@@ -1,0 +1,270 @@
+---
+// No imports needed - using inline SVG
+---
+
+<header class="header">
+  <div class="header-content">
+    <div class="header-left">
+      <a href="/" class="logo">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M12 2L2 7L12 12L22 7L12 2Z"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M2 17L12 22L22 17"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M2 12L12 17L22 12"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        <span class="logo-text">ClaudeKit</span>
+      </a>
+
+      <nav class="nav">
+        <a href="/docs" class="nav-link">Documentation</a>
+        <a href="/guides" class="nav-link">Guides</a>
+        <a href="/api" class="nav-link">API Reference</a>
+      </nav>
+    </div>
+
+    <div class="header-right">
+      <button class="icon-button" aria-label="Search" title="Search">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.3-4.3"></path>
+        </svg>
+      </button>
+
+      <button class="icon-button theme-toggle" onclick="window.toggleTheme()" aria-label="Toggle theme" title="Toggle theme">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="sun-icon"
+        >
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2"></path>
+          <path d="M12 20v2"></path>
+          <path d="m4.93 4.93 1.41 1.41"></path>
+          <path d="m17.66 17.66 1.41 1.41"></path>
+          <path d="M2 12h2"></path>
+          <path d="M20 12h2"></path>
+          <path d="m6.34 17.66-1.41 1.41"></path>
+          <path d="m19.07 4.93-1.41 1.41"></path>
+        </svg>
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="moon-icon"
+        >
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<style>
+  /* Header (Polar v1.1) */
+  .header {
+    height: var(--layout-header-height);
+    background: var(--color-bg-secondary);
+    border-bottom: 1px solid var(--color-border);
+    padding-inline: var(--space-6);
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+    backdrop-filter: blur(12px);
+    background-color: rgba(17, 17, 17, 0.8);
+  }
+
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--color-text-primary);
+    font-size: 1.125rem;
+    font-weight: var(--font-bold);
+    text-decoration: none;
+    transition: opacity var(--duration-normal) var(--ease-out);
+  }
+
+  .logo:hover {
+    text-decoration: none;
+    opacity: 0.8;
+  }
+
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-lg);
+    color: var(--color-accent-blue);
+  }
+
+  .logo-text {
+    font-size: 1.125rem;
+  }
+
+  .nav {
+    display: flex;
+    gap: var(--space-1);
+    margin-inline-start: auto;
+  }
+
+  .nav-link {
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-text-secondary);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: all var(--duration-normal) var(--ease-out);
+  }
+
+  .nav-link:hover {
+    color: var(--color-text-primary);
+    background: var(--color-bg-tertiary);
+    text-decoration: none;
+  }
+
+  .nav-link.active {
+    color: var(--color-text-primary);
+    background: var(--color-bg-tertiary);
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .icon-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all var(--duration-normal) var(--ease-out);
+  }
+
+  .icon-button:hover {
+    background-color: var(--color-bg-tertiary);
+    border-color: var(--color-border-hover);
+    color: var(--color-text-primary);
+  }
+
+  /* Theme toggle pill (Polar v1.1: 64x32px, 16px border-radius) */
+  .theme-toggle {
+    width: 64px !important;
+    height: 32px !important;
+    min-height: 32px !important;
+    max-height: 32px !important;
+    border-radius: 16px !important;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg-tertiary);
+    border: 1px solid var(--color-border);
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    transition: all var(--duration-normal) var(--ease-out);
+  }
+
+  .theme-toggle:hover {
+    border-color: var(--color-border-hover);
+  }
+
+  .sun-icon,
+  .moon-icon {
+    position: absolute;
+    transition: all var(--duration-normal) var(--ease-out);
+  }
+
+  :root[data-theme='dark'] .sun-icon {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.8);
+  }
+
+  :root[data-theme='dark'] .moon-icon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+
+  :root[data-theme='light'] .sun-icon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+
+  :root[data-theme='light'] .moon-icon {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.8);
+  }
+
+  /* Responsive (Polar v1.1) */
+  @media (max-width: 768px) {
+    .nav {
+      display: none;
+    }
+
+    .header {
+      padding-inline: var(--space-4);
+    }
+  }
+</style>

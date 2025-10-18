@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: claudekit-docs
+  labels:
+    app: claudekit-docs
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: claudekit-docs
+  template:
+    metadata:
+      labels:
+        app: claudekit-docs
+    spec:
+      containers:
+        - name: claudekit-docs
+          image: ghcr.io/claudekit/claudekit-docs:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+              name: http
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 10
+            periodSeconds: 30
+            timeoutSeconds: 5
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 3
+            failureThreshold: 3
+          env:
+            - name: NODE_ENV
+              value: "production"
+      imagePullSecrets:
+        - name: github-registry

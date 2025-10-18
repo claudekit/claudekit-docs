@@ -1,0 +1,74 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Sidebar from '../components/Sidebar.astro';
+import AIPanel from '../components/AIPanel.astro';
+
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="docs-layout">
+    <Header />
+
+    <div class="docs-content">
+      <Sidebar />
+
+      <main class="content-area">
+        <article class="prose">
+          <slot />
+        </article>
+      </main>
+
+      <AIPanel />
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .docs-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .docs-content {
+    display: flex;
+    flex: 1;
+    position: relative;
+  }
+
+  .content-area {
+    flex: 1;
+    padding: var(--spacing-8);
+    max-width: var(--layout-content-max-width);
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .prose {
+    max-width: 100%;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .content-area {
+      padding: var(--spacing-6);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .docs-content {
+      flex-direction: column;
+    }
+
+    .content-area {
+      padding: var(--spacing-4);
+    }
+  }
+</style>

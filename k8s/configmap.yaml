@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: claudekit-docs-config
+data:
+  SITE_URL: "https://docs.claudekit.cc"
+  NODE_ENV: "production"

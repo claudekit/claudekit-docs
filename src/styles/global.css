@@ -1,0 +1,508 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* CSS Custom Properties - Design Tokens */
+  :root {
+    /* Color System - Light Theme */
+    --color-bg-primary: #FFFFFF;
+    --color-bg-secondary: #F9FAFB;
+    --color-bg-tertiary: #F3F4F6;
+    --color-bg-code: #F5F5F5;
+
+    --color-text-primary: #1A1A1A;
+    --color-text-secondary: #6B7280;
+    --color-text-muted: #9CA3AF;
+
+    --color-accent-blue: #3B82F6;
+    --color-accent-green: #10B981;
+    --color-accent-purple: #8B5CF6;
+    --color-accent-cyan: #06B6D4;
+    --color-accent-red: #EF4444;
+    --color-accent-yellow: #F59E0B;
+
+    --color-border: #E5E7EB;
+    --color-border-hover: #D1D5DB;
+  }
+
+  /* Dark Theme (Polar-inspired v1.1) */
+  :root[data-theme='dark'] {
+    /* Backgrounds */
+    --color-bg-primary: #0A0A0A;      /* Main background (pure black) */
+    --color-bg-secondary: #111111;    /* Sidebar, panels (very dark gray) */
+    --color-bg-tertiary: #1C1C1C;     /* Cards, inputs, hover states */
+    --color-bg-code: #1C1C1C;         /* Code blocks */
+    --color-bg-inline-code: #1C1C1C;  /* Inline code background */
+
+    /* Text */
+    --color-text-primary: #FFFFFF;    /* Main content (pure white) */
+    --color-text-secondary: #A3A3A3;  /* Secondary text (light gray) */
+    --color-text-muted: #737373;      /* Muted text, hints (medium gray) */
+    --color-text-inverse: #0A0A0A;    /* Text on light backgrounds */
+
+    /* Accents */
+    --color-accent-blue: #60A5FA;     /* Active states, links (vibrant blue) */
+    --color-accent-green: #98C379;    /* Success, strings */
+    --color-accent-purple: #C678DD;   /* Keywords, tags */
+    --color-accent-cyan: #56B6C2;     /* AI sparkle, operators */
+    --color-accent-red: #E06C75;      /* Errors, warnings */
+    --color-accent-yellow: #E5C07B;   /* Warnings, highlights */
+    --color-accent-orange: #D19A66;   /* Emphasis, numbers */
+
+    /* Borders */
+    --color-border: #262626;          /* Subtle borders (dark gray) */
+    --color-border-hover: #3A3A3A;    /* Hover state borders */
+    --color-border-focus: #60A5FA;    /* Focus ring (vibrant blue) */
+
+    /* Overlays */
+    --color-overlay: rgba(0, 0, 0, 0.5);
+    --color-overlay-heavy: rgba(0, 0, 0, 0.75);
+
+    /* Syntax Highlighting */
+    --syntax-comment: #737373;
+    --syntax-keyword: #C678DD;
+    --syntax-function: #60A5FA;
+    --syntax-string: #98C379;
+    --syntax-number: #D19A66;
+    --syntax-operator: #56B6C2;
+    --syntax-variable: #E06C75;
+    --syntax-class: #E5C07B;
+  }
+
+  /* Typography Variables (Polar v1.1) */
+  :root {
+    /* Font Families */
+    --font-sans: 'Inter Variable', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    --font-mono: 'Geist Mono', 'SF Mono', 'Monaco', 'Inconsolata', 'Courier New', monospace;
+
+    /* Type Scale */
+    --text-xs: 0.75rem;      /* 12px - Sidebar section headers, small labels */
+    --text-sm: 0.875rem;     /* 14px - Navigation, code, AI chat */
+    --text-base: 1rem;       /* 16px - Body text, main content */
+    --text-lg: 1.125rem;     /* 18px - H3, callouts */
+    --text-xl: 1.25rem;      /* 20px - H2 subsections */
+    --text-2xl: 1.5rem;      /* 24px - H2 main headings */
+    --text-3xl: 1.875rem;    /* 30px - H1 subpages */
+    --text-4xl: 2.25rem;     /* 36px - H1 main page titles */
+
+    /* Font Weights */
+    --font-light: 300;
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+
+    /* Line Heights */
+    --leading-tight: 1.25;    /* Headings */
+    --leading-snug: 1.375;    /* Subheadings */
+    --leading-normal: 1.5;    /* Body text */
+    --leading-relaxed: 1.625; /* Long-form content */
+    --leading-loose: 2;       /* Spaced content */
+
+    /* Letter Spacing */
+    --tracking-tighter: -0.05em;  /* Large headings */
+    --tracking-tight: -0.025em;   /* Headings */
+    --tracking-normal: 0em;       /* Body, default */
+    --tracking-wide: 0.025em;     /* Navigation items */
+    --tracking-wider: 0.05em;     /* Sidebar section headers (12px uppercase) */
+  }
+
+  /* Spacing System (8px base grid - Polar v1.1) */
+  :root {
+    --space-0: 0;
+    --space-px: 1px;
+    --space-0-5: 0.125rem;  /* 2px */
+    --space-1: 0.25rem;     /* 4px */
+    --space-1-5: 0.375rem;  /* 6px */
+    --space-2: 0.5rem;      /* 8px */
+    --space-2-5: 0.625rem;  /* 10px */
+    --space-3: 0.75rem;     /* 12px */
+    --space-4: 1rem;        /* 16px */
+    --space-5: 1.25rem;     /* 20px */
+    --space-6: 1.5rem;      /* 24px */
+    --space-7: 1.75rem;     /* 28px */
+    --space-8: 2rem;        /* 32px */
+    --space-10: 2.5rem;     /* 40px */
+    --space-12: 3rem;       /* 48px */
+    --space-16: 4rem;       /* 64px */
+    --space-20: 5rem;       /* 80px */
+    --space-24: 6rem;       /* 96px */
+  }
+
+  /* Layout Variables (Polar v1.1) */
+  :root {
+    --layout-header-height: 64px;
+    --layout-sidebar-width: 280px;
+    --layout-content-max-width: 700px;
+    --layout-ai-panel-width: 380px;
+
+    /* Breakpoints */
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1536px;
+  }
+
+  /* Border Radius System (Polar v1.1) */
+  :root {
+    --radius-sm: 4px;   /* Badges, small elements */
+    --radius-md: 6px;   /* Buttons, inputs (medium) */
+    --radius-lg: 8px;   /* Cards, panels, code blocks (large) */
+    --radius-xl: 16px;  /* Theme toggle, very large containers */
+    --radius-full: 9999px; /* Pills, avatars */
+  }
+
+  /* Shadow System (Polar v1.1) */
+  :root {
+    /* Elevation shadows */
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.3);
+    --shadow-xl: 0 16px 32px rgba(0, 0, 0, 0.4);
+
+    /* Colored shadows (for buttons) */
+    --shadow-blue: 0 4px 12px rgba(96, 165, 250, 0.2);
+    --shadow-green: 0 4px 12px rgba(152, 195, 121, 0.2);
+    --shadow-red: 0 4px 12px rgba(224, 108, 117, 0.2);
+  }
+
+  /* Animation & Transitions (Polar v1.1) */
+  :root {
+    /* Timing Functions */
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* Duration Scale */
+    --duration-fast: 100ms;
+    --duration-normal: 150ms;
+    --duration-slow: 200ms;
+    --duration-slower: 300ms;
+  }
+
+  /* Z-Index Scale (Polar v1.1) */
+  :root {
+    --z-base: 0;
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-fixed: 300;
+    --z-modal-backdrop: 400;
+    --z-modal: 500;
+    --z-popover: 600;
+    --z-tooltip: 700;
+  }
+
+  /* Icon Sizes (Polar v1.1) */
+  :root {
+    --icon-xs: 12px;
+    --icon-sm: 16px;  /* Navigation icons */
+    --icon-md: 20px;
+    --icon-lg: 24px;  /* Feature cards, headers */
+    --icon-xl: 32px;
+  }
+
+  /* Semantic Colors */
+  :root {
+    --color-success: var(--color-accent-green);
+    --color-warning: var(--color-accent-yellow);
+    --color-error: var(--color-accent-red);
+    --color-info: var(--color-accent-blue);
+
+    /* AI-specific colors */
+    --color-ai-primary: var(--color-accent-cyan);
+    --color-ai-secondary: var(--color-accent-purple);
+    --color-ai-gradient: linear-gradient(135deg, var(--color-accent-cyan), var(--color-accent-purple));
+  }
+
+  /* Base Styles */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: var(--leading-normal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    transition: background-color var(--duration-normal) var(--ease-out),
+                color var(--duration-normal) var(--ease-out);
+  }
+
+  /* Typography (Polar v1.1) */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: var(--font-bold);
+    line-height: var(--leading-tight);
+    margin-bottom: var(--space-4);
+    color: var(--color-text-primary);
+  }
+
+  h1 {
+    font-size: var(--text-4xl);
+    letter-spacing: var(--tracking-tight);
+  }
+
+  h2 {
+    font-size: var(--text-2xl);
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--color-border);
+    margin-top: var(--space-12);
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    margin-top: var(--space-8);
+  }
+
+  p {
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-4);
+  }
+
+  a {
+    color: var(--color-accent-blue);
+    text-decoration: none;
+    transition: color var(--duration-normal) var(--ease-out);
+  }
+
+  a:hover {
+    color: var(--color-accent-cyan);
+    text-decoration: underline;
+  }
+
+  code {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    background: var(--color-bg-inline-code);
+    padding: 0.2em 0.4em;
+    border-radius: var(--radius-sm);
+    color: var(--color-accent-blue);
+  }
+
+  pre {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    background-color: var(--color-bg-code);
+    padding: var(--space-4);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    overflow-x: auto;
+    margin-block: var(--space-6);
+  }
+
+  pre code {
+    background: transparent;
+    padding: 0;
+    color: var(--color-text-primary);
+  }
+
+  ul,
+  ol {
+    margin-bottom: var(--space-4);
+    padding-inline-start: var(--space-6);
+  }
+
+  li {
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-2);
+  }
+
+  /* Scrollbar Styles */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-bg-secondary);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-border-hover);
+    border-radius: var(--radius-sm);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text-muted);
+  }
+
+  /* Focus Styles (Polar v1.1) */
+  *:focus-visible {
+    outline: 2px solid var(--color-border-focus);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  *:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Button Styles (Polar v1.1) */
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-2-5) var(--space-4);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    border-radius: var(--radius-md);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all var(--duration-normal) var(--ease-out);
+    white-space: nowrap;
+  }
+
+  .button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .button-primary {
+    background: var(--color-accent-blue);
+    color: white;
+    border-color: var(--color-accent-blue);
+  }
+
+  .button-primary:hover:not(:disabled) {
+    background: var(--color-accent-cyan);
+    border-color: var(--color-accent-cyan);
+    box-shadow: var(--shadow-blue);
+  }
+
+  .button-primary:active:not(:disabled) {
+    transform: translateY(1px);
+  }
+
+  .button-secondary {
+    background: var(--color-bg-tertiary);
+    color: var(--color-text-primary);
+    border-color: var(--color-border);
+  }
+
+  .button-secondary:hover:not(:disabled) {
+    background: var(--color-bg-code);
+    border-color: var(--color-border-hover);
+  }
+
+  .button-ghost {
+    background: transparent;
+    color: var(--color-text-secondary);
+    border-color: transparent;
+  }
+
+  .button-ghost:hover:not(:disabled) {
+    background: var(--color-bg-tertiary);
+    color: var(--color-text-primary);
+  }
+
+  /* Card Styles (Polar v1.1) */
+  .card {
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+  }
+
+  /* Badge Styles (Polar v1.1) */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-1) var(--space-2);
+    font-size: var(--text-xs);
+    font-weight: var(--font-medium);
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+  }
+
+  .badge-primary {
+    background: rgba(96, 165, 250, 0.1);
+    color: var(--color-accent-blue);
+  }
+
+  .badge-success {
+    background: rgba(152, 195, 121, 0.1);
+    color: var(--color-accent-green);
+  }
+
+  .badge-warning {
+    background: rgba(229, 192, 123, 0.1);
+    color: var(--color-accent-yellow);
+  }
+
+  .badge-ai {
+    background: var(--color-ai-gradient);
+    color: white;
+  }
+
+  /* AI Sparkle Icon (Polar v1.1) */
+  .ai-sparkle {
+    width: var(--icon-md);
+    height: var(--icon-md);
+    color: var(--color-ai-primary);
+    filter: drop-shadow(0 0 8px rgba(86, 182, 194, 0.3));
+  }
+
+  @keyframes ai-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  .ai-loading {
+    animation: ai-pulse 1.5s ease-in-out infinite;
+  }
+
+  .ai-gradient-text {
+    background: var(--color-ai-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Icon Sizes */
+  .icon {
+    width: var(--icon-md);
+    height: var(--icon-md);
+    stroke-width: 2;
+  }
+
+  .icon-xs { width: var(--icon-xs); height: var(--icon-xs); }
+  .icon-sm { width: var(--icon-sm); height: var(--icon-sm); }
+  .icon-lg { width: var(--icon-lg); height: var(--icon-lg); }
+  .icon-xl { width: var(--icon-xl); height: var(--icon-xl); }
+}

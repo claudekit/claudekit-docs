@@ -1,0 +1,545 @@
+---
+import DocsLayout from '../layouts/DocsLayout.astro';
+
+const title = 'ClaudeKit - Build Software Like You Have a Team';
+const description = '14 specialized AI agents working together. Write less code, ship faster, maintain quality. Reclaim 50-70% of time on repetitive tasks.';
+---
+
+<DocsLayout title={title} description={description}>
+
+<div class="hero">
+  <h1 class="hero-title">Build Software Like You Have a Team</h1>
+
+  <p class="hero-subtitle">
+    ClaudeKit gives you 14 specialized developer agents working together.
+    Write less code, ship faster, maintain quality.
+  </p>
+
+  <div class="hero-actions">
+    <a href="/docs/getting-started/quick-start" class="btn btn-primary">Get Started in 5 Minutes</a>
+    <a href="/docs/getting-started/introduction" class="btn btn-secondary">View Documentation</a>
+  </div>
+
+  <div class="hero-demo">
+    ```bash
+    # Install ClaudeKit CLI
+    npm install -g claudekit-cli
+
+    # Create new project
+    ck new my-app
+
+    # Plan and implement a feature
+    /plan [add user authentication]
+    /cook [implement OAuth 2.1 with JWT]
+
+    # Review, approve, deploy
+    ```
+  </div>
+</div>
+
+## Why ClaudeKit?
+
+<div class="features-grid">
+  <div class="feature">
+    <h3>Specialized Agents, Real Results</h3>
+    <p>14 expert agents—planner, tester, debugger, designer—each focusing on what it does best. Orchestrate workflows like a senior architect, not just autocomplete.</p>
+    <ul>
+      <li>Planner analyzes requirements and creates implementation roadmaps</li>
+      <li>Tester generates comprehensive test suites automatically</li>
+      <li>Debugger identifies and fixes issues across your entire codebase</li>
+      <li>Designer creates UI components following your design system</li>
+    </ul>
+  </div>
+
+  <div class="feature">
+    <h3>Eliminate Repetitive Work</h3>
+    <p>Reclaim 50-70% of time spent on repetitive tasks. AI writes initial implementations; you focus on architecture, review, and high-value decisions.</p>
+    <ul>
+      <li>Generate tests automatically with coverage reports</li>
+      <li>Fix bugs across multiple files with context awareness</li>
+      <li>Update documentation as code changes</li>
+      <li>Refactor legacy code with confidence</li>
+    </ul>
+  </div>
+
+  <div class="feature">
+    <h3>Stay in Control</h3>
+    <p>You're the reviewer, AI is the implementer. Checkpoints and rollback at every step. Transparent decision-making with full audit trails.</p>
+    <ul>
+      <li>Approve or reject changes before they're applied</li>
+      <li>Instant rollback to any previous checkpoint</li>
+      <li>Understand AI reasoning with detailed explanations</li>
+      <li>Customize agent behavior for your team's workflows</li>
+    </ul>
+  </div>
+</div>
+
+## How It Works
+
+ClaudeKit operates through two main components that work seamlessly together:
+
+### ClaudeKit Engineer: 14 Specialized Agents
+
+Multi-agent orchestration system with role-based specialists:
+
+- **Core Workflow**: `/plan` → `/cook` → `/test` → `/debug` → `/git:cm`
+- **Design Tools**: `/design:fast`, `/design:3d`, `/design:screenshot`
+- **Fix Commands**: `/fix:fast`, `/fix:hard`, `/fix:ui`, `/fix:types`
+- **Content Creation**: `/content:good`, `/content:cro`, `/docs:update`
+- **Integrations**: `/integrate:polar`, `/integrate:sepay`
+
+Each command triggers specialized agents that collaborate to deliver results.
+
+### ClaudeKit CLI: Smart Project Management
+
+Intelligent project scaffolding and version management:
+
+```bash
+# Create new project with ClaudeKit configuration
+ck new my-app --template react
+
+# Update existing project to latest ClaudeKit version
+ck update
+
+# Check and switch between ClaudeKit versions
+ck versions
+```
+
+The CLI handles:
+- Project initialization with best practices
+- Smart file merging without breaking changes
+- Version management across projects
+- Multi-tier authentication (GitHub CLI)
+
+## Real Developer Workflows
+
+### Building a New Feature
+
+**Planning:**
+```bash
+# Planner agent reads your codebase
+/plan [add real-time notifications with WebSocket]
+
+# Creates detailed implementation plan:
+# - Architecture decisions
+# - File changes needed
+# - Test strategy
+# - Security considerations
+```
+
+**Implementation:**
+```bash
+# Code agent follows the plan
+/cook [implement WebSocket notifications]
+
+# Generates:
+# - Server-side WebSocket handler
+# - Client-side connection manager
+# - Event types and validators
+# - Error handling and reconnection logic
+```
+
+**Testing:**
+```bash
+# Tester agent creates comprehensive tests
+/test [WebSocket notifications]
+
+# Produces:
+# - Unit tests for handlers
+# - Integration tests for end-to-end flow
+# - Mock WebSocket server
+# - Coverage report
+```
+
+### Debugging Production Issues
+
+```bash
+# Debugger agent analyzes logs and code
+/debug [users reporting timeout errors on checkout]
+
+# Agent workflow:
+# 1. Searches logs for timeout patterns
+# 2. Traces code execution paths
+# 3. Identifies bottleneck in payment processing
+# 4. Suggests fixes with performance impact
+# 5. Generates tests to prevent regression
+```
+
+### Refactoring Legacy Code
+
+```bash
+# Scout agent maps codebase structure
+/scout [analyze authentication system]
+
+# Planner creates refactoring roadmap
+/plan [migrate from sessions to JWT]
+
+# Code agent implements changes safely
+/cook [implement JWT authentication]
+
+# Tester ensures nothing breaks
+/test [authentication system]
+```
+
+## Proven Results
+
+<div class="social-proof">
+  <div class="stat">
+    <div class="stat-number">50-70%</div>
+    <div class="stat-label">Time reclaimed on repetitive tasks</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-number">14</div>
+    <div class="stat-label">Specialized agents working for you</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-number">38+</div>
+    <div class="stat-label">Commands for every workflow</div>
+  </div>
+</div>
+
+<div class="callout">
+  <strong>Teammate Extension, Not Replacement</strong>: ClaudeKit positions you as the architect and reviewer while AI handles implementation. You maintain full control with checkpoints, rollback capabilities, and transparent decision-making.
+</div>
+
+## What Developers Say
+
+> "More time in reviewer mode than coding mode. AI writes 80% of initial implementations; I focus on architecture and steering multiple threads."
+>
+> — Senior Staff Engineer using AI-powered development tools
+
+> "Functions more like a code editor than a typical AI tool. Essential part of my workflow."
+>
+> — Developer working with Claude Code
+
+> "The checkpoint feature is game-changing. Try an approach, rollback instantly if it doesn't work. No fear of AI going off the rails."
+>
+> — Frontend Developer using ClaudeKit Engineer
+
+## Get Started in 5 Minutes
+
+<div class="quick-start-steps">
+  <div class="step">
+    <div class="step-number">1</div>
+    <div class="step-content">
+      <h4>Install ClaudeKit CLI</h4>
+      <pre><code>npm install -g claudekit-cli</code></pre>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-number">2</div>
+    <div class="step-content">
+      <h4>Create Your First Project</h4>
+      <pre><code>ck new my-first-app
+cd my-first-app</code></pre>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-number">3</div>
+    <div class="step-content">
+      <h4>Plan and Implement a Feature</h4>
+      <pre><code>/plan [add user registration API]
+/cook [implement registration endpoint]</code></pre>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-number">4</div>
+    <div class="step-content">
+      <h4>Review and Commit</h4>
+      <pre><code>git diff
+npm test
+/git:cm</code></pre>
+    </div>
+  </div>
+</div>
+
+<div class="cta-section">
+  <h2>Ready to Build Like You Have a Team?</h2>
+  <p>Get started with ClaudeKit and experience developer productivity at a new level.</p>
+  <div class="cta-actions">
+    <a href="/docs/getting-started/quick-start" class="btn btn-primary btn-large">Start Building Now</a>
+    <a href="/docs/getting-started/installation" class="btn btn-secondary btn-large">Installation Guide</a>
+  </div>
+</div>
+
+## Explore Documentation
+
+<div class="doc-sections">
+  <a href="/docs/getting-started/introduction" class="doc-card">
+    <h3>Getting Started</h3>
+    <p>Quick start guide, installation, and core concepts</p>
+  </a>
+
+  <a href="/docs/cli/" class="doc-card">
+    <h3>CLI Reference</h3>
+    <p>Commands, configuration, and templates</p>
+  </a>
+
+  <a href="/docs/agents/" class="doc-card">
+    <h3>Agent System</h3>
+    <p>14 specialized agents and orchestration patterns</p>
+  </a>
+
+  <a href="/docs/commands/" class="doc-card">
+    <h3>Commands</h3>
+    <p>38+ commands for every development workflow</p>
+  </a>
+
+  <a href="/docs/guides/" class="doc-card">
+    <h3>Guides & Tutorials</h3>
+    <p>Complete walkthroughs and use cases</p>
+  </a>
+
+  <a href="/docs/api-reference/" class="doc-card">
+    <h3>API Reference</h3>
+    <p>Detailed API documentation and configuration</p>
+  </a>
+</div>
+
+<style is:inline>
+  .hero {
+    text-align: center;
+    padding: 4rem 0;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #fff 0%, #999 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    color: #999;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+
+  .hero-demo {
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: left;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+  }
+
+  .feature h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature p {
+    margin-bottom: 1rem;
+    color: #999;
+  }
+
+  .feature ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .feature li:before {
+    content: "✓ ";
+    color: #4ade80;
+    font-weight: bold;
+    margin-right: 0.5rem;
+  }
+
+  .social-proof {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    margin: 3rem 0;
+    padding: 2rem;
+    background: #111;
+    border-radius: 8px;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #4ade80;
+  }
+
+  .stat-label {
+    color: #999;
+    margin-top: 0.5rem;
+  }
+
+  .quick-start-steps {
+    display: grid;
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+
+  .step {
+    display: flex;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .step-number {
+    flex-shrink: 0;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: #4ade80;
+    color: #0a0a0a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+
+  .step-content h4 {
+    margin: 0 0 0.5rem 0;
+  }
+
+  .cta-section {
+    text-align: center;
+    padding: 4rem 0;
+    margin: 4rem 0;
+    background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
+    border-radius: 12px;
+  }
+
+  .cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .cta-section p {
+    font-size: 1.25rem;
+    color: #999;
+    margin-bottom: 2rem;
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .doc-sections {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 3rem 0;
+  }
+
+  .doc-card {
+    padding: 1.5rem;
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .doc-card:hover {
+    border-color: #4ade80;
+    transform: translateY(-2px);
+  }
+
+  .doc-card h3 {
+    margin: 0 0 0.5rem 0;
+    color: #fff;
+  }
+
+  .doc-card p {
+    margin: 0;
+    color: #999;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+
+  .btn-primary {
+    background: #4ade80;
+    color: #0a0a0a;
+  }
+
+  .btn-primary:hover {
+    background: #22c55e;
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: #4ade80;
+    border: 1px solid #4ade80;
+  }
+
+  .btn-secondary:hover {
+    background: #4ade8020;
+  }
+
+  .btn-large {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+  }
+
+  .callout {
+    padding: 1.5rem;
+    margin: 2rem 0;
+    background: #111;
+    border-left: 4px solid #4ade80;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+    }
+
+    .hero-actions, .cta-actions {
+      flex-direction: column;
+    }
+
+    .social-proof {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+</style>
+
+</DocsLayout>

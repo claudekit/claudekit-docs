@@ -33,6 +33,28 @@ import SidebarNav from './SidebarNav.astro';
   </div>
 </aside>
 
+<script>
+  // Save and restore sidebar scroll position
+  const sidebar = document.querySelector('.sidebar');
+
+  if (sidebar) {
+    // Restore scroll position on load
+    const savedScrollPosition = localStorage.getItem('sidebar-scroll-position');
+    if (savedScrollPosition) {
+      sidebar.scrollTop = parseInt(savedScrollPosition, 10);
+    }
+
+    // Save scroll position on scroll
+    let scrollTimeout: number;
+    sidebar.addEventListener('scroll', () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        localStorage.setItem('sidebar-scroll-position', sidebar.scrollTop.toString());
+      }, 100);
+    });
+  }
+</script>
+
 <style>
   /* Sidebar (Polar v1.1) */
   .sidebar {

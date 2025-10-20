@@ -30,6 +30,25 @@ const { title, description } = Astro.props;
   </div>
 </BaseLayout>
 
+<script>
+  // Prevent automatic scroll on navigation
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  // Ensure page always starts at top
+  window.addEventListener('beforeunload', () => {
+    window.scrollTo(0, 0);
+  });
+
+  // Reset scroll position on page load
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 0);
+  });
+</script>
+
 <style>
   .docs-layout {
     display: flex;
@@ -45,7 +64,10 @@ const { title, description } = Astro.props;
 
   .content-area {
     flex: 1;
-    padding: var(--spacing-8);
+    padding-top: var(--space-12);
+    padding-right: var(--space-8);
+    padding-bottom: var(--space-8);
+    padding-left: var(--space-8);
     max-width: var(--layout-content-max-width);
     margin: 0 auto;
     width: 100%;

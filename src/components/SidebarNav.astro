@@ -124,10 +124,36 @@ const currentPath = Astro.url.pathname;
   document.addEventListener('DOMContentLoaded', () => {
     const sectionTitles = document.querySelectorAll('.nav-section-title');
 
+    // Initialize collapsed state from localStorage or defaults
     sectionTitles.forEach((title) => {
+      const section = title.closest('.nav-section');
+      const sectionName = title.querySelector('span')?.textContent?.trim();
+
+      // Get saved state from localStorage
+      const savedState = localStorage.getItem(`sidebar-section-${sectionName}`);
+
+      if (savedState !== null) {
+        // Use saved state
+        if (savedState === 'collapsed') {
+          section?.classList.add('collapsed');
+        }
+      } else {
+        // Default: collapse all except "Getting Started"
+        if (sectionName !== 'Getting Started') {
+          section?.classList.add('collapsed');
+        }
+      }
+
+      // Handle click to toggle
       title.addEventListener('click', () => {
-        const section = title.closest('.nav-section');
         section?.classList.toggle('collapsed');
+
+        // Save state to localStorage
+        const isCollapsed = section?.classList.contains('collapsed');
+        localStorage.setItem(
+          `sidebar-section-${sectionName}`,
+          isCollapsed ? 'collapsed' : 'expanded'
+        );
       });
     });
   });
@@ -138,7 +164,7 @@ const currentPath = Astro.url.pathname;
   .sidebar-nav {
     display: flex;
     flex-direction: column;
-    gap: var(--space-6);
+    gap: var(--space-3);
   }
 
   .nav-section {

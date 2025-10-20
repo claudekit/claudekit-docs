@@ -11,6 +11,12 @@ const categories = {
       .filter((doc) => doc.data.category === 'getting-started')
       .sort((a, b) => (a.data.order || 0) - (b.data.order || 0)),
   },
+  'cli': {
+    title: 'CLI',
+    docs: allDocs
+      .filter((doc) => doc.data.category === 'cli')
+      .sort((a, b) => (a.data.order || 0) - (b.data.order || 0)),
+  },
   'core-concepts': {
     title: 'Core Concepts',
     docs: allDocs
@@ -39,18 +45,6 @@ const categories = {
     title: 'Use Cases',
     docs: allDocs
       .filter((doc) => doc.data.category === 'use-cases')
-      .sort((a, b) => (a.data.order || 0) - (b.data.order || 0)),
-  },
-  'components': {
-    title: 'Components',
-    docs: allDocs
-      .filter((doc) => doc.data.category === 'components')
-      .sort((a, b) => (a.data.order || 0) - (b.data.order || 0)),
-  },
-  'cli': {
-    title: 'CLI',
-    docs: allDocs
-      .filter((doc) => doc.data.category === 'cli')
       .sort((a, b) => (a.data.order || 0) - (b.data.order || 0)),
   },
 };

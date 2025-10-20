@@ -2,7 +2,7 @@
 import { AIChat } from './AIChat';
 ---
 
-<aside class="ai-panel">
+<aside class="ai-panel" id="ai-panel">
   <div class="ai-panel-header">
     <div class="ai-title">
       <svg
@@ -24,41 +24,190 @@ import { AIChat } from './AIChat';
         <path d="M3 5h4"></path>
         <path d="M17 19h4"></path>
       </svg>
-      <span>AI Assistant</span>
+      <span class="ai-title-text">AI Assistant</span>
     </div>
+    <button
+      class="ai-collapse-toggle"
+      id="ai-collapse-toggle"
+      aria-label="Toggle AI Assistant panel"
+      aria-expanded="true"
+      aria-controls="ai-panel-content"
+      type="button"
+    >
+      <svg
+        class="chevron-icon"
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="m15 18-6-6 6-6"></path>
+      </svg>
+    </button>
   </div>
 
-  <AIChat client:load />
+  <div class="ai-panel-content" id="ai-panel-content">
+    <AIChat client:load />
+  </div>
 </aside>
+
+<script>
+  // AI Panel Collapse/Expand functionality with localStorage persistence
+  const AI_PANEL_STATE_KEY = 'ai-panel-collapsed';
+
+  function initAIPanelCollapse() {
+    const panel = document.getElementById('ai-panel');
+    const toggle = document.getElementById('ai-collapse-toggle');
+    const content = document.getElementById('ai-panel-content');
+
+    if (!panel || !toggle || !content) return;
+
+    // Restore state from localStorage
+    const isCollapsed = localStorage.getItem(AI_PANEL_STATE_KEY) === 'true';
+
+    if (isCollapsed) {
+      panel.classList.add('collapsed');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+
+    // Toggle collapse/expand
+    toggle.addEventListener('click', () => {
+      const willCollapse = !panel.classList.contains('collapsed');
+
+      panel.classList.toggle('collapsed');
+      toggle.setAttribute('aria-expanded', (!willCollapse).toString());
+
+      // Save state to localStorage
+      localStorage.setItem(AI_PANEL_STATE_KEY, willCollapse.toString());
+    });
+  }
+
+  // Initialize on page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAIPanelCollapse);
+  } else {
+    initAIPanelCollapse();
+  }
+
+  // Re-initialize after Astro view transitions
+  document.addEventListener('astro:after-swap', initAIPanelCollapse);
+</script>
 
 <style>
   .ai-panel {
     width: var(--layout-ai-panel-width);
-    height: calc(100vh - var(--layout-topbar-height));
+    height: calc(100vh - var(--layout-header-height));
     position: sticky;
-    top: var(--layout-topbar-height);
+    top: var(--layout-header-height);
     background-color: var(--color-bg-secondary);
     border-left: 1px solid var(--color-border);
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    transition: width var(--duration-slower) var(--ease-in-out);
+  }
+
+  /* Collapsed state */
+  .ai-panel.collapsed {
+    width: 56px;
   }
 
   .ai-panel-header {
-    padding: var(--spacing-4);
+    padding: var(--space-7) var(--space-6);
     border-bottom: 1px solid var(--color-border);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
   }
 
   .ai-title {
     display: flex;
     align-items: center;
-    gap: var(--spacing-2);
-    font-size: var(--font-size-base);
-    font-weight: var(--font-weight-semibold);
+    gap: var(--space-2);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
     color: var(--color-text-primary);
+    overflow: hidden;
+  }
+
+  .ai-title-text {
+    white-space: nowrap;
+    opacity: 1;
+    transition: opacity var(--duration-normal) var(--ease-out);
+  }
+
+  .ai-panel.collapsed .ai-title-text {
+    opacity: 0;
+    width: 0;
   }
 
   .ai-sparkle {
-    color: #ffd700;
+    color: var(--color-ai-primary);
+    animation: sparkle 2s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+
+  @keyframes sparkle {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.05); }
+  }
+
+  /* Toggle button */
+  .ai-collapse-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-md);
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all var(--duration-normal) var(--ease-out);
+    flex-shrink: 0;
+  }
+
+  .ai-collapse-toggle:hover {
+    background: var(--color-bg-tertiary);
+    color: var(--color-text-primary);
+  }
+
+  .ai-collapse-toggle:active {
+    transform: scale(0.95);
+  }
+
+  .ai-collapse-toggle:focus-visible {
+    outline: 2px solid var(--color-border-focus);
+    outline-offset: 2px;
+  }
+
+  .chevron-icon {
+    transition: transform var(--duration-slower) var(--ease-in-out);
+  }
+
+  .ai-panel.collapsed .chevron-icon {
+    transform: rotate(180deg);
+  }
+
+  /* Panel content */
+  .ai-panel-content {
+    flex: 1;
+    overflow: hidden;
+    opacity: 1;
+    transition: opacity var(--duration-slow) var(--ease-out);
+  }
+
+  .ai-panel.collapsed .ai-panel-content {
+    opacity: 0;
+    pointer-events: none;
   }
 
   /* AI Chat Container */
@@ -72,23 +221,23 @@ import { AIChat } from './AIChat';
   :global(.ai-messages) {
     flex: 1;
     overflow-y: auto;
-    padding: var(--spacing-4);
+    padding: var(--space-6);
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-4);
+    gap: var(--space-4);
   }
 
   :global(.ai-message) {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-2);
+    gap: var(--space-2);
   }
 
   :global(.message-content) {
-    padding: var(--spacing-3);
+    padding: var(--space-3) var(--space-4);
     border-radius: var(--radius-lg);
-    font-size: var(--font-size-sm);
-    line-height: var(--line-height-relaxed);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
   }
 
   :global(.ai-message.user .message-content) {
@@ -113,8 +262,8 @@ import { AIChat } from './AIChat';
 
   :global(.message-content.loading) {
     display: flex;
-    gap: var(--spacing-2);
-    padding: var(--spacing-4);
+    gap: var(--space-2);
+    padding: var(--space-4);
   }
 
   :global(.loading-dot) {
@@ -145,35 +294,39 @@ import { AIChat } from './AIChat';
   }
 
   :global(.ai-input-container) {
-    padding: var(--spacing-4);
+    padding: var(--space-4) var(--space-6);
     border-top: 1px solid var(--color-border);
+    flex-shrink: 0;
+    background-color: var(--color-bg-secondary);
   }
 
   :global(.ai-input-form) {
     display: flex;
-    gap: var(--spacing-2);
+    gap: var(--space-2);
+    align-items: center;
   }
 
   :global(.ai-input) {
     flex: 1;
-    padding: var(--spacing-2) var(--spacing-3);
-    background-color: var(--color-bg-tertiary);
+    padding: var(--space-3);
+    background-color: var(--color-bg-primary);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     color: var(--color-text-primary);
-    font-size: var(--font-size-sm);
-    font-family: var(--font-family-sans);
-    transition: all var(--transition-fast);
+    font-size: var(--text-sm);
+    font-family: var(--font-sans);
+    transition: all var(--duration-normal) var(--ease-out);
+    min-height: 40px;
   }
 
   :global(.ai-input:focus) {
     outline: none;
-    border-color: var(--color-accent-blue);
-    box-shadow: 0 0 0 3px rgba(97, 175, 239, 0.1);
+    border-color: var(--color-ai-primary);
+    box-shadow: 0 0 0 3px rgba(86, 182, 194, 0.1);
   }
 
   :global(.ai-input::placeholder) {
-    color: var(--color-text-muted);
+    color: #B8B8B8 !important;
   }
 
   :global(.ai-input:disabled) {
@@ -185,22 +338,24 @@ import { AIChat } from './AIChat';
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     background-color: var(--color-accent-blue);
     color: white;
     border: none;
     border-radius: var(--radius-md);
     cursor: pointer;
-    transition: all var(--transition-fast);
+    transition: all var(--duration-normal) var(--ease-out);
+    flex-shrink: 0;
   }
 
   :global(.ai-send-button:hover:not(:disabled)) {
-    opacity: 0.9;
+    background-color: var(--color-accent-cyan);
+    box-shadow: var(--shadow-blue);
   }
 
   :global(.ai-send-button:active:not(:disabled)) {
-    transform: scale(0.95);
+    transform: translateY(1px);
   }
 
   :global(.ai-send-button:disabled) {

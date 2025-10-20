@@ -1,0 +1,37 @@
+# Dependencies
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+dist
+.astro
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs.txt
+*.log
+
+# Git
+.git
+.gitignore
+
+# Misc
+.claude
+.opencode
+plans
+docs
+k8s
+repomix-output.xml
+.repomixignore
+README.md

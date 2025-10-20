@@ -10,8 +10,14 @@ COPY package*.json ./
 # Install dependencies
 RUN npm ci
 
-# Copy source code
-COPY . .
+# Copy configuration files
+COPY astro.config.mjs ./
+COPY tailwind.config.mjs ./
+COPY tsconfig.json ./
+
+# Copy source code and content
+COPY src ./src
+COPY public ./public
 
 # Build the application
 RUN npm run build

@@ -1,731 +1,519 @@
 ---
 title: ck new
-description: Create new ClaudeKit project with intelligent scaffolding and templates
+description: Create new ClaudeKit project by downloading the latest release from GitHub
 category: cli
 order: 2
 published: true
-keywords: [ck new, create project, templates, scaffolding]
-lastUpdated: 2025-10-18
-difficulty: beginner
-estimatedTime: "3 minutes"
-prerequisites:
-  - /docs/cli/installation
-relatedPages:
-  - /docs/cli/templates
-  - /docs/getting-started/quick-start
 ---
 
 # ck new
 
-Create new ClaudeKit project with intelligent scaffolding, agent configuration, and your choice of templates.
+Create a new ClaudeKit project by downloading the latest or specific version from private GitHub releases.
 
 ## Synopsis
 
 ```bash
-ck new <project-name> [options]
+ck new [options]
 ```
 
 ## Description
 
-The `ck new` command creates a new project with:
-- ClaudeKit configuration (`.claude/` directory)
-- 14 specialized agent templates
-- Workflow examples and documentation structure
-- Optional framework templates (React, Next.js, Astro, etc.)
-- Git initialization and dependency installation
+The `ck new` command downloads a ClaudeKit starter kit from private GitHub releases and sets it up in your local directory. This command:
 
-## Arguments
+- Downloads the specified ClaudeKit release (latest by default)
+- Extracts files to your target directory
+- Preserves your existing files (if updating)
+- Installs dependencies (npm install)
+- Ready to use immediately
 
-### project-name
-
-**Required.** Name of the project directory to create.
-
-```bash
-ck new my-app
-```
-
-**Naming rules:**
-- Lowercase letters, numbers, hyphens, underscores
-- No spaces or special characters
-- Must start with letter or number
-- Max 214 characters (npm package name limit)
-
-**Valid names:**
-- `my-app` ✓
-- `my_app` ✓
-- `myapp123` ✓
-- `my-awesome-project` ✓
-
-**Invalid names:**
-- `My App` ✗ (spaces)
-- `-myapp` ✗ (starts with hyphen)
-- `my@app` ✗ (special character)
+**Important:** You must purchase a ClaudeKit starter kit from [ClaudeKit.cc](https://claudekit.cc) to access the private repositories and use this command.
 
 ## Options
 
-### --template, -t
+### --dir <directory>
 
-Choose project template. Defaults to interactive prompt if not specified.
-
-```bash
-ck new my-app --template react
-ck new my-app -t nextjs
-```
-
-**Available templates:**
-- `blank` - Empty project with ClaudeKit configuration only
-- `react` - React 18 + TypeScript + Vite
-- `nextjs` - Next.js 14 with App Router
-- `astro` - Astro v4 + React + Tailwind CSS
-- `fastify` - Fastify 4 API server + TypeScript
-- `express` - Express.js 4 API + TypeScript
-- `nuxt` - Nuxt 3 + Vue 3 + TypeScript
-- `svelte` - SvelteKit + TypeScript
-
-[See all templates](/docs/cli/templates)
-
-### --no-install
-
-Skip automatic dependency installation.
+Target directory for the new project.
 
 ```bash
-ck new my-app --no-install
+ck new --dir my-project
 ```
 
-**Use when:**
-- You want to review dependencies first
-- Installing manually later
-- Using different package manager
-- CI/CD environment with separate install step
+**Default:** Current directory (`.`)
 
-**Remember to install later:**
+**Examples:**
 ```bash
-cd my-app
-npm install
+ck new --dir ./my-app
+ck new --dir ../projects/new-app
+ck new --dir ~/projects/my-app
 ```
 
-### --git
+### --kit <kit-name>
 
-Initialize Git repository automatically.
+Specify which ClaudeKit to download.
 
 ```bash
-ck new my-app --git
+ck new --kit engineer
 ```
 
-**What it does:**
-- Runs `git init`
-- Creates `.gitignore` with sensible defaults
-- Makes initial commit with project structure
-- Configures git hooks (optional)
+**Available kits:**
+- `engineer` - ClaudeKit Engineer (14 specialized agents)
+- `marketing` - ClaudeKit Marketing [Coming Soon]
 
-**Default `.gitignore` includes:**
-```
-node_modules/
-.env
-.env.local
-dist/
-build/
-.claude/cache/
-plans/temp/
-```
+**Default:** Interactive prompt if not specified
 
-### --package-manager, -pm
+### --version <version>
 
-Specify package manager to use.
+Download a specific version instead of latest.
 
 ```bash
-ck new my-app --package-manager pnpm
-ck new my-app -pm yarn
+ck new --kit engineer --version v1.0.0
 ```
 
-**Options:**
-- `npm` (default)
-- `pnpm`
-- `yarn`
-- `bun`
+**Version format:** `v1.0.0` or `1.0.0`
 
-Auto-detected if available, falls back to npm.
-
-### --no-claude
-
-Create project without ClaudeKit configuration.
-
+**Examples:**
 ```bash
-ck new my-app --template react --no-claude
+ck new --kit engineer --version v1.2.0
+ck new --kit engineer --version 1.2.0  # Also works
 ```
 
-**Use when:**
-- You only want the framework template
-- Adding ClaudeKit later with `ck init`
-- Testing template without agents
+To see available versions, run:
+```bash
+ck versions --kit engineer
+```
 
-### --verbose
+### --verbose, -v
 
-Show detailed output during creation.
+Enable verbose logging for debugging.
 
 ```bash
-ck new my-app --verbose
+ck new --verbose
+ck new -v
 ```
 
 **Output includes:**
-- File creation steps
-- Dependency resolution
-- Git operations
-- Configuration details
+- HTTP request/response details (tokens sanitized)
+- File operations (downloads, extractions, copies)
+- Command execution steps and timing
+- Error stack traces with full context
+- Authentication flow details
 
-### --dry-run
+### --log-file <file>
 
-Preview what would be created without actually creating it.
-
-```bash
-ck new my-app --template react --dry-run
-```
-
-**Output shows:**
-- Files that would be created
-- Dependencies that would be installed
-- Configuration that would be applied
-- Disk space required
-
-## Examples
-
-### Create blank project
+Write logs to a file for sharing or debugging.
 
 ```bash
-ck new my-app
+ck new --verbose --log-file debug.log
 ```
 
-**Interactive prompts:**
+**Note:** All sensitive data (tokens, credentials) is automatically sanitized in logs.
 
-```
-? Select a template:
-❯ blank          - Empty project with ClaudeKit config
-  react          - React + TypeScript + Vite
-  nextjs         - Next.js 14 with App Router
-  [... more options]
+## Interactive Mode
 
-? Initialize git repository? (Y/n)
-
-? Install dependencies? (Y/n)
-```
-
-**Created structure:**
-
-```
-my-app/
-├── .claude/
-│   ├── config.json
-│   ├── commands/
-│   ├── skills/
-│   └── workflows/
-├── plans/
-├── docs/
-├── .gitignore
-├── package.json
-└── README.md
-```
-
-### Create React project
+When you run `ck new` without options, you'll be prompted:
 
 ```bash
-ck new my-react-app --template react --git
+ck new
 ```
 
-**Created structure:**
+**Prompts:**
 
 ```
-my-react-app/
-├── .claude/              # ClaudeKit configuration
-├── src/                  # React source code
-│   ├── App.tsx
-│   ├── main.tsx
-│   └── components/
-├── public/
-├── plans/
-├── docs/
-├── .gitignore
-├── package.json
-├── tsconfig.json
-├── vite.config.ts
-└── README.md
+? Select a ClaudeKit to download:
+❯ engineer - ClaudeKit Engineer (14 specialized agents)
+  marketing - ClaudeKit Marketing [Coming Soon]
+
+? Enter target directory (default: current directory):
+> my-project
+
+? Select version:
+❯ latest (v1.2.1)
+  v1.2.0
+  v1.1.9
+  [... more versions]
+
+Downloading ClaudeKit Engineer v1.2.1...
+✓ Downloaded (5.2 MB)
+✓ Extracted to my-project
+✓ Installing dependencies...
+✓ Complete!
+
+Next steps:
+  cd my-project
+  claude  # Start Claude Code
 ```
 
-### Create Next.js API project
+## What Gets Downloaded
 
-```bash
-ck new my-api --template nextjs -pm pnpm
-```
+When you run `ck new`, the CLI downloads and extracts:
 
-**What happens:**
-
-1. Creates Next.js 14 project with App Router
-2. Sets up ClaudeKit configuration
-3. Installs dependencies with pnpm
-4. Configures TypeScript
-5. Creates example API routes
-
-### Create without installing dependencies
-
-```bash
-ck new my-app --no-install
-cd my-app
-pnpm install  # Install later with preferred package manager
-```
-
-### Preview before creating
-
-```bash
-ck new my-app --template astro --dry-run
-```
-
-**Output:**
-
-```
-Dry run mode - no files will be created
-
-Project: my-app
-Template: astro
-Package manager: npm
-
-Files to create (23):
-  ├── .claude/config.json
-  ├── .claude/commands/plan.md
-  ├── src/pages/index.astro
-  ├── src/layouts/Base.astro
-  [... more files]
-
-Dependencies to install (12):
-  ├── astro@4.14.6
-  ├── @astrojs/react@3.6.2
-  [... more packages]
-
-Estimated disk space: 142 MB
-
-Run without --dry-run to create project
-```
-
-## What gets created
-
-### .claude/ directory
-
-ClaudeKit configuration and agent templates:
+### ClaudeKit Configuration
 
 ```
 .claude/
 ├── config.json           # Project configuration
-├── commands/             # Custom slash commands
+├── commands/             # 38+ slash commands
 │   ├── plan.md
 │   ├── cook.md
-│   └── [... 36 more]
+│   ├── fix-fast.md
+│   └── ... (35 more)
 ├── skills/              # Custom skills
-│   └── examples/
 └── workflows/           # Agent workflows
-    ├── sequential.md
-    ├── parallel.md
-    └── supervisor.md
+    ├── development-rules.md
+    ├── documentation-management.md
+    ├── orchestration-protocol.md
+    └── primary-workflow.md
 ```
 
-### plans/ directory
-
-Storage for AI-generated implementation plans:
-
-```
-plans/
-├── README.md
-├── templates/           # Plan templates
-└── reports/            # Analysis reports
-```
-
-### docs/ directory
-
-Project documentation structure:
+### Documentation Structure
 
 ```
 docs/
-├── README.md
-├── architecture.md
-└── api/
+├── project-overview-pdr.md
+├── code-standards.md
+├── codebase-summary.md
+├── system-architecture.md
+└── deployment-guide.md
 ```
 
-### Configuration files
-
-**package.json** - Node.js project metadata:
-
-```json
-{
-  "name": "my-app",
-  "version": "0.1.0",
-  "type": "module",
-  "scripts": {
-    "dev": "...",
-    "build": "...",
-    "test": "..."
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "claudekit": "^1.2.0"
-  }
-}
-```
-
-**.gitignore** - Files to exclude from git:
+### Plans Directory
 
 ```
-node_modules/
-.env
-.env.local
-dist/
-build/
-.claude/cache/
-plans/temp/
-*.log
+plans/
+└── README.md           # Planning documentation
 ```
 
-**README.md** - Project documentation:
-
-```markdown
-# My App
-
-Created with ClaudeKit CLI
-
-## Getting Started
-
-\`\`\`bash
-npm install
-npm run dev
-\`\`\`
-
-## ClaudeKit Commands
-
-- `/plan [feature]` - Create implementation plan
-- `/cook [task]` - Implement feature
-- `/test [module]` - Generate tests
-[... more commands]
-```
-
-## Template-specific files
-
-### React template
+### Project Files
 
 ```
-src/
-├── App.tsx              # Main app component
-├── main.tsx             # Entry point
-├── App.css
-├── index.css
-└── components/
-    └── HelloWorld.tsx
+.gitignore             # Sensible defaults
+README.md              # Getting started guide
+package.json           # (if applicable)
 ```
 
-### Next.js template
+## Examples
 
-```
-app/
-├── layout.tsx           # Root layout
-├── page.tsx             # Home page
-├── api/
-│   └── hello/
-│       └── route.ts     # API route example
-└── globals.css
-```
-
-### Fastify template
-
-```
-src/
-├── server.ts            # Fastify server
-├── routes/
-│   └── health.ts        # Health check endpoint
-├── plugins/
-│   └── sensible.ts
-└── config/
-    └── env.ts           # Environment config
-```
-
-## Post-creation steps
-
-After creating project, ClaudeKit suggests next steps:
+### Create in Current Directory
 
 ```bash
-✓ Created project: my-app
-
-Next steps:
-
-  cd my-app              Navigate to project
-
-  /plan [feature]        Plan your first feature
-  /cook [task]           Implement code
-  /test [module]         Generate tests
-
-  npm run dev            Start development server
-
-Documentation: https://docs.claudekit.cc
+ck new --kit engineer
 ```
 
-## Common workflows
+Downloads ClaudeKit Engineer to current directory.
 
-### Standard web app
+### Create in New Directory
 
 ```bash
-# Create React project
-ck new my-app --template react --git
+ck new --dir my-app --kit engineer
+```
 
-# Navigate to project
+Creates `my-app/` directory and downloads ClaudeKit Engineer.
+
+### Download Specific Version
+
+```bash
+ck new --kit engineer --version v1.0.0
+```
+
+Downloads version 1.0.0 instead of latest.
+
+### Check Available Versions First
+
+```bash
+# List all versions
+ck versions --kit engineer
+
+# Then download specific version
+ck new --kit engineer --version v1.1.9
+```
+
+### Debug Download Issues
+
+```bash
+ck new --kit engineer --verbose --log-file debug.log
+```
+
+Creates detailed log file for troubleshooting.
+
+## After Installation
+
+Once the download completes:
+
+### 1. Navigate to Project
+
+```bash
+cd my-project
+```
+
+### 2. Start Claude Code
+
+```bash
+claude
+```
+
+This starts Claude Code with full ClaudeKit capabilities.
+
+### 3. Explore Commands
+
+```bash
+/help      # List all commands
+/plan      # Plan a feature
+/cook      # Implement code
+/test      # Run tests
+/docs:init # Generate documentation
+```
+
+### 4. Read Documentation
+
+```bash
+cat README.md
+cat docs/project-overview-pdr.md
+```
+
+## Common Workflows
+
+### Quick Start
+
+```bash
+# Download and start
+ck new --kit engineer --dir my-app
 cd my-app
+claude
 
-# Start development
-npm run dev
-
-# Plan a feature
-/plan [add user authentication]
-
-# Implement
-/cook [implement auth with JWT]
-
-# Test
-/test [auth module]
-
-# Commit
-/git:cm
+# Inside Claude Code
+/docs:init  # Generate initial docs
+/plan [your first feature]
+/cook [implement feature]
 ```
 
-### API server
+### Specific Version
 
 ```bash
-# Create Fastify API
-ck new my-api --template fastify -pm pnpm
+# Check available versions
+ck versions --kit engineer
 
-cd my-api
-
-# Plan endpoint
-/plan [add REST API for users]
-
-# Implement
-/cook [implement CRUD endpoints]
-
-# Generate tests
-/test [user API]
-
-# Start server
-pnpm dev
+# Download specific version
+ck new --kit engineer --version v1.1.0 --dir my-app
+cd my-app
+claude
 ```
 
-### Static site
+### Debug Mode
 
 ```bash
-# Create Astro site
-ck new my-site --template astro
+# Download with verbose logging
+ck new --kit engineer --verbose --log-file setup.log
 
-cd my-site
-
-# Plan content
-/plan [create blog post system]
-
-# Implement
-/cook [implement blog with markdown]
-
-# Build
-npm run build
+# Check log if issues occur
+cat setup.log
 ```
+
+## File Conflicts
+
+If the target directory already has files:
+
+**Safe files (never overwritten):**
+- `.env`, `.env.local`, `.env.*.local`
+- `*.key`, `*.pem`, `*.p12`
+- `node_modules/**`
+- `.git/**`
+- `dist/**`, `build/**`
+
+**ClaudeKit files (updated):**
+- `.claude/config.json`
+- `.claude/commands/*.md` (standard commands)
+- `.claude/workflows/*.md`
+
+**Custom .claude files (preserved):**
+- `.claude/commands/my-custom.md`
+- Any custom commands or configurations you created
+
+**Example:**
+```
+Before:
+  .claude/
+    ├── commands/plan.md       (v1.0.0)
+    └── commands/my-custom.md  (yours)
+
+After ck new:
+  .claude/
+    ├── commands/plan.md       (v1.2.1 - updated)
+    └── commands/my-custom.md  (yours - preserved)
+```
+
+## Protected Files
+
+These files are **never overwritten** during `ck new` or `ck update`:
+
+**Environment & Secrets:**
+- `.env`, `.env.local`, `.env.*.local`
+- `*.key`, `*.pem`, `*.p12`
+- `credentials.json`
+
+**Dependencies:**
+- `node_modules/**`
+- `package-lock.json` (if you have custom dependencies)
+
+**Version Control:**
+- `.git/**`
+
+**Build Outputs:**
+- `dist/**`, `build/**`, `out/**`
 
 ## Troubleshooting
 
-### Directory already exists
+### Authentication Error
 
-**Error:**
-
+**Problem:**
 ```
-Error: Directory 'my-app' already exists
-```
-
-**Solutions:**
-
-1. **Use different name:**
-   ```bash
-   ck new my-app-v2
-   ```
-
-2. **Remove existing directory:**
-   ```bash
-   rm -rf my-app
-   ck new my-app
-   ```
-
-3. **Initialize in existing directory:**
-   ```bash
-   cd my-app
-   ck init
-   ```
-
-### npm install fails
-
-**Error:**
-
-```
-Error: npm install failed with code 1
+Error: Authentication failed
+Unable to access repository
 ```
 
 **Solutions:**
 
-1. **Create without installing, install manually:**
+1. Check GitHub authentication:
    ```bash
-   ck new my-app --no-install
-   cd my-app
-   npm install --verbose
+   gh auth status
    ```
 
-2. **Clear npm cache:**
+2. Set environment variable:
    ```bash
-   npm cache clean --force
-   ck new my-app
+   export GITHUB_TOKEN=ghp_your_token
    ```
 
-3. **Use different package manager:**
-   ```bash
-   ck new my-app -pm pnpm
-   ```
+3. Verify repository access (requires ClaudeKit purchase)
 
-### Template not found
+See [Authentication Guide](/docs/cli/installation#github-authentication)
 
-**Error:**
+### Directory Already Exists
 
+**Problem:**
 ```
-Error: Template 'reacts' not found
-```
-
-**Solution:**
-
-```bash
-# List available templates
-ck template list
-
-# Use correct template name
-ck new my-app --template react
-```
-
-### Permission denied
-
-**Error:**
-
-```
-Error: EACCES: permission denied, mkdir '/my-app'
+Error: Directory 'my-project' already exists
 ```
 
 **Solutions:**
 
-1. **Create in home directory:**
+1. Use different directory:
+   ```bash
+   ck new --dir my-project-v2
+   ```
+
+2. Update existing project instead:
+   ```bash
+   cd my-project
+   ck update
+   ```
+
+3. Remove and recreate (careful!):
+   ```bash
+   rm -rf my-project
+   ck new --dir my-project
+   ```
+
+### Download Failed
+
+**Problem:**
+```
+Error: Failed to download release
+```
+
+**Solutions:**
+
+1. Check internet connection
+
+2. Verify authentication:
+   ```bash
+   gh auth status
+   ```
+
+3. Try with verbose logging:
+   ```bash
+   ck new --kit engineer --verbose
+   ```
+
+4. Check GitHub status:
+   - Visit [githubstatus.com](https://www.githubstatus.com)
+
+### Version Not Found
+
+**Problem:**
+```
+Error: Version 'v1.5.0' not found
+```
+
+**Solutions:**
+
+1. List available versions:
+   ```bash
+   ck versions --kit engineer
+   ```
+
+2. Use latest version:
+   ```bash
+   ck new --kit engineer  # No --version flag
+   ```
+
+### Permission Denied
+
+**Problem:**
+```
+Error: EACCES: permission denied
+```
+
+**Solutions:**
+
+1. Create in home directory:
    ```bash
    cd ~
-   ck new my-app
+   ck new --dir my-app
    ```
 
-2. **Check directory permissions:**
+2. Check directory permissions:
    ```bash
    ls -la
-   # Create in directory you own
+   # Use directory you own
    ```
 
-### Git initialization fails
+## Best Practices
 
-**Error:**
-
-```
-Error: git init failed
-```
-
-**Solutions:**
-
-1. **Skip git, initialize later:**
-   ```bash
-   ck new my-app  # Don't use --git
-   cd my-app
-   git init
-   ```
-
-2. **Check git installation:**
-   ```bash
-   git --version
-   # Install git if missing
-   ```
-
-## Best practices
-
-**Naming:**
+**Directory naming:**
 - Use lowercase with hyphens: `my-project-name`
-- Be descriptive: `user-auth-api` not `project1`
+- Be descriptive: `task-manager-api` not `project1`
 - Match repository name for clarity
 
-**Templates:**
-- Choose template matching your stack
-- Start with official templates
-- Customize after creation
-- Create team templates for consistency
+**Version management:**
+- Use `ck versions` to check available versions
+- Specify version for reproducibility in teams
+- Document which version you're using in README
 
-**Git:**
-- Always use `--git` for new projects
-- Review `.gitignore` before first commit
-- Commit generated code immediately
-- Document customizations in README
+**After download:**
+- Review README.md
+- Read docs/project-overview-pdr.md
+- Explore .claude/commands/
+- Run `/docs:init` for codebase docs
 
-**Dependencies:**
-- Review `package.json` after creation
-- Update to latest versions if needed
-- Remove unused dependencies
-- Lock versions in production projects
+**Team setup:**
+- Document version in package.json or README
+- Share authentication setup instructions
+- Use same version across team for consistency
 
-**Configuration:**
-- Review `.claude/config.json`
-- Customize agent settings for workflow
-- Add team-specific commands
-- Document configuration changes
+## Related Commands
 
-## Advanced usage
+- [`ck update`](/docs/cli/) - Update existing project to latest version
+- [`ck versions`](/docs/cli/) - List available ClaudeKit releases
+- [`/docs:init`](/docs/commands/docs/init) - Generate project documentation
 
-### Custom template from GitHub
+## Next Steps
 
-```bash
-ck new my-app --template https://github.com/user/template.git
-```
+After creating your project:
 
-### Create multiple projects
-
-```bash
-for name in app-1 app-2 app-3; do
-  ck new $name --template react --no-install
-done
-```
-
-### Scripted project creation
-
-```bash
-#!/bin/bash
-PROJECT_NAME=$1
-TEMPLATE=${2:-react}
-
-ck new $PROJECT_NAME --template $TEMPLATE --git -pm pnpm
-cd $PROJECT_NAME
-pnpm install
-git add .
-git commit -m "feat: initial project setup"
-```
-
-## Next steps
-
-**Get started:**
-- [Quick start guide](/docs/getting-started/quick-start)
-- [CLI overview](/docs/cli/)
-- [Templates](/docs/cli/templates)
-
-**Configure:**
-- [Configuration guide](/docs/cli/configuration)
-- [Agent setup](/docs/agents/)
-- [Workflows](/docs/guides/workflows)
-
-**Build:**
-- [Plan your first feature](/docs/commands/core/plan)
-- [Implement with agents](/docs/commands/core/cook)
-- [Generate tests](/docs/commands/core/test)
+1. **Explore the kit** - Review `.claude/commands/` and workflows
+2. **Generate docs** - Run `/docs:init` to document your codebase
+3. **Plan a feature** - Use `/plan [description]` to create implementation plans
+4. **Start coding** - Use `/cook [task]` to implement features
 
 ---
 
-**Ready to create?** Run `ck new my-app` to get started
+**Ready to create?** Run `ck new --kit engineer` to get started.

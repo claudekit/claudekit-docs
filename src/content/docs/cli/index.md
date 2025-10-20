@@ -1,526 +1,332 @@
 ---
-title: CLI overview
-description: ClaudeKit CLI for project management, templates, and version control
+title: CLI Overview
+description: ClaudeKit CLI for bootstrapping and updating projects from private GitHub releases
 category: cli
 order: 0
 published: true
-keywords: [cli, commands, project management, templates]
-lastUpdated: 2025-10-18
-difficulty: beginner
-estimatedTime: "5 minutes"
-relatedPages:
-  - /docs/cli/installation
-  - /docs/cli/new
-  - /docs/cli/update
 ---
 
-# CLI overview
+# ClaudeKit CLI Overview
 
-ClaudeKit CLI provides intelligent project scaffolding, version management, and template system for AI-powered development.
+Command-line tool for bootstrapping and updating ClaudeKit projects from private GitHub repository releases.
 
 ## What is ClaudeKit CLI?
 
-The command-line interface handles:
-- **Project initialization** - Create new projects with ClaudeKit configuration
-- **Smart file merging** - Update projects without breaking custom changes
-- **Version management** - Switch between ClaudeKit versions seamlessly
-- **Template system** - Choose from React, Next.js, Astro, Fastify, and more
-- **Multi-tier authentication** - Secure access via GitHub CLI
+**ClaudeKit CLI** (`ck`) is a command-line tool that downloads and manages ClaudeKit starter kits from private GitHub repositories. Built with Bun and TypeScript, it provides fast, secure project setup and updates.
 
-ClaudeKit CLI works alongside ClaudeKit Engineer (the 14-agent system) to provide complete development toolkit.
+**Important:** You need to purchase a ClaudeKit Starter Kit from [ClaudeKit.cc](https://claudekit.cc) to use this CLI. Without a purchased kit and repository access, the CLI cannot download project templates.
 
-## Core commands
+## Key Features
+
+- **Multi-tier GitHub Authentication** - Secure authentication via gh CLI → env vars → keychain → prompt
+- **Streaming Downloads** - Fast downloads with progress tracking
+- **Smart File Merging** - Updates projects without breaking custom changes
+- **Protected Files** - Automatic protection of sensitive files and custom configurations
+- **Secure Credential Storage** - Uses OS keychain for token management
+- **Beautiful CLI Interface** - Interactive prompts with progress indicators
+
+## Core Commands
 
 ### ck new
 
-Create new project with ClaudeKit configuration:
+Create new project from latest ClaudeKit release:
 
 ```bash
-ck new my-app
-```
+# Interactive mode
+ck new
 
-**What it does:**
-- Initializes project structure
-- Sets up `.claude/` configuration directory
-- Creates agent templates (14 specialized agents)
-- Configures workflow examples
-- Installs dependencies
+# With options
+ck new --dir my-project --kit engineer
+
+# Specific version
+ck new --kit engineer --version v1.0.0
+```
 
 **Options:**
-
-```bash
-ck new my-app --template react    # Use React template
-ck new my-app --template nextjs   # Use Next.js template
-ck new my-app --no-install        # Skip dependency installation
-ck new my-app --git              # Initialize git repository
-```
+- `--dir <dir>` - Target directory (default: current directory)
+- `--kit <kit>` - Kit to use (`engineer` or `marketing`)
+- `--version <version>` - Specific version to download (default: latest)
 
 [Learn more about `ck new`](/docs/cli/new)
 
 ### ck update
 
-Update existing project to latest ClaudeKit version:
+Update existing project to latest or specific version:
 
 ```bash
+# Interactive mode
 ck update
+
+# With options
+ck update --kit engineer
+
+# Specific version
+ck update --kit engineer --version v1.0.0
 ```
 
 **What it does:**
-- Detects current ClaudeKit version
-- Compares with latest version
-- Smart merges configuration files
+- Downloads specified ClaudeKit release
+- Intelligently merges files
 - Preserves your custom changes
-- Updates agent templates
-
-**Smart merging:**
-- Keeps your customizations
-- Adds new features
-- Updates deprecated patterns
-- Resolves conflicts intelligently
+- Protects sensitive files
+- Maintains custom `.claude/` files
 
 **Options:**
-
-```bash
-ck update --check           # Check for updates without applying
-ck update --version 1.2.0   # Update to specific version
-ck update --dry-run         # Preview changes without applying
-ck update --force           # Force update (overwrites conflicts)
-```
-
-[Learn more about `ck update`](/docs/cli/update)
+- `--dir <dir>` - Target directory (default: current directory)
+- `--kit <kit>` - Kit to use (`engineer` or `marketing`)
+- `--version <version>` - Specific version to download (default: latest)
 
 ### ck versions
 
-Manage ClaudeKit versions across projects:
+List available versions of ClaudeKit releases:
 
 ```bash
+# Show all available versions
 ck versions
-```
 
-**What it does:**
-- Lists all available ClaudeKit versions
-- Shows currently installed version
-- Displays version compatibility
-- Enables version switching
+# Filter by specific kit
+ck versions --kit engineer
+ck versions --kit marketing
+
+# Show more versions (default: 30)
+ck versions --limit 50
+
+# Include prereleases and drafts
+ck versions --all
+```
 
 **Options:**
+- `--kit <kit>` - Filter by specific kit
+- `--limit <limit>` - Number of releases to show (default: 30)
+- `--all` - Show all releases including prereleases
+
+## Global Options
+
+All commands support these global options:
+
+### --verbose, -v
+
+Enable verbose logging for debugging:
 
 ```bash
-ck versions                 # List all versions
-ck versions --current       # Show current version
-ck versions use 1.2.0       # Switch to specific version
-ck versions latest          # Switch to latest version
+ck new --verbose
+ck update -v  # Short form
 ```
 
-[Learn more about `ck versions`](/docs/cli/versions)
+**Shows:**
+- HTTP request/response details (tokens sanitized)
+- File operations (downloads, extractions, copies)
+- Command execution steps and timing
+- Error stack traces with full context
+- Authentication flow details
 
-## Additional commands
+### --log-file
 
-### ck init
-
-Initialize ClaudeKit in existing project:
+Write logs to file for sharing:
 
 ```bash
-ck init
+ck new --verbose --log-file debug.log
 ```
 
-**Use case:** Add ClaudeKit to project that wasn't created with `ck new`
+**Note:** All sensitive data (tokens, credentials) is automatically sanitized in logs.
 
-**What it does:**
-- Creates `.claude/` directory
-- Sets up configuration
-- Adds agent templates
-- Preserves existing code
+## Available Kits
 
-### ck config
+ClaudeKit offers premium starter kits (purchase required):
 
-Manage ClaudeKit configuration:
+- **engineer**: ClaudeKit Engineer - Engineering toolkit with 14 specialized agents
+- **marketing**: ClaudeKit Marketing - [Coming Soon]
 
-```bash
-ck config list                              # View all settings
-ck config set model claude-3-5-sonnet       # Set model
-ck config set temperature 0.7               # Set temperature
-ck config get model                         # Get specific value
-ck config reset                             # Reset to defaults
-```
-
-### ck template
-
-Manage project templates:
-
-```bash
-ck template list              # List available templates
-ck template show react        # Show template details
-ck template create my-tmpl    # Create custom template
-```
+Purchase at [ClaudeKit.cc](https://claudekit.cc) to get repository access.
 
 ## Authentication
 
-ClaudeKit CLI uses GitHub CLI for secure authentication:
+The CLI requires a **GitHub Personal Access Token (PAT)** to download releases from private repositories.
+
+### Authentication Flow (Multi-Tier Fallback)
+
+1. **GitHub CLI**: Uses `gh auth token` if available
+2. **Environment Variables**: Checks `GITHUB_TOKEN` or `GH_TOKEN`
+3. **OS Keychain**: Retrieves stored token
+4. **User Prompt**: Prompts for token and offers secure storage
+
+### Creating a Personal Access Token
+
+1. Go to GitHub Settings → Developer settings → Personal access tokens → Tokens (classic)
+2. Generate new token with `repo` scope (for private repositories)
+3. Copy the token
+
+### Setting Token via Environment Variable
 
 ```bash
-# Login
-gh auth login
-
-# Check status
-gh auth status
-
-# Logout
-gh auth logout
+export GITHUB_TOKEN=ghp_your_token_here
 ```
-
-**Why GitHub authentication?**
-- Secure OAuth 2.1 flow
-- Scoped, revocable credentials
-- No stored passwords
-- Just-in-time access
-- Full audit trail
-
-[Learn more about authentication](/docs/cli/authentication)
 
 ## Configuration
 
-ClaudeKit CLI stores configuration at two levels:
-
-### Global configuration
-
-Location: `~/.claudekit/config.json`
+Configuration stored in `~/.claudekit/config.json`:
 
 ```json
 {
-  "defaultModel": "claude-3-5-sonnet-20241022",
-  "temperature": 0.7,
-  "maxTokens": 4096,
-  "telemetry": true,
-  "updateCheck": true
-}
-```
-
-Manage global config:
-
-```bash
-ck config set --global model claude-3-5-sonnet
-```
-
-### Project configuration
-
-Location: `./.claude/config.json` (in project root)
-
-```json
-{
-  "version": "1.2.0",
-  "agents": {
-    "planner": {
-      "enabled": true,
-      "model": "claude-3-5-sonnet-20241022"
-    },
-    "coder": {
-      "enabled": true,
-      "model": "claude-3-5-sonnet-20241022"
-    }
+  "github": {
+    "token": "stored_in_keychain"
   },
-  "workflows": {
-    "autoReview": true,
-    "autoTest": true,
-    "autoCommit": false
+  "defaults": {
+    "kit": "engineer",
+    "dir": "."
   }
 }
 ```
 
-Project config overrides global config.
+## Protected Files
 
-[Learn more about configuration](/docs/cli/configuration)
+These files are **never overwritten** during updates:
 
-## Templates
+- Environment files: `.env`, `.env.local`, `.env.*.local`
+- Security files: `*.key`, `*.pem`, `*.p12`
+- Dependencies: `node_modules/**`, `.git/**`
+- Build outputs: `dist/**`, `build/**`
 
-ClaudeKit CLI provides templates for common project types:
+### Custom .claude Files
 
-**Available templates:**
+Your custom files in `.claude/` directory are automatically preserved:
 
-| Template | Description | Tech Stack |
-|----------|-------------|------------|
-| `blank` | Empty project with ClaudeKit config | None |
-| `react` | React application | React 18 + TypeScript + Vite |
-| `nextjs` | Next.js application | Next.js 14 + App Router + TypeScript |
-| `astro` | Astro static site | Astro v4 + React + Tailwind |
-| `fastify` | Fastify API server | Fastify 4 + TypeScript |
-| `express` | Express.js API | Express 4 + TypeScript |
-| `nuxt` | Nuxt application | Nuxt 3 + Vue 3 + TypeScript |
-| `svelte` | SvelteKit application | SvelteKit + TypeScript |
+**Example:**
+```
+Your project:
+  .claude/
+    ├── commands/standard.md  (from ClaudeKit)
+    └── commands/my-custom.md (your custom command)
 
-Use template:
+After update:
+  .claude/
+    ├── commands/standard.md  (updated from release)
+    └── commands/my-custom.md (preserved automatically)
+```
+
+## Quick Start
 
 ```bash
-ck new my-app --template react
-```
-
-[Learn more about templates](/docs/cli/templates)
-
-## Version management
-
-ClaudeKit uses semantic versioning (`MAJOR.MINOR.PATCH`):
-
-```
-1.2.3
-│ │ └─ Patch: Bug fixes, no breaking changes
-│ └─── Minor: New features, backward compatible
-└───── Major: Breaking changes
-```
-
-**Compatibility:**
-- `1.x.x` → `1.y.z`: Safe to update
-- `1.x.x` → `2.0.0`: Review breaking changes
-
-Check version compatibility:
-
-```bash
-ck versions --compatible
-```
-
-**Output:**
-
-```
-Current version: 1.2.0
-Latest compatible: 1.3.5
-Latest version: 2.0.0 (breaking changes)
-
-Changelog: https://github.com/claudekit/claudekit-cli/releases
-```
-
-[Learn more about versions](/docs/cli/versions)
-
-## Command reference
-
-### Quick reference
-
-| Command | Description |
-|---------|-------------|
-| `ck new [name]` | Create new project |
-| `ck init` | Initialize ClaudeKit in existing project |
-| `ck update` | Update ClaudeKit configuration |
-| `ck versions` | Manage versions |
-| `ck config` | Manage configuration |
-| `ck template` | Manage templates |
-| `ck --version` | Show CLI version |
-| `ck --help` | Show help |
-
-### Global flags
-
-All commands support these flags:
-
-| Flag | Description |
-|------|-------------|
-| `--verbose` | Enable verbose logging |
-| `--debug` | Enable debug mode |
-| `--no-color` | Disable colored output |
-| `--quiet` | Suppress non-error output |
-| `--help` | Show command help |
-
-Example:
-
-```bash
-ck new my-app --verbose --debug
-```
-
-## Workflow examples
-
-### Create React project
-
-```bash
-# Create project
-ck new my-react-app --template react
-
-# Navigate to project
-cd my-react-app
-
-# Plan a feature
-/plan [add user authentication]
-
-# Implement
-/cook [implement auth]
-
-# Commit
-/git:cm
-```
-
-### Update existing project
-
-```bash
-# Check for updates
-ck update --check
-
-# Preview changes
-ck update --dry-run
-
-# Apply update
-ck update
-
-# Verify
-ck versions --current
-```
-
-### Switch versions
-
-```bash
-# List available versions
-ck versions
-
-# Switch to specific version
-ck versions use 1.2.0
-
-# Verify switch
-ck versions --current
-```
-
-## Best practices
-
-**Project initialization:**
-- Choose appropriate template for your stack
-- Initialize git repository with `--git` flag
-- Review generated `.claude/config.json`
-- Customize agent settings for your workflow
-
-**Version updates:**
-- Always run `ck update --check` first
-- Use `--dry-run` to preview changes
-- Review changelog before major updates
-- Test after updating
-
-**Configuration management:**
-- Keep project config in version control
-- Document custom settings in README
-- Use global config for personal preferences
-- Don't commit API keys or tokens
-
-**Template usage:**
-- Start with official templates
-- Create custom templates for team workflows
-- Document template customizations
-- Share templates via GitHub
-
-## Common workflows
-
-### Onboarding new team member
-
-```bash
-# Clone repository
-git clone https://github.com/your-org/project.git
-cd project
-
-# Install ClaudeKit CLI
+# Install CLI
 npm install -g claudekit-cli
 
-# Authenticate
+# Verify installation
+ck --version
+
+# Authenticate with GitHub
 gh auth login
+# OR
+export GITHUB_TOKEN=ghp_your_token
 
-# Install project dependencies
-npm install
+# Create new project
+ck new --kit engineer
 
-# Verify setup
-ck config list
-```
-
-### Migrating existing project
-
-```bash
 # Navigate to project
-cd existing-project
+cd my-project
 
-# Initialize ClaudeKit
-ck init
-
-# Choose template (or skip)
-? Select template: blank
-
-# Review configuration
-cat .claude/config.json
-
-# Customize as needed
-ck config set model claude-3-5-sonnet
+# Start using ClaudeKit
+claude  # Start Claude Code
 ```
 
-### Creating custom template
+## Common Workflows
+
+### Create New Project
 
 ```bash
-# Create from existing project
-ck template create my-template --from ./my-project
+# Interactive mode (recommended)
+ck new
 
-# Or create from scratch
-ck template create my-template
+# Direct with options
+ck new --dir my-app --kit engineer
 
-# Edit template files
-cd ~/.claudekit/templates/my-template
+# Specific version
+ck new --dir my-app --kit engineer --version v1.0.0
+```
 
-# Use template
-ck new new-project --template my-template
+### Update Existing Project
+
+```bash
+# Update to latest
+ck update
+
+# Update to specific version
+ck update --version v1.2.0
+
+# Update with verbose output
+ck update --verbose
+```
+
+### Check Available Versions
+
+```bash
+# List all versions
+ck versions
+
+# Filter by kit
+ck versions --kit engineer
+
+# Show more releases
+ck versions --limit 50
 ```
 
 ## Troubleshooting
 
-### Command not found
+### Authentication Failed
 
-**Cause:** CLI not installed or not in PATH
+**Problem:** "Authentication failed"
 
-**Solution:**
+**Solutions:**
+1. Check if GitHub CLI is authenticated: `gh auth status`
+2. Or set environment variable: `export GITHUB_TOKEN=ghp_your_token`
+3. Verify token has `repo` scope
+4. Check repository access (requires purchased kit)
+
+### Command Not Found
+
+**Problem:** `ck: command not found`
+
+**Solutions:**
 ```bash
+# Reinstall globally
 npm install -g claudekit-cli
+
+# Check installation
+npm list -g claudekit-cli
+
+# Restart terminal
 ```
 
-### Permission errors
+### Download Fails
 
-**Cause:** Insufficient permissions for global install
+**Problem:** "Failed to download release"
 
-**Solution:**
+**Solutions:**
+1. Check internet connection
+2. Verify GitHub token is valid: `gh auth status`
+3. Confirm you have repository access (purchased kit)
+4. Try with verbose flag: `ck new --verbose`
+
+## Version Information
+
+Current version: **1.2.1**
+
+Check version:
 ```bash
-# Fix npm permissions
-mkdir ~/.npm-global
-npm config set prefix '~/.npm-global'
-export PATH=~/.npm-global/bin:$PATH
+ck --version
 ```
 
-### Authentication fails
-
-**Cause:** GitHub CLI not authenticated
-
-**Solution:**
+View help:
 ```bash
-gh auth login
-gh auth status
+ck --help
+ck -h
 ```
 
-### Update conflicts
+## Next Steps
 
-**Cause:** Local changes conflict with update
-
-**Solution:**
-```bash
-# Preview conflicts
-ck update --dry-run
-
-# Apply update (choose conflict resolution)
-ck update
-
-# Or force update (overwrites local changes)
-ck update --force
-```
-
-## Next steps
-
-**Get started:**
-- [Create your first project](/docs/getting-started/quick-start)
-- [Learn about agent system](/docs/agents/)
-- [Explore commands](/docs/commands/)
-
-**Deep dive:**
-- [Configuration guide](/docs/cli/configuration)
-- [Template system](/docs/cli/templates)
-- [Authentication](/docs/cli/authentication)
-
-**Advanced:**
-- [Custom templates](/docs/guides/custom-templates)
-- [Workflow automation](/docs/guides/workflows)
-- [Team setup](/docs/guides/team-collaboration)
+- [Installation Guide](/docs/cli/installation) - Install ClaudeKit CLI
+- [ck new Command](/docs/cli/new) - Create new projects
+- [Getting Started](/docs/getting-started/installation) - Start using ClaudeKit
 
 ---
 
-**Ready to start?** Create your first project with `ck new my-app`
+**Ready to start?** Purchase a kit at [ClaudeKit.cc](https://claudekit.cc), then run `ck new` to create your first project.

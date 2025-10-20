@@ -1,377 +1,271 @@
 ---
-title: CLI installation
-description: Install and configure ClaudeKit CLI for your development environment
+title: CLI Installation
+description: Install ClaudeKit CLI to download and manage ClaudeKit projects from private GitHub releases
 category: cli
 order: 1
 published: true
-keywords: [cli, installation, setup, configuration, authentication]
-lastUpdated: 2025-10-18
-difficulty: beginner
-estimatedTime: "5 minutes"
-prerequisites: []
-relatedPages:
-  - /docs/getting-started/quick-start
-  - /docs/cli/new
-  - /docs/cli/configuration
 ---
 
-# CLI installation
+# CLI Installation
 
-Install ClaudeKit CLI to manage projects, templates, and agent workflows from your terminal.
+Install ClaudeKit CLI (`ck`) to download and manage ClaudeKit starter kits from private GitHub repository releases.
 
-## System requirements
+## Prerequisites
 
-Before installing, verify your system meets these requirements:
+Before installing, ensure you have:
 
-**Operating Systems:**
-- macOS 11 (Big Sur) or later
-- Windows 10/11 with WSL2 or PowerShell 7+
-- Linux (Ubuntu 20.04+, Debian 11+, or equivalent)
+- **Node.js 18+** - [Download from nodejs.org](https://nodejs.org)
+- **npm 9+** - Comes with Node.js
+- **Git** - For repository access
+- **ClaudeKit purchase** - Required for repository access from [ClaudeKit.cc](https://claudekit.cc)
 
-**Software:**
-- Node.js 18.0.0 or higher
-- npm 9.0.0 or higher (comes with Node.js)
-- Git 2.30.0 or higher
-- GitHub CLI (`gh`) for authentication
-
-Check your versions:
+Verify installations:
 
 ```bash
-node --version    # Should be v18.0.0+
-npm --version     # Should be 9.0.0+
-git --version     # Should be 2.30.0+
+node --version  # Should be v18.0.0+
+npm --version   # Should be 9.0.0+
+git --version   # Any recent version
 ```
 
-If you need to install or update Node.js, visit [nodejs.org](https://nodejs.org).
+## Install CLI
 
-## Install ClaudeKit CLI
-
-### Using npm (recommended)
+### Global Installation (Recommended)
 
 ```bash
 npm install -g claudekit-cli
 ```
 
-**What this does:**
-- Downloads ClaudeKit CLI from npm registry
-- Installs globally (available in all directories)
-- Adds `ck` command to your PATH
-- Sets up shell completions
+This installs the `ck` command globally, available from any directory.
 
-### Using pnpm
-
-```bash
-pnpm add -g claudekit-cli
-```
-
-### Using yarn
-
-```bash
-yarn global add claudekit-cli
-```
-
-## Verify installation
-
-Confirm ClaudeKit CLI installed correctly:
+### Verify Installation
 
 ```bash
 ck --version
 ```
 
 **Expected output:**
-
 ```
-claudekit-cli v1.2.0
+1.2.1
 ```
 
-Run the help command to see available options:
-
+View help:
 ```bash
 ck --help
 ```
 
-**Expected output:**
-
+**Output:**
 ```
-ClaudeKit CLI - AI-powered development toolkit
+ClaudeKit CLI v1.2.1
 
 Usage:
   ck <command> [options]
 
 Commands:
-  new [name]           Create new project
-  update              Update ClaudeKit configuration
-  versions            Manage ClaudeKit versions
-  init                Initialize ClaudeKit in existing project
+  new       Create new project from latest ClaudeKit release
+  update    Update existing project to latest version
+  versions  List available ClaudeKit releases
 
 Options:
-  -v, --version       Show version
-  -h, --help          Show help
-  --verbose           Enable verbose logging
-  --debug             Enable debug mode
+  --version, -v   Show version number
+  --help, -h      Show help
 
 Examples:
-  ck new my-app                    Create new project
-  ck new my-app --template react   Create React project
-  ck update                        Update to latest version
-  ck versions                      List available versions
+  ck new --kit engineer
+  ck update
+  ck versions --kit engineer
 
-For more help: https://docs.claudekit.cc
+For more info: https://docs.claudekit.cc
 ```
 
-## Install GitHub CLI
+## GitHub Authentication
 
-ClaudeKit uses GitHub CLI for authentication. Install it if you haven't already:
+ClaudeKit CLI requires GitHub authentication to download from private repositories.
 
-### macOS
+### Authentication Methods
 
+The CLI uses **multi-tier authentication** with automatic fallback:
+
+1. **GitHub CLI** - `gh auth token` (if authenticated)
+2. **Environment Variable** - `GITHUB_TOKEN` or `GH_TOKEN`
+3. **OS Keychain** - Stored token
+4. **User Prompt** - Interactive prompt (with secure storage option)
+
+### Option 1: GitHub CLI (Recommended)
+
+Install and authenticate with GitHub CLI:
+
+**macOS:**
 ```bash
 brew install gh
 ```
 
-### Windows
-
-**Using winget (Windows 10/11):**
-
+**Windows:**
 ```bash
 winget install GitHub.cli
 ```
 
-**Using Chocolatey:**
-
+**Linux (Ubuntu/Debian):**
 ```bash
-choco install gh
-```
-
-### Linux (Ubuntu/Debian)
-
-```bash
-# Add GitHub CLI repository
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
-
-# Install
 sudo apt update
 sudo apt install gh
 ```
 
-### Linux (Fedora/RHEL/CentOS)
-
-```bash
-sudo dnf install gh
-```
-
-Verify GitHub CLI installation:
-
-```bash
-gh --version
-```
-
-**Expected output:**
-
-```
-gh version 2.40.0 (2024-10-15)
-```
-
-## Authenticate with GitHub
-
-ClaudeKit requires GitHub authentication for:
-- Accessing private repositories
-- Creating and managing projects
-- Pulling templates and configurations
-- Version management
-
-Authenticate using GitHub CLI:
-
+**Authenticate:**
 ```bash
 gh auth login
 ```
 
-Follow the interactive prompts:
+Follow prompts:
+1. Select "GitHub.com"
+2. Select "HTTPS"
+3. Choose "Login with web browser"
+4. Copy one-time code
+5. Complete authentication in browser
 
-**Step 1: Choose GitHub.com**
-
-```
-? What account do you want to log into?
-❯ GitHub.com
-  GitHub Enterprise Server
-```
-
-Select **GitHub.com** and press Enter.
-
-**Step 2: Choose HTTPS**
-
-```
-? What is your preferred protocol for Git operations?
-  SSH
-❯ HTTPS
-```
-
-Select **HTTPS** and press Enter.
-
-**Step 3: Authenticate**
-
-```
-? How would you like to authenticate GitHub CLI?
-❯ Login with a web browser
-  Paste an authentication token
-```
-
-Select **Login with a web browser** and press Enter.
-
-**Step 4: Copy one-time code**
-
-```
-! First copy your one-time code: ABCD-1234
-Press Enter to open github.com in your browser...
-```
-
-Copy the code, then press Enter. Your browser opens to GitHub.
-
-**Step 5: Complete in browser**
-
-1. Paste the one-time code
-2. Click "Continue"
-3. Review permissions
-4. Click "Authorize github"
-5. Return to terminal
-
-**Success indicator:**
-
-```
-✓ Authentication complete.
-✓ Logged in as your-username
-```
-
-Verify authentication status:
-
+**Verify:**
 ```bash
 gh auth status
 ```
 
-**Expected output:**
+### Option 2: Environment Variable
 
-```
-github.com
-  ✓ Logged in to github.com as your-username (oauth_token)
-  ✓ Git operations for github.com configured to use https protocol.
-  ✓ Token: *******************
-```
+Create a GitHub Personal Access Token (PAT):
 
-## Shell completions (optional)
+1. Go to [GitHub Settings → Developer settings → Personal access tokens](https://github.com/settings/tokens)
+2. Click "Generate new token (classic)"
+3. Give it a name: "ClaudeKit CLI"
+4. Select scopes: **`repo`** (Full control of private repositories)
+5. Click "Generate token"
+6. Copy the token (starts with `ghp_`)
 
-Enable shell completions for faster command typing:
+**Set environment variable:**
 
-### Bash
-
+**macOS/Linux (Bash/Zsh):**
 ```bash
-# Add to ~/.bashrc
-echo 'eval "$(ck completion bash)"' >> ~/.bashrc
+echo 'export GITHUB_TOKEN=ghp_your_token_here' >> ~/.bashrc
+# or ~/.zshrc for Zsh
 source ~/.bashrc
 ```
 
-### Zsh
-
-```bash
-# Add to ~/.zshrc
-echo 'eval "$(ck completion zsh)"' >> ~/.zshrc
-source ~/.zshrc
+**Windows (PowerShell):**
+```powershell
+[System.Environment]::SetEnvironmentVariable('GITHUB_TOKEN', 'ghp_your_token_here', 'User')
 ```
 
-### Fish
-
+**Verify:**
 ```bash
-# Add to ~/.config/fish/config.fish
-ck completion fish > ~/.config/fish/completions/ck.fish
+echo $GITHUB_TOKEN  # Should show your token
 ```
 
-Test completions by typing `ck ` and pressing Tab.
+### Option 3: Interactive Prompt
 
-## Update ClaudeKit CLI
+If no authentication is found, the CLI will prompt you:
 
-Keep ClaudeKit CLI up to date for latest features and fixes:
+```
+GitHub authentication required.
+
+Please enter your GitHub Personal Access Token (PAT):
+> ghp_your_token_here
+
+Would you like to store this token securely in your OS keychain? (y/n)
+> y
+
+✓ Token stored securely
+```
+
+The token is encrypted and stored in your OS keychain:
+- **macOS**: Keychain Access
+- **Windows**: Windows Credential Manager
+- **Linux**: libsecret
+
+## Verify Access
+
+After authentication, verify you can access ClaudeKit repositories:
+
+```bash
+# List available versions
+ck versions --kit engineer
+```
+
+If authentication is successful, you'll see available releases. If not, you'll see an error about repository access.
+
+## Repository Access
+
+**Important:** You must purchase a ClaudeKit starter kit from [ClaudeKit.cc](https://claudekit.cc) to access the private repositories.
+
+After purchase:
+1. You'll be added to the GitHub repository
+2. Your GitHub account gets access to releases
+3. The CLI can download using your authenticated account
+
+Without purchase, you'll see:
+```
+Error: Repository not found or access denied
+Please purchase a ClaudeKit kit at https://claudekit.cc
+```
+
+## Configuration
+
+ClaudeKit CLI stores configuration in `~/.claudekit/config.json`:
+
+```json
+{
+  "github": {
+    "token": "stored_in_keychain"
+  },
+  "defaults": {
+    "kit": "engineer",
+    "dir": "."
+  }
+}
+```
+
+**Note:** The actual token is stored in your OS keychain, not in the config file.
+
+## Update CLI
+
+Keep the CLI updated for latest features:
 
 ```bash
 npm update -g claudekit-cli
 ```
 
-Check for updates:
-
+Check installed version:
 ```bash
-ck update --check
-```
-
-**Output if update available:**
-
-```
-Update available: 1.2.0 → 1.3.0
-Changelog: https://github.com/claudekit/claudekit-cli/releases/tag/v1.3.0
-
-Run: npm update -g claudekit-cli
+ck --version
 ```
 
 ## Uninstall
 
-Remove ClaudeKit CLI if needed:
+Remove ClaudeKit CLI:
 
 ```bash
 npm uninstall -g claudekit-cli
 ```
 
-Verify removal:
-
+Remove configuration (optional):
 ```bash
-ck --version
-# Expected: command not found: ck
-```
-
-## Configuration
-
-ClaudeKit CLI stores configuration in:
-- **Global config:** `~/.claudekit/config.json`
-- **Project config:** `./.claude/config.json` (per project)
-
-View current configuration:
-
-```bash
-ck config list
-```
-
-Set global configuration:
-
-```bash
-ck config set model claude-3-5-sonnet-20241022
-ck config set temperature 0.7
-ck config set maxTokens 4096
-```
-
-Reset to defaults:
-
-```bash
-ck config reset
+rm -rf ~/.claudekit
 ```
 
 ## Troubleshooting
 
 ### Command not found: ck
 
-**Cause:** CLI not in PATH or installation incomplete
+**Problem:** Terminal doesn't recognize `ck` command
 
 **Solutions:**
 
-1. **Restart terminal** - Often fixes PATH issues
+1. **Restart terminal** - Sometimes PATH needs refresh
 
-2. **Check global install location:**
+2. **Check installation:**
    ```bash
    npm list -g claudekit-cli
    ```
 
-3. **Reinstall with verbose logging:**
-   ```bash
-   npm install -g claudekit-cli --verbose
-   ```
-
-4. **Check npm global bin path:**
+3. **Verify npm global bin in PATH:**
    ```bash
    npm config get prefix
    ```
@@ -381,140 +275,101 @@ ck config reset
    export PATH="$PATH:$(npm config get prefix)/bin"
    ```
 
-### Permission denied during installation
-
-**Cause:** Insufficient permissions to write to global npm directory
-
-**Solutions:**
-
-**Option 1: Use npx (no install needed):**
-```bash
-npx claudekit-cli new my-app
-```
-
-**Option 2: Fix npm permissions (recommended):**
-```bash
-# Create directory for global installs
-mkdir ~/.npm-global
-
-# Configure npm to use new directory
-npm config set prefix '~/.npm-global'
-
-# Add to PATH in ~/.bashrc or ~/.zshrc
-export PATH=~/.npm-global/bin:$PATH
-
-# Reload shell config
-source ~/.bashrc  # or source ~/.zshrc
-```
-
-**Option 3: Use sudo (not recommended):**
-```bash
-sudo npm install -g claudekit-cli
-```
-
-### GitHub authentication fails
-
-**Cause:** Token expired or invalid permissions
-
-**Solutions:**
-
-1. **Re-authenticate:**
+4. **Reinstall:**
    ```bash
-   gh auth logout
-   gh auth login
+   npm uninstall -g claudekit-cli
+   npm install -g claudekit-cli
    ```
 
-2. **Check token permissions:**
+### Authentication failed
+
+**Problem:** "Authentication failed" or "Repository not found"
+
+**Solutions:**
+
+1. **Check GitHub authentication:**
    ```bash
    gh auth status
    ```
 
-3. **Verify token has required scopes:**
-   - `repo` (access repositories)
-   - `read:org` (read organization data)
-   - `workflow` (update GitHub Actions)
+   If not authenticated:
+   ```bash
+   gh auth login
+   ```
 
-4. **Manually create token:**
-   - Go to GitHub Settings → Developer settings → Personal access tokens
-   - Generate new token with required scopes
-   - Use token:
-     ```bash
-     gh auth login --with-token < token.txt
-     ```
+2. **Verify token has `repo` scope:**
+   - Go to [GitHub Settings → Personal access tokens](https://github.com/settings/tokens)
+   - Check your token has "Full control of private repositories"
 
-### Installation hangs or times out
+3. **Try environment variable:**
+   ```bash
+   export GITHUB_TOKEN=ghp_your_token
+   ck versions
+   ```
 
-**Cause:** Network issues or npm registry problems
+4. **Verify repository access:**
+   - Ensure you purchased a ClaudeKit kit
+   - Check you can access the repository on GitHub
+
+### Permission denied
+
+**Problem:** Cannot install globally
 
 **Solutions:**
 
-1. **Check network connection:**
+1. **Use npx (no installation needed):**
    ```bash
-   ping registry.npmjs.org
+   npx claudekit-cli new --kit engineer
    ```
 
-2. **Clear npm cache:**
+2. **Fix npm permissions:**
    ```bash
-   npm cache clean --force
+   mkdir ~/.npm-global
+   npm config set prefix '~/.npm-global'
+   export PATH=~/.npm-global/bin:$PATH
+   npm install -g claudekit-cli
    ```
 
-3. **Use different registry:**
+3. **Use sudo (not recommended):**
    ```bash
-   npm install -g claudekit-cli --registry=https://registry.npmjs.org/
+   sudo npm install -g claudekit-cli
    ```
 
-4. **Install with verbose logging:**
-   ```bash
-   npm install -g claudekit-cli --verbose
-   ```
+### Download fails
 
-### Wrong Node.js version
-
-**Cause:** Node.js version below 18.0.0
+**Problem:** "Failed to download release"
 
 **Solutions:**
 
-1. **Check current version:**
+1. **Check internet connection**
+
+2. **Verify authentication:**
    ```bash
-   node --version
+   gh auth status
    ```
 
-2. **Update Node.js:**
-   - Download from [nodejs.org](https://nodejs.org)
-   - Or use version manager:
-     ```bash
-     # nvm (recommended)
-     nvm install 18
-     nvm use 18
-
-     # Or n
-     n 18
-     ```
-
-3. **Verify update:**
+3. **Try with verbose logging:**
    ```bash
-   node --version  # Should be v18.0.0+
+   ck new --kit engineer --verbose
    ```
 
-## Next steps
+4. **Check GitHub status:**
+   - Visit [githubstatus.com](https://www.githubstatus.com)
 
-Now that ClaudeKit CLI is installed:
+## Next Steps
 
-1. **Create your first project** - [Quick start guide](/docs/getting-started/quick-start)
-2. **Learn CLI commands** - [Command reference](/docs/cli/commands)
-3. **Configure your environment** - [Configuration guide](/docs/cli/configuration)
-4. **Explore templates** - [Available templates](/docs/cli/templates)
+Now that the CLI is installed:
 
-## Need help?
+1. **Create a new project** - [ck new command](/docs/cli/new)
+2. **Browse available versions** - Run `ck versions`
+3. **Start developing** - Follow [Getting Started](/docs/getting-started/installation)
 
-If installation issues persist:
+## Need Help?
 
-1. **Check system requirements** - Verify Node.js, npm, and Git versions
-2. **Search documentation** - Use search (⌘K) to find solutions
-3. **Ask community** - [GitHub Discussions](https://github.com/claudekit/claudekit-cli/discussions)
-4. **Report bugs** - [Issue tracker](https://github.com/claudekit/claudekit-cli/issues)
-5. **Get support** - [Discord community](https://discord.gg/claudekit)
+- **Documentation**: [docs.claudekit.cc](https://docs.claudekit.cc)
+- **GitHub Issues**: [github.com/mrgoonie/claudekit-cli/issues](https://github.com/mrgoonie/claudekit-cli/issues)
+- **Purchase Support**: [claudekit.cc](https://claudekit.cc)
 
 ---
 
-**Installation complete!** You're ready to create AI-powered applications with ClaudeKit.
+**Ready to start?** Run `ck new --kit engineer` to create your first project.

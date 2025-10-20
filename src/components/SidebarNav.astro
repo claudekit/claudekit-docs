@@ -17,16 +17,40 @@ const categories = {
       .filter((doc) => doc.data.category === 'core-concepts')
       .sort((a, b) => (a.data.order || 0) - (b.data.order || 0)),
   },
+  'agents': {
+    title: 'Agents',
+    docs: allDocs
+      .filter((doc) => doc.data.category === 'agents')
+      .sort((a, b) => (a.data.order || 0) - (b.data.order || 0)),
+  },
+  'commands': {
+    title: 'Commands',
+    docs: allDocs
+      .filter((doc) => doc.data.category === 'commands')
+      .sort((a, b) => (a.data.order || 0) - (b.data.order || 0)),
+  },
+  'skills': {
+    title: 'Skills',
+    docs: allDocs
+      .filter((doc) => doc.data.category === 'skills')
+      .sort((a, b) => (a.data.order || 0) - (b.data.order || 0)),
+  },
+  'use-cases': {
+    title: 'Use Cases',
+    docs: allDocs
+      .filter((doc) => doc.data.category === 'use-cases')
+      .sort((a, b) => (a.data.order || 0) - (b.data.order || 0)),
+  },
   'components': {
     title: 'Components',
     docs: allDocs
       .filter((doc) => doc.data.category === 'components')
       .sort((a, b) => (a.data.order || 0) - (b.data.order || 0)),
   },
-  'api-reference': {
-    title: 'API Reference',
+  'cli': {
+    title: 'CLI',
     docs: allDocs
-      .filter((doc) => doc.data.category === 'api-reference')
+      .filter((doc) => doc.data.category === 'cli')
       .sort((a, b) => (a.data.order || 0) - (b.data.order || 0)),
   },
 };

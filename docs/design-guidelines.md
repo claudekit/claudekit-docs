@@ -2025,8 +2025,63 @@ For design-to-code workflows (Figma, Sketch, etc.):
   - Border radius scale updated (very large: 16px)
   - Shadow system adjusted for darker theme
   - Active nav border indicator added (2px blue left border)
+- v1.2 (2025-10-21): Homepage markdown rendering fix
+  - Documented prose styling pattern for non-MDX pages
+  - Added semantic HTML conversion guidelines
+  - Code block and blockquote specifications refined
+  - Typography hierarchy clarified for content pages
 
 **Approval:** Pending review by development team
+
+---
+
+## Content Rendering Patterns
+
+### Markdown vs. HTML in Astro
+
+**When to use Markdown (.md/.mdx):**
+- Documentation pages in `src/content/docs/`
+- Blog posts, articles, long-form content
+- Content that needs frontmatter validation
+
+**When to use HTML in Astro (.astro):**
+- Landing pages, marketing pages
+- Pages with complex layouts or components
+- Homepage, pricing, features pages
+
+**Important:** Astro components require proper HTML elements, not raw markdown syntax. Use semantic HTML with appropriate styling.
+
+### Prose Styling Pattern
+
+For content-heavy pages without MDX, apply prose styling directly:
+
+```css
+/* Scoped prose styles in <style is:inline> */
+h2 {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  margin-top: var(--space-12);
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+}
+
+code {
+  font-family: var(--font-mono);
+  background: var(--color-bg-inline-code);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  color: var(--color-accent-blue);
+}
+
+blockquote {
+  border-left: 4px solid var(--color-accent-blue);
+  background: var(--color-bg-tertiary);
+  padding: var(--space-4) var(--space-6);
+}
+```
+
+**Reference Implementation:** `/src/pages/index.astro` (lines 300-394)
 
 ---
 

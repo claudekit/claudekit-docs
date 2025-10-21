@@ -1,8 +1,99 @@
 ---
 import DocsLayout from '../layouts/DocsLayout.astro';
+import { Code } from 'astro:components';
 
 const title = 'ClaudeKit - Build Software Like You Have a Team';
 const description = '14 specialized AI agents working together. Write less code, ship faster, maintain quality. Reclaim 50-70% of time on repetitive tasks.';
+
+const heroCode = `# Install ClaudeKit CLI
+npm install -g claudekit-cli
+
+# Create new project
+ck new my-app
+
+# Select "Engineer Kit"
+# Wait for installation to complete
+
+# Start the project
+cd my-app
+
+# Start Claude Code
+claude
+# or \`claude --dangerously-ignore-permissions\` (use as your own risk)
+
+# Bootstrap a new project, or Plan and implement a feature
+/bootstrap [create a calendar booking app that sync with Apple & Google Calendar]
+/plan [add user authentication]
+/cook [implement OAuth 2.1 with JWT]
+
+# Review, approve, deploy`;
+
+const cliCode = `# Create new project with ClaudeKit configuration
+ck new my-app --template react
+
+# Update existing project to latest ClaudeKit version
+ck update
+
+# Check and switch between ClaudeKit versions
+ck versions`;
+
+const planningCode = `# Planner agent reads your codebase
+/plan [add real-time notifications with WebSocket]
+
+# Creates detailed implementation plan:
+# - Architecture decisions
+# - File changes needed
+# - Test strategy
+# - Security considerations`;
+
+const implementationCode = `# Code agent follows the plan
+/cook [implement WebSocket notifications]
+
+# Generates:
+# - Server-side WebSocket handler
+# - Client-side connection manager
+# - Event types and validators
+# - Error handling and reconnection logic`;
+
+const testingCode = `# Tester agent creates comprehensive tests
+/test [WebSocket notifications]
+
+# Produces:
+# - Unit tests for handlers
+# - Integration tests for end-to-end flow
+# - Mock WebSocket server
+# - Coverage report`;
+
+const debuggingCode = `# Debugger agent analyzes logs and code
+/debug [users reporting timeout errors on checkout]
+
+# Agent workflow:
+# 1. Searches logs for timeout patterns
+# 2. Traces code execution paths
+# 3. Identifies bottleneck in payment processing
+# 4. Suggests fixes with performance impact
+# 5. Generates tests to prevent regression`;
+
+const refactoringCode = `# Scout agent maps codebase structure
+/scout [analyze authentication system]
+
+# Planner creates refactoring roadmap
+/plan [migrate from sessions to JWT]
+
+# Code agent implements changes safely
+/cook [implement JWT authentication]
+
+# Tester ensures nothing breaks
+/test [authentication system]`;
+
+const step1Code = `npm install -g claudekit-cli`;
+const step2Code = `ck new my-first-app
+cd my-first-app`;
+const step3Code = `/plan [add user registration API]
+/cook [implement registration endpoint]`;
+const step4Code = `git diff
+npm test
+/git:cm`;
 ---
 
 <DocsLayout title={title} description={description}>
@@ -21,23 +112,11 @@ const description = '14 specialized AI agents working together. Write less code,
   </div>
 
   <div class="hero-demo">
-    ```bash
-    # Install ClaudeKit CLI
-    npm install -g claudekit-cli
-
-    # Create new project
-    ck new my-app
-
-    # Plan and implement a feature
-    /plan [add user authentication]
-    /cook [implement OAuth 2.1 with JWT]
-
-    # Review, approve, deploy
-    ```
+    <Code code={heroCode} lang="bash" theme="one-dark-pro" />
   </div>
 </div>
 
-## Why ClaudeKit?
+<h2>Why ClaudeKit?</h2>
 
 <div class="features-grid">
   <div class="feature">
@@ -74,114 +153,60 @@ const description = '14 specialized AI agents working together. Write less code,
   </div>
 </div>
 
-## How It Works
+<h2>How It Works</h2>
 
-ClaudeKit operates through two main components that work seamlessly together:
+<p>ClaudeKit operates through two main components that work seamlessly together:</p>
 
-### ClaudeKit Engineer: 14 Specialized Agents
+<h3>ClaudeKit Engineer: 14 Specialized Agents</h3>
 
-Multi-agent orchestration system with role-based specialists:
+<p>Multi-agent orchestration system with role-based specialists:</p>
 
-- **Core Workflow**: `/plan` → `/cook` → `/test` → `/debug` → `/git:cm`
-- **Design Tools**: `/design:fast`, `/design:3d`, `/design:screenshot`
-- **Fix Commands**: `/fix:fast`, `/fix:hard`, `/fix:ui`, `/fix:types`
-- **Content Creation**: `/content:good`, `/content:cro`, `/docs:update`
-- **Integrations**: `/integrate:polar`, `/integrate:sepay`
+<ul>
+  <li><strong>Core Workflow</strong>: <code>/plan</code> → <code>/cook</code> → <code>/test</code> → <code>/debug</code> → <code>/git:cm</code></li>
+  <li><strong>Design Tools</strong>: <code>/design:fast</code>, <code>/design:3d</code>, <code>/design:screenshot</code></li>
+  <li><strong>Fix Commands</strong>: <code>/fix:fast</code>, <code>/fix:hard</code>, <code>/fix:ui</code>, <code>/fix:types</code></li>
+  <li><strong>Content Creation</strong>: <code>/content:good</code>, <code>/content:cro</code>, <code>/docs:update</code></li>
+  <li><strong>Integrations</strong>: <code>/integrate:polar</code>, <code>/integrate:sepay</code></li>
+</ul>
 
-Each command triggers specialized agents that collaborate to deliver results.
+<p>Each command triggers specialized agents that collaborate to deliver results.</p>
 
-### ClaudeKit CLI: Smart Project Management
+<h3>ClaudeKit CLI: Smart Project Management</h3>
 
-Intelligent project scaffolding and version management:
+<p>Intelligent project scaffolding and version management:</p>
 
-```bash
-# Create new project with ClaudeKit configuration
-ck new my-app --template react
+<Code code={cliCode} lang="bash" theme="one-dark-pro" />
 
-# Update existing project to latest ClaudeKit version
-ck update
+<p>The CLI handles:</p>
+<ul>
+  <li>Project initialization with best practices</li>
+  <li>Smart file merging without breaking changes</li>
+  <li>Version management across projects</li>
+  <li>Multi-tier authentication (GitHub CLI)</li>
+</ul>
 
-# Check and switch between ClaudeKit versions
-ck versions
-```
+<h2>Real Developer Workflows</h2>
 
-The CLI handles:
-- Project initialization with best practices
-- Smart file merging without breaking changes
-- Version management across projects
-- Multi-tier authentication (GitHub CLI)
+<h3>Building a New Feature</h3>
 
-## Real Developer Workflows
+<p><strong>Planning:</strong></p>
+<Code code={planningCode} lang="bash" theme="one-dark-pro" />
 
-### Building a New Feature
+<p><strong>Implementation:</strong></p>
+<Code code={implementationCode} lang="bash" theme="one-dark-pro" />
 
-**Planning:**
-```bash
-# Planner agent reads your codebase
-/plan [add real-time notifications with WebSocket]
+<p><strong>Testing:</strong></p>
+<Code code={testingCode} lang="bash" theme="one-dark-pro" />
 
-# Creates detailed implementation plan:
-# - Architecture decisions
-# - File changes needed
-# - Test strategy
-# - Security considerations
-```
+<h3>Debugging Production Issues</h3>
 
-**Implementation:**
-```bash
-# Code agent follows the plan
-/cook [implement WebSocket notifications]
+<Code code={debuggingCode} lang="bash" theme="one-dark-pro" />
 
-# Generates:
-# - Server-side WebSocket handler
-# - Client-side connection manager
-# - Event types and validators
-# - Error handling and reconnection logic
-```
+<h3>Refactoring Legacy Code</h3>
 
-**Testing:**
-```bash
-# Tester agent creates comprehensive tests
-/test [WebSocket notifications]
+<Code code={refactoringCode} lang="bash" theme="one-dark-pro" />
 
-# Produces:
-# - Unit tests for handlers
-# - Integration tests for end-to-end flow
-# - Mock WebSocket server
-# - Coverage report
-```
-
-### Debugging Production Issues
-
-```bash
-# Debugger agent analyzes logs and code
-/debug [users reporting timeout errors on checkout]
-
-# Agent workflow:
-# 1. Searches logs for timeout patterns
-# 2. Traces code execution paths
-# 3. Identifies bottleneck in payment processing
-# 4. Suggests fixes with performance impact
-# 5. Generates tests to prevent regression
-```
-
-### Refactoring Legacy Code
-
-```bash
-# Scout agent maps codebase structure
-/scout [analyze authentication system]
-
-# Planner creates refactoring roadmap
-/plan [migrate from sessions to JWT]
-
-# Code agent implements changes safely
-/cook [implement JWT authentication]
-
-# Tester ensures nothing breaks
-/test [authentication system]
-```
-
-## Proven Results
+<h2>Proven Results</h2>
 
 <div class="social-proof">
   <div class="stat">
@@ -204,28 +229,31 @@ The CLI handles:
   <strong>Teammate Extension, Not Replacement</strong>: ClaudeKit positions you as the architect and reviewer while AI handles implementation. You maintain full control with checkpoints, rollback capabilities, and transparent decision-making.
 </div>
 
-## What Developers Say
+<h2>What Developers Say</h2>
 
-> "More time in reviewer mode than coding mode. AI writes 80% of initial implementations; I focus on architecture and steering multiple threads."
->
-> — Senior Staff Engineer using AI-powered development tools
+<blockquote>
+  <p>"More time in reviewer mode than coding mode. AI writes 80% of initial implementations; I focus on architecture and steering multiple threads."</p>
+  <footer>— Senior Staff Engineer using AI-powered development tools</footer>
+</blockquote>
 
-> "Functions more like a code editor than a typical AI tool. Essential part of my workflow."
->
-> — Developer working with Claude Code
+<blockquote>
+  <p>"Functions more like a code editor than a typical AI tool. Essential part of my workflow."</p>
+  <footer>— Developer working with Claude Code</footer>
+</blockquote>
 
-> "The checkpoint feature is game-changing. Try an approach, rollback instantly if it doesn't work. No fear of AI going off the rails."
->
-> — Frontend Developer using ClaudeKit Engineer
+<blockquote>
+  <p>"The checkpoint feature is game-changing. Try an approach, rollback instantly if it doesn't work. No fear of AI going off the rails."</p>
+  <footer>— Frontend Developer using ClaudeKit Engineer</footer>
+</blockquote>
 
-## Get Started in 5 Minutes
+<h2>Get Started in 5 Minutes</h2>
 
 <div class="quick-start-steps">
   <div class="step">
     <div class="step-number">1</div>
     <div class="step-content">
       <h4>Install ClaudeKit CLI</h4>
-      <pre><code>npm install -g claudekit-cli</code></pre>
+      <Code code={step1Code} lang="bash" theme="one-dark-pro" />
     </div>
   </div>
 
@@ -233,8 +261,7 @@ The CLI handles:
     <div class="step-number">2</div>
     <div class="step-content">
       <h4>Create Your First Project</h4>
-      <pre><code>ck new my-first-app
-cd my-first-app</code></pre>
+      <Code code={step2Code} lang="bash" theme="one-dark-pro" />
     </div>
   </div>
 
@@ -242,8 +269,7 @@ cd my-first-app</code></pre>
     <div class="step-number">3</div>
     <div class="step-content">
       <h4>Plan and Implement a Feature</h4>
-      <pre><code>/plan [add user registration API]
-/cook [implement registration endpoint]</code></pre>
+      <Code code={step3Code} lang="bash" theme="one-dark-pro" />
     </div>
   </div>
 
@@ -251,9 +277,7 @@ cd my-first-app</code></pre>
     <div class="step-number">4</div>
     <div class="step-content">
       <h4>Review and Commit</h4>
-      <pre><code>git diff
-npm test
-/git:cm</code></pre>
+      <Code code={step4Code} lang="bash" theme="one-dark-pro" />
     </div>
   </div>
 </div>
@@ -267,7 +291,7 @@ npm test
   </div>
 </div>
 
-## Explore Documentation
+<h2>Explore Documentation</h2>
 
 <div class="doc-sections">
   <a href="/docs/getting-started/introduction" class="doc-card">
@@ -302,6 +326,102 @@ npm test
 </div>
 
 <style is:inline>
+  /* Content prose styling for proper markdown rendering */
+  h2 {
+    font-size: var(--text-2xl, 1.5rem);
+    font-weight: var(--font-bold, 700);
+    line-height: 1.3;
+    color: var(--color-text-primary, #ffffff);
+    margin-top: var(--space-12, 3rem);
+    margin-bottom: var(--space-4, 1rem);
+    padding-bottom: var(--space-2, 0.5rem);
+    border-bottom: 1px solid var(--color-border, #262626);
+  }
+
+  h3 {
+    font-size: var(--text-lg, 1.125rem);
+    font-weight: var(--font-semibold, 600);
+    line-height: var(--leading-snug, 1.375);
+    color: var(--color-text-primary, #ffffff);
+    margin-top: var(--space-8, 2rem);
+    margin-bottom: var(--space-3, 0.75rem);
+  }
+
+  h4 {
+    font-size: var(--text-base, 1rem);
+    font-weight: var(--font-semibold, 600);
+    color: var(--color-text-primary, #ffffff);
+    margin-bottom: var(--space-2, 0.5rem);
+  }
+
+  p {
+    font-size: var(--text-base, 1rem);
+    line-height: 1.6;
+    color: var(--color-text-secondary, #a3a3a3);
+    margin-bottom: var(--space-4, 1rem);
+  }
+
+  ul {
+    margin-bottom: var(--space-4, 1rem);
+    padding-inline-start: var(--space-6, 1.5rem);
+  }
+
+  li {
+    font-size: var(--text-base, 1rem);
+    line-height: var(--leading-relaxed, 1.625);
+    color: var(--color-text-secondary, #a3a3a3);
+    margin-bottom: var(--space-2, 0.5rem);
+  }
+
+  code {
+    font-family: var(--font-mono, 'Geist Mono', monospace);
+    font-size: var(--text-sm, 0.875rem);
+    background: var(--color-bg-inline-code, #1c1c1c);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    color: var(--color-accent-blue, #60a5fa);
+  }
+
+  pre {
+    background: var(--color-bg-code, #1c1c1c);
+    border: 1px solid var(--color-border, #262626);
+    border-radius: 8px;
+    padding: var(--space-4, 1rem);
+    overflow-x: auto;
+    margin-bottom: var(--space-6, 1.5rem);
+  }
+
+  pre code {
+    background: transparent;
+    padding: 0;
+    color: var(--color-text-secondary, #a3a3a3);
+    font-size: var(--text-sm, 0.875rem);
+  }
+
+  blockquote {
+    margin: var(--space-6, 1.5rem) 0;
+    padding: var(--space-4, 1rem) var(--space-6, 1.5rem);
+    border-left: 4px solid var(--color-accent-blue, #60a5fa);
+    background: var(--color-bg-tertiary, #1c1c1c);
+    border-radius: 4px;
+  }
+
+  blockquote p {
+    margin-bottom: var(--space-2, 0.5rem);
+    font-style: italic;
+  }
+
+  blockquote footer {
+    font-size: var(--text-sm, 0.875rem);
+    color: var(--color-text-muted, #737373);
+    margin-top: var(--space-2, 0.5rem);
+  }
+
+  strong {
+    font-weight: var(--font-bold, 700);
+    color: var(--color-text-primary, #ffffff);
+  }
+
   .hero {
     text-align: center;
     padding: 4rem 0;

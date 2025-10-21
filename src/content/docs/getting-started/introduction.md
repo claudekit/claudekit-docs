@@ -1,6 +1,6 @@
 ---
 title: Introduction
-description: Get started with ClaudeKit - A comprehensive toolkit for building AI-powered applications with Claude
+description: Ship production features in hours with ClaudeKit - Your AI development team built on Claude Code
 category: getting-started
 order: 1
 published: true
@@ -8,80 +8,79 @@ published: true
 
 # Introduction
 
-Welcome to ClaudeKit! This comprehensive toolkit empowers developers to build sophisticated AI-powered applications using Claude, Anthropic's advanced language model.
+**Ship Production Features in Hours, Not Weeks**
+
+ClaudeKit Engineer is a multi-agent AI system built on Claude Code that handles the complete software development lifecycle. Instead of giving you static boilerplate code, ClaudeKit provides 12 specialized AI agents that collaboratively plan, code, test, review, and deploy features.
 
 ## What is ClaudeKit?
 
-ClaudeKit is a full-featured development toolkit that provides:
+ClaudeKit is an AI development team alternative to traditional boilerplates. Rather than starting with outdated templates, you get intelligent agents that:
 
-- **CLI Tools** - Command-line utilities for rapid development and deployment
-- **API Integration** - Seamless integration with Claude API
-- **Code Generation** - AI-powered code scaffolding and generation
-- **Workflow Automation** - Automated workflows for common development tasks
-- **Documentation Assistant** - Intelligent documentation generation and management
+- **Understand Your Stack** - Works with Next.js, Django, Laravel, Go, Rust, or any tech stack
+- **Learn Your Patterns** - Adapts to your project through CLAUDE.md configuration
+- **Ship Production Code** - Delivers production-ready features, not just templates
+- **Evolve Automatically** - Improves continuously with Claude model updates
 
-## Key Features
+## 12 Specialized Agents
 
-### AI-Powered Development
+ClaudeKit provides a complete AI development team:
 
-ClaudeKit leverages Claude's capabilities to accelerate your development workflow:
+### Planning & Research
+- **Planner** - Creates detailed implementation plans with multiple approaches
+- **Researcher** - Investigates technologies, best practices, and documentation
+- **Project Manager** - Coordinates agents and tracks progress
 
-```typescript
-import { ClaudeKit } from 'claudekit';
+### Development
+- **UI/UX Designer** - Creates interface designs, wireframes, and design systems
+- **Database Admin** - Handles database queries, optimization, and migrations
+- **Copywriter** - Writes compelling, conversion-focused content
 
-const kit = new ClaudeKit({
-  apiKey: process.env.ANTHROPIC_API_KEY,
-});
+### Quality Assurance
+- **Tester** - Runs tests, validates features, and checks coverage
+- **Code Reviewer** - Reviews code quality, security, and best practices
+- **Debugger** - Investigates issues and analyzes system behavior
 
-const result = await kit.generate({
-  prompt: 'Create a REST API endpoint for user authentication',
-  model: 'claude-3-5-sonnet-20241022',
-});
-```
+### Operations
+- **Git Manager** - Handles commits, pull requests, and version control
+- **Docs Manager** - Maintains technical documentation and standards
+- **Journal Writer** - Documents technical difficulties and learnings
 
-### Workflow Automation
+## Why ClaudeKit?
 
-Automate repetitive tasks with built-in workflows:
+### Not a Boilerplate
+Traditional boilerplates lock you into specific tech stacks and become outdated quickly. ClaudeKit works with your existing codebase and any technology.
 
-- Code review automation
-- Documentation generation
-- Test case creation
-- API endpoint scaffolding
+### Production-Ready
+Generate AI-powered visual assets, write conversion-optimized copy, and ship features that work in production - capabilities no static template can provide.
 
-### Intelligent Code Analysis
-
-Get insights and suggestions for your codebase:
-
-- Performance optimization recommendations
-- Security vulnerability detection
-- Code quality metrics
-- Refactoring suggestions
+### Time Savings
+Save 10+ hours on your first feature. Focus on business logic while AI agents handle the implementation details.
 
 ## Who Should Use ClaudeKit?
 
 ClaudeKit is designed for:
 
-- **Full-Stack Developers** - Build AI-enhanced applications faster
-- **DevOps Engineers** - Automate deployment and infrastructure tasks
-- **Technical Writers** - Generate and maintain comprehensive documentation
-- **Team Leads** - Streamline development workflows and code reviews
+- **Solo Developers** - Get an entire development team without hiring
+- **Indie Makers** - Ship faster and validate ideas quickly
+- **Small Teams** - Augment your team with AI agents
+- **Developers Frustrated with Boilerplates** - Escape locked tech stacks
 
 ## Next Steps
 
-Ready to get started? Follow our installation guide:
+Ready to get started?
 
-1. [Installation](/docs/getting-started/installation) - Install ClaudeKit CLI
-2. [Quick Start](/docs/getting-started/quick-start) - Build your first project
-3. [Configuration](/docs/core-concepts/configuration) - Configure ClaudeKit for your needs
+1. [Installation](/docs/getting-started/installation) - Install ClaudeKit
+2. [Quick Start](/docs/getting-started/quick-start) - Ship your first feature
+3. [Agent Guide](/docs/agents/overview) - Learn about specialized agents
+4. [Configuration](/docs/core-concepts/configuration) - Configure CLAUDE.md
 
-## Support
+## Pricing
 
-Need help? Check out these resources:
-
-- [GitHub Repository](https://github.com/claudekit/claudekit)
-- [Discord Community](https://discord.gg/claudekit)
-- [API Reference](/docs/api-reference/rest)
+**One-time payment**: $99 (reduced from $149)
+- Lifetime access with unlimited updates
+- 30-day money-back guarantee
+- Works with any tech stack
 
 ---
 
-*Ready to build something amazing? Let's dive in!*
+*Stop copy-pasting boilerplate code. Start shipping features.*

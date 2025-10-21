@@ -82,6 +82,39 @@ To see available versions, run:
 ck versions --kit engineer
 ```
 
+### --exclude <pattern>
+
+Exclude files/directories using glob patterns during project setup.
+
+```bash
+ck new --exclude "*.log"
+```
+
+**Pattern format:** Supports standard glob patterns
+
+**Examples:**
+```bash
+# Single pattern
+ck new --exclude "*.log"
+
+# Multiple patterns
+ck new --exclude "*.log" --exclude "temp/**" --exclude "cache/**"
+
+# Exclude local config files
+ck new --exclude "*.local" --exclude ".env.*"
+
+# Exclude specific directories
+ck new --exclude "logs/**" --exclude "coverage/**"
+```
+
+**Use cases:**
+- Skip temporary or cache files
+- Exclude environment-specific configurations
+- Prevent overwriting custom local files
+- Reduce download size by excluding unnecessary files
+
+**Note:** Excluded patterns are applied during file extraction and copying.
+
 ### --verbose, -v
 
 Enable verbose logging for debugging.
@@ -234,6 +267,21 @@ ck new --kit engineer --verbose --log-file debug.log
 ```
 
 Creates detailed log file for troubleshooting.
+
+### Exclude Specific Files
+
+```bash
+# Exclude log files
+ck new --kit engineer --exclude "*.log"
+
+# Exclude multiple patterns
+ck new --kit engineer --exclude "*.log" --exclude "temp/**" --exclude "cache/**"
+
+# Combine with other options
+ck new --dir my-app --kit engineer --exclude "local-config/**" --exclude "*.local"
+```
+
+Useful for excluding temporary files, caches, or environment-specific files.
 
 ## After Installation
 

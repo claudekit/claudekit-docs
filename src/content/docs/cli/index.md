@@ -46,6 +46,7 @@ ck new --kit engineer --version v1.0.0
 - `--dir <dir>` - Target directory (default: current directory)
 - `--kit <kit>` - Kit to use (`engineer` or `marketing`)
 - `--version <version>` - Specific version to download (default: latest)
+- `--exclude <pattern>` - Exclude files/directories using glob patterns (can be used multiple times)
 
 [Learn more about `ck new`](/docs/cli/new)
 
@@ -75,6 +76,7 @@ ck update --kit engineer --version v1.0.0
 - `--dir <dir>` - Target directory (default: current directory)
 - `--kit <kit>` - Kit to use (`engineer` or `marketing`)
 - `--version <version>` - Specific version to download (default: latest)
+- `--exclude <pattern>` - Exclude files/directories using glob patterns (can be used multiple times)
 
 ### ck versions
 
@@ -241,6 +243,9 @@ ck new --dir my-app --kit engineer
 
 # Specific version
 ck new --dir my-app --kit engineer --version v1.0.0
+
+# With exclusions
+ck new --kit engineer --exclude "*.log" --exclude "temp/**"
 ```
 
 ### Update Existing Project
@@ -251,6 +256,9 @@ ck update
 
 # Update to specific version
 ck update --version v1.2.0
+
+# Update with exclusions
+ck update --exclude "local-config/**" --exclude "*.local"
 
 # Update with verbose output
 ck update --verbose

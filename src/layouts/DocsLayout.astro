@@ -31,21 +31,44 @@ const { title, description } = Astro.props;
 </BaseLayout>
 
 <script>
-  // Prevent automatic scroll on navigation
+  // Aggressive scroll prevention
   if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
   }
 
-  // Ensure page always starts at top
-  window.addEventListener('beforeunload', () => {
-    window.scrollTo(0, 0);
-  });
+  // Immediately set scroll to top
+  window.scrollTo(0, 0);
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
 
-  // Reset scroll position on page load
+  // Prevent any scroll attempts during page load
+  let isLoading = true;
+  const preventScroll = (e: Event) => {
+    if (isLoading) {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }
+  };
+
+  window.addEventListener('scroll', preventScroll, { passive: false });
+
+  // Stop preventing scroll after page is fully loaded
   window.addEventListener('load', () => {
     setTimeout(() => {
+      isLoading = false;
+      window.removeEventListener('scroll', preventScroll);
       window.scrollTo(0, 0);
-    }, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }, 100);
+  });
+
+  // Also reset on DOMContentLoaded
+  document.addEventListener('DOMContentLoaded', () => {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
   });
 </script>
 

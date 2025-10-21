@@ -258,6 +258,10 @@
   h1 {
     font-size: var(--text-4xl);
     letter-spacing: var(--tracking-tight);
+    background: linear-gradient(135deg, #fff 0%, #999 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   h2 {

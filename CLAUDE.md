@@ -12,6 +12,7 @@ Your role is to analyze user requirements, delegate tasks to appropriate sub-age
 - Development rules: `./.claude/workflows/development-rules.md`
 - Orchestration protocols: `./.claude/workflows/orchestration-protocol.md`
 - Documentation management: `./.claude/workflows/documentation-management.md`
+- Other workflows: `./.claude/workflows/*`
 
 **IMPORTANT:** You must follow strictly the development rules in `./.claude/workflows/development-rules.md` file.
 **IMPORTANT:** Before you plan or proceed any implementation, always read the `./README.md` file first to get context.

@@ -1,637 +1,1065 @@
 # Project Overview & Product Development Requirements (PDR)
 
-**Project:** ClaudeKit Documentation Website
-**Version:** 0.0.1
-**Status:** Development (MVP Complete)
-**Last Updated:** 2025-10-18
-**Owner:** ClaudeKit Team
+**Product**: ClaudeKit Engineer
+**Version**: 1.0 (MVP)
+**Last Updated**: 2025-10-30
+**Status**: Production Ready
 
 ---
 
 ## Executive Summary
 
-ClaudeKit Documentation is a modern, AI-powered documentation platform built to serve the ClaudeKit ecosystem. It combines static site generation performance with interactive AI assistance, providing developers with an exceptional learning experience through intelligent search, contextual help, and comprehensive guides.
+ClaudeKit Engineer is a revolutionary AI-powered development system that replaces traditional boilerplates with intelligent, context-aware AI agents. Built on Claude Code and Open Code CLI, it provides a complete software development lifecycle toolkit with 12 specialized agents, 30+ workflow automation commands, and seamless integration with modern development tools.
 
-**Live Site:** https://docs.claudekit.cc
-**Repository:** github.com/claudekit/claudekit-docs
+Unlike static templates that lock developers into specific tech stacks and become outdated, ClaudeKit adapts to any technology, learns project patterns, and continuously improves with Claude model updates.
 
 ---
 
-## Project Vision
+## Product Vision
 
 ### Mission Statement
+Empower developers to ship production-ready features in hours instead of weeks by providing an AI development team that handles planning, coding, testing, reviewing, and deploying with enterprise-grade quality standards.
 
-Provide the most developer-friendly documentation experience in the AI toolkit space by combining:
-- Fast, searchable static content
-- Intelligent AI assistance for contextual help
-- Beautiful, accessible design
-- Comprehensive, up-to-date guides
+### Core Value Proposition
+**Stop copy-pasting boilerplate code. Start shipping features.**
 
-### Target Audience
-
-**Primary Users:**
-1. **Developers** (70%) - Building with ClaudeKit
-   - Frontend/backend developers
-   - Full-stack engineers
-   - DevOps engineers
-
-2. **Technical Writers** (20%) - Contributing content
-   - Internal team members
-   - Community contributors
-
-3. **Product Managers** (10%) - Understanding capabilities
-   - Feature planning
-   - Customer support
-
-### Success Metrics
-
-**Phase 1 (Current - MVP):**
-- [x] Site deployed and accessible
-- [x] Basic documentation structure
-- [x] AI assistant UI implemented
-- [ ] 20+ documentation pages
-- [ ] <1.5s page load time
-- [ ] 95+ Lighthouse score
-
-**Phase 2 (Q1 2026 - Production):**
-- [ ] Full API reference coverage
-- [ ] Interactive code examples
-- [ ] AI assistant backend connected
-- [ ] Search functionality (Pagefind)
-- [ ] 100+ daily active users
-- [ ] <200ms AI response time
-
-**Phase 3 (Q2 2026 - Growth):**
-- [ ] Multi-language support
-- [ ] Interactive playground
-- [ ] Video tutorials
-- [ ] Community contributions
-- [ ] 1000+ monthly active users
+- Traditional boilerplates lock you into tech stacks and become outdated
+- ClaudeKit works with any technology and evolves automatically
+- Generate AI-powered assets, write conversion-optimized copy, ship production code
+- Save 10+ hours on your first feature implementation
 
 ---
 
-## Product Requirements
+## Target Audience
 
-### Functional Requirements
+### Primary Users
 
-#### FR-1: Content Management
-**Priority:** P0 (Critical)
+**Solo Developers**
+- Need an entire development team without hiring
+- Want to validate ideas quickly
+- Require production-ready code, not prototypes
+- Value time savings and quality assurance
 
-- **FR-1.1** Type-safe markdown content with frontmatter validation
-- **FR-1.2** Content categories: getting-started, cli, core-concepts, components, api-reference
-- **FR-1.3** Automatic route generation from file structure
-- **FR-1.4** Version control via Git
-- **FR-1.5** Last updated timestamps on pages
+**Indie Makers**
+- Ship faster to validate business ideas
+- Limited resources for hiring teams
+- Need consistent quality across projects
+- Want to focus on business logic
 
-**Acceptance Criteria:**
-- All markdown files validate against Zod schema
-- Invalid frontmatter blocks site build
-- Routes match file paths exactly
-- Content updates reflect immediately in dev mode
+**Small Development Teams (2-5 developers)**
+- Augment team capabilities with specialized AI agents
+- Standardize development workflows
+- Improve code quality and consistency
+- Accelerate feature delivery timelines
 
-#### FR-2: AI Assistant
-**Priority:** P0 (Critical)
+**Developers Frustrated with Traditional Boilerplates**
+- Tired of tech stack lock-in
+- Want flexibility to choose technologies
+- Need solutions that stay current
+- Require customization beyond templates
 
-- **FR-2.1** Chat interface in right panel (380px width)
-- **FR-2.2** Context-aware responses based on current page
-- **FR-2.3** Streaming responses for real-time feedback
-- **FR-2.4** Message history preservation during session
-- **FR-2.5** Model selection (Claude 3.5 Sonnet, GPT-4, etc.)
+### Secondary Users
 
-**Current Status:** UI complete, backend pending
-
-**Acceptance Criteria:**
-- Assistant responds within 2 seconds
-- Responses reference current documentation
-- Chat history persists across page navigation
-- Graceful error handling for API failures
-
-#### FR-3: Search Functionality
-**Priority:** P1 (High)
-
-- **FR-3.1** Full-text search across all documentation
-- **FR-3.2** Keyboard shortcut activation (⌘K / Ctrl+K)
-- **FR-3.3** Instant results as user types
-- **FR-3.4** Result highlighting with context
-- **FR-3.5** AI-enhanced semantic search (optional)
-
-**Current Status:** Not implemented
-
-**Recommendation:** Use Pagefind for static search
-
-#### FR-4: Navigation
-**Priority:** P0 (Critical)
-
-- **FR-4.1** Left sidebar with collapsible sections
-- **FR-4.2** Active page highlighting with blue indicator
-- **FR-4.3** Breadcrumb navigation
-- **FR-4.4** Table of contents for current page
-- **FR-4.5** Previous/next page links
-
-**Current Status:** Partially implemented (sidebar and breadcrumbs done)
-
-#### FR-5: Code Examples
-**Priority:** P1 (High)
-
-- **FR-5.1** Syntax highlighting (One Dark Pro theme)
-- **FR-5.2** Copy to clipboard functionality
-- **FR-5.3** Line numbers (optional)
-- **FR-5.4** Line highlighting for emphasis
-- **FR-5.5** Multi-language tabs (JavaScript/TypeScript/Python)
-
-**Current Status:** Basic syntax highlighting implemented
-
-#### FR-6: Responsive Design
-**Priority:** P0 (Critical)
-
-- **FR-6.1** Mobile layout (<768px): Single column, drawer navigation
-- **FR-6.2** Tablet layout (768-1024px): 2 columns, collapsible sidebar
-- **FR-6.3** Desktop layout (1024-1280px): 2-3 columns
-- **FR-6.4** Wide desktop (1280px+): Full 3-column layout
-- **FR-6.5** Touch-friendly interactions on mobile
-
-**Current Status:** Implemented for desktop, mobile needs refinement
+**Technical Leaders**
+- Evaluate AI-assisted development tools
+- Seek productivity improvements for teams
+- Need quality assurance automation
+- Want documentation that stays current
 
 ---
 
-### Non-Functional Requirements
+## Product Goals
 
-#### NFR-1: Performance
-**Priority:** P0 (Critical)
+### Short-term Goals (Q1 2025)
 
-- **NFR-1.1** First Contentful Paint (FCP) <1.2s
-- **NFR-1.2** Largest Contentful Paint (LCP) <1.5s
-- **NFR-1.3** Time to Interactive (TTI) <2.5s
-- **NFR-1.4** Cumulative Layout Shift (CLS) <0.1
-- **NFR-1.5** Page size <500KB (including images)
+1. **Market Validation**
+   - Achieve 100 paying customers
+   - Maintain 30-day money-back guarantee rate <5%
+   - Collect 50+ testimonials and case studies
+   - Build community of 500+ active users
 
-**Measurement:** Lighthouse CI in production builds
+2. **Feature Completion**
+   - Deliver all 12 specialized agents
+   - Complete 30+ slash commands
+   - Integrate 5 Gemini-powered skills
+   - Provide comprehensive documentation
 
-#### NFR-2: Accessibility
-**Priority:** P0 (Critical)
+3. **Quality Assurance**
+   - Achieve 95% customer satisfaction rating
+   - Maintain <2 critical bugs per month
+   - Response time <24 hours for support
+   - 99.9% uptime for documentation site
 
-- **NFR-2.1** WCAG 2.1 Level AA compliance
-- **NFR-2.2** Keyboard navigation for all features
-- **NFR-2.3** Screen reader compatibility (NVDA, JAWS, VoiceOver)
-- **NFR-2.4** Color contrast ratio ≥4.5:1 for text
-- **NFR-2.5** Reduced motion support (prefers-reduced-motion)
+### Mid-term Goals (Q2-Q3 2025)
 
-**Testing:** Manual testing with screen readers + automated axe-core
+1. **Ecosystem Expansion**
+   - Add 10+ framework-specific templates
+   - Create marketplace for custom agents
+   - Build integration library (50+ services)
+   - Develop IDE extensions (VSCode, JetBrains)
 
-#### NFR-3: Security
-**Priority:** P0 (Critical)
+2. **Community Growth**
+   - Reach 1,000 paying customers
+   - Establish active Discord community (5,000+ members)
+   - Launch contributor program
+   - Host monthly webinars and workshops
 
-- **NFR-3.1** No client-side API keys (server-side only)
-- **NFR-3.2** HTTPS enforcement (TLS 1.3)
-- **NFR-3.3** Content Security Policy headers
-- **NFR-3.4** Rate limiting on AI endpoints (20 req/min per IP)
-- **NFR-3.5** Input sanitization for user queries
+3. **Enterprise Features**
+   - Team collaboration features
+   - Organization-wide settings management
+   - Usage analytics and reporting
+   - Priority support tiers
 
-**Compliance:** OWASP Top 10 guidelines
+### Long-term Goals (Q4 2025+)
 
-#### NFR-4: Scalability
-**Priority:** P1 (High)
+1. **Platform Evolution**
+   - Multi-language agent support (Python, Go, Rust)
+   - Cloud-hosted agent orchestration
+   - Real-time collaborative development
+   - AI model marketplace
 
-- **NFR-4.1** Support 10,000 concurrent users
-- **NFR-4.2** Horizontal pod scaling (2-10 replicas)
-- **NFR-4.3** CDN integration for static assets
-- **NFR-4.4** Database-free architecture (static + API)
-- **NFR-4.5** <500ms p95 response time
-
-**Infrastructure:** Kubernetes with HPA (Horizontal Pod Autoscaler)
-
-#### NFR-5: Maintainability
-**Priority:** P1 (High)
-
-- **NFR-5.1** TypeScript strict mode enabled
-- **NFR-5.2** 80%+ code test coverage (future)
-- **NFR-5.3** Automated dependency updates (Dependabot)
-- **NFR-5.4** CI/CD pipeline with automated deployment
-- **NFR-5.5** Documentation for all major components
-
-**Tools:** ESLint, Prettier, Vitest (future)
-
----
-
-## Technical Architecture
-
-### System Overview
-
-```
-┌─────────────────────────────────────────────────────┐
-│                    User Browser                      │
-└──────────────────┬──────────────────────────────────┘
-                   │ HTTPS
-                   ▼
-┌─────────────────────────────────────────────────────┐
-│           nginx Ingress Controller                   │
-│              (TLS Termination)                       │
-└──────────────────┬──────────────────────────────────┘
-                   │
-                   ▼
-┌─────────────────────────────────────────────────────┐
-│        Kubernetes Service (ClusterIP)                │
-└──────────────────┬──────────────────────────────────┘
-                   │
-        ┌──────────┴──────────┐
-        ▼                     ▼
-┌──────────────┐      ┌──────────────┐
-│  Pod 1       │      │  Pod 2       │
-│              │      │              │
-│  Node.js     │      │  Node.js     │
-│  + serve     │      │  + serve     │
-│              │      │              │
-│  Static      │      │  Static      │
-│  HTML/CSS/JS │      │  HTML/CSS/JS │
-└──────────────┘      └──────────────┘
-```
-
-### Component Architecture
-
-**Frontend (Browser):**
-- Astro static HTML pages
-- React islands for interactive components
-- Tailwind CSS for styling
-- Minimal JavaScript hydration
-
-**Backend (Astro Build):**
-- Markdown → HTML compilation
-- Content collection validation
-- Image optimization
-- Static site generation
-
-**Infrastructure:**
-- Kubernetes deployment (2 replicas)
-- Docker containerization
-- nginx ingress + cert-manager
-- GitHub Container Registry
-
-**External Services:**
-- OpenRouter API (AI responses)
-- Google Fonts (Inter, Geist Mono)
-- (Future) Analytics service
-
-### Data Flow
-
-**Static Content Request:**
-```
-User → nginx → K8s Service → Pod → Static HTML → User
-```
-
-**AI Assistant Interaction:**
-```
-User Input → Browser → (Future) API Route → OpenRouter →
-Claude/GPT-4 → Streaming Response → Browser → User
-```
+2. **Market Leadership**
+   - Become #1 AI development toolkit
+   - 10,000+ paying customers
+   - Strategic partnerships with tech companies
+   - Conference presence and thought leadership
 
 ---
 
-## Design Requirements
+## Functional Requirements
 
-### Design System
+### FR-1: AI Agent System
 
-**Color Palette:** Polar-inspired dark theme (primary)
-- Background: #0A0A0A (pure black)
-- Secondary BG: #111111
-- Tertiary BG: #1C1C1C
-- Text Primary: #FFFFFF
-- Text Secondary: #A3A3A3
-- Accent Blue: #60A5FA (links, active states)
-- Accent Purple: #C678DD (AI features)
-- Accent Cyan: #56B6C2 (AI sparkle)
+**Priority**: P0 (Critical)
+**Status**: Complete
 
-**Typography:**
-- Body: Inter Variable (400-700)
-- Code: Geist Mono (400)
-- H1: 36px / 2.25rem (bold)
-- H2: 24px / 1.5rem (bold)
-- Body: 16px / 1rem (normal)
-- Small: 14px / 0.875rem
+**Description**: Provide 12 specialized AI agents that handle different aspects of software development lifecycle.
 
-**Spacing:** 8px base grid
-- Space-1: 4px
-- Space-2: 8px
-- Space-4: 16px
-- Space-6: 24px
-- Space-8: 32px
+**Agents**:
 
-### Layout Specifications
+1. **Planner Agent**
+   - Creates detailed implementation plans
+   - Spawns researcher agents in parallel
+   - Uses sequential-thinking for problem decomposition
+   - Generates plans in `./plans` directory
 
-**Desktop (1280px+):**
-```
-┌────────────────────────────────────────────────┐
-│         Header (64px height)                   │
-├─────────┬────────────────────┬─────────────────┤
-│ Sidebar │ Content            │ AI Panel        │
-│ 280px   │ 700px max          │ 380px           │
-│         │                    │                 │
-└─────────┴────────────────────┴─────────────────┘
-```
+2. **Researcher Agent**
+   - Multi-source research (Google, YouTube, websites)
+   - Uses SearchAPI and VidCap MCP servers
+   - Creates comprehensive markdown reports
+   - Validates information across sources
 
-**Tablet (768-1024px):**
-- 2 columns: Sidebar (collapsible) + Content
-- AI panel as slide-over
+3. **Project Manager Agent**
+   - Tracks progress and coordinates agents
+   - Updates roadmaps and changelogs
+   - Verifies task completion
+   - Manages documentation updates
 
-**Mobile (<768px):**
-- 1 column: Content only
-- Sidebar as drawer
-- AI panel as bottom sheet
+4. **UI/UX Designer Agent**
+   - Creates wireframes and mockups
+   - Generates design systems
+   - Uses Human MCP for image generation
+   - Maintains design guidelines
 
----
+5. **Database Admin Agent**
+   - Query optimization
+   - Schema design and migration
+   - Performance analysis
+   - Data modeling
 
-## Content Strategy
+6. **Copywriter Agent**
+   - Conversion-focused content
+   - Marketing copy generation
+   - SEO optimization
+   - Multi-language support
 
-### Documentation Structure
+7. **Tester Agent**
+   - Unit, integration, E2E tests
+   - Coverage analysis
+   - Performance validation
+   - Build verification
 
-**Level 1 Categories:**
-1. **Getting Started** - Onboarding new users
-   - Introduction
-   - Installation
-   - Quick Start
-   - First Steps
+8. **Code Reviewer Agent**
+   - Security vulnerability scanning
+   - Performance analysis
+   - Type safety validation
+   - Best practices enforcement
 
-2. **Core Concepts** - Understanding ClaudeKit
-   - Architecture
-   - Configuration
-   - Best Practices
+9. **Debugger Agent**
+   - CI/CD log analysis
+   - Performance bottleneck identification
+   - Root cause analysis
+   - System health assessment
 
-3. **CLI Reference** - Command-line tool docs
-   - Installation
-   - Commands (new, build, deploy, etc.)
-   - Configuration
+10. **Git Manager Agent**
+    - Secure staging and commits
+    - Conventional commit messages
+    - Secret detection
+    - PR management
 
-4. **Components** - UI components (future)
-5. **API Reference** - Auto-generated from code (future)
-6. **Guides** - Tutorials and how-tos (future)
+11. **Docs Manager Agent**
+    - Documentation synchronization
+    - Naming convention compliance
+    - Codebase summary generation
+    - API documentation updates
 
-### Content Guidelines
+12. **Journal Writer Agent**
+    - Technical diary entries
+    - Development reflections
+    - Learning documentation
+    - Decision tracking
 
-**Writing Style:**
-- Concise and scannable
-- Code examples for every concept
-- Active voice, second person ("you")
-- Avoid jargon unless explained
-- Include "what" and "why" not just "how"
-
-**Markdown Standards:**
-- H1: Page title only (one per page)
-- H2-H4: Section headings
-- Code blocks: Language-specific fences
-- Callouts: Info, warning, error boxes
-- Links: Descriptive text (no "click here")
-
-**Metadata Required:**
-```yaml
----
-title: Page title (required)
-description: SEO description (required)
-category: getting-started | cli | etc. (required)
-order: 1 (optional, for sorting)
-published: true (default)
-lastUpdated: 2025-10-18 (optional)
----
-```
+**Acceptance Criteria**:
+- All agents respond within 30 seconds
+- Agents produce markdown reports in standardized format
+- Inter-agent communication via file system works reliably
+- Agents handle errors gracefully with clear messages
 
 ---
 
-## Development Roadmap
+### FR-2: Slash Command System
 
-### Phase 1: MVP (CURRENT)
-**Timeline:** October 2025
-**Status:** 80% Complete
+**Priority**: P0 (Critical)
+**Status**: Complete
 
-**Deliverables:**
-- [x] Project setup and configuration
-- [x] Base layouts and components
-- [x] Sidebar navigation
-- [x] AI chat UI (no backend)
-- [x] Basic documentation pages (7 pages)
-- [x] Docker containerization
-- [x] Kubernetes deployment
-- [ ] Production deployment to docs.claudekit.cc
-- [ ] Basic SEO optimization
+**Description**: Provide 30+ slash commands for workflow automation and agent orchestration.
 
-**Blockers:**
-- OpenRouter API key setup
-- Domain SSL certificate
+**Command Categories**:
 
-### Phase 2: Production-Ready
-**Timeline:** November 2025
-**Status:** Not Started
+1. **Core Development** (10 commands)
+   - /ask, /bootstrap, /brainstorm, /cook, /debug, /journal, /plan, /scout, /test, /watzup
 
-**Deliverables:**
-- [ ] AI assistant backend connection
-- [ ] Search functionality (Pagefind)
-- [ ] Complete CLI documentation (10+ pages)
-- [ ] API reference auto-generation
-- [ ] Analytics integration
-- [ ] Error tracking (Sentry)
-- [ ] CI/CD pipeline (GitHub Actions)
-- [ ] Automated testing (E2E, unit)
+2. **Design** (5 commands)
+   - /design:3d, /design:fast, /design:good, /design:screenshot, /design:video
 
-**Dependencies:**
-- OpenRouter account setup
-- Analytics provider decision
-- CI/CD infrastructure
+3. **Documentation** (3 commands)
+   - /docs:init, /docs:summarize, /docs:update
 
-### Phase 3: Enhanced Features
-**Timeline:** December 2025 - January 2026
-**Status:** Not Started
+4. **Fix & Debug** (6 commands)
+   - /fix:ci, /fix:fast, /fix:hard, /fix:logs, /fix:test, /fix:types, /fix:ui
 
-**Deliverables:**
-- [ ] Interactive code playground
-- [ ] Video tutorials integration
-- [ ] Advanced search (semantic AI search)
-- [ ] Multi-language support (i18n)
-- [ ] Community contribution workflow
-- [ ] Versioned documentation
-- [ ] Changelog automation
+5. **Git Operations** (3 commands)
+   - /git:cm, /git:cp, /git:pr
 
-### Phase 4: Scale & Optimize
-**Timeline:** Q1 2026
-**Status:** Not Started
+6. **Planning** (2 commands)
+   - /plan:ci, /plan:two
 
-**Deliverables:**
-- [ ] CDN integration
-- [ ] Advanced caching strategies
-- [ ] Performance monitoring dashboard
-- [ ] A/B testing framework
-- [ ] User feedback system
-- [ ] Documentation API for third-party integrations
+7. **Integration** (2 commands)
+   - /integrate:polar, /integrate:sepay
+
+8. **Content Creation** (4 commands)
+   - /content:cro, /content:enhance, /content:fast, /content:good
+
+**Acceptance Criteria**:
+- Commands parse arguments correctly
+- Commands orchestrate appropriate agents
+- Commands provide clear progress feedback
+- Commands handle failures with helpful error messages
 
 ---
 
-## Technical Constraints
+### FR-3: MCP Server Integration
 
-### Must Have
-1. **Static Site Generation** - Fast, cacheable, SEO-friendly
-2. **Kubernetes Deployment** - Scalable, reliable infrastructure
-3. **TypeScript** - Type safety throughout
-4. **Accessibility** - WCAG AA compliance minimum
-5. **Mobile-First** - Responsive on all devices
+**Priority**: P1 (High)
+**Status**: Complete
 
-### Cannot Have
-1. **Database** - Keep architecture stateless
-2. **Server-Side Rendering** - SSG only (simplicity)
-3. **Client-Side Routing** - Use native browser navigation
-4. **Heavy JavaScript** - Minimal JS for performance
+**Description**: Integrate Model Context Protocol servers for extended capabilities.
 
-### Trade-offs Accepted
-1. **AI Cost vs. UX** - Accept API costs for better UX
-2. **Build Time vs. Performance** - Longer builds for faster runtime
-3. **Feature Scope vs. Timeline** - Ship MVP fast, iterate
-4. **Customization vs. Maintenance** - Custom Astro over Starlight
+**MCP Servers**:
+
+1. **Context7** (Upstash)
+   - Documentation context management
+   - Package/plugin documentation access
+
+2. **Human** (Google Gemini)
+   - Visual content generation
+   - Image creation and editing
+
+3. **SearchAPI**
+   - Google search integration
+   - YouTube search and caption extraction
+
+4. **VidCap**
+   - Video caption extraction
+   - Transcript analysis
+
+5. **Sequential Thinking**
+   - Problem decomposition
+   - Structured reasoning
+
+6. **Eyes**
+   - Image/video/document analysis
+   - Visual content understanding
+
+**Acceptance Criteria**:
+- All MCP servers connect reliably
+- API keys managed securely via environment variables
+- Server failures don't crash agent workflows
+- Clear error messages for missing credentials
 
 ---
 
-## Risk Analysis
+### FR-4: Gemini Skills Integration
+
+**Priority**: P1 (High)
+**Status**: Complete
+
+**Description**: Provide AI-powered skills for multimedia processing and generation.
+
+**Skills**:
+
+1. **gemini-audio**
+   - Audio transcription and analysis
+   - Text-to-speech generation
+   - Audio summarization (up to 9.5 hours)
+
+2. **gemini-video-understanding**
+   - Video analysis and description
+   - Timestamp referencing
+   - YouTube URL processing
+
+3. **gemini-document-processing**
+   - PDF text extraction
+   - Table and chart extraction
+   - Document summarization
+
+4. **gemini-image-gen**
+   - AI image generation from prompts
+   - Image editing and composition
+   - Iterative refinement
+
+5. **gemini-vision**
+   - Image captioning and classification
+   - Object detection and segmentation
+   - Multi-image comparison
+
+**Acceptance Criteria**:
+- Skills work with both Google AI Studio and Vertex AI
+- API key validation provides clear feedback
+- Skills handle large files (multi-hour videos, large PDFs)
+- Generated content meets quality standards
+
+---
+
+### FR-5: Documentation System
+
+**Priority**: P0 (Critical)
+**Status**: Complete
+
+**Description**: Comprehensive, auto-synchronized documentation that stays current with code.
+
+**Documentation Files**:
+
+1. **project-overview-pdr.md**
+   - Product vision and goals
+   - Functional and non-functional requirements
+   - Success metrics
+   - Roadmap
+
+2. **codebase-summary.md**
+   - Auto-generated from repomix
+   - Directory structure
+   - File statistics
+   - Technology stack
+
+3. **code-standards.md**
+   - Coding conventions
+   - Naming standards
+   - File organization
+   - Best practices
+
+4. **system-architecture.md**
+   - High-level architecture
+   - Component interactions
+   - Data flow
+   - Technology decisions
+
+5. **COMMANDS.md**
+   - Complete command reference
+   - Usage examples
+   - Workflow patterns
+
+6. **SKILLS.md**
+   - Skills documentation
+   - Setup instructions
+   - API key configuration
+
+**Acceptance Criteria**:
+- Documentation auto-updates when code changes
+- Naming conventions match codebase reality
+- Examples are tested and functional
+- Documentation is searchable and navigable
+
+---
+
+### FR-6: Security Features
+
+**Priority**: P0 (Critical)
+**Status**: Complete
+
+**Description**: Enterprise-grade security controls and best practices enforcement.
+
+**Security Controls**:
+
+1. **Secret Detection**
+   - Pre-commit scanning for credentials
+   - .env file detection
+   - API key pattern matching
+   - Certificate and key file detection
+
+2. **Code Security Analysis**
+   - OWASP Top 10 vulnerability scanning
+   - SQL injection detection
+   - XSS vulnerability identification
+   - CORS and CSP validation
+
+3. **Secure Git Operations**
+   - .gitignore validation
+   - Credential exclusion enforcement
+   - Commit message sanitization
+   - No AI attribution to protect user privacy
+
+4. **Authentication & Authorization**
+   - Secure token handling
+   - Session management validation
+   - Permission checks in code review
+
+**Acceptance Criteria**:
+- 100% prevention of secret commits
+- All OWASP Top 10 vulnerabilities detected
+- Security issues flagged as critical in reviews
+- Clear remediation guidance provided
+
+---
+
+### FR-7: Quality Assurance System
+
+**Priority**: P0 (Critical)
+**Status**: Complete
+
+**Description**: Automated testing, code review, and quality enforcement.
+
+**Quality Controls**:
+
+1. **Automated Testing**
+   - Unit test execution
+   - Integration test validation
+   - E2E test coverage
+   - Performance testing
+
+2. **Code Coverage**
+   - Minimum 80% coverage target
+   - Line, branch, function coverage
+   - Uncovered code identification
+   - Coverage trend tracking
+
+3. **Code Review**
+   - Type safety validation
+   - Performance analysis
+   - Security scanning
+   - Best practices verification
+
+4. **Build Validation**
+   - Compilation success
+   - Dependency resolution
+   - Production build testing
+   - CI/CD compatibility
+
+**Acceptance Criteria**:
+- All tests must pass before completion
+- Coverage reports generated automatically
+- Code review identifies 95%+ of issues
+- Build failures provide actionable guidance
+
+---
+
+### FR-8: Git Workflow Automation
+
+**Priority**: P1 (High)
+**Status**: Complete
+
+**Description**: Professional version control operations with conventional commits.
+
+**Git Features**:
+
+1. **Conventional Commits**
+   - Type enforcement (feat, fix, docs, etc.)
+   - Subject case validation
+   - Header length limit (100 chars)
+   - Body line length limit (300 chars)
+
+2. **Automated Changelog**
+   - Semantic versioning
+   - Release note generation
+   - GitHub release creation
+   - Optional NPM publishing
+
+3. **Commit Operations**
+   - Secret detection before staging
+   - Professional commit messages
+   - No AI attribution
+   - Atomic, focused commits
+
+4. **PR Management**
+   - Automated PR creation
+   - Summary generation from commits
+   - Test plan inclusion
+   - GitHub CLI integration
+
+**Acceptance Criteria**:
+- 100% commit message compliance
+- Changelog accuracy matches commits
+- PRs include all necessary information
+- Git history is clean and professional
+
+---
+
+## Non-Functional Requirements
+
+### NFR-1: Performance
+
+**Priority**: P0 (Critical)
+
+**Requirements**:
+- Agent response time <30 seconds for simple queries
+- Plan generation <2 minutes for complex features
+- Documentation sync <1 minute
+- Repomix generation <30 seconds for medium projects
+
+**Metrics**:
+- 95th percentile response time <45 seconds
+- Average command execution <15 seconds
+- Documentation generation <60 seconds
+- Zero timeout failures
+
+---
+
+### NFR-2: Reliability
+
+**Priority**: P0 (Critical)
+
+**Requirements**:
+- Agent success rate >95%
+- Command completion rate >98%
+- Documentation accuracy >99%
+- Zero data loss in agent communication
+
+**Metrics**:
+- Uptime >99.5% for all agents
+- Error recovery rate >90%
+- Data consistency 100%
+- Graceful degradation on API failures
+
+---
+
+### NFR-3: Usability
+
+**Priority**: P1 (High)
+
+**Requirements**:
+- Intuitive command syntax
+- Clear error messages
+- Comprehensive documentation
+- Helpful examples for all commands
+
+**Metrics**:
+- First-time success rate >80%
+- Documentation clarity rating >4.5/5
+- Support ticket volume <10 per week
+- User satisfaction >90%
+
+---
+
+### NFR-4: Maintainability
+
+**Priority**: P1 (High)
+
+**Requirements**:
+- Modular agent architecture
+- Clear separation of concerns
+- Comprehensive inline documentation
+- Easy addition of new agents/commands
+
+**Metrics**:
+- Code duplication <5%
+- Test coverage >80%
+- Documentation coverage 100%
+- New agent onboarding time <2 hours
+
+---
+
+### NFR-5: Scalability
+
+**Priority**: P2 (Medium)
+
+**Requirements**:
+- Support projects with 10,000+ files
+- Handle parallel agent execution
+- Manage large repomix outputs (>500K tokens)
+- Scale to team environments (10+ users)
+
+**Metrics**:
+- Linear performance scaling
+- No memory leaks in long sessions
+- Efficient resource utilization
+- Support for monorepo architectures
+
+---
+
+### NFR-6: Security & Privacy
+
+**Priority**: P0 (Critical)
+
+**Requirements**:
+- No credential exposure
+- Local-first processing
+- Optional cloud features
+- User data privacy protection
+
+**Metrics**:
+- Zero security incidents
+- 100% secret detection accuracy
+- No unauthorized data transmission
+- GDPR compliance
+
+---
+
+## Success Metrics
+
+### Product Metrics
+
+**Adoption Metrics**:
+- Monthly Active Users (MAU): Target 500 by Q2 2025
+- Paying Customers: Target 100 by Q1 2025, 1,000 by Q3 2025
+- Customer Retention Rate: Target >85% after 90 days
+- Net Promoter Score (NPS): Target >50
+
+**Engagement Metrics**:
+- Commands per user per week: Target >20
+- Agent invocations per feature: Target 5-8
+- Documentation views per month: Target 10,000+
+- Community contributions per month: Target >10
+
+**Quality Metrics**:
+- Customer Satisfaction (CSAT): Target >90%
+- Bug report rate: Target <2 per 100 users per month
+- Feature request implementation rate: Target >50%
+- Support response time: Target <24 hours
+
+---
+
+### Business Metrics
+
+**Revenue Metrics**:
+- Monthly Recurring Revenue (MRR): Target $10K by Q2 2025
+- Average Revenue Per User (ARPU): $99 one-time
+- Customer Acquisition Cost (CAC): Target <$50
+- Lifetime Value (LTV): Target >$150
+
+**Growth Metrics**:
+- Month-over-Month Growth: Target 20%+
+- Referral Rate: Target 15% of new customers
+- Churn Rate: Target <5% per month
+- Expansion Revenue: Target 20% via upsells
+
+**Marketing Metrics**:
+- Website Conversion Rate: Target 5%+
+- Trial-to-Paid Conversion: Target 30%+
+- Organic Traffic Growth: Target 25% monthly
+- Social Media Engagement: Target 1,000+ followers by Q2
+
+---
+
+## Roadmap
+
+### Phase 1: MVP Launch (Q4 2024) ✅ COMPLETE
+
+**Objectives**:
+- Launch core product with 12 agents
+- Deliver 30+ slash commands
+- Complete documentation system
+- Achieve product-market fit
+
+**Deliverables**:
+- ✅ All 12 specialized agents
+- ✅ Core slash commands (/plan, /cook, /test, etc.)
+- ✅ MCP server integrations
+- ✅ Gemini skills
+- ✅ Comprehensive documentation
+- ✅ GitHub repository
+- ✅ Marketing website
+
+**Success Criteria**:
+- ✅ 50+ beta users
+- ✅ <5% refund rate
+- ✅ 95%+ feature completeness
+- ✅ Zero critical bugs
+
+### Phase 1.5: Documentation Content Update (Oct 2025) ✅ COMPLETE
+
+**Objectives**:
+- Create comprehensive documentation for all ClaudeKit features
+- Achieve high coverage for agents, commands, and skills
+- Provide practical use cases and troubleshooting guides
+- Improve onboarding experience with quick start guide
+
+**Deliverables**:
+- ✅ 79 total documentation pages (259% increase from 22)
+- ✅ 14 agent pages (100% coverage)
+- ✅ 25 command pages across 9 categories (83% coverage)
+- ✅ 3 essential skill pages (Next.js, Tailwind CSS, shadcn/ui)
+- ✅ 7 use case pages (features, bugs, refactoring, API, auth, payments, performance)
+- ✅ 6 troubleshooting pages (installation, commands, agents, API keys, performance)
+- ✅ Quick Start Guide (complete 15-min workflow)
+- ✅ Introduction revision (20% more concise with comparison table)
+- ✅ ~250KB of quality documentation added
+
+**Success Metrics**:
+- ✅ Agent coverage: 100% (14/14)
+- ✅ Command coverage: 83% (25/30)
+- ✅ Skill coverage: 7% (3/45)
+- ✅ Build time: 6.29s (optimized)
+- ✅ Zero build errors
+
+**Remaining Work**:
+- 📋 42 skill pages (ongoing)
+- 📋 5 command pages (minor commands)
+
+---
+
+### Phase 2: Community Growth (Q1 2025) 🔄 IN PROGRESS
+
+**Objectives**:
+- Build active user community
+- Gather feedback and iterate
+- Expand documentation and tutorials
+- Improve onboarding experience
+
+**Deliverables**:
+- 📋 Discord community server
+- 📋 Video tutorial series
+- 📋 Interactive code playground
+- 📋 Community showcase
+- 📋 Contributor guidelines
+- 📋 Monthly webinars
+
+**Success Criteria**:
+- 100+ paying customers
+- 500+ Discord members
+- 50+ testimonials
+- >90% satisfaction rating
+
+---
+
+### Phase 3: Ecosystem Expansion (Q2-Q3 2025)
+
+**Objectives**:
+- Add framework-specific templates
+- Launch agent marketplace
+- Build integration library
+- Develop IDE extensions
+
+**Deliverables**:
+- Framework templates (Next.js, Django, Laravel, etc.)
+- Agent marketplace platform
+- 50+ service integrations
+- VSCode extension
+- JetBrains plugin
+- GitHub Actions integration
+
+**Success Criteria**:
+- 1,000+ customers
+- 100+ marketplace agents
+- 5,000+ Discord members
+- 20%+ monthly growth
+
+---
+
+### Phase 4: Enterprise Features (Q4 2025)
+
+**Objectives**:
+- Enable team collaboration
+- Add organization management
+- Provide usage analytics
+- Launch priority support
+
+**Deliverables**:
+- Team workspaces
+- Role-based access control
+- Usage dashboards
+- Custom agent training
+- Enterprise support tiers
+- SLA guarantees
+
+**Success Criteria**:
+- 50+ enterprise customers
+- $50K+ MRR
+- 99.9% uptime
+- <4 hour support response
+
+---
+
+## Risk Assessment & Mitigation
 
 ### Technical Risks
 
-**Risk 1: OpenRouter API Reliability**
-- **Impact:** High (AI assistant core feature)
-- **Probability:** Medium
-- **Mitigation:** Fallback to cached responses, error messaging, multiple model support
+**Risk 1: Claude Model Changes**
+- **Probability**: Medium
+- **Impact**: High
+- **Mitigation**: Abstract model APIs, test against multiple models, maintain backward compatibility
 
-**Risk 2: Kubernetes Cluster Downtime**
-- **Impact:** High (site unavailable)
-- **Probability:** Low
-- **Mitigation:** 2+ replicas, health checks, automated failover
+**Risk 2: MCP Server Downtime**
+- **Probability**: Low
+- **Impact**: Medium
+- **Mitigation**: Graceful degradation, local fallbacks, retry logic, user notifications
 
-**Risk 3: Build Performance Degradation**
-- **Impact:** Medium (slow deployments)
-- **Probability:** High (as content grows)
-- **Mitigation:** Incremental builds, content pagination, caching
+**Risk 3: Performance Degradation**
+- **Probability**: Medium
+- **Impact**: Medium
+- **Mitigation**: Performance monitoring, optimization pipelines, caching strategies
 
-### Product Risks
-
-**Risk 4: Low Content Quality**
-- **Impact:** High (user dissatisfaction)
-- **Probability:** Medium
-- **Mitigation:** Editorial review process, community feedback, analytics
-
-**Risk 5: AI Response Inaccuracy**
-- **Impact:** High (user trust erosion)
-- **Probability:** Medium
-- **Mitigation:** Context awareness, disclaimers, feedback mechanism
+---
 
 ### Business Risks
 
-**Risk 6: OpenRouter Costs Exceed Budget**
-- **Impact:** Medium (financial)
-- **Probability:** Medium
-- **Mitigation:** Usage caps, rate limiting, cost monitoring
+**Risk 1: Low Adoption Rate**
+- **Probability**: Medium
+- **Impact**: High
+- **Mitigation**: Aggressive marketing, free trial period, money-back guarantee, testimonials
 
-**Risk 7: Low Adoption**
-- **Impact:** Medium (wasted effort)
-- **Probability:** Low
-- **Mitigation:** User research, feedback loops, continuous improvement
+**Risk 2: High Churn Rate**
+- **Probability**: Low
+- **Impact**: High
+- **Mitigation**: Excellent onboarding, responsive support, continuous value delivery, community engagement
 
----
-
-## Success Criteria
-
-### Launch Criteria (Phase 1)
-
-- [ ] Site accessible at docs.claudekit.cc
-- [ ] SSL certificate valid
-- [ ] 20+ documentation pages published
-- [ ] Mobile responsive (tested on 3 devices)
-- [ ] Lighthouse score >90
-- [ ] No critical accessibility issues
-- [ ] Zero production errors for 48 hours
-
-### Production Readiness (Phase 2)
-
-- [ ] AI assistant responding with <2s latency
-- [ ] Search returns relevant results
-- [ ] 100+ pages of documentation
-- [ ] CI/CD pipeline operational
-- [ ] Monitoring and alerts configured
-- [ ] 95%+ uptime over 30 days
-- [ ] Positive user feedback (>4/5 stars)
-
-### Growth Indicators (Phase 3+)
-
-- [ ] 1000+ monthly active users
-- [ ] 10,000+ page views per month
-- [ ] <2% bounce rate
-- [ ] 5+ community contributions
-- [ ] Featured in developer newsletters
-- [ ] 100+ GitHub stars
+**Risk 3: Competition**
+- **Probability**: High
+- **Impact**: Medium
+- **Mitigation**: Unique value proposition, fast innovation, community building, thought leadership
 
 ---
 
-## Dependencies
+### Operational Risks
 
-### External Services
-1. **OpenRouter API** - AI model access
-2. **GitHub Container Registry** - Docker image storage
-3. **Let's Encrypt** - SSL certificates
-4. **Google Fonts** - Typography assets
+**Risk 1: Support Scalability**
+- **Probability**: Medium
+- **Impact**: Medium
+- **Mitigation**: Self-service documentation, community support, tiered support model, automation
 
-### Internal Projects
-1. **ClaudeKit CLI** - Documentation subject
-2. **ClaudeKit Website** - Brand consistency
-3. **ClaudeKit Engineer** - Integration examples
+**Risk 2: Documentation Drift**
+- **Probability**: Low
+- **Impact**: Medium
+- **Mitigation**: Automated doc sync, regular audits, community contributions, version control
 
-### Infrastructure
-1. **Kubernetes Cluster** - Hosting platform
-2. **nginx-ingress** - Load balancing
-3. **cert-manager** - Certificate management
-
----
-
-## Open Questions
-
-### Technical Questions
-1. Which OpenRouter model should be default? (Claude 3.5 Sonnet vs GPT-4 Turbo)
-2. Should AI responses be cached? If so, for how long?
-3. How to handle versioned documentation (v1.x vs v2.x)?
-4. What's the strategy for API reference auto-generation?
-5. Should we support offline documentation (service worker)?
-
-### Product Questions
-1. Should users authenticate to track AI usage?
-2. What analytics do we need beyond basic page views?
-3. How to measure documentation effectiveness?
-4. Should there be a feedback widget on every page?
-5. What content should be open-sourced for community contributions?
-
-### Business Questions
-1. What's the monthly budget for OpenRouter API calls?
-2. Who owns content creation (engineering vs product)?
-3. How often should documentation be audited for accuracy?
-4. Should there be enterprise-specific documentation?
+**Risk 3: Security Incidents**
+- **Probability**: Low
+- **Impact**: Critical
+- **Mitigation**: Proactive scanning, security audits, incident response plan, user education
 
 ---
 
-## Approval & Sign-off
+## Pricing Strategy
 
-**Technical Lead:** TBD
-**Product Manager:** TBD
-**Design Lead:** TBD
+### Current Pricing (MVP)
 
-**Approval Date:** Pending
-**Next Review:** 2025-11-01
+**One-Time Payment**: $99
+- ~~$149~~ (33% launch discount)
+- Lifetime access
+- Unlimited updates
+- All current and future agents
+- All current and future commands
+- Priority email support
+- 30-day money-back guarantee
 
----
-
-## Appendix
-
-### Related Documents
-- [Tech Stack](./tech-stack.md) - Technology decisions
-- [Design Guidelines](./design-guidelines.md) - Design system spec
-- [Codebase Summary](./codebase-summary.md) - Code structure
-- [System Architecture](./system-architecture.md) - Technical architecture
-- [Deployment Guide](./deployment-guide.md) - K8s deployment
-
-### References
-- Astro Documentation: https://docs.astro.build
-- OpenRouter Docs: https://openrouter.ai/docs
-- Polar Design Inspiration: https://polar.sh/docs
-- Kubernetes Best Practices: https://kubernetes.io/docs/concepts/
+**Value Proposition**:
+- Save 10+ hours on first feature
+- Equivalent to hiring multiple specialists
+- No recurring subscription
+- Continuous improvements with Claude updates
 
 ---
 
-*This PDR is a living document. Update as requirements evolve and decisions are made.*
+### Future Pricing (Post-MVP)
+
+**Free Tier** (Community)
+- Access to open-source agents
+- Limited command usage (50/month)
+- Community support
+- Public documentation
+
+**Pro Tier** ($149 one-time or $19/month)
+- Unlimited command usage
+- All agents and skills
+- Priority support
+- Private workspaces
+
+**Team Tier** ($499 one-time or $49/month)
+- Everything in Pro
+- Team collaboration (up to 5 members)
+- Shared workspaces
+- Usage analytics
+- Admin dashboard
+
+**Enterprise Tier** (Custom pricing)
+- Everything in Team
+- Unlimited team members
+- Custom agent development
+- SLA guarantees
+- Dedicated support
+- On-premise deployment option
+
+---
+
+## Competitive Analysis
+
+### Traditional Boilerplates
+
+**Strengths**:
+- Immediate code availability
+- No AI dependency
+- Well-documented patterns
+- Community support
+
+**Weaknesses**:
+- Tech stack lock-in
+- Become outdated quickly
+- No customization flexibility
+- Require manual updates
+
+**ClaudeKit Advantage**:
+- Works with any tech stack
+- Auto-updates with AI models
+- Infinite customization
+- Context-aware recommendations
+
+---
+
+### AI Coding Assistants (Copilot, Cursor, etc.)
+
+**Strengths**:
+- IDE integration
+- Real-time suggestions
+- Large user base
+- Continuous learning
+
+**Weaknesses**:
+- No workflow orchestration
+- No specialized agents
+- Limited planning capabilities
+- No documentation sync
+
+**ClaudeKit Advantage**:
+- Complete development lifecycle
+- 12 specialized agents
+- Workflow automation
+- Auto-synchronized docs
+
+---
+
+### Code Generation Tools
+
+**Strengths**:
+- Fast code generation
+- Template libraries
+- API integrations
+- Visual builders
+
+**Weaknesses**:
+- Limited context understanding
+- No quality assurance
+- No testing automation
+- No documentation generation
+
+**ClaudeKit Advantage**:
+- Context-aware development
+- Built-in QA and testing
+- Automated code review
+- Documentation management
+
+---
+
+## Technical Architecture Highlights
+
+### Agent System Architecture
+
+**Components**:
+- **Agent Definitions**: Markdown files with frontmatter metadata
+- **Command Router**: Maps slash commands to agent workflows
+- **Context Manager**: File-based inter-agent communication
+- **Report System**: Standardized markdown reports in `./plans/reports/`
+
+**Design Principles**:
+- **Separation of Concerns**: Each agent has single responsibility
+- **Loose Coupling**: Agents communicate via file system
+- **Composability**: Commands orchestrate multiple agents
+- **Extensibility**: Easy to add new agents and commands
+
+---
+
+### Technology Stack
+
+**Core Technologies**:
+- **Claude Code** - AI orchestration platform
+- **Open Code CLI** - Agent framework
+- **Node.js 20+** - Runtime environment
+- **Git** - Version control
+
+**AI Models**:
+- **Claude Sonnet 4** - Code review, debugging, design
+- **Claude Opus 4** - Architectural planning
+- **Google Gemini 2.5 Flash** - Documentation, planning
+- **Grok Code** - Testing, git operations
+
+**MCP Servers**:
+- Context7, Human, SearchAPI, VidCap, Sequential Thinking, Eyes
+
+**Developer Tools**:
+- Repomix, Commitlint, Husky, ImageMagick, FFmpeg
+
+---
+
+## Appendices
+
+### Appendix A: Glossary
+
+**Agent**: AI specialist that performs specific development tasks
+**Slash Command**: Workflow automation trigger (e.g., /plan, /cook)
+**MCP**: Model Context Protocol for extending AI capabilities
+**Repomix**: Tool for compacting codebases into AI-friendly format
+**Conventional Commits**: Standardized commit message format
+**YAGNI**: You Aren't Gonna Need It principle
+**KISS**: Keep It Simple, Stupid principle
+**DRY**: Don't Repeat Yourself principle
+
+---
+
+### Appendix B: Related Projects
+
+**ClaudeKit Ecosystem**:
+- **claudekit-engineer** - This project
+- **claudekit-cli** - Command-line installer
+- **claudekit-docs** - Public documentation site
+- **claudekit-marketing** - Marketing toolkit
+- **claudekit** - Main website
+
+**GitHub Repositories**:
+- https://github.com/claudekit/claudekit-engineer
+- https://github.com/mrgoonie/claudekit-cli
+- https://github.com/claudekit/claudekit-docs
+
+---
+
+### Appendix C: Support & Resources
+
+**Documentation**: https://docs.claudekit.cc
+**GitHub Issues**: Report bugs and request features
+**Discord Community**: Join discussions and get help
+**Email Support**: support@claudekit.cc
+**Response Time**: <24 hours for paying customers
+
+---
+
+**Document Version**: 1.0
+**Next Review**: Q1 2025
+**Owner**: ClaudeKit Team
+**Contributors**: AI agents (planner, docs-manager, project-manager)

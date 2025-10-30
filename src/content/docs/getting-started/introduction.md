@@ -1,6 +1,6 @@
 ---
 title: Introduction
-description: Ship production features in hours with ClaudeKit - Your AI development team built on Claude Code
+description: Your AI development team - 14 agents that plan, code, test, and ship production features in minutes
 category: getting-started
 order: 1
 published: true
@@ -8,79 +8,125 @@ published: true
 
 # Introduction
 
-**Ship Production Features in Hours, Not Weeks**
+**AI Development Team That Ships Production Code**
 
-ClaudeKit Engineer is a multi-agent AI system built on Claude Code that handles the complete software development lifecycle. Instead of giving you static boilerplate code, ClaudeKit provides 12 specialized AI agents that collaboratively plan, code, test, review, and deploy features.
+ClaudeKit is 14 specialized AI agents built on Claude Code. They plan, research, code, test, review, and deploy features - like hiring a senior dev team without the cost.
 
-## What is ClaudeKit?
+## 5-Minute Quick Win
 
-ClaudeKit is an AI development team alternative to traditional boilerplates. Rather than starting with outdated templates, you get intelligent agents that:
+```bash
+ck new my-app --kit engineer
+cd my-app
+/cook add user authentication with OAuth
+```
 
-- **Understand Your Stack** - Works with Next.js, Django, Laravel, Go, Rust, or any tech stack
-- **Learn Your Patterns** - Adapts to your project through CLAUDE.md configuration
-- **Ship Production Code** - Delivers production-ready features, not just templates
-- **Evolve Automatically** - Improves continuously with Claude model updates
+**Result**: Production auth system with login/signup pages, OAuth (Google/GitHub), protected routes, tests, and docs. **Time: 6 minutes vs 8 hours manually.**
 
-## 12 Specialized Agents
+[Try Quick Start →](/docs/getting-started/quick-start)
 
-ClaudeKit provides a complete AI development team:
+## What You Get
 
-### Planning & Research
-- **Planner** - Creates detailed implementation plans with multiple approaches
-- **Researcher** - Investigates technologies, best practices, and documentation
-- **Project Manager** - Coordinates agents and tracks progress
+**14 AI Agents**:
+- **planner** - Implementation plans
+- **researcher** - Best practices (parallel search)
+- **tester** - Validates everything works
+- **code-reviewer** - Security + performance checks
+- **debugger** - Root cause analysis
+- **ui-ux-designer** - Interface design + wireframes
+- **database-admin** - Query optimization
+- **git-manager** - Professional commits
+- **docs-manager** - Keeps docs current
+- **project-manager** - Progress tracking
+- **copywriter** - Conversion-focused content
+- **journal-writer** - Decision documentation
+- **brainstormer** - Solution exploration
+- **scout** - Codebase navigation
 
-### Development
-- **UI/UX Designer** - Creates interface designs, wireframes, and design systems
-- **Database Admin** - Handles database queries, optimization, and migrations
-- **Copywriter** - Writes compelling, conversion-focused content
+**30+ Slash Commands**:
+- `/cook` - Implement features end-to-end
+- `/plan` - Research + create implementation plan
+- `/fix:hard` - Multi-agent bug fixing
+- `/design:good` - UI/UX design
+- `/git:cm` - Commit with conventional format
+- [See all commands →](/docs/commands/)
 
-### Quality Assurance
-- **Tester** - Runs tests, validates features, and checks coverage
-- **Code Reviewer** - Reviews code quality, security, and best practices
-- **Debugger** - Investigates issues and analyzes system behavior
+**45 Built-in Skills**:
+- Frontend: Next.js, shadcn/ui, Tailwind CSS
+- Auth: Better Auth
+- E-commerce: Shopify
+- Cloud: Cloudflare Workers, R2, Docker
+- AI: Gemini (audio, video, images, vision)
+- Database: PostgreSQL, MongoDB
+- [See all skills →](/docs/skills/)
 
-### Operations
-- **Git Manager** - Handles commits, pull requests, and version control
-- **Docs Manager** - Maintains technical documentation and standards
-- **Journal Writer** - Documents technical difficulties and learnings
+## ClaudeKit vs Alternatives
 
-## Why ClaudeKit?
+| Feature | ClaudeKit | Boilerplates | AI Chat |
+|---------|-----------|--------------|---------|
+| **Tech Stack** | Any (Next.js, Django, Go, Rust) | Locked to specific stack | Limited support |
+| **Setup Time** | 2 min | 30-60 min | N/A |
+| **Feature Shipping** | 5-20 min | 4-12 hours | Copy-paste, manual fixes |
+| **Quality** | Production-ready, tested | Copy-paste required | Unvalidated code |
+| **Testing** | Automated (tester agent) | Manual | You write tests |
+| **Code Review** | Built-in (code-reviewer) | Manual or external | None |
+| **Updates** | Evolves with Claude | Becomes outdated | N/A |
+| **Documentation** | Auto-generated | Manual | None |
+| **Visual Assets** | AI-generated (Gemini) | You design | Not applicable |
+| **Time Savings** | **10+ hours/feature** | None (is the baseline) | 2-3 hours |
+| **Cost** | $99 one-time | $0-$200 one-time | $20/month ongoing |
 
-### Not a Boilerplate
-Traditional boilerplates lock you into specific tech stacks and become outdated quickly. ClaudeKit works with your existing codebase and any technology.
+**Verdict**: ClaudeKit is the only solution that ships production features end-to-end with testing, review, and docs.
 
-### Production-Ready
-Generate AI-powered visual assets, write conversion-optimized copy, and ship features that work in production - capabilities no static template can provide.
+## Why It Works
 
-### Time Savings
-Save 10+ hours on your first feature. Focus on business logic while AI agents handle the implementation details.
+### Living System, Not Dead Code
+Traditional boilerplates are snapshots in time. ClaudeKit improves with every Claude update. Your dev team gets smarter automatically.
 
-## Who Should Use ClaudeKit?
+### Tech Stack Agnostic
+Works with your existing codebase. Next.js today, migrate to Django tomorrow. No lock-in.
 
-ClaudeKit is designed for:
+### Full Lifecycle
+Not just code generation. **Plan → Research → Implement → Test → Review → Document → Commit**. Complete workflow, not fragments.
 
-- **Solo Developers** - Get an entire development team without hiring
-- **Indie Makers** - Ship faster and validate ideas quickly
-- **Small Teams** - Augment your team with AI agents
-- **Developers Frustrated with Boilerplates** - Escape locked tech stacks
+### Real ROI
+**First feature**: 10 hours saved at $100/hr = $1,000 value
+**Cost**: $99 one-time
+**Net profit day 1**: $901
 
-## Next Steps
+## Who Uses ClaudeKit
 
-Ready to get started?
+- **Solo developers** - Entire dev team in your terminal
+- **Indie makers** - Validate ideas 800% faster
+- **Small teams** - Augment with AI specialists
+- **Anyone frustrated with boilerplates** - Escape tech stack prison
 
-1. [Installation](/docs/getting-started/installation) - Install ClaudeKit
-2. [Quick Start](/docs/getting-started/quick-start) - Ship your first feature
-3. [Agent Guide](/docs/agents/overview) - Learn about specialized agents
-4. [Configuration](/docs/core-concepts/configuration) - Configure CLAUDE.md
+## Get Started
+
+**Fast track** (6 minutes):
+1. [Quick Start](/docs/getting-started/quick-start) - Ship your first feature now
+
+**Complete setup** (15 minutes):
+1. [Installation](/docs/getting-started/installation)
+2. [Quick Start](/docs/getting-started/quick-start)
+3. [CLAUDE.md Guide](/docs/configuration/claude-md-reference)
+
+**Learn the system**:
+- [Agents Overview](/docs/agents/) - Meet your AI team
+- [Commands Guide](/docs/commands/) - All 30+ commands
+- [Use Cases](/docs/use-cases/) - Real-world examples
 
 ## Pricing
 
-**One-time payment**: $99 (reduced from $149)
-- Lifetime access with unlimited updates
+**$99 one-time** (save $50 from $149):
+- Lifetime access + unlimited updates
 - 30-day money-back guarantee
-- Works with any tech stack
+- All future features included
+- No monthly fees
+
+[Get ClaudeKit →](https://claudekit.cc)
 
 ---
 
-*Stop copy-pasting boilerplate code. Start shipping features.*
+**Traditional dev**: 40 hours/feature
+**With ClaudeKit**: 5-20 minutes/feature
+**Time reclaimed**: Build your product instead of infrastructure.

@@ -27,7 +27,7 @@ pnpm-debug.log*
 *.tsbuildinfo
 
 # project-specific
-.claude
+.claude/**/*
 .opencode
 .serena/cache
 plans/reports/*
@@ -38,3 +38,6 @@ repomix-output.xml
 
 # Playwright screenshots
 playwright-*.png
+
+# goon
+!.claude/commands/write-tutorial.md

@@ -1,5 +1,10 @@
 ---
-// No imports needed - using inline SVG
+import LanguageSwitcher from './LanguageSwitcher';
+import { getLangFromUrl, getLocalizedPath } from '../i18n/utils';
+import type { Locale } from '../i18n/locales';
+
+const currentLocale = getLangFromUrl(Astro.url);
+const currentPath = Astro.url.pathname;
 ---
 
 <header class="header">
@@ -10,9 +15,9 @@
       </a>
 
       <nav class="nav">
-        <a href="/docs/getting-started/introduction" class="nav-link">Getting Started</a>
-        <a href="/docs/cli" class="nav-link">CLI</a>
-        <a href="/docs/use-cases" class="nav-link">Use Cases</a>
+        <a href={getLocalizedPath('/docs/getting-started/introduction', currentLocale)} class="nav-link">Getting Started</a>
+        <a href={getLocalizedPath('/docs/cli', currentLocale)} class="nav-link">CLI</a>
+        <a href={getLocalizedPath('/docs/use-cases', currentLocale)} class="nav-link">Use Cases</a>
       </nav>
     </div>
 
@@ -32,6 +37,8 @@
           <path d="m21 21-4.3-4.3"></path>
         </svg>
       </button>
+
+      <LanguageSwitcher client:load currentLocale={currentLocale} currentPath={currentPath} />
 
       <button class="icon-button theme-toggle" onclick="window.toggleTheme()" aria-label="Toggle theme" title="Toggle theme">
         <svg

@@ -1,48 +1,54 @@
 ---
 import { getCollection } from 'astro:content';
+import { getLangFromUrl, useTranslations, getLocalizedPath } from '../i18n/utils';
 
-const allDocs = await getCollection('docs');
+const currentLocale = getLangFromUrl(Astro.url);
+const t = useTranslations(currentLocale);
 
-// Group by category
+// Get docs from appropriate collection based on locale
+const collectionName = currentLocale === 'vi' ? 'docs-vi' : 'docs';
+const allDocs = await getCollection(collectionName);
+
+// Group by category with translated titles
 const categories = {
   'getting-started': {
-    title: 'Getting Started',
+    title: t('nav.getting-started'),
     docs: allDocs
       .filter((doc) => doc.data.category === 'getting-started')
       .sort((a, b) => (a.data.order || 0) - (b.data.order || 0)),
   },
   'cli': {
-    title: 'CLI',
+    title: t('nav.cli'),
     docs: allDocs
       .filter((doc) => doc.data.category === 'cli')
       .sort((a, b) => (a.data.order || 0) - (b.data.order || 0)),
   },
   'core-concepts': {
-    title: 'Core Concepts',
+    title: t('nav.core-concepts'),
     docs: allDocs
       .filter((doc) => doc.data.category === 'core-concepts')
       .sort((a, b) => (a.data.order || 0) - (b.data.order || 0)),
   },
   'agents': {
-    title: 'Agents',
+    title: t('nav.agents'),
     docs: allDocs
       .filter((doc) => doc.data.category === 'agents')
       .sort((a, b) => (a.data.order || 0) - (b.data.order || 0)),
   },
   'commands': {
-    title: 'Commands',
+    title: t('nav.commands'),
     docs: allDocs
       .filter((doc) => doc.data.category === 'commands')
       .sort((a, b) => (a.data.order || 0) - (b.data.order || 0)),
   },
   'skills': {
-    title: 'Skills',
+    title: t('nav.skills'),
     docs: allDocs
       .filter((doc) => doc.data.category === 'skills')
       .sort((a, b) => (a.data.order || 0) - (b.data.order || 0)),
   },
   'use-cases': {
-    title: 'Use Cases',
+    title: t('nav.use-cases'),
     docs: allDocs
       .filter((doc) => doc.data.category === 'use-cases')
       .sort((a, b) => (a.data.order || 0) - (b.data.order || 0)),
@@ -88,30 +94,33 @@ const currentPath = Astro.url.pathname;
 
         {category.docs.length > 0 && (
           <ul class="nav-items">
-            {category.docs.map((doc) => (
-              <li>
-                <a
-                  href={`/docs/${doc.slug}`}
-                  class:list={['nav-item', { active: currentPath === `/docs/${doc.slug}` }]}
-                >
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="file-icon"
+            {category.docs.map((doc) => {
+              const docPath = getLocalizedPath(`/docs/${doc.slug}`, currentLocale);
+              return (
+                <li>
+                  <a
+                    href={docPath}
+                    class:list={['nav-item', { active: currentPath === docPath }]}
                   >
-                    <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
-                    <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
-                  </svg>
-                  <span>{doc.data.title}</span>
-                </a>
-              </li>
-            ))}
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="file-icon"
+                    >
+                      <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                      <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                    </svg>
+                    <span>{doc.data.title}</span>
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         )}
       </div>

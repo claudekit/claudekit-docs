@@ -34,27 +34,19 @@ Copy all directories and files from the `claudekit-engineer` repo to your projec
 docs/*
 plans/*
 CLAUDE.md
-.mcp.json
 ```
 
-### Step 2: Configure MCP (Human MCP)
+### Step 2: Configure Gemini API Key (Optional)
+
+**WHY?**
+ClaudeKit utilized [Human MCP](https://www.npmjs.com/package/@goonnguyen/human-mcp) to analyze images and videos since Gemini models have better vision capabilities. But Anthropic already released [**Agent Skills**](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview) which is much better for context engineering, so we already converted all tools of Human MCP to Agent Skills.
+
+**Notes:** Gemini API have a pretty generous free requests limit at the moment.
 
 1. Go to [Google AI Studio](https://aistudio.google.com) and grab your API Key
-2. Open `.mcp.json` and paste the key into the "human-mcp" environment variable
+2. Copy `.claude/skills/.env.example` to `.claude/skills/.env` and paste the key into the `GEMINI_API_KEY` environment variable
 
-**Recommended: Install Human MCP globally**
-
-Install with `user` scope to use it across all projects without re-installing:
-
-```bash
-claude mcp add-json human -s user '{
-  "command": "npx",
-  "args": ["@goonnguyen/human-mcp@latest", "-e", "GOOGLE_GEMINI_API_KEY"],
-  "env": {
-    "GOOGLE_GEMINI_API_KEY": "your_api_key_here"
-  }
-}'
-```
+Now you're good to go.
 
 ### Step 3: Start Claude Code
 
@@ -162,9 +154,6 @@ claude --version
 
 # Check if .claude directory exists
 ls -la .claude/
-
-# Check if Human MCP is configured
-cat .mcp.json
 ```
 
 ## Update ClaudeKit
@@ -210,14 +199,6 @@ If `claude` command is not found:
 1. Install Claude Code CLI from [claude.ai/code](https://claude.ai/code)
 2. Restart your terminal
 3. Verify with `claude --version`
-
-### MCP Configuration Issues
-
-If Human MCP is not working:
-
-1. Verify API key is correct in `.mcp.json`
-2. Check no trailing spaces or quotes in the key
-3. Test with: `claude` and try using vision features
 
 ### GitHub Authentication Failed
 

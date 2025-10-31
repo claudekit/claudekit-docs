@@ -3,16 +3,19 @@ import BaseLayout from './BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Sidebar from '../components/Sidebar.astro';
 import AIPanel from '../components/AIPanel.astro';
+import type { Locale } from '../i18n/locales';
 
 export interface Props {
   title?: string;
   description?: string;
+  locale?: Locale;
+  slug?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, locale = 'en', slug = '' } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} locale={locale} slug={slug}>
   <div class="docs-layout">
     <Header />
 

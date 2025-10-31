@@ -15,6 +15,11 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<DocsLayout title={`${entry.data.title} - ClaudeKit Documentation`} description={entry.data.description}>
+<DocsLayout
+  title={`${entry.data.title} - ClaudeKit Documentation`}
+  description={entry.data.description}
+  locale="en"
+  slug={entry.slug}
+>
   <Content />
 </DocsLayout>

@@ -1,0 +1,36 @@
+export const ui = {
+  en: {
+    'nav.getting-started': 'Getting Started',
+    'nav.core-concepts': 'Core Concepts',
+    'nav.agents': 'Agents',
+    'nav.commands': 'Commands',
+    'nav.skills': 'Skills',
+    'nav.use-cases': 'Use Cases',
+    'nav.troubleshooting': 'Troubleshooting',
+    'nav.cli': 'CLI',
+    'search.placeholder': 'Search documentation...',
+    'theme.toggle': 'Toggle theme',
+    'language.switch': 'Switch language',
+    'header.search': 'Search',
+    'footer.copyright': '© 2025 ClaudeKit. All rights reserved.',
+    'toc.title': 'On this page',
+  },
+  vi: {
+    'nav.getting-started': 'Bắt Đầu',
+    'nav.core-concepts': 'Khái Niệm Cơ Bản',
+    'nav.agents': 'Agents',
+    'nav.commands': 'Lệnh',
+    'nav.skills': 'Kỹ Năng',
+    'nav.use-cases': 'Trường Hợp Sử Dụng',
+    'nav.troubleshooting': 'Khắc Phục Sự Cố',
+    'nav.cli': 'CLI',
+    'search.placeholder': 'Tìm kiếm tài liệu...',
+    'theme.toggle': 'Đổi chủ đề',
+    'language.switch': 'Đổi ngôn ngữ',
+    'header.search': 'Tìm kiếm',
+    'footer.copyright': '© 2025 ClaudeKit. Mọi quyền được bảo lưu.',
+    'toc.title': 'Trong trang này',
+  },
+} as const;
+
+export type UiKey = keyof typeof ui['en'];

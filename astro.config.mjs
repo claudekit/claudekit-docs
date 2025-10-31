@@ -11,6 +11,14 @@ import rehypeKatex from 'rehype-katex';
 
 // https://astro.build/config
 export default defineConfig({
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'vi'],
+    routing: {
+      prefixDefaultLocale: false,
+      redirectToDefaultLocale: false,
+    },
+  },
   integrations: [
     mdx(),
     react(),

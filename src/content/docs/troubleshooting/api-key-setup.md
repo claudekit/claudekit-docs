@@ -72,26 +72,6 @@ echo 'export GEMINI_API_KEY=AIza...' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-**Method 3: .mcp.json (for Human MCP)**
-
-```bash
-# Edit .mcp.json
-nano .mcp.json
-
-# Add key to human-mcp env:
-{
-  "mcpServers": {
-    "human-mcp": {
-      "command": "npx",
-      "args": ["@goonnguyen/human-mcp@latest", "-e", "GOOGLE_GEMINI_API_KEY"],
-      "env": {
-        "GOOGLE_GEMINI_API_KEY": "AIza..."
-      }
-    }
-  }
-}
-```
-
 ### Verify Gemini Setup
 
 ```bash

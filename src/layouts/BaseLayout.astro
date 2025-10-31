@@ -1,16 +1,28 @@
 ---
 import '../styles/global.css';
+import { getAlternateUrls } from '../i18n/utils';
+import type { Locale } from '../i18n/locales';
 
 export interface Props {
   title?: string;
   description?: string;
+  locale?: Locale;
+  slug?: string;
 }
 
-const { title = 'ClaudeKit Documentation', description = 'Official documentation for ClaudeKit' } = Astro.props;
+const {
+  title = 'ClaudeKit Documentation',
+  description = 'Official documentation for ClaudeKit',
+  locale = 'en',
+  slug = '',
+} = Astro.props;
+
+// Generate alternate URLs for hreflang tags
+const alternates = slug ? getAlternateUrls(slug) : [];
 ---
 
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang={locale} data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,6 +30,11 @@ const { title = 'ClaudeKit Documentation', description = 'Official documentation
     <meta name="generator" content={Astro.generator} />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Hreflang tags for SEO -->
+    {alternates.map(({ lang, url }) => (
+      <link rel="alternate" hreflang={lang} href={url} />
+    ))}
 
     <title>{title}</title>
   </head>

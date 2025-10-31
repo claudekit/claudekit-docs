@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import DocsLayout from '../../../layouts/DocsLayout.astro';
+
+export async function getStaticPaths() {
+  const docsEntries = await getCollection('docs-vi');
+
+  return docsEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<DocsLayout
+  title={`${entry.data.title} - ClaudeKit Documentation`}
+  description={entry.data.description}
+  locale="vi"
+  slug={entry.slug}
+>
+  <Content />
+</DocsLayout>

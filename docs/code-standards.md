@@ -1,990 +1,895 @@
-# Code Standards & Structure
+# Code Standards & Development Guidelines
 
-**Project:** ClaudeKit Documentation
-**Version:** 1.0
-**Last Updated:** 2025-10-18
-**Status:** Active
-
----
-
-## Overview
-
-This document defines the coding standards, architectural patterns, and best practices for the ClaudeKit Documentation project. All code contributions must adhere to these guidelines to maintain consistency, quality, and maintainability.
+**Last Updated**: 2025-10-30
+**Applies To**: ClaudeKit Engineer v1.0+
+**Status**: Active
 
 ---
 
 ## Table of Contents
 
-1. [Project Structure](#project-structure)
-2. [File Naming Conventions](#file-naming-conventions)
-3. [TypeScript Standards](#typescript-standards)
-4. [React Component Guidelines](#react-component-guidelines)
-5. [Astro Component Standards](#astro-component-standards)
-6. [CSS & Styling](#css--styling)
-7. [Markdown Content](#markdown-content)
-8. [Error Handling](#error-handling)
-9. [Security Best Practices](#security-best-practices)
-10. [Testing Requirements](#testing-requirements)
-11. [Git Workflow](#git-workflow)
+1. [Core Development Principles](#core-development-principles)
+2. [File Organization](#file-organization)
+3. [Naming Conventions](#naming-conventions)
+4. [Agent Development Standards](#agent-development-standards)
+5. [Command Development Standards](#command-development-standards)
+6. [Documentation Standards](#documentation-standards)
+7. [Code Quality Requirements](#code-quality-requirements)
+8. [Git Workflow Standards](#git-workflow-standards)
+9. [Testing Standards](#testing-standards)
+10. [Security Standards](#security-standards)
 
 ---
 
-## Project Structure
+## Core Development Principles
 
-### Directory Organization
+### YAGNI (You Aren't Gonna Need It)
 
-```
-claudekit-docs/
-├── src/                          # Source code (never modify compiled output)
-│   ├── components/               # Reusable UI components
-│   │   ├── *.tsx                 # React components (interactive)
-│   │   └── *.astro               # Astro components (static/hybrid)
-│   ├── layouts/                  # Page layouts
-│   │   ├── BaseLayout.astro      # HTML document wrapper
-│   │   └── DocsLayout.astro      # 3-column docs layout
-│   ├── pages/                    # File-based routing
-│   │   ├── index.astro           # Homepage
-│   │   └── docs/[...slug].astro  # Dynamic routes
-│   ├── content/                  # Markdown content
-│   │   ├── config.ts             # Content collection schemas
-│   │   └── docs/                 # Documentation markdown
-│   ├── lib/                      # Shared utilities
-│   │   └── *.ts                  # Utility functions, API clients
-│   └── styles/                   # Global CSS
-│       └── global.css            # Design system variables
-├── public/                       # Static assets (served as-is)
-│   ├── favicon.svg               # Site icon
-│   └── *.png                     # Images, logos
-├── k8s/                          # Kubernetes manifests
-├── docs/                         # Project documentation (not user-facing)
-├── .claude/                      # Claude Code workflows
-└── config files                  # Root-level configuration
-```
+**Definition**: Only implement features that are immediately required.
 
-### File Organization Principles
+**Application**:
+- Don't add functionality "just in case"
+- Avoid premature optimization
+- Build the simplest solution that works
+- Add complexity only when proven necessary
 
-1. **Separation of Concerns** - Components, layouts, pages, content are isolated
-2. **Colocation** - Related files stay close (e.g., component + styles)
-3. **Convention Over Configuration** - Follow Astro file-based routing
-4. **Public vs. Private** - Clearly separate user assets (`public/`) from source (`src/`)
+**Examples**:
+```markdown
+❌ Bad: Adding caching layer before performance issues identified
+✅ Good: Add caching after profiling shows bottleneck
 
----
+❌ Bad: Building complex configuration system for single setting
+✅ Good: Use simple environment variable, expand if needed
 
-## File Naming Conventions
-
-### General Rules
-
-- **Components:** PascalCase (e.g., `AIChat.tsx`, `Sidebar.astro`)
-- **Pages:** lowercase, kebab-case for multi-word (e.g., `index.astro`, `quick-start.md`)
-- **Utilities:** camelCase (e.g., `openrouter.ts`, `formatDate.ts`)
-- **Config Files:** kebab-case with extension (e.g., `astro.config.mjs`, `tailwind.config.mjs`)
-- **Directories:** lowercase, kebab-case (e.g., `getting-started`, `core-concepts`)
-
-### Examples
-
-✅ **Good:**
-```
-AIChat.tsx
-DocsLayout.astro
-openrouter.ts
-getting-started/
-quick-start.md
-```
-
-❌ **Bad:**
-```
-ai-chat.tsx (should be PascalCase)
-docslayout.astro (missing PascalCase)
-OpenRouter.ts (should be camelCase for non-component)
-Getting-Started/ (should be lowercase)
-QuickStart.md (should be kebab-case)
+❌ Bad: Creating abstract factory pattern for single implementation
+✅ Good: Direct implementation, refactor when second use case appears
 ```
 
 ---
 
-## TypeScript Standards
+### KISS (Keep It Simple, Stupid)
 
-### Configuration
+**Definition**: Prefer simple, straightforward solutions over complex ones.
 
-**Use strict mode** (`tsconfig.json` extends `astro/tsconfigs/strict`):
+**Application**:
+- Choose clarity over cleverness
+- Minimize dependencies and abstractions
+- Write code that's easy to understand
+- Favor explicit over implicit
 
-```json
-{
-  "extends": "astro/tsconfigs/strict"
-}
-```
+**Examples**:
+```markdown
+❌ Bad: Complex regex when simple string methods work
+✅ Good: Use indexOf, substring, split for simple parsing
 
-### Type Definitions
+❌ Bad: Deep inheritance hierarchies
+✅ Good: Composition and simple class structures
 
-**Always define explicit types for:**
-- Function parameters
-- Function return values
-- Component props
-- API responses
-- State variables
-
-✅ **Good:**
-```typescript
-interface Message {
-  role: 'user' | 'assistant' | 'system';
-  content: string;
-}
-
-function formatMessage(message: Message): string {
-  return `${message.role}: ${message.content}`;
-}
-
-const [messages, setMessages] = useState<Message[]>([]);
-```
-
-❌ **Bad:**
-```typescript
-function formatMessage(message) {  // Missing types
-  return `${message.role}: ${message.content}`;
-}
-
-const [messages, setMessages] = useState([]);  // No type annotation
-```
-
-### Enums vs. Union Types
-
-**Prefer union types** over enums for better tree-shaking:
-
-✅ **Good:**
-```typescript
-type Category = 'getting-started' | 'cli' | 'core-concepts' | 'components' | 'api-reference';
-```
-
-❌ **Bad:**
-```typescript
-enum Category {
-  GettingStarted = 'getting-started',
-  CLI = 'cli',
-  CoreConcepts = 'core-concepts'
-}
-```
-
-### Async/Await
-
-**Always use async/await** instead of Promise chains:
-
-✅ **Good:**
-```typescript
-async function fetchData() {
-  try {
-    const response = await fetch('/api/data');
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error('Error fetching data:', error);
-    throw error;
-  }
-}
-```
-
-❌ **Bad:**
-```typescript
-function fetchData() {
-  return fetch('/api/data')
-    .then(response => response.json())
-    .catch(error => console.error(error));
-}
-```
-
-### Nullish Coalescing
-
-**Use `??` for default values** (not `||`):
-
-✅ **Good:**
-```typescript
-const port = process.env.PORT ?? 3000;  // Only null/undefined trigger default
-```
-
-❌ **Bad:**
-```typescript
-const port = process.env.PORT || 3000;  // 0, false, '' also trigger default
+❌ Bad: Overly abstracted generic solutions
+✅ Good: Concrete implementations that solve actual problems
 ```
 
 ---
 
-## React Component Guidelines
+### DRY (Don't Repeat Yourself)
 
-### Component Structure
+**Definition**: Eliminate code duplication through abstraction and reuse.
 
-**Order of component elements:**
+**Application**:
+- Extract common logic into functions
+- Use shared utilities and libraries
+- Create reusable components
+- Maintain single source of truth
 
-```typescript
-// 1. Imports
-import { useState, useEffect } from 'react';
-import type { SomeType } from './types';
+**Examples**:
+```markdown
+❌ Bad: Duplicate validation logic across multiple files
+✅ Good: Shared validation utility functions
 
-// 2. Type definitions
-interface Props {
-  title: string;
-  count?: number;
-}
+❌ Bad: Copy-pasted error handling in every function
+✅ Good: Centralized error handling middleware
 
-// 3. Component function
-export function MyComponent({ title, count = 0 }: Props) {
-  // 4. Hooks (useState, useEffect, etc.)
-  const [value, setValue] = useState<number>(count);
-
-  // 5. Event handlers
-  const handleClick = () => {
-    setValue(prev => prev + 1);
-  };
-
-  // 6. Effects
-  useEffect(() => {
-    // Side effects
-  }, [value]);
-
-  // 7. Render
-  return (
-    <div className="component">
-      <h2>{title}</h2>
-      <button onClick={handleClick}>Count: {value}</button>
-    </div>
-  );
-}
-```
-
-### Props Naming
-
-- **Boolean props:** `is`, `has`, `should` prefix (e.g., `isLoading`, `hasError`)
-- **Event handlers:** `on` prefix (e.g., `onClick`, `onSubmit`)
-- **Render props:** `render` prefix (e.g., `renderHeader`)
-
-✅ **Good:**
-```typescript
-interface Props {
-  isLoading: boolean;
-  hasError: boolean;
-  onClick: () => void;
-  renderFooter?: () => ReactNode;
-}
-```
-
-❌ **Bad:**
-```typescript
-interface Props {
-  loading: boolean;    // Should be isLoading
-  error: boolean;      // Should be hasError
-  click: () => void;   // Should be onClick
-  footer?: () => ReactNode;  // Should be renderFooter
-}
-```
-
-### State Management
-
-**Use `useState` for local state**, not class components:
-
-✅ **Good:**
-```typescript
-const [count, setCount] = useState<number>(0);
-const [user, setUser] = useState<User | null>(null);
-```
-
-**Functional updates** when depending on previous state:
-
-✅ **Good:**
-```typescript
-setCount(prev => prev + 1);
-```
-
-❌ **Bad:**
-```typescript
-setCount(count + 1);  // Stale closure risk
-```
-
-### Accessibility
-
-**Always include:**
-- `aria-label` for icon-only buttons
-- `alt` text for images
-- Semantic HTML (button, nav, header, etc.)
-
-✅ **Good:**
-```typescript
-<button
-  type="submit"
-  className="ai-send-button"
-  disabled={isLoading || !input.trim()}
-  aria-label="Send message"
->
-  <SendIcon />
-</button>
+❌ Bad: Repeated configuration values
+✅ Good: Configuration file with exports
 ```
 
 ---
 
-## Astro Component Standards
+## File Organization
 
-### Component Scripts
+### Directory Structure
 
-**Use TypeScript in frontmatter:**
-
-```astro
----
-import Layout from '../layouts/BaseLayout.astro';
-
-interface Props {
-  title: string;
-  description?: string;
-}
-
-const { title, description } = Astro.props;
-const currentPath = Astro.url.pathname;
----
-
-<Layout title={title} description={description}>
-  <h1>{title}</h1>
-</Layout>
 ```
-
-### Client Directives
-
-**Use specific client directives** for React components:
-
-```astro
----
-import AIChat from '../components/AIChat.tsx';
----
-
-<!-- Load immediately -->
-<AIChat client:load />
-
-<!-- Load when visible -->
-<AIChat client:visible />
-
-<!-- Load when page is idle -->
-<AIChat client:idle />
-
-<!-- Only in browser (no SSR) -->
-<AIChat client:only="react" />
-```
-
-**Rule:** Use `client:idle` for non-critical interactive components
-
-### Slots
-
-**Define named slots** for flexible layouts:
-
-```astro
----
-// DocsLayout.astro
----
-<div class="docs-layout">
-  <aside>
-    <slot name="sidebar" />
-  </aside>
-  <main>
-    <slot />  <!-- Default slot -->
-  </main>
-  <aside>
-    <slot name="ai-panel" />
-  </aside>
-</div>
+claudekit-engineer/
+├── .husky/                    # Git hooks
+│   └── commit-msg             # Commit message validation
+├── .opencode/                 # Agent and command definitions
+│   ├── agent/                 # AI agent configurations
+│   │   ├── *.md              # One file per agent
+│   │   └── ...
+│   └── command/               # Slash command definitions
+│       ├── design/            # Design-related commands
+│       ├── docs/              # Documentation commands
+│       ├── fix/               # Fix and debug commands
+│       ├── git/               # Git operation commands
+│       ├── plan/              # Planning commands
+│       └── *.md               # Core commands
+├── guide/                     # User-facing documentation
+│   ├── COMMANDS.md            # Command reference guide
+│   └── SKILLS.md              # Skills documentation
+├── docs/                      # Project documentation
+│   ├── project-overview-pdr.md    # Product requirements
+│   ├── codebase-summary.md        # Generated codebase summary
+│   ├── code-standards.md          # This file
+│   ├── system-architecture.md     # Architecture docs
+│   └── research/              # Research reports
+├── plans/                     # Implementation plans
+│   ├── templates/             # Plan templates
+│   │   ├── feature-implementation-template.md
+│   │   ├── bug-fix-template.md
+│   │   └── refactor-template.md
+│   └── reports/               # Agent communication
+│       └── YYMMDD-from-to-task-report.md
+├── .commitlintrc.json         # Commit linting rules
+├── .env.example               # Environment template
+├── .gitignore                 # Git exclusions
+├── .releaserc.json            # Release configuration
+├── .repomixignore             # Repomix exclusions
+├── CHANGELOG.md               # Version history
+├── CLAUDE.md                  # AI instructions
+├── LICENSE                    # MIT license
+├── package.json               # Dependencies
+└── README.md                  # Project overview
 ```
 
 ---
 
-## CSS & Styling
+### File Size Guidelines
 
-### CSS Architecture
+**Maximum File Size**: 500 lines per file
 
-**Three-layer approach:**
+**Rationale**:
+- Optimal for AI context management
+- Improves readability and maintainability
+- Encourages proper separation of concerns
+- Reduces cognitive load
 
-1. **Global CSS** (`global.css`) - Design tokens, resets, utilities
-2. **Tailwind Classes** - Component-level styling
-3. **Scoped Styles** - Astro component `<style>` blocks (rare)
+**Refactoring Strategy**:
+```markdown
+When file exceeds 500 lines:
 
-### CSS Variables
+1. **Identify Logical Boundaries**
+   - Separate modules or components
+   - Extract utility functions
+   - Split related functionality
 
-**All values use CSS custom properties:**
+2. **Extract Components**
+   - Create focused, single-responsibility files
+   - Use clear naming for extracted files
+   - Maintain proper imports/exports
 
-```css
-/* Define in global.css */
-:root {
-  --color-bg-primary: #0A0A0A;
-  --color-text-primary: #FFFFFF;
-  --space-4: 1rem;
-}
-
-/* Reference in components */
-.my-component {
-  background: var(--color-bg-primary);
-  color: var(--color-text-primary);
-  padding: var(--space-4);
-}
+3. **Update References**
+   - Update all import statements
+   - Test functionality after extraction
+   - Document new file structure
 ```
 
-### Tailwind Usage
+---
 
-**Use Tailwind classes** for component styling:
+## Naming Conventions
 
-✅ **Good:**
-```astro
-<div class="flex items-center gap-4 p-6 bg-bg-secondary rounded-lg">
-  <h2 class="text-2xl font-bold text-text-primary">Title</h2>
-</div>
+### File Naming
+
+**Agent Files**: `kebab-case.md`
+```
+✅ code-reviewer.md
+✅ ui-ux-designer.md
+✅ planner-researcher.md
+❌ CodeReviewer.md
+❌ ui_ux_designer.md
 ```
 
-**Custom classes** only when Tailwind is insufficient:
-
-```astro
-<div class="ai-chat-container">  <!-- Custom class -->
-  <div class="flex flex-col gap-4">  <!-- Tailwind -->
-    <!-- ... -->
-  </div>
-</div>
-
-<style>
-.ai-chat-container {
-  /* Complex grid layout not easily done in Tailwind */
-  display: grid;
-  grid-template-rows: 1fr auto;
-  height: calc(100vh - var(--layout-header-height));
-}
-</style>
+**Command Files**: `kebab-case.md`
+```
+✅ fix/fast.md
+✅ docs/init.md
+✅ plan/two.md
+❌ fixFast.md
+❌ docs_init.md
 ```
 
-### Naming Conventions
-
-**BEM-style** for custom classes:
-
+**Plan Files**: `YYMMDD-feature-name-plan.md`
 ```
-.block {}
-.block__element {}
-.block--modifier {}
+✅ 251030-auth-system-plan.md
+✅ 251115-database-migration-plan.md
+❌ auth-plan.md
+❌ 2025-10-30-plan.md
 ```
 
-Example:
-```css
-.ai-chat {}
-.ai-chat__message {}
-.ai-chat__message--user {}
-.ai-chat__message--assistant {}
+**Report Files**: `YYMMDD-from-agent-to-agent-task-report.md`
+```
+✅ 251030-from-planner-to-main-auth-implementation-report.md
+✅ 251115-from-tester-to-debugger-test-failures-report.md
+❌ planner-report.md
+❌ test-results.md
 ```
 
-### Responsive Design
+---
 
-**Mobile-first breakpoints:**
+### Variable Naming
 
-```css
-/* Mobile styles (default) */
-.component { width: 100%; }
+**JavaScript/TypeScript**:
+```javascript
+// Variables and functions: camelCase
+const userProfile = {};
+function getUserData() {}
 
-/* Tablet and up */
-@media (min-width: 768px) {
-  .component { width: 50%; }
-}
+// Constants: SCREAMING_SNAKE_CASE
+const MAX_RETRY_COUNT = 3;
+const API_BASE_URL = 'https://api.example.com';
 
-/* Desktop and up */
-@media (min-width: 1024px) {
-  .component { width: 33.333%; }
+// Classes and interfaces: PascalCase
+class UserService {}
+interface ApiResponse {}
+
+// Private members: _camelCase (if needed)
+class Example {
+  private _internalState;
 }
 ```
 
----
-
-## Markdown Content
-
-### Frontmatter Schema
-
-**Required fields:**
-
+**Markdown/YAML**:
 ```yaml
+# Frontmatter fields: kebab-case
 ---
-title: "Page Title"
-description: "SEO-friendly description (150-160 chars)"
-category: "getting-started"
-order: 1
-published: true
+description: Agent description
+model: anthropic/claude-sonnet-4
+mode: subagent
 ---
 ```
 
-### Content Structure
+---
 
-**Hierarchy:**
+### Directory Naming
 
+**Directories**: `kebab-case`
+```
+✅ .opencode/
+✅ plans/templates/
+✅ docs/research/
+❌ PlansTemplates/
+❌ docs_research/
+```
+
+---
+
+## Agent Development Standards
+
+### Agent File Structure
+
+**Required Frontmatter**:
 ```markdown
-# Page Title (H1 - only one per page)
-
-Brief introduction paragraph.
-
-## Section Heading (H2)
-
-Content...
-
-### Subsection Heading (H3)
-
-Content...
-
-#### Minor Heading (H4)
-
-Avoid H5 and H6 - restructure if needed.
+---
+name: agent-name                    # Unique identifier (optional)
+description: |                      # Multi-line description
+  Use this agent when...
+  Examples: <example>...</example>
+mode: subagent                      # or "all" for main agents
+model: anthropic/claude-sonnet-4    # Model identifier
+temperature: 0.1                    # Optional, default varies
+---
 ```
 
-### Code Blocks
+**Required Sections**:
 
-**Always specify language:**
+1. **Role Description** (1-2 paragraphs)
+   - Clear explanation of agent's expertise
+   - Specialization areas
+   - Core capabilities
 
-````markdown
-```typescript
-const greeting: string = "Hello, world!";
-console.log(greeting);
-```
-````
+2. **Core Responsibilities** (Bulleted list)
+   - Specific tasks the agent handles
+   - Expected inputs and outputs
+   - Quality standards
 
-**File names in code blocks:**
+3. **Working Process** (Numbered steps)
+   - Step-by-step workflow
+   - Decision points
+   - Error handling approach
 
-````markdown
-```typescript title="src/lib/openrouter.ts"
-export class OpenRouterClient {
-  // ...
-}
-```
-````
+4. **Output Format** (Template or description)
+   - Expected deliverables
+   - Report structure
+   - File locations
 
-### Links
+5. **Quality Standards** (Requirements)
+   - Acceptance criteria
+   - Performance expectations
+   - Error tolerance
 
-**Use descriptive text:**
+6. **Important Guidelines** (Best practices)
+   - Do's and don'ts
+   - Common pitfalls
+   - Integration notes
 
-✅ **Good:**
+---
+
+### Agent Communication Protocol
+
+**File-Based Communication**:
+- All inter-agent communication via markdown files
+- Reports saved in `./plans/reports/`
+- Standardized naming: `YYMMDD-from-agent-to-agent-task-report.md`
+
+**Report Structure**:
 ```markdown
-Learn more about [Astro content collections](https://docs.astro.build/en/guides/content-collections/).
+# Report: [Task Name]
+
+**From**: [Agent Name]
+**To**: [Recipient Agent or Main]
+**Date**: YYYY-MM-DD
+**Status**: [In Progress / Complete / Blocked]
+
+## Summary
+[2-3 sentence overview]
+
+## Details
+[Comprehensive findings]
+
+## Recommendations
+[Actionable next steps]
+
+## Unresolved Questions
+[If any]
 ```
 
-❌ **Bad:**
+---
+
+### Agent Model Selection
+
+**Model Guidelines**:
+
+**Claude Sonnet 4** - Balanced performance and cost
+- Code review
+- Debugging
+- UI/UX design
+- Documentation management
+
+**Claude Opus 4** - Maximum reasoning capability
+- Complex architectural planning
+- Critical system design
+- High-stakes technical decisions
+
+**Google Gemini 2.5 Flash** - Fast, cost-effective
+- Documentation generation
+- Routine planning tasks
+- Content processing
+
+**Grok Code** - Specialized coding tasks
+- Testing execution
+- Git operations
+- Quick code analysis
+
+---
+
+## Command Development Standards
+
+### Command File Structure
+
+**Required Frontmatter**:
 ```markdown
-Click [here](https://docs.astro.build/en/guides/content-collections/) to learn more.
+---
+description: Brief description of command purpose
+---
 ```
 
-### Callouts
-
-**Use custom callouts:**
-
+**Command Body**:
 ```markdown
-:::info
-This is informational content.
-:::
+[Instructions for main agent]
 
-:::warning
-This is a warning.
-:::
+## Workflow:
+1. Step-by-step process
+2. Agent delegation pattern
+3. Expected outputs
 
-:::danger
-This is critical information.
-:::
+## Notes:
+- Important considerations
+- Special requirements
+- Edge cases
+
+**IMPORTANT**: Key warnings or constraints
 ```
 
 ---
 
-## Error Handling
+### Command Argument Handling
 
-### Try-Catch Blocks
+**Variable Substitution**:
+- `$ARGUMENTS` - All arguments as single string
+- `$1`, `$2`, `$3` - Individual positional arguments
 
-**Always handle errors gracefully:**
+**Examples**:
+```markdown
+# Command: /plan [task]
+# Usage: /plan "implement user authentication"
 
-```typescript
-try {
-  const result = await riskyOperation();
-  return result;
-} catch (error) {
-  console.error('Operation failed:', error);
-
-  // Provide user-friendly error message
-  if (error instanceof NetworkError) {
-    throw new Error('Network connection failed. Please try again.');
-  }
-
-  // Re-throw for upstream handling
-  throw error;
-}
-```
-
-### Validation
-
-**Validate input at boundaries:**
-
-```typescript
-// Zod schema validation
-import { z } from 'astro:content';
-
-const messageSchema = z.object({
-  role: z.enum(['user', 'assistant', 'system']),
-  content: z.string().min(1).max(5000)
-});
-
-function processMessage(input: unknown) {
-  const message = messageSchema.parse(input);  // Throws on invalid
-  // ... process validated message
-}
-```
-
-### Error Messages
-
-**Be specific and actionable:**
-
-✅ **Good:**
-```typescript
-throw new Error('API key missing. Set OPENROUTER_API_KEY environment variable.');
-```
-
-❌ **Bad:**
-```typescript
-throw new Error('Configuration error');
+Use the `planner` subagent to plan for this task:
+<task>
+ $ARGUMENTS
+</task>
 ```
 
 ---
 
-## Security Best Practices
+### Command Orchestration Patterns
 
-### Environment Variables
-
-**Never commit secrets:**
-
-```typescript
-// ❌ Bad
-const apiKey = 'sk-proj-abc123...';
-
-// ✅ Good
-const apiKey = process.env.OPENROUTER_API_KEY;
-if (!apiKey) {
-  throw new Error('OPENROUTER_API_KEY not configured');
-}
+**Sequential Execution**:
+```markdown
+## Workflow:
+1. Use `planner` to create implementation plan
+2. Wait for plan completion
+3. Use main agent to implement plan
+4. Use `tester` to validate implementation
+5. Use `code-reviewer` to assess quality
+6. Use `git-manager` to commit changes
 ```
 
-### API Routes
-
-**Server-side only:**
-
-```typescript
-// src/pages/api/chat.ts
-import type { APIRoute } from 'astro';
-
-export const POST: APIRoute = async ({ request }) => {
-  // ✅ API key accessed server-side only
-  const client = new OpenRouterClient(process.env.OPENROUTER_API_KEY);
-
-  const body = await request.json();
-  const response = await client.chat(body);
-
-  return new Response(JSON.stringify(response), {
-    headers: { 'Content-Type': 'application/json' }
-  });
-};
+**Parallel Execution**:
+```markdown
+## Workflow:
+1. Use `planner` to spawn multiple `researcher` agents in parallel:
+   - researcher (database options)
+   - researcher (authentication methods)
+   - researcher (UI frameworks)
+2. Wait for all researchers to report back
+3. Synthesize findings and create plan
 ```
 
-### Input Sanitization
-
-**Sanitize user input:**
-
-```typescript
-import DOMPurify from 'isomorphic-dompurify';
-
-function sanitizeInput(input: string): string {
-  return DOMPurify.sanitize(input.trim());
-}
-```
-
----
-
-## Testing Requirements
-
-### Unit Tests (Future)
-
-**Vitest conventions:**
-
-```typescript
-import { describe, it, expect } from 'vitest';
-import { formatMessage } from './utils';
-
-describe('formatMessage', () => {
-  it('should format user messages correctly', () => {
-    const message = { role: 'user' as const, content: 'Hello' };
-    expect(formatMessage(message)).toBe('user: Hello');
-  });
-
-  it('should handle empty content', () => {
-    const message = { role: 'user' as const, content: '' };
-    expect(formatMessage(message)).toBe('user: ');
-  });
-});
-```
-
-### E2E Tests (Future)
-
-**Playwright conventions:**
-
-```typescript
-import { test, expect } from '@playwright/test';
-
-test('AI chat sends messages', async ({ page }) => {
-  await page.goto('/docs/getting-started/introduction');
-
-  await page.fill('[placeholder="Ask about ClaudeKit..."]', 'What is ClaudeKit?');
-  await page.click('[aria-label="Send message"]');
-
-  await expect(page.locator('.ai-message.assistant')).toBeVisible();
-});
-```
-
----
-
-## Git Workflow
-
-### Commit Messages
-
-**Conventional Commits format:**
-
-```
-<type>(<scope>): <subject>
-
-[optional body]
-
-[optional footer]
-```
-
-**Types:**
-- `feat`: New feature
-- `fix`: Bug fix
-- `docs`: Documentation changes
-- `style`: Code style (formatting, no logic change)
-- `refactor`: Code refactor (no feature/fix)
-- `test`: Test additions/changes
-- `chore`: Build process, dependencies
-
-**Examples:**
-
-✅ **Good:**
-```
-feat(ai-chat): add streaming response support
-
-Implement streaming chat completions using OpenRouter API.
-Includes loading states and error handling.
-
-Closes #42
-```
-
-```
-fix(sidebar): correct active page highlighting
-
-Active nav indicator now appears on current page.
-
-Fixes #38
-```
-
-❌ **Bad:**
-```
-Update files
-```
-
-```
-Fixed bug
-```
-
-### Branch Naming
-
-**Convention:**
-
-```
-<type>/<short-description>
-```
-
-**Examples:**
-- `feat/ai-search`
-- `fix/sidebar-navigation`
-- `docs/api-reference`
-- `refactor/component-structure`
-
-### Pull Request Guidelines
-
-**Required:**
-1. Descriptive title matching commit message style
-2. Summary of changes
-3. Testing performed
-4. Screenshots (for UI changes)
-5. Linked issues (Closes #X)
-
-**Review Checklist:**
-- [ ] TypeScript strict mode passes
-- [ ] No console errors or warnings
-- [ ] Responsive design tested (mobile, tablet, desktop)
-- [ ] Accessibility verified (keyboard navigation, screen reader)
-- [ ] Documentation updated (if applicable)
-
----
-
-## Code Review Standards
-
-### What to Review
-
-1. **Functionality** - Does it work as intended?
-2. **Code Quality** - Is it readable and maintainable?
-3. **Performance** - Any obvious bottlenecks?
-4. **Security** - Any vulnerabilities?
-5. **Accessibility** - WCAG compliance?
-6. **Testing** - Adequate test coverage?
-
-### Review Comments
-
-**Be constructive:**
-
-✅ **Good:**
-```
-Consider extracting this logic into a separate function for reusability:
-
-function calculateTotal(items) {
-  return items.reduce((sum, item) => sum + item.price, 0);
-}
-```
-
-❌ **Bad:**
-```
-This is wrong.
-```
-
----
-
-## Performance Guidelines
-
-### Bundle Size
-
-**Monitor JavaScript payload:**
-
-```bash
-# Check bundle size after build
-npm run build
-du -sh dist/_astro/*.js
-```
-
-**Target:** <150KB initial JS
-
-### Image Optimization
-
-**Use Astro's Image component:**
-
-```astro
----
-import { Image } from 'astro:assets';
-import logo from '../assets/logo.png';
----
-
-<Image src={logo} alt="ClaudeKit Logo" width={200} height={200} />
-```
-
-**Formats:** WebP primary, PNG fallback
-
-### Lazy Loading
-
-**Defer non-critical components:**
-
-```astro
----
-import AIChat from '../components/AIChat.tsx';
----
-
-<!-- Load when page is idle -->
-<AIChat client:idle />
+**Conditional Execution**:
+```markdown
+## Workflow:
+1. Use `tester` to run tests
+2. If tests fail:
+   - Use `debugger` to analyze failures
+   - Use main agent to implement fixes
+   - Repeat from step 1
+3. If tests pass:
+   - Proceed to code review
 ```
 
 ---
 
 ## Documentation Standards
 
-### Code Comments
+### Markdown Formatting
 
-**When to comment:**
-- Complex algorithms
-- Non-obvious business logic
-- Workarounds for bugs
-- TODOs (with issue reference)
-
-**When NOT to comment:**
-- Self-explanatory code
-- Redundant statements
-
-✅ **Good:**
-```typescript
-// Calculate exponential backoff: 2^attempt * 100ms
-const delay = Math.pow(2, attempt) * 100;
+**Headers**:
+```markdown
+# H1: Document title only (once per file)
+## H2: Major sections
+### H3: Subsections
+#### H4: Detailed points
 ```
 
-❌ **Bad:**
-```typescript
-// Increment counter by 1
-count++;
+**Emphasis**:
+```markdown
+**Bold** for important terms and definitions
+*Italic* for emphasis
+`Code` for inline code, commands, file names
 ```
 
-### JSDoc (Optional)
+**Lists**:
+```markdown
+Unordered lists:
+- Item 1
+- Item 2
+  - Sub-item 2.1
+  - Sub-item 2.2
 
-**Use for public APIs:**
+Ordered lists:
+1. First step
+2. Second step
+3. Third step
+```
 
-```typescript
-/**
- * Sends a chat message to the AI assistant.
- *
- * @param messages - Array of previous messages for context
- * @param model - OpenRouter model ID (default: claude-3.5-sonnet)
- * @returns Promise resolving to AI response string
- * @throws {Error} If API key is missing or request fails
- */
-export async function chat(
-  messages: Message[],
-  model?: string
-): Promise<string> {
-  // ...
+**Code Blocks**:
+````markdown
+```language
+code here
+```
+
+Languages: javascript, typescript, bash, markdown, yaml, json, python
+````
+
+**Links**:
+```markdown
+[Link text](./relative/path.md)
+[External link](https://example.com)
+[Reference link][ref-id]
+
+[ref-id]: https://example.com
+```
+
+---
+
+### Documentation Sections
+
+**Required in All Docs**:
+
+1. **Title** (H1)
+2. **Metadata** (optional but recommended)
+   - Last Updated date
+   - Version number
+   - Status (Draft, Active, Deprecated)
+3. **Table of Contents** (for docs >1000 words)
+4. **Introduction/Overview**
+5. **Main Content** (organized by H2 sections)
+6. **Examples** (when applicable)
+7. **Related Resources** (when applicable)
+
+---
+
+### Code Examples
+
+**Requirements**:
+- All examples must be tested and functional
+- Include necessary context and imports
+- Show both correct and incorrect approaches
+- Provide explanations
+
+**Format**:
+```markdown
+**Good Example**:
+\```javascript
+// Descriptive comment
+const result = correctApproach();
+\```
+
+**Bad Example**:
+\```javascript
+// Why this is wrong
+const result = incorrectApproach();
+\```
+
+**Explanation**: Why the good approach is better...
+```
+
+---
+
+## Code Quality Requirements
+
+### Code Review Checklist
+
+**Before Completion**:
+- [ ] All syntax errors resolved
+- [ ] Code compiles successfully
+- [ ] All tests pass
+- [ ] Type safety validated
+- [ ] Security vulnerabilities addressed
+- [ ] Performance acceptable
+- [ ] Documentation updated
+- [ ] No secrets in code or commits
+
+---
+
+### Linting Standards
+
+**Philosophy**: Reasonable standards that enhance productivity
+
+**Priority Levels**:
+1. **Critical**: Syntax errors, security issues
+2. **High**: Type safety, error handling
+3. **Medium**: Code style, maintainability
+4. **Low**: Formatting preferences
+
+**Approach**:
+- Fix critical and high issues immediately
+- Address medium issues when practical
+- Low issues are suggestions, not requirements
+
+---
+
+### Error Handling
+
+**Required Patterns**:
+
+**Try-Catch Blocks**:
+```javascript
+try {
+  // Risky operation
+  const result = await riskyOperation();
+  return result;
+} catch (error) {
+  // Specific error handling
+  if (error instanceof SpecificError) {
+    // Handle specific error
+  }
+  // Log error
+  logger.error('Operation failed', { error });
+  // User-friendly message
+  throw new Error('Failed to complete operation. Please try again.');
+}
+```
+
+**Input Validation**:
+```javascript
+function processUser(user) {
+  // Validate required fields
+  if (!user || !user.id || !user.email) {
+    throw new Error('Invalid user data: missing required fields');
+  }
+
+  // Validate data types
+  if (typeof user.id !== 'string') {
+    throw new Error('Invalid user ID: must be string');
+  }
+
+  // Proceed with processing
+  return validateAndProcess(user);
+}
+```
+
+**Error Messages**:
+- Clear and actionable
+- Include context (what failed, why, what to do)
+- No sensitive information in messages
+- Logged errors include stack traces
+
+---
+
+## Git Workflow Standards
+
+### Commit Message Format
+
+**Conventional Commits**:
+```
+<type>(<scope>): <subject>
+
+<body>
+
+<footer>
+```
+
+**Types**:
+- `feat`: New feature
+- `fix`: Bug fix
+- `docs`: Documentation changes
+- `style`: Code style/formatting
+- `refactor`: Code refactoring
+- `test`: Test additions/changes
+- `chore`: Maintenance tasks
+- `build`: Build system changes
+- `ci`: CI/CD changes
+- `perf`: Performance improvements
+- `revert`: Revert previous commit
+
+**Rules**:
+- Subject: lowercase, no period, <100 chars
+- Body: wrap at 300 chars, explain what and why
+- Footer: BREAKING CHANGE or issue references
+
+**Examples**:
+```
+feat(auth): add OAuth2 authentication
+
+Implement OAuth2 flow with Google and GitHub providers.
+Includes token refresh and secure storage.
+
+Closes #123
+
+---
+
+fix(api): resolve timeout in database queries
+
+Database queries were timing out due to missing index.
+Added index on user_id column to improve performance.
+
+---
+
+docs: update installation guide
+
+Add troubleshooting section for common setup issues.
+
+---
+
+BREAKING CHANGE: API endpoints redesigned
+
+POST /users is now POST /api/v2/users
+Response format changed from XML to JSON
+```
+
+---
+
+### Pre-Commit Checks
+
+**Automated Checks**:
+1. **Secret Detection** - Scan for credentials
+2. **Lint Validation** - Run linters
+3. **Commit Message** - Validate conventional format
+4. **File Size** - Warn on large files
+
+**Manual Checks**:
+- Review staged changes
+- Verify no debug code
+- Confirm no commented code
+- Check for TODO comments
+
+---
+
+### Branch Strategy
+
+**Branch Naming**:
+```
+feature/short-description
+fix/issue-description
+docs/documentation-topic
+refactor/component-name
+```
+
+**Workflow**:
+1. Create branch from `main`
+2. Make focused commits
+3. Keep commits atomic
+4. Rebase before merging
+5. Squash if needed
+6. Delete branch after merge
+
+---
+
+## Testing Standards
+
+### Test Coverage Requirements
+
+**Minimum Coverage**: 80% overall
+
+**Priority Areas**:
+- Critical business logic: 100%
+- API endpoints: 95%
+- Utility functions: 90%
+- UI components: 80%
+
+---
+
+### Test Types
+
+**Unit Tests**:
+- Test individual functions
+- Mock external dependencies
+- Fast execution (<1ms per test)
+- Isolated and independent
+
+**Integration Tests**:
+- Test component interactions
+- Use test databases
+- Moderate speed (<100ms per test)
+- Setup and teardown required
+
+**End-to-End Tests**:
+- Test complete workflows
+- Use test environment
+- Slower execution (<5s per test)
+- Realistic scenarios
+
+---
+
+### Test Organization
+
+**File Structure**:
+```
+src/
+├── utils/
+│   ├── validation.ts
+│   └── validation.test.ts    # Co-located tests
+├── services/
+│   ├── userService.ts
+│   └── userService.test.ts
+└── __tests__/                # Integration tests
+    └── api.test.ts
+```
+
+**Naming**:
+```javascript
+describe('UserService', () => {
+  describe('createUser', () => {
+    it('should create user with valid data', () => {});
+    it('should throw error for invalid email', () => {});
+    it('should hash password before saving', () => {});
+  });
+});
+```
+
+---
+
+## Security Standards
+
+### Secret Management
+
+**Never Commit**:
+- `.env` files (use `.env.example`)
+- API keys and tokens
+- Database credentials
+- Private keys and certificates
+- AWS/GCP credentials
+
+**Environment Variables**:
+```bash
+# .env.example (commit this)
+API_KEY=your-api-key-here
+DATABASE_URL=postgresql://user:pass@host:port/db
+
+# .env (never commit)
+API_KEY=actual-secret-key
+DATABASE_URL=postgresql://real-user:real-pass@real-host:5432/prod_db
+```
+
+---
+
+### Input Validation
+
+**Always Validate**:
+- User input
+- API responses
+- File uploads
+- Database queries
+- External data sources
+
+**Validation Example**:
+```javascript
+function validateEmail(email) {
+  if (!email || typeof email !== 'string') {
+    throw new Error('Email must be a non-empty string');
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    throw new Error('Invalid email format');
+  }
+
+  return email.toLowerCase().trim();
 }
 ```
 
 ---
 
-## Editor Configuration
+### Security Best Practices
 
-### VS Code Settings
-
-**Recommended `.vscode/settings.json`:**
-
-```json
-{
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "files.associations": {
-    "*.css": "tailwindcss"
-  },
-  "tailwindCSS.experimental.classRegex": [
-    ["class:\\s*?[\"'`]([^\"'`]*).*?[\"'`]", "[\"'`]([^\"'`]*).*?[\"'`]"]
-  ]
-}
-```
-
-### Recommended Extensions
-
-1. **Astro** - Official Astro support
-2. **Tailwind CSS IntelliSense** - Tailwind autocomplete
-3. **ESLint** - Code linting
-4. **Prettier** - Code formatting
-5. **Error Lens** - Inline error display
+**OWASP Top 10 Coverage**:
+1. **Injection** - Parameterized queries, input validation
+2. **Broken Authentication** - Secure session management, MFA
+3. **Sensitive Data Exposure** - Encryption, secure transmission
+4. **XML External Entities** - Disable XXE in parsers
+5. **Broken Access Control** - Role-based permissions
+6. **Security Misconfiguration** - Secure defaults, hardening
+7. **XSS** - Output encoding, CSP headers
+8. **Insecure Deserialization** - Validate serialized data
+9. **Known Vulnerabilities** - Regular dependency updates
+10. **Insufficient Logging** - Comprehensive audit trails
 
 ---
 
-## Conclusion
+## Summary
 
-These standards ensure:
-- **Consistency** - Code looks like it was written by one person
-- **Quality** - High standards for maintainability
-- **Security** - Best practices for sensitive data
-- **Performance** - Optimized user experience
-- **Accessibility** - Inclusive design for all users
+### Quick Reference
 
-**When in doubt:** Look at existing code for examples, or ask in code review.
+**Core Principles**: YAGNI, KISS, DRY
+**File Size Limit**: 500 lines
+**Naming**: kebab-case for files, camelCase for code
+**Agents**: Markdown with frontmatter, clear responsibilities
+**Commands**: Workflow orchestration, argument substitution
+**Documentation**: Comprehensive, examples, up-to-date
+**Git**: Conventional commits, atomic changes
+**Testing**: 80% coverage, unit+integration+E2E
+**Security**: No secrets, validate input, OWASP Top 10
 
 ---
 
-*Last updated: 2025-10-18*
-*Review this document quarterly and update as project evolves.*
+**Enforcement**: All standards enforced through automated reviews by code-reviewer agent
+**Updates**: Standards evolve based on project needs and community feedback
+**Exceptions**: Discuss with team before deviating from standards
+
+---
+
+**Version**: 1.0
+**Last Review**: 2025-10-30
+**Next Review**: Q1 2025
+**Owner**: ClaudeKit Team

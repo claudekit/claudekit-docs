@@ -15,7 +15,7 @@ ClaudeKit includes 14 specialized agents that work together to handle every aspe
 ### Development Agents
 
 1. **[planner](/docs/agents/planner)** - Research, analyze, and create implementation plans
-2. **[scout](/docs/agents/scout)** - Quickly locate relevant files across large codebases
+2. **[scout](/docs/agents/scout)** - Quickly locate relevant files across large codebases using parallel search
 3. **[debugger](/docs/agents/debugger)** - Investigate issues, analyze logs, diagnose problems
 4. **[tester](/docs/agents/tester)** - Validate code quality through comprehensive testing
 
@@ -32,11 +32,11 @@ ClaudeKit includes 14 specialized agents that work together to handle every aspe
 
 8. **[ui-ux-designer](/docs/agents/ui-ux-designer)** - Design interfaces, wireframes, and user experiences
 9. **[copywriter](/docs/agents/copywriter)** - Create high-converting marketing copy
-10. **[brainstormer](/docs/agents/brainstormer)** - Explore ideas and feature feasibility
+10. **[brainstormer](/docs/agents/brainstormer)** - Explore ideas, challenge assumptions, and debate technical decisions
 
 ### Research & Writing
 
-11. **[researcher](/docs/agents/researcher)** - Conduct comprehensive research on technologies and best practices
+11. **[researcher](/docs/agents/researcher)** - Multi-source research with documentation analysis and best practices
 12. **[journal-writer](/docs/agents/journal-writer)** - Document technical difficulties and project journey
 
 ### DevOps & Infrastructure

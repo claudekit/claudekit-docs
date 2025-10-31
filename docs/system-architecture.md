@@ -1,939 +1,1277 @@
 # System Architecture
 
-**Project:** ClaudeKit Documentation
-**Version:** 1.0
-**Last Updated:** 2025-10-18
-**Status:** Active
+**Last Updated**: 2025-10-30
+**Version**: 1.0
+**Status**: Production Ready
 
 ---
 
-## Overview
+## Table of Contents
 
-ClaudeKit Documentation is a static site generator (SSG) application built on Astro v5, deployed as containerized microservice on Kubernetes. The architecture prioritizes performance, scalability, and developer experience through a modern JAMstack approach with AI-enhanced features.
-
-**Architecture Pattern:** JAMstack (JavaScript, APIs, Markup)
-**Deployment Model:** Containerized microservice (Docker + Kubernetes)
-**Scaling Strategy:** Horizontal pod autoscaling
+1. [Architecture Overview](#architecture-overview)
+2. [System Components](#system-components)
+3. [Agent Architecture](#agent-architecture)
+4. [Command Orchestration](#command-orchestration)
+5. [Data Flow](#data-flow)
+6. [Communication Protocols](#communication-protocols)
+7. [Technology Stack](#technology-stack)
+8. [Integration Architecture](#integration-architecture)
+9. [Security Architecture](#security-architecture)
+10. [Scalability & Performance](#scalability--performance)
+11. [Deployment Architecture](#deployment-architecture)
 
 ---
 
-## System Diagram
+## Architecture Overview
 
 ### High-Level Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                         Users                                │
-│                  (Web Browsers, Mobile)                      │
-└────────────────────────┬────────────────────────────────────┘
-                         │ HTTPS (TLS 1.3)
-                         ▼
-┌─────────────────────────────────────────────────────────────┐
-│                    CDN Layer (Future)                        │
-│              (CloudFlare, AWS CloudFront)                    │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-                         ▼
-┌─────────────────────────────────────────────────────────────┐
-│              nginx Ingress Controller                        │
-│        (Load Balancing, TLS Termination, Routing)           │
-│                                                              │
-│  - Host: docs.claudekit.cc                                   │
-│  - Certificate: Let's Encrypt (cert-manager)                 │
-│  - Redirect: HTTP → HTTPS                                    │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-                         ▼
-┌─────────────────────────────────────────────────────────────┐
-│            Kubernetes Service (ClusterIP)                    │
-│                                                              │
-│  Type: ClusterIP                                             │
-│  Port: 80 → 3000                                             │
-│  Selector: app=claudekit-docs                                │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-                ┌────────┴────────┐
-                ▼                 ▼
-        ┌──────────────┐  ┌──────────────┐
-        │   Pod 1      │  │   Pod 2      │
-        │              │  │              │
-        │  ┌────────┐  │  │  ┌────────┐  │
-        │  │ Node.js│  │  │  │ Node.js│  │
-        │  │  v20   │  │  │  │  v20   │  │
-        │  │  +     │  │  │  │  +     │  │
-        │  │ serve  │  │  │  │ serve  │  │
-        │  └────────┘  │  │  └────────┘  │
-        │              │  │              │
-        │  /dist       │  │  /dist       │
-        │  (Static     │  │  (Static     │
-        │   Files)     │  │   Files)     │
-        │              │  │              │
-        │  Port: 3000  │  │  Port: 3000  │
-        └──────────────┘  └──────────────┘
-                │                 │
-                └────────┬────────┘
-                         │
-                         ▼
-        ┌────────────────────────────────┐
-        │   External Services (Future)   │
-        │                                │
-        │  - OpenRouter API (AI)         │
-        │  - Analytics (Plausible)       │
-        │  - Error Tracking (Sentry)     │
-        └────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────┐
+│                         User Interface                          │
+│                    (Claude Code CLI / Terminal)                 │
+└────────────────────────────┬────────────────────────────────────┘
+                             │
+                             ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                     Command Router Layer                        │
+│  • Slash command parsing                                        │
+│  • Argument extraction                                          │
+│  • Workflow orchestration                                       │
+└────────────────────────────┬────────────────────────────────────┘
+                             │
+            ┌────────────────┼────────────────┐
+            │                │                │
+            ▼                ▼                ▼
+┌──────────────────┐ ┌──────────────┐ ┌─────────────────┐
+│  Agent Layer     │ │  MCP Servers │ │ External Tools  │
+│  (12 Agents)     │ │  (6 Servers) │ │ (Git, npm, etc) │
+└────────┬─────────┘ └──────┬───────┘ └────────┬────────┘
+         │                  │                  │
+         └──────────────────┼──────────────────┘
+                           │
+                           ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                    File System Layer                            │
+│  • Plans & reports                                              │
+│  • Documentation                                                │
+│  • Codebase files                                               │
+└─────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## Component Architecture
+### Design Philosophy
 
-### Frontend Layer
+**1. Separation of Concerns**
+- Each agent has a single, well-defined responsibility
+- Commands orchestrate agents without implementing logic
+- Clear boundaries between layers
 
-#### Static HTML/CSS/JS (Build Output)
+**2. Loose Coupling**
+- Agents communicate via file system (no direct dependencies)
+- Commands are independent and composable
+- MCP servers are optional and replaceable
 
-**Generated by Astro build process:**
+**3. Composability**
+- Small, focused agents combine for complex workflows
+- Commands can be chained and nested
+- Reusable patterns across different contexts
+
+**4. Extensibility**
+- Easy to add new agents and commands
+- Plugin architecture for MCP servers
+- Skill system for specialized capabilities
+
+---
+
+## System Components
+
+### 1. Command Router
+
+**Purpose**: Parse user commands and route to appropriate workflows
+
+**Components**:
+```
+.opencode/command/
+├── core/
+│   ├── cook.md      # Feature implementation
+│   ├── plan.md      # Planning workflow
+│   ├── debug.md     # Debugging workflow
+│   └── test.md      # Testing workflow
+├── design/          # Design workflows
+├── docs/            # Documentation workflows
+├── fix/             # Fix workflows
+├── git/             # Git workflows
+└── plan/            # Advanced planning
+```
+
+**Responsibilities**:
+- Parse slash commands
+- Extract and validate arguments
+- Load command definitions
+- Orchestrate agent execution
+- Handle errors and timeouts
+
+---
+
+### 2. Agent System
+
+**Purpose**: Execute specialized development tasks
+
+**Agent Categories**:
+
+**Planning & Research** (3 agents):
+- `planner` - Implementation planning
+- `planner-researcher` - Architectural analysis
+- `researcher` - Technical research
+
+**Development** (2 agents):
+- `ui-ux-designer` - Design system creation
+- `ui-ux-developer` - Frontend implementation
+
+**Quality Assurance** (3 agents):
+- `tester` - Testing and validation
+- `code-reviewer` - Quality assessment
+- `debugger` - Issue analysis
+
+**Operations** (4 agents):
+- `git-manager` - Version control
+- `docs-manager` - Documentation
+- `project-manager` - Coordination
+- `journal-writer` - Development diary
+
+---
+
+### 3. MCP Server Integration
+
+**Purpose**: Extend agent capabilities with external services
+
+**MCP Servers**:
 
 ```
-dist/
-├── index.html                  # Homepage
+┌──────────────────────────────────────────────────────────────┐
+│                       MCP Servers                            │
+├──────────────────────────────────────────────────────────────┤
+│                                                              │
+│  ┌────────────┐  ┌─────────────┐  ┌──────────────┐        │
+│  │ Context7   │  │   Human     │  │  SearchAPI   │        │
+│  │ (Upstash)  │  │  (Gemini)   │  │   (Search)   │        │
+│  └────────────┘  └─────────────┘  └──────────────┘        │
+│                                                              │
+│  ┌────────────┐  ┌─────────────┐  ┌──────────────┐        │
+│  │  VidCap    │  │ Sequential  │  │    Eyes      │        │
+│  │ (Captions) │  │  Thinking   │  │  (Analysis)  │        │
+│  └────────────┘  └─────────────┘  └──────────────┘        │
+│                                                              │
+└──────────────────────────────────────────────────────────────┘
+```
+
+**Integration Patterns**:
+- **Context7**: Documentation context for agents
+- **Human**: Image generation and editing
+- **SearchAPI**: Google and YouTube search
+- **VidCap**: Video transcript extraction
+- **Sequential Thinking**: Problem decomposition
+- **Eyes**: Visual content analysis
+
+---
+
+### 4. File System Layer
+
+**Purpose**: Persistent storage for plans, reports, and documentation
+
+**Directory Structure**:
+```
+Project Root/
+├── plans/
+│   ├── templates/           # Reusable plan templates
+│   ├── reports/             # Agent-to-agent communication
+│   └── *.md                 # Implementation plans
 ├── docs/
-│   ├── getting-started/
-│   │   ├── introduction/index.html
-│   │   ├── installation/index.html
-│   │   └── quick-start/index.html
-│   └── cli/
-│       ├── index.html
-│       ├── installation/index.html
-│       └── new/index.html
-├── _astro/
-│   ├── *.css                   # Minified CSS bundles
-│   └── *.js                    # Minified JS bundles (React islands)
-└── assets/
-    ├── images/
-    └── fonts/
+│   ├── project-overview-pdr.md
+│   ├── codebase-summary.md
+│   ├── code-standards.md
+│   ├── system-architecture.md
+│   └── research/            # Research reports
+├── src/content/docs/        # Documentation site content (79 pages)
+│   ├── getting-started/     # Introduction, installation, quick-start
+│   ├── agents/             # 14 agent pages (100% coverage)
+│   ├── commands/           # 25 command pages (83% coverage)
+│   ├── skills/             # 3 skill pages (7% coverage)
+│   ├── use-cases/          # 7 use case pages
+│   └── troubleshooting/    # 6 troubleshooting pages
+└── [project files]
 ```
 
-**Characteristics:**
-- Pre-rendered HTML (no server-side rendering)
-- Optimized CSS (Tailwind + custom variables)
-- Minimal JavaScript (only interactive components)
-- Optimized images (WebP/AVIF + PNG fallback)
-
-#### Interactive Components (React Islands)
-
-**Hydration Strategy:**
-
-```typescript
-// AIPanel only hydrates when page is idle
-<AIChat client:idle />
-
-// Navigation hydrates immediately
-<Sidebar client:load />
-
-// Search hydrates when visible
-<SearchBox client:visible />
-```
-
-**Why Islands Architecture?**
-- **Performance:** Only interactive parts use JavaScript
-- **SEO:** Static HTML for search engines
-- **Progressive Enhancement:** Works without JS, enhanced with JS
-
-### Build-Time Layer (Astro)
-
-#### Content Collections
-
-**Type-Safe Content Management:**
-
-```typescript
-// src/content/config.ts
-import { defineCollection, z } from 'astro:content';
-
-const docs = defineCollection({
-  type: 'content',
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    category: z.enum(['getting-started', 'cli', 'core-concepts', 'components', 'api-reference']),
-    order: z.number().optional(),
-    published: z.boolean().default(true),
-  }),
-});
-```
-
-**Benefits:**
-- TypeScript autocompletion for frontmatter
-- Build-time validation (errors caught early)
-- Automatic route generation
-- Type-safe queries
-
-#### Markdown Processing Pipeline
-
-```
-Markdown File (.md)
-       ↓
-   Frontmatter Parsing (Zod validation)
-       ↓
-   Remark Plugins (GFM, Math)
-       ↓
-   Markdown → HTML (unified)
-       ↓
-   Rehype Plugins (Slug, Autolink, KaTeX)
-       ↓
-   Syntax Highlighting (Shiki - One Dark Pro)
-       ↓
-   Astro Layout Wrapper
-       ↓
-   Static HTML Output
-```
-
-**Plugins in Pipeline:**
-1. `remark-gfm` - GitHub Flavored Markdown (tables, task lists, strikethrough)
-2. `remark-math` - Math notation support ($inline$ and $$blocks$$)
-3. `rehype-slug` - Auto-generate heading IDs (e.g., `#installation`)
-4. `rehype-autolink-headings` - Add anchor links to headings
-5. `rehype-katex` - Render LaTeX math equations
+**File-Based Communication**:
+- Plans: `./plans/YYMMDD-feature-name-plan.md`
+- Reports: `./plans/reports/YYMMDD-from-to-task-report.md`
+- Docs: `./docs/*.md`
+- Content: `./src/content/docs/**/*.md` (public documentation)
 
 ---
 
-## Deployment Architecture
+## Agent Architecture
 
-### Container Layer (Docker)
+### Agent Lifecycle
 
-#### Multi-Stage Build
-
-**Stage 1: Builder**
-
-```dockerfile
-FROM node:20-alpine AS builder
-WORKDIR /app
-
-# Dependency installation
-COPY package*.json ./
-RUN npm ci
-
-# Build static site
-COPY . .
-RUN npm run build
+```
+┌──────────────┐
+│ Command      │
+│ Triggered    │
+└──────┬───────┘
+       │
+       ▼
+┌──────────────┐
+│ Agent        │
+│ Spawned      │
+└──────┬───────┘
+       │
+       ▼
+┌──────────────┐
+│ Context      │
+│ Loaded       │
+└──────┬───────┘
+       │
+       ▼
+┌──────────────┐
+│ Task         │
+│ Execution    │
+└──────┬───────┘
+       │
+       ▼
+┌──────────────┐
+│ Report       │
+│ Generation   │
+└──────┬───────┘
+       │
+       ▼
+┌──────────────┐
+│ Handoff to   │
+│ Next Agent   │
+└──────────────┘
 ```
 
-**Output:** `/app/dist` directory with static files
+---
 
-**Stage 2: Runner**
-
-```dockerfile
-FROM node:20-alpine AS runner
-WORKDIR /app
-
-# Install static file server
-RUN npm install -g serve
-
-# Copy built files
-COPY --from=builder /app/dist ./dist
-
-# Expose port
-EXPOSE 3000
-
-# Start server
-CMD ["serve", "-s", "dist", "-l", "3000"]
-```
-
-**Benefits:**
-- Small final image (<100MB)
-- No build dependencies in production
-- Fast startup (<2s)
-- Simple static file serving
-
-### Orchestration Layer (Kubernetes)
-
-#### Pod Configuration
-
-**Deployment Spec:**
+### Agent Definition Schema
 
 ```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: claudekit-docs
-spec:
-  replicas: 2  # High availability
-  selector:
-    matchLabels:
-      app: claudekit-docs
-  template:
-    metadata:
-      labels:
-        app: claudekit-docs
-    spec:
-      containers:
-        - name: claudekit-docs
-          image: ghcr.io/claudekit/claudekit-docs:latest
-          ports:
-            - containerPort: 3000
-          resources:
-            requests:
-              cpu: 100m      # 0.1 CPU cores
-              memory: 128Mi  # 128 MB
-            limits:
-              cpu: 500m      # 0.5 CPU cores
-              memory: 512Mi  # 512 MB
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 3000
-            initialDelaySeconds: 10
-            periodSeconds: 30
-          readinessProbe:
-            httpGet:
-              path: /
-              port: 3000
-            initialDelaySeconds: 5
-            periodSeconds: 10
+# Frontmatter (YAML)
+---
+name: agent-name              # Unique identifier
+description: |                # Multi-line description
+  When to use this agent...
+  Examples...
+mode: subagent               # or "all" for main agents
+model: provider/model-id     # AI model to use
+temperature: 0.1             # Sampling temperature (optional)
+---
+
+# Agent Prompt (Markdown)
+You are a [role]...
+
+## Core Responsibilities
+- Responsibility 1
+- Responsibility 2
+
+## Working Process
+1. Step 1
+2. Step 2
+
+## Output Format
+[Template or description]
+
+## Quality Standards
+[Requirements]
 ```
 
-**Resource Allocation:**
-- **Requests:** Guaranteed resources (scheduling basis)
-- **Limits:** Maximum allowed resources (prevents runaway)
+---
 
-**Health Checks:**
-- **Liveness:** Restart if unresponsive (30s interval)
-- **Readiness:** Remove from load balancer if not ready (10s interval)
+### Agent Communication Flow
 
-#### Service Configuration
-
-**ClusterIP Service:**
-
-```yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: claudekit-docs
-spec:
-  type: ClusterIP  # Internal only (ingress exposes externally)
-  ports:
-    - port: 80          # Service port
-      targetPort: 3000  # Container port
-      protocol: TCP
-  selector:
-    app: claudekit-docs
+```
+┌─────────────┐     Creates Plan      ┌──────────────┐
+│   Planner   │ ──────────────────> │ Plan File    │
+│   Agent     │                      │ (.md)        │
+└─────────────┘                      └──────┬───────┘
+                                             │
+                                             │ Reads
+                                             │
+                                             ▼
+┌─────────────┐     Implements       ┌──────────────┐
+│    Main     │ <─────────────────── │ Plan File    │
+│   Agent     │                      └──────────────┘
+└──────┬──────┘
+       │
+       │ Delegates
+       ▼
+┌─────────────┐     Creates Report   ┌──────────────┐
+│   Tester    │ ──────────────────> │ Report File  │
+│   Agent     │                      │ (.md)        │
+└─────────────┘                      └──────┬───────┘
+                                             │
+                                             │ Reads
+                                             │
+                                             ▼
+┌─────────────┐     Reads Report     ┌──────────────┐
+│    Main     │ <─────────────────── │ Report File  │
+│   Agent     │                      └──────────────┘
+└─────────────┘
 ```
 
-**Why ClusterIP?**
-- Internal load balancing across pods
-- Not directly accessible from internet
-- Ingress controller handles external access
+---
 
-#### Ingress Configuration
+### Model Selection Strategy
 
-**nginx Ingress with TLS:**
+**Decision Matrix**:
 
-```yaml
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: claudekit-docs
-  annotations:
-    cert-manager.io/cluster-issuer: "letsencrypt-prod"
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
-spec:
-  ingressClassName: nginx
-  tls:
-    - hosts:
-        - docs.claudekit.cc
-      secretName: claudekit-docs-tls  # Auto-generated by cert-manager
-  rules:
-    - host: docs.claudekit.cc
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: claudekit-docs
-                port:
-                  number: 80
+| Agent Type | Complexity | Model | Rationale |
+|------------|-----------|--------|-----------|
+| Code Review | High | Claude Sonnet 4 | Deep reasoning for security |
+| Debugging | High | Claude Sonnet 4 | Root cause analysis |
+| Planning | Very High | Gemini 2.5 Flash | Fast, cost-effective |
+| Architectural | Critical | Claude Opus 4 | Maximum reasoning |
+| Testing | Medium | Grok Code | Specialized for code execution |
+| Git Ops | Low | Grok Code | Simple, deterministic tasks |
+| Documentation | Medium | Gemini 2.5 Flash | Fast generation |
+
+**Cost Optimization**:
+- Use fastest/cheapest model that meets requirements
+- Reserve Opus 4 for critical architectural decisions
+- Parallelize when possible to reduce wall-clock time
+
+---
+
+## Command Orchestration
+
+### Sequential Workflow Pattern
+
+**Use Case**: Dependent tasks must execute in order
+
+**Example: /cook Command**
+
+```
+User: /cook "implement user authentication"
+  │
+  ▼
+┌─────────────────────────────────────────┐
+│ 1. Planner Agent                        │
+│    • Creates implementation plan        │
+│    • Saves to ./plans/251030-auth.md    │
+└────────────┬────────────────────────────┘
+             │
+             ▼
+┌─────────────────────────────────────────┐
+│ 2. Main Agent                           │
+│    • Reads plan file                    │
+│    • Implements features step-by-step   │
+│    • Writes code files                  │
+└────────────┬────────────────────────────┘
+             │
+             ▼
+┌─────────────────────────────────────────┐
+│ 3. Tester Agent                         │
+│    • Runs test suite                    │
+│    • Generates coverage report          │
+│    • Saves to ./plans/reports/...       │
+└────────────┬────────────────────────────┘
+             │
+             ▼ (if tests pass)
+┌─────────────────────────────────────────┐
+│ 4. Code Reviewer Agent                  │
+│    • Reviews code quality               │
+│    • Checks security                    │
+│    • Validates standards                │
+└────────────┬────────────────────────────┘
+             │
+             ▼
+┌─────────────────────────────────────────┐
+│ 5. Docs Manager Agent                   │
+│    • Updates documentation              │
+│    • Syncs codebase summary             │
+└────────────┬────────────────────────────┘
+             │
+             ▼
+┌─────────────────────────────────────────┐
+│ 6. Git Manager Agent                    │
+│    • Stages changes                     │
+│    • Creates conventional commit        │
+│    • Pushes to remote                   │
+└─────────────────────────────────────────┘
 ```
 
-**Features:**
-- TLS certificate auto-renewal (Let's Encrypt)
-- HTTP → HTTPS redirect (forced SSL)
-- Path-based routing (extensible for /api, etc.)
-- Load balancing across multiple pods
+---
+
+### Parallel Workflow Pattern
+
+**Use Case**: Independent tasks can execute simultaneously
+
+**Example: /plan Command with Research**
+
+```
+User: /plan "implement real-time notifications"
+  │
+  ▼
+┌─────────────────────────────────────────┐
+│ Planner Agent                           │
+│ • Identifies research topics            │
+│ • Spawns multiple researchers           │
+└────────┬────────────────────────────────┘
+         │
+         ├─────────────┬─────────────┬────────────┐
+         ▼             ▼             ▼            ▼
+    ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐
+    │Research │  │Research │  │Research │  │Research │
+    │WebSocket│  │ Redis   │  │ Server  │  │ Client  │
+    │ Techs   │  │ PubSub  │  │ Sent    │  │ Libs    │
+    │         │  │         │  │ Events  │  │         │
+    └────┬────┘  └────┬────┘  └────┬────┘  └────┬────┘
+         │            │            │            │
+         └────────────┴────────────┴────────────┘
+                         │
+                         ▼
+              ┌─────────────────┐
+              │ Planner Agent   │
+              │ • Synthesizes   │
+              │ • Creates plan  │
+              └─────────────────┘
+```
+
+---
+
+### Conditional Workflow Pattern
+
+**Use Case**: Branching logic based on results
+
+**Example: /fix:test Command**
+
+```
+┌─────────────────────┐
+│ Tester Agent        │
+│ • Runs test suite   │
+└──────────┬──────────┘
+           │
+           ▼
+     ┌──────────┐
+     │ Tests    │
+     │ Status?  │
+     └────┬─────┘
+          │
+     ┌────┴─────┐
+     │          │
+   PASS       FAIL
+     │          │
+     ▼          ▼
+┌─────────┐  ┌──────────────┐
+│ Code    │  │ Debugger     │
+│ Review  │  │ Agent        │
+│ Agent   │  │ • Analyzes   │
+└─────────┘  └──────┬───────┘
+                    │
+                    ▼
+             ┌──────────────┐
+             │ Main Agent   │
+             │ • Fixes      │
+             └──────┬───────┘
+                    │
+                    ▼
+             [Loop back to Tester]
+```
 
 ---
 
 ## Data Flow
 
-### Static Content Request
-
-**Sequence Diagram:**
+### Plan Creation Flow
 
 ```
-User Browser                nginx Ingress              K8s Service                 Pod (serve)
-     │                            │                         │                          │
-     │──── GET /docs/intro ─────>│                         │                          │
-     │                            │                         │                          │
-     │                            │─── Route to Service ───>│                          │
-     │                            │                         │                          │
-     │                            │                         │─── Load Balance ───────>│
-     │                            │                         │                          │
-     │                            │                         │                          │──┐
-     │                            │                         │                          │  │ Read /dist/docs/intro/index.html
-     │                            │                         │                          │<─┘
-     │                            │                         │                          │
-     │                            │                         │<──── HTML Response ──────│
-     │                            │                         │                          │
-     │                            │<─── Proxy Response ─────│                          │
-     │                            │                         │                          │
-     │<──── HTML Document ────────│                         │                          │
-     │                            │                         │                          │
-     │──── GET /assets/main.css ─>│                         │                          │
-     │<──── CSS File ─────────────│                         │                          │
-     │                            │                         │                          │
-     │──── GET /js/islands.js ───>│                         │                          │
-     │<──── JS File ──────────────│                         │                          │
-     │                            │                         │                          │
-     │──┐                         │                         │                          │
-     │  │ Hydrate React components│                         │                          │
-     │<─┘                         │                         │                          │
+┌──────────────┐
+│ User Request │
+└──────┬───────┘
+       │
+       ▼
+┌──────────────┐
+│ /plan cmd    │
+└──────┬───────┘
+       │
+       ▼
+┌──────────────────────────────────┐
+│ Planner Agent                    │
+│ • Reads ./docs/codebase-summary  │
+│ • Reads ./docs/code-standards    │
+│ • Spawns researcher agents       │
+└──────┬───────────────────────────┘
+       │
+       ▼
+┌──────────────────────────────────┐
+│ Research Phase                   │
+│ • Google search                  │
+│ • YouTube tutorials              │
+│ • Documentation scraping         │
+└──────┬───────────────────────────┘
+       │
+       ▼
+┌──────────────────────────────────┐
+│ Plan Generation                  │
+│ • Synthesize research            │
+│ • Create TODO tasks              │
+│ • Write plan markdown            │
+└──────┬───────────────────────────┘
+       │
+       ▼
+┌──────────────────────────────────┐
+│ Save Plan                        │
+│ ./plans/YYMMDD-feature-plan.md   │
+└──────────────────────────────────┘
 ```
 
-**Response Times:**
-- HTML document: <50ms (cached) / <200ms (uncached)
-- CSS/JS assets: <30ms (small bundles)
-- Images: <100ms (optimized formats)
+---
 
-### AI Assistant Interaction (Future)
-
-**Sequence Diagram:**
+### Implementation Flow
 
 ```
-User                AIChat (React)         API Route              OpenRouter          Claude API
- │                       │                     │                      │                   │
- │─── Type message ─────>│                     │                      │                   │
- │                       │                     │                      │                   │
- │─── Click Send ───────>│                     │                      │                   │
- │                       │                     │                      │                   │
- │                       │─── POST /api/chat ─>│                      │                   │
- │                       │    {messages, model}│                      │                   │
- │                       │                     │                      │                   │
- │                       │                     │─── POST /chat ─────>│                   │
- │                       │                     │    (OpenAI format)   │                   │
- │                       │                     │                      │                   │
- │                       │                     │                      │─── Completion ──>│
- │                       │                     │                      │    Request        │
- │                       │                     │                      │                   │
- │                       │                     │                      │<─── Stream ───────│
- │                       │                     │                      │    Chunks         │
- │                       │                     │                      │                   │
- │                       │                     │<─── Stream ──────────│                   │
- │                       │                     │    Response          │                   │
- │                       │                     │                      │                   │
- │                       │<─── SSE Stream ─────│                      │                   │
- │                       │    (text/event-     │                      │                   │
- │                       │     stream)          │                      │                   │
- │                       │                     │                      │                   │
- │                       │──┐                  │                      │                   │
- │<─── Display ──────────│  │ Append chunks   │                      │                   │
- │     Response          │<─┘                  │                      │                   │
+┌──────────────┐
+│ Plan File    │
+└──────┬───────┘
+       │
+       ▼
+┌──────────────────────────────────┐
+│ Main Agent                       │
+│ • Reads plan                     │
+│ • Extracts TODO tasks            │
+└──────┬───────────────────────────┘
+       │
+       ▼
+┌──────────────────────────────────┐
+│ Code Implementation              │
+│ • Creates/modifies files         │
+│ • Follows code standards         │
+│ • Handles errors                 │
+└──────┬───────────────────────────┘
+       │
+       ▼
+┌──────────────────────────────────┐
+│ Validation                       │
+│ • Compile check                  │
+│ • Syntax validation              │
+│ • Type checking                  │
+└──────┬───────────────────────────┘
+       │
+       ▼
+┌──────────────────────────────────┐
+│ Updated Codebase                 │
+└──────────────────────────────────┘
 ```
 
-**Components:**
-1. **AIChat Component:** UI for chat interface
-2. **API Route:** Server-side proxy to OpenRouter
-3. **OpenRouter:** Multi-model gateway
-4. **Claude API:** LLM provider (or GPT-4, etc.)
+---
+
+### Testing Flow
+
+```
+┌──────────────┐
+│ Codebase     │
+└──────┬───────┘
+       │
+       ▼
+┌──────────────────────────────────┐
+│ Tester Agent                     │
+│ • Identifies test command        │
+│ • Runs test suite                │
+└──────┬───────────────────────────┘
+       │
+       ▼
+┌──────────────────────────────────┐
+│ Test Execution                   │
+│ • Unit tests                     │
+│ • Integration tests              │
+│ • E2E tests                      │
+└──────┬───────────────────────────┘
+       │
+       ▼
+┌──────────────────────────────────┐
+│ Coverage Analysis                │
+│ • Line coverage                  │
+│ • Branch coverage                │
+│ • Function coverage              │
+└──────┬───────────────────────────┘
+       │
+       ▼
+┌──────────────────────────────────┐
+│ Report Generation                │
+│ ./plans/reports/YYMMDD-test.md   │
+└──────────────────────────────────┘
+```
+
+---
+
+## Communication Protocols
+
+### File-Based Communication
+
+**Advantages**:
+- No runtime dependencies between agents
+- Persistent communication history
+- Easy to debug and audit
+- Human-readable formats
+
+**File Types**:
+
+1. **Plans** (`./plans/*.md`)
+   - Implementation roadmaps
+   - TODO task lists
+   - Architectural decisions
+
+2. **Reports** (`./plans/reports/*.md`)
+   - Agent findings
+   - Test results
+   - Code review feedback
+
+3. **Documentation** (`./docs/*.md`)
+   - Project overview
+   - Code standards
+   - System architecture
+
+---
+
+### Naming Conventions
+
+**Plans**:
+```
+Format: YYMMDD-feature-name-plan.md
+Example: 251030-authentication-system-plan.md
+```
+
+**Reports**:
+```
+Format: YYMMDD-from-agent-to-agent-task-report.md
+Example: 251030-from-tester-to-main-test-results-report.md
+```
+
+**Research**:
+```
+Format: YYMMDD-research-topic.md
+Example: 251030-websocket-libraries-research.md
+```
+
+---
+
+### Standard Report Structure
+
+```markdown
+# Report: [Task Name]
+
+**From**: [Source Agent]
+**To**: [Recipient Agent or Main]
+**Date**: YYYY-MM-DD
+**Status**: [In Progress / Complete / Blocked]
+
+## Summary
+[2-3 sentence overview of findings]
+
+## Details
+[Comprehensive information]
+
+## Key Findings
+1. Finding 1
+2. Finding 2
+3. Finding 3
+
+## Recommendations
+- Recommendation 1
+- Recommendation 2
+
+## Next Steps
+1. Step 1
+2. Step 2
+
+## Unresolved Questions
+- Question 1 (if any)
+- Question 2 (if any)
+
+---
+
+**Generated by**: [Agent Name]
+**Model Used**: [Model Identifier]
+**Execution Time**: [Duration]
+```
+
+---
+
+## Technology Stack
+
+### Core Technologies
+
+```
+┌─────────────────────────────────────────┐
+│ Runtime Environment                     │
+│ • Node.js 20+                           │
+│ • npm 10+ (Package manager)             │
+└─────────────────────────────────────────┘
+
+┌─────────────────────────────────────────┐
+│ AI Platform                             │
+│ • Claude Code (Orchestration)           │
+│ • Open Code CLI (Agent framework)       │
+└─────────────────────────────────────────┘
+
+┌─────────────────────────────────────────┐
+│ Version Control                         │
+│ • Git (Version control)                 │
+│ • GitHub (Repository hosting)           │
+│ • Conventional Commits (Standards)      │
+└─────────────────────────────────────────┘
+```
+
+---
+
+### AI Models
+
+**Primary Models**:
+
+```
+┌──────────────────────┬──────────────┬─────────────┐
+│ Model                │ Provider     │ Usage       │
+├──────────────────────┼──────────────┼─────────────┤
+│ Claude Sonnet 4      │ Anthropic    │ Code review │
+│                      │              │ Debugging   │
+│                      │              │ UI design   │
+├──────────────────────┼──────────────┼─────────────┤
+│ Claude Opus 4        │ Anthropic    │ Architecture│
+│                      │              │ Planning    │
+├──────────────────────┼──────────────┼─────────────┤
+│ Gemini 2.5 Flash     │ Google       │ Docs        │
+│                      │              │ Planning    │
+├──────────────────────┼──────────────┼─────────────┤
+│ Grok Code            │ X.AI         │ Testing     │
+│                      │              │ Git ops     │
+└──────────────────────┴──────────────┴─────────────┘
+```
+
+---
+
+### MCP Servers
+
+**Integration Architecture**:
+
+```
+Agent <──> MCP Protocol <──> MCP Server <──> External Service
+
+Example:
+Researcher <──> MCP <──> SearchAPI <──> Google Search
+```
+
+**Server Configuration**:
+```bash
+# Context7 Setup
+export UPSTASH_API_KEY="..."
+claude mcp add context7 -s user -- npx -y @upstash/context7-mcp
+
+# Human MCP Setup
+export GOOGLE_GEMINI_API_KEY="..."
+claude mcp add-json human -s user '{"command": "npx", "args": ["@goonnguyen/human-mcp@latest"]}'
+```
+
+---
+
+### Development Tools
+
+**Code Analysis**:
+- **Repomix** - Codebase compaction for AI analysis
+- **Commitlint** - Commit message validation
+- **Husky** - Git hooks
+
+**Media Processing**:
+- **ImageMagick** - Image manipulation
+- **FFmpeg** - Video/audio processing
+
+**Release Management**:
+- **Semantic Release** - Automated versioning
+- **Conventional Changelog** - Release notes generation
+
+---
+
+## Integration Architecture
+
+### GitHub Integration
+
+**Capabilities**:
+- Read GitHub Actions logs
+- Create pull requests
+- Manage issues
+- Access repository metadata
+
+**Integration Pattern**:
+```
+Agent ──> gh CLI ──> GitHub API ──> Repository
+```
+
+**Example Usage**:
+```bash
+# In debugger agent
+gh run view $RUN_ID --log
+gh pr create --title "feat: add auth" --body "..."
+```
+
+---
+
+### Database Integration
+
+**Capabilities**:
+- Query optimization analysis
+- Schema design
+- Data migration planning
+
+**Integration Pattern**:
+```
+Database Admin Agent ──> psql CLI ──> PostgreSQL
+```
+
+**Example Usage**:
+```bash
+# In database-admin agent
+psql $DATABASE_URL -c "EXPLAIN ANALYZE SELECT ..."
+```
+
+---
+
+### External API Integration
+
+**Pattern: MCP Server Wrapper**
+
+```
+┌──────────────┐
+│ Agent        │
+│ Needs Data   │
+└──────┬───────┘
+       │
+       ▼
+┌──────────────┐
+│ MCP Server   │
+│ (Middleware) │
+└──────┬───────┘
+       │
+       ▼
+┌──────────────┐
+│ External API │
+│ (REST/GraphQL)│
+└──────────────┘
+```
+
+**Benefits**:
+- Standardized interface
+- Error handling
+- Rate limiting
+- Caching
 
 ---
 
 ## Security Architecture
 
-### Network Security
+### Secret Management
 
-**Layers of Protection:**
-
-```
-Internet
-   │
-   ▼
-┌──────────────────────────┐
-│   nginx Ingress          │
-│   - TLS Termination      │ ◄── Certificate validation
-│   - Rate Limiting        │ ◄── DDoS protection
-│   - WAF (Future)         │
-└──────────────────────────┘
-   │
-   ▼
-┌──────────────────────────┐
-│   Kubernetes Network     │
-│   - Network Policies     │ ◄── Pod-to-pod isolation
-│   - Service Mesh (Future)│
-└──────────────────────────┘
-   │
-   ▼
-┌──────────────────────────┐
-│   Application (serve)    │
-│   - No exposed secrets   │
-│   - Read-only filesystem │
-└──────────────────────────┘
-```
-
-### API Security (Future)
-
-**Authentication Flow:**
+**Environment Variable Hierarchy**:
 
 ```
-User Request
-     │
-     ▼
+1. Process Environment (highest priority)
+   export GEMINI_API_KEY="..."
+
+2. Project Root .env
+   /project/.env
+
+3. Claude Config .env
+   /project/.claude/.env
+
+4. Skills Config .env
+   /project/.claude/skills/.env
+
+5. Individual Skill .env (lowest priority)
+   /project/.claude/skills/gemini-audio/.env
+```
+
+**Secret Detection**:
+
+```
+Pre-Commit Hook:
+  │
+  ▼
 ┌──────────────────────┐
-│  API Route Handler   │
-│                      │
-│  1. Extract API key  │
-│  2. Validate format  │
-│  3. Rate limit check │
-│  4. Sanitize input   │
-└──────────────────────┘
-     │
-     ▼
-┌──────────────────────┐
-│  OpenRouter Client   │
-│                      │
-│  - Server-side only  │
-│  - Secure API key    │
-└──────────────────────┘
+│ Git Manager Agent    │
+│ • Scans staged files │
+│ • Pattern matching   │
+│ • .env detection     │
+└──────┬───────────────┘
+       │
+    ┌──┴──┐
+    │     │
+  PASS   FAIL
+    │     │
+    ▼     ▼
+ Commit  Abort
+         + Warn User
 ```
-
-**Security Measures:**
-- API keys stored in Kubernetes Secrets
-- Rate limiting: 20 requests/minute per IP
-- Input sanitization: DOMPurify for user text
-- CORS: Restricted to docs.claudekit.cc
-- CSP headers: Prevent XSS attacks
 
 ---
 
-## Scaling Strategy
+### Code Security
 
-### Horizontal Pod Autoscaling (HPA)
+**OWASP Top 10 Coverage**:
 
-**Configuration:**
+```
+Code Reviewer Agent
+  │
+  ├─> SQL Injection Detection
+  ├─> XSS Vulnerability Scanning
+  ├─> Authentication Issues
+  ├─> Sensitive Data Exposure
+  ├─> Access Control Validation
+  ├─> Security Misconfiguration
+  ├─> Deserialization Flaws
+  ├─> Component Vulnerabilities
+  ├─> Logging & Monitoring
+  └─> Known CVEs
+```
+
+---
+
+### Access Control
+
+**Principle of Least Privilege**:
+- Agents only access files they need
+- MCP servers isolated per agent
+- API keys scoped to minimum permissions
+- No cross-agent data sharing (except via files)
+
+---
+
+## Scalability & Performance
+
+### Horizontal Scalability
+
+**Parallel Agent Execution**:
+
+```
+Single Command:
+/plan "complex feature"
+  │
+  ├─> Researcher 1 (WebSocket techs)
+  ├─> Researcher 2 (Authentication)
+  ├─> Researcher 3 (Database options)
+  └─> Researcher 4 (UI frameworks)
+       │
+       └─> All run in parallel
+           └─> Results aggregated by Planner
+```
+
+**Benefits**:
+- Reduced wall-clock time
+- Better resource utilization
+- Independent failure domains
+
+---
+
+### Performance Optimization
+
+**Caching Strategies**:
+
+1. **Repomix Output Caching**
+   - Cache codebase summaries
+   - Invalidate on file changes
+   - Reduces generation time from 30s to <1s
+
+2. **MCP Server Response Caching**
+   - Cache search results (15 min TTL)
+   - Cache documentation fetches
+   - Reduces API calls and costs
+
+3. **Documentation Caching**
+   - Reuse docs <1 day old
+   - Avoid redundant generation
+   - Faster agent initialization
+
+---
+
+### Resource Management
+
+**Memory Optimization**:
+- Stream large files instead of loading entirely
+- Clean up temporary files after agent completion
+- Limit concurrent agent execution (configurable)
+
+**Token Optimization**:
+- Use smaller models when appropriate
+- Compress prompts without losing context
+- Batch operations when possible
+
+---
+
+## Deployment Architecture
+
+### Local Development
+
+```
+Developer Machine:
+├── Claude Code CLI
+├── Node.js Runtime
+├── Git Repository
+├── MCP Servers (optional)
+└── Environment Variables
+```
+
+**Setup**:
+```bash
+# Clone repository
+git clone https://github.com/claudekit/claudekit-engineer.git
+cd claudekit-engineer
+
+# Install dependencies
+npm install
+
+# Configure environment
+cp .env.example .env
+# Edit .env with API keys
+
+# Initialize Claude Code
+claude
+
+# Run first command
+/plan "your feature"
+```
+
+---
+
+### Team Collaboration
+
+**Shared Resources**:
+- Git repository (shared codebase)
+- Documentation (synced via git)
+- Plans and reports (version controlled)
+- Standards and templates (team-wide)
+
+**Individual Resources**:
+- API keys (developer-specific)
+- Local MCP servers
+- Development environment
+- Git branches
+
+**Workflow**:
+```
+Developer A                Developer B
+    │                          │
+    ├─> /plan "feature"       │
+    ├─> /cook plan            │
+    ├─> /test                 │
+    ├─> /git:cp               │
+    │                          │
+    │                      ├─> git pull
+    │                      ├─> /plan "fix bug"
+    │                      ├─> /fix:fast issue
+    │                      └─> /git:cp
+    │                          │
+    └─> git pull               │
+```
+
+---
+
+### CI/CD Integration
+
+**GitHub Actions Example**:
 
 ```yaml
-apiVersion: autoscaling/v2
-kind: HorizontalPodAutoscaler
-metadata:
-  name: claudekit-docs-hpa
-spec:
-  scaleTargetRef:
-    apiVersion: apps/v1
-    kind: Deployment
-    name: claudekit-docs
-  minReplicas: 2   # Minimum for high availability
-  maxReplicas: 10  # Maximum under heavy load
-  metrics:
-    - type: Resource
-      resource:
-        name: cpu
-        target:
-          type: Utilization
-          averageUtilization: 70  # Scale at 70% CPU
+name: ClaudeKit Quality Check
+on: [push, pull_request]
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+
+      # Run tests
+      - run: npm test
+
+      # Validate commit messages
+      - run: npx commitlint --from=HEAD~1
+
+      # Check for secrets
+      - run: |
+          if grep -r "sk-[a-zA-Z0-9]" .; then
+            echo "Secret detected!"
+            exit 1
+          fi
 ```
 
-**Scaling Behavior:**
+**Agent-Assisted CI/CD**:
+```bash
+# When CI fails
+/fix:ci https://github.com/user/repo/actions/runs/123456
 
+# Debugger agent:
+# 1. Fetches action logs via gh CLI
+# 2. Analyzes failure root cause
+# 3. Creates fix plan
+# 4. Main agent implements fixes
+# 5. Tester validates
+# 6. Git manager commits
 ```
-Traffic Pattern          Pod Count     CPU Usage
-──────────────────────────────────────────────────
-Low (100 req/min)        2 pods        ~20%
-Medium (1000 req/min)    4 pods        ~60%
-High (5000 req/min)      8 pods        ~75%
-Peak (10000 req/min)     10 pods       ~80%
-```
-
-### CDN Integration (Future)
-
-**CloudFlare Architecture:**
-
-```
-User Request
-     │
-     ▼
-┌──────────────────────────┐
-│   CloudFlare CDN         │ ◄── Cache static assets
-│   - HTML caching (5 min) │     (HTML, CSS, JS, images)
-│   - Asset caching (1 day)│
-│   - Gzip/Brotli compress │
-└──────────────────────────┘
-     │ Cache miss
-     ▼
-┌──────────────────────────┐
-│   nginx Ingress          │
-│   (Origin server)        │
-└──────────────────────────┘
-```
-
-**Benefits:**
-- Reduced latency (edge locations worldwide)
-- Lower K8s load (static assets served from CDN)
-- Automatic DDoS protection
-- Bandwidth savings
 
 ---
 
 ## Monitoring & Observability
 
-### Health Checks
+### Agent Performance Metrics
 
-**Endpoint:** `GET /`
+**Tracked Metrics**:
+- Agent execution time
+- Success/failure rates
+- Token usage per agent
+- File I/O operations
+- API call counts
 
-**Liveness Probe:**
-- **Purpose:** Detect if pod is alive (restart if not)
-- **Interval:** Every 30 seconds
-- **Timeout:** 5 seconds
-- **Failure Threshold:** 3 consecutive failures
-
-**Readiness Probe:**
-- **Purpose:** Detect if pod can accept traffic
-- **Interval:** Every 10 seconds
-- **Timeout:** 3 seconds
-- **Failure Threshold:** 3 consecutive failures
-
-**Why Different?**
-- Liveness: Conservative (avoid unnecessary restarts)
-- Readiness: Aggressive (quickly remove unhealthy pods from load balancer)
-
-### Logging Architecture (Future)
-
+**Logging**:
 ```
-Application Logs
-     │
-     ▼
-┌──────────────────────┐
-│  stdout/stderr       │
-│  (Container logs)    │
-└──────────────────────┘
-     │
-     ▼
-┌──────────────────────┐
-│  Kubernetes API      │
-│  (kubectl logs)      │
-└──────────────────────┘
-     │
-     ▼
-┌──────────────────────┐
-│  Log Aggregation     │
-│  (Loki, ELK Stack)   │
-└──────────────────────┘
-     │
-     ▼
-┌──────────────────────┐
-│  Visualization       │
-│  (Grafana, Kibana)   │
-└──────────────────────┘
+./logs/
+├── 251030-planner-execution.log
+├── 251030-tester-results.log
+└── 251030-system-events.log
 ```
 
-### Metrics (Future)
+---
 
-**Prometheus Metrics:**
+### Error Tracking
 
-```yaml
-# Application metrics
-http_requests_total{path="/docs/intro", status="200"}
-http_request_duration_seconds{path="/docs/intro", quantile="0.95"}
-ai_chat_requests_total{model="claude-3.5-sonnet"}
-ai_chat_duration_seconds{model="claude-3.5-sonnet", quantile="0.99"}
+**Error Handling Levels**:
 
-# Infrastructure metrics
-kube_pod_container_resource_requests_cpu_cores
-kube_pod_container_resource_limits_memory_bytes
-nginx_ingress_controller_requests{host="docs.claudekit.cc"}
-```
+1. **Agent-Level Errors**
+   - Logged to agent report
+   - Included in output to main agent
+   - Actionable error messages
 
-**Grafana Dashboards:**
-- Application performance (requests, latency, errors)
-- Infrastructure health (CPU, memory, network)
-- AI usage metrics (requests, costs, models)
-- User analytics (page views, popular content)
+2. **Command-Level Errors**
+   - User-facing error display
+   - Troubleshooting guidance
+   - Recovery suggestions
+
+3. **System-Level Errors**
+   - Critical failures logged
+   - User notification
+   - Graceful degradation
 
 ---
 
 ## Disaster Recovery
 
-### Backup Strategy
+### Data Backup
 
-**Static Content:**
-- **Primary:** Git repository (single source of truth)
-- **Deployment:** Rebuild from source on any infrastructure
+**Version Controlled**:
+- All plans (in git)
+- All documentation (in git)
+- Code changes (in git)
 
-**No Traditional Backups Needed:**
-- Stateless architecture (no databases)
-- Immutable deployments (Docker images)
-- Reproducible builds (package-lock.json)
+**Not Version Controlled**:
+- Temporary files
+- Cache data
+- Log files
 
-### Rollback Strategy
-
-**Kubernetes Deployment Rollback:**
-
+**Recovery**:
 ```bash
-# Check deployment history
-kubectl rollout history deployment/claudekit-docs
+# Restore from git
+git reset --hard HEAD
+git pull origin main
 
-# Rollback to previous version
-kubectl rollout undo deployment/claudekit-docs
-
-# Rollback to specific revision
-kubectl rollout undo deployment/claudekit-docs --to-revision=3
+# Regenerate summaries
+/docs:summarize
 ```
-
-**Zero-Downtime Rollback:**
-- Rolling update strategy (default)
-- Readiness probes ensure new pods are ready
-- Old pods remain until new pods pass health checks
-
-### High Availability
-
-**Current Configuration:**
-- 2 replicas minimum (different nodes if possible)
-- Liveness probes restart unhealthy pods
-- Readiness probes remove unhealthy pods from load balancer
-- Service load balances across healthy pods
-
-**Expected Uptime:** 99.9% (downtime <8.76 hours/year)
 
 ---
 
-## Performance Optimization
+### Failure Scenarios
 
-### Build-Time Optimizations
+**Scenario 1: MCP Server Down**
+- **Impact**: Limited (optional features)
+- **Mitigation**: Graceful degradation, local fallbacks
+- **Recovery**: Automatic retry, user notification
 
-**Astro Build Process:**
+**Scenario 2: AI Model Unavailable**
+- **Impact**: High (core functionality)
+- **Mitigation**: Fallback to alternative models
+- **Recovery**: Queue requests, retry with backoff
 
-```
-Source Code
-     │
-     ▼
-┌──────────────────────┐
-│  Static Analysis     │ ◄── Dead code elimination
-└──────────────────────┘
-     │
-     ▼
-┌──────────────────────┐
-│  Component Bundling  │ ◄── Code splitting per page
-└──────────────────────┘
-     │
-     ▼
-┌──────────────────────┐
-│  CSS Optimization    │ ◄── Tailwind purge, minification
-└──────────────────────┘
-     │
-     ▼
-┌──────────────────────┐
-│  Image Optimization  │ ◄── WebP/AVIF conversion
-└──────────────────────┘
-     │
-     ▼
-┌──────────────────────┐
-│  HTML Minification   │ ◄── Remove whitespace, comments
-└──────────────────────┘
-     │
-     ▼
-   /dist/
-```
-
-### Runtime Optimizations
-
-**Static File Serving (`serve`):**
-- Gzip/Brotli compression (automatic)
-- Cache-Control headers (1 year for assets)
-- ETag support (efficient caching)
-
-**Browser Caching:**
-
-```
-Resource Type        Cache Duration
-──────────────────────────────────
-HTML                 5 minutes
-CSS/JS (hashed)      1 year
-Images (hashed)      1 year
-Fonts                1 year
-```
-
-**Why Different TTLs?**
-- HTML: Short cache (fresh content)
-- Assets: Long cache (immutable filenames with hashes)
-
----
-
-## Technology Stack Summary
-
-### Frontend
-- **Framework:** Astro v5.14.6 (SSG)
-- **UI Library:** React 18.3.1 (islands)
-- **Styling:** Tailwind CSS v3.4.17 + CSS Variables
-- **Typography:** Inter Variable, Geist Mono
-
-### Content
-- **Format:** Markdown with frontmatter (Zod validation)
-- **Processing:** Unified (remark + rehype)
-- **Syntax Highlighting:** Shiki (One Dark Pro)
-
-### Infrastructure
-- **Container:** Docker (node:20-alpine)
-- **Orchestration:** Kubernetes v1.24+
-- **Ingress:** nginx-ingress-controller
-- **Certificates:** cert-manager + Let's Encrypt
-- **Registry:** GitHub Container Registry
-
-### External Services (Future)
-- **AI:** OpenRouter API (multi-model gateway)
-- **Analytics:** Plausible or similar (privacy-focused)
-- **Monitoring:** Prometheus + Grafana
-- **Logging:** Loki + Grafana
-- **Errors:** Sentry
-
----
-
-## Architectural Decisions
-
-### ADR-001: Static Site Generation over SSR
-
-**Decision:** Use Astro SSG (static), not Next.js SSR (server-side rendering)
-
-**Rationale:**
-- **Performance:** Pre-rendered HTML faster than runtime rendering
-- **Simplicity:** No server-side runtime complexity
-- **Cost:** Static hosting cheaper than server instances
-- **SEO:** Pre-rendered HTML better for search engines
-
-**Trade-offs Accepted:**
-- No dynamic data without client-side JS
-- Build time increases with content (mitigated by incremental builds)
-
-### ADR-002: Kubernetes over Serverless
-
-**Decision:** Deploy on Kubernetes, not serverless (Vercel, Netlify)
-
-**Rationale:**
-- **Control:** Full infrastructure control
-- **Cost:** Predictable pricing (no per-request billing)
-- **Flexibility:** Can add APIs, databases later
-- **Learning:** Team expertise in K8s
-
-**Trade-offs Accepted:**
-- More complex infrastructure management
-- Need to manage scaling, monitoring
-
-### ADR-003: OpenRouter over Direct AI APIs
-
-**Decision:** Use OpenRouter as AI gateway, not direct Claude/GPT-4 APIs
-
-**Rationale:**
-- **Flexibility:** Switch models without code changes
-- **Fallbacks:** Automatic failover to alternative models
-- **Cost Optimization:** Route to cheapest model for task
-- **Simplicity:** Single API interface for 400+ models
-
-**Trade-offs Accepted:**
-- Additional latency (proxy layer)
-- Dependency on third-party service
-
-### ADR-004: React Islands over Full React App
-
-**Decision:** Use Astro islands architecture, not full React SPA
-
-**Rationale:**
-- **Performance:** Minimal JS payload (<50KB vs. >500KB)
-- **SEO:** Static HTML for content
-- **Progressive Enhancement:** Works without JS
-- **Simplicity:** Less state management complexity
-
-**Trade-offs Accepted:**
-- No shared state across islands (without workarounds)
-- Complex interactions may be harder to implement
+**Scenario 3: Corrupted Plan File**
+- **Impact**: Medium (single feature affected)
+- **Mitigation**: Git history recovery
+- **Recovery**: Restore from git, regenerate if needed
 
 ---
 
 ## Future Architecture Considerations
 
-### Phase 2: API Routes
-
-**Planned Architecture:**
+### Cloud-Hosted Agents (Future)
 
 ```
-src/pages/api/
-├── chat.ts          # AI chat endpoint
-├── search.ts        # AI-powered search
-└── feedback.ts      # User feedback submission
+┌──────────────────────────────────────────┐
+│ User Machine                             │
+│ • Claude Code CLI                        │
+│ • Lightweight client                     │
+└────────────┬─────────────────────────────┘
+             │ HTTPS
+             ▼
+┌──────────────────────────────────────────┐
+│ ClaudeKit Cloud Platform                 │
+│ • Agent orchestration                    │
+│ • Shared MCP servers                     │
+│ • Centralized caching                    │
+│ • Team collaboration                     │
+└────────────┬─────────────────────────────┘
+             │ WebSocket
+             ▼
+┌──────────────────────────────────────────┐
+│ External Services                        │
+│ • GitHub, GitLab, Bitbucket              │
+│ • Cloud providers                        │
+│ • Third-party APIs                       │
+└──────────────────────────────────────────┘
 ```
-
-**Implementation:**
-- Server-side API routes (Astro endpoints)
-- OpenRouter client for AI requests
-- Rate limiting middleware
-- Input validation (Zod)
-
-### Phase 3: Search Integration
-
-**Pagefind Architecture:**
-
-```
-Build Time                 Runtime
-──────────────────────────────────
-Markdown → HTML           Browser
-     │                        │
-     ▼                        ▼
-Pagefind indexer          Search index
-     │                     (lazy loaded)
-     ▼                        │
-search-index.json            ▼
-search-data.json          Search UI
-```
-
-**Benefits:**
-- Zero backend infrastructure
-- Instant client-side search
-- Works offline after initial load
-- ~1KB initial payload
-
-### Phase 4: Analytics Integration
-
-**Privacy-Focused Analytics:**
-
-```
-User Event                Plausible API           Dashboard
-     │                         │                      │
-     │─── Page view ─────────>│                      │
-     │─── Click event ───────>│                      │
-     │                         │                      │
-     │                         │─── Aggregated ─────>│
-     │                         │    Data              │
-```
-
-**Principles:**
-- No cookies
-- No PII collection
-- GDPR compliant
-- Aggregate metrics only
 
 ---
 
-## Conclusion
+### Multi-Language Support (Future)
 
-The ClaudeKit Documentation architecture balances:
-- **Performance:** Static generation + minimal JS
-- **Scalability:** Kubernetes horizontal scaling
-- **Maintainability:** Simple Docker deployment
-- **Future-Proof:** Extensible for APIs, search, analytics
+**Current**: Markdown-based agents
+**Future**: Multi-language agent implementations
 
-**Next Steps:**
-1. Implement CI/CD pipeline
-2. Add monitoring and logging
-3. Connect AI assistant backend
-4. Integrate search (Pagefind)
-5. Set up analytics
+```
+Agent Implementations:
+├── Python/           # For data science tasks
+├── JavaScript/       # For web development
+├── Go/              # For systems programming
+└── Rust/            # For performance-critical tasks
+```
 
 ---
 
-*Last updated: 2025-10-18*
-*Review this document when adding major architectural components or making significant infrastructure changes.*
+## Summary
+
+ClaudeKit Engineer's architecture is built on proven principles:
+
+1. **Separation of Concerns** - Each component has clear responsibility
+2. **Loose Coupling** - File-based communication enables independence
+3. **Composability** - Small agents combine for complex workflows
+4. **Extensibility** - Easy to add agents, commands, and integrations
+
+The system is designed for:
+- **Local-first development** with optional cloud features
+- **Team collaboration** via version-controlled artifacts
+- **Security by default** with secret detection and scanning
+- **Performance at scale** through parallelization and caching
+
+---
+
+**Version**: 1.0
+**Last Review**: 2025-10-30
+**Next Review**: Q1 2025
+**Owner**: ClaudeKit Team

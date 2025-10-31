@@ -281,47 +281,37 @@ npm run astro     # Run Astro CLI commands
 
 ### Project Documentation
 
-Comprehensive project documentation located in `docs/`:
+Comprehensive project documentation for both ClaudeKit Docs site and ClaudeKit Engineer located in `docs/`:
 
-1. **[Codebase Summary](./docs/codebase-summary.md)**
-   - Complete overview of file structure, dependencies, and code organization
-   - Statistics: 34 files, 37K tokens, 135K characters
-   - Top files by size, missing dependencies, gaps analysis
+#### Core Documentation
 
-2. **[Project Overview & PDR](./docs/project-overview-pdr.md)**
-   - Product requirements (functional & non-functional)
+1. **[Project Overview & PDR](./docs/project-overview-pdr.md)**
+   - Product vision, goals, and value proposition
+   - Functional and non-functional requirements
    - Success metrics and roadmap (4 phases)
-   - Architecture decisions and trade-offs
-   - Risk analysis and mitigation strategies
+   - Pricing strategy and competitive analysis
+   - Risk assessment and mitigation strategies
+
+2. **[Codebase Summary](./docs/codebase-summary.md)**
+   - Complete overview of ClaudeKit Engineer structure
+   - 49 source files, 44K+ tokens analyzed
+   - AI agents (12), slash commands (30+), MCP servers (6)
+   - Technology stack and dependencies
+   - File statistics and distribution
 
 3. **[Code Standards](./docs/code-standards.md)**
-   - File naming conventions and directory structure
-   - TypeScript, React, and Astro coding standards
-   - CSS architecture and styling guidelines
-   - Testing requirements and Git workflow
+   - Core principles: YAGNI, KISS, DRY
+   - File organization and naming conventions
+   - Agent and command development standards
+   - Documentation, testing, and security standards
+   - Git workflow and commit message format
 
 4. **[System Architecture](./docs/system-architecture.md)**
-   - High-level architecture diagrams
-   - Component architecture and data flow
-   - Security architecture and scaling strategy
-   - Monitoring, observability, disaster recovery
-
-5. **[Deployment Guide](./docs/deployment-guide.md)**
-   - Step-by-step production deployment
-   - Docker and Kubernetes configuration
-   - SSL/TLS setup with cert-manager
-   - Troubleshooting and maintenance procedures
-
-6. **[Tech Stack](./docs/tech-stack.md)**
-   - Technology decisions and rationale
-   - Alternative solutions considered
-   - Cost breakdown and performance targets
-
-7. **[Design Guidelines](./docs/design-guidelines.md)**
-   - Design system specification (colors, typography, spacing)
-   - Component specifications and patterns
-   - Accessibility standards (WCAG 2.1 AA)
-   - Asset generation prompts
+   - High-level architecture overview
+   - Agent architecture and lifecycle
+   - Command orchestration patterns (sequential, parallel, conditional)
+   - Data flow and communication protocols
+   - Integration, security, and scalability architecture
 
 ### Kubernetes Documentation
 
@@ -331,24 +321,36 @@ Detailed K8s deployment guide: **[k8s/README.md](./k8s/README.md)**
 
 ## Current Status
 
-### Completed (MVP)
+### Completed (Phase 1-4) ✅
 - ✅ Project setup and configuration
 - ✅ Base layouts (BaseLayout, DocsLayout)
 - ✅ Navigation components (Header, Sidebar)
 - ✅ AI chat UI (placeholder responses)
 - ✅ Content collections with Zod validation
-- ✅ 7 documentation pages (getting-started, cli, core-concepts)
 - ✅ Docker containerization
 - ✅ Kubernetes manifests
 - ✅ Comprehensive project documentation
+
+### Completed (Content Update - Oct 2025) ✅
+- ✅ **79 documentation pages** (259% increase from 22 pages)
+- ✅ **14 agent pages** (100% coverage)
+- ✅ **25 command pages** across 9 categories (83% coverage)
+- ✅ **3 essential skill pages** (Next.js, Tailwind CSS, shadcn/ui)
+- ✅ **7 use case pages** (features, bugs, refactoring, API, auth, payments, performance)
+- ✅ **6 troubleshooting pages** (installation, commands, agents, API keys, performance)
+- ✅ **Quick Start Guide** (complete 15-min workflow)
+- ✅ **Introduction revision** (20% more concise with comparison table)
+- ✅ **~250KB of quality documentation** added
 
 ### In Progress
 - 🔄 Production deployment to docs.claudekit.cc
 - 🔄 AI assistant backend connection (OpenRouter API)
 - 🔄 Search functionality (Pagefind)
+- 🔄 Remaining content: 42 skills, 5 commands
 
 ### Planned (Phase 2)
-- 📋 Complete API reference documentation
+- 📋 Complete skill documentation (42 remaining)
+- 📋 Complete command documentation (5 remaining)
 - 📋 Interactive code examples
 - 📋 Analytics integration (Plausible)
 - 📋 Error tracking (Sentry)
@@ -369,9 +371,13 @@ Detailed K8s deployment guide: **[k8s/README.md](./k8s/README.md)**
 ClaudeKit ecosystem projects:
 
 1. **[ClaudeKit Website](https://github.com/mrgoonie/claudekit)** - Main marketing site
+  - Source code: `../claudekit-web/`
 2. **[ClaudeKit Engineer](https://github.com/claudekit/claudekit-engineer)** - Engineering toolkit
+  - Source code: `../claudekit-engineer/`
 3. **[ClaudeKit Marketing](https://github.com/claudekit/claudekit-marketing)** - Marketing toolkit
+  - Source code: `../claudekit-marketing/`
 4. **[ClaudeKit CLI](https://github.com/mrgoonie/claudekit-cli)** - Command-line tool
+  - Source code: `../claudekit-cli/`
 
 ---
 

@@ -2,7 +2,7 @@
 title: Debugger Agent
 description: Systematically investigate issues, analyze logs, and provide root cause analysis with actionable solutions
 category: agents
-order: 4
+order: 5
 published: true
 ---
 

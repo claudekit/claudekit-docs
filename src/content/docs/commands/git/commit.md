@@ -2,7 +2,7 @@
 title: /git:cm
 description: Stage all files and create a conventional commit with an AI-generated message
 category: commands
-order: 1
+order: 30
 published: true
 ---
 

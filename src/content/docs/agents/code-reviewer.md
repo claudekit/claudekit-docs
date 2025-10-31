@@ -2,7 +2,7 @@
 title: Code Reviewer Agent
 description: Comprehensive code quality assessment with security audits, performance analysis, and actionable recommendations
 category: agents
-order: 5
+order: 7
 published: true
 ---
 

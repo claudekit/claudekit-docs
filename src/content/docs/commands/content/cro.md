@@ -2,7 +2,7 @@
 title: /content:cro
 description: Analyze content and optimize for conversion with A/B test suggestions and psychological triggers
 category: commands
-order: 1
+order: 50
 published: true
 ---
 

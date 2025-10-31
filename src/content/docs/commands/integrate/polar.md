@@ -2,7 +2,7 @@
 title: /integrate:polar
 description: Implement payment integration with Polar.sh for subscriptions, webhooks, and customer portal
 category: commands
-order: 1
+order: 70
 published: true
 ---
 

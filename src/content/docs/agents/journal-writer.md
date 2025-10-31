@@ -2,7 +2,7 @@
 title: Journal Writer Agent
 description: Document technical failures and setbacks with brutal honesty and emotional authenticity
 category: agents
-order: 14
+order: 15
 published: true
 ---
 

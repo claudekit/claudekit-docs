@@ -2,7 +2,7 @@
 title: /content:good
 description: Create high-quality creative copy with research, competitor analysis, and A/B test recommendations
 category: commands
-order: 4
+order: 53
 published: true
 ---
 

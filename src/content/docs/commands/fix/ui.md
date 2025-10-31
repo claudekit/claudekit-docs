@@ -2,7 +2,7 @@
 title: /fix:ui
 description: Fix UI/UX issues with screenshots, videos, and detailed error descriptions
 category: commands
-order: 4
+order: 24
 published: true
 ---
 

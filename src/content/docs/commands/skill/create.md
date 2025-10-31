@@ -2,7 +2,7 @@
 title: /skill:create
 description: Create new agent skills with research, implementation, review, and evaluation in 4 phases
 category: commands
-order: 1
+order: 80
 published: true
 ---
 

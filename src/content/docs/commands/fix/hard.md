@@ -2,7 +2,7 @@
 title: /fix:hard
 description: Fix complex bugs with thorough investigation, root cause analysis, and comprehensive testing
 category: commands
-order: 2
+order: 21
 published: true
 ---
 

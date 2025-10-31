@@ -2,7 +2,7 @@
 title: /docs:update
 description: Analyze codebase and update all documentation files
 category: commands
-order: 2
+order: 61
 published: true
 ---
 

@@ -2,7 +2,7 @@
 title: /docs:init
 description: Initialize comprehensive project documentation by analyzing the entire codebase
 category: commands
-order: 1
+order: 60
 published: true
 ---
 

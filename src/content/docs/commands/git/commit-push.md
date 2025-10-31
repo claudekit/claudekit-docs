@@ -2,7 +2,7 @@
 title: /git:cp
 description: Stage all changes, create a conventional commit, and push to remote in one command
 category: commands
-order: 2
+order: 31
 published: true
 ---
 

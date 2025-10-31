@@ -2,7 +2,7 @@
 title: /git:pr
 description: Create a pull request with comprehensive summary and test plan
 category: commands
-order: 3
+order: 32
 published: true
 ---
 

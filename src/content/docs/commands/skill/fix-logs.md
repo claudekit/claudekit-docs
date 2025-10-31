@@ -2,7 +2,7 @@
 title: /skill:fix-logs
 description: Fix agent skills based on logs.txt file by debugging issues and updating skill documentation
 category: commands
-order: 2
+order: 81
 published: true
 ---
 

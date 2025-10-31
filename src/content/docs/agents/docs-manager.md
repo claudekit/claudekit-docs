@@ -2,7 +2,7 @@
 title: Docs Manager Agent
 description: Senior technical documentation specialist for creating, maintaining, and organizing developer documentation
 category: agents
-order: 7
+order: 9
 published: true
 ---
 

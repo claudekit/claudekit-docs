@@ -2,7 +2,7 @@
 title: /docs:summarize
 description: Generate comprehensive codebase summary documentation
 category: commands
-order: 3
+order: 62
 published: true
 ---
 

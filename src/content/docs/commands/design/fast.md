@@ -2,7 +2,7 @@
 title: /design:fast
 description: Create quick design prototypes and wireframes with rapid turnaround for fast iteration
 category: commands
-order: 3
+order: 42
 published: true
 ---
 

@@ -2,7 +2,7 @@
 title: /design:describe
 description: Analyze screenshots or videos to understand design patterns, extract specifications, and generate implementation suggestions
 category: commands
-order: 2
+order: 41
 published: true
 ---
 

@@ -2,7 +2,7 @@
 title: Researcher Agent
 description: Multi-source technology research with comprehensive documentation analysis and best practices discovery
 category: agents
-order: 3
+order: 2
 published: true
 ---
 

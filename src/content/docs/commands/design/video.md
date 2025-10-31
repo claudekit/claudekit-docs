@@ -2,7 +2,7 @@
 title: /design:video
 description: Extract design patterns and motion from videos to implement animated interfaces with precise timing
 category: commands
-order: 6
+order: 45
 published: true
 ---
 

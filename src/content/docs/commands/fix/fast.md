@@ -2,7 +2,7 @@
 title: /fix:fast
 description: Fix minor bugs and issues quickly without extensive analysis
 category: commands
-order: 1
+order: 20
 published: true
 ---
 

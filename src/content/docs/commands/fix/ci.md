@@ -2,7 +2,7 @@
 title: /fix:ci
 description: Automatically fix GitHub Actions CI failures by analyzing logs and implementing solutions
 category: commands
-order: 3
+order: 22
 published: true
 ---
 

@@ -2,7 +2,7 @@
 title: /design:good
 description: Create comprehensive, immersive designs with research-backed excellence inspired by award-winning work
 category: commands
-order: 4
+order: 43
 published: true
 ---
 

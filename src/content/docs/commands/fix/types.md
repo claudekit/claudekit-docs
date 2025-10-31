@@ -2,7 +2,7 @@
 title: /fix:types
 description: Automatically fix all TypeScript and Dart type errors
 category: commands
-order: 5
+order: 25
 published: true
 ---
 

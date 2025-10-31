@@ -2,7 +2,7 @@
 title: Commands Overview
 description: Comprehensive guide to ClaudeKit's slash commands for development, debugging, design, and more
 category: commands
-order: 1
+order: 0
 published: true
 ---
 

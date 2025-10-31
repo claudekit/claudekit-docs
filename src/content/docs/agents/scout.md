@@ -2,7 +2,7 @@
 title: Scout Agent
 description: Rapidly locate relevant files across large codebases using parallel agentic search with Gemini and OpenCode
 category: agents
-order: 5
+order: 8
 published: true
 ---
 

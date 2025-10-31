@@ -2,7 +2,7 @@
 title: Brainstormer Agent
 description: Solution architect and technical advisor for exploring approaches, challenging assumptions, and debating decisions
 category: agents
-order: 4
+order: 6
 published: true
 ---
 

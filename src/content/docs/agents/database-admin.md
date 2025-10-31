@@ -2,7 +2,7 @@
 title: Database Admin Agent
 description: Senior database administrator specializing in performance optimization, query tuning, and reliability
 category: agents
-order: 13
+order: 14
 published: true
 ---
 

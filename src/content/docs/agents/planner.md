@@ -2,7 +2,7 @@
 title: Planner Agent
 description: Research, analyze, and create comprehensive implementation plans before coding
 category: agents
-order: 2
+order: 3
 published: true
 ---
 

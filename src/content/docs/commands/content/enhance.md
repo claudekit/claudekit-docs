@@ -2,7 +2,7 @@
 title: /content:enhance
 description: Analyze and enhance existing copy for clarity, impact, SEO, and readability
 category: commands
-order: 2
+order: 51
 published: true
 ---
 

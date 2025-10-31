@@ -2,7 +2,7 @@
 title: /plan:two
 description: Research and create two different implementation approaches with pros/cons and recommendation
 category: commands
-order: 2
+order: 11
 published: true
 ---
 

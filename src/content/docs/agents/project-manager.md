@@ -2,7 +2,7 @@
 title: Project Manager Agent
 description: Senior project manager and system orchestrator for implementation planning, progress tracking, and cross-agent coordination
 category: agents
-order: 8
+order: 10
 published: true
 ---
 

@@ -2,7 +2,7 @@
 title: /fix:logs
 description: Analyze logs and fix issues with automated root cause analysis
 category: commands
-order: 4
+order: 23
 published: true
 ---
 

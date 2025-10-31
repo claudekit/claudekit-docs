@@ -2,7 +2,7 @@
 title: /content:fast
 description: Generate creative copy quickly with multiple variations for different platforms
 category: commands
-order: 3
+order: 52
 published: true
 ---
 

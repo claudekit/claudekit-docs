@@ -2,7 +2,7 @@
 title: Use Cases
 description: Real-world examples of using ClaudeKit for different development scenarios
 category: use-cases
-order: 1
+order: 0
 published: true
 ---
 

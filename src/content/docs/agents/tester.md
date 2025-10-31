@@ -2,7 +2,7 @@
 title: Tester Agent
 description: Execute tests, validate implementations, and ensure code quality with comprehensive coverage analysis
 category: agents
-order: 3
+order: 4
 published: true
 ---
 

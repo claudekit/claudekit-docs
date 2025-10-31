@@ -2,7 +2,7 @@
 title: /plan:ci
 description: Analyze GitHub Actions logs and create detailed plan to fix CI/CD issues (does not implement)
 category: commands
-order: 1
+order: 10
 published: true
 ---
 

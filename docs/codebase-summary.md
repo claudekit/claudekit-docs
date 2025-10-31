@@ -1,309 +1,322 @@
 # Codebase Summary
 
-**Last Updated**: 2025-10-30
-**Generated From**: ClaudeKit Docs v0.0.1 + ClaudeKit Engineer v1.0
-**Documentation Files**: 79 pages (~250KB content)
-**Source Files**: ~30 components and layouts
-**Build Time**: 6.29s
-**Status**: Production Ready
+**Last Updated**: 2025-10-26
+**Version**: 1.8.0
+**Repository**: [claudekit/claudekit-engineer](https://github.com/claudekit/claudekit-engineer)
 
----
+## Overview
 
-## Project Overview
+ClaudeKit Engineer is a comprehensive boilerplate template for building professional software projects with CLI Coding Agents (Claude Code and Open Code). It provides a complete development environment with AI-powered agent orchestration, automated workflows, and intelligent project management.
 
-ClaudeKit Documentation is the official documentation website for ClaudeKit Engineer - a comprehensive multi-agent AI development system. Built with Astro v5, the site features 79 documentation pages covering agents, commands, skills, use cases, and troubleshooting guides.
-
-### Content Statistics
-
-**Total Pages**: 79 (259% increase from 22)
-- **Getting Started**: 3 pages (Introduction, Installation, Quick Start)
-- **Agents**: 14 pages (100% coverage of all agents)
-- **Commands**: 25 pages across 9 categories (83% coverage)
-- **Skills**: 3 pages (Next.js, Tailwind CSS, shadcn/ui - 7% coverage)
-- **Use Cases**: 7 pages (features, bugs, refactoring, API, auth, payments, performance)
-- **Troubleshooting**: 6 pages (installation, commands, agents, API keys, performance)
-- **Core Concepts**: Multiple architecture and workflow pages
-
-**Content Metrics**:
-- Total content added: ~250KB
-- Agent coverage: 100% (14/14)
-- Command coverage: 83% (25/30)
-- Skill coverage: 7% (3/45)
-- Remaining work: 42 skills, 5 commands
-
-### Key Components
-
-1. **Documentation Site**: 79 pages of comprehensive documentation
-2. **AI Agents Documentation**: Complete coverage of all 14 agents
-3. **Commands Documentation**: 25 command pages across 9 categories
-4. **Skills Documentation**: Essential skills (Next.js, Tailwind, shadcn/ui)
-5. **Use Cases**: Practical examples for common development scenarios
-6. **Troubleshooting**: Comprehensive guides for common issues
-
----
-
-## Directory Structure
+## Project Structure
 
 ```
-claudekit-docs/
-├── src/
-│   ├── components/              # React & Astro components
-│   │   ├── AIChat.tsx           # AI chat interface
-│   │   ├── AIPanel.astro        # AI assistant panel
-│   │   ├── Header.astro         # Top navigation
-│   │   ├── Sidebar.astro        # Left sidebar
-│   │   └── SidebarNav.astro     # Navigation tree
-│   ├── content/                 # Documentation content
-│   │   └── docs/                # 79 markdown pages
-│   │       ├── getting-started/ # 3 pages (intro, install, quick-start)
-│   │       ├── agents/          # 14 pages (100% coverage)
-│   │       ├── commands/        # 25 pages (83% coverage)
-│   │       │   ├── core/        # Core development commands
-│   │       │   ├── design/      # Design commands
-│   │       │   ├── documentation/ # Docs commands
-│   │       │   ├── fix/         # Fix commands
-│   │       │   ├── git/         # Git commands
-│   │       │   ├── planning/    # Planning commands
-│   │       │   ├── integration/ # Integration commands
-│   │       │   ├── content/     # Content commands
-│   │       │   └── automation/  # Automation commands
-│   │       ├── skills/          # 3 pages (7% coverage)
-│   │       ├── use-cases/       # 7 pages
-│   │       ├── troubleshooting/ # 6 pages
-│   │       └── core-concepts/   # Architecture & workflows
-│   ├── layouts/                 # Page layouts
-│   │   ├── BaseLayout.astro     # HTML document structure
-│   │   └── DocsLayout.astro     # 3-column docs layout
-│   ├── lib/                     # Utilities
-│   │   └── openrouter.ts        # OpenRouter API client
-│   ├── pages/                   # File-based routing
-│   │   ├── index.astro          # Homepage
-│   │   └── docs/[...slug].astro # Dynamic doc pages
-│   └── styles/                  # Global styles
-│       └── global.css           # Design system
-├── public/                      # Static assets
-│   ├── favicon.svg              # Site icon
-│   └── *.png                    # Logos
-├── k8s/                         # Kubernetes deployment
-├── docs/                        # Project documentation
-│   ├── project-overview-pdr.md  # Product requirements
-│   ├── codebase-summary.md      # This file
-│   ├── code-standards.md        # Coding conventions
-│   ├── system-architecture.md   # Technical architecture
-│   ├── deployment-guide.md      # Deployment guide
-│   └── design-guidelines.md     # Design system
-├── Dockerfile                   # Multi-stage Docker build
-├── astro.config.mjs             # Astro configuration
-├── tailwind.config.mjs          # Tailwind CSS config
-├── package.json                 # Dependencies
-└── README.md                    # This project README
+claudekit-engineer/
+├── .claude/               # Claude Code configuration
+│   ├── agents/           # Specialized agent definitions (14 agents)
+│   ├── commands/         # Slash command implementations (50+ commands)
+│   ├── hooks/            # Git hooks and scripts
+│   ├── skills/           # Specialized skills library (20+ skills)
+│   └── workflows/        # Development workflow definitions
+├── .opencode/            # Open Code CLI configuration
+│   ├── agent/           # Agent definitions for OpenCode (13 agents)
+│   └── command/         # Command definitions for OpenCode
+├── .github/             # GitHub Actions workflows
+│   └── workflows/       # CI/CD automation
+├── docs/                # Project documentation
+│   └── research/        # Research reports directory
+├── guide/               # User guides and references
+├── plans/               # Implementation plans and reports
+│   ├── reports/         # Agent-to-agent communication
+│   └── templates/       # Plan templates
+├── CLAUDE.md           # Project-specific Claude instructions
+├── README.md           # Project overview
+├── package.json        # Node.js dependencies
+└── repomix-output.xml  # Codebase compaction file
 ```
 
----
+## Core Technologies
 
-## Documentation Content Overview
+### Runtime & Dependencies
+- **Node.js**: >=18.0.0
+- **Package Manager**: npm
+- **License**: MIT
 
-### Getting Started (3 pages)
-- **Introduction** - ClaudeKit overview with comparison table vs traditional approaches
-- **Installation** - Complete setup guide for Claude Code, CLI, and MCP servers
-- **Quick Start** - 15-minute workflow guide with practical examples
+### Development Tools
+- **Semantic Release**: Automated versioning and changelog
+- **Commitlint**: Conventional commit enforcement
+- **Husky**: Git hooks automation
+- **Repomix**: Codebase compaction for AI consumption
 
-### Agents (14 pages - 100% coverage)
-All agents documented with complete usage guides, examples, and best practices:
-- Brainstormer, Code Reviewer, Database Admin, Debugger, Docs Manager
-- Git Manager, Journal Writer, Planner, Project Manager, Researcher
-- Scout, Tester, UI/UX Designer, Copywriter
+### CI/CD
+- **GitHub Actions**: Automated release workflow
+- **Semantic Versioning**: Automated version management
+- **Conventional Commits**: Structured commit messages
 
-### Commands (25 pages - 83% coverage)
+## Key Components
 
-**Core Development** (7 commands):
-- /ask, /bootstrap, /brainstorm, /cook, /debug, /journal, /plan
+### 1. Agent Orchestration System
 
-**Design** (5 commands):
-- /design:3d, /design:fast, /design:good, /design:screenshot, /design:video
+**Claude Code Agents** (`.claude/agents/`):
+- `planner.md` - Technical planning and architecture
+- `researcher.md` - Research and analysis
+- `tester.md` - Testing and validation
+- `debugger.md` - Issue analysis and debugging
+- `code-reviewer.md` - Code quality assessment
+- `docs-manager.md` - Documentation management
+- `git-manager.md` - Version control operations
+- `project-manager.md` - Project tracking and oversight
+- `database-admin.md` - Database operations
+- `ui-ux-designer.md` - UI/UX design
+- `copywriter.md` - Content creation
+- `scout.md` - Codebase exploration
+- `journal-writer.md` - Development journaling
+- `brainstormer.md` - Solution ideation
 
-**Documentation** (3 commands):
-- /docs:init, /docs:summarize, /docs:update
+**OpenCode Agents** (`.opencode/agent/`):
+- Similar agent definitions optimized for OpenCode CLI
+- `planner-researcher.md` - Combined planning and research
+- `solution-brainstormer.md` - Advanced brainstorming
+- `system-architecture.md` - Architecture documentation
 
-**Fix & Debug** (4 commands):
-- /fix:fast, /fix:hard, /fix:test, /fix:ui
+### 2. Slash Commands System
 
-**Git Operations** (3 commands):
-- /git:cm, /git:cp, /git:pr
+**Categories**:
+- **Core Development**: `/plan`, `/cook`, `/ask`, `/bootstrap`, `/brainstorm`, `/test`
+- **Debugging**: `/debug`, `/fix:fast`, `/fix:hard`, `/fix:ci`, `/fix:logs`, `/fix:test`, `/fix:types`, `/fix:ui`
+- **Design**: `/design:fast`, `/design:good`, `/design:3d`, `/design:screenshot`, `/design:video`
+- **Documentation**: `/docs:init`, `/docs:update`, `/docs:summarize`
+- **Git Operations**: `/git:cm`, `/git:cp`, `/git:pr`
+- **Planning**: `/plan:two`, `/plan:ci`, `/plan:cro`
+- **Content**: `/content:fast`, `/content:good`, `/content:enhance`, `/content:cro`
+- **Integration**: `/integrate:polar`, `/integrate:sepay`
+- **Utility**: `/watzup`, `/journal`, `/scout`
 
-**Integration** (2 commands):
-- /integrate:polar, /integrate:sepay
+### 3. Skills Library
 
-**Content Creation** (1 command):
-- /content:fast
+**Skill Categories** (`.claude/skills/`):
+- **Authentication**: `better-auth/`
+- **Cloud Platforms**: `cloudflare/`, `gcloud/`, `cloudflare-workers/`, `cloudflare-r2/`
+- **Databases**: `mongodb/`, `postgresql-psql/`
+- **Design**: `canvas-design/`
+- **Debugging**: `systematic-debugging/`, `root-cause-tracing/`, `defense-in-depth/`
+- **Documentation**: `docs-seeker/`, `repomix/`
+- **Document Processing**: `document-skills/` (docx, pdf, pptx, xlsx)
+- **Frameworks**: `nextjs/`, `shadcn-ui/`, `tailwindcss/`, `turborepo/`
+- **Media**: `ffmpeg/`, `imagemagick/`
+- **MCP**: `mcp-builder/`
+- **Problem Solving**: `collision-zone-thinking/`, `meta-pattern-recognition/`, `scale-game/`
+- **Ecommerce**: `shopify/`
+- **Infrastructure**: `docker/`
+- **Icons**: `remix-icon/`
+- **Development**: `claude-code/`, `skill-creator/`
 
-### Skills (3 pages - 7% coverage)
-- **Next.js** - Complete Next.js development guide with ClaudeKit
-- **Tailwind CSS** - Styling and design system integration
-- **shadcn/ui** - Component library integration
+### 4. Workflows
 
-### Use Cases (7 pages)
-- Adding New Features - End-to-end feature development workflow
-- Fixing Bugs - Systematic debugging and repair process
-- Refactoring Code - Code improvement and optimization strategies
-- Building APIs - RESTful API development with best practices
-- Implementing Authentication - Auth system setup and security
-- Payment Integration - Stripe, Polar, SePay integration guides
-- Performance Optimization - Speed and efficiency improvements
+**Primary Workflows** (`.claude/workflows/`):
+1. **primary-workflow.md**: Core development cycle
+   - Code implementation
+   - Testing
+   - Code quality
+   - Integration
+   - Debugging
 
-### Troubleshooting (6 pages)
-- Installation Issues - Common setup problems and solutions
-- Command Errors - Slash command troubleshooting
-- Agent Problems - Agent execution and configuration issues
-- API Key Issues - Authentication and credential management
-- Performance Problems - Speed and resource optimization
+2. **orchestration-protocol.md**: Agent coordination patterns
+   - Sequential chaining
+   - Parallel execution
 
----
+3. **development-rules.md**: Development standards
+   - File size management (<500 lines)
+   - YANGI, KISS, DRY principles
+   - Code quality guidelines
+   - Pre-commit/push rules
 
-## Technology Stack
+4. **documentation-management.md**: Doc maintenance
+   - Roadmap and changelog updates
+   - Automatic update triggers
+   - Documentation protocols
 
-### Core Framework
-- **Astro v5.14.6** - Static site generator with islands architecture
-- **React 18.3.1** - Interactive UI components
-- **TypeScript 5.7.3** - Type-safe development
-- **Node.js 20** - Runtime environment
+## Entry Points
 
-### Styling
-- **Tailwind CSS v3.4.17** - Utility-first CSS framework
-- **CSS Variables** - Design token system
-- **Inter Variable** - Body font (Google Fonts)
-- **Geist Mono** - Code font (Vercel)
+### For Users
+- **README.md**: Project overview and quick start
+- **guide/COMMANDS.md**: Comprehensive command reference (7,073 tokens)
+- **CLAUDE.md**: Development instructions and workflows
 
-### Content Management
-- **Astro Content Collections** - Type-safe markdown with Zod validation
-- **remark-gfm** - GitHub Flavored Markdown support
-- **rehype-slug** - Auto-generate heading anchors
-- **Shiki** - Syntax highlighting (One Dark Pro theme)
+### For Developers
+- **package.json**: Dependencies and scripts
+- **.releaserc.json**: Semantic release configuration
+- **.commitlintrc.json**: Commit message linting rules
+- **.gitignore**: Version control exclusions
 
-### UI Components
-- **Radix UI** - Accessible headless components
-  - Collapsible, Dialog, Dropdown Menu, Scroll Area
+### For Agents
+- **CLAUDE.md**: Primary agent instructions
+- **.claude/workflows/**: Workflow definitions
+- **plans/templates/**: Implementation plan templates
 
-### Deployment
-- **Docker** - Containerization (multi-stage build)
-- **Kubernetes** - Orchestration (2 replicas, HPA-ready)
-- **nginx-ingress** - Load balancing and TLS termination
-- **cert-manager** - Automatic SSL certificates
+## Development Principles
 
----
+### YANGI (You Aren't Gonna Need It)
+Avoid over-engineering and unnecessary features
 
-## Key Features
+### KISS (Keep It Simple, Stupid)
+Prefer simple, straightforward solutions
 
-### Comprehensive Documentation
-- **79 pages** covering all aspects of ClaudeKit
-- **100% agent coverage** with detailed guides
-- **83% command coverage** with practical examples
-- **7 use case guides** for common development scenarios
-- **6 troubleshooting guides** for common issues
+### DRY (Don't Repeat Yourself)
+Eliminate code duplication
 
-### Developer Experience
-- **Quick Start Guide** - Get productive in 15 minutes
-- **Interactive Examples** - Real-world code samples
-- **Search Functionality** - Find information fast (planned)
-- **AI Assistant** - Context-aware help (UI complete, backend planned)
+### File Size Management
+- Keep files under 500 lines
+- Split large files into focused components
+- Extract utilities into separate modules
 
-### Content Quality
-- **Professional Writing** - Clear, concise, actionable content
-- **Consistent Structure** - Predictable page layouts
-- **Code Examples** - Tested, working code snippets
-- **Best Practices** - Industry-standard recommendations
+### Security First
+- Try-catch error handling
+- Security standards coverage
+- No secrets in commits
+- Confidential info protection
 
-### Performance
-- **Fast Build** - 6.29s for 79 pages
-- **Static Site** - Instant page loads
-- **Optimized Assets** - Minimal JavaScript hydration
-- **SEO Optimized** - Proper meta tags and structure
+## Agent Communication Protocol
 
----
+**Report Format**: Markdown files in `./plans/reports/`
+**Naming Convention**: `YYMMDD-from-[agent]-to-[agent]-[task]-report.md`
 
-## Content Update Achievements (Oct 2025)
+**Communication Patterns**:
+- Sequential: Task dependencies require ordered execution
+- Parallel: Independent tasks run simultaneously
+- Query Fan-Out: Multiple researchers explore different approaches
 
-### Metrics
-- **259% page increase** - From 22 to 79 pages
-- **~250KB content** - High-quality documentation added
-- **100% agent coverage** - All 14 agents documented
-- **83% command coverage** - 25 of 30 commands documented
-- **7% skill coverage** - 3 essential skills documented
+## Git Workflow
 
-### Content Breakdown
-| Category | Pages | Coverage |
-|----------|-------|----------|
-| Getting Started | 3 | 100% |
-| Agents | 14 | 100% |
-| Commands | 25 | 83% |
-| Skills | 3 | 7% |
-| Use Cases | 7 | 100% |
-| Troubleshooting | 6 | 100% |
-| Core Concepts | Multiple | 100% |
+**Commit Message Format**: Conventional Commits
+```
+type(scope): description
 
-### Quality Standards Met
-- All pages follow consistent structure
-- All code examples tested and working
-- All cross-references validated
-- All markdown properly formatted
-- Zero build errors or warnings
+Types:
+- feat: Features (minor bump)
+- fix: Bug fixes (patch bump)
+- docs: Documentation (patch bump)
+- refactor: Code refactoring (patch bump)
+- test: Tests (patch bump)
+- ci: CI changes (patch bump)
+- BREAKING CHANGE: Major version bump
+```
 
-### Remaining Work
-- **42 skill pages** - Framework and library guides
-- **5 command pages** - Minor workflow commands
-- **AI assistant backend** - OpenRouter integration
-- **Search functionality** - Pagefind implementation
+**Automated Release**:
+- Every push to `main` triggers release check
+- Semantic versioning (MAJOR.MINOR.PATCH)
+- Automated changelog generation
+- GitHub releases with generated notes
 
----
+## Testing Strategy
 
-## Project Documentation
+- Comprehensive unit tests required
+- High code coverage mandatory
+- Error scenario testing
+- Performance validation
+- Tests must pass before push
+- No ignoring failed tests
 
-Comprehensive project documentation located in `./docs/`:
+## Documentation Standards
 
-1. **[Project Overview & PDR](./project-overview-pdr.md)**
-   - Product vision and goals
-   - Functional and non-functional requirements
-   - Success metrics and roadmap
-   - Phase 1.5 completion status
+**Required Docs** (`./docs/`):
+- `project-overview-pdr.md` - Project overview and PDR
+- `code-standards.md` - Coding standards and structure
+- `codebase-summary.md` - This file
+- `system-architecture.md` - Architecture documentation
+- `project-roadmap.md` - Development roadmap
+- `project-changelog.md` - Detailed changelog
 
-2. **[Codebase Summary](./codebase-summary.md)** (this file)
-   - Complete overview of documentation site
-   - Content statistics and coverage metrics
-   - Directory structure and organization
+**Documentation Triggers**:
+- Feature implementation completion
+- Major milestone achievements
+- Bug fixes
+- Security updates
+- Weekly reviews
 
-3. **[Code Standards](./code-standards.md)**
-   - Coding conventions and best practices
-   - File organization and naming standards
-   - Documentation standards
+## Dependencies Overview
 
-4. **[System Architecture](./system-architecture.md)**
-   - Technical architecture overview
-   - Component interactions and data flow
-   - Content management system
+### Production Dependencies
+None (template project)
 
-5. **[Deployment Guide](./deployment-guide.md)**
-   - Docker containerization
-   - Kubernetes deployment
-   - Production setup instructions
+### Development Dependencies
+- **@commitlint/cli**: ^18.4.3
+- **@commitlint/config-conventional**: ^18.4.3
+- **@semantic-release/changelog**: ^6.0.3
+- **@semantic-release/commit-analyzer**: ^11.1.0
+- **@semantic-release/git**: ^10.0.1
+- **@semantic-release/github**: ^9.2.6
+- **@semantic-release/npm**: ^11.0.2
+- **@semantic-release/release-notes-generator**: ^12.1.0
+- **conventional-changelog-conventionalcommits**: ^7.0.2
+- **husky**: ^8.0.3
+- **semantic-release**: ^22.0.12
 
----
+## File Statistics
 
-## Summary
+**Total Files**: 48 files (in repomix output)
+**Total Tokens**: 38,868 tokens
+**Total Characters**: 173,077 chars
 
-ClaudeKit Documentation is a production-ready documentation site that provides:
+**Top 5 Files by Token Count**:
+1. `guide/COMMANDS.md` - 7,073 tokens (18.2%)
+2. `CHANGELOG.md` - 4,836 tokens (12.4%)
+3. `README.md` - 3,261 tokens (8.4%)
+4. `.opencode/agent/ui-ux-designer.md` - 2,521 tokens (6.5%)
+5. `.opencode/agent/system-architecture.md` - 1,714 tokens (4.4%)
 
-- **79 comprehensive pages** covering all ClaudeKit features
-- **100% agent coverage** with detailed usage guides
-- **83% command coverage** with practical examples
-- **Modern tech stack** (Astro v5, React, TypeScript, Tailwind)
-- **Fast performance** (6.29s builds, instant page loads)
-- **Production deployment** (Docker, Kubernetes ready)
+## Integration Capabilities
 
-The documentation follows industry best practices with consistent structure, tested code examples, and professional writing quality. Phase 1.5 content update successfully completed with 259% page increase.
+### Discord Notifications
+Script: `.claude/hooks/send-discord.sh`
+Purpose: Send project updates to Discord channels
 
----
+### GitHub Actions
+Workflow: `.github/workflows/release.yml`
+Features: Automated releases, changelog generation
 
-**Live Site**: https://docs.claudekit.cc
-**Build Time**: 6.29s
-**Total Pages**: 79
-**Status**: Production Ready
+### MCP Tools
+- **context7**: Documentation reading
+- **sequential-thinking**: Structured problem solving
+- **SearchAPI**: Google and YouTube search
+- **review-website**: Web content extraction
+- **VidCap**: Video transcript extraction
+
+## Critical Files
+
+### Configuration
+- `/mnt/d/www/claudekit/claudekit-engineer/package.json` - Node.js config
+- `/mnt/d/www/claudekit/claudekit-engineer/.releaserc.json` - Release config
+- `/mnt/d/www/claudekit/claudekit-engineer/.commitlintrc.json` - Commit linting
+- `/mnt/d/www/claudekit/claudekit-engineer/.gitignore` - Git exclusions
+- `/mnt/d/www/claudekit/claudekit-engineer/.repomixignore` - Repomix exclusions
+
+### Documentation
+- `/mnt/d/www/claudekit/claudekit-engineer/README.md` - Main project docs
+- `/mnt/d/www/claudekit/claudekit-engineer/CLAUDE.md` - Agent instructions
+- `/mnt/d/www/claudekit/claudekit-engineer/CHANGELOG.md` - Version history
+- `/mnt/d/www/claudekit/claudekit-engineer/guide/COMMANDS.md` - Command reference
+
+### Workflows
+- `/mnt/d/www/claudekit/claudekit-engineer/.claude/workflows/primary-workflow.md`
+- `/mnt/d/www/claudekit/claudekit-engineer/.claude/workflows/development-rules.md`
+- `/mnt/d/www/claudekit/claudekit-engineer/.claude/workflows/orchestration-protocol.md`
+- `/mnt/d/www/claudekit/claudekit-engineer/.claude/workflows/documentation-management.md`
+
+## Related Projects
+
+- **claudekit** - ClaudeKit website (`../claudekit`)
+- **claudekit-marketing** - Marketing Kit (`../claudekit-marketing`)
+- **claudekit-cli** - CLI setup tool (`../claudekit-cli`)
+- **claudekit-docs** - Public docs (`../claudekit-docs`)
+
+## Version History
+
+**Current**: v1.8.0
+**License**: MIT
+**Author**: Duy Nguyen
+**Repository**: https://github.com/claudekit/claudekit-engineer
+
+## Unresolved Questions
+
+None identified. All core components are well-documented and functional.

@@ -1,1277 +1,882 @@
 # System Architecture
 
-**Last Updated**: 2025-10-30
-**Version**: 1.0
-**Status**: Production Ready
+**Last Updated**: 2025-10-26
+**Version**: 1.8.0
+**Project**: ClaudeKit Engineer
 
----
+## Overview
 
-## Table of Contents
+ClaudeKit Engineer implements a multi-agent AI orchestration architecture where specialized agents collaborate through a file-based communication protocol. The system enables developers to leverage AI assistance throughout the entire software development lifecycle - from planning and implementation to testing, review, and deployment.
 
-1. [Architecture Overview](#architecture-overview)
-2. [System Components](#system-components)
-3. [Agent Architecture](#agent-architecture)
-4. [Command Orchestration](#command-orchestration)
-5. [Data Flow](#data-flow)
-6. [Communication Protocols](#communication-protocols)
-7. [Technology Stack](#technology-stack)
-8. [Integration Architecture](#integration-architecture)
-9. [Security Architecture](#security-architecture)
-10. [Scalability & Performance](#scalability--performance)
-11. [Deployment Architecture](#deployment-architecture)
+## Architectural Pattern
 
----
-
-## Architecture Overview
-
-### High-Level Architecture
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                         User Interface                          │
-│                    (Claude Code CLI / Terminal)                 │
-└────────────────────────────┬────────────────────────────────────┘
-                             │
-                             ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                     Command Router Layer                        │
-│  • Slash command parsing                                        │
-│  • Argument extraction                                          │
-│  • Workflow orchestration                                       │
-└────────────────────────────┬────────────────────────────────────┘
-                             │
-            ┌────────────────┼────────────────┐
-            │                │                │
-            ▼                ▼                ▼
-┌──────────────────┐ ┌──────────────┐ ┌─────────────────┐
-│  Agent Layer     │ │  MCP Servers │ │ External Tools  │
-│  (12 Agents)     │ │  (6 Servers) │ │ (Git, npm, etc) │
-└────────┬─────────┘ └──────┬───────┘ └────────┬────────┘
-         │                  │                  │
-         └──────────────────┼──────────────────┘
-                           │
-                           ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                    File System Layer                            │
-│  • Plans & reports                                              │
-│  • Documentation                                                │
-│  • Codebase files                                               │
-└─────────────────────────────────────────────────────────────────┘
-```
-
----
+### Pattern Classification
+**Primary Pattern**: Microservices-inspired Agent Architecture
+**Secondary Patterns**:
+- Command Pattern (slash commands)
+- Observer Pattern (agent communication)
+- Strategy Pattern (workflow selection)
+- Template Method Pattern (agent workflows)
 
 ### Design Philosophy
-
-**1. Separation of Concerns**
-- Each agent has a single, well-defined responsibility
-- Commands orchestrate agents without implementing logic
-- Clear boundaries between layers
-
-**2. Loose Coupling**
-- Agents communicate via file system (no direct dependencies)
-- Commands are independent and composable
-- MCP servers are optional and replaceable
-
-**3. Composability**
-- Small, focused agents combine for complex workflows
-- Commands can be chained and nested
-- Reusable patterns across different contexts
-
-**4. Extensibility**
-- Easy to add new agents and commands
-- Plugin architecture for MCP servers
-- Skill system for specialized capabilities
-
----
+- **Decoupled Agents**: Each agent is independent and specialized
+- **File-Based Communication**: Agents communicate via markdown reports
+- **Workflow Orchestration**: Coordinated agent execution (sequential/parallel)
+- **Configuration-Driven**: Agents and commands defined in markdown
+- **AI-First Development**: Leverage AI at every stage of SDLC
 
 ## System Components
 
-### 1. Command Router
+### 1. Core Layer
 
-**Purpose**: Parse user commands and route to appropriate workflows
-
-**Components**:
-```
-.opencode/command/
-├── core/
-│   ├── cook.md      # Feature implementation
-│   ├── plan.md      # Planning workflow
-│   ├── debug.md     # Debugging workflow
-│   └── test.md      # Testing workflow
-├── design/          # Design workflows
-├── docs/            # Documentation workflows
-├── fix/             # Fix workflows
-├── git/             # Git workflows
-└── plan/            # Advanced planning
-```
-
-**Responsibilities**:
+#### 1.1 CLI Interface
+**Location**: Claude Code / Open Code CLI
+**Responsibility**: User interaction and command routing
+**Key Functions**:
 - Parse slash commands
-- Extract and validate arguments
-- Load command definitions
-- Orchestrate agent execution
-- Handle errors and timeouts
+- Route to appropriate agent workflows
+- Display results to users
+- Manage conversation context
 
----
+**Technology**: Anthropic Claude Code CLI / OpenCode AI CLI
 
-### 2. Agent System
+#### 1.2 Command Parser
+**Location**: Built into CLI
+**Responsibility**: Command interpretation and argument extraction
+**Input**: Slash command with arguments (`/command arg1 arg2`)
+**Output**: Parsed command and argument values
+**Argument Variables**:
+- `$ARGUMENTS` - All arguments as single string
+- `$1, $2, $3...` - Individual positional arguments
 
-**Purpose**: Execute specialized development tasks
+#### 1.3 Configuration Manager
+**Location**: `.claude/` and `.opencode/` directories
+**Responsibility**: Load agent and command definitions
+**File Types**:
+- Agent definitions (`.md` with YAML frontmatter)
+- Command definitions (`.md` with embedded agent calls)
+- Skill modules (knowledge bases)
+- Workflow templates
 
-**Agent Categories**:
+### 2. Agent Layer
 
-**Planning & Research** (3 agents):
-- `planner` - Implementation planning
-- `planner-researcher` - Architectural analysis
-- `researcher` - Technical research
+#### 2.1 Agent Types
 
-**Development** (2 agents):
-- `ui-ux-designer` - Design system creation
-- `ui-ux-developer` - Frontend implementation
+**Planning Agents**:
+- `planner` - Technical planning and architecture
+- `researcher` - Research and analysis
+- `planner-researcher` - Combined planning and research (Opus model)
+- `brainstormer` - Solution ideation
 
-**Quality Assurance** (3 agents):
-- `tester` - Testing and validation
-- `code-reviewer` - Quality assessment
-- `debugger` - Issue analysis
+**Implementation Agents**:
+- Main agent (user interaction) - Implements code
+- `scout` - Parallel codebase exploration
+- `ui-ux-designer` - Design creation
+- `ui-ux-developer` - Design implementation
+- `database-admin` - Database operations
 
-**Operations** (4 agents):
-- `git-manager` - Version control
-- `docs-manager` - Documentation
-- `project-manager` - Coordination
-- `journal-writer` - Development diary
+**Quality Assurance Agents**:
+- `code-reviewer` - Code quality assessment
+- `tester` - Test creation and execution
+- `debugger` - Issue analysis and debugging
 
----
+**Documentation Agents**:
+- `docs-manager` - Documentation maintenance
+- `copywriter` - Content creation
+- `journal-writer` - Development journaling
 
-### 3. MCP Server Integration
+**Operations Agents**:
+- `git-manager` - Version control operations
+- `project-manager` - Progress tracking and oversight
 
-**Purpose**: Extend agent capabilities with external services
-
-**MCP Servers**:
-
-```
-┌──────────────────────────────────────────────────────────────┐
-│                       MCP Servers                            │
-├──────────────────────────────────────────────────────────────┤
-│                                                              │
-│  ┌────────────┐  ┌─────────────┐  ┌──────────────┐        │
-│  │ Context7   │  │   Human     │  │  SearchAPI   │        │
-│  │ (Upstash)  │  │  (Gemini)   │  │   (Search)   │        │
-│  └────────────┘  └─────────────┘  └──────────────┘        │
-│                                                              │
-│  ┌────────────┐  ┌─────────────┐  ┌──────────────┐        │
-│  │  VidCap    │  │ Sequential  │  │    Eyes      │        │
-│  │ (Captions) │  │  Thinking   │  │  (Analysis)  │        │
-│  └────────────┘  └─────────────┘  └──────────────┘        │
-│                                                              │
-└──────────────────────────────────────────────────────────────┘
-```
-
-**Integration Patterns**:
-- **Context7**: Documentation context for agents
-- **Human**: Image generation and editing
-- **SearchAPI**: Google and YouTube search
-- **VidCap**: Video transcript extraction
-- **Sequential Thinking**: Problem decomposition
-- **Eyes**: Visual content analysis
-
----
-
-### 4. File System Layer
-
-**Purpose**: Persistent storage for plans, reports, and documentation
-
-**Directory Structure**:
-```
-Project Root/
-├── plans/
-│   ├── templates/           # Reusable plan templates
-│   ├── reports/             # Agent-to-agent communication
-│   └── *.md                 # Implementation plans
-├── docs/
-│   ├── project-overview-pdr.md
-│   ├── codebase-summary.md
-│   ├── code-standards.md
-│   ├── system-architecture.md
-│   └── research/            # Research reports
-├── src/content/docs/        # Documentation site content (79 pages)
-│   ├── getting-started/     # Introduction, installation, quick-start
-│   ├── agents/             # 14 agent pages (100% coverage)
-│   ├── commands/           # 25 command pages (83% coverage)
-│   ├── skills/             # 3 skill pages (7% coverage)
-│   ├── use-cases/          # 7 use case pages
-│   └── troubleshooting/    # 6 troubleshooting pages
-└── [project files]
-```
-
-**File-Based Communication**:
-- Plans: `./plans/YYMMDD-feature-name-plan.md`
-- Reports: `./plans/reports/YYMMDD-from-to-task-report.md`
-- Docs: `./docs/*.md`
-- Content: `./src/content/docs/**/*.md` (public documentation)
-
----
-
-## Agent Architecture
-
-### Agent Lifecycle
-
-```
-┌──────────────┐
-│ Command      │
-│ Triggered    │
-└──────┬───────┘
-       │
-       ▼
-┌──────────────┐
-│ Agent        │
-│ Spawned      │
-└──────┬───────┘
-       │
-       ▼
-┌──────────────┐
-│ Context      │
-│ Loaded       │
-└──────┬───────┘
-       │
-       ▼
-┌──────────────┐
-│ Task         │
-│ Execution    │
-└──────┬───────┘
-       │
-       ▼
-┌──────────────┐
-│ Report       │
-│ Generation   │
-└──────┬───────┘
-       │
-       ▼
-┌──────────────┐
-│ Handoff to   │
-│ Next Agent   │
-└──────────────┘
-```
-
----
-
-### Agent Definition Schema
+#### 2.2 Agent Definition Structure
 
 ```yaml
-# Frontmatter (YAML)
 ---
-name: agent-name              # Unique identifier
-description: |                # Multi-line description
-  When to use this agent...
-  Examples...
-mode: subagent               # or "all" for main agents
-model: provider/model-id     # AI model to use
-temperature: 0.1             # Sampling temperature (optional)
+name: agent-name
+description: Agent purpose and use cases
+mode: subagent | all
+model: anthropic/claude-sonnet-4-20250514
+temperature: 0.1
 ---
 
-# Agent Prompt (Markdown)
-You are a [role]...
-
+# Agent instructions in markdown
 ## Core Responsibilities
-- Responsibility 1
-- Responsibility 2
-
-## Working Process
-1. Step 1
-2. Step 2
-
-## Output Format
-[Template or description]
-
+## Workflow Process
+## Output Requirements
 ## Quality Standards
-[Requirements]
 ```
 
----
+**Agent Modes**:
+- `subagent`: Spawned by other agents, runs independently
+- `all`: Can be invoked as main or sub agent
 
-### Agent Communication Flow
+**Model Selection**:
+- `claude-sonnet-4-20250514` - Fast, efficient (most agents)
+- `claude-opus-4-1-20250805` - Advanced reasoning (planner-researcher)
+- `google/gemini-2.5-flash` - Cost-effective (docs-manager)
+- `grok-code` - Specialized (git-manager)
 
-```
-┌─────────────┐     Creates Plan      ┌──────────────┐
-│   Planner   │ ──────────────────> │ Plan File    │
-│   Agent     │                      │ (.md)        │
-└─────────────┘                      └──────┬───────┘
-                                             │
-                                             │ Reads
-                                             │
-                                             ▼
-┌─────────────┐     Implements       ┌──────────────┐
-│    Main     │ <─────────────────── │ Plan File    │
-│   Agent     │                      └──────────────┘
-└──────┬──────┘
-       │
-       │ Delegates
-       ▼
-┌─────────────┐     Creates Report   ┌──────────────┐
-│   Tester    │ ──────────────────> │ Report File  │
-│   Agent     │                      │ (.md)        │
-└─────────────┘                      └──────┬───────┘
-                                             │
-                                             │ Reads
-                                             │
-                                             ▼
-┌─────────────┐     Reads Report     ┌──────────────┐
-│    Main     │ <─────────────────── │ Report File  │
-│   Agent     │                      └──────────────┘
-└─────────────┘
-```
+#### 2.3 Agent Communication Protocol
 
----
+**Communication Medium**: File system (markdown files)
+**Report Location**: `./plans/reports/`
+**Naming Convention**: `YYMMDD-from-[source]-to-[dest]-[task]-report.md`
 
-### Model Selection Strategy
-
-**Decision Matrix**:
-
-| Agent Type | Complexity | Model | Rationale |
-|------------|-----------|--------|-----------|
-| Code Review | High | Claude Sonnet 4 | Deep reasoning for security |
-| Debugging | High | Claude Sonnet 4 | Root cause analysis |
-| Planning | Very High | Gemini 2.5 Flash | Fast, cost-effective |
-| Architectural | Critical | Claude Opus 4 | Maximum reasoning |
-| Testing | Medium | Grok Code | Specialized for code execution |
-| Git Ops | Low | Grok Code | Simple, deterministic tasks |
-| Documentation | Medium | Gemini 2.5 Flash | Fast generation |
-
-**Cost Optimization**:
-- Use fastest/cheapest model that meets requirements
-- Reserve Opus 4 for critical architectural decisions
-- Parallelize when possible to reduce wall-clock time
-
----
-
-## Command Orchestration
-
-### Sequential Workflow Pattern
-
-**Use Case**: Dependent tasks must execute in order
-
-**Example: /cook Command**
-
-```
-User: /cook "implement user authentication"
-  │
-  ▼
-┌─────────────────────────────────────────┐
-│ 1. Planner Agent                        │
-│    • Creates implementation plan        │
-│    • Saves to ./plans/251030-auth.md    │
-└────────────┬────────────────────────────┘
-             │
-             ▼
-┌─────────────────────────────────────────┐
-│ 2. Main Agent                           │
-│    • Reads plan file                    │
-│    • Implements features step-by-step   │
-│    • Writes code files                  │
-└────────────┬────────────────────────────┘
-             │
-             ▼
-┌─────────────────────────────────────────┐
-│ 3. Tester Agent                         │
-│    • Runs test suite                    │
-│    • Generates coverage report          │
-│    • Saves to ./plans/reports/...       │
-└────────────┬────────────────────────────┘
-             │
-             ▼ (if tests pass)
-┌─────────────────────────────────────────┐
-│ 4. Code Reviewer Agent                  │
-│    • Reviews code quality               │
-│    • Checks security                    │
-│    • Validates standards                │
-└────────────┬────────────────────────────┘
-             │
-             ▼
-┌─────────────────────────────────────────┐
-│ 5. Docs Manager Agent                   │
-│    • Updates documentation              │
-│    • Syncs codebase summary             │
-└────────────┬────────────────────────────┘
-             │
-             ▼
-┌─────────────────────────────────────────┐
-│ 6. Git Manager Agent                    │
-│    • Stages changes                     │
-│    • Creates conventional commit        │
-│    • Pushes to remote                   │
-└─────────────────────────────────────────┘
-```
-
----
-
-### Parallel Workflow Pattern
-
-**Use Case**: Independent tasks can execute simultaneously
-
-**Example: /plan Command with Research**
-
-```
-User: /plan "implement real-time notifications"
-  │
-  ▼
-┌─────────────────────────────────────────┐
-│ Planner Agent                           │
-│ • Identifies research topics            │
-│ • Spawns multiple researchers           │
-└────────┬────────────────────────────────┘
-         │
-         ├─────────────┬─────────────┬────────────┐
-         ▼             ▼             ▼            ▼
-    ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐
-    │Research │  │Research │  │Research │  │Research │
-    │WebSocket│  │ Redis   │  │ Server  │  │ Client  │
-    │ Techs   │  │ PubSub  │  │ Sent    │  │ Libs    │
-    │         │  │         │  │ Events  │  │         │
-    └────┬────┘  └────┬────┘  └────┬────┘  └────┬────┘
-         │            │            │            │
-         └────────────┴────────────┴────────────┘
-                         │
-                         ▼
-              ┌─────────────────┐
-              │ Planner Agent   │
-              │ • Synthesizes   │
-              │ • Creates plan  │
-              └─────────────────┘
-```
-
----
-
-### Conditional Workflow Pattern
-
-**Use Case**: Branching logic based on results
-
-**Example: /fix:test Command**
-
-```
-┌─────────────────────┐
-│ Tester Agent        │
-│ • Runs test suite   │
-└──────────┬──────────┘
-           │
-           ▼
-     ┌──────────┐
-     │ Tests    │
-     │ Status?  │
-     └────┬─────┘
-          │
-     ┌────┴─────┐
-     │          │
-   PASS       FAIL
-     │          │
-     ▼          ▼
-┌─────────┐  ┌──────────────┐
-│ Code    │  │ Debugger     │
-│ Review  │  │ Agent        │
-│ Agent   │  │ • Analyzes   │
-└─────────┘  └──────┬───────┘
-                    │
-                    ▼
-             ┌──────────────┐
-             │ Main Agent   │
-             │ • Fixes      │
-             └──────┬───────┘
-                    │
-                    ▼
-             [Loop back to Tester]
-```
-
----
-
-## Data Flow
-
-### Plan Creation Flow
-
-```
-┌──────────────┐
-│ User Request │
-└──────┬───────┘
-       │
-       ▼
-┌──────────────┐
-│ /plan cmd    │
-└──────┬───────┘
-       │
-       ▼
-┌──────────────────────────────────┐
-│ Planner Agent                    │
-│ • Reads ./docs/codebase-summary  │
-│ • Reads ./docs/code-standards    │
-│ • Spawns researcher agents       │
-└──────┬───────────────────────────┘
-       │
-       ▼
-┌──────────────────────────────────┐
-│ Research Phase                   │
-│ • Google search                  │
-│ • YouTube tutorials              │
-│ • Documentation scraping         │
-└──────┬───────────────────────────┘
-       │
-       ▼
-┌──────────────────────────────────┐
-│ Plan Generation                  │
-│ • Synthesize research            │
-│ • Create TODO tasks              │
-│ • Write plan markdown            │
-└──────┬───────────────────────────┘
-       │
-       ▼
-┌──────────────────────────────────┐
-│ Save Plan                        │
-│ ./plans/YYMMDD-feature-plan.md   │
-└──────────────────────────────────┘
-```
-
----
-
-### Implementation Flow
-
-```
-┌──────────────┐
-│ Plan File    │
-└──────┬───────┘
-       │
-       ▼
-┌──────────────────────────────────┐
-│ Main Agent                       │
-│ • Reads plan                     │
-│ • Extracts TODO tasks            │
-└──────┬───────────────────────────┘
-       │
-       ▼
-┌──────────────────────────────────┐
-│ Code Implementation              │
-│ • Creates/modifies files         │
-│ • Follows code standards         │
-│ • Handles errors                 │
-└──────┬───────────────────────────┘
-       │
-       ▼
-┌──────────────────────────────────┐
-│ Validation                       │
-│ • Compile check                  │
-│ • Syntax validation              │
-│ • Type checking                  │
-└──────┬───────────────────────────┘
-       │
-       ▼
-┌──────────────────────────────────┐
-│ Updated Codebase                 │
-└──────────────────────────────────┘
-```
-
----
-
-### Testing Flow
-
-```
-┌──────────────┐
-│ Codebase     │
-└──────┬───────┘
-       │
-       ▼
-┌──────────────────────────────────┐
-│ Tester Agent                     │
-│ • Identifies test command        │
-│ • Runs test suite                │
-└──────┬───────────────────────────┘
-       │
-       ▼
-┌──────────────────────────────────┐
-│ Test Execution                   │
-│ • Unit tests                     │
-│ • Integration tests              │
-│ • E2E tests                      │
-└──────┬───────────────────────────┘
-       │
-       ▼
-┌──────────────────────────────────┐
-│ Coverage Analysis                │
-│ • Line coverage                  │
-│ • Branch coverage                │
-│ • Function coverage              │
-└──────┬───────────────────────────┘
-       │
-       ▼
-┌──────────────────────────────────┐
-│ Report Generation                │
-│ ./plans/reports/YYMMDD-test.md   │
-└──────────────────────────────────┘
-```
-
----
-
-## Communication Protocols
-
-### File-Based Communication
-
-**Advantages**:
-- No runtime dependencies between agents
-- Persistent communication history
-- Easy to debug and audit
-- Human-readable formats
-
-**File Types**:
-
-1. **Plans** (`./plans/*.md`)
-   - Implementation roadmaps
-   - TODO task lists
-   - Architectural decisions
-
-2. **Reports** (`./plans/reports/*.md`)
-   - Agent findings
-   - Test results
-   - Code review feedback
-
-3. **Documentation** (`./docs/*.md`)
-   - Project overview
-   - Code standards
-   - System architecture
-
----
-
-### Naming Conventions
-
-**Plans**:
-```
-Format: YYMMDD-feature-name-plan.md
-Example: 251030-authentication-system-plan.md
-```
-
-**Reports**:
-```
-Format: YYMMDD-from-agent-to-agent-task-report.md
-Example: 251030-from-tester-to-main-test-results-report.md
-```
-
-**Research**:
-```
-Format: YYMMDD-research-topic.md
-Example: 251030-websocket-libraries-research.md
-```
-
----
-
-### Standard Report Structure
-
+**Report Structure**:
 ```markdown
-# Report: [Task Name]
+# Task Report: [Task Name]
 
 **From**: [Source Agent]
-**To**: [Recipient Agent or Main]
+**To**: [Destination Agent]
 **Date**: YYYY-MM-DD
-**Status**: [In Progress / Complete / Blocked]
+**Status**: [Complete|In Progress|Blocked]
 
 ## Summary
-[2-3 sentence overview of findings]
+Brief overview of findings/results
 
 ## Details
-[Comprehensive information]
-
-## Key Findings
-1. Finding 1
-2. Finding 2
-3. Finding 3
+Comprehensive information
 
 ## Recommendations
-- Recommendation 1
-- Recommendation 2
+Actionable next steps
 
-## Next Steps
-1. Step 1
-2. Step 2
-
-## Unresolved Questions
-- Question 1 (if any)
-- Question 2 (if any)
-
----
-
-**Generated by**: [Agent Name]
-**Model Used**: [Model Identifier]
-**Execution Time**: [Duration]
+## Concerns
+Issues, blockers, or questions
 ```
 
----
+**Communication Patterns**:
+1. **Request-Response**: Agent A requests, Agent B responds
+2. **Broadcast**: Agent publishes report for multiple consumers
+3. **Chain**: Sequential handoffs (A → B → C)
+4. **Fan-Out**: Parallel execution (A spawns B, C, D)
+5. **Fan-In**: Collect results from parallel agents
+
+### 3. Command Layer
+
+#### 3.1 Command Categories
+
+**Core Development**:
+- `/plan` - Research and planning
+- `/cook` - Feature implementation
+- `/test` - Test execution
+- `/ask` - Technical consultation
+- `/bootstrap` - Project initialization
+- `/brainstorm` - Solution ideation
+
+**Debugging & Fixing**:
+- `/debug` - Deep analysis
+- `/fix:fast` - Quick fixes
+- `/fix:hard` - Complex problems
+- `/fix:ci` - CI/CD debugging
+- `/fix:test` - Test debugging
+- `/fix:types` - Type error resolution
+- `/fix:logs` - Log analysis
+- `/fix:ui` - UI issue fixing
+
+**Design & Content**:
+- `/design:*` - Design creation variants
+- `/content:*` - Content creation variants
+
+**Documentation**:
+- `/docs:init` - Initial docs
+- `/docs:update` - Update docs
+- `/docs:summarize` - Generate summaries
+
+**Git Operations**:
+- `/git:cm` - Commit
+- `/git:cp` - Commit and push
+- `/git:pr` - Create PR
+
+**Project Management**:
+- `/watzup` - Status review
+- `/journal` - Journaling
+- `/scout` - Codebase exploration
+
+#### 3.2 Command Workflow Pattern
+
+```
+User Input: /command [args]
+    ↓
+Command Parser
+    ↓
+Load Command Definition
+    ↓
+Substitute Arguments
+    ↓
+Execute Agent Workflow
+    ↓
+Sequential or Parallel Execution
+    ↓
+Collect Results
+    ↓
+Present to User
+```
+
+### 4. Workflow Layer
+
+#### 4.1 Orchestration Patterns
+
+**Sequential Chaining**:
+```
+Planner → Researcher → Planner → Main Agent → Tester → Code Reviewer → Docs Manager → Git Manager
+```
+Use when tasks have dependencies
+
+**Parallel Execution**:
+```
+            ┌─→ Researcher (Auth) ─┐
+Planner ────┼─→ Researcher (DB) ───┼─→ Planner (Synthesize)
+            └─→ Researcher (UI) ───┘
+```
+Use for independent research tasks
+
+**Query Fan-Out**:
+```
+Main Agent → Planner → [Multiple Researchers in Parallel] → Planner → Main Agent
+```
+Explore different approaches simultaneously
+
+#### 4.2 Standard Workflows
+
+**Feature Development Workflow**:
+1. User: `/cook "add user authentication"`
+2. Planner: Create implementation plan
+3. Researchers: Explore auth solutions (parallel)
+4. Planner: Synthesize research, create detailed plan
+5. Main Agent: Implement code
+6. Main Agent: Run type checking/compilation
+7. Tester: Write and run tests
+8. (If tests fail): Debugger analyzes, loop to step 5
+9. Code Reviewer: Review implementation
+10. Docs Manager: Update documentation
+11. Git Manager: Commit with conventional message
+
+**Bug Fix Workflow**:
+1. User: `/debug "API timeout errors"`
+2. Debugger: Analyze logs and system
+3. Debugger: Identify root cause
+4. Planner: Create fix plan
+5. Main Agent: Implement solution
+6. Tester: Validate fix
+7. Code Reviewer: Review changes
+8. Git Manager: Commit fix
+
+**Documentation Update Workflow**:
+1. User: `/docs:update`
+2. Docs Manager: Check doc freshness
+3. (If >1 day old): Run `repomix` for codebase summary
+4. Docs Manager: Analyze codebase changes
+5. Docs Manager: Update affected documentation
+6. Docs Manager: Validate naming conventions
+7. Docs Manager: Create update report
+
+### 5. Skills Layer
+
+#### 5.1 Skill Architecture
+
+**Purpose**: Reusable knowledge modules for specific technologies
+
+**Structure**:
+```
+.claude/skills/
+└── [skill-name]/
+    ├── SKILL.md           # Main skill definition
+    ├── references/        # Supporting documentation
+    │   ├── api-ref.md
+    │   └── examples.md
+    └── scripts/           # Utility scripts (if applicable)
+```
+
+**Skill Categories**:
+- **Authentication**: better-auth
+- **Cloud Platforms**: Cloudflare, Google Cloud
+- **Databases**: MongoDB, PostgreSQL
+- **Design**: Canvas design generation
+- **Debugging**: Systematic approaches
+- **Development**: Next.js, Turborepo
+- **Documentation**: Repomix, docs-seeker
+- **Document Processing**: PDF, DOCX, PPTX, XLSX
+- **Infrastructure**: Docker
+- **Media**: FFmpeg, ImageMagick
+- **MCP**: Server building
+- **Problem Solving**: Meta-patterns, thinking frameworks
+- **UI Frameworks**: shadcn/ui, Tailwind CSS
+- **Ecommerce**: Shopify
+
+#### 5.2 Skill Invocation
+
+**Invocation**: `Skill` tool in CLI
+**Usage**: Agents invoke skills to access specialized knowledge
+**Example**:
+```
+Planner needs Next.js expertise
+  ↓
+Invokes "nextjs" skill
+  ↓
+Skill provides implementation guidance
+  ↓
+Planner incorporates into plan
+```
+
+### 6. Integration Layer
+
+#### 6.1 MCP (Model Context Protocol) Integration
+
+**Available MCP Servers**:
+
+**context7** (Documentation):
+- Read latest docs for packages/plugins
+- Access up-to-date technical information
+
+**sequential-thinking** (Problem Solving):
+- Structured thinking process
+- Break down complex problems
+- Reflective analysis
+
+**SearchAPI** (Web Search):
+- `search_google` - Google search integration
+- `search_youtube` - YouTube search integration
+
+**review-website** (Web Scraping):
+- `Convert to markdown` - Extract web content
+- Analyze websites and documentation
+
+**VidCap** (Video Analysis):
+- `getCaption` - Extract video transcripts
+- Analyze technical tutorials
+
+**eyes** (Visual Analysis):
+- Describe images, videos, documents
+- UI/UX analysis from screenshots
+
+**gemini-image-gen & imagemagick skills** (Generation & Processing):
+- Generate images, videos, and documents via gemini-image-gen skills
+- Perform design asset creation and edits with imagemagick skill workflows
+
+**brain** (Advanced Reasoning):
+- Sequential thinking
+- Code analysis
+- Debugging assistance
+
+#### 6.2 External Service Integration
+
+**GitHub**:
+- Actions (CI/CD automation)
+- Releases (semantic versioning)
+- Issues and PRs (project management)
+
+**Discord**:
+- Webhook notifications
+- Project updates
+- Team communication
+
+**NPM** (Optional):
+- Package publishing
+- Version management
+
+### 7. Data Layer
+
+#### 7.1 File-Based Storage
+
+**Configuration Data**:
+- `.claude/` - Claude Code config
+- `.opencode/` - OpenCode config
+- `.gitignore` - Git exclusions
+- `package.json` - Node.js config
+- `.releaserc.json` - Release config
+
+**Runtime Data**:
+- `plans/` - Implementation plans
+- `plans/reports/` - Agent communication
+- `plans/research/` - Research reports
+- `docs/` - Project documentation
+- `repomix-output.xml` - Codebase compaction
+
+**Version Control**:
+- `.git/` - Git repository
+- `CHANGELOG.md` - Version history
+- Git tags - Release versions
+
+#### 7.2 Data Flow
+
+```
+User Input
+    ↓
+Command Parsing
+    ↓
+Agent Execution
+    ↓
+File System (Reports/Plans)
+    ↓
+Agent Reading
+    ↓
+Processing
+    ↓
+File System (Updated Docs/Code)
+    ↓
+Version Control (Git)
+    ↓
+Remote Repository (GitHub)
+```
+
+## Component Interactions
+
+### Typical Interaction Flow: Feature Implementation
+
+```
+┌─────────────┐
+│    User     │
+└──────┬──────┘
+       │ /cook "add auth"
+       ↓
+┌─────────────────────┐
+│   Command Parser    │
+└──────┬──────────────┘
+       │ Parse command + args
+       ↓
+┌─────────────────────┐
+│  Planner Agent      │
+└──────┬──────────────┘
+       │ Spawn researchers
+       ↓
+┌──────────────────────────────────┐
+│  Researchers (Parallel)          │
+│  - Auth strategies               │
+│  - Security best practices       │
+│  - Integration patterns          │
+└──────┬───────────────────────────┘
+       │ Reports to planner
+       ↓
+┌─────────────────────┐
+│  Planner Agent      │
+└──────┬──────────────┘
+       │ Create plan
+       │ Save to ./plans/
+       ↓
+┌─────────────────────┐
+│   Main Agent        │
+└──────┬──────────────┘
+       │ Read plan
+       │ Implement code
+       ↓
+┌─────────────────────┐
+│  Tester Agent       │
+└──────┬──────────────┘
+       │ Write & run tests
+       ↓
+┌─────────────────────┐
+│ Code Reviewer Agent │
+└──────┬──────────────┘
+       │ Review quality
+       ↓
+┌─────────────────────┐
+│ Docs Manager Agent  │
+└──────┬──────────────┘
+       │ Update docs
+       ↓
+┌─────────────────────┐
+│  Git Manager Agent  │
+└──────┬──────────────┘
+       │ Commit & push
+       ↓
+┌─────────────────────┐
+│   User (Result)     │
+└─────────────────────┘
+```
+
+### Agent Communication Example
+
+```
+plans/reports/251026-from-planner-to-main-auth-plan-report.md
+    ↓
+Main Agent reads plan
+    ↓
+Implements features
+    ↓
+plans/reports/251026-from-main-to-tester-auth-impl-report.md
+    ↓
+Tester reads implementation details
+    ↓
+Runs tests
+    ↓
+plans/reports/251026-from-tester-to-main-test-results-report.md
+```
 
 ## Technology Stack
 
 ### Core Technologies
 
-```
-┌─────────────────────────────────────────┐
-│ Runtime Environment                     │
-│ • Node.js 20+                           │
-│ • npm 10+ (Package manager)             │
-└─────────────────────────────────────────┘
+**Runtime Environment**:
+- Node.js >= 18.0.0
+- Bash scripting (hooks)
 
-┌─────────────────────────────────────────┐
-│ AI Platform                             │
-│ • Claude Code (Orchestration)           │
-│ • Open Code CLI (Agent framework)       │
-└─────────────────────────────────────────┘
+**AI Platforms**:
+- Anthropic Claude (Sonnet 4, Opus 4)
+- Google Gemini 2.5 Flash
+- OpenRouter (multi-model support)
+- Grok Code
 
-┌─────────────────────────────────────────┐
-│ Version Control                         │
-│ • Git (Version control)                 │
-│ • GitHub (Repository hosting)           │
-│ • Conventional Commits (Standards)      │
-└─────────────────────────────────────────┘
-```
+**Development Tools**:
+- Semantic Release (versioning)
+- Commitlint (commit standards)
+- Husky (git hooks)
+- Repomix (codebase compaction)
 
----
+**CI/CD**:
+- GitHub Actions
+- Conventional Commits
+- Semantic Versioning
 
-### AI Models
+### MCP Tools Ecosystem
 
-**Primary Models**:
+**Sequential Thinking**: Problem decomposition
+**Context7**: Documentation access
+**SearchAPI**: Web research
+**Review-Website**: Content extraction
+**VidCap**: Video analysis
+**Eyes**: Visual understanding
+**gemini-image-gen & imagemagick skills**: Content generation and processing
+**Brain**: Advanced reasoning
 
-```
-┌──────────────────────┬──────────────┬─────────────┐
-│ Model                │ Provider     │ Usage       │
-├──────────────────────┼──────────────┼─────────────┤
-│ Claude Sonnet 4      │ Anthropic    │ Code review │
-│                      │              │ Debugging   │
-│                      │              │ UI design   │
-├──────────────────────┼──────────────┼─────────────┤
-│ Claude Opus 4        │ Anthropic    │ Architecture│
-│                      │              │ Planning    │
-├──────────────────────┼──────────────┼─────────────┤
-│ Gemini 2.5 Flash     │ Google       │ Docs        │
-│                      │              │ Planning    │
-├──────────────────────┼──────────────┼─────────────┤
-│ Grok Code            │ X.AI         │ Testing     │
-│                      │              │ Git ops     │
-└──────────────────────┴──────────────┴─────────────┘
-```
+## Data Flow Diagrams
 
----
-
-### MCP Servers
-
-**Integration Architecture**:
+### Command Execution Flow
 
 ```
-Agent <──> MCP Protocol <──> MCP Server <──> External Service
-
-Example:
-Researcher <──> MCP <──> SearchAPI <──> Google Search
+User → CLI → Parser → Command Def → Agent Workflow
+                                         ↓
+                        ┌────────────────┴────────────────┐
+                        ↓                                 ↓
+                Sequential Execution              Parallel Execution
+                        ↓                                 ↓
+                Agent A → Agent B → Agent C    Agent A + Agent B + Agent C
+                        ↓                                 ↓
+                        └─────────────┬───────────────────┘
+                                      ↓
+                              Collect Results
+                                      ↓
+                              Present to User
 ```
 
-**Server Configuration**:
-```bash
-# Context7 Setup
-export UPSTASH_API_KEY="..."
-claude mcp add context7 -s user -- npx -y @upstash/context7-mcp
-
-# Human MCP Setup
-export GOOGLE_GEMINI_API_KEY="..."
-claude mcp add-json human -s user '{"command": "npx", "args": ["@goonnguyen/human-mcp@latest"]}'
-```
-
----
-
-### Development Tools
-
-**Code Analysis**:
-- **Repomix** - Codebase compaction for AI analysis
-- **Commitlint** - Commit message validation
-- **Husky** - Git hooks
-
-**Media Processing**:
-- **ImageMagick** - Image manipulation
-- **FFmpeg** - Video/audio processing
-
-**Release Management**:
-- **Semantic Release** - Automated versioning
-- **Conventional Changelog** - Release notes generation
-
----
-
-## Integration Architecture
-
-### GitHub Integration
-
-**Capabilities**:
-- Read GitHub Actions logs
-- Create pull requests
-- Manage issues
-- Access repository metadata
-
-**Integration Pattern**:
-```
-Agent ──> gh CLI ──> GitHub API ──> Repository
-```
-
-**Example Usage**:
-```bash
-# In debugger agent
-gh run view $RUN_ID --log
-gh pr create --title "feat: add auth" --body "..."
-```
-
----
-
-### Database Integration
-
-**Capabilities**:
-- Query optimization analysis
-- Schema design
-- Data migration planning
-
-**Integration Pattern**:
-```
-Database Admin Agent ──> psql CLI ──> PostgreSQL
-```
-
-**Example Usage**:
-```bash
-# In database-admin agent
-psql $DATABASE_URL -c "EXPLAIN ANALYZE SELECT ..."
-```
-
----
-
-### External API Integration
-
-**Pattern: MCP Server Wrapper**
+### File-Based Communication Flow
 
 ```
-┌──────────────┐
-│ Agent        │
-│ Needs Data   │
-└──────┬───────┘
-       │
-       ▼
-┌──────────────┐
-│ MCP Server   │
-│ (Middleware) │
-└──────┬───────┘
-       │
-       ▼
-┌──────────────┐
-│ External API │
-│ (REST/GraphQL)│
-└──────────────┘
+Agent A (Planner)
+    ↓ Writes
+./plans/251026-auth-implementation-plan.md
+    ↓ Reads
+Main Agent
+    ↓ Implements
+Code Changes
+    ↓ Writes
+./plans/reports/251026-from-main-to-tester-impl-report.md
+    ↓ Reads
+Tester Agent
+    ↓ Executes
+Tests
+    ↓ Writes
+./plans/reports/251026-from-tester-to-main-results-report.md
+    ↓ Reads
+Main Agent (next steps)
 ```
 
-**Benefits**:
-- Standardized interface
-- Error handling
-- Rate limiting
-- Caching
+### Documentation Update Flow
 
----
+```
+Code Changes
+    ↓
+Docs Manager Triggered
+    ↓
+Check Freshness (< 1 day?)
+    ↓
+┌─────────┴─────────┐
+↓ No (outdated)     ↓ Yes (fresh)
+Run Repomix         Read Existing
+    ↓                   ↓
+Generate Summary        │
+    └────────┬──────────┘
+             ↓
+    Analyze Changes
+             ↓
+    Update Documentation
+    - API docs
+    - Code standards
+    - Architecture
+    - Codebase summary
+             ↓
+    Validate Naming
+             ↓
+    Create Report
+             ↓
+    Save to ./docs/
+```
 
 ## Security Architecture
 
+### Security Layers
+
+**Layer 1: Pre-Commit Security**
+- Secret scanning (git-manager agent)
+- Credential detection
+- .gitignore validation
+- Environment file exclusion
+
+**Layer 2: Code Security**
+- Input validation enforcement
+- SQL injection prevention
+- XSS protection patterns
+- OWASP Top 10 awareness
+
+**Layer 3: Agent Security**
+- No logging of sensitive data
+- Sanitized error messages
+- Secure credential handling
+- API key protection
+
+**Layer 4: Communication Security**
+- File system permissions
+- Report sanitization
+- Context isolation
+- Clean handoffs
+
 ### Secret Management
 
-**Environment Variable Hierarchy**:
-
+**Environment Variables**:
 ```
-1. Process Environment (highest priority)
-   export GEMINI_API_KEY="..."
-
-2. Project Root .env
-   /project/.env
-
-3. Claude Config .env
-   /project/.claude/.env
-
-4. Skills Config .env
-   /project/.claude/skills/.env
-
-5. Individual Skill .env (lowest priority)
-   /project/.claude/skills/gemini-audio/.env
+.env (local, gitignored)
+.env.example (template, committed)
 ```
 
-**Secret Detection**:
+**API Keys**:
+- Never hardcoded
+- Environment variable injection
+- Secure storage systems in production
 
-```
-Pre-Commit Hook:
-  │
-  ▼
-┌──────────────────────┐
-│ Git Manager Agent    │
-│ • Scans staged files │
-│ • Pattern matching   │
-│ • .env detection     │
-└──────┬───────────────┘
-       │
-    ┌──┴──┐
-    │     │
-  PASS   FAIL
-    │     │
-    ▼     ▼
- Commit  Abort
-         + Warn User
-```
+**Credentials**:
+- Password hashing (bcrypt, argon2)
+- Token-based authentication
+- Secure session management
 
----
-
-### Code Security
-
-**OWASP Top 10 Coverage**:
-
-```
-Code Reviewer Agent
-  │
-  ├─> SQL Injection Detection
-  ├─> XSS Vulnerability Scanning
-  ├─> Authentication Issues
-  ├─> Sensitive Data Exposure
-  ├─> Access Control Validation
-  ├─> Security Misconfiguration
-  ├─> Deserialization Flaws
-  ├─> Component Vulnerabilities
-  ├─> Logging & Monitoring
-  └─> Known CVEs
-```
-
----
-
-### Access Control
-
-**Principle of Least Privilege**:
-- Agents only access files they need
-- MCP servers isolated per agent
-- API keys scoped to minimum permissions
-- No cross-agent data sharing (except via files)
-
----
-
-## Scalability & Performance
+## Scalability Considerations
 
 ### Horizontal Scalability
 
 **Parallel Agent Execution**:
+- Independent researchers run simultaneously
+- No shared state between agents
+- File-based coordination
+- Scalable to N agents
 
-```
-Single Command:
-/plan "complex feature"
-  │
-  ├─> Researcher 1 (WebSocket techs)
-  ├─> Researcher 2 (Authentication)
-  ├─> Researcher 3 (Database options)
-  └─> Researcher 4 (UI frameworks)
-       │
-       └─> All run in parallel
-           └─> Results aggregated by Planner
-```
+**Workflow Parallelization**:
+- Multiple feature branches
+- Concurrent issue resolution
+- Parallel test execution
+- Independent documentation updates
 
-**Benefits**:
-- Reduced wall-clock time
-- Better resource utilization
-- Independent failure domains
+### Vertical Scalability
 
----
+**Context Management**:
+- Repomix for code compaction
+- Selective context loading
+- Chunked file processing
+- Efficient token usage
 
-### Performance Optimization
-
-**Caching Strategies**:
-
-1. **Repomix Output Caching**
-   - Cache codebase summaries
-   - Invalidate on file changes
-   - Reduces generation time from 30s to <1s
-
-2. **MCP Server Response Caching**
-   - Cache search results (15 min TTL)
-   - Cache documentation fetches
-   - Reduces API calls and costs
-
-3. **Documentation Caching**
-   - Reuse docs <1 day old
-   - Avoid redundant generation
-   - Faster agent initialization
-
----
-
-### Resource Management
-
-**Memory Optimization**:
-- Stream large files instead of loading entirely
-- Clean up temporary files after agent completion
-- Limit concurrent agent execution (configurable)
-
-**Token Optimization**:
-- Use smaller models when appropriate
-- Compress prompts without losing context
-- Batch operations when possible
-
----
+**Performance Optimization**:
+- Lazy loading of skills
+- Cached MCP responses
+- Incremental documentation updates
+- Optimized file I/O
 
 ## Deployment Architecture
 
-### Local Development
+### Development Environment
 
 ```
-Developer Machine:
-├── Claude Code CLI
-├── Node.js Runtime
-├── Git Repository
-├── MCP Servers (optional)
-└── Environment Variables
+Developer Machine
+├── Claude Code CLI / Open Code CLI
+├── .claude/ (configuration)
+├── .opencode/ (configuration)
+├── Git repository
+└── Node.js runtime
 ```
 
-**Setup**:
-```bash
-# Clone repository
-git clone https://github.com/claudekit/claudekit-engineer.git
-cd claudekit-engineer
+### CI/CD Pipeline
 
-# Install dependencies
-npm install
-
-# Configure environment
-cp .env.example .env
-# Edit .env with API keys
-
-# Initialize Claude Code
-claude
-
-# Run first command
-/plan "your feature"
+```
+GitHub Repository
+    ↓ Push to main
+GitHub Actions
+    ↓
+Run Tests
+    ↓
+Semantic Release
+    ├─→ Version Bump
+    ├─→ Changelog Generation
+    ├─→ GitHub Release
+    └─→ (Optional) NPM Publish
 ```
 
----
+### Production Usage
 
-### Team Collaboration
-
-**Shared Resources**:
-- Git repository (shared codebase)
-- Documentation (synced via git)
-- Plans and reports (version controlled)
-- Standards and templates (team-wide)
-
-**Individual Resources**:
-- API keys (developer-specific)
-- Local MCP servers
-- Development environment
-- Git branches
-
-**Workflow**:
 ```
-Developer A                Developer B
-    │                          │
-    ├─> /plan "feature"       │
-    ├─> /cook plan            │
-    ├─> /test                 │
-    ├─> /git:cp               │
-    │                          │
-    │                      ├─> git pull
-    │                      ├─> /plan "fix bug"
-    │                      ├─> /fix:fast issue
-    │                      └─> /git:cp
-    │                          │
-    └─> git pull               │
+User Project
+├── .claude/ (from template)
+├── .opencode/ (from template)
+├── docs/ (generated)
+├── plans/ (generated)
+├── src/ (user code)
+└── tests/ (user tests)
 ```
-
----
-
-### CI/CD Integration
-
-**GitHub Actions Example**:
-
-```yaml
-name: ClaudeKit Quality Check
-on: [push, pull_request]
-
-jobs:
-  quality:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '20'
-
-      # Run tests
-      - run: npm test
-
-      # Validate commit messages
-      - run: npx commitlint --from=HEAD~1
-
-      # Check for secrets
-      - run: |
-          if grep -r "sk-[a-zA-Z0-9]" .; then
-            echo "Secret detected!"
-            exit 1
-          fi
-```
-
-**Agent-Assisted CI/CD**:
-```bash
-# When CI fails
-/fix:ci https://github.com/user/repo/actions/runs/123456
-
-# Debugger agent:
-# 1. Fetches action logs via gh CLI
-# 2. Analyzes failure root cause
-# 3. Creates fix plan
-# 4. Main agent implements fixes
-# 5. Tester validates
-# 6. Git manager commits
-```
-
----
 
 ## Monitoring & Observability
 
-### Agent Performance Metrics
+### Agent Activity Tracking
 
-**Tracked Metrics**:
-- Agent execution time
-- Success/failure rates
-- Token usage per agent
-- File I/O operations
-- API call counts
+**Logs**:
+- Agent invocations
+- Command executions
+- Workflow progress
+- Error occurrences
 
-**Logging**:
-```
-./logs/
-├── 251030-planner-execution.log
-├── 251030-tester-results.log
-└── 251030-system-events.log
-```
+**Reports**:
+- Agent communication files
+- Implementation plans
+- Research findings
+- Test results
 
----
+**Metrics**:
+- Command execution time
+- Agent success rates
+- Test pass/fail ratios
+- Documentation coverage
 
-### Error Tracking
+### Quality Metrics
 
-**Error Handling Levels**:
+**Code Quality**:
+- Test coverage percentage
+- Type safety compliance
+- Linting pass rate
+- Security scan results
 
-1. **Agent-Level Errors**
-   - Logged to agent report
-   - Included in output to main agent
-   - Actionable error messages
+**Process Metrics**:
+- Planning to implementation time
+- Code review turnaround
+- Documentation freshness
+- Commit message compliance
 
-2. **Command-Level Errors**
-   - User-facing error display
-   - Troubleshooting guidance
-   - Recovery suggestions
+## Failure Handling
 
-3. **System-Level Errors**
-   - Critical failures logged
-   - User notification
-   - Graceful degradation
+### Error Recovery Strategies
 
----
+**Agent Failures**:
+- Graceful degradation
+- Error reporting to user
+- Rollback mechanisms
+- Retry logic for transient errors
 
-## Disaster Recovery
+**Workflow Failures**:
+- Checkpoint saving
+- Partial progress preservation
+- Clear failure messages
+- Recovery suggestions
 
-### Data Backup
+**Communication Failures**:
+- File write retries
+- Report validation
+- Missing report detection
+- Timeout handling
 
-**Version Controlled**:
-- All plans (in git)
-- All documentation (in git)
-- Code changes (in git)
+## Extension Points
 
-**Not Version Controlled**:
-- Temporary files
-- Cache data
-- Log files
+### Adding New Agents
 
-**Recovery**:
-```bash
-# Restore from git
-git reset --hard HEAD
-git pull origin main
+1. Create agent definition file: `.claude/agents/my-agent.md`
+2. Define YAML frontmatter (name, description, mode, model)
+3. Write agent instructions and workflows
+4. Reference in commands or other agents
 
-# Regenerate summaries
-/docs:summarize
-```
+### Adding New Commands
 
----
+1. Create command file: `.claude/commands/my-command.md`
+2. Define YAML frontmatter
+3. Write command workflow with agent invocations
+4. Use `$ARGUMENTS` or `$1, $2` for parameters
 
-### Failure Scenarios
+### Adding New Skills
 
-**Scenario 1: MCP Server Down**
-- **Impact**: Limited (optional features)
-- **Mitigation**: Graceful degradation, local fallbacks
-- **Recovery**: Automatic retry, user notification
+1. Create skill directory: `.claude/skills/my-skill/`
+2. Write `SKILL.md` with knowledge content
+3. Add references and examples
+4. Reference in agent definitions
 
-**Scenario 2: AI Model Unavailable**
-- **Impact**: High (core functionality)
-- **Mitigation**: Fallback to alternative models
-- **Recovery**: Queue requests, retry with backoff
+### Custom Workflows
 
-**Scenario 3: Corrupted Plan File**
-- **Impact**: Medium (single feature affected)
-- **Mitigation**: Git history recovery
-- **Recovery**: Restore from git, regenerate if needed
+1. Define workflow in `.claude/workflows/`
+2. Document orchestration patterns
+3. Specify agent handoffs
+4. Provide examples
 
----
+## Performance Considerations
 
-## Future Architecture Considerations
+### Optimization Strategies
 
-### Cloud-Hosted Agents (Future)
+**Token Efficiency**:
+- Repomix for codebase compaction
+- Selective context inclusion
+- Efficient prompt engineering
+- Response caching where possible
 
-```
-┌──────────────────────────────────────────┐
-│ User Machine                             │
-│ • Claude Code CLI                        │
-│ • Lightweight client                     │
-└────────────┬─────────────────────────────┘
-             │ HTTPS
-             ▼
-┌──────────────────────────────────────────┐
-│ ClaudeKit Cloud Platform                 │
-│ • Agent orchestration                    │
-│ • Shared MCP servers                     │
-│ • Centralized caching                    │
-│ • Team collaboration                     │
-└────────────┬─────────────────────────────┘
-             │ WebSocket
-             ▼
-┌──────────────────────────────────────────┐
-│ External Services                        │
-│ • GitHub, GitLab, Bitbucket              │
-│ • Cloud providers                        │
-│ • Third-party APIs                       │
-└──────────────────────────────────────────┘
-```
+**Execution Speed**:
+- Parallel agent spawning
+- Async file operations
+- Lazy skill loading
+- Minimal context switching
 
----
+**Resource Usage**:
+- File system efficiency
+- Memory management for large files
+- Cleanup of temporary files
+- Optimized git operations
 
-### Multi-Language Support (Future)
+## Future Architecture Evolution
 
-**Current**: Markdown-based agents
-**Future**: Multi-language agent implementations
+### Planned Enhancements
 
-```
-Agent Implementations:
-├── Python/           # For data science tasks
-├── JavaScript/       # For web development
-├── Go/              # For systems programming
-└── Rust/            # For performance-critical tasks
-```
+**Agent Improvements**:
+- Visual workflow builder for agent orchestration
+- Custom agent creator with UI
+- Agent marketplace for community contributions
+- Real-time agent communication (beyond files)
 
----
+**Scalability Enhancements**:
+- Distributed agent execution
+- Cloud-based agent orchestration
+- Multi-repository support
+- Large-scale project handling
 
-## Summary
+**Integration Expansions**:
+- Additional AI platforms
+- More MCP servers
+- Custom integration framework
+- Enterprise service connectors
 
-ClaudeKit Engineer's architecture is built on proven principles:
+## References
 
-1. **Separation of Concerns** - Each component has clear responsibility
-2. **Loose Coupling** - File-based communication enables independence
-3. **Composability** - Small agents combine for complex workflows
-4. **Extensibility** - Easy to add agents, commands, and integrations
+### Internal Documentation
+- [Project Overview PDR](./project-overview-pdr.md)
+- [Codebase Summary](./codebase-summary.md)
+- [Code Standards](./code-standards.md)
 
-The system is designed for:
-- **Local-first development** with optional cloud features
-- **Team collaboration** via version-controlled artifacts
-- **Security by default** with secret detection and scanning
-- **Performance at scale** through parallelization and caching
+### External Resources
+- [Claude Code Documentation](https://docs.claude.com/)
+- [Open Code Documentation](https://opencode.ai/docs)
+- [MCP Documentation](https://modelcontextprotocol.io/)
+- [Semantic Versioning](https://semver.org/)
 
----
+## Unresolved Questions
 
-**Version**: 1.0
-**Last Review**: 2025-10-30
-**Next Review**: Q1 2025
-**Owner**: ClaudeKit Team
+1. **Real-Time Collaboration**: How to handle multiple developers using agents simultaneously on same codebase?
+2. **Agent State Management**: Should agents maintain state between invocations beyond file system?
+3. **Distributed Execution**: Architecture for running agents across multiple machines?
+4. **Performance Benchmarking**: What are acceptable latency thresholds for different operation types?

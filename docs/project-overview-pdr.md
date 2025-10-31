@@ -1,1065 +1,596 @@
 # Project Overview & Product Development Requirements (PDR)
 
-**Product**: ClaudeKit Engineer
-**Version**: 1.0 (MVP)
-**Last Updated**: 2025-10-30
-**Status**: Production Ready
-
----
+**Project Name**: ClaudeKit Engineer
+**Version**: 1.8.0
+**Last Updated**: 2025-10-26
+**Status**: Active Development
+**Repository**: https://github.com/claudekit/claudekit-engineer
 
 ## Executive Summary
 
-ClaudeKit Engineer is a revolutionary AI-powered development system that replaces traditional boilerplates with intelligent, context-aware AI agents. Built on Claude Code and Open Code CLI, it provides a complete software development lifecycle toolkit with 12 specialized agents, 30+ workflow automation commands, and seamless integration with modern development tools.
+ClaudeKit Engineer is a comprehensive boilerplate template that revolutionizes software development by integrating AI-powered CLI coding agents (Claude Code and Open Code) into the development workflow. It provides a complete orchestration framework where specialized AI agents collaborate to handle planning, implementation, testing, code review, documentation, and project management.
 
-Unlike static templates that lock developers into specific tech stacks and become outdated, ClaudeKit adapts to any technology, learns project patterns, and continuously improves with Claude model updates.
+## Project Purpose
 
----
+### Vision
+Enable developers to build professional software projects faster and with higher quality by leveraging AI agent orchestration, automated workflows, and intelligent project management.
 
-## Product Vision
+### Mission
+Provide a production-ready template that:
+- Accelerates development velocity through AI-powered agent collaboration
+- Enforces best practices and coding standards automatically
+- Maintains comprehensive documentation that evolves with code
+- Ensures code quality through automated testing and review
+- Streamlines git workflows with professional commit standards
 
-### Mission Statement
-Empower developers to ship production-ready features in hours instead of weeks by providing an AI development team that handles planning, coding, testing, reviewing, and deploying with enterprise-grade quality standards.
+### Value Proposition
+- **10x Faster Planning**: Parallel researcher agents explore solutions simultaneously
+- **Consistent Quality**: Automated code review and testing on every change
+- **Zero Documentation Debt**: Docs update automatically with code changes
+- **Professional Git History**: Clean, conventional commits without AI attribution
+- **Reduced Context Switching**: Specialized agents handle specific concerns
 
-### Core Value Proposition
-**Stop copy-pasting boilerplate code. Start shipping features.**
-
-- Traditional boilerplates lock you into tech stacks and become outdated
-- ClaudeKit works with any technology and evolves automatically
-- Generate AI-powered assets, write conversion-optimized copy, ship production code
-- Save 10+ hours on your first feature implementation
-
----
-
-## Target Audience
+## Target Users
 
 ### Primary Users
-
-**Solo Developers**
-- Need an entire development team without hiring
-- Want to validate ideas quickly
-- Require production-ready code, not prototypes
-- Value time savings and quality assurance
-
-**Indie Makers**
-- Ship faster to validate business ideas
-- Limited resources for hiring teams
-- Need consistent quality across projects
-- Want to focus on business logic
-
-**Small Development Teams (2-5 developers)**
-- Augment team capabilities with specialized AI agents
-- Standardize development workflows
-- Improve code quality and consistency
-- Accelerate feature delivery timelines
-
-**Developers Frustrated with Traditional Boilerplates**
-- Tired of tech stack lock-in
-- Want flexibility to choose technologies
-- Need solutions that stay current
-- Require customization beyond templates
-
-### Secondary Users
-
-**Technical Leaders**
-- Evaluate AI-assisted development tools
-- Seek productivity improvements for teams
-- Need quality assurance automation
-- Want documentation that stays current
-
----
-
-## Product Goals
-
-### Short-term Goals (Q1 2025)
-
-1. **Market Validation**
-   - Achieve 100 paying customers
-   - Maintain 30-day money-back guarantee rate <5%
-   - Collect 50+ testimonials and case studies
-   - Build community of 500+ active users
-
-2. **Feature Completion**
-   - Deliver all 12 specialized agents
-   - Complete 30+ slash commands
-   - Integrate 5 Gemini-powered skills
-   - Provide comprehensive documentation
-
-3. **Quality Assurance**
-   - Achieve 95% customer satisfaction rating
-   - Maintain <2 critical bugs per month
-   - Response time <24 hours for support
-   - 99.9% uptime for documentation site
-
-### Mid-term Goals (Q2-Q3 2025)
-
-1. **Ecosystem Expansion**
-   - Add 10+ framework-specific templates
-   - Create marketplace for custom agents
-   - Build integration library (50+ services)
-   - Develop IDE extensions (VSCode, JetBrains)
-
-2. **Community Growth**
-   - Reach 1,000 paying customers
-   - Establish active Discord community (5,000+ members)
-   - Launch contributor program
-   - Host monthly webinars and workshops
-
-3. **Enterprise Features**
-   - Team collaboration features
-   - Organization-wide settings management
-   - Usage analytics and reporting
-   - Priority support tiers
-
-### Long-term Goals (Q4 2025+)
-
-1. **Platform Evolution**
-   - Multi-language agent support (Python, Go, Rust)
-   - Cloud-hosted agent orchestration
-   - Real-time collaborative development
-   - AI model marketplace
-
-2. **Market Leadership**
-   - Become #1 AI development toolkit
-   - 10,000+ paying customers
-   - Strategic partnerships with tech companies
-   - Conference presence and thought leadership
-
----
-
-## Functional Requirements
-
-### FR-1: AI Agent System
-
-**Priority**: P0 (Critical)
-**Status**: Complete
-
-**Description**: Provide 12 specialized AI agents that handle different aspects of software development lifecycle.
-
-**Agents**:
-
-1. **Planner Agent**
-   - Creates detailed implementation plans
-   - Spawns researcher agents in parallel
-   - Uses sequential-thinking for problem decomposition
-   - Generates plans in `./plans` directory
-
-2. **Researcher Agent**
-   - Multi-source research (Google, YouTube, websites)
-   - Uses SearchAPI and VidCap MCP servers
-   - Creates comprehensive markdown reports
-   - Validates information across sources
-
-3. **Project Manager Agent**
-   - Tracks progress and coordinates agents
-   - Updates roadmaps and changelogs
-   - Verifies task completion
-   - Manages documentation updates
-
-4. **UI/UX Designer Agent**
-   - Creates wireframes and mockups
-   - Generates design systems
-   - Uses Human MCP for image generation
-   - Maintains design guidelines
-
-5. **Database Admin Agent**
-   - Query optimization
-   - Schema design and migration
-   - Performance analysis
-   - Data modeling
-
-6. **Copywriter Agent**
-   - Conversion-focused content
-   - Marketing copy generation
-   - SEO optimization
-   - Multi-language support
-
-7. **Tester Agent**
-   - Unit, integration, E2E tests
-   - Coverage analysis
-   - Performance validation
-   - Build verification
-
-8. **Code Reviewer Agent**
-   - Security vulnerability scanning
-   - Performance analysis
-   - Type safety validation
-   - Best practices enforcement
-
-9. **Debugger Agent**
-   - CI/CD log analysis
-   - Performance bottleneck identification
-   - Root cause analysis
-   - System health assessment
-
-10. **Git Manager Agent**
-    - Secure staging and commits
-    - Conventional commit messages
-    - Secret detection
-    - PR management
-
-11. **Docs Manager Agent**
-    - Documentation synchronization
-    - Naming convention compliance
-    - Codebase summary generation
-    - API documentation updates
-
-12. **Journal Writer Agent**
-    - Technical diary entries
-    - Development reflections
-    - Learning documentation
-    - Decision tracking
-
-**Acceptance Criteria**:
-- All agents respond within 30 seconds
-- Agents produce markdown reports in standardized format
-- Inter-agent communication via file system works reliably
-- Agents handle errors gracefully with clear messages
-
----
-
-### FR-2: Slash Command System
-
-**Priority**: P0 (Critical)
-**Status**: Complete
-
-**Description**: Provide 30+ slash commands for workflow automation and agent orchestration.
-
-**Command Categories**:
-
-1. **Core Development** (10 commands)
-   - /ask, /bootstrap, /brainstorm, /cook, /debug, /journal, /plan, /scout, /test, /watzup
-
-2. **Design** (5 commands)
-   - /design:3d, /design:fast, /design:good, /design:screenshot, /design:video
-
-3. **Documentation** (3 commands)
-   - /docs:init, /docs:summarize, /docs:update
-
-4. **Fix & Debug** (6 commands)
-   - /fix:ci, /fix:fast, /fix:hard, /fix:logs, /fix:test, /fix:types, /fix:ui
-
-5. **Git Operations** (3 commands)
-   - /git:cm, /git:cp, /git:pr
-
-6. **Planning** (2 commands)
-   - /plan:ci, /plan:two
-
-7. **Integration** (2 commands)
-   - /integrate:polar, /integrate:sepay
-
-8. **Content Creation** (4 commands)
-   - /content:cro, /content:enhance, /content:fast, /content:good
-
-**Acceptance Criteria**:
-- Commands parse arguments correctly
-- Commands orchestrate appropriate agents
-- Commands provide clear progress feedback
-- Commands handle failures with helpful error messages
-
----
-
-### FR-3: MCP Server Integration
-
-**Priority**: P1 (High)
-**Status**: Complete
-
-**Description**: Integrate Model Context Protocol servers for extended capabilities.
-
-**MCP Servers**:
-
-1. **Context7** (Upstash)
-   - Documentation context management
-   - Package/plugin documentation access
-
-2. **Human** (Google Gemini)
-   - Visual content generation
-   - Image creation and editing
-
-3. **SearchAPI**
-   - Google search integration
-   - YouTube search and caption extraction
-
-4. **VidCap**
-   - Video caption extraction
-   - Transcript analysis
-
-5. **Sequential Thinking**
-   - Problem decomposition
-   - Structured reasoning
-
-6. **Eyes**
-   - Image/video/document analysis
-   - Visual content understanding
-
-**Acceptance Criteria**:
-- All MCP servers connect reliably
-- API keys managed securely via environment variables
-- Server failures don't crash agent workflows
-- Clear error messages for missing credentials
-
----
-
-### FR-4: Gemini Skills Integration
-
-**Priority**: P1 (High)
-**Status**: Complete
-
-**Description**: Provide AI-powered skills for multimedia processing and generation.
-
-**Skills**:
-
-1. **gemini-audio**
-   - Audio transcription and analysis
-   - Text-to-speech generation
-   - Audio summarization (up to 9.5 hours)
-
-2. **gemini-video-understanding**
-   - Video analysis and description
-   - Timestamp referencing
-   - YouTube URL processing
-
-3. **gemini-document-processing**
-   - PDF text extraction
-   - Table and chart extraction
-   - Document summarization
-
-4. **gemini-image-gen**
-   - AI image generation from prompts
-   - Image editing and composition
-   - Iterative refinement
-
-5. **gemini-vision**
-   - Image captioning and classification
-   - Object detection and segmentation
-   - Multi-image comparison
-
-**Acceptance Criteria**:
-- Skills work with both Google AI Studio and Vertex AI
-- API key validation provides clear feedback
-- Skills handle large files (multi-hour videos, large PDFs)
-- Generated content meets quality standards
-
----
-
-### FR-5: Documentation System
-
-**Priority**: P0 (Critical)
-**Status**: Complete
-
-**Description**: Comprehensive, auto-synchronized documentation that stays current with code.
-
-**Documentation Files**:
-
-1. **project-overview-pdr.md**
-   - Product vision and goals
-   - Functional and non-functional requirements
-   - Success metrics
-   - Roadmap
-
-2. **codebase-summary.md**
-   - Auto-generated from repomix
-   - Directory structure
-   - File statistics
-   - Technology stack
-
-3. **code-standards.md**
-   - Coding conventions
-   - Naming standards
-   - File organization
-   - Best practices
-
-4. **system-architecture.md**
-   - High-level architecture
-   - Component interactions
-   - Data flow
-   - Technology decisions
-
-5. **COMMANDS.md**
-   - Complete command reference
-   - Usage examples
-   - Workflow patterns
-
-6. **SKILLS.md**
-   - Skills documentation
-   - Setup instructions
-   - API key configuration
-
-**Acceptance Criteria**:
-- Documentation auto-updates when code changes
-- Naming conventions match codebase reality
-- Examples are tested and functional
-- Documentation is searchable and navigable
-
----
-
-### FR-6: Security Features
-
-**Priority**: P0 (Critical)
-**Status**: Complete
-
-**Description**: Enterprise-grade security controls and best practices enforcement.
-
-**Security Controls**:
-
-1. **Secret Detection**
-   - Pre-commit scanning for credentials
-   - .env file detection
-   - API key pattern matching
-   - Certificate and key file detection
-
-2. **Code Security Analysis**
-   - OWASP Top 10 vulnerability scanning
-   - SQL injection detection
-   - XSS vulnerability identification
-   - CORS and CSP validation
-
-3. **Secure Git Operations**
-   - .gitignore validation
-   - Credential exclusion enforcement
-   - Commit message sanitization
-   - No AI attribution to protect user privacy
-
-4. **Authentication & Authorization**
-   - Secure token handling
-   - Session management validation
-   - Permission checks in code review
-
-**Acceptance Criteria**:
-- 100% prevention of secret commits
-- All OWASP Top 10 vulnerabilities detected
-- Security issues flagged as critical in reviews
-- Clear remediation guidance provided
-
----
-
-### FR-7: Quality Assurance System
-
-**Priority**: P0 (Critical)
-**Status**: Complete
-
-**Description**: Automated testing, code review, and quality enforcement.
-
-**Quality Controls**:
-
-1. **Automated Testing**
-   - Unit test execution
-   - Integration test validation
-   - E2E test coverage
-   - Performance testing
-
-2. **Code Coverage**
-   - Minimum 80% coverage target
-   - Line, branch, function coverage
-   - Uncovered code identification
-   - Coverage trend tracking
-
-3. **Code Review**
-   - Type safety validation
-   - Performance analysis
-   - Security scanning
-   - Best practices verification
-
-4. **Build Validation**
-   - Compilation success
-   - Dependency resolution
-   - Production build testing
-   - CI/CD compatibility
-
-**Acceptance Criteria**:
-- All tests must pass before completion
-- Coverage reports generated automatically
-- Code review identifies 95%+ of issues
-- Build failures provide actionable guidance
-
----
-
-### FR-8: Git Workflow Automation
-
-**Priority**: P1 (High)
-**Status**: Complete
-
-**Description**: Professional version control operations with conventional commits.
-
-**Git Features**:
-
-1. **Conventional Commits**
-   - Type enforcement (feat, fix, docs, etc.)
-   - Subject case validation
-   - Header length limit (100 chars)
-   - Body line length limit (300 chars)
-
-2. **Automated Changelog**
-   - Semantic versioning
-   - Release note generation
-   - GitHub release creation
-   - Optional NPM publishing
-
-3. **Commit Operations**
-   - Secret detection before staging
-   - Professional commit messages
-   - No AI attribution
-   - Atomic, focused commits
-
-4. **PR Management**
-   - Automated PR creation
-   - Summary generation from commits
-   - Test plan inclusion
-   - GitHub CLI integration
-
-**Acceptance Criteria**:
-- 100% commit message compliance
-- Changelog accuracy matches commits
-- PRs include all necessary information
-- Git history is clean and professional
-
----
-
-## Non-Functional Requirements
-
-### NFR-1: Performance
-
-**Priority**: P0 (Critical)
-
-**Requirements**:
-- Agent response time <30 seconds for simple queries
-- Plan generation <2 minutes for complex features
-- Documentation sync <1 minute
-- Repomix generation <30 seconds for medium projects
-
-**Metrics**:
-- 95th percentile response time <45 seconds
-- Average command execution <15 seconds
-- Documentation generation <60 seconds
-- Zero timeout failures
-
----
-
-### NFR-2: Reliability
-
-**Priority**: P0 (Critical)
-
-**Requirements**:
-- Agent success rate >95%
-- Command completion rate >98%
-- Documentation accuracy >99%
-- Zero data loss in agent communication
-
-**Metrics**:
-- Uptime >99.5% for all agents
-- Error recovery rate >90%
-- Data consistency 100%
-- Graceful degradation on API failures
-
----
-
-### NFR-3: Usability
-
-**Priority**: P1 (High)
-
-**Requirements**:
-- Intuitive command syntax
-- Clear error messages
-- Comprehensive documentation
-- Helpful examples for all commands
-
-**Metrics**:
-- First-time success rate >80%
-- Documentation clarity rating >4.5/5
-- Support ticket volume <10 per week
-- User satisfaction >90%
-
----
-
-### NFR-4: Maintainability
-
-**Priority**: P1 (High)
-
-**Requirements**:
-- Modular agent architecture
+1. **Solo Developers**: Building projects faster with AI assistance
+2. **Small Development Teams**: Standardizing workflows and practices
+3. **Open Source Maintainers**: Managing contributions and documentation
+4. **Startups**: Rapid prototyping and MVP development
+5. **Enterprise Teams**: Enforcing architectural standards
+
+### User Personas
+
+**Persona 1: Solo Full-Stack Developer**
+- **Needs**: Fast iteration, quality code, minimal documentation overhead
+- **Pain Points**: Context switching, documentation maintenance, testing gaps
+- **Solution**: AI agents handle planning, testing, docs while dev focuses on features
+
+**Persona 2: Technical Lead**
+- **Needs**: Enforce standards, review code, maintain architecture docs
+- **Pain Points**: Code review bottleneck, inconsistent patterns, outdated docs
+- **Solution**: Automated reviews, standardized workflows, living documentation
+
+**Persona 3: Open Source Maintainer**
+- **Needs**: Scale contributions, maintain quality, clear documentation
+- **Pain Points**: Limited time, varying contribution quality, doc rot
+- **Solution**: Consistent review process, automated standards enforcement
+
+## Key Features & Capabilities
+
+### 1. Multi-Agent Orchestration System
+
+**Agent Types**:
+- **Planning Agents**: Research, architecture, technical decisions
+- **Implementation Agents**: Code generation, feature development
+- **Quality Agents**: Testing, code review, security analysis
+- **Documentation Agents**: Auto-updating docs, API references
+- **Management Agents**: Project tracking, progress monitoring, git operations
+
+**Orchestration Patterns**:
+- **Sequential Chaining**: Planning → Implementation → Testing → Review → Deploy
+- **Parallel Execution**: Multiple researchers exploring different approaches
+- **Query Fan-Out**: Simultaneous investigation of technical solutions
+
+### 2. Comprehensive Slash Commands (50+)
+
+**Core Development**:
+- `/plan [task]` - Research and create implementation plans
+- `/cook [tasks]` - Implement features with full workflow
+- `/test` - Run comprehensive test suites
+- `/ask [question]` - Expert technical consultation
+- `/bootstrap` - Initialize new projects end-to-end
+- `/brainstorm [question]` - Solution ideation and evaluation
+
+**Debugging & Fixing**:
+- `/debug [issues]` - Deep issue analysis
+- `/fix:fast [issues]` - Quick bug fixes
+- `/fix:hard [issues]` - Complex problem solving with subagents
+- `/fix:ci [url]` - GitHub Actions log analysis
+- `/fix:test [issues]` - Test suite debugging
+- `/fix:types` - Type error resolution
+- `/fix:logs [issue]` - Log analysis and fixes
+- `/fix:ui [issue]` - UI/UX problem solving
+
+**Design & Content**:
+- `/design:fast [tasks]` - Quick design creation
+- `/design:good [tasks]` - Immersive design development
+- `/design:3d [tasks]` - Interactive 3D designs with Three.js
+- `/design:screenshot [image]` - Design from screenshots
+- `/design:video [video]` - Design from video references
+- `/content:fast [request]` - Quick copywriting
+- `/content:good [request]` - High-quality content creation
+- `/content:enhance [issues]` - Copy improvement
+- `/content:cro [issues]` - Conversion optimization
+
+**Documentation**:
+- `/docs:init` - Create initial documentation
+- `/docs:update` - Update existing documentation
+- `/docs:summarize` - Generate codebase summaries
+
+**Git Operations**:
+- `/git:cm` - Stage and commit changes
+- `/git:cp` - Stage, commit, and push
+- `/git:pr [branch]` - Create pull requests
+
+**Project Management**:
+- `/watzup` - Review recent changes and status
+- `/journal` - Development journal entries
+- `/scout [prompt] [scale]` - Parallel codebase exploration
+
+### 3. Extensive Skills Library (20+ Skills)
+
+**Categories**:
+- **Authentication**: better-auth integration
+- **Cloud**: Cloudflare (Workers, R2, Browser Rendering), Google Cloud
+- **Databases**: MongoDB, PostgreSQL
+- **Design**: Canvas-based design generation
+- **Debugging**: Systematic debugging, root-cause tracing, defense-in-depth
+- **Development**: Next.js, Turborepo, Claude Code workflows
+- **Documentation**: Repomix, docs-seeker
+- **Documents**: PDF, DOCX, PPTX, XLSX processing
+- **Infrastructure**: Docker containerization
+- **Media**: FFmpeg, ImageMagick
+- **MCP**: Model Context Protocol server building
+- **Problem Solving**: Meta-pattern recognition, collision-zone thinking
+- **UI**: shadcn/ui, Tailwind CSS, Remix Icon
+- **Ecommerce**: Shopify integrations
+
+### 4. Automated Release Management
+
+**Features**:
+- Semantic versioning (MAJOR.MINOR.PATCH)
+- Conventional commit enforcement
+- Automated changelog generation
+- GitHub releases with assets
+- Optional NPM publishing
+- Git hooks for commit validation
+
+**Commit Types**:
+- `feat:` → Minor version bump
+- `fix:` → Patch version bump
+- `BREAKING CHANGE:` → Major version bump
+- `docs:`, `refactor:`, `test:`, `ci:` → Patch bump
+
+### 5. Development Workflow Automation
+
+**Pre-Commit**:
+- Commit message linting (conventional commits)
+- Optional test execution
+
+**Pre-Push**:
+- Linting validation
+- Test suite execution
+- Build verification
+
+**CI/CD**:
+- GitHub Actions integration
+- Automated releases on main branch
+- Test automation
+- Build validation
+
+## Technical Requirements
+
+### Functional Requirements
+
+**FR1: Agent Orchestration**
+- Support sequential and parallel agent execution
+- Enable agent-to-agent communication via file system
+- Maintain context across agent handoffs
+- Track agent task completion
+
+**FR2: Command System**
+- Parse slash commands with arguments
+- Route to appropriate agent workflows
+- Support nested commands (e.g., `/fix:ci`)
+- Provide command discovery and help
+
+**FR3: Documentation Management**
+- Auto-generate codebase summaries with repomix
+- Keep docs synchronized with code changes
+- Maintain project roadmap and changelog
+- Update API documentation automatically
+
+**FR4: Quality Assurance**
+- Run tests before commits
+- Perform code review automatically
+- Check type safety and compilation
+- Validate security best practices
+
+**FR5: Git Workflow**
+- Enforce conventional commits
+- Scan for secrets before commits
+- Generate professional commit messages
+- Create clean PR descriptions
+
+**FR6: Project Bootstrapping**
+- Initialize git repository
+- Gather requirements through questions
+- Research tech stacks
+- Generate project structure
+- Create initial documentation
+- Set up CI/CD
+
+### Non-Functional Requirements
+
+**NFR1: Performance**
+- Command execution < 5 seconds for simple operations
+- Parallel agent spawning for independent tasks
+- Efficient file system operations
+- Optimized context loading
+
+**NFR2: Reliability**
+- Handle agent failures gracefully
+- Provide rollback mechanisms
+- Validate agent outputs
+- Error recovery and retry logic
+
+**NFR3: Usability**
+- Clear command syntax and documentation
+- Helpful error messages
+- Progress indicators for long operations
+- Comprehensive command help
+
+**NFR4: Maintainability**
+- Modular agent definitions
+- Reusable workflow templates
 - Clear separation of concerns
-- Comprehensive inline documentation
-- Easy addition of new agents/commands
+- Self-documenting code and configs
 
-**Metrics**:
-- Code duplication <5%
-- Test coverage >80%
-- Documentation coverage 100%
-- New agent onboarding time <2 hours
+**NFR5: Security**
+- Secret detection before commits
+- No AI attribution in public commits
+- Secure handling of credentials
+- Security best practice enforcement
 
----
-
-### NFR-5: Scalability
-
-**Priority**: P2 (Medium)
-
-**Requirements**:
-- Support projects with 10,000+ files
-- Handle parallel agent execution
-- Manage large repomix outputs (>500K tokens)
-- Scale to team environments (10+ users)
-
-**Metrics**:
-- Linear performance scaling
-- No memory leaks in long sessions
-- Efficient resource utilization
-- Support for monorepo architectures
-
----
-
-### NFR-6: Security & Privacy
-
-**Priority**: P0 (Critical)
-
-**Requirements**:
-- No credential exposure
-- Local-first processing
-- Optional cloud features
-- User data privacy protection
-
-**Metrics**:
-- Zero security incidents
-- 100% secret detection accuracy
-- No unauthorized data transmission
-- GDPR compliance
-
----
+**NFR6: Scalability**
+- Support projects of any size
+- Handle large codebases efficiently
+- Scale agent parallelization
+- Manage complex dependency graphs
 
 ## Success Metrics
 
-### Product Metrics
-
-**Adoption Metrics**:
-- Monthly Active Users (MAU): Target 500 by Q2 2025
-- Paying Customers: Target 100 by Q1 2025, 1,000 by Q3 2025
-- Customer Retention Rate: Target >85% after 90 days
-- Net Promoter Score (NPS): Target >50
-
-**Engagement Metrics**:
-- Commands per user per week: Target >20
-- Agent invocations per feature: Target 5-8
-- Documentation views per month: Target 10,000+
-- Community contributions per month: Target >10
-
-**Quality Metrics**:
-- Customer Satisfaction (CSAT): Target >90%
-- Bug report rate: Target <2 per 100 users per month
-- Feature request implementation rate: Target >50%
-- Support response time: Target <24 hours
-
----
-
-### Business Metrics
-
-**Revenue Metrics**:
-- Monthly Recurring Revenue (MRR): Target $10K by Q2 2025
-- Average Revenue Per User (ARPU): $99 one-time
-- Customer Acquisition Cost (CAC): Target <$50
-- Lifetime Value (LTV): Target >$150
-
-**Growth Metrics**:
-- Month-over-Month Growth: Target 20%+
-- Referral Rate: Target 15% of new customers
-- Churn Rate: Target <5% per month
-- Expansion Revenue: Target 20% via upsells
-
-**Marketing Metrics**:
-- Website Conversion Rate: Target 5%+
-- Trial-to-Paid Conversion: Target 30%+
-- Organic Traffic Growth: Target 25% monthly
-- Social Media Engagement: Target 1,000+ followers by Q2
-
----
-
-## Roadmap
-
-### Phase 1: MVP Launch (Q4 2024) ✅ COMPLETE
-
-**Objectives**:
-- Launch core product with 12 agents
-- Deliver 30+ slash commands
-- Complete documentation system
-- Achieve product-market fit
-
-**Deliverables**:
-- ✅ All 12 specialized agents
-- ✅ Core slash commands (/plan, /cook, /test, etc.)
-- ✅ MCP server integrations
-- ✅ Gemini skills
-- ✅ Comprehensive documentation
-- ✅ GitHub repository
-- ✅ Marketing website
-
-**Success Criteria**:
-- ✅ 50+ beta users
-- ✅ <5% refund rate
-- ✅ 95%+ feature completeness
-- ✅ Zero critical bugs
-
-### Phase 1.5: Documentation Content Update (Oct 2025) ✅ COMPLETE
-
-**Objectives**:
-- Create comprehensive documentation for all ClaudeKit features
-- Achieve high coverage for agents, commands, and skills
-- Provide practical use cases and troubleshooting guides
-- Improve onboarding experience with quick start guide
-
-**Deliverables**:
-- ✅ 79 total documentation pages (259% increase from 22)
-- ✅ 14 agent pages (100% coverage)
-- ✅ 25 command pages across 9 categories (83% coverage)
-- ✅ 3 essential skill pages (Next.js, Tailwind CSS, shadcn/ui)
-- ✅ 7 use case pages (features, bugs, refactoring, API, auth, payments, performance)
-- ✅ 6 troubleshooting pages (installation, commands, agents, API keys, performance)
-- ✅ Quick Start Guide (complete 15-min workflow)
-- ✅ Introduction revision (20% more concise with comparison table)
-- ✅ ~250KB of quality documentation added
-
-**Success Metrics**:
-- ✅ Agent coverage: 100% (14/14)
-- ✅ Command coverage: 83% (25/30)
-- ✅ Skill coverage: 7% (3/45)
-- ✅ Build time: 6.29s (optimized)
-- ✅ Zero build errors
-
-**Remaining Work**:
-- 📋 42 skill pages (ongoing)
-- 📋 5 command pages (minor commands)
-
----
-
-### Phase 2: Community Growth (Q1 2025) 🔄 IN PROGRESS
-
-**Objectives**:
-- Build active user community
-- Gather feedback and iterate
-- Expand documentation and tutorials
-- Improve onboarding experience
-
-**Deliverables**:
-- 📋 Discord community server
-- 📋 Video tutorial series
-- 📋 Interactive code playground
-- 📋 Community showcase
-- 📋 Contributor guidelines
-- 📋 Monthly webinars
-
-**Success Criteria**:
-- 100+ paying customers
-- 500+ Discord members
-- 50+ testimonials
-- >90% satisfaction rating
-
----
-
-### Phase 3: Ecosystem Expansion (Q2-Q3 2025)
-
-**Objectives**:
-- Add framework-specific templates
-- Launch agent marketplace
-- Build integration library
-- Develop IDE extensions
-
-**Deliverables**:
-- Framework templates (Next.js, Django, Laravel, etc.)
-- Agent marketplace platform
-- 50+ service integrations
-- VSCode extension
-- JetBrains plugin
-- GitHub Actions integration
-
-**Success Criteria**:
-- 1,000+ customers
-- 100+ marketplace agents
-- 5,000+ Discord members
-- 20%+ monthly growth
-
----
-
-### Phase 4: Enterprise Features (Q4 2025)
-
-**Objectives**:
-- Enable team collaboration
-- Add organization management
-- Provide usage analytics
-- Launch priority support
-
-**Deliverables**:
-- Team workspaces
-- Role-based access control
-- Usage dashboards
-- Custom agent training
-- Enterprise support tiers
-- SLA guarantees
-
-**Success Criteria**:
-- 50+ enterprise customers
-- $50K+ MRR
-- 99.9% uptime
-- <4 hour support response
-
----
-
-## Risk Assessment & Mitigation
-
-### Technical Risks
-
-**Risk 1: Claude Model Changes**
-- **Probability**: Medium
-- **Impact**: High
-- **Mitigation**: Abstract model APIs, test against multiple models, maintain backward compatibility
-
-**Risk 2: MCP Server Downtime**
-- **Probability**: Low
-- **Impact**: Medium
-- **Mitigation**: Graceful degradation, local fallbacks, retry logic, user notifications
-
-**Risk 3: Performance Degradation**
-- **Probability**: Medium
-- **Impact**: Medium
-- **Mitigation**: Performance monitoring, optimization pipelines, caching strategies
-
----
-
-### Business Risks
-
-**Risk 1: Low Adoption Rate**
-- **Probability**: Medium
-- **Impact**: High
-- **Mitigation**: Aggressive marketing, free trial period, money-back guarantee, testimonials
-
-**Risk 2: High Churn Rate**
-- **Probability**: Low
-- **Impact**: High
-- **Mitigation**: Excellent onboarding, responsive support, continuous value delivery, community engagement
-
-**Risk 3: Competition**
-- **Probability**: High
-- **Impact**: Medium
-- **Mitigation**: Unique value proposition, fast innovation, community building, thought leadership
-
----
-
-### Operational Risks
-
-**Risk 1: Support Scalability**
-- **Probability**: Medium
-- **Impact**: Medium
-- **Mitigation**: Self-service documentation, community support, tiered support model, automation
-
-**Risk 2: Documentation Drift**
-- **Probability**: Low
-- **Impact**: Medium
-- **Mitigation**: Automated doc sync, regular audits, community contributions, version control
-
-**Risk 3: Security Incidents**
-- **Probability**: Low
-- **Impact**: Critical
-- **Mitigation**: Proactive scanning, security audits, incident response plan, user education
-
----
-
-## Pricing Strategy
-
-### Current Pricing (MVP)
-
-**One-Time Payment**: $99
-- ~~$149~~ (33% launch discount)
-- Lifetime access
-- Unlimited updates
-- All current and future agents
-- All current and future commands
-- Priority email support
-- 30-day money-back guarantee
-
-**Value Proposition**:
-- Save 10+ hours on first feature
-- Equivalent to hiring multiple specialists
-- No recurring subscription
-- Continuous improvements with Claude updates
-
----
-
-### Future Pricing (Post-MVP)
-
-**Free Tier** (Community)
-- Access to open-source agents
-- Limited command usage (50/month)
-- Community support
-- Public documentation
-
-**Pro Tier** ($149 one-time or $19/month)
-- Unlimited command usage
-- All agents and skills
-- Priority support
-- Private workspaces
-
-**Team Tier** ($499 one-time or $49/month)
-- Everything in Pro
-- Team collaboration (up to 5 members)
-- Shared workspaces
-- Usage analytics
-- Admin dashboard
-
-**Enterprise Tier** (Custom pricing)
-- Everything in Team
-- Unlimited team members
-- Custom agent development
-- SLA guarantees
-- Dedicated support
-- On-premise deployment option
-
----
-
-## Competitive Analysis
-
-### Traditional Boilerplates
-
-**Strengths**:
-- Immediate code availability
-- No AI dependency
-- Well-documented patterns
-- Community support
-
-**Weaknesses**:
-- Tech stack lock-in
-- Become outdated quickly
-- No customization flexibility
-- Require manual updates
-
-**ClaudeKit Advantage**:
-- Works with any tech stack
-- Auto-updates with AI models
-- Infinite customization
-- Context-aware recommendations
-
----
-
-### AI Coding Assistants (Copilot, Cursor, etc.)
-
-**Strengths**:
-- IDE integration
-- Real-time suggestions
-- Large user base
-- Continuous learning
-
-**Weaknesses**:
-- No workflow orchestration
-- No specialized agents
-- Limited planning capabilities
-- No documentation sync
-
-**ClaudeKit Advantage**:
-- Complete development lifecycle
-- 12 specialized agents
-- Workflow automation
-- Auto-synchronized docs
-
----
-
-### Code Generation Tools
-
-**Strengths**:
-- Fast code generation
-- Template libraries
-- API integrations
-- Visual builders
-
-**Weaknesses**:
-- Limited context understanding
-- No quality assurance
-- No testing automation
-- No documentation generation
-
-**ClaudeKit Advantage**:
-- Context-aware development
-- Built-in QA and testing
-- Automated code review
-- Documentation management
-
----
-
-## Technical Architecture Highlights
-
-### Agent System Architecture
-
-**Components**:
-- **Agent Definitions**: Markdown files with frontmatter metadata
-- **Command Router**: Maps slash commands to agent workflows
-- **Context Manager**: File-based inter-agent communication
-- **Report System**: Standardized markdown reports in `./plans/reports/`
-
-**Design Principles**:
-- **Separation of Concerns**: Each agent has single responsibility
-- **Loose Coupling**: Agents communicate via file system
-- **Composability**: Commands orchestrate multiple agents
-- **Extensibility**: Easy to add new agents and commands
-
----
+### Adoption Metrics
+- GitHub stars and forks
+- NPM package downloads
+- Active users and installations
+- Community engagement (issues, discussions, PRs)
+
+### Performance Metrics
+- Average time to bootstrap new project: < 10 minutes
+- Planning to implementation cycle time: 50% reduction
+- Documentation coverage: > 90%
+- Test coverage: > 80%
+- Code review time: 75% reduction
+
+### Quality Metrics
+- Conventional commit compliance: 100%
+- Zero secrets in commits: 100%
+- Automated test pass rate: > 95%
+- Documentation freshness: < 24 hours lag
+
+### Developer Experience Metrics
+- Time to first commit: < 5 minutes
+- Developer onboarding time: 50% reduction
+- Context switching overhead: 60% reduction
+- Satisfaction score: > 4.5/5.0
+
+## Technical Architecture
+
+### Core Components
+
+**1. Agent Framework**
+- Agent definition files (Markdown with frontmatter)
+- Agent orchestration engine
+- Context management system
+- Communication protocol (file-based reports)
+
+**2. Command System**
+- Command parser and router
+- Argument handling ($ARGUMENTS, $1, $2, etc.)
+- Command composition and nesting
+- Help and discovery system
+
+**3. Workflow Engine**
+- Sequential execution support
+- Parallel task scheduling
+- Dependency resolution
+- Error handling and recovery
+
+**4. Documentation System**
+- Repomix integration for codebase compaction
+- Template-based doc generation
+- Auto-update triggers
+- Version tracking
+
+**5. Quality System**
+- Test runner integration
+- Code review automation
+- Type checking and linting
+- Security scanning
+
+**6. Release System**
+- Semantic versioning engine
+- Changelog generation
+- GitHub release creation
+- Asset packaging
 
 ### Technology Stack
 
-**Core Technologies**:
-- **Claude Code** - AI orchestration platform
-- **Open Code CLI** - Agent framework
-- **Node.js 20+** - Runtime environment
-- **Git** - Version control
+**Runtime**:
+- Node.js >= 18.0.0
+- Bash scripting for hooks
 
-**AI Models**:
-- **Claude Sonnet 4** - Code review, debugging, design
-- **Claude Opus 4** - Architectural planning
-- **Google Gemini 2.5 Flash** - Documentation, planning
-- **Grok Code** - Testing, git operations
+**AI Platforms**:
+- Anthropic Claude (Sonnet 4, Opus 4)
+- OpenRouter integration
+- Google Gemini (for docs-manager)
+- Grok Code (for git-manager)
 
-**MCP Servers**:
-- Context7, Human, SearchAPI, VidCap, Sequential Thinking, Eyes
+**Development Tools**:
+- Semantic Release
+- Commitlint
+- Husky (git hooks)
+- Repomix (codebase compaction)
 
-**Developer Tools**:
-- Repomix, Commitlint, Husky, ImageMagick, FFmpeg
+**CI/CD**:
+- GitHub Actions
+- Conventional Commits
+- Automated versioning
 
----
+### Integration Points
 
-## Appendices
+**MCP Tools**:
+- **context7**: Read latest documentation
+- **sequential-thinking**: Structured problem solving
+- **SearchAPI**: Google and YouTube search
+- **review-website**: Web content extraction
+- **VidCap**: Video transcript analysis
 
-### Appendix A: Glossary
+**External Services**:
+- GitHub (Actions, Releases, PRs)
+- Discord (notifications)
+- NPM (optional package publishing)
 
-**Agent**: AI specialist that performs specific development tasks
-**Slash Command**: Workflow automation trigger (e.g., /plan, /cook)
-**MCP**: Model Context Protocol for extending AI capabilities
-**Repomix**: Tool for compacting codebases into AI-friendly format
-**Conventional Commits**: Standardized commit message format
-**YAGNI**: You Aren't Gonna Need It principle
-**KISS**: Keep It Simple, Stupid principle
-**DRY**: Don't Repeat Yourself principle
+## Use Cases
 
----
+### UC1: Bootstrap New Project
+**Actor**: Developer
+**Goal**: Create new project from scratch
+**Flow**:
+1. Run `/bootstrap` command
+2. Answer requirement questions
+3. AI researches tech stacks
+4. Review and approve recommendations
+5. AI generates project structure
+6. AI implements initial features
+7. AI creates tests and documentation
+8. Project ready for development
 
-### Appendix B: Related Projects
+**Outcome**: Fully functional project with tests, docs, CI/CD in < 10 minutes
 
-**ClaudeKit Ecosystem**:
-- **claudekit-engineer** - This project
-- **claudekit-cli** - Command-line installer
-- **claudekit-docs** - Public documentation site
-- **claudekit-marketing** - Marketing toolkit
-- **claudekit** - Main website
+### UC2: Implement New Feature
+**Actor**: Developer
+**Goal**: Add feature with full workflow
+**Flow**:
+1. Run `/cook "add user authentication"`
+2. Planner creates implementation plan
+3. Researcher agents explore auth solutions
+4. Developer reviews and approves plan
+5. AI implements code
+6. AI writes comprehensive tests
+7. AI performs code review
+8. AI updates documentation
+9. AI commits with conventional message
 
-**GitHub Repositories**:
-- https://github.com/claudekit/claudekit-engineer
-- https://github.com/mrgoonie/claudekit-cli
-- https://github.com/claudekit/claudekit-docs
+**Outcome**: Feature complete with tests, docs, and clean git history
 
----
+### UC3: Debug Production Issue
+**Actor**: Developer
+**Goal**: Identify and fix production bug
+**Flow**:
+1. Run `/fix:logs "API timeout errors"`
+2. Debugger agent analyzes logs
+3. Root cause identified
+4. Fix plan created
+5. AI implements solution
+6. Tests validate fix
+7. Code review confirms quality
+8. Commit and deploy
 
-### Appendix C: Support & Resources
+**Outcome**: Bug fixed with comprehensive testing and documentation
 
-**Documentation**: https://docs.claudekit.cc
-**GitHub Issues**: Report bugs and request features
-**Discord Community**: Join discussions and get help
-**Email Support**: support@claudekit.cc
-**Response Time**: <24 hours for paying customers
+### UC4: Create Pull Request
+**Actor**: Developer
+**Goal**: Submit code for review
+**Flow**:
+1. Run `/git:pr feature/new-auth main`
+2. AI analyzes all commits in branch
+3. AI generates comprehensive PR description
+4. PR created with proper context
+5. Links to related issues added
 
----
+**Outcome**: Professional PR ready for review
 
-**Document Version**: 1.0
-**Next Review**: Q1 2025
-**Owner**: ClaudeKit Team
-**Contributors**: AI agents (planner, docs-manager, project-manager)
+### UC5: Update Documentation
+**Actor**: Project Manager
+**Goal**: Ensure docs are current
+**Flow**:
+1. Run `/docs:update`
+2. Docs manager scans codebase
+3. Generates fresh summary with repomix
+4. Identifies outdated sections
+5. Updates API docs, guides, architecture
+6. Validates naming conventions
+7. Creates update report
+
+**Outcome**: Documentation synchronized with code
+
+## Constraints & Limitations
+
+### Technical Constraints
+- Requires Node.js >= 18.0.0
+- Depends on Claude Code or Open Code CLI
+- File-based communication has I/O overhead
+- Token limits on AI model context windows
+
+### Operational Constraints
+- Requires API keys for AI platforms
+- GitHub Actions minutes for CI/CD
+- Internet connection for MCP tools
+- Storage for repomix output files
+
+### Design Constraints
+- Agent definitions must be Markdown with frontmatter
+- Commands follow slash syntax
+- Reports use specific naming conventions
+- Conventional commits required
+
+## Risks & Mitigation
+
+### Risk 1: AI Model API Failures
+**Impact**: High
+**Likelihood**: Medium
+**Mitigation**: Retry logic, fallback models, graceful degradation
+
+### Risk 2: Context Window Limits
+**Impact**: Medium
+**Likelihood**: High
+**Mitigation**: Repomix for code compaction, selective context loading, chunking
+
+### Risk 3: Agent Coordination Failures
+**Impact**: High
+**Likelihood**: Low
+**Mitigation**: Validation checks, error recovery, rollback mechanisms
+
+### Risk 4: Secret Exposure
+**Impact**: Critical
+**Likelihood**: Low
+**Mitigation**: Pre-commit scanning, .gitignore enforcement, security reviews
+
+### Risk 5: Documentation Drift
+**Impact**: Medium
+**Likelihood**: Medium
+**Mitigation**: Automated triggers, freshness checks, validation workflows
+
+## Future Roadmap
+
+### Phase 1: Foundation (Complete - v1.0-1.8)
+- ✅ Core agent framework
+- ✅ Slash command system
+- ✅ Automated releases
+- ✅ Skills library
+- ✅ Documentation system
+
+### Phase 2: Enhancement (Current)
+- 🔄 Additional skills (GCP, AWS, Azure)
+- 🔄 UI/UX improvements
+- 🔄 Performance optimization
+- 🔄 Enhanced error handling
+
+### Phase 3: Advanced Features (Planned)
+- 📋 Visual workflow builder
+- 📋 Custom agent creator UI
+- 📋 Team collaboration features
+- 📋 Analytics and insights dashboard
+- 📋 Multi-language support
+
+### Phase 4: Enterprise (Future)
+- 📋 Self-hosted deployment
+- 📋 Advanced security features
+- 📋 Compliance automation
+- 📋 Custom integrations
+- 📋 Enterprise support
+
+## Dependencies & Integration
+
+### Required Dependencies
+- Node.js runtime environment
+- Git version control
+- Claude Code or Open Code CLI
+- API keys for AI platforms
+
+### Optional Dependencies
+- Discord webhook for notifications
+- GitHub repository for CI/CD
+- NPM account for publishing
+
+### Integrations
+- GitHub Actions
+- Semantic Release
+- Commitlint
+- Husky
+- Repomix
+- Various MCP servers
+
+## Compliance & Standards
+
+### Coding Standards
+- YANGI (You Aren't Gonna Need It)
+- KISS (Keep It Simple, Stupid)
+- DRY (Don't Repeat Yourself)
+- Files < 500 lines
+- Comprehensive error handling
+- Security-first development
+
+### Git Standards
+- Conventional Commits
+- Clean commit history
+- No AI attribution
+- No secrets in commits
+- Professional PR descriptions
+
+### Documentation Standards
+- Markdown format
+- Up-to-date (< 24 hours)
+- Comprehensive coverage
+- Clear examples
+- Proper versioning
+
+### Testing Standards
+- Unit test coverage > 80%
+- Integration tests for workflows
+- Error scenario coverage
+- Performance validation
+- Security testing
+
+## Glossary
+
+- **Agent**: Specialized AI assistant with specific expertise and responsibilities
+- **Slash Command**: Shortcut that triggers agent workflows (e.g., `/plan`)
+- **Skill**: Reusable knowledge module for specific technologies or patterns
+- **MCP**: Model Context Protocol for AI tool integration
+- **Repomix**: Tool for compacting codebases into AI-friendly format
+- **Sequential Chaining**: Running agents one after another with dependencies
+- **Parallel Execution**: Running multiple agents simultaneously
+- **Query Fan-Out**: Spawning multiple researchers to explore different approaches
+- **Conventional Commits**: Structured commit message format (type(scope): description)
+
+## Appendix
+
+### Related Documentation
+- [Codebase Summary](./codebase-summary.md)
+- [Code Standards](./code-standards.md)
+- [System Architecture](./system-architecture.md)
+- [Commands Reference](../guide/COMMANDS.md)
+
+### External Resources
+- [Claude Code Documentation](https://docs.claude.com/en/docs/claude-code/overview)
+- [Open Code Documentation](https://opencode.ai/docs)
+- [Conventional Commits](https://conventionalcommits.org/)
+- [Semantic Versioning](https://semver.org/)
+- [Keep a Changelog](https://keepachangelog.com/)
+
+### Support & Community
+- GitHub Issues: https://github.com/claudekit/claudekit-engineer/issues
+- Discussions: https://github.com/claudekit/claudekit-engineer/discussions
+- Repository: https://github.com/claudekit/claudekit-engineer
+
+## Unresolved Questions
+
+1. **Performance Benchmarks**: Need to establish baseline metrics for agent execution times
+2. **Multi-Repository Support**: How to handle projects spanning multiple repositories?
+3. **Custom AI Model Support**: Should we support other AI platforms beyond Claude and OpenRouter?
+4. **Agent Marketplace**: Community-contributed agents and skills distribution mechanism?
+5. **Real-Time Collaboration**: How to handle multiple developers using agents simultaneously?

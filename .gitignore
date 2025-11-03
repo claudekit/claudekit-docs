@@ -40,4 +40,6 @@ repomix-output.xml
 playwright-*.png
 
 # goon
+!.claude/commands/
 !.claude/commands/write-tutorial.md
+!.claude/commands/update-docs.md

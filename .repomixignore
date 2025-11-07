@@ -1,15 +1,39 @@
-docs/*
-plans/*
-assets/*
+# Build outputs
 dist/*
-coverage/*
 build/*
+coverage/*
+.astro/*
+
+# Documentation (keep source, ignore generated)
+docs/reports/*
+docs/screenshots/*
+docs/wireframe/*
+
+# Mobile
 ios/*
 android/*
 
+# Dependencies
+node_modules/*
+.pnpm-store/*
+
+# IDE & tooling
 .claude/*
 .serena/*
-.pnpm-store/*
 .github/*
 .dart_tool/*
 .idea/*
+.vscode/*
+.opencode
+
+# Project management
+plans/*
+backlog/*
+
+# Logs
+logs.txt
+*.log
+
+# Generated files
+repomix-output.xml
+*.tsbuildinfo

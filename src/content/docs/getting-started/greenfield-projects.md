@@ -1,395 +1,448 @@
 ---
 title: "Greenfield Projects"
-description: "Start new projects with ClaudeKit from scratch. Build modern applications faster with AI-powered development tools."
+description: "Start new projects with ClaudeKit from scratch - bootstrap ideas into production-ready applications with AI agents."
 category: "getting-started"
 order: 4
 published: true
-lastUpdated: 2025-11-06
+lastUpdated: 2025-11-07
 ---
 
 # Greenfield Projects
 
-Start new projects with ClaudeKit's AI-powered development workflow. Perfect for new applications, prototypes, and modern development stacks.
+Create new projects from scratch with ClaudeKit's AI-powered development workflow. Transform ideas into production-ready applications quickly with intelligent agents.
 
-## Project Initialization
+## Installation
 
-### 1. Create New Project
-
-```bash
-# Create new project with ClaudeKit
-claudekit new my-awesome-app
-
-# Or create in current directory
-claudekit init --project-type new
-```
-
-### 2. Choose Your Stack
-
-ClaudeKit supports modern development stacks:
+### 1. Install ClaudeKit CLI
 
 ```bash
-# React with TypeScript
-claudekit bootstrap --framework react --language typescript
-
-# Next.js full-stack
-claudekit bootstrap --framework nextjs --features api,auth,db
-
-# Node.js API
-claudekit bootstrap --framework express --template api-server
-
-# Vue.js application
-claudekit bootstrap --framework vue --features router,pinia
-
-# Python with FastAPI
-claudekit bootstrap --framework fastapi --language python
+npm i -g claudekit-cli@latest
 ```
 
-### 3. Configure Project Features
+## Quick Start
+
+### Method 1: Bootstrap New Project
 
 ```bash
-# Add authentication
-claudekit add feature auth --provider nextauth
-
-# Add database
-claudekit add feature database --provider postgres
-
-# Add API routes
-claudekit add feature api --pattern rest
-
-# Add testing setup
-claudekit add feature testing --framework jest
+# Create new project with ClaudeKit Engineer kit
+ck new --kit engineer --dir /path/to/project
 ```
 
-## Project Templates
+**Options:**
+- `--kit engineer`: Installs ClaudeKit Engineer configuration
+- `--dir`: Target directory for the project
 
-### Modern Web Application
+### Method 2: Manual Setup
 
 ```bash
-# Full-stack Next.js application
-claudekit new my-web-app \
-  --template nextjs-fullstack \
-  --features auth,database,api,testing \
-  --ui-framework tailwind \
-  --deployment vercel
+# Create directory
+mkdir my-awesome-project
+cd my-awesome-project
+
+# Initialize git (optional but recommended)
+git init
+
+# Start Claude Code
+claude
 ```
 
-**Includes:**
-- Next.js 14 with App Router
-- TypeScript configuration
-- Tailwind CSS + shadcn/ui
-- Authentication setup
-- PostgreSQL database
-- API routes structure
-- Testing with Jest and Playwright
-- Deployment configuration
+## Bootstrap Your Idea
 
-### React Component Library
+### The Bootstrap Command
 
 ```bash
-# Reusable component library
-claudekit new my-ui-library \
-  --template react-library \
-  --features storybook,testing \
-  --build-tool rollup \
-  --package-manager npm
+/bootstrap <description-of-your-idea>
 ```
 
-**Includes:**
-- TypeScript + React setup
-- Storybook for component documentation
-- Rollup build configuration
-- Automated testing with Jest
-- NPM package publishing setup
+This is the **most powerful command** for greenfield projects. It:
+1. Asks clarifying questions for context
+2. **Provides detailed implementation plan** (review carefully!)
+3. After approval, starts implementing
+4. Writes tests automatically
+5. Performs code reviews
+6. Creates initial specs and roadmap
+7. Provides summary report
 
-### Node.js Microservice
+**No need to run `/docs:init`** - specs are created automatically during bootstrap.
+
+### Example: Simple Project
 
 ```bash
-# API microservice
-claudekit new my-api-service \
-  --template node-microservice \
-  --features api,database,cache \
-  --database postgres \
-  --cache redis
+/bootstrap A CLI tool that converts markdown files to PDF with custom styling
 ```
 
-**Includes:**
-- Express.js with TypeScript
-- PostgreSQL connection
-- Redis caching layer
-- API documentation with Swagger
-- Docker configuration
-- Kubernetes manifests
+**CC will ask:**
+- Target platforms? (Node.js, Deno, Bun?)
+- PDF library preference? (pdfkit, puppeteer, weasyprint?)
+- Custom styling method? (CSS, theme files?)
+- Distribution method? (npm, binary, both?)
+
+### Example: Web Application
+
+```bash
+/bootstrap A real-time collaborative todo app with team workspaces and permissions
+```
+
+**CC will ask:**
+- Frontend framework? (React, Vue, Svelte?)
+- Backend? (Node.js, Python, Go?)
+- Database? (PostgreSQL, MongoDB, Supabase?)
+- Real-time solution? (WebSocket, Server-Sent Events?)
+- Authentication? (OAuth, email/password, magic link?)
+
+### Example: Discord Bot
+
+```bash
+/bootstrap A Discord Bot that researches, analyzes and sends report of DJI stock market at 7am every day
+```
+
+**CC will ask:**
+- Stock data source? (API preference?)
+- Analysis type? (Technical, fundamental, both?)
+- Report format? (Embed, text, charts?)
+- Time zone for scheduling?
+- Storage for historical data?
+
+### Autonomous Mode (Use with Caution!)
+
+```bash
+/bootstrap:auto <your-idea>
+```
+
+Runs full autonomous mode without plan review. CC will:
+- Make all technical decisions
+- Implement entire project
+- Run tests and fix issues
+- Generate documentation
+
+**Recommendation:** Only use for:
+- Simple, well-defined projects
+- Prototypes and experiments
+- Non-critical applications
+
+**Always review generated code** before production use.
+
+## After Bootstrap
+
+### Project Structure
+
+ClaudeKit creates standard project structure:
+
+```
+my-project/
+├── .claude/           # ClaudeKit configuration
+├── docs/              # Generated documentation
+│   ├── project-overview-pdr.md
+│   ├── system-architecture.md
+│   └── roadmap.md
+├── src/               # Source code
+├── tests/             # Test files
+├── package.json       # Dependencies
+└── README.md          # Project readme
+```
+
+### Continue Development
+
+Use all ClaudeKit commands for further development:
+
+#### Add New Features
+```bash
+/cook Add user authentication with email verification
+```
+
+#### Fix Issues
+```bash
+/fix:fast Button click handler not responding on mobile
+/fix:hard Complex state management bug in checkout flow
+```
+
+#### Plan Enhancements
+```bash
+/plan Add payment processing with Stripe
+```
+
+#### Run Tests
+```bash
+/test
+```
+
+## Common Project Types
+
+### Web API Server
+
+```bash
+/bootstrap REST API for e-commerce platform with products, cart, orders, and payments
+```
+
+**Typical questions:**
+- Framework: Express, Fastify, Nest.js?
+- Database: PostgreSQL, MySQL, MongoDB?
+- Authentication: JWT, session-based?
+- Payment provider: Stripe, PayPal?
+- Hosting: Vercel, AWS, Railway?
+
+### Full-Stack Application
+
+```bash
+/bootstrap Full-stack task management app with kanban boards, time tracking, and team collaboration
+```
+
+**Typical questions:**
+- Frontend: Next.js, React + Vite, Remix?
+- State management: Redux, Zustand, Context?
+- Database: Supabase, PlanetScale, MongoDB?
+- Real-time: Socket.io, Supabase Realtime?
+- File storage: S3, Cloudflare R2?
+
+### Chrome Extension
+
+```bash
+/bootstrap Chrome extension that summarizes web articles and saves highlights to Notion
+```
+
+**Typical questions:**
+- Manifest version: V2 or V3?
+- AI service: OpenAI, Anthropic, local?
+- Notion integration: Official API?
+- Storage: Chrome storage, cloud sync?
 
 ### Mobile App Backend
 
 ```bash
-# Backend for mobile apps
-claudekit new mobile-backend \
-  --template api-server \
-  --features auth,database,storage \
-  --auth jwt \
-  --storage s3
+/bootstrap Backend API for mobile fitness app with workout tracking, social features, and achievements
 ```
 
-## Development Workflow
+**Typical questions:**
+- Framework: Express, FastAPI, Rails?
+- Database: PostgreSQL, MongoDB?
+- File uploads: S3, Cloudflare R2?
+- Push notifications: FCM, OneSignal?
+- Analytics: Mixpanel, PostHog?
 
-### 1. Project Planning
+## Advanced Workflows
+
+### Iterative Development
 
 ```bash
-# Plan project architecture
-claudekit /plan project "Build a task management app"
+# 1. Start with MVP
+/bootstrap Minimal viable product for habit tracking app
 
-# Create project structure
-claudekit scaffold --pattern mvc
+# 2. After MVP completion, add features
+/cook Add social sharing features
+/cook Add streak tracking and notifications
+/cook Add analytics dashboard
 
-# Define data models
-claudekit /model create User name:string email:string
-claudekit /model create Task title:string completed:boolean
+# 3. Optimize and refine
+/fix:hard Performance issues with large datasets
+/plan Add premium features with subscription
 ```
 
-### 2. Core Development
+### Multi-Service Architecture
 
 ```bash
-# Generate components
-claudekit /generate component UserProfile --props user,avatar
-claudekit /generate component TaskList --props tasks,onDelete
+# 1. Bootstrap main API
+/bootstrap Main API service for social media platform
 
-# Create API endpoints
-claudekit /generate api /api/users --methods GET,POST,PUT,DELETE
-claudekit /generate api /api/tasks --methods GET,POST,PUT,DELETE
+# 2. Plan microservices
+/plan Add separate auth service
+/plan Add media processing service
+/plan Add notification service
 
-# Add database migrations
-claudekit /migration create create_users_table
-claudekit /migration create create_tasks_table
+# 3. Implement services separately
+/code auth-service-plan.md
+/code media-service-plan.md
+/code notification-service-plan.md
 ```
 
-### 3. Feature Development
+### Documentation-Driven Development
 
 ```bash
-# Add authentication
-claudekit /feature auth --flow email-password
+# 1. Create detailed plan first
+/plan Complete SaaS platform with multi-tenancy, billing, and admin dashboard
 
-# Add file uploads
-claudekit /feature upload --provider s3
+# 2. Review and refine plan
+# Edit the generated plan markdown
 
-# Add real-time features
-claudekit /feature realtime --provider socket.io
+# 3. Implement in phases
+/code plan.md --phase 1
+/test
+/code plan.md --phase 2
+/test
+```
 
-# Add search functionality
-claudekit /feature search --provider elasticsearch
+## Project Configuration
+
+### Environment Setup
+
+After bootstrap, configure environments:
+
+```bash
+# Development
+/config Create development environment configuration
+
+# Production
+/config Create production environment configuration
+
+# Testing
+/config Create testing environment configuration
+```
+
+### Deployment
+
+```bash
+# Plan deployment
+/plan Deploy to Vercel with CI/CD
+
+# Implement deployment
+/code deployment-plan.md
+
+# Or use specific integration
+/integrate vercel
+/integrate railway
+/integrate fly.io
 ```
 
 ## Best Practices
 
-### 1. Project Structure
+### 1. Clear Description
 
-ClaudeKit follows best practices for project organization:
-
-```
-my-project/
-├── src/
-│   ├── components/     # React/Vue components
-│   ├── pages/         # Page components
-│   ├── lib/           # Utility functions
-│   ├── hooks/         # Custom hooks
-│   ├── types/         # TypeScript definitions
-│   └── styles/        # Global styles
-├── docs/              # Documentation
-├── tests/             # Test files
-├── scripts/           # Build scripts
-└── config/            # Configuration files
+**Good:**
+```bash
+/bootstrap Real-time chat application with rooms, direct messages, file sharing, and presence indicators. Target 1000 concurrent users.
 ```
 
-### 2. Code Quality
+**Bad:**
+```bash
+/bootstrap Chat app
+```
+
+### 2. Answer Questions Thoroughly
+
+Provide detailed answers to CC's questions. Better context = better implementation.
+
+### 3. Review Plans Carefully
+
+**IMPORTANT:** Always review implementation plans before approval. Check:
+- Architecture decisions
+- Technology choices
+- Security considerations
+- Scalability approach
+- Testing strategy
+
+### 4. Start Small, Iterate
+
+Begin with core functionality, then expand:
+```bash
+# Phase 1: Core MVP
+/bootstrap Basic blogging platform with posts and comments
+
+# Phase 2: Enhancements
+/cook Add rich text editor
+/cook Add image uploads
+/cook Add user profiles
+
+# Phase 3: Advanced Features
+/cook Add search functionality
+/cook Add social sharing
+```
+
+### 5. Use Version Control
 
 ```bash
-# Set up linting and formatting
-claudekit add feature linting --tools eslint,prettier
+# After bootstrap
+git add .
+git commit -m "Initial project setup via ClaudeKit bootstrap"
 
-# Configure pre-commit hooks
-claudekit add feature pre-commit --tools husky,lint-staged
-
-# Set up code coverage
-claudekit add feature coverage --threshold 80
+# After each feature
+/commit-push
 ```
 
-### 3. Testing Strategy
+## Troubleshooting
+
+### Bootstrap Stalls or Fails
 
 ```bash
-# Unit tests
-claudekit /test unit src/components/
-
-# Integration tests
-claudekit /test integration tests/api/
-
-# End-to-end tests
-claudekit /test e2e tests/e2e/
-
-# Performance tests
-claudekit /test performance --threshold 1000ms
+# Stop and restart with more specific description
+/bootstrap [more detailed description with tech stack preferences]
 ```
 
-## AI-Powered Development
-
-### 1. Intelligent Code Generation
+### Generated Code Has Issues
 
 ```bash
-# Generate based on requirements
-claudekit /ask "Create a user authentication system with JWT"
+# Fix specific issues
+/fix:hard [describe the issue]
 
-# Enhance existing code
-claudekit /enhance src/components/Header.tsx --add mobile-responsive
-
-# Optimize performance
-claudekit /optimize src/pages/Dashboard.tsx --target performance
+# Or run full test suite and auto-fix
+/fix:test
 ```
 
-### 2. Automated Documentation
+### Need to Change Approach
 
 ```bash
-# Generate API documentation
-claudekit /docs api --format openapi
+# Create new plan
+/plan Refactor to use different architecture
 
-# Create component documentation
-claudekit /docs components --output docs/components/
-
-# Generate README
-claudekit /docs readme --template comprehensive
+# Implement changes
+/code new-approach-plan.md
 ```
 
-### 3. Code Review and Optimization
-
-```bash
-# Review code quality
-claudekit /review src/ --strict
-
-# Find and fix bugs
-claudekit /debug src/ --auto-fix
-
-# Refactor for better performance
-claudekit /refactor src/ --strategy performance
-```
-
-## Deployment Setup
-
-### 1. Choose Platform
-
-```bash
-# Vercel deployment
-claudekit deploy vercel --auto-setup
-
-# Netlify deployment
-claudekit deploy netlify --setup-functions
-
-# AWS deployment
-claudekit deploy aws --services ec2,rds,s3
-
-# Docker deployment
-claudekit deploy docker --registry ghcr
-```
-
-### 2. CI/CD Pipeline
-
-```bash
-# GitHub Actions
-claudekit /ci github --workflow test,build,deploy
-
-# GitLab CI
-claudekit /ci gitlab --stages test,build,deploy
-
-# CircleCI
-claudekit /ci circleci --workflow test,build,deploy
-```
-
-### 3. Environment Configuration
-
-```bash
-# Development environment
-claudekit env set development NODE_ENV=development
-claudekit env set development DATABASE_URL=postgresql://localhost/dev
-
-# Production environment
-claudekit env set production NODE_ENV=production
-claudekit env set production DATABASE_URL=${DATABASE_URL}
-```
-
-## Project Templates Gallery
+## Examples from Real Projects
 
 ### E-commerce Platform
 
 ```bash
-claudekit new ecommerce-store \
-  --template nextjs-ecommerce \
-  --features auth,payments,inventory,cms \
-  --payment stripe \
-  --cms contentful
+/bootstrap E-commerce platform with:
+- Product catalog with categories and search
+- Shopping cart with session persistence
+- Checkout with Stripe integration
+- Order management for customers and admin
+- Email notifications for orders
+- Admin dashboard for inventory management
 ```
 
-### Social Media App
+### SaaS Analytics Tool
 
 ```bash
-claudekit new social-app \
-  --template react-native-social \
-  --features auth,chat,feed,notifications \
-  --backend firebase
-```
-
-### Analytics Dashboard
-
-```bash
-claudekit new analytics-dashboard \
-  --template react-dashboard \
-  --features charts,real-time,exports \
-  --charts recharts
+/bootstrap SaaS analytics dashboard with:
+- Multi-tenant architecture with workspaces
+- Real-time data ingestion API
+- Custom dashboard builder with drag-and-drop
+- SQL query builder for custom reports
+- Role-based access control
+- Subscription billing with Stripe
 ```
 
 ### Content Management System
 
 ```bash
-claudekit new cms-platform \
-  --template nextjs-cms \
-  --features auth,content,media,workflow \
-  --database mongodb
-```
-
-## Migration and Scaling
-
-### 1. Scaling Up
-
-```bash
-# Add microservices
-claudekit /microservice create users-service
-claudekit /microservice create orders-service
-
-# Add message queue
-claudekit add feature queue --provider rabbitmq
-
-# Add caching layer
-claudekit add feature cache --provider redis
-```
-
-### 2. Team Collaboration
-
-```bash
-# Add team workspace
-claudekit team add developer@company.com --role developer
-claudekit team add designer@company.com --role designer
-
-# Configure workflows
-claudekit workflow set code-review --required 2
-claudekit workflow set deployment --staging first
+/bootstrap Headless CMS with:
+- Flexible content modeling with custom types
+- Rich text editor with markdown support
+- Media library with image optimization
+- GraphQL and REST APIs
+- Webhook support for publishing events
+- Multi-environment content staging
 ```
 
 ## Next Steps
 
-After initializing your greenfield project:
+After bootstrapping your project:
 
-1. **Customize Configuration**: Tailor settings to your needs
-2. **Explore Agents**: Use specialized AI agents for specific tasks
-3. **Build Features**: Leverage AI-powered development tools
-4. **Deploy**: Set up production deployment
-5. **Monitor**: Add analytics and monitoring
+1. **Continuous Development**: Use `/cook` for new features
+2. **Testing**: Regular `/test` runs
+3. **Documentation**: Keep `/docs:update` current
+4. **Deployment**: Set up CI/CD with `/plan ci`
+5. **Team Collaboration**: Share `.claude/` configuration
+
+## Resources
+
+- [All Commands](/docs/commands/) - Complete command reference
+- [AI Agents](/docs/agents/) - Understanding specialized agents
+- [Workflows](/docs/core-concepts/workflows) - Development workflows
+- [Use Cases](/docs/use-cases/) - Real-world examples
 
 ---
 
-**Ready to start?** Use our [Quick Start Guide](./quick-start.md) or explore [Project Templates](https://github.com/mrgoonie/claudekit-cli/templates) for more options.
+**Ready to build?** Start with `/bootstrap` and let AI agents handle the heavy lifting. Remember to **review plans carefully** before approval!
+
+**Need help?** Visit [GitHub Discussions](https://github.com/mrgoonie/claudekit-cli/discussions)

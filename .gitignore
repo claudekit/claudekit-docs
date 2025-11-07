@@ -35,6 +35,7 @@ plans/research/*
 plans/*.md
 logs.txt
 repomix-output.xml
+backlog/
 
 # Playwright screenshots
 playwright-*.png

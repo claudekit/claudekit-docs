@@ -303,8 +303,8 @@ claude
 
 ### Lệnh Không Hoạt Động
 ```bash
-# Kiểm tra phiên bản ClaudeKit
-claudekit --version
+# Kiểm tra cài đặt ClaudeKit
+ck --version
 
 # Khởi động lại Claude Code
 # Thoát CC và chạy: claude

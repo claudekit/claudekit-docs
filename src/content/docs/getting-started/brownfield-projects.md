@@ -304,7 +304,7 @@ claude
 ### Commands Not Working
 ```bash
 # Verify ClaudeKit installation
-claudekit --version
+ck --version
 
 # Restart Claude Code
 # Exit CC and run: claude

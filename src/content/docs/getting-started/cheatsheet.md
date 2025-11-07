@@ -18,7 +18,7 @@ Quick reference guide for ClaudeKit CLI commands and workflows.
 npm i -g claudekit-cli@latest
 
 # Check version
-claudekit --version
+ck --version
 ```
 
 ## Starting ClaudeKit
@@ -420,7 +420,7 @@ More detailed descriptions = better results
 
 ```bash
 # Check ClaudeKit version
-claudekit --version
+ck --version
 
 # Restart Claude Code
 # Exit and run: claude

@@ -18,7 +18,7 @@ Hướng dẫn tham khảo nhanh cho ClaudeKit CLI commands và workflows.
 npm i -g claudekit-cli@latest
 
 # Kiểm tra phiên bản
-claudekit --version
+ck --version
 ```
 
 ## Khởi Động ClaudeKit
@@ -420,7 +420,7 @@ Mô tả chi tiết hơn = kết quả tốt hơn
 
 ```bash
 # Kiểm tra phiên bản ClaudeKit
-claudekit --version
+ck --version
 
 # Khởi động lại Claude Code
 # Thoát và chạy: claude

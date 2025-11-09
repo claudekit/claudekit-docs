@@ -1,534 +1,551 @@
 ---
 title: "ClaudeKit Cheatsheet"
-description: "Quick reference guide for ClaudeKit commands, features, and workflows. Essential commands and shortcuts for productive development."
+description: "Quick reference for ClaudeKit commands - essential commands for AI-powered development workflow."
 category: "getting-started"
 order: 5
 published: true
-lastUpdated: 2025-11-06
+lastUpdated: 2025-11-07
 ---
 
 # ClaudeKit Cheatsheet
 
-Quick reference guide for ClaudeKit commands, features, and essential workflows.
+Quick reference guide for ClaudeKit CLI commands and workflows.
 
-## Installation & Setup
-
-### Basic Installation
+## Installation
 
 ```bash
-# Install globally
-npm install -g @claudekit/cli
+# Install ClaudeKit globally
+npm i -g claudekit-cli@latest
 
-# Install locally
-npm install --save-dev @claudekit/cli
-
-# Use npx (no installation)
-npx @claudekit init
+# Check version
+ck --version
 ```
 
-### Project Initialization
+## Starting ClaudeKit
 
 ```bash
-# New project
-claudekit new my-project
+# Navigate to your project
+cd /path/to/project
 
-# Existing project
-claudekit init
+# Start Claude Code with ClaudeKit
+claude
+```
 
-# With template
-claudekit new my-app --template nextjs-fullstack
+## Initial Setup
 
-# Specify framework
-claudekit bootstrap --framework react
+```bash
+# For existing projects (brownfield)
+/docs:init
+
+# For new projects (greenfield)
+ck new --kit engineer --dir /path/to/project
 ```
 
 ## Core Commands
 
-### Project Management
+### Development
 
 ```bash
-# Project information
-claudekit --version
-claudekit doctor
-claudekit status
+# Initialize documentation and specs
+/docs:init
 
-# Configuration
-claudekit config list
-claudekit config set key value
-claudekit config get key
-claudekit config reset
+# Implement new feature
+/cook <description>
+
+# Autonomous feature implementation
+/cook:auto <description>
+
+# Fast autonomous mode (less planning)
+/cook:auto:fast <description>
+
+# Create implementation plan only
+/plan <description>
+
+# Execute existing plan
+/code <plan.md>
+
+# Bootstrap new project
+/bootstrap <idea-description>
+
+# Autonomous bootstrap
+/bootstrap:auto <idea-description>
 ```
 
-### Development Workflow
+### Bug Fixing
 
 ```bash
-# Analysis and planning
-claudekit scout                    # Analyze project structure
-claudekit ask "question"           # Get AI assistance
-claudekit plan "feature"           # Plan implementation
-claudekit debug                    # Debug issues
+# Quick bug fix
+/fix:fast <description>
 
-# Code generation
-claudekit generate component Name
-claudekit generate api /endpoint
-claudekit generate model ModelName
-claudekit generate test Component
+# Complex bug fix (deeper analysis)
+/fix:hard <description>
 
-# Code improvement
-claudekit review path/             # Code review
-claudekit fix path/                # Auto-fix issues
-claudekit optimize path/           # Performance optimization
-claudekit refactor path/           # Refactor code
+# Auto-fetch logs and fix
+/fix:logs
+
+# Run test suite and fix until passing
+/fix:test
+
+# Fix CI/CD pipeline issues
+/fix:ci <github-action-url>
 ```
 
-## Slash Commands
-
-### Core Commands
+### Testing
 
 ```bash
-/ask "What does this function do?"
-/plan "Implement user authentication"
-/debug "Fix this TypeError"
-/scout "Analyze the codebase structure"
-/cook "Generate a REST API endpoint"
-/journal "Summarize today's work"
-```
-
-### Content Commands
-
-```bash
-/enhance "Improve this documentation"
-/fast "Quick implementation"
-/good "Best practices implementation"
-/cro "Conversion rate optimization"
-```
-
-### Design Commands
-
-```bash
-/design "Create a modern dashboard"
-/screenshot "Analyze this design"
-/video "Review this UI interaction"
-/describe "Describe this component"
-/3d "Create 3D visualization"
-```
-
-### Fix Commands
-
-```bash
-/fix types "Fix TypeScript errors"
-/fix performance "Optimize performance"
-/fix ui "Fix UI issues"
-/fix logs "Analyze error logs"
-/fix hard "Handle complex issues"
-/fix fast "Quick fixes"
-/fix ci "Fix CI/CD pipeline"
-```
-
-### Git Commands
-
-```bash
-/commit "Create meaningful commit message"
-/commit-push "Commit and push changes"
-/pull-request "Create pull request"
-```
-
-### Documentation Commands
-
-```bash
-/docs init "Initialize documentation"
-/docs update "Update existing docs"
-/docs summarize "Summarize documentation"
-```
-
-### Integration Commands
-
-```bash
-/integrate polar "Integrate Polar API"
-/integrate sepay "Integrate SePay payment"
-```
-
-### Plan Commands
-
-```bash
-/plan ci "Plan CI/CD setup"
-/plan two "Two-step implementation plan"
-```
-
-### Skill Commands
-
-```bash
-/skill create "Create new skill"
-/skill fix-logs "Fix skill errors"
-```
-
-## Project Templates
-
-### Web Applications
-
-```bash
-# Next.js Full Stack
-claudekit new app --template nextjs-fullstack
-
-# React SPA
-claudekit new app --template react-spa
-
-# Vue.js App
-claudekit new app --template vue-app
-
-# Angular App
-claudekit new app --template angular-app
-```
-
-### API Projects
-
-```bash
-# Express.js API
-claudekit new api --template express-api
-
-# FastAPI Python
-claudekit new api --template fastapi
-
-# GraphQL Server
-claudekit new api --template graphql-server
-```
-
-### Component Libraries
-
-```bash
-# React Library
-claudekit new lib --template react-library
-
-# Vue Library
-claudekit new lib --template vue-library
-
-# TypeScript Library
-claudekit new lib --template typescript-lib
-```
-
-## Framework-Specific Commands
-
-### React
-
-```bash
-# Generate components
-claudekit generate component Button --props variant,size
-claudekit generate component Modal --props isOpen,onClose
-claudekit generate hook useAuth --dependencies auth
-
-# Next.js specific
-claudekit generate page /about
-claudekit generate api /api/users
-claudekit generate middleware auth
-```
-
-### Vue.js
-
-```bash
-# Generate components
-claudekit generate component UserProfile --props user
-claudekit generate component Navigation --items navItems
-
-# Vue Router
-claudekit generate route /profile --component Profile
-claudekit generate route /settings --component Settings
-```
-
-### Node.js
-
-```bash
-# Generate API endpoints
-claudekit generate endpoint GET /api/users
-claudekit generate endpoint POST /api/auth/login
-claudekit generate middleware auth
-claudekit generate service UserService
-```
-
-## Database Operations
-
-### PostgreSQL
-
-```bash
-# Create models
-claudekit model create User name:string email:string
-claudekit model create Post title:string content:text user:reference
-
-# Migrations
-claudekit migration create create_users_table
-claudekit migration run
-claudekit migration rollback
-```
-
-### MongoDB
-
-```bash
-# Create schemas
-claudekit schema User name email profile
-claudekit schema Post title content author
-
-# Seed data
-claudekit seed users --count 10
-claudekit seed posts --count 50
-```
-
-## Testing Commands
-
-### Unit Tests
-
-```bash
-# Generate tests
-claudekit test unit src/components/
-claudekit test unit src/utils/
-
-# Run tests
-claudekit test run --unit
-claudekit test run --coverage
-```
-
-### Integration Tests
-
-```bash
-# API tests
-claudekit test integration tests/api/
-claudekit test api --endpoint /api/users
-
-# Database tests
-claudekit test integration tests/database/
-```
-
-### E2E Tests
-
-```bash
-# Generate E2E tests
-claudekit test e2e tests/e2e/login.spec.js
-claudekit test e2e tests/e2e/checkout.spec.js
-
-# Run E2E tests
-claudekit test run --e2e
-claudekit test run --e2e --headless
-```
-
-## Deployment Commands
-
-### Vercel
-
-```bash
-# Deploy to Vercel
-claudekit deploy vercel
-
-# Setup environment
-claudekit deploy vercel --env production
-claudekit env set vercel API_KEY=${API_KEY}
-```
-
-### Netlify
-
-```bash
-# Deploy to Netlify
-claudekit deploy netlify
-
-# Configure redirects
-claudekit deploy netlify --config netlify.toml
-```
-
-### Docker
-
-```bash
-# Build Docker image
-claudekit docker build
-
-# Run container
-claudekit docker run --port 3000
-
-# Push to registry
-claudekit docker push --registry ghcr
-```
-
-### Kubernetes
-
-```bash
-# Generate K8s manifests
-claudekit k8s generate
-
-# Deploy to cluster
-claudekit k8s deploy
-
-# Scale deployment
-claudekit k8s scale --replicas 3
-```
-
-## Configuration
-
-### Environment Variables
-
-```bash
-# Set environment variables
-claudekit env set development NODE_ENV=development
-claudekit env set production NODE_ENV=production
-
-# List environment variables
-claudekit env list
-
-# Load from .env file
-claudekit env load .env.production
-```
-
-### Project Settings
-
-```bash
-# Configure TypeScript
-claudekit config set typescript.strict true
-claudekit config set typescript.target ES2020
-
-# Configure testing
-claudekit config set testing.framework jest
-claudekit config set testing.coverage 80
-
-# Configure linting
-claudekit config set linting.eslint true
-claudekit config set linting.prettier true
-```
-
-## AI Assistant Features
-
-### Code Analysis
-
-```bash
-# Explain code
-claudekit ask "Explain this function and its purpose"
-
-# Find bugs
-claudekit debug "Look for potential issues in this code"
-
-# Suggest improvements
-claudekit ask "How can I improve this component's performance?"
+# Run test suite and report (no fixes)
+/test
 ```
 
 ### Documentation
 
 ```bash
-# Generate docs
-claudekit docs generate --format markdown
-claudekit docs api --output docs/api/
+# Initialize documentation
+/docs:init
 
-# Update README
-claudekit docs readme --update
+# Update documentation
+/docs:update
+
+# Summarize documentation
+/docs:summarize
 ```
 
-### Refactoring
+### Git Operations
 
 ```bash
-# Refactor suggestions
-claudekit refactor src/components/OldComponent.js
+# Create commit with meaningful message
+/commit
 
-# Modernize code
-claudekit modernize src/legacy/ --target es6+
+# Commit and push changes
+/commit-push
+
+# Create pull request
+/pull-request
 ```
 
-## Troubleshooting
-
-### Common Issues
+### Planning & Research
 
 ```bash
-# Check system health
-claudekit doctor
+# Brainstorm technical approaches
+/brainstorm <description>
 
-# Fix permissions
-claudekit fix permissions
+# Create detailed implementation plan
+/plan <description>
 
-# Clear cache
-claudekit cache clear
+# Plan CI/CD setup
+/plan ci
 
-# Reset configuration
-claudekit config reset --hard
+# Two-step implementation plan
+/plan two
 ```
 
-### Performance Issues
+### Integration
 
 ```bash
-# Analyze performance
-claudekit analyze performance
+# Integrate Polar API
+/integrate polar
 
-# Profile application
-claudekit profile --duration 30s
-
-# Memory usage
-claudekit analyze memory
+# Integrate SePay payment
+/integrate sepay
 ```
 
-## Keyboard Shortcuts
-
-### Interactive Mode
+### Skills Management
 
 ```bash
-# Start interactive mode
-claudekit interactive
+# Create new skill
+/skill create
 
-# Navigation shortcuts (in interactive mode)
-Ctrl+C      # Exit
-Tab         # Auto-complete
-↑/↓         # Navigate history
-Ctrl+R      # Search history
+# Fix skill errors
+/skill fix-logs
+```
+
+## Command Comparison
+
+### Feature Implementation Flow
+
+```bash
+# Approach 1: With plan review (recommended)
+/cook <feature-description>
+# → CC asks questions
+# → Review plan
+# → Approve
+# → Implementation starts
+
+# Approach 2: Autonomous (use with caution)
+/cook:auto <feature-description>
+# → Full autonomous without plan review
+
+# Approach 3: Fast autonomous (least tokens)
+/cook:auto:fast <feature-description>
+# → Fast mode with minimal planning
+```
+
+### Bug Fixing Flow
+
+```bash
+# Simple bugs
+/fix:fast <bug-description>
+
+# Complex bugs
+/fix:hard <bug-description>
+
+# From logs
+/fix:logs
+
+# From failing tests
+/fix:test
+
+# From CI/CD
+/fix:ci <action-url>
+```
+
+## Common Workflows
+
+### Brownfield Project Setup
+
+```bash
+# 1. Install ClaudeKit
+npm i -g claudekit-cli@latest
+
+# 2. Go to project
+cd /path/to/existing/project
+
+# 3. Start Claude Code
+claude
+
+# 4. Initialize
+/docs:init
+
+# 5. Start working
+/cook <feature>
+```
+
+### Greenfield Project Setup
+
+```bash
+# 1. Install ClaudeKit
+npm i -g claudekit-cli@latest
+
+# 2. Create project
+ck new --kit engineer --dir /path/to/project
+
+# 3. Navigate to project
+cd /path/to/project
+
+# 4. Start Claude Code
+claude
+
+# 5. Bootstrap idea
+/bootstrap <idea-description>
+
+# 6. Continue development
+/cook <next-feature>
+```
+
+### Feature Development
+
+```bash
+# 1. Plan feature
+/plan Add user profile with avatar upload
+
+# 2. Review plan (markdown file generated)
+
+# 3. Implement
+/code profile-feature-plan.md
+
+# 4. Test
+/test
+
+# 5. Fix if needed
+/fix:test
+
+# 6. Commit
+/commit-push
+```
+
+### Bug Fix Workflow
+
+```bash
+# 1. Describe bug
+/fix:hard Payment fails on Safari after form validation
+
+# 2. CC analyzes and fixes
+
+# 3. Test the fix
+/test
+
+# 4. Commit
+/commit
+```
+
+### CI/CD Fix Workflow
+
+```bash
+# 1. Get failing action URL
+# https://github.com/user/repo/actions/runs/12345
+
+# 2. Fix CI
+/fix:ci https://github.com/user/repo/actions/runs/12345
+
+# 3. CC fetches logs, analyzes, fixes
+
+# 4. Push fix
+/commit-push
 ```
 
 ## Quick Examples
 
-### Create a React Component
+### Add Authentication
 
 ```bash
-# Quick component creation
-claudekit generate component Button \
-  --props variant,size,onClick \
-  --styled true \
-  --typescript true
-
-# With styled-components
-claudekit generate component Card \
-  --props children,title \
-  --styled-components true
+/cook Add JWT authentication with login, register, and password reset
 ```
 
-### Create API Endpoint
+### Fix Performance Issue
 
 ```bash
-# Express.js endpoint
-claudekit generate endpoint POST /api/users \
-  --middleware auth,validation \
-  --response json
-
-# GraphQL resolver
-claudekit generate resolver Query.users \
-  --type [User] \
-  --resolver getUserList
+/fix:hard Dashboard loads slowly with 1000+ items
 ```
 
-### Database Migration
+### Plan Database Migration
 
 ```bash
-# Create migration
-claudekit migration create add_email_verified_to_users
+/plan Migrate from MongoDB to PostgreSQL with zero downtime
+```
 
-# Run migration
-claudekit migration run
+### Integrate Payment
 
-# Rollback
-claudekit migration rollback --step 1
+```bash
+/integrate stripe
+# or
+/cook Add Stripe payment integration with subscription billing
+```
+
+### Bootstrap New API
+
+```bash
+/bootstrap REST API for task management with teams, projects, tasks, and time tracking
+```
+
+## Command Categories
+
+### 🚀 Core Development
+- `/cook` - Feature implementation
+- `/plan` - Create plans
+- `/code` - Execute plans
+- `/bootstrap` - New projects
+
+### 🐛 Debugging & Fixing
+- `/fix:fast` - Quick fixes
+- `/fix:hard` - Complex fixes
+- `/fix:logs` - Log-based fixes
+- `/fix:test` - Test-based fixes
+- `/fix:ci` - CI/CD fixes
+
+### 🧪 Testing
+- `/test` - Run tests
+
+### 📚 Documentation
+- `/docs:init` - Initialize
+- `/docs:update` - Update
+- `/docs:summarize` - Summarize
+
+### 🔧 Git Operations
+- `/commit` - Commit changes
+- `/commit-push` - Commit and push
+- `/pull-request` - Create PR
+
+### 💡 Planning
+- `/plan` - Detailed planning
+- `/brainstorm` - Explore ideas
+
+### 🔌 Integrations
+- `/integrate <service>` - Add integrations
+
+### ⚙️ Skills
+- `/skill create` - New skills
+- `/skill fix-logs` - Fix skills
+
+## Tips & Best Practices
+
+### 1. Always Review Plans
+**IMPORTANT:** Review implementation plans carefully before approving. Plans exist for a reason.
+
+### 2. Provide Context
+More detailed descriptions = better results
+```bash
+# ❌ Bad
+/cook Add search
+
+# ✅ Good
+/cook Add full-text search for blog posts with filters by category, tag, and date range
+```
+
+### 3. Use Right Command
+
+```bash
+# Quick bugs
+/fix:fast <simple-issue>
+
+# Complex bugs
+/fix:hard <complex-issue>
+
+# Small features
+/cook <feature>
+
+# Large features
+/plan <feature> → review → /code plan.md
+```
+
+### 4. Test Frequently
+
+```bash
+# After each feature
+/test
+
+# Or auto-fix tests
+/fix:test
+```
+
+### 5. Document Changes
+
+```bash
+# Keep docs updated
+/docs:update
+```
+
+## Troubleshooting
+
+### Command Not Working
+
+```bash
+# Check ClaudeKit version
+ck --version
+
+# Restart Claude Code
+# Exit and run: claude
+```
+
+### Need Fresh Start
+
+```bash
+# Reinitialize docs
+/docs:init --force
+```
+
+### Need More Help
+
+```bash
+# Brainstorm approach
+/brainstorm How to implement <complex-feature>
+
+# Get detailed plan
+/plan <what-you-want-to-do>
+```
+
+## Language-Specific Quick Reference
+
+### Tiếng Việt
+
+```bash
+# Khởi tạo dự án có sẵn
+/docs:init
+
+# Tính năng mới (cần review plan)
+/cook <mô-tả-tính-năng>
+
+# Tính năng mới (tự động, ko review)
+/cook:auto <mô-tả>
+
+# Tính năng mới (nhanh hơn, ít plan hơn)
+/cook:auto:fast <mô-tả>
+
+# Chỉ lên plan, không code
+/plan <mô-tả>
+
+# Code theo plan có sẵn
+/code <plan.md>
+
+# Sửa lỗi nhanh
+/fix:fast <mô-tả-lỗi>
+
+# Sửa lỗi khó (suy nghĩ lâu hơn)
+/fix:hard <mô-tả-lỗi>
+
+# Tự lấy logs và sửa
+/fix:logs
+
+# Chạy test và sửa tới chết
+/fix:test
+
+# Lấy logs GitHub Actions và sửa
+/fix:ci <github-action-url>
+
+# Tạo dự án mới (cần review plan)
+/bootstrap <ý-tưởng>
+
+# Tạo dự án mới (tự động tới chết)
+/bootstrap:auto <ý-tưởng>
+
+# Chạy test và báo cáo (không sửa)
+/test
+```
+
+### English
+
+```bash
+# Initialize existing project
+/docs:init
+
+# New feature (needs plan review)
+/cook <feature-description>
+
+# New feature (autonomous, no review)
+/cook:auto <description>
+
+# New feature (faster, less planning)
+/cook:auto:fast <description>
+
+# Only plan, no implementation
+/plan <description>
+
+# Code from existing plan
+/code <plan.md>
+
+# Quick bug fix
+/fix:fast <bug-description>
+
+# Hard bug fix (deeper analysis)
+/fix:hard <bug-description>
+
+# Auto-fetch logs and fix
+/fix:logs
+
+# Run tests and fix till passing
+/fix:test
+
+# Fetch GitHub Actions logs and fix
+/fix:ci <github-action-url>
+
+# Create new project (needs plan review)
+/bootstrap <idea-description>
+
+# Create new project (autonomous till death)
+/bootstrap:auto <idea>
+
+# Run test suite and report (no fixes)
+/test
 ```
 
 ## Resources
 
-### Documentation
-
-- [Official Docs](https://docs.claudekit.cc)
-- [API Reference](../api-reference/)
-- [Examples](https://github.com/mrgoonie/claudekit-cli/examples)
-
-### Community
-
-- [GitHub Issues](https://github.com/mrgoonie/claudekit-cli/issues)
-- [Discussions](https://github.com/mrgoonie/claudekit-cli/discussions)
-- [Discord Community](https://discord.gg/claudekit)
+- [Full Documentation](https://docs.claudekit.cc)
+- [All Commands](/docs/commands/)
+- [AI Agents](/docs/agents/)
+- [Workflows](/docs/core-concepts/workflows)
+- [Troubleshooting](/docs/troubleshooting/)
+- [GitHub Discussions](https://github.com/mrgoonie/claudekit-cli/discussions)
 
 ---
 
-**Need more help?** Check our [Troubleshooting Guide](../troubleshooting/) or ask in the [Community Forums](https://github.com/mrgoonie/claudekit-cli/discussions).
+**Print this page** or keep it open while working with ClaudeKit for quick command reference!

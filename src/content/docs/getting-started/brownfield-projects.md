@@ -1,264 +1,327 @@
 ---
 title: "Brownfield Projects"
-description: "Learn how to integrate ClaudeKit into existing projects with minimal disruption to your current workflow."
+description: "Integrate ClaudeKit into your existing projects - analyze codebase, implement features, and fix bugs with AI agents."
 category: "getting-started"
 order: 3
 published: true
-lastUpdated: 2025-11-06
+lastUpdated: 2025-11-07
 ---
 
 # Brownfield Projects
 
-Integrate ClaudeKit into your existing projects without disrupting your current development workflow. Perfect for legacy codebases, team collaborations, and gradual adoption scenarios.
+Integrate ClaudeKit into your existing projects to enhance development workflow with AI-powered agents. Perfect for legacy codebases, team projects, and gradual AI adoption.
 
-## Quick Integration
+## Installation
 
-### 1. Installation
-
-```bash
-# Install ClaudeKit CLI
-npm install -g @claudekit/cli
-
-# Or use npx for temporary usage
-npx @claudekit/cli init
-```
-
-### 2. Initialize ClaudeKit
-
-Navigate to your existing project directory:
+### 1. Install ClaudeKit CLI
 
 ```bash
-cd your-existing-project
-claudekit init
+npm i -g claudekit-cli@latest
 ```
 
-This will:
+### 2. Navigate to Your Project
+
+```bash
+cd /path/to/your/existing/project
+```
+
+### 3. Start Claude Code
+
+```bash
+claude
+```
+
+This will start Claude Code (CC) with ClaudeKit agents in your project directory.
+
+## Initial Setup
+
+### Analyze and Create Specs
+
+Let Claude Code scan and analyze your codebase to create initial specifications:
+
+```bash
+/docs:init
+```
+
+This command will:
 - Analyze your project structure
-- Detect your tech stack automatically
-- Create `.claude/` directory with minimal configuration
-- Preserve all existing files and workflows
+- Understand your tech stack
+- Generate initial documentation specs
+- Create baseline for AI-assisted development
 
-### 3. Configure for Your Stack
+**Wait for completion** before proceeding with other commands.
 
-ClaudeKit automatically detects common frameworks and libraries:
+## Core Workflows
+
+### Implement New Features
 
 ```bash
-# For React projects
-claudekit bootstrap --framework react
-
-# For Next.js projects
-claudekit bootstrap --framework nextjs
-
-# For Node.js/Express projects
-claudekit bootstrap --framework express
-
-# For generic projects
-claudekit bootstrap --framework generic
+/cook <description-of-a-feature>
 ```
 
-## Project Analysis
-
-### Understanding Your Codebase
-
+**Example:**
 ```bash
-# Analyze project structure
-claudekit scout
-
-# Generate project summary
-claudekit ask "What is the architecture of this project?"
-
-# Identify potential issues
-claudekit debug
+/cook Add user profile page with avatar upload and edit functionality
 ```
 
-### Workflow Integration
+**Process:**
+1. CC will ask clarifying questions - answer them!
+2. **IMPORTANT:** Review the detailed implementation plan carefully
+3. After your approval, CC starts implementing
+4. Automatic testing and code review included
+5. Summary report provided when finished
 
-Gradually integrate ClaudeKit into your existing workflow:
+**Autonomous variants** (use at your own risk):
+- `/cook:auto` - Full autonomous mode with plan review
+- `/cook:auto:fast` - Faster mode with less token consumption
 
+### Fix Bugs
+
+#### Quick Bug Fix
 ```bash
-# Code review existing files
-claudekit /review src/components/Header.tsx
-
-# Enhance documentation
-claudekit /docs update
-
-# Optimize performance
-claudekit /fix performance
+/fix:fast <description-of-bug>
 ```
 
-## Team Collaboration
+For simple, straightforward bugs.
 
-### Sharing ClaudeKit Configuration
-
+#### Complex Bug Fix
 ```bash
-# Export configuration
-claudekit config export > claudekit-config.json
-
-# Share with team
-git add claudekit-config.json .claude/
-git commit -m "Add ClaudeKit configuration"
-git push
+/fix:hard <description-of-bug>
 ```
 
-### Team Setup Instructions
+For difficult bugs requiring deeper analysis and more thinking time.
 
-1. Clone the repository with ClaudeKit config
-2. Install dependencies: `npm install`
-3. Initialize with shared config: `claudekit init --import claudekit-config.json`
-
-## Common Integration Patterns
-
-### Legacy Code Migration
-
+**Example:**
 ```bash
-# Analyze legacy module
-claudekit ask "Explain this legacy module and suggest improvements"
-
-# Refactor gradually
-claudekit /refactor src/legacy/module.js --strategy incremental
-
-# Add tests to legacy code
-claudekit /test src/legacy/module.js
+/fix:hard User authentication breaks after OAuth login when email is not verified
 ```
 
-### Build System Integration
-
+#### Auto-Fix from Logs
 ```bash
-# Analyze build configuration
-claudekit scout --config webpack.config.js
-
-# Optimize build process
-claudekit /fix build --target production
-
-# Add CI/CD integration
-claudekit /plan ci --platform github
+/fix:logs
 ```
 
-### Database Integration
+Automatically fetches logs and fixes issues.
+
+#### Fix Test Suite
+```bash
+/fix:test
+```
+
+Runs test suite and keeps fixing until all tests pass.
+
+#### Fix CI/CD Issues
+```bash
+/fix:ci <github-action-url>
+```
+
+**Example:**
+```bash
+/fix:ci https://github.com/username/repo/actions/runs/12345
+```
+
+Fetches GitHub Actions logs and fixes build/deployment errors.
+
+### Planning & Research
+
+#### Brainstorm Ideas
+```bash
+/brainstorm <your-description>
+```
+
+Use when unsure about technical feasibility or implementation approach.
+
+**Example:**
+```bash
+/brainstorm Real-time collaborative editing feature like Google Docs
+```
+
+#### Create Implementation Plan
+```bash
+/plan <your-description>
+```
+
+Research and create detailed implementation plan without implementing.
+
+**Example:**
+```bash
+/plan Migrate from REST API to GraphQL with backward compatibility
+```
+
+#### Execute Existing Plan
+```bash
+/code <your-plan.md>
+```
+
+Start implementing from a markdown plan file.
+
+### Testing
+
+#### Run Tests and Report
+```bash
+/test
+```
+
+Runs test suite and generates report. No automatic fixes.
+
+## Advanced Commands
+
+### Documentation
 
 ```bash
-# Analyze database schema
-claudekit scout --database
+/docs:update    # Update existing documentation
+/docs:summarize # Summarize documentation
+```
 
-# Create migration scripts
-claudekit /migration create --description "Add user_preferences table"
+### Git Operations
 
-# Optimize queries
-claudekit /fix database --target performance
+```bash
+/commit         # Create meaningful commit message
+/commit-push    # Commit and push changes
+/pull-request   # Create pull request
+```
+
+### Integration
+
+```bash
+/integrate polar  # Integrate Polar API
+/integrate sepay  # Integrate SePay payment
+```
+
+### Skills Management
+
+```bash
+/skill create    # Create new skill
+/skill fix-logs  # Fix skill errors
 ```
 
 ## Best Practices
 
-### 1. Gradual Adoption
-- Start with documentation tasks
-- Move to code analysis and reviews
-- Implement small refactoring tasks
-- Gradually increase AI-assisted development
+### 1. Start with Documentation
+Always run `/docs:init` first to let CC understand your codebase.
 
-### 2. Configuration Management
+### 2. Review Plans Carefully
+**IMPORTANT:** Always review implementation plans before approving. CC provides detailed plans for a reason.
+
+### 3. Incremental Integration
+- Start with small features
+- Fix non-critical bugs first
+- Gradually increase complexity
+- Build team confidence
+
+### 4. Use Appropriate Commands
+- Simple bugs → `/fix:fast`
+- Complex bugs → `/fix:hard`
+- Small features → `/cook`
+- Large features → `/plan` then `/code`
+
+### 5. Test Regularly
+Run `/test` frequently to catch issues early.
+
+## Common Scenarios
+
+### Adding Feature to Legacy Code
+
 ```bash
-# Create environment-specific configs
-claudekit config set env development
-claudekit config set env production
+# 1. Analyze codebase
+/docs:init
+
+# 2. Plan the feature
+/plan Add user roles and permissions system
+
+# 3. Review and approve plan
+
+# 4. Implement
+/code plan.md
+
+# 5. Test
+/test
 ```
 
-### 3. Code Quality Standards
+### Fixing Production Bug
+
 ```bash
-# Enforce coding standards
-claudekit /review --strict
+# 1. Quick fix for urgent issue
+/fix:fast Payment processing fails on Safari browser
 
-# Run automated tests
-claudekit /test --coverage
+# 2. Test the fix
+/test
 
-# Performance monitoring
-claudekit /debug --performance
+# 3. Commit and deploy
+/commit-push
 ```
 
-### 4. Documentation Maintenance
-```bash
-# Keep docs in sync
-claudekit /docs update --auto
+### Refactoring Legacy Module
 
-# Generate API documentation
-claudekit /docs api --output docs/api/
+```bash
+# 1. Brainstorm approach
+/brainstorm Refactor authentication module to use modern JWT patterns
+
+# 2. Create detailed plan
+/plan Refactor auth module with backward compatibility
+
+# 3. Review plan carefully
+
+# 4. Implement incrementally
+/code auth-refactor-plan.md
+
+# 5. Run full test suite
+/fix:test
+```
+
+## Team Collaboration
+
+### Sharing Configuration
+Share `.claude/` directory and generated specs with your team via git.
+
+### Onboarding Team Members
+
+```bash
+# 1. Clone repository
+git clone <repo-url>
+
+# 2. Install ClaudeKit
+npm i -g claudekit-cli@latest
+
+# 3. Navigate to project
+cd project-name
+
+# 4. Start Claude Code
+claude
+
+# 5. Specs already exist - start working!
+/cook Add new feature
 ```
 
 ## Troubleshooting
 
-### Common Issues
-
-**Issue**: ClaudeKit conflicts with existing tools
+### CC Not Understanding Codebase
 ```bash
-# Check for conflicts
-claudekit doctor --check-conflicts
-
-# Resolve automatically
-claudekit fix --resolve-conflicts
+# Regenerate specs
+/docs:init --force
 ```
 
-**Issue**: Large repository performance
+### Commands Not Working
 ```bash
-# Optimize for large repos
-claudekit config set scanDepth 2
-claudekit config set exclude "node_modules,dist,build"
+# Verify ClaudeKit installation
+ck --version
+
+# Restart Claude Code
+# Exit CC and run: claude
 ```
 
-**Issue**: Team configuration sync
-```bash
-# Reset and re-import
-claudekit config reset
-claudekit init --import team-config.json
-```
-
-## Migration Examples
-
-### React Project Example
-
-```bash
-# 1. Analyze existing React app
-claudekit init --framework react
-
-# 2. Review component structure
-claudekit ask "Analyze the React component architecture"
-
-# 3. Enhance existing components
-claudekit /enhance src/components/UserProfile.tsx
-
-# 4. Add missing tests
-claudekit /test src/components/
-
-# 5. Optimize build
-claudekit /fix build --target production
-```
-
-### Node.js API Example
-
-```bash
-# 1. Initialize for API project
-claudekit init --framework express
-
-# 2. Analyze API endpoints
-claudekit scout --api
-
-# 3. Document API routes
-claudekit /docs api --format openapi
-
-# 4. Add error handling
-claudekit /fix api --target error-handling
-
-# 5. Performance optimization
-claudekit /fix performance --target api
-```
+### Need More Context
+Provide detailed descriptions in commands. More context = better results.
 
 ## Next Steps
 
 After successful integration:
 
-1. **Explore Agents**: Use specialized agents for specific tasks
-2. **Custom Commands**: Create commands for your workflow
-3. **Team Training**: Share best practices with your team
-4. **Advanced Features**: Implement custom skills and workflows
+1. **Explore Commands**: Check [Commands Documentation](/docs/commands/)
+2. **Learn Agents**: Understand [Specialized Agents](/docs/agents/)
+3. **Advanced Workflows**: See [Workflows Guide](/docs/core-concepts/workflows)
+4. **Team Training**: Share best practices with your team
 
 ---
 
-**Need help?** Check our [Troubleshooting Guide](../troubleshooting/) or [Community Forums](https://github.com/mrgoonie/claudekit-cli/discussions)
+**Need help?** Check [Troubleshooting Guide](/docs/troubleshooting/) or [GitHub Discussions](https://github.com/mrgoonie/claudekit-cli/discussions)

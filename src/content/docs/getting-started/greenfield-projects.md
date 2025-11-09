@@ -2,7 +2,7 @@
 title: "Greenfield Projects"
 description: "Start new projects with ClaudeKit from scratch - bootstrap ideas into production-ready applications with AI agents."
 category: "getting-started"
-order: 4
+order: 5
 published: true
 lastUpdated: 2025-11-07
 ---
@@ -354,7 +354,7 @@ git add .
 git commit -m "Initial project setup via ClaudeKit bootstrap"
 
 # After each feature
-/commit-push
+/git:cp
 ```
 
 ## Troubleshooting

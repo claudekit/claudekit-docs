@@ -2,7 +2,7 @@
 title: "ClaudeKit Cheatsheet"
 description: "Tham khảo nhanh các lệnh ClaudeKit - lệnh thiết yếu cho quy trình phát triển AI-powered."
 category: "getting-started"
-order: 5
+order: 4
 published: true
 lastUpdated: 2025-11-07
 ---
@@ -114,13 +114,13 @@ ck new --kit engineer --dir /đường/dẫn/đến/dự/án
 
 ```bash
 # Tạo commit với message có ý nghĩa
-/commit
+/git:cm
 
 # Commit và push changes
-/commit-push
+/git:cp
 
 # Tạo pull request
-/pull-request
+/git:pr
 ```
 
 ### Lập Kế Hoạch & Nghiên Cứu
@@ -143,20 +143,20 @@ ck new --kit engineer --dir /đường/dẫn/đến/dự/án
 
 ```bash
 # Tích hợp Polar API
-/integrate polar
+/integrate:polar
 
 # Tích hợp thanh toán SePay
-/integrate sepay
+/integrate:sepay
 ```
 
 ### Quản Lý Skills
 
 ```bash
 # Tạo skill mới
-/skill create
+/skill:create
 
 # Sửa lỗi skill
-/skill fix-logs
+/skill:fix-logs
 ```
 
 ## So Sánh Lệnh
@@ -260,7 +260,7 @@ claude
 /fix:test
 
 # 6. Commit
-/commit-push
+/git:cp
 ```
 
 ### Quy Trình Sửa Lỗi
@@ -275,7 +275,7 @@ claude
 /test
 
 # 4. Commit
-/commit
+/git:cp
 ```
 
 ### Quy Trình Sửa CI/CD
@@ -290,7 +290,7 @@ claude
 # 3. CC lấy logs, phân tích, sửa
 
 # 4. Push bản sửa
-/commit-push
+/git:cp
 ```
 
 ## Ví Dụ Nhanh
@@ -351,9 +351,9 @@ claude
 - `/docs:summarize` - Tóm tắt
 
 ### 🔧 Git Operations
-- `/commit` - Commit changes
-- `/commit-push` - Commit và push
-- `/pull-request` - Tạo PR
+- `/git:cm` - Commit changes
+- `/git:cp` - Commit và push
+- `/git:pr` - Tạo PR
 
 ### 💡 Lập Kế Hoạch
 - `/plan` - Kế hoạch chi tiết
@@ -363,8 +363,8 @@ claude
 - `/integrate <service>` - Thêm integrations
 
 ### ⚙️ Skills
-- `/skill create` - Skills mới
-- `/skill fix-logs` - Sửa skills
+- `/skill:create` - Skills mới
+- `/skill:fix-logs` - Sửa skills
 
 ## Tips & Best Practices
 
@@ -430,7 +430,7 @@ ck --version
 
 ```bash
 # Khởi tạo lại docs
-/docs:init --force
+/docs:init
 ```
 
 ### Cần Thêm Giúp Đỡ

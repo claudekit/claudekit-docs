@@ -2,7 +2,7 @@
 title: "Dự Án Greenfield"
 description: "Khởi tạo dự án mới với ClaudeKit từ đầu - biến ý tưởng thành ứng dụng production với AI agents."
 category: "getting-started"
-order: 4
+order: 5
 published: true
 lastUpdated: 2025-11-07
 ---
@@ -354,7 +354,7 @@ git add .
 git commit -m "Khởi tạo dự án qua ClaudeKit bootstrap"
 
 # Sau mỗi tính năng
-/commit-push
+/git:cp
 ```
 
 ## Xử Lý Sự Cố
@@ -393,7 +393,7 @@ Sau khi bootstrap dự án:
 1. **Phát Triển Liên Tục**: Dùng `/cook` cho tính năng mới
 2. **Testing**: Chạy `/test` thường xuyên
 3. **Tài Liệu**: Giữ `/docs:update` cập nhật
-4. **Deployment**: Thiết lập CI/CD với `/plan ci`
+4. **Deployment**: Thiết lập CI/CD với `/plan:ci`
 5. **Cộng Tác Nhóm**: Chia sẻ cấu hình `.claude/`
 
 ## Tài Nguyên

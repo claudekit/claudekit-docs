@@ -45,7 +45,7 @@ import SidebarNav from './SidebarNav.astro';
     }
 
     // Save scroll position on scroll
-    let scrollTimeout: number;
+    let scrollTimeout: any;
     sidebar.addEventListener('scroll', () => {
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(() => {

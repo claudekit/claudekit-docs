@@ -2,7 +2,7 @@
 title: "Brownfield Projects"
 description: "Integrate ClaudeKit into your existing projects - analyze codebase, implement features, and fix bugs with AI agents."
 category: "getting-started"
-order: 3
+order: 6
 published: true
 lastUpdated: 2025-11-07
 ---
@@ -176,23 +176,23 @@ Runs test suite and generates report. No automatic fixes.
 ### Git Operations
 
 ```bash
-/commit         # Create meaningful commit message
-/commit-push    # Commit and push changes
-/pull-request   # Create pull request
+/git:cm         # Create meaningful commit message
+/git:cp         # Commit and push changes
+/git:pr         # Create pull request
 ```
 
 ### Integration
 
 ```bash
-/integrate polar  # Integrate Polar API
-/integrate sepay  # Integrate SePay payment
+/integrate:polar  # Integrate Polar API
+/integrate:sepay  # Integrate SePay payment
 ```
 
 ### Skills Management
 
 ```bash
-/skill create    # Create new skill
-/skill fix-logs  # Fix skill errors
+/skill:create    # Create new skill
+/skill:fix-logs  # Fix skill errors
 ```
 
 ## Best Practices
@@ -247,8 +247,8 @@ Run `/test` frequently to catch issues early.
 # 2. Test the fix
 /test
 
-# 3. Commit and deploy
-/commit-push
+# 3. Commit and push
+/git:cp
 ```
 
 ### Refactoring Legacy Module
@@ -298,7 +298,7 @@ claude
 ### CC Not Understanding Codebase
 ```bash
 # Regenerate specs
-/docs:init --force
+/docs:update
 ```
 
 ### Commands Not Working

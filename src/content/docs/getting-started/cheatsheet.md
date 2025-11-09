@@ -2,7 +2,7 @@
 title: "ClaudeKit Cheatsheet"
 description: "Quick reference for ClaudeKit commands - essential commands for AI-powered development workflow."
 category: "getting-started"
-order: 5
+order: 4
 published: true
 lastUpdated: 2025-11-07
 ---
@@ -114,13 +114,13 @@ ck new --kit engineer --dir /path/to/project
 
 ```bash
 # Create commit with meaningful message
-/commit
+/git:cm
 
 # Commit and push changes
-/commit-push
+/git:cp
 
 # Create pull request
-/pull-request
+/git:pr
 ```
 
 ### Planning & Research
@@ -132,31 +132,31 @@ ck new --kit engineer --dir /path/to/project
 # Create detailed implementation plan
 /plan <description>
 
-# Plan CI/CD setup
-/plan ci
+# Plan CI/CD setup or fix CI/CD pipeline
+/plan:ci
 
 # Two-step implementation plan
-/plan two
+/plan:two
 ```
 
 ### Integration
 
 ```bash
 # Integrate Polar API
-/integrate polar
+/integrate:polar
 
 # Integrate SePay payment
-/integrate sepay
+/integrate:sepay
 ```
 
 ### Skills Management
 
 ```bash
 # Create new skill
-/skill create
+/skill:create
 
 # Fix skill errors
-/skill fix-logs
+/skill:fix-logs
 ```
 
 ## Command Comparison
@@ -260,7 +260,7 @@ claude
 /fix:test
 
 # 6. Commit
-/commit-push
+/git:cm
 ```
 
 ### Bug Fix Workflow
@@ -275,7 +275,7 @@ claude
 /test
 
 # 4. Commit
-/commit
+/git:cm
 ```
 
 ### CI/CD Fix Workflow
@@ -290,7 +290,7 @@ claude
 # 3. CC fetches logs, analyzes, fixes
 
 # 4. Push fix
-/commit-push
+/git:cp
 ```
 
 ## Quick Examples
@@ -351,9 +351,9 @@ claude
 - `/docs:summarize` - Summarize
 
 ### 🔧 Git Operations
-- `/commit` - Commit changes
-- `/commit-push` - Commit and push
-- `/pull-request` - Create PR
+- `/git:cm` - Commit changes
+- `/git:cp` - Commit and push
+- `/git:pr` - Create PR
 
 ### 💡 Planning
 - `/plan` - Detailed planning
@@ -363,8 +363,8 @@ claude
 - `/integrate <service>` - Add integrations
 
 ### ⚙️ Skills
-- `/skill create` - New skills
-- `/skill fix-logs` - Fix skills
+- `/skill:create` - New skills
+- `/skill:fix-logs` - Fix skills
 
 ## Tips & Best Practices
 
@@ -430,7 +430,7 @@ ck --version
 
 ```bash
 # Reinitialize docs
-/docs:init --force
+/docs:init
 ```
 
 ### Need More Help

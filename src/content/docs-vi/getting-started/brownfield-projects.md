@@ -2,7 +2,7 @@
 title: "Dự Án Brownfield"
 description: "Tích hợp ClaudeKit vào dự án có sẵn - phân tích codebase, triển khai tính năng và sửa lỗi với AI agents."
 category: "getting-started"
-order: 3
+order: 6
 published: true
 lastUpdated: 2025-11-07
 ---
@@ -176,9 +176,9 @@ Chạy test suite và tạo báo cáo. Không tự động sửa.
 ### Git Operations
 
 ```bash
-/commit         # Tạo commit message có ý nghĩa
-/commit-push    # Commit và push changes
-/pull-request   # Tạo pull request
+/git:cm         # Tạo commit message có ý nghĩa
+/git:cp    # Commit và push changes
+/git:pr   # Tạo pull request
 ```
 
 ### Tích Hợp
@@ -191,8 +191,8 @@ Chạy test suite và tạo báo cáo. Không tự động sửa.
 ### Quản Lý Skills
 
 ```bash
-/skill create    # Tạo skill mới
-/skill fix-logs  # Sửa lỗi skill
+/skill:create    # Tạo skill mới
+/skill:fix-logs  # Sửa lỗi skill
 ```
 
 ## Best Practices
@@ -248,7 +248,7 @@ Chạy `/test` thường xuyên để phát hiện lỗi sớm.
 /test
 
 # 3. Commit và deploy
-/commit-push
+/git:cp
 ```
 
 ### Refactor Legacy Module
@@ -298,7 +298,7 @@ claude
 ### CC Không Hiểu Codebase
 ```bash
 # Tạo lại specs
-/docs:init --force
+/docs:init
 ```
 
 ### Lệnh Không Hoạt Động

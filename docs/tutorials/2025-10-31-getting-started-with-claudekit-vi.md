@@ -732,7 +732,7 @@ source ~/.zshrc
 ls -la .claude/
 
 # Cài lại nếu thiếu
-ck new . --kit engineer --force
+ck update --kit engineer
 ```
 
 **Vấn đề:** "Context limit exceeded"

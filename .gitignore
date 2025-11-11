@@ -27,7 +27,7 @@ pnpm-debug.log*
 *.tsbuildinfo
 
 # project-specific
-.claude/**/*
+.claude
 .opencode
 .serena/cache
 plans/reports/*

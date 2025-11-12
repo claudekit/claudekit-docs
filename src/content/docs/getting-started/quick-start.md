@@ -2,7 +2,7 @@
 title: Quick Start
 description: Ship your first feature in 15 minutes with ClaudeKit's AI development team
 category: getting-started
-order: 3
+order: 4
 published: true
 ---
 

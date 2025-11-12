@@ -2,7 +2,7 @@
 title: "ClaudeKit Cheatsheet"
 description: "Quick reference for ClaudeKit commands - essential commands for AI-powered development workflow."
 category: "getting-started"
-order: 4
+order: 5
 published: true
 lastUpdated: 2025-11-07
 ---

@@ -2,7 +2,7 @@
 title: "Dự Án Brownfield"
 description: "Tích hợp ClaudeKit vào dự án có sẵn - phân tích codebase, triển khai tính năng và sửa lỗi với AI agents."
 category: "getting-started"
-order: 6
+order: 7
 published: true
 lastUpdated: 2025-11-07
 ---

@@ -2,7 +2,7 @@
 title: "ClaudeKit Cheatsheet"
 description: "Tham khảo nhanh các lệnh ClaudeKit - lệnh thiết yếu cho quy trình phát triển AI-powered."
 category: "getting-started"
-order: 4
+order: 5
 published: true
 lastUpdated: 2025-11-07
 ---

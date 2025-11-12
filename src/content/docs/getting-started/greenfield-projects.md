@@ -2,7 +2,7 @@
 title: "Greenfield Projects"
 description: "Start new projects with ClaudeKit from scratch - bootstrap ideas into production-ready applications with AI agents."
 category: "getting-started"
-order: 5
+order: 6
 published: true
 lastUpdated: 2025-11-07
 ---

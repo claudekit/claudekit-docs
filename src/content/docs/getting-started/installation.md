@@ -95,31 +95,41 @@ bun add -g claudekit-cli
 ck --version
 ```
 
-### Create a New Project
+### Initialize or Update Project
+
+**Note:** this command should be run from the root directory of your project.
+
+⚠️ **Deprecation Notice:** The `update` command has been renamed to `init`. The `update` command still works but will show a deprecation warning. Please use `init` instead.
 
 ```bash
-# Interactive mode
-ck new
+# Interactive mode (recommended)
+ck init
 
 # With options
-ck new --dir my-project --kit engineer
+ck init --kit engineer
 
 # Specific version
-ck new --kit engineer --version v1.0.0
+ck init --kit engineer --version v1.0.0
+
+# With exclude patterns
+ck init --exclude "local-config/**" --exclude "*.local"
+
+# Global mode - use platform-specific user configuration
+ck init --global
+ck init -g --kit engineer
+
+# Legacy (deprecated - use 'init' instead)
+ck update  # Shows deprecation warning
 ```
 
-### Update Existing Project
+**Global vs Local Configuration:**
 
-```bash
-# Interactive mode
-ck update
+By default, ClaudeKit uses local configuration (`~/.claudekit`). For platform-specific user-scoped settings:
 
-# With options
-ck update --kit engineer
+- **macOS/Linux**: `~/.config/claude/config.json`
+- **Windows**: `%LOCALAPPDATA%\claude\config.json`
 
-# Specific version
-ck update --kit engineer --version v1.0.0
-```
+Global mode uses user-scoped directories (no sudo required), allowing separate configurations for different projects.
 
 ### Authentication
 
@@ -162,7 +172,7 @@ Keep ClaudeKit up to date:
 
 ```bash
 # Using CLI
-ck update
+ck init
 
 # Or manually pull latest changes from claudekit-engineer repo
 ```
@@ -171,7 +181,7 @@ ck update
 
 ```bash
 # Don't overwrite CLAUDE.md
-ck update --exclude CLAUDE.md
+ck init --exclude CLAUDE.md
 ```
 
 ## Troubleshooting

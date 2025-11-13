@@ -144,7 +144,7 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 ```bash
 1. /bootstrap [project description]
    # OR
-   ck new --kit engineer
+   ck init --kit engineer
 
 2. # Customize requirements through Q&A
 

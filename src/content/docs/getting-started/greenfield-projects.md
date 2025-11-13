@@ -24,8 +24,8 @@ npm i -g claudekit-cli@latest
 ### Method 1: Bootstrap New Project
 
 ```bash
-# Create new project with ClaudeKit Engineer kit
-ck new --kit engineer --dir /path/to/project
+# Initialize project with ClaudeKit Engineer kit
+ck init --kit engineer --dir /path/to/project
 ```
 
 **Options:**

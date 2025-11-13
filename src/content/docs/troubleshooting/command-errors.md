@@ -108,7 +108,7 @@ Detailed implementation instructions...
 
 ### ck Commands Don't Work
 
-**Symptom**: `ck new` or `ck update` shows "command not found"
+**Symptom**: `ck init` shows "command not found"
 
 **Solution**:
 
@@ -294,10 +294,7 @@ description: My custom cook implementation
 
 ```bash
 # Initialize ClaudeKit
-ck new --kit engineer
-
-# Or if already initialized
-ck update --kit engineer
+ck init --kit engineer
 
 # Verify structure
 tree .claude -L 2

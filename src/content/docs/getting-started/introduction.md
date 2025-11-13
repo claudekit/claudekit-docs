@@ -15,7 +15,7 @@ ClaudeKit is 14 specialized AI agents built on Claude Code. They plan, research,
 ## 5-Minute Quick Win
 
 ```bash
-ck new my-app --kit engineer
+ck init my-app --kit engineer
 cd my-app
 /cook add user authentication with OAuth
 ```

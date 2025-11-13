@@ -10,6 +10,23 @@ const currentPath = Astro.url.pathname;
 <header class="header">
   <div class="header-content">
     <div class="header-left">
+      <button class="icon-button mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu" title="Toggle menu">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
       <a href="/" class="logo">
         <img src="/logo-horizontal.png" alt="ClaudeKit Engineer" class="logo-image" />
       </a>
@@ -80,6 +97,91 @@ const currentPath = Astro.url.pathname;
     </div>
   </div>
 </header>
+
+<!-- Mobile sidebar backdrop -->
+<div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+<script>
+  // Mobile menu toggle functionality
+  const MOBILE_BREAKPOINT = 768;
+
+  function setupMobileMenu() {
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    const sidebar = document.querySelector('.sidebar');
+    const backdrop = document.getElementById('sidebar-backdrop');
+
+    if (!menuToggle || !sidebar || !backdrop) return;
+
+    // Helper function to close sidebar
+    function closeSidebar() {
+      sidebar.classList.remove('open');
+      backdrop.classList.remove('visible');
+      document.body.style.overflow = '';
+    }
+
+    // Helper function to open sidebar
+    function openSidebar() {
+      sidebar.classList.add('open');
+      backdrop.classList.add('visible');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Toggle sidebar on button click
+    function handleToggle() {
+      const isOpen = sidebar.classList.contains('open');
+      if (isOpen) {
+        closeSidebar();
+      } else {
+        openSidebar();
+      }
+    }
+
+    // Close sidebar when clicking backdrop
+    function handleBackdropClick() {
+      closeSidebar();
+    }
+
+    // Close sidebar on Escape key
+    function handleEscape(e: KeyboardEvent) {
+      if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+        closeSidebar();
+      }
+    }
+
+    // Use matchMedia for better performance than resize listener
+    const mediaQuery = window.matchMedia(`(min-width: ${MOBILE_BREAKPOINT + 1}px)`);
+    function handleMediaChange(e: MediaQueryListEvent | MediaQueryList) {
+      if (e.matches) {
+        closeSidebar();
+      }
+    }
+
+    // Attach event listeners
+    menuToggle.addEventListener('click', handleToggle);
+    backdrop.addEventListener('click', handleBackdropClick);
+    document.addEventListener('keydown', handleEscape);
+    mediaQuery.addEventListener('change', handleMediaChange);
+
+    // Initial check
+    handleMediaChange(mediaQuery);
+
+    // Cleanup function for event listeners
+    function cleanup() {
+      menuToggle.removeEventListener('click', handleToggle);
+      backdrop.removeEventListener('click', handleBackdropClick);
+      document.removeEventListener('keydown', handleEscape);
+      mediaQuery.removeEventListener('change', handleMediaChange);
+    }
+
+    // Cleanup on page navigation (Astro view transitions)
+    document.addEventListener('astro:before-swap', cleanup);
+
+    return cleanup;
+  }
+
+  // Initialize on DOMContentLoaded
+  document.addEventListener('DOMContentLoaded', setupMobileMenu);
+</script>
 
 <style>
   /* Header (Polar v1.1) */
@@ -237,6 +339,30 @@ const currentPath = Astro.url.pathname;
     transform: rotate(-90deg) scale(0.8);
   }
 
+  /* Mobile menu toggle button */
+  .mobile-menu-toggle {
+    display: none;
+  }
+
+  /* Sidebar backdrop */
+  .sidebar-backdrop {
+    display: none;
+    position: fixed;
+    top: var(--layout-header-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: calc(var(--z-modal) - 1);
+    opacity: 0;
+    transition: opacity var(--duration-slower) var(--ease-out);
+  }
+
+  .sidebar-backdrop.visible {
+    display: block;
+    opacity: 1;
+  }
+
   /* Responsive (Polar v1.1) */
   @media (max-width: 768px) {
     .nav {
@@ -245,6 +371,10 @@ const currentPath = Astro.url.pathname;
 
     .header {
       padding-inline: var(--space-4);
+    }
+
+    .mobile-menu-toggle {
+      display: flex;
     }
   }
 </style>

@@ -38,7 +38,7 @@ claude
 /docs:init
 
 # For new projects (greenfield)
-ck new --kit engineer --dir /path/to/project
+ck init --kit engineer --dir /path/to/project
 ```
 
 ## Core Commands
@@ -226,8 +226,8 @@ claude
 # 1. Install ClaudeKit
 npm i -g claudekit-cli@latest
 
-# 2. Create project
-ck new --kit engineer --dir /path/to/project
+# 2. Initialize project
+ck init --kit engineer --dir /path/to/project
 
 # 3. Navigate to project
 cd /path/to/project

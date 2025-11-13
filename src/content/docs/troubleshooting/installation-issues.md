@@ -376,12 +376,12 @@ ck --version
 # Check available commands
 ck --help
 
-# Expected: Lists new, update, diagnose commands
+# Expected: Lists init, versions, diagnose commands
 
 # Test with demo project
 mkdir test-project
 cd test-project
-ck new --kit engineer
+ck init --kit engineer
 
 # Expected: Downloads ClaudeKit Engineer successfully
 ```

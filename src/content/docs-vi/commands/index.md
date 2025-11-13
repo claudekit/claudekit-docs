@@ -26,13 +26,14 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 
 ### Bug Fixing
 
-- **[/fix:fast](/docs/commands/fix/fast)** - Fix minor bugs quickly
-- **[/fix:hard](/docs/commands/fix/hard)** - Fix complex bugs with thorough analysis
-- **[/fix:ci](/docs/commands/fix/ci)** - Fix GitHub Actions CI failures
-- **[/fix:logs](/docs/commands/fix/logs)** - Analyze and fix issues from logs
-- **[/fix:test](/docs/commands/fix/test)** - Fix failing tests
-- **[/fix:ui](/docs/commands/fix/ui)** - Fix UI/UX issues
-- **[/fix:types](/docs/commands/fix/types)** - Fix TypeScript type errors
+- **[/fix](/docs-vi/commands/fix/)** - Sửa lỗi thông minh (tự động chọn phương pháp fast/hard)
+- **[/fix:fast](/docs-vi/commands/fix/fast)** - Sửa lỗi nhỏ nhanh chóng
+- **[/fix:hard](/docs-vi/commands/fix/hard)** - Sửa lỗi phức tạp với phân tích kỹ lưỡng
+- **[/fix:ci](/docs-vi/commands/fix/ci)** - Sửa lỗi GitHub Actions CI
+- **[/fix:logs](/docs-vi/commands/fix/logs)** - Phân tích và sửa lỗi từ logs
+- **[/fix:test](/docs-vi/commands/fix/test)** - Sửa lỗi tests thất bại
+- **[/fix:ui](/docs-vi/commands/fix/ui)** - Sửa lỗi UI/UX
+- **[/fix:types](/docs-vi/commands/fix/types)** - Sửa lỗi TypeScript type
 
 ### Documentation
 

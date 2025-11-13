@@ -26,6 +26,7 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 
 ### Bug Fixing
 
+- **[/fix](/docs/commands/fix/)** - Intelligently fix any issue (auto-selects fast/hard approach)
 - **[/fix:fast](/docs/commands/fix/fast)** - Fix minor bugs quickly
 - **[/fix:hard](/docs/commands/fix/hard)** - Fix complex bugs with thorough analysis
 - **[/fix:ci](/docs/commands/fix/ci)** - Fix GitHub Actions CI failures
@@ -87,6 +88,7 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 /cook [feature description]      # Implement the feature
 
 # Bug Fixing
+/fix [any issue]                 # Smart fix (auto-selects approach)
 /fix:fast [simple bug]           # Quick fix
 /fix:hard [complex issue]        # Thorough investigation + fix
 /fix:ci [github-ci-url]          # Fix CI failures
@@ -177,6 +179,14 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 ### Fixing a Bug
 
 ```bash
+# Smart fix (recommended - auto-selects approach)
+/fix [describe any issue]
+# - Analyzes complexity
+# - Chooses optimal strategy
+# - Implements fix
+
+# OR manually choose approach:
+
 # Simple bug (you know the fix)
 /fix:fast [typo in validation message]
 

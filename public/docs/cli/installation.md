@@ -62,7 +62,7 @@ Usage:
 
 Commands:
   new       Create new project from latest ClaudeKit release
-  update    Update existing project to latest version
+  init      Update existing project to latest version
   versions  List available ClaudeKit releases
 
 Options:
@@ -71,7 +71,7 @@ Options:
 
 Examples:
   ck new --kit engineer
-  ck update
+  ck init
   ck versions --kit engineer
 
 For more info: https://docs.claudekit.cc

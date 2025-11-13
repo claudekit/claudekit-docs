@@ -71,7 +71,7 @@ Options:
 
 Examples:
   ck new --kit engineer
-  ck update
+  ck init
   ck versions --kit engineer
 
 For more info: https://docs.claudekit.cc

@@ -411,7 +411,7 @@ Next: Review changes, then /git:cm
 **Solutions:**
 1. Verify you're in a ClaudeKit project (`ls .claude/`)
 2. Check command exists (`ls .claude/commands/`)
-3. Run `ck update` to get latest commands
+3. Run `ck init` to get latest commands
 4. Restart Claude Code
 
 ### Command Fails

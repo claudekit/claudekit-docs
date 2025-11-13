@@ -73,7 +73,7 @@ cd existing-project
 **Integrating ClaudeKit**
 ```bash
 # Adding ClaudeKit to existing project
-ck update --kit engineer
+ck init --kit engineer
 /docs:init
 
 # ClaudeKit now understands your codebase

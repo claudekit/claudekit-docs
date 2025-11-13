@@ -112,13 +112,13 @@ ck new --kit engineer --version v1.0.0
 
 ```bash
 # Interactive mode
-ck update
+ck init
 
 # With options
-ck update --kit engineer
+ck init --kit engineer
 
 # Specific version
-ck update --kit engineer --version v1.0.0
+ck init --kit engineer --version v1.0.0
 ```
 
 ### Authentication
@@ -162,7 +162,7 @@ Keep ClaudeKit up to date:
 
 ```bash
 # Using CLI
-ck update
+ck init
 
 # Or manually pull latest changes from claudekit-engineer repo
 ```
@@ -171,7 +171,7 @@ ck update
 
 ```bash
 # Don't overwrite CLAUDE.md
-ck update --exclude CLAUDE.md
+ck init --exclude CLAUDE.md
 ```
 
 ## Troubleshooting

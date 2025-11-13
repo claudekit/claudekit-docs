@@ -53,7 +53,7 @@ ck init --global
 ck init -g --kit engineer
 
 # Legacy (deprecated - use 'init' instead)
-ck update  # Shows deprecation warning
+ck init  # Shows deprecation warning
 ```
 
 **What it does:**
@@ -72,10 +72,11 @@ ck update  # Shows deprecation warning
 
 **Global vs Local Configuration:**
 
-By default, ClaudeKit uses local configuration (`~/.claudekit`). For platform-specific user-scoped settings:
+By default, ClaudeKit uses local configuration (`~/.claudekit`). 
 
-- **macOS/Linux**: `~/.config/claude/config.json`
-- **Windows**: `%LOCALAPPDATA%\claude\config.json`
+For platform-specific **user-scoped settings**, use the `--global` flag:
+- **macOS/Linux**: `~/.claude`
+- **Windows**: `%LOCALAPPDATA%\.claude`
 
 Global mode uses user-scoped directories (no sudo required), allowing separate configurations for different projects.
 

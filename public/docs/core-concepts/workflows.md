@@ -356,7 +356,7 @@ cat .claude/workflows/development-rules.md
 
 **Solutions:**
 1. Review and update workflow files
-2. Run `ck update` to get latest ClaudeKit workflows
+2. Run `ck init` to get latest ClaudeKit workflows
 3. Merge custom changes with updates
 4. Document customizations
 

@@ -260,7 +260,7 @@ claude
 npm cache clean --force
 
 # 3. Update ClaudeKit
-ck update --kit engineer
+ck init --kit engineer
 
 # 4. Update Node.js
 node --version  # Should be 18+

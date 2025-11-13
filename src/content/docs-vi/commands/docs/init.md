@@ -73,7 +73,7 @@ cd existing-project
 **Integrating ClaudeKit**
 ```bash
 # Adding ClaudeKit to existing project
-ck update --kit engineer
+ck init --kit engineer
 /docs:init
 
 # ClaudeKit now understands your codebase
@@ -441,7 +441,7 @@ Documentation should be updated when:
 - Major refactoring occurs
 - Architecture changes
 - New patterns introduced
-- Tech stack updates
+- Tech stack inits
 
 ```bash
 # After major changes

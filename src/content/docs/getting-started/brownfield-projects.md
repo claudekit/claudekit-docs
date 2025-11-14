@@ -2,7 +2,7 @@
 title: "Brownfield Projects"
 description: "Integrate ClaudeKit into your existing projects - analyze codebase, implement features, and fix bugs with AI agents."
 category: "getting-started"
-order: 6
+order: 7
 published: true
 lastUpdated: 2025-11-07
 ---

@@ -293,7 +293,7 @@ cat .claude/agents/planner.md | grep -i "spawn\|delegate"
 
 ```bash
 # Update ClaudeKit to latest version
-ck update --kit engineer
+ck init --kit engineer
 
 # Verify planner agent updated
 cat .claude/agents/planner.md | head -20
@@ -321,7 +321,7 @@ ls -la plans/reports/
 
 # If missing, agents not writing reports correctly
 # Update ClaudeKit
-ck update --kit engineer
+ck init --kit engineer
 ```
 
 ---
@@ -584,7 +584,7 @@ done
 ## Prevention Tips
 
 ✅ **Do**:
-- Keep agents updated: `ck update`
+- Keep agents updated: `ck init`
 - Use appropriate agents for task complexity
 - Provide clear, specific task descriptions
 - Monitor API rate limits
@@ -636,4 +636,4 @@ done
 
 ---
 
-**Most agent issues resolve with updated ClaudeKit.** Run `ck update --kit engineer` first, then retest your command.
+**Most agent issues resolve with updated ClaudeKit.** Run `ck init --kit engineer` first, then retest your command.

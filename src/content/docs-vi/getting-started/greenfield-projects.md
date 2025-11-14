@@ -2,7 +2,7 @@
 title: "Dự Án Greenfield"
 description: "Khởi tạo dự án mới với ClaudeKit từ đầu - biến ý tưởng thành ứng dụng production với AI agents."
 category: "getting-started"
-order: 5
+order: 6
 published: true
 lastUpdated: 2025-11-07
 ---

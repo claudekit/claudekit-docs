@@ -112,13 +112,17 @@ ck new --kit engineer --version v1.0.0
 
 ```bash
 # Chế độ tương tác
-ck update
+ck init
 
 # Với tùy chọn
-ck update --kit engineer
+ck init --kit engineer
 
 # Phiên bản cụ thể
-ck update --kit engineer --version v1.0.0
+ck init --kit engineer --version v1.0.0
+
+# Global mode - use platform-specific user configuration
+ck init --global
+ck init -g --kit engineer
 ```
 
 ### Xác Thực
@@ -162,7 +166,7 @@ Giữ ClaudeKit luôn cập nhật:
 
 ```bash
 # Sử dụng CLI
-ck update
+ck init
 
 # Hoặc thủ công pull các thay đổi mới nhất từ repo claudekit-engineer
 ```
@@ -171,7 +175,7 @@ ck update
 
 ```bash
 # Không ghi đè CLAUDE.md
-ck update --exclude CLAUDE.md
+ck init --exclude CLAUDE.md
 ```
 
 ## Khắc Phục Sự Cố

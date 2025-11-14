@@ -116,7 +116,7 @@ export GEMINI_API_KEY=your-key
 cp -r .claude .claude.backup
 
 # Update to latest
-ck update --kit engineer
+ck init --kit engineer
 
 # Restore custom files
 cp .claude.backup/commands/my-custom.md .claude/commands/
@@ -180,7 +180,7 @@ tree .claude -L 2
 ## Prevention Tips
 
 ✅ **Do**:
-- Keep ClaudeKit updated (`ck update`)
+- Keep ClaudeKit updated (`ck init`)
 - Use `--verbose` when debugging
 - Backup before major changes
 - Read error messages fully

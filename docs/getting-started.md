@@ -51,13 +51,17 @@ ck new --kit engineer --version v1.0.0
   
 ```
 # Interactive mode
-ck update
+ck init
 
 # With options
-ck update --kit engineer
+ck init --kit engineer
 
 # Specific version
-ck update --kit engineer --version v1.0.0
+ck init --kit engineer --version v1.0.0
+
+# Global mode - use platform-specific user configuration
+ck init --global
+ck init -g --kit engineer
 ```
   
 ### Authentication

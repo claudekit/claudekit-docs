@@ -2,7 +2,7 @@
 title: Quick Start
 description: Ship your first feature in 15 minutes with ClaudeKit's AI development team
 category: getting-started
-order: 3
+order: 4
 published: true
 ---
 
@@ -25,7 +25,7 @@ Add user authentication to Next.js app in 15 minutes.
 ### Step 1: Bootstrap Project
 
 ```bash
-ck new my-app --kit engineer
+ck init my-app --kit engineer
 cd my-app
 ```
 

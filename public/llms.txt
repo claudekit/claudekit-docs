@@ -1,0 +1,228 @@
+# ClaudeKit Documentation
+
+> AI Development Team - 14 specialized agents that plan, code, test, and ship production features in minutes
+
+ClaudeKit is a comprehensive toolkit built on Claude Code, providing 14 AI agents, 30+ slash commands, and 45 built-in skills to accelerate software development. This documentation covers everything from installation to advanced workflows.
+
+## Getting Started
+
+Essential guides to begin using ClaudeKit:
+
+- [Introduction](/docs/getting-started/introduction.md): Overview and value proposition
+- [Installation](/docs/getting-started/installation.md): Setup instructions
+- [Quick Start](/docs/getting-started/quick-start.md): Ship your first feature in 6 minutes
+- [Cheatsheet](/docs/getting-started/cheatsheet.md): Command reference
+- [Greenfield Projects](/docs/getting-started/greenfield-projects.md): Starting new projects
+- [Brownfield Projects](/docs/getting-started/brownfield-projects.md): Working with existing codebases
+
+## Core Concepts
+
+Understanding ClaudeKit's architecture and workflows:
+
+- [CLAUDE.md Configuration](/docs/core-concepts/claude-md.md): Project configuration file
+- [Workflows](/docs/core-concepts/workflows.md): Development workflows and orchestration
+
+## CLI Reference
+
+Command-line interface documentation:
+
+- [CLI Overview](/docs/cli/index.md): CLI capabilities
+- [Installation](/docs/cli/installation.md): CLI setup
+- [ck new](/docs/cli/new.md): Create new projects
+
+## AI Agents
+
+Specialized agents for different development tasks:
+
+- [Agents Overview](/docs/agents/index.md): Complete agent reference
+
+### Planning & Research
+- [planner](/docs/agents/planner.md): Research and implementation planning
+- [researcher](/docs/agents/researcher.md): Best practices research with parallel search
+- [brainstormer](/docs/agents/brainstormer.md): Solution exploration and ideation
+- [scout](/docs/agents/scout.md): Codebase navigation and file discovery
+
+### Development & Quality
+- [tester](/docs/agents/tester.md): Testing and validation
+- [code-reviewer](/docs/agents/code-reviewer.md): Code quality and security review
+- [debugger](/docs/agents/debugger.md): Root cause analysis and bug fixing
+
+### Design & Content
+- [ui-ux-designer](/docs/agents/ui-ux-designer.md): Interface design and wireframes
+- [copywriter](/docs/agents/copywriter.md): Conversion-focused content creation
+
+### Infrastructure & Management
+- [database-admin](/docs/agents/database-admin.md): Database optimization and administration
+- [git-manager](/docs/agents/git-manager.md): Version control and commits
+- [docs-manager](/docs/agents/docs-manager.md): Documentation management and updates
+- [project-manager](/docs/agents/project-manager.md): Progress tracking and coordination
+- [journal-writer](/docs/agents/journal-writer.md): Decision and progress documentation
+
+## Slash Commands
+
+- [Commands Overview](/docs/commands/index.md): Complete command reference
+
+### Core Commands
+
+End-to-end development workflows:
+
+- [/cook](/docs/commands/core/cook.md): Implement features end-to-end with planning, coding, testing
+- [/bootstrap](/docs/commands/core/bootstrap.md): Start new projects with best practices
+- [/debug](/docs/commands/core/debug.md): Debug issues with systematic analysis
+- [/journal](/docs/commands/core/journal.md): Document decisions and progress
+- [/scout](/docs/commands/core/scout.md): Explore codebase and locate files
+- [/ask](/docs/commands/core/ask.md): Answer technical and architectural questions
+
+### Fix Commands
+
+Bug fixing and error resolution:
+
+- [/fix:hard](/docs/commands/fix/hard.md): Multi-agent bug fixing for complex issues
+- [/fix:fast](/docs/commands/fix/fast.md): Quick fixes for simple issues
+- [/fix:types](/docs/commands/fix/types.md): TypeScript type errors
+- [/fix:ui](/docs/commands/fix/ui.md): UI and layout issues
+- [/fix:ci](/docs/commands/fix/ci.md): CI/CD pipeline failures
+- [/fix:logs](/docs/commands/fix/logs.md): Analyze logs and fix issues
+
+### Design Commands
+
+UI/UX design and visual content creation:
+
+- [/design:good](/docs/commands/design/good.md): High-quality UI design with wireframes
+- [/design:fast](/docs/commands/design/fast.md): Quick design iterations
+- [/design:3d](/docs/commands/design/3d.md): Interactive 3D designs with Three.js
+- [/design:screenshot](/docs/commands/design/screenshot.md): Design from screenshots
+- [/design:video](/docs/commands/design/video.md): Design from video references
+- [/design:describe](/docs/commands/design/describe.md): Describe and analyze existing designs
+
+### Content Commands
+
+Copywriting and content optimization:
+
+- [/content:good](/docs/commands/content/good.md): High-quality conversion-focused copy
+- [/content:fast](/docs/commands/content/fast.md): Quick copy generation
+- [/content:cro](/docs/commands/content/cro.md): Conversion rate optimization
+- [/content:enhance](/docs/commands/content/enhance.md): Improve existing copy
+
+### Documentation Commands
+
+Documentation creation and maintenance:
+
+- [/docs:init](/docs/commands/docs/init.md): Initialize project documentation
+- [/docs:update](/docs/commands/docs/update.md): Update documentation after code changes
+- [/docs:summarize](/docs/commands/docs/summarize.md): Generate codebase summary
+
+### Git Commands
+
+Version control automation:
+
+- [/git:cm](/docs/commands/git/commit.md): Create conventional commits
+- [/git:cp](/docs/commands/git/commit-push.md): Commit and push changes
+- [/git:pr](/docs/commands/git/pull-request.md): Create pull requests with descriptions
+
+### Integration Commands
+
+Third-party service integrations:
+
+- [/integrate:polar](/docs/commands/integrate/polar.md): Polar.sh payment integration
+- [/integrate:sepay](/docs/commands/integrate/sepay.md): SePay.vn payment integration
+
+### Plan Commands
+
+Planning and analysis:
+
+- [/plan:two](/docs/commands/plan/two.md): Create plan with two alternative approaches
+- [/plan:ci](/docs/commands/plan/ci.md): Analyze CI/CD failures and create fix plan
+
+### Skill Commands
+
+Custom skill management:
+
+- [/skill:create](/docs/commands/skill/create.md): Create new custom skills
+- [/skill:fix-logs](/docs/commands/skill/fix-logs.md): Fix skill issues from logs
+
+## Built-in Skills
+
+- [Skills Overview](/docs/skills/index.md): Complete skill reference
+
+### Frontend Development
+
+- [Next.js](/docs/skills/nextjs.md): React framework with SSR and SSG
+- [shadcn/ui](/docs/skills/shadcn-ui.md): Accessible UI component library
+- [Tailwind CSS](/docs/skills/tailwindcss.md): Utility-first CSS framework
+
+### Authentication
+
+- [Better Auth](/docs/skills/better-auth.md): Framework-agnostic authentication
+
+### Database
+
+- [PostgreSQL](/docs/skills/postgresql-psql.md): PostgreSQL database and psql CLI
+
+### E-commerce
+
+- [Shopify](/docs/skills/shopify.md): Shopify apps and integrations
+
+### Design & Media
+
+- [Canvas Design](/docs/skills/canvas-design.md): Visual design and artwork
+- [FFmpeg](/docs/skills/ffmpeg.md): Video and audio processing
+- [ImageMagick](/docs/skills/imagemagick.md): Image manipulation
+- [Gemini Vision](/docs/skills/gemini-vision.md): AI image understanding
+
+### DevOps
+
+- [Docker](/docs/skills/docker.md): Container platform
+
+### Development Tools
+
+- [MCP Builder](/docs/skills/mcp-builder.md): Model Context Protocol servers
+- [Skill Creator](/docs/skills/skill-creator.md): Create custom skills
+- [Systematic Debugging](/docs/skills/systematic-debugging.md): Structured debugging methodology
+
+### Documentation
+
+- [Document Skills](/docs/skills/document-skills.md): Technical documentation creation
+
+## Use Cases
+
+Real-world examples and workflows:
+
+- [Use Cases Overview](/docs/use-cases/index.md): All use case guides
+
+### Feature Development
+- [Adding Features](/docs/use-cases/adding-feature.md): Implement new features end-to-end
+- [Building APIs](/docs/use-cases/building-api.md): Create REST and GraphQL APIs
+- [Implementing Auth](/docs/use-cases/implementing-auth.md): Authentication systems
+- [Payment Integration](/docs/use-cases/integrating-payment.md): Payment gateway integration
+
+### Code Quality
+- [Fixing Bugs](/docs/use-cases/fixing-bugs.md): Systematic bug resolution
+- [Code Refactoring](/docs/use-cases/refactoring-code.md): Code cleanup and improvement
+- [Performance Optimization](/docs/use-cases/optimizing-performance.md): Speed and efficiency improvements
+
+### Project Management
+- [Starting New Project](/docs/use-cases/starting-new-project.md): Bootstrap new codebases
+- [Maintaining Old Projects](/docs/use-cases/maintaining-old-project.md): Legacy code maintenance
+
+## Troubleshooting
+
+Common issues and solutions:
+
+- [Troubleshooting Overview](/docs/troubleshooting/index.md): All troubleshooting guides
+- [Installation Issues](/docs/troubleshooting/installation-issues.md): Setup and installation problems
+- [Command Errors](/docs/troubleshooting/command-errors.md): Slash command failures
+- [Agent Issues](/docs/troubleshooting/agent-issues.md): Agent execution problems
+- [API Key Setup](/docs/troubleshooting/api-key-setup.md): API key configuration
+- [Performance Issues](/docs/troubleshooting/performance-issues.md): Speed and performance problems
+
+## Additional Resources
+
+- Website: https://docs.claudekit.cc
+- Main Site: https://claudekit.cc
+- GitHub: https://github.com/claudekit/claudekit-docs
+
+---
+
+Last Updated: 2025-11-11
+Maintainers: ClaudeKit Team

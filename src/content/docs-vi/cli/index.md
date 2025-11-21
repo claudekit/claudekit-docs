@@ -50,19 +50,19 @@ ck new --kit engineer --version v1.0.0
 
 [Learn more about `ck new`](/docs/cli/new)
 
-### ck update
+### ck init
 
 Update existing project to latest or specific version:
 
 ```bash
 # Interactive mode
-ck update
+ck init
 
 # With options
-ck update --kit engineer
+ck init --kit engineer
 
 # Specific version
-ck update --kit engineer --version v1.0.0
+ck init --kit engineer --version v1.0.0
 ```
 
 **What it does:**
@@ -112,7 +112,7 @@ Enable verbose logging for debugging:
 
 ```bash
 ck new --verbose
-ck update -v  # Short form
+ck init -v  # Short form
 ```
 
 **Shows:**
@@ -252,16 +252,16 @@ ck new --kit engineer --exclude "*.log" --exclude "temp/**"
 
 ```bash
 # Update to latest
-ck update
+ck init
 
 # Update to specific version
-ck update --version v1.2.0
+ck init --version v1.2.0
 
 # Update with exclusions
-ck update --exclude "local-config/**" --exclude "*.local"
+ck init --exclude "local-config/**" --exclude "*.local"
 
 # Update with verbose output
-ck update --verbose
+ck init --verbose
 ```
 
 ### Check Available Versions

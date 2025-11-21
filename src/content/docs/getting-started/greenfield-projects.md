@@ -2,7 +2,7 @@
 title: "Greenfield Projects"
 description: "Start new projects with ClaudeKit from scratch - bootstrap ideas into production-ready applications with AI agents."
 category: "getting-started"
-order: 4
+order: 6
 published: true
 lastUpdated: 2025-11-07
 ---
@@ -24,8 +24,8 @@ npm i -g claudekit-cli@latest
 ### Method 1: Bootstrap New Project
 
 ```bash
-# Create new project with ClaudeKit Engineer kit
-ck new --kit engineer --dir /path/to/project
+# Initialize project with ClaudeKit Engineer kit
+ck init --kit engineer --dir /path/to/project
 ```
 
 **Options:**
@@ -354,7 +354,7 @@ git add .
 git commit -m "Initial project setup via ClaudeKit bootstrap"
 
 # After each feature
-/commit-push
+/git:cp
 ```
 
 ## Troubleshooting

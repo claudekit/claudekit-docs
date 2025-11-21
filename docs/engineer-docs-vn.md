@@ -46,13 +46,17 @@ ck new --kit engineer --version v1.0.0
 
 ```bash
 # Interactive mode
-ck update
+ck init
 
 # With options
-ck update --kit engineer
+ck init --kit engineer
 
 # Specific version
-ck update --kit engineer --version v1.0.0
+ck init --kit engineer --version v1.0.0
+
+# Global mode - use platform-specific user configuration
+ck init --global
+ck init -g --kit engineer
 ```
 
 #### Authentication
@@ -82,7 +86,7 @@ Now you're good to go!
 
 ## CLAUDE.md
 
-[quan trọng] bạn không nên điều chỉnh file này, vì nó sẽ bị ghi đè mỗi lần update ClaudeKit (`ck update`). Nếu bạn muốn điều chỉnh file này mà không bị ghi đè, lúc cập nhật hãy thêm flag như sau: `ck update --exclude CLAUDE.md`
+[quan trọng] bạn không nên điều chỉnh file này, vì nó sẽ bị ghi đè mỗi lần update ClaudeKit (`ck init`). Nếu bạn muốn điều chỉnh file này mà không bị ghi đè, lúc cập nhật hãy thêm flag như sau: `ck init --exclude CLAUDE.md`
 
 Tôi đã đọc tất cả các tài liệu về Context Engineering, và thử nghiệm tất cả chúng, tôi đã học được rằng cách làm của Manus là cực kỳ hiệu quả: Use File System As Context, đó là lý do tôi khuyên bạn giữ mọi thứ như hiện tại: chỉ để vài dòng trong `CLAUDE.md` và link nó tới những files chi tiết cụ thể hơn nằm trong thư mục `.claude/workflows/` và `docs/`
 Điều này tốt cho Claude Code vì CLAUDE.md sẽ không ngốn quá nhiều tokens ban đầu khi được load lên trong dự án, chỉ khi thực hiện nhiệm vụ, nó mới tìm đến những hướng dẫn cụ thể hơn (ví dụ: `development-rules.md`)

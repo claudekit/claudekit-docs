@@ -732,7 +732,7 @@ source ~/.zshrc
 ls -la .claude/
 
 # Reinstall if missing
-ck new . --kit engineer --force
+ck init --kit engineer
 ```
 
 **Problem:** "Context limit exceeded"

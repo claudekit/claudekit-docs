@@ -46,13 +46,13 @@ ck new --kit engineer --version v1.0.0
 
 ```bash
 # Interactive mode
-ck update
+ck init
 
 # With options
-ck update --kit engineer
+ck init --kit engineer
 
 # Specific version
-ck update --kit engineer --version v1.0.0
+ck init --kit engineer --version v1.0.0
 ```
 
 #### Authentication
@@ -82,7 +82,7 @@ Now you're good to go!
 
 ## CLAUDE.md
 
-**[Important]** You should not modify this file, as it will be overwritten each time you update ClaudeKit (`ck update`). If you want to modify this file without it being overwritten, use the following flag during updates: `ck update --exclude CLAUDE.md`
+**[Important]** You should not modify this file, as it will be overwritten each time you update ClaudeKit (`ck init`). If you want to modify this file without it being overwritten, use the following flag during updates: `ck init --exclude CLAUDE.md`
 
 I've read all the documentation about Context Engineering and tested everything. I learned that Manus's approach is extremely effective: Use File System As Context. That's why I recommend you keep everything as it is: just a few lines in `CLAUDE.md` linking to more detailed files in the `.claude/workflows/` and `docs/` directories.
 

@@ -1173,35 +1173,6 @@ A successful code review:
 - [ ] Ensure backward compatibility
 ```
 
-### Automated Reviews
-
-```yaml
-# .github/workflows/code-review.yml
-name: Automated Code Review
-
-on: [pull_request]
-
-jobs:
-  review:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Run ClaudeKit Review
-        run: |
-          npx @claudekit/cli review --pr ${{ github.event.pull_request.number }}
-
-      - name: Post Review Comment
-        uses: actions/github-script@v6
-        with:
-          script: |
-            const review = require('./review-report.json');
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              body: review.summary
-            });
-```
-
 ## Next Steps
 
 - [Planner](/docs/agents/planner) - Plan fixes for issues

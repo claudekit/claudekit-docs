@@ -61,8 +61,8 @@ Usage:
   ck <command> [options]
 
 Commands:
-  new       Create new project from latest ClaudeKit release
-  update    Update existing project to latest version
+  init      Initialize or update project from ClaudeKit release
+  update    (deprecated) Use 'init' instead
   versions  List available ClaudeKit releases
 
 Options:
@@ -70,8 +70,8 @@ Options:
   --help, -h      Show help
 
 Examples:
-  ck new --kit engineer
-  ck update
+  ck init --kit engineer
+  ck init --global
   ck versions --kit engineer
 
 For more info: https://docs.claudekit.cc
@@ -350,7 +350,7 @@ rm -rf ~/.claudekit
 
 3. **Try with verbose logging:**
    ```bash
-   ck new --kit engineer --verbose
+   ck init --kit engineer --verbose
    ```
 
 4. **Check GitHub status:**
@@ -360,7 +360,7 @@ rm -rf ~/.claudekit
 
 Now that the CLI is installed:
 
-1. **Create a new project** - [ck new command](/docs/cli/new)
+1. **Initialize a project** - Run `ck init --kit engineer`
 2. **Browse available versions** - Run `ck versions`
 3. **Start developing** - Follow [Getting Started](/docs/getting-started/installation)
 
@@ -372,4 +372,4 @@ Now that the CLI is installed:
 
 ---
 
-**Ready to start?** Run `ck new --kit engineer` to create your first project.
+**Ready to start?** Run `ck init --kit engineer` to initialize your first project.

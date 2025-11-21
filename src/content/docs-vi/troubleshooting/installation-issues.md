@@ -395,7 +395,7 @@ ck new --kit engineer
 - Keep Node.js updated (18+)
 - Use npm global directory in home folder
 - Check PATH after installation
-- Update ClaudeKit regularly: `ck update`
+- Update ClaudeKit regularly: `ck init`
 
 ❌ **Don't**:
 - Use sudo with npm (except as last resort)

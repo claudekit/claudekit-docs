@@ -1,322 +1,451 @@
 # Codebase Summary
 
-**Last Updated**: 2025-10-26
-**Version**: 1.8.0
-**Repository**: [claudekit/claudekit-engineer](https://github.com/claudekit/claudekit-engineer)
+**Last Updated**: 2025-11-25
+**Version**: 0.0.1 (MVP)
+**Repository**: claudekit-docs
 
 ## Overview
 
-ClaudeKit Engineer is a comprehensive boilerplate template for building professional software projects with CLI Coding Agents (Claude Code and Open Code). It provides a complete development environment with AI-powered agent orchestration, automated workflows, and intelligent project management.
+claudekit-docs is Astro v5-based static documentation site for ClaudeKit ecosystem. Features bi-lingual content (English/Vietnamese), AI chat integration (UI complete, backend pending), collapsible sidebar navigation, and One Dark Pro-inspired design system.
 
-## Project Structure
+## Project Statistics
+
+**Content**:
+- 97 English markdown docs
+- 97 Vietnamese translations (mirrored structure)
+- 9 content categories
+- ~250KB documentation content
+
+**Source Code**:
+- 18 source files (Astro, TypeScript, React)
+- 6 components (3 Astro, 3 React islands)
+- 2 layouts (BaseLayout, DocsLayout)
+- 3 i18n files (locales, ui, utils)
+
+**Infrastructure**:
+- 5 K8s manifests (deployment, service, ingress, configmap)
+- 1 Dockerfile (multi-stage Node 20 Alpine)
+- 14+ docs files in `docs/` directory
+
+## Directory Structure
 
 ```
-claudekit-engineer/
-├── .claude/               # Claude Code configuration
-│   ├── agents/           # Specialized agent definitions (14 agents)
-│   ├── commands/         # Slash command implementations (50+ commands)
-│   ├── hooks/            # Git hooks and scripts
-│   ├── skills/           # Specialized skills library (20+ skills)
-│   └── workflows/        # Development workflow definitions
-├── .opencode/            # Open Code CLI configuration
-│   ├── agent/           # Agent definitions for OpenCode (13 agents)
-│   └── command/         # Command definitions for OpenCode
-├── .github/             # GitHub Actions workflows
-│   └── workflows/       # CI/CD automation
-├── docs/                # Project documentation
-│   └── research/        # Research reports directory
-├── guide/               # User guides and references
-├── plans/               # Implementation plans and reports
-│   ├── reports/         # Agent-to-agent communication
-│   └── templates/       # Plan templates
-├── CLAUDE.md           # Project-specific Claude instructions
-├── README.md           # Project overview
-├── package.json        # Node.js dependencies
-└── repomix-output.xml  # Codebase compaction file
+/home/kai/claudekit/claudekit-docs/
+├── src/                          # Source code
+│   ├── components/              # UI components
+│   │   ├── AIChat.tsx           # React: Chat interface (backend pending)
+│   │   ├── AIPanel.astro        # Astro: AI panel wrapper
+│   │   ├── Header.astro         # Astro: Top navigation
+│   │   ├── LanguageSwitcher.tsx # React: EN/VI switcher
+│   │   ├── Sidebar.astro        # Astro: Left sidebar container
+│   │   └── SidebarNav.astro     # Astro: Nav tree with collapse logic
+│   ├── content/                 # Content collections (Zod validated)
+│   │   ├── docs/                # English docs (97 files)
+│   │   │   ├── agents/          # 15 agent docs (14 agents + index)
+│   │   │   ├── cli/             # 2 CLI docs
+│   │   │   ├── commands/        # 25 command docs (9 categories)
+│   │   │   ├── core-concepts/   # 2 architecture docs
+│   │   │   ├── getting-started/ # 8 onboarding docs
+│   │   │   ├── skills/          # 15 skill docs
+│   │   │   ├── troubleshooting/ # 6 troubleshooting docs
+│   │   │   └── use-cases/       # 10 use case tutorials
+│   │   ├── docs-vi/             # Vietnamese (mirrored structure)
+│   │   └── config.ts            # Zod schema for frontmatter validation
+│   ├── i18n/                    # Internationalization
+│   │   ├── locales.ts           # Locale definitions (en, vi)
+│   │   ├── ui.ts                # Translation strings
+│   │   └── utils.ts             # getLangFromUrl, useTranslations, getLocalizedPath
+│   ├── layouts/                 # Page layouts
+│   │   ├── BaseLayout.astro     # HTML shell (meta, fonts, theme)
+│   │   └── DocsLayout.astro     # 3-column: sidebar | content | AI panel
+│   ├── lib/                     # Utilities
+│   │   └── openrouter.ts        # OpenRouter API client (future)
+│   ├── pages/                   # File-based routing
+│   │   ├── index.astro          # Homepage
+│   │   ├── docs/[...slug].astro # English doc pages
+│   │   └── vi/docs/[...slug].astro # Vietnamese doc pages
+│   └── styles/                  # Global CSS
+│       └── global.css           # Design tokens, One Dark Pro theme
+├── public/                      # Static assets
+│   ├── assets/                  # Images (screenshots)
+│   ├── docs/                    # Legacy docs (93+ mirrored pages)
+│   ├── favicon.svg              # Site icon
+│   ├── llms.txt                 # LLM context file
+│   ├── logo-*.png               # Logo variants (dark, light, transparent)
+│   └── og-image.png             # Open Graph image
+├── k8s/                         # Kubernetes deployment
+│   ├── configmap.yaml           # Environment variables
+│   ├── deployment.yaml          # 2 replicas, resource limits
+│   ├── ingress.yaml             # nginx-ingress with TLS
+│   ├── service.yaml             # ClusterIP service
+│   └── README.md                # Deployment instructions
+├── docs/                        # Project documentation
+│   ├── research/                # Research reports
+│   ├── tutorials/               # Tutorials (EN/VI)
+│   ├── codebase-summary.md      # This file
+│   ├── code-standards.md        # Coding conventions
+│   ├── design-guidelines.md     # Design system specs (49KB)
+│   ├── deployment-guide.md      # Production deployment
+│   ├── project-overview-pdr.md  # Product requirements
+│   ├── system-architecture.md   # Technical architecture
+│   └── tech-stack.md            # Technology decisions
+├── .claude/                     # Claude Code workflows
+├── astro.config.mjs             # Astro config (MDX, React, Tailwind, i18n)
+├── CLAUDE.md                    # Claude-specific instructions (171 lines)
+├── Dockerfile                   # Multi-stage build (node:20-alpine)
+├── package.json                 # Dependencies (18 total: 15 prod, 3 dev)
+├── README.md                    # User-facing docs (413 lines)
+├── repomix-output.xml           # Codebase compaction (1M+ tokens)
+├── tailwind.config.mjs          # Tailwind config (CSS var mappings)
+└── tsconfig.json                # TypeScript strict mode
 ```
 
-## Core Technologies
+## Technology Stack
 
-### Runtime & Dependencies
-- **Node.js**: >=18.0.0
-- **Package Manager**: npm
-- **License**: MIT
+### Core Framework
+- **Astro v5.14.6**: Static site generator with islands architecture
+- **React 18.3.1**: Interactive components (AIChat, LanguageSwitcher)
+- **TypeScript 5.7.3**: Strict type checking
+- **Node.js 20**: Runtime
 
-### Development Tools
-- **Semantic Release**: Automated versioning and changelog
-- **Commitlint**: Conventional commit enforcement
-- **Husky**: Git hooks automation
-- **Repomix**: Codebase compaction for AI consumption
+### Styling
+- **Tailwind CSS v3.4.17**: Utility-first CSS
+- **CSS Variables**: Design token system (`--color-*`, `--space-*`, `--text-*`)
+- **Shiki**: Syntax highlighting (One Dark Pro theme)
+- **Inter Variable**: Body font (Google Fonts)
+- **Geist Mono**: Code font (Vercel)
 
-### CI/CD
-- **GitHub Actions**: Automated release workflow
-- **Semantic Versioning**: Automated version management
-- **Conventional Commits**: Structured commit messages
+### Content Management
+- **Astro Content Collections**: Type-safe markdown with Zod validation
+- **remark-gfm**: GitHub Flavored Markdown
+- **remark-math**: LaTeX math equations
+- **rehype-slug**: Auto-generate heading anchors
+- **rehype-autolink-headings**: Link headings
+- **rehype-katex**: Render math notation
+
+### UI Components
+- **Radix UI**: Accessible headless components
+  - `@radix-ui/react-collapsible`: Sidebar navigation
+  - `@radix-ui/react-dialog`: AI assistant panel
+  - `@radix-ui/react-dropdown-menu`: Copy page actions
+  - `@radix-ui/react-scroll-area`: Custom scrollbars
+
+### AI Integration (Future)
+- **OpenRouter API**: Multi-model LLM gateway
+- **OpenAI SDK v4.75.1**: API client library
+
+### Deployment
+- **Docker**: Multi-stage build (node:20-alpine)
+- **Kubernetes**: 2 replicas, HPA-ready
+- **nginx-ingress**: Load balancing, TLS termination
+- **cert-manager**: Automatic SSL (Let's Encrypt)
 
 ## Key Components
 
-### 1. Agent Orchestration System
+### 1. Content System
 
-**Claude Code Agents** (`.claude/agents/`):
-- `planner.md` - Technical planning and architecture
-- `researcher.md` - Research and analysis
-- `tester.md` - Testing and validation
-- `debugger.md` - Issue analysis and debugging
-- `code-reviewer.md` - Code quality assessment
-- `docs-manager.md` - Documentation management
-- `git-manager.md` - Version control operations
-- `project-manager.md` - Project tracking and oversight
-- `database-admin.md` - Database operations
-- `ui-ux-designer.md` - UI/UX design
-- `copywriter.md` - Content creation
-- `scout.md` - Codebase exploration
-- `journal-writer.md` - Development journaling
-- `brainstormer.md` - Solution ideation
+**Schema Definition** (`src/content/config.ts`):
+```typescript
+docsSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+  category: z.enum([
+    'getting-started',
+    'core-concepts',
+    'agents',
+    'commands',
+    'skills',
+    'use-cases',
+    'components',
+    'cli',
+    'troubleshooting'
+  ]).optional(),
+  order: z.number().optional(),
+  published: z.boolean().default(true),
+  lastUpdated: z.date().optional(),
+})
+```
 
-**OpenCode Agents** (`.opencode/agent/`):
-- Similar agent definitions optimized for OpenCode CLI
-- `planner-researcher.md` - Combined planning and research
-- `solution-brainstormer.md` - Advanced brainstorming
-- `system-architecture.md` - Architecture documentation
+**Content Categories** (9 total):
+1. **getting-started** (8 docs): installation, quick-start, greenfield/brownfield projects, Gemini setup, MCP setup, cheatsheet
+2. **cli** (2 docs): CLI index, installation
+3. **core-concepts** (2 docs): CLAUDE.md explanation, workflows
+4. **agents** (15 docs): 14 agent pages + index (planner, researcher, tester, debugger, code-reviewer, docs-manager, git-manager, project-manager, database-admin, ui-ux-designer, copywriter, scout, journal-writer, brainstormer)
+5. **commands** (25 docs): Slash commands across 9 subcategories (core, fix, design, docs, git, plan, content, integrate, skill)
+6. **skills** (15 docs): Built-in skills (Next.js, Tailwind, shadcn/ui, Better Auth, Docker, FFmpeg, ImageMagick, etc.)
+7. **use-cases** (10 docs): Real-world tutorials (adding features, fixing bugs, building APIs, auth, payments, performance, refactoring, maintaining old projects, starting new projects, understanding codebases with GKG)
+8. **troubleshooting** (6 docs): Installation issues, command errors, agent issues, API key setup, performance issues
+9. **components** (0 docs): Future UI component reference
 
-### 2. Slash Commands System
+### 2. Navigation System
 
-**Categories**:
-- **Core Development**: `/plan`, `/cook`, `/ask`, `/bootstrap`, `/brainstorm`, `/test`
-- **Debugging**: `/debug`, `/fix:fast`, `/fix:hard`, `/fix:ci`, `/fix:logs`, `/fix:test`, `/fix:types`, `/fix:ui`
-- **Design**: `/design:fast`, `/design:good`, `/design:3d`, `/design:screenshot`, `/design:video`
-- **Documentation**: `/docs:init`, `/docs:update`, `/docs:summarize`
-- **Git Operations**: `/git:cm`, `/git:cp`, `/git:pr`
-- **Planning**: `/plan:two`, `/plan:ci`, `/plan:cro`
-- **Content**: `/content:fast`, `/content:good`, `/content:enhance`, `/content:cro`
-- **Integration**: `/integrate:polar`, `/integrate:sepay`
-- **Utility**: `/watzup`, `/journal`, `/scout`
+**SidebarNav.astro**:
+- Groups docs by category from frontmatter
+- Sorts by `order` field (lower = higher)
+- Collapsible sections with localStorage persistence
+- Auto-expands "Getting Started" by default
+- Active page highlighting with 2px blue left border
+- File/folder icons (Lucide-style inline SVG)
 
-### 3. Skills Library
+**Known Issue**: Commands have nested subdirectories (`commands/fix/hard.md`) but sidebar shows flat list. Hierarchical nav needed.
 
-**Skill Categories** (`.claude/skills/`):
-- **Authentication**: `better-auth/`
-- **Cloud Platforms**: `cloudflare/`, `gcloud/`, `cloudflare-workers/`, `cloudflare-r2/`
-- **Databases**: `mongodb/`, `postgresql-psql/`
-- **Design**: `canvas-design/`
-- **Debugging**: `systematic-debugging/`, `root-cause-tracing/`, `defense-in-depth/`
-- **Documentation**: `docs-seeker/`, `repomix/`
-- **Document Processing**: `document-skills/` (docx, pdf, pptx, xlsx)
-- **Frameworks**: `nextjs/`, `shadcn-ui/`, `tailwindcss/`, `turborepo/`
-- **Media**: `ffmpeg/`, `imagemagick/`
-- **MCP**: `mcp-builder/`
-- **Problem Solving**: `collision-zone-thinking/`, `meta-pattern-recognition/`, `scale-game/`
-- **Ecommerce**: `shopify/`
-- **Infrastructure**: `docker/`
-- **Icons**: `remix-icon/`
-- **Development**: `claude-code/`, `skill-creator/`
+**Missing Category**: `troubleshooting` defined in schema but not in SidebarNav categories object.
 
-### 4. Workflows
+### 3. Internationalization (i18n)
 
-**Primary Workflows** (`.claude/workflows/`):
-1. **primary-workflow.md**: Core development cycle
-   - Code implementation
-   - Testing
-   - Code quality
-   - Integration
-   - Debugging
+**Supported Locales** (`src/i18n/locales.ts`):
+- `en` (English, default, no prefix)
+- `vi` (Vietnamese, `/vi/` prefix)
 
-2. **orchestration-protocol.md**: Agent coordination patterns
-   - Sequential chaining
-   - Parallel execution
+**Translation System** (`src/i18n/ui.ts`):
+```typescript
+ui = {
+  en: {
+    'nav.getting-started': 'Getting Started',
+    'nav.agents': 'Agents',
+    // ... 18 translation keys
+  },
+  vi: {
+    'nav.getting-started': 'Bắt Đầu',
+    'nav.agents': 'Agents',
+    // ... Vietnamese translations
+  }
+}
+```
 
-3. **development-rules.md**: Development standards
-   - File size management (<500 lines)
-   - YANGI, KISS, DRY principles
-   - Code quality guidelines
-   - Pre-commit/push rules
+**Routing**:
+- English: `/docs/getting-started/introduction`
+- Vietnamese: `/vi/docs/getting-started/introduction`
 
-4. **documentation-management.md**: Doc maintenance
-   - Roadmap and changelog updates
-   - Automatic update triggers
-   - Documentation protocols
+### 4. AI Chat System (UI Only)
+
+**AIChat.tsx** (React):
+- Chat interface with message history
+- Markdown rendering with syntax highlighting
+- Send message functionality (no backend)
+- Responsive design with collapsible panel
+
+**AIPanel.astro** (Astro):
+- Radix Dialog wrapper
+- Slide-in panel from right
+- Close button and backdrop
+- Future: Connect to OpenRouter API
+
+**Planned Backend** (`src/lib/openrouter.ts`):
+- OpenRouter API integration
+- Multi-model support (Claude, GPT-4, 400+ models)
+- Streaming responses
+- Context-aware assistance
+
+### 5. Design System
+
+**CSS Variables** (`src/styles/global.css`):
+```css
+/* Colors */
+--color-bg-primary: #1e1e1e
+--color-bg-secondary: #252525
+--color-bg-tertiary: #2d2d2d
+--color-text-primary: #abb2bf
+--color-text-secondary: #848b98
+--color-accent-blue: #61afef
+
+/* Spacing */
+--space-1: 0.25rem (4px)
+--space-2: 0.5rem (8px)
+--space-3: 0.75rem (12px)
+--space-4: 1rem (16px)
+/* ... up to --space-12 */
+
+/* Typography */
+--text-xs: 0.75rem (12px)
+--text-sm: 0.875rem (14px)
+--text-base: 1rem (16px)
+--text-lg: 1.125rem (18px)
+/* ... up to --text-6xl */
+```
+
+**Inspiration**: Polar documentation aesthetics, One Dark Pro color scheme
+
+### 6. Layouts
+
+**BaseLayout.astro**:
+- HTML document structure
+- Meta tags (title, description, OG)
+- Font loading (Inter, Geist Mono)
+- Theme initialization (`[data-theme="dark"]`)
+- Global CSS injection
+
+**DocsLayout.astro**:
+- 3-column responsive layout
+- Left sidebar (250px desktop, hidden mobile)
+- Center content (max-width 900px)
+- Right AI panel (350px desktop, slide-in mobile)
+- Breakpoints: 768px (mobile), 1024px (desktop)
+
+## File Statistics
+
+**Source Files**:
+- 6 components (.astro + .tsx)
+- 2 layouts (.astro)
+- 5 pages (.astro)
+- 3 i18n files (.ts)
+- 1 lib file (.ts)
+- 1 config file (.ts)
+- 1 global CSS (.css)
+- **Total**: 19 source files
+
+**Content Files**:
+- 97 English docs (.md)
+- 97 Vietnamese docs (.md)
+- **Total**: 194 markdown files
+
+**Configuration Files**:
+- astro.config.mjs
+- tailwind.config.mjs
+- tsconfig.json
+- package.json
+- Dockerfile
+- 5 K8s manifests
+
+**Documentation Files**:
+- 14 files in `docs/` directory
+- ~150KB total size
 
 ## Entry Points
 
 ### For Users
-- **README.md**: Project overview and quick start
-- **guide/COMMANDS.md**: Comprehensive command reference (7,073 tokens)
-- **CLAUDE.md**: Development instructions and workflows
+- `/` - Homepage (landing page)
+- `/docs/getting-started/introduction` - First doc page
+- `/docs/getting-started/quick-start` - 15-minute quickstart guide
 
 ### For Developers
-- **package.json**: Dependencies and scripts
-- **.releaserc.json**: Semantic release configuration
-- **.commitlintrc.json**: Commit message linting rules
-- **.gitignore**: Version control exclusions
+- `package.json` - Dependencies and scripts
+- `astro.config.mjs` - Astro configuration
+- `src/content/config.ts` - Content schema
+- `CLAUDE.md` - AI assistant instructions
 
-### For Agents
-- **CLAUDE.md**: Primary agent instructions
-- **.claude/workflows/**: Workflow definitions
-- **plans/templates/**: Implementation plan templates
+### For Content Contributors
+- `src/content/docs/` - English markdown
+- `src/content/docs-vi/` - Vietnamese markdown
+- Frontmatter schema in `src/content/config.ts`
 
-## Development Principles
+## Development Workflow
 
-### YANGI (You Aren't Gonna Need It)
-Avoid over-engineering and unnecessary features
-
-### KISS (Keep It Simple, Stupid)
-Prefer simple, straightforward solutions
-
-### DRY (Don't Repeat Yourself)
-Eliminate code duplication
-
-### File Size Management
-- Keep files under 500 lines
-- Split large files into focused components
-- Extract utilities into separate modules
-
-### Security First
-- Try-catch error handling
-- Security standards coverage
-- No secrets in commits
-- Confidential info protection
-
-## Agent Communication Protocol
-
-**Report Format**: Markdown files in `./plans/reports/`
-**Naming Convention**: `YYMMDD-from-[agent]-to-[agent]-[task]-report.md`
-
-**Communication Patterns**:
-- Sequential: Task dependencies require ordered execution
-- Parallel: Independent tasks run simultaneously
-- Query Fan-Out: Multiple researchers explore different approaches
-
-## Git Workflow
-
-**Commit Message Format**: Conventional Commits
-```
-type(scope): description
-
-Types:
-- feat: Features (minor bump)
-- fix: Bug fixes (patch bump)
-- docs: Documentation (patch bump)
-- refactor: Code refactoring (patch bump)
-- test: Tests (patch bump)
-- ci: CI changes (patch bump)
-- BREAKING CHANGE: Major version bump
+**Local Development**:
+```bash
+npm install          # Install dependencies
+npm run dev          # Dev server → http://localhost:4321
+npm run build        # Production build → dist/
+npm run preview      # Preview build
 ```
 
-**Automated Release**:
-- Every push to `main` triggers release check
-- Semantic versioning (MAJOR.MINOR.PATCH)
-- Automated changelog generation
-- GitHub releases with generated notes
+**Content Updates**:
+1. Add/edit markdown in `src/content/docs/<category>/`
+2. Add frontmatter (title, description, category, order)
+3. Dev server auto-reloads
+4. Optionally add Vietnamese translation in `src/content/docs-vi/`
 
-## Testing Strategy
+**Component Development**:
+- Astro components: `.astro` files
+- React islands: `.tsx` files (use client directives)
+- Styling: Tailwind classes + CSS variables
+- Hot module reloading in dev mode
 
-- Comprehensive unit tests required
-- High code coverage mandatory
-- Error scenario testing
-- Performance validation
-- Tests must pass before push
-- No ignoring failed tests
+## Dependencies
 
-## Documentation Standards
+**Production** (15):
+- `@astrojs/mdx` v4.3.7
+- `@astrojs/react` v4.0.0
+- `@astrojs/tailwind` v6.0.2
+- `@radix-ui/react-collapsible` v1.1.2
+- `@radix-ui/react-dialog` v1.1.4
+- `@radix-ui/react-dropdown-menu` v2.1.4
+- `@radix-ui/react-scroll-area` v1.2.2
+- `astro` v5.14.6
+- `openai` v4.75.1
+- `react` v18.3.1
+- `react-dom` v18.3.1
+- `rehype-autolink-headings` v7.1.0
+- `rehype-katex` v7.0.1
+- `rehype-slug` v6.0.0
+- `remark-gfm` v4.0.0
+- `remark-math` v6.0.0
+- `tailwindcss` v3.4.17
 
-**Required Docs** (`./docs/`):
-- `project-overview-pdr.md` - Project overview and PDR
-- `code-standards.md` - Coding standards and structure
-- `codebase-summary.md` - This file
-- `system-architecture.md` - Architecture documentation
-- `project-roadmap.md` - Development roadmap
-- `project-changelog.md` - Detailed changelog
+**Development** (3):
+- `@types/react` v18.3.17
+- `@types/react-dom` v18.3.5
+- `typescript` v5.7.3
 
-**Documentation Triggers**:
-- Feature implementation completion
-- Major milestone achievements
-- Bug fixes
-- Security updates
-- Weekly reviews
+## Build Process
 
-## Dependencies Overview
+**Multi-Stage Docker Build**:
+1. **Stage 1**: Build (node:20-alpine)
+   - Copy package files, install deps
+   - Copy source, run `npm run build`
+   - Output: `dist/` directory
+2. **Stage 2**: Runtime (node:20-alpine)
+   - Copy built files from stage 1
+   - Expose port 3000
+   - Serve with `node` (static file server)
 
-### Production Dependencies
-None (template project)
+**Static Output**:
+- All pages pre-rendered at build time
+- No server-side rendering (SSR)
+- Minimal JavaScript (islands architecture)
+- Optimized for CDN deployment
 
-### Development Dependencies
-- **@commitlint/cli**: ^18.4.3
-- **@commitlint/config-conventional**: ^18.4.3
-- **@semantic-release/changelog**: ^6.0.3
-- **@semantic-release/commit-analyzer**: ^11.1.0
-- **@semantic-release/git**: ^10.0.1
-- **@semantic-release/github**: ^9.2.6
-- **@semantic-release/npm**: ^11.0.2
-- **@semantic-release/release-notes-generator**: ^12.1.0
-- **conventional-changelog-conventionalcommits**: ^7.0.2
-- **husky**: ^8.0.3
-- **semantic-release**: ^22.0.12
+## Deployment
 
-## File Statistics
+**Kubernetes** (Production):
+- 2 replicas (default)
+- Resource limits: 200m CPU, 256Mi RAM
+- Liveness/readiness probes on port 3000
+- nginx-ingress with TLS (cert-manager)
+- ConfigMap for environment variables
 
-**Total Files**: 48 files (in repomix output)
-**Total Tokens**: 38,868 tokens
-**Total Characters**: 173,077 chars
+**Docker** (Local/Testing):
+- Build: `docker build -t claudekit-docs:local .`
+- Run: `docker run -p 3000:3000 claudekit-docs:local`
 
-**Top 5 Files by Token Count**:
-1. `guide/COMMANDS.md` - 7,073 tokens (18.2%)
-2. `CHANGELOG.md` - 4,836 tokens (12.4%)
-3. `README.md` - 3,261 tokens (8.4%)
-4. `.opencode/agent/ui-ux-designer.md` - 2,521 tokens (6.5%)
-5. `.opencode/agent/system-architecture.md` - 1,714 tokens (4.4%)
+**Static Hosts** (Alternative):
+- Vercel, Netlify, Cloudflare Pages
+- Deploy `dist/` directory
+- No special config needed
 
-## Integration Capabilities
+## Known Issues
 
-### Discord Notifications
-Script: `.claude/hooks/send-discord.sh`
-Purpose: Send project updates to Discord channels
+1. **AI Chat Backend**: UI complete, OpenRouter integration pending
+2. **Search**: Not implemented (Pagefind planned)
+3. **Sidebar Hierarchy**: Commands show flat, need nested nav
+4. **Missing Category**: `troubleshooting` not in SidebarNav.astro
+5. **Vietnamese Sync**: Some docs may be out of sync with English
 
-### GitHub Actions
-Workflow: `.github/workflows/release.yml`
-Features: Automated releases, changelog generation
+## Performance Characteristics
 
-### MCP Tools
-- **context7**: Documentation reading
-- **sequential-thinking**: Structured problem solving
-- **SearchAPI**: Google and YouTube search
-- **review-website**: Web content extraction
-- **VidCap**: Video transcript extraction
+**Build Time**: ~15-30 seconds (194 markdown files)
+**Bundle Size**: < 200KB gzipped JavaScript
+**Initial Load**: < 1s (static HTML)
+**Time to Interactive**: < 2s (minimal hydration)
 
-## Critical Files
+## Security Considerations
 
-### Configuration
-- `/mnt/d/www/claudekit/claudekit-engineer/package.json` - Node.js config
-- `/mnt/d/www/claudekit/claudekit-engineer/.releaserc.json` - Release config
-- `/mnt/d/www/claudekit/claudekit-engineer/.commitlintrc.json` - Commit linting
-- `/mnt/d/www/claudekit/claudekit-engineer/.gitignore` - Git exclusions
-- `/mnt/d/www/claudekit/claudekit-engineer/.repomixignore` - Repomix exclusions
-
-### Documentation
-- `/mnt/d/www/claudekit/claudekit-engineer/README.md` - Main project docs
-- `/mnt/d/www/claudekit/claudekit-engineer/CLAUDE.md` - Agent instructions
-- `/mnt/d/www/claudekit/claudekit-engineer/CHANGELOG.md` - Version history
-- `/mnt/d/www/claudekit/claudekit-engineer/guide/COMMANDS.md` - Command reference
-
-### Workflows
-- `/mnt/d/www/claudekit/claudekit-engineer/.claude/workflows/primary-workflow.md`
-- `/mnt/d/www/claudekit/claudekit-engineer/.claude/workflows/development-rules.md`
-- `/mnt/d/www/claudekit/claudekit-engineer/.claude/workflows/orchestration-protocol.md`
-- `/mnt/d/www/claudekit/claudekit-engineer/.claude/workflows/documentation-management.md`
+- No secrets in repo (.env.example only)
+- Static site (minimal attack surface)
+- TLS termination at ingress
+- CSP headers recommended (add to nginx config)
 
 ## Related Projects
 
-- **claudekit** - ClaudeKit website (`../claudekit`)
-- **claudekit-marketing** - Marketing Kit (`../claudekit-marketing`)
-- **claudekit-cli** - CLI setup tool (`../claudekit-cli`)
-- **claudekit-docs** - Public docs (`../claudekit-docs`)
-
-## Version History
-
-**Current**: v1.8.0
-**License**: MIT
-**Author**: Duy Nguyen
-**Repository**: https://github.com/claudekit/claudekit-engineer
+- **claudekit-cli**: CLI setup tool (`../claudekit-cli`)
+- **claudekit-engineer**: Engineering toolkit (`../claudekit-engineer`)
+- **claudekit-marketing**: Marketing toolkit (`../claudekit-marketing`)
+- **claudekit** (main): Website (`../claudekit`)
 
 ## Unresolved Questions
 
-None identified. All core components are well-documented and functional.
+1. Should `troubleshooting` category be added to SidebarNav or removed from schema?
+2. How to implement hierarchical navigation for nested command categories?
+3. What's the timeline for OpenRouter API backend integration?
+4. Should Vietnamese translations be auto-synced or manually maintained?
+5. What search solution to use (Pagefind, Algolia, custom)?

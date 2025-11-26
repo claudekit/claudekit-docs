@@ -1,13 +1,25 @@
-# CLAUDE.md - ClaudeKit Docs
+# ClaudeKit Docs
 
 Astro v5 static docs site for ClaudeKit. Live: https://docs.claudekit.cc
+
+## CRITICAL: Quality Gate
+
+**MUST pass before ANY commit/PR. No exceptions.**
+
+```bash
+bun run build
+```
+
+**Build must pass before commit/PR. No exceptions.**
 
 ## Quick Commands
 
 ```bash
-npm run dev      # Dev server → http://localhost:4321
-npm run build    # Production build → dist/
-npm run preview  # Preview build
+# Development
+bun install           # Install deps
+bun run dev           # Dev server → http://localhost:4321
+bun run build         # Production build → dist/
+bun run preview       # Preview build
 ```
 
 ## Key Locations
@@ -54,7 +66,7 @@ From `src/content/config.ts`:
 - **TypeScript 5.7.3**: Strict mode
 - **Tailwind CSS 3.4**: Utility-first + CSS variables
 - **Radix UI**: Accessible components
-- **Node.js 20**: Runtime
+- **Bun**: Package manager & runtime
 
 ## Design System
 
@@ -69,6 +81,25 @@ From `src/content/config.ts`:
 - **Vietnamese**: `vi` (prefix: `/vi/`)
 - **UI Strings**: `src/i18n/ui.ts` (18 keys × 2 locales)
 - **Workflow**: Create EN first, mirror structure in `docs-vi/`, translate
+
+## Git Workflow
+
+```bash
+# Feature branch from dev
+git checkout dev && git pull origin dev
+git checkout -b kai/<feature>
+
+# After work complete
+bun run build
+git push origin kai/<feature>
+# Create PR to dev branch
+```
+
+## Commit Convention
+
+- `feat:` → minor version bump
+- `fix:` → patch version bump
+- `docs:`, `refactor:`, `test:`, `chore:` → no version bump
 
 ## Known Issues / TODOs
 

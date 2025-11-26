@@ -104,11 +104,12 @@ import { AIChat } from './AIChat';
     position: sticky;
     top: var(--layout-header-height);
     background-color: var(--color-bg-secondary);
-    border-left: 1px solid var(--color-border);
+    border-left: 1px solid var(--color-border-hover);
     display: flex;
     flex-direction: column;
     overflow: hidden;
     transition: width var(--duration-slower) var(--ease-in-out);
+    box-shadow: -1px 0 4px rgba(0, 0, 0, 0.05);
   }
 
   /* Collapsed state */
@@ -124,6 +125,15 @@ import { AIChat } from './AIChat';
     align-items: center;
     justify-content: space-between;
     gap: var(--space-3);
+  }
+
+  .ai-panel.collapsed .ai-panel-header {
+    padding: var(--space-4) var(--space-2);
+    justify-content: center;
+  }
+
+  .ai-panel.collapsed .ai-title {
+    display: none;
   }
 
   .ai-title {
@@ -167,12 +177,10 @@ import { AIChat } from './AIChat';
     height: 40px;
     padding: 0;
     background: transparent;
-    border: none;
-    border-radius: var(--radius-md);
-    color: var(--color-text-muted);
-    cursor: pointer;
-    transition: all var(--duration-normal) var(--ease-out);
     flex-shrink: 0;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-secondary);
   }
 
   .ai-collapse-toggle:hover {

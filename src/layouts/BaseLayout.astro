@@ -56,6 +56,12 @@ const alternates = slug ? getAlternateUrls(slug) : [];
         localStorage.setItem('theme', newTheme);
       }
 
+      declare global {
+        interface Window {
+          toggleTheme: () => void;
+        }
+      }
+
       // Expose to window for button handlers
       window.toggleTheme = toggleTheme;
     </script>

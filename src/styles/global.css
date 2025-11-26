@@ -26,6 +26,10 @@
 
     --color-border: #E5E7EB;
     --color-border-hover: #D1D5DB;
+
+    /* Theme-specific gradients and overlays */
+    --color-text-gradient: linear-gradient(135deg, #111 0%, #666 100%);
+    --color-header-bg: rgba(255, 255, 255, 0.8);
   }
 
   /* Dark Theme (Polar-inspired v1.1) */
@@ -70,6 +74,10 @@
     --syntax-operator: #56B6C2;
     --syntax-variable: #E06C75;
     --syntax-class: #E5C07B;
+
+    /* Theme-specific gradients and overlays */
+    --color-text-gradient: linear-gradient(135deg, #fff 0%, #999 100%);
+    --color-header-bg: rgba(17, 17, 17, 0.8);
   }
 
   /* Typography Variables (Polar v1.1) */
@@ -136,7 +144,7 @@
   :root {
     --layout-header-height: 64px;
     --layout-sidebar-width: 280px;
-    --layout-content-max-width: 700px;
+    --layout-content-max-width: 900px;
     --layout-ai-panel-width: 380px;
 
     /* Breakpoints */
@@ -258,7 +266,7 @@
   h1 {
     font-size: var(--text-4xl);
     letter-spacing: var(--tracking-tight);
-    background: linear-gradient(135deg, #fff 0%, #999 100%);
+    background: var(--color-text-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

@@ -142,7 +142,7 @@
 
   /* Layout Variables (Polar v1.1) */
   :root {
-    --layout-header-height: 64px;
+    --layout-header-height: 56px;
     --layout-sidebar-width: 280px;
     --layout-content-max-width: 900px;
     --layout-ai-panel-width: 380px;

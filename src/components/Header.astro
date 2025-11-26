@@ -34,9 +34,7 @@ const navIcons = {
         </svg>
       </button>
 
-      <a href="/" class="logo">
-        <img src="/logo-horizontal.png" alt="ClaudeKit Engineer" class="logo-image" />
-      </a>
+
 
       <nav class="nav">
         <a href={getLocalizedPath('/docs/getting-started/introduction', currentLocale)} class="nav-link">
@@ -77,42 +75,7 @@ const navIcons = {
 
       <LanguageSwitcher client:load currentLocale={currentLocale} currentPath={currentPath} />
 
-      <button class="icon-button theme-toggle" onclick="window.toggleTheme()" aria-label="Toggle theme" title="Toggle theme">
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="sun-icon"
-        >
-          <circle cx="12" cy="12" r="4"></circle>
-          <path d="M12 2v2"></path>
-          <path d="M12 20v2"></path>
-          <path d="m4.93 4.93 1.41 1.41"></path>
-          <path d="m17.66 17.66 1.41 1.41"></path>
-          <path d="M2 12h2"></path>
-          <path d="M20 12h2"></path>
-          <path d="m6.34 17.66-1.41 1.41"></path>
-          <path d="m19.07 4.93-1.41 1.41"></path>
-        </svg>
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="moon-icon"
-        >
-          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
-        </svg>
-      </button>
+
     </div>
   </div>
 </header>
@@ -234,31 +197,7 @@ const navIcons = {
     gap: var(--space-8);
   }
 
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
-    color: var(--color-text-primary);
-    font-size: 1.125rem;
-    font-weight: var(--font-bold);
-    text-decoration: none;
-    transition: opacity var(--duration-normal) var(--ease-out);
-  }
 
-  .logo:hover {
-    text-decoration: none;
-    opacity: 0.8;
-  }
-
-  .logo-image {
-    height: 32px;
-    width: auto;
-    object-fit: contain;
-  }
-
-  :root[data-theme='light'] .logo-image {
-    filter: invert(1) hue-rotate(180deg);
-  }
 
   .nav {
     display: flex;
@@ -316,54 +255,7 @@ const navIcons = {
     color: var(--color-text-primary);
   }
 
-  /* Theme toggle pill (Polar v1.1: 64x32px, 16px border-radius) */
-  .theme-toggle {
-    width: 64px !important;
-    height: 32px !important;
-    min-height: 32px !important;
-    max-height: 32px !important;
-    border-radius: 16px !important;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--color-bg-tertiary);
-    border: 1px solid var(--color-border);
-    padding: 0 !important;
-    margin: 0 !important;
-    box-sizing: border-box !important;
-    transition: all var(--duration-normal) var(--ease-out);
-  }
 
-  .theme-toggle:hover {
-    border-color: var(--color-border-hover);
-  }
-
-  .sun-icon,
-  .moon-icon {
-    position: absolute;
-    transition: all var(--duration-normal) var(--ease-out);
-  }
-
-  :root[data-theme='dark'] .sun-icon {
-    opacity: 0;
-    transform: rotate(90deg) scale(0.8);
-  }
-
-  :root[data-theme='dark'] .moon-icon {
-    opacity: 1;
-    transform: rotate(0deg) scale(1);
-  }
-
-  :root[data-theme='light'] .sun-icon {
-    opacity: 1;
-    transform: rotate(0deg) scale(1);
-  }
-
-  :root[data-theme='light'] .moon-icon {
-    opacity: 0;
-    transform: rotate(-90deg) scale(0.8);
-  }
 
   /* Mobile menu toggle button */
   .mobile-menu-toggle {

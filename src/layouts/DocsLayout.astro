@@ -17,18 +17,20 @@ const { title, description, locale = 'en', slug = '' } = Astro.props;
 
 <BaseLayout title={title} description={description} locale={locale} slug={slug}>
   <div class="docs-layout">
-    <Header />
+    <Sidebar />
 
-    <div class="docs-content">
-      <Sidebar />
+    <div class="main-wrapper">
+      <Header />
 
-      <main class="content-area">
-        <article class="prose">
-          <slot />
-        </article>
-      </main>
+      <div class="content-wrapper">
+        <main class="content-area">
+          <article class="prose">
+            <slot />
+          </article>
+        </main>
 
-      <AIPanel />
+        <AIPanel />
+      </div>
     </div>
   </div>
 </BaseLayout>
@@ -78,11 +80,19 @@ const { title, description, locale = 'en', slug = '' } = Astro.props;
 <style>
   .docs-layout {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     min-height: 100vh;
   }
 
-  .docs-content {
+  .main-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    position: relative;
+  }
+
+  .content-wrapper {
     display: flex;
     flex: 1;
     position: relative;
@@ -90,7 +100,7 @@ const { title, description, locale = 'en', slug = '' } = Astro.props;
 
   .content-area {
     flex: 1;
-    padding-top: var(--space-12);
+    padding-top: var(--space-8);
     padding-right: var(--space-8);
     padding-bottom: var(--space-8);
     padding-left: var(--space-8);
@@ -111,7 +121,11 @@ const { title, description, locale = 'en', slug = '' } = Astro.props;
   }
 
   @media (max-width: 768px) {
-    .docs-content {
+    .docs-layout {
+      flex-direction: column;
+    }
+
+    .content-wrapper {
       flex-direction: column;
     }
 

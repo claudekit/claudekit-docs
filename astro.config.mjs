@@ -9,6 +9,9 @@ import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeKatex from 'rehype-katex';
 
+import remarkDirective from 'remark-directive';
+import { remarkAdmonitions } from './src/plugins/remark-admonitions.mjs';
+
 // https://astro.build/config
 export default defineConfig({
   i18n: {
@@ -27,7 +30,7 @@ export default defineConfig({
     }),
   ],
   markdown: {
-    remarkPlugins: [remarkGfm, remarkMath],
+    remarkPlugins: [remarkGfm, remarkMath, remarkDirective, remarkAdmonitions],
     rehypePlugins: [
       rehypeSlug,
       [

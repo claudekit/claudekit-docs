@@ -112,7 +112,7 @@ npm test
   </div>
 
   <div class="hero-demo">
-    <Code code={heroCode} lang="bash" theme="one-dark-pro" />
+    <Code code={heroCode} lang="bash" themes={{ light: 'light-plus', dark: 'one-dark-pro' }} />
   </div>
 </div>
 
@@ -175,7 +175,7 @@ npm test
 
 <p>Intelligent project scaffolding and version management:</p>
 
-<Code code={cliCode} lang="bash" theme="one-dark-pro" />
+<Code code={cliCode} lang="bash" themes={{ light: 'light-plus', dark: 'one-dark-pro' }} />
 
 <p>The CLI handles:</p>
 <ul>
@@ -190,21 +190,21 @@ npm test
 <h3>Building a New Feature</h3>
 
 <p><strong>Planning:</strong></p>
-<Code code={planningCode} lang="bash" theme="one-dark-pro" />
+<Code code={planningCode} lang="bash" themes={{ light: 'light-plus', dark: 'one-dark-pro' }} />
 
 <p><strong>Implementation:</strong></p>
-<Code code={implementationCode} lang="bash" theme="one-dark-pro" />
+<Code code={implementationCode} lang="bash" themes={{ light: 'light-plus', dark: 'one-dark-pro' }} />
 
 <p><strong>Testing:</strong></p>
-<Code code={testingCode} lang="bash" theme="one-dark-pro" />
+<Code code={testingCode} lang="bash" themes={{ light: 'light-plus', dark: 'one-dark-pro' }} />
 
 <h3>Debugging Production Issues</h3>
 
-<Code code={debuggingCode} lang="bash" theme="one-dark-pro" />
+<Code code={debuggingCode} lang="bash" themes={{ light: 'light-plus', dark: 'one-dark-pro' }} />
 
 <h3>Refactoring Legacy Code</h3>
 
-<Code code={refactoringCode} lang="bash" theme="one-dark-pro" />
+<Code code={refactoringCode} lang="bash" themes={{ light: 'light-plus', dark: 'one-dark-pro' }} />
 
 <h2>Proven Results</h2>
 
@@ -253,7 +253,7 @@ npm test
     <div class="step-number">1</div>
     <div class="step-content">
       <h4>Install ClaudeKit CLI</h4>
-      <Code code={step1Code} lang="bash" theme="one-dark-pro" />
+      <Code code={step1Code} lang="bash" themes={{ light: 'light-plus', dark: 'one-dark-pro' }} />
     </div>
   </div>
 
@@ -261,7 +261,7 @@ npm test
     <div class="step-number">2</div>
     <div class="step-content">
       <h4>Create Your First Project</h4>
-      <Code code={step2Code} lang="bash" theme="one-dark-pro" />
+      <Code code={step2Code} lang="bash" themes={{ light: 'light-plus', dark: 'one-dark-pro' }} />
     </div>
   </div>
 
@@ -269,7 +269,7 @@ npm test
     <div class="step-number">3</div>
     <div class="step-content">
       <h4>Plan and Implement a Feature</h4>
-      <Code code={step3Code} lang="bash" theme="one-dark-pro" />
+      <Code code={step3Code} lang="bash" themes={{ light: 'light-plus', dark: 'one-dark-pro' }} />
     </div>
   </div>
 
@@ -277,7 +277,7 @@ npm test
     <div class="step-number">4</div>
     <div class="step-content">
       <h4>Review and Commit</h4>
-      <Code code={step4Code} lang="bash" theme="one-dark-pro" />
+      <Code code={step4Code} lang="bash" themes={{ light: 'light-plus', dark: 'one-dark-pro' }} />
     </div>
   </div>
 </div>
@@ -331,95 +331,95 @@ npm test
     font-size: var(--text-2xl, 1.5rem);
     font-weight: var(--font-bold, 700);
     line-height: 1.3;
-    color: var(--color-text-primary, #ffffff);
-    margin-top: var(--space-12, 3rem);
-    margin-bottom: var(--space-4, 1rem);
-    padding-bottom: var(--space-2, 0.5rem);
-    border-bottom: 1px solid var(--color-border, #262626);
+    color: var(--color-text-primary);
+    margin-top: var(--space-12);
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--color-border);
   }
 
   h3 {
     font-size: var(--text-lg, 1.125rem);
     font-weight: var(--font-semibold, 600);
     line-height: var(--leading-snug, 1.375);
-    color: var(--color-text-primary, #ffffff);
-    margin-top: var(--space-8, 2rem);
-    margin-bottom: var(--space-3, 0.75rem);
+    color: var(--color-text-primary);
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-3);
   }
 
   h4 {
     font-size: var(--text-base, 1rem);
     font-weight: var(--font-semibold, 600);
-    color: var(--color-text-primary, #ffffff);
-    margin-bottom: var(--space-2, 0.5rem);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-2);
   }
 
   p {
     font-size: var(--text-base, 1rem);
     line-height: 1.6;
-    color: var(--color-text-secondary, #a3a3a3);
-    margin-bottom: var(--space-4, 1rem);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-4);
   }
 
   ul {
-    margin-bottom: var(--space-4, 1rem);
-    padding-inline-start: var(--space-6, 1.5rem);
+    margin-bottom: var(--space-4);
+    padding-inline-start: var(--space-6);
   }
 
   li {
     font-size: var(--text-base, 1rem);
     line-height: var(--leading-relaxed, 1.625);
-    color: var(--color-text-secondary, #a3a3a3);
-    margin-bottom: var(--space-2, 0.5rem);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-2);
   }
 
   code {
-    font-family: var(--font-mono, 'Geist Mono', monospace);
-    font-size: var(--text-sm, 0.875rem);
-    background: var(--color-bg-inline-code, #1c1c1c);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    background: var(--color-bg-inline-code);
     padding: 0.2em 0.4em;
-    border-radius: 4px;
-    color: var(--color-accent-blue, #60a5fa);
+    border-radius: var(--radius-sm);
+    color: var(--color-accent-blue);
   }
 
   pre {
-    background: var(--color-bg-code, #1c1c1c);
-    border: 1px solid var(--color-border, #262626);
-    border-radius: 8px;
-    padding: var(--space-4, 1rem);
+    background: var(--color-bg-code);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
     overflow-x: auto;
-    margin-bottom: var(--space-6, 1.5rem);
+    margin-bottom: var(--space-6);
   }
 
   pre code {
     background: transparent;
     padding: 0;
-    color: var(--color-text-secondary, #a3a3a3);
+    color: var(--color-text-secondary);
     font-size: var(--text-sm, 0.875rem);
   }
 
   blockquote {
-    margin: var(--space-6, 1.5rem) 0;
-    padding: var(--space-4, 1rem) var(--space-6, 1.5rem);
-    border-left: 4px solid var(--color-accent-blue, #60a5fa);
-    background: var(--color-bg-tertiary, #1c1c1c);
-    border-radius: 4px;
+    margin: var(--space-6) 0;
+    padding: var(--space-4) var(--space-6);
+    border-left: 4px solid var(--color-accent-blue);
+    background: var(--color-bg-tertiary);
+    border-radius: var(--radius-sm);
   }
 
   blockquote p {
-    margin-bottom: var(--space-2, 0.5rem);
+    margin-bottom: var(--space-2);
     font-style: italic;
   }
 
   blockquote footer {
-    font-size: var(--text-sm, 0.875rem);
-    color: var(--color-text-muted, #737373);
-    margin-top: var(--space-2, 0.5rem);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin-top: var(--space-2);
   }
 
   strong {
-    font-weight: var(--font-bold, 700);
-    color: var(--color-text-primary, #ffffff);
+    font-weight: var(--font-bold);
+    color: var(--color-text-primary);
   }
 
   .hero {
@@ -434,7 +434,7 @@ npm test
     font-weight: 700;
     line-height: 1.1;
     margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, #fff 0%, #999 100%);
+    background: var(--color-text-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -443,7 +443,7 @@ npm test
     font-size: 1.5rem;
     line-height: 1.6;
     margin-bottom: 2.5rem;
-    color: #999;
+    color: var(--color-text-secondary);
   }
 
   .hero-actions {
@@ -454,8 +454,8 @@ npm test
   }
 
   .hero-demo {
-    background: #111;
-    border: 1px solid #333;
+    background: var(--color-bg-code);
+    border: 1px solid var(--color-border);
     border-radius: 8px;
     padding: 1.5rem;
     text-align: left;
@@ -475,7 +475,7 @@ npm test
 
   .feature p {
     margin-bottom: 1rem;
-    color: #999;
+    color: var(--color-text-secondary);
   }
 
   .feature ul {
@@ -485,7 +485,7 @@ npm test
 
   .feature li:before {
     content: "✓ ";
-    color: #4ade80;
+    color: var(--color-accent-green);
     font-weight: bold;
     margin-right: 0.5rem;
   }
@@ -496,8 +496,8 @@ npm test
     justify-content: center;
     margin: 3rem 0;
     padding: 2rem;
-    background: #111;
-    border-radius: 8px;
+    background: var(--color-bg-tertiary);
+    border-radius: var(--radius-lg);
   }
 
   .stat {
@@ -507,11 +507,11 @@ npm test
   .stat-number {
     font-size: 3rem;
     font-weight: 700;
-    color: #4ade80;
+    color: var(--color-accent-green);
   }
 
   .stat-label {
-    color: #999;
+    color: var(--color-text-muted);
     margin-top: 0.5rem;
   }
 
@@ -532,8 +532,8 @@ npm test
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
-    background: #4ade80;
-    color: #0a0a0a;
+    background: var(--color-accent-green);
+    color: var(--color-text-inverse, #0a0a0a);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -549,7 +549,7 @@ npm test
     text-align: center;
     padding: 4rem 0;
     margin: 4rem 0;
-    background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
+    background: linear-gradient(135deg, var(--color-bg-tertiary) 0%, var(--color-bg-secondary) 100%);
     border-radius: 12px;
   }
 
@@ -560,7 +560,7 @@ npm test
 
   .cta-section p {
     font-size: 1.25rem;
-    color: #999;
+    color: var(--color-text-secondary);
     margin-bottom: 2rem;
   }
 
@@ -579,26 +579,26 @@ npm test
 
   .doc-card {
     padding: 1.5rem;
-    background: #111;
-    border: 1px solid #333;
+    background: var(--color-bg-tertiary);
+    border: 1px solid var(--color-border);
     border-radius: 8px;
     text-decoration: none;
     transition: all 0.2s;
   }
 
   .doc-card:hover {
-    border-color: #4ade80;
+    border-color: var(--color-accent-green);
     transform: translateY(-2px);
   }
 
   .doc-card h3 {
     margin: 0 0 0.5rem 0;
-    color: #fff;
+    color: var(--color-text-primary);
   }
 
   .doc-card p {
     margin: 0;
-    color: #999;
+    color: var(--color-text-secondary);
   }
 
   .btn {
@@ -611,22 +611,22 @@ npm test
   }
 
   .btn-primary {
-    background: #4ade80;
-    color: #0a0a0a;
+    background: var(--color-accent-green);
+    color: var(--color-text-inverse, #0a0a0a);
   }
 
   .btn-primary:hover {
-    background: #22c55e;
+    filter: brightness(1.1);
   }
 
   .btn-secondary {
     background: transparent;
-    color: #4ade80;
-    border: 1px solid #4ade80;
+    color: var(--color-accent-green);
+    border: 1px solid var(--color-accent-green);
   }
 
   .btn-secondary:hover {
-    background: #4ade8020;
+    background: rgba(16, 185, 129, 0.1);
   }
 
   .btn-large {
@@ -637,8 +637,8 @@ npm test
   .callout {
     padding: 1.5rem;
     margin: 2rem 0;
-    background: #111;
-    border-left: 4px solid #4ade80;
+    background: var(--color-bg-tertiary);
+    border-left: 4px solid var(--color-accent-green);
     border-radius: 4px;
   }
 

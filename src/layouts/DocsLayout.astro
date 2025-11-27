@@ -2,33 +2,47 @@
 import BaseLayout from './BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Sidebar from '../components/Sidebar.astro';
-import AIPanel from '../components/AIPanel.astro';
+// import AIPanel from '../components/AIPanel.astro'; // Temporarily disabled - backend not ready
+import TableOfContents from '../components/TableOfContents';
 import type { Locale } from '../i18n/locales';
+
+interface Heading {
+  depth: number;
+  text: string;
+  slug: string;
+}
 
 export interface Props {
   title?: string;
   description?: string;
   locale?: Locale;
   slug?: string;
+  headings?: Heading[];
 }
 
-const { title, description, locale = 'en', slug = '' } = Astro.props;
+const { title, description, locale = 'en', slug = '', headings = [] } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description} locale={locale} slug={slug}>
   <div class="docs-layout">
-    <Header />
+    <Sidebar />
 
-    <div class="docs-content">
-      <Sidebar />
+    <div class="main-wrapper">
+      <Header />
 
-      <main class="content-area">
-        <article class="prose">
-          <slot />
-        </article>
-      </main>
+      <div class="content-wrapper">
+        <main class="content-area">
+          <article class="prose">
+            <slot />
+          </article>
+        </main>
 
-      <AIPanel />
+        {headings.length > 0 && (
+          <TableOfContents headings={headings} client:load />
+        )}
+
+        {/* AIPanel temporarily disabled - backend not ready */}
+      </div>
     </div>
   </div>
 </BaseLayout>
@@ -78,11 +92,19 @@ const { title, description, locale = 'en', slug = '' } = Astro.props;
 <style>
   .docs-layout {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     min-height: 100vh;
   }
 
-  .docs-content {
+  .main-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    position: relative;
+  }
+
+  .content-wrapper {
     display: flex;
     flex: 1;
     position: relative;
@@ -90,7 +112,7 @@ const { title, description, locale = 'en', slug = '' } = Astro.props;
 
   .content-area {
     flex: 1;
-    padding-top: var(--space-12);
+    padding-top: var(--space-8);
     padding-right: var(--space-8);
     padding-bottom: var(--space-8);
     padding-left: var(--space-8);
@@ -111,7 +133,11 @@ const { title, description, locale = 'en', slug = '' } = Astro.props;
   }
 
   @media (max-width: 768px) {
-    .docs-content {
+    .docs-layout {
+      flex-direction: column;
+    }
+
+    .content-wrapper {
       flex-direction: column;
     }
 

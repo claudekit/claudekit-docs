@@ -1,471 +1,602 @@
-# Code Standards & Codebase Structure
+# Code Standards
 
-**Last Updated**: 2025-10-26
-**Version**: 1.8.0
-**Applies To**: All code within ClaudeKit Engineer project
+**Last Updated**: 2025-11-25
+**Version**: 0.0.1
+**Applies To**: claudekit-docs codebase
 
 ## Overview
 
-This document defines coding standards, file organization patterns, naming conventions, and best practices for ClaudeKit Engineer. All code must adhere to these standards to ensure consistency, maintainability, and quality.
+Coding standards for Astro v5 documentation site. Covers file organization, naming conventions, component patterns, content structure, and quality guidelines.
 
-## Core Development Principles
+## Core Principles
 
-### YANGI (You Aren't Gonna Need It)
-- Avoid over-engineering and premature optimization
-- Implement features only when needed
-- Don't build infrastructure for hypothetical future requirements
-- Start simple, refactor when necessary
+### YAGNI (You Aren't Gonna Need It)
+- Build features when needed, not speculatively
+- Avoid premature optimization
+- Keep components simple and focused
 
 ### KISS (Keep It Simple, Stupid)
-- Prefer simple, straightforward solutions
-- Avoid unnecessary complexity
-- Write code that's easy to understand and modify
-- Choose clarity over cleverness
+- Prefer simple solutions over complex
+- Clear code over clever code
+- Minimal dependencies
 
 ### DRY (Don't Repeat Yourself)
-- Eliminate code duplication
-- Extract common logic into reusable functions/modules
-- Use composition and abstraction appropriately
-- Maintain single source of truth
+- Extract reusable components
+- Use CSS variables for design tokens
+- Centralize i18n strings
 
-## File Organization Standards
+## File Organization
 
 ### Directory Structure
 
 ```
-project-root/
-├── .claude/                    # Claude Code configuration
-│   ├── agents/                # Agent definitions (*.md)
-│   ├── commands/              # Slash commands (*.md)
-│   │   ├── [category]/       # Nested command categories
-│   │   └── [command].md      # Individual commands
-│   ├── hooks/                # Git hooks and scripts
-│   ├── skills/               # Reusable knowledge modules
-│   │   └── [skill-name]/     # Individual skill directories
-│   │       ├── SKILL.md      # Skill definition
-│   │       └── references/   # Supporting materials
-│   └── workflows/            # Workflow definitions
-├── .opencode/                 # OpenCode configuration
-│   ├── agent/                # OpenCode agent definitions
-│   └── command/              # OpenCode commands
-├── .github/                   # GitHub-specific files
-│   └── workflows/            # CI/CD workflows
-├── docs/                      # Project documentation
-│   ├── research/             # Research reports
-│   └── *.md                  # Core documentation files
-├── guide/                     # User guides
-├── plans/                     # Implementation plans
-│   ├── reports/              # Agent communication reports
-│   └── templates/            # Plan templates
-├── src/                       # Source code (if applicable)
-├── tests/                     # Test suites (if applicable)
-├── .gitignore                # Git ignore patterns
-├── CLAUDE.md                 # Claude-specific instructions
-├── README.md                 # Project overview
-├── package.json              # Node.js dependencies
-└── LICENSE                   # License file
+src/
+├── components/        # UI components (Astro + React)
+├── content/          # Markdown content (Zod validated)
+│   ├── docs/         # English
+│   └── docs-vi/      # Vietnamese
+├── i18n/             # Internationalization
+├── layouts/          # Page layouts
+├── lib/              # Utilities
+├── pages/            # File-based routing
+└── styles/           # Global CSS
 ```
 
 ### File Naming Conventions
 
-**Agent Definitions** (`.claude/agents/`, `.opencode/agent/`):
-- Format: `[agent-name].md`
-- Use kebab-case: `code-reviewer.md`, `docs-manager.md`
-- Descriptive, role-based names
-- Examples: `planner.md`, `tester.md`, `git-manager.md`
+**Components**:
+- Astro: PascalCase (e.g., `Header.astro`, `SidebarNav.astro`)
+- React: PascalCase (e.g., `AIChat.tsx`, `LanguageSwitcher.tsx`)
+- Use descriptive names indicating purpose
 
-**Commands** (`.claude/commands/`, `.opencode/command/`):
-- Format: `[command-name].md` or `[category]/[command-name].md`
-- Use kebab-case for names
-- Group related commands in subdirectories
-- Examples:
-  - `plan.md`
-  - `fix/ci.md`
-  - `design/screenshot.md`
-  - `git/cm.md`
+**Content**:
+- Markdown: kebab-case (e.g., `quick-start.md`, `installation-issues.md`)
+- Match URL structure
+- Descriptive, lowercase, hyphen-separated
 
-**Skills** (`.claude/skills/`):
-- Format: `[skill-name]/SKILL.md`
-- Use kebab-case for directory names
-- Main file always named `SKILL.md`
-- Supporting files in `references/` or `scripts/`
-- Examples:
-  - `better-auth/SKILL.md`
-  - `cloudflare-workers/SKILL.md`
-  - `mongodb/SKILL.md`
+**Utilities**:
+- TypeScript: kebab-case (e.g., `openrouter.ts`)
+- Config: kebab-case (e.g., `astro.config.mjs`)
 
-**Documentation** (`docs/`):
-- Format: `[document-purpose].md`
-- Use kebab-case with descriptive names
-- Examples:
-  - `project-overview-pdr.md`
-  - `codebase-summary.md`
-  - `code-standards.md`
-  - `system-architecture.md`
+**Directories**:
+- kebab-case for all directories
+- Singular for utilities (e.g., `lib/`, `i18n/`)
+- Plural for collections (e.g., `components/`, `layouts/`)
 
-**Reports** (`plans/reports/`):
-- Format: `YYMMDD-from-[agent]-to-[agent]-[task]-report.md`
-- Use date prefix for chronological sorting
-- Clear source and destination agents
-- Examples:
-  - `251026-from-planner-to-main-auth-implementation-report.md`
-  - `251026-from-tester-to-debugger-test-failures-report.md`
+## File Size Limits
 
-**Plans** (`plans/`):
-- Format: `YYMMDD-[feature-name]-plan.md`
-- Use date prefix for version tracking
-- Descriptive feature names in kebab-case
-- Examples:
-  - `251026-user-authentication-plan.md`
-  - `251026-database-migration-plan.md`
+**Hard Limits**:
+- Astro components: < 300 lines
+- React components: < 250 lines
+- TypeScript files: < 200 lines
+- Markdown docs: < 500 lines (content only, code examples excluded)
 
-**Research Reports** (`plans/research/`):
-- Format: `YYMMDD-[research-topic].md`
-- Date prefix for tracking
-- Clear topic description
-- Examples:
-  - `251026-oauth2-implementation-strategies.md`
-  - `251026-performance-optimization-techniques.md`
-
-## File Size Management
-
-### Hard Limits
-- **Maximum file size**: 500 lines of code
-- Files exceeding 500 lines MUST be refactored
-- Exception: Auto-generated files (with clear marking)
-
-### Refactoring Strategies
-
-**When file exceeds 500 lines**:
-1. **Extract Utility Functions**: Move to separate `utils/` directory
-2. **Component Splitting**: Break into smaller, focused components
-3. **Service Classes**: Extract business logic to dedicated services
-4. **Module Organization**: Group related functionality into modules
-
-**Example Refactoring**:
-```
-Before:
-user-service.js (750 lines)
-
-After:
-services/
-├── user-service.js (200 lines)      # Core service
-├── user-validation.js (150 lines)   # Validation logic
-└── user-repository.js (180 lines)   # Database operations
-utils/
-└── password-hasher.js (80 lines)    # Utility functions
-```
+**Refactoring Strategy**:
+- Extract reusable logic to `lib/`
+- Split large components into sub-components
+- Create shared hooks for React components
+- Use Astro slots for composition
 
 ## Naming Conventions
 
 ### Variables & Functions
 
-**JavaScript/TypeScript**:
-- **Variables**: camelCase
-  ```javascript
-  const userName = 'John Doe';
-  const isAuthenticated = true;
-  ```
+**TypeScript/JavaScript**:
+```typescript
+// Variables: camelCase
+const pageTitle = 'Introduction';
+const isPublished = true;
 
-- **Functions**: camelCase
-  ```javascript
-  function calculateTotal(items) { }
-  const getUserById = (id) => { };
-  ```
+// Functions: camelCase
+function generateSlug(title: string) { }
+const getLocalizedPath = (path, locale) => { };
 
-- **Classes**: PascalCase
-  ```javascript
-  class UserService { }
-  class AuthenticationManager { }
-  ```
+// Constants: UPPER_SNAKE_CASE
+const MAX_SIDEBAR_DEPTH = 3;
+const DEFAULT_LOCALE = 'en';
 
-- **Constants**: UPPER_SNAKE_CASE
-  ```javascript
-  const MAX_RETRY_COUNT = 3;
-  const API_BASE_URL = 'https://api.example.com';
-  ```
+// Types/Interfaces: PascalCase
+interface DocsFrontmatter {
+  title: string;
+  category: string;
+}
 
-- **Private Members**: Prefix with underscore
-  ```javascript
-  class Database {
-    _connectionPool = null;
-    _connect() { }
+type LocaleCode = 'en' | 'vi';
+```
+
+**Astro Components**:
+```astro
+---
+// Props: camelCase
+interface Props {
+  pageTitle: string;
+  currentLocale: string;
+}
+const { pageTitle, currentLocale } = Astro.props;
+---
+```
+
+### CSS
+
+**Class Names**:
+- Use Tailwind utility classes primarily
+- Custom classes: kebab-case (e.g., `.sidebar-nav`, `.nav-item`)
+- BEM-style for complex components (e.g., `.nav-section__title`)
+
+**CSS Variables**:
+```css
+/* Design tokens: kebab-case with semantic names */
+--color-bg-primary
+--color-text-secondary
+--space-4
+--text-lg
+--radius-md
+```
+
+### Content Frontmatter
+
+```yaml
+---
+title: "Page Title"              # Human-readable
+description: "SEO description"   # 150-160 chars
+category: "getting-started"      # kebab-case enum
+order: 1                         # Number for sorting
+published: true                  # Boolean
+---
+```
+
+**Category Values** (must match schema):
+- `getting-started`
+- `core-concepts`
+- `agents`
+- `commands`
+- `skills`
+- `use-cases`
+- `cli`
+- `troubleshooting`
+- `components`
+
+## Component Patterns
+
+### Astro Components
+
+**Structure**:
+```astro
+---
+// 1. Imports
+import Layout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+// 2. Props interface
+interface Props {
+  title: string;
+}
+
+// 3. Props extraction
+const { title } = Astro.props;
+
+// 4. Data fetching
+const docs = await getCollection('docs');
+
+// 5. Logic
+const sortedDocs = docs.sort((a, b) => a.data.order - b.data.order);
+---
+
+<!-- 6. Template -->
+<Layout title={title}>
+  <div class="container">
+    <!-- Content -->
+  </div>
+</Layout>
+
+<!-- 7. Scoped styles (if needed) -->
+<style>
+  .container {
+    /* Prefer Tailwind, use scoped CSS for complex cases */
   }
-  ```
-
-### Files & Directories
-
-**Source Files**:
-- **JavaScript/TypeScript**: kebab-case
-  ```
-  user-service.js
-  authentication-manager.ts
-  api-client.js
-  ```
-
-- **React Components**: PascalCase
-  ```
-  UserProfile.jsx
-  AuthenticationForm.tsx
-  NavigationBar.jsx
-  ```
-
-- **Test Files**: Match source file name + `.test` or `.spec`
-  ```
-  user-service.test.js
-  authentication-manager.spec.ts
-  ```
-
-**Directories**: kebab-case
-```
-src/
-├── components/
-├── services/
-├── utils/
-├── api-clients/
-└── test-helpers/
+</style>
 ```
 
-### API Design
+**Best Practices**:
+- Use Astro for static content and layout
+- Frontmatter for data fetching and processing
+- Minimal client-side JavaScript
+- Prefer CSS variables over hardcoded values
 
-**REST Endpoints**:
-- Use kebab-case for URLs
-- Plural nouns for collections
-- Resource IDs in path parameters
+### React Components (Islands)
 
+**Structure**:
+```tsx
+import { useState } from 'react';
+
+interface AIChat Props {
+  initialMessages?: Message[];
+}
+
+export default function AIChat({ initialMessages = [] }: AIChatProps) {
+  const [messages, setMessages] = useState(initialMessages);
+
+  // Logic
+
+  return (
+    <div className="ai-chat">
+      {/* JSX */}
+    </div>
+  );
+}
 ```
-GET    /api/users
-GET    /api/users/:id
-POST   /api/users
-PUT    /api/users/:id
-DELETE /api/users/:id
-GET    /api/users/:userId/posts
+
+**Client Directives**:
+```astro
+<!-- Load immediately -->
+<AIChat client:load />
+
+<!-- Load when visible -->
+<AIChat client:visible />
+
+<!-- Load when idle -->
+<AIChat client:idle />
+
+<!-- Only hydrate on interaction -->
+<AIChat client:only="react" />
 ```
 
-**Request/Response Fields**:
-- Use camelCase for JSON properties
+**Best Practices**:
+- Use islands for interactive components only
+- Keep state management simple (useState, useReducer)
+- Prefer `client:visible` or `client:idle` for non-critical components
+- TypeScript strict mode
+
+### Layout Patterns
+
+**BaseLayout.astro**:
+- HTML document structure
+- Meta tags, fonts, global scripts
+- Theme initialization
+- No layout-specific styles
+
+**DocsLayout.astro**:
+- Uses BaseLayout
+- Defines page structure (sidebar, content, panel)
+- Responsive breakpoints
+- Grid/Flexbox layout
+
+**Nested Layouts**:
+```astro
+---
+import BaseLayout from './BaseLayout.astro';
+---
+
+<BaseLayout {...props}>
+  <div class="docs-wrapper">
+    <slot />
+  </div>
+</BaseLayout>
+```
+
+## Content Standards
+
+### Markdown Structure
+
+```markdown
+---
+title: "Clear, Descriptive Title"
+description: "SEO-optimized description (150-160 chars)"
+category: "appropriate-category"
+order: 10
+published: true
+---
+
+# Page Title (H1 - only one per page)
+
+Brief introduction paragraph (1-3 sentences).
+
+## First Section (H2)
+
+Content with [links](https://example.com) and **formatting**.
+
+### Subsection (H3)
+
+More detailed content.
+
+#### Detail Level (H4)
+
+Avoid H5 and H6.
+
+## Code Examples
+
+\```typescript
+// Always specify language
+const example: string = 'Hello';
+\```
+
+## Lists
+
+- Unordered lists for related items
+- Start with dash, space, lowercase
+- Parallel structure
+
+1. Ordered lists for sequences
+2. Start with number, period, space
+3. Complete sentences or fragments (consistent)
+
+## Tables
+
+| Column 1 | Column 2 | Column 3 |
+|----------|----------|----------|
+| Value A  | Value B  | Value C  |
+
+## Links
+
+Internal: [Getting Started](./getting-started/introduction)
+External: [Astro Docs](https://docs.astro.build)
+
+## Notes
+
+> **Note**: Use blockquotes for notes, warnings, tips.
+
+## See Also
+
+- [Related Doc 1](./related-1)
+- [Related Doc 2](./related-2)
+```
+
+### Content Guidelines
+
+**Tone**:
+- Professional but friendly
+- Active voice preferred
+- Second person ("you") for instructions
+- Present tense
+
+**Formatting**:
+- One sentence per line in source (easier diffs)
+- Max 80-100 characters per line
+- Two spaces after H1, one space after H2-H4
+- Consistent list formatting
+
+**Code Blocks**:
+- Always specify language
+- Include comments for clarity
+- Show complete, runnable examples
+- Syntax: \```language
+
+**Links**:
+- Descriptive anchor text (not "click here")
+- Internal links relative (e.g., `./introduction`)
+- External links absolute with https://
+- Open external links in same tab (users decide)
+
+**Images**:
+- Store in `public/` directory
+- Reference with `/image-name.png`
+- Alt text required
+- Optimize for web (<200KB)
+
+## Styling Standards
+
+### Tailwind CSS
+
+**Utility-First Approach**:
+```astro
+<div class="flex items-center gap-4 p-6 bg-[var(--color-bg-secondary)]">
+  <!-- Content -->
+</div>
+```
+
+**Responsive Design**:
+```astro
+<div class="w-full md:w-1/2 lg:w-1/3">
+  <!-- Mobile-first, breakpoints: md (768px), lg (1024px) -->
+</div>
+```
+
+**Dark Mode**:
+```css
+/* Use CSS variables, not Tailwind dark: variant */
+.element {
+  color: var(--color-text-primary);
+  background: var(--color-bg-secondary);
+}
+```
+
+### CSS Variables
+
+**Usage**:
+```css
+/* Defined in src/styles/global.css */
+.custom-component {
+  /* Colors */
+  color: var(--color-text-primary);
+  background: var(--color-bg-secondary);
+  border-color: var(--color-border);
+
+  /* Spacing */
+  padding: var(--space-4);
+  margin-bottom: var(--space-6);
+  gap: var(--space-2);
+
+  /* Typography */
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  font-weight: var(--font-medium);
+
+  /* Effects */
+  border-radius: var(--radius-md);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+```
+
+**Never Hardcode**:
+```css
+/* ❌ Bad */
+.element {
+  color: #abb2bf;
+  padding: 16px;
+  font-size: 14px;
+}
+
+/* ✅ Good */
+.element {
+  color: var(--color-text-primary);
+  padding: var(--space-4);
+  font-size: var(--text-sm);
+}
+```
+
+## i18n Standards
+
+### Translation Keys
+
+**Naming** (`src/i18n/ui.ts`):
+```typescript
+export const ui = {
+  en: {
+    'nav.getting-started': 'Getting Started',  // Dot notation
+    'search.placeholder': 'Search docs...',
+    'button.submit': 'Submit',
+  },
+  vi: {
+    'nav.getting-started': 'Bắt Đầu',
+    'search.placeholder': 'Tìm kiếm...',
+    'button.submit': 'Gửi',
+  }
+};
+```
+
+**Usage in Components**:
+```astro
+---
+import { useTranslations } from '../i18n/utils';
+const t = useTranslations(currentLocale);
+---
+
+<button>{t('button.submit')}</button>
+```
+
+### Content Localization
+
+**File Structure**:
+```
+src/content/
+├── docs/              # English
+│   └── category/
+│       └── page.md
+└── docs-vi/           # Vietnamese (mirror structure)
+    └── category/
+        └── page.md
+```
+
+**Translation Workflow**:
+1. Create English content first
+2. Mirror file structure in `docs-vi/`
+3. Translate all frontmatter and content
+4. Ensure code examples remain consistent
+5. Test both locales
+
+## TypeScript Standards
+
+### Type Safety
+
+**Strict Mode** (tsconfig.json):
 ```json
 {
-  "userId": 123,
-  "userName": "john_doe",
-  "emailAddress": "john@example.com",
-  "isVerified": true,
-  "createdAt": "2025-10-26T00:00:00Z"
-}
-```
-
-## Code Style Guidelines
-
-### General Formatting
-
-**Indentation**:
-- Use 2 spaces (not tabs)
-- Consistent indentation throughout file
-- No trailing whitespace
-
-**Line Length**:
-- Preferred: 80-100 characters
-- Hard limit: 120 characters
-- Break long lines logically
-
-**Whitespace**:
-- One blank line between functions/methods
-- Two blank lines between classes
-- Space after keywords: `if (`, `for (`, `while (`
-- No space before function parentheses: `function name(`
-
-### Comments & Documentation
-
-**File Headers** (Optional but recommended):
-```javascript
-/**
- * User Service
- *
- * Handles user authentication, registration, and profile management.
- *
- * @module services/user-service
- * @author ClaudeKit
- * @version 1.0.0
- */
-```
-
-**Function Documentation**:
-```javascript
-/**
- * Authenticates a user with email and password
- *
- * @param {string} email - User's email address
- * @param {string} password - User's password
- * @returns {Promise<User>} Authenticated user object
- * @throws {AuthenticationError} If credentials are invalid
- */
-async function authenticateUser(email, password) {
-  // Implementation
-}
-```
-
-**Inline Comments**:
-- Explain WHY, not WHAT
-- Complex logic requires explanation
-- TODO comments include assignee and date
-```javascript
-// TODO(john, 2025-10-26): Optimize this query for large datasets
-const users = await db.query('SELECT * FROM users');
-
-// Cache miss - fetch from database
-const user = await fetchUserFromDB(userId);
-```
-
-### Error Handling
-
-**Always Use Try-Catch**:
-```javascript
-async function processPayment(orderId) {
-  try {
-    const order = await getOrder(orderId);
-    const payment = await chargeCard(order.total);
-    await updateOrderStatus(orderId, 'paid');
-    return payment;
-  } catch (error) {
-    logger.error('Payment processing failed', { orderId, error });
-    throw new PaymentError('Failed to process payment', { cause: error });
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true
   }
 }
 ```
 
-**Error Types**:
-- Create custom error classes for domain errors
-- Include context and cause
-- Provide actionable error messages
-
-```javascript
-class ValidationError extends Error {
-  constructor(message, field) {
-    super(message);
-    this.name = 'ValidationError';
-    this.field = field;
-  }
+**Interface Definitions**:
+```typescript
+// Prefer interfaces for objects
+interface DocsFrontmatter {
+  title: string;
+  description: string;
+  category?: Category;
+  order?: number;
+  published: boolean;
 }
+
+// Use type for unions, primitives
+type Category =
+  | 'getting-started'
+  | 'core-concepts'
+  | 'agents';
+
+type LocaleCode = 'en' | 'vi';
 ```
 
-**Error Logging**:
-- Log errors with context
-- Use appropriate log levels
-- Never expose sensitive data in logs
-
-```javascript
-logger.error('Database query failed', {
-  query: sanitizeQuery(query),
-  params: sanitizeParams(params),
-  error: error.message
-});
-```
-
-## Security Standards
-
-### Input Validation
-
-**Validate All Inputs**:
-```javascript
-function createUser(userData) {
-  // Validate required fields
-  if (!userData.email || !userData.password) {
-    throw new ValidationError('Email and password required');
-  }
-
-  // Sanitize inputs
-  const email = sanitizeEmail(userData.email);
-  const password = userData.password; // Never log passwords
-
-  // Validate formats
-  if (!isValidEmail(email)) {
-    throw new ValidationError('Invalid email format');
-  }
-
-  if (password.length < 8) {
-    throw new ValidationError('Password must be at least 8 characters');
-  }
+**Type Annotations**:
+```typescript
+// Explicit return types
+function getSlug(title: string): string {
+  return title.toLowerCase().replace(/\s+/g, '-');
 }
+
+// Inferred types (simple cases)
+const locale = 'en'; // Type: string
+
+// Explicit when needed
+const locale: LocaleCode = 'en'; // Type: LocaleCode
 ```
 
-### Sensitive Data Handling
+## Quality Standards
 
-**Never Commit Secrets**:
-- Use environment variables for API keys, credentials
-- Add `.env*` to `.gitignore`
-- Use secret management systems in production
+### Code Review Checklist
 
-**Never Log Sensitive Data**:
-```javascript
-// BAD
-logger.info('User login', { email, password }); // Never log passwords
+**Functionality**:
+- [ ] Features work as specified
+- [ ] Edge cases handled
+- [ ] Error states covered
+- [ ] Responsive on mobile/desktop
 
-// GOOD
-logger.info('User login', { email }); // OK to log email
-```
+**Code Quality**:
+- [ ] Follows naming conventions
+- [ ] Under file size limits
+- [ ] No code duplication
+- [ ] TypeScript strict mode passes
+- [ ] No unused imports/variables
 
-**Sanitize Database Queries**:
-```javascript
-// Use parameterized queries
-const user = await db.query(
-  'SELECT * FROM users WHERE email = $1',
-  [email]
-);
+**Performance**:
+- [ ] Minimal client-side JavaScript
+- [ ] Images optimized
+- [ ] No unnecessary re-renders
+- [ ] Efficient data fetching
 
-// Never concatenate user input
-// BAD: const user = await db.query(`SELECT * FROM users WHERE email = '${email}'`);
-```
+**Accessibility**:
+- [ ] Semantic HTML
+- [ ] Alt text for images
+- [ ] Keyboard navigation works
+- [ ] Color contrast sufficient (WCAG AA)
 
-## Testing Standards
+**i18n**:
+- [ ] All UI strings in i18n files
+- [ ] Vietnamese translation provided (or issue created)
+- [ ] Locale-specific formatting correct
 
-### Test File Organization
+**Documentation**:
+- [ ] Complex logic commented
+- [ ] Props documented (JSDoc)
+- [ ] README updated if needed
 
-```
-tests/
-├── unit/              # Unit tests
-│   ├── services/
-│   └── utils/
-├── integration/       # Integration tests
-│   └── api/
-├── e2e/              # End-to-end tests
-└── fixtures/         # Test data
-```
+### Testing
 
-### Test Naming
+**Manual Testing**:
+- Dev server: `npm run dev`
+- Build test: `npm run build && npm run preview`
+- Test both locales: `/docs/...` and `/vi/docs/...`
+- Test responsive breakpoints
+- Check navigation, links, search
 
-```javascript
-describe('UserService', () => {
-  describe('authenticateUser', () => {
-    it('should return user when credentials are valid', async () => {
-      // Test implementation
-    });
-
-    it('should throw AuthenticationError when password is incorrect', async () => {
-      // Test implementation
-    });
-
-    it('should throw ValidationError when email is missing', async () => {
-      // Test implementation
-    });
-  });
-});
-```
-
-### Test Coverage Requirements
-
-- **Unit tests**: > 80% code coverage
-- **Integration tests**: Critical user flows
-- **E2E tests**: Happy paths and edge cases
-- **Error scenarios**: All error paths tested
-
-### Test Best Practices
-
-- **Arrange-Act-Assert** pattern
-- **Independent tests** (no test dependencies)
-- **Descriptive test names** (behavior, not implementation)
-- **Test one thing** per test
-- **Use fixtures** for complex test data
-- **Mock external dependencies**
+**Content Validation**:
+- Frontmatter validates against schema
+- No broken internal links
+- Images load correctly
+- Code blocks have language specified
 
 ## Git Standards
 
@@ -481,412 +612,200 @@ type(scope): description
 ```
 
 **Types**:
-- `feat`: New feature (minor version bump)
-- `fix`: Bug fix (patch version bump)
-- `docs`: Documentation changes
-- `refactor`: Code refactoring
-- `test`: Test additions/changes
-- `ci`: CI/CD changes
-- `chore`: Maintenance tasks
-- `perf`: Performance improvements
-- `style`: Code style changes
+- `feat`: New feature
+- `fix`: Bug fix
+- `docs`: Documentation only
+- `style`: Formatting, white-space
+- `refactor`: Code restructuring
+- `perf`: Performance improvement
+- `test`: Add/update tests
+- `chore`: Build, configs
 
 **Examples**:
 ```
-feat(auth): add OAuth2 authentication support
+feat(content): add troubleshooting guide for installation issues
 
-Implements OAuth2 flow with Google and GitHub providers.
-Includes token refresh and revocation.
+docs(readme): update quick start instructions
 
-Closes #123
+fix(sidebar): add missing troubleshooting category
 
----
+style(global): adjust heading spacing for better readability
 
-fix(api): resolve timeout in database queries
-
-Optimized slow queries and added connection pooling.
-
----
-
-docs: update installation guide with Docker setup
+refactor(i18n): extract translation utilities to separate file
 ```
 
 **Rules**:
-- Subject line: imperative mood, lowercase, no period
-- Max 72 characters for subject
-- Blank line between subject and body
+- Subject: imperative mood, lowercase, no period
+- Max 72 characters
 - Body: explain WHY, not WHAT
-- Footer: reference issues, breaking changes
-- No AI attribution or signatures
+- Footer: reference issues (`Closes #123`)
 
 ### Branch Naming
 
 **Format**: `type/description`
 
-**Types**:
-- `feature/` - New features
-- `fix/` - Bug fixes
-- `refactor/` - Code refactoring
-- `docs/` - Documentation updates
-- `test/` - Test improvements
-
 **Examples**:
 ```
-feature/oauth-authentication
-fix/database-connection-timeout
-refactor/user-service-cleanup
-docs/api-reference-update
-test/integration-test-suite
+feat/add-search-functionality
+fix/sidebar-collapse-bug
+docs/update-installation-guide
+refactor/simplify-i18n-utils
 ```
 
 ### Pre-Commit Checklist
 
-- ✅ No secrets or credentials
-- ✅ No debug code or console.logs
-- ✅ All tests pass locally
-- ✅ Code follows style guidelines
-- ✅ No linting errors
-- ✅ Files under 500 lines
-- ✅ Conventional commit message
+- [ ] No secrets, API keys, credentials
+- [ ] No console.log or debug code
+- [ ] TypeScript compiles without errors
+- [ ] Build succeeds (`npm run build`)
+- [ ] No linting errors
+- [ ] Files under size limits
+- [ ] Conventional commit message
 
-## Documentation Standards
+## Security Standards
 
-### Code Documentation
+### Secrets Management
 
-**Self-Documenting Code**:
-- Clear variable and function names
-- Logical code organization
-- Minimal comments needed
+**Never Commit**:
+- API keys
+- Credentials
+- .env files (except .env.example)
+- Personal access tokens
 
-**When to Comment**:
-- Complex algorithms or business logic
-- Non-obvious optimizations
-- Workarounds for bugs/limitations
-- Public API functions
-- Configuration options
+**Environment Variables**:
+```bash
+# .env (gitignored)
+OPENROUTER_API_KEY=sk-...
 
-### Markdown Documentation
-
-**Structure**:
-```markdown
-# Document Title
-
-Brief overview paragraph
-
-## Section 1
-
-Content with examples
-
-## Section 2
-
-More content
-
-## See Also
-
-- [Related Doc](./related.md)
+# .env.example (committed)
+OPENROUTER_API_KEY=your_api_key_here
 ```
 
-**Formatting**:
-- Use ATX-style headers (`#`, `##`, `###`)
-- Code blocks with language specification
-- Tables for structured data
-- Lists for sequential items
-- Links for cross-references
+**Usage**:
+```typescript
+// Server-side only
+const apiKey = import.meta.env.OPENROUTER_API_KEY;
 
-**Code Blocks**:
-````markdown
-```javascript
-function example() {
-  return 'example';
-}
-```
-````
-
-## Agent-Specific Standards
-
-### Agent Definition Files
-
-**Frontmatter**:
-```yaml
----
-name: agent-name
-description: Brief description of agent purpose and when to use it
-mode: subagent | all
-model: anthropic/claude-sonnet-4-20250514
-temperature: 0.1
----
+// Never expose in client-side code
 ```
 
-**Required Sections**:
-1. Agent role and responsibilities
-2. Core capabilities
-3. Workflow process
-4. Output requirements
-5. Quality standards
-6. Communication protocols
+### Content Security
 
-### Command Definition Files
-
-**Frontmatter**:
-```yaml
----
-name: command-name
-description: What this command does
----
-```
-
-**Argument Handling**:
-- `$ARGUMENTS` - All arguments as single string
-- `$1`, `$2`, `$3` - Individual positional arguments
-
-**Example**:
-```markdown
----
-name: plan
-description: Create implementation plan for given task
----
-
-Planning task: $ARGUMENTS
-
-Using planner agent to research and create comprehensive plan for: $1
-```
-
-### Skill Definition Files
-
-**Structure**:
-```markdown
-# Skill Name
-
-Guide for using [Technology] - brief description
-
-## When to Use
-
-- List of use cases
-- Scenarios where skill applies
-
-## Core Concepts
-
-Key concepts and terminology
-
-## Implementation Guide
-
-Step-by-step instructions
-
-## Examples
-
-Practical examples
-
-## Best Practices
-
-Recommendations and tips
-
-## Common Pitfalls
-
-Mistakes to avoid
-
-## Resources
-
-- Official docs
-- Tutorials
-- References
-```
-
-## Configuration File Standards
-
-### package.json
-
-**Required Fields**:
-- name, version, description
-- repository (with URL)
-- author, license
-- engines (Node version)
-- scripts (test, lint, etc.)
-
-**Best Practices**:
-- Use semantic versioning
-- Specify exact dependency versions for stability
-- Include keywords for discoverability
-- Use `files` field to control published content
-
-### .gitignore
-
-**Standard Exclusions**:
-```
-# Dependencies
-node_modules/
-package-lock.json (for libraries)
-
-# Environment
-.env
-.env.*
-!.env.example
-
-# Build outputs
-dist/
-build/
-*.log
-
-# IDE
-.vscode/
-.idea/
-*.swp
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Testing
-coverage/
-*.test.js.snap
-
-# Temporary
-tmp/
-temp/
-*.tmp
-```
+**User Input**: No user-generated content (static site)
+**External Links**: Open in same tab (let users decide)
+**Images**: Only from trusted sources
+**Scripts**: Minimal client-side JS, no eval()
 
 ## Performance Standards
 
-### Code Performance
+### Build Optimization
 
-**Optimization Priorities**:
-1. Correctness first
-2. Readability second
-3. Performance third (when needed)
+**Static Generation**:
+- All pages pre-rendered at build time
+- No server-side rendering (SSR)
+- Minimal JavaScript hydration
 
-**Common Optimizations**:
-- Use appropriate data structures
-- Avoid unnecessary loops
-- Cache expensive computations
-- Lazy load when possible
-- Debounce/throttle frequent operations
+**Asset Optimization**:
+- Images: WebP format, < 200KB
+- Fonts: Variable fonts, preload
+- CSS: Purged unused Tailwind classes
+- JS: Tree-shaking, code splitting
 
-**Example**:
-```javascript
-// Cache expensive operations
-const memoize = (fn) => {
-  const cache = new Map();
-  return (...args) => {
-    const key = JSON.stringify(args);
-    if (cache.has(key)) return cache.get(key);
-    const result = fn(...args);
-    cache.set(key, result);
-    return result;
-  };
-};
+### Runtime Performance
 
-const expensiveCalculation = memoize((n) => {
-  // Complex calculation
-  return result;
-});
+**Target Metrics**:
+- First Contentful Paint (FCP): < 1.5s
+- Largest Contentful Paint (LCP): < 2.5s
+- Time to Interactive (TTI): < 3.0s
+- Total Blocking Time (TBT): < 200ms
+
+**Optimization Strategies**:
+- Islands architecture (partial hydration)
+- Lazy load images
+- Defer non-critical JavaScript
+- Use `client:visible` for below-fold components
+
+## Documentation Standards
+
+### Component Documentation
+
+**Astro Components**:
+```astro
+---
+/**
+ * SidebarNav - Collapsible navigation tree
+ *
+ * Groups documentation by category from frontmatter.
+ * Sorts by order field, persists collapse state in localStorage.
+ *
+ * @component
+ */
+
+interface Props {
+  /** Current page path for active highlighting */
+  currentPath: string;
+}
+---
 ```
 
-### File I/O
+**React Components**:
+```tsx
+/**
+ * AI chat interface with message history
+ *
+ * Renders chat messages with markdown support and syntax highlighting.
+ * Backend integration pending (OpenRouter API).
+ *
+ * @param props - Component props
+ * @param props.initialMessages - Pre-populated messages
+ */
+export default function AIChat({ initialMessages = [] }: AIChatProps) {
+  // ...
+}
+```
 
-- Use async operations
-- Stream large files
-- Batch writes when possible
-- Clean up file handles
+### README Updates
 
-## Quality Assurance
+**When to Update**:
+- New feature added
+- Breaking changes
+- Installation process changes
+- New scripts added to package.json
+- Architecture changes
 
-### Code Review Checklist
-
-**Functionality**:
-- ✅ Implements required features
-- ✅ Handles edge cases
-- ✅ Error handling complete
-- ✅ Input validation present
-
-**Code Quality**:
-- ✅ Follows naming conventions
-- ✅ Adheres to file size limits
-- ✅ DRY principle applied
-- ✅ KISS principle followed
-- ✅ Well-structured and organized
-
-**Security**:
-- ✅ No hardcoded secrets
-- ✅ Input sanitization
-- ✅ Proper authentication/authorization
-- ✅ Secure dependencies
-
-**Testing**:
-- ✅ Unit tests included
-- ✅ Integration tests for flows
-- ✅ Edge cases tested
-- ✅ Error paths covered
-
-**Documentation**:
-- ✅ Code comments where needed
-- ✅ API documentation updated
-- ✅ README updated if needed
-- ✅ Changelog entry added
-
-## Enforcement
-
-### Automated Checks
-
-**Pre-Commit**:
-- Commitlint (conventional commits)
-- Secret scanning
-- File size validation
-
-**Pre-Push**:
-- Linting (ESLint, Prettier)
-- Unit tests
-- Type checking
-
-**CI/CD**:
-- All tests
-- Build verification
-- Coverage reports
-- Security scans
-
-### Manual Review
-
-**Code Review Focus**:
-- Architecture and design decisions
-- Complex logic correctness
-- Security implications
-- Performance considerations
-- Maintainability and readability
+**Keep Under 300 Lines**: Focus on essentials, link to detailed docs
 
 ## Exceptions
 
 **When to Deviate**:
-- Performance-critical code (document reasons)
-- External library constraints
+- Performance-critical code (document reason)
+- Third-party library constraints
 - Generated code (mark clearly)
-- Legacy code (plan refactoring)
+- Temporary workarounds (add TODO with date)
 
 **Documentation Required**:
-```javascript
+```typescript
 /**
- * EXCEPTION: File exceeds 500 lines
- * REASON: Critical performance optimization requires monolithic structure
- * TODO: Refactor when performance is no longer critical
- * DATE: 2025-10-26
+ * EXCEPTION: File exceeds 300 lines
+ * REASON: Complex navigation logic requires unified state management
+ * TODO: Refactor into smaller components when time permits
+ * DATE: 2025-11-25
  */
 ```
 
 ## References
 
-### Internal Documentation
-- [Project Overview PDR](./project-overview-pdr.md)
+### Internal
 - [Codebase Summary](./codebase-summary.md)
 - [System Architecture](./system-architecture.md)
+- [Project Overview PDR](./project-overview-pdr.md)
 
-### External Standards
+### External
+- [Astro Documentation](https://docs.astro.build)
+- [Tailwind CSS](https://tailwindcss.com/docs)
 - [Conventional Commits](https://conventionalcommits.org/)
-- [Semantic Versioning](https://semver.org/)
-- [Keep a Changelog](https://keepachangelog.com/)
-- [OWASP Top 10](https://owasp.org/www-project-top-ten/)
-
-### Related Projects
-- [Claude Code Documentation](https://docs.claude.com/)
-- [Open Code Documentation](https://opencode.ai/docs)
+- [WCAG 2.1](https://www.w3.org/WAI/WCAG21/quickref/)
 
 ## Unresolved Questions
 
-None. All code standards are well-defined and documented.
+None. All standards are clear and documented.

@@ -5,80 +5,151 @@ import type { Locale } from '../i18n/locales';
 
 const currentLocale = getLangFromUrl(Astro.url);
 const currentPath = Astro.url.pathname;
+
+const navIcons = {
+  'getting-started': `<path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>`,
+  'cli': `<path d="M4 17l6-6-6-6"/><path d="M12 19h8"/>`,
+  'use-cases': `<rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>`,
+  'cheatsheet': `<path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/>`,
+};
 ---
 
 <header class="header">
   <div class="header-content">
     <div class="header-left">
-      <a href="/" class="logo">
-        <img src="/logo-horizontal.png" alt="ClaudeKit Engineer" class="logo-image" />
-      </a>
+      <button class="icon-button mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu" title="Toggle menu">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+
 
       <nav class="nav">
-        <a href={getLocalizedPath('/docs/getting-started/introduction', currentLocale)} class="nav-link">Getting Started</a>
-        <a href={getLocalizedPath('/docs/cli', currentLocale)} class="nav-link">CLI</a>
-        <a href={getLocalizedPath('/docs/use-cases', currentLocale)} class="nav-link">Use Cases</a>
+        <a href={getLocalizedPath('/docs/getting-started/introduction', currentLocale)} class="nav-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={navIcons['getting-started']} />
+          <span>Getting Started</span>
+        </a>
+        <a href={getLocalizedPath('/docs/cli', currentLocale)} class="nav-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={navIcons['cli']} />
+          <span>CLI</span>
+        </a>
+        <a href={getLocalizedPath('/docs/use-cases', currentLocale)} class="nav-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={navIcons['use-cases']} />
+          <span>Use Cases</span>
+        </a>
+        <a href={getLocalizedPath('/docs/getting-started/cheatsheet', currentLocale)} class="nav-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={navIcons['cheatsheet']} />
+          <span>Cheatsheet</span>
+        </a>
       </nav>
     </div>
 
     <div class="header-right">
-      <button class="icon-button" aria-label="Search" title="Search">
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <circle cx="11" cy="11" r="8"></circle>
-          <path d="m21 21-4.3-4.3"></path>
-        </svg>
-      </button>
+
 
       <LanguageSwitcher client:load currentLocale={currentLocale} currentPath={currentPath} />
 
-      <button class="icon-button theme-toggle" onclick="window.toggleTheme()" aria-label="Toggle theme" title="Toggle theme">
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="sun-icon"
-        >
-          <circle cx="12" cy="12" r="4"></circle>
-          <path d="M12 2v2"></path>
-          <path d="M12 20v2"></path>
-          <path d="m4.93 4.93 1.41 1.41"></path>
-          <path d="m17.66 17.66 1.41 1.41"></path>
-          <path d="M2 12h2"></path>
-          <path d="M20 12h2"></path>
-          <path d="m6.34 17.66-1.41 1.41"></path>
-          <path d="m19.07 4.93-1.41 1.41"></path>
-        </svg>
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="moon-icon"
-        >
-          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
-        </svg>
-      </button>
+
     </div>
   </div>
 </header>
+
+<!-- Mobile sidebar backdrop -->
+<div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+<script>
+  // Mobile menu toggle functionality
+  const MOBILE_BREAKPOINT = 768;
+
+  function setupMobileMenu() {
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    const sidebar = document.querySelector('.sidebar');
+    const backdrop = document.getElementById('sidebar-backdrop');
+
+    if (!menuToggle || !sidebar || !backdrop) return;
+
+    // Helper function to close sidebar
+    function closeSidebar() {
+      sidebar.classList.remove('open');
+      backdrop.classList.remove('visible');
+      document.body.style.overflow = '';
+    }
+
+    // Helper function to open sidebar
+    function openSidebar() {
+      sidebar.classList.add('open');
+      backdrop.classList.add('visible');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Toggle sidebar on button click
+    function handleToggle() {
+      const isOpen = sidebar.classList.contains('open');
+      if (isOpen) {
+        closeSidebar();
+      } else {
+        openSidebar();
+      }
+    }
+
+    // Close sidebar when clicking backdrop
+    function handleBackdropClick() {
+      closeSidebar();
+    }
+
+    // Close sidebar on Escape key
+    function handleEscape(e: KeyboardEvent) {
+      if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+        closeSidebar();
+      }
+    }
+
+    // Use matchMedia for better performance than resize listener
+    const mediaQuery = window.matchMedia(`(min-width: ${MOBILE_BREAKPOINT + 1}px)`);
+    function handleMediaChange(e: MediaQueryListEvent | MediaQueryList) {
+      if (e.matches) {
+        closeSidebar();
+      }
+    }
+
+    // Attach event listeners
+    menuToggle.addEventListener('click', handleToggle);
+    backdrop.addEventListener('click', handleBackdropClick);
+    document.addEventListener('keydown', handleEscape);
+    mediaQuery.addEventListener('change', handleMediaChange);
+
+    // Initial check
+    handleMediaChange(mediaQuery);
+
+    // Cleanup function for event listeners
+    function cleanup() {
+      menuToggle.removeEventListener('click', handleToggle);
+      backdrop.removeEventListener('click', handleBackdropClick);
+      document.removeEventListener('keydown', handleEscape);
+      mediaQuery.removeEventListener('change', handleMediaChange);
+    }
+
+    // Cleanup on page navigation (Astro view transitions)
+    document.addEventListener('astro:before-swap', cleanup);
+
+    return cleanup;
+  }
+
+  // Initialize on DOMContentLoaded
+  document.addEventListener('DOMContentLoaded', setupMobileMenu);
+</script>
 
 <style>
   /* Header (Polar v1.1) */
@@ -94,7 +165,7 @@ const currentPath = Astro.url.pathname;
     top: 0;
     z-index: var(--z-sticky);
     backdrop-filter: blur(12px);
-    background-color: rgba(17, 17, 17, 0.8);
+    background-color: var(--color-header-bg);
   }
 
   .header-content {
@@ -112,27 +183,7 @@ const currentPath = Astro.url.pathname;
     gap: var(--space-8);
   }
 
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
-    color: var(--color-text-primary);
-    font-size: 1.125rem;
-    font-weight: var(--font-bold);
-    text-decoration: none;
-    transition: opacity var(--duration-normal) var(--ease-out);
-  }
 
-  .logo:hover {
-    text-decoration: none;
-    opacity: 0.8;
-  }
-
-  .logo-image {
-    height: 32px;
-    width: auto;
-    object-fit: contain;
-  }
 
   .nav {
     display: flex;
@@ -148,6 +199,9 @@ const currentPath = Astro.url.pathname;
     border-radius: var(--radius-md);
     text-decoration: none;
     transition: all var(--duration-normal) var(--ease-out);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
   }
 
   .nav-link:hover {
@@ -187,53 +241,30 @@ const currentPath = Astro.url.pathname;
     color: var(--color-text-primary);
   }
 
-  /* Theme toggle pill (Polar v1.1: 64x32px, 16px border-radius) */
-  .theme-toggle {
-    width: 64px !important;
-    height: 32px !important;
-    min-height: 32px !important;
-    max-height: 32px !important;
-    border-radius: 16px !important;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--color-bg-tertiary);
-    border: 1px solid var(--color-border);
-    padding: 0 !important;
-    margin: 0 !important;
-    box-sizing: border-box !important;
-    transition: all var(--duration-normal) var(--ease-out);
+
+
+  /* Mobile menu toggle button */
+  .mobile-menu-toggle {
+    display: none;
   }
 
-  .theme-toggle:hover {
-    border-color: var(--color-border-hover);
-  }
-
-  .sun-icon,
-  .moon-icon {
-    position: absolute;
-    transition: all var(--duration-normal) var(--ease-out);
-  }
-
-  :root[data-theme='dark'] .sun-icon {
+  /* Sidebar backdrop */
+  .sidebar-backdrop {
+    display: none;
+    position: fixed;
+    top: var(--layout-header-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: calc(var(--z-modal) - 1);
     opacity: 0;
-    transform: rotate(90deg) scale(0.8);
+    transition: opacity var(--duration-slower) var(--ease-out);
   }
 
-  :root[data-theme='dark'] .moon-icon {
+  .sidebar-backdrop.visible {
+    display: block;
     opacity: 1;
-    transform: rotate(0deg) scale(1);
-  }
-
-  :root[data-theme='light'] .sun-icon {
-    opacity: 1;
-    transform: rotate(0deg) scale(1);
-  }
-
-  :root[data-theme='light'] .moon-icon {
-    opacity: 0;
-    transform: rotate(-90deg) scale(0.8);
   }
 
   /* Responsive (Polar v1.1) */
@@ -244,6 +275,10 @@ const currentPath = Astro.url.pathname;
 
     .header {
       padding-inline: var(--space-4);
+    }
+
+    .mobile-menu-toggle {
+      display: flex;
     }
   }
 </style>

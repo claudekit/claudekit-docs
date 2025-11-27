@@ -8,6 +8,28 @@ published: true
 
 # /cook
 
+:::tip[Token-Saving Tip: /cook = /plan + /code]
+**If you already have a plan**, skip `/cook` and use `/code` directly:
+
+```bash
+# ✅ Efficient: Use existing plan (saves tokens!)
+/code @plans/your-feature-plan.md
+
+# ❌ Wasteful: /cook will create a new plan, consuming extra tokens
+/cook [same feature you already planned]
+```
+
+**The relationship:**
+- `/cook` = `/plan` + `/code` (full cycle: planning → implementation)
+- `/code` = Implementation only (uses existing plan)
+
+**When to use each:**
+| Command | When to Use |
+|---------|-------------|
+| `/cook` | New feature, no plan exists |
+| `/code @plan.md` | Plan already exists in `plans/` directory |
+:::
+
 Main command for feature development. Orchestrates planning, implementation, testing, code review, and documentation updates automatically.
 
 ## Syntax

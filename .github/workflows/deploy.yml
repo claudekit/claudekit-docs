@@ -1,0 +1,42 @@
+name: Deploy Workflow
+
+# TRIGGERS
+on:
+  push:
+    branches:
+      # - deploy/*
+      - main
+
+# ENVIRONMENT VARIABLES
+env:
+  GITHUB_TOKEN: ${{ secrets.CI_GITHUB_TOKEN }}
+  BRANCH_NAME: ${{ github.head_ref || github.ref }}
+
+# CI/CD STEPS
+jobs:
+  deploy:
+    name: Deploy to [reviewweb.site]
+    runs-on: ubuntu-latest
+    if: always() && !cancelled() && !failure() && contains(github.ref, 'main')
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Deploy with DXUP
+        uses: "digitopvn/diginext-actions@v2"
+        with:
+          api_key: ${{ secrets.DX_API_KEY }}
+          cluster: dxupprod
+          registry: digitopdockerhub
+          deploy_env: prod
+          tail: true
+          port: 3000
+
+      - name: Send Discord Notification
+        uses: sarisia/actions-status-discord@v1
+        if: always()
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK_DEPLOY }}
+          title: "[vidcap.xyz] Deploy process finished"

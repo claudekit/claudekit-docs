@@ -15,7 +15,7 @@ env:
 # CI/CD STEPS
 jobs:
   deploy:
-    name: Deploy to [reviewweb.site]
+    name: Deploy to [docs.claudekit.cc]
     runs-on: ubuntu-latest
     if: always() && !cancelled() && !failure() && contains(github.ref, 'main')
     steps:
@@ -39,4 +39,4 @@ jobs:
         if: always()
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK_DEPLOY }}
-          title: "[vidcap.xyz] Deploy process finished"
+          title: "[docs.claudekit.cc] Deploy process finished"

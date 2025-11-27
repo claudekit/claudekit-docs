@@ -1,14 +1,14 @@
 # Multi-stage build for ClaudeKit Docs
-FROM node:20-alpine AS builder
+FROM oven/bun:1-alpine AS builder
 
 # Set working directory
 WORKDIR /app
 
-# Copy package files
-COPY package*.json ./
+# Copy package files and lockfile
+COPY package.json bun.lockb ./
 
 # Install dependencies
-RUN npm ci
+RUN bun install --frozen-lockfile
 
 # Copy configuration files
 COPY astro.config.mjs ./
@@ -20,7 +20,7 @@ COPY src ./src
 COPY public ./public
 
 # Build the application
-RUN npm run build
+RUN bun run build
 
 # Production image
 FROM node:20-alpine AS runner

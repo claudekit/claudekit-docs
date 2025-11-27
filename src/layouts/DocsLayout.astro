@@ -2,17 +2,25 @@
 import BaseLayout from './BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Sidebar from '../components/Sidebar.astro';
-import AIPanel from '../components/AIPanel.astro';
+// import AIPanel from '../components/AIPanel.astro'; // Temporarily disabled - backend not ready
+import TableOfContents from '../components/TableOfContents';
 import type { Locale } from '../i18n/locales';
+
+interface Heading {
+  depth: number;
+  text: string;
+  slug: string;
+}
 
 export interface Props {
   title?: string;
   description?: string;
   locale?: Locale;
   slug?: string;
+  headings?: Heading[];
 }
 
-const { title, description, locale = 'en', slug = '' } = Astro.props;
+const { title, description, locale = 'en', slug = '', headings = [] } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description} locale={locale} slug={slug}>
@@ -29,7 +37,11 @@ const { title, description, locale = 'en', slug = '' } = Astro.props;
           </article>
         </main>
 
-        <AIPanel />
+        {headings.length > 0 && (
+          <TableOfContents headings={headings} client:load />
+        )}
+
+        {/* AIPanel temporarily disabled - backend not ready */}
       </div>
     </div>
   </div>

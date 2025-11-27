@@ -42,7 +42,10 @@ export default defineConfig({
       rehypeKatex,
     ],
     shikiConfig: {
-      theme: 'one-dark-pro',
+      themes: {
+        light: 'light-plus',
+        dark: 'one-dark-pro',
+      },
       wrap: true,
     },
   },

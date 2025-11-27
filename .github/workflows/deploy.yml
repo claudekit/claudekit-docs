@@ -39,4 +39,4 @@ jobs:
         if: always()
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK_DEPLOY }}
-          title: "[vidcap.xyz] Deploy process finished"
+          title: "[claudekit-docs] Deploy process finished"

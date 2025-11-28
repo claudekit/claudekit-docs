@@ -661,9 +661,9 @@ After fixing bugs, improve processes:
 ## Next Steps
 
 ### Related Use Cases
-- [Adding a New Feature](/docs/use-cases/adding-feature) - Implement features
-- [Optimizing Performance](/docs/use-cases/optimizing-performance) - Speed improvements
-- [Refactoring Code](/docs/use-cases/refactoring-code) - Code quality
+- [Adding a New Feature](/docs/workflows/adding-feature) - Implement features
+- [Optimizing Performance](/docs/workflows/optimizing-performance) - Speed improvements
+- [Refactoring Code](/docs/workflows/refactoring-code) - Code quality
 
 ### Related Commands
 - [/fix:fast](/docs/commands/fix/fast) - Quick bug fixes

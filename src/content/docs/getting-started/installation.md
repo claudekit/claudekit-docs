@@ -231,5 +231,5 @@ If CLI can't authenticate:
 Now that ClaudeKit is installed, proceed to:
 
 - [Quick Start Guide](/docs/getting-started/quick-start) - Build your first project
-- [CLAUDE.md Explained](/docs/core-concepts/claude-md) - Understand the configuration file
-- [Workflows](/docs/core-concepts/workflows) - Learn about development workflows
+- [CLAUDE.md Explained](/docs/docs/configuration/claude-md) - Understand the configuration file
+- [Workflows](/docs/docs/configuration/workflows) - Learn about development workflows

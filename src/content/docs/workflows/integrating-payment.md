@@ -716,9 +716,9 @@ Before production:
 ## Next Steps
 
 ### Related Use Cases
-- [Implementing Authentication](/docs/use-cases/implementing-auth) - User accounts
-- [Building a REST API](/docs/use-cases/building-api) - API development
-- [Adding a New Feature](/docs/use-cases/adding-feature) - Feature development
+- [Implementing Authentication](/docs/workflows/implementing-auth) - User accounts
+- [Building a REST API](/docs/workflows/building-api) - API development
+- [Adding a New Feature](/docs/workflows/adding-feature) - Feature development
 
 ### Related Commands
 - [/integrate:polar](/docs/commands/integrate/polar) - Polar integration

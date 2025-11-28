@@ -360,9 +360,9 @@ ffmpeg -i input.mkv -c:v libx264 -profile:v high \
 
 ## Next Steps
 
-- [Media Examples](/docs/use-cases/)
+- [Media Examples](/docs/workflows/)
 - [Image Processing](/docs/skills/imagemagick)
-- [Streaming Guide](/docs/use-cases/)
+- [Streaming Guide](/docs/workflows/)
 
 ---
 

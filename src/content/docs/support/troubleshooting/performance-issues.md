@@ -573,9 +573,9 @@ EOF
 
 ## Related Issues
 
-- [Installation Issues](/docs/troubleshooting/installation-issues) - Slow installation problems
-- [Command Errors](/docs/troubleshooting/command-errors) - Commands failing vs hanging
-- [Agent Issues](/docs/troubleshooting/agent-issues) - Specific agent slowness
+- [Installation Issues](/docs/support/troubleshooting/installation-issues) - Slow installation problems
+- [Command Errors](/docs/support/troubleshooting/command-errors) - Commands failing vs hanging
+- [Agent Issues](/docs/support/troubleshooting/agent-issues) - Specific agent slowness
 
 ---
 

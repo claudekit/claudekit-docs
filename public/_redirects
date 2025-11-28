@@ -1,0 +1,37 @@
+# ClaudeKit Docs URL Redirects
+# Format: old-path new-path status-code
+
+# Getting Started moves
+/docs/getting-started/greenfield-projects /docs/workflows/new-project 301
+/docs/getting-started/brownfield-projects /docs/workflows/existing-project 301
+/docs/getting-started/mcp-setup /docs/docs/configuration/mcp-setup 301
+/docs/getting-started/gemini /docs/docs/skills/ai/gemini-vision 301
+
+# Core Concepts → Configuration/Docs
+/docs/core-concepts/claude-md /docs/docs/configuration/claude-md 301
+/docs/core-concepts/workflows /docs/docs/configuration/workflows 301
+/docs/core-concepts/architecture /docs/docs/agents 301
+/docs/core-concepts/code-standards /docs/docs/configuration/claude-md 301
+/docs/core-concepts/system-architecture /docs/docs/agents 301
+/docs/core-concepts/* /docs/docs/configuration/:splat 301
+
+# CLI → Docs
+/docs/cli /docs/docs/cli 301
+/docs/cli/* /docs/docs/cli/:splat 301
+
+# Use Cases → Workflows
+/docs/use-cases /docs/workflows 301
+/docs/use-cases/adding-feature /docs/workflows/adding-feature 301
+/docs/use-cases/fixing-bugs /docs/workflows/fixing-bugs 301
+/docs/use-cases/building-api /docs/workflows/building-api 301
+/docs/use-cases/implementing-auth /docs/workflows/implementing-auth 301
+/docs/use-cases/integrating-payment /docs/workflows/integrating-payment 301
+/docs/use-cases/optimizing-performance /docs/workflows/optimizing-performance 301
+/docs/use-cases/refactoring-code /docs/workflows/refactoring-code 301
+/docs/use-cases/understanding-codebases-with-gkg /docs/workflows/understanding-codebases 301
+/docs/use-cases/starting-new-project /docs/workflows/new-project 301
+/docs/use-cases/* /docs/workflows/:splat 301
+
+# Troubleshooting → Support
+/docs/troubleshooting /docs/support/troubleshooting 301
+/docs/troubleshooting/* /docs/support/troubleshooting/:splat 301

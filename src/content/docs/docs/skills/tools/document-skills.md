@@ -441,9 +441,9 @@ Preserve:
 
 ## Next Steps
 
-- [Data Processing Examples](/docs/use-cases/)
+- [Data Processing Examples](/docs/workflows/)
 - [AI Integration](/docs/skills/)
-- [Automation Workflows](/docs/use-cases/)
+- [Automation Workflows](/docs/workflows/)
 
 ---
 

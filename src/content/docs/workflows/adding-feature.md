@@ -639,9 +639,9 @@ git checkout -b feature/password-reset
 ## Next Steps
 
 ### Related Use Cases
-- [Fixing Bugs](/docs/use-cases/fixing-bugs) - Debug and fix issues
-- [Refactoring Code](/docs/use-cases/refactoring-code) - Improve code quality
-- [Building an API](/docs/use-cases/building-api) - Create REST APIs
+- [Fixing Bugs](/docs/workflows/fixing-bugs) - Debug and fix issues
+- [Refactoring Code](/docs/workflows/refactoring-code) - Improve code quality
+- [Building an API](/docs/workflows/building-api) - Create REST APIs
 
 ### Related Commands
 - [/plan](/docs/commands/core/plan) - Create implementation plans
@@ -653,7 +653,7 @@ git checkout -b feature/password-reset
 ### Further Reading
 - [Command Reference](/docs/commands) - All available commands
 - [Agent Guide](/docs/agents) - Understanding agents
-- [Workflows](/docs/core-concepts/workflows) - Development patterns
+- [Workflows](/docs/docs/configuration/workflows) - Development patterns
 
 ---
 

@@ -2,6 +2,7 @@
 import BaseLayout from './BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Sidebar from '../components/Sidebar.astro';
+import Search from '../components/Search.astro';
 // import AIPanel from '../components/AIPanel.astro'; // Temporarily disabled - backend not ready
 import TableOfContents from '../components/TableOfContents';
 import CopyForLLMs from '../components/CopyForLLMs.tsx';
@@ -42,8 +43,8 @@ const frontmatter = content?.data || {
       <Header />
 
       <div class="content-wrapper">
-        <main class="content-area">
-          <div class="content-header">
+        <main class="content-area" data-pagefind-body>
+          <div class="content-header" data-pagefind-ignore>
             <CopyForLLMs
               client:load
               pageContent={content?.body || ''}
@@ -58,7 +59,7 @@ const frontmatter = content?.data || {
             />
           </div>
 
-          <article class="prose">
+          <article class="prose" data-pagefind-meta="title:{title}">
             <slot />
           </article>
         </main>
@@ -71,6 +72,8 @@ const frontmatter = content?.data || {
       </div>
     </div>
   </div>
+
+  <Search />
 </BaseLayout>
 
 <script>

@@ -431,8 +431,8 @@ Creates:
 
 ## Next Steps
 
-- [Custom Tools Examples](/docs/use-cases/)
-- [API Integration Guide](/docs/use-cases/)
+- [Custom Tools Examples](/docs/workflows/)
+- [API Integration Guide](/docs/workflows/)
 - [Database Skills](/docs/skills/postgresql-psql)
 
 ---

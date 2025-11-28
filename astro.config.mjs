@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
+import pagefind from 'astro-pagefind';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 import rehypeSlug from 'rehype-slug';
@@ -186,7 +187,11 @@ export default defineConfig({
       applyBaseStyles: false, // We'll use our custom CSS
     }),
     llmsTxtGenerator(),
+    pagefind(), // Must be LAST - runs after build to index HTML
   ],
+  build: {
+    format: 'directory', // Required for Pagefind proper URL indexing
+  },
   markdown: {
     remarkPlugins: [remarkGfm, remarkMath, remarkDirective, remarkAdmonitions],
     rehypePlugins: [

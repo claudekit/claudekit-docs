@@ -488,8 +488,8 @@ mutation {
 
 ## Next Steps
 
-- [E-commerce Examples](/docs/use-cases/)
-- [API Integration](/docs/use-cases/)
+- [E-commerce Examples](/docs/workflows/)
+- [API Integration](/docs/workflows/)
 - [Database Skills](/docs/skills/postgresql-psql)
 
 ---

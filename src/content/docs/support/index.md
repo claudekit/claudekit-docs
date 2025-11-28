@@ -73,7 +73,7 @@ Get help with ClaudeKit through our community resources, documentation, and dire
 
 ### Tutorials and Examples
 - [Workflow Examples](../workflows/) - Real-world workflows
-- [Use Cases](../docs/docs/use-cases/) - Practical applications
+- [Use Cases](../docs/docs/workflows/) - Practical applications
 - [Quick Start Guide](../getting-started/quick-start.md) - First project in 15 minutes
 - [Migration Guide](../getting-started/upgrade-guide.md) - From Claude Code to ClaudeKit
 

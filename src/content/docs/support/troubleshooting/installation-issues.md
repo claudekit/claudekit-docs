@@ -413,9 +413,9 @@ ck init --kit engineer
 
 ## Related Issues
 
-- [Command Errors](/docs/troubleshooting/command-errors) - After installation, commands not working
-- [API Key Setup](/docs/troubleshooting/api-key-setup) - Configure credentials after install
-- [Performance Issues](/docs/troubleshooting/performance-issues) - Slow installation or downloads
+- [Command Errors](/docs/support/troubleshooting/command-errors) - After installation, commands not working
+- [API Key Setup](/docs/support/troubleshooting/api-key-setup) - Configure credentials after install
+- [Performance Issues](/docs/support/troubleshooting/performance-issues) - Slow installation or downloads
 
 ---
 

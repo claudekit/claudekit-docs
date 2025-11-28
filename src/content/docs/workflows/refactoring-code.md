@@ -636,9 +636,9 @@ Improvement: +36 points maintainability
 ## Next Steps
 
 ### Related Use Cases
-- [Adding a New Feature](/docs/use-cases/adding-feature) - Build features
-- [Fixing Bugs](/docs/use-cases/fixing-bugs) - Debug issues
-- [Optimizing Performance](/docs/use-cases/optimizing-performance) - Speed improvements
+- [Adding a New Feature](/docs/workflows/adding-feature) - Build features
+- [Fixing Bugs](/docs/workflows/fixing-bugs) - Debug issues
+- [Optimizing Performance](/docs/workflows/optimizing-performance) - Speed improvements
 
 ### Related Commands
 - [/cook](/docs/commands/core/cook) - Implement refactoring

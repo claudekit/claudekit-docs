@@ -338,9 +338,9 @@ The skill will help you:
 
 ## Next Steps
 
-- [Design Examples](/docs/use-cases/)
-- [Brand Guidelines](/docs/use-cases/)
-- [UI/UX Patterns](/docs/use-cases/)
+- [Design Examples](/docs/workflows/)
+- [Brand Guidelines](/docs/workflows/)
+- [UI/UX Patterns](/docs/workflows/)
 
 ---
 

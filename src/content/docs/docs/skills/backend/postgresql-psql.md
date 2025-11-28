@@ -490,9 +490,9 @@ WHERE cardinality(pg_blocking_pids(pid)) > 0;
 
 ## Next Steps
 
-- [Database Design Patterns](/docs/use-cases/)
+- [Database Design Patterns](/docs/workflows/)
 - [Docker Integration](/docs/skills/docker)
-- [Backend Examples](/docs/use-cases/)
+- [Backend Examples](/docs/workflows/)
 
 ---
 

@@ -335,7 +335,7 @@ ck -h
 
 ## Next Steps
 
-- [Installation Guide](/docs/cli/installation) - Install ClaudeKit CLI
+- [Installation Guide](/docs/docs/cli/installation) - Install ClaudeKit CLI
 - [Getting Started](/docs/getting-started/installation) - Start using ClaudeKit
 
 ---

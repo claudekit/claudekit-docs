@@ -514,9 +514,9 @@ nano .env
 
 ## Related Issues
 
-- [Agent Issues](/docs/troubleshooting/agent-issues) - Agents failing due to missing keys
-- [Command Errors](/docs/troubleshooting/command-errors) - Commands failing silently
-- [Performance Issues](/docs/troubleshooting/performance-issues) - Rate limiting causing slowness
+- [Agent Issues](/docs/support/troubleshooting/agent-issues) - Agents failing due to missing keys
+- [Command Errors](/docs/support/troubleshooting/command-errors) - Commands failing silently
+- [Performance Issues](/docs/support/troubleshooting/performance-issues) - Rate limiting causing slowness
 
 ---
 

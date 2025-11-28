@@ -644,9 +644,9 @@ Before production deployment:
 ## Next Steps
 
 ### Related Use Cases
-- [Building a REST API](/docs/use-cases/building-api) - Create APIs
-- [Integrating Payments](/docs/use-cases/integrating-payment) - Add payments
-- [Adding a New Feature](/docs/use-cases/adding-feature) - Build features
+- [Building a REST API](/docs/workflows/building-api) - Create APIs
+- [Integrating Payments](/docs/workflows/integrating-payment) - Add payments
+- [Adding a New Feature](/docs/workflows/adding-feature) - Build features
 
 ### Related Commands
 - [/cook](/docs/commands/core/cook) - Implement features

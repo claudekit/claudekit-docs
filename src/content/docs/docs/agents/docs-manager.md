@@ -836,8 +836,8 @@ project-manager: Updates roadmap
 Learn more about related topics:
 
 - [Project Manager](/docs/agents/project-manager) - Overall project coordination
-- [Code Standards](/docs/core-concepts/code-standards) - Coding conventions
-- [System Architecture](/docs/core-concepts/system-architecture) - Technical design
+- [Code Standards](/docs/docs/configuration/claude-md) - Coding conventions
+- [System Architecture](/docs/docs/agents) - Technical design
 - [Commands](/docs/commands/) - Documentation-related commands
 
 ---

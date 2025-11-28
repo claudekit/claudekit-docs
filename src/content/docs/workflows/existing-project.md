@@ -320,9 +320,9 @@ After successful integration:
 
 1. **Explore Commands**: Check [Commands Documentation](/docs/commands/)
 2. **Learn Agents**: Understand [Specialized Agents](/docs/agents/)
-3. **Advanced Workflows**: See [Workflows Guide](/docs/core-concepts/workflows)
+3. **Advanced Workflows**: See [Workflows Guide](/docs/docs/configuration/workflows)
 4. **Team Training**: Share best practices with your team
 
 ---
 
-**Need help?** Check [Troubleshooting Guide](/docs/troubleshooting/) or [GitHub Discussions](https://github.com/mrgoonie/claudekit-cli/discussions)
+**Need help?** Check [Troubleshooting Guide](/docs/support/troubleshooting/) or [GitHub Discussions](https://github.com/mrgoonie/claudekit-cli/discussions)

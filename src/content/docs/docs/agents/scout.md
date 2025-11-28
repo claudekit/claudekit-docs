@@ -292,7 +292,7 @@ When:
 - [Planner Agent](/docs/agents/planner) - Uses scout to locate files before planning
 - [Debugger Agent](/docs/agents/debugger) - Uses scout to find relevant files when debugging
 - [/scout Command](/docs/commands/core/scout) - Directly invoke scout agent
-- [Code Standards](/docs/core-concepts/code-standards) - File organization patterns scout understands
+- [Code Standards](/docs/docs/configuration/claude-md) - File organization patterns scout understands
 
 ---
 

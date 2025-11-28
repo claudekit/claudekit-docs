@@ -225,7 +225,7 @@ ls docs/
 
 Now that you understand CLAUDE.md:
 
-- [Workflows](/docs/core-concepts/workflows) - Learn about workflow files
+- [Workflows](/docs/docs/configuration/workflows) - Learn about workflow files
 - [Agents](/docs/agents/) - Understand the agent system
 - [Commands](/docs/commands/) - Explore available commands
 

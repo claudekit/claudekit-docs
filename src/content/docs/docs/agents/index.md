@@ -403,7 +403,7 @@ Learn more about specific agents:
 Or explore:
 
 - [Commands](/docs/commands/) - How to invoke agents
-- [Workflows](/docs/core-concepts/workflows) - How agents coordinate
+- [Workflows](/docs/docs/configuration/workflows) - How agents coordinate
 - [Orchestration](/docs/agents/orchestration) - Advanced patterns
 
 ---

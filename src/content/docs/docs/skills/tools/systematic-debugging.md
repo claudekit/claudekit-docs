@@ -303,7 +303,7 @@ Using systematic-debugging:
 ## Next Steps
 
 - [Root Cause Tracing](/docs/skills/)
-- [Debugging Examples](/docs/use-cases/)
+- [Debugging Examples](/docs/workflows/)
 - [Testing Skills](/docs/agents/tester)
 
 ---

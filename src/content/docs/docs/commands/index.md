@@ -454,7 +454,7 @@ Explore specific command categories:
 Or learn about:
 
 - [Agents](/docs/agents/) - How commands invoke agents
-- [Workflows](/docs/core-concepts/workflows) - Command execution flows
+- [Workflows](/docs/docs/configuration/workflows) - Command execution flows
 - [Quick Start](/docs/getting-started/quick-start) - Hands-on tutorial
 
 ---

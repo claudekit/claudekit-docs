@@ -439,8 +439,8 @@ After bootstrapping your project:
 
 - [All Commands](/docs/commands/) - Complete command reference
 - [AI Agents](/docs/agents/) - Understanding specialized agents
-- [Workflows](/docs/core-concepts/workflows) - Development workflows
-- [Use Cases](/docs/use-cases/) - Real-world examples
+- [Workflows](/docs/docs/configuration/workflows) - Development workflows
+- [Use Cases](/docs/workflows/) - Real-world examples
 
 ---
 

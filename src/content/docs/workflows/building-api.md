@@ -764,9 +764,9 @@ npx prisma db pull
 ## Next Steps
 
 ### Related Use Cases
-- [Implementing Authentication](/docs/use-cases/implementing-auth) - Auth deep dive
-- [Integrating Payments](/docs/use-cases/integrating-payment) - Add payments
-- [Optimizing Performance](/docs/use-cases/optimizing-performance) - Speed up API
+- [Implementing Authentication](/docs/workflows/implementing-auth) - Auth deep dive
+- [Integrating Payments](/docs/workflows/integrating-payment) - Add payments
+- [Optimizing Performance](/docs/workflows/optimizing-performance) - Speed up API
 
 ### Related Commands
 - [/bootstrap](/docs/commands/core/bootstrap) - Initialize projects

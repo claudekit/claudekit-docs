@@ -786,9 +786,9 @@ Metrics:
 ## Next Steps
 
 ### Related Use Cases
-- [Fixing Bugs](/docs/use-cases/fixing-bugs) - Debug issues
-- [Refactoring Code](/docs/use-cases/refactoring-code) - Code quality
-- [Building a REST API](/docs/use-cases/building-api) - API development
+- [Fixing Bugs](/docs/workflows/fixing-bugs) - Debug issues
+- [Refactoring Code](/docs/workflows/refactoring-code) - Code quality
+- [Building a REST API](/docs/workflows/building-api) - API development
 
 ### Related Commands
 - [/debug](/docs/commands/core/debug) - Performance profiling

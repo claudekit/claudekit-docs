@@ -1,203 +1,136 @@
 ---
-title: Use Cases
-description: "Documentation for Use Cases
-description:
+title: "Workflows"
+description: "Task-oriented guides for common development scenarios with ClaudeKit"
 section: workflows
-category: workflows
-order: 0
-published: true"
-section: workflows
-category: workflows
 order: 0
 published: true
 ---
 
-# Use Cases
+# Workflows
 
-Learn how to use ClaudeKit for real-world development scenarios. This section contains practical examples and workflows for common tasks.
+Task-oriented guides for common development scenarios using ClaudeKit's slash commands and agents.
 
-## Coming Soon
+## Popular Workflows
 
-We're working on comprehensive guides for:
+### Feature Development
+[**Feature Development Guide**](./feature-development.md) - Complete feature lifecycle from planning to deployment
+```bash
+/plan "add user authentication with OAuth"
+/cook
+/fix:test
+/git:pr "feature/user-auth"
+```
 
-### Starting a New Project
+### Bug Fixing
+[**Bug Fixing Workflow**](./bug-fixing.md) - Systematic approach to debugging and fixing issues
+```bash
+/debug "login button not working"
+/fix:hard
+/fix:test
+/git:cm
+```
 
-Step-by-step guide for initializing a new project from scratch:
+### Documentation
+[**Documentation Workflow**](./documentation.md) - Keep docs in sync with code changes
+```bash
+/docs:init
+/docs:update "after feature changes"
+```
 
-- Choosing the right tech stack
-- Setting up project structure
-- Implementing core features
-- Establishing development workflows
-- Setting up CI/CD
-- Deploying to production
+## Quick Workflows
 
-**Expected:** Q1 2025
+### Setup New Project
+```bash
+ck init my-project --kit engineer
+cd my-project
+/plan "set up project structure"
+/cook
+```
 
----
+### Add New Feature
+```bash
+/plan "add [feature description]"
+/cook
+/design:good "UI mockups if needed"
+/fix:test
+/git:cm
+```
 
-### Maintaining an Old Project
+### Deploy to Production
+```bash
+/plan "prepare for production deployment"
+/fix:ci "fix any failing tests"
+/git:pr "deploy-to-production"
+```
 
-How to integrate ClaudeKit into existing codebases:
+### Code Review
+```bash
+/code-review "review recent changes"
+/fix "implement suggested improvements"
+/git:cm
+```
 
-- Initial documentation setup with `/docs:init`
-- Understanding existing architecture
-- Refactoring legacy code safely
-- Adding tests to untested code
-- Modernizing dependencies
-- Improving code quality incrementally
+## By Use Case
 
-**Expected:** Q1 2025
+### Frontend Development
+- [UI/UX Design](../docs/commands/#design-commands) - `/design:good`, `/design:fast`
+- Component Development - `/plan → /cook → /fix:test`
+- Styling - `/design:good` for aesthetic components
 
----
+### Backend Development
+- API Development - `/plan → /cook → /fix:hard`
+- Database Changes - `/plan "add user table" → /cook`
+- Performance Optimization - `/debug "slow queries" → /fix`
 
-### Screenshot to Code
+### Full Stack
+- Complete Features - See [Feature Development](./feature-development.md)
+- Authentication - `/cook "add authentication with Better Auth"`
+- E-commerce - `/cook "add Stripe payment integration`
 
-Complete workflow for converting designs to implementation:
+### DevOps & Infrastructure
+- Docker Setup - `/cook "add Docker configuration"`
+- CI/CD - `/fix:ci "fix failing GitHub Actions"`
+- Deployment - `/plan "deploy to Cloudflare Workers"`
 
-- Using `/design:screenshot` command
-- Analyzing design elements
-- Extracting components
-- Implementing responsive layouts
-- Matching styles accurately
-- Generating assets with AI
-- Testing across devices
+## Advanced Workflows
 
-**Expected:** Q1 2025
+### Multi-agent Collaboration
+```bash
+/plan "complex feature with multiple components"
+# Spawns: planner → researcher → frontend dev → backend dev → tester
 
----
+/fix:hard "production bug"
+# Spawns: debugger → researcher → dev → tester → reviewer
+```
 
-### Video to Code
+### Content Creation
+```bash
+/content:good "write marketing copy for new feature"
+/content:enhance "improve existing landing page"
+/design:good "create visual assets for social media"
+```
 
-Convert screen recordings into working code:
+### Integration Workflows
+```bash
+/integrate:polar "add Polar billing integration"
+/integrate:sepay "add SePay payment gateway"
+```
 
-- Using `/design:video` command
-- Understanding interactions from video
-- Implementing animations
-- Creating transitions
-- Building dynamic components
-- Maintaining design consistency
+## Getting Started
 
-**Expected:** Q1 2025
+New to ClaudeKit? Start with:
+1. [Getting Started Guide](../getting-started/) - Learn the basics
+2. [Quick Start](../getting-started/quick-start.md) - Build your first feature
+3. [Feature Development](./feature-development.md) - Complete workflow example
 
----
+## Reference
 
-### Building a REST API
+- [Commands Reference](../docs/commands/) - All available commands
+- [Agents Overview](../docs/agents/) - Meet your AI team
+- [Skills Library](../docs/docs/skills/) - Built-in knowledge modules
 
-End-to-end API development:
+## Need Help?
 
-- Planning API architecture
-- Implementing endpoints
-- Adding authentication
-- Input validation
-- Error handling
-- API documentation
-- Testing strategies
-- Deployment
-
-**Expected:** Q1 2025
-
----
-
-### Creating a Full-Stack Application
-
-Complete full-stack workflow:
-
-- Backend API development
-- Frontend implementation
-- Database design
-- State management
-- Authentication flow
-- Real-time features
-- Testing full stack
-- Deployment pipeline
-
-**Expected:** Q1 2025
-
----
-
-### Integrating Third-Party Services
-
-How to add external integrations:
-
-- Payment gateways (Stripe, Polar, SePay)
-- Authentication providers (OAuth2)
-- Cloud services (AWS S3, GCP)
-- Email services
-- Analytics
-- Error tracking
-
-**Expected:** Q1 2025
-
----
-
-### Debugging Production Issues
-
-Systematic approach to fixing production bugs:
-
-- Analyzing production logs with `/fix:logs`
-- Reproducing issues locally
-- Root cause analysis
-- Implementing fixes
-- Testing thoroughly
-- Safe deployment
-- Post-mortem documentation
-
-**Expected:** Q1 2025
-
----
-
-### Team Collaboration
-
-Working with ClaudeKit in a team environment:
-
-- Sharing workflows
-- Custom commands for team
-- Documentation standards
-- Code review processes
-- Onboarding new members
-- Maintaining consistency
-
-**Expected:** Q1 2025
-
----
-
-### CI/CD Integration
-
-Setting up continuous integration and deployment:
-
-- GitHub Actions integration
-- Fixing CI failures with `/fix:ci`
-- Automated testing
-- Deployment pipelines
-- Environment management
-- Release automation
-
-**Expected:** Q1 2025
-
----
-
-## Early Access
-
-Want to contribute use case examples? We're looking for:
-
-- Real-world project stories
-- Before/after comparisons
-- Time savings metrics
-- Challenges and solutions
-- Best practices learned
-
-**Contact us:**
-- [Discord Community](https://discord.gg/x7SwTSf3wc)
-- [GitHub Discussions](https://github.com/claudekit/discussions)
-
-## Request Use Cases
-
-Need a specific use case documented?
-
-1. Join our [Discord](https://discord.gg/x7SwTSf3wc)
-2. Share your scenario
-3. We'll prioritize based on community interest
-
----
-
-**Stay tuned!** These comprehensive guides are coming soon. Follow us for updates.
+- [Troubleshooting](../troubleshooting/) - Common issues
+- [FAQ](../support/faq/) - Frequently asked questions
+- [Support](../support/) - Get help from the community

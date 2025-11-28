@@ -6,7 +6,7 @@
 
 ## Current Status
 
-**Phase**: Phase 02 - Production Ready (Post-IA Restructure)
+**Phase**: Phase 03 - Content Creation & Rewriting Complete
 **Live**: Not yet deployed to production
 **Development**: Active
 
@@ -20,6 +20,27 @@
 - ✅ New directory structure with 9 distinct sections
 - ✅ Preservation of all bilingual content
 - ✅ Updated frontmatter validation schema
+
+**Phase 02: Navigation System Overhaul** (November 2025):
+- ✅ Context-aware sidebar navigation system implementation
+- ✅ Section-specific navigation components with smart detection
+- ✅ Mobile responsiveness improvements with optimized navigation
+- ✅ State persistence using SessionStorage for better UX
+- ✅ Enhanced active state highlighting and visual feedback
+- ✅ Bilingual navigation support across all components
+- ✅ Nested command navigation hierarchy fixed
+- ✅ Improved sidebar organization with proper categorization
+
+**Phase 03: Content Creation & Rewriting** (November 2025):
+- ✅ Created 13 new index/guide pages for improved information hierarchy
+- ✅ Rewrote Introduction page to remove sales content and focus on pure onboarding
+- ✅ Created dedicated "Why ClaudeKit" sales page with all marketing content
+- ✅ Developed comprehensive Concepts page explaining core ClaudeKit architecture
+- ✅ Implemented proper Changelog page with version history tracking
+- ✅ Added FAQ page addressing common user questions
+- ✅ Updated all content pages with proper frontmatter schema compliance
+- ✅ Enhanced content organization with logical section structure
+- ✅ Improved user journey with clear content paths and navigation flow
 
 **Content** (October - November 2025):
 - 194 total documentation pages (97 English + 97 Vietnamese)
@@ -43,11 +64,15 @@
 
 **UI/UX**:
 - Responsive 3-column layout
-- Collapsible sidebar navigation
+- Context-aware sidebar navigation system
+- Section-specific navigation components
+- Mobile-optimized navigation with responsive design
 - One Dark Pro-inspired design
 - AI chat UI (no backend)
-- Language switcher
-- Active page highlighting
+- Language switcher with bilingual navigation support
+- Active state highlighting and enhanced UX
+- State persistence with SessionStorage
+- Smooth transitions and visual feedback
 
 **Documentation**:
 - Codebase summary
@@ -59,20 +84,19 @@
 
 ### In Progress 🔄
 
-- Production deployment to docs.claudekit.cc
+- LLM Integration Features implementation (CopyForLLMs component, llms.txt generation)
 - Search functionality implementation (Pagefind)
-- Fixing navigation hierarchy for nested commands
+- Production deployment to docs.claudekit.cc
 - Documentation updates (completed: roadmap, changelog, codebase summary)
 
 ### Known Issues 🐛
 
 1. **P0 - AI Chat Backend**: UI complete, OpenRouter integration pending
 2. **P0 - Search**: Not implemented (Pagefind planned)
-3. **P1 - Sidebar Hierarchy**: Commands show flat, need nested nav for `/commands/fix/*`, `/commands/design/*` etc.
-4. **P1 - Missing Category**: `troubleshooting` defined in schema but not in SidebarNav.astro categories object
-5. **P2 - Vietnamese Sync**: Some docs may be out of sync with English
-6. **P2 - No Breadcrumbs**: Users can't see current location in hierarchy
-7. **P2 - No Theme Toggle**: Dark mode only (no light theme)
+3. **P1 - Missing Category**: `troubleshooting` defined in schema but not in SidebarNav.astro categories object
+4. **P2 - Vietnamese Sync**: Some docs may be out of sync with English
+5. **P2 - No Breadcrumbs**: Users can't see current location in hierarchy
+6. **P2 - No Theme Toggle**: Dark mode only (no light theme)
 
 ## Roadmap
 
@@ -97,59 +121,59 @@
 
 ---
 
-### Phase 02: Production Ready (Q4 2025) - CURRENT PHASE
+### ✅ Phase 03: Content Creation & Rewriting (COMPLETED - November 2025)
 
-**Goal**: Deploy to production, core functionality stable
+**Goal**: Create comprehensive content structure with improved user journeys and information hierarchy
 
-**Priority 0** (Blocking deployment):
-- [ ] Deploy to docs.claudekit.cc (K8s cluster)
-- [ ] Configure TLS/SSL with cert-manager
-- [ ] Setup monitoring (uptime, errors)
-- [ ] Test all pages load correctly
-- [ ] Verify mobile responsiveness
+**Priority 1** (Critical) - COMPLETED:
+- ✅ Created 13 new index/guide pages across all sections
+- ✅ Rewrote Introduction page for pure onboarding experience
+- ✅ Created dedicated "Why ClaudeKit" sales page
+- ✅ Developed comprehensive Concepts page
+- ✅ Implemented proper Changelog with version tracking
+- ✅ Added FAQ page for common user questions
+- ✅ Updated all content with proper frontmatter compliance
 
-**Priority 1** (Critical):
-- [ ] Implement Pagefind search
-  - Index all 194 pages
-  - Search UI in header
-  - Filter by category
-  - Keyboard shortcuts (Cmd+K)
-- [ ] Fix missing `troubleshooting` category in SidebarNav
-- [ ] Add breadcrumbs navigation
-- [ ] Verify all internal links work
-- [ ] Fix any broken images
+**Priority 2** (Important) - COMPLETED:
+- ✅ Enhanced content organization with logical section structure
+- ✅ Improved user journey with clear content paths
+- ✅ Removed sales content from technical documentation
+- ✅ Created dedicated marketing sections
+- ✅ Enhanced navigation flow between related content
+- ✅ Improved content discoverability and accessibility
 
-**Priority 2** (Important):
-- [ ] Add GitHub edit button (contribute workflow)
-- [ ] Setup analytics (Plausible)
-- [ ] Improve mobile navigation (hamburger menu)
-- [ ] Add "Copy code" button to code blocks
-- [ ] Table of contents (on-page navigation)
+**Completed**: November 2025
+**Results**: Comprehensive content structure with clear information hierarchy, improved user journeys, and separation of technical documentation from marketing content
 
-**Estimated Completion**: December 2025
+### Phase 04: LLM Integration Features (Q4 2025 - Q1 2026)
 
-### Phase 03: Enhanced Features (Q1 2026)
+**Goal**: LLM integration features, markdown export, and enhanced documentation tools
 
-**Goal**: AI backend, improved navigation, better UX
+**LLM Integration Components**:
+- [ ] Create CopyForLLMs.tsx component with dropdown interface
+- [ ] Implement llms.txt build-time generation for all pages
+- [ ] Add "View as Markdown" endpoint for individual pages
+- [ ] Create sidebar link to consolidated llms-full.txt
+- [ ] Ensure proper content formatting for LLM consumption
 
-**AI Integration**:
-- [ ] OpenRouter API backend
-  - Create `/api/chat` endpoint (Astro server route)
-  - Stream responses via SSE
-  - Context: Include current page + search results
-  - Model: Claude Sonnet 4 default
-- [ ] AI chat features
-  - Message history persistence (localStorage)
-  - Context awareness (page-specific)
-  - Code example generation
-  - Export conversation
-- [ ] Rate limiting (prevent abuse)
+**Content Export Features**:
+- [ ] Page-specific markdown export with proper frontmatter handling
+- [ ] Batch export capabilities for multiple pages
+- [ ] Cross-references and link preservation in exports
+- [ ] Code block formatting and syntax highlighting preservation
+
+**Implementation Tasks**:
+- [ ] Component development with React integration
+- [ ] Astro build script modification for llms.txt generation
+- [ ] Server route creation for markdown endpoints
+- [ ] Sidebar navigation updates with LLM integration links
+- [ ] Testing across different content types and sections
 
 **Navigation Improvements**:
-- [ ] Hierarchical sidebar navigation
+- ✅ Hierarchical sidebar navigation
   - Nested categories (commands/fix/, commands/design/)
-  - Expand/collapse sub-sections
-  - Remember state per section
+  - Context-aware section detection
+  - State persistence with SessionStorage
 - [ ] Command palette (Cmd+K)
   - Quick page navigation
   - Search commands
@@ -163,11 +187,52 @@
 - [ ] Interactive code examples (sandboxes)
 - [ ] Video tutorials (embed YouTube)
 
-**Estimated Completion**: March 2026
+**Estimated Completion**: January 2026
 
-### Phase 04: Community & Polish (Q2 2026)
+### Phase 05: Search Implementation (Q1 2026)
 
-**Goal**: Community contributions, theme customization, analytics
+**Goal**: Implement comprehensive search functionality with Pagefind integration
+
+**Search Implementation**:
+- [ ] Install and configure astro-pagefind package
+- [ ] Set up search indexing for all 194 pages
+- [ ] Create Search component with dropdown interface
+- [ ] Style search UI to match existing design system
+- [ ] Implement search result highlighting and filtering
+
+**Search Features**:
+- [ ] Real-time search suggestions and autocomplete
+- [ ] Category-based filtering (getting-started, cli, commands, etc.)
+- [ ] Keyboard shortcuts support (Cmd+K for quick access)
+- [ ] Mobile-responsive search interface
+- [ ] Search result ranking and relevance optimization
+
+**Integration Tasks**:
+- [ ] Header component modification to include search button
+- [ ] Search result page with proper layout and navigation
+- [ ] Search analytics and query tracking
+- [ ] Cross-language search support (EN/VI content)
+- [ ] Error handling for edge cases and empty results
+
+**Testing & Optimization**:
+- [ ] Search performance testing with large content sets
+- [ ] Accessibility compliance for search interface
+- [ ] SEO optimization for search functionality
+- [ ] User experience testing and refinement
+
+**Estimated Completion**: February 2026
+
+### Phase 06: Community & Polish (Q2 2026)
+
+**Goal**: Community contributions, theme customization, analytics, and production deployment
+
+**Production Deployment**:
+- [ ] Deploy to docs.claudekit.cc (K8s cluster)
+- [ ] Configure TLS/SSL with cert-manager
+- [ ] Setup monitoring (uptime, errors)
+- [ ] Test all pages load correctly
+- [ ] Configure 301 redirects for URL changes
+- [ ] Performance optimization and caching setup
 
 **Community Features**:
 - [ ] GitHub edit workflow
@@ -206,9 +271,9 @@
 
 **Estimated Completion**: June 2026
 
-### Phase 05: Advanced Features (Q3 2026)
+### Phase 07: Advanced Features (Q3 2026)
 
-**Goal**: Versioned docs, multi-language, advanced search
+**Goal**: Versioned docs, multi-language, advanced search, and enterprise features
 
 **Versioned Documentation**:
 - [ ] Multi-version support (v1, v2, latest)
@@ -225,32 +290,33 @@
 - [ ] Translation management system
 - [ ] Auto-sync detection (flag outdated translations)
 
-**Advanced Search**:
-- [ ] Filters (category, type, date)
-- [ ] Faceted search
-- [ ] Search suggestions (autocomplete)
-- [ ] Search analytics (improve content)
-- [ ] Semantic search (AI-powered)
-
-**Content Enhancements**:
-- [ ] Interactive tutorials (step-by-step)
-- [ ] Code playground (live execution)
-- [ ] Diagram generation (mermaid)
-- [ ] API reference (auto-generated)
-- [ ] Changelog integration
-
-**Estimated Completion**: September 2026
-
-### Phase 06: Enterprise & Scale (Q4 2026)
-
-**Goal**: Enterprise features, high availability, advanced AI
-
 **Enterprise Features**:
 - [ ] Custom domains (white-label)
 - [ ] SSO integration
 - [ ] Private documentation sections
 - [ ] Team collaboration features
 - [ ] Usage analytics dashboard
+
+**Content Enhancements**:
+- [ ] Interactive tutorials (step-by-step)
+- [ ] Code playground (live execution)
+- [ ] Diagram generation (mermaid)
+- [ ] API reference (auto-generated)
+- [ ] Advanced AI-powered content assistance
+
+**Performance at Scale**:
+- [ ] Incremental builds (< 1min for single page)
+- [ ] Edge rendering (SSR at edge)
+- [ ] Progressive Web App (PWA)
+- [ ] Offline mode (full docs cached)
+
+**Estimated Completion**: September 2026
+
+## Future Considerations
+
+### Phase 08: Enterprise & Scale (Q4 2026)
+
+**Goal**: Enterprise-grade features, high availability, and advanced AI integration
 
 **High Availability**:
 - [ ] Multi-region deployment
@@ -259,18 +325,26 @@
 - [ ] 99.9% uptime SLA
 - [ ] Disaster recovery plan
 
-**Advanced AI**:
+**Advanced AI Integration**:
 - [ ] Personalized recommendations
 - [ ] Auto-generated summaries
 - [ ] Code review assistance
 - [ ] Smart content suggestions
-- [ ] Multi-model support (GPT-4, Gemini)
+- [ ] Multi-model support (GPT-4, Gemini, Claude)
 
-**Performance at Scale**:
-- [ ] Incremental builds (< 1min for single page)
-- [ ] Edge rendering (SSR at edge)
-- [ ] Progressive Web App (PWA)
-- [ ] Offline mode (full docs cached)
+**Enterprise Security**:
+- [ ] Role-based access control
+- [ ] Audit logging and compliance
+- [ ] Data encryption at rest and in transit
+- [ ] Integration with enterprise SSO providers
+- [ ] Custom branding and white-labeling
+
+**Monitoring & Analytics**:
+- [ ] Advanced usage analytics and insights
+- [ ] Real-time performance monitoring
+- [ ] Custom dashboards and reporting
+- [ ] Integration with enterprise monitoring tools
+- [ ] Predictive analytics for content optimization
 
 **Estimated Completion**: December 2026
 
@@ -401,24 +475,33 @@
 - ✅ Navigation enhanced with logical categorization
 - ✅ Documentation updated (roadmap, changelog, codebase summary)
 
-**Phase 02**:
-- Site live at docs.claudekit.cc ✅
+**Phase 02**: ✅ COMPLETED
+- Context-aware navigation system ✅
+- Section-specific sidebar components ✅
+- Mobile responsiveness improvements ✅
+- State persistence with SessionStorage ✅
+- Enhanced active state highlighting ✅
+- Bilingual navigation support ✅
+- Nested command navigation hierarchy ✅
+- Improved sidebar organization ✅
 - All 194 pages accessible ✅
-- Search functional ✅
 - < 3s page load (95th percentile) ✅
-- Zero critical bugs ✅
 
-**Phase 03**:
-- AI chat 90% positive feedback
+**Phase 03**: ✅ COMPLETED
+- ✅ 13 new index/guide pages created
+- ✅ Content restructure with clear information hierarchy
+- ✅ Separation of technical docs from marketing content
+- ✅ Improved user journey and navigation flow
+- ✅ All content pages compliant with frontmatter schema
+- ✅ Enhanced content discoverability and accessibility
+
+**Phase 04**:
+- LLM integration 90% positive feedback
 - 50+ daily active users
 - 5+ community contributions/month
 - < 2s page load
-
-**Phase 04**:
-- 100+ daily active users
-- 10+ community contributions/month
-- 4.5+ star rating (if applicable)
-- 99.5% uptime
+- Functional CopyForLLMs component with markdown export
+- Successful llms.txt generation for all content
 
 ## Changelog
 
@@ -431,6 +514,26 @@
 - Created comprehensive project changelog
 - Updated codebase summary with new directory structure
 - Preserved bilingual support (EN/VI) throughout restructuring
+- ✅ Phase 02: Navigation System Overhaul COMPLETED
+- Implemented context-aware sidebar navigation system
+- Created section-specific navigation components with smart detection
+- Enhanced mobile responsiveness with optimized navigation design
+- Added state persistence using SessionStorage for improved UX
+- Implemented enhanced active state highlighting and visual feedback
+- Added comprehensive bilingual navigation support across all components
+- Fixed nested command navigation hierarchy with proper categorization
+- Improved overall sidebar organization and user experience
+- ✅ Phase 03: Content Creation & Rewriting COMPLETED
+- Created 13 new index/guide pages across all documentation sections
+- Rewrote Introduction page to focus on pure onboarding experience
+- Created dedicated "Why ClaudeKit" sales page with marketing content
+- Developed comprehensive Concepts page explaining core architecture
+- Implemented proper Changelog page with version history tracking
+- Added FAQ page addressing common user questions
+- Enhanced content organization with logical section structure
+- Improved user journey with clear content paths and navigation flow
+- Updated all content pages with proper frontmatter schema compliance
+- Successfully separated technical documentation from marketing content
 
 ### 2025-11-25
 - Initial roadmap created

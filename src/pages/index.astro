@@ -94,9 +94,28 @@ const step3Code = `/plan [add user registration API]
 const step4Code = `git diff
 npm test
 /git:cm`;
+
+// Define headings for Table of Contents
+const headings = [
+  { depth: 2, text: 'Why ClaudeKit?', slug: 'why-claudekit' },
+  { depth: 3, text: 'Specialized Agents, Real Results', slug: 'specialized-agents-real-results' },
+  { depth: 3, text: 'Eliminate Repetitive Work', slug: 'eliminate-repetitive-work' },
+  { depth: 3, text: 'Stay in Control', slug: 'stay-in-control' },
+  { depth: 2, text: 'How It Works', slug: 'how-it-works' },
+  { depth: 3, text: 'ClaudeKit Engineer: 14 Specialized Agents', slug: 'claudekit-engineer-14-specialized-agents' },
+  { depth: 3, text: 'ClaudeKit CLI: Smart Project Management', slug: 'claudekit-cli-smart-project-management' },
+  { depth: 2, text: 'Real Developer Workflows', slug: 'real-developer-workflows' },
+  { depth: 3, text: 'Building a New Feature', slug: 'building-a-new-feature' },
+  { depth: 3, text: 'Debugging Production Issues', slug: 'debugging-production-issues' },
+  { depth: 3, text: 'Refactoring Legacy Code', slug: 'refactoring-legacy-code' },
+  { depth: 2, text: 'Proven Results', slug: 'proven-results' },
+  { depth: 2, text: 'What Developers Say', slug: 'what-developers-say' },
+  { depth: 2, text: 'Get Started in 5 Minutes', slug: 'get-started-in-5-minutes' },
+  { depth: 2, text: 'Explore Documentation', slug: 'explore-documentation' },
+];
 ---
 
-<DocsLayout title={title} description={description}>
+<DocsLayout title={title} description={description} headings={headings}>
 
 <div class="hero">
   <h1 class="hero-title">Build Software Like You Have a Team</h1>
@@ -116,11 +135,11 @@ npm test
   </div>
 </div>
 
-<h2>Why ClaudeKit?</h2>
+<h2 id="why-claudekit">Why ClaudeKit?</h2>
 
 <div class="features-grid">
   <div class="feature">
-    <h3>Specialized Agents, Real Results</h3>
+    <h3 id="specialized-agents-real-results">Specialized Agents, Real Results</h3>
     <p>14 expert agents—planner, tester, debugger, designer—each focusing on what it does best. Orchestrate workflows like a senior architect, not just autocomplete.</p>
     <ul>
       <li>Planner analyzes requirements and creates implementation roadmaps</li>
@@ -131,7 +150,7 @@ npm test
   </div>
 
   <div class="feature">
-    <h3>Eliminate Repetitive Work</h3>
+    <h3 id="eliminate-repetitive-work">Eliminate Repetitive Work</h3>
     <p>Reclaim 50-70% of time spent on repetitive tasks. AI writes initial implementations; you focus on architecture, review, and high-value decisions.</p>
     <ul>
       <li>Generate tests automatically with coverage reports</li>
@@ -142,7 +161,7 @@ npm test
   </div>
 
   <div class="feature">
-    <h3>Stay in Control</h3>
+    <h3 id="stay-in-control">Stay in Control</h3>
     <p>You're the reviewer, AI is the implementer. Checkpoints and rollback at every step. Transparent decision-making with full audit trails.</p>
     <ul>
       <li>Approve or reject changes before they're applied</li>
@@ -153,11 +172,11 @@ npm test
   </div>
 </div>
 
-<h2>How It Works</h2>
+<h2 id="how-it-works">How It Works</h2>
 
 <p>ClaudeKit operates through two main components that work seamlessly together:</p>
 
-<h3>ClaudeKit Engineer: 14 Specialized Agents</h3>
+<h3 id="claudekit-engineer-14-specialized-agents">ClaudeKit Engineer: 14 Specialized Agents</h3>
 
 <p>Multi-agent orchestration system with role-based specialists:</p>
 
@@ -171,7 +190,7 @@ npm test
 
 <p>Each command triggers specialized agents that collaborate to deliver results.</p>
 
-<h3>ClaudeKit CLI: Smart Project Management</h3>
+<h3 id="claudekit-cli-smart-project-management">ClaudeKit CLI: Smart Project Management</h3>
 
 <p>Intelligent project scaffolding and version management:</p>
 
@@ -185,9 +204,9 @@ npm test
   <li>Multi-tier authentication (GitHub CLI)</li>
 </ul>
 
-<h2>Real Developer Workflows</h2>
+<h2 id="real-developer-workflows">Real Developer Workflows</h2>
 
-<h3>Building a New Feature</h3>
+<h3 id="building-a-new-feature">Building a New Feature</h3>
 
 <p><strong>Planning:</strong></p>
 <Code code={planningCode} lang="bash" themes={{ light: 'light-plus', dark: 'one-dark-pro' }} />
@@ -198,15 +217,15 @@ npm test
 <p><strong>Testing:</strong></p>
 <Code code={testingCode} lang="bash" themes={{ light: 'light-plus', dark: 'one-dark-pro' }} />
 
-<h3>Debugging Production Issues</h3>
+<h3 id="debugging-production-issues">Debugging Production Issues</h3>
 
 <Code code={debuggingCode} lang="bash" themes={{ light: 'light-plus', dark: 'one-dark-pro' }} />
 
-<h3>Refactoring Legacy Code</h3>
+<h3 id="refactoring-legacy-code">Refactoring Legacy Code</h3>
 
 <Code code={refactoringCode} lang="bash" themes={{ light: 'light-plus', dark: 'one-dark-pro' }} />
 
-<h2>Proven Results</h2>
+<h2 id="proven-results">Proven Results</h2>
 
 <div class="social-proof">
   <div class="stat">
@@ -229,7 +248,7 @@ npm test
   <strong>Teammate Extension, Not Replacement</strong>: ClaudeKit positions you as the architect and reviewer while AI handles implementation. You maintain full control with checkpoints, rollback capabilities, and transparent decision-making.
 </div>
 
-<h2>What Developers Say</h2>
+<h2 id="what-developers-say">What Developers Say</h2>
 
 <blockquote>
   <p>"More time in reviewer mode than coding mode. AI writes 80% of initial implementations; I focus on architecture and steering multiple threads."</p>
@@ -246,7 +265,7 @@ npm test
   <footer>— Frontend Developer using ClaudeKit Engineer</footer>
 </blockquote>
 
-<h2>Get Started in 5 Minutes</h2>
+<h2 id="get-started-in-5-minutes">Get Started in 5 Minutes</h2>
 
 <div class="quick-start-steps">
   <div class="step">
@@ -291,7 +310,7 @@ npm test
   </div>
 </div>
 
-<h2>Explore Documentation</h2>
+<h2 id="explore-documentation">Explore Documentation</h2>
 
 <div class="doc-sections">
   <a href="/docs/getting-started/introduction" class="doc-card">

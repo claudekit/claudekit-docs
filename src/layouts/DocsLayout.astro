@@ -21,11 +21,12 @@ export interface Props {
 }
 
 const { title, description, locale = 'en', slug = '', headings = [] } = Astro.props;
+const currentPath = Astro.url.pathname;
 ---
 
 <BaseLayout title={title} description={description} locale={locale} slug={slug}>
   <div class="docs-layout">
-    <Sidebar />
+    <Sidebar currentPath={currentPath} />
 
     <div class="main-wrapper">
       <Header />

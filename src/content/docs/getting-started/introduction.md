@@ -1,11 +1,6 @@
 ---
 title: Introduction
-description: "Documentation for Introduction
-description:
-section: getting-started
-category: getting-started
-order: 1
-published: true"
+description: "AI Development Team That Ships Production Code"
 section: getting-started
 category: getting-started
 order: 1

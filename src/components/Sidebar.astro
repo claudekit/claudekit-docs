@@ -1,5 +1,11 @@
 ---
 import SidebarNav from './SidebarNav.astro';
+
+interface Props {
+  currentPath: string;
+}
+
+const { currentPath } = Astro.props;
 ---
 
 <aside class="sidebar">
@@ -72,7 +78,7 @@ import SidebarNav from './SidebarNav.astro';
       <kbd class="search-kbd">⌘K</kbd>
     </div>
 
-    <SidebarNav />
+    <SidebarNav currentPath={currentPath} />
   </div>
 </aside>
 

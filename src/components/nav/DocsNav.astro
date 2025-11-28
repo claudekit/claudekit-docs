@@ -1,0 +1,237 @@
+---
+// src/components/nav/DocsNav.astro
+import { getLangFromUrl, getLocalizedPath } from '../../i18n/utils';
+
+interface Props {
+  docs: any[];
+  currentPath: string;
+}
+
+const { docs, currentPath } = Astro.props;
+const currentLocale = getLangFromUrl(Astro.url);
+
+// Group by category
+const grouped = docs.reduce((acc, doc) => {
+  const cat = doc.data.category || 'uncategorized';
+  if (!acc[cat]) acc[cat] = [];
+  acc[cat].push(doc);
+  return acc;
+}, {});
+
+// Sort within groups
+Object.keys(grouped).forEach(key => {
+  grouped[key].sort((a, b) => (a.data.order || 999) - (b.data.order || 999));
+});
+
+// Category metadata
+const categories = {
+  'agents': { title: 'Agents', collapsible: false },
+  'commands/core': { title: 'Commands ’ Core', collapsible: true },
+  'commands/fix': { title: 'Commands ’ Fix', collapsible: true },
+  'commands/design': { title: 'Commands ’ Design', collapsible: true },
+  'commands/git': { title: 'Commands ’ Git', collapsible: true },
+  'commands/docs-cmd': { title: 'Commands ’ Docs', collapsible: true },
+  'commands/content': { title: 'Commands ’ Content', collapsible: true },
+  'commands/plan': { title: 'Commands ’ Plan', collapsible: true },
+  'commands/integrate': { title: 'Commands ’ Integrate', collapsible: true },
+  'commands/skill': { title: 'Commands ’ Skill', collapsible: true },
+  'skills/frontend': { title: 'Skills ’ Frontend', collapsible: true },
+  'skills/backend': { title: 'Skills ’ Backend', collapsible: true },
+  'skills/ai': { title: 'Skills ’ AI', collapsible: true },
+  'skills/auth': { title: 'Skills ’ Auth', collapsible: true },
+  'skills/ecommerce': { title: 'Skills ’ Ecommerce', collapsible: true },
+  'skills/tools': { title: 'Skills ’ Tools', collapsible: true },
+  'cli': { title: 'CLI', collapsible: false },
+  'configuration': { title: 'Configuration', collapsible: false },
+};
+---
+
+<div class="docs-nav">
+  {Object.entries(grouped).map(([category, categoryDocs]) => {
+    const meta = categories[category] || { title: category, collapsible: false };
+
+    return (
+      <div
+        class="nav-section"
+        data-collapsible={meta.collapsible ? '' : null}
+        data-category={category}
+      >
+        {meta.collapsible ? (
+          <button class="nav-section-title" aria-expanded="false">
+            <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="folder-icon"
+            >
+              <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"></path>
+            </svg>
+            {meta.title}
+          </button>
+        ) : (
+          <div class="nav-section-title">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="folder-icon"
+            >
+              <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"></path>
+            </svg>
+            {meta.title}
+          </div>
+        )}
+
+        <ul class="nav-items" hidden={meta.collapsible ? true : false}>
+          {categoryDocs.map(doc => {
+            const href = getLocalizedPath(`/docs/${doc.slug}`, currentLocale);
+            const isActive = currentPath === href;
+
+            return (
+              <li>
+                <a
+                  href={href}
+                  class:list={['nav-link', { active: isActive }]}
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="file-icon"
+                  >
+                    <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                    <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                  </svg>
+                  <span>{doc.data.title}</span>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    );
+  })}
+</div>
+
+<style>
+  .docs-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .nav-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--space-4);
+  }
+
+  .nav-section-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-secondary);
+    padding: var(--space-2) var(--space-3);
+    width: 100%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    transition: all 0.15s;
+    margin-bottom: var(--space-1);
+  }
+
+  .nav-section[data-collapsible] .nav-section-title:hover {
+    background-color: var(--color-bg-tertiary);
+    color: var(--color-text-primary);
+  }
+
+  .chevron {
+    transition: transform 0.2s;
+    color: var(--color-text-muted);
+  }
+
+  .nav-section.collapsed .chevron {
+    transform: rotate(-90deg);
+  }
+
+  .folder-icon {
+    color: var(--color-accent-blue);
+    width: var(--icon-sm);
+    height: var(--icon-sm);
+    flex-shrink: 0;
+  }
+
+  .nav-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .nav-items[hidden] {
+    display: none;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    padding-left: calc(var(--space-3) + 32px);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    border-radius: var(--radius-md);
+    transition: all 0.15s;
+    text-decoration: none;
+  }
+
+  .nav-link:hover {
+    background: var(--color-bg-tertiary);
+    color: var(--color-text-primary);
+    text-decoration: none;
+  }
+
+  .nav-link.active {
+    background: var(--color-bg-tertiary);
+    color: var(--color-accent-blue);
+    border-left: 2px solid var(--color-accent-blue);
+    padding-left: calc(var(--space-3) + 30px);
+    font-weight: var(--font-normal);
+  }
+
+  .file-icon {
+    color: var(--color-text-muted);
+    width: var(--icon-sm);
+    height: var(--icon-sm);
+    flex-shrink: 0;
+  }
+
+  .nav-link.active .file-icon {
+    color: var(--color-accent-blue);
+  }
+</style>

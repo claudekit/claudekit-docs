@@ -1,6 +1,12 @@
 ---
 title: Bắt Đầu Nhanh
-description: Ship tính năng đầu tiên trong 15 phút với đội ngũ phát triển AI của ClaudeKit
+description: "Documentation for Bắt Đầu Nhanh
+description:
+section: getting-started
+category: getting-started
+order: 4
+published: true"
+section: getting-started
 category: getting-started
 order: 4
 published: true

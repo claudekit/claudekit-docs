@@ -1,6 +1,12 @@
 ---
 title: Introduction
-description: Your AI development team - 14 agents that plan, code, test, and ship production features in minutes
+description: "Documentation for Introduction
+description:
+section: getting-started
+category: getting-started
+order: 1
+published: true"
+section: getting-started
 category: getting-started
 order: 1
 published: true

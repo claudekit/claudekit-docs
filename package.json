@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.6",
     "@astrojs/mdx": "^4.3.7",
     "@astrojs/react": "^4.0.0",
     "@astrojs/tailwind": "^6.0.2",
@@ -31,7 +32,7 @@
     "@types/react": "^18.3.17",
     "@types/react-dom": "^18.3.5",
     "remark-directive": "^4.0.0",
-    "typescript": "^5.7.3",
+    "typescript": "^5.9.3",
     "unist-util-visit": "^5.0.0"
   }
 }

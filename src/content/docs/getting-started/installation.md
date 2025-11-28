@@ -1,6 +1,12 @@
 ---
 title: Installation
-description: Install ClaudeKit and set up your development environment using manual setup or CLI
+description: "Documentation for Installation
+description:
+section: getting-started
+category: getting-started
+order: 2
+published: true"
+section: getting-started
 category: getting-started
 order: 2
 published: true

@@ -2,9 +2,16 @@ import { defineCollection, z } from 'astro:content';
 
 const docsSchema = z.object({
   title: z.string(),
-  description: z.string(),
-  category: z.enum(['getting-started', 'core-concepts', 'agents', 'commands', 'skills', 'use-cases', 'components', 'cli', 'troubleshooting']).optional(),
-  order: z.number().optional(),
+  description: z.string().min(10).max(160), // SEO constraint
+  section: z.enum([
+    'getting-started',
+    'docs',
+    'workflows',
+    'changelog',
+    'support'
+  ]),
+  category: z.string().optional(), // e.g., 'agents', 'commands/core'
+  order: z.number().optional().default(999),
   published: z.boolean().default(true),
   lastUpdated: z.date().optional(),
 });

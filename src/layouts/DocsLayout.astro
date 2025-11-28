@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Sidebar from '../components/Sidebar.astro';
 // import AIPanel from '../components/AIPanel.astro'; // Temporarily disabled - backend not ready
 import TableOfContents from '../components/TableOfContents';
+import CopyForLLMs from '../components/CopyForLLMs.tsx';
 import type { Locale } from '../i18n/locales';
 
 interface Heading {
@@ -22,6 +23,15 @@ export interface Props {
 
 const { title, description, locale = 'en', slug = '', headings = [] } = Astro.props;
 const currentPath = Astro.url.pathname;
+
+// Get the content data for CopyForLLMs
+const content = Astro.props.content;
+const frontmatter = content?.data || {
+  title: title || '',
+  description: description || '',
+  section: 'docs',
+  category: 'N/A'
+};
 ---
 
 <BaseLayout title={title} description={description} locale={locale} slug={slug}>
@@ -33,6 +43,21 @@ const currentPath = Astro.url.pathname;
 
       <div class="content-wrapper">
         <main class="content-area">
+          <div class="content-header">
+            <CopyForLLMs
+              client:load
+              pageContent={content?.body || ''}
+              pageUrl={currentPath}
+              pageSlug={slug}
+              frontmatter={{
+                title: frontmatter.title,
+                description: frontmatter.description,
+                section: frontmatter.section,
+                category: frontmatter.category
+              }}
+            />
+          </div>
+
           <article class="prose">
             <slot />
           </article>
@@ -120,6 +145,14 @@ const currentPath = Astro.url.pathname;
     max-width: var(--layout-content-max-width);
     margin: 0 auto;
     width: 100%;
+  }
+
+  .content-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: var(--space-4);
+    gap: var(--space-3);
   }
 
   .prose {

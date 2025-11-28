@@ -79,6 +79,20 @@ const { currentPath } = Astro.props;
     </div>
 
     <SidebarNav currentPath={currentPath} />
+
+    <!-- Sidebar Footer -->
+    <div class="sidebar-footer">
+      <a href="/llms-full.txt" target="_blank" rel="noopener noreferrer" class="llms-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        <span>Complete Docs (1.3MB)</span>
+      </a>
+    </div>
   </div>
 </aside>
 
@@ -135,6 +149,37 @@ const { currentPath } = Astro.props;
     display: flex;
     flex-direction: column;
     gap: var(--space-6);
+  }
+
+  /* Sidebar Footer */
+  .sidebar-footer {
+    margin-top: auto;
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .llms-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-size: var(--text-xs);
+    border-radius: var(--radius-md);
+    transition: all var(--duration-normal) var(--ease-out);
+    border: 1px solid transparent;
+  }
+
+  .llms-link:hover {
+    color: var(--color-text-primary);
+    background: var(--color-bg-secondary);
+    border-color: var(--color-border);
+    text-decoration: none;
+  }
+
+  .llms-link svg {
+    flex-shrink: 0;
   }
 
   /* Logo Styles */

@@ -101,23 +101,12 @@ bun add -g claudekit-cli
 ck --version
 ```
 
-### Tạo Dự Án Mới
+### Khởi Tạo hoặc Cập Nhật ClaudeKit Engineer
+
+**Lưu ý:** Lệnh này nên được chạy từ thư mục gốc của dự án.
 
 ```bash
-# Chế độ tương tác
-ck new
-
-# Với tùy chọn
-ck new --dir my-project --kit engineer
-
-# Phiên bản cụ thể
-ck new --kit engineer --version v1.0.0
-```
-
-### Cập Nhật Dự Án Hiện Có
-
-```bash
-# Chế độ tương tác
+# Chế độ tương tác (khuyến nghị)
 ck init
 
 # Với tùy chọn
@@ -126,10 +115,23 @@ ck init --kit engineer
 # Phiên bản cụ thể
 ck init --kit engineer --version v1.0.0
 
-# Global mode - use platform-specific user configuration
+# Với mẫu loại trừ
+ck init --exclude "local-config/**" --exclude "*.local"
+
+# Chế độ global - sử dụng thư mục cấu hình theo platform
 ck init --global
 ck init -g --kit engineer
 ```
+
+### Cập Nhật CLI
+
+Để cập nhật công cụ dòng lệnh `ck` lên phiên bản mới nhất:
+
+```bash
+ck update
+```
+
+**Lưu ý:** Lệnh này chỉ cập nhật CLI, không cập nhật file ClaudeKit Engineer. Dùng `ck init` để cập nhật ClaudeKit Engineer.
 
 ### Xác Thực
 
@@ -168,13 +170,14 @@ ls -la .claude/
 
 ## Cập Nhật ClaudeKit
 
-Giữ ClaudeKit luôn cập nhật:
+Giữ ClaudeKit Engineer luôn cập nhật:
 
 ```bash
-# Sử dụng CLI
+# Cập nhật ClaudeKit Engineer lên phiên bản mới nhất
 ck init
 
-# Hoặc thủ công pull các thay đổi mới nhất từ repo claudekit-engineer
+# Cập nhật lên phiên bản cụ thể
+ck init --version v1.2.0
 ```
 
 **Loại trừ các file cụ thể khi cập nhật:**
@@ -182,6 +185,13 @@ ck init
 ```bash
 # Không ghi đè CLAUDE.md
 ck init --exclude CLAUDE.md
+```
+
+**Cập nhật CLI:**
+
+```bash
+# Cập nhật công cụ dòng lệnh ck
+ck update
 ```
 
 ## Khắc Phục Sự Cố

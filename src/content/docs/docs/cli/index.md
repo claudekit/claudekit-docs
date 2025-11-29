@@ -35,11 +35,9 @@ Command-line tool for bootstrapping and updating ClaudeKit projects from private
 
 ### ck init
 
-Initialize or update project from ClaudeKit release:
+Initialize or update ClaudeKit Engineer in your project:
 
-**Note:** this command should be run from the root directory of your project.
-
-⚠️ **Deprecation Notice:** The `update` command has been renamed to `init`. The `update` command still works but will show a deprecation warning. Please use `init` instead.
+**Note:** This command should be run from the root directory of your project.
 
 ```bash
 # Interactive mode (recommended)
@@ -57,9 +55,6 @@ ck init --exclude "local-config/**" --exclude "*.local"
 # Global mode - use platform-specific user configuration
 ck init --global
 ck init -g --kit engineer
-
-# Legacy (deprecated - use 'init' instead)
-ck init  # Shows deprecation warning
 ```
 
 **What it does:**
@@ -78,13 +73,26 @@ ck init  # Shows deprecation warning
 
 **Global vs Local Configuration:**
 
-By default, ClaudeKit uses local configuration (`~/.claudekit`). 
+By default, ClaudeKit uses local configuration (`~/.claudekit`).
 
 For platform-specific **user-scoped settings**, use the `--global` flag:
 - **macOS/Linux**: `~/.claude`
 - **Windows**: `%LOCALAPPDATA%\.claude`
 
 Global mode uses user-scoped directories (no sudo required), allowing separate configurations for different projects.
+
+### ck update
+
+Update the ClaudeKit CLI itself to the latest version:
+
+```bash
+# Update CLI to latest
+ck update
+```
+
+**What it does:**
+- Updates the `ck` command-line tool to the latest version
+- Does NOT update ClaudeKit Engineer files (use `ck init` for that)
 
 ### ck versions
 
@@ -240,7 +248,7 @@ claude  # Start Claude Code
 
 ## Common Workflows
 
-### Initialize or Update Project
+### Initialize or Update ClaudeKit Engineer
 
 ```bash
 # Interactive mode (recommended)
@@ -255,7 +263,7 @@ ck init --dir my-app --kit engineer --version v1.0.0
 # With exclusions
 ck init --exclude "*.log" --exclude "temp/**"
 
-# Update to latest
+# Update ClaudeKit Engineer to latest
 ck init
 
 # Update to specific version
@@ -266,6 +274,13 @@ ck init --exclude "local-config/**" --exclude "*.local"
 
 # Update with verbose output
 ck init --verbose
+```
+
+### Update the CLI Itself
+
+```bash
+# Update ck CLI to latest version
+ck update
 ```
 
 ### Check Available Versions

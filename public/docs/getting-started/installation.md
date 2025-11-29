@@ -95,23 +95,12 @@ bun add -g claudekit-cli
 ck --version
 ```
 
-### Create a New Project
+### Initialize or Update ClaudeKit Engineer
+
+**Note:** This command should be run from the root directory of your project.
 
 ```bash
-# Interactive mode
-ck new
-
-# With options
-ck new --dir my-project --kit engineer
-
-# Specific version
-ck new --kit engineer --version v1.0.0
-```
-
-### Update Existing Project
-
-```bash
-# Interactive mode
+# Interactive mode (recommended)
 ck init
 
 # With options
@@ -119,7 +108,24 @@ ck init --kit engineer
 
 # Specific version
 ck init --kit engineer --version v1.0.0
+
+# With exclude patterns
+ck init --exclude "local-config/**" --exclude "*.local"
+
+# Global mode - use platform-specific user configuration
+ck init --global
+ck init -g --kit engineer
 ```
+
+### Update the CLI Itself
+
+To update the `ck` command-line tool to the latest version:
+
+```bash
+ck update
+```
+
+**Note:** This updates the CLI tool only, not ClaudeKit Engineer files. Use `ck init` to update ClaudeKit Engineer.
 
 ### Authentication
 
@@ -158,13 +164,14 @@ ls -la .claude/
 
 ## Update ClaudeKit
 
-Keep ClaudeKit up to date:
+Keep ClaudeKit Engineer up to date:
 
 ```bash
-# Using CLI
+# Update ClaudeKit Engineer to latest version
 ck init
 
-# Or manually pull latest changes from claudekit-engineer repo
+# Update to specific version
+ck init --version v1.2.0
 ```
 
 **Exclude specific files during update:**
@@ -172,6 +179,13 @@ ck init
 ```bash
 # Don't overwrite CLAUDE.md
 ck init --exclude CLAUDE.md
+```
+
+**Update the CLI itself:**
+
+```bash
+# Update ck command-line tool
+ck update
 ```
 
 ## Troubleshooting

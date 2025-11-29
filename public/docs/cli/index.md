@@ -27,35 +27,14 @@ Command-line tool for bootstrapping and updating ClaudeKit projects from private
 
 ## Core Commands
 
-### ck new
-
-Create new project from latest ClaudeKit release:
-
-```bash
-# Interactive mode
-ck new
-
-# With options
-ck new --dir my-project --kit engineer
-
-# Specific version
-ck new --kit engineer --version v1.0.0
-```
-
-**Options:**
-- `--dir <dir>` - Target directory (default: current directory)
-- `--kit <kit>` - Kit to use (`engineer` or `marketing`)
-- `--version <version>` - Specific version to download (default: latest)
-- `--exclude <pattern>` - Exclude files/directories using glob patterns (can be used multiple times)
-
-[Learn more about `ck new`](/docs/cli/new)
-
 ### ck init
 
-Update existing project to latest or specific version:
+Initialize or update ClaudeKit Engineer in your project:
+
+**Note:** This command should be run from the root directory of your project.
 
 ```bash
-# Interactive mode
+# Interactive mode (recommended)
 ck init
 
 # With options
@@ -63,6 +42,9 @@ ck init --kit engineer
 
 # Specific version
 ck init --kit engineer --version v1.0.0
+
+# With exclude patterns
+ck init --exclude "local-config/**" --exclude "*.local"
 
 # Global mode - use platform-specific user configuration
 ck init --global
@@ -81,6 +63,30 @@ ck init -g --kit engineer
 - `--kit <kit>` - Kit to use (`engineer` or `marketing`)
 - `--version <version>` - Specific version to download (default: latest)
 - `--exclude <pattern>` - Exclude files/directories using glob patterns (can be used multiple times)
+- `--global, -g` - Use platform-specific user configuration directory
+
+**Global vs Local Configuration:**
+
+By default, ClaudeKit uses local configuration (`~/.claudekit`).
+
+For platform-specific **user-scoped settings**, use the `--global` flag:
+- **macOS/Linux**: `~/.claude`
+- **Windows**: `%LOCALAPPDATA%\.claude`
+
+Global mode uses user-scoped directories (no sudo required), allowing separate configurations for different projects.
+
+### ck update
+
+Update the ClaudeKit CLI itself to the latest version:
+
+```bash
+# Update CLI to latest
+ck update
+```
+
+**What it does:**
+- Updates the `ck` command-line tool to the latest version
+- Does NOT update ClaudeKit Engineer files (use `ck init` for that)
 
 ### ck versions
 
@@ -115,7 +121,7 @@ All commands support these global options:
 Enable verbose logging for debugging:
 
 ```bash
-ck new --verbose
+ck init --verbose
 ck init -v  # Short form
 ```
 
@@ -131,7 +137,7 @@ ck init -v  # Short form
 Write logs to file for sharing:
 
 ```bash
-ck new --verbose --log-file debug.log
+ck init --verbose --log-file debug.log
 ```
 
 **Note:** All sensitive data (tokens, credentials) is automatically sanitized in logs.
@@ -224,8 +230,8 @@ gh auth login
 # OR
 export GITHUB_TOKEN=ghp_your_token
 
-# Create new project
-ck new --kit engineer
+# Initialize project
+ck init --kit engineer
 
 # Navigate to project
 cd my-project
@@ -236,26 +242,22 @@ claude  # Start Claude Code
 
 ## Common Workflows
 
-### Create New Project
+### Initialize or Update ClaudeKit Engineer
 
 ```bash
 # Interactive mode (recommended)
-ck new
+ck init
 
 # Direct with options
-ck new --dir my-app --kit engineer
+ck init --dir my-app --kit engineer
 
 # Specific version
-ck new --dir my-app --kit engineer --version v1.0.0
+ck init --dir my-app --kit engineer --version v1.0.0
 
 # With exclusions
-ck new --kit engineer --exclude "*.log" --exclude "temp/**"
-```
+ck init --exclude "*.log" --exclude "temp/**"
 
-### Update Existing Project
-
-```bash
-# Update to latest
+# Update ClaudeKit Engineer to latest
 ck init
 
 # Update to specific version
@@ -266,10 +268,13 @@ ck init --exclude "local-config/**" --exclude "*.local"
 
 # Update with verbose output
 ck init --verbose
+```
 
-# Global mode - use platform-specific user configuration
-ck init --global
-ck init -g --kit engineer
+### Update the CLI Itself
+
+```bash
+# Update ck CLI to latest version
+ck update
 ```
 
 ### Check Available Versions
@@ -320,7 +325,7 @@ npm list -g claudekit-cli
 1. Check internet connection
 2. Verify GitHub token is valid: `gh auth status`
 3. Confirm you have repository access (purchased kit)
-4. Try with verbose flag: `ck new --verbose`
+4. Try with verbose flag: `ck init --verbose`
 
 ## Version Information
 
@@ -340,9 +345,8 @@ ck -h
 ## Next Steps
 
 - [Installation Guide](/docs/cli/installation) - Install ClaudeKit CLI
-- [ck new Command](/docs/cli/new) - Create new projects
 - [Getting Started](/docs/getting-started/installation) - Start using ClaudeKit
 
 ---
 
-**Ready to start?** Purchase a kit at [ClaudeKit.cc](https://claudekit.cc), then run `ck new` to create your first project.
+**Ready to start?** Purchase a kit at [ClaudeKit.cc](https://claudekit.cc), then run `ck init` to initialize your first project.

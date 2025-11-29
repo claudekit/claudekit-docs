@@ -64,20 +64,6 @@ const categories = {
                   href={href}
                   class:list={['nav-link', { active: isActive }]}
                 >
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="file-icon"
-                  >
-                    <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
-                    <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
-                  </svg>
                   <span>{doc.data.title}</span>
                 </a>
               </li>
@@ -136,7 +122,7 @@ const categories = {
     align-items: center;
     gap: var(--space-2);
     padding: var(--space-2) var(--space-3);
-    padding-left: calc(var(--space-3) + 32px);
+    padding-left: calc(var(--space-3) + 12px);
     font-size: var(--text-sm);
     color: var(--color-text-secondary);
     border-radius: var(--radius-md);
@@ -154,18 +140,7 @@ const categories = {
     background: var(--color-bg-tertiary);
     color: var(--color-accent-blue);
     border-left: 2px solid var(--color-accent-blue);
-    padding-left: calc(var(--space-3) + 30px);
+    padding-left: calc(var(--space-3) + 10px);
     font-weight: var(--font-normal);
-  }
-
-  .file-icon {
-    color: var(--color-text-muted);
-    width: var(--icon-sm);
-    height: var(--icon-sm);
-    flex-shrink: 0;
-  }
-
-  .nav-link.active .file-icon {
-    color: var(--color-accent-blue);
   }
 </style>

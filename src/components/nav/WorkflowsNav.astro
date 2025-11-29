@@ -26,19 +26,6 @@ const sortedDocs = docs.sort((a, b) => (a.data.order || 999) - (b.data.order || 
             href={href}
             class:list={['nav-link', { active: isActive }]}
           >
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="file-icon"
-            >
-              <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect width="12" height="12" x="8" y="8" rx="2" ry="2"/><path d="M16 8V6a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
-            </svg>
             <span>{doc.data.title}</span>
           </a>
         </li>
@@ -62,6 +49,7 @@ const sortedDocs = docs.sort((a, b) => (a.data.order || 999) - (b.data.order || 
     align-items: center;
     gap: var(--space-2);
     padding: var(--space-2) var(--space-3);
+    padding-left: calc(var(--space-3) + 12px);
     font-size: var(--text-sm);
     color: var(--color-text-secondary);
     border-radius: var(--radius-md);
@@ -79,18 +67,7 @@ const sortedDocs = docs.sort((a, b) => (a.data.order || 999) - (b.data.order || 
     background: var(--color-bg-tertiary);
     color: var(--color-accent-blue);
     border-left: 2px solid var(--color-accent-blue);
-    padding-left: calc(var(--space-3) - 2px);
+    padding-left: calc(var(--space-3) + 10px);
     font-weight: var(--font-normal);
-  }
-
-  .file-icon {
-    color: var(--color-text-muted);
-    width: var(--icon-sm);
-    height: var(--icon-sm);
-    flex-shrink: 0;
-  }
-
-  .nav-link.active .file-icon {
-    color: var(--color-accent-blue);
   }
 </style>

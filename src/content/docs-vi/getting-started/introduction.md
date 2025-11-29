@@ -1,6 +1,12 @@
 ---
 title: Giới Thiệu
-description: Đội ngũ phát triển AI của bạn - 14 agents lập kế hoạch, viết code, kiểm tra và triển khai tính năng production trong vài phút
+description: "Documentation for Giới Thiệu
+description:
+section: getting-started
+category: getting-started
+order: 1
+published: true"
+section: getting-started
 category: getting-started
 order: 1
 published: true

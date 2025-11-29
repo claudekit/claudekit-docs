@@ -1,6 +1,7 @@
 ---
 title: "ClaudeKit Cheatsheet"
 description: "Quick reference for ClaudeKit commands - essential commands for AI-powered development workflow."
+section: getting-started
 category: "getting-started"
 order: 5
 published: true
@@ -542,8 +543,8 @@ ck --version
 - [Full Documentation](https://docs.claudekit.cc)
 - [All Commands](/docs/commands/)
 - [AI Agents](/docs/agents/)
-- [Workflows](/docs/core-concepts/workflows)
-- [Troubleshooting](/docs/troubleshooting/)
+- [Workflows](/docs/docs/configuration/workflows)
+- [Troubleshooting](/docs/support/troubleshooting/)
 - [GitHub Discussions](https://github.com/mrgoonie/claudekit-cli/discussions)
 
 ---

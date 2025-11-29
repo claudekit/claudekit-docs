@@ -29,7 +29,7 @@ const alternates = slug ? getAlternateUrls(slug) : [];
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/logo-512-transparent.png" />
 
     <!-- Hreflang tags for SEO -->
     {alternates.map(({ lang, url }) => (
@@ -57,7 +57,7 @@ const alternates = slug ? getAlternateUrls(slug) : [];
       }
 
       // Expose to window for button handlers
-      window.toggleTheme = toggleTheme;
+      (window as any).toggleTheme = toggleTheme;
     </script>
   </body>
 </html>

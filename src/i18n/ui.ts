@@ -1,6 +1,10 @@
 export const ui = {
   en: {
     'nav.getting-started': 'Getting Started',
+    'nav.docs': 'Docs',
+    'nav.workflows': 'Workflows',
+    'nav.changelog': 'Changelog',
+    'nav.support': 'Support',
     'nav.core-concepts': 'Core Concepts',
     'nav.agents': 'Agents',
     'nav.commands': 'Commands',
@@ -18,6 +22,10 @@ export const ui = {
   },
   vi: {
     'nav.getting-started': 'Bắt Đầu',
+    'nav.docs': 'Tài Liệu',
+    'nav.workflows': 'Quy Trình',
+    'nav.changelog': 'Lịch Sử',
+    'nav.support': 'Hỗ Trợ',
     'nav.core-concepts': 'Khái Niệm Cơ Bản',
     'nav.agents': 'Agents',
     'nav.commands': 'Lệnh',

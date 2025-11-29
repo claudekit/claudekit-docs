@@ -1,0 +1,254 @@
+---
+// src/components/nav/DocsNav.astro
+import { getLangFromUrl, getLocalizedPath } from '../../i18n/utils';
+
+interface Props {
+  docs: any[];
+  currentPath: string;
+}
+
+const { docs, currentPath } = Astro.props;
+const currentLocale = getLangFromUrl(Astro.url);
+
+// Helper to capitalize words
+const capitalize = (str: string) => {
+  return str.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+};
+
+// Build nested structure
+const buildHierarchy = (docs: any[]) => {
+  const root = {};
+
+  docs.forEach(doc => {
+    const categoryPath = doc.data.category || 'uncategorized';
+    const parts = categoryPath.split('/');
+    
+    let currentLevel = root;
+    
+    parts.forEach((part, index) => {
+      if (!currentLevel[part]) {
+        currentLevel[part] = {
+          title: capitalize(part),
+          items: [],
+          subcategories: {},
+          path: parts.slice(0, index + 1).join('/'),
+          collapsed: true // Default collapsed
+        };
+      }
+      
+      if (index === parts.length - 1) {
+        currentLevel[part].items.push(doc);
+      } else {
+        currentLevel = currentLevel[part].subcategories;
+      }
+    });
+  });
+
+  return root;
+};
+
+const hierarchy = buildHierarchy(docs);
+
+// Recursive render function (simulated with nested components or inline map)
+// Since Astro doesn't support recursive components easily in the same file without self-import,
+// we'll handle a fixed depth or use a client-side script for toggling if needed, 
+// but for now let's try to flatten the render loop or use a simple recursive structure if possible.
+// Actually, for sidebar, usually 2-3 levels max. Let's iterate.
+
+// Sort items
+const sortItems = (items: any[]) => {
+  return items.sort((a, b) => (a.data.order || 999) - (b.data.order || 999));
+};
+
+// Flatten hierarchy for easier rendering if we want to avoid complex recursion in template
+// But we want nesting visual.
+---
+
+<div class="docs-nav">
+  {Object.entries(hierarchy).map(([key, category]: [string, any]) => (
+    <div class="nav-section" data-category={category.path} data-collapsible>
+      <button class="nav-section-title" aria-expanded="false">
+        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m6 9 6 6 6-6"></path>
+        </svg>
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="folder-icon"
+        >
+          <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"></path>
+        </svg>
+        {category.title}
+      </button>
+
+      <div class="nav-items" hidden>
+        {/* Render direct items */}
+        {sortItems(category.items).map(doc => {
+          const href = getLocalizedPath(`/docs/${doc.slug}`, currentLocale);
+          const isActive = currentPath === href;
+          return (
+            <a href={href} class:list={['nav-link', { active: isActive }]}>
+              <span>{doc.data.title}</span>
+            </a>
+          );
+        })}
+
+        {/* Render subcategories */}
+        {Object.entries(category.subcategories).map(([subKey, subCategory]: [string, any]) => (
+          <div class="nav-sub-section" data-category={subCategory.path} data-collapsible>
+            <button class="nav-sub-section-title" aria-expanded="false">
+              <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m6 9 6 6 6-6"></path>
+              </svg>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="folder-icon"
+              >
+                <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"></path>
+              </svg>
+              {subCategory.title}
+            </button>
+            <div class="nav-items" hidden>
+              {sortItems(subCategory.items).map(doc => {
+                const href = getLocalizedPath(`/docs/${doc.slug}`, currentLocale);
+                const isActive = currentPath === href;
+                return (
+                  <a href={href} class:list={['nav-link', { active: isActive }]}>
+                    <span>{doc.data.title}</span>
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  ))}
+</div>
+
+<style>
+  .docs-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .nav-section, .nav-sub-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--space-1);
+  }
+
+  .nav-section-title, .nav-sub-section-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-secondary);
+    padding: var(--space-2) var(--space-3);
+    width: 100%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    transition: all 0.15s;
+    text-align: left;
+  }
+
+  .nav-sub-section-title {
+    padding-left: calc(var(--space-3) + 12px);
+    font-size: var(--text-xs);
+    text-transform: none;
+    letter-spacing: normal;
+    font-weight: var(--font-medium);
+    color: var(--color-text-secondary);
+  }
+
+  .nav-sub-section-title:hover {
+    color: var(--color-text-primary);
+  }
+
+  .nav-section-title:hover, .nav-sub-section-title:hover {
+    background-color: var(--color-bg-tertiary);
+  }
+
+  .chevron {
+    transition: transform 0.2s;
+    color: var(--color-text-muted);
+    width: 14px;
+    height: 14px;
+  }
+
+  .nav-section.collapsed .chevron, .nav-sub-section.collapsed .chevron {
+    transform: rotate(-90deg);
+  }
+
+  .folder-icon {
+    color: var(--color-accent-blue);
+    width: var(--icon-sm);
+    height: var(--icon-sm);
+    flex-shrink: 0;
+  }
+
+  .nav-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .nav-items[hidden] {
+    display: none;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    padding-left: calc(var(--space-3) + 12px);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    border-radius: var(--radius-md);
+    transition: all 0.15s;
+    text-decoration: none;
+  }
+
+  .nav-sub-section .nav-items .nav-link {
+    padding-left: calc(var(--space-3) + 28px);
+    font-size: var(--text-sm);
+  }
+
+  .nav-link:hover {
+    background: var(--color-bg-tertiary);
+    color: var(--color-text-primary);
+    text-decoration: none;
+  }
+
+  .nav-link.active {
+    background: var(--color-bg-tertiary);
+    color: var(--color-accent-blue);
+    border-left: 2px solid var(--color-accent-blue);
+    padding-left: calc(var(--space-3) + 10px);
+    font-weight: var(--font-normal);
+  }
+
+  .nav-sub-section .nav-items .nav-link.active {
+    padding-left: calc(var(--space-3) + 26px);
+  }
+</style>

@@ -1,0 +1,501 @@
+---
+// Search.astro - Pagefind Search Modal
+---
+
+<div id="search-modal" class="search-modal" hidden>
+  <div class="search-backdrop"></div>
+  <div class="search-container">
+    <div class="search-wrapper">
+      <div class="search-header">
+        <div class="search-input-wrapper">
+          <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+          <input
+            type="text"
+            id="search-input"
+            class="search-input"
+            placeholder="Search documentation..."
+            autocomplete="off"
+          />
+          <kbd class="search-escape">Esc</kbd>
+        </div>
+      </div>
+      <div id="search-results" class="search-results">
+        <div class="search-empty">
+          <p>Start typing to search...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  // Pagefind integration - must be is:inline to avoid Vite bundling issues
+  window.pagefindInstance = null;
+  let searchTimeout;
+
+  async function loadPagefind() {
+    if (window.pagefindInstance) return window.pagefindInstance;
+
+    try {
+      // Dynamic import at runtime (after build, /pagefind/ exists)
+      var pagefind = await import('/pagefind/pagefind.js');
+      await pagefind.init();
+      window.pagefindInstance = pagefind;
+      return pagefind;
+    } catch (error) {
+      console.warn('Pagefind not available (build required):', error);
+      return null;
+    }
+  }
+
+  function openSearch() {
+    var modal = document.getElementById('search-modal');
+    if (!modal) return;
+
+    modal.removeAttribute('hidden');
+    document.body.style.overflow = 'hidden';
+
+    // Focus search input
+    setTimeout(function() {
+      var input = document.getElementById('search-input');
+      if (input) input.focus();
+    }, 50);
+
+    // Lazy load Pagefind
+    loadPagefind();
+  }
+
+  function closeSearch() {
+    var modal = document.getElementById('search-modal');
+    if (!modal) return;
+
+    modal.setAttribute('hidden', '');
+    document.body.style.overflow = '';
+
+    // Clear search input and results
+    var input = document.getElementById('search-input');
+    var results = document.getElementById('search-results');
+    if (input) input.value = '';
+    if (results) {
+      results.innerHTML = '';
+      // Reset to initial state if needed, or just leave empty
+      // We'll show the "Ask AI" section by default when empty in a future iteration if desired
+      // For now, just clear results
+    }
+  }
+
+  function getBreadcrumbs(url, title) {
+    // Remove leading/trailing slashes and split
+    var parts = url.replace(/^\/|\/$/g, '').split('/');
+    
+    // Filter out common prefixes if needed (e.g., 'docs')
+    // For now, we'll capitalize and join them
+    var breadcrumbs = parts.map(function(part) {
+      return part.charAt(0).toUpperCase() + part.slice(1).replace(/-/g, ' ');
+    });
+
+    // If the last part matches the title roughly, we might remove it to avoid duplication
+    // but often it's nice to see the full path.
+    
+    return breadcrumbs.join(' › ');
+  }
+
+  async function performSearch(query) {
+    var results = document.getElementById('search-results');
+    if (!results) return;
+
+    if (!query.trim()) {
+      results.innerHTML = '';
+      return;
+    }
+
+    // Show loading state
+    results.innerHTML = '<div class="search-loading"><p>Searching...</p></div>';
+
+    var pf = await loadPagefind();
+    if (!pf) {
+      results.innerHTML = '<div class="search-error"><p>Search unavailable. Run <code>bun run build</code> to enable.</p></div>';
+      return;
+    }
+
+    try {
+      var search = await pf.search(query);
+
+      if (search.results.length === 0) {
+        results.innerHTML = '<div class="search-empty"><p>No results for "<strong>' + escapeHtml(query) + '</strong>"</p></div>';
+        return;
+      }
+
+      // Load first 10 results
+      var loadedResults = await Promise.all(
+        search.results.slice(0, 10).map(function(r) { return r.data(); })
+      );
+
+      var resultsHtml = '';
+
+      loadedResults.forEach(function(result) {
+        // Clean up excerpt
+        var excerpt = result.excerpt || '';
+        if (excerpt.length > 120) {
+          excerpt = excerpt.substring(0, 120) + '...';
+        }
+
+        // Determine icon
+        var isHash = result.url.includes('#');
+        var iconSvg = isHash 
+          ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="9" x2="20" y2="9"></line><line x1="4" y1="15" x2="20" y2="15"></line><line x1="10" y1="3" x2="8" y2="21"></line><line x1="16" y1="3" x2="14" y2="21"></line></svg>' // Hash
+          : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>'; // File Text
+
+        // Generate breadcrumbs
+        var breadcrumbs = getBreadcrumbs(result.url, result.meta.title);
+
+        resultsHtml += '<a href="' + result.url + '" class="search-result" onclick="window.closeSearch()">' +
+          '<div class="result-icon">' + iconSvg + '</div>' +
+          '<div class="result-content">' +
+            '<div class="result-breadcrumbs">' + breadcrumbs + '</div>' +
+            '<div class="result-title">' + (result.meta && result.meta.title ? result.meta.title : 'Untitled') + '</div>' +
+            '<div class="result-excerpt">' + excerpt + '</div>' +
+          '</div>' +
+        '</a>';
+      });
+
+      // Add "Ask AI" section at the bottom
+      resultsHtml += '<div class="search-ai-section">' +
+        '<div class="ai-header">Ask AI assistant</div>' +
+        '<button class="ai-question" onclick="alert(\'AI Assistant coming soon!\')">' +
+          '<svg class="ai-sparkle" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>' +
+          '<span>Can you tell me about ' + escapeHtml(query) + '?</span>' +
+        '</button>' +
+      '</div>';
+
+      results.innerHTML = resultsHtml;
+    } catch (error) {
+      console.error('Search error:', error);
+      results.innerHTML = '<div class="search-error"><p>Search error. Try again.</p></div>';
+    }
+  }
+
+  function escapeHtml(text) {
+    var div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  }
+
+  // Expose global functions
+  window.openSearch = openSearch;
+  window.closeSearch = closeSearch;
+
+  // Setup event listeners
+  document.addEventListener('DOMContentLoaded', function() {
+    const input = document.getElementById('search-input');
+    const backdrop = document.querySelector('.search-backdrop');
+
+    // Search input handler with debounce
+    if (input) {
+      input.addEventListener('input', function(e) {
+        const query = e.target.value;
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(function() { performSearch(query); }, 150);
+      });
+
+      // Handle result navigation with keyboard
+      input.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          const firstResult = document.querySelector('.search-result');
+          if (firstResult) {
+            firstResult.click();
+          }
+        }
+      });
+    }
+
+    // Click backdrop to close
+    if (backdrop) {
+      backdrop.addEventListener('click', closeSearch);
+    }
+
+    // Keyboard shortcuts
+    document.addEventListener('keydown', function(e) {
+      // Cmd+K or Ctrl+K to open
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        const modal = document.getElementById('search-modal');
+        if (modal && modal.hasAttribute('hidden')) {
+          openSearch();
+        } else {
+          closeSearch();
+        }
+      }
+
+      // Escape to close
+      if (e.key === 'Escape') {
+        closeSearch();
+      }
+    });
+  });
+</script>
+
+<style>
+  .search-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    font-family: var(--font-sans);
+  }
+
+  .search-modal[hidden] {
+    display: none;
+  }
+
+  .search-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    animation: fadeIn 0.2s ease-out;
+  }
+
+  .search-container {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 12vh;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 100%;
+    pointer-events: none; /* Allow clicks to pass through to backdrop */
+  }
+
+  .search-wrapper {
+    width: 100%;
+    max-width: 640px;
+    background: var(--color-bg-primary);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    box-shadow: 
+      0 0 0 1px rgba(0, 0, 0, 0.05),
+      0 12px 40px -8px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    max-height: 70vh;
+    pointer-events: auto; /* Re-enable clicks */
+    animation: slideDown 0.2s ease-out;
+  }
+
+  .search-header {
+    padding: 12px;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-bg-primary);
+    flex-shrink: 0;
+  }
+
+  .search-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .search-icon {
+    position: absolute;
+    left: 14px;
+    color: var(--color-text-muted);
+    pointer-events: none;
+    width: 20px;
+    height: 20px;
+  }
+
+  .search-input {
+    width: 100%;
+    height: 44px;
+    padding: 0 12px;
+    padding-left: 44px;
+    padding-right: 50px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-size: 16px;
+    color: var(--color-text-primary);
+    outline: none;
+  }
+
+  .search-input:focus {
+    /* No focus ring in this design style, just cursor */
+  }
+
+  .search-input::placeholder {
+    color: var(--color-text-muted);
+  }
+
+  .search-escape {
+    position: absolute;
+    right: 12px;
+    padding: 2px 6px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+
+  .search-results {
+    overflow-y: auto;
+    padding: 8px 0;
+    background: var(--color-bg-primary);
+    flex-grow: 1;
+  }
+
+  .search-empty,
+  .search-loading,
+  .search-error {
+    padding: 40px 20px;
+    text-align: center;
+    color: var(--color-text-muted);
+  }
+
+  .search-empty p,
+  .search-loading p,
+  .search-error p {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  /* Result Item Styling */
+  .search-result {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 16px;
+    text-decoration: none;
+    border-left: 2px solid transparent;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+  }
+
+  .search-result:hover,
+  .search-result:focus {
+    background-color: var(--color-bg-secondary);
+    border-left-color: var(--color-text-primary);
+    outline: none;
+  }
+
+  .result-icon {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--color-text-muted);
+    opacity: 0.7;
+  }
+
+  .result-content {
+    flex-grow: 1;
+    min-width: 0; /* Enable text truncation */
+  }
+
+  .result-breadcrumbs {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .result-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: 4px;
+    line-height: 1.4;
+  }
+
+  .result-excerpt {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Highlight styling */
+  :global(.search-result mark) {
+    background: transparent !important;
+    color: var(--color-text-primary) !important;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent-blue);
+    padding: 0;
+  }
+
+  /* AI Section */
+  .search-ai-section {
+    padding: 16px;
+    border-top: 1px solid var(--color-border);
+    background: var(--color-bg-secondary);
+  }
+
+  .ai-header {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+
+  .ai-question {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 0;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--color-text-primary);
+    font-weight: 500;
+  }
+
+  .ai-question:hover {
+    text-decoration: underline;
+  }
+
+  .ai-sparkle {
+    color: var(--color-text-primary);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 768px) {
+    .search-container {
+      padding: 0;
+      padding-top: 0;
+    }
+
+    .search-wrapper {
+      height: 100%;
+      max-height: 100%;
+      border-radius: 0;
+      border: none;
+    }
+
+    .search-escape {
+      display: none;
+    }
+  }
+</style>

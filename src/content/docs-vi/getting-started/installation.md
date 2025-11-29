@@ -1,6 +1,12 @@
 ---
 title: Cài Đặt
-description: Cài đặt ClaudeKit và thiết lập môi trường phát triển bằng cách cài đặt thủ công hoặc CLI
+description: "Documentation for Cài Đặt
+description:
+section: getting-started
+category: getting-started
+order: 2
+published: true"
+section: getting-started
 category: getting-started
 order: 2
 published: true

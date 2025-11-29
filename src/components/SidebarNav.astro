@@ -1,172 +1,100 @@
 ---
 import { getCollection } from 'astro:content';
 import { getLangFromUrl, useTranslations, getLocalizedPath } from '../i18n/utils';
+import GettingStartedNav from './nav/GettingStartedNav.astro';
+import DocsNav from './nav/DocsNav.astro';
+import WorkflowsNav from './nav/WorkflowsNav.astro';
+import ChangelogNav from './nav/ChangelogNav.astro';
+import SupportNav from './nav/SupportNav.astro';
 
+interface Props {
+  currentPath: string;
+}
+
+const { currentPath } = Astro.props;
 const currentLocale = getLangFromUrl(Astro.url);
-const t = useTranslations(currentLocale);
+
+// Detect section from URL
+function getSectionFromUrl(path: string): string {
+  if (path.startsWith('/docs/getting-started')) return 'getting-started';
+  if (path.startsWith('/docs/workflows')) return 'workflows';
+  if (path.startsWith('/docs/changelog')) return 'changelog';
+  if (path.startsWith('/docs/support')) return 'support';
+  return 'docs';
+}
+
+const section = getSectionFromUrl(currentPath);
 
 // Get docs from appropriate collection based on locale
 const collectionName = currentLocale === 'vi' ? 'docs-vi' : 'docs';
-const allDocs = await getCollection(collectionName);
+const allDocs = await getCollection(collectionName, (entry) => entry.data.published);
 
-// Group by category with translated titles
-const categories = {
-  'getting-started': {
-    title: t('nav.getting-started'),
-    docs: allDocs
-      .filter((doc) => doc.data.category === 'getting-started')
-      .sort((a, b) => (a.data.order || 0) - (b.data.order || 0)),
-  },
-  'cli': {
-    title: t('nav.cli'),
-    docs: allDocs
-      .filter((doc) => doc.data.category === 'cli')
-      .sort((a, b) => (a.data.order || 0) - (b.data.order || 0)),
-  },
-  'core-concepts': {
-    title: t('nav.core-concepts'),
-    docs: allDocs
-      .filter((doc) => doc.data.category === 'core-concepts')
-      .sort((a, b) => (a.data.order || 0) - (b.data.order || 0)),
-  },
-  'agents': {
-    title: t('nav.agents'),
-    docs: allDocs
-      .filter((doc) => doc.data.category === 'agents')
-      .sort((a, b) => (a.data.order || 0) - (b.data.order || 0)),
-  },
-  'commands': {
-    title: t('nav.commands'),
-    docs: allDocs
-      .filter((doc) => doc.data.category === 'commands')
-      .sort((a, b) => (a.data.order || 0) - (b.data.order || 0)),
-  },
-  'skills': {
-    title: t('nav.skills'),
-    docs: allDocs
-      .filter((doc) => doc.data.category === 'skills')
-      .sort((a, b) => (a.data.order || 0) - (b.data.order || 0)),
-  },
-  'use-cases': {
-    title: t('nav.use-cases'),
-    docs: allDocs
-      .filter((doc) => doc.data.category === 'use-cases')
-      .sort((a, b) => (a.data.order || 0) - (b.data.order || 0)),
-  },
-};
-
-const currentPath = Astro.url.pathname;
+// Filter by section
+const sectionDocs = allDocs.filter(doc => doc.data.section === section);
 ---
 
-<nav class="sidebar-nav">
-  {
-    Object.entries(categories).map(([key, category]) => (
-      <div class="nav-section">
-        <button class="nav-section-title">
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="chevron"
-          >
-            <path d="m9 18 6-6-6-6"></path>
-          </svg>
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="folder-icon"
-          >
-            <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"></path>
-          </svg>
-          <span>{category.title}</span>
-        </button>
-
-        {category.docs.length > 0 && (
-          <ul class="nav-items">
-            {category.docs.map((doc) => {
-              const docPath = getLocalizedPath(`/docs/${doc.slug}`, currentLocale);
-              return (
-                <li>
-                  <a
-                    href={docPath}
-                    class:list={['nav-item', { active: currentPath === docPath }]}
-                  >
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="file-icon"
-                    >
-                      <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
-                      <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
-                    </svg>
-                    <span>{doc.data.title}</span>
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-        )}
-      </div>
-    ))
-  }
+<nav class="sidebar-nav" aria-label="Documentation navigation">
+  {section === 'getting-started' && <GettingStartedNav docs={sectionDocs} currentPath={currentPath} />}
+  {section === 'docs' && <DocsNav docs={sectionDocs} currentPath={currentPath} />}
+  {section === 'workflows' && <WorkflowsNav docs={sectionDocs} currentPath={currentPath} />}
+  {section === 'changelog' && <ChangelogNav docs={sectionDocs} currentPath={currentPath} />}
+  {section === 'support' && <SupportNav docs={sectionDocs} currentPath={currentPath} />}
 </nav>
 
 <script>
-  // Collapsible navigation sections
-  document.addEventListener('DOMContentLoaded', () => {
-    const sectionTitles = document.querySelectorAll('.nav-section-title');
+  // State persistence logic (runs client-side)
+  const COLLAPSE_KEY = 'claudekit-sidebar-collapse-state';
 
-    // Initialize collapsed state from localStorage or defaults
-    sectionTitles.forEach((title) => {
-      const section = title.closest('.nav-section');
-      const sectionName = title.querySelector('span')?.textContent?.trim();
+  function initSidebarState() {
+    const saved = sessionStorage.getItem(COLLAPSE_KEY);
+    const state = saved ? JSON.parse(saved) : {};
 
-      // Get saved state from localStorage
-      const savedState = localStorage.getItem(`sidebar-section-${sectionName}`);
+    // Apply saved collapse state
+    document.querySelectorAll('[data-collapsible]').forEach(section => {
+      const key = section.getAttribute('data-category');
+      const isCollapsed = state[key] ?? true; // Default collapsed
 
-      if (savedState !== null) {
-        // Use saved state
-        if (savedState === 'collapsed') {
-          section?.classList.add('collapsed');
-        }
+      const button = section.querySelector('button');
+      const items = section.querySelector('.nav-items');
+
+      if (isCollapsed) {
+        section.classList.add('collapsed');
+        items?.setAttribute('hidden', '');
       } else {
-        // Default: collapse all except "Getting Started"
-        if (sectionName !== 'Getting Started') {
-          section?.classList.add('collapsed');
-        }
+        section.classList.remove('collapsed');
+        items?.removeAttribute('hidden');
       }
+    });
 
-      // Handle click to toggle
-      title.addEventListener('click', () => {
-        section?.classList.toggle('collapsed');
+    // Add click handlers
+    document.querySelectorAll('[data-collapsible] button').forEach(button => {
+      button.addEventListener('click', (e) => {
+        const section = button.closest('[data-collapsible]');
+        const key = section.getAttribute('data-category');
+        const items = section.querySelector('.nav-items');
 
-        // Save state to localStorage
-        const isCollapsed = section?.classList.contains('collapsed');
-        localStorage.setItem(
-          `sidebar-section-${sectionName}`,
-          isCollapsed ? 'collapsed' : 'expanded'
-        );
+        const isCollapsed = section.classList.toggle('collapsed');
+
+        if (isCollapsed) {
+          items?.setAttribute('hidden', '');
+        } else {
+          items?.removeAttribute('hidden');
+        }
+
+        // Save state
+        const saved = sessionStorage.getItem(COLLAPSE_KEY);
+        const state = saved ? JSON.parse(saved) : {};
+        state[key] = isCollapsed;
+        sessionStorage.setItem(COLLAPSE_KEY, JSON.stringify(state));
       });
     });
-  });
+  }
+
+  // Initialize on page load
+  document.addEventListener('astro:page-load', initSidebarState);
+  document.addEventListener('DOMContentLoaded', initSidebarState);
 </script>
+
 
 <style>
   /* Sidebar Navigation (Polar v1.1) */

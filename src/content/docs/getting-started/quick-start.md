@@ -1,6 +1,12 @@
 ---
 title: Quick Start
-description: Ship your first feature in 15 minutes with ClaudeKit's AI development team
+description: "Documentation for Quick Start
+description:
+section: getting-started
+category: getting-started
+order: 4
+published: true"
+section: getting-started
 category: getting-started
 order: 4
 published: true
@@ -77,14 +83,14 @@ Scan the plan. Architecture solid? Continue.
 ### Step 4: Implement
 
 ```bash
-/cook implement the auth plan
+/code plans/251030-auth-implementation.md
 ```
 
 **What happens** (5 minutes):
 
 **Clarification** (15 sec):
 ```
-cook: Which OAuth providers?
+code: Which OAuth providers?
 You: Google and GitHub
 ```
 
@@ -267,7 +273,7 @@ A: Yes. Next.js, Django, Laravel, Go, Rust, Flutter - any stack. ClaudeKit adapt
 A: `code-reviewer` catches issues before commit. Plus, you review PRs as normal. AI augments, doesn't replace judgment.
 
 **Q: Do I need API keys?**
-A: For basic features, no. For advanced skills (Gemini, Search), yes. See [API Key Setup](/docs/troubleshooting/api-key-setup).
+A: For basic features, no. For advanced skills (Gemini, Search), yes. See [API Key Setup](/docs/support/troubleshooting/api-key-setup).
 
 **Q: Can I customize agents?**
 A: Yes. Edit `.claude/agents/*.md` to tune behavior. See [Custom Agents](/docs/hooks/custom-agents).
@@ -275,19 +281,19 @@ A: Yes. Edit `.claude/agents/*.md` to tune behavior. See [Custom Agents](/docs/h
 ## Explore More
 
 **Core Concepts**:
-- [Architecture](/docs/core-concepts/architecture) - How ClaudeKit works
+- [Architecture](/docs/docs/agents) - How ClaudeKit works
 - [Agents Overview](/docs/agents/) - Meet your AI team
 - [Commands Guide](/docs/commands/) - All 30+ commands
 
 **Real-World Uses**:
-- [Starting New Project](/docs/use-cases/starting-new-project)
-- [Adding Features](/docs/use-cases/adding-feature)
-- [Fixing Bugs](/docs/use-cases/fixing-bugs)
+- [Starting New Project](/docs/workflows/new-project)
+- [Adding Features](/docs/workflows/adding-feature)
+- [Fixing Bugs](/docs/workflows/fixing-bugs)
 
 **Troubleshooting**:
-- [Installation Issues](/docs/troubleshooting/installation-issues)
-- [Command Errors](/docs/troubleshooting/command-errors)
-- [Performance Issues](/docs/troubleshooting/performance-issues)
+- [Installation Issues](/docs/support/troubleshooting/installation-issues)
+- [Command Errors](/docs/support/troubleshooting/command-errors)
+- [Performance Issues](/docs/support/troubleshooting/performance-issues)
 
 ---
 

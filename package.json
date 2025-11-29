@@ -9,14 +9,17 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.6",
     "@astrojs/mdx": "^4.3.7",
     "@astrojs/react": "^4.0.0",
     "@astrojs/tailwind": "^6.0.2",
+    "@lobehub/icons": "^2.43.1",
     "@radix-ui/react-collapsible": "^1.1.2",
     "@radix-ui/react-dialog": "^1.1.4",
     "@radix-ui/react-dropdown-menu": "^2.1.4",
     "@radix-ui/react-scroll-area": "^1.2.2",
     "astro": "^5.14.6",
+    "astro-pagefind": "^1.8.5",
     "openai": "^4.75.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -31,7 +34,7 @@
     "@types/react": "^18.3.17",
     "@types/react-dom": "^18.3.5",
     "remark-directive": "^4.0.0",
-    "typescript": "^5.7.3",
+    "typescript": "^5.9.3",
     "unist-util-visit": "^5.0.0"
   }
 }

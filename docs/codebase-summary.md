@@ -1,7 +1,7 @@
 # Codebase Summary
 
-**Last Updated**: 2025-11-28
-**Version**: 0.0.3 (Post-Content Creation Phase)
+**Last Updated**: 2025-11-29
+**Version**: 0.0.3 (Post-Content Creation Phase - Phase 01 Complete)
 **Repository**: claudekit-docs
 
 ## Overview
@@ -11,13 +11,14 @@ claudekit-docs is Astro v5-based static documentation site for ClaudeKit ecosyst
 ## Project Statistics
 
 **Content**:
-- 207 total documentation pages (110 English + 97 Vietnamese, 13 new pages in Phase 03)
+- 209 total documentation pages (112 English + 97 Vietnamese, 15 new pages in Phases 03+04)
 - 9 logical content sections (post-IA restructure)
 - Section-based organization with improved discoverability and user journeys
-- ~280KB documentation content (30KB+ new content in Phase 03)
+- ~295KB documentation content (45KB+ new content in Phases 03+04)
 - Complete IA restructure completed (Phase 01)
 - Enhanced navigation system (Phase 02)
 - Comprehensive content creation and rewriting (Phase 03)
+- Phase 01 (Commands Core) documentation complete (Phase 04)
 
 **Source Code**:
 - 18 source files (Astro, TypeScript, React)
@@ -197,8 +198,8 @@ docsSchema = z.object({
    - 14 specialized agents (planner, researcher, tester, debugger, code-reviewer, docs-manager, git-manager, project-manager, database-admin, ui-ux-designer, copywriter, scout, journal-writer, brainstormer)
    - Agent overview and coordination
 
-5. **commands** (25 docs): Slash command documentation across 9 subcategories
-   - Core commands (general purpose)
+5. **commands** (27 docs): Slash command documentation across 9 subcategories
+   - Core commands (general purpose) - 2 new: `/code` (order 8), `/brainstorm` (order 9)
    - Fix commands (debugging and troubleshooting)
    - Design commands (UI/UX development)
    - Documentation commands
@@ -394,9 +395,9 @@ ui = {
 - **Total**: 19 source files
 
 **Content Files**:
-- 110 English docs (.md) - 97 original + 13 new pages in Phase 03
-- 97 Vietnamese docs (.md) - pending translation of new Phase 03 pages
-- **Total**: 207 markdown files (194 original + 13 new)
+- 112 English docs (.md) - 97 original + 15 new pages in Phases 03+04
+- 97 Vietnamese docs (.md) - pending translation of new Phase 03+04 pages
+- **Total**: 209 markdown files (194 original + 15 new)
 
 **Configuration Files**:
 - astro.config.mjs
@@ -576,31 +577,63 @@ npm run preview      # Preview build
 - ✅ Build process passes with all new content
 - ✅ Navigation flow tested and verified
 
+## Phase 04 (Phase 01) Commands Core Documentation Results
+
+### Completed Successfully ✅
+- **2 New Command Pages**: `/code` and `/brainstorm` core commands fully documented
+- **Complete Command Reference**: Both commands include syntax, examples, workflows
+- **Quality-Gated Workflow**: `/code` documents 6-step workflow with blocking gates
+- **YAGNI/KISS/DRY Framework**: `/brainstorm` documents principle-based evaluation
+- **Cross-Reference Integration**: Linked to related commands and workflows
+- **Report Location Standards**: Documented markdown report generation patterns
+
+### Documentation Quality
+- ✅ Comprehensive syntax and argument documentation
+- ✅ Real-world examples with step-by-step outputs
+- ✅ Enforcement rules and best practices
+- ✅ Subagent integration documentation
+- ✅ Common issues and troubleshooting
+- ✅ Proper frontmatter: section=docs, category=commands/core, orders 8-9
+
+### Command Coverage Status
+- Core commands: 2 new (/code, /brainstorm) - more pending documentation
+- Fix commands: Status pending verification
+- Design commands: Status pending verification
+- Documentation commands: Status pending verification
+- Git commands: Status pending verification
+- Planning commands: Status pending verification
+- Content commands: Status pending verification
+- Integration commands: Status pending verification
+- Skill commands: Status pending verification
+
 ## Known Issues
 
 1. **AI Chat Backend**: UI complete, OpenRouter integration pending
-2. **Search**: Not implemented (Pagefind planned for Phase 02)
+2. **Search**: Not implemented (Pagefind planned for future phase)
 3. **Command Navigation Hierarchy**: Commands have nested subdirectories but show flat list
 4. **Troubleshooting Category**: Navigation integration needs verification
-5. **Vietnamese Sync**: Some docs may be out of sync with English
+5. **Vietnamese Sync**: 15 new pages pending translation (Phase 03+04 content)
+6. **Command Documentation**: Core command set partially documented (2/N complete)
 
-## Next Steps (Phase 04)
+## Next Steps (Phase 02+)
 
-1. **Production Deployment**: Deploy to docs.claudekit.cc with all Phase 03 content
-2. **LLM Integration Features**: Implement CopyForLLMs component and llms.txt generation
-3. **Search Implementation**: Implement Pagefind search functionality
-4. **Vietnamese Translation**: Translate 13 new pages to Vietnamese
-5. **Quality Assurance**: Complete testing and validation of new content structure
+1. **Complete Core Commands**: Document remaining core commands beyond `/code` and `/brainstorm`
+2. **Fix Commands Documentation**: Document all `/fix:*` command variants
+3. **Design Commands**: Document `/design:*` command suite
+4. **Production Deployment**: Deploy to docs.claudekit.cc with all documented content
+5. **Vietnamese Translation**: Translate 15 new pages to Vietnamese
+6. **Search Implementation**: Implement Pagefind search functionality
+7. **LLM Integration Features**: Implement CopyForLLMs component and llms.txt generation
 
 ## Performance Characteristics
 
-**Build Time**: ~15-30 seconds (207 markdown files - 13 new content pages)
+**Build Time**: ~15-30 seconds (209 markdown files - 15 new content pages)
 **Bundle Size**: < 200KB gzipped JavaScript
 **Initial Load**: < 1s (static HTML)
 **Time to Interactive**: < 2s (minimal hydration)
 **Content Organization**: Enhanced information hierarchy with improved user journeys
 **Navigation Performance**: < 100ms for state updates and section switches (Phase 02 improvements)
-**Content Accessibility**: All 207 pages accessible with proper navigation context
+**Content Accessibility**: All 209 pages accessible with proper navigation context
 
 ## Security Considerations
 

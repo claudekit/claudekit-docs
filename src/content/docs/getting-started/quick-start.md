@@ -16,6 +16,24 @@ published: true
 
 Ship production feature in 15 minutes. No boilerplate, no setup hell.
 
+## Video Demo
+
+See ClaudeKit in action - from installation to building UI from a screenshot:
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 0.75rem; border: 1px solid var(--color-border); margin-bottom: 1rem;">
+  <iframe
+    src="https://www.youtube.com/embed/F_E0GIi_kVY"
+    title="ClaudeKit Quick Start Demo"
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen>
+  </iframe>
+</div>
+
+*More tutorials: [@goonnguyen](https://www.youtube.com/@goonnguyen)*
+
 ## Prerequisites
 
 - ClaudeKit CLI installed (`ck --version` works)

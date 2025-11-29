@@ -10,6 +10,24 @@ published: true
 
 **ClaudeKit** extends Claude Code with specialized agents, slash commands, and reusable skills.
 
+## Video Walkthrough
+
+New to ClaudeKit? Watch this step-by-step walkthrough covering CLI installation, setup with `ck` commands, and a demo building UI from a screenshot.
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 0.75rem; border: 1px solid var(--color-border); margin-bottom: 1rem;">
+  <iframe
+    src="https://www.youtube.com/embed/F_E0GIi_kVY"
+    title="ClaudeKit Complete Walkthrough"
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen>
+  </iframe>
+</div>
+
+*More tutorials: [@goonnguyen](https://www.youtube.com/@goonnguyen)*
+
 ## What is ClaudeKit?
 
 ClaudeKit transforms Claude Code from a general AI assistant into a focused engineering toolkit. Instead of writing prompts from scratch, you invoke battle-tested workflows optimized for speed and quality.

@@ -129,13 +129,32 @@ const headings = [
         Write less code, ship faster, maintain quality.
       </p>
 
-      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
         <a href="/docs/getting-started/installation" class="inline-flex items-center justify-center px-8 py-3.5 text-base font-medium text-white bg-[var(--color-accent-blue)] rounded-[var(--radius-md)] hover:bg-[var(--color-accent-cyan)] transition-all duration-200 shadow-blue hover:shadow-lg transform hover:-translate-y-0.5">
           Get Started in 5 Minutes
         </a>
         <a href="/docs/getting-started/introduction" class="inline-flex items-center justify-center px-8 py-3.5 text-base font-medium text-[var(--color-text-primary)] bg-[var(--color-bg-tertiary)] border border-[var(--color-border)] rounded-[var(--radius-md)] hover:bg-[var(--color-bg-secondary)] hover:border-[var(--color-border-hover)] transition-all duration-200">
           View Documentation
         </a>
+      </div>
+
+      <!-- Video Walkthrough -->
+      <div class="mb-16">
+        <p class="text-sm text-[var(--color-text-muted)] mb-4">Watch the complete walkthrough</p>
+        <div class="relative mx-auto max-w-3xl aspect-video rounded-xl overflow-hidden border border-[var(--color-border)] shadow-2xl">
+          <iframe
+            src="https://www.youtube.com/embed/F_E0GIi_kVY"
+            title="ClaudeKit Complete Walkthrough - From Installation to Building UI"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            class="absolute inset-0 w-full h-full"
+          ></iframe>
+        </div>
+        <p class="text-xs text-[var(--color-text-muted)] mt-3">
+          More tutorials on <a href="https://www.youtube.com/@goonnguyen" target="_blank" rel="noopener noreferrer" class="text-[var(--color-accent-blue)] hover:underline">@goonnguyen</a>
+        </p>
       </div>
     </div>
 

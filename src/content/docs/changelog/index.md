@@ -24,7 +24,7 @@ Recent changes, updates, and release notes for ClaudeKit.
 - **Context-aware Navigation** - Dynamic sidebar based on current section
 
 **Core Capabilities**:
-- Complete feature development workflow (`/plan → /cook → /test → /commit`)
+- Complete feature development workflow (`/plan → /code → /test → /commit`)
 - Systematic bug fixing with root cause analysis
 - Automated documentation generation and maintenance
 - UI/UX design with AI-generated assets

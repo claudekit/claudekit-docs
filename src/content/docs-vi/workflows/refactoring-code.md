@@ -21,7 +21,7 @@ Learn how to safely refactor code with ClaudeKit - from identifying technical de
 **Goal**: Improve code quality and maintainability without breaking functionality
 **Time**: 15-45 minutes (vs 3-8 hours manually)
 **Agents Used**: code-reviewer, tester, docs-manager
-**Commands**: /plan, /cook, /test, /docs:update
+**Commands**: /plan, /code, /test, /docs:update
 
 ## Prerequisites
 

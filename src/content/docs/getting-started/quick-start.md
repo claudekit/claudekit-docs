@@ -83,14 +83,14 @@ Scan the plan. Architecture solid? Continue.
 ### Step 4: Implement
 
 ```bash
-/cook implement the auth plan
+/code plans/251030-auth-implementation.md
 ```
 
 **What happens** (5 minutes):
 
 **Clarification** (15 sec):
 ```
-cook: Which OAuth providers?
+code: Which OAuth providers?
 You: Google and GitHub
 ```
 

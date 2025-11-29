@@ -74,12 +74,12 @@ cd my-project
 
 ### Frontend Development
 - [UI/UX Design](../docs/commands/#design-commands) - `/design:good`, `/design:fast`
-- Component Development - `/plan → /cook → /fix:test`
+- Component Development - `/plan → /code → /fix:test`
 - Styling - `/design:good` for aesthetic components
 
 ### Backend Development
-- API Development - `/plan → /cook → /fix:hard`
-- Database Changes - `/plan "add user table" → /cook`
+- API Development - `/plan → /code → /fix:hard`
+- Database Changes - `/plan "add user table" → /code`
 - Performance Optimization - `/debug "slow queries" → /fix`
 
 ### Full Stack

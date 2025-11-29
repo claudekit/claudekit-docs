@@ -21,7 +21,7 @@ Learn the complete workflow for adding new features to your project with ClaudeK
 **Goal**: Add a complete feature with planning, implementation, tests, and docs
 **Time**: 15-30 minutes (vs 2-4 hours manually)
 **Agents Used**: planner, scout, tester, code-reviewer, docs-manager
-**Commands**: /plan, /cook, /test, /docs:update, /git:cm
+**Commands**: /plan, /code, /test, /docs:update, /git:cm
 
 ## Prerequisites
 

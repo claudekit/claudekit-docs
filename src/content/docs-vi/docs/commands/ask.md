@@ -364,7 +364,7 @@ You can also call it explicitly:
 **Solution**: Use appropriate commands
 - Code syntax: Just ask directly
 - Bugs: `/debug [issue]`
-- Implementation: `/plan` then `/cook`
+- Implementation: `/plan` then `/code`
 
 ## Related Commands
 

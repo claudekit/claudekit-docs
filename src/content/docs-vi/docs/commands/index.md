@@ -354,7 +354,7 @@ Estimated time: 2-3 hours
 Files to create: 5
 Files to modify: 3
 
-Next: Review plan, then run /cook
+Next: Review plan, then run /code
 ```
 
 ### Implementation Commands

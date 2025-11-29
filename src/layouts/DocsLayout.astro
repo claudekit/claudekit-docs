@@ -44,20 +44,22 @@ const frontmatter = content?.data || {
 
       <div class="content-wrapper">
         <main class="content-area" data-pagefind-body>
-          <div class="content-header" data-pagefind-ignore>
-            <CopyForLLMs
-              client:load
-              pageContent={content?.body || ''}
-              pageUrl={currentPath}
-              pageSlug={slug}
-              frontmatter={{
-                title: frontmatter.title,
-                description: frontmatter.description,
-                section: frontmatter.section,
-                category: frontmatter.category
-              }}
-            />
-          </div>
+          {content?.body && (
+            <div class="content-header" data-pagefind-ignore>
+              <CopyForLLMs
+                client:load
+                pageContent={content.body}
+                pageUrl={currentPath}
+                pageSlug={slug}
+                frontmatter={{
+                  title: frontmatter.title,
+                  description: frontmatter.description,
+                  section: frontmatter.section,
+                  category: frontmatter.category
+                }}
+              />
+            </div>
+          )}
 
           <article class="prose" data-pagefind-meta="title:{title}">
             <slot />

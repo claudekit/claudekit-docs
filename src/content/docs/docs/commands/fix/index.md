@@ -1,276 +1,268 @@
 ---
 title: /fix
-description: "Documentation for /fix
-description:
+description: Intelligently route issues to specialized fix commands based on type, complexity, and scope analysis
 section: docs
 category: commands/fix
-order: 10
-published: true"
-section: docs
-category: commands/fix
-order: 10
+order: 1
 published: true
 ---
 
 # /fix
 
-Smart bug fixing command that analyzes your issue description and automatically chooses between fast or thorough approaches. No need to decide between `/fix:fast` and `/fix:hard` - let ClaudeKit determine the best strategy.
+Intelligent issue router. Analyzes your issue description and automatically routes to the most appropriate fix command based on type, complexity, and scope.
 
 ## Syntax
 
 ```bash
-/fix [issue description]
-```
-
-## How It Works
-
-The `/fix` command intelligently routes your request:
-
-### 1. Issue Analysis
-
-- Analyzes complexity of the described issue
-- Evaluates scope (single file vs multiple files)
-- Assesses clarity of the problem description
-- Determines if root cause is known
-
-### 2. Strategy Selection
-
-**Routes to `/fix:fast` when:**
-- Issue is well-understood and straightforward
-- Location is known or easily identified
-- Fix requires minimal changes (1-2 files)
-- No investigation needed
-
-**Routes to `/fix:hard` when:**
-- Issue is complex or unclear
-- Multiple components affected
-- Root cause unknown
-- Requires investigation and planning
-
-### 3. Enhanced Execution
-
-- Enhances your prompt with additional context
-- Executes chosen strategy automatically
-- Provides detailed fix report
-
-## Quick Example
-
-```bash
-/fix [button text shows "Loggin" instead of "Login"]
-```
-
-**What happens:**
-```
-Analyzing issue...
-→ Simple typo in UI
-→ Location likely in button component
-→ Single file change expected
-
-Strategy: /fix:fast
-
-Executing: /fix:fast [button text shows "Loggin" instead of "Login" in LoginButton component]
-
-Found: src/components/LoginButton.tsx:15
-Fixed: "Loggin" → "Login"
-Tests: ✓ All passed
-
-✓ Fix complete (8 seconds)
+/fix [issues]
 ```
 
 ## When to Use
 
-### Perfect For
+- **Any Bug or Issue**: Let ClaudeKit decide the approach
+- **Unknown Complexity**: Don't know if simple or complex
+- **Quick Workflow**: Describe problem, let router decide
+- **Multiple Issues**: Can detect and route to parallel fixing
 
-**Any Bug or Issue**
-- Let ClaudeKit decide the approach
-- Don't waste time categorizing complexity
-- Trust intelligent routing
-
-**When Unsure**
-```bash
-# Not sure if it's simple or complex?
-/fix [users reporting slow page load times]
-
-# ClaudeKit analyzes and chooses the right approach
-```
-
-**Quick Workflow**
-```bash
-# Just describe the problem
-/fix [payment webhook not triggering]
-
-# No need to think about strategy
-```
-
-## Complete Examples
-
-### Example 1: Simple Issue (Routes to /fix:fast)
-
-```bash
-/fix [missing import statement for UserType in auth.ts]
-```
-
-**Analysis:**
-```
-Issue: Missing import
-Scope: Single file
-Clarity: High
-Known location: Yes
-
-→ Routing to /fix:fast
-```
-
-**Result:**
-```
-Fixed in 6 seconds:
-- Added: import { UserType } from './types'
-- File: src/auth/auth.ts:3
-- Tests: ✓ Passed
-```
-
-### Example 2: Complex Issue (Routes to /fix:hard)
+## Quick Example
 
 ```bash
 /fix [users sometimes getting logged out randomly]
 ```
 
-**Analysis:**
+**Output**:
 ```
-Issue: Intermittent logout
-Scope: Unknown (session, cookies, auth system?)
-Clarity: Low (needs investigation)
-Known location: No
+Analyzing issue...
 
+Keywords detected: "randomly", "sometimes" (intermittent)
+Scope: Unknown (needs investigation)
+Complexity: High
+
+Decision: Complex issue requiring investigation
+→ Routing to /fix:hard
+
+Executing /fix:hard with enhanced prompt...
+```
+
+## Arguments
+
+- `[issues]`: Description of issue(s) to fix (required). Can be single issue or numbered list.
+
+## Pre-Routing Check
+
+Before analyzing the issue, `/fix` checks for existing plans:
+
+```
+Checking for active plan...
+Active plan found: plans/251128-auth-system/plan.md
+
+→ Routing to /code plans/251128-auth-system/plan.md
+```
+
+If an active plan exists at `<WORKING-DIR>/.claude/active-plan`, routes to `/code` instead.
+
+## Decision Tree
+
+Routes are evaluated in priority order:
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                    /fix [issues]                        │
+└─────────────────────────────────────────────────────────┘
+                           │
+                           ▼
+┌─────────────────────────────────────────────────────────┐
+│ 1. Existing plan found?                                 │
+│    → /code <path-to-plan>                               │
+└─────────────────────────────────────────────────────────┘
+                           │ No
+                           ▼
+┌─────────────────────────────────────────────────────────┐
+│ 2. Type errors? (type, typescript, tsc)                 │
+│    → /fix:types                                         │
+└─────────────────────────────────────────────────────────┘
+                           │ No
+                           ▼
+┌─────────────────────────────────────────────────────────┐
+│ 3. UI/UX issue? (ui, ux, design, layout, style, css)    │
+│    → /fix:ui                                            │
+└─────────────────────────────────────────────────────────┘
+                           │ No
+                           ▼
+┌─────────────────────────────────────────────────────────┐
+│ 4. CI/CD issue? (github actions, pipeline, workflow)    │
+│    → /fix:ci                                            │
+└─────────────────────────────────────────────────────────┘
+                           │ No
+                           ▼
+┌─────────────────────────────────────────────────────────┐
+│ 5. Test failure? (test, spec, jest, vitest, failing)    │
+│    → /fix:test                                          │
+└─────────────────────────────────────────────────────────┘
+                           │ No
+                           ▼
+┌─────────────────────────────────────────────────────────┐
+│ 6. Log analysis? (logs, error logs, stack trace)        │
+│    → /fix:logs                                          │
+└─────────────────────────────────────────────────────────┘
+                           │ No
+                           ▼
+┌─────────────────────────────────────────────────────────┐
+│ 7. Multiple independent issues? (2+ unrelated)          │
+│    → /fix:parallel                                      │
+└─────────────────────────────────────────────────────────┘
+                           │ No
+                           ▼
+┌─────────────────────────────────────────────────────────┐
+│ 8. Complex issue? (complex, architecture, refactor)     │
+│    → /fix:hard                                          │
+└─────────────────────────────────────────────────────────┘
+                           │ No
+                           ▼
+┌─────────────────────────────────────────────────────────┐
+│ 9. Default: Simple, single-file issue                   │
+│    → /fix:fast                                          │
+└─────────────────────────────────────────────────────────┘
+```
+
+## Keyword Detection
+
+| Keywords | Route | Description |
+|----------|-------|-------------|
+| `type`, `typescript`, `tsc`, `type error` | /fix:types | TypeScript type errors |
+| `ui`, `ux`, `design`, `layout`, `style`, `css`, `responsive` | /fix:ui | UI/UX issues |
+| `github actions`, `pipeline`, `ci/cd`, `workflow`, `build failed` | /fix:ci | CI/CD failures |
+| `test`, `spec`, `jest`, `vitest`, `failing test`, `test error` | /fix:test | Test failures |
+| `logs`, `error logs`, `log file`, `stack trace`, `exception` | /fix:logs | Log-based debugging |
+| `complex`, `architecture`, `refactor`, `major`, `rewrite` | /fix:hard | Complex issues |
+| `typo`, `simple`, `quick`, `single file`, `obvious` | /fix:fast | Simple fixes |
+
+## Routing Examples
+
+### Route 1: Type Errors → /fix:types
+
+```bash
+/fix [typescript errors in user service]
+```
+```
+Keywords: "typescript"
+→ Routing to /fix:types
+```
+
+### Route 2: UI Issues → /fix:ui
+
+```bash
+/fix [button alignment broken on mobile layout]
+```
+```
+Keywords: "button", "mobile", "layout"
+→ Routing to /fix:ui
+```
+
+### Route 3: CI/CD → /fix:ci
+
+```bash
+/fix [GitHub Actions workflow failing on test step]
+```
+```
+Keywords: "GitHub Actions", "workflow", "failing"
+→ Routing to /fix:ci
+```
+
+### Route 4: Test Failures → /fix:test
+
+```bash
+/fix [jest tests failing after refactor]
+```
+```
+Keywords: "jest", "tests", "failing"
+→ Routing to /fix:test
+```
+
+### Route 5: Log Analysis → /fix:logs
+
+```bash
+/fix [stack trace shows null pointer in auth module]
+```
+```
+Keywords: "stack trace"
+→ Routing to /fix:logs
+```
+
+### Route 6: Multiple Issues → /fix:parallel
+
+```bash
+/fix [
+1. Button not clickable on mobile
+2. API timeout on /users endpoint
+3. Typo in footer copyright
+]
+```
+```
+Issues detected: 3 independent issues
+→ Routing to /fix:parallel
+```
+
+### Route 7: Complex → /fix:hard
+
+```bash
+/fix [users randomly getting logged out, need to investigate session handling]
+```
+```
+Keywords: "randomly", "investigate"
+Complexity: High
 → Routing to /fix:hard
 ```
 
-**Result:**
-```
-Investigation started...
-
-Root cause found:
-- Session cookie SameSite attribute missing
-- Cross-site requests dropping cookies
-- Affects 15% of users (Safari browsers)
-
-Fix implemented:
-- Updated session configuration
-- Added SameSite=Lax attribute
-- Added tests for cookie behavior
-- Updated documentation
-
-Files changed: 4
-Tests added: 8
-Time: 4 minutes
-```
-
-### Example 3: Medium Issue (Intelligent Decision)
+### Route 8: Simple → /fix:fast
 
 ```bash
-/fix [form validation not working for email field]
+/fix [change button color from blue to green]
 ```
-
-**Analysis:**
 ```
-Issue: Validation failure
-Scope: Likely 1-2 files (form + validation)
-Clarity: Medium
-Known location: Partial
-
+Keywords: "change", single-file implied
+Complexity: Low
 → Routing to /fix:fast
 ```
 
-**Result:**
-```
-Found issue:
-- Email regex pattern incorrect
-- Missing @ domain validation
-- Located in: src/utils/validation.ts
+## Clarification Questions
 
-Fixed:
-- Updated regex pattern
-- Added domain validation
-- Updated tests
-
-✓ Complete (15 seconds)
-```
-
-## Comparison with Manual Selection
-
-### Using /fix (Recommended)
+If the issue is ambiguous, `/fix` asks before routing:
 
 ```bash
-/fix [describe any issue]
+/fix [something's wrong with the API]
 ```
 
-✅ Benefits:
-- No decision paralysis
-- Optimal strategy chosen automatically
-- Enhanced prompt generation
-- Faster workflow
-
-### Manual Selection
-
-```bash
-# You decide and execute
-/fix:fast [simple issue]
-/fix:hard [complex issue]
 ```
+Issue unclear. Please clarify:
 
-⚠️ Drawbacks:
-- Requires complexity assessment
-- Risk of wrong choice
-- Slower workflow
-- No prompt enhancement
+1. What specific behavior are you seeing?
+   [ ] Errors returned
+   [ ] Slow responses
+   [ ] Wrong data
+   [ ] Connection issues
 
-## How Strategy Selection Works
+2. Is this affecting:
+   [ ] Single endpoint
+   [ ] Multiple endpoints
+   [ ] All endpoints
 
-### /fix:fast Selected When
-
-**Indicators:**
-- ✓ Specific location mentioned
-- ✓ Simple action verbs (fix typo, add, update, change)
-- ✓ Single file implied
-- ✓ Clear description
-- ✓ Known cause
-
-**Examples:**
-```bash
-/fix [typo in welcome message]
-/fix [add missing semicolon in line 42]
-/fix [change button color to blue]
-/fix [update API timeout from 5s to 10s]
-```
-
-### /fix:hard Selected When
-
-**Indicators:**
-- ✓ Vague or unclear description
-- ✓ Investigation verbs (randomly, sometimes, occasionally)
-- ✓ System-wide terms (all, everywhere, entire)
-- ✓ Multiple components mentioned
-- ✓ Unknown cause
-
-**Examples:**
-```bash
-/fix [users reporting errors]
-/fix [something wrong with payments]
-/fix [app crashes intermittently]
-/fix [performance degradation over time]
+3. Do you have:
+   [ ] Error logs
+   [ ] Stack traces
+   [ ] Reproduction steps
 ```
 
 ## Prompt Enhancement
 
-`/fix` automatically enhances your description before execution:
+Before delegating, `/fix` enhances your description:
 
-![Fix Prompt Enhancement](/assets/fix-prompt-enhancement.png)
-
-### Your Input
+**Your Input**:
 ```bash
 /fix [login broken]
 ```
 
-### Enhanced Prompt
+**Enhanced Prompt**:
 ```
 Analyze and fix login functionality issue.
 
@@ -293,154 +285,98 @@ Fix and validate:
 - Document changes
 ```
 
-## Best Practices
+## Complete Example
 
-### Be Descriptive
-
-✅ **Good:**
-```bash
-/fix [email validation accepts invalid emails like "test@"]
-```
-
-❌ **Too Vague:**
-```bash
-/fix [validation broken]
-```
-
-### Include Context
-
-✅ **Good:**
-```bash
-/fix [payment webhook returns 500 error when Stripe sends events]
-```
-
-❌ **Lacks Context:**
-```bash
-/fix [500 error]
-```
-
-### Mention Location if Known
-
-✅ **Good:**
-```bash
-/fix [missing await in getUserData function in user.service.ts]
-```
-
-❌ **Missing Location:**
-```bash
-/fix [missing await somewhere]
-```
-
-## Common Use Cases
-
-### Typos and Text Changes
+### Scenario: Mixed Complexity Issue
 
 ```bash
-/fix [button says "Submitt" should be "Submit"]
-/fix [error message has typo: "sucessful"]
-/fix [update copyright year to 2025]
+/fix [payment processing fails for international cards]
 ```
 
-### Logic Bugs
+**Routing Analysis**:
+```
+Analyzing issue...
+
+Keywords: "payment", "fails", "international cards"
+Scope: Payment system (likely multiple files)
+Complexity: Medium-High
+Investigation needed: Yes (specific card types)
+
+Decision: Complex issue requiring investigation
+→ Routing to /fix:hard
+
+Enhancing prompt...
+Added context:
+- Payment provider integration points
+- Currency handling considerations
+- International card validation rules
+
+Executing /fix:hard with enhanced prompt...
+
+[Fix execution begins]
+```
+
+## Manual Override
+
+If you know the right command, call it directly:
 
 ```bash
-/fix [discount calculation showing 15% instead of 20%]
-/fix [validation allows empty required fields]
-/fix [forgot to add await in async function]
-```
-
-### Configuration Issues
-
-```bash
-/fix [API timeout too short, causing failures]
-/fix [CORS not allowing localhost:3000]
-/fix [environment variable not loaded]
-```
-
-### Unclear Problems
-
-```bash
-/fix [users reporting slow performance]
-/fix [payment sometimes fails]
-/fix [authentication issues on mobile]
-```
-
-## Integration with Existing Plan
-
-If a markdown implementation plan already exists:
-
-```bash
-# Instead of /fix, use:
-/code [path/to/plan.md]
-
-# /fix is for issues without existing plans
-```
-
-## Output
-
-You'll see:
-
-```
-Analyzing: [your issue description]
-
-Complexity Assessment:
-- Scope: Single file / Multiple files
-- Clarity: High / Medium / Low
-- Investigation needed: Yes / No
-
-Strategy Selected: /fix:fast | /fix:hard
-
-Executing with enhanced prompt...
-
-[Fix results]
-
-✓ Complete
+# Override router, use specific command
+/fix:types [your issue]
+/fix:ui [your issue]
+/fix:fast [your issue]
+/fix:hard [your issue]
+/fix:parallel [issue list]
 ```
 
 ## Related Commands
 
-- [/fix:fast](/docs/commands/fix/fast) - Fast fixes (auto-selected)
-- [/fix:hard](/docs/commands/fix/hard) - Complex fixes (auto-selected)
-- [/fix:ci](/docs/commands/fix/ci) - Fix CI failures
-- [/fix:logs](/docs/commands/fix/logs) - Fix issues from logs
-- [/fix:ui](/docs/commands/fix/ui) - Fix UI issues
-- [/fix:types](/docs/commands/fix/types) - Fix type errors
-- [/debug](/docs/commands/core/debug) - Investigate issues
-- [/code](/docs/commands/core/code) - Implement existing plans
+| Command | Description | When Auto-Selected |
+|---------|-------------|--------------------|
+| [/fix:fast](/docs/commands/fix/fast) | Quick single-file fixes | Simple, clear issues |
+| [/fix:hard](/docs/commands/fix/hard) | Complex multi-file fixes | Investigation needed |
+| [/fix:types](/docs/commands/fix/types) | TypeScript type errors | Type-related keywords |
+| [/fix:ui](/docs/commands/fix/ui) | UI/UX issues | UI/design keywords |
+| [/fix:ci](/docs/commands/fix/ci) | CI/CD failures | Pipeline keywords |
+| [/fix:test](/docs/commands/fix/test) | Test failures | Test-related keywords |
+| [/fix:logs](/docs/commands/fix/logs) | Log-based debugging | Log/trace keywords |
+| [/fix:parallel](/docs/commands/fix/parallel) | Multiple independent issues | 2+ unrelated issues |
+| [/code](/docs/commands/core/code) | Execute existing plan | Active plan found |
+| [/debug](/docs/commands/core/debug) | Investigate issues | Deep investigation |
 
-## Troubleshooting
+## Best Practices
 
-### Wrong Strategy Selected
+### Be Descriptive
 
-**Problem:** `/fix` chose `/fix:fast` but issue was complex
-
-**Solution:**
 ```bash
-# Override by calling directly
-/fix:hard [your issue description]
+# Good: Specific with context
+/fix [email validation accepts invalid emails like "test@" without domain]
+
+# Less helpful: Vague
+/fix [validation broken]
 ```
 
-### Need More Control
+### Include Location if Known
 
-**Problem:** Want to control the approach yourself
-
-**Solution:**
 ```bash
-# Call strategies directly
-/fix:fast [for simple issues]
-/fix:hard [for complex issues]
+# Good: Location provided
+/fix [missing await in getUserData function in user.service.ts]
+
+# Less context
+/fix [missing await somewhere]
 ```
 
-### Plan Exists
+### Trust the Router
 
-**Problem:** Already have an implementation plan
+Let `/fix` decide the strategy:
 
-**Solution:**
 ```bash
-# Use /code instead
-/code [path/to/plan.md]
+# Just describe the problem
+/fix [users reporting slow page loads]
+
+# Don't overthink which command to use
 ```
 
 ---
 
-**Key Takeaway**: `/fix` is your intelligent bug-fixing assistant. Just describe the problem - ClaudeKit analyzes complexity and automatically selects the optimal fixing strategy, saving you time and mental overhead.
+**Key Takeaway**: `/fix` is your intelligent bug-fixing entry point. Describe the problem, and it routes to the optimal fix command based on type, complexity, and scope analysis.

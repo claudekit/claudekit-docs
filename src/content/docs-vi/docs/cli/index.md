@@ -33,56 +33,66 @@ Command-line tool for bootstrapping and updating ClaudeKit projects from private
 
 ## Core Commands
 
-### ck new
-
-Create new project from latest ClaudeKit release:
-
-```bash
-# Interactive mode
-ck new
-
-# With options
-ck new --dir my-project --kit engineer
-
-# Specific version
-ck new --kit engineer --version v1.0.0
-```
-
-**Options:**
-- `--dir <dir>` - Target directory (default: current directory)
-- `--kit <kit>` - Kit to use (`engineer` or `marketing`)
-- `--version <version>` - Specific version to download (default: latest)
-- `--exclude <pattern>` - Exclude files/directories using glob patterns (can be used multiple times)
-
-[Learn more about `ck new`](/docs/cli/new)
-
 ### ck init
 
-Update existing project to latest or specific version:
+Khởi tạo hoặc cập nhật ClaudeKit Engineer trong dự án:
+
+**Lưu ý:** Lệnh này nên được chạy từ thư mục gốc của dự án.
 
 ```bash
-# Interactive mode
+# Chế độ tương tác (khuyến nghị)
 ck init
 
-# With options
+# Với tùy chọn
 ck init --kit engineer
 
-# Specific version
+# Phiên bản cụ thể
 ck init --kit engineer --version v1.0.0
+
+# Với mẫu loại trừ
+ck init --exclude "local-config/**" --exclude "*.local"
+
+# Chế độ global - sử dụng thư mục cấu hình người dùng theo platform
+ck init --global
+ck init -g --kit engineer
 ```
 
-**What it does:**
-- Downloads specified ClaudeKit release
-- Intelligently merges files
-- Preserves your custom changes
-- Protects sensitive files
-- Maintains custom `.claude/` files
+**Chức năng:**
+- Tải xuống bản phát hành ClaudeKit được chỉ định
+- Merge file thông minh
+- Bảo toàn các thay đổi tùy chỉnh của bạn
+- Bảo vệ file nhạy cảm
+- Duy trì file tùy chỉnh trong `.claude/`
 
-**Options:**
-- `--dir <dir>` - Target directory (default: current directory)
-- `--kit <kit>` - Kit to use (`engineer` or `marketing`)
-- `--version <version>` - Specific version to download (default: latest)
-- `--exclude <pattern>` - Exclude files/directories using glob patterns (can be used multiple times)
+**Tùy chọn:**
+- `--dir <dir>` - Thư mục đích (mặc định: thư mục hiện tại)
+- `--kit <kit>` - Kit sử dụng (`engineer` hoặc `marketing`)
+- `--version <version>` - Phiên bản cụ thể để tải (mặc định: mới nhất)
+- `--exclude <pattern>` - Loại trừ file/thư mục sử dụng glob patterns (có thể dùng nhiều lần)
+- `--global, -g` - Sử dụng thư mục cấu hình người dùng theo platform
+
+**Cấu hình Global vs Local:**
+
+Mặc định, ClaudeKit sử dụng cấu hình local (`~/.claudekit`).
+
+Để cài đặt **user-scoped theo platform**, sử dụng flag `--global`:
+- **macOS/Linux**: `~/.claude`
+- **Windows**: `%LOCALAPPDATA%\.claude`
+
+Chế độ global sử dụng thư mục user-scoped (không cần sudo), cho phép cấu hình riêng biệt cho các dự án khác nhau.
+
+### ck update
+
+Cập nhật ClaudeKit CLI lên phiên bản mới nhất:
+
+```bash
+# Cập nhật CLI lên phiên bản mới nhất
+ck update
+```
+
+**Chức năng:**
+- Cập nhật công cụ dòng lệnh `ck` lên phiên bản mới nhất
+- KHÔNG cập nhật file ClaudeKit Engineer (dùng `ck init` cho việc đó)
 
 ### ck versions
 
@@ -215,59 +225,62 @@ After update:
 ## Quick Start
 
 ```bash
-# Install CLI
+# Cài đặt CLI
 npm install -g claudekit-cli
 
-# Verify installation
+# Kiểm tra cài đặt
 ck --version
 
-# Authenticate with GitHub
+# Xác thực với GitHub
 gh auth login
-# OR
+# HOẶC
 export GITHUB_TOKEN=ghp_your_token
 
-# Create new project
-ck new --kit engineer
+# Khởi tạo dự án
+ck init --kit engineer
 
-# Navigate to project
+# Điều hướng tới dự án
 cd my-project
 
-# Start using ClaudeKit
-claude  # Start Claude Code
+# Bắt đầu sử dụng ClaudeKit
+claude  # Khởi động Claude Code
 ```
 
 ## Common Workflows
 
-### Create New Project
+### Khởi tạo hoặc Cập nhật ClaudeKit Engineer
 
 ```bash
-# Interactive mode (recommended)
-ck new
-
-# Direct with options
-ck new --dir my-app --kit engineer
-
-# Specific version
-ck new --dir my-app --kit engineer --version v1.0.0
-
-# With exclusions
-ck new --kit engineer --exclude "*.log" --exclude "temp/**"
-```
-
-### Update Existing Project
-
-```bash
-# Update to latest
+# Chế độ tương tác (khuyến nghị)
 ck init
 
-# Update to specific version
+# Trực tiếp với tùy chọn
+ck init --dir my-app --kit engineer
+
+# Phiên bản cụ thể
+ck init --dir my-app --kit engineer --version v1.0.0
+
+# Với loại trừ
+ck init --exclude "*.log" --exclude "temp/**"
+
+# Cập nhật ClaudeKit Engineer lên mới nhất
+ck init
+
+# Cập nhật lên phiên bản cụ thể
 ck init --version v1.2.0
 
-# Update with exclusions
+# Cập nhật với loại trừ
 ck init --exclude "local-config/**" --exclude "*.local"
 
-# Update with verbose output
+# Cập nhật với verbose output
 ck init --verbose
+```
+
+### Cập nhật CLI
+
+```bash
+# Cập nhật ck CLI lên phiên bản mới nhất
+ck update
 ```
 
 ### Check Available Versions
@@ -343,4 +356,4 @@ ck -h
 
 ---
 
-**Ready to start?** Purchase a kit at [ClaudeKit.cc](https://claudekit.cc), then run `ck new` to create your first project.
+**Ready to start?** Purchase a kit at [ClaudeKit.cc](https://claudekit.cc), then run `ck init` to initialize your first project.

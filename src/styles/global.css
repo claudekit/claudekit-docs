@@ -16,6 +16,7 @@
     --color-text-primary: #1A1A1A;
     --color-text-secondary: #6B7280;
     --color-text-muted: #9CA3AF;
+    --color-text-inverse: #1A1A1A;      /* Text on colored backgrounds (like cyan) */
     --color-text-code: #1F2328;         /* Near-black for maximum readability */
 
     --color-accent-blue: #3B82F6;

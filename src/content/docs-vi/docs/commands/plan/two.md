@@ -837,19 +837,19 @@ cat plans/[task]-comparison.md
 # 4. Make decision
 # Consider: team skills, timeline, budget, requirements
 
-# 5. Implement chosen approach
-/cook [implement approach 1 from plan]
+# 5. Implement chosen approach (use /code since plan exists)
+/code @plans/[task]-approach-1-*.md
 # OR
-/cook [implement approach 2 from plan]
+/code @plans/[task]-approach-2-*.md
 
 # 6. Optionally: Hybrid
-/cook [implement hybrid approach using X from plan 1 and Y from plan 2]
+/code @plans/[task]-approach-1-*.md  # then manually integrate from approach 2
 ```
 
 ## Next Steps
 
 - [/plan](/docs/commands/core/plan) - Single approach planning
-- [/cook](/docs/commands/core/cook) - Implement chosen plan
+- [/code](/docs/commands/core/code) - Implement chosen plan
 - [/plan:cro](/docs/commands/plan/cro) - CRO-specific planning
 
 ---

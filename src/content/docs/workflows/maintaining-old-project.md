@@ -652,7 +652,7 @@ cat docs/technical-debt.md
 /plan [new feature description]
 
 # 2. Implement
-/cook [implement feature]
+/code @plans/feature.md
 
 # 3. Test
 /test
@@ -692,7 +692,7 @@ Prioritize:
 ```bash
 /plan [migrate from package X v1 to v2]
 # Review plan carefully
-/cook [implement migration]
+/code @plans/migration.md
 /test  # Comprehensive testing
 ```
 

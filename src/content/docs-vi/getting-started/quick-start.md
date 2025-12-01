@@ -83,7 +83,7 @@ Quét qua kế hoạch. Kiến trúc vững chắc? Tiếp tục.
 ### Bước 4: Triển Khai
 
 ```bash
-/cook implement the auth plan
+/code @plans/251030-auth-implementation.md
 ```
 
 **Điều gì xảy ra** (5 phút):

@@ -149,7 +149,7 @@ curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:g
 # Wait 1 minute between commands
 /plan implement feature
 # Wait 60 seconds...
-/cook implement feature
+/code @plans/feature.md
 
 # Or upgrade to paid tier
 # Visit: console.cloud.google.com/billing

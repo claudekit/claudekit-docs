@@ -660,7 +660,7 @@ A production-ready REST API with:
 
 ```bash
 /plan [add task reminders and notifications]
-/cook [implement the feature]
+/code @plans/reminders.md
 /test
 /git:cm
 ```

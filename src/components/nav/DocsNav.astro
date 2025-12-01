@@ -1,6 +1,6 @@
 ---
 // src/components/nav/DocsNav.astro
-import { getLangFromUrl, getLocalizedPath } from '../../i18n/utils';
+import { getLangFromUrl, getDocPath } from '../../i18n/utils';
 
 interface Props {
   docs: any[];
@@ -90,7 +90,7 @@ const sortItems = (items: any[]) => {
       <div class="nav-items" hidden>
         {/* Render direct items */}
         {sortItems(category.items).map(doc => {
-          const href = getLocalizedPath(`/docs/${doc.slug}`, currentLocale);
+          const href = getDocPath(doc.slug, currentLocale);
           const isActive = currentPath === href;
           return (
             <a href={href} class:list={['nav-link', { active: isActive }]}>
@@ -123,7 +123,7 @@ const sortItems = (items: any[]) => {
             </button>
             <div class="nav-items" hidden>
               {sortItems(subCategory.items).map(doc => {
-                const href = getLocalizedPath(`/docs/${doc.slug}`, currentLocale);
+                const href = getDocPath(doc.slug, currentLocale);
                 const isActive = currentPath === href;
                 return (
                   <a href={href} class:list={['nav-link', { active: isActive }]}>

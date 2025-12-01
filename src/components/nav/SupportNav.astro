@@ -1,6 +1,6 @@
 ---
 // src/components/nav/SupportNav.astro
-import { getLangFromUrl, getLocalizedPath } from '../../i18n/utils';
+import { getLangFromUrl, getDocPath } from '../../i18n/utils';
 
 interface Props {
   docs: any[];
@@ -55,7 +55,7 @@ const categories = {
 
         <ul class="nav-items">
           {categoryDocs.map(doc => {
-            const href = getLocalizedPath(`/docs/${doc.slug}`, currentLocale);
+            const href = getDocPath(doc.slug, currentLocale);
             const isActive = currentPath === href;
 
             return (

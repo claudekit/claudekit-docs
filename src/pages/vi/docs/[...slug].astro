@@ -5,8 +5,9 @@ import DocsLayout from '../../../layouts/DocsLayout.astro';
 export async function getStaticPaths() {
   const docsEntries = await getCollection('docs-vi');
 
+  // Normalize slug: remove leading 'docs/' to avoid /docs/docs/... duplication
   return docsEntries.map((entry) => ({
-    params: { slug: entry.slug },
+    params: { slug: entry.slug.startsWith('docs/') ? entry.slug.slice(5) : entry.slug },
     props: { entry },
   }));
 }

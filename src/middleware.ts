@@ -5,19 +5,19 @@ const exactRedirects: Record<string, string> = {
   // Getting Started moves
   '/docs/getting-started/greenfield-projects': '/docs/workflows/new-project',
   '/docs/getting-started/brownfield-projects': '/docs/workflows/existing-project',
-  '/docs/getting-started/mcp-setup': '/docs/docs/configuration/mcp-setup',
-  '/docs/getting-started/gemini': '/docs/docs/skills/ai/gemini-vision',
+  '/docs/getting-started/mcp-setup': '/docs/configuration/mcp-setup',
+  '/docs/getting-started/gemini': '/docs/skills/ai/gemini-vision',
 
   // Core Concepts → Configuration/Docs
-  '/docs/core-concepts/claude-md': '/docs/docs/configuration/claude-md',
-  '/docs/core-concepts/workflows': '/docs/docs/configuration/workflows',
-  '/docs/core-concepts/architecture': '/docs/docs/agents',
-  '/docs/core-concepts/code-standards': '/docs/docs/configuration/claude-md',
-  '/docs/core-concepts/system-architecture': '/docs/docs/agents',
+  '/docs/core-concepts/claude-md': '/docs/configuration/claude-md',
+  '/docs/core-concepts/workflows': '/docs/configuration/workflows',
+  '/docs/core-concepts/architecture': '/docs/agents',
+  '/docs/core-concepts/code-standards': '/docs/configuration/claude-md',
+  '/docs/core-concepts/system-architecture': '/docs/agents',
 
-  // CLI → Docs
-  '/docs/cli': '/docs/docs/cli',
-  '/docs/cli/installation': '/docs/docs/cli/installation',
+  // CLI → Docs (no /docs/docs prefix needed - pages now at /docs/cli)
+  // '/docs/cli': '/docs/cli', // Same path, no redirect needed
+  // '/docs/cli/installation': '/docs/cli/installation', // Same path, no redirect needed
 
   // Use Cases → Workflows
   '/docs/use-cases': '/docs/workflows',

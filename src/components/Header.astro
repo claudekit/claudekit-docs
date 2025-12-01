@@ -58,7 +58,7 @@ const navIcons = {
           <span>{t('nav.getting-started')}</span>
         </a>
         <a
-          href={getLocalizedPath('/docs/docs/agents/planner', currentLocale)}
+          href={getLocalizedPath('/docs/agents', currentLocale)}
           class:list={['nav-link', { active: currentSection === 'docs' }]}
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={navIcons['docs']} />

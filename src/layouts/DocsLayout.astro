@@ -61,7 +61,7 @@ const frontmatter = content?.data || {
             </div>
           )}
 
-          <article class="prose" data-pagefind-meta="title:{title}">
+          <article class="prose" data-pagefind-meta={`title:${title}`}>
             <slot />
           </article>
         </main>

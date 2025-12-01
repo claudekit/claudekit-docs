@@ -1,6 +1,6 @@
 ---
 // src/components/nav/ChangelogNav.astro
-import { getLangFromUrl, getLocalizedPath } from '../../i18n/utils';
+import { getLangFromUrl, getDocPath } from '../../i18n/utils';
 
 interface Props {
   docs: any[];
@@ -17,7 +17,7 @@ const sortedDocs = docs.sort((a, b) => (a.data.order || 999) - (b.data.order || 
 <div class="nav-section">
   <ul class="nav-items">
     {sortedDocs.map(doc => {
-      const href = getLocalizedPath(`/docs/${doc.slug}`, currentLocale);
+      const href = getDocPath(doc.slug, currentLocale);
       const isActive = currentPath === href;
 
       return (

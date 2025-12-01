@@ -65,3 +65,17 @@ export function getAlternateUrls(slug: string, baseUrl: string = 'https://docs.c
     { lang: 'x-default', url: `${baseUrl}/docs/${slug}` },
   ];
 }
+
+/**
+ * Generate doc path from slug, avoiding duplicate /docs/ prefix
+ * Content in src/content/docs/docs/* creates slugs like "docs/agents/planner"
+ * This function ensures the final path is /docs/agents/planner, not /docs/docs/agents/planner
+ * @param slug - Document slug from content collection
+ * @param locale - Target locale
+ * @returns Properly formatted doc path
+ */
+export function getDocPath(slug: string, locale: Locale): string {
+  // Remove leading 'docs/' if present to avoid duplication
+  const normalizedSlug = slug.startsWith('docs/') ? slug.slice(5) : slug;
+  return getLocalizedPath(`/docs/${normalizedSlug}`, locale);
+}

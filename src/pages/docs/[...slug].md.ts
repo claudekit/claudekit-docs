@@ -3,8 +3,9 @@ import { getCollection } from 'astro:content';
 export async function getStaticPaths() {
   const docs = await getCollection('docs', (entry) => entry.data.published);
 
+  // Normalize slug: remove leading 'docs/' to avoid /docs/docs/... duplication
   return docs.map(doc => ({
-    params: { slug: doc.slug },
+    params: { slug: doc.slug.startsWith('docs/') ? doc.slug.slice(5) : doc.slug },
     props: { doc },
   }));
 }

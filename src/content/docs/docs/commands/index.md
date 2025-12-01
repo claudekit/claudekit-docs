@@ -91,7 +91,7 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 ```bash
 # Feature Development
 /plan [feature description]      # Plan the feature
-/cook [feature description]      # Implement the feature
+/code @plans/feature.md          # Implement the plan
 
 # Bug Fixing
 /fix [any issue]                 # Smart fix (auto-selects approach)
@@ -256,14 +256,14 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 ✅ **Clear**
 ```bash
 /plan [add OAuth2 authentication with Google and GitHub providers]
-/cook [implement JWT token refresh with 15-minute expiry]
+/code @plans/oauth.md  # Implement the plan
 /debug [API returns 500 error when creating user with empty email]
 ```
 
 ❌ **Vague**
 ```bash
 /plan [add auth]
-/cook [make it work]
+/code [make it work]
 /debug [something's broken]
 ```
 

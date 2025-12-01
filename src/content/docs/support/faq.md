@@ -68,7 +68,7 @@ claudekit init
 **A:** The feature development workflow:
 ```bash
 /plan "add user authentication with OAuth"  # Plan the feature
-/cook                                      # Implement it
+/code @plans/user-auth.md                  # Implement the plan
 /fix:test                                  # Test and fix issues
 /git:cm                                    # Commit changes
 ```

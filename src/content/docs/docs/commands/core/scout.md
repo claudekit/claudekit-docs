@@ -354,7 +354,7 @@ System continues with available results, doesn't retry.
 /ask [should we consolidate these caching patterns or keep separate?]
 ```
 
-### Scout → Plan → Cook
+### Scout → Plan → Code
 
 ```bash
 # 1. Scout codebase
@@ -364,7 +364,7 @@ System continues with available results, doesn't retry.
 /plan [add centralized error handling middleware]
 
 # 3. Implement
-/cook [implement error handling following discovered patterns]
+/code @plans/error-handling.md
 ```
 
 ### Scout → Debug

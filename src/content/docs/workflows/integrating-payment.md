@@ -520,8 +520,8 @@ Implement payment system for SaaS platform:
 # Plan implementation
 /plan [design payment system for SaaS with all requirements]
 
-# Integrate Stripe
-/cook [integrate Stripe with subscription and usage billing]
+# Integrate Stripe (use /code since plan exists)
+/code @plans/payment-system.md
 
 # Subscription tiers
 /cook [create three subscription tiers with feature gates]

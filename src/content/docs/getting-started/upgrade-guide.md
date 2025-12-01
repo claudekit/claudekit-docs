@@ -67,7 +67,7 @@ Add custom skills for your stack:
 Combine commands for complete workflows:
 ```bash
 /plan "redesign checkout flow"
-/cook
+/code @plans/checkout-redesign.md
 /design:good "checkout UI mockup"
 /fix:test
 /git:pr "feature/new-checkout"

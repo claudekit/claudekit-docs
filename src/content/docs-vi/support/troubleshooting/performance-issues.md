@@ -83,7 +83,7 @@ curl -w "@-" -o /dev/null -s https://generativelanguage.googleapis.com <<< "time
 # Wait between commands
 /plan feature A
 # Wait 60 seconds
-/cook feature A
+/code @plans/feature-a.md
 
 # Or upgrade to paid tier
 # console.cloud.google.com/billing
@@ -292,9 +292,7 @@ node --version  # Should be 18+
 
 # ✅ Fast (incremental)
 /plan implement authentication
-/cook implement login endpoint
-/cook implement signup endpoint
-/cook implement password reset
+/code @plans/auth.md  # Implements login, signup, password reset phases
 ```
 
 #### Check API Endpoint
@@ -522,11 +520,11 @@ EOF
 # ✅ Correct (one at a time)
 /plan implement auth
 # Wait for completion
-/cook implement auth
+/code @plans/auth.md
 
 # ❌ Wrong (compete for resources)
 /plan implement auth
-/cook implement auth  # Don't run simultaneously!
+/code @plans/auth.md  # Don't run simultaneously!
 ```
 
 ---

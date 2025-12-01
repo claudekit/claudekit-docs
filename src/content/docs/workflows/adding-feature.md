@@ -487,7 +487,7 @@ Real-world scenario: Adding search functionality to an e-commerce site.
 ```bash
 # Plan complex database changes first
 /plan [implement multi-tenant architecture with tenant isolation]
-/cook [implement multi-tenant architecture]
+/code @plans/multi-tenant.md
 ```
 
 ### Variation 3: UI + Backend Feature
@@ -503,7 +503,7 @@ Real-world scenario: Adding search functionality to an e-commerce site.
 ```bash
 # Research included automatically
 /plan [integrate Twilio SMS notifications]
-/cook [integrate Twilio SMS as planned]
+/code @plans/twilio-sms.md
 ```
 
 ## Troubleshooting
@@ -516,10 +516,10 @@ Real-world scenario: Adding search functionality to an e-commerce site.
 ```bash
 # Break into smaller features
 /plan [add user management - phase 1: user CRUD]
-/cook [implement user CRUD]
+/code @plans/user-crud.md
 
 /plan [add user management - phase 2: roles and permissions]
-/cook [implement roles and permissions]
+/code @plans/roles-permissions.md
 ```
 
 ### Issue: Tests Failing

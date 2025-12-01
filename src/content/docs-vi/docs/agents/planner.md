@@ -411,8 +411,8 @@ cat plans/latest-plan.md
 # 4. Regenerate if needed
 /plan [updated requirements]
 
-# 5. Implement
-/cook [implement following the plan]
+# 5. Implement (use /code since plan exists)
+/code @plans/your-feature-plan.md
 ```
 
 ### During Implementation
@@ -468,7 +468,7 @@ A good plan results in:
 
 ## Next Steps
 
-- [Implementation](/docs/commands/core/cook) - Execute the plan
+- [Implementation](/docs/commands/core/code) - Execute the plan
 - [Testing](/docs/commands/core/test) - Validate the implementation
 - [Documentation](/docs/commands/docs/update) - Update docs
 

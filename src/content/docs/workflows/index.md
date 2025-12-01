@@ -16,7 +16,7 @@ Task-oriented guides for common development scenarios using ClaudeKit's slash co
 [**Feature Development Guide**](./feature-development.md) - Complete feature lifecycle from planning to deployment
 ```bash
 /plan "add user authentication with OAuth"
-/cook
+/code @plans/user-auth.md
 /fix:test
 /git:pr "feature/user-auth"
 ```
@@ -44,13 +44,13 @@ Task-oriented guides for common development scenarios using ClaudeKit's slash co
 ck init my-project --kit engineer
 cd my-project
 /plan "set up project structure"
-/cook
+/code @plans/project-setup.md
 ```
 
 ### Add New Feature
 ```bash
 /plan "add [feature description]"
-/cook
+/code @plans/your-feature.md
 /design:good "UI mockups if needed"
 /fix:test
 /git:cm

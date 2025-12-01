@@ -828,8 +828,8 @@ cat plans/fix-ci-12345.md
 # Option A: Implement manually
 # Follow steps in plan
 
-# Option B: Use /cook
-/cook [implement CI fix from plans/fix-ci-12345.md]
+# Option B: Use /code (recommended - uses existing plan)
+/code @plans/fix-ci-12345.md
 
 # Option C: Use /fix:ci (auto-implements)
 /fix:ci https://github.com/user/repo/actions/runs/12345
@@ -848,7 +848,7 @@ npm run build
 ## Next Steps
 
 - [/fix:ci](/docs/commands/fix/ci) - Auto-implement CI fix
-- [/cook](/docs/commands/core/cook) - Implement plan manually
+- [/code](/docs/commands/core/code) - Implement existing plan
 - [/debug](/docs/commands/core/debug) - Debug complex issues
 
 ---

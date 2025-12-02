@@ -102,7 +102,7 @@ Các thay đổi gần đây, cập nhật, và ghi chú phát hành cho ClaudeK
 
 ### v1.0.0
 - Không có breaking change từ phiên bản beta
-- Lộ trình migration: Lệnh `claudekit migrate` có sẵn
+- Lộ trình migration: Lệnh `ck migrate` có sẵn
 - Tất cả cấu hình beta vẫn tương thích
 
 ### v0.9.0 → v1.0.0
@@ -120,13 +120,13 @@ Các thay đổi gần đây, cập nhật, và ghi chú phát hành cho ClaudeK
 ### Hướng dẫn Migration
 ```bash
 # Cập nhật lên v1.0.0
-npm update @claudekit/cli
+npm update claudekit-cli
 
 # Migrate cấu hình
-claudekit migrate
+ck migrate
 
 # Xác minh setup
-claudekit doctor
+ck doctor
 ```
 
 ## Cập nhật bảo mật

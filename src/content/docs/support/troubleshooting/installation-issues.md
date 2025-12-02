@@ -443,7 +443,7 @@ which ck
 
 1. **Check logs**: Look for errors during `npm install -g claudekit-cli`
 2. **GitHub Issues**: [Report installation problems](https://github.com/claudekit/claudekit-engineer/issues)
-3. **Discord**: [Join ClaudeKit community](https://discord.gg/claudekit)
+3. **Discord**: [Join ClaudeKit community](https://claudekit.cc/discord)
 
 Include in your report:
 - Operating system and version

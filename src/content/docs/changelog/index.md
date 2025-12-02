@@ -212,7 +212,7 @@ Bug Resolution:
 ## Support and Resources
 
 ### Getting Help
-- [Discord Community](https://discord.gg/claudekit) - Real-time chat with community
+- [Discord Community](https://claudekit.cc/discord) - Real-time chat with community
 - [GitHub Issues](https://github.com/claudekit/claudekit/issues) - Bug reports and feature requests
 - [Documentation](../) - Complete reference documentation
 - [Email Support](mailto:support@claudekit.cc) - Enterprise support inquiries
@@ -225,6 +225,6 @@ Bug Resolution:
 
 ---
 
-**Stay Updated**: Follow [@ClaudeKitDev](https://twitter.com/ClaudeKitDev) on Twitter for announcements and updates.
+**Stay Updated**: Join our [Discord](https://claudekit.cc/discord) for announcements and updates.
 
 **Release Cadence**: Regular releases on the 1st of each month. Security patches released as needed.

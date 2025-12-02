@@ -187,14 +187,14 @@ Want to contribute use case examples? We're looking for:
 - Best practices learned
 
 **Contact us:**
-- [Discord Community](https://discord.gg/x7SwTSf3wc)
+- [Discord Community](https://claudekit.cc/discord)
 - [GitHub Discussions](https://github.com/claudekit/discussions)
 
 ## Request Use Cases
 
 Need a specific use case documented?
 
-1. Join our [Discord](https://discord.gg/x7SwTSf3wc)
+1. Join our [Discord](https://claudekit.cc/discord)
 2. Share your scenario
 3. We'll prioritize based on community interest
 

@@ -744,7 +744,7 @@ then use gemini-document-processing to summarize key requirements"
 ```
 
 **Need help?**
-- Join [Discord](https://discord.gg/x7SwTSf3wc)
+- Join [Discord](https://claudekit.cc/discord)
 - Check [Commands](/docs/commands/) for workflows
 - Read [Agents](/docs/agents/) for orchestration
 

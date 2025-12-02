@@ -37,12 +37,12 @@ Chuyển đổi giữa nhiều tài khoản Claude và các mô hình AI (GLM, K
 
 *Sắp ra mắt - Gửi công cụ của bạn qua GitHub*
 
-## Danh mục công Cụ
+## Danh mục công cụ
 
 ### Quản lý tài khoản
 - [CCS](/vi/docs/tools/ccs) - Chuyển đổi đa tài khoản và ủy quyền
 
-### Giám sát & phân Tích
+### Giám sát & phân tích
 *Sắp ra mắt*
 
 ### Tự động hóa quy trình

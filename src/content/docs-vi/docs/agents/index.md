@@ -54,7 +54,7 @@ These 14 agents are carefully optimized for daily development workflows based on
 - **Comprehensive Coverage**: Cover all aspects of development
 - **Maintainable**: Small enough to maintain, large enough to be effective
 
-> **Note**: If you need a new specialized agent, you can request it at the [ClaudeKit Discord](https://discord.gg/x7SwTSf3wc)
+> **Note**: If you need a new specialized agent, you can request it at the [ClaudeKit Discord](https://claudekit.cc/discord)
 
 ## How Agents Work Together
 

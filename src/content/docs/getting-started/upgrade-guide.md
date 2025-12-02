@@ -28,12 +28,22 @@ Already using Claude Code? ClaudeKit enhances your workflow without breaking exi
 
 ```bash
 # Install ClaudeKit CLI (doesn't replace Claude Code)
-npm install -g @claudekit/cli
+npm install -g claudekit-cli
 
 # Initialize in existing project
-claudekit init
+ck init
 # → Adds .claude/CLAUDE.md, skills/, workflows/
 # → Existing .claude/commands/ preserved
+```
+
+### Upgrading ClaudeKit
+
+```bash
+# Recommended: Use built-in update command
+ck update
+
+# Alternative: npm global update
+npm install -g claudekit-cli@latest
 ```
 
 ## Gradual Migration Path

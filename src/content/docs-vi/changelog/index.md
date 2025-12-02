@@ -102,7 +102,7 @@ Các thay đổi gần đây, cập nhật, và ghi chú phát hành cho ClaudeK
 
 ### v1.0.0
 - Không có breaking change từ phiên bản beta
-- Lộ trình migration: Lệnh `claudekit migrate` có sẵn
+- Lộ trình migration: Lệnh `ck migrate` có sẵn
 - Tất cả cấu hình beta vẫn tương thích
 
 ### v0.9.0 → v1.0.0
@@ -120,13 +120,13 @@ Các thay đổi gần đây, cập nhật, và ghi chú phát hành cho ClaudeK
 ### Hướng dẫn Migration
 ```bash
 # Cập nhật lên v1.0.0
-npm update @claudekit/cli
+npm update claudekit-cli
 
 # Migrate cấu hình
-claudekit migrate
+ck migrate
 
 # Xác minh setup
-claudekit doctor
+ck doctor
 ```
 
 ## Cập nhật bảo mật
@@ -212,7 +212,7 @@ Giải quyết bug:
 ## Hỗ trợ và tài nguyên
 
 ### Nhận trợ giúp
-- [Discord Community](https://discord.gg/claudekit) - Chat real-time với cộng đồng
+- [Discord Community](https://claudekit.cc/discord) - Chat real-time với cộng đồng
 - [GitHub Issues](https://github.com/claudekit/claudekit/issues) - Báo cáo bug và yêu cầu tính năng
 - [Documentation](../) - Tài liệu tham khảo đầy đủ
 - [Email Support](mailto:support@claudekit.cc) - Hỗ trợ doanh nghiệp
@@ -225,6 +225,6 @@ Giải quyết bug:
 
 ---
 
-**Cập nhật**: Theo dõi [@ClaudeKitDev](https://twitter.com/ClaudeKitDev) trên Twitter để nhận thông báo và cập nhật.
+**Cập nhật**: Tham gia [Discord](https://claudekit.cc/discord) để nhận thông báo và cập nhật.
 
 **Chu kỳ phát hành**: Phát hành định kỳ vào ngày 1 mỗi tháng. Bản vá bảo mật phát hành khi cần.

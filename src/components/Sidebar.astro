@@ -93,24 +93,29 @@ const { currentPath } = Astro.props;
 
 <script>
   // Save and restore sidebar scroll position
-  const sidebar = document.querySelector('.sidebar-content');
+  function initSidebarScroll() {
+    const sidebar = document.querySelector('.sidebar-content');
+    if (!sidebar) return;
 
-  if (sidebar) {
-    // Restore scroll position on load
-    const savedScrollPosition = localStorage.getItem('sidebar-scroll-position');
-    if (savedScrollPosition) {
-      sidebar.scrollTop = parseInt(savedScrollPosition, 10);
+    // Restore scroll position
+    const savedPosition = localStorage.getItem('sidebar-scroll-position');
+    if (savedPosition) {
+      sidebar.scrollTop = parseInt(savedPosition, 10);
     }
 
-    // Save scroll position on scroll
-    let scrollTimeout: any;
+    // Save scroll position on scroll (debounced)
+    let timeout: number;
     sidebar.addEventListener('scroll', () => {
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        localStorage.setItem('sidebar-scroll-position', sidebar.scrollTop.toString());
+      clearTimeout(timeout);
+      timeout = window.setTimeout(() => {
+        localStorage.setItem('sidebar-scroll-position', String(sidebar.scrollTop));
       }, 100);
     });
   }
+
+  // Initialize on page load and after View Transitions
+  document.addEventListener('astro:page-load', initSidebarScroll);
+  document.addEventListener('DOMContentLoaded', initSidebarScroll);
 </script>
 
 <style>

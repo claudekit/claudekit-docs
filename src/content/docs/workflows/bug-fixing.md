@@ -241,7 +241,7 @@ const sessionConfig = {
 
 - [Troubleshooting Guide](../troubleshooting.md)
 - [Common Issues](../troubleshooting.md#common-issues)
-- [Discord Community](https://discord.gg/claudekit)
+- [Discord Community](https://claudekit.cc/discord)
 
 ## Related Workflows
 

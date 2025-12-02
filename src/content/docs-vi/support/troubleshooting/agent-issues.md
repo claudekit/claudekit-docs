@@ -637,7 +637,7 @@ done
 ### Get Help
 
 1. **GitHub Issues**: [Report agent problems](https://github.com/claudekit/claudekit-engineer/issues)
-2. **Discord**: [Agent troubleshooting channel](https://discord.gg/claudekit)
+2. **Discord**: [Agent troubleshooting channel](https://claudekit.cc/discord)
 3. **Include**: Agent debug report, specific agent name, command used, expected vs actual behavior
 
 ---

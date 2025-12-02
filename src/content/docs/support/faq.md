@@ -162,6 +162,13 @@ claudekit doctor  # Check system health
 - Run `/debug "performance issues"` to identify bottlenecks
 - Consider splitting large tasks into smaller ones
 
+### Q: I keep hitting Claude's rate limits. What can I do?
+**A:** Install [CCS (Claude Code Switch)](/docs/tools/ccs) to:
+- **Switch accounts instantly:** Use multiple Claude accounts without downtime
+- **Optimize costs:** Delegate simple tasks to GLM/Kimi (81% cheaper)
+- **Parallel workflows:** Run multiple sessions simultaneously
+- **Keep momentum:** Never lose context due to rate limits
+
 ### Q: Generated code has errors
 **A:** Quick fixes:
 ```bash
@@ -259,7 +266,7 @@ echo "node_modules/\ndist/\nbuild/\ncoverage/" > .claudeignore
 
 ### Q: How do I get help?
 **A:** Multiple support channels:
-- [Discord Community](https://discord.gg/claudekit) - Real-time help
+- [Discord Community](https://claudekit.cc/discord) - Real-time help
 - [GitHub Issues](https://github.com/claudekit/claudekit/issues) - Bug reports
 - [Documentation](../) - Complete reference
 - [Email Support](mailto:support@claudekit.cc) - Direct assistance
@@ -286,7 +293,7 @@ echo "node_modules/\ndist/\nbuild/\ncoverage/" > .claudeignore
 - [Complete Documentation](../)
 - [Getting Started Guide](../getting-started/)
 - [Workflow Examples](../workflows/)
-- [Discord Community](https://discord.gg/claudekit)
+- [Discord Community](https://claudekit.cc/discord)
 - [Blog](https://claudekit.cc/blog)
 
 ### Q: Can I talk to a human?
@@ -298,4 +305,4 @@ echo "node_modules/\ndist/\nbuild/\ncoverage/" > .claudeignore
 
 ---
 
-**Don't see your question here?** Ask in our [Discord community](https://discord.gg/claudekit) or [open an issue](https://github.com/claudekit/claudekit/issues). We're here to help!
+**Don't see your question here?** Ask in our [Discord community](https://claudekit.cc/discord) or [open an issue](https://github.com/claudekit/claudekit/issues). We're here to help!

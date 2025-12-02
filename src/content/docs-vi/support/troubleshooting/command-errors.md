@@ -546,7 +546,7 @@ claude --dangerously-skip-permissions
 ### Get Help
 
 1. **GitHub Issues**: [Report command problems](https://github.com/claudekit/claudekit-engineer/issues)
-2. **Discord**: [Ask community](https://discord.gg/claudekit)
+2. **Discord**: [Ask community](https://claudekit.cc/discord)
 3. **Include**: Debug report, error message, steps to reproduce
 
 ---

@@ -32,7 +32,7 @@ Prefer video? Watch the complete installation walkthrough:
   </iframe>
 </div>
 
-*More tutorials: [@goonnguyen](https://www.youtube.com/@goonnguyen)*
+*More tutorials: [@goonnguyen](https://www.youtube.com/@goonnguyen) | X: [@goon_nguyen](https://x.com/goon_nguyen)*
 
 ## Prerequisites
 

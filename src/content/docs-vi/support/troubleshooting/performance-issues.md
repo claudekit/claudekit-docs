@@ -612,7 +612,7 @@ EOF
 ### Get Help
 
 1. **GitHub Issues**: [Report performance problems](https://github.com/claudekit/claudekit-engineer/issues)
-2. **Discord**: [Performance optimization channel](https://discord.gg/claudekit)
+2. **Discord**: [Performance optimization channel](https://claudekit.cc/discord)
 3. **Include**: Performance report, project size, specific slow command, expected vs actual time
 
 ---

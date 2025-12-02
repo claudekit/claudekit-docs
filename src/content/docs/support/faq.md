@@ -266,7 +266,7 @@ echo "node_modules/\ndist/\nbuild/\ncoverage/" > .claudeignore
 
 ### Q: How do I get help?
 **A:** Multiple support channels:
-- [Discord Community](https://discord.gg/claudekit) - Real-time help
+- [Discord Community](https://claudekit.cc/discord) - Real-time help
 - [GitHub Issues](https://github.com/claudekit/claudekit/issues) - Bug reports
 - [Documentation](../) - Complete reference
 - [Email Support](mailto:support@claudekit.cc) - Direct assistance
@@ -293,7 +293,7 @@ echo "node_modules/\ndist/\nbuild/\ncoverage/" > .claudeignore
 - [Complete Documentation](../)
 - [Getting Started Guide](../getting-started/)
 - [Workflow Examples](../workflows/)
-- [Discord Community](https://discord.gg/claudekit)
+- [Discord Community](https://claudekit.cc/discord)
 - [Blog](https://claudekit.cc/blog)
 
 ### Q: Can I talk to a human?
@@ -305,4 +305,4 @@ echo "node_modules/\ndist/\nbuild/\ncoverage/" > .claudeignore
 
 ---
 
-**Don't see your question here?** Ask in our [Discord community](https://discord.gg/claudekit) or [open an issue](https://github.com/claudekit/claudekit/issues). We're here to help!
+**Don't see your question here?** Ask in our [Discord community](https://claudekit.cc/discord) or [open an issue](https://github.com/claudekit/claudekit/issues). We're here to help!

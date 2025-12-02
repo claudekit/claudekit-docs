@@ -15,7 +15,7 @@ Get help with ClaudeKit through our community resources, documentation, and dire
 ### Stuck on something specific?
 - [FAQ](./faq.md) - Answers to common questions
 - [Troubleshooting](./troubleshooting.md) - Solutions to common issues
-- [Discord Community](https://discord.gg/claudekit) - Real-time help from community
+- [Discord Community](https://claudekit.cc/discord) - Real-time help from community
 
 ### Looking for how-to guides?
 - [Getting Started](../getting-started/) - Learn the basics
@@ -25,7 +25,7 @@ Get help with ClaudeKit through our community resources, documentation, and dire
 ## Community Support
 
 ### Discord Community
-[**Join ClaudeKit Discord**](https://discord.gg/claudekit)
+[**Join ClaudeKit Discord**](https://claudekit.cc/discord)
 
 **What you'll find**:
 - Real-time chat with ClaudeKit users and developers
@@ -162,7 +162,6 @@ I've tried running /skill:refresh and restarting ClaudeKit.
 
 **Quick questions** (< 5 min response):
 - Discord `#help` channel
-- Twitter [@ClaudeKitDev](https://twitter.com/ClaudeKitDev)
 
 **Technical issues**:
 - GitHub Issues (bug reports)
@@ -238,4 +237,4 @@ We value your feedback! Help us improve ClaudeKit:
 
 ---
 
-**Need immediate help?** Join our [Discord community](https://discord.gg/claudekit) for real-time assistance from fellow users and the ClaudeKit team.
+**Need immediate help?** Join our [Discord community](https://claudekit.cc/discord) for real-time assistance from fellow users and the ClaudeKit team.

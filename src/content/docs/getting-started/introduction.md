@@ -26,7 +26,7 @@ New to ClaudeKit? Watch this step-by-step walkthrough covering CLI installation,
   </iframe>
 </div>
 
-*More tutorials: [@goonnguyen](https://www.youtube.com/@goonnguyen)*
+*More tutorials: [@goonnguyen](https://www.youtube.com/@goonnguyen) | X: [@goon_nguyen](https://x.com/goon_nguyen)*
 
 ## What is ClaudeKit?
 

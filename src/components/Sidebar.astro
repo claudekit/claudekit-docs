@@ -93,24 +93,46 @@ const { currentPath } = Astro.props;
 
 <script>
   // Save and restore sidebar scroll position
-  const sidebar = document.querySelector('.sidebar-content');
+  const SCROLL_KEY = 'sidebar-scroll-position';
+  const INIT_FLAG = 'data-scroll-init';
 
-  if (sidebar) {
-    // Restore scroll position on load
-    const savedScrollPosition = localStorage.getItem('sidebar-scroll-position');
+  function initSidebarScroll() {
+    const sidebar = document.querySelector('.sidebar-content') as HTMLElement;
+    if (!sidebar) return;
+
+    // Restore scroll position - use requestAnimationFrame to ensure DOM is painted
+    const savedScrollPosition = localStorage.getItem(SCROLL_KEY);
     if (savedScrollPosition) {
-      sidebar.scrollTop = parseInt(savedScrollPosition, 10);
+      const scrollPos = parseInt(savedScrollPosition, 10);
+      sidebar.scrollTop = scrollPos;
+      requestAnimationFrame(() => {
+        sidebar.scrollTop = scrollPos;
+      });
     }
 
-    // Save scroll position on scroll
-    let scrollTimeout: any;
+    // Prevent duplicate scroll listeners
+    if (sidebar.hasAttribute(INIT_FLAG)) return;
+    sidebar.setAttribute(INIT_FLAG, 'true');
+
+    // Save scroll position on scroll (debounced)
+    let scrollTimeout: ReturnType<typeof setTimeout>;
     sidebar.addEventListener('scroll', () => {
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(() => {
-        localStorage.setItem('sidebar-scroll-position', sidebar.scrollTop.toString());
+        localStorage.setItem(SCROLL_KEY, sidebar.scrollTop.toString());
       }, 100);
-    });
+    }, { passive: true });
   }
+
+  // Run on initial load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSidebarScroll);
+  } else {
+    initSidebarScroll();
+  }
+
+  // Handle Astro view transitions (client-side navigation)
+  document.addEventListener('astro:page-load', initSidebarScroll);
 </script>
 
 <style>

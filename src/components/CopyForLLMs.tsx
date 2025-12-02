@@ -104,7 +104,7 @@ ${pageContent}`;
 
           {/* View as Markdown */}
           <DropdownMenu.Item className="flex items-start gap-3 p-2 outline-none cursor-pointer rounded-lg hover:bg-bg-secondary focus:bg-bg-secondary group transition-colors" asChild>
-            <a href={`${pageUrl}.md`} target="_blank" rel="noopener noreferrer">
+            <a href={`${pageUrl.replace(/\/$/, '')}.md`} target="_blank" rel="noopener noreferrer">
               <div className="flex items-center justify-center w-8 h-8 mt-0.5 rounded-lg border border-border text-text-secondary bg-bg-secondary group-hover:border-border-hover group-hover:text-text-primary transition-colors">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>

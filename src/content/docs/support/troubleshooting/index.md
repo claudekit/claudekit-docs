@@ -179,9 +179,8 @@ tree .claude -L 2
 
 ### Community
 
-- **Discord**: [Join ClaudeKit Discord](https://discord.gg/claudekit)
+- **Discord**: [Join ClaudeKit Discord](https://claudekit.cc/discord)
 - **GitHub Discussions**: Share solutions, ask questions
-- **Twitter**: [@claudekit](https://twitter.com/claudekit) for updates
 
 ## Prevention Tips
 

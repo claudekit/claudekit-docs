@@ -177,7 +177,7 @@ Let's walk through adding authentication to a Next.js app:
 ### Getting Help
 - [Troubleshooting Guide](../troubleshooting.md)
 - [FAQ](../support/faq/)
-- [Discord Community](https://discord.gg/claudekit)
+- [Discord Community](https://claudekit.cc/discord)
 
 ## Next Steps
 

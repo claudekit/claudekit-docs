@@ -541,7 +541,7 @@ nano .env
 ### Get Help
 
 1. **GitHub Issues**: [Report API key problems](https://github.com/claudekit/claudekit-engineer/issues)
-2. **Discord**: [API configuration help](https://discord.gg/claudekit)
+2. **Discord**: [API configuration help](https://claudekit.cc/discord)
 3. **Include**: API debug report (keys masked), error messages, provider (Gemini/SearchAPI/OpenRouter)
 
 ---

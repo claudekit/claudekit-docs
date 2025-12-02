@@ -162,6 +162,13 @@ claudekit doctor  # Check system health
 - Run `/debug "performance issues"` to identify bottlenecks
 - Consider splitting large tasks into smaller ones
 
+### Q: I keep hitting Claude's rate limits. What can I do?
+**A:** Install [CCS (Claude Code Switch)](/docs/tools/ccs) to:
+- **Switch accounts instantly:** Use multiple Claude accounts without downtime
+- **Optimize costs:** Delegate simple tasks to GLM/Kimi (81% cheaper)
+- **Parallel workflows:** Run multiple sessions simultaneously
+- **Keep momentum:** Never lose context due to rate limits
+
 ### Q: Generated code has errors
 **A:** Quick fixes:
 ```bash

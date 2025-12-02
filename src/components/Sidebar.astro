@@ -93,46 +93,29 @@ const { currentPath } = Astro.props;
 
 <script>
   // Save and restore sidebar scroll position
-  const SCROLL_KEY = 'sidebar-scroll-position';
-  const INIT_FLAG = 'data-scroll-init';
-
   function initSidebarScroll() {
-    const sidebar = document.querySelector('.sidebar-content') as HTMLElement;
+    const sidebar = document.querySelector('.sidebar-content');
     if (!sidebar) return;
 
-    // Restore scroll position - use requestAnimationFrame to ensure DOM is painted
-    const savedScrollPosition = localStorage.getItem(SCROLL_KEY);
-    if (savedScrollPosition) {
-      const scrollPos = parseInt(savedScrollPosition, 10);
-      sidebar.scrollTop = scrollPos;
-      requestAnimationFrame(() => {
-        sidebar.scrollTop = scrollPos;
-      });
+    // Restore scroll position
+    const savedPosition = localStorage.getItem('sidebar-scroll-position');
+    if (savedPosition) {
+      sidebar.scrollTop = parseInt(savedPosition, 10);
     }
 
-    // Prevent duplicate scroll listeners
-    if (sidebar.hasAttribute(INIT_FLAG)) return;
-    sidebar.setAttribute(INIT_FLAG, 'true');
-
     // Save scroll position on scroll (debounced)
-    let scrollTimeout: ReturnType<typeof setTimeout>;
+    let timeout: number;
     sidebar.addEventListener('scroll', () => {
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        localStorage.setItem(SCROLL_KEY, sidebar.scrollTop.toString());
+      clearTimeout(timeout);
+      timeout = window.setTimeout(() => {
+        localStorage.setItem('sidebar-scroll-position', String(sidebar.scrollTop));
       }, 100);
-    }, { passive: true });
+    });
   }
 
-  // Run on initial load
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initSidebarScroll);
-  } else {
-    initSidebarScroll();
-  }
-
-  // Handle Astro view transitions (client-side navigation)
+  // Initialize on page load and after View Transitions
   document.addEventListener('astro:page-load', initSidebarScroll);
+  document.addEventListener('DOMContentLoaded', initSidebarScroll);
 </script>
 
 <style>

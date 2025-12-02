@@ -153,7 +153,7 @@ ck update
 
 **Global vs Local Configuration:**
 
-By default, ClaudeKit uses local configuration (`~/.claudekit`). 
+By default, ClaudeKit uses local configuration (`~/.claudekit`).
 
 For platform-specific **user-scoped settings**, use the `--global` flag:
 - **macOS/Linux**: `~/.claude`
@@ -256,6 +256,24 @@ If CLI can't authenticate:
 2. Authenticate: `gh auth login`
 3. Verify: `gh auth status`
 4. Or set environment variable: `export GITHUB_TOKEN=your_token`
+
+## Optional Tools
+
+### CCS - Claude Code Switch (Recommended for Heavy Users)
+
+If you're a heavy ClaudeKit user or frequently hit Claude's rate limits, consider installing **CCS**:
+
+```bash
+npm install -g @kaitranntt/ccs
+```
+
+**Benefits:**
+- Switch between multiple Claude accounts instantly
+- Delegate simple tasks to cheaper models (81% cost savings)
+- Keep working without interruption when hitting limits
+- Optimize costs for high-volume usage
+
+[**Learn more about CCS →**](/docs/tools/ccs)
 
 ## Next Steps
 

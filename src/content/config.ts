@@ -7,6 +7,7 @@ const docsSchema = z.object({
     'getting-started',
     'docs',
     'workflows',
+    'tools',
     'changelog',
     'support'
   ]),

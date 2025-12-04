@@ -72,12 +72,12 @@ ClaudeKit:
 
 ## Next Steps
 
-1. **[Understand Concepts](./concepts)** - How agents, commands, and skills work
-2. **[Install ClaudeKit](./installation)** - Set up the CLI
-3. **[Quick Start](./quick-start)** - Build your first feature in 15 minutes
+1. **[Understand Concepts](/docs/getting-started/concepts)** - How agents, commands, and skills work
+2. **[Install ClaudeKit](/docs/getting-started/installation)** - Set up the CLI
+3. **[Quick Start](/docs/getting-started/quick-start)** - Build your first feature in 15 minutes
 
 ## Want to Learn More?
 
-- [Why ClaudeKit](./why-claudekit) - Comparisons, ROI calculations, pricing
-- [Use Cases](../workflows) - Real-world workflows
-- [FAQ](../support/faq/) - Common questions answered
+- [Why ClaudeKit](/docs/getting-started/why-claudekit) - Comparisons, ROI calculations, pricing
+- [Use Cases](/docs/workflows) - Real-world workflows
+- [FAQ](/docs/support/faq) - Common questions answered

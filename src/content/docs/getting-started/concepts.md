@@ -121,7 +121,7 @@ All agent behaviors, skills, and workflows configured in `.claude/CLAUDE.md`:
 
 ## Next Steps
 
-- **[Installation](./installation)** - Install ClaudeKit
-- **[Quick Start](./quick-start)** - Try your first command
-- **[Commands Reference](../docs/commands)** - Explore all commands
-- **[Agents Reference](../docs/agents)** - Learn about each agent
+- **[Installation](/docs/getting-started/installation)** - Install ClaudeKit
+- **[Quick Start](/docs/getting-started/quick-start)** - Try your first command
+- **[Commands Reference](/docs/commands)** - Explore all commands
+- **[Agents Reference](/docs/agents)** - Learn about each agent

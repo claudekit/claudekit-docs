@@ -239,12 +239,12 @@ const sessionConfig = {
 
 ## Getting Help
 
-- [Troubleshooting Guide](../troubleshooting.md)
-- [Common Issues](../troubleshooting.md#common-issues)
+- [Troubleshooting Guide](/docs/support/troubleshooting)
+- [Common Issues](/docs/support/troubleshooting#common-issues)
 - [Discord Community](https://claudekit.cc/discord)
 
 ## Related Workflows
 
-- [Feature Development](./feature-development.md) - Building new features
-- [Code Review](./code-review.md) - Maintaining quality
-- [Performance Optimization](./performance-optimization.md) - Speed improvements
+- [Feature Development](/docs/workflows/feature-development) - Building new features
+- [Code Review](/docs/workflows/code-review) - Maintaining quality
+- [Performance Optimization](/docs/workflows/performance-optimization) - Speed improvements

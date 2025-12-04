@@ -107,6 +107,6 @@ A: Uninstall and delete .claude/CLAUDE.md. No breaking changes.
 
 ## Next Steps
 
-1. [Install ClaudeKit](./installation)
-2. [Try Quick Start](./quick-start)
-3. [Explore Commands](../docs/commands)
+1. [Install ClaudeKit](/docs/getting-started/installation)
+2. [Try Quick Start](/docs/getting-started/quick-start)
+3. [Explore Commands](/docs/commands)

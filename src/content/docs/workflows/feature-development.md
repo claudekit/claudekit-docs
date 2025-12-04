@@ -175,19 +175,19 @@ Let's walk through adding authentication to a Next.js app:
 - **CI Failures**: Use `/fix:ci` for pipeline issues
 
 ### Getting Help
-- [Troubleshooting Guide](../troubleshooting.md)
-- [FAQ](../support/faq/)
+- [Troubleshooting Guide](/docs/support/troubleshooting)
+- [FAQ](/docs/support/faq)
 - [Discord Community](https://claudekit.cc/discord)
 
 ## Next Steps
 
 After mastering feature development:
-- Learn [Bug Fixing Workflow](./bug-fixing.md)
-- Explore [Documentation Workflow](./documentation.md)
-- Study [Commands Reference](../docs/commands/)
+- Learn [Bug Fixing Workflow](/docs/workflows/bug-fixing)
+- Explore [Documentation Workflow](/docs/workflows/documentation)
+- Study [Commands Reference](/docs/commands)
 
 ## Related Workflows
 
-- [Bug Fixing](./bug-fixing.md) - For when things go wrong
-- [Code Review](./code-review.md) - Maintaining code quality
-- [Documentation](./documentation.md) - Keeping docs current
+- [Bug Fixing](/docs/workflows/bug-fixing) - For when things go wrong
+- [Code Review](/docs/workflows/code-review) - Maintaining code quality
+- [Documentation](/docs/workflows/documentation) - Keeping docs current

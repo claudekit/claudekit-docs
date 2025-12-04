@@ -13,7 +13,7 @@ Task-oriented guides for common development scenarios using ClaudeKit's slash co
 ## Popular Workflows
 
 ### Feature Development
-[**Feature Development Guide**](./feature-development.md) - Complete feature lifecycle from planning to deployment
+[**Feature Development Guide**](/docs/workflows/feature-development) - Complete feature lifecycle from planning to deployment
 ```bash
 /plan "add user authentication with OAuth"
 /code @plans/user-auth.md
@@ -22,7 +22,7 @@ Task-oriented guides for common development scenarios using ClaudeKit's slash co
 ```
 
 ### Bug Fixing
-[**Bug Fixing Workflow**](./bug-fixing.md) - Systematic approach to debugging and fixing issues
+[**Bug Fixing Workflow**](/docs/workflows/bug-fixing) - Systematic approach to debugging and fixing issues
 ```bash
 /debug "login button not working"
 /fix:hard
@@ -31,7 +31,7 @@ Task-oriented guides for common development scenarios using ClaudeKit's slash co
 ```
 
 ### Documentation
-[**Documentation Workflow**](./documentation.md) - Keep docs in sync with code changes
+[**Documentation Workflow**](/docs/workflows/documentation) - Keep docs in sync with code changes
 ```bash
 /docs:init
 /docs:update "after feature changes"
@@ -73,7 +73,7 @@ cd my-project
 ## By Use Case
 
 ### Frontend Development
-- [UI/UX Design](../docs/commands/#design-commands) - `/design:good`, `/design:fast`
+- [UI/UX Design](/docs/commands#design-commands) - `/design:good`, `/design:fast`
 - Component Development - `/plan → /code → /fix:test`
 - Styling - `/design:good` for aesthetic components
 
@@ -83,7 +83,7 @@ cd my-project
 - Performance Optimization - `/debug "slow queries" → /fix`
 
 ### Full Stack
-- Complete Features - See [Feature Development](./feature-development.md)
+- Complete Features - See [Feature Development](/docs/workflows/feature-development)
 - Authentication - `/cook "add authentication with Better Auth"`
 - E-commerce - `/cook "add Stripe payment integration`
 
@@ -119,18 +119,18 @@ cd my-project
 ## Getting Started
 
 New to ClaudeKit? Start with:
-1. [Getting Started Guide](../getting-started/) - Learn the basics
-2. [Quick Start](../getting-started/quick-start.md) - Build your first feature
-3. [Feature Development](./feature-development.md) - Complete workflow example
+1. [Getting Started Guide](/docs/getting-started) - Learn the basics
+2. [Quick Start](/docs/getting-started/quick-start) - Build your first feature
+3. [Feature Development](/docs/workflows/feature-development) - Complete workflow example
 
 ## Reference
 
-- [Commands Reference](../docs/commands/) - All available commands
-- [Agents Overview](../docs/agents/) - Meet your AI team
-- [Skills Library](../docs/docs/skills/) - Built-in knowledge modules
+- [Commands Reference](/docs/commands) - All available commands
+- [Agents Overview](/docs/agents) - Meet your AI team
+- [Skills Library](/docs/skills) - Built-in knowledge modules
 
 ## Need Help?
 
-- [Troubleshooting](../troubleshooting/) - Common issues
-- [FAQ](../support/faq/) - Frequently asked questions
-- [Support](../support/) - Get help from the community
+- [Troubleshooting](/docs/support/troubleshooting) - Common issues
+- [FAQ](/docs/support/faq) - Frequently asked questions
+- [Support](/docs/support) - Get help from the community

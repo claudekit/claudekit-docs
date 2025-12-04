@@ -18,7 +18,7 @@ cd my-app
 
 **Result**: Production auth system with login/signup pages, OAuth (Google/GitHub), protected routes, tests, and docs. **Time: 6 minutes vs 8 hours manually.**
 
-[Try Quick Start →](./quick-start)
+[Try Quick Start →](/docs/getting-started/quick-start)
 
 ## What You Get
 
@@ -44,7 +44,7 @@ cd my-app
 - `/fix:hard` - Multi-agent bug fixing
 - `/design:good` - UI/UX design
 - `/git:cm` - Commit with conventional format
-- [See all commands →](../docs/commands/)
+- [See all commands →](/docs/commands)
 
 **45 Built-in Skills**:
 - Frontend: Next.js, shadcn/ui, Tailwind CSS
@@ -53,7 +53,7 @@ cd my-app
 - Cloud: Cloudflare Workers, R2, Docker
 - AI: Gemini (audio, video, images, vision)
 - Database: PostgreSQL, MongoDB
-- [See all skills →](../docs/docs/skills/)
+- [See all skills →](/docs/skills)
 
 ## ClaudeKit vs Alternatives
 

@@ -268,7 +268,7 @@ echo "node_modules/\ndist/\nbuild/\ncoverage/" > .claudeignore
 **A:** Multiple support channels:
 - [Discord Community](https://claudekit.cc/discord) - Real-time help
 - [GitHub Issues](https://github.com/claudekit/claudekit/issues) - Bug reports
-- [Documentation](../) - Complete reference
+- [Documentation](/docs) - Complete reference
 - [Email Support](mailto:support@claudekit.cc) - Direct assistance
 
 ### Q: How can I contribute to ClaudeKit?
@@ -290,9 +290,9 @@ echo "node_modules/\ndist/\nbuild/\ncoverage/" > .claudeignore
 
 ### Q: Where can I find more information?
 **A:** Additional resources:
-- [Complete Documentation](../)
-- [Getting Started Guide](../getting-started/)
-- [Workflow Examples](../workflows/)
+- [Complete Documentation](/docs)
+- [Getting Started Guide](/docs/getting-started)
+- [Workflow Examples](/docs/workflows)
 - [Discord Community](https://claudekit.cc/discord)
 - [Blog](https://claudekit.cc/blog)
 

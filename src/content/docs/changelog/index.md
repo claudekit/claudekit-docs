@@ -214,13 +214,13 @@ Bug Resolution:
 ### Getting Help
 - [Discord Community](https://claudekit.cc/discord) - Real-time chat with community
 - [GitHub Issues](https://github.com/claudekit/claudekit/issues) - Bug reports and feature requests
-- [Documentation](../) - Complete reference documentation
+- [Documentation](/docs) - Complete reference documentation
 - [Email Support](mailto:support@claudekit.cc) - Enterprise support inquiries
 
 ### Contributing
-- [Contributing Guide](../development/contributing.md) - How to contribute to ClaudeKit
-- [Skill Development](../development/creating-skills.md) - Create custom skills
-- [Plugin Development](../development/plugins.md) - Extend ClaudeKit functionality
+- [Contributing Guide](/docs/development/contributing) - How to contribute to ClaudeKit
+- [Skill Development](/docs/development/creating-skills) - Create custom skills
+- [Plugin Development](/docs/development/plugins) - Extend ClaudeKit functionality
 - [Translation Project](https://translate.claudekit.cc) - Help translate ClaudeKit
 
 ---

@@ -59,6 +59,31 @@ From `src/content/config.ts`:
 - `src/content/docs/getting-started/intro.md` → `/docs/getting-started/intro`
 - `src/content/docs-vi/getting-started/intro.md` → `/vi/docs/getting-started/intro`
 
+## CRITICAL: Link Guidelines
+
+**ALWAYS use absolute paths for internal links. NEVER use relative paths.**
+
+```markdown
+# ✅ CORRECT - Absolute paths
+[Quick Start](/docs/getting-started/quick-start)
+[Commands](/docs/commands)
+
+# ❌ WRONG - Relative paths (WILL BREAK)
+[Quick Start](./quick-start)
+[Commands](../docs/commands/)
+```
+
+**Why:** Relative links resolve differently based on trailing slash in URL:
+- `/docs/getting-started` + `./quick-start` → `/docs/quick-start` (404!)
+- `/docs/getting-started/` + `./quick-start` → `/docs/getting-started/quick-start` (works)
+
+Since Astro serves URLs without trailing slashes by default, relative links break.
+
+**When moving docs:** Search for the old path and update all references:
+```bash
+grep -r "/docs/old/path" src/content/docs/
+```
+
 ## Tech Stack
 
 - **Astro v5.14.6**: SSG with islands architecture

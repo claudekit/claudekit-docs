@@ -302,13 +302,13 @@ docs/
 
 ## Getting Help
 
-- [Writing Style Guide](../docs/docs/writing-style-guide.md)
-- [Templates and Examples](../docs/docs/templates/)
+- [Writing Style Guide](/docs/writing-style-guide)
+- [Templates and Examples](/docs/templates)
 - [Community Forum](https://forum.claudekit.com)
-- [Documentation Best Practices](../docs/docs/best-practices.md)
+- [Documentation Best Practices](/docs/best-practices)
 
 ## Related Workflows
 
-- [Feature Development](./feature-development.md) - Building features that need documentation
-- [Code Review](./code-review.md) - Reviewing documentation alongside code
-- [Release Management](./release-management.md) - Preparing release notes
+- [Feature Development](/docs/workflows/feature-development) - Building features that need documentation
+- [Code Review](/docs/workflows/code-review) - Reviewing documentation alongside code
+- [Release Management](/docs/workflows/release-management) - Preparing release notes

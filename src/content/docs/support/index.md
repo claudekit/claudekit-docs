@@ -13,14 +13,14 @@ Get help with ClaudeKit through our community resources, documentation, and dire
 ## Quick Help
 
 ### Stuck on something specific?
-- [FAQ](./faq.md) - Answers to common questions
-- [Troubleshooting](./troubleshooting.md) - Solutions to common issues
+- [FAQ](/docs/support/faq) - Answers to common questions
+- [Troubleshooting](/docs/support/troubleshooting) - Solutions to common issues
 - [Discord Community](https://claudekit.cc/discord) - Real-time help from community
 
 ### Looking for how-to guides?
-- [Getting Started](../getting-started/) - Learn the basics
-- [Workflows](../workflows/) - Step-by-step guides
-- [Commands Reference](../docs/commands/) - All available commands
+- [Getting Started](/docs/getting-started) - Learn the basics
+- [Workflows](/docs/workflows) - Step-by-step guides
+- [Commands Reference](/docs/commands) - All available commands
 
 ## Community Support
 
@@ -65,17 +65,17 @@ Get help with ClaudeKit through our community resources, documentation, and dire
 ## Self-Service Resources
 
 ### Documentation
-- [Getting Started](../getting-started/) - New user guides
-- [Commands Reference](../docs/commands/) - Complete command documentation
-- [Agents Overview](../docs/agents/) - Meet your AI team
-- [Skills Library](../docs/docs/skills/) - Built-in knowledge modules
-- [Troubleshooting](./troubleshooting.md) - Common issues and solutions
+- [Getting Started](/docs/getting-started) - New user guides
+- [Commands Reference](/docs/commands) - Complete command documentation
+- [Agents Overview](/docs/agents) - Meet your AI team
+- [Skills Library](/docs/skills) - Built-in knowledge modules
+- [Troubleshooting](/docs/support/troubleshooting) - Common issues and solutions
 
 ### Tutorials and Examples
-- [Workflow Examples](../workflows/) - Real-world workflows
-- [Use Cases](../docs/docs/workflows/) - Practical applications
-- [Quick Start Guide](../getting-started/quick-start.md) - First project in 15 minutes
-- [Migration Guide](../getting-started/upgrade-guide.md) - From Claude Code to ClaudeKit
+- [Workflow Examples](/docs/workflows) - Real-world workflows
+- [Use Cases](/docs/workflows) - Practical applications
+- [Quick Start Guide](/docs/getting-started/quick-start) - First project in 15 minutes
+- [Migration Guide](/docs/getting-started/upgrade-guide) - From Claude Code to ClaudeKit
 
 ### Code Examples
 - [GitHub Repository](https://github.com/claudekit/examples) - Example projects
@@ -121,7 +121,7 @@ Get help with ClaudeKit through our community resources, documentation, and dire
 
 ### Before Asking for Help
 
-1. **Search First**: Check [FAQ](./faq.md) and [Troubleshooting](./troubleshooting.md)
+1. **Search First**: Check [FAQ](/docs/support/faq) and [Troubleshooting](/docs/support/troubleshooting)
 2. **Check Documentation**: Look in relevant documentation sections
 3. **Search GitHub Issues**: See if your issue has been reported
 4. **Try Debugging**: Use `/debug` command to investigate issues
@@ -178,7 +178,7 @@ I've tried running /skill:refresh and restarting ClaudeKit.
 ## Contributing
 
 ### Help Improve Documentation
-- [Contributing Guide](../development/contributing.md)
+- [Contributing Guide](/docs/development/contributing)
 - Report documentation issues on GitHub
 - Suggest improvements via Discord
 
@@ -222,9 +222,9 @@ I've tried running /skill:refresh and restarting ClaudeKit.
 - [Certification](https://claudekit.cc/certification) - Become a ClaudeKit expert
 
 ### Developer Resources
-- [API Documentation](../docs/docs/api/) - For extending ClaudeKit
-- [Plugin Development](../development/plugins.md) - Create extensions
-- [Skill Development](../development/creating-skills.md) - Build custom skills
+- [API Documentation](/docs/api) - For extending ClaudeKit
+- [Plugin Development](/docs/development/plugins) - Create extensions
+- [Skill Development](/docs/development/creating-skills) - Build custom skills
 
 ## Feedback
 

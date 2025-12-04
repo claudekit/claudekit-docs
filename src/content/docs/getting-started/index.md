@@ -13,26 +13,26 @@ ClaudeKit supercharges Claude Code with agents, commands, and skills for product
 ## Quick Paths
 
 ### New to ClaudeKit?
-1. [Introduction](./introduction) - Understand what ClaudeKit is
-2. [Concepts](./concepts) - Learn how agents, commands, and skills work
-3. [Installation](./installation) - Install ClaudeKit CLI
-4. [Quick Start](./quick-start) - Build your first feature in 15 minutes
+1. [Introduction](/docs/getting-started/introduction) - Understand what ClaudeKit is
+2. [Concepts](/docs/getting-started/concepts) - Learn how agents, commands, and skills work
+3. [Installation](/docs/getting-started/installation) - Install ClaudeKit CLI
+4. [Quick Start](/docs/getting-started/quick-start) - Build your first feature in 15 minutes
 
 ### Existing Claude Code User?
-[Upgrade Guide](./upgrade-guide) - Migrate to ClaudeKit seamlessly
+[Upgrade Guide](/docs/getting-started/upgrade-guide) - Migrate to ClaudeKit seamlessly
 
 ### Evaluating ClaudeKit?
-[Why ClaudeKit](./why-claudekit) - See comparisons, ROI, and pricing
+[Why ClaudeKit](/docs/getting-started/why-claudekit) - See comparisons, ROI, and pricing
 
 ## Additional Resources
 
-- [Cheatsheet](./cheatsheet) - Quick reference for common commands
-- [FAQ](../support/faq/) - Frequently asked questions
-- [Troubleshooting](../troubleshooting) - Common issues and solutions
+- [Cheatsheet](/docs/getting-started/cheatsheet) - Quick reference for common commands
+- [FAQ](/docs/support/faq) - Frequently asked questions
+- [Troubleshooting](/docs/support/troubleshooting) - Common issues and solutions
 
 ## Next Steps
 
 After installation, explore:
-- **[Workflows](../workflows)** - Task-oriented guides for common scenarios
-- **[Docs](../docs)** - Deep reference documentation
-- **[Support](../support)** - Get help when stuck
+- **[Workflows](/docs/workflows)** - Task-oriented guides for common scenarios
+- **[Docs](/docs)** - Deep reference documentation
+- **[Support](/docs/support)** - Get help when stuck

@@ -282,7 +282,7 @@ Paid tiers scale up significantly.
 
 ## Next Steps
 
-- [Document Processing](/docs/skills/document-skills)
+- [Document Processing](/docs/skills/tools/document-skills)
 - [AI Integration Examples](/docs/workflows/)
 - [API Reference](https://ai.google.dev/gemini-api/docs/image-understanding)
 

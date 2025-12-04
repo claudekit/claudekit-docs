@@ -433,7 +433,7 @@ Creates:
 
 - [Custom Tools Examples](/docs/workflows/)
 - [API Integration Guide](/docs/workflows/)
-- [Database Skills](/docs/skills/postgresql-psql)
+- [Database Skills](/docs/skills/backend/postgresql-psql)
 
 ---
 

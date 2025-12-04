@@ -490,7 +490,7 @@ mutation {
 
 - [E-commerce Examples](/docs/workflows/)
 - [API Integration](/docs/workflows/)
-- [Database Skills](/docs/skills/postgresql-psql)
+- [Database Skills](/docs/skills/backend/postgresql-psql)
 
 ---
 

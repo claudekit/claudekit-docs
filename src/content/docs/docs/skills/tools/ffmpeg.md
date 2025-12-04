@@ -361,7 +361,7 @@ ffmpeg -i input.mkv -c:v libx264 -profile:v high \
 ## Next Steps
 
 - [Media Examples](/docs/workflows/)
-- [Image Processing](/docs/skills/imagemagick)
+- [Image Processing](/docs/skills/tools/imagemagick)
 - [Streaming Guide](/docs/workflows/)
 
 ---

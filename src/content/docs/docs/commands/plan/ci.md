@@ -274,7 +274,7 @@ npm run type-check
 ✓ Plan complete (45 seconds total)
 
 Next step: Review plan and implement fixes
-Use: /cook [implement plan from plans/fix-ci-build-12345.md]
+Use: /code [implement plan from plans/fix-ci-build-12345.md]
 ```
 
 ### Test Failure Analysis
@@ -439,7 +439,7 @@ module.exports = {
 
 ✓ Plan complete
 
-Next: /cook [implement CI fixes from plan]
+Next: /code [implement CI fixes from plan]
 ```
 
 ### Deployment Failure
@@ -624,7 +624,7 @@ cat plans/fix-ci-*.md
 # Follow steps yourself
 
 # Option 2: Use /cook to implement
-/cook [implement CI fix plan]
+/code [implement CI fix plan]
 
 # Option 3: Use /fix:ci to auto-implement
 /fix:ci https://github.com/user/repo/actions/runs/12345
@@ -797,7 +797,7 @@ cat plans/fix-ci-*.md
 # 3. Understand the root cause
 
 # 4. Then implement
-/cook [implement from plan]
+/code [implement from plan]
 ```
 
 ### Test Locally First

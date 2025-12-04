@@ -815,10 +815,8 @@ npx shadcn@latest diff
 
 ## Related Skills
 
-- [Tailwind CSS](/docs/skills/tailwindcss) - Styling foundation
-- [Next.js](/docs/skills/nextjs) - React framework integration
-- [React Hook Form](/docs/skills/react-hook-form) - Form management
-- [Zod](/docs/skills/zod) - Schema validation
+- [Tailwind CSS](/docs/skills/frontend/tailwindcss) - Styling foundation
+- [Next.js](/docs/skills/frontend/nextjs) - React framework integration
 
 ## Reference
 

@@ -50,7 +50,7 @@ Slash commands that trigger agent workflows.
 /plan "add payment processing with Stripe"
 # → Planner agent creates detailed plan
 
-/cook
+/code
 # → Reads plan, spawns developer + tester agents, implements feature
 
 /fix

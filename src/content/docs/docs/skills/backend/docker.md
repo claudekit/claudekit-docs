@@ -418,7 +418,7 @@ Common problems:
 ## Next Steps
 
 - [Deployment Guide](/docs/workflows/)
-- [PostgreSQL Integration](/docs/skills/postgresql-psql)
+- [PostgreSQL Integration](/docs/skills/backend/postgresql-psql)
 - [CI/CD Examples](/docs/workflows/)
 
 ---

@@ -624,10 +624,8 @@ export default function DashboardLayout({
 
 ## Related Skills
 
-- [Tailwind CSS](/docs/skills/tailwindcss) - Styling Next.js applications
-- [shadcn/ui](/docs/skills/shadcn-ui) - Pre-built UI components
-- [TypeScript](/docs/skills/typescript) - Type-safe development
-- [React](/docs/skills/react) - Core React patterns
+- [Tailwind CSS](/docs/skills/frontend/tailwindcss) - Styling Next.js applications
+- [shadcn/ui](/docs/skills/frontend/shadcn-ui) - Pre-built UI components
 
 ## Reference
 

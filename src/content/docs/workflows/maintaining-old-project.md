@@ -209,7 +209,7 @@ npm outdated
 ### Implement Updates
 
 ```bash
-/cook [update dependencies following the plan]
+/code [update dependencies following the plan]
 ```
 
 **What happens:**
@@ -452,7 +452,7 @@ const getUserOrders = async (userId) => {
 Review the plan, then:
 
 ```bash
-/cook [implement TypeScript migration following the plan]
+/code [implement TypeScript migration following the plan]
 ```
 
 ### Improve Documentation

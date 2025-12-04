@@ -35,7 +35,7 @@ Skills are folders of instructions, scripts, and resources that Claude loads dyn
 
 Skills for creating and managing other skills.
 
-#### [skill-creator](/docs/skills/skill-creator)
+#### [skill-creator](/docs/skills/tools/skill-creator)
 Create new custom skills that extend Claude's capabilities with specialized knowledge, workflows, or tool integrations.
 
 **Use when:** Building custom skills for your project-specific needs
@@ -45,7 +45,7 @@ Create new custom skills that extend Claude's capabilities with specialized know
 "Use skill-creator to create a skill for GraphQL schema generation"
 ```
 
-[→ Full skill-creator guide](/docs/skills/skill-creator)
+[→ Full skill-creator guide](/docs/skills/tools/skill-creator)
 
 ---
 
@@ -56,7 +56,7 @@ Basic template as starting point for new skills.
 
 ### Authentication & Security
 
-#### [better-auth](/docs/skills/better-auth)
+#### [better-auth](/docs/skills/auth/better-auth)
 Framework-agnostic authentication framework for TypeScript with email/password, OAuth, 2FA, passkeys, and multi-tenancy.
 
 **Use when:** Implementing authentication in TypeScript/JavaScript apps
@@ -75,7 +75,7 @@ Framework-agnostic authentication framework for TypeScript with email/password, 
 "Use better-auth to implement GitHub OAuth with 2FA"
 ```
 
-[→ Full better-auth guide](/docs/skills/better-auth)
+[→ Full better-auth guide](/docs/skills/auth/better-auth)
 
 ---
 
@@ -102,7 +102,7 @@ Create beautiful visual art in PNG and PDF formats using design philosophy.
 
 ### Document Processing
 
-#### [document-skills](/docs/skills/document-skills)
+#### [document-skills](/docs/skills/tools/document-skills)
 Read, parse, and create various document formats.
 
 **Supported Formats:**
@@ -118,13 +118,13 @@ Read, parse, and create various document formats.
 "Use document-skills/pdf to extract form fields from contract.pdf"
 ```
 
-[→ Full document-skills guide](/docs/skills/document-skills)
+[→ Full document-skills guide](/docs/skills/tools/document-skills)
 
 ---
 
 ### Development Tools
 
-#### [mcp-builder](/docs/skills/mcp-builder)
+#### [mcp-builder](/docs/skills/tools/mcp-builder)
 Create high-quality MCP (Model Context Protocol) servers for integrating external services.
 
 **Use when:** Building MCP servers in Python (FastMCP) or Node/TypeScript
@@ -141,7 +141,7 @@ Create high-quality MCP (Model Context Protocol) servers for integrating externa
 "Use mcp-builder to create MCP server for Stripe API"
 ```
 
-[→ Full mcp-builder guide](/docs/skills/mcp-builder)
+[→ Full mcp-builder guide](/docs/skills/tools/mcp-builder)
 
 ---
 
@@ -154,7 +154,7 @@ Pack entire repository into single file for context sharing.
 
 ### Debugging & Problem Solving
 
-#### [systematic-debugging](/docs/skills/systematic-debugging)
+#### [systematic-debugging](/docs/skills/tools/systematic-debugging)
 Four-phase debugging framework ensuring root cause investigation before fixes.
 
 **Use when:** Any bug, test failure, or unexpected behavior
@@ -170,7 +170,7 @@ Four-phase debugging framework ensuring root cause investigation before fixes.
 "Use systematic-debugging to investigate test failure"
 ```
 
-[→ Full systematic-debugging guide](/docs/skills/systematic-debugging)
+[→ Full systematic-debugging guide](/docs/skills/tools/systematic-debugging)
 
 ---
 
@@ -209,7 +209,7 @@ Strategies for getting unstuck.
 
 ### Frontend Frameworks & UI
 
-#### [nextjs](/docs/skills/nextjs)
+#### [nextjs](/docs/skills/frontend/nextjs)
 Comprehensive Next.js implementation guide.
 
 **Use when:** Building Next.js applications
@@ -222,11 +222,11 @@ Comprehensive Next.js implementation guide.
 - Data fetching
 - Optimization
 
-[→ Full Next.js guide](/docs/skills/nextjs)
+[→ Full Next.js guide](/docs/skills/frontend/nextjs)
 
 ---
 
-#### [shadcn-ui](/docs/skills/shadcn-ui)
+#### [shadcn-ui](/docs/skills/frontend/shadcn-ui)
 Beautiful, accessible component library for React.
 
 **Use when:** Building UI with Tailwind CSS
@@ -237,16 +237,16 @@ Beautiful, accessible component library for React.
 - Accessible
 - TypeScript support
 
-[→ Full shadcn-ui guide](/docs/skills/shadcn-ui)
+[→ Full shadcn-ui guide](/docs/skills/frontend/shadcn-ui)
 
 ---
 
-#### [tailwindcss](/docs/skills/tailwindcss)
+#### [tailwindcss](/docs/skills/frontend/tailwindcss)
 Utility-first CSS framework.
 
 **Use when:** Styling applications
 
-[→ Full Tailwind CSS guide](/docs/skills/tailwindcss)
+[→ Full Tailwind CSS guide](/docs/skills/frontend/tailwindcss)
 
 ---
 
@@ -257,7 +257,7 @@ Open-source icon system.
 
 ### Backend & Databases
 
-#### [postgresql-psql](/docs/skills/postgresql-psql)
+#### [postgresql-psql](/docs/skills/backend/postgresql-psql)
 PostgreSQL database administration and optimization.
 
 **Use when:** Working with PostgreSQL databases
@@ -269,7 +269,7 @@ PostgreSQL database administration and optimization.
 - Backup/restore
 - Replication
 
-[→ Full postgresql-psql guide](/docs/skills/postgresql-psql)
+[→ Full postgresql-psql guide](/docs/skills/backend/postgresql-psql)
 
 ---
 
@@ -280,7 +280,7 @@ MongoDB database operations and best practices.
 
 ### DevOps & Infrastructure
 
-#### [docker](/docs/skills/docker)
+#### [docker](/docs/skills/backend/docker)
 Containerization platform for building, running, and deploying applications.
 
 **Use when:** Containerizing apps, creating Dockerfiles, Docker Compose
@@ -293,7 +293,7 @@ Containerization platform for building, running, and deploying applications.
 - CI/CD integration
 - Production deployment
 
-[→ Full docker guide](/docs/skills/docker)
+[→ Full docker guide](/docs/skills/backend/docker)
 
 ---
 
@@ -694,9 +694,9 @@ then use gemini-document-processing to summarize key requirements"
 ### Want More Details
 
 **For comprehensive guides, see:**
-- [Next.js](/docs/skills/nextjs)
-- [Tailwind CSS](/docs/skills/tailwindcss)
-- [shadcn/ui](/docs/skills/shadcn-ui)
+- [Next.js](/docs/skills/frontend/nextjs)
+- [Tailwind CSS](/docs/skills/frontend/tailwindcss)
+- [shadcn/ui](/docs/skills/frontend/shadcn-ui)
 
 ---
 

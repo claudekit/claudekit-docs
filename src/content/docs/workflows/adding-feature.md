@@ -443,7 +443,7 @@ Real-world scenario: Adding search functionality to an e-commerce site.
 ### Implementation
 
 ```bash
-/cook [implement product search as planned]
+/code [implement product search as planned]
 ```
 
 **Results after 8 minutes**:

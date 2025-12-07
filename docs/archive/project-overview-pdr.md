@@ -527,7 +527,7 @@ Provide a production-ready template that:
 ## Compliance & Standards
 
 ### Coding Standards
-- YANGI (You Aren't Gonna Need It)
+- YAGNI (You Aren't Gonna Need It)
 - KISS (Keep It Simple, Stupid)
 - DRY (Don't Repeat Yourself)
 - Files < 500 lines

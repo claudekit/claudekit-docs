@@ -14,437 +14,88 @@ published: true
 
 # document-skills
 
-Read, parse, and create PDF, Word, PowerPoint, and Excel documents. Extract text, tables, images, and metadata.
-
-## Supported Formats
-
-- **PDF** - Extract and create PDFs
-- **DOCX** - Word documents
-- **PPTX** - PowerPoint presentations
-- **XLSX** - Excel spreadsheets
+Read, parse, create, and manipulate PDF, Word, PowerPoint, and Excel documents with formula preservation and format conversion.
 
 ## When to Use
 
-Use document-skills when working with:
-- Office documents
-- PDF files
-- Data extraction
-- Document generation
-- Format conversion
-- Report creation
+- Extract text, tables, or data from existing documents (invoices, reports, forms)
+- Generate professional documents programmatically (reports, presentations, spreadsheets)
+- Convert between formats while preserving structure (DOCX to PDF, Excel to JSON)
+- Automate document workflows at scale (merge PDFs, batch processing)
 
-## Quick Start
+## Key Capabilities
 
-### Invoke the Skill
-
-```
-"Use document-skills/pdf to extract all tables from quarterly-report.pdf and save as CSV"
-```
-
-### What You Get
-
-The skill will help you:
-1. Read document content
-2. Extract structured data
-3. Parse tables
-4. Get images
-5. Create new documents
-6. Convert formats
-7. Preserve formatting
-
-## PDF Skills
-
-### Extract Text
-
-```
-"Use document-skills/pdf to extract all text from contract.pdf"
-```
-
-### Extract Tables
-
-```
-"Use document-skills/pdf to:
-- Extract all tables
-- Convert to CSV
-- Preserve structure
-- Handle merged cells"
-```
-
-### Extract Forms
-
-```
-"Use document-skills/pdf to extract form fields and values from application.pdf"
-```
-
-### Create PDF
-
-```
-"Use document-skills/pdf to create PDF with:
-- Custom content
-- Formatting
-- Images
-- Tables"
-```
-
-### Merge PDFs
-
-```
-"Use document-skills/pdf to merge multiple PDFs into single file"
-```
-
-### Split PDF
-
-```
-"Use document-skills/pdf to split PDF by:
-- Page numbers
-- Page ranges
-- Bookmarks"
-```
-
-## Word (DOCX) Skills
-
-### Read Content
-
-```
-"Use document-skills/docx to extract text from report.docx with formatting preserved"
-```
-
-### Track Changes
-
-```
-"Use document-skills/docx to:
-- Extract tracked changes
-- List all comments
-- Show revision history
-- Export to markdown"
-```
-
-### Create Document
-
-```
-"Use document-skills/docx to create Word document with:
-- Headings and paragraphs
-- Bullet lists
-- Tables
-- Images
-- Formatting"
-```
-
-### Convert Format
-
-```
-"Use document-skills/docx to convert Word doc to:
-- Markdown
-- Plain text
-- HTML
-- PDF"
-```
-
-## PowerPoint (PPTX) Skills
-
-### Read Slides
-
-```
-"Use document-skills/pptx to extract content from presentation.pptx:
-- Slide titles
-- Bullet points
-- Notes
-- Images"
-```
-
-### Create Presentation
-
-```
-"Use document-skills/pptx to create PowerPoint with:
-- Title slides
-- Content slides
-- Charts
-- Images
-- Layouts"
-```
-
-### Extract Data
-
-```
-"Use document-skills/pptx to extract:
-- All text content
-- Chart data
-- Table data
-- Speaker notes"
-```
-
-## Excel (XLSX) Skills
-
-### Read Data
-
-```
-"Use document-skills/xlsx to read data from spreadsheet.xlsx:
-- All sheets
-- Specific ranges
-- Formatted values
-- Formulas"
-```
-
-### Extract Tables
-
-```
-"Use document-skills/xlsx to:
-- Extract tables
-- Convert to JSON
-- Preserve formatting
-- Handle multiple sheets"
-```
-
-### Create Spreadsheet
-
-```
-"Use document-skills/xlsx to create Excel with:
-- Multiple sheets
-- Formulas
-- Formatting
-- Charts
-- Data validation"
-```
-
-### Analyze Data
-
-```
-"Use document-skills/xlsx to analyze:
-- Calculate totals
-- Find patterns
-- Generate summaries
-- Create reports"
-```
+| **Skill** | **Read** | **Create** | **Special Features** |
+|-----------|----------|------------|----------------------|
+| pdf | Text, tables, forms | Merge, split, watermark | OCR scanned PDFs, form filling |
+| docx | Text, tracked changes | Professional docs | Redlining, comments, formatting |
+| pptx | Slides, speaker notes | Presentations | HTML conversion, templates |
+| xlsx | Data, formulas | Spreadsheets | Formula recalc, financial models |
 
 ## Common Use Cases
 
-### Data Extraction
+**Accountant extracting invoice data**
+> "Use document-skills/pdf to extract all line items, amounts, and vendor info from these 50 invoices and save to Excel"
 
-```
-"Use document-skills to:
-1. Read PDF invoice
-2. Extract line items
-3. Parse amounts
-4. Convert to JSON
-5. Save to database"
-```
+**Lawyer reviewing contracts**
+> "Use document-skills/docx to analyze contract.docx, track changes for proposed amendments to payment terms in Section 5, and generate redlined version"
 
-### Document Generation
+**Analyst building financial model**
+> "Use document-skills/xlsx to create DCF model with assumptions sheet, 5-year projections, formulas for NPV/IRR, and blue text for inputs"
 
-```
-"Use document-skills to:
-1. Create Word template
-2. Fill with data
-3. Add tables
-4. Export to PDF
-5. Send to client"
-```
+**Marketing team generating reports**
+> "Use document-skills/pptx to create quarterly deck using template.pptx - duplicate slide 3 for each region, replace text with Q4 metrics, output presentation.pptx"
 
-### Format Conversion
+**Compliance team processing forms**
+> "Use document-skills/pdf to fill out tax forms from data.json, merge into single PDF, and validate all required fields completed"
 
+## Quick Reference
+
+**PDF Operations**
 ```
-"Use document-skills to convert:
-- PDF to text
-- Word to markdown
-- Excel to JSON
-- PowerPoint to images"
+Extract tables: "Use document-skills/pdf to extract tables from report.pdf and save as CSV"
+Merge files: "Use document-skills/pdf to merge contract.pdf, terms.pdf, exhibit.pdf into final.pdf"
+Fill forms: "Use document-skills/pdf to fill W-9 form with company data and flatten fields"
 ```
 
-### Report Creation
-
+**Word Documents**
 ```
-"Use document-skills to generate monthly report:
-- Extract data from Excel
-- Create PowerPoint slides
-- Add charts
-- Export to PDF"
+Read content: "Use document-skills/docx to convert agreement.docx to markdown preserving structure"
+Track changes: "Use document-skills/docx to add tracked change replacing '30 days' with '60 days' in Section 3.2"
+Create doc: "Use document-skills/docx to generate report with headings, tables, and formatted text"
 ```
 
-## Advanced Features
-
-### Text Extraction
-
-Capabilities:
-- Preserve formatting
-- Handle columns
-- Extract metadata
-- OCR support
-- Font information
-
-### Table Parsing
-
-Features:
-- Detect table structure
-- Handle merged cells
-- Preserve formatting
-- Export to CSV/JSON
-- Multi-page tables
-
-### Image Handling
-
-Support for:
-- Extract embedded images
-- Add images to documents
-- Image positioning
-- Size and scaling
-- Format conversion
-
-### Formatting
-
-Preserve:
-- Text styles
-- Colors
-- Fonts
-- Alignment
-- Spacing
-
-## Best Practices
-
-### Large Documents
-
+**PowerPoint**
 ```
-"Use document-skills to handle large PDF:
-- Process in chunks
-- Extract specific pages
-- Optimize memory
-- Stream processing"
+Use template: "Use document-skills/pptx to duplicate slides 0,5,5,12 from template.pptx, replace text with new content"
+Extract text: "Use document-skills/pptx to extract all slide text and speaker notes to JSON"
+Create deck: "Use document-skills/pptx to build 10-slide presentation with charts and bullet points"
 ```
 
-### Scanned Documents
-
+**Excel**
 ```
-"Use document-skills with OCR to:
-- Extract text from scanned PDFs
-- Handle image quality
-- Improve accuracy
-- Validate results"
+Read data: "Use document-skills/xlsx to load sales.xlsx and analyze revenue by region"
+Create model: "Use document-skills/xlsx to build budget with formulas, blue inputs, formatted numbers"
+Recalc formulas: "Use document-skills/xlsx to recalculate all formulas in model.xlsx and check for errors"
 ```
 
-### Complex Tables
+## Pro Tips
 
-```
-"Use document-skills for complex tables:
-- Detect merged cells
-- Handle nested tables
-- Preserve relationships
-- Validate structure"
-```
+- **Specify format details**: "Extract tables preserving merged cells" vs just "extract tables"
+- **Chain operations**: Read → Process → Create in one request for efficiency
+- **Use templates**: Faster than creating from scratch for consistent branding
+- **Validate formulas**: Always recalculate Excel files after modification (`recalc.py`)
+- **Batch processing**: Process multiple files in one request for large jobs
 
-## Integration Examples
+**Not activating?** Say: *"Use document-skills skill to [your task]"* or reference specific sub-skill like *"Use document-skills/pdf to..."*
 
-### With Databases
+## Related Skills
 
-```
-"Use document-skills to:
-1. Extract data from Excel
-2. Validate format
-3. Insert into PostgreSQL
-4. Log results"
-```
+- [ai-multimodal](/docs/skills/ai/ai-multimodal) - Analyze document images with AI
+- [gemini-vision](/docs/skills/ai/gemini-vision) - OCR and visual document analysis
+- [research](/docs/skills/tools/research) - Extract insights from documents
+- [repomix](/docs/skills/tools/repomix) - Package documents for AI analysis
 
-### With APIs
+## Key Takeaway
 
-```
-"Use document-skills to:
-1. Generate PDF invoice
-2. Upload to cloud storage
-3. Send via email API
-4. Update database"
-```
-
-### With AI
-
-```
-"Use document-skills then use gemini-vision to:
-1. Extract images from PDF
-2. Analyze with AI
-3. Extract information
-4. Create summary"
-```
-
-## Error Handling
-
-### Corrupted Files
-
-```
-"Use document-skills to handle:
-- Validate document structure
-- Attempt recovery
-- Report errors clearly
-- Provide alternatives"
-```
-
-### Missing Data
-
-```
-"Use document-skills to:
-- Detect empty fields
-- Validate required data
-- Provide defaults
-- Log warnings"
-```
-
-## Quick Examples
-
-**Simple Extraction:**
-```
-"Use document-skills/pdf to extract text from file.pdf"
-```
-
-**Complex Processing:**
-```
-"Use document-skills to:
-1. Read Excel data
-2. Validate entries
-3. Generate Word report
-4. Create PDF summary
-5. Extract as JSON"
-```
-
-**Batch Processing:**
-```
-"Use document-skills to process folder of PDFs:
-- Extract all tables
-- Combine data
-- Create summary Excel
-- Generate report"
-```
-
-## Format Comparison
-
-| **Format** | **Best For** | **Extract** | **Create** |
-|------------|--------------|-------------|------------|
-| PDF | Reports, forms | ✓ | ✓ |
-| DOCX | Documents, templates | ✓ | ✓ |
-| PPTX | Presentations | ✓ | ✓ |
-| XLSX | Data, calculations | ✓ | ✓ |
-
-## Troubleshooting
-
-### PDF Issues
-
-- Password protected → Provide password
-- Scanned PDF → Use OCR
-- Corrupted → Try repair tools
-
-### Excel Issues
-
-- Large files → Process in chunks
-- Complex formulas → Extract values
-- Multiple sheets → Specify sheet
-
-### Word Issues
-
-- Old format (.doc) → Convert to .docx
-- Embedded objects → Extract separately
-- Macros → Handle with caution
-
-## Next Steps
-
-- [Data Processing Examples](/docs/workflows/)
-- [AI Integration](/docs/skills/)
-- [Automation Workflows](/docs/workflows/)
-
----
-
-**Bottom Line:** document-skills handles all major document formats. Extract data, create documents, convert formats - all automated.
+document-skills handles all major document formats with professional precision. Extract invoice data, track contract changes, generate financial models, build presentations - all automated and production-ready.

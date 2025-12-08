@@ -12,415 +12,145 @@ order: 11
 published: true
 ---
 
-# docker Skill
+# docker
 
-Containerization platform for building, running, and deploying applications in isolated containers. Works with any language or framework.
+Containerize applications with production-ready Dockerfiles, multi-stage builds, and Docker Compose orchestration.
 
 ## When to Use
 
-Use docker when you need:
-- Containerize applications
-- Create Dockerfiles
-- Set up Docker Compose
-- Deploy to production
-- Consistent dev environments
-- CI/CD pipelines
-- Microservices architecture
+- **Containerize apps**: Create optimized Dockerfiles for any language/framework
+- **Multi-container setups**: Orchestrate services with Docker Compose
+- **Dev/prod parity**: Consistent environments across local/staging/production
+- **CI/CD integration**: Build, test, and deploy containerized workflows
 
 ## Quick Start
 
-### Invoke the Skill
+```bash
+# Build multi-stage Dockerfile
+docker build -t myapp:1.0 .
 
+# Run with Docker Compose
+docker compose up -d
+
+# View logs
+docker compose logs -f
 ```
-"Use docker to containerize my Node.js app with:
-- Production Dockerfile
-- Docker Compose with PostgreSQL
-- Health checks"
-```
-
-### What You Get
-
-The skill will help you:
-1. Create optimized Dockerfile
-2. Set up Docker Compose
-3. Configure networking
-4. Add health checks
-5. Implement security best practices
-6. Optimize for production
-7. Set up CI/CD integration
 
 ## Common Use Cases
 
-### Create Production Dockerfile
-
-```
-"Use docker to create production Dockerfile for Next.js 14 app with:
-- Multi-stage build
-- Node 20 Alpine
-- Non-root user
-- Security hardening"
-```
-
-### Docker Compose Setup
-
-```
-"Use docker to set up Docker Compose with:
-- Web application
-- PostgreSQL database
-- Redis cache
-- Nginx reverse proxy"
-```
-
-### Development Environment
-
-```
-"Use docker to create development environment with:
-- Hot reload
-- Volume mounts
-- Database seed data
-- Debug configuration"
-```
-
-### Production Deployment
-
-```
-"Use docker to prepare for production:
-- Optimize image size
-- Add health checks
-- Configure resource limits
-- Set up logging
-- Implement secrets management"
-```
-
-## Key Concepts
-
-### Containers
-
-Lightweight, isolated processes that bundle app with dependencies:
-- Filesystem isolation
-- Process isolation
-- Network isolation
-- Ephemeral by default
-
-### Images
-
-Blueprint for containers:
-- Layered filesystem
-- Immutable layers
-- Reusable across containers
-- Stored in registries
-
-### Volumes
-
-Persistent storage:
-- Survives container deletion
-- Share data between containers
-- Managed by Docker
-
-### Networks
-
-Container communication:
-- Isolated networks
-- Service discovery
-- Port mapping
-
-## Example Implementations
-
-### Node.js Application
-
-```
-"Use docker to containerize Node.js API with:
-- Multi-stage build
-- Production dependencies only
-- PM2 process manager
-- Health endpoint"
-```
-
-### Python Application
-
-```
-"Use docker to containerize FastAPI app with:
-- Python 3.11 slim
-- Virtual environment
-- Gunicorn server
-- Non-root user"
-```
-
-### Full Stack Application
-
-```
-"Use docker to set up full stack with:
-- React frontend (Nginx)
-- Node.js API
-- PostgreSQL
-- Redis
-- Shared network"
-```
-
-### Microservices
-
-```
-"Use docker to create microservices setup:
-- Multiple services
-- Service mesh
-- Load balancing
-- Centralized logging"
-```
-
-## Best Practices
-
-### Multi-Stage Builds
-
-Separate build from runtime:
-- Smaller final image
-- No build tools in production
-- Better security
-- Faster deployments
-
-### Layer Caching
-
-Optimize for cache:
-- Copy package files first
-- Install dependencies
-- Copy source code last
-- Faster rebuilds
-
-### Security
-
-The skill ensures:
-- Non-root user
-- Specific image versions
-- No secrets in images
-- Vulnerability scanning
-- Minimal base images
-- Read-only filesystem
-
-### Image Optimization
-
-Reduce image size:
-- Alpine base images
-- Multi-stage builds
-- Remove unnecessary files
-- Combine RUN commands
-
-## Common Workflows
-
-### Build and Run
-
-```
-"Use docker to:
-1. Build image with tag
-2. Run container
-3. View logs
-4. Inspect container"
-```
-
-### Docker Compose
-
-```
-"Use docker to manage services:
-- Start all services
-- View logs
-- Scale services
-- Stop and clean up"
-```
-
-### Production Deployment
-
-```
-"Use docker for production:
-- Build optimized image
-- Push to registry
-- Deploy with health checks
-- Configure auto-restart
-- Set resource limits"
-```
-
-## Advanced Features
-
-### Health Checks
-
-```
-"Use docker to add health checks that:
-- Monitor application status
-- Trigger automatic restarts
-- Integrate with orchestrators"
-```
-
-### Resource Limits
-
-```
-"Use docker to configure:
-- CPU limits
-- Memory limits
-- Process limits
-- Disk I/O limits"
-```
-
-### Networking
-
-```
-"Use docker to set up:
-- Custom bridge network
-- Service discovery
-- Port publishing
-- Network isolation"
-```
-
-### Volumes & Storage
-
-```
-"Use docker to manage storage:
-- Named volumes
-- Bind mounts
-- Volume backups
-- Data persistence"
-```
-
-## Language-Specific Examples
-
-### Node.js
-
-```
-"Use docker for Node.js with:
-- Multi-stage build
-- npm ci for dependencies
-- Production mode
-- Health check endpoint"
-```
-
-### Python
-
-```
-"Use docker for Python with:
-- Virtual environment
-- Requirements caching
-- Gunicorn server
-- Non-root user"
-```
-
-### Go
-
-```
-"Use docker for Go with:
-- Scratch base image
-- Static binary
-- Minimal attack surface
-- 5MB final image"
-```
-
-### Java
-
-```
-"Use docker for Spring Boot with:
-- JRE Alpine
-- JAR execution
-- JVM optimization
-- Proper shutdown handling"
-```
-
-## CI/CD Integration
-
-### GitHub Actions
-
-```
-"Use docker in GitHub Actions to:
-- Build on every commit
-- Run tests in container
-- Push to registry
-- Deploy to production"
-```
-
-### GitLab CI
-
-```
-"Use docker in GitLab CI for:
-- Docker-in-Docker builds
-- Multi-stage pipelines
-- Registry integration
-- Automated deployment"
-```
-
-## Troubleshooting
-
-### Build Issues
-
-Common problems:
-- Cache not working → Check layer order
-- Build slow → Optimize Dockerfile
-- Image too large → Use multi-stage builds
-
-### Runtime Issues
-
-Common problems:
-- Container exits → Check logs
-- Can't connect → Verify port mapping
-- Permission errors → Check user/volumes
-
-### Performance Issues
-
-Common problems:
-- Slow startup → Reduce image size
-- High memory → Set limits
-- Disk full → Clean up images/containers
+### 1. Containerize Node.js App
+**Who**: Full-stack dev deploying Next.js app to VPS
+**Prompt**: "Use docker to create production Dockerfile for Next.js 14 with multi-stage build, Node 20 Alpine, non-root user, and health checks"
+
+### 2. Multi-Service Stack
+**Who**: Backend dev setting up API + database locally
+**Prompt**: "Use docker to create Docker Compose with FastAPI, PostgreSQL, Redis, and Nginx reverse proxy"
+
+### 3. Optimize Existing Image
+**Who**: DevOps engineer reducing CI build time
+**Prompt**: "Use docker to optimize this Dockerfile—reduce image size, improve layer caching, add security hardening"
+
+### 4. Development Environment
+**Who**: Team lead standardizing local dev setup
+**Prompt**: "Use docker to create dev Docker Compose with hot reload, volume mounts, seed data, and debug config"
+
+### 5. Production Deployment
+**Who**: SRE preparing container for Kubernetes
+**Prompt**: "Use docker for production: health checks, resource limits, logging, secrets management, and vulnerability scan"
+
+## Key Differences
+
+| Feature | Development | Production |
+|---------|-------------|------------|
+| **Base image** | Standard (node:20) | Alpine (node:20-alpine) |
+| **Build** | Single-stage | Multi-stage |
+| **Volumes** | Bind mounts (hot reload) | Named volumes only |
+| **User** | root (convenience) | Non-root (security) |
+| **Health checks** | Optional | Required |
+| **Resource limits** | None | CPU/memory caps |
 
 ## Quick Reference
 
-### Common Commands
+### Essential Commands
+```bash
+# Build & run
+docker build -t app:1.0 .
+docker run -d -p 8080:3000 app:1.0
 
-| **Task** | **Command** |
-|----------|-------------|
-| Build image | `docker build -t app:1.0 .` |
-| Run container | `docker run -d -p 8080:3000 app:1.0` |
-| View logs | `docker logs -f container` |
-| Shell into container | `docker exec -it container sh` |
-| Stop container | `docker stop container` |
-| Compose up | `docker compose up -d` |
-| Compose down | `docker compose down` |
-| Clean up | `docker system prune -a` |
+# Compose lifecycle
+docker compose up -d          # Start
+docker compose logs -f web    # Logs
+docker compose restart web    # Restart
+docker compose down --volumes # Clean up
 
-### Best Base Images
+# Debugging
+docker exec -it container sh
+docker logs -f container
+docker inspect container
 
-| **Language** | **Base Image** |
-|--------------|----------------|
-| Node.js | `node:20-alpine` |
-| Python | `python:3.11-slim` |
-| Java | `eclipse-temurin:21-jre-alpine` |
-| Go | `scratch` |
-| .NET | `mcr.microsoft.com/dotnet/aspnet:8.0-alpine` |
-
-## Quick Examples
-
-**Simple Containerization:**
-```
-"Use docker to containerize my app"
+# Cleanup
+docker system prune -a
+docker volume prune
 ```
 
-**Production Ready:**
+### Multi-Stage Template
+```dockerfile
+# Build stage
+FROM node:20-alpine AS build
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+COPY . .
+RUN npm run build
+
+# Production stage
+FROM node:20-alpine
+WORKDIR /app
+COPY --from=build /app/dist ./dist
+COPY --from=build /app/node_modules ./node_modules
+USER node
+EXPOSE 3000
+CMD ["node", "dist/server.js"]
 ```
-"Use docker for production with:
-- Optimized Dockerfile
-- Security hardening
-- Health checks
-- Resource limits
-- Logging configuration"
+
+### Docker Compose Template
+```yaml
+version: '3.8'
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgresql://user:pass@db:5432/app
+  db:
+    image: postgres:15-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+volumes:
+  postgres_data:
 ```
 
-**Full Development Environment:**
-```
-"Use docker to create dev environment with:
-- Hot reload
-- All services
-- Seed data
-- Debug tools"
-```
+## Pro Tips
 
-## Next Steps
+- **Multi-stage builds**: Reduce image size by 60-80% (keeps build tools out of production)
+- **Layer caching**: Copy `package*.json` before source code for faster rebuilds
+- **Security**: Always run as non-root user, pin specific versions, scan with `docker scout cves`
+- **.dockerignore**: Exclude `node_modules`, `.git`, `.env` to speed builds
+- **Health checks**: Add `/health` endpoint for container orchestrators
+- **Resource limits**: Set memory/CPU caps in production to prevent runaway containers
+- **Alpine images**: Use `-alpine` variants (5-10x smaller than standard images)
 
-- [Deployment Guide](/docs/workflows/)
-- [PostgreSQL Integration](/docs/skills/backend/postgresql-psql)
-- [CI/CD Examples](/docs/workflows/)
+**Not activating?** Say: "Use docker skill to containerize my app"
 
----
+## Related Skills
 
-**Bottom Line:** docker skill creates production-ready containerized applications. Just invoke and describe your containerization needs.
+- [/docs/skills/backend/devops](/docs/skills/backend/devops) - Cloudflare Workers, GCP, deployment strategies
+- [/docs/skills/backend/databases](/docs/skills/backend/databases) - PostgreSQL, MongoDB containerization
+- [/docs/skills/backend/backend-development](/docs/skills/backend/backend-development) - Node.js, Python, Go backends
+
+## Key Takeaway
+
+Docker skill creates production-ready containers with security hardening, optimized builds, and multi-service orchestration. Just describe your stack—get Dockerfiles, Compose configs, and best practices instantly.

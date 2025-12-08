@@ -14,486 +14,174 @@ published: true
 
 # postgresql-psql Skill
 
-PostgreSQL database administration, optimization, and best practices. Query optimization, schema design, performance tuning.
+Master PostgreSQL with psql CLI - query optimization, schema design, and production-ready database administration.
 
 ## When to Use
 
-Use postgresql-psql when working with:
-- Query optimization
-- Schema design
-- Performance issues
-- Database migrations
-- Backup/restore
-- Replication setup
-- Index strategies
+- **Slow queries**: Analyze EXPLAIN plans, add indexes, rewrite inefficient SQL
+- **Schema design**: Model relationships, foreign keys, constraints, normalization
+- **Performance tuning**: Configure PostgreSQL, connection pooling, vacuum strategies
+- **Production ops**: Backups, replication, monitoring, security hardening
 
 ## Quick Start
 
-### Invoke the Skill
+```bash
+# Connect to database
+psql -U postgres -d myapp
 
+# Essential meta-commands
+\d users              # Describe table
+\di                   # List indexes
+\x on                 # Expanded output
+\timing               # Show query time
 ```
-"Use postgresql-psql to optimize slow queries in my app:
-- Analyze query plans
-- Add proper indexes
-- Rewrite inefficient queries"
-```
-
-### What You Get
-
-The skill will help you:
-1. Analyze performance
-2. Design optimal schema
-3. Create indexes
-4. Optimize queries
-5. Set up replication
-6. Configure backups
-7. Monitor health
 
 ## Common Use Cases
 
-### Query Optimization
+### 1. E-commerce Developer - Optimize Slow Checkout Query
 
-```
-"Use postgresql-psql to optimize this slow query:
-- Analyze execution plan
-- Identify bottlenecks
-- Add indexes
-- Rewrite query
-- Verify improvement"
-```
+**Who**: Backend dev, 2000ms checkout query killing conversions
 
-### Schema Design
-
+**Prompt**:
 ```
-"Use postgresql-psql to design schema for:
-- User authentication
-- Multi-tenancy
-- Proper normalization
-- Foreign keys
-- Constraints"
+"Use postgresql-psql skill to optimize this checkout query:
+SELECT * FROM orders WHERE user_id = 123 AND status = 'pending'
+It's taking 2 seconds. Need EXPLAIN analysis and index recommendations."
 ```
 
-### Performance Tuning
+### 2. SaaS Founder - Design Multi-Tenant Schema
 
-```
-"Use postgresql-psql to improve database performance:
-- Analyze slow queries
-- Add missing indexes
-- Update statistics
-- Tune configuration
-- Monitor metrics"
-```
+**Who**: Solo founder building B2B SaaS, needs tenant isolation
 
-### Migration Planning
-
+**Prompt**:
 ```
-"Use postgresql-psql to plan migration:
-- Create migration scripts
-- Handle data transformation
-- Zero-downtime strategy
-- Rollback plan"
+"Use postgresql-psql skill to design multi-tenant schema:
+- Shared tables with tenant_id column
+- Row-level security policies
+- Indexes for tenant queries
+- Migration from single-tenant"
 ```
 
-## Key Features
+### 3. Data Engineer - Fix Bloated Tables
 
-### Query Analysis
+**Who**: Data team seeing 10GB table that should be 2GB
 
-Tools for:
-- EXPLAIN ANALYZE
-- Execution plans
-- Cost estimates
-- Bottleneck identification
-- Index usage
-
-### Index Management
-
-Strategies for:
-- B-tree indexes
-- Partial indexes
-- Expression indexes
-- Multi-column indexes
-- Index maintenance
-
-### Schema Design
-
-Best practices for:
-- Table structure
-- Data types
-- Constraints
-- Relationships
-- Normalization
-
-### Performance Monitoring
-
-Track:
-- Query performance
-- Connection pools
-- Lock contention
-- Cache hit rates
-- Disk I/O
-
-## Example Implementations
-
-### E-commerce Database
-
+**Prompt**:
 ```
-"Use postgresql-psql to design e-commerce schema:
-- Products and categories
-- Orders and line items
-- User accounts
-- Inventory tracking
-- Payment records
-- Proper indexing"
+"Use postgresql-psql skill to fix bloated tables:
+- Identify bloat with pg_stat_user_tables
+- VACUUM FULL strategy
+- Autovacuum tuning
+- Prevent future bloat"
 ```
 
-### Multi-Tenant SaaS
+### 4. DevOps Engineer - Production Replication Setup
 
+**Who**: DevOps setting up HA PostgreSQL for production
+
+**Prompt**:
 ```
-"Use postgresql-psql for multi-tenant database:
-- Row-level security
-- Tenant isolation
-- Shared schema
-- Performance optimization
-- Data partitioning"
-```
-
-### Analytics Database
-
-```
-"Use postgresql-psql for analytics:
-- Time-series data
-- Aggregation tables
-- Materialized views
-- Query optimization
-- Partitioning strategy"
-```
-
-## Best Practices
-
-### Connection Management
-
-```
-"Use postgresql-psql to set up:
-- Connection pooling
-- Pool size tuning
-- Connection limits
-- Timeout configuration"
-```
-
-### Backup Strategy
-
-```
-"Use postgresql-psql for backups:
-- pg_dump for logical
-- pg_basebackup for physical
-- Point-in-time recovery
-- Backup verification
-- Restore testing"
-```
-
-### Security
-
-```
-"Use postgresql-psql to secure database:
-- Role-based access
-- Row-level security
-- SSL connections
-- Password policies
-- Audit logging"
-```
-
-### Monitoring
-
-```
-"Use postgresql-psql to monitor:
-- Query performance (pg_stat_statements)
-- Table statistics
-- Index usage
-- Locks and blocks
-- Replication lag"
-```
-
-## Advanced Features
-
-### Partitioning
-
-```
-"Use postgresql-psql to implement partitioning:
-- Range partitioning
-- List partitioning
-- Hash partitioning
-- Partition maintenance
-- Query optimization"
-```
-
-### Replication
-
-```
-"Use postgresql-psql to set up replication:
-- Streaming replication
-- Logical replication
-- Failover configuration
+"Use postgresql-psql skill for production replication:
+- Streaming replication setup
+- Failover automation
 - Monitoring lag
-- Promoting replicas"
+- Backup strategy"
 ```
 
-### Full-Text Search
+## Key Differences
 
-```
-"Use postgresql-psql for full-text search:
-- Create tsvector columns
-- GIN indexes
-- Search queries
-- Ranking results
-- Language support"
-```
+| vs MongoDB | Use PostgreSQL When |
+|------------|---------------------|
+| Flexible schema | Need strict schema validation, ACID transactions |
+| Document store | Complex joins, referential integrity critical |
+| Horizontal scaling | SQL expertise, existing tools, BI integration |
+| Nested data | Financial data, e-commerce, ERP systems |
 
-### JSON/JSONB
+## Quick Reference
 
-```
-"Use postgresql-psql with JSON:
-- JSONB data type
-- JSON operators
-- GIN indexes on JSONB
-- Query optimization
-- Schema flexibility"
-```
-
-## Query Optimization
-
-### Analyze Slow Queries
-
-```
-"Use postgresql-psql to debug slow query:
-1. Run EXPLAIN ANALYZE
-2. Identify sequential scans
-3. Check missing indexes
-4. Review join order
-5. Optimize subqueries"
-```
-
-### Index Strategies
-
-```
-"Use postgresql-psql to add indexes:
-- WHERE clause columns
-- JOIN columns
-- ORDER BY columns
-- Partial indexes for filtered queries
-- Multi-column for compound filters"
-```
-
-### Query Rewriting
-
-```
-"Use postgresql-psql to rewrite:
-- Replace subqueries with joins
-- Use CTEs for readability
-- Avoid SELECT *
-- Limit result sets
-- Use appropriate data types"
-```
-
-## Schema Patterns
-
-### One-to-Many
-
+### EXPLAIN Analysis
 ```sql
-CREATE TABLE users (
-  id SERIAL PRIMARY KEY,
-  email VARCHAR(255) UNIQUE NOT NULL
-);
+-- Basic execution plan
+EXPLAIN SELECT * FROM users WHERE email = 'test@example.com';
 
+-- Actual runtime (executes query)
+EXPLAIN ANALYZE SELECT * FROM orders WHERE user_id = 123;
+
+-- Show buffer usage
+EXPLAIN (ANALYZE, BUFFERS) SELECT * FROM products;
+```
+
+### Index Types
+```sql
+-- B-tree (default, most common)
+CREATE INDEX idx_email ON users(email);
+
+-- Partial index (filtered)
+CREATE INDEX idx_active_users ON users(id) WHERE deleted_at IS NULL;
+
+-- Multi-column (order matters)
+CREATE INDEX idx_status_created ON orders(status, created_at DESC);
+
+-- Expression index
+CREATE INDEX idx_email_lower ON users(LOWER(email));
+```
+
+### Performance Queries
+```sql
+-- Find slow queries
+SELECT query, mean_exec_time, calls
+FROM pg_stat_statements
+ORDER BY mean_exec_time DESC LIMIT 10;
+
+-- Unused indexes
+SELECT schemaname, tablename, indexname, idx_scan
+FROM pg_stat_user_indexes WHERE idx_scan = 0;
+
+-- Table sizes
+SELECT schemaname, tablename,
+  pg_size_pretty(pg_total_relation_size(schemaname||'.'||tablename))
+FROM pg_tables WHERE schemaname = 'public'
+ORDER BY pg_total_relation_size(schemaname||'.'||tablename) DESC;
+```
+
+### Schema Patterns
+```sql
+-- One-to-many with index
 CREATE TABLE posts (
   id SERIAL PRIMARY KEY,
   user_id INTEGER REFERENCES users(id),
-  title TEXT NOT NULL,
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
-
 CREATE INDEX idx_posts_user_id ON posts(user_id);
-```
 
-### Many-to-Many
-
-```sql
-CREATE TABLE tags (
-  id SERIAL PRIMARY KEY,
-  name VARCHAR(100) UNIQUE NOT NULL
-);
-
+-- Many-to-many junction table
 CREATE TABLE post_tags (
   post_id INTEGER REFERENCES posts(id) ON DELETE CASCADE,
   tag_id INTEGER REFERENCES tags(id) ON DELETE CASCADE,
   PRIMARY KEY (post_id, tag_id)
 );
-
-CREATE INDEX idx_post_tags_tag_id ON post_tags(tag_id);
 ```
 
-### Soft Delete
+## Pro Tips
 
-```sql
-CREATE TABLE products (
-  id SERIAL PRIMARY KEY,
-  name TEXT NOT NULL,
-  deleted_at TIMESTAMPTZ DEFAULT NULL
-);
+**Not activating?** Say: "Use postgresql-psql skill to [your task]"
 
-CREATE INDEX idx_products_active ON products(id)
-  WHERE deleted_at IS NULL;
-```
+**Index strategy**: Index foreign keys, WHERE/JOIN columns, ORDER BY columns first.
 
-## Common Queries
+**EXPLAIN gotchas**: "Seq Scan" isn't always bad - for small tables it's faster than indexes.
 
-### Find Slow Queries
+**Connection pooling**: Use pgBouncer in production. Formula: `max_connections = (CPU cores * 2) + disk spindles`.
 
-```sql
-SELECT query, mean_exec_time, calls
-FROM pg_stat_statements
-ORDER BY mean_exec_time DESC
-LIMIT 10;
-```
+**Vacuum**: Run `ANALYZE` after bulk inserts. If tables bloat, check autovacuum settings before VACUUM FULL.
 
-### Check Index Usage
+**JSON in PostgreSQL**: Use JSONB (binary), not JSON (text). GIN indexes on JSONB for fast queries.
 
-```sql
-SELECT schemaname, tablename, indexname, idx_scan
-FROM pg_stat_user_indexes
-WHERE idx_scan = 0
-ORDER BY schemaname, tablename;
-```
+## Related Skills
 
-### Table Sizes
+- [databases](/docs/skills/backend/databases) - MongoDB + PostgreSQL unified guide
+- [backend-development](/docs/skills/backend/backend-development) - API integration patterns
+- [devops](/docs/skills/backend/devops) - Production deployment, monitoring
 
-```sql
-SELECT schemaname, tablename,
-  pg_size_pretty(pg_total_relation_size(schemaname||'.'||tablename)) AS size
-FROM pg_tables
-WHERE schemaname = 'public'
-ORDER BY pg_total_relation_size(schemaname||'.'||tablename) DESC;
-```
+## Key Takeaway
 
-### Lock Monitoring
-
-```sql
-SELECT pid, usename, pg_blocking_pids(pid) as blocked_by,
-  query
-FROM pg_stat_activity
-WHERE cardinality(pg_blocking_pids(pid)) > 0;
-```
-
-## Troubleshooting
-
-### Connection Issues
-
-**Too many connections:**
-```
-"Use postgresql-psql to fix:
-- Increase max_connections
-- Implement connection pooling
-- Find connection leaks
-- Kill idle connections"
-```
-
-### Performance Problems
-
-**Slow queries:**
-```
-"Use postgresql-psql to diagnose:
-- Check pg_stat_statements
-- Review EXPLAIN plans
-- Update statistics
-- Add missing indexes"
-```
-
-### Disk Space
-
-**Running out of space:**
-```
-"Use postgresql-psql to manage:
-- Find large tables
-- Archive old data
-- Vacuum bloated tables
-- Monitor growth"
-```
-
-## Quick Examples
-
-**Simple Optimization:**
-```
-"Use postgresql-psql to add index on users.email column"
-```
-
-**Schema Design:**
-```
-"Use postgresql-psql to design schema for blog with:
-- Users, posts, comments
-- Tags (many-to-many)
-- Proper indexes
-- Foreign keys"
-```
-
-**Production Setup:**
-```
-"Use postgresql-psql for production database:
-- Replication setup
-- Backup strategy
-- Monitoring
-- Performance tuning
-- Security hardening"
-```
-
-## Configuration
-
-### Performance Tuning
-
-```
-"Use postgresql-psql to tune config:
-- shared_buffers (25% of RAM)
-- effective_cache_size (75% of RAM)
-- work_mem (per operation)
-- maintenance_work_mem (maintenance tasks)"
-```
-
-### Connection Pooling
-
-```
-"Use postgresql-psql with pgBouncer:
-- Transaction mode
-- Pool size calculation
-- Max client connections
-- Health checks"
-```
-
-## Migration Tools
-
-### Supported Tools
-
-- **Prisma** - Type-safe migrations
-- **Drizzle** - SQL-like TypeScript
-- **Knex** - Query builder with migrations
-- **TypeORM** - ORM with migrations
-- **Flyway** - Version-based migrations
-- **Liquibase** - XML/SQL migrations
-
-### Migration Example
-
-```
-"Use postgresql-psql to create migration:
-1. Add new column
-2. Migrate existing data
-3. Add constraints
-4. Create indexes
-5. Update application"
-```
-
-## Next Steps
-
-- [Database Design Patterns](/docs/workflows/)
-- [Docker Integration](/docs/skills/backend/docker)
-- [Backend Examples](/docs/workflows/)
-
----
-
-**Bottom Line:** postgresql-psql handles all PostgreSQL needs. Query optimization, schema design, performance tuning - all covered.
+PostgreSQL + psql = production-grade relational database. When queries slow down, schema needs redesign, or production needs HA - this skill delivers optimized SQL, proper indexes, and battle-tested patterns. No theory, just working solutions.

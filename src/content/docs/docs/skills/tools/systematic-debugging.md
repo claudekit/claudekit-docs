@@ -1,311 +1,102 @@
 ---
 title: systematic-debugging
-description: "Documentation for systematic-debugging
-description:
-section: docs
-category: skills/tools
-order: 12
-published: true"
+description: "Four-phase debugging framework that enforces root cause investigation before fixes - prevents random changes that waste time and create new bugs"
 section: docs
 category: skills/tools
 order: 12
 published: true
 ---
 
-# systematic-debugging Skill
+# systematic-debugging
 
-Four-phase debugging framework that ensures root cause investigation before attempting fixes. Never jump to solutions.
+Four-phase debugging framework that enforces root cause investigation before attempting any fixes - turning hours of thrashing into 15-minute resolutions.
 
 ## Core Principle
 
 **NO FIXES WITHOUT ROOT CAUSE INVESTIGATION FIRST**
 
-Random fixes waste time and create new bugs. This skill enforces systematic investigation.
+Random fixes waste 2-3 hours thrashing. Systematic investigation takes 15-30 minutes and achieves 95% first-time fix rate. If you don't understand the root cause, you're guessing - and guessing introduces new bugs.
 
 ## When to Use
 
-Use systematic-debugging for ANY technical issue:
-- Test failures
-- Bugs in production
-- Unexpected behavior
-- Performance problems
-- Build failures
-- Integration issues
+Always use for ANY technical issue:
+- Test failures, bugs in production, unexpected behavior
+- Performance problems, build failures, integration issues
 
-**ESPECIALLY when:**
-- Under time pressure
-- "Quick fix" seems obvious
-- You've tried multiple fixes
-- Previous fix didn't work
+Especially when:
+- Under time pressure (systematic is FASTER than random)
+- "Quick fix" seems obvious (usually wrong)
+- You've tried multiple fixes already
 - You don't fully understand the issue
 
-## Quick Start
+## The Process
 
-### Invoke the Skill
+### 1. Root Cause Investigation (REQUIRED FIRST)
 
-```
-"Use systematic-debugging to investigate why tests are failing"
-```
+**Read error messages carefully** - Stack traces often contain exact solution
+**Reproduce consistently** - Can you trigger it reliably? If not, gather more data first
+**Check recent changes** - Git diff, dependencies, config changes
+**Gather evidence** - Add diagnostic logging at component boundaries, trace data flow
+**Trace to source** - Where does bad value originate? Fix source, not symptom
 
-### What You Get
+### 2. Pattern Analysis
 
-The skill guides you through:
-1. Root cause investigation
-2. Pattern analysis
-3. Hypothesis testing
-4. Fix implementation
+**Find working examples** - Locate similar working code in codebase
+**Compare references** - Read reference implementation COMPLETELY, understand fully
+**Identify differences** - List every difference, don't assume "that can't matter"
+**Check dependencies** - What components, settings, config, environment needed?
 
-## The Four Phases
+### 3. Hypothesis Testing
 
-### Phase 1: Root Cause Investigation
+**Form single hypothesis** - "I think X because Y" (specific, not vague)
+**Test minimally** - SMALLEST possible change, one variable at a time
+**Verify before continuing** - Worked → Phase 4. Didn't work → NEW hypothesis (don't stack fixes)
+**Count attempts** - If 3+ fixes failed → STOP, question architecture
 
-**BEFORE attempting ANY fix:**
+### 4. Implementation
 
-1. **Read Error Messages Carefully**
-   - Don't skip errors or warnings
-   - They often contain exact solution
-   - Read stack traces completely
-
-2. **Reproduce Consistently**
-   - Can you trigger it reliably?
-   - What are exact steps?
-   - If not reproducible → gather more data
-
-3. **Check Recent Changes**
-   - What changed that could cause this?
-   - Git diff, recent commits
-   - Dependencies, config changes
-
-4. **Gather Evidence**
-   - Add diagnostic logging
-   - Check component boundaries
-   - Verify data flow
-   - Trace through system layers
-
-5. **Trace Data Flow**
-   - Where does bad value originate?
-   - What called this with bad value?
-   - Fix at source, not symptom
-
-### Phase 2: Pattern Analysis
-
-1. **Find Working Examples**
-   - Locate similar working code
-   - What works that's similar?
-
-2. **Compare Against References**
-   - Read reference implementation completely
-   - Don't skim - understand fully
-
-3. **Identify Differences**
-   - List every difference
-   - Don't assume "that can't matter"
-
-4. **Understand Dependencies**
-   - What components does this need?
-   - What settings, config, environment?
-
-### Phase 3: Hypothesis Testing
-
-1. **Form Single Hypothesis**
-   - State clearly: "I think X because Y"
-   - Be specific, not vague
-
-2. **Test Minimally**
-   - Smallest possible change
-   - One variable at a time
-   - Don't fix multiple things
-
-3. **Verify Before Continuing**
-   - Did it work? → Phase 4
-   - Didn't work? → New hypothesis
-   - Don't add more fixes
-
-### Phase 4: Implementation
-
-1. **Create Failing Test**
-   - Simplest reproduction
-   - Automated if possible
-   - MUST have before fixing
-
-2. **Implement Single Fix**
-   - Address root cause
-   - ONE change at a time
-   - No bundled refactoring
-
-3. **Verify Fix**
-   - Test passes?
-   - Other tests OK?
-   - Issue resolved?
-
-4. **If Fix Doesn't Work**
-   - Count: How many fixes tried?
-   - If < 3: Return to Phase 1
-   - If ≥ 3: Question architecture
-
-## Red Flags - STOP
-
-If you think:
-- "Quick fix for now"
-- "Just try changing X"
-- "Add multiple changes"
-- "Skip the test"
-- "It's probably X"
-- "I don't fully understand"
-- "One more fix attempt" (after 2+)
-
-**ALL mean: STOP. Return to Phase 1.**
+**Create failing test** - Simplest reproduction, automated if possible (MUST have before fixing)
+**Implement single fix** - Address root cause, ONE change, no "while I'm here" improvements
+**Verify completely** - Test passes? No other tests broken? Issue actually resolved?
 
 ## Common Use Cases
 
-### Test Failure
+### Senior Backend Dev: Test Suite Failing After Dependency Update
+**"Use systematic-debugging to investigate test failures: Read error messages completely, check what dependency changed, reproduce locally, trace data flow to find where new version breaks contract, create minimal failing test, fix root cause"**
 
-```
-"Use systematic-debugging to investigate test failure:
-1. Read exact error message
-2. Reproduce locally
-3. Check recent code changes
-4. Trace data flow
-5. Find root cause
-6. Create minimal failing test
-7. Implement fix"
-```
+### Frontend Engineer: Button Click Not Working
+**"Use systematic-debugging for button not responding: Check browser console for errors, verify event handler attached, trace click event flow, compare with working buttons, identify missing handler or binding issue"**
 
-### Production Bug
+### DevOps Engineer: Production API Returning 500 Errors
+**"Use systematic-debugging for production 500s: Gather error logs, reproduce in staging, check recent deployments, analyze error patterns, trace request flow through services, identify failing component, fix at source"**
 
-```
-"Use systematic-debugging for production bug:
-- Gather error logs
-- Reproduce in staging
-- Check recent deployments
-- Analyze error patterns
-- Form hypothesis
-- Test fix in staging
-- Deploy with monitoring"
-```
+### Full-Stack Dev: Slow Page Load Performance
+**"Use systematic-debugging to investigate slow page loads: Measure actual load time, check network waterfall, analyze bundle size, profile JavaScript execution, identify bottleneck, test optimization, verify improvement"**
 
-### Performance Issue
+### Integration Specialist: Third-Party API Integration Failing
+**"Use systematic-debugging for API integration: Log request/response at boundary, verify data format matches contract, compare with working examples, check both sides of integration, trace to source of mismatch"**
 
-```
-"Use systematic-debugging to investigate slow queries:
-- Identify slow operations
-- Check query patterns
-- Analyze indexes
-- Review recent changes
-- Test optimization
-- Verify improvement"
-```
+## Pro Tips
 
-### Integration Failure
+**Red flags to STOP immediately:**
+- "Quick fix for now" → Sets bad precedent
+- "Just try changing X" → Random guessing
+- "Add multiple changes" → Can't isolate what worked
+- "Skip the test" → Untested fixes don't stick
+- "One more fix" (after 2+) → Architecture problem
 
-```
-"Use systematic-debugging for API integration issue:
-- Check both sides of integration
-- Log request/response
-- Verify data format
-- Compare working examples
-- Fix at source"
-```
+**If 3+ fixes failed:** Don't try more fixes. Each failure revealing new problem = architectural issue. Question fundamentals before continuing.
 
-## Red Flags
+**Emergency = MORE systematic:** Time pressure makes random fixes tempting, but systematic is 8-12x faster than thrashing.
 
-Watch for these patterns:
+**Not activating?** Say: "Use systematic-debugging skill to investigate this issue - follow the four phases starting with root cause investigation"
 
-**"Quick fix first, investigate later"**
-→ Sets bad precedent, wastes time
+## Related Skills
 
-**"Just try changing X"**
-→ Random guessing, not systematic
+- [debugging](/docs/skills/tools/debugging) - General debugging skill
+- [problem-solving](/docs/skills/tools/problem-solving) - Structured problem solving
+- [sequential-thinking](/docs/skills/tools/sequential-thinking) - Step-by-step analysis
 
-**"Add multiple changes at once"**
-→ Can't isolate what worked
+## Key Takeaway
 
-**"Skip test, manually verify"**
-→ Untested fixes don't stick
-
-**"One more fix" (after 2+)**
-→ Architecture problem, not implementation
-
-## Example Session
-
-**Wrong Approach:**
-```
-User: Tests failing
-Dev: Let me try fixing the import
-Dev: That didn't work, trying different config
-Dev: Still failing, maybe it's the version
-Dev: [2 hours later, still broken]
-```
-
-**Systematic Approach:**
-```
-User: Tests failing
-Dev: Use systematic-debugging
-Phase 1: Read error - "Module not found: ./utils"
-Phase 1: Check recent changes - Moved utils folder
-Phase 1: Root cause - Import path outdated
-Phase 2: Find working imports in other files
-Phase 3: Hypothesis - Update import path
-Phase 4: Create test, fix import, verify
-[15 minutes, fixed]
-```
-
-## Integration with Other Skills
-
-Works with:
-- **root-cause-tracing** - Trace through call stack
-- **verification-before-completion** - Verify fix worked
-- **defense-in-depth** - Add validation after fix
-
-## Benefits
-
-Using systematic-debugging:
-- **15-30 min** to fix vs **2-3 hours** thrashing
-- **95% first-time** fix rate vs **40%**
-- **Near zero** new bugs vs common
-- **Lower stress** - clear process
-
-## Quick Examples
-
-**Simple Bug:**
-```
-"Use systematic-debugging to investigate button not working"
-```
-
-**Complex Issue:**
-```
-"Use systematic-debugging for multi-service failure:
-- Check each service layer
-- Add diagnostic logging
-- Trace request flow
-- Identify failing component
-- Fix root cause"
-```
-
-**Performance:**
-```
-"Use systematic-debugging to find why page loads slowly:
-- Measure load time
-- Check network requests
-- Analyze bundle size
-- Profile JavaScript
-- Optimize bottleneck"
-```
-
-## Key Takeaways
-
-1. **Always investigate before fixing**
-2. **One change at a time**
-3. **Test the fix**
-4. **If 3+ fixes fail, question architecture**
-5. **Systematic is faster than random**
-
-## Next Steps
-
-- [Root Cause Tracing](/docs/skills/)
-- [Debugging Examples](/docs/workflows/)
-- [Testing Skills](/docs/agents/tester)
-
----
-
-**Bottom Line:** systematic-debugging prevents random fixes. Find root cause first, fix once, move on.
+Systematic debugging converts 2-3 hours of random fix attempts into 15-30 minutes of focused investigation. Always investigate root cause first, fix once, move on. If 3+ fixes fail, stop and question architecture - don't keep trying.

@@ -1,123 +1,105 @@
 ---
-title: shopify
-description: "Documentation for shopify
-description:
-section: docs
-category: skills/ecommerce
-order: 23
-published: true"
+title: Shopify Skill
+description: Build Shopify apps, extensions, and themes using GraphQL/REST APIs, Shopify CLI, and Polaris UI
 section: docs
 category: skills/ecommerce
 order: 23
 published: true
 ---
 
-# shopify Skill
+# Shopify Skill
 
-Build Shopify apps, extensions, themes, and integrations using GraphQL/REST APIs and Shopify CLI.
+Build production-ready Shopify apps, checkout extensions, admin integrations, and themes with GraphQL APIs and Shopify CLI.
 
 ## When to Use
 
-Use shopify when building:
-- Shopify apps (public or custom)
-- Checkout/admin extensions
-- Themes with Liquid
-- API integrations
-- Shopify Functions
-- Headless storefronts
+- Building public or custom Shopify apps
+- Creating checkout/admin/POS UI extensions
+- Developing themes with Liquid templating
+- Integrating external services with webhooks
+- Managing products, orders, inventory via API
 
-## Quick Start
+## Key Capabilities
 
-### Invoke the Skill
+| Feature | Technology | Use Case |
+|---------|-----------|----------|
+| **App Development** | Shopify CLI, OAuth | Multi-store functionality, merchant tools |
+| **GraphQL Admin API** | GraphQL | Product/order/customer management |
+| **Checkout Extensions** | React, UI Extensions | Custom checkout fields, validation |
+| **Admin Extensions** | React, Polaris | Dashboard widgets, bulk actions |
+| **Theme Development** | Liquid, Sections | Custom storefront design |
+| **Webhooks** | HMAC Verification | Real-time event handling |
+| **Shopify Functions** | JavaScript | Custom discounts, payments, shipping |
+| **Metafields** | GraphQL | Store custom data on resources |
 
-```
-"Use shopify to create app that:
-- Adds custom checkout fields
-- Validates customer data
-- Saves to metafields
-- Shows in admin"
-```
+**Frameworks**: React (extensions), Remix, Node.js (apps)
 
-### What You Get
-
-The skill will help you:
-1. Set up Shopify CLI
-2. Create app structure
-3. Implement GraphQL queries
-4. Build UI extensions
-5. Handle webhooks
+**APIs**: GraphQL Admin (recommended), REST Admin (legacy), Storefront API
 
 ## Common Use Cases
 
-### Custom Checkout
-
+### Custom Checkout Fields
+**Who**: E-commerce store adding gift options
 ```
-"Use shopify to add checkout extension:
-- Gift message field
-- Delivery instructions
-- Save to order metafields"
+"Use shopify skill to create checkout extension with gift message field,
+delivery instructions, and save to order metafields. Show in admin order view."
 ```
 
-### Admin Extension
-
+### Inventory Management App
+**Who**: Multi-location retailer
 ```
-"Use shopify to create admin extension showing:
-- Order analytics
-- Custom reports
-- Bulk actions"
+"Build Shopify app that tracks inventory across locations, sends low stock
+alerts via email, and auto-creates purchase orders. PostgreSQL backend."
 ```
 
-### Product Sync
-
+### Admin Analytics Dashboard
+**Who**: Store owner needing custom reports
 ```
-"Use shopify to sync products with external inventory system using webhooks"
-```
-
-### Discount App
-
-```
-"Use shopify to build discount app with custom logic based on customer tags"
+"Use shopify skill to add admin extension showing top products this month,
+revenue by category, and customer lifetime value charts with Polaris."
 ```
 
-## Setup
+### Product Sync Integration
+**Who**: Business with external ERP system
+```
+"Create Shopify app that syncs products from our REST API every hour,
+updates inventory via GraphQL, handles webhooks for order fulfillment."
+```
 
-### Install Shopify CLI
+### Custom Discount Logic
+**Who**: B2B wholesaler
+```
+"Use shopify skill to build Shopify Function applying tiered discounts
+based on customer tags, order volume, and product collections."
+```
+
+## Quick Start
 
 ```bash
+# Install Shopify CLI
 npm install -g @shopify/cli@latest
 
 # Verify
 shopify version
 ```
 
-### Create App
-
+**Create App:**
 ```bash
-# Initialize new app
 shopify app init
-
-# Start dev server
-shopify app dev
-
-# Deploy
-shopify app deploy
+shopify app dev          # Local development
+shopify app deploy       # Production deploy
 ```
 
-## GraphQL Admin API
-
-### Authentication
-
-```javascript
-const headers = {
-  'X-Shopify-Access-Token': 'your-access-token',
-  'Content-Type': 'application/json'
-};
-
-const endpoint = `https://${shop}.myshopify.com/admin/api/2025-01/graphql.json`;
+**Create Theme:**
+```bash
+shopify theme init
+shopify theme dev        # Preview at localhost:9292
+shopify theme push       # Deploy to store
 ```
 
-### Query Products
+## Core Patterns
 
+### GraphQL Product Query
 ```graphql
 query {
   products(first: 10) {
@@ -140,65 +122,11 @@ query {
 }
 ```
 
-### Create Product
-
-```graphql
-mutation {
-  productCreate(input: {
-    title: "New Product"
-    vendor: "My Store"
-    productType: "Apparel"
-    variants: [{
-      price: "29.99"
-      inventoryQuantity: 100
-    }]
-  }) {
-    product {
-      id
-      title
-    }
-    userErrors {
-      field
-      message
-    }
-  }
-}
-```
-
-### Update Inventory
-
-```graphql
-mutation {
-  inventoryAdjustQuantity(input: {
-    inventoryLevelId: "gid://shopify/InventoryLevel/123"
-    availableDelta: 50
-  }) {
-    inventoryLevel {
-      available
-    }
-  }
-}
-```
-
-## Extensions
-
-### Checkout UI Extension
-
-```bash
-shopify app generate extension --type checkout_ui_extension
-```
-
+### Checkout Extension
 ```javascript
-// Extension code
-import {
-  reactExtension,
-  TextField,
-  BlockStack
-} from '@shopify/ui-extensions-react/checkout';
+import { reactExtension, BlockStack, TextField } from '@shopify/ui-extensions-react/checkout';
 
-export default reactExtension('purchase.checkout.block.render', () => (
-  <Extension />
-));
+export default reactExtension('purchase.checkout.block.render', () => <Extension />);
 
 function Extension() {
   return (
@@ -209,39 +137,10 @@ function Extension() {
 }
 ```
 
-### Admin UI Extension
-
-```bash
-shopify app generate extension --type admin_ui_extension
-```
-
-## Webhooks
-
-### Subscribe to Webhooks
-
-```graphql
-mutation {
-  webhookSubscriptionCreate(
-    topic: ORDERS_CREATE
-    webhookSubscription: {
-      format: JSON
-      callbackUrl: "https://your-app.com/webhooks/orders"
-    }
-  ) {
-    webhookSubscription {
-      id
-    }
-  }
-}
-```
-
-### Handle Webhook
-
+### Handle Webhooks
 ```javascript
 app.post('/webhooks/orders', async (req, res) => {
   const hmac = req.headers['x-shopify-hmac-sha256'];
-
-  // Verify webhook
   const verified = verifyWebhook(req.body, hmac);
 
   if (verified) {
@@ -253,245 +152,26 @@ app.post('/webhooks/orders', async (req, res) => {
 });
 ```
 
-## Metafields
+## Pro Tips
 
-### Create Metafield
+- **Use GraphQL over REST** for new development (better performance, cost-based limits)
+- **Request minimal scopes** in OAuth to pass app review faster
+- **Implement retry logic** for API calls with exponential backoff
+- **Cache API responses** to reduce costs and improve speed
+- **Test on development stores** (free via Partner Dashboard)
+- **Monitor rate limits** via `X-Shopify-Shop-Api-Call-Limit` header
+- **Use bulk operations** for processing 1000+ resources
+- **Verify webhook signatures** with HMAC to prevent spoofing
+- **Not activating?** Say: "Use shopify skill to..."
 
-```graphql
-mutation {
-  metafieldsSet(metafields: [{
-    ownerId: "gid://shopify/Product/123"
-    namespace: "custom"
-    key: "gift_message"
-    value: "Happy Birthday!"
-    type: "single_line_text_field"
-  }]) {
-    metafields {
-      id
-      value
-    }
-  }
-}
-```
+## Related Skills
 
-### Query Metafields
-
-```graphql
-query {
-  product(id: "gid://shopify/Product/123") {
-    metafield(namespace: "custom", key: "gift_message") {
-      value
-    }
-  }
-}
-```
-
-## Themes (Liquid)
-
-### Basic Liquid
-
-```liquid
-<!-- Product title -->
-{{ product.title }}
-
-<!-- Loop through variants -->
-{% for variant in product.variants %}
-  <option value="{{ variant.id }}">
-    {{ variant.title }} - {{ variant.price | money }}
-  </option>
-{% endfor %}
-
-<!-- Conditional -->
-{% if product.available %}
-  <button>Add to Cart</button>
-{% else %}
-  <span>Sold Out</span>
-{% endif %}
-```
-
-### Theme Development
-
-```bash
-# Pull theme
-shopify theme pull
-
-# Start dev server
-shopify theme dev
-
-# Push changes
-shopify theme push
-```
-
-## Shopify Functions
-
-### Discount Function
-
-```javascript
-export function run(input) {
-  const discountPercentage = 10;
-
-  return {
-    discounts: [{
-      message: "10% off for VIP customers",
-      targets: input.cart.lines,
-      value: {
-        percentage: {
-          value: discountPercentage
-        }
-      }
-    }]
-  };
-}
-```
-
-## Polaris UI
-
-### Install
-
-```bash
-npm install @shopify/polaris
-```
-
-### Use Components
-
-```javascript
-import {Page, Card, Button} from '@shopify/polaris';
-
-function Dashboard() {
-  return (
-    <Page title="Dashboard">
-      <Card sectioned>
-        <Button primary>Create Product</Button>
-      </Card>
-    </Page>
-  );
-}
-```
-
-## Best Practices
-
-### API Usage
-
-1. **Use GraphQL over REST**
-2. **Batch requests** when possible
-3. **Handle rate limits** (2-4 req/sec)
-4. **Use bulk operations** for large datasets
-5. **Implement retry logic**
-
-### Security
-
-1. **Verify webhooks** with HMAC
-2. **Validate OAuth** tokens
-3. **Use HTTPS** always
-4. **Sanitize inputs**
-5. **Follow GDPR** requirements
-
-### Performance
-
-1. **Cache GraphQL responses**
-2. **Use pagination** for large lists
-3. **Minimize API calls**
-4. **Optimize images**
-5. **Lazy load** content
-
-## Quick Examples
-
-**Sync Products:**
-```
-"Use shopify to sync products from CSV file to store via GraphQL"
-```
-
-**Custom Checkout:**
-```
-"Use shopify to add date picker to checkout for delivery date selection"
-```
-
-**Admin Dashboard:**
-```
-"Use shopify to create admin extension showing top products this month"
-```
-
-**Inventory App:**
-```
-"Use shopify to build app that:
-- Tracks inventory across locations
-- Sends low stock alerts
-- Auto-reorder functionality"
-```
-
-## Common Tasks
-
-### Get Orders
-
-```graphql
-query {
-  orders(first: 50, query: "created_at:>2025-01-01") {
-    edges {
-      node {
-        id
-        name
-        totalPrice
-        customer {
-          email
-        }
-      }
-    }
-  }
-}
-```
-
-### Update Product Price
-
-```graphql
-mutation {
-  productVariantUpdate(input: {
-    id: "gid://shopify/ProductVariant/123"
-    price: "39.99"
-  }) {
-    productVariant {
-      price
-    }
-  }
-}
-```
-
-### Bulk Operations
-
-```graphql
-mutation {
-  bulkOperationRunQuery(query: """
-    {
-      products {
-        edges {
-          node {
-            id
-            title
-          }
-        }
-      }
-    }
-  """) {
-    bulkOperation {
-      id
-      status
-    }
-  }
-}
-```
-
-## Resources
-
-- [Shopify Dev Docs](https://shopify.dev)
-- [GraphQL Admin API](https://shopify.dev/api/admin-graphql)
-- [Polaris](https://polaris.shopify.com)
-- [CLI Reference](https://shopify.dev/docs/api/shopify-cli)
-
-## Next Steps
-
-- [E-commerce Examples](/docs/workflows/)
-- [API Integration](/docs/workflows/)
-- [Database Skills](/docs/skills/backend/postgresql-psql)
+- [Backend Development](/docs/skills/backend/backend-development) - API integration patterns
+- [Databases](/docs/skills/backend/databases) - PostgreSQL for app data
+- [Frontend Development](/docs/skills/frontend/frontend-development) - React extensions
 
 ---
 
-**Bottom Line:** shopify skill covers app development, GraphQL APIs, extensions, and themes. Build complete Shopify integrations.
+## Key Takeaway
+
+ Use Shopify skill to build apps, extensions, and themes with GraphQL APIs, Shopify CLI, and React. Handles authentication, webhooks, metafields, and all Shopify platform integrations.

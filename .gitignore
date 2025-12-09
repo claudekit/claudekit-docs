@@ -43,3 +43,9 @@ playwright-*.png
 !.claude/commands/
 !.claude/commands/write-tutorial.md
 !.claude/commands/update-docs.md
+
+# AI doc patterns (internal reference)
+.doc-patterns.md
+
+# Tony's research folder
+tony/

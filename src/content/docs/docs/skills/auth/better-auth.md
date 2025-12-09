@@ -1,289 +1,120 @@
 ---
-title: better-auth
-description: "Documentation for better-auth
-description:
-section: docs
-category: skills/auth
-order: 10
-published: true"
+title: Better Auth Skill
+description: Framework-agnostic TypeScript authentication with email/password, OAuth, 2FA, passkeys, and multi-tenancy
 section: docs
 category: skills/auth
 order: 10
 published: true
 ---
 
-# better-auth Skill
+# Better Auth Skill
 
-Framework-agnostic authentication and authorization framework for TypeScript. Works with any framework - Next.js, Nuxt, SvelteKit, Remix, Astro, Hono, Express.
+Production-ready authentication for any TypeScript framework—Next.js, Nuxt, SvelteKit, Remix, Astro, Hono, Express.
 
 ## When to Use
 
-Use better-auth when you need:
-- Email/password authentication
-- Social OAuth (GitHub, Google, etc.)
-- Two-factor authentication (2FA)
-- Passkeys (WebAuthn)
-- Magic links
-- Multi-tenancy / Organizations
-- Framework flexibility
+- Adding authentication to TypeScript/JavaScript apps
+- Email/password or social OAuth login
+- 2FA, passkeys, magic links
+- Multi-tenant apps with organizations
+- Session management and protected routes
 
-## Quick Start
+## Key Capabilities
 
-### Invoke the Skill
+| Feature | Built-in | Plugin |
+|---------|----------|--------|
+| Email/Password | ✓ | - |
+| OAuth (GitHub, Google, etc.) | ✓ | - |
+| Email Verification | ✓ | - |
+| Password Reset | ✓ | - |
+| Rate Limiting | ✓ | - |
+| Two-Factor (TOTP) | - | `twoFactor` |
+| Passkeys/WebAuthn | - | `passkey` |
+| Magic Links | - | `magicLink` |
+| Organizations | - | `organization` |
 
-```
-"Use better-auth to add authentication to my Next.js app with:
-- Email/password signup
-- GitHub OAuth
-- PostgreSQL with Drizzle"
-```
+**Frameworks**: Next.js, Nuxt, SvelteKit, Remix, Astro, Hono, Express
 
-### What You Get
-
-The skill will help you:
-1. Install and configure better-auth
-2. Set up database schema
-3. Create auth server instance
-4. Mount API routes
-5. Create client instance
-6. Implement sign-up/sign-in UI
-7. Add session management
-8. Protect routes
+**Databases**: PostgreSQL, MySQL, SQLite, MongoDB (via Drizzle, Prisma, Kysely)
 
 ## Common Use Cases
 
-### Basic Email/Password Auth
-
+### SaaS MVP Authentication
+**Who**: Solo founder building first product
 ```
-"Use better-auth to implement email/password authentication with:
-- Auto sign-in after signup
-- Email verification
-- Password reset flow"
+"Add authentication to my Next.js app with email/password signup,
+GitHub OAuth, and PostgreSQL with Drizzle. Include email verification."
 ```
 
-### Social OAuth
-
+### Multi-Tenant Platform
+**Who**: Team building B2B SaaS
 ```
-"Use better-auth to add GitHub and Google OAuth to my app"
-```
-
-### Two-Factor Authentication
-
-```
-"Use better-auth to add 2FA with TOTP codes and trusted devices"
+"Set up Better Auth with organization support for multi-tenant app.
+Need team invitations, role-based permissions, and admin dashboard."
 ```
 
-### Multi-Tenant Application
-
+### Secure Enterprise App
+**Who**: Developer at security-conscious company
 ```
-"Use better-auth to build multi-tenant app with:
-- Organizations
-- Team member invitations
-- Role-based permissions"
+"Implement Better Auth with 2FA requirement, passkey support,
+rate limiting, and audit logging. PostgreSQL backend."
 ```
 
-## Key Features
-
-### Authentication Methods
-
-- **Email/Password** - Traditional signup/signin
-- **Social OAuth** - GitHub, Google, Apple, Discord, Facebook, etc.
-- **Magic Links** - Passwordless email authentication
-- **Passkeys** - WebAuthn biometric authentication
-- **2FA/TOTP** - Two-factor authentication
-- **Email OTP** - One-time password codes
-
-### Framework Support
-
-- Next.js (App Router & Pages Router)
-- Nuxt
-- SvelteKit
-- Remix
-- Astro
-- Hono
-- Express
-- Any Node.js framework
-
-### Database Support
-
-- PostgreSQL
-- MySQL
-- SQLite
-- MongoDB
-
-### ORM Adapters
-
-- Drizzle
-- Prisma
-- Kysely
-- MongoDB native
-
-## Example Implementations
-
-### Next.js App Router
-
+### Passwordless Experience
+**Who**: UX-focused startup
 ```
-"Use better-auth to set up authentication for Next.js 14 App Router with:
-- Email/password
-- GitHub OAuth
-- PostgreSQL + Drizzle
-- Protected routes middleware
-- Server actions for auth"
+"Add magic link authentication to my SvelteKit app.
+No passwords, just email-based login with session management."
 ```
 
-### SvelteKit
-
+### Quick Prototype
+**Who**: Developer testing an idea
 ```
-"Use better-auth to implement auth in SvelteKit with:
-- Magic link authentication
-- Session management
-- Protected routes"
+"Set up basic Better Auth with SQLite for local development.
+Just email/password, minimal config."
 ```
 
-### Multi-Framework
+## Quick Start
 
-```
-"Use better-auth to create auth system that works with both:
-- Next.js frontend
-- Hono API backend
-- Shared PostgreSQL database"
-```
-
-## Advanced Features
-
-### Session Management
-
-```
-"Use better-auth to implement:
-- Server-side session validation
-- Client-side session hooks
-- Custom session expiration
-- Remember me functionality"
-```
-
-### Rate Limiting
-
-```
-"Use better-auth to add rate limiting to prevent:
-- Brute force attacks
-- Signup spam
-- API abuse"
-```
-
-### Email Verification
-
-```
-"Use better-auth to require email verification:
-- Send verification emails
-- Handle verification tokens
-- Block unverified users"
-```
-
-## Best Practices
-
-### Environment Variables
-
-Always use environment variables for:
-- `BETTER_AUTH_SECRET` - Secret key (min 32 chars)
-- `BETTER_AUTH_URL` - Application URL
-- OAuth client IDs and secrets
-
-### Security
-
-The skill ensures:
-- HTTPS in production
-- Secure cookie settings
-- CORS configuration
-- Password requirements
-- Session security
-
-### Database Migrations
-
-After adding plugins:
 ```bash
-npx @better-auth/cli generate
-npx @better-auth/cli migrate
+npm install better-auth
 ```
 
-## Plugins
-
-### Available Plugins
-
-- **twoFactor** - TOTP 2FA
-- **username** - Username authentication
-- **magicLink** - Passwordless email
-- **passkey** - WebAuthn biometric
-- **organization** - Multi-tenancy
-- **emailOTP** - One-time passwords
-- **anonymous** - Guest users
-
-### Adding Plugins
-
-```
-"Use better-auth to add these plugins:
-- Two-factor authentication
-- Organization support
-- Magic link signin"
+```env
+BETTER_AUTH_SECRET=your-32-char-secret
+BETTER_AUTH_URL=http://localhost:3000
 ```
 
-## Troubleshooting
-
-### Common Issues
-
-**"Unable to find auth instance"**
-- Check auth.ts location (root, lib/, utils/)
-- Verify export name
-
-**Database connection errors**
-- Verify credentials
-- Check database is running
-- Ensure correct adapter
-
-**CORS errors**
-- Configure corsOptions
-- Match client/server URLs
-
-## Resources
-
-- [Official Docs](https://www.better-auth.com/docs)
-- [GitHub](https://github.com/better-auth/better-auth)
-- [Plugins](https://www.better-auth.com/docs/plugins)
-- [Examples](https://www.better-auth.com/docs/examples)
-
-## Quick Examples
-
-**Minimal Setup:**
-```
-"Use better-auth for basic email/password auth with SQLite"
+```bash
+npx @better-auth/cli generate  # Generate schema
+npx @better-auth/cli migrate   # Apply migrations
 ```
 
-**Production Setup:**
-```
-"Use better-auth for production with:
-- GitHub + Google OAuth
-- Email verification
-- 2FA support
-- PostgreSQL
-- Rate limiting
-- Proper error handling"
-```
+## Auth Method Selection
 
-**Enterprise Setup:**
-```
-"Use better-auth for enterprise app with:
-- Multi-tenancy
-- SSO integration
-- Role-based access control
-- Audit logging
-- Custom session management"
-```
+| Method | Best For |
+|--------|----------|
+| Email/Password | Traditional web apps, full credential control |
+| OAuth | Quick signup, social profile access |
+| Passkeys | Passwordless, security-first apps |
+| Magic Links | Email-first users, temporary access |
 
-## Next Steps
+## Pro Tips
 
-- [Authentication Examples](/docs/workflows/)
-- [Database Skills](/docs/skills/backend/postgresql-psql)
-- [Next.js Integration](/docs/skills/frontend/nextjs)
+- **Run migrations after adding plugins**: `npx @better-auth/cli generate && migrate`
+- **Use environment variables** for secrets and OAuth credentials
+- **Enable rate limiting** in production to prevent abuse
+- **Combine methods** for user flexibility (OAuth + email as backup)
+- **Not activating?** Say: "Use the better-auth skill to..."
+
+## Related Skills
+
+- [Databases](/docs/skills/backend/databases) - PostgreSQL/MongoDB setup
+- [Next.js](/docs/skills/frontend/nextjs) - Framework integration
+- [Backend Development](/docs/skills/backend/backend-development) - API patterns
 
 ---
 
-**Bottom Line:** better-auth provides production-ready authentication that works with any TypeScript framework. Just invoke the skill and describe your auth requirements.
+## Key Takeaway
+
+ Use Better Auth for production-ready authentication in any TypeScript framework with built-in email/password, OAuth, and extensible plugin system for 2FA, passkeys, and organizations.

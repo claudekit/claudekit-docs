@@ -1,11 +1,6 @@
 ---
 title: skill-creator
-description: "Documentation for skill-creator
-description:
-section: docs
-category: skills/tools
-order: 15
-published: true"
+description: "Create custom skills that extend Claude's capabilities with specialized knowledge, workflows, and tool integrations"
 section: docs
 category: skills/tools
 order: 15
@@ -14,444 +9,92 @@ published: true
 
 # skill-creator
 
-Create custom skills that extend Claude's capabilities with specialized knowledge, workflows, and tool integrations.
-
-## What Are Skills?
-
-Skills are packages that give Claude:
-- Specialized knowledge
-- Step-by-step workflows
-- Tool integrations
-- Domain expertise
-- Bundled resources
+Transform your workflow knowledge into reusable AI skills that Claude can activate automatically.
 
 ## When to Use
 
-Use skill-creator when you need:
-- Project-specific skill
-- Custom workflow
-- Domain knowledge
-- Reusable process
-- Tool integration
-- Company-specific logic
+- **API integration** - Create skills for Stripe, Twilio, or custom APIs with proper patterns
+- **Company knowledge** - Encode coding standards, schemas, or business logic into portable skills
+- **Reusable workflows** - Turn deployment, testing, or ETL processes into repeatable instructions
+- **Framework guides** - Build skills for Vue, Django, or tech stacks with bundled resources
 
-## Quick Start
+## Key Capabilities
 
-### Invoke the Skill
-
-```
-"Use skill-creator to create skill for Stripe integration that:
-- Handles webhooks
-- Manages subscriptions
-- Processes payments
-- Follows best practices"
-```
-
-### What You Get
-
-The skill-creator will:
-1. Ask clarifying questions
-2. Design skill structure
-3. Create SKILL.md file
-4. Add bundled resources
-5. Write documentation
-6. Save to `.claude/skills/`
+| Feature | What It Does |
+|---------|-------------|
+| SKILL.md Generation | Creates structured skill files with metadata and instructions |
+| Bundled Resources | Adds scripts, references, and assets for complex tasks |
+| Progressive Disclosure | Keeps skills under 100 lines, references external files as needed |
+| Validation & Packaging | Validates structure and packages skills as distributable ZIPs |
 
 ## Common Use Cases
 
-### API Integration Skill
+### API Integration Developer
+**Prompt:** "Use skill-creator to make Stripe payment skill with webhooks, subscriptions, and error handling"
 
-```
-"Use skill-creator to make skill for Twilio API:
-- Send SMS
-- Make calls
-- Handle responses
-- Manage errors"
-```
+### DevOps Engineer
+**Prompt:** "Use skill-creator for deployment workflow: build, test staging, smoke tests, production deploy"
 
-### Workflow Automation
+### Engineering Lead
+**Prompt:** "Use skill-creator for team coding standards: file structure, naming conventions, error patterns, testing requirements"
 
-```
-"Use skill-creator for deployment workflow:
-- Build application
-- Run tests
-- Deploy to staging
-- Smoke tests
-- Deploy to production"
-```
+### Data Engineer
+**Prompt:** "Use skill-creator for BigQuery skill with table schemas, join patterns, and optimization rules"
 
-### Company Knowledge
+### Frontend Developer
+**Prompt:** "Use skill-creator for React skill with component patterns, hooks best practices, and state management"
 
-```
-"Use skill-creator for company coding standards:
-- Code structure
-- Naming conventions
-- Error handling patterns
-- Testing requirements"
+## Quick Reference
+
+### Invoke Skill
+
+```bash
+"Use skill-creator to create skill for [purpose]:
+- [capability 1]
+- [capability 2]
+- [best practices]"
 ```
 
-### Data Processing
+### Skill Structure
 
 ```
-"Use skill-creator for ETL pipeline:
-- Extract from sources
-- Transform data
-- Validate format
-- Load to destination"
+.claude/skills/skill-name/
+├── SKILL.md              # <100 lines, core instructions
+├── scripts/              # Python/Node scripts with tests
+├── references/           # Documentation loaded as needed
+└── assets/               # Templates, images, boilerplate
 ```
 
-## Skill Anatomy
+### Skill Creation Process
 
-### SKILL.md Structure
+1. **Clarify** - skill-creator asks about use cases and functionality
+2. **Design** - Plans structure: scripts, references, assets needed
+3. **Initialize** - Runs `init_skill.py` to create template
+4. **Implement** - Writes SKILL.md, adds bundled resources, writes tests
+5. **Validate** - Runs `package_skill.py` to check structure and package
+6. **Save** - Outputs to `.claude/skills/` for immediate use
 
-```markdown
----
-name: skill-name
-description: What skill does and when to use it
----
+### Key Requirements
 
-# Skill Name
+- **SKILL.md**: <100 lines, uses imperative form ("To do X, run Y")
+- **Scripts**: Include tests, respect `.env` hierarchy, prefer Python/Node over Bash
+- **References**: <100 lines each, split large docs using progressive disclosure
+- **Metadata**: Specific `description` triggers automatic activation
 
-Instructions Claude follows when skill is active.
+## Pro Tips
 
-## When to Use
-Specific scenarios
+- **Not activating?** Say: "Use skill-creator skill to create a [domain] skill"
+- **Large documentation?** Split into multiple reference files, let Claude load as needed
+- **Repetitive code?** Move to scripts with tests instead of regenerating
+- **Company schemas?** Store in `references/` so Claude doesn't rediscover each time
+- **Boilerplate?** Add to `assets/` as templates Claude can copy and modify
 
-## Examples
-Real usage examples
+## Related Skills
 
-## Best Practices
-Guidelines to follow
-```
+- [/docs/skills/tools/claude-code-skill](/docs/skills/tools/claude-code-skill) - Create skills via CLI commands
+- [/docs/skills/tools/planning](/docs/skills/tools/planning) - Design complex workflows before building skills
+- [/docs/skills/tools/mcp-management](/docs/skills/tools/mcp-management) - Manage Model Context Protocol integrations
 
-### Bundled Resources
+## Key Takeaway
 
-**Scripts** (`scripts/`)
-- Executable code
-- Reusable functions
-- Automation tools
-
-**References** (`references/`)
-- Documentation
-- API specs
-- Examples
-- Guides
-
-**Assets** (`assets/`)
-- Templates
-- Images
-- Boilerplate
-- Configuration files
-
-## Example Skills to Create
-
-### Framework Integration
-
-```
-"Use skill-creator for Vue.js skill:
-- Component patterns
-- Composition API
-- State management
-- Best practices
-- Common pitfalls"
-```
-
-### Database Operations
-
-```
-"Use skill-creator for MongoDB skill:
-- Schema design
-- Query optimization
-- Aggregation pipelines
-- Index strategies
-- Migration patterns"
-```
-
-### Testing Workflows
-
-```
-"Use skill-creator for E2E testing:
-- Playwright setup
-- Page objects
-- Test scenarios
-- Assertions
-- CI integration"
-```
-
-### Security Practices
-
-```
-"Use skill-creator for security skill:
-- Input validation
-- SQL injection prevention
-- XSS protection
-- CSRF tokens
-- Secure headers"
-```
-
-## Design Process
-
-### Step 1: Define Purpose
-
-```
-"Use skill-creator to plan skill for:
-- What problem does it solve?
-- Who will use it?
-- What outcomes are expected?
-- What knowledge is needed?"
-```
-
-### Step 2: Gather Examples
-
-```
-"Use skill-creator to collect examples:
-- Working code samples
-- Common patterns
-- Error scenarios
-- Edge cases"
-```
-
-### Step 3: Structure Content
-
-```
-"Use skill-creator to organize:
-- Core instructions
-- Reference materials
-- Reusable scripts
-- Example assets"
-```
-
-### Step 4: Test & Refine
-
-```
-"Use skill-creator to validate:
-- Test on real tasks
-- Gather feedback
-- Update content
-- Improve clarity"
-```
-
-## Best Practices
-
-### Clear Description
-
-**Good:**
-```yaml
-description: Guide for implementing Stripe payments with TypeScript, including webhooks, subscriptions, and error handling. Use when adding payment processing to applications.
-```
-
-**Bad:**
-```yaml
-description: Stripe skill
-```
-
-### Specific Instructions
-
-**Good:**
-```markdown
-## Creating a Customer
-
-To create a Stripe customer:
-1. Import stripe client
-2. Call stripe.customers.create()
-3. Pass email and metadata
-4. Store customer ID in database
-5. Handle errors with try/catch
-```
-
-**Bad:**
-```markdown
-Create customers as needed.
-```
-
-### Include Examples
-
-**Good:**
-```markdown
-## Example: Create Subscription
-
-```typescript
-const subscription = await stripe.subscriptions.create({
-  customer: customerId,
-  items: [{ price: priceId }],
-  payment_behavior: 'default_incomplete',
-  expand: ['latest_invoice.payment_intent']
-});
-```
-```
-
-### Provide Context
-
-**Good:**
-```markdown
-## When to Use
-
-Use this skill when:
-- Implementing payment processing
-- Handling recurring billing
-- Managing customer subscriptions
-- Processing webhook events
-```
-
-## Advanced Features
-
-### Multi-File Skills
-
-```
-"Use skill-creator to build complex skill:
-- Main SKILL.md
-- scripts/helper.py
-- references/api-docs.md
-- assets/template.json"
-```
-
-### Dynamic Content
-
-```
-"Use skill-creator with:
-- Parameterized instructions
-- Conditional logic
-- Environment-specific configs
-- Template variables"
-```
-
-### Skill Dependencies
-
-```
-"Use skill-creator to reference other skills:
-- Build on existing skills
-- Combine capabilities
-- Share resources
-- Avoid duplication"
-```
-
-## Testing Skills
-
-### Validate Structure
-
-```
-"Use skill-creator to check:
-- YAML frontmatter correct
-- Required fields present
-- Markdown formatting valid
-- File structure proper"
-```
-
-### Test Usage
-
-```
-"Use skill-creator then test the new skill:
-1. Invoke skill in conversation
-2. Verify Claude follows instructions
-3. Check output quality
-4. Gather feedback
-5. Iterate improvements"
-```
-
-## Skill Categories
-
-### Technical Skills
-
-- Framework guides (React, Vue, Django)
-- Database operations (PostgreSQL, MongoDB)
-- DevOps tools (Docker, Kubernetes)
-- API integrations (Stripe, Twilio)
-
-### Business Skills
-
-- Company processes
-- Industry standards
-- Compliance requirements
-- Brand guidelines
-
-### Workflow Skills
-
-- Deployment procedures
-- Testing protocols
-- Code review checklists
-- Documentation standards
-
-## Quick Examples
-
-**Simple Skill:**
-```
-"Use skill-creator for API error handling patterns"
-```
-
-**Complex Skill:**
-```
-"Use skill-creator for complete authentication system:
-- User registration
-- Login/logout
-- Password reset
-- Session management
-- OAuth integration
-- 2FA support"
-```
-
-**Domain Skill:**
-```
-"Use skill-creator for financial calculations:
-- Interest computation
-- Amortization schedules
-- Currency conversion
-- Tax calculations"
-```
-
-## Iteration & Improvement
-
-### Gather Feedback
-
-```
-"Use skill-creator to improve existing skill:
-- Test on real tasks
-- Note pain points
-- Collect suggestions
-- Update content"
-```
-
-### Version Control
-
-```
-"Use skill-creator to manage versions:
-- Track changes
-- Document updates
-- Maintain compatibility
-- Deprecate old patterns"
-```
-
-### Share Skills
-
-```
-"Use skill-creator then:
-- Export as ZIP
-- Share with team
-- Contribute to community
-- Document usage"
-```
-
-## Skill Storage
-
-### Project Skills
-
-Located in `.claude/skills/`
-- Shared with team
-- Version controlled
-- Project-specific
-
-### Personal Skills
-
-Located in `~/.claude/skills/`
-- Available everywhere
-- Personal workflows
-- Cross-project use
-
-## Next Steps
-
-- [Existing Skills](/docs/skills/)
-- [Skill Examples](/docs/workflows/)
-- [Advanced Patterns](/docs/workflows/)
-
----
-
-**Bottom Line:** skill-creator transforms your knowledge into reusable skills. Describe what you need and let the skill-creator build it.
+skill-creator turns procedural knowledge into AI-activatable skills. Describe what you need, get a validated skill package ready for your team or personal toolkit.

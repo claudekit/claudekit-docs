@@ -1,440 +1,145 @@
 ---
-title: mcp-builder
-description: "Documentation for mcp-builder
-description:
-section: docs
-category: skills/tools
-order: 13
-published: true"
+title: MCP Builder Skill
+description: Build production-ready MCP servers in Python or TypeScript that connect Claude to any external API, database, or service
 section: docs
 category: skills/tools
 order: 13
 published: true
 ---
 
-# mcp-builder Skill
+# MCP Builder Skill
 
-Build high-quality MCP (Model Context Protocol) servers that enable Claude to interact with external services through well-designed tools.
-
-## What is MCP?
-
-Model Context Protocol allows Claude to:
-- Call external APIs
-- Access databases
-- Read/write files
-- Interact with services
-- Execute tools
-- Fetch resources
+Production-ready MCP (Model Context Protocol) servers that connect Claude to external APIs, databases, and services—built with agent-first design principles.
 
 ## When to Use
 
-Use mcp-builder when creating MCP servers for:
-- Custom API integrations
-- Database access
-- File system operations
-- External service connections
-- Custom tools for Claude
-- Resource providers
+- Connecting Claude to external APIs (Stripe, GitHub, Slack, etc.)
+- Creating database access tools (PostgreSQL, MongoDB, MySQL)
+- Building custom business logic tools
+- Enabling workflow automation through integrated services
 
-## Quick Start
+## Key Capabilities
 
-### Invoke the Skill
+| Capability | Python (FastMCP) | TypeScript (MCP SDK) |
+|-----------|-----------------|---------------------|
+| Tool Registration | `@mcp.tool` decorator | `server.registerTool` |
+| Input Validation | Pydantic v2 models | Zod schemas |
+| Async Operations | Native async/await | Promise-based |
+| Type Safety | Type hints | TypeScript strict mode |
+| Best For | Data/ML/scientific | API wrappers/web services |
 
-```
-"Use mcp-builder to create MCP server for Stripe API with:
-- Payment tools
-- Subscription management
-- Webhook handling
-- TypeScript implementation"
-```
-
-### What You Get
-
-The skill will help you:
-1. Design server architecture
-2. Create tool definitions
-3. Implement handlers
-4. Add authentication
-5. Handle errors properly
-6. Write documentation
-7. Set up testing
+**Core Features**:
+- Agent-optimized workflow tools (not just API wrappers)
+- Context-aware responses (concise vs. detailed)
+- Actionable error messages that guide usage
+- Pagination, rate limiting, character limits (25K tokens)
+- Read-only, destructive, idempotent tool hints
 
 ## Common Use Cases
 
-### API Integration
-
+### Payment Processing Integration
+**Who**: SaaS developer adding billing
 ```
-"Use mcp-builder to create MCP server for GitHub API:
-- Repository management
-- Issue tracking
-- Pull request tools
-- Authentication with tokens"
-```
-
-### Database Access
-
-```
-"Use mcp-builder for PostgreSQL MCP server:
-- Query execution
-- Schema introspection
-- Connection pooling
-- Read-only safety"
-```
-
-### File System
-
-```
-"Use mcp-builder to create file management MCP server:
-- Read/write files
-- Directory operations
-- Search functionality
-- Safe path handling"
-```
-
-### Custom Tools
-
-```
-"Use mcp-builder for custom business logic:
-- Invoice generation
-- Report creation
-- Data transformation
-- Workflow automation"
-```
-
-## MCP Server Types
-
-### Python (FastMCP)
-
-```
-"Use mcp-builder to create Python MCP server with FastMCP:
-- Tool decorators
-- Resource handlers
-- Type hints
-- Async operations"
-```
-
-**Best for:**
-- Data processing
-- ML/AI integration
-- Scientific computing
-- Python ecosystem tools
-
-### TypeScript (MCP SDK)
-
-```
-"Use mcp-builder to create TypeScript MCP server:
-- Type safety
-- Modern async/await
-- NPM ecosystem
-- Easy deployment"
-```
-
-**Best for:**
-- API wrappers
-- Web services
-- Node.js integrations
-- JavaScript tooling
-
-## Key Components
-
-### Tools
-
-Functions Claude can call:
-- Input schema
-- Output format
-- Error handling
-- Documentation
-
-### Resources
-
-Data Claude can read:
-- URIs
-- Content types
-- Dynamic updates
-- Metadata
-
-### Prompts
-
-Templates Claude can use:
-- Pre-defined prompts
-- Parameter injection
-- Context building
-
-## Example Implementations
-
-### Stripe Integration
-
-```
-"Use mcp-builder to create Stripe MCP server with tools for:
-- Create customer
-- Create subscription
-- Process payment
+"Use mcp-builder to create Stripe MCP server with:
+- Create customer and subscription
+- Process payments
+- Manage invoices
 - Handle webhooks
 - List transactions"
 ```
 
-### Slack Integration
-
+### Project Management Automation
+**Who**: Team lead integrating dev tools
 ```
-"Use mcp-builder for Slack MCP server:
-- Send messages
-- List channels
-- Search messages
-- Upload files
-- React to messages"
-```
-
-### Database Tools
-
-```
-"Use mcp-builder for database MCP server:
-- Execute queries
-- Get schema info
-- Run migrations
-- Backup data
-- Safety checks"
+"Use mcp-builder for GitHub + Jira MCP server:
+- Sync issues between platforms
+- Create PRs from Jira tickets
+- Track commit status
+- Send Slack notifications"
 ```
 
-### File Processing
-
+### Database Operations
+**Who**: Backend developer building admin tools
 ```
-"Use mcp-builder to create document processor:
-- PDF extraction
-- Image conversion
-- Text analysis
-- Format conversion"
-```
-
-## Best Practices
-
-### Tool Design
-
-The skill ensures:
-- Clear tool names
-- Descriptive parameters
-- Proper input validation
-- Good error messages
-- Complete documentation
-
-### Security
-
-Implements:
-- Authentication
-- Authorization
-- Input sanitization
-- Rate limiting
-- Safe defaults
-
-### Error Handling
-
-Provides:
-- Clear error messages
-- Proper error codes
-- Recovery suggestions
-- Logging
-- Graceful failures
-
-### Documentation
-
-Creates:
-- Tool descriptions
-- Parameter docs
-- Usage examples
-- Setup guide
-- Troubleshooting
-
-## Advanced Features
-
-### Authentication
-
-```
-"Use mcp-builder to add authentication:
-- API key validation
-- OAuth2 flow
-- Token refresh
-- Session management"
+"Use mcp-builder for PostgreSQL MCP server with:
+- Execute queries safely
+- Schema introspection
+- Read-only mode
+- Character limit truncation
+- Pagination support"
 ```
 
-### Caching
-
+### Custom Business Logic
+**Who**: Startup automating workflows
 ```
-"Use mcp-builder to implement caching:
-- Response caching
-- Cache invalidation
-- TTL configuration
-- Performance optimization"
-```
-
-### Rate Limiting
-
-```
-"Use mcp-builder to add rate limiting:
-- Per-user limits
-- Endpoint limits
-- Retry logic
-- Backoff strategy"
+"Use mcp-builder to create invoice generation MCP server:
+- Calculate taxes
+- Generate PDF invoices
+- Send email notifications
+- Update accounting records"
 ```
 
-### Webhooks
-
+### Multi-Service Integration
+**Who**: Full-stack developer building AI assistant
 ```
-"Use mcp-builder to handle webhooks:
-- Signature verification
-- Event processing
-- Async handling
-- Error recovery"
+"Use mcp-builder to combine Slack, Google Calendar, and Notion:
+- Schedule meetings
+- Send team updates
+- Create task lists
+- Sync across platforms"
 ```
 
 ## Development Workflow
 
-### 1. Design Phase
+| Phase | Action |
+|-------|--------|
+| **1. Research** | Study MCP docs, API docs, design agent-first workflows |
+| **2. Plan** | Select high-impact tools, define input/output schemas |
+| **3. Implement** | Build shared utilities, implement tools with validation |
+| **4. Review** | Check DRY, type safety, error handling, documentation |
+| **5. Evaluate** | Create 10 complex questions to test tool effectiveness |
 
-```
-"Use mcp-builder to design MCP server:
-- Define tools needed
-- Specify inputs/outputs
-- Plan authentication
-- Document API"
-```
+**Testing**: Use evaluation harness or tmux (servers run indefinitely on stdio/stdin).
 
-### 2. Implementation
+## Pro Tips
 
-```
-"Use mcp-builder to implement:
-- Create server structure
-- Implement tools
-- Add error handling
-- Write tests"
-```
-
-### 3. Testing
-
-```
-"Use mcp-builder to test server:
-- Unit tests for tools
-- Integration tests
-- Error scenarios
-- Performance tests"
-```
-
-### 4. Deployment
-
-```
-"Use mcp-builder to deploy:
-- Package server
-- Configuration
-- Monitoring
-- Documentation"
-```
-
-## Testing
-
-### Unit Tests
-
-```
-"Use mcp-builder to create tests for:
-- Each tool function
-- Error conditions
-- Input validation
-- Output format"
-```
-
-### Integration Tests
-
-```
-"Use mcp-builder to test integration:
-- Real API calls
-- Authentication flow
-- Error handling
-- Edge cases"
-```
+- **Design for workflows, not endpoints**: Combine operations (e.g., check availability + schedule event)
+- **Optimize context**: Default to concise responses, provide detailed option when needed
+- **Write actionable errors**: Suggest next steps ("Try filter='active_only'")
+- **Use consistent prefixes**: Group related tools (e.g., `github_*`, `stripe_*`)
+- **Load docs as needed**: MCP protocol, SDK docs, language-specific guides
+- **Create evaluations**: 10 complex, read-only questions to verify tool quality
+- **Not activating?** Say: "Use mcp-builder skill to..."
 
 ## Configuration
 
-### Claude Desktop
-
+**Claude Desktop** (`~/Library/Application Support/Claude/claude_desktop_config.json`):
 ```json
 {
   "mcpServers": {
     "my-server": {
       "command": "node",
-      "args": ["path/to/server.js"]
+      "args": ["/absolute/path/to/dist/index.js"],
+      "env": {
+        "API_KEY": "your-api-key"
+      }
     }
   }
 }
 ```
 
-### Environment Variables
+**Python**: Use `python /path/to/server.py` as command
+**TypeScript**: Use `node /path/to/dist/index.js` after `npm run build`
 
-```
-"Use mcp-builder to configure:
-- API keys
-- Database URLs
-- Service endpoints
-- Feature flags"
-```
+## Related Skills
 
-## Troubleshooting
-
-### Common Issues
-
-**Server not connecting**
-- Check configuration path
-- Verify server starts
-- Review logs
-
-**Tools not appearing**
-- Check tool definitions
-- Verify schema format
-- Review documentation
-
-**Authentication failing**
-- Verify credentials
-- Check token format
-- Review auth flow
-
-## Quick Examples
-
-**Simple API Wrapper:**
-```
-"Use mcp-builder to wrap REST API as MCP server"
-```
-
-**Database Tools:**
-```
-"Use mcp-builder for PostgreSQL query tools with read-only safety"
-```
-
-**Custom Business Logic:**
-```
-"Use mcp-builder to create MCP server for:
-- Generate invoices
-- Calculate taxes
-- Send notifications
-- Update records"
-```
-
-**Multi-Service Integration:**
-```
-"Use mcp-builder to combine:
-- GitHub API
-- Jira API
-- Slack notifications
-- Into single MCP server"
-```
-
-## Resources
-
-- [MCP Specification](https://modelcontextprotocol.io)
-- [FastMCP (Python)](https://github.com/jlowin/fastmcp)
-- [MCP SDK (TypeScript)](https://github.com/modelcontextprotocol/typescript-sdk)
-
-## Next Steps
-
-- [Custom Tools Examples](/docs/workflows/)
-- [API Integration Guide](/docs/workflows/)
-- [Database Skills](/docs/skills/backend/postgresql-psql)
+- [MCP Management](/docs/skills/tools/mcp-management) - Install and manage MCP servers
+- [Databases](/docs/skills/backend/databases) - PostgreSQL/MongoDB integration
+- [Backend Development](/docs/skills/backend/backend-development) - API design patterns
+- [Planning](/docs/skills/tools/planning) - Design complex integrations
 
 ---
 
-**Bottom Line:** mcp-builder creates production-ready MCP servers. Just describe the tools you need and the skill handles the implementation.
+## Key Takeaway
+
+ Use MCP Builder to create production-ready servers that connect Claude to any external service. Follows agent-first design principles with workflow-focused tools, context optimization, and comprehensive evaluation harnesses for quality assurance.

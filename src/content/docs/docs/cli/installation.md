@@ -92,9 +92,8 @@ ClaudeKit CLI requires GitHub authentication to download from private repositori
 The CLI uses **multi-tier authentication** with automatic fallback:
 
 1. **GitHub CLI** - `gh auth token` (if authenticated)
-2. **Environment Variable** - `GITHUB_TOKEN` or `GH_TOKEN`
-3. **OS Keychain** - Stored token
-4. **User Prompt** - Interactive prompt (with secure storage option)
+2. **OS Keychain** - Stored token
+3. **User Prompt** - Interactive prompt (with secure storage option)
 
 ### Option 1: GitHub CLI (Recommended)
 
@@ -135,37 +134,7 @@ Follow prompts:
 gh auth status
 ```
 
-### Option 2: Environment Variable
-
-Create a GitHub Personal Access Token (PAT):
-
-1. Go to [GitHub Settings → Developer settings → Personal access tokens](https://github.com/settings/tokens)
-2. Click "Generate new token (classic)"
-3. Give it a name: "ClaudeKit CLI"
-4. Select scopes: **`repo`** (Full control of private repositories)
-5. Click "Generate token"
-6. Copy the token (starts with `ghp_`)
-
-**Set environment variable:**
-
-**macOS/Linux (Bash/Zsh):**
-```bash
-echo 'export GITHUB_TOKEN=ghp_your_token_here' >> ~/.bashrc
-# or ~/.zshrc for Zsh
-source ~/.bashrc
-```
-
-**Windows (PowerShell):**
-```powershell
-[System.Environment]::SetEnvironmentVariable('GITHUB_TOKEN', 'ghp_your_token_here', 'User')
-```
-
-**Verify:**
-```bash
-echo $GITHUB_TOKEN  # Should show your token
-```
-
-### Option 3: Interactive Prompt
+### Option 2: Interactive Prompt
 
 If no authentication is found, the CLI will prompt you:
 
@@ -303,17 +272,7 @@ rm -rf ~/.claudekit
    gh auth login
    ```
 
-2. **Verify token has `repo` scope:**
-   - Go to [GitHub Settings → Personal access tokens](https://github.com/settings/tokens)
-   - Check your token has "Full control of private repositories"
-
-3. **Try environment variable:**
-   ```bash
-   export GITHUB_TOKEN=ghp_your_token
-   ck versions
-   ```
-
-4. **Verify repository access:**
+2. **Verify repository access:**
    - Ensure you purchased a ClaudeKit kit
    - Check you can access the repository on GitHub
 

@@ -1,11 +1,6 @@
 ---
 title: Skills Overview
-description: "Documentation for Skills Overview
-description:
-section: docs
-category: skills
-order: 1
-published: true"
+description: ClaudeKit's 42 specialized skills for development, design, and tooling
 section: docs
 category: skills
 order: 1
@@ -14,740 +9,166 @@ published: true
 
 # Skills Overview
 
-Skills are specialized capabilities that extend Claude Code's functionality. ClaudeKit includes 46+ pre-built skills covering everything from authentication to AI integration.
-
-## What Are Skills?
-
-Skills are folders of instructions, scripts, and resources that Claude loads dynamically to improve performance on specialized tasks. They teach Claude how to complete specific tasks in a repeatable way.
-
-**Key Benefits:**
-- Pre-built expertise for common frameworks
-- Consistent implementation patterns
-- Best practices baked in
-- Immediate access to specialized knowledge
-- No configuration needed
-
----
-
-## Skill Categories
-
-### Meta Skills
-
-Skills for creating and managing other skills.
-
-#### [skill-creator](/docs/skills/tools/skill-creator)
-Create new custom skills that extend Claude's capabilities with specialized knowledge, workflows, or tool integrations.
-
-**Use when:** Building custom skills for your project-specific needs
-
-**Example:**
-```
-"Use skill-creator to create a skill for GraphQL schema generation"
-```
-
-[→ Full skill-creator guide](/docs/skills/tools/skill-creator)
-
----
-
-#### template-skill
-Basic template as starting point for new skills.
-
----
-
-### Authentication & Security
-
-#### [better-auth](/docs/skills/auth/better-auth)
-Framework-agnostic authentication framework for TypeScript with email/password, OAuth, 2FA, passkeys, and multi-tenancy.
-
-**Use when:** Implementing authentication in TypeScript/JavaScript apps
-
-**Features:**
-- Email/password authentication
-- Social OAuth (GitHub, Google, etc.)
-- Two-factor authentication
-- Passkeys (WebAuthn)
-- Magic links
-- Organization/multi-tenancy
-- Works with any framework
-
-**Example:**
-```
-"Use better-auth to implement GitHub OAuth with 2FA"
-```
-
-[→ Full better-auth guide](/docs/skills/auth/better-auth)
-
----
-
-### Design & Visual
-
-#### canvas-design
-Create beautiful visual art in PNG and PDF formats using design philosophy.
-
-**Use when:** Creating posters, designs, or visual content
-
-**Capabilities:**
-- Original visual designs
-- Design systems
-- Brand guidelines
-- Professional layouts
-- No copyright violations
-
-**Example:**
-```
-"Use canvas-design to create a landing page hero section"
-```
-
----
-
-### Document Processing
-
-#### [document-skills](/docs/skills/tools/document-skills)
-Read, parse, and create various document formats.
-
-**Supported Formats:**
-- **PDF** - Extract text, tables, forms, create new PDFs
-- **DOCX** - Word documents with formatting, tracked changes
-- **PPTX** - PowerPoint presentations with layouts, charts
-- **XLSX** - Excel spreadsheets with formulas, formatting
-
-**Use when:** Working with office documents
-
-**Example:**
-```
-"Use document-skills/pdf to extract form fields from contract.pdf"
-```
-
-[→ Full document-skills guide](/docs/skills/tools/document-skills)
-
----
-
-### Development Tools
-
-#### [mcp-builder](/docs/skills/tools/mcp-builder)
-Create high-quality MCP (Model Context Protocol) servers for integrating external services.
-
-**Use when:** Building MCP servers in Python (FastMCP) or Node/TypeScript
-
-**What it creates:**
-- MCP server boilerplate
-- Tool definitions
-- Resource handlers
-- Authentication
-- Documentation
-
-**Example:**
-```
-"Use mcp-builder to create MCP server for Stripe API"
-```
-
-[→ Full mcp-builder guide](/docs/skills/tools/mcp-builder)
-
----
-
-#### repomix
-Pack entire repository into single file for context sharing.
-
-**Use when:** Sharing codebase context with AI or documentation
-
----
-
-### Debugging & Problem Solving
-
-#### [systematic-debugging](/docs/skills/tools/systematic-debugging)
-Four-phase debugging framework ensuring root cause investigation before fixes.
-
-**Use when:** Any bug, test failure, or unexpected behavior
-
-**Process:**
-1. Root cause investigation
-2. Pattern analysis
-3. Hypothesis testing
-4. Implementation
-
-**Example:**
-```
-"Use systematic-debugging to investigate test failure"
-```
-
-[→ Full systematic-debugging guide](/docs/skills/tools/systematic-debugging)
-
----
-
-#### root-cause-tracing
-Backward tracing technique for finding error origins.
-
-#### verification-before-completion
-Verify implementation completeness before claiming done.
-
-#### defense-in-depth
-Layered validation and error handling.
-
----
-
-### Problem Solving Strategies
-
-#### collision-zone-thinking
-Find where conflicting requirements meet.
-
-#### inversion-exercise
-Solve problems by inverting them.
-
-#### meta-pattern-recognition
-Identify patterns across different domains.
-
-#### scale-game
-Think at different scales to find solutions.
-
-#### simplification-cascades
-Break complex problems into simple parts.
-
-#### when-stuck
-Strategies for getting unstuck.
-
----
-
-### Frontend Frameworks & UI
-
-#### [nextjs](/docs/skills/frontend/nextjs)
-Comprehensive Next.js implementation guide.
-
-**Use when:** Building Next.js applications
-
-**Covers:**
-- App Router patterns
-- Server Components
-- Server Actions
-- Routing
-- Data fetching
-- Optimization
-
-[→ Full Next.js guide](/docs/skills/frontend/nextjs)
-
----
-
-#### [shadcn-ui](/docs/skills/frontend/shadcn-ui)
-Beautiful, accessible component library for React.
-
-**Use when:** Building UI with Tailwind CSS
-
-**Features:**
-- Copy-paste components
-- Customizable
-- Accessible
-- TypeScript support
-
-[→ Full shadcn-ui guide](/docs/skills/frontend/shadcn-ui)
-
----
-
-#### [tailwindcss](/docs/skills/frontend/tailwindcss)
-Utility-first CSS framework.
-
-**Use when:** Styling applications
-
-[→ Full Tailwind CSS guide](/docs/skills/frontend/tailwindcss)
-
----
-
-#### remix-icon
-Open-source icon system.
-
----
-
-### Backend & Databases
-
-#### [postgresql-psql](/docs/skills/backend/postgresql-psql)
-PostgreSQL database administration and optimization.
-
-**Use when:** Working with PostgreSQL databases
-
-**Covers:**
-- Query optimization
-- Schema design
-- Performance tuning
-- Backup/restore
-- Replication
-
-[→ Full postgresql-psql guide](/docs/skills/backend/postgresql-psql)
-
----
-
-#### mongodb
-MongoDB database operations and best practices.
-
----
-
-### DevOps & Infrastructure
-
-#### [docker](/docs/skills/backend/docker)
-Containerization platform for building, running, and deploying applications.
-
-**Use when:** Containerizing apps, creating Dockerfiles, Docker Compose
-
-**Covers:**
-- Dockerfile best practices
-- Multi-stage builds
-- Docker Compose
-- Security hardening
-- CI/CD integration
-- Production deployment
-
-[→ Full docker guide](/docs/skills/backend/docker)
-
----
-
-#### gcloud
-Google Cloud Platform tools and services.
-
-**Use when:** Working with GCP infrastructure
-
-#### turborepo
-High-performance build system for JavaScript/TypeScript monorepos.
-
----
-
-### Cloud Services
-
-#### cloudflare
-Cloudflare services and APIs.
-
-#### cloudflare-workers
-Serverless execution environment on Cloudflare's edge network.
-
-#### cloudflare-r2
-S3-compatible object storage without egress fees.
-
-#### cloudflare-browser-rendering
-Headless Chrome automation on Cloudflare.
-
----
-
-### AI & Machine Learning
-
-#### google-adk-python
-Google AI Development Kit for Python applications.
-
-#### gemini-vision
-Google Gemini Vision API for image analysis.
-
-**Use when:** Analyzing images, extracting text from images
-
-**Capabilities:**
-- Image understanding
-- OCR
-- Object detection
-- Scene analysis
-
-#### gemini-audio
-Audio generation and processing with Gemini.
-
-**Features:**
-- Text-to-speech
-- Audio analysis
-- Voice generation
-
-#### gemini-document-processing
-Process documents with Gemini AI.
-
-#### gemini-image-gen
-Generate images using Gemini models.
-
-#### gemini-video-understanding
-Analyze and understand video content.
-
----
-
-### Media Processing
-
-#### ffmpeg
-Process videos and audio with FFmpeg command-line tools.
-
-**Use when:** Converting, editing, or manipulating media files
-
-**Capabilities:**
-- Format conversion
-- Video editing
-- Audio extraction
-- Streaming
-- Compression
-
-#### imagemagick
-Advanced image processing via command-line.
-
-**Use when:** Batch image manipulation, format conversion
-
-**Operations:**
-- Resize, crop, rotate
-- Format conversion
-- Effects and filters
-- Batch processing
-
----
-
-### Testing & Browser Automation
-
-#### chrome-devtools
-Automate Chrome browser for testing and debugging.
-
-**Use when:** Web scraping, automated testing, performance analysis
-
-**Features:**
-- Puppeteer integration
-- Chrome DevTools Protocol
-- Performance profiling
-- Network monitoring
-
----
-
-### Documentation & Code Analysis
-
-#### docs-seeker
-Find and retrieve documentation from various sources.
-
-**Use when:** Need to look up API docs, framework guides
-
-#### claude-code
-Meta-skill for understanding Claude Code itself.
-
----
-
-### E-commerce
-
-#### shopify
-Shopify app development and API integration.
-
-**Use when:** Building Shopify apps or integrations
-
-**Covers:**
-- Shopify CLI
-- GraphQL Admin API
-- UI Extensions
-- App development
-
----
-
-## How to Use Skills
-
-Skills are invoked by mentioning them in conversation with Claude Code.
-
-### Basic Invocation
-
-```
-"Use [skill-name] to [task description]"
-```
-
-### Real Examples
-
-**Authentication:**
-```
-"Use better-auth to add GitHub OAuth to my Next.js app"
-```
-
-**Document Processing:**
-```
-"Use document-skills/pdf to extract all tables from quarterly-report.pdf"
-```
-
-**Containerization:**
-```
-"Use docker to create production Dockerfile for my Node.js app"
-```
-
-**Debugging:**
-```
-"Use systematic-debugging to investigate why tests are failing"
-```
-
-**AI Integration:**
-```
-"Use gemini-vision to analyze this product image and extract text"
-```
-
----
-
-## Skills vs Commands
-
-| **Aspect** | **Skills** | **Commands** |
-|------------|-----------|--------------|
-| **Invocation** | "Use [skill]..." | `/command` |
-| **Purpose** | Specialized knowledge | Workflow orchestration |
-| **Scope** | Single focused task | Multi-step processes |
-| **Examples** | better-auth, docker | /cook, /debug, /plan |
-
-**When to use Skills:** Need specific technical expertise
-
-**When to use Commands:** Need complete workflow with multiple agents
-
----
-
-## Common Use Cases
-
-### Authentication Setup
-
-```
-"Use better-auth to implement authentication with:
-- Email/password signup
-- GitHub OAuth
-- 2FA with TOTP
-- Session management"
-```
-
-### Containerization
-
-```
-"Use docker to:
-1. Create optimized multi-stage Dockerfile
-2. Set up Docker Compose with PostgreSQL
-3. Add health checks
-4. Configure for production"
-```
-
-### Document Analysis
-
-```
-"Use document-skills/docx to:
-- Extract all comments and tracked changes
-- Preserve formatting
-- Export to markdown"
-```
-
-### AI-Powered Features
-
-```
-"Use gemini-vision to build feature that:
-- Analyzes product photos
-- Extracts product details
-- Validates image quality
-- Returns structured data"
-```
-
-### Database Work
-
-```
-"Use postgresql-psql to:
-- Analyze slow queries
-- Optimize schema
-- Add proper indexes
-- Set up replication"
-```
-
-### Problem Solving
-
-```
-"I'm stuck on this architecture issue. Use collision-zone-thinking to find where requirements conflict"
-```
-
----
-
-## Creating Custom Skills
-
-### Using skill-creator
-
-```
-"Use skill-creator to create a skill called 'stripe-integration' that:
-- Handles Stripe webhooks
-- Manages subscriptions
-- Processes payments
-- Follows best practices"
-```
-
-**The skill-creator will:**
-1. Ask clarifying questions
-2. Design skill structure
-3. Create SKILL.md file
-4. Add bundled resources if needed
-5. Save to `.claude/skills/`
-
-### Skill Anatomy
-
-Every skill has:
-
-```markdown
----
-name: skill-name
-description: Clear description of what skill does and when to use it
----
-
-# Skill Name
-
-Instructions that Claude follows when skill is active.
-
-## When to Use
-List specific scenarios
-
-## Examples
-Real usage examples
-
-## Best Practices
-Guidelines to follow
-```
-
----
-
-## Best Practices
-
-### Be Specific
-
-✅ **Good:**
-```
-"Use docker to create production Dockerfile for Next.js 14 app with:
-- Multi-stage build
-- Node 20 Alpine
-- Non-root user
-- Health checks"
-```
-
-❌ **Vague:**
-```
-"Use docker to containerize this"
-```
-
-### Provide Context
-
-✅ **Good:**
-```
-"Use better-auth to add authentication to my Next.js app. I need:
-- GitHub and Google OAuth
-- Email/password backup
-- Role-based permissions
-- PostgreSQL with Drizzle"
-```
-
-❌ **Minimal:**
-```
-"Use better-auth"
-```
-
-### Specify Output
-
-✅ **Good:**
-```
-"Use document-skills/pdf to extract tables from contract.pdf and save as CSV in ./exports/"
-```
-
-❌ **Unclear:**
-```
-"Use document-skills to read this PDF"
-```
-
----
-
-## Skill Combinations
-
-Skills work together seamlessly:
-
-**Document + AI:**
-```
-"First use document-skills/pdf to extract text from spec.pdf,
-then use gemini-document-processing to summarize key requirements"
-```
-
-**Auth + Database:**
-```
-"Use better-auth for authentication, then use postgresql-psql to optimize the auth schema"
-```
-
-**Debug + Test:**
-```
-"Use systematic-debugging to find root cause, then use chrome-devtools to verify fix in browser"
-```
-
----
+42 specialized skills that extend Claude's capabilities—loaded dynamically when you mention them.
 
 ## Quick Reference
 
-### Most Used Skills
+### Frontend & Design
 
-| **Task** | **Skill** | **Example** |
-|----------|-----------|-------------|
-| Authentication | `better-auth` | "Use better-auth for OAuth" |
-| Containers | `docker` | "Use docker to create Dockerfile" |
-| Documents | `document-skills` | "Use document-skills/pdf..." |
-| Debugging | `systematic-debugging` | "Use systematic-debugging..." |
-| Next.js | `nextjs` | "Use nextjs for App Router" |
-| Database | `postgresql-psql` | "Use postgresql-psql..." |
-| AI Vision | `gemini-vision` | "Use gemini-vision to analyze" |
-| UI Components | `shadcn-ui` | "Use shadcn-ui for form" |
-| MCP Server | `mcp-builder` | "Use mcp-builder..." |
-| Custom Skill | `skill-creator` | "Use skill-creator to make..." |
+| Skill | Purpose |
+|-------|---------|
+| [frontend-design](/docs/skills/frontend/frontend-design) | Build memorable web interfaces with bold aesthetics |
+| [frontend-design-pro](/docs/skills/frontend/frontend-design-pro) | Agency-grade interfaces with perfect imagery |
+| [ui-ux-pro-max](/docs/skills/frontend/ui-ux-pro-max) | Production-ready UI with research-backed patterns |
+| [aesthetic](/docs/skills/frontend/aesthetic) | Systematic aesthetic framework (BEAUTIFUL→RIGHT→SATISFYING→PEAK) |
+| [ui-styling](/docs/skills/frontend/ui-styling) | Tailwind patterns, responsive layouts, dark mode |
+| [frontend-development](/docs/skills/frontend/frontend-development) | React patterns, Suspense, state management |
+| [nextjs](/docs/skills/frontend/nextjs) | App Router, Server Components, SSR/SSG |
+| [web-frameworks](/docs/skills/frontend/web-frameworks) | Next.js + Turborepo + RemixIcon stack |
+| [shadcn-ui](/docs/skills/frontend/shadcn-ui) | Accessible UI components with Radix + Tailwind |
+| [tailwindcss](/docs/skills/frontend/tailwindcss) | Utility-first CSS, zero custom CSS |
+| [threejs](/docs/skills/frontend/threejs) | 3D web experiences with WebGL/WebGPU |
 
----
+### Backend & Infrastructure
 
-## Troubleshooting
+| Skill | Purpose |
+|-------|---------|
+| [backend-development](/docs/skills/backend/backend-development) | Node.js, NestJS, security, testing patterns |
+| [databases](/docs/skills/backend/databases) | Schema design, query optimization, migrations |
+| [postgresql-psql](/docs/skills/backend/postgresql-psql) | PostgreSQL CLI, performance tuning, administration |
+| [docker](/docs/skills/backend/docker) | Containerization, multi-stage builds, Compose |
+| [devops](/docs/skills/backend/devops) | CI/CD, deployment, infrastructure automation |
 
-### Skill Not Working
+### AI & Multimodal
 
-**Check:**
-1. Skill name spelled correctly
-2. Clear description of task
-3. Sufficient context provided
-4. Expected output specified
+| Skill | Purpose |
+|-------|---------|
+| [ai-multimodal](/docs/skills/ai/ai-multimodal) | Gemini vision, audio, document processing |
+| [google-adk-python](/docs/skills/ai/google-adk-python) | Google AI Development Kit for Python agents |
+| [canvas-design](/docs/skills/ai/canvas-design) | Visual art creation (PNG/PDF) with design philosophy |
+| [gemini-vision](/docs/skills/ai/gemini-vision) | Image analysis (redirects to ai-multimodal) |
 
-### Need Different Skill
+### Tools & Utilities
 
-**Options:**
-1. Check if similar skill exists
-2. Use `skill-creator` to build it
-3. Request on Discord/GitHub
+| Skill | Purpose |
+|-------|---------|
+| [mcp-builder](/docs/skills/tools/mcp-builder) | Create MCP servers (Python FastMCP / TypeScript) |
+| [mcp-management](/docs/skills/tools/mcp-management) | Discover and execute MCP tools |
+| [skill-creator](/docs/skills/tools/skill-creator) | Create custom skills for your projects |
+| [repomix](/docs/skills/tools/repomix) | Pack repos into AI-friendly context files |
+| [document-skills](/docs/skills/tools/document-skills) | PDF, DOCX, PPTX, XLSX processing |
+| [docs-seeker](/docs/skills/tools/docs-seeker) | Find and retrieve external documentation |
+| [chrome-devtools](/docs/skills/tools/chrome-devtools) | Browser automation, performance profiling |
+| [ffmpeg](/docs/skills/tools/ffmpeg) | Video/audio processing and conversion |
+| [imagemagick](/docs/skills/tools/imagemagick) | Image manipulation and batch processing |
+| [claude-code-skill](/docs/skills/tools/claude-code-skill) | Meta-skill for Claude Code itself |
 
-### Want More Details
+### Process & Methodology
 
-**For comprehensive guides, see:**
-- [Next.js](/docs/skills/frontend/nextjs)
-- [Tailwind CSS](/docs/skills/frontend/tailwindcss)
-- [shadcn/ui](/docs/skills/frontend/shadcn-ui)
+| Skill | Purpose |
+|-------|---------|
+| [planning](/docs/skills/tools/planning) | Transform requirements into executable plans |
+| [research](/docs/skills/tools/research) | Multi-source validation before implementation |
+| [sequential-thinking](/docs/skills/tools/sequential-thinking) | Numbered thought sequences for complex problems |
+| [problem-solving](/docs/skills/tools/problem-solving) | Systematic approaches when stuck |
+| [debugging](/docs/skills/tools/debugging) | Root cause investigation framework |
+| [systematic-debugging](/docs/skills/tools/systematic-debugging) | Four-phase debugging (95% fix rate) |
+| [code-review](/docs/skills/tools/code-review) | Verification gates and technical rigor |
 
----
+### Integrations
 
-## All 46+ Skills Summary
+| Skill | Purpose |
+|-------|---------|
+| [better-auth](/docs/skills/auth/better-auth) | TypeScript auth (OAuth, 2FA, passkeys, multi-tenant) |
+| [shopify](/docs/skills/ecommerce/shopify) | Shopify apps, GraphQL API, checkout extensions |
+| [payment-integration](/docs/skills/payments/payment-integration) | Stripe, PayPal, LemonSqueezy integration |
 
-**Meta:** skill-creator, template-skill
+### Mobile & Media
 
-**Auth/Security:** better-auth
+| Skill | Purpose |
+|-------|---------|
+| [mobile-development](/docs/skills/mobile/mobile-development) | React Native, Expo, cross-platform patterns |
+| [media-processing](/docs/skills/multimedia/media-processing) | Audio/video manipulation workflows |
 
-**Design:** canvas-design
+## How to Use
 
-**Documents:** pdf, docx, pptx, xlsx
-
-**Development:** mcp-builder, repomix, claude-code, docs-seeker
-
-**Debugging:** systematic-debugging, root-cause-tracing, verification-before-completion, defense-in-depth
-
-**Problem Solving:** collision-zone-thinking, inversion-exercise, meta-pattern-recognition, scale-game, simplification-cascades, when-stuck
-
-**Frontend:** nextjs, shadcn-ui, tailwindcss, remix-icon
-
-**Backend:** postgresql-psql, mongodb
-
-**DevOps:** docker, gcloud, turborepo
-
-**Cloud:** cloudflare, cloudflare-workers, cloudflare-r2, cloudflare-browser-rendering
-
-**AI/ML:** google-adk-python, gemini-vision, gemini-audio, gemini-document-processing, gemini-image-gen, gemini-video-understanding
-
-**Media:** ffmpeg, imagemagick
-
-**Testing:** chrome-devtools
-
-**E-commerce:** shopify
-
----
-
-## Get Started
-
-**Try it now:**
+**Basic invocation:**
 ```
-"Use better-auth to add authentication to my app"
-"Use docker to containerize my application"
-"Use systematic-debugging to investigate this error"
+"Use [skill-name] to [task]"
 ```
 
-**Need help?**
-- Join [Discord](https://claudekit.cc/discord)
-- Check [Commands](/docs/commands/) for workflows
-- Read [Agents](/docs/agents/) for orchestration
+**Examples:**
+```
+"Use better-auth to add GitHub OAuth with 2FA"
+"Use docker to create production Dockerfile"
+"Use systematic-debugging to investigate this test failure"
+"Use frontend-design to build a SaaS landing page"
+```
 
----
+**Skill not activating?** Be explicit:
+```
+"Use the [skill-name] skill to..."
+```
 
-**Bottom Line:** Skills provide instant expertise. Just mention the skill and describe what you need.
+## Under the Hood
+
+### How Skills Activate
+
+Skills activate through **semantic matching** on your prompt:
+1. Claude matches your request to skill descriptions
+2. Relevant skill instructions load into context
+3. Claude follows skill-specific patterns and best practices
+
+**Activation triggers:**
+- Mentioning the skill name explicitly
+- Describing a task that matches skill description
+- Using keywords from skill's domain
+
+### Skill Structure
+
+Every skill contains:
+```
+.claude/skills/[skill-name]/
+├── SKILL.md          # Core instructions (<100 lines)
+├── references/       # Detailed documentation
+└── scripts/          # Automation scripts (optional)
+```
+
+**Progressive disclosure**: SKILL.md provides essentials, references/ has depth.
+
+### Skills vs Commands vs Agents
+
+| Aspect | Skills | Commands | Agents |
+|--------|--------|----------|--------|
+| **Purpose** | Specialized knowledge | Workflow orchestration | Task execution |
+| **Invocation** | "Use [skill]..." | `/command` | Auto or explicit |
+| **Scope** | Single focused capability | Multi-step processes | Autonomous work |
+| **Example** | better-auth, docker | /cook, /plan | planner, tester |
+
+### Creating Custom Skills
+
+```
+"Use skill-creator to create a skill for [your-domain]"
+```
+
+skill-creator will:
+1. Ask clarifying questions
+2. Design skill structure
+3. Create SKILL.md with proper frontmatter
+4. Add references if needed
+5. Save to `.claude/skills/`
+
+### Troubleshooting
+
+**Skill not working?**
+- Check skill name spelling
+- Provide more context about your task
+- Try explicit invocation: "Use the X skill to..."
+
+**Need a skill that doesn't exist?**
+- Use skill-creator to build it
+- Request on [Discord](https://claudekit.cc/discord)
+
+## Key Takeaway
+
+42 skills provide instant expertise—just mention the skill and describe your task. No configuration needed.

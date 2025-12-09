@@ -1,377 +1,123 @@
 ---
 title: imagemagick
-description: "Documentation for imagemagick
-description:
-section: docs
-category: skills/tools
-order: 22
-published: true"
+description: "Documentation for imagemagick"
 section: docs
 category: skills/tools
 order: 22
 published: true
 ---
 
-# imagemagick Skill
+# imagemagick
 
-Advanced image processing - format conversion, resizing, effects, transformations, batch operations.
+Command-line powerhouse for image processing - format conversion, resizing, effects, batch operations.
 
 ## When to Use
 
-Use imagemagick when you need:
-- Convert image formats
-- Resize/crop images
-- Apply effects/filters
-- Create thumbnails
-- Batch process images
-- Add watermarks/text
-- Optimize for web
+- **Format conversion** - PNG/JPEG/WebP/GIF between formats with quality control
+- **Batch processing** - Resize, optimize, watermark hundreds of images at once
+- **Web optimization** - Create responsive sizes, strip metadata, compress for web
+- **Effects & filters** - Blur, sharpen, color adjustments, artistic effects
 
-## Quick Start
+## Key Capabilities
 
-### Invoke the Skill
-
-```
-"Use imagemagick to:
-- Resize all product images to 800x800
-- Convert to WebP
-- Optimize file size
-- Keep quality high"
-```
-
-### What You Get
-
-The skill will help you:
-1. Convert formats
-2. Resize/transform
-3. Apply effects
-4. Batch process
-5. Optimize output
+| Operation | Examples |
+|-----------|----------|
+| **Resize** | Fit, fill, crop, maintain aspect, exact dimensions |
+| **Convert** | PNG↔JPEG↔WebP with quality settings |
+| **Effects** | Blur, sharpen, grayscale, sepia, watermarks |
+| **Batch** | Process entire folders with mogrify or loops |
+| **Optimize** | Strip metadata, progressive JPEGs, WebP compression |
 
 ## Common Use Cases
 
-### Format Conversion
+### E-commerce Product Manager
+**Who:** Store owner with 200 product photos
+**Prompt:** "Use imagemagick to batch process product images: resize to 1000x1000 square from center, convert to WebP 85% quality, create 300x300 thumbnails"
 
-```
-"Use imagemagick to convert all PNG images to JPEG with 90% quality"
-```
+### Social Media Manager
+**Who:** Content creator preparing Instagram posts
+**Prompt:** "Use imagemagick to create Instagram square (1080x1080) from these landscape photos, center crop, add white watermark bottom-right"
 
-### Create Thumbnails
+### Web Developer
+**Who:** Dev optimizing site performance
+**Prompt:** "Use imagemagick to generate responsive image set: create 320w, 640w, 1024w, 1920w versions of all JPEGs, WebP format, strip metadata"
 
-```
-"Use imagemagick to create 200x200 thumbnails for all images in folder"
-```
+### Email Marketer
+**Who:** Newsletter designer reducing image sizes
+**Prompt:** "Use imagemagick to optimize images for email: max width 600px, JPEG quality 75, strip all metadata, progressive encoding"
 
-### Watermark Images
+### Photographer
+**Who:** Pro photographer watermarking portfolio
+**Prompt:** "Use imagemagick to add logo watermark to all photos in folder, position bottom-right with 20px margin, 50% opacity"
 
-```
-"Use imagemagick to add logo watermark to bottom-right of all images"
-```
-
-### Batch Optimization
-
-```
-"Use imagemagick to optimize all images for web:
-- Max width 1920px
-- WebP format
-- Good quality
-- Small file size"
-```
-
-## Basic Operations
-
-### Format Conversion
+## Quick Reference
 
 ```bash
-# PNG to JPEG
-magick input.png output.jpg
-
-# With quality setting
-magick input.png -quality 85 output.jpg
-
-# To WebP
-magick input.jpg output.webp
-```
-
-### Resize
-
-```bash
-# Fit within 800x600 (maintains aspect)
+# Resize (maintain aspect)
 magick input.jpg -resize 800x600 output.jpg
 
-# Exact size (may distort)
-magick input.jpg -resize 800x600! output.jpg
+# Square crop from center
+magick input.jpg -resize 1000x1000^ -gravity center -extent 1000x1000 output.jpg
 
-# Width only
-magick input.jpg -resize 800x output.jpg
+# Convert format
+magick input.png -quality 85 output.jpg
 
-# Height only
-magick input.jpg -resize x600 output.jpg
+# Batch resize all
+mogrify -resize 800x *.jpg
 
-# By percentage
-magick input.jpg -resize 50% output.jpg
-```
+# Batch to different folder
+mogrify -path ./output -resize 800x600 *.jpg
 
-### Crop
+# Web optimize
+magick input.jpg -quality 85 -strip -interlace Plane output.jpg
 
-```bash
-# Crop to 500x500 from top-left
-magick input.jpg -crop 500x500+0+0 output.jpg
-
-# Crop from center
-magick input.jpg -gravity center -crop 500x500+0+0 output.jpg
-```
-
-### Rotate
-
-```bash
-# Rotate 90 degrees
-magick input.jpg -rotate 90 output.jpg
-
-# Flip horizontal
-magick input.jpg -flop output.jpg
-
-# Flip vertical
-magick input.jpg -flip output.jpg
-```
-
-## Effects & Filters
-
-### Blur/Sharpen
-
-```bash
-# Blur
-magick input.jpg -blur 0x8 output.jpg
-
-# Sharpen
-magick input.jpg -sharpen 0x1 output.jpg
-```
-
-### Adjust Colors
-
-```bash
-# Brightness (+/- 50)
-magick input.jpg -modulate 120 output.jpg
-
-# Contrast
-magick input.jpg -contrast output.jpg
-
-# Saturation
-magick input.jpg -modulate 100,150 output.jpg
+# Add watermark
+magick input.jpg logo.png -gravity southeast -geometry +10+10 -composite output.jpg
 
 # Grayscale
 magick input.jpg -colorspace Gray output.jpg
 
-# Sepia tone
-magick input.jpg -sepia-tone 80% output.jpg
+# Create thumbnails
+for f in *.jpg; do magick "$f" -thumbnail 200x200 "thumb_$f"; done
+
+# Responsive sizes
+for w in 320 640 1024 1920; do magick input.jpg -resize ${w}x out-${w}w.jpg; done
 ```
 
-### Borders & Frames
+**Geometry syntax:**
+- `800x600` = fit within (maintains aspect)
+- `800x600!` = exact size (may distort)
+- `800x600^` = fill (may crop)
+- `800x` = width 800, auto height
+- `x600` = height 600, auto width
 
+## Pro Tips
+
+**Quality settings:**
+- 95-100: Archival (large files)
+- 85-90: Web publishing (recommended)
+- 70-80: Email, thumbnails
+- WebP: Use 80-85 for best size/quality
+
+**Batch best practices:**
+- Always backup originals before mogrify (modifies in-place)
+- Test command on single file first
+- Use `-path` to preserve originals: `mogrify -path ./output ...`
+- For complex operations, use loops instead of mogrify
+
+**Web optimization combo:**
 ```bash
-# Add border
-magick input.jpg -border 10 -bordercolor black output.jpg
-
-# Add frame
-magick input.jpg -mattecolor white -frame 10x10 output.jpg
+magick input.jpg -resize 1920x -quality 85 -strip -interlace Plane output.jpg
 ```
 
-### Watermark
+**Not activating?** Say: "Use imagemagick skill to resize these images to 800px width and convert to WebP"
 
-```bash
-# Add logo
-magick input.jpg logo.png -gravity southeast -geometry +10+10 -composite output.jpg
+## Related Skills
 
-# Add text
-magick input.jpg -gravity southeast -pointsize 20 -fill white -annotate +10+10 'Copyright 2025' output.jpg
-```
+- [FFmpeg](/docs/skills/tools/ffmpeg) - Video/audio processing
+- [Frontend Design](/docs/skills/frontend/frontend-design) - UI component creation
+- [Chrome DevTools](/docs/skills/tools/chrome-devtools) - Browser debugging
 
-## Batch Processing
+## Key Takeaway
 
-### Convert All Files
-
-```bash
-# Convert all PNG to JPEG
-for file in *.png; do
-  magick "$file" "${file%.png}.jpg"
-done
-```
-
-### Batch mogrify
-
-```bash
-# Resize all JPEGs in place
-mogrify -resize 800x600 *.jpg
-
-# Convert all to WebP
-mogrify -format webp *.jpg
-```
-
-### Advanced Batch
-
-```bash
-# Create thumbnails for all images
-for file in *.jpg; do
-  magick "$file" -resize 200x200^ -gravity center -extent 200x200 "thumb_${file}"
-done
-```
-
-## Web Optimization
-
-### Progressive JPEG
-
-```bash
-magick input.jpg -interlace Plane -quality 85 output.jpg
-```
-
-### Strip Metadata
-
-```bash
-magick input.jpg -strip output.jpg
-```
-
-### Optimize WebP
-
-```bash
-magick input.jpg -quality 80 -define webp:method=6 output.webp
-```
-
-### Create Responsive Sizes
-
-```bash
-# Create multiple sizes
-magick input.jpg -resize 1920x output-large.jpg
-magick input.jpg -resize 1280x output-medium.jpg
-magick input.jpg -resize 640x output-small.jpg
-```
-
-## Advanced Features
-
-### Create Montage
-
-```bash
-# Create contact sheet
-montage *.jpg -thumbnail 200x200 -geometry +5+5 montage.jpg
-```
-
-### Composite Images
-
-```bash
-# Overlay two images
-composite overlay.png background.jpg output.jpg
-```
-
-### Create Animated GIF
-
-```bash
-magick -delay 100 -loop 0 frame*.jpg animated.gif
-```
-
-### Extract Frames from GIF
-
-```bash
-magick animated.gif frame_%03d.jpg
-```
-
-## Geometry Specs
-
-- `100x100` - Fit within (maintains aspect)
-- `100x100!` - Exact size (may distort)
-- `100x100^` - Fill (may crop)
-- `100x` - Width 100, auto height
-- `x100` - Height 100, auto width
-- `50%` - Scale to 50%
-- `100x100+10+20` - 100x100 at offset (10,20)
-
-## Quick Examples
-
-**Simple Resize:**
-```
-"Use imagemagick to resize image to 800px width"
-```
-
-**Batch Thumbnails:**
-```
-"Use imagemagick to create square 300x300 thumbnails for all product images"
-```
-
-**Format Conversion:**
-```
-"Use imagemagick to convert all images to WebP format with good compression"
-```
-
-**Add Watermark:**
-```
-"Use imagemagick to add copyright text to bottom-right of all images"
-```
-
-## Best Practices
-
-1. **Always backup originals**
-2. **Test on single file first**
-3. **Use appropriate quality** (85-90 for web)
-4. **Strip metadata** for web
-5. **Maintain aspect ratio**
-6. **Use WebP** for modern browsers
-7. **Create multiple sizes** for responsive
-8. **Optimize file size**
-
-## Common Tasks
-
-### Product Images
-
-```bash
-# Square crop from center
-magick input.jpg -resize 1000x1000^ -gravity center -extent 1000x1000 product.jpg
-```
-
-### Social Media
-
-```bash
-# Instagram (1080x1080)
-magick input.jpg -resize 1080x1080^ -gravity center -extent 1080x1080 instagram.jpg
-
-# Facebook cover (820x312)
-magick input.jpg -resize 820x312^ -gravity center -extent 820x312 facebook.jpg
-```
-
-### Email Friendly
-
-```bash
-# Small file size
-magick input.jpg -resize 600x -quality 70 -strip email.jpg
-```
-
-## Troubleshooting
-
-### Command not found
-
-```bash
-# Check installation
-magick -version
-
-# Install
-brew install imagemagick  # macOS
-sudo apt-get install imagemagick  # Linux
-```
-
-### Security policy
-
-Edit `/etc/ImageMagick-7/policy.xml` or use `convert` instead of `magick`.
-
-### Quality issues
-
-- Increase quality value (-quality 90)
-- Use PNG for graphics/screenshots
-- Use JPEG for photos
-- Use WebP for best compression
-
-## Next Steps
-
-- [Media Processing](/docs/workflows/)
-- [FFmpeg](/docs/skills/tools/ffmpeg)
-- [Batch Automation](/docs/workflows/)
-
----
-
-**Bottom Line:** imagemagick handles all image processing. Resize, convert, optimize - powerful command-line image manipulation.
+ImageMagick = Swiss Army knife for images. One command processes hundreds of files. Essential for any workflow involving image optimization, batch conversion, or automated resizing.

@@ -9,469 +9,144 @@ published: true
 
 # Planner Agent
 
-The planner agent researches, analyzes, and creates detailed implementation plans before any code is written. It ensures features are well-thought-out and follows best practices.
+Researches best practices, analyzes your codebase, and generates step-by-step implementation plans with code examples, timelines, and rollback procedures.
 
-## Purpose
+## When to Use
 
-Research, analyze, and create comprehensive implementation plans for features, refactoring, and technical decisions.
+- **Before major features** - Break down complex work into clear steps
+- **Technical decisions** - Evaluate multiple approaches with pros/cons
+- **Large refactors** - Map dependencies and impact before touching code
+- **CI/CD failures** - Analyze logs and create systematic fix plans
 
-## When Activated
+## Key Capabilities
 
-The planner agent activates when:
+| Capability | What It Does |
+|-----------|--------------|
+| **Research** | Searches industry standards, official docs, proven solutions |
+| **Analysis** | Reads codebase, evaluates dependencies, identifies integration points |
+| **Planning** | Breaks work into tasks, lists file changes, estimates timeline |
+| **Risk Management** | Includes rollback plans, security checks, performance considerations |
 
-- Using `/plan [description]` command
-- Using `/bootstrap` (research phase)
-- Using `/fix:hard` (complex issues needing strategy)
-- Before major refactoring
-- When evaluating technical trade-offs
+## Common Use Cases
 
-## Capabilities
+**Feature Planning**
+- **Who**: Backend dev adding real-time notifications
+- **Prompt**: `/plan [add WebSocket notifications with Socket.io and Redis]`
+- **Output**: Plan with setup steps, auth integration, database schema, test strategy
 
-### Research
+**Architecture Review**
+- **Who**: Tech lead evaluating database migration
+- **Prompt**: `/plan [migrate from MongoDB to PostgreSQL]`
+- **Output**: Migration strategy, data transformation steps, zero-downtime approach
 
-- **Best Practices**: Searches for industry standards and patterns
-- **Documentation**: Reviews official docs and guides
-- **Solutions**: Finds proven approaches to common problems
-- **Trade-offs**: Analyzes pros/cons of different approaches
+**Bug Investigation**
+- **Who**: Developer fixing complex race condition
+- **Prompt**: `/plan:hard [fix checkout race condition causing double charges]`
+- **Output**: Root cause analysis, reproduction steps, fix plan with test cases
 
-### Analysis
+**Optimization Planning**
+- **Who**: DevOps engineer improving performance
+- **Prompt**: `/plan [optimize API response time from 2s to 200ms]`
+- **Output**: Profiling strategy, bottleneck analysis, optimization steps with benchmarks
 
-- **Codebase Understanding**: Reads existing code and patterns
-- **Dependency Analysis**: Evaluates library options
-- **Architecture Review**: Assesses current system design
-- **Impact Assessment**: Identifies affected components
+**CRO Implementation**
+- **Who**: Growth engineer improving conversion
+- **Prompt**: `/plan:cro [improve checkout abandonment rate]`
+- **Output**: A/B test plan, UX improvements, tracking implementation
 
-### Planning
+## What You Get
 
-- **Implementation Steps**: Breaks down work into clear tasks
-- **File Changes**: Lists files to create/modify
-- **Test Strategy**: Defines testing approach
-- **Timeline Estimates**: Provides realistic time estimates
-- **Rollback Plan**: Includes recovery procedures
-
-## Example Usage
-
-### Feature Planning
-
-**Input:**
-```bash
-/plan [add real-time notifications with WebSocket]
-```
-
-**Process:**
-```
-1. Research Phase (30s)
-   Searching: WebSocket best practices
-   Searching: Socket.io vs native WebSocket
-   Searching: Notification patterns
-   Searching: Authentication with WebSockets
-
-   Found:
-   - Socket.io recommended for production
-   - Need heartbeat for connection health
-   - Store notifications in database
-   - Use Redis for scaling
-
-2. Analysis Phase (45s)
-   Reading: src/server.ts
-   Reading: src/auth/middleware.ts
-   Reading: docs/system-architecture.md
-
-   Current State:
-   - Express server on port 3000
-   - JWT authentication in place
-   - PostgreSQL database
-   - No real-time features yet
-
-   Integration Points:
-   - Auth middleware can validate JWT
-   - User model has ID for targeting
-   - Existing error handling compatible
-
-3. Planning Phase (30s)
-   Creating implementation plan...
-
-   Plan saved: plans/websocket-notifications-20241020.md
-```
-
-**Generated Plan:**
+Every plan includes:
 
 ```markdown
-# Implementation Plan: Real-time Notifications
+# Implementation Plan: [Feature Name]
 
-## Overview
-Add WebSocket-based real-time notifications to the application
-using Socket.io for reliability and scalability.
+## Approach
+Why this solution + alternatives considered
 
-## Approach: Socket.io with Redis Adapter
+## Steps
+1. Install Dependencies (5 min)
+   - Commands to run
 
-### Why Socket.io?
-- Automatic reconnection
-- Room-based messaging
-- Fallback to polling if needed
-- Production-ready
+2. Core Implementation (20 min)
+   - Files to create: src/feature/service.ts
+   - Files to modify: src/server.ts
+   - Code snippets showing structure
 
-### Why Redis?
-- Multiple server instances support
-- Shared state across servers
-- Pub/sub for notifications
+3. Integration (15 min)
+   - Where to hook into existing code
 
-## Implementation Steps
+4. Testing (20 min)
+   - Test files to create
+   - Coverage requirements
 
-### 1. Install Dependencies (5 min)
-```bash
-npm install socket.io socket.io-redis-adapter ioredis
-npm install --save-dev @types/socket.io
-```
-
-### 2. WebSocket Server Setup (15 min)
-
-**Files to create:**
-- `src/websocket/server.ts` - Socket.io server setup
-- `src/websocket/middleware.ts` - Auth middleware for WS
-- `src/websocket/handlers.ts` - Event handlers
-
-**Implementation:**
-```typescript
-// src/websocket/server.ts
-import { Server } from 'socket.io';
-import { createAdapter } from '@socket.io/redis-adapter';
-import { createClient } from 'redis';
-
-export const initWebSocket = (httpServer) => {
-  const io = new Server(httpServer, {
-    cors: { origin: process.env.FRONTEND_URL }
-  });
-
-  // Redis adapter for scaling
-  const pubClient = createClient({ url: process.env.REDIS_URL });
-  const subClient = pubClient.duplicate();
-
-  io.adapter(createAdapter(pubClient, subClient));
-
-  // Auth middleware
-  io.use(authMiddleware);
-
-  // Connection handling
-  io.on('connection', handleConnection);
-
-  return io;
-};
-```
-
-### 3. Authentication (10 min)
-
-**Files to modify:**
-- `src/auth/jwt.ts` - Add token verification helper
-
-**Implementation:**
-```typescript
-// Verify JWT from Socket.io handshake
-export const authMiddleware = async (socket, next) => {
-  const token = socket.handshake.auth.token;
-  try {
-    const user = await verifyToken(token);
-    socket.user = user;
-    next();
-  } catch (err) {
-    next(new Error('Authentication failed'));
-  }
-};
-```
-
-### 4. Notification Model (15 min)
-
-**Files to create:**
-- `src/models/notification.model.ts`
-- `prisma/migrations/XXX_add_notifications.sql`
-
-**Database Schema:**
-```prisma
-model Notification {
-  id        String   @id @default(uuid())
-  userId    String
-  type      String   // 'info', 'success', 'warning', 'error'
-  title     String
-  message   String
-  read      Boolean  @default(false)
-  createdAt DateTime @default(now())
-
-  user      User     @relation(fields: [userId], references: [id])
-
-  @@index([userId, createdAt])
-  @@index([userId, read])
-}
-```
-
-### 5. Notification Service (20 min)
-
-**Files to create:**
-- `src/services/notification.service.ts`
-
-**Key functions:**
-- `sendNotification(userId, notification)` - Send to user
-- `sendToAll(notification)` - Broadcast to all users
-- `markAsRead(notificationId)` - Mark read
-- `getUnreadCount(userId)` - Get unread count
-
-### 6. Integration with Existing Features (15 min)
-
-**Files to modify:**
-- `src/services/order.service.ts` - Notify on order status
-- `src/services/payment.service.ts` - Notify on payment
-- `src/controllers/user.controller.ts` - Notify on updates
-
-**Example Integration:**
-```typescript
-// After order is placed
-await notificationService.sendNotification(order.userId, {
-  type: 'success',
-  title: 'Order Placed',
-  message: `Order #${order.id} confirmed`
-});
-```
-
-### 7. Frontend Integration Guide (10 min)
-
-**Files to create:**
-- `docs/websocket-client-guide.md`
-
-**Client Example:**
-```typescript
-import io from 'socket.io-client';
-
-const socket = io('http://localhost:3000', {
-  auth: { token: userToken }
-});
-
-socket.on('notification', (data) => {
-  showToast(data.title, data.message);
-  updateNotificationBadge();
-});
-```
-
-### 8. Testing (30 min)
-
-**Files to create:**
-- `tests/websocket/connection.test.ts` - Connection tests
-- `tests/websocket/notification.test.ts` - Notification tests
-- `tests/integration/websocket-auth.test.ts` - Auth tests
-
-**Test Coverage:**
-- Connection with valid token
-- Connection with invalid token
-- Receiving notifications
-- Room-based messaging
-- Reconnection handling
-- Multiple server instances
-
-### 9. Monitoring & Health Checks (10 min)
-
-**Files to modify:**
-- `src/health/health.controller.ts` - Add WS health check
-
-**Metrics to track:**
-- Active connections count
-- Messages per second
-- Failed authentications
-- Average latency
-
-## File Changes Summary
-
-**Files to create: 15**
-- src/websocket/server.ts
-- src/websocket/middleware.ts
-- src/websocket/handlers.ts
-- src/services/notification.service.ts
-- src/models/notification.model.ts
-- tests/* (8 test files)
-- docs/websocket-client-guide.md
-
-**Files to modify: 6**
-- src/server.ts
-- src/auth/jwt.ts
-- src/services/order.service.ts
-- src/services/payment.service.ts
-- prisma/schema.prisma
-- src/health/health.controller.ts
-
-## Timeline Estimate
-
-| Phase | Time |
-|-------|------|
-| Setup & Config | 20 min |
-| Core Implementation | 60 min |
-| Integration | 25 min |
-| Testing | 30 min |
-| Documentation | 15 min |
-| **Total** | **2.5 hours** |
+## Timeline
+Total: 1 hour
 
 ## Rollback Plan
+Step-by-step recovery if issues occur
 
-If issues occur:
-
-1. **Disable WebSocket server:**
-   ```typescript
-   // src/server.ts
-   // Comment out: initWebSocket(httpServer)
-   ```
-
-2. **Revert database migration:**
-   ```bash
-   npx prisma migrate resolve --rolled-back XXX
-   ```
-
-3. **Remove Socket.io dependencies:**
-   ```bash
-   npm uninstall socket.io socket.io-redis-adapter
-   ```
-
-4. **Restore previous code:**
-   ```bash
-   git revert HEAD
-   ```
-
-## Security Considerations
-
-✅ **Implemented:**
-- JWT verification on connection
-- Rate limiting per socket
-- Input validation on all events
-- CORS configuration
-- Heartbeat for stale connections
-
-⚠ **To Monitor:**
-- Connection count (prevent DoS)
-- Message size limits
-- Authentication failures
-
-## Performance Considerations
-
-- Use Redis adapter for horizontal scaling
-- Implement connection pooling
-- Add message queuing for high volume
-- Monitor memory usage
-- Set max connections limit
-
-## Next Steps After Implementation
-
-1. Load testing
-2. Monitor connection metrics
-3. Tune connection limits
-4. Add more notification types
-5. Implement notification preferences
-
-## Questions to Resolve
-
-- [ ] Should we support notification preferences?
-- [ ] Max notifications to store per user?
-- [ ] Retention policy for old notifications?
-- [ ] Push notifications for offline users?
-
----
-
-Ready to implement? Run: `/cook [implement WebSocket notifications]`
-```
-
-## Output Format
-
-All plans are saved to `plans/` directory with format:
-```
-plans/[feature-name]-YYYYMMDD-HHMMSS.md
-```
-
-## Plan Quality
-
-Good plans include:
-
-✅ **Research findings** - Not reinventing the wheel
-✅ **Clear steps** - Actionable tasks
-✅ **Code examples** - Concrete implementation details
-✅ **File changes** - What will be modified
-✅ **Timeline** - Realistic estimates
-✅ **Tests** - How to validate
-✅ **Security** - What to watch for
-✅ **Rollback** - How to undo if needed
-✅ **Open questions** - What needs decisions
-
-## Workflow Integration
-
-### Before Coding
-
-```bash
-# 1. Create plan
-/plan [feature description]
-
-# 2. Review plan
-cat plans/latest-plan.md
-
-# 3. Provide feedback
-"Use PostgreSQL instead of Redis for notifications"
-
-# 4. Regenerate if needed
-/plan [updated requirements]
-
-# 5. Implement (use /code since plan exists)
-/code @plans/your-feature-plan.md
-```
-
-### During Implementation
-
-The planner agent ensures:
-- Implementation follows the plan
-- All security considerations addressed
-- Test coverage meets requirements
-- Documentation is created
-
-### After Implementation
-
-Plans serve as:
-- Implementation documentation
-- Decision record (ADR)
-- Onboarding material
-- Refactoring guide
-
-## Advanced Features
-
-### Multiple Approaches
-
-```bash
-/plan:two [feature description]
-```
-
-Generates two different approaches with pros/cons.
-
-### CI/CD Planning
-
-```bash
-/plan:ci [github-actions-url]
-```
-
-Analyzes CI failures and creates fix plan.
-
-### CRO Planning
-
-```bash
-/plan:cro [conversion optimization needs]
-```
-
-Creates conversion rate optimization plan.
-
-## Success Metrics
-
-A good plan results in:
-- ✅ Implementation matches plan (>90%)
-- ✅ No major surprises during coding
-- ✅ Timeline estimate accurate (±20%)
-- ✅ Security issues prevented
-- ✅ Team understands the approach
+## Security Checklist
+- Auth validation
+- Input sanitization
+- Rate limiting
 
 ## Next Steps
+Ready to implement? Run: /cook @plans/your-plan.md
+```
 
-- [Implementation](/docs/commands/core/code) - Execute the plan
-- [Testing](/docs/commands/core/test) - Validate the implementation
-- [Documentation](/docs/commands/docs/update) - Update docs
+Plans saved to: `plans/[feature-name]-YYYYMMDD-HHMMSS.md`
 
----
+## Pro Tips
 
-**Key Takeaway**: The planner agent ensures well-researched, thoroughly-planned implementations that save time and prevent mistakes.
+**Review before coding**: Plans catch design flaws before you write code. Check the approach section first.
+
+**Use plans as specs**: Reference the plan during code review. "Did we implement step 3?" ensures nothing is missed.
+
+**Multiple approaches**: Use `/plan:two [description]` to generate two different solutions with trade-off comparison.
+
+**Link from issues**: Save plans to git, link from GitHub issues. Future devs understand *why* decisions were made.
+
+**Update after implementation**: Mark completed steps, note deviations. Plans become living documentation.
+
+## Example Commands
+
+```bash
+# Basic planning
+/plan [add OAuth2 authentication]
+
+# Compare approaches
+/plan:two [use Redis vs PostgreSQL for caching]
+
+# Fix planning
+/plan:hard [memory leak in job processor]
+
+# CRO planning
+/plan:cro [improve signup conversion]
+
+# CI/CD fix
+/plan:ci [github-actions-url]
+
+# Execute plan
+/cook @plans/oauth2-auth-20241020.md
+```
+
+## Integration with Commands
+
+| Phase | Command | Purpose |
+|-------|---------|---------|
+| Research | `/plan` | Generate implementation plan |
+| Review | `cat plans/latest.md` | Review plan before coding |
+| Execute | `/cook @plans/plan.md` | Implement following plan |
+| Test | `/test` | Validate implementation |
+| Document | Update plan with actuals | Create decision record |
+
+## Related Agents
+
+- [Fullstack Developer](/docs/agents/fullstack-developer) - Executes implementation plans
+- [Researcher Agent](/docs/agents/researcher) - Deep dives on specific topics
+- [Scout](/docs/agents/scout) - Explores codebase for context
+
+## Key Takeaway
+
+Planning prevents waste. 10 minutes of research and analysis saves hours of refactoring when you discover you picked the wrong approach halfway through implementation.

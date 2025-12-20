@@ -101,27 +101,67 @@ bun add -g claudekit-cli
 ck --version
 ```
 
-### Khởi Tạo hoặc Cập Nhật ClaudeKit Engineer
+### Nên Chọn Chế Độ Cài Đặt Nào?
 
-**Lưu ý:** Lệnh này nên được chạy từ thư mục gốc của dự án.
+| Trường hợp | Chế độ | Lệnh |
+|------------|--------|------|
+| **Cài đặt lần đầu** | Global ⭐ | `ck init -g --kit engineer` |
+| **Muốn dùng ClaudeKit cho TẤT CẢ dự án** | Global ⭐ | `ck init -g --kit engineer` |
+| **Chỉ cho một dự án cụ thể** | Local | `ck init --kit engineer` |
+| **Môi trường CI/CD** | Local | `ck init --kit engineer` |
+
+---
+
+### Tùy Chọn A: Cài Đặt Global ⭐ Khuyến Nghị Cho Đa Số Người Dùng
+
+> **Sử dụng khi:** Bạn muốn ClaudeKit có sẵn cho TẤT CẢ dự án mà không cần copy file vào từng dự án.
+>
+> **Chạy từ:** Bất kỳ thư mục nào (ví dụ: home folder, desktop, bất cứ đâu)
 
 ```bash
-# Chế độ tương tác (khuyến nghị)
-ck init
+# Chế độ tương tác
+ck init -g
 
-# Với tùy chọn
-ck init --kit engineer
+# Với lựa chọn kit
+ck init -g --kit engineer
 
 # Phiên bản cụ thể
-ck init --kit engineer --version v1.0.0
+ck init -g --kit engineer --version v1.0.0
+```
+
+**File được cài đặt ở đâu:**
+- **macOS/Linux**: `~/.claude/`
+- **Windows**: `%LOCALAPPDATA%\.claude\`
+
+> ✅ **Mẹo:** Chế độ global lý tưởng cho phát triển cá nhân. Cài một lần, dùng mọi nơi.
+
+---
+
+### Tùy Chọn B: Cài Đặt Local (Dành Riêng Cho Dự Án)
+
+> **Sử dụng khi:** Bạn muốn file ClaudeKit CHỈ trong một dự án cụ thể.
+>
+> **Chạy từ:** Thư mục gốc của dự án (ví dụ: `/projects/my-app/`)
+
+```bash
+# Di chuyển đến dự án trước!
+cd /path/to/your/project
+
+# Chế độ tương tác
+ck init
+
+# Với lựa chọn kit
+ck init --kit engineer
 
 # Với mẫu loại trừ
 ck init --exclude "local-config/**" --exclude "*.local"
-
-# Chế độ global - sử dụng thư mục cấu hình theo platform
-ck init --global
-ck init -g --kit engineer
 ```
+
+**File được cài đặt ở đâu:** Trong thư mục dự án hiện tại (`./.claude/`)
+
+> ⚠️ **Cảnh báo:** Chạy `ck init` (không có `-g`) từ **thư mục home** hoặc **thư mục user** sẽ cài ClaudeKit tại đó, có thể gây lỗi đường dẫn hook. Nếu muốn ClaudeKit có sẵn ở mọi nơi, hãy dùng `ck init -g`.
+
+---
 
 ### Cập Nhật CLI
 
@@ -131,7 +171,7 @@ ck init -g --kit engineer
 ck update
 ```
 
-**Lưu ý:** Lệnh này chỉ cập nhật CLI, không cập nhật file ClaudeKit Engineer. Dùng `ck init` để cập nhật ClaudeKit Engineer.
+**Lưu ý:** Lệnh này chỉ cập nhật CLI, không cập nhật file ClaudeKit Engineer. Dùng `ck init` (local) hoặc `ck init -g` (global) để cập nhật file ClaudeKit Engineer.
 
 ### Xác Thực
 

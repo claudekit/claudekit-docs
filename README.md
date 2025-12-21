@@ -6,6 +6,8 @@ Official documentation website for ClaudeKit - AI-powered development toolkit wi
 📦 **Version**: 0.0.1 (MVP)
 🚀 **Status**: Development
 
+[![Code Hunt 2025](https://img.shields.io/badge/🎄_Code_Hunt_2025-FR0STYC0DE-brightgreen)](https://claudekit.cc)
+
 ---
 
 ## Overview

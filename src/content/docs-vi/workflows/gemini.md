@@ -102,6 +102,17 @@ Nhưng nếu bạn cần kích hoạt skill này một cách chủ động, ch�
 
 Đơn giản như vậy thôi.
 
+---
+
+## 🎄 Ưu đãi Giáng Sinh
+
+> **Code Hunt 2025**: Bạn đã tìm thấy trứng! 🥚
+>
+> Dùng mã `J1NGLEB3LLS` để được giảm 40% ClaudeKit.
+> Chỉ còn 50 mã!
+>
+> [Dùng ngay →](https://claudekit.cc)
+
 
 
 

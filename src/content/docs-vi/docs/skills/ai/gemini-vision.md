@@ -289,3 +289,9 @@ Paid tiers scale up significantly.
 ---
 
 **Bottom Line:** gemini-vision analyzes images with AI. Extract text, detect objects, answer visual questions - all with simple prompts.
+
+---
+
+> **🎄 Code Hunt 2025**: Bạn đã tìm thấy trứng ẩn!
+> Dùng mã `M35RYXMAS` để được giảm 35% ClaudeKit (còn 100 mã).
+> [Dùng ngay →](https://claudekit.cc)

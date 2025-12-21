@@ -16,9 +16,40 @@ published: true
 
 ClaudeKit installation problems? Get unblocked in minutes with platform-specific fixes.
 
-## Quick Fix: Command Not Found
+## Sửa Nhanh: Lỗi Đường Dẫn Hook / User Prompt Submit Error
 
-**Symptom**: `ck: command not found` or `claudekit-cli: command not found`
+**Triệu chứng**: "User prompt submit error", hooks lỗi với lỗi đường dẫn, hoặc `%CLAUDE_PROJECT_DIR%` không tìm thấy
+
+**Nguyên nhân**: Bạn đã chạy `ck init` (chế độ local) từ thư mục sai—có thể là thư mục home hoặc thư mục user thay vì thư mục dự án.
+
+**Giải pháp**:
+
+```bash
+# Bước 1: Xóa cài đặt bị lỗi
+# Di chuyển đến nơi bạn đã vô tình cài đặt
+cd ~  # hoặc bất cứ nơi nào bạn chạy ck init
+rm -rf .claude/  # Xóa cài đặt local bị lỗi
+
+# Bước 2: Cài đặt lại đúng cách
+# Cho GLOBAL (khuyến nghị cho đa số người dùng):
+ck init -g --kit engineer
+
+# Cho LOCAL (chỉ cho dự án cụ thể):
+cd /path/to/your/actual/project
+ck init --kit engineer
+```
+
+**Phòng ngừa**:
+- Dùng `ck init -g` (global) nếu bạn muốn ClaudeKit có sẵn ở mọi nơi
+- Chỉ dùng `ck init` (local) khi đang ở trong thư mục dự án thực sự
+
+Xem [Hướng Dẫn Cài Đặt - Nên Chọn Chế Độ Nào?](/vi/docs/getting-started/installation#nên-chọn-chế-độ-cài-đặt-nào) để biết thêm chi tiết.
+
+---
+
+## Sửa Nhanh: Không Tìm Thấy Lệnh
+
+**Triệu chứng**: `ck: command not found` hoặc `claudekit-cli: command not found`
 
 **Solution**:
 

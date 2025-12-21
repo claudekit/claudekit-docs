@@ -16,6 +16,37 @@ published: true
 
 ClaudeKit installation problems? Get unblocked in minutes with platform-specific fixes.
 
+## Quick Fix: Hook Path Errors / User Prompt Submit Error
+
+**Symptom**: "User prompt submit error", hooks fail with path errors, or `%CLAUDE_PROJECT_DIR%` not found
+
+**Cause**: You ran `ck init` (local mode) from the wrong directory—likely your home folder or user directory instead of a project folder.
+
+**Solution**:
+
+```bash
+# Step 1: Remove broken installation
+# Navigate to where you accidentally installed
+cd ~  # or wherever you ran ck init
+rm -rf .claude/  # Remove the broken local installation
+
+# Step 2: Reinstall correctly
+# For GLOBAL (recommended for most users):
+ck init -g --kit engineer
+
+# For LOCAL (project-specific):
+cd /path/to/your/actual/project
+ck init --kit engineer
+```
+
+**Prevention**:
+- Use `ck init -g` (global) if you want ClaudeKit available everywhere
+- Only use `ck init` (local) when inside an actual project directory
+
+See [Installation Guide - Which Mode Should I Use?](/docs/getting-started/installation#which-installation-mode-should-i-use) for detailed guidance.
+
+---
+
 ## Quick Fix: Command Not Found
 
 **Symptom**: `ck: command not found` or `claudekit-cli: command not found`

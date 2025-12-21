@@ -37,4 +37,10 @@ The [AI Multimodal skill](/docs/skills/ai/ai-multimodal) now covers:
 
 ## Key Takeaway
 
- Use [AI Multimodal](/docs/skills/ai/ai-multimodal) for all Gemini-powered image, audio, video, and document processing.
+Use [AI Multimodal](/docs/skills/ai/ai-multimodal) for all Gemini-powered image, audio, video, and document processing.
+
+---
+
+> **🎄 Code Hunt 2025**: You found a hidden egg!
+> Use code `M35RYXMAS` for 35% off ClaudeKit (100 uses).
+> [Redeem now →](https://claudekit.cc)

@@ -101,3 +101,14 @@ Typically, skills will be automatically activated depending on the context the a
 But if you need to manually activate this skill, just prompt like this: `use ai-multimodal to analyze this screenshot: ...`
 
 It's that simple.
+
+---
+
+## 🎄 Holiday Special
+
+> **Code Hunt 2025**: You found an egg! 🥚
+>
+> Use code `J1NGLEB3LLS` for 40% off ClaudeKit.
+> Only 50 uses available!
+>
+> [Claim now →](https://claudekit.cc)

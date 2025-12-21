@@ -119,27 +119,67 @@ bun add -g claudekit-cli
 ck --version
 ```
 
-### Initialize or Update ClaudeKit Engineer
+### Which Installation Mode Should I Use?
 
-**Note:** This command should be run from the root directory of your project.
+| Scenario | Mode | Command |
+|----------|------|---------|
+| **First-time setup** | Global ⭐ | `ck init -g --kit engineer` |
+| **Want ClaudeKit in ALL projects** | Global ⭐ | `ck init -g --kit engineer` |
+| **Single project only** | Local | `ck init --kit engineer` |
+| **CI/CD environment** | Local | `ck init --kit engineer` |
+
+---
+
+### Option A: Global Installation ⭐ Recommended for Most Users
+
+> **Use this when:** You want ClaudeKit available for ALL your projects without copying files to each one.
+>
+> **Run from:** Any directory (e.g., your home folder, desktop, anywhere)
 
 ```bash
-# Interactive mode (recommended)
-ck init
+# Interactive mode
+ck init -g
 
-# With options
-ck init --kit engineer
+# With kit selection
+ck init -g --kit engineer
 
 # Specific version
-ck init --kit engineer --version v1.0.0
+ck init -g --kit engineer --version v1.0.0
+```
+
+**Where files are installed:**
+- **macOS/Linux**: `~/.claude/`
+- **Windows**: `%LOCALAPPDATA%\.claude\`
+
+> ✅ **Tip:** Global mode is ideal for personal development. Install once, use everywhere.
+
+---
+
+### Option B: Local Installation (Project-Specific)
+
+> **Use this when:** You want ClaudeKit files ONLY in a specific project.
+>
+> **Run from:** Your project's root directory (e.g., `/projects/my-app/`)
+
+```bash
+# Navigate to your project first!
+cd /path/to/your/project
+
+# Interactive mode
+ck init
+
+# With kit selection
+ck init --kit engineer
 
 # With exclude patterns
 ck init --exclude "local-config/**" --exclude "*.local"
-
-# Global mode - use platform-specific user configuration
-ck init --global
-ck init -g --kit engineer
 ```
+
+**Where files are installed:** Inside your current project directory (`./.claude/`)
+
+> ⚠️ **Warning:** Running `ck init` (without `-g`) from your **home directory** or **user folder** will install ClaudeKit locally there, which may cause hook path errors. If you want ClaudeKit available everywhere, use `ck init -g` instead.
+
+---
 
 ### Update the CLI Itself
 
@@ -149,17 +189,7 @@ To update the `ck` command-line tool to the latest version:
 ck update
 ```
 
-**Note:** This updates the CLI tool only, not ClaudeKit Engineer files. Use `ck init` to update ClaudeKit Engineer.
-
-**Global vs Local Configuration:**
-
-By default, ClaudeKit uses local configuration (`~/.claudekit`).
-
-For platform-specific **user-scoped settings**, use the `--global` flag:
-- **macOS/Linux**: `~/.claude`
-- **Windows**: `%LOCALAPPDATA%\.claude`
-
-Global mode uses user-scoped directories (no sudo required), allowing separate configurations for different projects.
+**Note:** This updates the CLI tool only, not ClaudeKit Engineer files. Use `ck init` (local) or `ck init -g` (global) to update ClaudeKit Engineer files.
 
 ### Authentication
 

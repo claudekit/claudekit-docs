@@ -68,16 +68,19 @@ Usage:
 
 Commands:
   new       Create new project from latest ClaudeKit release
+  init      Initialize or update project from ClaudeKit release
   update    Update existing project to latest version
   versions  List available ClaudeKit releases
 
 Options:
   --version, -v   Show version number
   --help, -h      Show help
+  --prefix        Apply /ck: namespace to slash commands
 
 Examples:
   ck new --kit engineer
   ck init
+  ck init --prefix
   ck versions --kit engineer
 
 For more info: https://docs.claudekit.cc

@@ -53,6 +53,11 @@ ck init my-app --kit engineer
 cd my-app
 ```
 
+**Tip:** Use `--prefix` to namespace commands as `/ck:plan`, `/ck:code`, etc.:
+```bash
+ck init my-app --kit engineer --prefix
+```
+
 **Created**:
 - `.claude/` - 14 AI agents, 30+ commands, 45 skills
 - `docs/` - Auto-generated project docs

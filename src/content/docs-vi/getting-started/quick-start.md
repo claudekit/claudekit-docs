@@ -35,6 +35,11 @@ ck new my-app --kit engineer
 cd my-app
 ```
 
+**Tip:** Sử dụng `--prefix` để namespace các lệnh thành `/ck:plan`, `/ck:code`, v.v.:
+```bash
+ck new my-app --kit engineer --prefix
+```
+
 **Đã tạo**:
 - `.claude/` - 14 AI agents, 30+ lệnh, 45 skills
 - `docs/` - Docs dự án tự động tạo

@@ -68,16 +68,19 @@ Usage:
 
 Commands:
   init      Initialize or update project from ClaudeKit release
+  new       Bootstrap new project from ClaudeKit release
   update    (deprecated) Use 'init' instead
   versions  List available ClaudeKit releases
 
 Options:
   --version, -v   Show version number
   --help, -h      Show help
+  --prefix        Apply /ck: namespace to slash commands
 
 Examples:
   ck init --kit engineer
   ck init --global
+  ck init --prefix
   ck versions --kit engineer
 
 For more info: https://docs.claudekit.cc

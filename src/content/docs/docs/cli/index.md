@@ -70,6 +70,7 @@ ck init -g --kit engineer
 - `--version <version>` - Specific version to download (default: latest)
 - `--exclude <pattern>` - Exclude files/directories using glob patterns (can be used multiple times)
 - `--global, -g` - Use platform-specific user configuration directory
+- `--prefix` - Apply `/ck:` namespace to slash commands (see [Command Namespacing](#command-namespacing))
 
 **Global vs Local Configuration:**
 
@@ -80,6 +81,44 @@ For platform-specific **user-scoped settings**, use the `--global` flag:
 - **Windows**: `%LOCALAPPDATA%\.claude`
 
 Global mode uses user-scoped directories (no sudo required), allowing separate configurations for different projects.
+
+## Command Namespacing
+
+Use `--prefix` to avoid conflicts with other Claude Code slash commands or custom commands.
+
+### What It Does
+
+When you run `ck init --prefix` or `ck new --prefix`, all ClaudeKit slash commands are moved to a `/ck:` namespace:
+
+| Without --prefix | With --prefix |
+|------------------|---------------|
+| `/plan` | `/ck:plan` |
+| `/code` | `/ck:code` |
+| `/cook` | `/ck:cook` |
+| `/debug` | `/ck:debug` |
+| `/test` | `/ck:test` |
+
+### When to Use
+
+- **Multiple command sources**: When using other CLI tools that define their own slash commands
+- **Custom commands**: When you have project-specific commands that might conflict
+- **Team conventions**: When your team prefers namespaced commands for clarity
+
+### Example
+
+```bash
+# Initialize with prefix namespace
+ck init --prefix
+
+# Commands are now namespaced
+/ck:plan add user authentication
+/ck:code plans/auth-plan.md
+/ck:cook fix the login bug
+```
+
+### Technical Details
+
+The `--prefix` flag moves command files to `.claude/commands/ck/` subdirectory. Claude Code automatically recognizes this structure and prefixes commands with `ck:`.
 
 ### ck update
 

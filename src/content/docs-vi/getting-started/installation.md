@@ -30,19 +30,58 @@ Trước khi cài đặt ClaudeKit, đảm bảo bạn có:
 
 Phương pháp này cho bạn quyền kiểm soát hoàn toàn quá trình cài đặt.
 
-### Bước 1: Sao Chép Các File ClaudeKit
-
-Sao chép tất cả thư mục và file từ repo `claudekit-engineer` vào dự án của bạn:
+### Bước 1: Clone hoặc Tải ClaudeKit Engineer
 
 ```bash
-# Sao chép các file và thư mục sau:
-.claude/*
-docs/*
-plans/*
-CLAUDE.md
+# Tùy chọn A: Clone repo (yêu cầu quyền truy cập GitHub)
+git clone https://github.com/claudekit/claudekit-engineer.git
+
+# Tùy chọn B: Tải từ GitHub Releases
+# Truy cập: https://github.com/claudekit/claudekit-engineer/releases
 ```
 
-### Bước 2: Cấu Hình API Key Gemini (Tuỳ Chọn)
+### Bước 2: Sao Chép Các File ClaudeKit
+
+Sao chép các thư mục và file sau từ `claudekit-engineer` vào thư mục gốc dự án:
+
+| Đường dẫn | Mô tả |
+|-----------|-------|
+| `.claude/` | Cấu hình chính - hooks, skills, commands, workflows |
+| `docs/` | Mẫu tài liệu |
+| `plans/` | Mẫu kế hoạch |
+| `CLAUDE.md` | Hướng dẫn dự án cho Claude |
+
+**Các file ẩn quan trọng trong `.claude/`:**
+- `.ck.json` - Cấu hình ClaudeKit (đặt tên plan, đường dẫn, ngôn ngữ)
+- `.ckignore` - Thư mục loại trừ khỏi context (giống `.gitignore` cho LLM)
+
+**Linux/macOS:**
+```bash
+cp -r claudekit-engineer/.claude your-project/
+cp -r claudekit-engineer/docs your-project/
+cp -r claudekit-engineer/plans your-project/
+cp claudekit-engineer/CLAUDE.md your-project/
+
+# Xác minh file ẩn đã được sao chép
+ls -la your-project/.claude/
+# Phải thấy: .ck.json, .ckignore, settings.json, v.v.
+```
+
+**Windows (PowerShell):**
+```powershell
+Copy-Item -Recurse claudekit-engineer\.claude your-project\
+Copy-Item -Recurse claudekit-engineer\docs your-project\
+Copy-Item -Recurse claudekit-engineer\plans your-project\
+Copy-Item claudekit-engineer\CLAUDE.md your-project\
+
+# Xác minh file ẩn đã được sao chép
+Get-ChildItem -Force your-project\.claude\
+# Phải thấy: .ck.json, .ckignore, settings.json, v.v.
+```
+
+> ⚠️ **Lưu ý:** Trình quản lý file có thể ẩn dotfiles (`.ck.json`, `.ckignore`). Sử dụng terminal/PowerShell hoặc bật "hiển thị file ẩn".
+
+### Bước 3: Cấu Hình API Key Gemini (Tuỳ Chọn)
 
 **TẠI SAO?**  
 ClaudeKit từng sử dụng [Human MCP](https://www.npmjs.com/package/@goonnguyen/human-mcp) để phân tích hình ảnh và video vì Gemini có khả năng xử lý vision tốt. Tuy nhiên, Anthropic đã ra mắt [**Agent Skills**](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview) hỗ trợ context engineering tốt hơn, nên toàn bộ công cụ Human MCP đã được chuyển thành Agent Skills.
@@ -54,7 +93,7 @@ ClaudeKit từng sử dụng [Human MCP](https://www.npmjs.com/package/@goonnguy
 
 Vậy là bạn đã sẵn sàng sử dụng.
 
-### Bước 3: Khởi Động Claude Code
+### Bước 4: Khởi Động Claude Code
 
 Khởi động Claude Code trong dự án làm việc của bạn:
 
@@ -66,7 +105,7 @@ claude
 claude --dangerously-skip-permissions
 ```
 
-### Bước 4: Khởi Tạo Tài Liệu
+### Bước 5: Khởi Tạo Tài Liệu
 
 Chạy lệnh `/docs:init` để quét và tạo specs cho dự án:
 

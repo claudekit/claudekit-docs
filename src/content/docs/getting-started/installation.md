@@ -48,19 +48,58 @@ Before installing ClaudeKit, ensure you have:
 
 This method gives you full control over the installation process.
 
-### Step 1: Copy ClaudeKit Files
-
-Copy all directories and files from the `claudekit-engineer` repo to your project:
+### Step 1: Clone or Download ClaudeKit Engineer
 
 ```bash
-# Copy these files and directories:
-.claude/*
-docs/*
-plans/*
-CLAUDE.md
+# Option A: Clone the repo (requires GitHub access)
+git clone https://github.com/claudekit/claudekit-engineer.git
+
+# Option B: Download from GitHub Releases
+# Go to: https://github.com/claudekit/claudekit-engineer/releases
 ```
 
-### Step 2: Configure Gemini API Key (Optional)
+### Step 2: Copy ClaudeKit Files
+
+Copy these directories and files from `claudekit-engineer` to your project root:
+
+| Path | Description |
+|------|-------------|
+| `.claude/` | Core config - hooks, skills, commands, workflows |
+| `docs/` | Documentation templates |
+| `plans/` | Planning templates |
+| `CLAUDE.md` | Project instructions for Claude |
+
+**Important hidden files inside `.claude/`:**
+- `.ck.json` - ClaudeKit configuration (plan naming, paths, locale)
+- `.ckignore` - Directories to exclude from context (like `.gitignore` for LLM)
+
+**Linux/macOS:**
+```bash
+cp -r claudekit-engineer/.claude your-project/
+cp -r claudekit-engineer/docs your-project/
+cp -r claudekit-engineer/plans your-project/
+cp claudekit-engineer/CLAUDE.md your-project/
+
+# Verify hidden files were copied
+ls -la your-project/.claude/
+# Should show: .ck.json, .ckignore, settings.json, etc.
+```
+
+**Windows (PowerShell):**
+```powershell
+Copy-Item -Recurse claudekit-engineer\.claude your-project\
+Copy-Item -Recurse claudekit-engineer\docs your-project\
+Copy-Item -Recurse claudekit-engineer\plans your-project\
+Copy-Item claudekit-engineer\CLAUDE.md your-project\
+
+# Verify hidden files were copied
+Get-ChildItem -Force your-project\.claude\
+# Should show: .ck.json, .ckignore, settings.json, etc.
+```
+
+> ⚠️ **Note:** File managers may hide dotfiles (`.ck.json`, `.ckignore`). Use terminal/PowerShell or enable "show hidden files".
+
+### Step 3: Configure Gemini API Key (Optional)
 
 **WHY?**
 ClaudeKit utilized [Human MCP](https://www.npmjs.com/package/@goonnguyen/human-mcp) to analyze images and videos since Gemini models have better vision capabilities. But Anthropic already released [**Agent Skills**](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview) which is much better for context engineering, so we already converted all tools of Human MCP to Agent Skills.
@@ -72,7 +111,7 @@ ClaudeKit utilized [Human MCP](https://www.npmjs.com/package/@goonnguyen/human-m
 
 Now you're good to go.
 
-### Step 3: Start Claude Code
+### Step 4: Start Claude Code
 
 Start Claude Code in your working project:
 
@@ -84,7 +123,7 @@ claude
 claude --dangerously-skip-permissions
 ```
 
-### Step 4: Initialize Documentation
+### Step 5: Initialize Documentation
 
 Run the `/docs:init` command to scan and create specs for your project:
 

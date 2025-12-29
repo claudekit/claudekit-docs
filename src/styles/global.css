@@ -25,6 +25,7 @@
     --color-accent-cyan: #06B6D4;
     --color-accent-red: #EF4444;
     --color-accent-yellow: #F59E0B;
+    --color-accent-coral: #D97757;    /* Claude-inspired coral for Marketing Kit */
 
     --color-border: #E5E7EB;
     --color-border-hover: #D1D5DB;
@@ -58,6 +59,7 @@
     --color-accent-red: #E06C75;      /* Errors, warnings */
     --color-accent-yellow: #E5C07B;   /* Warnings, highlights */
     --color-accent-orange: #D19A66;   /* Emphasis, numbers */
+    --color-accent-coral: #D97757;    /* Claude-inspired coral for Marketing Kit */
 
     /* Borders */
     --color-border: #262626;          /* Subtle borders (dark gray) */

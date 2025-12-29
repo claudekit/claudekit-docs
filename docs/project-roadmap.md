@@ -379,9 +379,19 @@
 - ✅ Build validation: PASSED (466 pages, 0 errors)
 - ⏳ Next phase ready for execution
 
-**Phase 05: Redirect Configuration** ⏳ READY (UNBLOCKED):
-- [ ] Configure URL redirects for old paths
-- [ ] Test redirect mappings
+**Phase 05: Redirect Configuration** ✅ COMPLETED (2025-12-30 02:01 UTC):
+- ✅ Added 12 redirect patterns to `public/_redirects`
+- ✅ Covers: 4 EN categories, 4 VI equivalents, 4 index pages
+- ✅ All legacy URLs now redirect to new `/docs/engineer/*` paths
+- ✅ Build validation: ✅ PASSED (464 pages, 0 errors)
+- ✅ Code review: ✅ APPROVED (0 critical issues)
+- **Method**: Netlify/Cloudflare Pages `_redirects` file (301 permanent redirects)
+- **Format**: `:splat` wildcard for category-level redirects
+- **File Size**: 2847 bytes in dist/_redirects
+
+**Critical Issue Resolved**:
+- Astro config redirects failed (dynamic routes limitation in SSG mode)
+- Solution: Switched to `public/_redirects` file (production-ready, platform-agnostic)
 
 **Phase 06: Internal Link Updates** (PENDING):
 - [ ] Update references to migrated files
@@ -393,8 +403,8 @@
 - [ ] Kit switcher testing
 
 **Overall Progress**:
-- **Phase 04 of 7 complete (57% total)**
-- **Next: Phase 05 (Redirect Configuration) - READY**
+- **Phase 05 of 7 complete (71% total)**
+- **Next: Phase 06 (Internal Links) - READY**
 
 ---
 

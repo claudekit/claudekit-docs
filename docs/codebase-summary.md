@@ -1,30 +1,31 @@
 # Codebase Summary
 
-**Last Updated**: 2025-12-30
-**Version**: 0.1.0 (Kit-Agnostic Refactor - Phase 09 / Engineer Migration Phase 04 Complete)
+**Last Updated**: 2025-12-30 02:01 UTC
+**Version**: 0.1.0 (Kit-Agnostic Refactor - Phase 09 / Engineer Migration Phase 05 Complete)
 **Repository**: claudekit-docs
-**Migration Status**: Phase 09A Engineer Docs Migration - Vietnamese migration complete (84 VI files migrated, 49 missing translations documented)
+**Migration Status**: Phase 09A Engineer Docs Migration - Redirect configuration complete (12 redirect patterns, 4 categories, all legacy URLs mapped)
 
 ## Overview
 
 claudekit-docs is Astro v5-based static documentation site supporting multiple ClaudeKit kits (Engineer, Marketing, CLI). Features kit-agnostic architecture, comprehensive documentation for 60+ agents/features, bi-lingual content (English/Vietnamese), AI chat integration (UI complete, backend pending), enhanced sidebar navigation with kit switching, and One Dark Pro-inspired design system. Successfully refactored from single-kit to multi-kit architecture with 280+ pages, 95% time savings through parallel agent execution, and 14% over-delivery on content targets. Engineer documentation migration phase 01 (pre-migration analysis) complete with 131 files ready for integration.
 
-## Engineer Docs Migration (Phase 09A) - Vietnamese Migration Complete
+## Engineer Docs Migration (Phase 09A) - Redirect Configuration Complete
 
-**Status**: Phase 04 (Vietnamese Translation) ✅ Complete
+**Status**: Phase 05 (Redirect Configuration) ✅ Complete
 
-**What**: Integration of legacy Engineer documentation Vietnamese translations into kit-agnostic architecture
-**Why**: Complete kit consolidation - Engineer VI docs moved to `src/content/docs-vi/engineer/` structure with bilingual support
-**Impact**: 84 Vietnamese files successfully migrated; 49 missing translations identified for future completion; bilingual navigation enabled
+**What**: Integration of legacy Engineer documentation with complete URL redirect system for backward compatibility
+**Why**: Complete kit consolidation with SEO-friendly redirect patterns for old documentation paths
+**Impact**: 12 redirect patterns configured; all legacy URLs now properly route to new `/docs/engineer/*` paths; backward compatibility ensured
 
-**Phase 04 Completion** ✅:
-- **Vietnamese Files Migrated**: 84 total files to `/engineer/` structure
-- **Frontmatter Standardization**: Applied `section: engineer`, `kit: engineer` to all VI files
-- **Build Status**: ✅ Passed (466 pages generated, 0 errors)
-- **Critical Issues Fixed**: 1 (frontmatter corruption in 55 files resolved)
-- **Missing Translations Documented**: 49 files (37% of Engineer docs)
-- **Duration**: 20 minutes total (15 min execution + 5 min critical fix)
-- **Overall Progress**: Phase 04 of 7 = 57% complete
+**Phase 05 Completion** ✅:
+- **Redirect Patterns Added**: 12 total to `public/_redirects` file
+- **Coverage**: 4 English categories + 4 Vietnamese equivalents + 4 index pages
+- **Redirect Method**: Netlify/Cloudflare Pages `_redirects` file (301 permanent redirects)
+- **Build Status**: ✅ Passed (464 pages generated, 0 errors)
+- **Critical Issue Resolved**: Astro SSG redirect limitation → switched to `public/_redirects` solution
+- **File Location**: `public/_redirects` (2847 bytes)
+- **Duration**: 30 minutes total
+- **Overall Progress**: Phase 05 of 7 = 71% complete
 
 **File Breakdown**:
 - **Agents**: 18 files → `src/content/docs/engineer/agents/`
@@ -566,6 +567,57 @@ npm run preview      # Preview build
 - Vercel, Netlify, Cloudflare Pages
 - Deploy `dist/` directory
 - No special config needed
+
+## URL Redirect Configuration (Phase 05 - Engineer Docs Migration)
+
+**Purpose**: Ensure backward compatibility for legacy documentation URLs during engineer docs migration
+
+**Implementation**: Netlify/Cloudflare Pages `_redirects` file (standard platform format)
+- **Location**: `public/_redirects` (copied to `dist/_redirects` at build time)
+- **Format**: Netlify/Cloudflare Pages compatible syntax with `:splat` wildcard support
+- **Type**: HTTP 301 permanent redirects for SEO compatibility
+- **File Size**: 2847 bytes
+
+**Redirect Patterns** (12 total):
+
+**English Category Redirects** (4):
+- `/docs/agents/*` → `/docs/engineer/agents/:splat`
+- `/docs/commands/*` → `/docs/engineer/commands/:splat`
+- `/docs/skills/*` → `/docs/engineer/skills/:splat`
+- `/docs/configuration/*` → `/docs/engineer/configuration/:splat`
+
+**Vietnamese Category Redirects** (4):
+- `/vi/docs/agents/*` → `/vi/docs/engineer/agents/:splat`
+- `/vi/docs/commands/*` → `/vi/docs/engineer/commands/:splat`
+- `/vi/docs/skills/*` → `/vi/docs/engineer/skills/:splat`
+- `/vi/docs/configuration/*` → `/vi/docs/engineer/configuration/:splat`
+
+**Index Page Redirects** (4):
+- `/docs/agents` → `/docs/engineer/agents`
+- `/docs/commands` → `/docs/engineer/commands`
+- `/docs/skills` → `/docs/engineer/skills`
+- `/docs/configuration` → `/docs/engineer/configuration`
+
+**Coverage**:
+- Legacy agent documentation URLs (e.g., `/docs/agents/planner` → `/docs/engineer/agents/planner`)
+- Legacy command documentation URLs (e.g., `/docs/commands/fix/lint` → `/docs/engineer/commands/fix/lint`)
+- Legacy skill documentation URLs (e.g., `/docs/skills/next-js` → `/docs/engineer/skills/next-js`)
+- Legacy configuration documentation URLs (all mapped to new paths)
+- Vietnamese equivalents for all categories
+- Index page navigation redirects
+
+**Technical Notes**:
+- **Why `public/_redirects`**: Original Astro config-based redirects failed due to SSG limitations
+- **Platform Support**: Works on Netlify, Cloudflare Pages, and similar platforms supporting `_redirects` files
+- **Build Integration**: Automatically included in production build (`dist/_redirects`)
+- **Performance**: Redirects processed at edge (minimal latency impact)
+- **SEO Impact**: 301 permanent redirects preserve search engine rankings
+
+**Build Validation**:
+- ✅ Build passes without errors
+- ✅ 464 pages generated successfully
+- ✅ Redirect file properly generated and included
+- ✅ All redirect patterns validated
 
 ## Phase 01 IA Restructure Results
 

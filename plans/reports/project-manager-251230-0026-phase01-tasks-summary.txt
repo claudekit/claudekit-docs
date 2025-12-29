@@ -1,0 +1,172 @@
+PHASE 01: PRE-MIGRATION ANALYSIS - TASK SUMMARY
+==============================================
+Plan: 251230-0006-engineer-docs-migration
+Report: project-manager-251230-0026-phase01-analysis.md
+Date: 2025-12-30
+
+TOTAL TASKS EXTRACTED: 26
+=======================
+
+SECTION A: FILE VERIFICATION (8 tasks - 2.1 to 2.8)
+---------------------------------------------------
+Step 2.1  | Verify English agents count (expect 18)
+Step 2.2  | Verify English commands count (expect 66)
+Step 2.3  | Verify English skills count (expect 43)
+Step 2.4  | Verify English configuration count (expect 4)
+Step 2.5  | Verify English CLI count (expect 2)
+Step 2.6  | Verify total English files (expect 133)
+Step 2.7  | Verify Vietnamese file count (expect 86)
+Step 2.8  | Verify existing engineer skills (expect 15)
+
+SECTION B: DEEP ANALYSIS (11 tasks - 2.9 to 2.19)
+-------------------------------------------------
+B1: SKILLS DUPLICATE ANALYSIS
+Step 2.9  | Extract legacy skills filenames from docs/docs/skills/
+Step 2.10 | Extract existing engineer skills filenames
+Step 2.11 | Find duplicate filenames (comm -12)
+Step 2.12 | Document skills merge decision (keep-legacy/keep-existing/merge)
+
+B2: CLI FILES ANALYSIS
+Step 2.13 | List CLI files in docs/docs/cli/ with paths
+Step 2.14 | List CLI files in docs/cli/ with paths
+Step 2.15 | Decide CLI migration: Option A (merge to /docs/cli/) recommended
+
+B3: SPECIAL CASES & FRONTMATTER
+Step 2.16 | Find index.md files in docs/docs tree
+Step 2.17 | Find files with section: docs (sample 5)
+Step 2.18 | Find files with custom slug: field
+Step 2.19 | Document all special cases and frontmatter variations
+
+SECTION C: VALIDATION & DELIVERABLES (6 tasks - 3.1 to 3.6)
+-----------------------------------------------------------
+Step 3.1  | Verify total English file count = 133
+Step 3.2  | Verify total Vietnamese file count = 86
+Step 3.3  | Verify existing engineer/skills files = 15
+Step 3.4  | Confirm no blocking duplicate conflicts found
+Step 3.5  | Create migration manifest with all results
+Step 3.6  | Sign off Phase 01 validation checklist
+
+DEPENDENCIES
+============
+CRITICAL PATH (Sequential):
+  2.3 → 2.9 → 2.11 → 2.12 → 3.4 → 3.5 → 3.6
+
+PARALLEL OPPORTUNITIES:
+  • Steps 2.1-2.8 (all file counts can run in parallel)
+  • Steps 2.13-2.15 with B1 tasks
+  • Steps 2.16-2.19 with any section
+
+AMBIGUITIES & DECISION POINTS
+==============================
+1. CLI migration location (Step 2.15)
+   - Option A: /docs/cli/ (RECOMMENDED)
+   - Option B: /docs/engineer/cli/
+   - Option C: Per-file review
+
+2. Skills duplicate handling (Step 2.12)
+   - Keep legacy version (overwrite)
+   - Keep existing version (skip migration)
+   - Merge content manually
+
+3. Index files impact (Step 2.16)
+   - Unknown: Do index.md files affect nav components?
+
+4. Custom slug preservation (Step 2.18)
+   - Assumption: Custom slugs preserved during git mv
+
+5. Vietnamese missing files (Phase 04)
+   - 47 files missing (133 - 86 = 47)
+   - Out of scope Phase 01
+
+REQUIRED TOOLS & SKILLS
+=======================
+Tools:
+  ✓ find command (file discovery)
+  ✓ grep command (pattern search)
+  ✓ wc -l (counting)
+  ✓ comm (find duplicates)
+  ✓ sort (ordering)
+  ✓ bash shell (execution)
+  ✓ Git (version control)
+
+Skills:
+  • Bash scripting (intermediate)
+  • File system navigation (basic)
+  • Frontmatter parsing (basic)
+  • Problem analysis (intermediate)
+  • Documentation (intermediate)
+
+EXECUTION TIMELINE
+==================
+Section A (File Verification):  2 minutes
+Section B (Analysis):           8 minutes
+Section C (Validation):         2 minutes
+Buffer:                         -2 minutes (actual: 10 min total)
+TOTAL ESTIMATED:                10 minutes
+
+VALIDATION SUCCESS CRITERIA
+===========================
+Phase 01 passes when ALL 6 checks pass:
+  ✓ Total English files = 133
+  ✓ Total Vietnamese files = 86
+  ✓ Existing engineer/skills = 15
+  ✓ No blocking duplicate conflicts
+  ✓ Migration manifest created
+  ✓ Special cases identified
+
+RISKS
+=====
+Risk                          | Severity | Mitigation
+File counts don't match       | MEDIUM   | Recount, check paths
+Duplicates found (unresolved) | MEDIUM   | Manual review per-file
+Custom slug handling unclear  | MEDIUM   | Document in Step 2.19
+Hidden files affect count     | LOW      | None - find gets all .md
+
+DELIVERABLES
+============
+1. ✓ File count verification report
+2. ✓ Skills duplicate list (or "No duplicates")
+3. ✓ CLI files decision documented
+4. ✓ Special cases documentation
+5. ✓ Migration manifest (/tmp/migration-manifest.txt)
+6. ✓ Phase 01 validation sign-off
+
+NEXT STEPS
+==========
+IF VALIDATION PASSES:
+  → Proceed to Phase 02: File Migration (English)
+  → Duration: 30 minutes
+  → Method: git mv for all files
+  → Input: Migration manifest from Phase 01
+
+IF ISSUES FOUND:
+  → Stop and resolve before Phase 02
+  → Document in separate ticket
+  → Flag blocker to team
+
+UNRESOLVED QUESTIONS
+====================
+1. Should custom slugs be preserved or remapped during migration?
+2. Do index.md files affect navigation components needing updates?
+3. Have the 2 docs/docs/cli files already been duplicated in docs/cli/?
+4. Are Vietnamese files named identically to English files?
+
+STATUS
+======
+Report: Ready for Execution
+Tasks: 26 extracted and formatted
+Checklist: Created in TodoWrite
+Approval: Awaiting execution
+
+EXECUTION COMMAND
+=================
+Execute all Phase 01 analysis tasks in order:
+  cd d:\www\claudekit\claudekit-docs
+  [Run commands from report Section "Execution Flow & Command Reference"]
+  Document all outputs in migration-manifest.txt
+  Verify all 6 validation criteria pass
+  Sign off Step 3.6
+  Proceed to Phase 02
+
+---
+Full detailed report: plans/reports/project-manager-251230-0026-phase01-analysis.md

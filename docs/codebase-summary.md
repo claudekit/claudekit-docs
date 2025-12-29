@@ -1,12 +1,39 @@
 # Codebase Summary
 
-**Last Updated**: 2025-12-29
-**Version**: 0.1.0 (Kit-Agnostic Refactor - Phase 09 In Progress)
+**Last Updated**: 2025-12-30
+**Version**: 0.1.0 (Kit-Agnostic Refactor - Phase 09 / Engineer Migration Phase 01 Complete)
 **Repository**: claudekit-docs
+**Migration Status**: Phase 09A Engineer Docs Migration - Pre-migration analysis complete
 
 ## Overview
 
-claudekit-docs is Astro v5-based static documentation site supporting multiple ClaudeKit kits (Engineer, Marketing, CLI). Features kit-agnostic architecture, comprehensive documentation for 60+ agents/features, bi-lingual content (English/Vietnamese), AI chat integration (UI complete, backend pending), enhanced sidebar navigation with kit switching, and One Dark Pro-inspired design system. Successfully refactored from single-kit to multi-kit architecture with 280+ pages, 95% time savings through parallel agent execution, and 14% over-delivery on content targets.
+claudekit-docs is Astro v5-based static documentation site supporting multiple ClaudeKit kits (Engineer, Marketing, CLI). Features kit-agnostic architecture, comprehensive documentation for 60+ agents/features, bi-lingual content (English/Vietnamese), AI chat integration (UI complete, backend pending), enhanced sidebar navigation with kit switching, and One Dark Pro-inspired design system. Successfully refactored from single-kit to multi-kit architecture with 280+ pages, 95% time savings through parallel agent execution, and 14% over-delivery on content targets. Engineer documentation migration phase 01 (pre-migration analysis) complete with 131 files ready for integration.
+
+## Engineer Docs Migration (Phase 09A) - Pre-Migration Context
+
+**Status**: Phase 01 (Pre-Migration Analysis) ✅ Complete
+
+**What**: Integration of legacy Engineer documentation into kit-agnostic architecture
+**Why**: Complete kit consolidation - Engineer docs remain in legacy `docs/docs/` structure; migration moves them to new `src/content/docs/engineer/` structure
+**Impact**: 131 files ready for migration; enables unified navigation + search across all kits
+
+**Key Decisions Made** ✅:
+- **Skills Strategy**: Option A selected - Keep 14 existing engineer/skills/* (exclude 8 duplicates from legacy)
+- **CLI Migration**: Skip legacy CLI files - already current at `docs/cli/`, no merge needed
+- **Total Files**: 131 English docs (agents: 18, commands: 66, skills: 35, config: 4)
+- **Translation Status**: 86 Vietnamese docs ready, 47 still need translation
+
+**Reference Documents** (in `plans/` directory):
+- `251230-0006-engineer-docs-migration/migration-manifest.md` - Source of truth for file inventory
+- `plans/reports/code-reviewer-251230-0034-engineer-migration-manifest-review.md` - Code review approval
+- `plans/reports/project-manager-251230-0026-EXECUTIVE-SUMMARY.md` - Executive summary
+
+**Next Phase** (Phase 02 - File Migration):
+- Estimated execution time: 30 minutes
+- Tasks: Migrate agents, commands, skills, config; update links; validate build
+- Status: Ready to execute
+
+---
 
 ## Project Statistics
 
@@ -20,6 +47,12 @@ claudekit-docs is Astro v5-based static documentation site supporting multiple C
 - ~400KB+ documentation content (new marketing + CLI content)
 - ✅ Complete Phase 01-06 core platform (IA, navigation, content, search)
 - ✅ Complete Phase 09 infrastructure (multi-kit architecture)
+- 🔄 Phase 09A Engineer docs migration: Phase 01 analysis complete
+  - **Pre-migration inventory**: 131 files ready (133 EN - 2 CLI excluded)
+  - **Skills duplicates**: 8 identified, Option A strategy selected (keep existing)
+  - **Total engineer files**: 49 skills (14 existing + 35 legacy) + 18 agents + 66 commands + 4 config
+  - **Migration manifest**: Created, code-reviewed (9/10 quality), 0 blockers
+  - **Next**: Phase 02 file migration (30 min estimated)
 - 🔄 Phase 09 visual assets: 60% complete (9/15 diagrams)
 - 🔄 Phase 09 translations: 72% complete (63/88 Vietnamese files)
 

@@ -1,0 +1,283 @@
+PHASE 01 QUICK REFERENCE CARD
+=============================
+Plan: 251230-0006-engineer-docs-migration
+Report: project-manager-251230-0026-*
+
+STATUS: ✓ READY FOR EXECUTION
+TIME: 10 minutes | TASKS: 26 | BLOCKERS: 0
+
+WORKING DIRECTORY
+=================
+cd d:\www\claudekit\claudekit-docs
+
+PHASE 01 OVERVIEW
+=================
+Input:  None (analysis phase)
+Output: Migration manifest + signed-off validation
+Next:   Phase 02 File Migration (uses this manifest)
+
+SECTIONS AT A GLANCE
+====================
+A: File Verification (8 tasks)      → Verify counts match expected
+B: Deep Analysis (11 tasks)         → Duplicates, CLI, special cases
+C: Validation (6 tasks)             → Sign off when all checks pass
+
+SECTION A: FILE COUNTS (PARALLEL - 2 min)
+==========================================
+Expected:
+  Agents:        18  (in docs/docs/agents/)
+  Commands:      66  (in docs/docs/commands/)
+  Skills:        43  (in docs/docs/skills/)
+  Configuration:  4  (in docs/docs/configuration/)
+  CLI:            2  (in docs/docs/cli/)
+  ────────────────
+  TOTAL EN:     133
+
+  Vietnamese:    86  (in docs-vi/docs/)
+  Engineer Skills: 15 (already in docs/engineer/skills/)
+
+Commands:
+  find src/content/docs/docs/agents -name "*.md" | wc -l        # expect 18
+  find src/content/docs/docs/commands -name "*.md" | wc -l      # expect 66
+  find src/content/docs/docs/skills -name "*.md" | wc -l        # expect 43
+  find src/content/docs/docs/configuration -name "*.md" | wc -l # expect 4
+  find src/content/docs/docs/cli -name "*.md" | wc -l           # expect 2
+  find src/content/docs/docs -name "*.md" | wc -l               # expect 133
+  find src/content/docs-vi/docs -name "*.md" 2>/dev/null | wc -l # expect 86
+  find src/content/docs/engineer/skills -name "*.md" 2>/dev/null | wc -l # expect 15
+
+SECTION B1: SKILLS DUPLICATES (3 min)
+======================================
+Command:
+  # Extract legacy skills filenames
+  find src/content/docs/docs/skills -name "*.md" -exec basename {} \; | sort > /tmp/legacy-skills.txt
+
+  # Extract engineer skills filenames
+  find src/content/docs/engineer/skills -name "*.md" -exec basename {} \; | sort > /tmp/engineer-skills.txt
+
+  # Find duplicates
+  comm -12 /tmp/legacy-skills.txt /tmp/engineer-skills.txt
+
+Decision Matrix (if duplicates found):
+  ☐ Keep legacy version (will overwrite)
+  ☐ Keep existing version (skip migration)
+  ☐ Merge content manually (review conflict)
+
+SECTION B2: CLI FILES (2 min)
+=============================
+Command:
+  echo "=== CLI in docs/docs/cli/ ==="
+  find src/content/docs/docs/cli -name "*.md" -exec echo {} \;
+
+  echo "=== CLI in docs/cli/ ==="
+  find src/content/docs/cli -name "*.md" -exec echo {} \;
+
+Decision (RECOMMENDED: Option A):
+  ☐ Option A: Move to /docs/cli/ (merge with existing 9)
+  ☐ Option B: Move to /docs/engineer/cli/
+  ☐ Option C: Per-file review
+
+SECTION B3: SPECIAL CASES (2 min)
+==================================
+Commands:
+  # Find index files
+  find src/content/docs/docs -name "index.md" -exec echo {} \;
+
+  # Find section:docs samples (first 5)
+  grep -r "section: docs" src/content/docs/docs | head -5
+
+  # Find custom slug files
+  grep -r "slug:" src/content/docs/docs | head -5
+
+Document all findings in manifest.
+
+SECTION C: VALIDATION (2 min)
+=============================
+Checklist (ALL must PASS):
+  [ ] Total English = 133? (sum of 18+66+43+4+2)
+  [ ] Total Vietnamese = 86? (count from docs-vi/docs/)
+  [ ] Engineer skills = 15? (count from docs/engineer/skills/)
+  [ ] No blocking duplicate conflicts? (from B1 analysis)
+  [ ] All decisions documented? (CLI, skills, special cases)
+  [ ] Migration manifest created? (aggregated results)
+
+If ALL pass → SIGN OFF and proceed to Phase 02
+If ANY fail → STOP and resolve blocker
+
+MIGRATION MANIFEST TEMPLATE
+============================
+Save to: /tmp/migration-manifest.txt
+
+# Migration Manifest - 251230-0006-engineer-docs-migration
+
+## File Counts Verified
+- English Agents: 18 ✓
+- English Commands: 66 ✓
+- English Skills: 43 ✓
+- English Configuration: 4 ✓
+- English CLI: 2 ✓
+- TOTAL ENGLISH: 133 ✓
+- Vietnamese: 86 ✓
+- Existing Engineer Skills: 15 ✓
+
+## Skills Duplicate Analysis
+- Legacy Skills: 43 files
+- Engineer Skills: 15 files
+- Duplicates Found: [list or None]
+- Merge Decision: [keep-legacy / keep-existing / merge-manual]
+
+## CLI Files Analysis
+- Files in docs/docs/cli: 2
+- Files in docs/cli: 9
+- Migration Decision: Option A (merge to /docs/cli/)
+
+## Special Cases Found
+- Index files: [list or None]
+- Custom slug files: [list or None]
+- Non-standard frontmatter: [list or None]
+- Handling approach: [documented]
+
+## Validation Sign-Off
+- [ ] Total English = 133 ✓
+- [ ] Total Vietnamese = 86 ✓
+- [ ] Engineer skills = 15 ✓
+- [ ] No blocking duplicates ✓
+- [ ] All decisions documented ✓
+- READY FOR PHASE 02 ✓
+
+EXECUTION ORDER (Recommended)
+==============================
+1. Run all Phase A tasks (parallel) → 2 min
+2. Verify all Phase A counts match expected
+3. Run Phase B1 tasks (parallel) → 1 min
+4. Run Phase B2 tasks (parallel) → 1 min
+5. Run Phase B3 tasks (parallel) → 1 min
+6. Analyze B1, B2, B3 outputs → 1 min
+7. Complete B1 decision (Step 2.12) → 1 min
+8. Complete B2 decision (Step 2.15) → 1 min
+9. Complete B3 documentation (Step 2.19) → 1 min
+10. Run all Phase C validation tasks → 2 min
+11. Create migration manifest → 1 min
+12. Sign off Phase 01 checklist → 1 min
+
+PASS/FAIL GATES
+===============
+Gate 1: Phase A counts = expected? [YES → Continue / NO → STOP, recount]
+Gate 2: All analysis outputs captured? [YES → Continue / NO → STOP, complete]
+Gate 3: All validation checks pass? [YES → Sign off / NO → STOP, resolve]
+Gate 4: Manifest complete & signed? [YES → Phase 02 / NO → STOP, finish]
+
+CRITICAL PATH (Sequential)
+===========================
+2.3 → 2.9 → 2.11 → 2.12 → 3.4 → 3.5 → 3.6
+(Skills verification → analysis → decision → validation → manifest → signoff)
+
+PARALLEL OPPORTUNITIES
+======================
+A: 2.1-2.8 (all file counts, simultaneous)
+B1: 2.9-2.10 (extract filenames, simultaneous)
+B2: 2.13-2.14 (list CLI files, simultaneous)
+B3: 2.16-2.18 (find special cases, simultaneous)
+
+COMMON ISSUES & FIXES
+=====================
+Issue: File counts don't match expected
+Fix:   Verify correct paths, check for hidden files, recount
+
+Issue: Duplicates found but unclear how to merge
+Fix:   Review file content, decide per-file, document in manifest
+
+Issue: Custom slugs found
+Fix:   Document in manifest, flag for Phase 06 link updates
+
+Issue: Index files found
+Fix:   Document in manifest, check if affects navigation
+
+PHASE 01 SUCCESS DEFINED
+========================
+✓ All 26 tasks executed
+✓ 6 validation gates passed
+✓ Migration manifest created
+✓ All decisions documented
+✓ Zero unresolved blockers
+✓ Ready for Phase 02
+
+HANDOFF TO PHASE 02
+===================
+Input:  Migration manifest (from this phase)
+Output: Phase 02 uses manifest for git mv commands
+Action: All 133 English files moved to /engineer/* paths
+Status: Git history preserved, no data loss
+
+USEFUL COMMANDS
+===============
+# Create temp file for analysis
+cat > /tmp/migration-manifest.txt << 'EOF'
+[paste manifest template above]
+EOF
+
+# Count files quickly
+find src/content/docs/docs -name "*.md" | wc -l
+
+# List specific category
+find src/content/docs/docs/skills -name "*.md"
+
+# Find duplicates
+comm -12 <(sort legacy.txt) <(sort engineer.txt)
+
+# Save output to file
+find ... > /tmp/output.txt
+
+# Display file
+cat /tmp/migration-manifest.txt
+
+VALIDATION CHECKLIST
+====================
+Before signing off Phase 01:
+  [ ] All file counts verified
+  [ ] Skills duplicates identified or "none"
+  [ ] CLI decision made (recommend Option A)
+  [ ] Special cases documented
+  [ ] Manifest created with all results
+  [ ] All 6 validation criteria passed
+  [ ] No unresolved questions
+  [ ] Ready for Phase 02
+
+NEXT STEPS
+==========
+IF PASS:
+  1. Sign off Phase 01 validation
+  2. Save manifest to reports/
+  3. Proceed to Phase 02: File Migration
+  4. Duration: 30 minutes
+  5. Method: git mv all files
+
+IF FAIL:
+  1. Identify blocker
+  2. Stop execution
+  3. Document issue
+  4. Resolve before retry
+  5. Notify team
+
+REFERENCE DOCUMENTS
+===================
+- Detailed Report:    project-manager-251230-0026-phase01-analysis.md
+- Task Summary:       project-manager-251230-0026-phase01-tasks-summary.txt
+- Task Flow Diagram:  project-manager-251230-0026-phase01-task-flow.txt
+- Executive Summary:  project-manager-251230-0026-EXECUTIVE-SUMMARY.md
+- This Card:          project-manager-251230-0026-QUICK-REFERENCE.txt
+
+All reports in: d:\www\claudekit\claudekit-docs\plans\reports\
+
+TIMESTAMPS
+==========
+Report Generated: 2025-12-30
+Estimated Duration: 10 minutes
+Status: Ready for immediate execution
+Next Review: After Phase 01 completion
+
+---
+Quick reference prepared for execution team
+Follow execution order above for 10-minute completion
+Document all findings in migration manifest
+Sign off Phase 01 when all validation checks pass

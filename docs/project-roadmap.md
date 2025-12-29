@@ -1,14 +1,14 @@
 # Project Roadmap
 
-**Last Updated**: 2025-12-29
+**Last Updated**: 2025-12-30
 **Version**: 0.1.0
 **Project**: claudekit-docs
 
 ## Current Status
 
-**Phase**: Phase 09 - Kit-Agnostic Refactor In Progress (85% Complete)
+**Phase**: Phase 09 - Kit-Agnostic Refactor In Progress (87% Complete)
 **Live**: Not yet deployed to production
-**Development**: Active - Kit-agnostic multi-documentation architecture completed
+**Development**: Active - Engineer docs migration Phase 01 complete, Phase 02 ready
 
 ### Completed Features ✅
 
@@ -113,6 +113,11 @@
 ### In Progress 🔄
 
 **Phase 08-10: Final Deliverables**
+- 🔄 Engineer docs migration: Phase 01 complete, Phase 02 ready to execute
+  - Pre-migration analysis: 131 files identified for migration
+  - Skills duplicates: 8 found, Option A confirmed (keep existing versions)
+  - CLI files: Excluded (already current)
+  - Migration manifest: Created and code-reviewed (9/10 quality score)
 - 🔄 Vietnamese translations: 72% complete (63/88 files)
 - 🔄 Visual assets: 60% complete (9/15 diagrams)
 - ⏸️ Integration testing & final QA
@@ -318,6 +323,47 @@
 - **Build Status**: ✅ Passing (183 pages generated)
 - **Parallelization**: 23 agents, 95% time savings
 - **Quality**: Storytelling approach, professional tone maintained
+
+---
+
+### 🔄 Phase 09A: Engineer Docs Migration (IN PROGRESS)
+
+**Goal**: Migrate Engineer documentation from legacy structure to kit-agnostic architecture
+
+**Phase 01: Pre-Migration Analysis** ✅ COMPLETED (2025-12-30):
+- ✅ File inventory: 133 English docs verified + 86 Vietnamese docs verified
+  - Agents: 18 | Commands: 66 | Skills: 43 | Config: 4 | CLI: 2
+- ✅ Skills duplicate analysis: 8 duplicates found
+  - Decision: Option A (merge legacy into existing engineer/skills/*)
+  - Result: 43 legacy skills + 15 existing = 49 total (8 duplicates resolved)
+- ✅ CLI migration decision: Skip legacy CLI files (2 files excluded - already migrated)
+- ✅ Migration manifest created and reviewed
+- ✅ 0 critical blockers identified
+- ✅ Approved for Phase 02 execution
+
+**Phase 02: File Migration** (PENDING - 30 min est.):
+- [ ] Migrate agent documentation (18 files)
+- [ ] Migrate command documentation (66 files)
+- [ ] Migrate skill documentation (35 legacy + preserve 14 existing)
+- [ ] Migrate configuration documentation (4 files)
+- [ ] Update internal links and references
+- [ ] Validate build and navigation
+
+**Phase 03: Vietnamese Translation** (PENDING):
+- [ ] Mirror migration structure in docs-vi/
+- [ ] Translate migrated content (47 missing EN docs must complete first)
+
+**Phase 04: Integration & QA** (PENDING):
+- [ ] Verify all links and navigation
+- [ ] Test kit-agnostic components
+- [ ] Build validation
+- [ ] Redirect setup if needed
+
+**Results So Far**:
+- **0 blockers** identified
+- **131 files** ready for migration (133 EN - 2 CLI)
+- **100% file inventory** verified
+- **Duplicate strategy** finalized
 
 ---
 

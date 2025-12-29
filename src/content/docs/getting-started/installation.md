@@ -232,26 +232,42 @@ ck update
 
 ### Authentication
 
-The CLI requires a **GitHub Personal Access Token (PAT)** to download releases from private repositories (`claudekit-engineer` and `claudekit-marketing`).
+The CLI supports multiple authentication methods for downloading releases from private repositories.
 
-**Authentication Fallback Chain:**
+**Authentication Priority:**
 
-1. **GitHub CLI**: Uses `gh auth token` if GitHub CLI is installed and authenticated
-2. **Environment Variables**: Checks `GITHUB_TOKEN` or `GH_TOKEN`
-3. **OS Keychain**: Retrieves stored token from system keychain
-4. **User Prompt**: Prompts for token input and offers to save it securely
+1. **Environment Variables** (checked first): `GITHUB_TOKEN` or `GH_TOKEN`
+2. **GitHub CLI**: Uses `gh auth token` if installed
+3. **Interactive Prompt**: Guides through setup when auth fails
 
-**Creating a Personal Access Token:**
-
-1. Go to GitHub Settings → Developer settings → Personal access tokens → Tokens (classic)
-2. Generate new token with `repo` scope (for private repositories)
-3. Copy the token
-
-**Setting Token via Environment Variable:**
+**Option 1: Environment Variables** (Recommended for CI/CD)
 
 ```bash
 export GITHUB_TOKEN=ghp_your_token_here
 ```
+
+**Option 2: GitHub CLI**
+
+```bash
+brew install gh  # macOS
+gh auth login
+```
+
+**Option 3: Git Clone Mode** (No token required)
+
+```bash
+ck init --use-git
+```
+
+Uses native git credentials (SSH keys or credential manager).
+
+**Creating a Personal Access Token:**
+
+1. Go to GitHub Settings → Developer settings → Personal access tokens → **Tokens (classic)**
+2. Generate new token with `repo` scope
+3. Copy the token
+
+> ⚠️ **Important:** Use Classic PAT, not fine-grained. Fine-grained PATs don't work for collaborator repos.
 
 ## Verify Installation
 
@@ -321,10 +337,26 @@ If `claude` command is not found:
 
 If CLI can't authenticate:
 
-1. Install GitHub CLI: `brew install gh` (macOS) or see [cli.github.com](https://cli.github.com)
-2. Authenticate: `gh auth login`
-3. Verify: `gh auth status`
-4. Or set environment variable: `export GITHUB_TOKEN=your_token`
+1. **Try environment variable first:**
+   ```bash
+   export GITHUB_TOKEN=ghp_your_token
+   ```
+
+2. **Or use git clone mode (no token needed):**
+   ```bash
+   ck init --use-git
+   ```
+
+3. **Or install GitHub CLI:**
+   ```bash
+   brew install gh  # macOS
+   gh auth login
+   ```
+
+4. **Verify authentication:**
+   ```bash
+   gh auth status
+   ```
 
 ## Optional Tools
 

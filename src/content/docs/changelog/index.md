@@ -12,6 +12,36 @@ Recent changes, updates, and release notes for ClaudeKit.
 
 ## Latest Release
 
+### CLI v3.16.0 - 2024-12-28
+
+#### 🔄 Config Sync Feature
+
+New `--sync` flag for interactive config file synchronization:
+- **3-Way Merge UI** - Side-by-side diff viewer
+- **Interactive Review** - Accept/reject/edit each change
+- **Smart Versioning** - Detects upstream config updates
+- **Backup Protection** - Preserves originals before changes
+- **Passive Notifications** - Shows update availability after `ck init`
+
+```bash
+ck init --sync
+```
+
+#### 🔐 Multi-Method GitHub Authentication
+
+New authentication options for easier setup:
+- **Environment Variables First** - `GITHUB_TOKEN`/`GH_TOKEN` now checked before gh CLI
+- **Git Clone Mode** - New `--use-git` flag bypasses API, uses native git credentials
+- **Interactive Prompt** - Guides through setup when auth fails
+- **SSH Auto-Detection** - Automatically detects SSH keys
+
+```bash
+# No token needed - uses SSH/HTTPS credentials
+ck init --use-git
+```
+
+---
+
 ### Version 1.0.0 - 2024-12-01
 
 #### 🎉 Initial Release

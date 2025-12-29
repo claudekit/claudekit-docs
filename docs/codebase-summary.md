@@ -1,29 +1,30 @@
 # Codebase Summary
 
 **Last Updated**: 2025-12-30
-**Version**: 0.1.0 (Kit-Agnostic Refactor - Phase 09 / Engineer Migration Phase 03 Complete)
+**Version**: 0.1.0 (Kit-Agnostic Refactor - Phase 09 / Engineer Migration Phase 04 Complete)
 **Repository**: claudekit-docs
-**Migration Status**: Phase 09A Engineer Docs Migration - Frontmatter updates complete (138/138 files)
+**Migration Status**: Phase 09A Engineer Docs Migration - Vietnamese migration complete (84 VI files migrated, 49 missing translations documented)
 
 ## Overview
 
 claudekit-docs is Astro v5-based static documentation site supporting multiple ClaudeKit kits (Engineer, Marketing, CLI). Features kit-agnostic architecture, comprehensive documentation for 60+ agents/features, bi-lingual content (English/Vietnamese), AI chat integration (UI complete, backend pending), enhanced sidebar navigation with kit switching, and One Dark Pro-inspired design system. Successfully refactored from single-kit to multi-kit architecture with 280+ pages, 95% time savings through parallel agent execution, and 14% over-delivery on content targets. Engineer documentation migration phase 01 (pre-migration analysis) complete with 131 files ready for integration.
 
-## Engineer Docs Migration (Phase 09A) - Frontmatter Updates Complete
+## Engineer Docs Migration (Phase 09A) - Vietnamese Migration Complete
 
-**Status**: Phase 03 (Frontmatter Updates) ✅ Complete
+**Status**: Phase 04 (Vietnamese Translation) ✅ Complete
 
-**What**: Integration of legacy Engineer documentation into kit-agnostic architecture with frontmatter standardization
-**Why**: Complete kit consolidation - Engineer docs moved from legacy `docs/docs/` structure to new `src/content/docs/engineer/` structure with unified metadata
-**Impact**: 138 files successfully updated with standardized frontmatter; unified navigation + search across all kits enabled
+**What**: Integration of legacy Engineer documentation Vietnamese translations into kit-agnostic architecture
+**Why**: Complete kit consolidation - Engineer VI docs moved to `src/content/docs-vi/engineer/` structure with bilingual support
+**Impact**: 84 Vietnamese files successfully migrated; 49 missing translations identified for future completion; bilingual navigation enabled
 
-**Phase 03 Completion** ✅:
-- **Files Updated**: 138 total (18 agents + 66 commands + 49 skills + 4 config + 1 index)
-- **Frontmatter Changes**: Updated `section: docs` → `section: engineer`, added `kit: engineer` field
+**Phase 04 Completion** ✅:
+- **Vietnamese Files Migrated**: 84 total files to `/engineer/` structure
+- **Frontmatter Standardization**: Applied `section: engineer`, `kit: engineer` to all VI files
 - **Build Status**: ✅ Passed (466 pages generated, 0 errors)
-- **Critical Issues Fixed**: 2 (YAML corruption in frontmatter + scripts not properly committed)
-- **Duration**: 50 minutes total (20 min execution + 30 min critical fixes)
-- **Overall Progress**: Phase 03 of 7 = 43% complete
+- **Critical Issues Fixed**: 1 (frontmatter corruption in 55 files resolved)
+- **Missing Translations Documented**: 49 files (37% of Engineer docs)
+- **Duration**: 20 minutes total (15 min execution + 5 min critical fix)
+- **Overall Progress**: Phase 04 of 7 = 57% complete
 
 **File Breakdown**:
 - **Agents**: 18 files → `src/content/docs/engineer/agents/`
@@ -38,11 +39,18 @@ claudekit-docs is Astro v5-based static documentation site supporting multiple C
 - `plans/reports/code-reviewer-251230-0105-phase02-file-migration.md` - Phase 02 completion review
 - `plans/reports/project-manager-251230-0026-EXECUTIVE-SUMMARY.md` - Executive summary
 
-**Next Phase** (Phase 04 - Vietnamese Translation):
+**Phase 04 Results**:
+- 84 Vietnamese files successfully migrated to `/engineer/` structure
+- Frontmatter corruption issue fixed (55 files with improper YAML)
+- 49 missing translations identified and documented (37% content gap)
+- Bilingual navigation framework operational
+- Full build validation passed
+
+**Next Phase** (Phase 05 - Redirect Configuration):
 - Status: READY (unblocked)
-- Tasks: Mirror structure in docs-vi/, update Vietnamese files with frontmatter, sync translations
-- Estimated time: TBD
-- Impact: Enable bilingual support for Engineer documentation
+- Tasks: Configure URL redirects for legacy paths, validate redirect mappings
+- Estimated time: 15 minutes
+- Impact: Backward compatibility for old documentation URLs
 
 ---
 

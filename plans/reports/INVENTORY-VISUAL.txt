@@ -1,0 +1,195 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║         CLAUDEKIT DOCS INVENTORY - VISUAL STRUCTURE SUMMARY               ║
+║                        2025-12-29 Complete Scan                          ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+📊 METRICS AT A GLANCE
+──────────────────────────────────────────────────────────────────────────────
+Total Pages:              169
+Sections:                 6 (getting-started, docs, workflows, support, tools, changelog)
+Categories:              18+
+Languages:               2 (English + Vietnamese)
+Marketing Docs:          0 (gap identified)
+
+📁 SECTION BREAKDOWN
+──────────────────────────────────────────────────────────────────────────────
+
+[1] GETTING-STARTED (8 pages) ████
+    ├─ Introduction & Core Concepts
+    ├─ Installation & Quick Start
+    ├─ Cheatsheet & Upgrade Guide
+    └─ STATUS: Onboarding focused
+
+[2] DOCS (133 pages) ███████████████████████████████████████
+    ├─ AGENTS (18) - brainstormer, code-reviewer, copywriter*, debugger,
+    │              docs-manager, fullstack-developer, git-manager,
+    │              journal-writer, mcp-manager, planner, project-manager,
+    │              researcher, scout, scout-external, tester, ui-ux-designer
+    │              database-admin (*marketing-adjacent)
+    │
+    ├─ CLI (2) - Installation, Overview (mentions --kit engineer)
+    │
+    ├─ COMMANDS (91) - Deep hierarchy
+    │   ├─ core (22)      - bootstrap, cook, ask, scout, debug, code, etc.
+    │   ├─ content (4)    - /content:cro, enhance, fast, good
+    │   ├─ design (6)     - /design:3d, describe, fast, good, screenshot, video
+    │   ├─ fix (9)        - /fix, test, parallel, fast, hard, ci, logs, ui, types
+    │   ├─ git (6)        - /git:cm, cp, merge, commit, commit-push, pr
+    │   ├─ plan (7)       - /plan, fast, hard, cro, ci, two, parallel
+    │   ├─ docs-cmd (3)   - /docs:init, update, summarize
+    │   ├─ skill (5)      - /skill:create, add, optimize, optimize:auto, fix-logs
+    │   ├─ integrate (2)  - /integrate:polar, sepay
+    │   └─ review (1)     - /review:codebase
+    │
+    ├─ CONFIGURATION (4) - claude-md, mcp-setup, workflows, hooks
+    │
+    └─ SKILLS (28) - Hierarchical categories
+        ├─ ai (4)           - AI Multimodal, Gemini Vision, Canvas Design, Google ADK
+        ├─ auth (1)         - Better Auth
+        ├─ backend (5)      - Backend Dev, Databases, DevOps, Docker, PostgreSQL
+        ├─ ecommerce (1)    - Shopify
+        ├─ frontend (11)    - Next.js, Tailwind, React, shadcn/ui, Three.js, etc.
+        ├─ mobile (1)       - Mobile Development
+        ├─ multimedia (1)   - Media Processing
+        ├─ payments (1)     - Payment Integration
+        └─ tools (17)       - Chrome DevTools, MCP Builder, Repomix, FFmpeg, etc.
+
+[3] WORKFLOWS (17 pages) ████
+    ├─ Development focused
+    ├─ feature-development, bug-fixing, documentation
+    ├─ starting-new-project, maintaining-old-project
+    ├─ building-api, implementing-auth, integrating-payment*
+    ├─ refactoring, optimizing-performance
+    └─ STATUS: Engineering-centric (*commerce-adjacent exists)
+
+[4] SUPPORT (8 pages) ████
+    ├─ FAQ & Troubleshooting
+    ├─ Installation, API Key Setup, Agent Issues
+    ├─ Command Errors, Performance Issues
+    └─ STATUS: Limited coverage
+
+[5] TOOLS (2 pages) █
+    ├─ Tools & Utilities
+    └─ CCS - Claude Code Switch
+
+[6] CHANGELOG (1 page) █
+    └─ Release History
+
+🔴 CRITICAL GAPS FOR MARKETING KIT
+──────────────────────────────────────────────────────────────────────────────
+
+1. ❌ Zero dedicated marketing section
+2. ❌ No marketing-specific agents (only 1 copywriter doc)
+3. ❌ No marketing commands documentation
+4. ❌ No marketing skills category
+5. ❌ No marketing workflows (campaigns, content calendar, etc.)
+6. ❌ No marketing troubleshooting
+
+📋 REFERENCED BUT UNDOCUMENTED
+──────────────────────────────────────────────────────────────────────────────
+
+Via CLI Installation:
+  ✓ --kit engineer     (documented)
+  ✓ --kit web         (referenced but no docs)
+  ✓ --kit marketing   (referenced but NO DOCS)
+
+🔧 SCHEMA CONSTRAINTS
+──────────────────────────────────────────────────────────────────────────────
+
+File: src/content/config.ts
+
+✗ HARDCODED SECTION ENUM (blocks expansion):
+  section: z.enum([
+    'getting-started',
+    'docs',
+    'workflows',
+    'tools',
+    'changelog',
+    'support'
+  ])
+  
+  → Cannot add 'marketing' section without code changes
+
+✓ FLEXIBLE CATEGORY (supports nesting):
+  category: z.string().optional()
+  
+  → Already used: "commands/core", "skills/backend", etc.
+  → Can scale to: "marketing/social", "marketing/seo", etc.
+
+🧭 NAVIGATION ARCHITECTURE
+──────────────────────────────────────────────────────────────────────────────
+
+Location: src/components/nav/
+
+Current Components:
+  • SidebarNav.astro         (main router, URL detection)
+  • GettingStartedNav.astro  (section-specific)
+  • DocsNav.astro            (2-level hierarchy builder)
+  • WorkflowsNav.astro       (workflow category listing)
+  • ToolsNav.astro           (tools listing)
+  • ChangelogNav.astro       (changelog)
+  • SupportNav.astro         (support)
+
+⚠️  Problem: No MarketingNav.astro exists
+→ Manual addition required per kit
+
+🎯 RECOMMENDED SOLUTIONS
+──────────────────────────────────────────────────────────────────────────────
+
+OPTION A: Minimal (Add Marketing Section)
+  Step 1: Update config schema to include 'marketing' in enum
+  Step 2: Create MarketingNav.astro component
+  Step 3: Add marketing docs at src/content/docs/marketing/
+  Effort:  🟡 Medium (3-5 days)
+  Impact:  ⚠️  Limited, tight coupling remains
+
+OPTION B: Kit-Agnostic Architecture (Recommended) ⭐
+  Step 1: Generalize section enum or use dynamic routing
+  Step 2: Add 'kit' field to schema for content filtering
+  Step 3: Create KitSwitcher component for navigation
+  Step 4: Reorganize docs: src/content/docs/{shared, engineer, marketing, web}/
+  Step 5: Update DocsNav to support multi-kit rendering
+  Effort:  🟠 Heavy (1-2 weeks)
+  Impact:  ✅ Scalable, reusable, clean separation
+
+📦 REUSABLE CONTENT IDENTIFIED
+──────────────────────────────────────────────────────────────────────────────
+
+Can be shared across kits:
+  • Core agents: 18 agent docs
+  • Some commands: /ask, /scout, /debug, /journal
+  • Some skills: AI, backend, tools
+  • Configuration docs
+
+Kit-specific:
+  • Commands: /content, /fix:ui, /design/* (marketing-centric)
+  • Workflows: marketing-specific workflows
+  • Skills: SEO, Social Media, Content Strategy
+
+✅ STRENGTHS
+──────────────────────────────────────────────────────────────────────────────
+✓ Existing 169 pages provide foundation
+✓ Hierarchical structure supports expansion
+✓ Multi-language ready (docs-vi/ exists)
+✓ Collapsible nav with state persistence
+✓ Schema mostly flexible (except section enum)
+
+❌ WEAKNESSES
+──────────────────────────────────────────────────────────────────────────────
+✗ Hardcoded section enum blocks scaling
+✗ Single-product assumption throughout
+✗ No kit differentiation docs
+✗ Navigation expects fixed sections
+✗ No multi-kit comparison/guidance
+
+🤔 KEY QUESTIONS
+──────────────────────────────────────────────────────────────────────────────
+1. Scope: What marketing-specific docs are needed?
+2. Nav Strategy: Kit switcher or separate docs site?
+3. Content Reuse: Which docs apply to multiple kits?
+4. Localization: Vietnamese for marketing kit?
+5. Architecture: Adopt Option A or Option B?
+
+════════════════════════════════════════════════════════════════════════════════
+
+📄 Full Report: plans/reports/scout-251229-2047-docs-inventory.md

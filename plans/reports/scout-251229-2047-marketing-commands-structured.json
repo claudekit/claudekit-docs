@@ -1,0 +1,668 @@
+{
+  "metadata": {
+    "report_date": "2025-12-29",
+    "report_time": "20:47",
+    "project": "claudekit-marketing",
+    "directory_scanned": ".claude/commands/",
+    "total_commands": 119,
+    "total_main_commands": 20,
+    "total_subcommands": 99
+  },
+  "commands": [
+    {
+      "id": 1,
+      "name": "analyze",
+      "description": "Generate analytics and performance reports",
+      "icon": "💡💡",
+      "argument_hint": "[type]",
+      "arguments": {
+        "type": {
+          "description": "Analysis type",
+          "options": [
+            { "name": "traffic", "description": "Traffic analysis report" },
+            { "name": "campaigns", "description": "Campaign performance overview" },
+            { "name": "conversions", "description": "Conversion funnel analysis" },
+            { "name": "funnel", "description": "Sales funnel metrics" },
+            { "name": "content", "description": "Content performance analysis" },
+            { "name": "engagement", "description": "Engagement metrics" }
+          ]
+        }
+      },
+      "output_paths": ["reports/analytics/{date}-{type}.md"],
+      "agents": ["analytics-analyst", "funnel-architect"],
+      "skills": ["analytics"],
+      "examples": [
+        "/analyze traffic",
+        "/analyze campaigns",
+        "/analyze conversions"
+      ],
+      "category": "Analytics & Reporting",
+      "complexity": "medium"
+    },
+    {
+      "id": 2,
+      "name": "ask",
+      "description": "Answer technical and architectural questions",
+      "icon": "💡",
+      "argument_hint": "[technical-question]",
+      "arguments": {
+        "technical_question": {
+          "description": "Architecture or technical challenge",
+          "type": "freeform"
+        }
+      },
+      "features": [
+        "Expert consultation from 4 specialized advisors (Systems Designer, Technology Strategist, Scalability Consultant, Risk Analyst)",
+        "Honors YAGNI, KISS, DRY principles",
+        "High-level architectural guidance (NOT implementation)"
+      ],
+      "agents": [
+        "systems-designer",
+        "technology-strategist",
+        "scalability-consultant",
+        "risk-analyst"
+      ],
+      "examples": [
+        "/ask How should we structure our microservices?",
+        "/ask What's the best approach for real-time notifications?"
+      ],
+      "category": "Planning & Strategy",
+      "complexity": "high"
+    },
+    {
+      "id": 3,
+      "name": "bootstrap",
+      "description": "Bootstrap a new project step by step",
+      "icon": "💡💡💡💡💡",
+      "argument_hint": "[user-requirements]",
+      "workflow_steps": [
+        "Question Everything (clarify requirements)",
+        "Research (explore solutions)",
+        "Tech Stack (recommend & validate)",
+        "Planning (detailed implementation plan)",
+        "Design (wireframes & guidelines, optional)",
+        "Implementation (code with subagents)",
+        "Testing (comprehensive coverage)",
+        "Code Review (quality assurance)",
+        "Documentation (update all docs)",
+        "Onboarding (guide user setup)",
+        "Final Report (summarize & commit)"
+      ],
+      "output": "Complete project skeleton with docs, tests, CI/CD",
+      "key_features": ["Progressive disclosure", "Phase-based structure"],
+      "examples": ["/bootstrap Create an AI-powered content management system"],
+      "category": "Planning & Strategy",
+      "complexity": "very-high"
+    },
+    {
+      "id": 4,
+      "name": "brainstorm",
+      "description": "Brainstorm a solution collaboratively",
+      "icon": "default",
+      "argument_hint": "[question or topic]",
+      "features": [
+        "5-phase brainstorming process",
+        "2-3 alternatives with trade-offs",
+        "Interactive questioning (1 question at a time)",
+        "Consensus-based summary report",
+        "BRAINSTORMING ONLY - no implementation"
+      ],
+      "next_actions": [
+        "/plan - Create detailed implementation plan",
+        "/cook - Start implementation",
+        "/fix - Address specific issues"
+      ],
+      "examples": ["/brainstorm How can we improve customer onboarding flow?"],
+      "category": "Planning & Strategy",
+      "complexity": "medium"
+    },
+    {
+      "id": 5,
+      "name": "campaign",
+      "description": "Create and manage marketing campaigns",
+      "icon": "💡💡",
+      "argument_hint": "[action] [name]",
+      "actions": [
+        { "name": "create", "params": "[name]", "description": "Create new campaign" },
+        { "name": "status", "params": "[name]", "description": "Get campaign status" },
+        { "name": "analyze", "params": "[name]", "description": "Analyze campaign performance" }
+      ],
+      "output_paths": [
+        "assets/campaigns/{date}-{slug}/briefs/",
+        "assets/campaigns/{date}-{slug}/creatives/",
+        "assets/campaigns/{date}-{slug}/reports/",
+        "assets/diagnostics/campaign-audits/{date}-{name}.md"
+      ],
+      "agents": [
+        "campaign-manager",
+        "funnel-architect",
+        "analytics-analyst",
+        "campaign-debugger"
+      ],
+      "skills": [
+        "campaign-management",
+        "creativity",
+        "assets-organizing"
+      ],
+      "examples": [
+        "/campaign create \"Q1 Product Launch\"",
+        "/campaign status \"Q1 Product Launch\"",
+        "/campaign analyze \"Q1 Product Launch\""
+      ],
+      "category": "Content & Copy",
+      "complexity": "high"
+    },
+    {
+      "id": 6,
+      "name": "code",
+      "description": "Start coding & testing an existing plan",
+      "icon": "💡💡💡",
+      "argument_hint": "[plan] or empty (auto-detects)",
+      "workflow_steps": [
+        "Plan Detection - Find latest or specified plan",
+        "Analysis & Task Extraction - Parse plan, identify blockers",
+        "Implementation - Code step-by-step",
+        "Testing - 100% pass requirement",
+        "Code Review - Zero critical issues gate",
+        "User Approval - Blocking gate",
+        "Finalize - Update docs, auto-commit"
+      ],
+      "critical_rules": [
+        "Tests must be 100% passing",
+        "Zero critical issues after review",
+        "User must approve before finalization",
+        "Auto-commits with phase name on approval"
+      ],
+      "examples": [
+        "/code",
+        "/code phase-2-payment-integration"
+      ],
+      "category": "Implementation",
+      "complexity": "very-high"
+    },
+    {
+      "id": 7,
+      "name": "cook",
+      "description": "Implement a feature [step by step]",
+      "icon": "💡💡💡",
+      "argument_hint": "[tasks]",
+      "workflow_steps": [
+        "Clarify requirements",
+        "Research solutions",
+        "Use /scout to find relevant code",
+        "Create implementation plan",
+        "Execute plan with /code",
+        "Test & code review",
+        "Update docs",
+        "Commit & push"
+      ],
+      "note": "/cook plans internally (no separate /plan needed)",
+      "examples": ["/cook Add dark mode toggle to settings"],
+      "category": "Planning & Strategy",
+      "complexity": "very-high"
+    },
+    {
+      "id": 8,
+      "name": "plan",
+      "description": "Intelligent plan creation with prompt enhancement",
+      "icon": "💡💡💡",
+      "argument_hint": "[task]",
+      "features": [
+        "Auto-detects active vs suggested plans",
+        "Intelligent complexity assessment",
+        "Routes to /plan:fast or /plan:hard",
+        "Progressive disclosure structure",
+        "Phase-based planning"
+      ],
+      "output": "plans/{date}-{slug}/plan.md + phase files",
+      "examples": ["/plan Implement real-time collaboration feature"],
+      "category": "Planning & Strategy",
+      "complexity": "high"
+    },
+    {
+      "id": 9,
+      "name": "fix",
+      "description": "Analyze and fix issues [INTELLIGENT ROUTING]",
+      "icon": "💡💡",
+      "argument_hint": "[issues]",
+      "routing_decision_tree": {
+        "type_errors": "/fix:types",
+        "ui_ux_issues": "/fix:ui",
+        "ci_cd_issues": "/fix:ci",
+        "test_failures": "/fix:test",
+        "log_analysis": "/fix:logs",
+        "multiple_issues": "/fix:parallel",
+        "complex_issues": "/fix:hard",
+        "simple_fixes": "/fix:fast"
+      },
+      "examples": [
+        "/fix TypeScript compilation errors in auth module",
+        "/fix Button styling not responsive on mobile",
+        "/fix GitHub Actions deployment pipeline failing"
+      ],
+      "category": "Implementation",
+      "complexity": "high"
+    },
+    {
+      "id": 10,
+      "name": "scout",
+      "description": "Scout given directories to respond to user requests",
+      "icon": "💡💡",
+      "argument_hint": "[user-prompt] [scale]",
+      "features": [
+        "Fast, token-efficient codebase search",
+        "Parallel agent spawning (default scale: 3)",
+        "Intelligent directory division",
+        "3-minute timeout per agent"
+      ],
+      "output_paths": ["plans/reports/"],
+      "examples": [
+        "/scout Find all payment-related files",
+        "/scout Authentication middleware implementation 5"
+      ],
+      "category": "Implementation",
+      "complexity": "medium"
+    },
+    {
+      "id": 11,
+      "name": "design/generate",
+      "description": "Generate images with enhanced prompt & project context",
+      "icon": "default",
+      "argument_hint": "[description]",
+      "workflow_steps": [
+        "Extract brand context dynamically",
+        "Enhance prompt using brand guidelines",
+        "Generate image with Imagen API",
+        "Verify against brand palette",
+        "Output with metadata"
+      ],
+      "output_paths": {
+        "banners": "assets/banners/",
+        "social_graphics": "assets/banners/social-media/",
+        "email_headers": "assets/banners/email-headers/",
+        "landing_pages": "assets/banners/landing-pages/",
+        "campaign_assets": "assets/designs/campaigns/",
+        "infographics": "assets/infographics/"
+      },
+      "skills": ["ai-multimodal", "brand-guidelines"],
+      "examples": [
+        "/design:generate \"hero banner for landing page\"",
+        "/design:generate \"LinkedIn post graphic, 1:1 aspect\"",
+        "/design:generate \"email header for welcome sequence\""
+      ],
+      "category": "Content & Copy",
+      "complexity": "medium"
+    },
+    {
+      "id": 12,
+      "name": "email",
+      "description": "Generate email content",
+      "icon": "💡💡",
+      "argument_hint": "[type]",
+      "email_types": [
+        { "name": "newsletter", "description": "Newsletter content" },
+        { "name": "cold", "description": "Cold outreach email" },
+        { "name": "followup", "description": "Follow-up sequence" },
+        { "name": "launch", "description": "Product launch email" },
+        { "name": "nurture", "description": "Nurture sequence email" },
+        { "name": "welcome", "description": "Welcome email series" },
+        { "name": "winback", "description": "Re-engagement email" }
+      ],
+      "output_paths": ["assets/copy/emails/{date}-{type}-{slug}.md"],
+      "agents": ["email-wizard", "copywriter"],
+      "skills": ["email-marketing", "creativity"],
+      "examples": [
+        "/email newsletter",
+        "/email cold \"SaaS founders\"",
+        "/email launch \"New Feature\"",
+        "/email nurture"
+      ],
+      "category": "Content & Copy",
+      "complexity": "medium"
+    },
+    {
+      "id": 13,
+      "name": "seo/audit",
+      "description": "Technical SEO audit",
+      "icon": "💡💡",
+      "argument_hint": "[url]",
+      "features": [
+        "Page data fetching (WebFetch or local)",
+        "ReviewWeb API integration (backlinks, traffic, keywords)",
+        "Technical analysis (meta, headings, schema, speed)",
+        "Priority-based recommendations",
+        "Score (0-100) with letter grade"
+      ],
+      "checks": [
+        "Title tag (length, keywords)",
+        "Meta description",
+        "Heading structure (H1-H6)",
+        "URL structure",
+        "Internal/external links",
+        "Image alt tags",
+        "Schema markup",
+        "Mobile responsiveness",
+        "Page speed indicators"
+      ],
+      "output_paths": ["assets/seo/audits/{date}-{domain}-audit.md"],
+      "agents": ["seo-specialist"],
+      "skills": ["seo-optimization"],
+      "examples": [
+        "/seo/audit https://example.com",
+        "/seo/audit https://example.com/pricing"
+      ],
+      "category": "Analytics & Reporting",
+      "complexity": "high"
+    },
+    {
+      "id": 14,
+      "name": "write/blog",
+      "description": "Create SEO-optimized blog content",
+      "icon": "💡💡",
+      "argument_hint": "[topic]",
+      "workflow_steps": [
+        "SEO Research - keyword research & intent",
+        "Content Planning - outline with H2-H4 structure",
+        "Content Creation - write engaging post",
+        "SEO Optimization - add schema markup, alt text",
+        "Quality Gate - /write/audit (target ≥8.0)"
+      ],
+      "output_paths": [
+        "assets/articles/{date}-{slug}/{date}-{slug}.md",
+        "assets/articles/{date}-{slug}/images/"
+      ],
+      "metadata_included": [
+        "SEO title",
+        "description",
+        "keywords",
+        "schema"
+      ],
+      "agents": [
+        "seo-specialist",
+        "content-creator",
+        "copywriter",
+        "planner"
+      ],
+      "skills": ["seo-optimization", "content-marketing", "creativity"],
+      "examples": [
+        "/write/blog \"best project management tools for startups\"",
+        "/write/blog \"AI marketing automation guide\"",
+        "/write/blog \"remote team productivity tips\""
+      ],
+      "category": "Content & Copy",
+      "complexity": "high"
+    },
+    {
+      "id": 15,
+      "name": "skill/create",
+      "description": "Create a new agent skill",
+      "icon": "default",
+      "argument_hint": "[prompt-or-llms-or-github-url]",
+      "skill_rules": [
+        "Token consumption efficient (progressive disclosure)",
+        "Short, concise SKILL.md reference guides",
+        "Project-scope: .claude/skills/ (not home scope)",
+        "Skills teach HOW to use tools, not WHAT tools do"
+      ],
+      "inputs_supported": [
+        "Plain prompt describing skill",
+        "Documentation URLs (explores all internal links)",
+        "GitHub URLs (uses repomix for analysis)",
+        "Multiple files/URLs (parallel exploration)"
+      ],
+      "scopes": {
+        "project": ".claude/skills/ (ALWAYS)",
+        "user": "~/.claude/skills/ (rarely)"
+      },
+      "examples": [
+        "/skill/create \"Create an email validation skill\"",
+        "/skill/create https://docs.example.com/email-validation",
+        "/skill/create https://github.com/user/email-lib"
+      ],
+      "category": "Development",
+      "complexity": "high"
+    },
+    {
+      "id": 16,
+      "name": "git/pr",
+      "description": "Create a pull request",
+      "icon": "default",
+      "argument_hint": "[branch] [from-branch]",
+      "features": [
+        "Compares REMOTE branches (critical!)",
+        "Analyzes actual PR content",
+        "Auto-merges base branch if needed",
+        "Generates conventional commit title",
+        "Uses gh CLI (GitHub CLI)"
+      ],
+      "default_branches": {
+        "to_branch": "main",
+        "from_branch": "current_branch"
+      },
+      "process": [
+        "Ensure remote synced (git fetch, git push -u)",
+        "Analyze remote diff (not local)",
+        "Generate PR title & body from remote diff",
+        "Create PR via gh"
+      ],
+      "examples": [
+        "/git/pr",
+        "/git/pr main feature/auth",
+        "/git/pr dev"
+      ],
+      "category": "Development",
+      "complexity": "medium"
+    },
+    {
+      "id": 17,
+      "name": "test",
+      "description": "Run tests locally and analyze the summary report",
+      "icon": "💡",
+      "features": [
+        "Activates tester subagent",
+        "Runs full test suite",
+        "Analyzes results",
+        "Reports summary"
+      ],
+      "important_note": "Do NOT implement, only test & analyze",
+      "examples": ["/test"],
+      "category": "Implementation",
+      "complexity": "low"
+    },
+    {
+      "id": 18,
+      "name": "dashboard",
+      "description": "Launch the Marketing Dashboard web application",
+      "icon": "default",
+      "argument_hint": "[mode]",
+      "modes": [
+        { "name": "dev", "description": "Development with HMR (default)" },
+        { "name": "prod", "description": "Production mode" },
+        { "name": "build", "description": "Build for production" },
+        { "name": "stop", "description": "Stop servers" }
+      ],
+      "features": [
+        "Campaign Board (Kanban drag-drop)",
+        "Content Library (grid view, filters)",
+        "Asset Gallery (link to campaigns)",
+        "Automation Panel (recipes)",
+        "AI-powered helpers"
+      ],
+      "urls": {
+        "dev": {
+          "frontend": "http://localhost:5173",
+          "api": "http://localhost:3457",
+          "health": "http://localhost:3457/health"
+        },
+        "prod": {
+          "application": "http://localhost:3457",
+          "health": "http://localhost:3457/health"
+        }
+      },
+      "tech_stack": ["Vue 3", "Vite", "Pinia", "Hono", "SQLite"],
+      "examples": [
+        "/dashboard",
+        "/dashboard dev",
+        "/dashboard build",
+        "/dashboard prod",
+        "/dashboard stop"
+      ],
+      "category": "Project Management",
+      "complexity": "medium"
+    },
+    {
+      "id": 19,
+      "name": "persona",
+      "description": "Customer persona management",
+      "icon": "💡💡",
+      "argument_hint": "[action]",
+      "actions": [
+        { "name": "create", "description": "Create new persona" },
+        { "name": "analyze", "description": "Analyze audience data" },
+        { "name": "update", "params": "[name]", "description": "Update existing persona" },
+        { "name": "list", "description": "List all personas" }
+      ],
+      "workflow_steps": [
+        "Gather demographics, pain points, goals, behavior",
+        "Market validation via researcher",
+        "Segment analysis & pattern identification",
+        "Persona profile generation"
+      ],
+      "output_paths": ["assets/leads/icp-profiles/{persona}.md"],
+      "agents": ["lead-qualifier", "researcher"],
+      "skills": ["content-marketing", "assets-organizing"],
+      "examples": [
+        "/persona create",
+        "/persona analyze",
+        "/persona update \"Tech Startup Founder\"",
+        "/persona list"
+      ],
+      "category": "Project Management",
+      "complexity": "medium"
+    },
+    {
+      "id": 20,
+      "name": "ck-help",
+      "description": "ClaudeKit usage guide - just type naturally",
+      "icon": "default",
+      "argument_hint": "[category|command|task description]",
+      "features": [
+        "Comprehensive documentation",
+        "Category guides (fix, plan, cook, etc.)",
+        "Single command details",
+        "Search results",
+        "Task-based recommendations",
+        "Translates non-English to English"
+      ],
+      "output_types": [
+        "@CK_OUTPUT_TYPE:comprehensive-docs",
+        "@CK_OUTPUT_TYPE:category-guide",
+        "@CK_OUTPUT_TYPE:command-details",
+        "@CK_OUTPUT_TYPE:search-results",
+        "@CK_OUTPUT_TYPE:task-recommendations"
+      ],
+      "examples": [
+        "/ck-help fix",
+        "/ck-help plan",
+        "/ck-help How do I create a blog post?",
+        "/ck-help search authentication"
+      ],
+      "category": "Project Management",
+      "complexity": "low"
+    }
+  ],
+  "categories": {
+    "Planning & Strategy": {
+      "count": 5,
+      "commands": ["/ask", "/bootstrap", "/brainstorm", "/plan", "/cook"]
+    },
+    "Implementation": {
+      "count": 4,
+      "commands": ["/code", "/fix", "/scout", "/test"]
+    },
+    "Analytics & Reporting": {
+      "count": 2,
+      "commands": ["/analyze", "/seo/audit"]
+    },
+    "Content & Copy": {
+      "count": 4,
+      "commands": ["/write/blog", "/email", "/design/generate", "/campaign"]
+    },
+    "Project Management": {
+      "count": 3,
+      "commands": ["/dashboard", "/persona", "/ck-help"]
+    },
+    "Development": {
+      "count": 2,
+      "commands": ["/skill/create", "/git/pr"]
+    }
+  },
+  "subcommand_groups": {
+    "bootstrap": {
+      "parent": "bootstrap",
+      "children": ["auto", "auto/fast", "auto/parallel"]
+    },
+    "campaign": {
+      "parent": "campaign",
+      "children": ["analyze", "create", "email", "status"]
+    },
+    "code": {
+      "parent": "code",
+      "children": ["auto", "no-test", "parallel"]
+    },
+    "cook": {
+      "parent": "cook",
+      "children": ["auto", "auto/fast", "auto/parallel"]
+    },
+    "design": {
+      "parent": "design",
+      "children": ["3d", "describe", "fast", "generate", "good", "screenshot", "video"]
+    },
+    "docs": {
+      "parent": "docs",
+      "children": ["init", "meta/init", "meta/update", "summarize", "update"]
+    },
+    "email": {
+      "parent": "email",
+      "children": ["flow", "sequence"]
+    },
+    "fix": {
+      "parent": "fix",
+      "children": ["ci", "fast", "hard", "logs", "parallel", "test", "types", "ui"]
+    },
+    "git": {
+      "parent": "git",
+      "children": ["ck", "cm", "cp", "merge", "pr"]
+    },
+    "plan": {
+      "parent": "plan",
+      "children": ["archive", "ci", "cro", "fast", "hard", "parallel", "two", "validate"]
+    },
+    "seo": {
+      "parent": "seo",
+      "children": ["audit", "keywords", "pseo"]
+    },
+    "skill": {
+      "parent": "skill",
+      "children": ["add", "create", "fix-logs", "optimize", "optimize/auto", "plan", "update"]
+    },
+    "write": {
+      "parent": "write",
+      "children": ["audit", "blog", "blog/youtube", "cro", "enhance", "fast", "good", "hub", "publish"]
+    }
+  },
+  "notes": {
+    "unresolved_questions": [],
+    "key_insights": [
+      "119 total commands split between 20 main commands and 99 subcommands",
+      "Strong emphasis on planning-first workflow (/plan → /code)",
+      "/cook provides all-in-one alternative for quick implementation",
+      "/fix uses intelligent routing based on issue type",
+      "SEO and content optimization deeply integrated (blog + audit)",
+      "Dashboard provides visual interface for campaign management",
+      "Skills are modular and token-efficient (progressive disclosure)",
+      "All commands follow consistent output naming convention",
+      "Agents and skills are activated contextually per command"
+    ]
+  }
+}

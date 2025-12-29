@@ -283,7 +283,7 @@ cp .env.example .env
 nano .env
 ```
 
-```env
+```bash
 # .env
 NODE_ENV=development
 PORT=3000

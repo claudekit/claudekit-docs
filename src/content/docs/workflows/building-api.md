@@ -269,7 +269,7 @@ nano .env
 ```
 
 **.env file**:
-```env
+```bash
 NODE_ENV=development
 PORT=3000
 

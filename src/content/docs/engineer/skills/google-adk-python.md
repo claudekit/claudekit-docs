@@ -2,6 +2,7 @@
 title: Google ADK Python
 description: Build, evaluate, and deploy AI agents with Google's Agent Development Kit - code-first toolkit for tool integration and multi-agent orchestration
 section: engineer
+kit: engineer
 category: skills
 order: 2
 published: true

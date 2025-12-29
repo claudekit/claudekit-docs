@@ -1,7 +1,8 @@
 ---
-title: "Engineer Kit"
-description: "AI-powered development toolkit for building, testing, and deploying software"
+title: Engineer Kit
+description: AI-powered development toolkit for building, testing, and deploying software
 section: engineer
+kit: engineer
 category: overview
 order: 1
 ---

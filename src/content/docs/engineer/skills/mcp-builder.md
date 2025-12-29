@@ -1,7 +1,8 @@
 ---
-title: "MCP Builder"
-description: "Build high-quality Model Context Protocol servers that enable LLMs to interact with external services through well-designed tools in Python or TypeScript"
+title: MCP Builder
+description: Build high-quality Model Context Protocol servers that enable LLMs to interact with external services through well-designed tools in Python or TypeScript
 section: engineer
+kit: engineer
 category: skills
 order: 18
 ---

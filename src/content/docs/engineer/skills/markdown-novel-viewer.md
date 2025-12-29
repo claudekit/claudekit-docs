@@ -2,6 +2,7 @@
 title: Markdown Novel Viewer
 description: Background HTTP server rendering markdown files with calm, book-like reading experience and directory browser for documentation navigation
 section: engineer
+kit: engineer
 category: skills
 order: 4
 published: true

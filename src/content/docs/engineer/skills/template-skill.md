@@ -2,6 +2,7 @@
 title: Template Skill
 description: Reference template for creating new ClaudeKit Engineer skills with proper structure, metadata, and integration patterns
 section: engineer
+kit: engineer
 category: skills
 order: 5
 published: true

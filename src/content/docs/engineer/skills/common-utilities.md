@@ -2,6 +2,7 @@
 title: Common Utilities
 description: Shared utility modules for Gemini-based skills including API key management, client configuration, and Vertex AI support
 section: engineer
+kit: engineer
 category: skills
 order: 6
 published: true

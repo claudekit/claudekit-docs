@@ -2,6 +2,7 @@
 title: Plans Kanban Dashboard
 description: Visual dashboard server for viewing plan directories with progress tracking, timeline visualization, phase status, and activity heatmap
 section: engineer
+kit: engineer
 category: skills
 order: 3
 published: true

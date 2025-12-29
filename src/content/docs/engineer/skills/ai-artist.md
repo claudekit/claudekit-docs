@@ -2,6 +2,7 @@
 title: AI Artist - Prompt Engineering
 description: Write and optimize prompts for AI-generated outcomes across text and image models for LLMs, image generators, and video generators
 section: engineer
+kit: engineer
 category: skills
 order: 1
 published: true

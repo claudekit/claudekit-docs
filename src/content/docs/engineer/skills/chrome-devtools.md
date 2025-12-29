@@ -1,7 +1,8 @@
 ---
-title: "Chrome DevTools"
-description: "Automate browsers, take screenshots, analyze performance, and debug with Puppeteer CLI scripts for browser automation and testing"
+title: Chrome DevTools
+description: Automate browsers, take screenshots, analyze performance, and debug with Puppeteer CLI scripts for browser automation and testing
 section: engineer
+kit: engineer
 category: skills
 order: 21
 ---

@@ -1,7 +1,8 @@
 ---
-title: "Media Processing"
-description: "Process video, audio, and images with FFmpeg, ImageMagick, and RMBG for encoding, conversion, effects, optimization, and background removal"
+title: Media Processing
+description: Process video, audio, and images with FFmpeg, ImageMagick, and RMBG for encoding, conversion, effects, optimization, and background removal
 section: engineer
+kit: engineer
 category: skills
 order: 20
 ---

@@ -1,7 +1,8 @@
 ---
-title: "Frontend Development"
-description: "Modern React and TypeScript development patterns with Suspense, lazy loading, TanStack Query, and MUI v7 for building performant applications"
+title: Frontend Development
+description: Modern React and TypeScript development patterns with Suspense, lazy loading, TanStack Query, and MUI v7 for building performant applications
 section: engineer
+kit: engineer
 category: skills
 order: 17
 ---

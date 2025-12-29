@@ -1,7 +1,8 @@
 ---
-title: "Frontend Design"
-description: "Create distinctive, production-grade frontend interfaces from scratch or screenshots with exceptional design quality and creative direction"
+title: Frontend Design
+description: Create distinctive, production-grade frontend interfaces from scratch or screenshots with exceptional design quality and creative direction
 section: engineer
+kit: engineer
 category: skills
 order: 16
 ---

@@ -2,6 +2,7 @@
 title: PDF Skills
 description: Comprehensive PDF manipulation toolkit for extracting text and tables, creating documents, merging/splitting files, and handling forms
 section: engineer
+kit: engineer
 category: skills
 order: 7
 published: true

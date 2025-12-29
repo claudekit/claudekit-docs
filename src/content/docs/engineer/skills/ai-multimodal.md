@@ -1,7 +1,8 @@
 ---
-title: "AI Multimodal"
-description: "Process audio, images, videos, and documents using Google Gemini API with superior vision capabilities for transcription, analysis, and content generation"
+title: AI Multimodal
+description: Process audio, images, videos, and documents using Google Gemini API with superior vision capabilities for transcription, analysis, and content generation
 section: engineer
+kit: engineer
 category: skills
 order: 15
 ---

@@ -1,7 +1,8 @@
 ---
-title: "MCP Management"
-description: "Discover, analyze, and execute tools from configured Model Context Protocol servers with intelligent tool selection and multi-server orchestration"
+title: MCP Management
+description: Discover, analyze, and execute tools from configured Model Context Protocol servers with intelligent tool selection and multi-server orchestration
 section: engineer
+kit: engineer
 category: skills
 order: 19
 ---

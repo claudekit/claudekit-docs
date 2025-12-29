@@ -365,11 +365,11 @@ Balance parallel gains vs. coordination overhead:
 
 ## Related Commands
 
-- [/plan](/docs/commands/plan) - Intelligent planning router
-- [/plan:hard](/docs/commands/plan/hard) - Sequential detailed planning
-- [/code:parallel](/docs/commands/code/parallel) - Execute parallel plans
-- [/bootstrap:auto:parallel](/docs/commands/bootstrap/auto-parallel) - Bootstrap with parallel execution
-- [/cook:auto:parallel](/docs/commands/cook/auto-parallel) - Cook with parallel agents
+- [/plan](/docs/engineer/commands/plan) - Intelligent planning router
+- [/plan:hard](/docs/engineer/commands/plan/hard) - Sequential detailed planning
+- [/code:parallel](/docs/engineer/commands/code/parallel) - Execute parallel plans
+- [/bootstrap:auto:parallel](/docs/engineer/commands/bootstrap/auto-parallel) - Bootstrap with parallel execution
+- [/cook:auto:parallel](/docs/engineer/commands/cook/auto-parallel) - Cook with parallel agents
 
 ---
 

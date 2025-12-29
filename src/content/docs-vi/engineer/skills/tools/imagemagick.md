@@ -365,7 +365,7 @@ Edit `/etc/ImageMagick-7/policy.xml` or use `convert` instead of `magick`.
 ## Next Steps
 
 - [Media Processing](/docs/use-cases/)
-- [FFmpeg](/docs/skills/ffmpeg)
+- [FFmpeg](/docs/engineer/skills/ffmpeg)
 - [Batch Automation](/docs/use-cases/)
 
 ---

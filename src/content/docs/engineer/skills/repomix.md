@@ -128,9 +128,9 @@ repomix --token-count-tree 1000
 
 ## Related Skills
 
-- [Code Review](/docs/skills/tools/code-review) - AI-powered code analysis
-- [Research](/docs/skills/tools/research) - Investigate unfamiliar codebases
-- [Debugging](/docs/skills/tools/debugging) - Systematic bug isolation
+- [Code Review](/docs/engineer/skills/tools/code-review) - AI-powered code analysis
+- [Research](/docs/engineer/skills/tools/research) - Investigate unfamiliar codebases
+- [Debugging](/docs/engineer/skills/tools/debugging) - Systematic bug isolation
 
 ## Key Takeaway
 

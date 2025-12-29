@@ -14,7 +14,7 @@ This skill has been merged into **AI Multimodal** which provides comprehensive m
 
 ## Redirecting to AI Multimodal
 
-The [AI Multimodal skill](/docs/skills/ai/ai-multimodal) now covers:
+The [AI Multimodal skill](/docs/engineer/skills/ai/ai-multimodal) now covers:
 
 - **Image analysis** - Captioning, OCR, object detection, visual Q&A, segmentation
 - **Audio processing** - Transcription, summarization, up to 9.5 hours
@@ -32,13 +32,13 @@ The [AI Multimodal skill](/docs/skills/ai/ai-multimodal) now covers:
 "Detect all objects in image with bounding boxes"
 ```
 
-→ **Go to [AI Multimodal](/docs/skills/ai/ai-multimodal)** for full documentation.
+→ **Go to [AI Multimodal](/docs/engineer/skills/ai/ai-multimodal)** for full documentation.
 
 ---
 
 ## Key Takeaway
 
-Use [AI Multimodal](/docs/skills/ai/ai-multimodal) for all Gemini-powered image, audio, video, and document processing.
+Use [AI Multimodal](/docs/engineer/skills/ai/ai-multimodal) for all Gemini-powered image, audio, video, and document processing.
 
 ---
 

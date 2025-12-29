@@ -769,9 +769,9 @@ npx prisma db pull
 - [Optimizing Performance](/docs/use-cases/optimizing-performance) - Speed up API
 
 ### Related Commands
-- [/bootstrap](/docs/commands/core/bootstrap) - Initialize projects
-- [/cook](/docs/commands/core/cook) - Implement features
-- [/test](/docs/commands/core/test) - Test suite
+- [/bootstrap](/docs/engineer/commands/core/bootstrap) - Initialize projects
+- [/cook](/docs/engineer/commands/core/cook) - Implement features
+- [/test](/docs/engineer/commands/core/test) - Test suite
 
 ### Further Reading
 - [API Best Practices](https://restfulapi.net/)

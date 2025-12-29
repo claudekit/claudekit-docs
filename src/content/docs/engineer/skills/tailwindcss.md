@@ -172,9 +172,9 @@ function Button({ children }) {
 
 ## Related Skills
 
-- [UI Styling](/docs/skills/frontend/ui-styling) - Combined shadcn/ui + Tailwind
-- [Frontend Design](/docs/skills/frontend/frontend-design) - Design-focused UI creation
-- [Frontend Development](/docs/skills/frontend/frontend-development) - Full-stack React development
+- [UI Styling](/docs/engineer/skills/frontend/ui-styling) - Combined shadcn/ui + Tailwind
+- [Frontend Design](/docs/engineer/skills/frontend/frontend-design) - Design-focused UI creation
+- [Frontend Development](/docs/engineer/skills/frontend/frontend-development) - Full-stack React development
 
 ## Key Takeaway
 

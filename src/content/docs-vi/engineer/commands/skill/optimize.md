@@ -359,9 +359,9 @@ New clarity score: 8.5/10 (was 6/10)
 
 ## Các lệnh liên quan
 
-- [/skill:optimize:auto](/vi/docs/commands/skill/optimize-auto) - Tối ưu không cần phê duyệt
-- [/skill:add](/vi/docs/commands/skill/add) - Thêm tham chiếu vào skill
-- [/skill:create](/vi/docs/commands/skill/create) - Tạo skill mới
+- [/skill:optimize:auto](/vi/docs/engineer/commands/skill/optimize-auto) - Tối ưu không cần phê duyệt
+- [/skill:add](/vi/docs/engineer/commands/skill/add) - Thêm tham chiếu vào skill
+- [/skill:create](/vi/docs/engineer/commands/skill/create) - Tạo skill mới
 
 ---
 

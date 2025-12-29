@@ -266,11 +266,11 @@ Analyzing complexity...
 
 | Command | Description | When to Use |
 |---------|-------------|-------------|
-| [/plan:fast](/docs/commands/plan/fast) | Quick planning without research | Simple, clear tasks |
-| [/plan:hard](/docs/commands/plan/hard) | Research-driven detailed planning | Complex tasks |
-| [/plan:parallel](/docs/commands/plan/parallel) | Plan with parallel-executable phases | Multi-agent execution |
-| [/plan:two](/docs/commands/plan/two) | Compare two implementation approaches | Architecture decisions |
-| [/plan:ci](/docs/commands/plan/ci) | Plan based on CI/CD failures | Fixing pipeline issues |
+| [/plan:fast](/docs/engineer/commands/plan/fast) | Quick planning without research | Simple, clear tasks |
+| [/plan:hard](/docs/engineer/commands/plan/hard) | Research-driven detailed planning | Complex tasks |
+| [/plan:parallel](/docs/engineer/commands/plan/parallel) | Plan with parallel-executable phases | Multi-agent execution |
+| [/plan:two](/docs/engineer/commands/plan/two) | Compare two implementation approaches | Architecture decisions |
+| [/plan:ci](/docs/engineer/commands/plan/ci) | Plan based on CI/CD failures | Fixing pipeline issues |
 
 ## Best Practices
 

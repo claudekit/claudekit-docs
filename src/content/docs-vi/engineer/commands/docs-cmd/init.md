@@ -570,10 +570,10 @@ git push
 
 After running `/docs:init`:
 
-- [/docs:update](/docs/commands/docs/update) - Update documentation
-- [/docs:summarize](/docs/commands/docs/summarize) - Create summary
-- [/ask](/docs/commands/core/ask) - Ask about codebase
-- [/watzup](/docs/commands/core/watzup) - Get project status
+- [/docs:update](/docs/engineer/commands/docs/update) - Update documentation
+- [/docs:summarize](/docs/engineer/commands/docs/summarize) - Create summary
+- [/ask](/docs/engineer/commands/core/ask) - Ask about codebase
+- [/watzup](/docs/engineer/commands/core/watzup) - Get project status
 
 ---
 

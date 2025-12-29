@@ -373,10 +373,10 @@ Run periodically for ongoing projects:
 
 ## Related Commands
 
-- [/scout](/docs/commands/core/scout) - Quick codebase exploration
-- [/scout:ext](/docs/commands/core/scout-ext) - External tool exploration
-- [/ask](/docs/commands/core/ask) - Architectural questions
-- [/plan](/docs/commands/plan) - Create improvement plans
+- [/scout](/docs/engineer/commands/core/scout) - Quick codebase exploration
+- [/scout:ext](/docs/engineer/commands/core/scout-ext) - External tool exploration
+- [/ask](/docs/engineer/commands/core/ask) - Architectural questions
+- [/plan](/docs/engineer/commands/plan) - Create improvement plans
 
 ---
 

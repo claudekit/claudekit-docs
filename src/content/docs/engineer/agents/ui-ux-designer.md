@@ -72,10 +72,10 @@ Research trending designs, create production-ready interfaces, and ship conversi
 
 ## Related Agents
 
-- [Copywriter](/docs/agents/copywriter) - Generate compelling headlines, CTAs, product descriptions
-- [Fullstack Developer](/docs/agents/fullstack-developer) - Integrate designs with backend APIs, databases
-- [Scout](/docs/agents/scout) - Explore existing components and patterns
-- [Code Reviewer](/docs/agents/code-reviewer) - Validate HTML semantics, CSS performance, accessibility
+- [Copywriter](/docs/engineer/agents/copywriter) - Generate compelling headlines, CTAs, product descriptions
+- [Fullstack Developer](/docs/engineer/agents/fullstack-developer) - Integrate designs with backend APIs, databases
+- [Scout](/docs/engineer/agents/scout) - Explore existing components and patterns
+- [Code Reviewer](/docs/engineer/agents/code-reviewer) - Validate HTML semantics, CSS performance, accessibility
 
 ## Key Takeaway
 

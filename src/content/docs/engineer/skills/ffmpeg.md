@@ -119,9 +119,9 @@ for file in *.mkv; do ffmpeg -i "$file" -c:v libx264 -crf 22 "${file%.mkv}.mp4";
 
 ## Related Skills
 
-- [Media Processing](/docs/skills/tools/media-processing) - Combined FFmpeg + ImageMagick + RMBG
-- [ImageMagick](/docs/skills/tools/imagemagick) - Image manipulation and batch processing
-- [Backend Development](/docs/skills/backend/backend-development) - Server-side media pipelines
+- [Media Processing](/docs/engineer/skills/tools/media-processing) - Combined FFmpeg + ImageMagick + RMBG
+- [ImageMagick](/docs/engineer/skills/tools/imagemagick) - Image manipulation and batch processing
+- [Backend Development](/docs/engineer/skills/backend/backend-development) - Server-side media pipelines
 
 ## Key Takeaway
 

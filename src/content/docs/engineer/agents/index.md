@@ -18,43 +18,43 @@ published: true
 
 | Agent | Purpose |
 |-------|---------|
-| [planner](/docs/agents/planner) | Research, analyze, create implementation plans before coding |
-| [fullstack-developer](/docs/agents/fullstack-developer) | Execute implementation phases with strict file ownership |
-| [scout](/docs/agents/scout) | Parallel file search across large codebases |
-| [scout-external](/docs/agents/scout-external) | External search using Gemini CLI and OpenCode |
-| [debugger](/docs/agents/debugger) | Root cause analysis, log investigation, issue diagnosis |
-| [tester](/docs/agents/tester) | Test execution, coverage analysis, quality validation |
+| [planner](/docs/engineer/agents/planner) | Research, analyze, create implementation plans before coding |
+| [fullstack-developer](/docs/engineer/agents/fullstack-developer) | Execute implementation phases with strict file ownership |
+| [scout](/docs/engineer/agents/scout) | Parallel file search across large codebases |
+| [scout-external](/docs/engineer/agents/scout-external) | External search using Gemini CLI and OpenCode |
+| [debugger](/docs/engineer/agents/debugger) | Root cause analysis, log investigation, issue diagnosis |
+| [tester](/docs/engineer/agents/tester) | Test execution, coverage analysis, quality validation |
 
 ### Quality & Review
 
 | Agent | Purpose |
 |-------|---------|
-| [code-reviewer](/docs/agents/code-reviewer) | Security audits, performance analysis, code quality |
-| [database-admin](/docs/agents/database-admin) | Query optimization, schema design, performance tuning |
+| [code-reviewer](/docs/engineer/agents/code-reviewer) | Security audits, performance analysis, code quality |
+| [database-admin](/docs/engineer/agents/database-admin) | Query optimization, schema design, performance tuning |
 
 ### Documentation & Management
 
 | Agent | Purpose |
 |-------|---------|
-| [docs-manager](/docs/agents/docs-manager) | Technical documentation, API docs, architecture guides |
-| [project-manager](/docs/agents/project-manager) | Progress tracking, cross-agent coordination, status reports |
-| [journal-writer](/docs/agents/journal-writer) | Document failures and setbacks with brutal honesty |
-| [git-manager](/docs/agents/git-manager) | Conventional commits, security scanning, token-optimized |
+| [docs-manager](/docs/engineer/agents/docs-manager) | Technical documentation, API docs, architecture guides |
+| [project-manager](/docs/engineer/agents/project-manager) | Progress tracking, cross-agent coordination, status reports |
+| [journal-writer](/docs/engineer/agents/journal-writer) | Document failures and setbacks with brutal honesty |
+| [git-manager](/docs/engineer/agents/git-manager) | Conventional commits, security scanning, token-optimized |
 
 ### Creative & Research
 
 | Agent | Purpose |
 |-------|---------|
-| [ui-ux-designer](/docs/agents/ui-ux-designer) | Award-winning UI with Three.js, responsive layouts |
-| [copywriter](/docs/agents/copywriter) | High-converting marketing copy, viral content |
-| [brainstormer](/docs/agents/brainstormer) | Explore approaches, challenge assumptions, debate decisions |
-| [researcher](/docs/agents/researcher) | Multi-source research, documentation analysis |
+| [ui-ux-designer](/docs/engineer/agents/ui-ux-designer) | Award-winning UI with Three.js, responsive layouts |
+| [copywriter](/docs/engineer/agents/copywriter) | High-converting marketing copy, viral content |
+| [brainstormer](/docs/engineer/agents/brainstormer) | Explore approaches, challenge assumptions, debate decisions |
+| [researcher](/docs/engineer/agents/researcher) | Multi-source research, documentation analysis |
 
 ### Integration
 
 | Agent | Purpose |
 |-------|---------|
-| [mcp-manager](/docs/agents/mcp-manager) | MCP server integrations, tool discovery, execution |
+| [mcp-manager](/docs/engineer/agents/mcp-manager) | MCP server integrations, tool discovery, execution |
 
 ## How to Use
 

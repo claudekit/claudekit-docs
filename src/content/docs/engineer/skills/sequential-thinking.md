@@ -111,9 +111,9 @@ Pros: Simple API, TypeScript. Cons: Less middleware ecosystem
 
 ## Related Skills
 
-- [Problem Solving](/docs/skills/tools/problem-solving) - General problem decomposition
-- [Debugging](/docs/skills/tools/debugging) - Systematic bug investigation
-- [Code Review](/docs/skills/tools/code-review) - Technical analysis
+- [Problem Solving](/docs/engineer/skills/tools/problem-solving) - General problem decomposition
+- [Debugging](/docs/engineer/skills/tools/debugging) - Systematic bug investigation
+- [Code Review](/docs/engineer/skills/tools/code-review) - Technical analysis
 
 ## Key Takeaway
 

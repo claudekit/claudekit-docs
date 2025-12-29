@@ -110,9 +110,9 @@ gcloud run deploy my-service \
 
 ## Related Skills
 
-- [Docker](/docs/skills/backend/docker) - Container deep-dive
-- [Databases](/docs/skills/backend/databases) - PostgreSQL, MongoDB setup
-- [Backend Development](/docs/skills/backend/backend-development) - API patterns
+- [Docker](/docs/engineer/skills/backend/docker) - Container deep-dive
+- [Databases](/docs/engineer/skills/backend/databases) - PostgreSQL, MongoDB setup
+- [Backend Development](/docs/engineer/skills/backend/backend-development) - API patterns
 
 ---
 

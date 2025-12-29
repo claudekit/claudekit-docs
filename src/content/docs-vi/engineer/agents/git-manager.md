@@ -701,10 +701,10 @@ Optimized for frequent commits:
 
 Learn more about related topics:
 
-- [Commit & Push Command](/docs/commands/git/commit-push) - How to commit and push
-- [Pull Request Command](/docs/commands/git/pr) - Creating pull requests
-- [Code Review](/docs/agents/code-reviewer) - Pre-commit code review
-- [Project Manager](/docs/agents/project-manager) - Overall project coordination
+- [Commit & Push Command](/docs/engineer/commands/git/commit-push) - How to commit and push
+- [Pull Request Command](/docs/engineer/commands/git/pr) - Creating pull requests
+- [Code Review](/docs/engineer/agents/code-reviewer) - Pre-commit code review
+- [Project Manager](/docs/engineer/agents/project-manager) - Overall project coordination
 
 ---
 

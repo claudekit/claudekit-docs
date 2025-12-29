@@ -585,10 +585,10 @@ Typical `/docs:summarize` performance:
 
 After using `/docs:summarize`:
 
-- [/docs:update](/docs/commands/docs/update) - Update all documentation
-- [/docs:init](/docs/commands/docs/init) - Initialize full documentation
-- [/watzup](/docs/commands/core/watzup) - Review recent changes
-- [/git:cm](/docs/commands/git/commit) - Commit documentation
+- [/docs:update](/docs/engineer/commands/docs/update) - Update all documentation
+- [/docs:init](/docs/engineer/commands/docs/init) - Initialize full documentation
+- [/watzup](/docs/engineer/commands/core/watzup) - Review recent changes
+- [/git:cm](/docs/engineer/commands/git/commit) - Commit documentation
 
 ---
 

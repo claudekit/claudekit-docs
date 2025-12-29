@@ -620,10 +620,10 @@ Typical `/fix:types` performance:
 
 After using `/fix:types`:
 
-- [/test](/docs/commands/core/test) - Run tests to verify fixes
-- [/fix:fast](/docs/commands/fix/fast) - For remaining simple issues
-- [/git:cm](/docs/commands/git/commit) - Commit type fixes
-- [/cook](/docs/commands/core/cook) - Continue feature development
+- [/test](/docs/engineer/commands/core/test) - Run tests to verify fixes
+- [/fix:fast](/docs/engineer/commands/fix/fast) - For remaining simple issues
+- [/git:cm](/docs/engineer/commands/git/commit) - Commit type fixes
+- [/cook](/docs/engineer/commands/core/cook) - Continue feature development
 
 ---
 

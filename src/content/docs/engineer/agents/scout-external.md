@@ -79,8 +79,8 @@ echo "What does authentication middleware do in app/middleware/auth.ts?" | gemin
 
 ## Related Agents
 
-- [Scout Agent](/docs/agents/scout) - Internal searches (Glob/Grep/Read)
-- [Fullstack Developer](/docs/agents/fullstack-developer) - Implements features after discovery
+- [Scout Agent](/docs/engineer/agents/scout) - Internal searches (Glob/Grep/Read)
+- [Fullstack Developer](/docs/engineer/agents/fullstack-developer) - Implements features after discovery
 
 ## Key Takeaway
 

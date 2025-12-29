@@ -304,11 +304,11 @@ app.post('/webhook', async (req, res) => {
 
 ## Related
 
-- [Planner Agent](/docs/agents/planner) - Uses research findings to create plans
-- [Brainstormer Agent](/docs/agents/brainstormer) - Debates technical approaches
-- [Scout Agent](/docs/agents/scout) - Locates files in existing codebase
-- [/plan Command](/docs/commands/core/plan) - Triggers research and planning
+- [Planner Agent](/docs/engineer/agents/planner) - Uses research findings to create plans
+- [Brainstormer Agent](/docs/engineer/agents/brainstormer) - Debates technical approaches
+- [Scout Agent](/docs/engineer/agents/scout) - Locates files in existing codebase
+- [/plan Command](/docs/engineer/commands/core/plan) - Triggers research and planning
 
 ---
 
-**Next**: Learn how [planner agent](/docs/agents/planner) uses research to create implementation plans
+**Next**: Learn how [planner agent](/docs/engineer/agents/planner) uses research to create implementation plans

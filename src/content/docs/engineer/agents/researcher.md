@@ -127,9 +127,9 @@ Multi-source technology intelligence that explores docs, videos, GitHub repos, a
 
 ## Related Agents
 
-- [Planner Agent](/docs/agents/planner) - Converts research findings into step-by-step implementation plans
-- [Brainstormer Agent](/docs/agents/brainstormer) - Debates technical trade-offs discovered in research
-- [Scout Agent](/docs/agents/scout) - Locates existing implementations in your codebase
+- [Planner Agent](/docs/engineer/agents/planner) - Converts research findings into step-by-step implementation plans
+- [Brainstormer Agent](/docs/engineer/agents/brainstormer) - Debates technical trade-offs discovered in research
+- [Scout Agent](/docs/engineer/agents/scout) - Locates existing implementations in your codebase
 
 ## Key Takeaway
 

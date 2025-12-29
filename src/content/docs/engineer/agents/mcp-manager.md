@@ -64,8 +64,8 @@ Execute MCP server tools (screenshots, browser automation, docs lookup) in isola
 
 ## Related Agents
 
-- [Scout External](/docs/agents/scout-external) - External research + MCP docs lookup synergy
-- [Fullstack Developer](/docs/agents/fullstack-developer) - Uses MCP Manager for visual regression testing
+- [Scout External](/docs/engineer/agents/scout-external) - External research + MCP docs lookup synergy
+- [Fullstack Developer](/docs/engineer/agents/fullstack-developer) - Uses MCP Manager for visual regression testing
 
 ## Key Takeaway
 

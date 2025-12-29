@@ -396,11 +396,11 @@ Lỗi cần phân tích sâu:
 
 ## Các lệnh liên quan
 
-- [/fix](/vi/docs/commands/fix) - Định tuyến thông minh (có thể định tuyến đến đây)
-- [/fix:fast](/vi/docs/commands/fix/fast) - Một lỗi đơn giản
-- [/fix:hard](/vi/docs/commands/fix/hard) - Lỗi phức tạp hoặc liên quan
-- [/code:parallel](/vi/docs/commands/core/code-parallel) - Thực thi kế hoạch song song
-- [/cook:auto:parallel](/vi/docs/commands/core/cook-auto-parallel) - Triển khai tính năng song song
+- [/fix](/vi/docs/engineer/commands/fix) - Định tuyến thông minh (có thể định tuyến đến đây)
+- [/fix:fast](/vi/docs/engineer/commands/fix/fast) - Một lỗi đơn giản
+- [/fix:hard](/vi/docs/engineer/commands/fix/hard) - Lỗi phức tạp hoặc liên quan
+- [/code:parallel](/vi/docs/engineer/commands/core/code-parallel) - Thực thi kế hoạch song song
+- [/cook:auto:parallel](/vi/docs/engineer/commands/core/cook-auto-parallel) - Triển khai tính năng song song
 
 ---
 

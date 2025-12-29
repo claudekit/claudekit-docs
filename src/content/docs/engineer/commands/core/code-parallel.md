@@ -381,10 +381,10 @@ If no path provided, uses active plan:
 
 ## Related Commands
 
-- [/code](/docs/commands/core/code) - Sequential plan execution
-- [/plan:parallel](/docs/commands/plan/parallel) - Create parallel plans
-- [/cook:auto:parallel](/docs/commands/core/cook-auto-parallel) - Plan + execute parallel
-- [/fix:parallel](/docs/commands/fix/parallel) - Parallel bug fixing
+- [/code](/docs/engineer/commands/core/code) - Sequential plan execution
+- [/plan:parallel](/docs/engineer/commands/plan/parallel) - Create parallel plans
+- [/cook:auto:parallel](/docs/engineer/commands/core/cook-auto-parallel) - Plan + execute parallel
+- [/fix:parallel](/docs/engineer/commands/fix/parallel) - Parallel bug fixing
 
 ---
 

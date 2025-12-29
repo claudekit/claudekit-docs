@@ -105,8 +105,8 @@ No overlap → Safe for parallel execution
 
 ## Related Agents
 
-- [Planner Agent](/docs/agents/planner) - Creates implementation plans
-- [Scout Agent](/docs/agents/scout-external) - Gathers external context before planning
+- [Planner Agent](/docs/engineer/agents/planner) - Creates implementation plans
+- [Scout Agent](/docs/engineer/agents/scout-external) - Gathers external context before planning
 
 ## Key Takeaway
 

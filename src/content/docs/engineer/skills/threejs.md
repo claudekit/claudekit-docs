@@ -105,9 +105,9 @@ Build immersive 3D web experiences with WebGL/WebGPU. Production-ready scenes, a
 
 ## Related Skills
 
-- [Frontend Design](/docs/skills/frontend/frontend-design) - UI overlays for 3D configurators
-- [Frontend Development](/docs/skills/frontend/frontend-development) - React Three Fiber integration
-- [AI Multimodal](/docs/skills/ai/ai-multimodal) - Extract 3D requirements from mockups
+- [Frontend Design](/docs/engineer/skills/frontend/frontend-design) - UI overlays for 3D configurators
+- [Frontend Development](/docs/engineer/skills/frontend/frontend-development) - React Three Fiber integration
+- [AI Multimodal](/docs/engineer/skills/ai/ai-multimodal) - Extract 3D requirements from mockups
 
 ## Key Takeaway
 

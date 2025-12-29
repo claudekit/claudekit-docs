@@ -116,9 +116,9 @@ plans/20251208-1430-oauth-implementation/
 
 ## Related Skills
 
-- [Sequential Thinking](/docs/skills/tools/sequential-thinking) - Multi-step analysis
-- [Problem Solving](/docs/skills/tools/problem-solving) - Complexity resolution
-- [Research](/docs/skills/tools/research) - External investigation
+- [Sequential Thinking](/docs/engineer/skills/tools/sequential-thinking) - Multi-step analysis
+- [Problem Solving](/docs/engineer/skills/tools/problem-solving) - Complexity resolution
+- [Research](/docs/engineer/skills/tools/research) - External investigation
 
 ## Key Takeaway
 

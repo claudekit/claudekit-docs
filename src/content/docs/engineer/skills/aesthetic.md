@@ -70,11 +70,11 @@ Transform any design from generic to gorgeous using ClaudeKit's systematic aesth
 
 ## Related Skills
 
-- [AI Multimodal](/docs/skills/ai/ai-multimodal) - Generate/analyze design images
-- [Chrome DevTools](/docs/skills/tools/chrome-devtools) - Capture inspiration screenshots
-- [UI Styling](/docs/skills/frontend/ui-styling) - Implement with shadcn/ui + Tailwind
-- [Frontend Design](/docs/skills/frontend/frontend-design) - Production-grade frontend interfaces
-- [Web Frameworks](/docs/skills/frontend/web-frameworks) - Build with Next.js, React, Vue
+- [AI Multimodal](/docs/engineer/skills/ai/ai-multimodal) - Generate/analyze design images
+- [Chrome DevTools](/docs/engineer/skills/tools/chrome-devtools) - Capture inspiration screenshots
+- [UI Styling](/docs/engineer/skills/frontend/ui-styling) - Implement with shadcn/ui + Tailwind
+- [Frontend Design](/docs/engineer/skills/frontend/frontend-design) - Production-grade frontend interfaces
+- [Web Frameworks](/docs/engineer/skills/frontend/web-frameworks) - Build with Next.js, React, Vue
 
 ## Key Takeaway
 

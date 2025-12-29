@@ -310,9 +310,9 @@ Sử dụng trung bình: ~1,500 tokens (giảm 81%)
 
 ## Các lệnh liên quan
 
-- [/skill:create](/vi/docs/commands/skill/create) - Tạo skill mới
-- [/skill:optimize](/vi/docs/commands/skill/optimize) - Tối ưu skill hiện có
-- [/skill:fix-logs](/vi/docs/commands/skill/fix-logs) - Sửa skill từ logs
+- [/skill:create](/vi/docs/engineer/commands/skill/create) - Tạo skill mới
+- [/skill:optimize](/vi/docs/engineer/commands/skill/optimize) - Tối ưu skill hiện có
+- [/skill:fix-logs](/vi/docs/engineer/commands/skill/fix-logs) - Sửa skill từ logs
 
 ---
 

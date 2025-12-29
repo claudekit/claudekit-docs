@@ -620,10 +620,10 @@ Start fast, upgrade when ready:
 
 ## Next Steps
 
-- [/design:good](/docs/commands/design/good) - Upgrade to polished design
-- [/design:screenshot](/docs/commands/design/screenshot) - Implement from mockup
-- [/cook](/docs/commands/core/cook) - Add backend functionality
-- [/fix:ui](/docs/commands/fix/ui) - Fix any UI issues
+- [/design:good](/docs/engineer/commands/design/good) - Upgrade to polished design
+- [/design:screenshot](/docs/engineer/commands/design/screenshot) - Implement from mockup
+- [/cook](/docs/engineer/commands/core/cook) - Add backend functionality
+- [/fix:ui](/docs/engineer/commands/fix/ui) - Fix any UI issues
 
 ---
 

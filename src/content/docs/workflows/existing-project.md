@@ -318,9 +318,9 @@ Provide detailed descriptions in commands. More context = better results.
 
 After successful integration:
 
-1. **Explore Commands**: Check [Commands Documentation](/docs/commands/)
-2. **Learn Agents**: Understand [Specialized Agents](/docs/agents/)
-3. **Advanced Workflows**: See [Workflows Guide](/docs/docs/configuration/workflows)
+1. **Explore Commands**: Check [Commands Documentation](/docs/engineer/commands/)
+2. **Learn Agents**: Understand [Specialized Agents](/docs/engineer/agents/)
+3. **Advanced Workflows**: See [Workflows Guide](/docs/docs/engineer/configuration/workflows)
 4. **Team Training**: Share best practices with your team
 
 ---

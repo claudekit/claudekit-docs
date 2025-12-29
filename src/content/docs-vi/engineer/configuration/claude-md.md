@@ -222,8 +222,8 @@ ls docs/
 Bây giờ bạn đã hiểu CLAUDE.md:
 
 - [Workflows](/docs/core-concepts/workflows) - Tìm hiểu về các file workflow
-- [Agents](/docs/agents/) - Hiểu hệ thống agent
-- [Commands](/docs/commands/) - Khám phá các lệnh có sẵn
+- [Agents](/docs/engineer/agents/) - Hiểu hệ thống agent
+- [Commands](/docs/engineer/commands/) - Khám phá các lệnh có sẵn
 
 ---
 

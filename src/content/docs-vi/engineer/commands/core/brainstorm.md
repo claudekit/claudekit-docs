@@ -408,10 +408,10 @@ git diff main
 
 ## Các lệnh liên quan
 
-- [/ask](/vi/docs/commands/core/ask) - Câu hỏi kiến trúc nhanh không cần báo cáo đầy đủ
-- [/plan](/vi/docs/commands/plan) - Tạo kế hoạch triển khai sau brainstorming
-- [/code](/vi/docs/commands/core/code) - Thực thi kế hoạch với các cổng kiểm soát chất lượng
-- [/cook](/vi/docs/commands/core/cook) - Triển khai tính năng từng bước
+- [/ask](/vi/docs/engineer/commands/core/ask) - Câu hỏi kiến trúc nhanh không cần báo cáo đầy đủ
+- [/plan](/vi/docs/engineer/commands/plan) - Tạo kế hoạch triển khai sau brainstorming
+- [/code](/vi/docs/engineer/commands/core/code) - Thực thi kế hoạch với các cổng kiểm soát chất lượng
+- [/cook](/vi/docs/engineer/commands/core/cook) - Triển khai tính năng từng bước
 
 ---
 

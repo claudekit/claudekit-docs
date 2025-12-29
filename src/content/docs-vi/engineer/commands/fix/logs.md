@@ -532,10 +532,10 @@ Typical `/fix:logs` performance:
 
 After using `/fix:logs`:
 
-- [/test](/docs/commands/core/test) - Verify fix with tests
-- [/fix:hard](/docs/commands/fix/hard) - For complex issues requiring deeper analysis
-- [/debug](/docs/commands/core/debug) - If issue needs more investigation
-- [/git:cm](/docs/commands/git/commit) - Commit the fix
+- [/test](/docs/engineer/commands/core/test) - Verify fix with tests
+- [/fix:hard](/docs/engineer/commands/fix/hard) - For complex issues requiring deeper analysis
+- [/debug](/docs/engineer/commands/core/debug) - If issue needs more investigation
+- [/git:cm](/docs/engineer/commands/git/commit) - Commit the fix
 
 ---
 

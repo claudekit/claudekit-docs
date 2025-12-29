@@ -110,9 +110,9 @@ npx @better-auth/cli migrate   # Apply migrations
 
 ## Related Skills
 
-- [Databases](/docs/skills/backend/databases) - PostgreSQL/MongoDB setup
-- [Next.js](/docs/skills/frontend/nextjs) - Framework integration
-- [Backend Development](/docs/skills/backend/backend-development) - API patterns
+- [Databases](/docs/engineer/skills/backend/databases) - PostgreSQL/MongoDB setup
+- [Next.js](/docs/engineer/skills/frontend/nextjs) - Framework integration
+- [Backend Development](/docs/engineer/skills/backend/backend-development) - API patterns
 
 ---
 

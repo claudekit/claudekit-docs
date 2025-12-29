@@ -18,78 +18,78 @@ published: true
 
 | Skill | Purpose |
 |-------|---------|
-| [frontend-design](/docs/skills/frontend/frontend-design) | Build memorable web interfaces with bold aesthetics |
-| [frontend-design-pro](/docs/skills/frontend/frontend-design-pro) | Agency-grade interfaces with perfect imagery |
-| [ui-ux-pro-max](/docs/skills/frontend/ui-ux-pro-max) | Production-ready UI with research-backed patterns |
-| [aesthetic](/docs/skills/frontend/aesthetic) | Systematic aesthetic framework (BEAUTIFUL→RIGHT→SATISFYING→PEAK) |
-| [ui-styling](/docs/skills/frontend/ui-styling) | Tailwind patterns, responsive layouts, dark mode |
-| [frontend-development](/docs/skills/frontend/frontend-development) | React patterns, Suspense, state management |
-| [nextjs](/docs/skills/frontend/nextjs) | App Router, Server Components, SSR/SSG |
-| [web-frameworks](/docs/skills/frontend/web-frameworks) | Next.js + Turborepo + RemixIcon stack |
-| [shadcn-ui](/docs/skills/frontend/shadcn-ui) | Accessible UI components with Radix + Tailwind |
-| [tailwindcss](/docs/skills/frontend/tailwindcss) | Utility-first CSS, zero custom CSS |
-| [threejs](/docs/skills/frontend/threejs) | 3D web experiences with WebGL/WebGPU |
+| [frontend-design](/docs/engineer/skills/frontend/frontend-design) | Build memorable web interfaces with bold aesthetics |
+| [frontend-design-pro](/docs/engineer/skills/frontend/frontend-design-pro) | Agency-grade interfaces with perfect imagery |
+| [ui-ux-pro-max](/docs/engineer/skills/frontend/ui-ux-pro-max) | Production-ready UI with research-backed patterns |
+| [aesthetic](/docs/engineer/skills/frontend/aesthetic) | Systematic aesthetic framework (BEAUTIFUL→RIGHT→SATISFYING→PEAK) |
+| [ui-styling](/docs/engineer/skills/frontend/ui-styling) | Tailwind patterns, responsive layouts, dark mode |
+| [frontend-development](/docs/engineer/skills/frontend/frontend-development) | React patterns, Suspense, state management |
+| [nextjs](/docs/engineer/skills/frontend/nextjs) | App Router, Server Components, SSR/SSG |
+| [web-frameworks](/docs/engineer/skills/frontend/web-frameworks) | Next.js + Turborepo + RemixIcon stack |
+| [shadcn-ui](/docs/engineer/skills/frontend/shadcn-ui) | Accessible UI components with Radix + Tailwind |
+| [tailwindcss](/docs/engineer/skills/frontend/tailwindcss) | Utility-first CSS, zero custom CSS |
+| [threejs](/docs/engineer/skills/frontend/threejs) | 3D web experiences with WebGL/WebGPU |
 
 ### Backend & Infrastructure
 
 | Skill | Purpose |
 |-------|---------|
-| [backend-development](/docs/skills/backend/backend-development) | Node.js, NestJS, security, testing patterns |
-| [databases](/docs/skills/backend/databases) | Schema design, query optimization, migrations |
-| [postgresql-psql](/docs/skills/backend/postgresql-psql) | PostgreSQL CLI, performance tuning, administration |
-| [docker](/docs/skills/backend/docker) | Containerization, multi-stage builds, Compose |
-| [devops](/docs/skills/backend/devops) | CI/CD, deployment, infrastructure automation |
+| [backend-development](/docs/engineer/skills/backend/backend-development) | Node.js, NestJS, security, testing patterns |
+| [databases](/docs/engineer/skills/backend/databases) | Schema design, query optimization, migrations |
+| [postgresql-psql](/docs/engineer/skills/backend/postgresql-psql) | PostgreSQL CLI, performance tuning, administration |
+| [docker](/docs/engineer/skills/backend/docker) | Containerization, multi-stage builds, Compose |
+| [devops](/docs/engineer/skills/backend/devops) | CI/CD, deployment, infrastructure automation |
 
 ### AI & Multimodal
 
 | Skill | Purpose |
 |-------|---------|
-| [ai-multimodal](/docs/skills/ai/ai-multimodal) | Gemini vision, audio, document processing |
-| [google-adk-python](/docs/skills/ai/google-adk-python) | Google AI Development Kit for Python agents |
-| [canvas-design](/docs/skills/ai/canvas-design) | Visual art creation (PNG/PDF) with design philosophy |
-| [gemini-vision](/docs/skills/ai/gemini-vision) | Image analysis (redirects to ai-multimodal) |
+| [ai-multimodal](/docs/engineer/skills/ai/ai-multimodal) | Gemini vision, audio, document processing |
+| [google-adk-python](/docs/engineer/skills/ai/google-adk-python) | Google AI Development Kit for Python agents |
+| [canvas-design](/docs/engineer/skills/ai/canvas-design) | Visual art creation (PNG/PDF) with design philosophy |
+| [gemini-vision](/docs/engineer/skills/ai/gemini-vision) | Image analysis (redirects to ai-multimodal) |
 
 ### Tools & Utilities
 
 | Skill | Purpose |
 |-------|---------|
-| [mcp-builder](/docs/skills/tools/mcp-builder) | Create MCP servers (Python FastMCP / TypeScript) |
-| [mcp-management](/docs/skills/tools/mcp-management) | Discover and execute MCP tools |
-| [skill-creator](/docs/skills/tools/skill-creator) | Create custom skills for your projects |
-| [repomix](/docs/skills/tools/repomix) | Pack repos into AI-friendly context files |
-| [document-skills](/docs/skills/tools/document-skills) | PDF, DOCX, PPTX, XLSX processing |
-| [docs-seeker](/docs/skills/tools/docs-seeker) | Find and retrieve external documentation |
-| [chrome-devtools](/docs/skills/tools/chrome-devtools) | Browser automation, performance profiling |
-| [ffmpeg](/docs/skills/tools/ffmpeg) | Video/audio processing and conversion |
-| [imagemagick](/docs/skills/tools/imagemagick) | Image manipulation and batch processing |
-| [claude-code-skill](/docs/skills/tools/claude-code-skill) | Meta-skill for Claude Code itself |
+| [mcp-builder](/docs/engineer/skills/tools/mcp-builder) | Create MCP servers (Python FastMCP / TypeScript) |
+| [mcp-management](/docs/engineer/skills/tools/mcp-management) | Discover and execute MCP tools |
+| [skill-creator](/docs/engineer/skills/tools/skill-creator) | Create custom skills for your projects |
+| [repomix](/docs/engineer/skills/tools/repomix) | Pack repos into AI-friendly context files |
+| [document-skills](/docs/engineer/skills/tools/document-skills) | PDF, DOCX, PPTX, XLSX processing |
+| [docs-seeker](/docs/engineer/skills/tools/docs-seeker) | Find and retrieve external documentation |
+| [chrome-devtools](/docs/engineer/skills/tools/chrome-devtools) | Browser automation, performance profiling |
+| [ffmpeg](/docs/engineer/skills/tools/ffmpeg) | Video/audio processing and conversion |
+| [imagemagick](/docs/engineer/skills/tools/imagemagick) | Image manipulation and batch processing |
+| [claude-code-skill](/docs/engineer/skills/tools/claude-code-skill) | Meta-skill for Claude Code itself |
 
 ### Process & Methodology
 
 | Skill | Purpose |
 |-------|---------|
-| [planning](/docs/skills/tools/planning) | Transform requirements into executable plans |
-| [research](/docs/skills/tools/research) | Multi-source validation before implementation |
-| [sequential-thinking](/docs/skills/tools/sequential-thinking) | Numbered thought sequences for complex problems |
-| [problem-solving](/docs/skills/tools/problem-solving) | Systematic approaches when stuck |
-| [debugging](/docs/skills/tools/debugging) | Root cause investigation framework |
-| [systematic-debugging](/docs/skills/tools/systematic-debugging) | Four-phase debugging (95% fix rate) |
-| [code-review](/docs/skills/tools/code-review) | Verification gates and technical rigor |
+| [planning](/docs/engineer/skills/tools/planning) | Transform requirements into executable plans |
+| [research](/docs/engineer/skills/tools/research) | Multi-source validation before implementation |
+| [sequential-thinking](/docs/engineer/skills/tools/sequential-thinking) | Numbered thought sequences for complex problems |
+| [problem-solving](/docs/engineer/skills/tools/problem-solving) | Systematic approaches when stuck |
+| [debugging](/docs/engineer/skills/tools/debugging) | Root cause investigation framework |
+| [systematic-debugging](/docs/engineer/skills/tools/systematic-debugging) | Four-phase debugging (95% fix rate) |
+| [code-review](/docs/engineer/skills/tools/code-review) | Verification gates and technical rigor |
 
 ### Integrations
 
 | Skill | Purpose |
 |-------|---------|
-| [better-auth](/docs/skills/auth/better-auth) | TypeScript auth (OAuth, 2FA, passkeys, multi-tenant) |
-| [shopify](/docs/skills/ecommerce/shopify) | Shopify apps, GraphQL API, checkout extensions |
-| [payment-integration](/docs/skills/payments/payment-integration) | Stripe, PayPal, LemonSqueezy integration |
+| [better-auth](/docs/engineer/skills/auth/better-auth) | TypeScript auth (OAuth, 2FA, passkeys, multi-tenant) |
+| [shopify](/docs/engineer/skills/ecommerce/shopify) | Shopify apps, GraphQL API, checkout extensions |
+| [payment-integration](/docs/engineer/skills/payments/payment-integration) | Stripe, PayPal, LemonSqueezy integration |
 
 ### Mobile & Media
 
 | Skill | Purpose |
 |-------|---------|
-| [mobile-development](/docs/skills/mobile/mobile-development) | React Native, Expo, cross-platform patterns |
-| [media-processing](/docs/skills/multimedia/media-processing) | Audio/video manipulation workflows |
+| [mobile-development](/docs/engineer/skills/mobile/mobile-development) | React Native, Expo, cross-platform patterns |
+| [media-processing](/docs/engineer/skills/multimedia/media-processing) | Audio/video manipulation workflows |
 
 ## How to Use
 

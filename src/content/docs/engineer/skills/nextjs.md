@@ -141,9 +141,9 @@ DATABASE_URL=postgresql://...                # Server only
 
 ## Related Skills
 
-- [Frontend Design](/docs/skills/frontend/frontend-design) - UI/UX implementation
-- [Web Frameworks](/docs/skills/frontend/web-frameworks) - Full-stack patterns with Turborepo
-- [Backend Development](/docs/skills/backend/backend-development) - API integration patterns
+- [Frontend Design](/docs/engineer/skills/frontend/frontend-design) - UI/UX implementation
+- [Web Frameworks](/docs/engineer/skills/frontend/web-frameworks) - Full-stack patterns with Turborepo
+- [Backend Development](/docs/engineer/skills/backend/backend-development) - API integration patterns
 
 ## Key Takeaway
 

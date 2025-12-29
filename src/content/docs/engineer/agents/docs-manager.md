@@ -133,15 +133,15 @@ Authenticate user and return JWT token.
 
 **8. Use Absolute Paths**
 ```markdown
-✅ [Authentication](/docs/agents/docs-manager)
+✅ [Authentication](/docs/engineer/agents/docs-manager)
 ❌ [Authentication](./docs-manager)
 ```
 
 ## Related Agents
 
-- [Planner Agent](/docs/agents/planner) - Creates implementation plans → docs-manager documents them
-- [Scout Agent](/docs/agents/scout) - Locates files → docs-manager uses for context
-- [Project Manager](/docs/agents/project-manager) - Coordinates tasks → docs-manager provides status
+- [Planner Agent](/docs/engineer/agents/planner) - Creates implementation plans → docs-manager documents them
+- [Scout Agent](/docs/engineer/agents/scout) - Locates files → docs-manager uses for context
+- [Project Manager](/docs/engineer/agents/project-manager) - Coordinates tasks → docs-manager provides status
 
 ## Key Takeaway
 

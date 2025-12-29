@@ -575,10 +575,10 @@ Generates animation specification:
 
 ## Next Steps
 
-- [/design:screenshot](/docs/commands/design/screenshot) - Implement the analyzed design
-- [/design:good](/docs/commands/design/good) - Create similar high-quality design
-- [/design:fast](/docs/commands/design/fast) - Quick prototype based on analysis
-- [/docs:update](/docs/commands/docs/update) - Document extracted design system
+- [/design:screenshot](/docs/engineer/commands/design/screenshot) - Implement the analyzed design
+- [/design:good](/docs/engineer/commands/design/good) - Create similar high-quality design
+- [/design:fast](/docs/engineer/commands/design/fast) - Quick prototype based on analysis
+- [/docs:update](/docs/engineer/commands/docs/update) - Document extracted design system
 
 ---
 

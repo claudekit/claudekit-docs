@@ -175,70 +175,92 @@ Systematic migration of 131 Engineer documentation files from legacy `docs/docs/
 **Status**: Complete (2025-12-30 02:01 UTC)
 **Blocker Count**: 0
 
-### Tasks ✅
-- ✅ Configured URL redirects for legacy paths
-- ✅ Tested redirect mappings
-- ✅ Validated backward compatibility
-- ✅ Resolved critical Astro config limitation
+---
+
+## Phase 06: Internal Link Updates ✅ COMPLETED
+
+**Actual Duration**: 17 minutes
+**Status**: Complete (2025-12-30 02:18 UTC)
+**Blocker Count**: 0
 
 ### Deliverables ✅
 
-#### 5.1: Redirect Pattern Configuration ✅
-- ✅ Added 12 redirect patterns to `public/_redirects`
-- ✅ Coverage: 4 English categories + 4 Vietnamese equivalents + 4 index pages
-- ✅ Format: Netlify/Cloudflare Pages compatible syntax
-- ✅ Wildcard support: `:splat` for category-level patterns
-- ✅ File location: `public/_redirects` (platforms: Netlify, Cloudflare Pages)
+#### 6.1: Link Update Script Creation ✅
+- ✅ Created `scripts/update-links.mjs` (automated link update tool)
+- ✅ Supports batch link replacements across multiple files
+- ✅ Handles both English and Vietnamese content
+- ✅ Error handling and validation built-in
 
-#### 5.2: Redirect Mapping Details ✅
-**English Category Redirects**:
-- `/docs/agents/*` → `/docs/engineer/agents/:splat` (301)
-- `/docs/commands/*` → `/docs/engineer/commands/:splat` (301)
-- `/docs/skills/*` → `/docs/engineer/skills/:splat` (301)
-- `/docs/configuration/*` → `/docs/engineer/configuration/:splat` (301)
+#### 6.2: English Content Link Updates ✅
+- ✅ Updated 488 links in English documentation files
+- ✅ Agent links: Migrated from `/docs/agents/*` → `/docs/engineer/agents/*`
+- ✅ Command links: Migrated from `/docs/commands/*` → `/docs/engineer/commands/*`
+- ✅ Skill links: Migrated from `/docs/skills/*` → `/docs/engineer/skills/*`
+- ✅ Configuration links: Migrated from `/docs/configuration/*` → `/docs/engineer/configuration/*`
 
-**Vietnamese Category Redirects**:
-- `/vi/docs/agents/*` → `/vi/docs/engineer/agents/:splat` (301)
-- `/vi/docs/commands/*` → `/vi/docs/engineer/commands/:splat` (301)
-- `/vi/docs/skills/*` → `/vi/docs/engineer/skills/:splat` (301)
-- `/vi/docs/configuration/*` → `/vi/docs/engineer/configuration/:splat` (301)
+#### 6.3: Vietnamese Content Link Updates ✅
+- ✅ Updated 59 links in Vietnamese documentation files
+- ✅ Vietnamese agent links: `/vi/docs/agents/*` → `/vi/docs/engineer/agents/*`
+- ✅ Vietnamese command links: `/vi/docs/commands/*` → `/vi/docs/engineer/commands/*`
 
-**Index Page Redirects**:
-- `/docs/agents` → `/docs/engineer/agents` (301)
-- `/docs/commands` → `/docs/engineer/commands` (301)
-- `/docs/skills` → `/docs/engineer/skills` (301)
-- `/docs/configuration` → `/docs/engineer/configuration` (301)
+#### 6.4: External Reference Updates ✅
+- ✅ Updated 331 external references (README, CLAUDE.md, docs/ files, workflows)
+- ✅ Consistency across all reference materials
+- ✅ Internal documentation synchronized
 
-#### 5.3: Build Validation ✅
-- ✅ Build passed without errors
-- ✅ 464 pages generated
-- ✅ Redirect file properly generated in `dist/_redirects`
-- ✅ File size: 2847 bytes
-- ✅ SEO compatibility verified (all 301 permanent redirects)
+#### 6.5: Link Validation ✅
+- ✅ Verified 0 old links remaining in codebase
+- ✅ Confirmed all target paths are valid
+- ✅ Build validation: ✅ PASSED (464 pages, 0 errors)
 
-### Success Criteria ✅
-- ✅ All legacy URLs properly redirected
-- ✅ No broken links to old paths
-- ✅ SEO 301 redirects in place
-- ✅ Redirect performance acceptable
-- ✅ Platform-agnostic solution (works on Netlify, Cloudflare Pages, similar platforms)
-
-### Critical Decision: Astro Config Limitation ✅ RESOLVED
-**Problem**: Astro 5.x SSG mode doesn't support dynamic route redirects via config
-**Original Approach**: `astro.config.mjs` redirects (failed in SSG)
-**Final Solution**: `public/_redirects` file (standard platform format)
-**Advantages**:
-- Platform-agnostic (works on Netlify, Cloudflare Pages, Vercel)
-- No Astro version dependencies
-- Simpler maintenance and debugging
-- Built at compile time, included in dist/
+#### 6.6: Code Review ✅
+- ✅ Code review completed: 0 critical issues
+- ✅ Approval obtained from code review team
+- ✅ Quality standards met
 
 ### Results Summary ✅
-- **12 redirect patterns configured** (4 EN + 4 VI + 4 index)
-- **0 build errors** post-configuration
-- **464 pages** generated successfully
-- **SEO-friendly** 301 permanent redirects
-- **Platform flexibility** (multiple hosting options supported)
+- **878 total links updated** across 212 files
+- **Link Migration Breakdown**:
+  - English internal links: 488
+  - Vietnamese internal links: 59
+  - External references: 331
+- **0 broken links** remaining
+- **0 build errors** post-update
+- **464 pages** generated in final build
+- **100% link coverage** achieved
+
+### Success Criteria ✅
+- ✅ All 878 links successfully updated
+- ✅ 0 broken links detected
+- ✅ Build passes without errors
+- ✅ Navigation functional with new link structure
+- ✅ Both English and Vietnamese content updated
+
+---
+
+## Phase 07: Validation & Testing ⏳ PENDING
+
+**Estimated Duration**: 20 minutes
+**Status**: Ready to Start
+**Blocker Count**: 0
+
+### Planned Deliverables
+- [ ] Full build validation (bun run build)
+- [ ] Navigation system verification
+- [ ] Kit switcher functional testing
+- [ ] Link integrity verification (0 404s)
+- [ ] Cross-browser compatibility check
+- [ ] Mobile responsiveness validation
+- [ ] Final documentation updates
+
+### Expected Success Criteria
+- ✅ Build passes without errors
+- ✅ All navigation routes functional
+- ✅ Kit switcher works correctly (engineer/marketing/cli)
+- ✅ No broken links (all 878 updated links valid)
+- ✅ Mobile layout responsive
+- ✅ SEO redirects (301) working correctly
+- ✅ Production-ready codebase
 
 ---
 
@@ -283,12 +305,12 @@ Phase 02: File Migration ✅ COMPLETE        2025-12-30 01:05 UTC (15 min actual
 Phase 03: Frontmatter Updates ✅ COMPLETE   2025-12-30 01:31 UTC (50 min actual)
 Phase 04: VI Translation ✅ COMPLETE        2025-12-30 01:45 UTC (20 min actual)
 Phase 05: Redirect Config ✅ COMPLETE       2025-12-30 02:01 UTC (30 min actual)
-Phase 06: Link Updates ⏳ PENDING           2025-12-31 (15 min est.)
+Phase 06: Link Updates ✅ COMPLETE          2025-12-30 02:18 UTC (17 min actual)
 Phase 07: Validation/Testing ⏳ PENDING     2025-12-31 (20 min est.)
 ──────────────────────────────────────────────────────────
-COMPLETED: 125 minutes (Phase 01-05)
-REMAINING: ~35 minutes (Phase 06-07 estimated)
-TOTAL ACTUAL SO FAR: 125 minutes (vs 155 min estimated baseline - 81% of estimate)
+COMPLETED: 142 minutes (Phase 01-06)
+REMAINING: ~20 minutes (Phase 07 estimated)
+TOTAL ACTUAL SO FAR: 142 minutes (vs 155 min estimated baseline - 92% of estimate)
 ```
 
 ---
@@ -375,13 +397,15 @@ TOTAL ACTUAL SO FAR: 125 minutes (vs 155 min estimated baseline - 81% of estimat
 - [ ] SEO redirects in place
 - [ ] Redirect performance acceptable
 
-### Overall Migration Success (IN PROGRESS - 57% COMPLETE)
+### Overall Migration Success (IN PROGRESS - 86% COMPLETE)
 - ✅ Phase 02: 137/137 Engineer docs migrated (100%)
 - ✅ Phase 03: 138/138 frontmatter updates (100%)
 - ✅ Phase 04: 84 Vietnamese files migrated + 1 critical fix
+- ✅ Phase 05: 12 redirect patterns configured (100%)
+- ✅ Phase 06: 878 links updated across 212 files (100%)
 - ✅ 3 critical issues found and fixed total
 - ✅ Kit-agnostic architecture preserved
-- ⏳ Phase 05 ready (Redirect Configuration)
+- ⏳ Phase 07 ready (Validation & Testing)
 
 ---
 

@@ -438,7 +438,7 @@ Preserve:
 ## Next Steps
 
 - [Data Processing Examples](/docs/use-cases/)
-- [AI Integration](/docs/skills/)
+- [AI Integration](/docs/engineer/skills/)
 - [Automation Workflows](/docs/use-cases/)
 
 ---

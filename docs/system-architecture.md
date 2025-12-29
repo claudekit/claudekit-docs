@@ -488,7 +488,7 @@ Interactive
 #### 8.3 i18n Flow
 
 ```
-URL: /vi/docs/agents/planner
+URL: /vi/docs/engineer/agents/planner
     ↓
 getLangFromUrl(url) → 'vi'
     ↓

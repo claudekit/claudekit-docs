@@ -1177,9 +1177,9 @@ A successful code review:
 
 ## Next Steps
 
-- [Planner](/docs/agents/planner) - Plan fixes for issues
-- [Fix Commands](/docs/commands/fix) - Apply fixes
-- [Testing](/docs/agents/tester) - Validate fixes
+- [Planner](/docs/engineer/agents/planner) - Plan fixes for issues
+- [Fix Commands](/docs/engineer/commands/fix) - Apply fixes
+- [Testing](/docs/engineer/agents/tester) - Validate fixes
 
 ---
 

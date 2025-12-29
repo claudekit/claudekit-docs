@@ -366,8 +366,8 @@ cat .claude/workflows/development-rules.md
 
 Now that you understand workflows:
 
-- [Agents](/docs/agents/) - Learn about the 14 specialized agents
-- [Commands](/docs/commands/) - Explore available commands
+- [Agents](/docs/engineer/agents/) - Learn about the 14 specialized agents
+- [Commands](/docs/engineer/commands/) - Explore available commands
 - [Development Rules](/.claude/workflows/development-rules.md) - Read the full development rules
 
 ---

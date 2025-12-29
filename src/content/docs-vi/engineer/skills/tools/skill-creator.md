@@ -444,7 +444,7 @@ Located in `~/.claude/skills/`
 
 ## Next Steps
 
-- [Existing Skills](/docs/skills/)
+- [Existing Skills](/docs/engineer/skills/)
 - [Skill Examples](/docs/use-cases/)
 - [Advanced Patterns](/docs/use-cases/)
 

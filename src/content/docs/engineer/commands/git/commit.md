@@ -532,9 +532,9 @@ Clean, professional, and easy to understand!
 
 ## Next Steps
 
-- [/git:cp](/docs/commands/git/commit-push) - Commit and push
-- [/git:pr](/docs/commands/git/pull-request) - Create pull request
-- [Code Review](/docs/commands/core/review) - Review before committing
+- [/git:cp](/docs/engineer/commands/git/commit-push) - Commit and push
+- [/git:pr](/docs/engineer/commands/git/pull-request) - Create pull request
+- [Code Review](/docs/engineer/commands/core/review) - Review before committing
 
 ---
 

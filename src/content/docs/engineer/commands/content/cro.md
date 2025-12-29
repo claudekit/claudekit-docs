@@ -621,9 +621,9 @@ cat plans/content-cro-*.md
 
 ## Related Commands
 
-- [/content:enhance](/docs/commands/content/enhance) - Improve existing copy
-- [/content:good](/docs/commands/content/good) - Write new optimized copy
-- [/plan:cro](/docs/commands/plan/cro) - Create CRO strategy plan
+- [/content:enhance](/docs/engineer/commands/content/enhance) - Improve existing copy
+- [/content:good](/docs/engineer/commands/content/good) - Write new optimized copy
+- [/plan:cro](/docs/engineer/commands/plan/cro) - Create CRO strategy plan
 
 ---
 

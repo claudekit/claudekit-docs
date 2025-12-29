@@ -162,9 +162,9 @@ CMD ["node", "dist/main.js"]
 
 ## Related Skills
 
-- [Databases](/docs/skills/backend/databases) - PostgreSQL, MongoDB deep-dive
-- [DevOps](/docs/skills/backend/devops) - Docker, Kubernetes, cloud deployment
-- [Better Auth](/docs/skills/auth/better-auth) - Authentication implementation
+- [Databases](/docs/engineer/skills/backend/databases) - PostgreSQL, MongoDB deep-dive
+- [DevOps](/docs/engineer/skills/backend/devops) - Docker, Kubernetes, cloud deployment
+- [Better Auth](/docs/engineer/skills/auth/better-auth) - Authentication implementation
 
 ---
 

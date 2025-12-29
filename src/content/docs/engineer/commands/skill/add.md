@@ -310,9 +310,9 @@ Average usage: ~1,500 tokens (81% reduction)
 
 ## Related Commands
 
-- [/skill:create](/docs/commands/skill/create) - Create new skills
-- [/skill:optimize](/docs/commands/skill/optimize) - Optimize existing skills
-- [/skill:fix-logs](/docs/commands/skill/fix-logs) - Fix skills from logs
+- [/skill:create](/docs/engineer/commands/skill/create) - Create new skills
+- [/skill:optimize](/docs/engineer/commands/skill/optimize) - Optimize existing skills
+- [/skill:fix-logs](/docs/engineer/commands/skill/fix-logs) - Fix skills from logs
 
 ---
 

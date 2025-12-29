@@ -107,8 +107,8 @@ Specify a philosophy in your prompt or let Claude choose based on your needs.
 
 ## Related Skills
 
-- [frontend-design](/docs/skills/frontend/frontend-design) - Build web interfaces and components
-- [ui-styling](/docs/skills/frontend/ui-styling) - Style existing web elements with Tailwind/CSS
+- [frontend-design](/docs/engineer/skills/frontend/frontend-design) - Build web interfaces and components
+- [ui-styling](/docs/engineer/skills/frontend/ui-styling) - Style existing web elements with Tailwind/CSS
 
 ---
 

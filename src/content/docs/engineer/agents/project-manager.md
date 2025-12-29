@@ -70,10 +70,10 @@ Senior orchestrator for tracking progress, collecting agent reports, maintaining
 
 ## Related Agents
 
-- [Planner](/docs/agents/planner) - Creates implementation plans analyzed by PM
-- [Docs Manager](/docs/agents/docs-manager) - Receives delegation for doc updates
-- [Git Manager](/docs/agents/git-manager) - Provides commit reports to PM
-- [Tester](/docs/agents/tester) - Sends test results for quality tracking
+- [Planner](/docs/engineer/agents/planner) - Creates implementation plans analyzed by PM
+- [Docs Manager](/docs/engineer/agents/docs-manager) - Receives delegation for doc updates
+- [Git Manager](/docs/engineer/agents/git-manager) - Provides commit reports to PM
+- [Tester](/docs/engineer/agents/tester) - Sends test results for quality tracking
 
 ## Key Takeaway
 

@@ -358,10 +358,10 @@ rm -rf $HOME/.claude/skills/my-skill/.backup-251128-*/
 
 ## Related Commands
 
-- [/skill:optimize](/docs/commands/skill/optimize) - Optimization with approval
-- [/skill:add](/docs/commands/skill/add) - Add references to skills
-- [/skill:create](/docs/commands/skill/create) - Create new skills
-- [/skill:fix-logs](/docs/commands/skill/fix-logs) - Fix skills from error logs
+- [/skill:optimize](/docs/engineer/commands/skill/optimize) - Optimization with approval
+- [/skill:add](/docs/engineer/commands/skill/add) - Add references to skills
+- [/skill:create](/docs/engineer/commands/skill/create) - Create new skills
+- [/skill:fix-logs](/docs/engineer/commands/skill/fix-logs) - Fix skills from error logs
 
 ---
 

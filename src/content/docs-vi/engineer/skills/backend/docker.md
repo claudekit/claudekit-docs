@@ -414,7 +414,7 @@ Common problems:
 ## Next Steps
 
 - [Deployment Guide](/docs/use-cases/)
-- [PostgreSQL Integration](/docs/skills/postgresql-psql)
+- [PostgreSQL Integration](/docs/engineer/skills/postgresql-psql)
 - [CI/CD Examples](/docs/use-cases/)
 
 ---

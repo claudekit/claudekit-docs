@@ -16,35 +16,35 @@ ClaudeKit includes 14 specialized agents that work together to handle every aspe
 
 ### Development Agents
 
-1. **[planner](/docs/agents/planner)** - Research, analyze, and create implementation plans
-2. **[scout](/docs/agents/scout)** - Quickly locate relevant files across large codebases using parallel search
-3. **[debugger](/docs/agents/debugger)** - Investigate issues, analyze logs, diagnose problems
-4. **[tester](/docs/agents/tester)** - Validate code quality through comprehensive testing
+1. **[planner](/docs/engineer/agents/planner)** - Research, analyze, and create implementation plans
+2. **[scout](/docs/engineer/agents/scout)** - Quickly locate relevant files across large codebases using parallel search
+3. **[debugger](/docs/engineer/agents/debugger)** - Investigate issues, analyze logs, diagnose problems
+4. **[tester](/docs/engineer/agents/tester)** - Validate code quality through comprehensive testing
 
 ### Quality Assurance
 
-5. **[code-reviewer](/docs/agents/code-reviewer)** - Comprehensive code review and quality assessment
+5. **[code-reviewer](/docs/engineer/agents/code-reviewer)** - Comprehensive code review and quality assessment
 
 ### Documentation & Project Management
 
-6. **[docs-manager](/docs/agents/docs-manager)** - Manage technical documentation and standards
-7. **[project-manager](/docs/agents/project-manager)** - Comprehensive project oversight and coordination
+6. **[docs-manager](/docs/engineer/agents/docs-manager)** - Manage technical documentation and standards
+7. **[project-manager](/docs/engineer/agents/project-manager)** - Comprehensive project oversight and coordination
 
 ### Creative & Design
 
-8. **[ui-ux-designer](/docs/agents/ui-ux-designer)** - Design interfaces, wireframes, and user experiences
-9. **[copywriter](/docs/agents/copywriter)** - Create high-converting marketing copy
-10. **[brainstormer](/docs/agents/brainstormer)** - Explore ideas, challenge assumptions, and debate technical decisions
+8. **[ui-ux-designer](/docs/engineer/agents/ui-ux-designer)** - Design interfaces, wireframes, and user experiences
+9. **[copywriter](/docs/engineer/agents/copywriter)** - Create high-converting marketing copy
+10. **[brainstormer](/docs/engineer/agents/brainstormer)** - Explore ideas, challenge assumptions, and debate technical decisions
 
 ### Research & Writing
 
-11. **[researcher](/docs/agents/researcher)** - Multi-source research with documentation analysis and best practices
-12. **[journal-writer](/docs/agents/journal-writer)** - Document technical difficulties and project journey
+11. **[researcher](/docs/engineer/agents/researcher)** - Multi-source research with documentation analysis and best practices
+12. **[journal-writer](/docs/engineer/agents/journal-writer)** - Document technical difficulties and project journey
 
 ### DevOps & Infrastructure
 
-13. **[git-manager](/docs/agents/git-manager)** - Stage, commit, and push code with professional standards
-14. **[database-admin](/docs/agents/database-admin)** - Database optimization, query analysis, and administration
+13. **[git-manager](/docs/engineer/agents/git-manager)** - Stage, commit, and push code with professional standards
+14. **[database-admin](/docs/engineer/agents/database-admin)** - Database optimization, query analysis, and administration
 
 ## Why Only 14 Agents?
 
@@ -396,16 +396,16 @@ planner Agent Report:
 
 Learn more about specific agents:
 
-- [planner Agent](/docs/agents/planner) - Planning and research
-- [scout Agent](/docs/agents/scout) - File location and search
-- [debugger Agent](/docs/agents/debugger) - Issue diagnosis
-- [tester Agent](/docs/agents/tester) - Testing and validation
+- [planner Agent](/docs/engineer/agents/planner) - Planning and research
+- [scout Agent](/docs/engineer/agents/scout) - File location and search
+- [debugger Agent](/docs/engineer/agents/debugger) - Issue diagnosis
+- [tester Agent](/docs/engineer/agents/tester) - Testing and validation
 
 Or explore:
 
-- [Commands](/docs/commands/) - How to invoke agents
+- [Commands](/docs/engineer/commands/) - How to invoke agents
 - [Workflows](/docs/core-concepts/workflows) - How agents coordinate
-- [Orchestration](/docs/agents/orchestration) - Advanced patterns
+- [Orchestration](/docs/engineer/agents/orchestration) - Advanced patterns
 
 ---
 

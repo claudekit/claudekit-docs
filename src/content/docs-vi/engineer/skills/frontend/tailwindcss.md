@@ -680,10 +680,10 @@ export default {
 
 ## Related Skills
 
-- [Next.js](/docs/skills/nextjs) - React framework integration
-- [shadcn/ui](/docs/skills/shadcn-ui) - Pre-built components
-- [React](/docs/skills/react) - Component development
-- [TypeScript](/docs/skills/typescript) - Type-safe styling
+- [Next.js](/docs/engineer/skills/nextjs) - React framework integration
+- [shadcn/ui](/docs/engineer/skills/shadcn-ui) - Pre-built components
+- [React](/docs/engineer/skills/react) - Component development
+- [TypeScript](/docs/engineer/skills/typescript) - Type-safe styling
 
 ## Reference
 

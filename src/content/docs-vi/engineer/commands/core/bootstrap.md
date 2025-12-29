@@ -371,10 +371,10 @@ npm test
 
 ## Next Steps
 
-- [/cook](/docs/commands/core/cook) - Add new features
-- [/plan](/docs/commands/core/plan) - Plan additions
-- [/test](/docs/commands/core/test) - Run test suite
-- [/docs:update](/docs/commands/docs/update) - Update docs
+- [/cook](/docs/engineer/commands/core/cook) - Add new features
+- [/plan](/docs/engineer/commands/core/plan) - Plan additions
+- [/test](/docs/engineer/commands/core/test) - Run test suite
+- [/docs:update](/docs/engineer/commands/docs/update) - Update docs
 
 ---
 

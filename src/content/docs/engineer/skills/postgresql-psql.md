@@ -174,9 +174,9 @@ CREATE TABLE post_tags (
 
 ## Related Skills
 
-- [databases](/docs/skills/backend/databases) - MongoDB + PostgreSQL unified guide
-- [backend-development](/docs/skills/backend/backend-development) - API integration patterns
-- [devops](/docs/skills/backend/devops) - Production deployment, monitoring
+- [databases](/docs/engineer/skills/backend/databases) - MongoDB + PostgreSQL unified guide
+- [backend-development](/docs/engineer/skills/backend/backend-development) - API integration patterns
+- [devops](/docs/engineer/skills/backend/devops) - Production deployment, monitoring
 
 ## Key Takeaway
 

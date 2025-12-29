@@ -338,10 +338,10 @@ cat plans/*/plan.md
 
 ## Related Commands
 
-- [/cook](/docs/commands/core/cook) - Step-by-step implementation
-- [/cook:auto](/docs/commands/core/cook-auto) - Auto cook (sequential)
-- [/plan:parallel](/docs/commands/plan/parallel) - Create parallel plans
-- [/code:parallel](/docs/commands/core/code-parallel) - Execute existing parallel plans
+- [/cook](/docs/engineer/commands/core/cook) - Step-by-step implementation
+- [/cook:auto](/docs/engineer/commands/core/cook-auto) - Auto cook (sequential)
+- [/plan:parallel](/docs/engineer/commands/plan/parallel) - Create parallel plans
+- [/code:parallel](/docs/engineer/commands/core/code-parallel) - Execute existing parallel plans
 
 ---
 

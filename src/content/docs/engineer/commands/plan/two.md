@@ -844,9 +844,9 @@ cat plans/[task]-comparison.md
 
 ## Next Steps
 
-- [/plan](/docs/commands/core/plan) - Single approach planning
-- [/code](/docs/commands/core/code) - Implement chosen plan
-- [/plan:cro](/docs/commands/plan/cro) - CRO-specific planning
+- [/plan](/docs/engineer/commands/core/plan) - Single approach planning
+- [/code](/docs/engineer/commands/core/code) - Implement chosen plan
+- [/plan:cro](/docs/engineer/commands/plan/cro) - CRO-specific planning
 
 ---
 

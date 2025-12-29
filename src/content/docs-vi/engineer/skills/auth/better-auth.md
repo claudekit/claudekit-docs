@@ -277,8 +277,8 @@ npx @better-auth/cli migrate
 ## Next Steps
 
 - [Authentication Examples](/docs/use-cases/)
-- [Database Skills](/docs/skills/postgresql-psql)
-- [Next.js Integration](/docs/skills/nextjs)
+- [Database Skills](/docs/engineer/skills/postgresql-psql)
+- [Next.js Integration](/docs/engineer/skills/nextjs)
 
 ---
 

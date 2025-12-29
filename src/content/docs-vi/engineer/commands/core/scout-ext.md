@@ -308,9 +308,9 @@ Opencode: Sử dụng LLM API đã cấu hình
 
 ## Các lệnh liên quan
 
-- [/scout](/vi/docs/commands/core/scout) - Khám phá codebase tiêu chuẩn
-- [/review:codebase](/vi/docs/commands/core/review-codebase) - Phân tích code toàn diện
-- [/ask](/vi/docs/commands/core/ask) - Câu hỏi kiến trúc
+- [/scout](/vi/docs/engineer/commands/core/scout) - Khám phá codebase tiêu chuẩn
+- [/review:codebase](/vi/docs/engineer/commands/core/review-codebase) - Phân tích code toàn diện
+- [/ask](/vi/docs/engineer/commands/core/ask) - Câu hỏi kiến trúc
 
 ---
 

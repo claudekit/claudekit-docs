@@ -110,9 +110,9 @@ for our CI pipeline."
 
 ## Related Skills
 
-- [Frontend Development](/docs/skills/frontend/frontend-development) - React patterns and state management
-- [UI Styling](/docs/skills/frontend/ui-styling) - Tailwind and CSS strategies
-- [DevOps](/docs/skills/backend/devops) - Deployment and CI/CD
+- [Frontend Development](/docs/engineer/skills/frontend/frontend-development) - React patterns and state management
+- [UI Styling](/docs/engineer/skills/frontend/ui-styling) - Tailwind and CSS strategies
+- [DevOps](/docs/engineer/skills/backend/devops) - Deployment and CI/CD
 
 ---
 

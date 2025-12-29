@@ -87,9 +87,9 @@ GROUP BY u.id ORDER BY SUM(o.total) DESC LIMIT 100;"
 
 ## Related Agents
 
-- [Debugger](/docs/agents/debugger) - Debug application database issues
-- [Fullstack Developer](/docs/agents/fullstack-developer) - Implement schema changes in app
-- [Tester](/docs/agents/tester) - Validate database migrations
+- [Debugger](/docs/engineer/agents/debugger) - Debug application database issues
+- [Fullstack Developer](/docs/engineer/agents/fullstack-developer) - Implement schema changes in app
+- [Tester](/docs/engineer/agents/tester) - Validate database migrations
 
 ## Key Takeaway
 

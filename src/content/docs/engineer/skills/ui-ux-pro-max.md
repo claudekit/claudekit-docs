@@ -118,6 +118,6 @@ Claude validates before delivering:
 
 ## Related Skills
 
-- [Frontend Design Pro](/docs/skills/frontend/frontend-design-pro) - Premium agency-quality interfaces
-- [Aesthetic](/docs/skills/frontend/aesthetic) - Four-stage design framework
-- [UI Styling](/docs/skills/frontend/ui-styling) - shadcn/ui + Tailwind patterns
+- [Frontend Design Pro](/docs/engineer/skills/frontend/frontend-design-pro) - Premium agency-quality interfaces
+- [Aesthetic](/docs/engineer/skills/frontend/aesthetic) - Four-stage design framework
+- [UI Styling](/docs/engineer/skills/frontend/ui-styling) - shadcn/ui + Tailwind patterns

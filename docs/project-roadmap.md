@@ -6,9 +6,9 @@
 
 ## Current Status
 
-**Phase**: Phase 09A - Engineer Docs Migration In Progress (98% Complete)
+**Phase**: Phase 09A - Engineer Docs Migration In Progress (86% Complete)
 **Live**: Not yet deployed to production
-**Development**: Active - Engineer docs migration Phase 04 COMPLETE (2025-12-30 01:45 UTC), Phase 05 READY
+**Development**: Active - Engineer docs migration Phase 06 COMPLETE (2025-12-30 02:18 UTC), Phase 07 READY
 
 ### Completed Features ✅
 
@@ -393,9 +393,15 @@
 - Astro config redirects failed (dynamic routes limitation in SSG mode)
 - Solution: Switched to `public/_redirects` file (production-ready, platform-agnostic)
 
-**Phase 06: Internal Link Updates** (PENDING):
-- [ ] Update references to migrated files
-- [ ] Validate no broken references
+**Phase 06: Internal Link Updates** ✅ COMPLETED (2025-12-30 02:18 UTC):
+- ✅ Created `scripts/update-links.mjs` (automated link update tool)
+- ✅ Updated 878 links across 212 files
+- ✅ English links: 488 updated (agents, commands, skills, configuration)
+- ✅ Vietnamese links: 59 updated (agents, commands)
+- ✅ External references: 331 updated (README, CLAUDE.md, docs/, workflows)
+- ✅ Verified 0 old links remaining
+- ✅ Build validation: ✅ PASSED (464 pages, 0 errors)
+- ✅ Code review: ✅ APPROVED (0 critical issues)
 
 **Phase 07: Validation & Testing** (PENDING):
 - [ ] Full build validation
@@ -403,8 +409,8 @@
 - [ ] Kit switcher testing
 
 **Overall Progress**:
-- **Phase 05 of 7 complete (71% total)**
-- **Next: Phase 06 (Internal Links) - READY**
+- **Phase 06 of 7 complete (86% total)**
+- **Next: Phase 07 (Validation & Testing) - READY**
 
 ---
 

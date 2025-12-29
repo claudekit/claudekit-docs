@@ -1264,9 +1264,9 @@ A good journal entry:
 
 ## Next Steps
 
-- [Debugger](/docs/agents/debugger) - Debug the actual issues
-- [Project Manager](/docs/agents/project-manager) - Track improvements
-- [Planner](/docs/agents/planner) - Plan preventive measures
+- [Debugger](/docs/engineer/agents/debugger) - Debug the actual issues
+- [Project Manager](/docs/engineer/agents/project-manager) - Track improvements
+- [Planner](/docs/engineer/agents/planner) - Plan preventive measures
 
 ---
 

@@ -120,8 +120,8 @@ Deliver private repository access on payment.
 
 ## Related Skills
 
-- [Backend Development](/docs/skills/backend/backend-development) - API implementation
-- [Web Frameworks](/docs/skills/frontend/web-frameworks) - Checkout UI integration
+- [Backend Development](/docs/engineer/skills/backend/backend-development) - API implementation
+- [Web Frameworks](/docs/engineer/skills/frontend/web-frameworks) - Checkout UI integration
 
 ---
 

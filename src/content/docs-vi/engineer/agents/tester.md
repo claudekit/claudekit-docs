@@ -791,9 +791,9 @@ npm test -- --runInBand
 
 ## Next Steps
 
-- [Debugging](/docs/agents/debugger) - Investigate test failures
-- [Code Review](/docs/agents/code-reviewer) - Validate code quality
-- [Fix Tests](/docs/commands/fix/test) - Repair failing tests
+- [Debugging](/docs/engineer/agents/debugger) - Investigate test failures
+- [Code Review](/docs/engineer/agents/code-reviewer) - Validate code quality
+- [Fix Tests](/docs/engineer/commands/fix/test) - Repair failing tests
 
 ---
 

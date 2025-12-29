@@ -150,9 +150,9 @@ SITUATION?
 
 ## Related Skills
 
-- [Debugging](/docs/skills/tools/debugging) - Debug with evidence-based approach
-- [Sequential Thinking](/docs/skills/tools/sequential-thinking) - Systematic problem-solving
-- [Planning](/docs/skills/tools/planning) - Task breakdown and verification
+- [Debugging](/docs/engineer/skills/tools/debugging) - Debug with evidence-based approach
+- [Sequential Thinking](/docs/engineer/skills/tools/sequential-thinking) - Systematic problem-solving
+- [Planning](/docs/engineer/skills/tools/planning) - Task breakdown and verification
 
 ## Key Takeaway
 

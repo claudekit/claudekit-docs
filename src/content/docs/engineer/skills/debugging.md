@@ -95,8 +95,8 @@ Stop and follow process if thinking:
 
 ## Related Skills
 
-- [Problem Solving](/docs/skills/tools/problem-solving) - Structured approach to complex problems
-- [Sequential Thinking](/docs/skills/tools/sequential-thinking) - Step-by-step reasoning
+- [Problem Solving](/docs/engineer/skills/tools/problem-solving) - Structured approach to complex problems
+- [Sequential Thinking](/docs/engineer/skills/tools/sequential-thinking) - Step-by-step reasoning
 
 ---
 

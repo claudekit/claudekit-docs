@@ -1291,9 +1291,9 @@ A successful database optimization achieves:
 
 ## Next Steps
 
-- [Debugger](/docs/agents/debugger) - Debug application issues
-- [Planner](/docs/agents/planner) - Plan database migrations
-- [Tester](/docs/agents/tester) - Validate database changes
+- [Debugger](/docs/engineer/agents/debugger) - Debug application issues
+- [Planner](/docs/engineer/agents/planner) - Plan database migrations
+- [Tester](/docs/engineer/agents/tester) - Validate database changes
 
 ---
 

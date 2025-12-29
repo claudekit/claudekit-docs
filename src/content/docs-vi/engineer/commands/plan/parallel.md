@@ -365,11 +365,11 @@ Cân bằng lợi ích song song vs. chi phí điều phối:
 
 ## Các lệnh liên quan
 
-- [/plan](/vi/docs/commands/plan) - Bộ định tuyến lập kế hoạch thông minh
-- [/plan:hard](/vi/docs/commands/plan/hard) - Lập kế hoạch chi tiết tuần tự
-- [/code:parallel](/vi/docs/commands/core/code-parallel) - Thực thi kế hoạch song song
-- [/bootstrap:auto:parallel](/vi/docs/commands/core/bootstrap-auto-parallel) - Bootstrap với thực thi song song
-- [/cook:auto:parallel](/vi/docs/commands/core/cook-auto-parallel) - Cook với agent song song
+- [/plan](/vi/docs/engineer/commands/plan) - Bộ định tuyến lập kế hoạch thông minh
+- [/plan:hard](/vi/docs/engineer/commands/plan/hard) - Lập kế hoạch chi tiết tuần tự
+- [/code:parallel](/vi/docs/engineer/commands/core/code-parallel) - Thực thi kế hoạch song song
+- [/bootstrap:auto:parallel](/vi/docs/engineer/commands/core/bootstrap-auto-parallel) - Bootstrap với thực thi song song
+- [/cook:auto:parallel](/vi/docs/engineer/commands/core/cook-auto-parallel) - Cook với agent song song
 
 ---
 

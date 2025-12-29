@@ -803,8 +803,8 @@ mv logs.txt logs.txt.$(date +%Y%m%d).bak
 
 ## Next Steps
 
-- [/skill:create](/docs/commands/skill/create) - Create new skills
-- [/ask](/docs/commands/core/ask) - Use fixed skills
+- [/skill:create](/docs/engineer/commands/skill/create) - Create new skills
+- [/ask](/docs/engineer/commands/core/ask) - Use fixed skills
 - [Skill Development Guide](/docs/guides/skill-development) - Advanced topics
 
 ---

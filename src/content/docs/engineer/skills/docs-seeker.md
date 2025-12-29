@@ -101,9 +101,9 @@ process.env > .claude/skills/docs-seeker/.env > .claude/skills/.env > .claude/.e
 
 ## Related Skills
 
-- [Research](/docs/skills/tools/research) - Documentation research workflows
-- [Planning](/docs/skills/tools/planning) - Plan with documentation context
-- [MCP Management](/docs/skills/tools/mcp-management) - Manage MCP servers for extended capabilities
+- [Research](/docs/engineer/skills/tools/research) - Documentation research workflows
+- [Planning](/docs/engineer/skills/tools/planning) - Plan with documentation context
+- [MCP Management](/docs/engineer/skills/tools/mcp-management) - Manage MCP servers for extended capabilities
 
 ---
 

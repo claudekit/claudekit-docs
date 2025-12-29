@@ -942,10 +942,10 @@ planner: Creates detailed implementation plan
 
 Learn more about related topics:
 
-- [Docs Manager](/docs/agents/docs-manager) - Documentation management
-- [Git Manager](/docs/agents/git-manager) - Version control operations
-- [Planner](/docs/agents/planner) - Implementation planning
-- [Commands](/docs/commands/) - Project management commands
+- [Docs Manager](/docs/engineer/agents/docs-manager) - Documentation management
+- [Git Manager](/docs/engineer/agents/git-manager) - Version control operations
+- [Planner](/docs/engineer/agents/planner) - Implementation planning
+- [Commands](/docs/engineer/commands/) - Project management commands
 
 ---
 

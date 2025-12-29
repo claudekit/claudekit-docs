@@ -811,10 +811,10 @@ npx shadcn@latest diff
 
 ## Related Skills
 
-- [Tailwind CSS](/docs/skills/tailwindcss) - Styling foundation
-- [Next.js](/docs/skills/nextjs) - React framework integration
-- [React Hook Form](/docs/skills/react-hook-form) - Form management
-- [Zod](/docs/skills/zod) - Schema validation
+- [Tailwind CSS](/docs/engineer/skills/tailwindcss) - Styling foundation
+- [Next.js](/docs/engineer/skills/nextjs) - React framework integration
+- [React Hook Form](/docs/engineer/skills/react-hook-form) - Form management
+- [Zod](/docs/engineer/skills/zod) - Schema validation
 
 ## Reference
 

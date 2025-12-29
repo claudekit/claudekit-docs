@@ -356,10 +356,10 @@ cat README.md
 
 ## Các lệnh liên quan
 
-- [/bootstrap](/vi/docs/commands/core/bootstrap) - Bootstrap với cổng phê duyệt
-- [/bootstrap:auto](/vi/docs/commands/core/bootstrap-auto) - Auto bootstrap (tuần tự)
-- [/plan:parallel](/vi/docs/commands/plan/parallel) - Tạo kế hoạch song song
-- [/code:parallel](/vi/docs/commands/core/code-parallel) - Thực thi kế hoạch song song
+- [/bootstrap](/vi/docs/engineer/commands/core/bootstrap) - Bootstrap với cổng phê duyệt
+- [/bootstrap:auto](/vi/docs/engineer/commands/core/bootstrap-auto) - Auto bootstrap (tuần tự)
+- [/plan:parallel](/vi/docs/engineer/commands/plan/parallel) - Tạo kế hoạch song song
+- [/code:parallel](/vi/docs/engineer/commands/core/code-parallel) - Thực thi kế hoạch song song
 
 ---
 

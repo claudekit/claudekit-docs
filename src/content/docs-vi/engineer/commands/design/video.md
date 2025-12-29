@@ -913,10 +913,10 @@ width: '200px'
 
 ## Next Steps
 
-- [/design:screenshot](/docs/commands/design/screenshot) - For static views
-- [/design:3d](/docs/commands/design/3d) - For 3D animations
-- [/design:describe](/docs/commands/design/describe) - Analyze video first
-- [/fix:ui](/docs/commands/fix/ui) - Adjust animation feel
+- [/design:screenshot](/docs/engineer/commands/design/screenshot) - For static views
+- [/design:3d](/docs/engineer/commands/design/3d) - For 3D animations
+- [/design:describe](/docs/engineer/commands/design/describe) - Analyze video first
+- [/fix:ui](/docs/engineer/commands/fix/ui) - Adjust animation feel
 
 ---
 

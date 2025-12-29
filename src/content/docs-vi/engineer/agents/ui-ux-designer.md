@@ -1680,9 +1680,9 @@ Saved to: `docs/design-guidelines.md`
 
 ## Next Steps
 
-- [Copywriter](/docs/agents/copywriter) - Create compelling copy
-- [Code Reviewer](/docs/agents/code-reviewer) - Validate implementation
-- [Implementation](/docs/commands/core/cook) - Build the design
+- [Copywriter](/docs/engineer/agents/copywriter) - Create compelling copy
+- [Code Reviewer](/docs/engineer/agents/code-reviewer) - Validate implementation
+- [Implementation](/docs/engineer/commands/core/cook) - Build the design
 
 ---
 

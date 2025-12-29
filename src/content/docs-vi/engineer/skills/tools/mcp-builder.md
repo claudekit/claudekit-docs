@@ -429,7 +429,7 @@ Creates:
 
 - [Custom Tools Examples](/docs/use-cases/)
 - [API Integration Guide](/docs/use-cases/)
-- [Database Skills](/docs/skills/postgresql-psql)
+- [Database Skills](/docs/engineer/skills/postgresql-psql)
 
 ---
 

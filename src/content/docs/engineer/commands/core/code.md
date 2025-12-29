@@ -346,10 +346,10 @@ cat plans/current-plan/plan.md
 
 ## Related Commands
 
-- [/plan](/docs/commands/core/plan) - Create implementation plan before `/code`
-- [/cook](/docs/commands/core/cook) - Step-by-step implementation without plan structure
-- [/fix](/docs/commands/fix) - Fix issues without full workflow
-- [/brainstorm](/docs/commands/core/brainstorm) - Evaluate approaches before planning
+- [/plan](/docs/engineer/commands/core/plan) - Create implementation plan before `/code`
+- [/cook](/docs/engineer/commands/core/cook) - Step-by-step implementation without plan structure
+- [/fix](/docs/engineer/commands/fix) - Fix issues without full workflow
+- [/brainstorm](/docs/engineer/commands/core/brainstorm) - Evaluate approaches before planning
 
 ---
 

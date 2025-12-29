@@ -198,9 +198,9 @@ Due to the IA restructure, some documentation URLs have changed. The old flat st
 
 **New Structure (Current)**:
 ```
-/docs/agents/agent-name
-/docs/commands/category/command-name
-/docs/skills/skill-name
+/docs/engineer/agents/agent-name
+/docs/engineer/commands/category/command-name
+/docs/engineer/skills/skill-name
 /docs/getting-started/topic-name
 ```
 

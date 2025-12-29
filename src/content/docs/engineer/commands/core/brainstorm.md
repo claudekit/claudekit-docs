@@ -408,10 +408,10 @@ git diff main
 
 ## Related Commands
 
-- [/ask](/docs/commands/core/ask) - Quick architectural questions without full report
-- [/plan](/docs/commands/core/plan) - Create implementation plan after brainstorming
-- [/code](/docs/commands/core/code) - Execute plans with quality gates
-- [/cook](/docs/commands/core/cook) - Implement features step-by-step
+- [/ask](/docs/engineer/commands/core/ask) - Quick architectural questions without full report
+- [/plan](/docs/engineer/commands/core/plan) - Create implementation plan after brainstorming
+- [/code](/docs/engineer/commands/core/code) - Execute plans with quality gates
+- [/cook](/docs/engineer/commands/core/cook) - Implement features step-by-step
 
 ---
 

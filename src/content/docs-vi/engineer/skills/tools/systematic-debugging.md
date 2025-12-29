@@ -298,9 +298,9 @@ Using systematic-debugging:
 
 ## Next Steps
 
-- [Root Cause Tracing](/docs/skills/)
+- [Root Cause Tracing](/docs/engineer/skills/)
 - [Debugging Examples](/docs/use-cases/)
-- [Testing Skills](/docs/agents/tester)
+- [Testing Skills](/docs/engineer/agents/tester)
 
 ---
 

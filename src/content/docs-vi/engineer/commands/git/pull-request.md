@@ -703,7 +703,7 @@ After using `/git:pr`:
 - Address reviewer feedback
 - Run CI/CD pipeline
 - Merge when approved
-- [/watzup](/docs/commands/core/watzup) - Review what was accomplished
+- [/watzup](/docs/engineer/commands/core/watzup) - Review what was accomplished
 
 ---
 

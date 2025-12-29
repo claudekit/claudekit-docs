@@ -486,7 +486,7 @@ mutation {
 
 - [E-commerce Examples](/docs/use-cases/)
 - [API Integration](/docs/use-cases/)
-- [Database Skills](/docs/skills/postgresql-psql)
+- [Database Skills](/docs/engineer/skills/postgresql-psql)
 
 ---
 

@@ -53,10 +53,10 @@ HTML + Tailwind CSS, React, Vue, Astro, Next.js, Nuxt
 
 ## Related Skills
 
-- [Frontend Design](/docs/skills/frontend/frontend-design) - Baseline design skill
-- [UI/UX Pro Max](/docs/skills/frontend/ui-ux-pro-max) - Advanced UX patterns
-- [Aesthetic](/docs/skills/frontend/aesthetic) - Visual polish
-- [Three.js](/docs/skills/frontend/threejs) - 3D web graphics
+- [Frontend Design](/docs/engineer/skills/frontend/frontend-design) - Baseline design skill
+- [UI/UX Pro Max](/docs/engineer/skills/frontend/ui-ux-pro-max) - Advanced UX patterns
+- [Aesthetic](/docs/engineer/skills/frontend/aesthetic) - Visual polish
+- [Three.js](/docs/engineer/skills/frontend/threejs) - 3D web graphics
 
 ## Key Takeaway
 

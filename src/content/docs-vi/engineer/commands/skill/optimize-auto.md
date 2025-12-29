@@ -358,10 +358,10 @@ rm -rf $HOME/.claude/skills/my-skill/.backup-251128-*/
 
 ## Các lệnh liên quan
 
-- [/skill:optimize](/vi/docs/commands/skill/optimize) - Tối ưu với phê duyệt
-- [/skill:add](/vi/docs/commands/skill/add) - Thêm tham chiếu vào skill
-- [/skill:create](/vi/docs/commands/skill/create) - Tạo skill mới
-- [/skill:fix-logs](/vi/docs/commands/skill/fix-logs) - Sửa skill từ log lỗi
+- [/skill:optimize](/vi/docs/engineer/commands/skill/optimize) - Tối ưu với phê duyệt
+- [/skill:add](/vi/docs/engineer/commands/skill/add) - Thêm tham chiếu vào skill
+- [/skill:create](/vi/docs/engineer/commands/skill/create) - Tạo skill mới
+- [/skill:fix-logs](/vi/docs/engineer/commands/skill/fix-logs) - Sửa skill từ log lỗi
 
 ---
 

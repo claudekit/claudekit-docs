@@ -143,9 +143,9 @@ volumes:
 
 ## Related Skills
 
-- [/docs/skills/backend/devops](/docs/skills/backend/devops) - Cloudflare Workers, GCP, deployment strategies
-- [/docs/skills/backend/databases](/docs/skills/backend/databases) - PostgreSQL, MongoDB containerization
-- [/docs/skills/backend/backend-development](/docs/skills/backend/backend-development) - Node.js, Python, Go backends
+- [/docs/engineer/skills/backend/devops](/docs/engineer/skills/backend/devops) - Cloudflare Workers, GCP, deployment strategies
+- [/docs/engineer/skills/backend/databases](/docs/engineer/skills/backend/databases) - PostgreSQL, MongoDB containerization
+- [/docs/engineer/skills/backend/backend-development](/docs/engineer/skills/backend/backend-development) - Node.js, Python, Go backends
 
 ## Key Takeaway
 

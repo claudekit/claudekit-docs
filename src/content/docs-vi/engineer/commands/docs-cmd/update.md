@@ -571,9 +571,9 @@ Typical `/docs:update` performance:
 
 After using `/docs:update`:
 
-- [/docs:summarize](/docs/commands/docs/summarize) - Update just codebase summary
-- [/watzup](/docs/commands/core/watzup) - Review recent changes
-- [/git:cm](/docs/commands/git/commit) - Commit documentation updates
+- [/docs:summarize](/docs/engineer/commands/docs/summarize) - Update just codebase summary
+- [/watzup](/docs/engineer/commands/core/watzup) - Review recent changes
+- [/git:cm](/docs/engineer/commands/git/commit) - Commit documentation updates
 
 ---
 

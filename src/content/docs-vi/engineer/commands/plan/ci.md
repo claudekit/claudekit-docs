@@ -843,9 +843,9 @@ npm run build
 
 ## Next Steps
 
-- [/fix:ci](/docs/commands/fix/ci) - Auto-implement CI fix
-- [/code](/docs/commands/core/code) - Implement existing plan
-- [/debug](/docs/commands/core/debug) - Debug complex issues
+- [/fix:ci](/docs/engineer/commands/fix/ci) - Auto-implement CI fix
+- [/code](/docs/engineer/commands/core/code) - Implement existing plan
+- [/debug](/docs/engineer/commands/core/debug) - Debug complex issues
 
 ---
 

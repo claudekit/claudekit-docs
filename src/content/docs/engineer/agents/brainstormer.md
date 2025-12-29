@@ -75,9 +75,9 @@ Your technical advisor who challenges assumptions, debates approaches, and provi
 
 ## Related Agents
 
-- [Planner Agent](/docs/agents/planner) - Creates implementation plans after approach is decided
-- [Researcher Agent](/docs/agents/researcher) - Provides data for brainstorming decisions
-- [Docs-Manager Agent](/docs/agents/docs-manager) - Documents architectural decision records
+- [Planner Agent](/docs/engineer/agents/planner) - Creates implementation plans after approach is decided
+- [Researcher Agent](/docs/engineer/agents/researcher) - Provides data for brainstorming decisions
+- [Docs-Manager Agent](/docs/engineer/agents/docs-manager) - Documents architectural decision records
 
 ## Key Takeaway
 

@@ -436,9 +436,9 @@ ClaudeKit hooks load environment variables in this priority:
 
 ## Related
 
-- [CLAUDE.md](/docs/configuration/claude-md) - Project instructions
-- [MCP Setup](/docs/configuration/mcp-setup) - MCP server configuration
-- [Workflows](/docs/configuration/workflows) - Development workflows
+- [CLAUDE.md](/docs/engineer/configuration/claude-md) - Project instructions
+- [MCP Setup](/docs/engineer/configuration/mcp-setup) - MCP server configuration
+- [Workflows](/docs/engineer/configuration/workflows) - Development workflows
 
 ---
 

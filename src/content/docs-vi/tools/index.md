@@ -67,5 +67,5 @@ Bạn có công cụ giúp nâng cao ClaudeKit? Chúng tôi rất muốn giới 
 
 ---
 
-**Tiếp theo:** Khám phá các công cụ riêng lẻ hoặc quay lại [Tài Liệu](/vi/docs/agents/)
+**Tiếp theo:** Khám phá các công cụ riêng lẻ hoặc quay lại [Tài Liệu](/vi/docs/engineer/agents/)
 

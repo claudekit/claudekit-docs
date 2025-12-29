@@ -654,9 +654,9 @@ Headlines:           25 min → 7 sec   (214x faster)
 
 ## Next Steps
 
-- [/content:good](/docs/commands/content/good) - For strategic content with research
-- [/content:enhance](/docs/commands/content/enhance) - Improve generated content
-- [/content:cro](/docs/commands/content/cro) - Optimize for conversion
+- [/content:good](/docs/engineer/commands/content/good) - For strategic content with research
+- [/content:enhance](/docs/engineer/commands/content/enhance) - Improve generated content
+- [/content:cro](/docs/engineer/commands/content/cro) - Optimize for conversion
 
 ---
 

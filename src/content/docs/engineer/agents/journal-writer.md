@@ -95,9 +95,9 @@ Output: Slow query log, missing index discovery, query plan analysis, why stagin
 
 ## Related Agents
 
-- [Debugger](/docs/agents/debugger) - Debug the issues being documented
-- [Project Manager](/docs/agents/project-manager) - Track improvements from learnings
-- [Fullstack Developer](/docs/agents/fullstack-developer) - Implement preventive fixes
+- [Debugger](/docs/engineer/agents/debugger) - Debug the issues being documented
+- [Project Manager](/docs/engineer/agents/project-manager) - Track improvements from learnings
+- [Fullstack Developer](/docs/engineer/agents/fullstack-developer) - Implement preventive fixes
 
 ## Key Takeaway
 

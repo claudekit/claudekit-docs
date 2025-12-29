@@ -416,10 +416,10 @@ Compare to `/fix:hard`:
 
 After using `/fix:fast`:
 
-- [/test](/docs/commands/core/test) - Run full test suite
-- [/fix:hard](/docs/commands/fix/hard) - For complex issues
-- [/git:cm](/docs/commands/git/commit) - Commit the fix
-- [/debug](/docs/commands/core/debug) - If issues persist
+- [/test](/docs/engineer/commands/core/test) - Run full test suite
+- [/fix:hard](/docs/engineer/commands/fix/hard) - For complex issues
+- [/git:cm](/docs/engineer/commands/git/commit) - Commit the fix
+- [/debug](/docs/engineer/commands/core/debug) - If issues persist
 
 ---
 

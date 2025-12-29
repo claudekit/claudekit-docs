@@ -810,10 +810,10 @@ More flexible implementation:
 
 ## Next Steps
 
-- [/design:describe](/docs/commands/design/describe) - Analyze screenshot first
-- [/design:video](/docs/commands/design/video) - For animated interfaces
-- [/design:good](/docs/commands/design/good) - Polish the implementation
-- [/fix:ui](/docs/commands/fix/ui) - Fine-tune the result
+- [/design:describe](/docs/engineer/commands/design/describe) - Analyze screenshot first
+- [/design:video](/docs/engineer/commands/design/video) - For animated interfaces
+- [/design:good](/docs/engineer/commands/design/good) - Polish the implementation
+- [/fix:ui](/docs/engineer/commands/fix/ui) - Fine-tune the result
 
 ---
 

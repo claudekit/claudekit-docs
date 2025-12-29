@@ -525,9 +525,9 @@ Success rate: ~85% automated fix rate
 
 ## Next Steps
 
-- [/plan:ci](/docs/commands/plan/ci) - Create fix plan without implementing
-- [/fix:hard](/docs/commands/fix/hard) - For complex CI issues
-- [/test](/docs/commands/core/test) - Run tests locally
+- [/plan:ci](/docs/engineer/commands/plan/ci) - Create fix plan without implementing
+- [/fix:hard](/docs/engineer/commands/fix/hard) - For complex CI issues
+- [/test](/docs/engineer/commands/core/test) - Run tests locally
 
 ---
 

@@ -356,10 +356,10 @@ cat README.md
 
 ## Related Commands
 
-- [/bootstrap](/docs/commands/core/bootstrap) - Bootstrap with approval gates
-- [/bootstrap:auto](/docs/commands/core/bootstrap-auto) - Auto bootstrap (sequential)
-- [/plan:parallel](/docs/commands/plan/parallel) - Create parallel plans
-- [/code:parallel](/docs/commands/core/code-parallel) - Execute parallel plans
+- [/bootstrap](/docs/engineer/commands/core/bootstrap) - Bootstrap with approval gates
+- [/bootstrap:auto](/docs/engineer/commands/core/bootstrap-auto) - Auto bootstrap (sequential)
+- [/plan:parallel](/docs/engineer/commands/plan/parallel) - Create parallel plans
+- [/code:parallel](/docs/engineer/commands/core/code-parallel) - Execute parallel plans
 
 ---
 

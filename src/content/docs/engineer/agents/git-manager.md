@@ -116,9 +116,9 @@ git pull --rebase origin main  # Pull latest
 
 ## Related Agents
 
-- [Code Reviewer](/docs/agents/code-reviewer) - Pre-commit code review
-- [Project Manager](/docs/agents/project-manager) - Overall project coordination
-- [Tester](/docs/agents/tester) - Pre-commit test verification
+- [Code Reviewer](/docs/engineer/agents/code-reviewer) - Pre-commit code review
+- [Project Manager](/docs/engineer/agents/project-manager) - Overall project coordination
+- [Tester](/docs/engineer/agents/tester) - Pre-commit test verification
 
 ## Key Takeaway
 

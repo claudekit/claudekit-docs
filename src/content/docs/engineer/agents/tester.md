@@ -73,9 +73,9 @@ Runs: Flutter analyze + Jest + pytest in sequence
 
 ## Related Agents
 
-- [Debugger](/docs/agents/debugger) - Investigate test failures
-- [Code Reviewer](/docs/agents/code-reviewer) - Pre-test code quality
-- [Fullstack Developer](/docs/agents/fullstack-developer) - Post-test build verification
+- [Debugger](/docs/engineer/agents/debugger) - Investigate test failures
+- [Code Reviewer](/docs/engineer/agents/code-reviewer) - Pre-test code quality
+- [Fullstack Developer](/docs/engineer/agents/fullstack-developer) - Post-test build verification
 
 ## Key Takeaway
 

@@ -94,9 +94,9 @@ Especially when:
 
 ## Related Skills
 
-- [debugging](/docs/skills/tools/debugging) - General debugging skill
-- [problem-solving](/docs/skills/tools/problem-solving) - Structured problem solving
-- [sequential-thinking](/docs/skills/tools/sequential-thinking) - Step-by-step analysis
+- [debugging](/docs/engineer/skills/tools/debugging) - General debugging skill
+- [problem-solving](/docs/engineer/skills/tools/problem-solving) - Structured problem solving
+- [sequential-thinking](/docs/engineer/skills/tools/sequential-thinking) - Step-by-step analysis
 
 ## Key Takeaway
 

@@ -92,9 +92,9 @@ Parallel AI file search across large codebases—organized results in <5 minutes
 
 ## Related Agents
 
-- [Planner Agent](/docs/agents/planner) - Uses scout results to create implementation plans
-- [Debugger Agent](/docs/agents/debugger) - Leverages scout to find debugging targets
-- [Fullstack Developer](/docs/agents/fullstack-developer) - Runs scout before full-stack features
+- [Planner Agent](/docs/engineer/agents/planner) - Uses scout results to create implementation plans
+- [Debugger Agent](/docs/engineer/agents/debugger) - Leverages scout to find debugging targets
+- [Fullstack Developer](/docs/engineer/agents/fullstack-developer) - Runs scout before full-stack features
 
 ## Key Takeaway
 

@@ -469,9 +469,9 @@ A good plan results in:
 
 ## Next Steps
 
-- [Implementation](/docs/commands/core/code) - Execute the plan
-- [Testing](/docs/commands/core/test) - Validate the implementation
-- [Documentation](/docs/commands/docs/update) - Update docs
+- [Implementation](/docs/engineer/commands/core/code) - Execute the plan
+- [Testing](/docs/engineer/commands/core/test) - Validate the implementation
+- [Documentation](/docs/engineer/commands/docs/update) - Update docs
 
 ---
 

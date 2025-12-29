@@ -346,10 +346,10 @@ cat plans/current-plan/plan.md
 
 ## Các lệnh liên quan
 
-- [/plan](/vi/docs/commands/plan) - Tạo kế hoạch triển khai trước `/code`
-- [/cook](/vi/docs/commands/core/cook) - Triển khai từng bước không cần cấu trúc kế hoạch
-- [/fix](/vi/docs/commands/fix) - Sửa lỗi không cần quy trình đầy đủ
-- [/brainstorm](/vi/docs/commands/core/brainstorm) - Đánh giá các cách tiếp cận trước khi lập kế hoạch
+- [/plan](/vi/docs/engineer/commands/plan) - Tạo kế hoạch triển khai trước `/code`
+- [/cook](/vi/docs/engineer/commands/core/cook) - Triển khai từng bước không cần cấu trúc kế hoạch
+- [/fix](/vi/docs/engineer/commands/fix) - Sửa lỗi không cần quy trình đầy đủ
+- [/brainstorm](/vi/docs/engineer/commands/core/brainstorm) - Đánh giá các cách tiếp cận trước khi lập kế hoạch
 
 ---
 

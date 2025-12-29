@@ -118,11 +118,11 @@ collapsible description tabs. Dark mode support."
 
 ## Related Skills
 
-- [Frontend Design](/docs/skills/frontend/frontend-design) - Full design system creation
-- [Frontend Design Pro](/docs/skills/frontend/frontend-design-pro) - Advanced visual design
-- [Aesthetic](/docs/skills/frontend/aesthetic) - Visual polish and refinement
-- [Canvas Design](/docs/skills/ai/canvas-design) - Museum-quality visual compositions
-- [Frontend Development](/docs/skills/frontend/frontend-development) - React/Next.js implementation
+- [Frontend Design](/docs/engineer/skills/frontend/frontend-design) - Full design system creation
+- [Frontend Design Pro](/docs/engineer/skills/frontend/frontend-design-pro) - Advanced visual design
+- [Aesthetic](/docs/engineer/skills/frontend/aesthetic) - Visual polish and refinement
+- [Canvas Design](/docs/engineer/skills/ai/canvas-design) - Museum-quality visual compositions
+- [Frontend Development](/docs/engineer/skills/frontend/frontend-development) - React/Next.js implementation
 
 ## Key Takeaway
 

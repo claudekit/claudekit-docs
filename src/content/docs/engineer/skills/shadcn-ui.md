@@ -171,9 +171,9 @@ import { cn } from "@/lib/utils"
 
 ## Related Skills
 
-- [Frontend Design](/docs/skills/frontend/frontend-design) - High-design UI generation
-- [UI Styling](/docs/skills/frontend/ui-styling) - Tailwind CSS patterns
-- [Frontend Development](/docs/skills/frontend/frontend-development) - React best practices
+- [Frontend Design](/docs/engineer/skills/frontend/frontend-design) - High-design UI generation
+- [UI Styling](/docs/engineer/skills/frontend/ui-styling) - Tailwind CSS patterns
+- [Frontend Development](/docs/engineer/skills/frontend/frontend-development) - React best practices
 
 ## Key Takeaway
 

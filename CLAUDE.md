@@ -81,7 +81,7 @@ From `src/content/config.ts`:
 
 # ❌ WRONG - Relative paths (WILL BREAK)
 [Quick Start](./quick-start)
-[Commands](../docs/commands/)
+[Commands](../docs/engineer/commands/)
 ```
 
 **Why:** Relative links resolve differently based on trailing slash in URL:

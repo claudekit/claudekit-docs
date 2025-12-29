@@ -334,16 +334,16 @@ If you know the right command, call it directly:
 
 | Command | Description | When Auto-Selected |
 |---------|-------------|--------------------|
-| [/fix:fast](/docs/commands/fix/fast) | Quick single-file fixes | Simple, clear issues |
-| [/fix:hard](/docs/commands/fix/hard) | Complex multi-file fixes | Investigation needed |
-| [/fix:types](/docs/commands/fix/types) | TypeScript type errors | Type-related keywords |
-| [/fix:ui](/docs/commands/fix/ui) | UI/UX issues | UI/design keywords |
-| [/fix:ci](/docs/commands/fix/ci) | CI/CD failures | Pipeline keywords |
-| [/fix:test](/docs/commands/fix/test) | Test failures | Test-related keywords |
-| [/fix:logs](/docs/commands/fix/logs) | Log-based debugging | Log/trace keywords |
-| [/fix:parallel](/docs/commands/fix/parallel) | Multiple independent issues | 2+ unrelated issues |
-| [/code](/docs/commands/core/code) | Execute existing plan | Active plan found |
-| [/debug](/docs/commands/core/debug) | Investigate issues | Deep investigation |
+| [/fix:fast](/docs/engineer/commands/fix/fast) | Quick single-file fixes | Simple, clear issues |
+| [/fix:hard](/docs/engineer/commands/fix/hard) | Complex multi-file fixes | Investigation needed |
+| [/fix:types](/docs/engineer/commands/fix/types) | TypeScript type errors | Type-related keywords |
+| [/fix:ui](/docs/engineer/commands/fix/ui) | UI/UX issues | UI/design keywords |
+| [/fix:ci](/docs/engineer/commands/fix/ci) | CI/CD failures | Pipeline keywords |
+| [/fix:test](/docs/engineer/commands/fix/test) | Test failures | Test-related keywords |
+| [/fix:logs](/docs/engineer/commands/fix/logs) | Log-based debugging | Log/trace keywords |
+| [/fix:parallel](/docs/engineer/commands/fix/parallel) | Multiple independent issues | 2+ unrelated issues |
+| [/code](/docs/engineer/commands/core/code) | Execute existing plan | Active plan found |
+| [/debug](/docs/engineer/commands/core/debug) | Investigate issues | Deep investigation |
 
 ## Best Practices
 

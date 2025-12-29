@@ -98,16 +98,16 @@ Every output includes test recommendations:
 - Expected performance ranges
 
 **Integration With Other Agents**
-1. [UI/UX Designer](/docs/agents/ui-ux-designer) creates layout
+1. [UI/UX Designer](/docs/engineer/agents/ui-ux-designer) creates layout
 2. Copywriter fills with high-converting copy
-3. [Tester](/docs/agents/tester) runs A/B tests
+3. [Tester](/docs/engineer/agents/tester) runs A/B tests
 4. Iterate based on metrics
 
 ## Related Agents
 
-- [UI/UX Designer](/docs/agents/ui-ux-designer) - Visual layouts for landing pages
-- [Planner](/docs/agents/planner) - Campaign strategy and content calendar
-- [Tester](/docs/agents/tester) - A/B test implementation and analysis
+- [UI/UX Designer](/docs/engineer/agents/ui-ux-designer) - Visual layouts for landing pages
+- [Planner](/docs/engineer/agents/planner) - Campaign strategy and content calendar
+- [Tester](/docs/engineer/agents/tester) - A/B test implementation and analysis
 
 ## Key Takeaway
 

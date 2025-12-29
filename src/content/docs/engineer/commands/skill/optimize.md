@@ -359,9 +359,9 @@ New clarity score: 8.5/10 (was 6/10)
 
 ## Related Commands
 
-- [/skill:optimize:auto](/docs/commands/skill/optimize-auto) - Optimize without approval
-- [/skill:add](/docs/commands/skill/add) - Add references to skills
-- [/skill:create](/docs/commands/skill/create) - Create new skills
+- [/skill:optimize:auto](/docs/engineer/commands/skill/optimize-auto) - Optimize without approval
+- [/skill:add](/docs/engineer/commands/skill/add) - Add references to skills
+- [/skill:create](/docs/engineer/commands/skill/create) - Create new skills
 
 ---
 

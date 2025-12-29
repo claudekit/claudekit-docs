@@ -414,13 +414,13 @@ Brainstormer will call this out. Trust the YAGNI assessment. Build what you need
 
 ## Related
 
-- [Planner Agent](/docs/agents/planner) - Creates detailed implementation plans after approach is decided
-- [Researcher Agent](/docs/agents/researcher) - Provides data for brainstorming decisions
-- [Docs-Manager Agent](/docs/agents/docs-manager) - Maintains architectural decision records
-- [/brainstorm Command](/docs/commands/core/brainstorm) - Triggers brainstorming session
+- [Planner Agent](/docs/engineer/agents/planner) - Creates detailed implementation plans after approach is decided
+- [Researcher Agent](/docs/engineer/agents/researcher) - Provides data for brainstorming decisions
+- [Docs-Manager Agent](/docs/engineer/agents/docs-manager) - Maintains architectural decision records
+- [/brainstorm Command](/docs/engineer/commands/core/brainstorm) - Triggers brainstorming session
 
 ---
 
-**Next**: Once approach is decided, use [planner agent](/docs/agents/planner) to create implementation plan
+**Next**: Once approach is decided, use [planner agent](/docs/engineer/agents/planner) to create implementation plan
 
 **Remember**: Brainstormer doesn't implement anything. It only advises, challenges, and recommends. Implementation comes after you've made informed decisions.

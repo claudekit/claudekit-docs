@@ -761,8 +761,8 @@ cat plans/skill-evaluation-*.md
 
 After creating skills:
 
-- [/skill:fix-logs](/docs/commands/skill/fix-logs) - Fix skill based on logs
-- [/ask](/docs/commands/core/ask) - Use skill to answer questions
+- [/skill:fix-logs](/docs/engineer/commands/skill/fix-logs) - Fix skill based on logs
+- [/ask](/docs/engineer/commands/core/ask) - Use skill to answer questions
 - [Skill Creator Guide](/docs/guides/creating-skills) - Advanced skill creation
 
 ---

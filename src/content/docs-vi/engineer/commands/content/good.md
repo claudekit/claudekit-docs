@@ -845,9 +845,9 @@ After publishing content:
 
 ## Next Steps
 
-- [/content:fast](/docs/commands/content/fast) - For quick content needs
-- [/content:cro](/docs/commands/content/cro) - Optimize for conversion
-- [/content:enhance](/docs/commands/content/enhance) - Improve existing content
+- [/content:fast](/docs/engineer/commands/content/fast) - For quick content needs
+- [/content:cro](/docs/engineer/commands/content/cro) - Optimize for conversion
+- [/content:enhance](/docs/engineer/commands/content/enhance) - Improve existing content
 
 ---
 

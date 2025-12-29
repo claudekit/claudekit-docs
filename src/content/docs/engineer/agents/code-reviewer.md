@@ -87,9 +87,9 @@ Enforce 80%+ test coverage, zero `any` types, security scan pass before producti
 
 ## Related Agents
 
-- [Planner](/docs/agents/planner) - Creates fix plans from review findings
-- [Tester](/docs/agents/tester) - Validates fixes with comprehensive tests
-- [Scout External](/docs/agents/scout-external) - Researches best practices for fixes
+- [Planner](/docs/engineer/agents/planner) - Creates fix plans from review findings
+- [Tester](/docs/engineer/agents/tester) - Validates fixes with comprehensive tests
+- [Scout External](/docs/engineer/agents/scout-external) - Researches best practices for fixes
 
 ## Key Takeaway
 

@@ -640,9 +640,9 @@ After publishing enhanced content:
 
 ## Next Steps
 
-- [/content:cro](/docs/commands/content/cro) - Optimize for conversion
-- [/content:good](/docs/commands/content/good) - Write new quality content
-- [/docs:update](/docs/commands/docs/update) - Update documentation
+- [/content:cro](/docs/engineer/commands/content/cro) - Optimize for conversion
+- [/content:good](/docs/engineer/commands/content/good) - Write new quality content
+- [/docs:update](/docs/engineer/commands/docs/update) - Update documentation
 
 ---
 

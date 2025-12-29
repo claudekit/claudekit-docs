@@ -366,8 +366,8 @@ cat .claude/workflows/development-rules.md
 
 Bây giờ bạn đã hiểu workflows:
 
-- [Agents](/docs/agents/) - Tìm hiểu về 14 agents chuyên biệt
-- [Commands](/docs/commands/) - Khám phá các lệnh có sẵn
+- [Agents](/docs/engineer/agents/) - Tìm hiểu về 14 agents chuyên biệt
+- [Commands](/docs/engineer/commands/) - Khám phá các lệnh có sẵn
 - [Development Rules](/.claude/workflows/development-rules.md) - Đọc development rules đầy đủ
 
 ---

@@ -115,9 +115,9 @@ magick input.jpg -resize 1920x -quality 85 -strip -interlace Plane output.jpg
 
 ## Related Skills
 
-- [FFmpeg](/docs/skills/tools/ffmpeg) - Video/audio processing
-- [Frontend Design](/docs/skills/frontend/frontend-design) - UI component creation
-- [Chrome DevTools](/docs/skills/tools/chrome-devtools) - Browser debugging
+- [FFmpeg](/docs/engineer/skills/tools/ffmpeg) - Video/audio processing
+- [Frontend Design](/docs/engineer/skills/frontend/frontend-design) - UI component creation
+- [Chrome DevTools](/docs/engineer/skills/tools/chrome-devtools) - Browser debugging
 
 ## Key Takeaway
 

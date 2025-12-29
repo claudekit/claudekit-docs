@@ -1,31 +1,49 @@
 # Codebase Summary
 
-**Last Updated**: 2025-12-30 02:01 UTC
-**Version**: 0.1.0 (Kit-Agnostic Refactor - Phase 09 / Engineer Migration Phase 05 Complete)
+**Last Updated**: 2025-12-30 02:18 UTC
+**Version**: 0.1.0 (Kit-Agnostic Refactor - Phase 09 / Engineer Migration Phase 06 Complete)
 **Repository**: claudekit-docs
-**Migration Status**: Phase 09A Engineer Docs Migration - Redirect configuration complete (12 redirect patterns, 4 categories, all legacy URLs mapped)
+**Migration Status**: Phase 09A Engineer Docs Migration - Internal link updates complete (878 links updated, 0 broken links, automated script created)
 
 ## Overview
 
 claudekit-docs is Astro v5-based static documentation site supporting multiple ClaudeKit kits (Engineer, Marketing, CLI). Features kit-agnostic architecture, comprehensive documentation for 60+ agents/features, bi-lingual content (English/Vietnamese), AI chat integration (UI complete, backend pending), enhanced sidebar navigation with kit switching, and One Dark Pro-inspired design system. Successfully refactored from single-kit to multi-kit architecture with 280+ pages, 95% time savings through parallel agent execution, and 14% over-delivery on content targets. Engineer documentation migration phase 01 (pre-migration analysis) complete with 131 files ready for integration.
 
-## Engineer Docs Migration (Phase 09A) - Redirect Configuration Complete
+## Engineer Docs Migration (Phase 09A) - Internal Link Updates Complete
 
-**Status**: Phase 05 (Redirect Configuration) ✅ Complete
+**Status**: Phase 06 (Internal Link Updates) ✅ Complete
 
-**What**: Integration of legacy Engineer documentation with complete URL redirect system for backward compatibility
-**Why**: Complete kit consolidation with SEO-friendly redirect patterns for old documentation paths
-**Impact**: 12 redirect patterns configured; all legacy URLs now properly route to new `/docs/engineer/*` paths; backward compatibility ensured
+**What**: Automated link migration for 878 references across 212 files, including internal documentation and external references
+**Why**: Ensure all links point to new kit-agnostic `/docs/engineer/*` paths after file migration and redirect setup
+**Impact**: Complete link coverage with 0 broken links; automated script enables future migrations; production-ready codebase
 
-**Phase 05 Completion** ✅:
-- **Redirect Patterns Added**: 12 total to `public/_redirects` file
-- **Coverage**: 4 English categories + 4 Vietnamese equivalents + 4 index pages
-- **Redirect Method**: Netlify/Cloudflare Pages `_redirects` file (301 permanent redirects)
+**Phase 06 Completion** ✅:
+- **Total Links Updated**: 878 across 212 files
+- **English Internal Links**: 488 updated (agents, commands, skills, configuration)
+- **Vietnamese Internal Links**: 59 updated (agents, commands)
+- **External References**: 331 updated (README, CLAUDE.md, docs/, workflows)
+- **Link Validation**: 0 broken links remaining verified
 - **Build Status**: ✅ Passed (464 pages generated, 0 errors)
-- **Critical Issue Resolved**: Astro SSG redirect limitation → switched to `public/_redirects` solution
-- **File Location**: `public/_redirects` (2847 bytes)
-- **Duration**: 30 minutes total
-- **Overall Progress**: Phase 05 of 7 = 71% complete
+- **Automated Tool**: `scripts/update-links.mjs` created for future link migrations
+- **Duration**: 17 minutes actual
+- **Code Review**: ✅ Approved (0 critical issues)
+- **Overall Progress**: Phase 06 of 7 = 86% complete
+
+**Link Update Details**:
+- **Agents**: `/docs/agents/*` → `/docs/engineer/agents/*`
+- **Commands**: `/docs/commands/*` → `/docs/engineer/commands/*`
+- **Skills**: `/docs/skills/*` → `/docs/engineer/skills/*`
+- **Configuration**: `/docs/configuration/*` → `/docs/engineer/configuration/*`
+- **Vietnamese Equivalents**: `/vi/docs/*` → `/vi/docs/engineer/*`
+- **External Docs**: All cross-references updated in README, CLAUDE.md, and documentation files
+
+**Script Features** (`scripts/update-links.mjs`):
+- Batch file processing with glob patterns
+- Pattern-based link replacement
+- Support for both English and Vietnamese content
+- Error handling and validation
+- Progress reporting and statistics
+- Reusable for future content migrations
 
 **File Breakdown**:
 - **Agents**: 18 files → `src/content/docs/engineer/agents/`
@@ -67,11 +85,14 @@ claudekit-docs is Astro v5-based static documentation site supporting multiple C
 - ~400KB+ documentation content (new marketing + CLI content)
 - ✅ Complete Phase 01-06 core platform (IA, navigation, content, search)
 - ✅ Complete Phase 09 infrastructure (multi-kit architecture)
-- ✅ Phase 09A Engineer docs migration: Phase 03 complete (43% of total)
+- ✅ Phase 09A Engineer docs migration: Phase 06 complete (86% of total)
   - **Phase 02**: 137 files migrated, 123 git renames, 0 build errors (15 min actual)
   - **Phase 03**: 138 files updated with frontmatter, 2 critical issues fixed (50 min total)
-  - **Build Status**: 466 pages generated, 0 errors
-  - **Next**: Phase 04 (Vietnamese translation)
+  - **Phase 04**: 84 Vietnamese files migrated, 1 critical fix (20 min total)
+  - **Phase 05**: 12 redirect patterns configured (30 min total)
+  - **Phase 06**: 878 links updated, automated script created (17 min actual)
+  - **Build Status**: 464 pages generated, 0 errors
+  - **Next**: Phase 07 (Validation & Testing)
 - 🔄 Phase 09 visual assets: 60% complete (9/15 diagrams)
 - 🔄 Phase 09 translations: 72% complete (63/88 Vietnamese files)
 
@@ -581,16 +602,16 @@ npm run preview      # Preview build
 **Redirect Patterns** (12 total):
 
 **English Category Redirects** (4):
-- `/docs/agents/*` → `/docs/engineer/agents/:splat`
-- `/docs/commands/*` → `/docs/engineer/commands/:splat`
-- `/docs/skills/*` → `/docs/engineer/skills/:splat`
-- `/docs/configuration/*` → `/docs/engineer/configuration/:splat`
+- `/docs/engineer/agents/*` → `/docs/engineer/agents/:splat`
+- `/docs/engineer/commands/*` → `/docs/engineer/commands/:splat`
+- `/docs/engineer/skills/*` → `/docs/engineer/skills/:splat`
+- `/docs/engineer/configuration/*` → `/docs/engineer/configuration/:splat`
 
 **Vietnamese Category Redirects** (4):
-- `/vi/docs/agents/*` → `/vi/docs/engineer/agents/:splat`
-- `/vi/docs/commands/*` → `/vi/docs/engineer/commands/:splat`
-- `/vi/docs/skills/*` → `/vi/docs/engineer/skills/:splat`
-- `/vi/docs/configuration/*` → `/vi/docs/engineer/configuration/:splat`
+- `/vi/docs/engineer/agents/*` → `/vi/docs/engineer/agents/:splat`
+- `/vi/docs/engineer/commands/*` → `/vi/docs/engineer/commands/:splat`
+- `/vi/docs/engineer/skills/*` → `/vi/docs/engineer/skills/:splat`
+- `/vi/docs/engineer/configuration/*` → `/vi/docs/engineer/configuration/:splat`
 
 **Index Page Redirects** (4):
 - `/docs/agents` → `/docs/engineer/agents`
@@ -599,9 +620,9 @@ npm run preview      # Preview build
 - `/docs/configuration` → `/docs/engineer/configuration`
 
 **Coverage**:
-- Legacy agent documentation URLs (e.g., `/docs/agents/planner` → `/docs/engineer/agents/planner`)
-- Legacy command documentation URLs (e.g., `/docs/commands/fix/lint` → `/docs/engineer/commands/fix/lint`)
-- Legacy skill documentation URLs (e.g., `/docs/skills/next-js` → `/docs/engineer/skills/next-js`)
+- Legacy agent documentation URLs (e.g., `/docs/engineer/agents/planner` → `/docs/engineer/agents/planner`)
+- Legacy command documentation URLs (e.g., `/docs/engineer/commands/fix/lint` → `/docs/engineer/commands/fix/lint`)
+- Legacy skill documentation URLs (e.g., `/docs/engineer/skills/next-js` → `/docs/engineer/skills/next-js`)
 - Legacy configuration documentation URLs (all mapped to new paths)
 - Vietnamese equivalents for all categories
 - Index page navigation redirects

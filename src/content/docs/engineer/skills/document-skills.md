@@ -87,10 +87,10 @@ Recalc formulas: "Use document-skills/xlsx to recalculate all formulas in model.
 
 ## Related Skills
 
-- [ai-multimodal](/docs/skills/ai/ai-multimodal) - Analyze document images with AI
-- [gemini-vision](/docs/skills/ai/gemini-vision) - OCR and visual document analysis
-- [research](/docs/skills/tools/research) - Extract insights from documents
-- [repomix](/docs/skills/tools/repomix) - Package documents for AI analysis
+- [ai-multimodal](/docs/engineer/skills/ai/ai-multimodal) - Analyze document images with AI
+- [gemini-vision](/docs/engineer/skills/ai/gemini-vision) - OCR and visual document analysis
+- [research](/docs/engineer/skills/tools/research) - Extract insights from documents
+- [repomix](/docs/engineer/skills/tools/repomix) - Package documents for AI analysis
 
 ## Key Takeaway
 

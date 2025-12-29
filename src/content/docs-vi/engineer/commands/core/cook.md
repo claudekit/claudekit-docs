@@ -539,10 +539,10 @@ git push
 
 ## Next Steps
 
-- [/test](/docs/commands/core/test) - Run test suite
-- [/fix:test](/docs/commands/fix/test) - Fix test failures
-- [/git:cm](/docs/commands/git/commit) - Commit changes
-- [/docs:update](/docs/commands/docs/update) - Update documentation
+- [/test](/docs/engineer/commands/core/test) - Run test suite
+- [/fix:test](/docs/engineer/commands/fix/test) - Fix test failures
+- [/git:cm](/docs/engineer/commands/git/commit) - Commit changes
+- [/docs:update](/docs/engineer/commands/docs/update) - Update documentation
 
 ---
 

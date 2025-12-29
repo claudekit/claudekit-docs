@@ -396,11 +396,11 @@ Issues requiring deep analysis:
 
 ## Related Commands
 
-- [/fix](/docs/commands/fix) - Intelligent routing (may route here)
-- [/fix:fast](/docs/commands/fix/fast) - Single simple issue
-- [/fix:hard](/docs/commands/fix/hard) - Complex or related issues
-- [/code:parallel](/docs/commands/code/parallel) - Parallel plan execution
-- [/cook:auto:parallel](/docs/commands/cook/auto-parallel) - Parallel feature implementation
+- [/fix](/docs/engineer/commands/fix) - Intelligent routing (may route here)
+- [/fix:fast](/docs/engineer/commands/fix/fast) - Single simple issue
+- [/fix:hard](/docs/engineer/commands/fix/hard) - Complex or related issues
+- [/code:parallel](/docs/engineer/commands/code/parallel) - Parallel plan execution
+- [/cook:auto:parallel](/docs/engineer/commands/cook/auto-parallel) - Parallel feature implementation
 
 ---
 

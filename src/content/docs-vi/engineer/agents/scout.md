@@ -290,13 +290,13 @@ When:
 
 ## Related
 
-- [Planner Agent](/docs/agents/planner) - Uses scout to locate files before planning
-- [Debugger Agent](/docs/agents/debugger) - Uses scout to find relevant files when debugging
-- [/scout Command](/docs/commands/core/scout) - Directly invoke scout agent
+- [Planner Agent](/docs/engineer/agents/planner) - Uses scout to locate files before planning
+- [Debugger Agent](/docs/engineer/agents/debugger) - Uses scout to find relevant files when debugging
+- [/scout Command](/docs/engineer/commands/core/scout) - Directly invoke scout agent
 - [Code Standards](/docs/core-concepts/code-standards) - File organization patterns scout understands
 
 ---
 
-**Next**: Use scout results with [planner agent](/docs/agents/planner) to create implementation plans
+**Next**: Use scout results with [planner agent](/docs/engineer/agents/planner) to create implementation plans
 
 **Key Takeaway**: Scout parallelizes file search across multiple AI agents to provide comprehensive, organized file lists in <5 minutes, even for large codebases.

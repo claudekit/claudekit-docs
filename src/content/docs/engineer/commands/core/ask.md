@@ -364,9 +364,9 @@ You can also call it explicitly:
 
 ## Related Commands
 
-- [/scout](/docs/commands/core/scout) - Search codebase before asking architectural questions
-- [/plan](/docs/commands/core/plan) - Create implementation plan after receiving guidance
-- [/debug](/docs/commands/core/debug) - Investigate technical issues (not architecture)
+- [/scout](/docs/engineer/commands/core/scout) - Search codebase before asking architectural questions
+- [/plan](/docs/engineer/commands/core/plan) - Create implementation plan after receiving guidance
+- [/debug](/docs/engineer/commands/core/debug) - Investigate technical issues (not architecture)
 
 ---
 

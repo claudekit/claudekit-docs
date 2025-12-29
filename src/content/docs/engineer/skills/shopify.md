@@ -167,9 +167,9 @@ app.post('/webhooks/orders', async (req, res) => {
 
 ## Related Skills
 
-- [Backend Development](/docs/skills/backend/backend-development) - API integration patterns
-- [Databases](/docs/skills/backend/databases) - PostgreSQL for app data
-- [Frontend Development](/docs/skills/frontend/frontend-development) - React extensions
+- [Backend Development](/docs/engineer/skills/backend/backend-development) - API integration patterns
+- [Databases](/docs/engineer/skills/backend/databases) - PostgreSQL for app data
+- [Frontend Development](/docs/engineer/skills/frontend/frontend-development) - React extensions
 
 ---
 

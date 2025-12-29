@@ -308,9 +308,9 @@ Opencode: Uses configured LLM API
 
 ## Related Commands
 
-- [/scout](/docs/commands/core/scout) - Standard codebase exploration
-- [/review:codebase](/docs/commands/core/review-codebase) - Comprehensive code analysis
-- [/ask](/docs/commands/core/ask) - Architectural questions
+- [/scout](/docs/engineer/commands/core/scout) - Standard codebase exploration
+- [/review:codebase](/docs/engineer/commands/core/review-codebase) - Comprehensive code analysis
+- [/ask](/docs/engineer/commands/core/ask) - Architectural questions
 
 ---
 

@@ -144,9 +144,9 @@ Plans saved to: `plans/[feature-name]-YYYYMMDD-HHMMSS.md`
 
 ## Related Agents
 
-- [Fullstack Developer](/docs/agents/fullstack-developer) - Executes implementation plans
-- [Researcher Agent](/docs/agents/researcher) - Deep dives on specific topics
-- [Scout](/docs/agents/scout) - Explores codebase for context
+- [Fullstack Developer](/docs/engineer/agents/fullstack-developer) - Executes implementation plans
+- [Researcher Agent](/docs/engineer/agents/researcher) - Deep dives on specific topics
+- [Scout](/docs/engineer/agents/scout) - Explores codebase for context
 
 ## Key Takeaway
 

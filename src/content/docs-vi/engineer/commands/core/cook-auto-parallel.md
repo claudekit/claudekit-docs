@@ -338,10 +338,10 @@ cat plans/*/plan.md
 
 ## Các lệnh liên quan
 
-- [/cook](/vi/docs/commands/core/cook) - Triển khai từng bước
-- [/cook:auto](/vi/docs/commands/core/cook-auto) - Auto cook (tuần tự)
-- [/plan:parallel](/vi/docs/commands/plan/parallel) - Tạo kế hoạch song song
-- [/code:parallel](/vi/docs/commands/core/code-parallel) - Thực thi kế hoạch song song hiện có
+- [/cook](/vi/docs/engineer/commands/core/cook) - Triển khai từng bước
+- [/cook:auto](/vi/docs/engineer/commands/core/cook-auto) - Auto cook (tuần tự)
+- [/plan:parallel](/vi/docs/engineer/commands/plan/parallel) - Tạo kế hoạch song song
+- [/code:parallel](/vi/docs/engineer/commands/core/code-parallel) - Thực thi kế hoạch song song hiện có
 
 ---
 

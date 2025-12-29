@@ -61,9 +61,9 @@ Profiles endpoints, finds N+1 queries or missing indexes, provides EXPLAIN ANALY
 
 ## Related Agents
 
-- [Tester](/docs/agents/tester) - Validate fixes with comprehensive tests
-- [Code Reviewer](/docs/agents/code-reviewer) - Review fix quality before merge
-- [Fullstack Developer](/docs/agents/fullstack-developer) - Implement suggested fixes
+- [Tester](/docs/engineer/agents/tester) - Validate fixes with comprehensive tests
+- [Code Reviewer](/docs/engineer/agents/code-reviewer) - Review fix quality before merge
+- [Fullstack Developer](/docs/engineer/agents/fullstack-developer) - Implement suggested fixes
 
 ## Key Takeaway
 

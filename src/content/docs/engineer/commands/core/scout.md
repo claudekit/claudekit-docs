@@ -452,9 +452,9 @@ find src/ -name "*payment*"
 
 ## Related Commands
 
-- [/ask](/docs/commands/core/ask) - Ask architectural questions about scouted code
-- [/plan](/docs/commands/core/plan) - Create implementation plan using scout findings
-- [/cook](/docs/commands/core/cook) - Implement feature after scouting integration points
+- [/ask](/docs/engineer/commands/core/ask) - Ask architectural questions about scouted code
+- [/plan](/docs/engineer/commands/core/plan) - Create implementation plan using scout findings
+- [/cook](/docs/engineer/commands/core/cook) - Implement feature after scouting integration points
 
 ---
 

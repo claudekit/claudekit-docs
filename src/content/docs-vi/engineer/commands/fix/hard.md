@@ -564,10 +564,10 @@ git diff
 
 ## Next Steps
 
-- [/debug](/docs/commands/core/debug) - Investigate issues
-- [/fix:fast](/docs/commands/fix/fast) - For simple fixes
-- [/test](/docs/commands/core/test) - Run tests
-- [/git:cm](/docs/commands/git/commit) - Commit fix
+- [/debug](/docs/engineer/commands/core/debug) - Investigate issues
+- [/fix:fast](/docs/engineer/commands/fix/fast) - For simple fixes
+- [/test](/docs/engineer/commands/core/test) - Run tests
+- [/git:cm](/docs/engineer/commands/git/commit) - Commit fix
 
 ---
 

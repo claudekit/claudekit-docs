@@ -818,11 +818,11 @@ git log -- src/payments/
 
 ## Related Commands
 
-- [/journal](/docs/commands/core/journal) - Detailed work documentation
-- [/git:cm](/docs/commands/git/commit) - Commit changes
-- [/git:pr](/docs/commands/git/pull-request) - Create pull request
-- [/cook](/docs/commands/core/cook) - Implement features
-- [/plan](/docs/commands/core/plan) - Plan implementations
+- [/journal](/docs/engineer/commands/core/journal) - Detailed work documentation
+- [/git:cm](/docs/engineer/commands/git/commit) - Commit changes
+- [/git:pr](/docs/engineer/commands/git/pull-request) - Create pull request
+- [/cook](/docs/engineer/commands/core/cook) - Implement features
+- [/plan](/docs/engineer/commands/core/plan) - Plan implementations
 
 ---
 

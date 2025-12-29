@@ -825,9 +825,9 @@ After major incidents:
 
 ## Next Steps
 
-- [Testing](/docs/agents/tester) - Validate fixes with tests
-- [Code Review](/docs/agents/code-reviewer) - Review fix quality
-- [Fix Commands](/docs/commands/fix) - Apply fixes systematically
+- [Testing](/docs/engineer/agents/tester) - Validate fixes with tests
+- [Code Review](/docs/engineer/agents/code-reviewer) - Review fix quality
+- [Fix Commands](/docs/engineer/commands/fix) - Apply fixes systematically
 
 ---
 

@@ -16,69 +16,69 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 
 ### Core Development
 
-- **[/bootstrap](/docs/commands/core/bootstrap)** - Initialize new projects with spec-driven development
-- **[/cook](/docs/commands/core/cook)** - Develop new features
-- **[/plan](/docs/commands/core/plan)** - Create implementation plans
-- **[/brainstorm](/docs/commands/core/brainstorm)** - Explore feature feasibility
-- **[/ask](/docs/commands/core/ask)** - Ask questions about the codebase
-- **[/watzup](/docs/commands/core/watzup)** - Get project status and recent changes
-- **[/scout](/docs/commands/core/scout)** - Find files across large codebases
-- **[/test](/docs/commands/core/test)** - Run test suite and get results
-- **[/debug](/docs/commands/core/debug)** - Investigate and diagnose issues
+- **[/bootstrap](/docs/engineer/commands/core/bootstrap)** - Initialize new projects with spec-driven development
+- **[/cook](/docs/engineer/commands/core/cook)** - Develop new features
+- **[/plan](/docs/engineer/commands/core/plan)** - Create implementation plans
+- **[/brainstorm](/docs/engineer/commands/core/brainstorm)** - Explore feature feasibility
+- **[/ask](/docs/engineer/commands/core/ask)** - Ask questions about the codebase
+- **[/watzup](/docs/engineer/commands/core/watzup)** - Get project status and recent changes
+- **[/scout](/docs/engineer/commands/core/scout)** - Find files across large codebases
+- **[/test](/docs/engineer/commands/core/test)** - Run test suite and get results
+- **[/debug](/docs/engineer/commands/core/debug)** - Investigate and diagnose issues
 
 ### Bug Fixing
 
-- **[/fix](/docs/commands/fix/)** - Intelligently fix any issue (auto-selects fast/hard approach)
-- **[/fix:fast](/docs/commands/fix/fast)** - Fix minor bugs quickly
-- **[/fix:hard](/docs/commands/fix/hard)** - Fix complex bugs with thorough analysis
-- **[/fix:ci](/docs/commands/fix/ci)** - Fix GitHub Actions CI failures
-- **[/fix:logs](/docs/commands/fix/logs)** - Analyze and fix issues from logs
-- **[/fix:test](/docs/commands/fix/test)** - Fix failing tests
-- **[/fix:ui](/docs/commands/fix/ui)** - Fix UI/UX issues
-- **[/fix:types](/docs/commands/fix/types)** - Fix TypeScript type errors
+- **[/fix](/docs/engineer/commands/fix/)** - Intelligently fix any issue (auto-selects fast/hard approach)
+- **[/fix:fast](/docs/engineer/commands/fix/fast)** - Fix minor bugs quickly
+- **[/fix:hard](/docs/engineer/commands/fix/hard)** - Fix complex bugs with thorough analysis
+- **[/fix:ci](/docs/engineer/commands/fix/ci)** - Fix GitHub Actions CI failures
+- **[/fix:logs](/docs/engineer/commands/fix/logs)** - Analyze and fix issues from logs
+- **[/fix:test](/docs/engineer/commands/fix/test)** - Fix failing tests
+- **[/fix:ui](/docs/engineer/commands/fix/ui)** - Fix UI/UX issues
+- **[/fix:types](/docs/engineer/commands/fix/types)** - Fix TypeScript type errors
 
 ### Documentation
 
-- **[/docs:init](/docs/commands/docs/init)** - Initialize project documentation
-- **[/docs:update](/docs/commands/docs/update)** - Update project documentation
-- **[/docs:summarize](/docs/commands/docs/summarize)** - Summarize project documentation
+- **[/docs:init](/docs/engineer/commands/docs/init)** - Initialize project documentation
+- **[/docs:update](/docs/engineer/commands/docs/update)** - Update project documentation
+- **[/docs:summarize](/docs/engineer/commands/docs/summarize)** - Summarize project documentation
 
 ### Git Operations
 
-- **[/git:cm](/docs/commands/git/commit)** - Stage and commit changes
-- **[/git:cp](/docs/commands/git/commit-push)** - Stage, commit, and push
-- **[/git:pr](/docs/commands/git/pull-request)** - Create pull request
+- **[/git:cm](/docs/engineer/commands/git/commit)** - Stage and commit changes
+- **[/git:cp](/docs/engineer/commands/git/commit-push)** - Stage, commit, and push
+- **[/git:pr](/docs/engineer/commands/git/pull-request)** - Create pull request
 
 ### Planning
 
-- **[/plan:ci](/docs/commands/plan/ci)** - Analyze CI failures and create fix plan
-- **[/plan:two](/docs/commands/plan/two)** - Create plan with 2 approaches
-- **[/plan:cro](/docs/commands/plan/cro)** - Create conversion optimization plan
+- **[/plan:ci](/docs/engineer/commands/plan/ci)** - Analyze CI failures and create fix plan
+- **[/plan:two](/docs/engineer/commands/plan/two)** - Create plan with 2 approaches
+- **[/plan:cro](/docs/engineer/commands/plan/cro)** - Create conversion optimization plan
 
 ### Design & UI
 
-- **[/design:3d](/docs/commands/design/3d)** - Create 3D designs with Three.js
-- **[/design:describe](/docs/commands/design/describe)** - Extract design from screenshots
-- **[/design:fast](/docs/commands/design/fast)** - Quick design creation
-- **[/design:good](/docs/commands/design/good)** - Complete, refined design
-- **[/design:screenshot](/docs/commands/design/screenshot)** - Screenshot to code
-- **[/design:video](/docs/commands/design/video)** - Video to code
+- **[/design:3d](/docs/engineer/commands/design/3d)** - Create 3D designs with Three.js
+- **[/design:describe](/docs/engineer/commands/design/describe)** - Extract design from screenshots
+- **[/design:fast](/docs/engineer/commands/design/fast)** - Quick design creation
+- **[/design:good](/docs/engineer/commands/design/good)** - Complete, refined design
+- **[/design:screenshot](/docs/engineer/commands/design/screenshot)** - Screenshot to code
+- **[/design:video](/docs/engineer/commands/design/video)** - Video to code
 
 ### Content & Marketing
 
-- **[/content:cro](/docs/commands/content/cro)** - Conversion-optimized content
-- **[/content:enhance](/docs/commands/content/enhance)** - Enhance existing content
-- **[/content:fast](/docs/commands/content/fast)** - Quick content creation
-- **[/content:good](/docs/commands/content/good)** - High-quality content with research
+- **[/content:cro](/docs/engineer/commands/content/cro)** - Conversion-optimized content
+- **[/content:enhance](/docs/engineer/commands/content/enhance)** - Enhance existing content
+- **[/content:fast](/docs/engineer/commands/content/fast)** - Quick content creation
+- **[/content:good](/docs/engineer/commands/content/good)** - High-quality content with research
 
 ### Integrations
 
-- **[/integrate:polar](/docs/commands/integrate/polar)** - Integrate Polar.sh payments
-- **[/integrate:sepay](/docs/commands/integrate/sepay)** - Integrate SePay.vn payments (Vietnam)
+- **[/integrate:polar](/docs/engineer/commands/integrate/polar)** - Integrate Polar.sh payments
+- **[/integrate:sepay](/docs/engineer/commands/integrate/sepay)** - Integrate SePay.vn payments (Vietnam)
 
 ### Journaling
 
-- **[/journal](/docs/commands/core/journal)** - Write development journal entries
+- **[/journal](/docs/engineer/commands/core/journal)** - Write development journal entries
 
 ## Quick Command Reference
 
@@ -442,15 +442,15 @@ Next: Review changes, then /git:cm
 
 Explore specific command categories:
 
-- [Core Commands](/docs/commands/core/) - Development essentials
-- [Fix Commands](/docs/commands/fix/) - Debugging and fixing
-- [Design Commands](/docs/commands/design/) - UI/UX creation
-- [Git Commands](/docs/commands/git/) - Version control
+- [Core Commands](/docs/engineer/commands/core/) - Development essentials
+- [Fix Commands](/docs/engineer/commands/fix/) - Debugging and fixing
+- [Design Commands](/docs/engineer/commands/design/) - UI/UX creation
+- [Git Commands](/docs/engineer/commands/git/) - Version control
 
 Or learn about:
 
-- [Agents](/docs/agents/) - How commands invoke agents
-- [Workflows](/docs/docs/configuration/workflows) - Command execution flows
+- [Agents](/docs/engineer/agents/) - How commands invoke agents
+- [Workflows](/docs/docs/engineer/configuration/workflows) - Command execution flows
 - [Quick Start](/docs/getting-started/quick-start) - Hands-on tutorial
 
 ---

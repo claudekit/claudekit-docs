@@ -788,9 +788,9 @@ npm run dev
 
 ## Related Commands
 
-- [/integrate:sepay](/docs/commands/integrate/sepay) - Vietnamese payment gateway
-- [/cook](/docs/commands/core/cook) - Implement custom features
-- [/test](/docs/commands/core/test) - Run test suite
+- [/integrate:sepay](/docs/engineer/commands/integrate/sepay) - Vietnamese payment gateway
+- [/cook](/docs/engineer/commands/core/cook) - Implement custom features
+- [/test](/docs/engineer/commands/core/test) - Run test suite
 
 ---
 

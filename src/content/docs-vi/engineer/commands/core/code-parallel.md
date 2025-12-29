@@ -381,10 +381,10 @@ Nếu không cung cấp đường dẫn, sử dụng kế hoạch đang hoạt �
 
 ## Các lệnh liên quan
 
-- [/code](/vi/docs/commands/core/code) - Thực thi kế hoạch tuần tự
-- [/plan:parallel](/vi/docs/commands/plan/parallel) - Tạo kế hoạch song song
-- [/cook:auto:parallel](/vi/docs/commands/core/cook-auto-parallel) - Lập kế hoạch + thực thi song song
-- [/fix:parallel](/vi/docs/commands/fix/parallel) - Sửa lỗi song song
+- [/code](/vi/docs/engineer/commands/core/code) - Thực thi kế hoạch tuần tự
+- [/plan:parallel](/vi/docs/engineer/commands/plan/parallel) - Tạo kế hoạch song song
+- [/cook:auto:parallel](/vi/docs/engineer/commands/core/cook-auto-parallel) - Lập kế hoạch + thực thi song song
+- [/fix:parallel](/vi/docs/engineer/commands/fix/parallel) - Sửa lỗi song song
 
 ---
 

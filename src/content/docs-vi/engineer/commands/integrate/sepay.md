@@ -795,9 +795,9 @@ npm run dev
 
 ## Related Commands
 
-- [/integrate:polar](/docs/commands/integrate/polar) - International payments
-- [/cook](/docs/commands/core/cook) - Implement custom features
-- [/test](/docs/commands/core/test) - Run test suite
+- [/integrate:polar](/docs/engineer/commands/integrate/polar) - International payments
+- [/cook](/docs/engineer/commands/core/cook) - Implement custom features
+- [/test](/docs/engineer/commands/core/test) - Run test suite
 
 ---
 

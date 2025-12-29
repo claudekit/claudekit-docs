@@ -515,9 +515,9 @@ npm run preview
 
 ## Next Steps
 
-- [/design:screenshot](/docs/commands/design/screenshot) - Convert design to code
-- [/fix:fast](/docs/commands/fix/fast) - Quick CSS fixes
-- [/test](/docs/commands/core/test) - Visual regression tests
+- [/design:screenshot](/docs/engineer/commands/design/screenshot) - Convert design to code
+- [/fix:fast](/docs/engineer/commands/fix/fast) - Quick CSS fixes
+- [/test](/docs/engineer/commands/core/test) - Visual regression tests
 
 ---
 

@@ -494,8 +494,8 @@ git push  # Manual push when ready
 
 ## Next Steps
 
-- [/git:pr](/docs/commands/git/pull-request) - Create pull request
-- [/git:cm](/docs/commands/git/commit) - Commit without pushing
+- [/git:pr](/docs/engineer/commands/git/pull-request) - Create pull request
+- [/git:cm](/docs/engineer/commands/git/commit) - Commit without pushing
 - [Git Workflow](/docs/guides/git-workflow) - Team workflows
 
 ---

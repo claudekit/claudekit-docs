@@ -349,5 +349,5 @@ npm install -g @kaitranntt/ccs
 Now that ClaudeKit is installed, proceed to:
 
 - [Quick Start Guide](/docs/getting-started/quick-start) - Build your first project
-- [CLAUDE.md Explained](/docs/docs/configuration/claude-md) - Understand the configuration file
-- [Workflows](/docs/docs/configuration/workflows) - Learn about development workflows
+- [CLAUDE.md Explained](/docs/docs/engineer/configuration/claude-md) - Understand the configuration file
+- [Workflows](/docs/docs/engineer/configuration/workflows) - Learn about development workflows

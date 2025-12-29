@@ -946,9 +946,9 @@ Good copy achieves:
 
 ## Next Steps
 
-- [UI/UX Designer](/docs/agents/ui-ux-designer) - Create visual layouts
-- [Implementation](/docs/commands/core/cook) - Build the pages
-- [Testing](/docs/agents/tester) - A/B test copy variations
+- [UI/UX Designer](/docs/engineer/agents/ui-ux-designer) - Create visual layouts
+- [Implementation](/docs/engineer/commands/core/cook) - Build the pages
+- [Testing](/docs/engineer/agents/tester) - A/B test copy variations
 
 ---
 

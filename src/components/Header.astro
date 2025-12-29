@@ -1,5 +1,6 @@
 ---
 import LanguageSwitcher from './LanguageSwitcher';
+import { KitSwitcher } from './KitSwitcher';
 import { getLangFromUrl, getLocalizedPath, useTranslations } from '../i18n/utils';
 import type { Locale } from '../i18n/locales';
 
@@ -101,6 +102,7 @@ const navIcons = {
     </div>
 
     <div class="header-right">
+      <KitSwitcher client:load />
       <LanguageSwitcher client:load currentLocale={currentLocale} currentPath={currentPath} />
     </div>
   </div>

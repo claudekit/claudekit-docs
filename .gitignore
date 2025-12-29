@@ -30,7 +30,7 @@ pnpm-debug.log*
 .claude
 .opencode
 .serena/cache
-plans/**/*
+# plans/**/*
 !plans/templates/*
 logs.txt
 repomix-output.xml

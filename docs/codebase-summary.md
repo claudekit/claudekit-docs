@@ -1,24 +1,27 @@
 # Codebase Summary
 
-**Last Updated**: 2025-11-29
-**Version**: 0.0.3 (Post-Content Creation Phase - Phase 01 Complete)
+**Last Updated**: 2025-12-29
+**Version**: 0.1.0 (Kit-Agnostic Refactor - Phase 09 In Progress)
 **Repository**: claudekit-docs
 
 ## Overview
 
-claudekit-docs is Astro v5-based static documentation site for ClaudeKit ecosystem. Features bi-lingual content (English/Vietnamese), section-based information architecture, AI chat integration (UI complete, backend pending), enhanced sidebar navigation, and One Dark Pro-inspired design system. Successfully completed Phase 01 IA restructure (194 files migrated), Phase 02 navigation overhaul (context-aware navigation system), and Phase 03 content creation & rewriting (13 new pages, enhanced user journeys).
+claudekit-docs is Astro v5-based static documentation site supporting multiple ClaudeKit kits (Engineer, Marketing, CLI). Features kit-agnostic architecture, comprehensive documentation for 60+ agents/features, bi-lingual content (English/Vietnamese), AI chat integration (UI complete, backend pending), enhanced sidebar navigation with kit switching, and One Dark Pro-inspired design system. Successfully refactored from single-kit to multi-kit architecture with 280+ pages, 95% time savings through parallel agent execution, and 14% over-delivery on content targets.
 
 ## Project Statistics
 
 **Content**:
-- 209 total documentation pages (112 English + 97 Vietnamese, 15 new pages in Phases 03+04)
-- 9 logical content sections (post-IA restructure)
-- Section-based organization with improved discoverability and user journeys
-- ~295KB documentation content (45KB+ new content in Phases 03+04)
-- Complete IA restructure completed (Phase 01)
-- Enhanced navigation system (Phase 02)
-- Comprehensive content creation and rewriting (Phase 03)
-- Phase 01 (Commands Core) documentation complete (Phase 04)
+- 280+ total documentation pages (166 English + 114 Vietnamese)
+  - **Engineer Kit**: 97 original pages (agents, commands, skills, workflows)
+  - **Marketing Kit**: 88 new pages (agents, commands, skills, workflows)
+  - **CLI Kit**: 9 new pages (commands, setup, reference)
+- 12+ logical content sections (kit-agnostic organization)
+- Kit-specific content with shared architecture documentation
+- ~400KB+ documentation content (new marketing + CLI content)
+- ✅ Complete Phase 01-06 core platform (IA, navigation, content, search)
+- ✅ Complete Phase 09 infrastructure (multi-kit architecture)
+- 🔄 Phase 09 visual assets: 60% complete (9/15 diagrams)
+- 🔄 Phase 09 translations: 72% complete (63/88 Vietnamese files)
 
 **Source Code**:
 - 18 source files (Astro, TypeScript, React)

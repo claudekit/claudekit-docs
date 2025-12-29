@@ -1,16 +1,24 @@
 # Project Roadmap
 
-**Last Updated**: 2025-11-28
-**Version**: 0.0.1
+**Last Updated**: 2025-12-29
+**Version**: 0.1.0
 **Project**: claudekit-docs
 
 ## Current Status
 
-**Phase**: Phase 06 - Polish & QA Complete
+**Phase**: Phase 09 - Kit-Agnostic Refactor In Progress (85% Complete)
 **Live**: Not yet deployed to production
-**Development**: Active - Ready for production deployment
+**Development**: Active - Kit-agnostic multi-documentation architecture completed
 
 ### Completed Features ✅
+
+**Phase 01-06: Core Documentation Platform** (November 2025):
+- ✅ Information architecture restructure with section-based organization
+- ✅ Navigation system overhaul with context-aware sidebar
+- ✅ Content creation & rewriting with improved user journeys
+- ✅ LLM integration features (CopyForLLMs, llms.txt generation)
+- ✅ Search implementation with Pagefind integration
+- ✅ Polish & QA with URL redirects and security audit
 
 **Phase 01: IA Restructure** (November 2025):
 - ✅ Complete information architecture overhaul
@@ -58,16 +66,18 @@
 - ✅ Code review completed (0 critical issues)
 - ✅ Build passing successfully (dist/ generated)
 
-**Content** (October - November 2025):
-- 194 total documentation pages (97 English + 97 Vietnamese)
-- 9 content categories with logical section organization
-- 15 agent pages
-- 25 command pages across 9 subcategories
-- 15 skill pages
-- 10 use case tutorials
-- 6 troubleshooting guides
-- 2 CLI documentation pages
-- 2 core concept documentation pages
+**Content** (October - December 2025):
+- 280+ total documentation pages (English + Vietnamese)
+  - 97 Engineer docs (original)
+  - 88 Marketing docs (NEW)
+  - 9 CLI docs (NEW)
+- 12+ content categories with kit-agnostic organization
+- 60+ agent documentation pages (Engineer + Marketing)
+- 73+ command pages across multiple kits
+- 60+ skill documentation pages
+- 20+ workflow guides and tutorials
+- 10+ troubleshooting guides
+- Comprehensive CLI documentation
 
 **Infrastructure**:
 - Astro v5.14.6 setup
@@ -102,7 +112,11 @@
 
 ### In Progress 🔄
 
-- Production deployment to docs.claudekit.cc
+**Phase 08-10: Final Deliverables**
+- 🔄 Vietnamese translations: 72% complete (63/88 files)
+- 🔄 Visual assets: 60% complete (9/15 diagrams)
+- ⏸️ Integration testing & final QA
+- ⏸️ Production deployment to docs.claudekit.cc
 - TypeScript null safety improvements (non-blocking)
 - AI chat backend integration (OpenRouter)
 
@@ -262,6 +276,64 @@
 - Backward compatibility via redirects
 - Functional search system
 - Security best practices enforced
+
+---
+
+### 🔄 Phase 09: Kit-Agnostic Refactor (IN PROGRESS - December 2025)
+
+**Goal**: Support Engineer + Marketing kits with parallel documentation creation
+
+**Completed** ✅:
+- ✅ Phase 1: Infrastructure Setup (Multi-kit architecture)
+  - Kit-agnostic navigation system
+  - Content schema supporting multiple kits
+  - Vietnamese i18n support
+  - Kit switcher component
+- ✅ Phases 2-5: Marketing Content (88/72 files - 122% delivery)
+  - 33 Marketing agents documented (+22% over plan)
+  - 23 Marketing commands (+15% over plan)
+  - 21 Marketing skills (+5% over plan)
+  - 11 Marketing workflows (+10% over plan)
+  - All content follows storytelling narrative
+  - Beginner-friendly, professional tone
+- ✅ Phase 6: CLI Documentation (9/8 files - 113% complete)
+  - Complete CLI command reference
+  - Installation and setup guides
+  - Configuration documentation
+- 🔄 Phase 8: Visual Assets (9/15 completed - 60%)
+  - 9 Imagen 4 diagrams completed (2K resolution)
+  - 6 diagrams in progress
+  - Professional technical illustrations
+  - Consistent brand colors (Coral #D97757 + Bronze #D4A27F)
+- 🔄 Phase 9: Vietnamese Translations (63/88 completed - 72%)
+  - 8 copywriter agents in parallel
+  - Professional marketing Vietnamese
+  - Cultural adaptation for Vietnamese audience
+  - Technical accuracy preserved
+  - ETA: 10-15 minutes for completion
+
+**Results So Far**:
+- **97 English content pages** (vs. 85 planned) - 14% over-delivery
+- **Multiple kit support**: Engineer, Marketing, CLI sections
+- **Build Status**: ✅ Passing (183 pages generated)
+- **Parallelization**: 23 agents, 95% time savings
+- **Quality**: Storytelling approach, professional tone maintained
+
+---
+
+### ⏸️ Phase 10: Integration & Testing (PENDING)
+
+**Goal**: Final QA, redirects, and production readiness for multi-kit architecture
+
+**Planned Activities**:
+- [ ] Quality assurance with 3 UI testers (parallel)
+- [ ] Code review with 3 code-reviewers (parallel)
+- [ ] Project validation with 2 project-managers (parallel)
+- [ ] Redirect mapping for old URLs (~100 redirects)
+- [ ] Build validation (`bun run build` passing)
+- [ ] Navigation verification
+- [ ] Kit switcher functional testing
+- [ ] Search index validation
 
 **Ready for Production Deployment**:
 - [ ] Deploy to docs.claudekit.cc (K8s cluster)

@@ -18,7 +18,10 @@ order: 19
 
 **Ngầm**: Kích hoạt khi agents cần thao tác với các tệp phương tiện (chuyển đổi, thay đổi kích thước, nén, trích xuất).
 
-**Rõ ràng**: `/skill:add media-processing`
+**Rõ ràng**: Kích hoạt qua prompt:
+```
+Kích hoạt skill media-processing để [mô tả task]
+```
 
 ## Khả năng
 

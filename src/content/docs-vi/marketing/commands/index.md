@@ -9,7 +9,7 @@ published: true
 
 # Lệnh Marketing (Marketing Commands)
 
-21 lệnh chuyên biệt cho tự động hóa marketing, tạo nội dung và quản lý chiến dịch. Mỗi lệnh kích hoạt các agent AI chuyên môn sâu về marketing.
+19 lệnh chuyên biệt cho tự động hóa marketing, tạo nội dung và quản lý chiến dịch. Mỗi lệnh kích hoạt các agent AI chuyên môn sâu về marketing.
 
 ## Ma Trận Tham Chiếu Nhanh
 
@@ -17,65 +17,51 @@ published: true
 
 | Lệnh | Mục Đích | Kết Quả | Agents Sử Dụng |
 |---------|---------|--------|-------------|
-| [/campaign](/vi/docs/marketing/commands/campaign) | Tạo và quản lý chiến dịch | Bản tóm tắt chiến dịch + báo cáo | campaign-manager, funnel-architect |
-| [/content](/vi/docs/marketing/commands/content) | Tạo nội dung marketing | Bài blog, trang landing | content-creator, seo-specialist |
-| [/seo](/vi/docs/marketing/commands/seo) | Kiểm tra và tối ưu SEO | Báo cáo SEO + đề xuất | seo-specialist |
-| [/email](/vi/docs/marketing/commands/email) | Tạo nội dung email | Chuỗi email | email-wizard, copywriter |
-| [/social](/vi/docs/marketing/commands/social) | Nội dung mạng xã hội | Bài đăng theo nền tảng | social-media-manager |
-| [/analyze](/vi/docs/marketing/commands/analyze) | Phân tích và hiệu suất | Thông tin dựa trên dữ liệu | analytics-analyst |
+| [/campaign](/docs/marketing/commands/campaign) | Tạo và quản lý chiến dịch | Bản tóm tắt chiến dịch + báo cáo | campaign-manager, funnel-architect |
+| [/content](/docs/marketing/commands/content) | Tạo nội dung marketing | Bài blog, trang landing | content-creator, seo-specialist |
+| [/seo](/docs/marketing/commands/seo) | Kiểm tra và tối ưu SEO | Báo cáo SEO + đề xuất | seo-specialist |
+| [/email](/docs/marketing/commands/email) | Tạo nội dung email | Chuỗi email | email-wizard, copywriter |
+| [/social](/docs/marketing/commands/social) | Nội dung mạng xã hội | Bài đăng theo nền tảng | social-media-manager |
+| [/analyze](/docs/marketing/commands/analyze) | Phân tích và hiệu suất | Thông tin dựa trên dữ liệu | analytics-analyst |
 
-### Lệnh Quy Trình Làm Việc (4 lệnh)
+### Lệnh Tạo Nội Dung (6 lệnh)
 
 | Lệnh | Mục Đích | Tốt Nhất Cho | Thời Gian Tiết Kiệm |
 |---------|---------|----------|------------|
-| [/plan](/vi/docs/marketing/commands/plan) | Tạo kế hoạch triển khai | Tính năng phức tạp | 2-4 giờ |
-| [/cook](/vi/docs/marketing/commands/cook) | Triển khai tất cả trong một | Tính năng hoàn chỉnh | 4-8 giờ |
-| [/brainstorm](/vi/docs/marketing/commands/brainstorm) | Tạo ý tưởng hợp tác | Phiên chiến lược | 1-2 giờ |
-| [/design](/vi/docs/marketing/commands/design) | Tạo hình ảnh AI | Tài sản hình ảnh | 30-60 phút |
+| [/write](/docs/marketing/commands/write) | Bài blog, kiểm tra nội dung, xuất bản | Nội dung dài | 2-4 giờ |
+| [/video](/docs/marketing/commands/video) | Script video, storyboard, sản xuất | Marketing video | 4-8 giờ |
+| [/slide](/docs/marketing/commands/slide) | Bài thuyết trình, pitch deck | Bán hàng & đề xuất | 2-3 giờ |
+| [/brainstorm](/docs/marketing/commands/brainstorm) | Tạo ý tưởng hợp tác | Phiên chiến lược | 1-2 giờ |
+| [/design](/docs/marketing/commands/design) | Tạo hình ảnh AI | Tài sản hình ảnh | 30-60 phút |
 
-### Lệnh Tiện Ích (11 lệnh)
+### Lệnh Tiện Ích (8 lệnh)
 
 | Lệnh | Mục Đích | Khi Nào Sử Dụng |
 |---------|---------|-------------|
-| [/fix](/vi/docs/marketing/commands/fix) | Định tuyến vấn đề thông minh | Lỗi, sai sót, thất bại |
-| [/code](/vi/docs/marketing/commands/code) | Thực thi kế hoạch hiện có | Sau giai đoạn lập kế hoạch |
-| [/scout](/vi/docs/marketing/commands/scout) | Tìm kiếm codebase nhanh | Tìm tệp liên quan |
-| [/review](/vi/docs/marketing/commands/review) | Phân tích chất lượng code | Trước khi commit |
-| [/test](/vi/docs/marketing/commands/test) | Chạy bộ kiểm thử | Kiểm tra xác thực |
-| [/ask](/vi/docs/marketing/commands/ask) | Tư vấn kiến trúc | Quyết định kỹ thuật |
-| [/bootstrap](/vi/docs/marketing/commands/bootstrap) | Khởi tạo dự án | Dự án mới |
-| [/git](/vi/docs/marketing/commands/git) | Thao tác Git | Tạo PR, commit |
-| [/dashboard](/vi/docs/marketing/commands/dashboard) | Giao diện dashboard marketing | Quản lý trực quan |
-| [/use-mcp](/vi/docs/marketing/commands/use-mcp) | Thao tác MCP server | Tích hợp bên ngoài |
-| [/persona](/vi/docs/marketing/commands/persona) | Quản lý persona khách hàng | Nghiên cứu đối tượng |
+| [/scout](/docs/marketing/commands/scout) | Tìm kiếm codebase nhanh | Tìm tệp liên quan |
+| [/review](/docs/marketing/commands/review) | Phân tích chất lượng code | Trước khi commit |
+| [/ask](/docs/marketing/commands/ask) | Tư vấn kiến trúc | Quyết định kỹ thuật |
+| [/bootstrap](/docs/marketing/commands/bootstrap) | Khởi tạo dự án | Dự án mới |
+| [/git](/docs/marketing/commands/git) | Thao tác Git | Tạo PR, commit |
+| [/dashboard](/docs/marketing/commands/dashboard) | Giao diện dashboard marketing | Quản lý trực quan |
+| [/use-mcp](/docs/marketing/commands/use-mcp) | Thao tác MCP server | Tích hợp bên ngoài |
+| [/persona](/docs/marketing/commands/persona) | Quản lý persona khách hàng | Nghiên cứu đối tượng |
 
 ## Danh Mục Lệnh
 
 ### Lập Kế Hoạch & Chiến Lược
 
-Bắt đầu từ đây cho tính năng hoặc chiến dịch mới:
+Bắt đầu từ đây cho chiến dịch hoặc creative brief mới:
 
 ```bash
-# Nghiên cứu và lập kế hoạch tính năng
-/plan implement email drip campaign with analytics
-
 # Brainstorm giải pháp cùng nhau
 /brainstorm how to improve conversion rates
 
 # Nhận hướng dẫn kiến trúc
 /ask what's the best way to structure our marketing automation?
-```
 
-### Triển Khai
-
-Thực thi kế hoạch của bạn:
-
-```bash
-# Triển khai kế hoạch hiện có
-/code plans/251229-email-campaign.md
-
-# Lập kế hoạch + triển khai trong một lệnh
-/cook add blog post SEO optimization workflow
+# Tạo persona khách hàng
+/persona create "enterprise software buyers"
 ```
 
 ### Tạo Nội Dung
@@ -83,8 +69,17 @@ Thực thi kế hoạch của bạn:
 Tạo tài sản marketing:
 
 ```bash
-# Tạo nội dung blog
-/content blog "AI marketing automation guide"
+# Tạo nội dung blog với khớp giọng văn thương hiệu
+/write:blog "AI marketing automation guide"
+
+# Kiểm tra chất lượng nội dung hiện có
+/write:audit /assets/blog-posts/latest-post.md
+
+# Tạo video với script và storyboard
+/video:create "30-second product demo for social media"
+
+# Tạo pitch deck
+/slide:create "Series A investor pitch deck"
 
 # Tạo chuỗi email
 /email nurture "SaaS trial users"
@@ -125,24 +120,6 @@ Tối ưu hóa và đo lường:
 # Báo cáo phân tích
 /analyze traffic
 /analyze conversions
-```
-
-### Giải Quyết Vấn Đề
-
-Sửa lỗi một cách thông minh:
-
-```bash
-# Lỗi kiểu dữ liệu
-/fix TypeScript compilation errors in campaign module
-
-# Vấn đề giao diện
-/fix Button not responsive on mobile
-
-# Lỗi CI/CD
-/fix GitHub Actions build failing
-
-# Vấn đề phức tạp
-/fix:hard Refactor campaign architecture
 ```
 
 ## Quy Trình Làm Việc Phổ Biến
@@ -188,91 +165,35 @@ Sửa lỗi một cách thông minh:
 
 **Thời gian**: 20 phút so với 4-6 giờ làm thủ công
 
-### 3. Xây Dựng Marketing Dashboard
+### 3. Tạo Video Marketing
 
 ```bash
-# Bước 1: Lập kế hoạch kiến trúc
-/plan build marketing dashboard with campaign tracking
+# Bước 1: Tạo script
+/video:script "Product feature demo" --duration=60 --platform=youtube
 
-# Bước 2: Triển khai
-/code
+# Bước 2: Tạo storyboard
+/video:storyboard /assets/videos/latest-script.md
 
-# Bước 3: Khởi chạy dashboard
-/dashboard dev
-
-# Bước 4: Kiểm thử
-/test
-
-# Bước 5: Xem xét và commit
-/review
-/git:cm
+# Bước 3: Tạo video hoàn chỉnh
+/video:create "Product demo video for homepage"
 ```
 
-**Thời gian**: 2 giờ so với 2-3 ngày làm thủ công
+**Thời gian**: 30 phút so với 2-3 ngày làm thủ công
 
-### 4. Sửa Lỗi Chiến Dịch
+### 4. Chuẩn Bị Pitch Deck
 
 ```bash
-# Chẩn đoán nhanh
-/debug email open rates dropping
+# Bước 1: Tạo bài thuyết trình
+/slide:create "Series A investor pitch deck"
 
-# Định tuyến thông minh
-/fix campaign analytics not tracking conversions
+# Bước 2: Xem dashboard để quản lý tài sản
+/dashboard
 
-# Cho vấn đề phức tạp
-/fix:hard Refactor entire email delivery system
+# Bước 3: Xuất và chia sẻ
+# File .pptx sẵn sàng chỉnh sửa tại /assets/slides/
 ```
 
-### 5. Khởi Tạo Dự Án Marketing Mới
-
-```bash
-# Thiết lập dự án hoàn chỉnh
-/bootstrap Create AI-powered marketing automation platform
-
-# Nó làm gì:
-# - Nghiên cứu best practices
-# - Đề xuất tech stack
-# - Tạo kế hoạch triển khai
-# - Tạo designs
-# - Triển khai tính năng
-# - Viết tests
-# - Tạo tài liệu
-# - Onboard người dùng
-```
-
-**Thời gian**: 1 giờ so với 1-2 tuần làm thủ công
-
-## Biến Thể Lệnh
-
-Nhiều lệnh hỗ trợ biến thể cho hành vi chuyên biệt:
-
-### Biến Thể Tốc Độ
-```bash
-/plan:fast    # Lập kế hoạch nhanh (tính năng đơn giản)
-/cook:fast    # Triển khai nhanh
-/fix:fast     # Sửa lỗi nhanh
-```
-
-### Biến Thể Độ Phức Tạp
-```bash
-/plan:hard    # Lập kế hoạch phức tạp (nhiều giai đoạn)
-/cook:hard    # Triển khai phức tạp
-/fix:hard     # Sửa lỗi kiến trúc sâu
-```
-
-### Biến Thể Song Song
-```bash
-/plan:parallel    # Thực thi giai đoạn song song
-/cook:parallel    # Phát triển tính năng song song
-/fix:parallel     # Sửa nhiều vấn đề đồng thời
-```
-
-### Biến Thể Tự Động
-```bash
-/plan:auto        # Lập kế hoạch tự động
-/cook:auto        # Tự động hóa hoàn toàn
-/bootstrap:auto   # Khởi tạo tự động
-```
+**Thời gian**: 20 phút so với 1-2 ngày làm thủ công
 
 ## Quy Ước Đầu Ra
 
@@ -369,22 +290,25 @@ Sử dụng `/use-mcp` để tương tác với các MCP servers đã kết nố
 
 ## Best Practices
 
-### 1. Bắt Đầu Nhỏ
+### 1. Bắt Đầu Cụ Thể
 ```bash
 # Tốt: Cụ thể, tập trung
-/plan add email open rate tracking
+/write:blog "10 SaaS pricing strategies for 2025"
 
 # Tránh: Mơ hồ, quá rộng
-/plan improve marketing
+/write:blog "marketing tips"
 ```
 
-### 2. Sử Dụng Biến Thể Một Cách Khôn Ngoan
+### 2. Sử Dụng Đúng Lệnh Cho Công Việc
 ```bash
-# Tính năng đơn giản → biến thể fast
-/cook:fast add newsletter signup form
+# Blog post → /write
+/write:blog "Complete guide to email marketing"
 
-# Tính năng phức tạp → biến thể tiêu chuẩn
-/cook implement multi-channel campaign automation
+# Video content → /video
+/video:create "30-second product demo"
+
+# Presentations → /slide
+/slide:create "Q1 campaign proposal"
 ```
 
 ### 3. Để AI Làm Rõ
@@ -398,26 +322,27 @@ Các lệnh sẽ đặt câu hỏi khi cần:
 # - Hành động mong muốn?
 ```
 
-### 4. Xem Xét Trước Khi Commit
+### 4. Xem Xét Trước Khi Xuất Bản
 ```bash
-# Luôn xem xét thay đổi
-/code plans/feature.md
+# Luôn kiểm tra nội dung
+/write:audit /assets/blog-posts/latest.md
 
-# Để code-reviewer xác thực
-# Sau đó commit
-/git:cm
+# Xem xét điểm chất lượng
+# Sau đó xuất bản
+/write:publish /assets/blog-posts/latest.md
 ```
 
-### 5. Chuỗi Lệnh
+### 5. Sử Dụng Dashboard Để Quản Lý
 ```bash
-# Nghiên cứu → Lập kế hoạch → Triển khai → Kiểm thử → Commit
-/brainstorm email automation strategy
-# (xem xét kết quả brainstorm)
-/plan implement email automation
-# (xem xét kế hoạch)
-/code
-# (tests chạy tự động)
-/git:cm
+# Xem tất cả tài sản marketing
+/dashboard
+
+# Quản lý:
+# - Copy & Writing Styles
+# - Video Storyboards
+# - Presentations
+# - Branding Guidelines
+# - Social Posts
 ```
 
 ## Nhận Trợ Giúp
@@ -446,30 +371,32 @@ Các lệnh sẽ đặt câu hỏi khi cần:
 
 ## Mẹo Hiệu Suất
 
-### Thực Thi Song Song
-Sử dụng biến thể song song cho các nhiệm vụ độc lập:
-```bash
-# Sửa nhiều vấn đề không liên quan
-/fix:parallel type errors + UI bugs + test failures
-```
-
-### Scout Trước Khi Coding
-Tìm các tệp liên quan trước:
-```bash
-# Tìm kiếm codebase hiệu quả
-/scout find campaign-related components
-
-# Sau đó triển khai
-/code
-```
-
-### Sử Dụng Dashboard Để Hiển Thị
+### Sử Dụng Dashboard Để Quản Lý Trực Quan
 ```bash
 # Khởi chạy giao diện trực quan
 /dashboard
 
 # Quản lý chiến dịch, nội dung, tài sản một cách trực quan
 # Truy cập tại http://localhost:5173
+```
+
+### Tận Dụng Asset Management
+```bash
+# Tổ chức tài sản theo danh mục
+# - Copy & Writing Styles
+# - Video Storyboards
+# - Presentations
+# - Infographics
+# - Branding Guidelines
+# - Social Posts
+```
+
+### Kiểm Tra Nội Dung Trước Xuất Bản
+```bash
+# Kiểm tra chất lượng trước khi xuất bản
+/write:audit /assets/blog-posts/article.md
+
+# Đảm bảo điểm ≥75/100 cho SEO, khả năng đọc, giọng văn thương hiệu
 ```
 
 ## Bước Tiếp Theo
@@ -498,4 +425,4 @@ Tìm các tệp liên quan trước:
 
 ---
 
-**21 lệnh. Khả năng marketing vô hạn.** Đội ngũ marketing AI của bạn đã sẵn sàng.
+**19 lệnh. Khả năng marketing vô hạn.** Đội ngũ marketing AI của bạn đã sẵn sàng.

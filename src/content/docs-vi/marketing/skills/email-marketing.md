@@ -18,7 +18,10 @@ order: 5
 
 **Ngầm**: Tự động kích hoạt cho agents Email Wizard, Nurture Specialist và Content Creator.
 
-**Rõ ràng**: `/skill:add email-marketing`
+**Rõ ràng**: Kích hoạt qua prompt:
+```
+Kích hoạt skill email-marketing để [mô tả task]
+```
 
 ## Khả năng
 

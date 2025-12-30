@@ -18,7 +18,10 @@ order: 13
 
 **Ngầm**: Kích hoạt khi agents thảo luận về giới thiệu khách hàng, vòng lặp viral hoặc tiếp thị miệng.
 
-**Rõ ràng**: `/skill:add referral-program-building`
+**Rõ ràng**: Kích hoạt qua prompt:
+```
+Kích hoạt skill referral-program-building để [mô tả task]
+```
 
 ## Khả năng
 

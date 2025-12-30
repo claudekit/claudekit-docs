@@ -35,9 +35,96 @@ ck new --kit marketing
 /campaign create "Q1 Product Launch"
 ```
 
+## Lợi Thế Vượt Trội
+
+Không giống như các công cụ marketing truyền thống, ClaudeKit Marketing có **quyền truy cập đầy đủ vào codebase của bạn**:
+
+- **Ảnh Chụp Màn Hình Sản Phẩm** - Tự động trích xuất từ code UI thực tế
+- **Mô Tả Tính Năng** - Được tạo từ triển khai thực, không phải tưởng tượng
+- **Độ Chính Xác Kỹ Thuật** - Tuyên bố marketing được xác minh dựa trên code thực
+- **Đồng Bộ Phiên Bản** - Nội dung tự động cập nhật khi tính năng thay đổi
+
+Điều này có nghĩa là tài liệu marketing của bạn luôn chính xác, chính xác về kỹ thuật và không thể bị đối thủ sao chép nếu không có codebase của bạn.
+
 ## Core Features
 
-### Campaign Management
+### Quản Lý Tài Sản (Content Hub)
+
+Trung tâm tập trung cho tất cả tài sản marketing với tổ chức thông minh:
+
+```bash
+# Mở dashboard trực quan
+/dashboard
+
+# Quản lý 6 danh mục tài sản:
+# - Copy & Phong Cách Viết
+# - Storyboard (câu chuyện video)
+# - Bài Thuyết Trình (pitch deck, đề xuất)
+# - Infographic (trực quan hóa dữ liệu)
+# - Hướng Dẫn Thương Hiệu (logo, màu sắc, giọng văn)
+# - Bài Đăng Mạng Xã Hội (nội dung theo nền tảng)
+```
+
+**Ảnh chụp màn hình**:
+
+![Trung tâm Quản lý Tài sản](/docs/screenshots/assets-management.png)
+![Hướng dẫn Thương hiệu](/docs/screenshots/assets-branding-guideline.png)
+![Xem trước Storyboard](/docs/screenshots/assets-storyboard-preview.png)
+
+Xem [Quản Lý Tài Sản](/docs/marketing/features/asset-management) để biết chi tiết đầy đủ.
+
+### Tạo Nội Dung
+
+Tạo nội dung marketing chất lượng cao với trích xuất giọng văn tác giả:
+
+```bash
+# Bài blog với khớp phong cách
+/write:blog "10 Chiến Lược Giá SaaS" --style casual-founder
+
+# Kiểm tra chất lượng nội dung
+/write:audit /assets/copy/blog-posts/pricing-guide.md
+
+# Quy trình xuất bản
+/write:publish /assets/copy/blog-posts/pricing-guide.md
+```
+
+Xem [Lệnh Write](/docs/marketing/commands/write) để biết chi tiết.
+
+### Sản Xuất Video
+
+Quy trình video chuyên nghiệp với Gemini Veo 3.1 + Imagen 4:
+
+```bash
+# Tạo video hoàn chỉnh
+/video:create "Demo sản phẩm cho trang chủ"
+
+# Tạo script video
+/video:script "Giải thích API rate limiting" --duration=60 --platform=youtube
+
+# Tạo storyboard trực quan
+/video:storyboard /assets/videos/2024-12-30-api-demo/script.md
+```
+
+Xem [Lệnh Video](/docs/marketing/commands/video) để biết chi tiết.
+
+### Bài Thuyết Trình
+
+Tạo pitch deck, đề xuất chiến dịch và bài thuyết trình đẹp:
+
+```bash
+# Pitch deck cho nhà đầu tư
+/slide:create "Series A pitch deck - AI marketing automation"
+
+# Đề xuất chiến dịch
+/slide:create "Q1 product launch campaign với phân tích ngân sách"
+
+# Demo sản phẩm
+/slide:create "Technical demo API features cho doanh nghiệp"
+```
+
+Xem [Lệnh Slide](/docs/marketing/commands/slide) để biết chi tiết.
+
+### Quản Lý Chiến Dịch
 
 Tạo, quản lý và tối ưu hóa chiến dịch tiếp thị với hỗ trợ AI:
 
@@ -45,16 +132,6 @@ Tạo, quản lý và tối ưu hóa chiến dịch tiếp thị với hỗ tr�
 /campaign create "Summer Sale 2025"
 /campaign status
 /campaign analyze
-```
-
-### Content Creation
-
-Tạo nội dung tiếp thị chất lượng cao trong vài giây:
-
-```bash
-/content:good "product launch blog post"
-/email create "welcome sequence"
-/social create "product announcement"
 ```
 
 ### SEO Optimization

@@ -18,7 +18,10 @@ order: 21
 
 **Ngầm**: Kích hoạt khi agents cần nghiên cứu các chủ đề, phân tích đối thủ cạnh tranh hoặc xác thực các cách tiếp cận kỹ thuật.
 
-**Rõ ràng**: `/skill:add research` hoặc lệnh `/scout`
+**Rõ ràng**: Kích hoạt qua prompt:
+```
+Kích hoạt skill research để [mô tả task]
+``` hoặc lệnh `/scout`
 
 ## Khả năng
 

@@ -18,7 +18,10 @@ order: 2
 
 **Ngầm**: Tự động kích hoạt cho agents Content Creator, Campaign Manager và Attraction Specialist.
 
-**Rõ ràng**: `/skill:add content-marketing`
+**Rõ ràng**: Kích hoạt qua prompt:
+```
+Kích hoạt skill content-marketing để [mô tả task]
+```
 
 ## Khả năng
 

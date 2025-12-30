@@ -18,7 +18,10 @@ order: 3
 
 **Ngầm**: Tự động kích hoạt cho agents SEO Specialist, Attraction Specialist và Content Creator.
 
-**Rõ ràng**: `/skill:add seo-optimization`
+**Rõ ràng**: Kích hoạt qua prompt:
+```
+Kích hoạt skill seo-optimization để [mô tả task]
+```
 
 ## Khả năng
 

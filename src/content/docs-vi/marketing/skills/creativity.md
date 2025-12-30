@@ -18,7 +18,10 @@ order: 15
 
 **Ngầm**: Kích hoạt khi các agents thảo luận về định hướng sáng tạo, các khái niệm chiến dịch, phong cách hình ảnh hoặc thiết kế nội dung.
 
-**Rõ ràng**: `/skill:add creativity`
+**Rõ ràng**: Kích hoạt qua prompt:
+```
+Kích hoạt skill creativity để [mô tả task]
+```
 
 ## Khả năng
 

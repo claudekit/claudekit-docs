@@ -55,11 +55,63 @@ published: true
 - Search by title, keywords
 - Quick preview and edit
 
-### Asset Gallery
-- Visual browser for images, videos
-- Link assets to campaigns
-- AI enhancement tools
-- Bulk operations
+### Trung Tâm Quản Lý Tài Sản
+
+Phần Quản Lý Tài Sản cung cấp quyền truy cập tập trung vào tất cả tài sản marketing được tạo bởi lệnh ClaudeKit. Duyệt, xem trước và tổ chức báo cáo markdown, storyboard, slide, hình ảnh, video và tài liệu thương hiệu.
+
+![Trung tâm Quản lý Tài sản](/docs/screenshots/assets-management.png)
+
+**Danh Mục Tài Sản:**
+
+**Hướng Dẫn Thương Hiệu**
+- Tài liệu giọng văn thương hiệu
+- Hướng dẫn phong cách và mẫu
+- Bảng màu và typography
+- Tài sản logo và quy tắc sử dụng
+
+![Hướng dẫn Thương hiệu](/docs/screenshots/assets-branding-guideline.png)
+
+**Storyboard (Sản Xuất Video)**
+- Phân tích cảnh trực quan
+- Lập kế hoạch từng shot
+- Xem trước timeline
+- Xuất sang sản xuất
+
+![Xem trước Storyboard](/docs/screenshots/assets-storyboard-preview.png)
+
+![Tùy chọn Storyboard](/docs/screenshots/assets-storyboard-options.png)
+
+**Slide Bài Thuyết Trình**
+- Pitch deck (.pptx)
+- Đề xuất chiến dịch
+- Demo sản phẩm
+- Báo cáo hiệu suất
+
+![Xem trước Slide](/docs/screenshots/assets-slides-preview.png)
+
+**Infographic & Hình Ảnh**
+- Đồ họa mạng xã hội
+- Trực quan hóa dữ liệu
+- Hình ảnh nổi bật blog
+- Creative chiến dịch
+
+![Xem trước Infographic](/docs/screenshots/assets-infographic-preview.png)
+
+**Bài Đăng Mạng Xã Hội**
+- Nội dung theo nền tảng
+- Bài đăng đã lên lịch
+- Chỉ số hiệu suất
+- Theo dõi tương tác
+
+![Xem trước Bài đăng Mạng xã hội](/docs/screenshots/assets-social-post-preview.png)
+
+**Tính Năng Trung Tâm Tài Sản:**
+- **Chế độ Xem Trước**: Xem markdown, hình ảnh, video inline
+- **Hành Động Nhanh**: Tải xuống, chia sẻ, chỉnh sửa, nhân bản
+- **Tìm Kiếm & Lọc**: Tìm tài sản theo loại, ngày, chiến dịch, thẻ
+- **Thao Tác Hàng Loạt**: Xuất, lưu trữ, xóa nhiều tài sản
+- **Lịch Sử Phiên Bản**: Theo dõi thay đổi và khôi phục phiên bản trước
+- **Bộ Sưu Tập**: Tổ chức tài sản vào thư mục tùy chỉnh
 
 ### Automation Panel
 Công thức tự động hóa được xây dựng sẵn:

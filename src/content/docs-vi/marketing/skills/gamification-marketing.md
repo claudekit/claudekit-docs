@@ -18,7 +18,10 @@ order: 12
 
 **Ngầm**: Kích hoạt khi agents thảo luận về engagement, retention, chương trình loyalty hoặc thiết kế hành vi.
 
-**Rõ ràng**: `/skill:add gamification-marketing`
+**Rõ ràng**: Kích hoạt qua prompt:
+```
+Kích hoạt skill gamification-marketing để [mô tả task]
+```
 
 ## Khả năng
 

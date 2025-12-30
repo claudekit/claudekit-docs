@@ -18,7 +18,10 @@ order: 4
 
 **Ngầm**: Tự động kích hoạt cho agents Analytics Analyst, Campaign Manager và Growth Specialist.
 
-**Rõ ràng**: `/skill:add analytics`
+**Rõ ràng**: Kích hoạt qua prompt:
+```
+Kích hoạt skill analytics để [mô tả task]
+```
 
 ## Khả năng
 

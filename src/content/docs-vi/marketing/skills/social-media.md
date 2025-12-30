@@ -18,7 +18,10 @@ order: 6
 
 **Ngầm**: Tự động kích hoạt cho agents Social Media Manager, Content Creator và Community Manager.
 
-**Rõ ràng**: `/skill:add social-media`
+**Rõ ràng**: Kích hoạt qua prompt:
+```
+Kích hoạt skill social-media để [mô tả task]
+```
 
 ## Khả năng
 

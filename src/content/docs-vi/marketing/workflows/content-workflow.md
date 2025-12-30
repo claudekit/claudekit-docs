@@ -18,6 +18,8 @@ Content Workflow là hệ thống đảm bảo chất lượng của bạn cho n
 
 Workflow này xử lý blog posts, landing pages, emails, social posts và ad copy. Cho dù bạn đang tạo một phần hoặc quản lý lịch nội dung với hàng chục tài liệu, quy trình này đảm bảo tính nhất quán và chất lượng.
 
+**Lợi Thế Vượt Trội**: ClaudeKit Marketing có quyền truy cập đầy đủ vào codebase của bạn, cho phép tạo nội dung nhận biết sản phẩm với ảnh chụp màn hình được trích xuất tự động, mô tả tính năng được xác minh dựa trên triển khai và tuyên bố marketing được xác thực dựa trên code thực tế. Xem [Tổng Quan Marketing](/docs/marketing/) để biết chi tiết.
+
 ## Metadata
 
 - **Ước Tính Thời Gian:** 2-5 ngày mỗi bài (thay đổi theo loại và độ dài)

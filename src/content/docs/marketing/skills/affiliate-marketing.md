@@ -1,141 +1,139 @@
 ---
-title: "Affiliate Marketing"
-description: "Build high-converting SaaS affiliate programs with commission structures, platform selection, KOL partnerships, and fraud prevention."
+title: "Tiếp Thị Liên Kết"
+description: "Xây dựng các chương trình liên kết SaaS chuyển đổi cao với cấu trúc hoa hồng, lựa chọn nền tảng, kết nối KOL và phòng chống gian lận."
+lang: vi
 section: marketing
 category: skills
 order: 11
 ---
 
-> Design affiliate programs that drive 20-50% of customer acquisition at 30-50% lower CAC through strategic partner recruitment.
+> Thiết kế các chương trình liên kết tạo ra 20-50% của việc mua lại khách hàng với CAC thấp hơn 30-50% thông qua tuyển dụng đối tác chiến lược.
 
-## What This Skill Does
+## Skill Này Làm Gì
 
-**The Challenge**: Building an affiliate program requires choosing commission models, selecting platforms, recruiting quality partners, and preventing fraud—all while maintaining profitability.
+**Thách Thức**: Xây dựng một chương trình liên kết đòi hỏi chọn các mô hình hoa hồng, lựa chọn nền tảng, tuyển dụng các đối tác chất lượng và phòng chống gian lận—tất cả trong khi duy trì lợi nhuận.
 
-**The Solution**: Affiliate Marketing skill provides program structure templates, platform comparison guides, KOL/KOC partnership strategies, fraud detection patterns, and case studies (Dropbox 3900% growth, PayPal 100M users).
+**Giải Pháp**: Skill Tiếp Thị Liên Kết cung cấp các mẫu cấu trúc chương trình, hướng dẫn so sánh nền tảng, chiến lược kết nối KOL/KOC, các mô hình phát hiện gian lận và các nghiên cứu trường hợp (Dropbox tăng 3900%, PayPal 100M người dùng).
 
-## Activation
+## Kích Hoạt
 
-**Implicit**: Activates automatically for Growth Specialist and Campaign Manager agents when discussing partner/affiliate strategies.
+**Ẩn Danh**: Kích hoạt tự động cho các agent Growth Specialist và Campaign Manager khi thảo luận về chiến lược đối tác/liên kết.
 
-**Explicit**: Activate via prompt:
-```
-Activate affiliate-marketing skill to create affiliate program strategy
-```
+**Rõ Ràng**: `/skill:add affiliate-marketing`
 
-## Capabilities
+## Khả Năng
 
-### 1. Commission Model Selection
-Choose structure based on business stage and customer lifetime value.
+### 1. Lựa Chọn Mô Hình Hoa Hồng
+Chọn cấu trúc dựa trên giai đoạn kinh doanh và giá trị vòng đời khách hàng.
 
-**Commission models**:
-| Model | Best For | Rate | Cookie Window |
+**Mô Hình Hoa Hồng**:
+| Mô Hình | Phù Hợp Nhất Cho | Tỷ Lệ | Cửa Sổ Cookie |
 |-------|----------|------|---------------|
-| **Recurring** | SaaS subscriptions | 20-30% | 90 days |
-| **One-time** | High-ticket products | $50-200 | 60 days |
-| **Tiered** | Scaling programs | 20→40% | 90 days |
-| **Hybrid** | Top affiliates | Base + % | 120 days |
+| **Tái Diễn** | Gói đăng ký SaaS | 20-30% | 90 ngày |
+| **Một Lần** | Sản phẩm giá cao | $50-200 | 60 ngày |
+| **Phân Tầng** | Mở rộng chương trình | 20→40% | 90 ngày |
+| **Kết Hợp** | Các đối tác hàng đầu | Cơ sở + % | 120 ngày |
 
-**Structure guide**: `references/program-structure.md`
+**Hướng Dẫn Cấu Trúc**: `references/program-structure.md`
 
-### 2. Platform Selection Framework
-Compare affiliate platforms by features, pricing, and integration complexity.
+### 2. Khung Lựa Chọn Nền Tảng
+So sánh các nền tảng liên kết theo các tính năng, giá cả và độ phức tạp tích hợp.
 
-**Platform comparison**:
-| Platform | Best For | Price | Setup Time |
+**So Sánh Nền Tảng**:
+| Nền Tảng | Phù Hợp Nhất Cho | Giá | Thời Gian Cài Đặt |
 |----------|----------|-------|------------|
-| **FirstPromoter** | Early-stage SaaS | $49/mo | 1 hour |
-| **Rewardful** | Stripe-first SaaS | $29/mo | 30 min |
-| **PartnerStack** | Enterprise scale | $500+/mo | 1 week |
-| **Impact.com** | Large affiliates | Custom | 2 weeks |
+| **FirstPromoter** | SaaS giai đoạn sớm | $49/tháng | 1 giờ |
+| **Rewardful** | SaaS Stripe-first | $29/tháng | 30 phút |
+| **PartnerStack** | Quy mô doanh nghiệp | $500+/tháng | 1 tuần |
+| **Impact.com** | Các đối tác lớn | Tùy chỉnh | 2 tuần |
 
-**Selection guide**: `references/platform-selection.md`
+**Hướng Dẫn Lựa Chọn**: `references/platform-selection.md`
 
-### 3. KOL/KOC Partnership Strategy
-Identify, vet, and recruit Key Opinion Leaders and Key Opinion Consumers.
+### 3. Chiến Lược Kết Nối KOL/KOC
+Xác định, kiểm tra và tuyển dụng Các Lãnh Đạo Ý Kiến Chính và Những Người Tiêu Dùng Ý Kiến Chính.
 
-**Recruitment workflow**:
-1. Identify influencers in niche (10k-100k followers for micro-influencers)
-2. Vet content quality and audience engagement (>3% engagement rate)
-3. Personalized outreach (use templates from `references/outreach-templates.md`)
-4. Negotiate compensation (affiliate % vs flat fee vs hybrid)
-5. Onboard with content kit and tracking links
+**Quy Trình Tuyển Dụng**:
+1. Xác định những người có ảnh hưởng trong thị trường (10k-100k người theo dõi cho các người có ảnh hưởng vi mô)
+2. Kiểm tra chất lượng nội dung và sự tương tác của khán giả (>3% tỷ lệ tương tác)
+3. Tiếp cận được cá nhân hóa (sử dụng các mẫu từ `references/outreach-templates.md`)
+4. Đàm phán bồi thường (% liên kết so với phí cố định so với kết hợp)
+5. Onboard với bộ nội dung và các liên kết theo dõi
 
-**Partnership guide**: `references/kol-koc-partnerships.md`
+**Hướng Dẫn Kết Nối**: `references/kol-koc-partnerships.md`
 
-## Prerequisites
+## Điều Kiện Tiên Quyết
 
-- Product/service with proven conversion funnel
-- Customer LTV data for commission calculation
-- Affiliate agreement template (legal review recommended)
+- Sản phẩm/dịch vụ có kênh chuyển đổi đã được chứng minh
+- Dữ liệu LTV khách hàng để tính toán hoa hồng
+- Mẫu thỏa thuận liên kết (khuyến nghị xem xét pháp lý)
 
-## Configuration
+## Cấu Hình
 
-**Program design checklist**:
-- [ ] Commission structure defined
-- [ ] Cookie window set (60-120 days typical for SaaS)
-- [ ] Payout terms established (Net 30/60/90)
-- [ ] Fraud prevention rules configured
-- [ ] Affiliate onboarding kit ready
-- [ ] Tracking and attribution setup verified
+**Danh sách kiểm tra thiết kế chương trình**:
+- [ ] Cấu trúc hoa hồng được xác định
+- [ ] Cửa sổ Cookie được đặt (60-120 ngày điển hình cho SaaS)
+- [ ] Các điều khoản thanh toán được thiết lập (Net 30/60/90)
+- [ ] Các quy tắc phòng chống gian lận được cấu hình
+- [ ] Bộ onboarding liên kết sẵn sàng
+- [ ] Cài đặt theo dõi và quy attributio được xác minh
 
-## Best Practices
+## Phương Pháp Tốt Nhất
 
-**1. Two-sided rewards work best**
-Both referrer AND referee get incentives. Increases participation 68%.
+**1. Phần Thưởng Hai Chiều Hoạt Động Tốt Nhất**
+Cả người giới thiệu VÀ người được giới thiệu nhận được các ưu đãi. Tăng sự tham gia 68%.
 
-**2. 90-day cookie for B2B SaaS**
-B2B sales cycles are longer. Short cookies lose conversions to long consideration periods.
+**2. Cookie 90 Ngày Cho B2B SaaS**
+Các chu kỳ bán B2B dài hơn. Các cookie ngắn mất chuyển đổi do các khoảng thời gian xem xét dài.
 
-**3. Commission holds prevent fraud**
-Hold payments 60-90 days to match refund window. Deters fraudulent signups.
+**3. Tạm Giữ Hoa Hồng Phòng Chống Gian Lận**
+Giữ thanh toán 60-90 ngày để khớp với cửa sổ hoàn lại. Ngăn các đăng ký gian lận.
 
-## Common Use Cases
+## Trường Hợp Sử Dụng Phổ Biến
 
-### Use Case 1: Launch SaaS Affiliate Program
-**Scenario**: Early-stage SaaS wants partner channel to complement paid ads.
+### Trường Hợp Sử Dụng 1: Khởi Động Chương Trình Liên Kết SaaS
+**Tình Huống**: SaaS giai đoạn sớm muốn kênh đối tác để bổ sung quảng cáo trả tiền.
 
-**Workflow**:
-1. Calculate max affordable commission (30% of MRR typical)
-2. Select platform (FirstPromoter recommended for <$500k ARR)
-3. Create affiliate onboarding kit (brand assets, messaging guidelines, demo video)
-4. Recruit 10-20 initial affiliates (existing customers, micro-influencers)
-5. Launch with 90-day cookie, Net 60 payout
-6. Monitor EPC (Earnings Per Click) - target $5-50 for SaaS
+**Quy Trình Công Việc**:
+1. Tính toán hoa hồng tối đa có thể chi trả (30% của MRR điển hình)
+2. Chọn nền tảng (FirstPromoter được khuyến nghị cho <$500k ARR)
+3. Tạo bộ onboarding liên kết (tài sản thương hiệu, hướng dẫn nhắn tin, video demo)
+4. Tuyển dụng 10-20 liên kết ban đầu (khách hàng hiện tại, những người có ảnh hưởng vi mô)
+5. Khởi động với cookie 90 ngày, thanh toán Net 60
+6. Giám sát EPC (Thu Nhập Trên Lần Nhấp) - mục tiêu $5-50 cho SaaS
 
-**Success metrics**: 5-9% participation rate, 5-10% referral rate.
+**Chỉ Số Thành Công**: Tỷ lệ tham gia 5-9%, tỷ lệ giới thiệu 5-10%.
 
-### Use Case 2: Scale Existing Program
-**Scenario**: Program has 50 affiliates, want to increase quality and reduce fraud.
+### Trường Hợp Sử Dụng 2: Mở Rộng Chương Trình Hiện Tại
+**Tình Huống**: Chương trình có 50 liên kết, muốn tăng chất lượng và giảm gian lận.
 
-**Workflow**:
-1. Analyze affiliate performance (top 20% drive 80% of revenue)
-2. Implement tiered commissions (20% base, 30% at 10+ referrals, 40% at 50+)
-3. Add vetting process for new affiliates (application review)
-4. Implement fraud detection (90-day payment hold, manual review of bulk signups)
-5. Create retention program (monthly check-ins, content support for top 10%)
+**Quy Trình Công Việc**:
+1. Phân tích hiệu suất liên kết (20% hàng đầu tạo ra 80% doanh thu)
+2. Triển khai hoa hồng phân tầng (cơ sở 20%, 30% tại 10+ giới thiệu, 40% tại 50+)
+3. Thêm quy trình kiểm tra cho các liên kết mới (xem xét ứng dụng)
+4. Triển khai phát hiện gian lận (tạm giữ 90 ngày, xem xét thủ công của các đăng ký hàng loạt)
+5. Tạo chương trình duy trì (check-in hàng tháng, hỗ trợ nội dung cho 10% hàng đầu)
 
-**Output**: Improved EPC, reduced fraud, higher affiliate retention.
+**Kết Quả**: EPC được cải thiện, gian lận giảm, duy trì liên kết cao hơn.
 
-## Troubleshooting
+## Khắc Phục Sự Cố
 
-**Issue**: Low affiliate participation (<3%)
-**Solution**: Increase commission to 25-30% OR improve affiliate resources (better content kit, landing pages).
+**Vấn Đề**: Sự tham gia liên kết thấp (<3%)
+**Giải Pháp**: Tăng hoa hồng lên 25-30% HOẶC cải thiện tài nguyên liên kết (bộ nội dung tốt hơn, trang đích).
 
-**Issue**: High fraud rate
-**Solution**: Implement 90-day holds, require affiliate vetting, add TOS prohibitions on brand bidding and incent traffic.
+**Vấn Đề**: Tỷ lệ gian lận cao
+**Giải Pháp**: Triển khai các khoảng tạm giữ 90 ngày, yêu cầu kiểm tra liên kết, thêm các điều khoản dịch vụ cấm đặt giá hiệu ứng thương hiệu và lưu lượng khuyến khích.
 
-**Issue**: Inactive affiliates after onboarding
-**Solution**: Monthly check-ins, provide pre-made content, feature top performers to motivate others.
+**Vấn Đề**: Các liên kết không hoạt động sau onboarding
+**Giải Pháp**: Check-in hàng tháng, cung cấp nội dung được tạo trước, đặc tính các nhà hoạt động hàng đầu để thúc đẩy những người khác.
 
-## Related Skills
+## Kỹ Năng Liên Quan
 
-- [Referral Program Building](/docs/marketing/skills/referral-program-building) - Customer-driven referrals
-- [Campaign Management](/docs/marketing/skills/campaign-management) - Launch coordination
-- [Analytics](/docs/marketing/skills/analytics) - Performance tracking and attribution
+- [Referral Program Building](/vi/docs/marketing/skills/referral-program-building) - Giới thiệu do khách hàng tạo
+- [Campaign Management](/vi/docs/marketing/skills/campaign-management) - Phối hợp khởi động
+- [Analytics](/vi/docs/marketing/skills/analytics) - Theo dõi và quy attributio hiệu suất
 
-## Related Commands
+## Lệnh Liên Quan
 
-- `/campaign/create` - Affiliate launch campaign
-- `/plan` - Implementation planning
-- `/analyze:report` - Performance analysis
+- `/campaign/create` - Chiến dịch khởi động liên kết
+- `/plan` - Lập kế hoạch thực hiện
+- `/analyze:report` - Phân tích hiệu suất

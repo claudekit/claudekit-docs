@@ -1,55 +1,56 @@
 ---
-title: "/video - Video Production Commands"
-description: "Create professional marketing videos with AI-powered script generation, visual storyboarding, and production-ready output using Gemini Veo 3.1 and Imagen 4"
+title: "/video - Lệnh Sản Xuất Video"
+description: "Tạo video marketing chuyên nghiệp với tạo script bằng AI, storyboard trực quan và đầu ra sẵn sàng sản xuất sử dụng Gemini Veo 3.1 và Imagen 4"
+lang: vi
 section: marketing
 category: commands
 order: 4
 published: true
 ---
 
-# /video - Video Production Commands
+# /video - Lệnh Sản Xuất Video
 
-End-to-end video production workflow powered by Google Gemini Veo 3.1 (video generation) and Imagen 4 (image generation). From script to storyboard to final video, create professional marketing content without traditional video production overhead.
+Quy trình sản xuất video từ đầu đến cuối được hỗ trợ bởi Google Gemini Veo 3.1 (tạo video) và Imagen 4 (tạo hình ảnh). Từ script đến storyboard đến video cuối cùng, tạo nội dung marketing chuyên nghiệp mà không cần chi phí sản xuất video truyền thống.
 
-## Commands
+## Các Lệnh
 
-### /video:create - Complete Video Workflow
+### /video:create - Quy Trình Video Hoàn Chỉnh
 
-Generate complete marketing videos from concept to production-ready output.
+Tạo video marketing hoàn chỉnh từ ý tưởng đến đầu ra sẵn sàng sản xuất.
 
-**Syntax:**
+**Cú pháp:**
 ```bash
-/video:create "<video concept or brief>"
+/video:create "<ý tưởng video hoặc brief>"
 ```
 
-**What It Does:**
-1. Generates compelling script optimized for video format
-2. Creates detailed visual storyboard with scene descriptions
-3. Generates video segments using Gemini Veo 3.1
-4. Synthesizes voice-over and background music
-5. Assembles final video with transitions and effects
-6. Outputs production files to `/assets/videos/`
+**Chức năng:**
+1. Tạo script hấp dẫn được tối ưu cho định dạng video
+2. Tạo storyboard trực quan chi tiết với mô tả cảnh
+3. Tạo các đoạn video sử dụng Gemini Veo 3.1
+4. Tổng hợp lồng tiếng và nhạc nền
+5. Lắp ráp video cuối cùng với hiệu ứng chuyển cảnh
+6. Xuất file sản xuất ra `/assets/videos/`
 
-**Examples:**
+**Ví dụ:**
 ```bash
-# Product demo video
-/video:create "30-second demo of our API rate limiting dashboard"
+# Video demo sản phẩm
+/video:create "demo 30 giây dashboard giới hạn tốc độ API"
 
-# Explainer video
-/video:create "explain how our authentication flow works in 60 seconds"
+# Video giải thích
+/video:create "giải thích cách hoạt động authentication flow trong 60 giây"
 
-# Social media ad
-/video:create "Instagram Reel announcing our new pricing tiers"
+# Quảng cáo mạng xã hội
+/video:create "Instagram Reel thông báo gói giá mới"
 
-# Tutorial series
-/video:create "5-part video series on getting started with our platform"
+# Loạt hướng dẫn
+/video:create "loạt video 5 phần về bắt đầu với nền tảng của chúng tôi"
 ```
 
-**Output:**
+**Đầu ra:**
 ```
 /assets/videos/YYYY-MM-DD-slug/
-├── script.md                  # Full script with timestamps
-├── storyboard.md             # Visual scene breakdown
+├── script.md                  # Script đầy đủ với timestamp
+├── storyboard.md             # Phân tích cảnh trực quan
 ├── scenes/
 │   ├── scene-01-intro.mp4
 │   ├── scene-02-problem.mp4
@@ -59,278 +60,278 @@ Generate complete marketing videos from concept to production-ready output.
 │   ├── voice-over.mp3
 │   └── background-music.mp3
 ├── final/
-│   ├── video-master.mp4      # Full resolution (1080p)
-│   ├── video-social-16x9.mp4 # Social media (landscape)
-│   ├── video-social-9x16.mp4 # Social media (portrait)
-│   └── video-social-1x1.mp4  # Social media (square)
-└── metadata.json             # Video specs, rendering settings
+│   ├── video-master.mp4      # Độ phân giải đầy đủ (1080p)
+│   ├── video-social-16x9.mp4 # Mạng xã hội (ngang)
+│   ├── video-social-9x16.mp4 # Mạng xã hội (dọc)
+│   └── video-social-1x1.mp4  # Mạng xã hội (vuông)
+└── metadata.json             # Thông số video, cài đặt render
 ```
 
-**Workflow Phases:**
+**Các Giai Đoạn Quy Trình:**
 
-**Phase 1: Script Generation** (2-3 min)
+**Giai Đoạn 1: Tạo Script** (2-3 phút)
 ```
-✓ Analyzing video concept...
-✓ Researching product/feature details from codebase
-✓ Generating hook, body, and call-to-action
-✓ Optimizing for [30/60/90] second format
-✓ Script saved: /assets/videos/2024-12-30-api-demo/script.md
-```
-
-**Phase 2: Storyboard Creation** (3-5 min)
-```
-✓ Breaking script into visual scenes (4 scenes)
-✓ Generating scene descriptions and visual references
-✓ Creating shot list with camera angles and transitions
-✓ Storyboard saved: /assets/videos/2024-12-30-api-demo/storyboard.md
+✓ Đang phân tích ý tưởng video...
+✓ Đang nghiên cứu chi tiết sản phẩm/tính năng từ codebase
+✓ Đang tạo hook, nội dung và call-to-action
+✓ Đang tối ưu cho định dạng [30/60/90] giây
+✓ Script đã lưu: /assets/videos/2024-12-30-api-demo/script.md
 ```
 
-**Phase 3: Video Generation** (10-15 min)
+**Giai Đoạn 2: Tạo Storyboard** (3-5 phút)
 ```
-✓ Generating Scene 1: Intro hook with product logo (Gemini Veo 3.1)
-✓ Generating Scene 2: Problem visualization (Imagen 4 + Veo 3.1)
-✓ Generating Scene 3: Dashboard demo walkthrough (Screen capture + Veo 3.1)
-✓ Generating Scene 4: Call-to-action with signup URL
-```
-
-**Phase 4: Assembly & Export** (2-3 min)
-```
-✓ Synthesizing voice-over (ElevenLabs / Google TTS)
-✓ Adding background music (royalty-free library)
-✓ Applying transitions and effects
-✓ Rendering 4 aspect ratios (16:9, 9:16, 1:1, master)
-✓ Compressing for web delivery (H.265, target 5MB)
+✓ Đang chia script thành cảnh trực quan (4 cảnh)
+✓ Đang tạo mô tả cảnh và tham chiếu trực quan
+✓ Đang tạo danh sách shot với góc máy và chuyển cảnh
+✓ Storyboard đã lưu: /assets/videos/2024-12-30-api-demo/storyboard.md
 ```
 
-**Tips:**
-- Keep videos 30-90 seconds for maximum engagement
-- Reference existing product screenshots for visual consistency
-- Review storyboard before video generation (saves rendering time)
-- Use `--fast` flag for draft-quality previews
+**Giai Đoạn 3: Tạo Video** (10-15 phút)
+```
+✓ Đang tạo Cảnh 1: Hook mở đầu với logo sản phẩm (Gemini Veo 3.1)
+✓ Đang tạo Cảnh 2: Trực quan hóa vấn đề (Imagen 4 + Veo 3.1)
+✓ Đang tạo Cảnh 3: Hướng dẫn dashboard demo (Quay màn hình + Veo 3.1)
+✓ Đang tạo Cảnh 4: Call-to-action với URL đăng ký
+```
+
+**Giai Đoạn 4: Lắp Ráp & Xuất** (2-3 phút)
+```
+✓ Đang tổng hợp lồng tiếng (ElevenLabs / Google TTS)
+✓ Đang thêm nhạc nền (thư viện miễn phí bản quyền)
+✓ Đang áp dụng hiệu ứng chuyển cảnh
+✓ Đang render 4 tỷ lệ khung hình (16:9, 9:16, 1:1, master)
+✓ Đang nén cho phân phối web (H.265, mục tiêu 5MB)
+```
+
+**Mẹo:**
+- Giữ video 30-90 giây để tương tác tối đa
+- Tham chiếu ảnh chụp màn hình sản phẩm hiện có để nhất quán trực quan
+- Xem xét storyboard trước khi tạo video (tiết kiệm thời gian render)
+- Sử dụng cờ `--fast` cho bản xem trước chất lượng nháp
 
 ---
 
-### /video:script - Script Generation
+### /video:script - Tạo Script
 
-Generate video scripts optimized for marketing messages and platform requirements.
+Tạo script video được tối ưu cho thông điệp marketing và yêu cầu nền tảng.
 
-**Syntax:**
+**Cú pháp:**
 ```bash
-/video:script "<video concept>" [--duration=<seconds>] [--platform=<platform>]
+/video:script "<ý tưởng video>" [--duration=<giây>] [--platform=<nền-tảng>]
 ```
 
-**Platforms:**
-- `youtube` - YouTube video (optimized for watch time)
-- `instagram` - Instagram Reel/Story (15-60s, vertical)
-- `tiktok` - TikTok video (15-60s, hook-first)
-- `linkedin` - LinkedIn video (30-120s, professional tone)
-- `twitter` - Twitter/X video (30-45s, captions required)
-- `web` - Website embed (any duration, high-quality)
+**Nền tảng:**
+- `youtube` - Video YouTube (tối ưu cho thời gian xem)
+- `instagram` - Instagram Reel/Story (15-60s, dọc)
+- `tiktok` - Video TikTok (15-60s, hook đầu tiên)
+- `linkedin` - Video LinkedIn (30-120s, tông chuyên nghiệp)
+- `twitter` - Video Twitter/X (30-45s, yêu cầu phụ đề)
+- `web` - Nhúng website (bất kỳ thời lượng, chất lượng cao)
 
-**What It Does:**
-1. Analyzes target platform requirements and best practices
-2. Structures script with proven formula (Hook → Value → CTA)
-3. Optimizes pacing for viewer attention span
-4. Includes on-screen text suggestions and visual cues
-5. Generates alternative versions for A/B testing
+**Chức năng:**
+1. Phân tích yêu cầu và thực hành tốt nhất của nền tảng mục tiêu
+2. Cấu trúc script với công thức đã được chứng minh (Hook → Value → CTA)
+3. Tối ưu nhịp độ cho khoảng chú ý của người xem
+4. Bao gồm gợi ý văn bản trên màn hình và tín hiệu trực quan
+5. Tạo phiên bản thay thế cho kiểm tra A/B
 
-**Examples:**
+**Ví dụ:**
 ```bash
-# YouTube explainer
-/video:script "how our API handles rate limiting" --duration=90 --platform=youtube
+# Giải thích YouTube
+/video:script "cách API của chúng tôi xử lý giới hạn tốc độ" --duration=90 --platform=youtube
 
 # Instagram Reel
-/video:script "3 tips for better API security" --duration=30 --platform=instagram
+/video:script "3 mẹo để bảo mật API tốt hơn" --duration=30 --platform=instagram
 
-# LinkedIn product announcement
-/video:script "introducing our enterprise plan features" --platform=linkedin
+# Thông báo sản phẩm LinkedIn
+/video:script "giới thiệu tính năng gói doanh nghiệp" --platform=linkedin
 ```
 
-**Script Output Format:**
+**Định Dạng Đầu Ra Script:**
 
 ```markdown
-# Video Script: API Rate Limiting Demo
+# Script Video: Demo Giới Hạn Tốc Độ API
 
-**Platform**: YouTube
-**Duration**: 90 seconds
-**Format**: Explainer / Product Demo
-**Tone**: Technical but accessible
-**Target Audience**: Developers, DevOps engineers
-
----
-
-## Hook (0:00-0:07, 7 seconds)
-
-**Visual**: Dashboard showing API traffic spike, then smooth regulation
-**Voice-Over**: "Your API just got 10,000 requests in 10 seconds. What happens next?"
-**On-Screen Text**: "API Overload → Your Solution"
+**Nền tảng**: YouTube
+**Thời lượng**: 90 giây
+**Định dạng**: Giải thích / Demo Sản phẩm
+**Tông giọng**: Kỹ thuật nhưng dễ hiểu
+**Đối tượng mục tiêu**: Developer, kỹ sư DevOps
 
 ---
 
-## Problem (0:08-0:25, 17 seconds)
+## Hook (0:00-0:07, 7 giây)
 
-**Visual**: Split screen showing crashed server vs. rate-limited server
-**Voice-Over**: "Without rate limiting, your infrastructure crumbles. With it, your service stays online even during traffic spikes."
-**B-Roll**: Quick cuts of error pages, loading spinners, frustrated users
-
----
-
-## Solution (0:26-0:70, 44 seconds)
-
-**Scene 1 (0:26-0:40)**: Dashboard walkthrough
-**Voice-Over**: "Our rate limiting dashboard gives you real-time control. Set limits per user, per endpoint, or globally."
-**On-Screen**: Cursor clicking through settings, graphs updating
-
-**Scene 2 (0:41-0:55)**: Code example
-**Voice-Over**: "Integrate in 3 lines of code. Configure in seconds."
-**On-Screen**: Code snippet with syntax highlighting
-
-**Scene 3 (0:56-0:70)**: Results visualization
-**Voice-Over**: "See the impact instantly. Monitor throttled requests, adjust on the fly, and keep your API healthy."
-**On-Screen**: Graphs showing controlled traffic flow
+**Hình ảnh**: Dashboard hiển thị tăng đột biến traffic API, sau đó điều chỉnh mượt mà
+**Lồng tiếng**: "API của bạn vừa nhận 10.000 yêu cầu trong 10 giây. Điều gì xảy ra tiếp theo?"
+**Văn bản trên màn hình**: "API Quá tải → Giải pháp của bạn"
 
 ---
 
-## Call-to-Action (0:71-0:90, 19 seconds)
+## Vấn đề (0:08-0:25, 17 giây)
 
-**Visual**: Product logo, signup URL prominently displayed
-**Voice-Over**: "Try it free for 14 days. No credit card required. Link in description."
-**On-Screen Text**: "Start Free Trial → example.com/signup"
-**Background Music**: Fade out, upbeat ending
+**Hình ảnh**: Màn hình chia đôi hiển thị server bị crash vs. server có giới hạn tốc độ
+**Lồng tiếng**: "Không có giới hạn tốc độ, hạ tầng của bạn sụp đổ. Có nó, dịch vụ của bạn vẫn online ngay cả khi traffic tăng đột biến."
+**B-Roll**: Cắt nhanh trang lỗi, loading spinner, người dùng thất vọng
 
 ---
 
-## Production Notes
+## Giải pháp (0:26-0:70, 44 giây)
 
-- **Pacing**: Fast cuts (4-6 second scenes) to maintain attention
-- **Captions**: Required for sound-off viewing (80% watch muted)
-- **Thumbnail**: Dashboard screenshot with "Rate Limiting" text overlay
-- **SEO Title**: "API Rate Limiting Explained in 90 Seconds | Product Demo"
-- **Description**: Include timestamps, links, and keyword-rich summary
+**Cảnh 1 (0:26-0:40)**: Hướng dẫn dashboard
+**Lồng tiếng**: "Dashboard giới hạn tốc độ của chúng tôi cho bạn kiểm soát thời gian thực. Đặt giới hạn theo người dùng, theo endpoint hoặc toàn cục."
+**Trên màn hình**: Con trỏ click qua cài đặt, đồ thị cập nhật
+
+**Cảnh 2 (0:41-0:55)**: Ví dụ code
+**Lồng tiếng**: "Tích hợp trong 3 dòng code. Cấu hình trong vài giây."
+**Trên màn hình**: Đoạn code với làm nổi bật cú pháp
+
+**Cảnh 3 (0:56-0:70)**: Trực quan hóa kết quả
+**Lồng tiếng**: "Xem tác động ngay lập tức. Giám sát yêu cầu bị điều tiết, điều chỉnh nhanh chóng và giữ API khỏe mạnh."
+**Trên màn hình**: Đồ thị hiển thị dòng traffic được kiểm soát
+
+---
+
+## Call-to-Action (0:71-0:90, 19 giây)
+
+**Hình ảnh**: Logo sản phẩm, URL đăng ký hiển thị nổi bật
+**Lồng tiếng**: "Dùng thử miễn phí 14 ngày. Không yêu cầu thẻ tín dụng. Link trong mô tả."
+**Văn bản trên màn hình**: "Bắt đầu dùng thử miễn phí → example.com/signup"
+**Nhạc nền**: Fade out, kết thúc sôi động
+
+---
+
+## Ghi Chú Sản Xuất
+
+- **Nhịp độ**: Cắt nhanh (cảnh 4-6 giây) để duy trì chú ý
+- **Phụ đề**: Yêu cầu để xem không có âm thanh (80% xem tắt tiếng)
+- **Thumbnail**: Ảnh chụp màn hình dashboard với overlay chữ "Rate Limiting"
+- **Tiêu đề SEO**: "Giới Hạn Tốc Độ API Được Giải Thích Trong 90 Giây | Demo Sản Phẩm"
+- **Mô tả**: Bao gồm timestamp, liên kết và tóm tắt giàu từ khóa
 ```
 
-**Script Formulas by Platform:**
+**Công Thức Script Theo Nền Tảng:**
 
-| Platform | Formula | Key Elements |
+| Nền tảng | Công thức | Yếu tố chính |
 |----------|---------|--------------|
-| **YouTube** | Hook (5s) → Problem (15s) → Solution (60s) → CTA (10s) | Longer form, educational, SEO-optimized |
-| **Instagram** | Hook (3s) → Value (20s) → CTA (7s) | Vertical, captions, trending audio |
-| **TikTok** | Hook (2s) → Deliver (25s) → CTA (3s) | Ultra-fast pacing, entertainment > education |
-| **LinkedIn** | Context (10s) → Insight (40s) → CTA (10s) | Professional tone, B2B focus |
-| **Twitter/X** | Hook (3s) → Point (35s) → CTA (7s) | Captions required, news-jacking |
+| **YouTube** | Hook (5s) → Vấn đề (15s) → Giải pháp (60s) → CTA (10s) | Dài hơn, giáo dục, tối ưu SEO |
+| **Instagram** | Hook (3s) → Giá trị (20s) → CTA (7s) | Dọc, phụ đề, âm thanh trending |
+| **TikTok** | Hook (2s) → Deliver (25s) → CTA (3s) | Nhịp cực nhanh, giải trí > giáo dục |
+| **LinkedIn** | Bối cảnh (10s) → Insight (40s) → CTA (10s) | Tông chuyên nghiệp, tập trung B2B |
+| **Twitter/X** | Hook (3s) → Điểm (35s) → CTA (7s) | Yêu cầu phụ đề, news-jacking |
 
-**Tips:**
-- Start with a visual hook (not just text intro)
-- Keep sentences short for voice-over clarity
-- Include on-screen text for accessibility and muted viewing
-- End with strong CTA (not weak "learn more")
+**Mẹo:**
+- Bắt đầu với hook trực quan (không chỉ giới thiệu văn bản)
+- Giữ câu ngắn để lồng tiếng rõ ràng
+- Bao gồm văn bản trên màn hình cho khả năng truy cập và xem tắt tiếng
+- Kết thúc với CTA mạnh (không phải "tìm hiểu thêm" yếu)
 
 ---
 
-### /video:storyboard - Visual Storyboarding
+### /video:storyboard - Storyboard Trực Quan
 
-Create detailed visual storyboards from scripts for pre-production planning.
+Tạo storyboard trực quan chi tiết từ script cho lập kế hoạch tiền sản xuất.
 
-**Syntax:**
+**Cú pháp:**
 ```bash
-/video:storyboard <script-file>
+/video:storyboard <file-script>
 ```
 
-**What It Does:**
-1. Parses script into individual scenes
-2. Generates visual descriptions for each scene
-3. Creates reference images using Imagen 4
-4. Specifies camera angles, transitions, and effects
-5. Outputs interactive HTML storyboard preview
+**Chức năng:**
+1. Phân tích script thành các cảnh riêng lẻ
+2. Tạo mô tả trực quan cho mỗi cảnh
+3. Tạo hình ảnh tham chiếu sử dụng Imagen 4
+4. Chỉ định góc máy, chuyển cảnh và hiệu ứng
+5. Xuất bản xem trước storyboard HTML tương tác
 
-**Examples:**
+**Ví dụ:**
 ```bash
-# Storyboard from generated script
+# Storyboard từ script được tạo
 /video:storyboard /assets/videos/2024-12-30-api-demo/script.md
 
-# Storyboard from custom script
+# Storyboard từ script tùy chỉnh
 /video:storyboard /projects/marketing/scripts/product-launch.md
 ```
 
-**Storyboard Output:**
+**Đầu Ra Storyboard:**
 
-**Markdown Version** (`storyboard.md`):
+**Phiên Bản Markdown** (`storyboard.md`):
 ```markdown
-# Storyboard: API Rate Limiting Demo
+# Storyboard: Demo Giới Hạn Tốc Độ API
 
-## Scene 1: Opening Hook (0:00-0:07)
+## Cảnh 1: Hook Mở Đầu (0:00-0:07)
 
-**Shot Type**: Extreme close-up → Wide shot
-**Duration**: 7 seconds
-**Camera Movement**: Zoom out dramatically
+**Loại Shot**: Cận cảnh cực gần → Góc rộng
+**Thời lượng**: 7 giây
+**Di chuyển máy**: Zoom out ấn tượng
 
-**Visual Description**:
-Dashboard interface fills screen, showing API request counter rapidly increasing (10,000 in 10 seconds). Red warning indicators flash. Camera zooms out to reveal controlled graph with smooth regulation line.
+**Mô Tả Trực Quan**:
+Giao diện dashboard lấp đầy màn hình, hiển thị bộ đếm yêu cầu API tăng nhanh (10.000 trong 10 giây). Chỉ báo cảnh báo đỏ nhấp nháy. Máy zoom out để hiển thị đồ thị được kiểm soát với đường điều chỉnh mượt mà.
 
-**On-Screen Elements**:
-- Request counter (animated numbers)
-- Warning icon (pulsing red)
-- Text overlay: "API Overload"
-- Smooth transition to "Your Solution" text
+**Yếu Tố Trên Màn Hình**:
+- Bộ đếm yêu cầu (số động)
+- Biểu tượng cảnh báo (đỏ nhấp nháy)
+- Overlay chữ: "API Quá tải"
+- Chuyển tiếp mượt mà sang chữ "Giải pháp của bạn"
 
-**Color Palette**: Dark UI (#1a1a1a) with accent red (#FF4444) and green (#44FF44)
+**Bảng Màu**: UI tối (#1a1a1a) với accent đỏ (#FF4444) và xanh lá (#44FF44)
 
-**Audio**:
-- Voice-Over: "Your API just got 10,000 requests in 10 seconds. What happens next?"
-- Sound FX: Rapid clicking, alert beep
-- Background: Subtle tension-building music
+**Âm thanh**:
+- Lồng tiếng: "API của bạn vừa nhận 10.000 yêu cầu trong 10 giây. Điều gì xảy ra tiếp theo?"
+- Hiệu ứng âm thanh: Click nhanh, tiếng bíp cảnh báo
+- Nền: Nhạc xây dựng căng thẳng tinh tế
 
-**Technical Notes**:
-- Screen resolution: 1920x1080
-- Frame rate: 60fps for smooth counter animation
-- Export reference image: scene-01-reference.png
+**Ghi Chú Kỹ Thuật**:
+- Độ phân giải màn hình: 1920x1080
+- Frame rate: 60fps cho hoạt ảnh bộ đếm mượt mà
+- Xuất hình ảnh tham chiếu: scene-01-reference.png
 
 ---
 
-## Scene 2: Problem Visualization (0:08-0:25)
+## Cảnh 2: Trực Quan Hóa Vấn Đề (0:08-0:25)
 
-**Shot Type**: Split screen
-**Duration**: 17 seconds
-**Camera Movement**: Static, cut between sides
+**Loại Shot**: Màn hình chia đôi
+**Thời lượng**: 17 giây
+**Di chuyển máy**: Tĩnh, cắt giữa các bên
 
-**Visual Description**:
-Left side: Server infrastructure diagram with red error indicators, crashed server icons, 503 error pages.
-Right side: Same infrastructure but with green success indicators, rate limiter icon protecting servers.
+**Mô Tả Trực Quan**:
+Bên trái: Sơ đồ hạ tầng server với chỉ báo lỗi đỏ, biểu tượng server bị crash, trang lỗi 503.
+Bên phải: Cùng hạ tầng nhưng với chỉ báo thành công xanh lá, biểu tượng rate limiter bảo vệ server.
 
-**On-Screen Elements**:
-- Split divider line (vertical)
-- Left label: "Without Rate Limiting"
-- Right label: "With Rate Limiting"
-- Icons: Server racks, error symbols, checkmarks
+**Yếu Tố Trên Màn Hình**:
+- Đường chia (dọc)
+- Nhãn trái: "Không có Giới Hạn Tốc Độ"
+- Nhãn phải: "Có Giới Hạn Tốc Độ"
+- Biểu tượng: Rack server, ký hiệu lỗi, dấu kiểm
 
-**B-Roll Footage**:
-- Quick cuts (2-second each): Loading spinner, error page, frustrated user, working dashboard
+**Footage B-Roll**:
+- Cắt nhanh (2 giây mỗi cái): Loading spinner, trang lỗi, người dùng thất vọng, dashboard hoạt động
 
-**Audio**:
-- Voice-Over: "Without rate limiting, your infrastructure crumbles..."
-- Sound FX: Crashing sound (left side), stable hum (right side)
-- Background: Maintain tension, slight resolution on right side
+**Âm thanh**:
+- Lồng tiếng: "Không có giới hạn tốc độ, hạ tầng của bạn sụp đổ..."
+- Hiệu ứng âm thanh: Âm thanh crash (bên trái), tiếng ổn định (bên phải)
+- Nền: Duy trì căng thẳng, giải quyết nhẹ ở bên phải
 
-**Technical Notes**:
-- Generate images with Imagen 4: before/after comparison
-- Use red/green color coding for clarity
-- Export reference: scene-02-split-screen.png
+**Ghi Chú Kỹ Thuật**:
+- Tạo hình ảnh với Imagen 4: so sánh trước/sau
+- Sử dụng mã màu đỏ/xanh để rõ ràng
+- Xuất tham chiếu: scene-02-split-screen.png
 
-[... Additional scenes 3-4 ...]
+[... Các cảnh 3-4 bổ sung ...]
 ```
 
-**HTML Interactive Preview** (`storyboard.html`):
+**Bản Xem Trước HTML Tương Tác** (`storyboard.html`):
 
-Features:
-- Timeline scrubber with scene thumbnails
-- Click scene to see full visual reference image
-- Audio preview buttons for voice-over
-- Shot type and camera movement annotations
-- Export to PDF for client review
+Tính năng:
+- Thanh scrub timeline với thumbnail cảnh
+- Click cảnh để xem hình ảnh tham chiếu đầy đủ
+- Nút xem trước âm thanh cho lồng tiếng
+- Chú thích loại shot và di chuyển máy
+- Xuất sang PDF để khách hàng xem xét
 
-**Reference Images Generated:**
+**Hình Ảnh Tham Chiếu Được Tạo:**
 
-Using Imagen 4 to create visual references for each scene:
+Sử dụng Imagen 4 để tạo tham chiếu trực quan cho mỗi cảnh:
 
 ```
 /assets/videos/2024-12-30-api-demo/storyboard/
@@ -338,131 +339,131 @@ Using Imagen 4 to create visual references for each scene:
 ├── scene-02-problem-viz.png
 ├── scene-03-solution-demo.png
 ├── scene-04-cta.png
-└── storyboard-overview.png (all scenes in grid)
+└── storyboard-overview.png (tất cả cảnh trong lưới)
 ```
 
-**Storyboard Templates:**
+**Mẫu Storyboard:**
 
-Pre-built templates for common video types:
+Mẫu được xây dựng sẵn cho các loại video phổ biến:
 
-- **Product Demo**: Hook → Features (3-4 scenes) → Pricing → CTA
-- **Explainer**: Problem → Solution → How It Works → Benefits → CTA
-- **Testimonial**: Customer intro → Before state → After state → Quote → CTA
-- **Tutorial**: Intro → Step 1-3 → Recap → CTA
-- **Social Proof**: Hook → Stats → Case studies → Social evidence → CTA
+- **Demo Sản Phẩm**: Hook → Tính năng (3-4 cảnh) → Giá → CTA
+- **Giải Thích**: Vấn đề → Giải pháp → Cách hoạt động → Lợi ích → CTA
+- **Testimonial**: Giới thiệu khách hàng → Trước → Sau → Trích dẫn → CTA
+- **Hướng dẫn**: Giới thiệu → Bước 1-3 → Tóm tắt → CTA
+- **Social Proof**: Hook → Thống kê → Case study → Bằng chứng xã hội → CTA
 
-**Tips:**
-- Review storyboard with stakeholders before expensive video generation
-- Use reference images to align on visual style early
-- Iterate on storyboard (fast) before video generation (slow)
-- Export PDF storyboard for offline client review
+**Mẹo:**
+- Xem xét storyboard với stakeholder trước khi tạo video đắt đỏ
+- Sử dụng hình ảnh tham chiếu để thống nhất phong cách trực quan sớm
+- Lặp lại trên storyboard (nhanh) trước khi tạo video (chậm)
+- Xuất storyboard PDF để khách hàng xem xét offline
 
 ---
 
-## Technical Requirements
+## Yêu Cầu Kỹ Thuật
 
-### Google Gemini API Setup
+### Thiết Lập Google Gemini API
 
-**Required APIs:**
-- **Gemini Veo 3.1** - Video generation
-- **Imagen 4** - Image generation for storyboards and B-roll
-- **Google Text-to-Speech** - Voice-over synthesis (optional, can use ElevenLabs)
+**API Yêu Cầu:**
+- **Gemini Veo 3.1** - Tạo video
+- **Imagen 4** - Tạo hình ảnh cho storyboard và B-roll
+- **Google Text-to-Speech** - Tổng hợp lồng tiếng (tùy chọn, có thể dùng ElevenLabs)
 
-**Environment Variables:**
+**Biến Môi Trường:**
 ```bash
 # Google Cloud Project
 GOOGLE_CLOUD_PROJECT=your-project-id
 GEMINI_API_KEY=your-gemini-api-key
 
-# Video generation settings
+# Cài đặt tạo video
 GEMINI_VEO_MODEL=veo-3.1-preview
 IMAGEN_MODEL=imagen-4
 
-# Voice synthesis (optional)
-ELEVENLABS_API_KEY=your-elevenlabs-key  # Alternative to Google TTS
+# Tổng hợp giọng nói (tùy chọn)
+ELEVENLABS_API_KEY=your-elevenlabs-key  # Thay thế cho Google TTS
 ```
 
-**API Quotas:**
+**Hạn Ngạch API:**
 
-| Resource | Free Tier | Paid Tier | Notes |
+| Tài nguyên | Gói miễn phí | Gói trả phí | Ghi chú |
 |----------|-----------|-----------|-------|
-| Gemini Veo 3.1 | 10 videos/month | Unlimited | Max 90s per video |
-| Imagen 4 | 100 images/month | Unlimited | Storyboard references |
-| Google TTS | 1M chars/month | Pay-as-you-go | Voice-over synthesis |
+| Gemini Veo 3.1 | 10 video/tháng | Không giới hạn | Tối đa 90s mỗi video |
+| Imagen 4 | 100 hình/tháng | Không giới hạn | Tham chiếu storyboard |
+| Google TTS | 1M ký tự/tháng | Trả theo sử dụng | Tổng hợp lồng tiếng |
 
-### Video Specifications
+### Thông Số Video
 
-**Generated Video Formats:**
+**Định Dạng Video Được Tạo:**
 
-| Output | Resolution | Aspect Ratio | Bitrate | File Size (60s) |
+| Đầu ra | Độ phân giải | Tỷ lệ khung hình | Bitrate | Kích thước file (60s) |
 |--------|-----------|--------------|---------|-----------------|
 | Master | 1920x1080 | 16:9 | 8 Mbps | ~60 MB |
-| Social (Landscape) | 1920x1080 | 16:9 | 4 Mbps | ~30 MB |
-| Social (Portrait) | 1080x1920 | 9:16 | 4 Mbps | ~30 MB |
-| Social (Square) | 1080x1080 | 1:1 | 3 Mbps | ~22 MB |
-| Web Optimized | 1280x720 | 16:9 | 2 Mbps | ~15 MB |
+| Social (Ngang) | 1920x1080 | 16:9 | 4 Mbps | ~30 MB |
+| Social (Dọc) | 1080x1920 | 9:16 | 4 Mbps | ~30 MB |
+| Social (Vuông) | 1080x1080 | 1:1 | 3 Mbps | ~22 MB |
+| Tối ưu Web | 1280x720 | 16:9 | 2 Mbps | ~15 MB |
 
-**Video Codec Settings:**
-- Codec: H.265 (HEVC) for better compression
-- Frame Rate: 30fps (social) / 60fps (product demos)
-- Audio: AAC 128kbps stereo
-- Color Space: sRGB (web) / Rec.709 (broadcast)
+**Cài Đặt Codec Video:**
+- Codec: H.265 (HEVC) để nén tốt hơn
+- Frame Rate: 30fps (mạng xã hội) / 60fps (demo sản phẩm)
+- Âm thanh: AAC 128kbps stereo
+- Không gian màu: sRGB (web) / Rec.709 (phát sóng)
 
 ---
 
-## Related Skills
+## Kỹ Năng Liên Quan
 
-The `/video` commands activate these skills automatically:
+Các lệnh `/video` tự động kích hoạt các kỹ năng này:
 
-- **[ai-multimodal](/docs/marketing/skills/ai-multimodal)** - Gemini Veo 3.1 and Imagen 4 integration
-- **[media-processing](/docs/marketing/skills/media-processing)** - FFmpeg for video editing and transcoding
-- **[copywriting](/docs/marketing/skills/copywriting)** - Script writing and storytelling
-- **[content-marketing](/docs/marketing/skills/content-marketing)** - Video marketing strategy
+- **[ai-multimodal](/docs/marketing/skills/ai-multimodal)** - Tích hợp Gemini Veo 3.1 và Imagen 4
+- **[media-processing](/docs/marketing/skills/media-processing)** - FFmpeg để chỉnh sửa và transcode video
+- **[copywriting](/docs/marketing/skills/copywriting)** - Viết script và storytelling
+- **[content-marketing](/docs/marketing/skills/content-marketing)** - Chiến lược marketing video
 
-## Related Agents
+## Agent Liên Quan
 
-These agents collaborate during `/video` workflows:
+Các agent này cộng tác trong quy trình `/video`:
 
-- **[copywriter](/docs/marketing/agents/copywriter)** - Writes compelling video scripts
-- **[ui-ux-designer](/docs/marketing/agents/ui-ux-designer)** - Creates visual storyboards
+- **[copywriter](/docs/marketing/agents/copywriter)** - Viết script video hấp dẫn
+- **[ui-ux-designer](/docs/marketing/agents/ui-ux-designer)** - Tạo storyboard trực quan
 
-## Workflows
+## Quy Trình Làm Việc
 
-See complete workflow guide:
+Xem hướng dẫn quy trình đầy đủ:
 
-- [Video Production Workflow](/docs/marketing/workflows/dashboard-workflow) - End-to-end video creation process
+- [Quy Trình Sản Xuất Video](/docs/marketing/workflows/dashboard-workflow) - Quy trình tạo video từ đầu đến cuối
 
-## Troubleshooting
+## Khắc Phục Sự Cố
 
-### Video Generation Failing
+### Tạo Video Thất Bại
 
-**Problem**: Gemini Veo 3.1 returns errors during video generation.
+**Vấn đề**: Gemini Veo 3.1 trả về lỗi trong quá trình tạo video.
 
-**Solutions**:
-1. **Check API quota**: Verify you haven't exceeded free tier limits (10 videos/month)
-2. **Validate API key**: `curl -H "Authorization: Bearer $GEMINI_API_KEY" https://generativelanguage.googleapis.com/v1/models`
-3. **Reduce video duration**: Try 30s instead of 90s
-4. **Simplify scene descriptions**: Remove complex visual effects or transitions
-5. **Check content policy**: Ensure scenes don't violate Google's content policy
+**Giải pháp**:
+1. **Kiểm tra hạn ngạch API**: Xác minh bạn chưa vượt quá giới hạn gói miễn phí (10 video/tháng)
+2. **Xác thực API key**: `curl -H "Authorization: Bearer $GEMINI_API_KEY" https://generativelanguage.googleapis.com/v1/models`
+3. **Giảm thời lượng video**: Thử 30s thay vì 90s
+4. **Đơn giản hóa mô tả cảnh**: Loại bỏ hiệu ứng hoặc chuyển cảnh phức tạp
+5. **Kiểm tra chính sách nội dung**: Đảm bảo cảnh không vi phạm chính sách nội dung của Google
 
-### Poor Video Quality
+### Chất Lượng Video Kém
 
-**Problem**: Generated videos look pixelated or have artifacts.
+**Vấn đề**: Video được tạo trông bị pixelated hoặc có artifacts.
 
-**Solutions**:
-1. **Use master quality**: Don't use `--fast` flag for final renders
-2. **Increase bitrate**: Add `--bitrate=10M` for higher quality
-3. **Simplify visual complexity**: Reduce number of moving elements per scene
-4. **Use reference images**: Provide visual examples in storyboard
-5. **Iterate on prompts**: Refine scene descriptions for better AI interpretation
+**Giải pháp**:
+1. **Sử dụng chất lượng master**: Không dùng cờ `--fast` cho render cuối cùng
+2. **Tăng bitrate**: Thêm `--bitrate=10M` để chất lượng cao hơn
+3. **Đơn giản hóa độ phức tạp trực quan**: Giảm số lượng yếu tố chuyển động mỗi cảnh
+4. **Sử dụng hình ảnh tham chiếu**: Cung cấp ví dụ trực quan trong storyboard
+5. **Lặp lại prompt**: Tinh chỉnh mô tả cảnh để AI hiểu tốt hơn
 
-### Storyboard Images Not Generating
+### Hình Ảnh Storyboard Không Tạo
 
-**Problem**: Imagen 4 fails to create reference images.
+**Vấn đề**: Imagen 4 không tạo được hình ảnh tham chiếu.
 
-**Solutions**:
-1. **Check quota**: Verify Imagen 4 API quota (100 images/month free tier)
-2. **Validate project ID**: Ensure `GOOGLE_CLOUD_PROJECT` is correct
-3. **Simplify descriptions**: Make scene descriptions more concise and specific
-4. **Use examples**: Reference existing product screenshots instead of generating
-5. **Manual upload**: Create reference images manually and add to `/storyboard/` directory
+**Giải pháp**:
+1. **Kiểm tra hạn ngạch**: Xác minh hạn ngạch API Imagen 4 (100 hình/tháng gói miễn phí)
+2. **Xác thực project ID**: Đảm bảo `GOOGLE_CLOUD_PROJECT` đúng
+3. **Đơn giản hóa mô tả**: Làm mô tả cảnh ngắn gọn và cụ thể hơn
+4. **Sử dụng ví dụ**: Tham chiếu ảnh chụp màn hình sản phẩm hiện có thay vì tạo
+5. **Tải lên thủ công**: Tạo hình ảnh tham chiếu thủ công và thêm vào thư mục `/storyboard/`

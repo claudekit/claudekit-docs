@@ -82,13 +82,22 @@ claudekit-docs is Astro v5-based static documentation site supporting multiple C
 ## Project Statistics
 
 **Content**:
-- 280+ total documentation pages (166 English + 114 Vietnamese baseline + engineer migration)
+- **451 total documentation pages** (275 English + 176 Vietnamese)
+  - **English**: 275 pages across 8 kit-agnostic categories
+  - **Vietnamese**: 176 pages (64% coverage, targeting 100%)
   - **Engineer Kit**: 138 pages (18 agents + 66 commands + 49 skills + 4 config + 1 index)
-  - **Marketing Kit**: 88 new pages (agents, commands, skills, workflows)
-  - **CLI Kit**: 9 new pages (commands, setup, reference)
-- 12+ logical content sections (kit-agnostic organization)
+  - **Marketing Kit**: 88 pages (agents, commands, skills, workflows, features)
+  - **CLI Kit**: 9 pages (commands, setup, reference)
+  - **Getting Started**: Complete onboarding guides (installation, quick-start, project types)
+  - **Workflows**: Cross-kit workflow documentation (20+ guides)
+  - **Tools & Support**: Tools directory, FAQ, troubleshooting, community resources
+  - **Changelog**: Version history and release notes
+- **8 main content categories** (kit-agnostic organization)
+- **20 component-level categories** (agents, commands, skills, workflows, etc.)
 - Kit-specific content with shared architecture documentation
-- ~400KB+ documentation content (marketing + CLI + engineer migration)
+- **~600KB+ documentation content** (text + images + metadata)
+- **Build Status**: ✅ PASSING (464 pages generated, 0 errors/warnings)
+- **Quality Score**: 95% (Excellent)
 - ✅ Complete Phase 01-06 core platform (IA, navigation, content, search)
 - ✅ Complete Phase 09 infrastructure (multi-kit architecture)
 - ✅ Phase 09A Engineer docs migration: ALL 7 PHASES COMPLETE (100%)
@@ -102,92 +111,104 @@ claudekit-docs is Astro v5-based static documentation site supporting multiple C
   - **Build Status**: 464 pages generated, 0 errors, all validation passed
   - **Quality**: 95% (Excellent), Production-ready for deployment
   - **Next**: Commit → PR → Merge to dev → Deploy
-- 🔄 Phase 09 visual assets: 60% complete (9/15 diagrams)
-- 🔄 Phase 09 translations: 72% complete (63/88 Vietnamese files)
 
 **Source Code**:
-- 18 source files (Astro, TypeScript, React)
-- 6 components (3 Astro, 3 React islands)
-- 2 layouts (BaseLayout, DocsLayout)
-- 3 i18n files (locales, ui, utils)
+- **Components**: 20 files
+  - Layout: Header.astro, Sidebar.astro, SidebarNav.astro
+  - React Islands: AIChat.tsx, TableOfContents.tsx, CopyForLLMs.tsx, LanguageSwitcher.tsx, KitSwitcher.tsx, KitContext.tsx
+  - Navigation: DocsNav, GettingStartedNav, CLINav, EngineerNav, MarketingNav, WorkflowsNav, ToolsNav, ChangelogNav, SupportNav
+  - UI: Search.astro (placeholder), AIPanel.astro (disabled)
+- **Layouts**: 2 files (BaseLayout.astro, DocsLayout.astro)
+- **i18n**: 3 files (locales.ts, ui.ts with 18 keys × 2 locales, utils.ts)
+- **Lib**: 1 file (openrouter.ts for AI integration)
+- **Styles**: 1 file (global.css with One Dark Pro theme + CSS variables)
+- **Pages**: 6 files (index, docs/index, docs/[...slug], vi variants)
+- **Configurations**: 4 files (astro.config.mjs, tailwind.config.mjs, tsconfig.json, content/config.ts)
 
 **Infrastructure**:
-- 5 K8s manifests (deployment, service, ingress, configmap)
-- 1 Dockerfile (multi-stage Node 20 Alpine)
-- 14+ docs files in `docs/` directory
+- **K8s manifests**: 5 files (deployment: 2 replicas, service, ingress with TLS, configmap)
+- **Docker**: Multi-stage build (bun:1-alpine builder → node:20-alpine runtime on port 3000)
+- **Deployment**: GitHub Actions CI/CD pipeline (deploy.yml) with Discord notifications
+- **Project Docs**: 13+ files in `docs/` directory (summaries, standards, architecture, roadmap, guidelines)
 
 ## Directory Structure
 
 ```
-/home/kai/claudekit/claudekit-docs/
-├── src/                          # Source code
-│   ├── components/              # UI components
-│   │   ├── AIChat.tsx           # React: Chat interface (backend pending)
-│   │   ├── AIPanel.astro        # Astro: AI panel wrapper
-│   │   ├── Header.astro         # Astro: Top navigation
-│   │   ├── LanguageSwitcher.tsx # React: EN/VI switcher
-│   │   ├── Sidebar.astro        # Astro: Left sidebar container
-│   │   └── SidebarNav.astro     # Astro: Nav tree with section-based logic
+claudekit-docs/
+├── src/                          # Source code (TypeScript + Astro)
+│   ├── components/              # 20 UI components
+│   │   ├── Layout: Header.astro, Sidebar.astro, SidebarNav.astro
+│   │   ├── React Islands: AIChat.tsx, TableOfContents.tsx, CopyForLLMs.tsx,
+│   │   │                 LanguageSwitcher.tsx, KitSwitcher.tsx, KitContext.tsx
+│   │   ├── Navigation: DocsNav, GettingStartedNav, CLINav, EngineerNav,
+│   │   │               MarketingNav, WorkflowsNav, ToolsNav, ChangelogNav, SupportNav
+│   │   └── UI: Search.astro, AIPanel.astro
 │   ├── content/                 # Content collections (Zod validated)
-│   │   ├── docs/                # English docs (section-based organization)
-│   │   │   ├── getting-started/ # 8 onboarding docs (installation, quick-start, project types)
-│   │   │   ├── cli/             # 2 CLI documentation files
-│   │   │   ├── core-concepts/   # 2 architecture and workflow documentation files
-│   │   │   ├── agents/          # 15 agent docs (14 agents + index)
-│   │   │   ├── commands/        # 25 command docs across 9 subcategories
-│   │   │   ├── skills/          # 15 built-in skill documentation files
-│   │   │   ├── use-cases/       # 10 tutorial and example files
-│   │   │   ├── troubleshooting/ # 6 troubleshooting guides
-│   │   │   └── components/      # Future UI component reference (placeholder)
-│   │   ├── docs-vi/             # Vietnamese translations (mirrored section structure)
-│   │   └── config.ts            # Zod schema for frontmatter validation (updated for sections)
-│   ├── i18n/                    # Internationalization
+│   │   ├── docs/                # 275 English docs (8 main categories)
+│   │   │   ├── getting-started/ # Onboarding, installation, quick-start
+│   │   │   ├── cli/             # CLI documentation
+│   │   │   ├── engineer/        # Engineer kit: agents, commands, skills, config
+│   │   │   ├── marketing/       # Marketing kit: agents, commands, skills, workflows, features
+│   │   │   ├── workflows/       # Cross-kit workflow guides (20+ pages)
+│   │   │   ├── tools/           # Tools directory and references
+│   │   │   ├── support/         # FAQ, troubleshooting, community resources
+│   │   │   └── changelog/       # Version history and release notes
+│   │   ├── docs-vi/             # 176 Vietnamese translations (64% coverage)
+│   │   └── config.ts            # Zod schema for frontmatter validation
+│   ├── i18n/                    # Internationalization (3 files)
 │   │   ├── locales.ts           # Locale definitions (en, vi)
-│   │   ├── ui.ts                # Translation strings
-│   │   └── utils.ts             # getLangFromUrl, useTranslations, getLocalizedPath
-│   ├── layouts/                 # Page layouts
+│   │   ├── ui.ts                # 18 translation keys × 2 locales
+│   │   └── utils.ts             # Helper functions for i18n
+│   ├── layouts/                 # Page layouts (2 files)
 │   │   ├── BaseLayout.astro     # HTML shell (meta, fonts, theme)
-│   │   └── DocsLayout.astro     # 3-column: sidebar | content | AI panel
-│   ├── lib/                     # Utilities
-│   │   └── openrouter.ts        # OpenRouter API client (future)
-│   ├── pages/                   # File-based routing
+│   │   └── DocsLayout.astro     # 3-column layout: sidebar | content | AI panel
+│   ├── lib/                     # Utilities (1 file)
+│   │   └── openrouter.ts        # OpenRouter API client for AI
+│   ├── pages/                   # File-based routing (6 files)
 │   │   ├── index.astro          # Homepage
-│   │   ├── docs/[...slug].astro # English doc pages
-│   │   └── vi/docs/[...slug].astro # Vietnamese doc pages
-│   └── styles/                  # Global CSS
-│       └── global.css           # Design tokens, One Dark Pro theme
+│   │   ├── docs/index.astro     # Docs index page
+│   │   ├── docs/[...slug].astro # English doc pages (dynamic routing)
+│   │   ├── vi/index.astro       # Vietnamese homepage
+│   │   ├── vi/docs/index.astro  # Vietnamese docs index
+│   │   └── vi/docs/[...slug].astro # Vietnamese doc pages (dynamic routing)
+│   └── styles/                  # Global CSS (1 file)
+│       └── global.css           # Design tokens, One Dark Pro theme, CSS variables
 ├── public/                      # Static assets
-│   ├── assets/                  # Images (screenshots)
-│   ├── docs/                    # Legacy docs (93+ mirrored pages)
+│   ├── assets/                  # Images and media
 │   ├── favicon.svg              # Site icon
 │   ├── llms.txt                 # LLM context file
-│   ├── logo-*.png               # Logo variants (dark, light, transparent)
-│   └── og-image.png             # Open Graph image
-├── k8s/                         # Kubernetes deployment
-│   ├── configmap.yaml           # Environment variables
-│   ├── deployment.yaml          # 2 replicas, resource limits
-│   ├── ingress.yaml             # nginx-ingress with TLS
+│   ├── llms-full.txt            # Complete documentation export
+│   ├── og-image.png             # Open Graph image
+│   └── logo-*.png               # Logo variants
+├── k8s/                         # Kubernetes deployment (5 files)
+│   ├── configmap.yaml           # Environment configuration
+│   ├── deployment.yaml          # 2 replicas with resource limits
+│   ├── ingress.yaml             # nginx-ingress + TLS
 │   ├── service.yaml             # ClusterIP service
-│   └── README.md                # Deployment instructions
-├── docs/                        # Project documentation
-│   ├── project-changelog.md     # Comprehensive project changelog (NEW)
-│   ├── codebase-summary.md      # This file (updated)
-│   ├── project-roadmap.md       # Development phases and timeline (updated)
-│   ├── code-standards.md        # Coding conventions
-│   ├── design-guidelines.md     # Design system specs (49KB)
-│   ├── deployment-guide.md      # Production deployment
-│   ├── project-overview-pdr.md  # Product requirements
+│   └── README.md                # Deployment guide
+├── docs/                        # Project documentation (13+ files)
+│   ├── codebase-summary.md      # Complete codebase overview (this file)
+│   ├── code-standards.md        # Coding conventions and standards
 │   ├── system-architecture.md   # Technical architecture
-│   └── tech-stack.md            # Technology decisions
+│   ├── project-roadmap.md       # Development phases and timeline
+│   ├── design-guidelines.md     # Design system specifications
+│   ├── project-changelog.md     # Comprehensive changelog
+│   ├── project-overview-pdr.md  # Product requirements
+│   ├── component-navigation-guide.md # Component documentation
+│   ├── engineer-migration-progress.md # Migration status
+│   ├── vietnamese-translation-gaps.md # Translation status
+│   └── phase-*.md               # Phase reports and completion summaries
+├── plans/                       # Planning and tracking
+│   ├── Active plans with detailed phases and reports
+│   └── reports/                 # 85+ organized report files
 ├── .claude/                     # Claude Code workflows
-├── astro.config.mjs             # Astro config (MDX, React, Tailwind, i18n)
-├── CLAUDE.md                    # Claude-specific instructions (171 lines)
-├── Dockerfile                   # Multi-stage build (node:20-alpine)
-├── package.json                 # Dependencies (18 total: 15 prod, 3 dev)
-├── README.md                    # User-facing docs (413 lines)
-├── repomix-output.xml           # Codebase compaction (1M+ tokens)
-├── tailwind.config.mjs          # Tailwind config (CSS var mappings)
-└── tsconfig.json                # TypeScript strict mode
+├── astro.config.mjs             # Astro v5 configuration
+├── CLAUDE.md                    # AI assistant project instructions
+├── Dockerfile                   # Multi-stage build (bun → node)
+├── package.json                 # Dependencies (Astro 5.14.6, React 18.3.1, TypeScript 5.7.3)
+├── tailwind.config.mjs          # Tailwind CSS configuration
+├── tsconfig.json                # TypeScript strict mode
+└── README.md                    # User-facing documentation
 ```
 
 ## Technology Stack

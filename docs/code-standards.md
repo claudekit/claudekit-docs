@@ -1,12 +1,65 @@
 # Code Standards
 
-**Last Updated**: 2025-11-25
-**Version**: 0.0.1
-**Applies To**: claudekit-docs codebase
+**Last Updated**: 2025-12-30
+**Version**: 0.1.0 (Kit-Agnostic Refactor)
+**Applies To**: claudekit-docs codebase (20 components, 8 content categories)
 
 ## Overview
 
 Coding standards for Astro v5 documentation site. Covers file organization, naming conventions, component patterns, content structure, and quality guidelines.
+
+## Codebase Structure Overview
+
+### Current Component Inventory (20 files)
+
+**Layout Components**:
+- `Header.astro` - Top navigation with logo and language switcher
+- `Sidebar.astro` - Left sidebar container (responsive mobile/desktop)
+- `SidebarNav.astro` - Navigation tree with kit-switching and section detection
+
+**React Islands (Interactive)**:
+- `AIChat.tsx` - Chat interface with OpenRouter integration (UI complete)
+- `TableOfContents.tsx` - Dynamic heading extraction and navigation
+- `CopyForLLMs.tsx` - Export content for LLM consumption
+- `LanguageSwitcher.tsx` - EN/VI language switcher with i18n
+- `KitSwitcher.tsx` - Switch between Engineer/Marketing/CLI kits
+- `KitContext.tsx` - React context for kit state management
+
+**Navigation Components** (Kit-specific):
+- `DocsNav.astro` - General docs navigation
+- `GettingStartedNav.astro` - Getting started section nav
+- `CLINav.astro` - CLI kit section nav
+- `EngineerNav.astro` - Engineer kit section nav
+- `MarketingNav.astro` - Marketing kit section nav
+- `WorkflowsNav.astro` - Workflows section nav
+- `ToolsNav.astro` - Tools section nav
+- `ChangelogNav.astro` - Changelog section nav
+- `SupportNav.astro` - Support section nav
+
+**UI Components**:
+- `Search.astro` - Pagefind search interface (placeholder)
+- `AIPanel.astro` - AI chat panel wrapper (disabled)
+
+### Content Organization (451 pages)
+
+**8 Main Categories**:
+- `getting-started/` - 8+ pages (installation, quick-start, onboarding)
+- `cli/` - CLI kit documentation
+- `engineer/` - 138 pages (agents: 18, commands: 66, skills: 49, config: 4, index: 1)
+- `marketing/` - 88 pages (agents, commands, skills, workflows, features)
+- `workflows/` - 20+ cross-kit workflow guides
+- `tools/` - Tools directory and references
+- `support/` - FAQ, troubleshooting, community resources
+- `changelog/` - Version history and release notes
+
+**Vietnamese Coverage**: 176/275 pages (64% - targeting 100%)
+
+### Key Files
+
+- **Configuration**: `astro.config.mjs`, `tailwind.config.mjs`, `tsconfig.json`
+- **Content Schema**: `src/content/config.ts` (Zod validation with 8 categories)
+- **i18n**: `src/i18n/locales.ts`, `ui.ts` (18 keys × 2 locales), `utils.ts`
+- **Deployment**: `Dockerfile` (multi-stage bun→node), `k8s/` manifests
 
 ## Core Principles
 
@@ -145,16 +198,21 @@ published: true                  # Boolean
 ---
 ```
 
-**Category Values** (must match schema):
-- `getting-started`
-- `core-concepts`
-- `agents`
-- `commands`
-- `skills`
-- `use-cases`
-- `cli`
-- `troubleshooting`
-- `components`
+**Valid Categories** (from `src/content/config.ts`):
+
+**Main Kit-Agnostic Categories**:
+- `getting-started` - Installation, quick-start, onboarding
+- `cli` - CLI-specific documentation
+- `engineer` - Engineer kit docs (agents, commands, skills, config)
+- `marketing` - Marketing kit docs (agents, commands, skills, workflows, features)
+- `workflows` - Cross-kit workflow guides
+- `tools` - Tools directory and references
+- `support` - FAQ, troubleshooting, community resources
+- `changelog` - Version history and release notes
+
+**Legacy Categories** (kept for backward compatibility):
+- `core-concepts` - Architecture and concepts
+- `components` - UI component reference (placeholder)
 
 ## Component Patterns
 

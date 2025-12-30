@@ -162,13 +162,16 @@ const example: string = 'Hello';
 
 ## Content Statistics
 
-- **English**: 97 pages across 9 categories
-- **Vietnamese**: 97 translated pages (mirrored structure)
-- **Agents**: 14 documented (planner, researcher, tester, debugger, etc.)
-- **Commands**: 25 documented across 9 subcategories
-- **Skills**: 15 documented (Next.js, Tailwind, Docker, etc.)
-- **Use Cases**: 10 tutorials (features, bugs, APIs, auth, performance)
-- **Troubleshooting**: 6 guides (installation, commands, API keys)
+- **Total Pages**: 451 documentation pages (275 EN + 176 VI)
+  - **Engineer Kit**: 138 pages (18 agents + 66 commands + 49 skills + 4 configuration + 1 index + docs)
+  - **Marketing Kit**: 88 pages (agents, commands, skills, workflows, features)
+  - **CLI Kit**: 9 pages (commands, setup, reference)
+  - **Getting Started**: Complete onboarding guides with quick-start tutorials
+  - **Workflows**: Cross-kit workflow documentation with practical guides
+  - **Tools & Support**: Troubleshooting, FAQ, and community support resources
+  - **Changelog**: Version history and release notes
+- **Vietnamese Coverage**: ~64% (176/275 pages translated)
+- **Build Status**: PASSING - 464 pages generated, 0 errors
 
 ---
 
@@ -264,25 +267,32 @@ No special config needed (pure static site).
 
 ### Completed ✅
 
-- 194 documentation pages (97 EN + 97 VI)
-- Responsive 3-column layout
-- Collapsible sidebar navigation
-- AI chat UI (no backend)
-- Language switcher
-- Docker + K8s setup
-- Comprehensive project docs
+- 451 documentation pages (275 EN + 176 VI) across 3 kits
+- Kit-agnostic content architecture with Engineer/Marketing/CLI sections
+- Comprehensive 8 content categories (getting-started, cli, engineer, marketing, workflows, tools, support, changelog)
+- Responsive 3-column layout with mobile adaptation
+- Context-aware sidebar navigation with kit switcher
+- AI chat UI with OpenRouter integration (UI complete, backend pending)
+- Language switcher with full bilingual support
+- Docker + Kubernetes HA setup with 2 replicas
+- Complete project documentation (codebase summary, standards, architecture, roadmap)
+- URL redirect system for legacy content
+- Pagefind search integration
+- Production-ready build system
 
 ### In Progress 🔄
 
-- Production deployment
-- Documentation optimization
+- Production deployment to docs.claudekit.cc
+- AI chat backend integration via OpenRouter
+- Search optimization with Pagefind indexing
+- Vietnamese translation gap closure (targeting 100% coverage)
 
 ### Known Issues 🐛
 
-- AI chat backend not connected
-- Search not implemented (Pagefind planned)
-- Sidebar shows flat nav (need hierarchical)
-- `troubleshooting` category missing from SidebarNav
+- AI chat backend connection pending OpenRouter setup
+- Marketing Workflows category has ~18% translation gap (9/50 pages)
+- Engineer Skills category has ~2% translation gap (1/49 pages)
+- `troubleshooting` category exists in schema but missing from SidebarNav navigation
 
 ---
 
@@ -347,5 +357,6 @@ MIT License - see LICENSE file for details
 
 ---
 
-**Last Updated**: 2025-11-25
+**Last Updated**: 2025-12-30
 **Maintainers**: ClaudeKit Team
+**Build Status**: PASSING (464 pages, 0 errors)

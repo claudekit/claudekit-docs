@@ -1,144 +1,142 @@
 ---
-title: "Ads Management"
-description: "Paid advertising campaign creation and optimization for Google Ads, Meta Ads, LinkedIn Ads, and TikTok Ads with ROAS tracking."
+title: "Quản Lý Quảng Cáo"
+description: "Tạo và tối ưu hóa chiến dịch quảng cáo trả tiền trên Google Ads, Meta Ads, LinkedIn Ads, và TikTok Ads với theo dõi ROAS."
+lang: vi
 section: marketing
 category: skills
 order: 10
 ---
 
-> Launch and optimize paid campaigns across major platforms with data-driven targeting, copy testing, and ROI tracking.
+> Khởi động và tối ưu hóa các chiến dịch trả tiền trên các nền tảng chính với nhắm mục tiêu dữ liệu, kiểm tra bản sao và theo dõi ROI.
 
-## What This Skill Does
+## Skill Này Làm Gì
 
-**The Challenge**: Paid advertising requires platform-specific knowledge, continuous optimization, and tight budget control. Poor setup wastes ad spend quickly.
+**Thách Thức**: Quảng cáo trả tiền đòi hỏi kiến thức cụ thể theo nền tảng, tối ưu hóa liên tục và kiểm soát ngân sách chặt chẽ. Cấu hình kém sẽ lãng phí chi tiêu quảng cáo nhanh chóng.
 
-**The Solution**: Ads Management skill provides platform-specific ad templates, audience targeting frameworks, budget optimization strategies, and ROAS tracking. Covers Google Ads, Meta (Facebook/Instagram), LinkedIn Ads, and TikTok Ads.
+**Giải Pháp**: Skill Ads Management cung cấp mẫu quảng cáo cụ thể theo nền tảng, khung nhắm mục tiêu khán giả, chiến lược tối ưu hóa ngân sách và theo dõi ROAS. Bao gồm Google Ads, Meta (Facebook/Instagram), LinkedIn Ads và TikTok Ads.
 
-## Activation
+## Kích Hoạt
 
-**Implicit**: Auto-activated by Ads Specialist and Campaign Manager agents based on task context.
+**Ẩn Danh**: Kích hoạt tự động cho các agent Ads Specialist và Campaign Manager.
 
-**Explicit**: Activate via prompt:
-```
-Activate ads-management skill to create Google Ads campaign with audience targeting
-```
+**Rõ Ràng**: `/skill:add ads-management`
 
-## Capabilities
+## Khả Năng
 
-### 1. Platform-Specific Ad Creation
-Ad copy templates optimized for each platform's format and audience.
+### 1. Tạo Quảng Cáo Cụ Thể Theo Nền Tảng
+Mẫu bản sao quảng cáo được tối ưu hóa cho định dạng và khán giả của mỗi nền tảng.
 
-**Platform specifications**:
-| Platform | Ad Types | Min Budget | Character Limits |
+**Thông số kỹ thuật nền tảng**:
+| Nền Tảng | Loại Quảng Cáo | Ngân Sách Tối Thiểu | Giới Hạn Ký Tự |
 |----------|----------|------------|------------------|
-| Google Ads | Search, Display, Video | $10/day | Headlines: 30 chars, Descriptions: 90 chars |
-| Meta Ads | Feed, Stories, Reels | $5/day | Text: 125 chars (primary), Headline: 27 chars |
-| LinkedIn Ads | Sponsored, Message | $10/day | Text: 600 chars, Headline: 70 chars |
-| TikTok Ads | In-Feed, TopView | $20/day | Text: 100 chars, Video: 5-60 seconds |
+| Google Ads | Tìm kiếm, Hiển thị, Video | $10/ngày | Tiêu đề: 30 ký tự, Mô tả: 90 ký tự |
+| Meta Ads | Feed, Stories, Reels | $5/ngày | Văn bản: 125 ký tự (chính), Tiêu đề: 27 ký tự |
+| LinkedIn Ads | Được Tài Trợ, Tin Nhắn | $10/ngày | Văn bản: 600 ký tự, Tiêu đề: 70 ký tự |
+| TikTok Ads | In-Feed, TopView | $20/ngày | Văn bản: 100 ký tự, Video: 5-60 giây |
 
-**Template library**: `references/ad-copy-templates.md`
+**Thư viện mẫu**: `references/ad-copy-templates.md`
 
-### 2. Audience Targeting Strategies
-Framework for building high-intent audience segments.
+### 2. Chiến Lược Nhắm Mục Tiêu Khán Giả
+Khung xây dựng các phân khúc khán giả có ý định cao.
 
-**Targeting layers**:
-- **Demographics**: Age, location, income, job title
-- **Interests**: Topics, pages followed, content engaged with
-- **Behaviors**: Purchase history, device usage, travel patterns
-- **Lookalike/Similar**: Based on existing customers or converters
+**Các Lớp Nhắm Mục Tiêu**:
+- **Nhân Khẩu Học**: Tuổi, vị trí, thu nhập, chức danh công việc
+- **Sở Thích**: Chủ đề, trang theo dõi, nội dung tương tác
+- **Hành Vi**: Lịch sử mua hàng, cách sử dụng thiết bị, mô hình du lịch
+- **Tương Tự/Giống Nhau**: Dựa trên khách hàng hiện có hoặc người chuyển đổi
 
-**Best practice**: Start narrow (500k-1M reach), expand winners.
+**Phương Pháp Tốt Nhất**: Bắt đầu hẹp (500k-1M phạm vi tiếp cận), mở rộng những người chiến thắng.
 
-**Guide loaded**: `references/audience-targeting.md`
+**Hướng Dẫn Tải**: `references/audience-targeting.md`
 
-### 3. Optimization Playbook
-Daily/weekly optimization checklist for scaling winners and cutting losers.
+### 3. Playbook Tối Ưu Hóa
+Danh sách kiểm tra tối ưu hóa hàng ngày/hàng tuần để mở rộng những người chiến thắng và cắt giảm những người thua.
 
-**Key metrics**:
-- **CTR (Click-Through Rate)**: Benchmark 1-3% for search, 0.5-1.5% for display
-- **CVR (Conversion Rate)**: Benchmark 2-5% for B2B, 1-3% for B2C
-- **CPC (Cost Per Click)**: Varies by industry ($1-10 typical)
-- **ROAS (Return on Ad Spend)**: Target 3:1 minimum
+**Chỉ Số Chính**:
+- **CTR (Tỷ Lệ Nhấp)**: Điểm chuẩn 1-3% cho tìm kiếm, 0.5-1.5% cho hiển thị
+- **CVR (Tỷ Lệ Chuyển Đổi)**: Điểm chuẩn 2-5% cho B2B, 1-3% cho B2C
+- **CPC (Chi Phí Cho Mỗi Lần Nhấp)**: Thay đổi theo ngành ($1-10 điển hình)
+- **ROAS (Lợi Tức Trên Chi Tiêu Quảng Cáo)**: Mục tiêu tối thiểu 3:1
 
-**Optimization workflow**: `references/optimization-playbook.md`
+**Quy Trình Tối Ưu Hóa**: `references/optimization-playbook.md`
 
-## Prerequisites
+## Điều Kiện Tiên Quyết
 
-- Ad accounts for target platforms
-- Conversion tracking pixels installed
-- Landing pages or conversion destinations ready
-- Budget allocated per platform
+- Tài khoản quảng cáo cho các nền tảng mục tiêu
+- Pixel theo dõi chuyển đổi được cài đặt
+- Trang đích hoặc điểm đến chuyển đổi sẵn sàng
+- Ngân sách được phân bổ cho mỗi nền tảng
 
-## Configuration
+## Cấu Hình
 
-**Tracking setup**:
-- Google Ads: Conversion actions configured
-- Meta Ads: Meta Pixel installed on website
-- LinkedIn Ads: Insight Tag on all pages
-- TikTok Ads: TikTok Pixel active
+**Cài Đặt Theo Dõi**:
+- Google Ads: Các hành động chuyển đổi được cấu hình
+- Meta Ads: Pixel Meta được cài đặt trên trang web
+- LinkedIn Ads: Thẻ Insight trên tất cả các trang
+- TikTok Ads: TikTok Pixel hoạt động
 
-## Best Practices
+## Phương Pháp Tốt Nhất
 
-**1. Start small, scale winners**
-Launch with $50/day, identify top performers in 3-5 days, then increase budget.
+**1. Bắt Đầu Nhỏ, Mở Rộng Những Người Chiến Thắng**
+Khởi động với $50/ngày, xác định các nhà hoạt động hàng đầu trong 3-5 ngày, sau đó tăng ngân sách.
 
-**2. Test one variable at a time**
-Don't change audience, creative, and copy simultaneously. Isolate what works.
+**2. Kiểm Tra Một Biến Tại Một Thời Điểm**
+Đừng thay đổi khán giả, sáng tạo và sao chép cùng một lúc. Cô lập những gì hoạt động.
 
-**3. Audience > Creative > Copy**
-Right audience with mediocre creative beats wrong audience with great creative.
+**3. Khán Giả > Sáng Tạo > Sao Chép**
+Khán giả phù hợp với sáng tạo trung bình vẫn tốt hơn khán giả sai với sáng tạo tuyệt vời.
 
-## Common Use Cases
+## Trường Hợp Sử Dụng Phổ Biến
 
-### Use Case 1: Google Search Campaign for SaaS
-**Scenario**: Drive demo signups for project management tool.
+### Trường Hợp Sử Dụng 1: Chiến Dịch Tìm Kiếm Google cho SaaS
+**Tình Huống**: Tăng các đăng ký bản demo cho công cụ quản lý dự án.
 
-**Workflow**:
-1. Keyword research (use seo-optimization skill)
-2. Create ad groups by intent (comparison, how-to, branded)
-3. Write ad variations (3 headlines, 2 descriptions each)
-4. Set bid strategy (Target CPA of $40)
-5. Launch with $100/day budget
-6. Review daily for first week, pause underperformers
+**Quy Trình Công Việc**:
+1. Nghiên cứu từ khóa (sử dụng skill seo-optimization)
+2. Tạo nhóm quảng cáo theo ý định (so sánh, how-to, branded)
+3. Viết các biến thể quảng cáo (3 tiêu đề, 2 mô tả mỗi cái)
+4. Đặt chiến lược đặt giá (CPA mục tiêu $40)
+5. Khởi động với ngân sách $100/ngày
+6. Xem xét hàng ngày trong tuần đầu tiên, tạm dừng những người kém hiệu quả
 
-**Success metrics**: CTR >3%, CVR >5%, CPA <$50.
+**Chỉ Số Thành Công**: CTR >3%, CVR >5%, CPA <$50.
 
-### Use Case 2: Meta Retargeting Campaign
-**Scenario**: Convert website visitors who didn't sign up.
+### Trường Hợp Sử Dụng 2: Chiến Dịch Tái Nhắm Mục Tiêu Meta
+**Tình Huống**: Chuyển đổi những người truy cập trang web không đăng ký.
 
-**Workflow**:
-1. Create custom audience (visited pricing page, no signup)
-2. Design ad creative (testimonial + limited-time offer)
-3. Set frequency cap (max 3 impressions per person per week)
-4. Budget $30/day
-5. Run for 14 days
-6. Measure ROAS (target 5:1 for warm audience)
+**Quy Trình Công Việc**:
+1. Tạo khán giả tùy chỉnh (đã truy cập trang giá cả, không đăng ký)
+2. Thiết kế sáng tạo quảng cáo (lời chứng thực + ưu đãi thời gian giới hạn)
+3. Đặt giới hạn tần suất (tối đa 3 lần hiển thị trên người mỗi tuần)
+4. Ngân sách $30/ngày
+5. Chạy trong 14 ngày
+6. Đo ROAS (mục tiêu 5:1 cho khán giả ấm)
 
-**Output**: 3-5% conversion rate on retargeting typical.
+**Kết Quả**: Tỷ lệ chuyển đổi 3-5% trên tái nhắm mục tiêu điển hình.
 
-## Troubleshooting
+## Khắc Phục Sự Cố
 
-**Issue**: High spend, low conversions
-**Solution**:
-- Check landing page relevance (does it match ad promise?)
-- Review audience quality (are you targeting decision-makers?)
-- Verify conversion tracking (pixel firing correctly?)
+**Vấn Đề**: Chi tiêu cao, chuyển đổi thấp
+**Giải Pháp**:
+- Kiểm tra tính liên quan của trang đích (nó có khớp với lời hứa quảng cáo không?)
+- Xem xét chất lượng khán giả (bạn có nhắm mục tiêu những người quyết định không?)
+- Xác minh theo dõi chuyển đổi (pixel có kích hoạt đúng không?)
 
-**Issue**: Ads rejected or flagged
-**Solution**: Review platform policies. Common issues: prohibited content, misleading claims, trademark violations.
+**Vấn Đề**: Quảng cáo bị từ chối hoặc bị gắn cờ
+**Giải Pháp**: Xem xét các chính sách nền tảng. Các vấn đề phổ biến: nội dung bị cấm, tuyên bố gây hiểu lầm, vi phạm nhãn hiệu.
 
-**Issue**: CPC suddenly increases
-**Solution**: Check auction competition (new competitors?), ad relevance score, and quality score. Refresh creative if ad fatigue detected.
+**Vấn Đề**: CPC đột ngột tăng
+**Giải Pháp**: Kiểm tra cạnh tranh đấu giá (đối thủ cạnh tranh mới?), điểm liên quan quảng cáo và điểm chất lượng. Làm mới sáng tạo nếu phát hiện mệt mỏi quảng cáo.
 
-## Related Skills
+## Kỹ Năng Liên Quan
 
-- [Copywriting](/docs/marketing/skills/copywriting) - Ad copy formulas
-- [Campaign Management](/docs/marketing/skills/campaign-management) - Multi-channel orchestration
-- [Analytics](/docs/marketing/skills/analytics) - ROAS and performance tracking
-- [Creativity](/docs/marketing/skills/creativity) - Creative direction for ad visuals
+- [Copywriting](/vi/docs/marketing/skills/copywriting) - Công thức bản sao quảng cáo
+- [Campaign Management](/vi/docs/marketing/skills/campaign-management) - Điều phối đa kênh
+- [Analytics](/vi/docs/marketing/skills/analytics) - Theo dõi ROAS và hiệu suất
+- [Creativity](/vi/docs/marketing/skills/creativity) - Hướng dẫn sáng tạo cho hình ảnh quảng cáo
 
-## Related Commands
+## Lệnh Liên Quan
 
-- `/campaign/create` - Full campaign planning
-- `/content/cro` - Conversion-optimized ad copy
-- `/analytics/keywords` - Search campaign keyword research
+- `/campaign/create` - Lập kế hoạch chiến dịch đầy đủ
+- `/content/cro` - Bản sao quảng cáo được tối ưu hóa để chuyển đổi
+- `/analytics/keywords` - Nghiên cứu từ khóa chiến dịch tìm kiếm

@@ -1,136 +1,134 @@
 ---
 title: "Brainstorming"
-description: "Collaborative solution exploration and technical decision-making through structured dialogue and approach validation."
+description: "Khám phá giải pháp cộng tác và ra quyết định kỹ thuật thông qua đối thoại có cấu trúc và xác nhận phương pháp tiếp cận."
+lang: vi
 section: marketing
 category: skills
 order: 9
 ---
 
-> Transform ideas into validated designs through structured dialogue before any implementation.
+> Chuyển đổi ý tưởng thành thiết kế được xác nhận thông qua đối thoại có cấu trúc trước bất kỳ việc triển khai nào.
 
-## What This Skill Does
+## Skill Này Làm Gì
 
-**The Challenge**: Teams jump to implementation without exploring alternatives, validating assumptions, or documenting decisions. This leads to technical debt and misaligned solutions.
+**Thách Thức**: Các đội nhảy vào triển khai mà không khám phá các lựa chọn thay thế, xác nhận các giả định hoặc ghi lại các quyết định. Điều này dẫn đến nợ kỹ thuật và các giải pháp không phù hợp.
 
-**The Solution**: Brainstorming skill enforces structured ideation sessions with YAGNI/KISS/DRY principles, approach comparison, and decision documentation. NO implementation until explicit user confirmation.
+**Giải Pháp**: Skill Brainstorming thực thi các phiên tưởng tượng có cấu trúc với các nguyên tắc YAGNI/KISS/DRY, so sánh phương pháp tiếp cận và ghi lại các quyết định. KHÔNG triển khai cho đến khi có xác nhận rõ ràng từ người dùng.
 
-## Activation
+## Kích Hoạt
 
-**Implicit**: Activates when user signals ideation mode ("let's explore", "what are our options", "brainstorm with me").
+**Ẩn Danh**: Kích hoạt khi người dùng báo hiệu chế độ tưởng tượng ("hãy khám phá", "những lựa chọn của chúng ta là gì", "brainstorm với tôi").
 
-**Explicit**: Activate via prompt:
-```
-Activate brainstorming skill to facilitate ideation session
-``` or `/brainstorm`
+**Rõ Ràng**: `/skill:add brainstorming` hoặc `/brainstorm`
 
-## Capabilities
+## Khả Năng
 
-### 1. Structured Discovery
-Sequential questioning to understand true requirements vs initial request.
+### 1. Khám Phá Có Cấu Trúc
+Các câu hỏi tuần tự để hiểu những yêu cầu thật sự so với yêu cầu ban đầu.
 
-**Discovery covers**:
-- Purpose and success criteria
-- Constraints (technical, time, resources)
-- Hidden assumptions and edge cases
-- Non-functional requirements (scale, security, performance)
+**Khám Phá Bao Gồm**:
+- Mục đích và tiêu chí thành công
+- Ràng buộc (kỹ thuật, thời gian, tài nguyên)
+- Các giả định ẩn và trường hợp cạnh
+- Yêu cầu phi chức năng (quy mô, bảo mật, hiệu suất)
 
-### 2. Approach Comparison
-Present 2-3 viable solutions with trade-offs, pros/cons, and complexity assessment.
+### 2. So Sánh Phương Pháp Tiếp Cận
+Trình bày 2-3 giải pháp khả thi với sự đánh đổi, ưu/nhược điểm và đánh giá độ phức tạp.
 
-**Example comparison**:
+**Ví Dụ So Sánh**:
 ```markdown
-## Approach A: Serverless with Cloudflare Workers
-**Pros**: Global edge deployment, auto-scaling, $0 at low volume
-**Cons**: 50ms CPU limit, vendor lock-in, debugging complexity
-**Complexity**: Low (2-3 days)
+## Phương Pháp A: Serverless với Cloudflare Workers
+**Ưu Điểm**: Triển khai cạnh toàn cầu, tự động mở rộng, $0 ở volume thấp
+**Nhược Điểm**: Giới hạn CPU 50ms, khóa nhà cung cấp, độ phức tạp gỡ lỗi
+**Độ Phức Tạp**: Thấp (2-3 ngày)
 
-## Approach B: Traditional Node.js with Docker
-**Pros**: Full control, easier debugging, portable
-**Cons**: Requires server management, fixed costs
-**Complexity**: Medium (4-5 days)
+## Phương Pháp B: Node.js Truyền Thống với Docker
+**Ưu Điểm**: Kiểm soát đầy đủ, gỡ lỗi dễ dàng, có thể di động
+**Nhược Điểm**: Yêu cầu quản lý máy chủ, chi phí cố định
+**Độ Phức Tạp**: Trung Bình (4-5 ngày)
 
-**Recommendation**: Approach A for MVP (test market fit), migrate to B if usage scales.
+**Khuyến Nghị**: Phương Pháp A cho MVP (kiểm tra độ phù hợp thị trường), di chuyển đến B nếu cách sử dụng mở rộng.
 ```
 
-### 3. Validation Gates
-Break design into segments, wait for user approval before continuing. Prevents runaway conversations.
+### 3. Cổng Xác Nhận
+Chia thiết kế thành các phân khúc, chờ sự phê duyệt của người dùng trước khi tiếp tục. Ngăn chặn các cuộc trò chuyện quá lâu.
 
-**Segment topics**:
-- Architecture and data flow
-- Component breakdown
-- Error handling strategy
-- Security and performance considerations
+**Chủ Đề Phân Khúc**:
+- Kiến trúc và luồng dữ liệu
+- Phân tích thành phần
+- Chiến lược xử lý lỗi
+- Các cân nhắc bảo mật và hiệu suất
 
-## Prerequisites
+## Điều Kiện Tiên Quyết
 
-- Clear problem statement or goal
-- User available for interactive dialogue
+- Tuyên bố vấn đề rõ ràng hoặc mục tiêu
+- Người dùng có sẵn để đối thoại tương tác
 
-## Configuration
+## Cấu Hình
 
-No configuration needed. Skill operates through conversational interface.
+Không cần cấu hình. Skill hoạt động thông qua giao diện hội thoại.
 
-## Best Practices
+## Phương Pháp Tốt Nhất
 
-**1. One question at a time**
-Avoid overwhelming users with 10 questions upfront. Ask sequentially based on answers.
+**1. Một Câu Hỏi Tại Một Thời Điểm**
+Tránh làm quá tải người dùng với 10 câu hỏi từ đầu. Hỏi liên tiếp dựa trên câu trả lời.
 
-**2. Multiple-choice preferred**
-"Should we use A, B, or C?" is easier to answer than open-ended questions.
+**2. Chọn Nhiều Được Ưa Thích**
+"Chúng ta nên sử dụng A, B hay C?" dễ trả lời hơn các câu hỏi mở.
 
-**3. Challenge assumptions constructively**
-"Have you considered X?" beats "That won't work because Y".
+**3. Thách Thức Giả Định Xây Dựng**
+"Bạn đã xem xét X chưa?" tốt hơn "Điều đó sẽ không hoạt động vì Y".
 
-## Common Use Cases
+## Trường Hợp Sử Dụng Phổ Biến
 
-### Use Case 1: Feature Design Session
-**Scenario**: User wants to add "user authentication" to app.
+### Trường Hợp Sử Dụng 1: Phiên Thiết Kế Tính Năng
+**Tình Huống**: Người dùng muốn thêm "xác thực người dùng" vào ứng dụng.
 
-**Workflow**:
-1. **Discovery**: What authentication methods? (email/password, OAuth, SSO?)
-2. **Constraints**: Security requirements? Compliance needs?
-3. **Approach comparison**:
-   - Auth0 (turnkey, $25/mo, vendor dependency)
-   - Better Auth (open-source, self-hosted, more control)
-   - Custom JWT (full control, higher maintenance)
-4. **Validation**: Review chosen approach's architecture
-5. **Summary**: Document decision with rationale
+**Quy Trình Công Việc**:
+1. **Khám Phá**: Những phương pháp xác thực nào? (email/mật khẩu, OAuth, SSO?)
+2. **Ràng Buộc**: Yêu cầu bảo mật? Nhu cầu tuân thủ?
+3. **So Sánh Phương Pháp Tiếp Cận**:
+   - Auth0 (turnkey, $25/tháng, phụ thuộc nhà cung cấp)
+   - Better Auth (nguồn mở, tự lưu trữ, kiểm soát nhiều hơn)
+   - JWT Tùy Chỉnh (kiểm soát đầy đủ, bảo trì cao hơn)
+4. **Xác Nhận**: Xem xét kiến trúc của phương pháp tiếp cận được chọn
+5. **Tóm Tắt**: Ghi lại quyết định với lý do
 
-**Output**: Markdown design doc ready for implementation planning.
+**Kết Quả**: Tài liệu thiết kế Markdown sẵn sàng cho lập kế hoạch triển khai.
 
-### Use Case 2: Technical Debt Evaluation
-**Scenario**: Monolith performance degrading, considering microservices.
+### Trường Hợp Sử Dụng 2: Đánh Giá Nợ Kỹ Thuật
+**Tình Huống**: Hiệu suất monolith suy thoái, xem xét microservices.
 
-**Workflow**:
-1. **Discovery**: What specific bottlenecks? Scale requirements?
-2. **Alternative approaches**:
-   - Optimize monolith (vertical scaling, caching)
-   - Extract critical services only (hybrid)
-   - Full microservices migration (3-6 month effort)
-3. **Risk assessment**: What could go wrong with each?
-4. **Recommendation**: Start with optimization + extract 1 service as proof of concept
+**Quy Trình Công Việc**:
+1. **Khám Phá**: Những nút cổ chai cụ thể nào? Yêu cầu quy mô?
+2. **Các Phương Pháp Thay Thế**:
+   - Tối ưu hóa monolith (mở rộng dọc, bộ nhớ cache)
+   - Trích xuất các dịch vụ quan trọng (kết hợp)
+   - Di chuyển microservices đầy đủ (nỗ lực 3-6 tháng)
+3. **Đánh Giá Rủi Ro**: Điều gì có thể sai lầm với mỗi cái?
+4. **Khuyến Nghị**: Bắt đầu với tối ưu hóa + trích xuất 1 dịch vụ như bằng chứng khái niệm
 
-**Output**: Decision matrix with recommendation and next steps.
+**Kết Quả**: Ma trận quyết định với khuyến nghị và bước tiếp theo.
 
-## Troubleshooting
+## Khắc Phục Sự Cố
 
-**Issue**: Session feels stuck, no progress
-**Solution**: Ask user to clarify the core problem. Reset to Phase 1 (Discovery).
+**Vấn Đề**: Phiên bị kẹt, không tiến bộ
+**Giải Pháp**: Yêu cầu người dùng làm rõ vấn đề cốt lõi. Đặt lại Giai Đoạn 1 (Khám Phá).
 
-**Issue**: User keeps adding requirements
-**Solution**: Acknowledge additions, but focus on MVP first. Document nice-to-haves separately.
+**Vấn Đề**: Người dùng tiếp tục thêm yêu cầu
+**Giải Pháp**: Công nhận bổ sung, nhưng tập trung vào MVP đầu tiên. Ghi lại tính năng tốt để-có riêng biệt.
 
-**Issue**: Conversation becoming too technical
-**Solution**: Use analogies and examples. Avoid jargon unless user demonstrates familiarity.
+**Vấn Đề**: Cuộc trò chuyện trở nên quá kỹ thuật
+**Giải Pháp**: Sử dụng các phép loại suy và ví dụ. Tránh jargon trừ khi người dùng cho thấy quen thuộc.
 
-## Related Skills
+## Kỹ Năng Liên Quan
 
-- [Planning](/docs/marketing/skills/planning) - Convert brainstorming output to implementation plan
-- [Research](/docs/marketing/skills/research) - Deep-dive technical research
-- [Problem Solving](/docs/marketing/skills/problem-solving) - Advanced decision frameworks
+- [Planning](/vi/docs/marketing/skills/planning) - Chuyển đổi đầu ra brainstorming thành kế hoạch triển khai
+- [Research](/vi/docs/marketing/skills/research) - Nghiên cứu sâu về kỹ thuật
+- [Problem Solving](/vi/docs/marketing/skills/problem-solving) - Khung ra quyết định nâng cao
 
-## Related Commands
+## Lệnh Liên Quan
 
-- `/brainstorm` - Start brainstorming session
-- `/plan` - Create plan from brainstorm output
-- `/ask` - General questions and advice
+- `/brainstorm` - Bắt đầu phiên brainstorming
+- `/plan` - Tạo kế hoạch từ đầu ra brainstorm
+- `/ask` - Câu hỏi chung và lời khuyên

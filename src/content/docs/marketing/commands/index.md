@@ -1,276 +1,206 @@
 ---
 title: "Marketing Commands"
-description: "Complete reference for ClaudeKit Marketing Kit's 21 AI-powered marketing commands - from campaign management to content generation"
+description: "Tài liệu đầy đủ về 21 lệnh marketing được hỗ trợ AI của ClaudeKit Marketing Kit - từ quản lý chiến dịch đến tạo nội dung"
+lang: vi
 section: marketing
 category: commands
 order: 1
 published: true
 ---
 
-# Marketing Commands
+# Lệnh Marketing (Marketing Commands)
 
-19 specialized commands for marketing automation, content creation, and campaign management. Each command activates specialized AI agents with deep marketing expertise.
+19 lệnh chuyên biệt cho tự động hóa marketing, tạo nội dung và quản lý chiến dịch. Mỗi lệnh kích hoạt các agent AI chuyên môn sâu về marketing.
 
-## Quick Reference Matrix
+## Ma Trận Tham Chiếu Nhanh
 
-### Core Marketing (6 commands)
+### Lệnh Marketing Cốt Lõi (6 lệnh)
 
-| Command | Purpose | Output | Agents Used |
+| Lệnh | Mục Đích | Kết Quả | Agents Sử Dụng |
 |---------|---------|--------|-------------|
-| [/campaign](/docs/marketing/commands/campaign) | Create and manage campaigns | Campaign briefs + reports | campaign-manager, funnel-architect |
-| [/content](/docs/marketing/commands/content) | Generate marketing content | Blog posts, landing pages | content-creator, seo-specialist |
-| [/seo](/docs/marketing/commands/seo) | SEO audit and optimization | SEO reports + recommendations | seo-specialist |
-| [/email](/docs/marketing/commands/email) | Email content generation | Email sequences | email-wizard, copywriter |
-| [/social](/docs/marketing/commands/social) | Social media content | Platform-specific posts | social-media-manager |
-| [/analyze](/docs/marketing/commands/analyze) | Analytics and performance | Data-driven insights | analytics-analyst |
+| [/campaign](/docs/marketing/commands/campaign) | Tạo và quản lý chiến dịch | Bản tóm tắt chiến dịch + báo cáo | campaign-manager, funnel-architect |
+| [/content](/docs/marketing/commands/content) | Tạo nội dung marketing | Bài blog, trang landing | content-creator, seo-specialist |
+| [/seo](/docs/marketing/commands/seo) | Kiểm tra và tối ưu SEO | Báo cáo SEO + đề xuất | seo-specialist |
+| [/email](/docs/marketing/commands/email) | Tạo nội dung email | Chuỗi email | email-wizard, copywriter |
+| [/social](/docs/marketing/commands/social) | Nội dung mạng xã hội | Bài đăng theo nền tảng | social-media-manager |
+| [/analyze](/docs/marketing/commands/analyze) | Phân tích và hiệu suất | Thông tin dựa trên dữ liệu | analytics-analyst |
 
-### Content Creation Commands (6 commands)
+### Lệnh Tạo Nội Dung (6 lệnh)
 
-| Command | Purpose | Best For | Time Saved |
+| Lệnh | Mục Đích | Tốt Nhất Cho | Thời Gian Tiết Kiệm |
 |---------|---------|----------|------------|
-| [/write](/docs/marketing/commands/write) | Blog posts, content audit, publishing | Long-form content | 2-4 hours |
-| [/video](/docs/marketing/commands/video) | Video scripts, storyboards, production | Video marketing | 4-8 hours |
-| [/slide](/docs/marketing/commands/slide) | Presentation decks, pitch decks | Sales & proposals | 2-3 hours |
-| [/brainstorm](/docs/marketing/commands/brainstorm) | Collaborative ideation | Strategy sessions | 1-2 hours |
-| [/design](/docs/marketing/commands/design) | AI image generation | Visual assets | 30-60 min |
+| [/write](/docs/marketing/commands/write) | Bài blog, kiểm tra nội dung, xuất bản | Nội dung dài | 2-4 giờ |
+| [/video](/docs/marketing/commands/video) | Script video, storyboard, sản xuất | Marketing video | 4-8 giờ |
+| [/slide](/docs/marketing/commands/slide) | Bài thuyết trình, pitch deck | Bán hàng & đề xuất | 2-3 giờ |
+| [/brainstorm](/docs/marketing/commands/brainstorm) | Tạo ý tưởng hợp tác | Phiên chiến lược | 1-2 giờ |
+| [/design](/docs/marketing/commands/design) | Tạo hình ảnh AI | Tài sản hình ảnh | 30-60 phút |
 
-### Utility Commands (8 commands)
+### Lệnh Tiện Ích (8 lệnh)
 
-| Command | Purpose | When to Use |
+| Lệnh | Mục Đích | Khi Nào Sử Dụng |
 |---------|---------|-------------|
-| [/scout](/docs/marketing/commands/scout) | Fast codebase search | Finding relevant files |
-| [/review](/docs/marketing/commands/review) | Code quality analysis | Before commits |
-| [/ask](/docs/marketing/commands/ask) | Architectural consultation | Technical decisions |
-| [/bootstrap](/docs/marketing/commands/bootstrap) | Project initialization | New projects |
-| [/git](/docs/marketing/commands/git) | Git operations | PR creation, commits |
-| [/dashboard](/docs/marketing/commands/dashboard) | Marketing dashboard UI | Visual management |
-| [/use-mcp](/docs/marketing/commands/use-mcp) | MCP server operations | External integrations |
-| [/persona](/docs/marketing/commands/persona) | Customer persona management | Audience research |
+| [/scout](/docs/marketing/commands/scout) | Tìm kiếm codebase nhanh | Tìm tệp liên quan |
+| [/review](/docs/marketing/commands/review) | Phân tích chất lượng code | Trước khi commit |
+| [/ask](/docs/marketing/commands/ask) | Tư vấn kiến trúc | Quyết định kỹ thuật |
+| [/bootstrap](/docs/marketing/commands/bootstrap) | Khởi tạo dự án | Dự án mới |
+| [/git](/docs/marketing/commands/git) | Thao tác Git | Tạo PR, commit |
+| [/dashboard](/docs/marketing/commands/dashboard) | Giao diện dashboard marketing | Quản lý trực quan |
+| [/use-mcp](/docs/marketing/commands/use-mcp) | Thao tác MCP server | Tích hợp bên ngoài |
+| [/persona](/docs/marketing/commands/persona) | Quản lý persona khách hàng | Nghiên cứu đối tượng |
 
-## Command Categories
+## Danh Mục Lệnh
 
-### Planning & Strategy
+### Lập Kế Hoạch & Chiến Lược
 
-Start here for new campaigns or creative briefs:
+Bắt đầu từ đây cho chiến dịch hoặc creative brief mới:
 
 ```bash
-# Brainstorm solutions collaboratively
+# Brainstorm giải pháp cùng nhau
 /brainstorm how to improve conversion rates
 
-# Get architectural guidance
+# Nhận hướng dẫn kiến trúc
 /ask what's the best way to structure our marketing automation?
 
-# Create customer personas
+# Tạo persona khách hàng
 /persona create "enterprise software buyers"
 ```
 
-### Content Creation
+### Tạo Nội Dung
 
-Generate marketing assets:
+Tạo tài sản marketing:
 
 ```bash
-# Create blog content with brand voice matching
+# Tạo nội dung blog với khớp giọng văn thương hiệu
 /write:blog "AI marketing automation guide"
 
-# Audit existing content quality
+# Kiểm tra chất lượng nội dung hiện có
 /write:audit /assets/blog-posts/latest-post.md
 
-# Generate video with script and storyboard
+# Tạo video với script và storyboard
 /video:create "30-second product demo for social media"
 
-# Create presentation deck
-/slide:create "Q1 campaign proposal with budget breakdown"
+# Tạo pitch deck
+/slide:create "Series A investor pitch deck"
 
-# Generate email sequences
+# Tạo chuỗi email
 /email nurture "SaaS trial users"
 
-# Social media posts
+# Bài đăng mạng xã hội
 /social linkedin post "product launch announcement"
 
-# Visual assets
+# Tài sản hình ảnh
 /design hero banner for landing page
 ```
 
-### Campaign Management
+### Quản Lý Chiến Dịch
 
-Orchestrate marketing campaigns:
+Điều phối chiến dịch marketing:
 
 ```bash
-# Create new campaign
+# Tạo chiến dịch mới
 /campaign create "Q1 Product Launch"
 
-# Check campaign status
+# Kiểm tra trạng thái chiến dịch
 /campaign status "Q1 Product Launch"
 
-# Analyze performance
+# Phân tích hiệu suất
 /campaign analyze "Q1 Product Launch"
 ```
 
-### SEO & Analytics
+### SEO & Phân Tích
 
-Optimize and measure:
+Tối ưu hóa và đo lường:
 
 ```bash
-# Technical SEO audit
+# Kiểm tra SEO kỹ thuật
 /seo audit https://example.com
 
-# Keyword research
+# Nghiên cứu từ khóa
 /seo keywords "project management software"
 
-# Analytics reports
+# Báo cáo phân tích
 /analyze traffic
 /analyze conversions
 ```
 
-### Visual Management
+## Quy Trình Làm Việc Phổ Biến
 
-Use the dashboard for visual oversight:
-
-```bash
-# Launch marketing dashboard
-/dashboard
-
-# Manage campaigns visually
-# Access asset library
-# View analytics reports
-# Run automation workflows
-```
-
-## Common Workflows
-
-### 1. Launch Marketing Campaign
+### 1. Khởi Chạy Chiến Dịch Marketing
 
 ```bash
-# Step 1: Define audience
+# Bước 1: Xác định đối tượng
 /persona create
 
-# Step 2: Plan campaign
+# Bước 2: Lập kế hoạch chiến dịch
 /campaign create "Summer Sale 2025"
 
-# Step 3: Create content
+# Bước 3: Tạo nội dung
 /email launch "Summer Sale"
 /social twitter thread "Summer Sale announcement"
 /design social graphic for Twitter
 
-# Step 4: Monitor performance
+# Bước 4: Theo dõi hiệu suất
 /analyze campaigns
 ```
 
-**Time**: 30 minutes vs 2-3 days manually
+**Thời gian**: 30 phút so với 2-3 ngày làm thủ công
 
-### 2. Create SEO Blog Post
+### 2. Tạo Bài Blog SEO
 
 ```bash
-# Step 1: Keyword research
+# Bước 1: Nghiên cứu từ khóa
 /seo keywords "best marketing automation tools"
 
-# Step 2: Generate content with brand voice
-/write:blog "Marketing automation tools comparison 2025"
+# Bước 2: Tạo nội dung
+/content blog "Marketing automation tools comparison 2025"
 
-# Step 3: Audit content quality
-/write:audit /assets/blog-posts/2025-01-01-marketing-automation.md
-
-# Step 4: Generate featured image
+# Bước 3: Tạo hình ảnh
 /design featured image for blog post
 
-# Step 5: Optimize and publish
-/write:publish /assets/blog-posts/2025-01-01-marketing-automation.md --platform=wordpress
+# Bước 4: Tối ưu hóa
+/seo audit https://yourblog.com/marketing-automation
 
-# Step 6: Commit
+# Bước 5: Commit
 /git:cm
 ```
 
-**Time**: 25 minutes vs 4-6 hours manually
+**Thời gian**: 20 phút so với 4-6 giờ làm thủ công
 
-### 3. Create Video Marketing Content
+### 3. Tạo Video Marketing
 
 ```bash
-# Step 1: Generate video script
-/video:script "explain our API features in 60 seconds" --platform=youtube
+# Bước 1: Tạo script
+/video:script "Product feature demo" --duration=60 --platform=youtube
 
-# Step 2: Create visual storyboard
-/video:storyboard /assets/videos/2025-01-01-api-features/script.md
+# Bước 2: Tạo storyboard
+/video:storyboard /assets/videos/latest-script.md
 
-# Step 3: Generate complete video
-/video:create "API features demo with dashboard walkthrough"
+# Bước 3: Tạo video hoàn chỉnh
+/video:create "Product demo video for homepage"
+```
 
-# Step 4: Review in dashboard
+**Thời gian**: 30 phút so với 2-3 ngày làm thủ công
+
+### 4. Chuẩn Bị Pitch Deck
+
+```bash
+# Bước 1: Tạo bài thuyết trình
+/slide:create "Series A investor pitch deck"
+
+# Bước 2: Xem dashboard để quản lý tài sản
 /dashboard
-# Navigate to Asset Management → Videos
 
-# Step 5: Commit and share
-/git:cm
+# Bước 3: Xuất và chia sẻ
+# File .pptx sẵn sàng chỉnh sửa tại /assets/slides/
 ```
 
-**Time**: 30 minutes vs 8-12 hours manually
+**Thời gian**: 20 phút so với 1-2 ngày làm thủ công
 
-### 4. Build Sales Presentation
+## Quy Ước Đầu Ra
 
-```bash
-# Step 1: Create pitch deck
-/slide:create "Series A pitch deck - AI marketing automation, $3M raise"
+Tất cả lệnh tuân theo các mẫu đầu ra nhất quán:
 
-# Step 2: Generate speaker notes
-/slide:create "pitch deck" --speaker-notes
-
-# Step 3: Review and customize
-# Open /assets/slides/presentation.pptx in PowerPoint
-
-# Step 4: Commit final version
-/git:cm
-```
-
-**Time**: 20 minutes vs 3-4 hours manually
-
-### 5. Bootstrap New Marketing Project
-
-```bash
-# Complete project setup
-/bootstrap Create AI-powered marketing automation platform
-
-# What it does:
-# - Research best practices
-# - Recommend tech stack
-# - Create implementation plan
-# - Generate designs
-# - Implement features
-# - Write tests
-# - Create documentation
-# - Onboard user
-```
-
-**Time**: 1 hour vs 1-2 weeks manually
-
-## Command Variants
-
-Some commands support variants for specialized behavior:
-
-### Content Variants
-```bash
-/write:blog      # Blog post generation
-/write:audit     # Content quality audit
-/write:publish   # Publishing workflow
-
-/video:create    # Complete video workflow
-/video:script    # Script generation only
-/video:storyboard # Visual storyboarding only
-```
-
-### Platform Variants
-```bash
-/social:linkedin    # LinkedIn-specific content
-/social:twitter     # Twitter/X content
-/social:instagram   # Instagram content
-
-/video:script "topic" --platform=youtube
-/video:script "topic" --platform=tiktok
-```
-
-## Output Conventions
-
-All commands follow consistent output patterns:
-
-### Campaign Assets
+### Tài Sản Chiến Dịch
 ```
 assets/campaigns/{date}-{slug}/
 ├── briefs/
@@ -278,7 +208,7 @@ assets/campaigns/{date}-{slug}/
 └── reports/
 ```
 
-### Content Assets
+### Tài Sản Nội Dung
 ```
 assets/
 ├── copy/emails/{date}-{type}-{slug}.md
@@ -287,14 +217,14 @@ assets/
 └── banners/
 ```
 
-### Reports
+### Báo Cáo
 ```
 reports/analytics/{date}-{type}.md
 assets/diagnostics/campaign-audits/{date}-{name}.md
 assets/seo/audits/{date}-{domain}-audit.md
 ```
 
-### Plans
+### Kế Hoạch
 ```
 plans/{date}-{slug}/
 ├── plan.md
@@ -303,77 +233,77 @@ plans/{date}-{slug}/
 └── reports/
 ```
 
-## Agent Ecosystem
+## Hệ Sinh Thái Agent
 
-Commands activate specialized AI agents:
+Các lệnh kích hoạt các agent AI chuyên biệt:
 
 ### Content Agents
-- **content-creator**: Blog posts, landing pages
-- **copywriter**: Sales copy, CTAs
-- **email-wizard**: Email sequences
-- **social-media-manager**: Social content
+- **content-creator**: Bài blog, trang landing
+- **copywriter**: Bản sao bán hàng, CTAs
+- **email-wizard**: Chuỗi email
+- **social-media-manager**: Nội dung xã hội
 
 ### Strategy Agents
-- **campaign-manager**: Campaign orchestration
-- **funnel-architect**: Conversion funnels
-- **seo-specialist**: SEO optimization
-- **analytics-analyst**: Performance analysis
+- **campaign-manager**: Điều phối chiến dịch
+- **funnel-architect**: Phễu chuyển đổi
+- **seo-specialist**: Tối ưu SEO
+- **analytics-analyst**: Phân tích hiệu suất
 
 ### Development Agents
-- **planner**: Implementation planning
-- **tester**: Quality assurance
-- **code-reviewer**: Code quality
-- **debugger**: Root cause analysis
+- **planner**: Lập kế hoạch triển khai
+- **tester**: Đảm bảo chất lượng
+- **code-reviewer**: Chất lượng code
+- **debugger**: Phân tích nguyên nhân gốc
 
 ### Support Agents
-- **researcher**: Market research
-- **lead-qualifier**: Audience analysis
-- **project-manager**: Progress tracking
-- **docs-manager**: Documentation
+- **researcher**: Nghiên cứu thị trường
+- **lead-qualifier**: Phân tích đối tượng
+- **project-manager**: Theo dõi tiến độ
+- **docs-manager**: Tài liệu
 
-See [Marketing Agents](/docs/marketing/agents) for complete details.
+Xem [Marketing Agents](/vi/docs/marketing/agents) để biết chi tiết đầy đủ.
 
-## Skill Activation
+## Kích Hoạt Skill
 
-Commands automatically activate relevant skills:
+Các lệnh tự động kích hoạt các skill liên quan:
 
-- **campaign-management**: Campaign templates and workflows
-- **email-marketing**: Email best practices
-- **seo-optimization**: SEO frameworks
-- **social-media**: Platform strategies
-- **creativity**: Design and copywriting
-- **analytics**: Performance tracking
-- **ai-multimodal**: Image generation and analysis
-- **brand-guidelines**: Brand consistency
+- **campaign-management**: Mẫu và quy trình chiến dịch
+- **email-marketing**: Best practices email
+- **seo-optimization**: Frameworks SEO
+- **social-media**: Chiến lược nền tảng
+- **creativity**: Thiết kế và copywriting
+- **analytics**: Theo dõi hiệu suất
+- **ai-multimodal**: Tạo và phân tích hình ảnh
+- **brand-guidelines**: Tính nhất quán thương hiệu
 
-See [Marketing Skills](/docs/marketing/skills) for complete catalog.
+Xem [Marketing Skills](/vi/docs/marketing/skills) để biết danh mục đầy đủ.
 
-## MCP Integrations
+## Tích Hợp MCP
 
-Commands support Model Context Protocol servers:
+Các lệnh hỗ trợ Model Context Protocol servers:
 
-- **Google Analytics 4**: Traffic and behavior data
-- **Search Console**: Search performance
-- **Discord**: Community management
-- **Slack**: Team collaboration
+- **Google Analytics 4**: Dữ liệu lưu lượng và hành vi
+- **Search Console**: Hiệu suất tìm kiếm
+- **Discord**: Quản lý cộng đồng
+- **Slack**: Cộng tác nhóm
 
-Use `/use-mcp` to interact with connected MCP servers.
+Sử dụng `/use-mcp` để tương tác với các MCP servers đã kết nối.
 
 ## Best Practices
 
-### 1. Be Specific
+### 1. Bắt Đầu Cụ Thể
 ```bash
-# Good: Specific, focused
-/write:blog "how to improve API response times with caching strategies"
+# Tốt: Cụ thể, tập trung
+/write:blog "10 SaaS pricing strategies for 2025"
 
-# Avoid: Vague, too broad
-/write:blog "make APIs better"
+# Tránh: Mơ hồ, quá rộng
+/write:blog "marketing tips"
 ```
 
-### 2. Use Appropriate Commands
+### 2. Sử Dụng Đúng Lệnh Cho Công Việc
 ```bash
-# Blog content → /write
-/write:blog "marketing automation guide"
+# Blog post → /write
+/write:blog "Complete guide to email marketing"
 
 # Video content → /video
 /video:create "30-second product demo"
@@ -382,129 +312,118 @@ Use `/use-mcp` to interact with connected MCP servers.
 /slide:create "Q1 campaign proposal"
 ```
 
-### 3. Let AI Clarify
-Commands will ask questions when needed:
+### 3. Để AI Làm Rõ
+Các lệnh sẽ đặt câu hỏi khi cần:
 ```bash
 /email newsletter
 
-# AI asks:
-# - Target audience?
-# - Key message?
-# - Desired action?
+# AI hỏi:
+# - Đối tượng mục tiêu?
+# - Thông điệp chính?
+# - Hành động mong muốn?
 ```
 
-### 4. Review Before Commit
+### 4. Xem Xét Trước Khi Xuất Bản
 ```bash
-# Always review changes
-/code plans/feature.md
+# Luôn kiểm tra nội dung
+/write:audit /assets/blog-posts/latest.md
 
-# Let code-reviewer validate
-# Then commit
-/git:cm
+# Xem xét điểm chất lượng
+# Sau đó xuất bản
+/write:publish /assets/blog-posts/latest.md
 ```
 
-### 5. Chain Commands
+### 5. Sử Dụng Dashboard Để Quản Lý
 ```bash
-# Research → Create → Audit → Publish
-/brainstorm content ideas for Q1 campaign
-# (review brainstorm output)
-/write:blog "top content idea from brainstorm"
-# (review draft)
-/write:audit /assets/blog-posts/latest-draft.md
-# (improve based on audit)
-/write:publish /assets/blog-posts/latest-draft.md --platform=wordpress
+# Xem tất cả tài sản marketing
+/dashboard
+
+# Quản lý:
+# - Copy & Writing Styles
+# - Video Storyboards
+# - Presentations
+# - Branding Guidelines
+# - Social Posts
 ```
 
-## Getting Help
+## Nhận Trợ Giúp
 
-### Command-Specific Help
+### Trợ Giúp Lệnh Cụ Thể
 ```bash
-# Get detailed command usage
+# Nhận hướng dẫn sử dụng lệnh chi tiết
 /ck-help campaign
 /ck-help plan
 /ck-help fix
 ```
 
-### Search Documentation
+### Tìm Kiếm Tài Liệu
 ```bash
-# Find relevant commands
+# Tìm lệnh liên quan
 /ck-help search email marketing
 /ck-help search SEO
 ```
 
-### Task Recommendations
+### Đề Xuất Nhiệm Vụ
 ```bash
-# Get command suggestions
+# Nhận gợi ý lệnh
 /ck-help How do I create a blog post?
 /ck-help What command analyzes campaigns?
 ```
 
-## Performance Tips
+## Mẹo Hiệu Suất
 
-### Batch Content Creation
-Create multiple assets in one session:
+### Sử Dụng Dashboard Để Quản Lý Trực Quan
 ```bash
-# Generate blog series
-/write:blog "Part 1: Introduction to marketing automation"
-/write:blog "Part 2: Email automation workflows"
-/write:blog "Part 3: Analytics and optimization"
-
-# Create social promotion
-/social linkedin "announce blog series"
-/social twitter "thread about blog series"
-```
-
-### Audit Before Publishing
-Always audit content quality:
-```bash
-# Create draft
-/write:blog "topic"
-
-# Audit quality (get actionable feedback)
-/write:audit /assets/blog-posts/draft.md
-
-# Fix issues, then publish
-/write:publish /assets/blog-posts/draft.md
-```
-
-### Use Dashboard for Asset Management
-```bash
-# Launch visual interface
+# Khởi chạy giao diện trực quan
 /dashboard
 
-# Navigate to Asset Management
-# Browse all generated content
-# Preview videos, slides, images
-# Organize into collections
-# Access at http://localhost:5173
+# Quản lý chiến dịch, nội dung, tài sản một cách trực quan
+# Truy cập tại http://localhost:5173
 ```
 
-## Next Steps
+### Tận Dụng Asset Management
+```bash
+# Tổ chức tài sản theo danh mục
+# - Copy & Writing Styles
+# - Video Storyboards
+# - Presentations
+# - Infographics
+# - Branding Guidelines
+# - Social Posts
+```
 
-**New to ClaudeKit Marketing?**
-1. [Quick Start Guide](/docs/marketing/quick-start)
-2. [Installation](/docs/getting-started/installation)
-3. [Marketing Concepts](/docs/marketing/core-concepts)
+### Kiểm Tra Nội Dung Trước Xuất Bản
+```bash
+# Kiểm tra chất lượng trước khi xuất bản
+/write:audit /assets/blog-posts/article.md
 
-**Ready to Create?**
-- [Blog Writing](/docs/marketing/commands/write) - `/write:blog`, audit, publish
-- [Video Production](/docs/marketing/commands/video) - Scripts, storyboards, generation
-- [Presentations](/docs/marketing/commands/slide) - Pitch decks, proposals
-- [Campaign Management](/docs/marketing/commands/campaign) - Campaign orchestration
-- [SEO Optimization](/docs/marketing/commands/seo) - Audits, keywords
+# Đảm bảo điểm ≥75/100 cho SEO, khả năng đọc, giọng văn thương hiệu
+```
 
-**Advanced Topics**:
-- [Custom Marketing Agents](/docs/marketing/agents/custom)
-- [Marketing Workflows](/docs/marketing/workflows)
-- [Dashboard & Asset Management](/docs/marketing/commands/dashboard)
+## Bước Tiếp Theo
 
-## Related Resources
+**Mới với ClaudeKit Marketing?**
+1. [Hướng Dẫn Bắt Đầu Nhanh](/vi/docs/marketing/quick-start)
+2. [Cài Đặt](/vi/docs/getting-started/installation)
+3. [Khái Niệm Marketing](/vi/docs/marketing/core-concepts)
 
-- [Marketing Agents](/docs/marketing/agents) - Meet your AI marketing team
-- [Marketing Skills](/docs/marketing/skills) - Specialized expertise modules
-- [Marketing Workflows](/docs/marketing/workflows) - Common workflows
-- [Marketing Dashboard](/docs/marketing/dashboard) - Visual management interface
+**Sẵn Sàng Tạo?**
+- [Quản Lý Chiến Dịch](/vi/docs/marketing/commands/campaign)
+- [Tạo Nội Dung](/vi/docs/marketing/commands/content)
+- [Tối Ưu SEO](/vi/docs/marketing/commands/seo)
+
+**Chủ Đề Nâng Cao**:
+- [Marketing Agents Tùy Chỉnh](/vi/docs/marketing/agents/custom)
+- [Marketing Workflows](/vi/docs/marketing/workflows)
+- [Tính Năng Dashboard](/vi/docs/marketing/commands/dashboard)
+
+## Tài Nguyên Liên Quan
+
+- [Marketing Agents](/vi/docs/marketing/agents) - Gặp gỡ đội ngũ marketing AI của bạn
+- [Marketing Skills](/vi/docs/marketing/skills) - Các module chuyên môn
+- [Marketing Workflows](/vi/docs/marketing/workflows) - Quy trình làm việc phổ biến
+- [Marketing Dashboard](/vi/docs/marketing/dashboard) - Giao diện quản lý trực quan
 
 ---
 
-**19 commands. Infinite marketing possibilities.** Your AI marketing team is ready.
+**19 lệnh. Khả năng marketing vô hạn.** Đội ngũ marketing AI của bạn đã sẵn sàng.

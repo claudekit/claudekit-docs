@@ -1,6 +1,7 @@
 ---
 title: "Marketing Kit"
-description: "AI-powered marketing automation toolkit for content, campaigns, and growth"
+description: "Bộ công cụ tự động hóa tiếp thị được cung cấp bởi AI"
+lang: vi
 section: marketing
 category: overview
 order: 1
@@ -8,125 +9,125 @@ order: 1
 
 # Marketing Kit
 
-Welcome to the ClaudeKit Marketing Kit documentation. This toolkit provides AI-powered automation for your entire marketing workflow.
+Chào mừng đến với tài liệu Marketing Kit của ClaudeKit. Bộ công cụ này cung cấp tự động hóa tiếp thị được cung cấp bởi AI cho toàn bộ quy trình tiếp thị của bạn.
 
 ## What's Inside
 
-The Marketing Kit includes:
+Marketing Kit bao gồm:
 
-- **27 Specialized Agents** - From campaign management to content creation
-- **73+ Slash Commands** - Quick access to marketing automation tasks
-- **60+ Skills** - Specialized capabilities for every marketing need
-- **10 Workflows** - Step-by-step guides for common marketing tasks
-- **Real-time Dashboard** - Monitor campaigns and analytics
+- **27 Specialized Agents** - Từ quản lý chiến dịch đến tạo nội dung
+- **73+ Slash Commands** - Truy cập nhanh vào các tác vụ tự động hóa tiếp thị
+- **60+ Skills** - Khả năng chuyên biệt cho mọi nhu cầu tiếp thị
+- **10 Workflows** - Hướng dẫn từng bước cho các tác vụ tiếp thị phổ biến
+- **Real-time Dashboard** - Giám sát chiến dịch và phân tích
 
 ## Quick Start
 
-Get started with the Marketing Kit in just a few commands:
+Bắt đầu với Marketing Kit chỉ với một vài lệnh:
 
 ```bash
-# Install ClaudeKit CLI
+# Cài đặt ClaudeKit CLI
 npm install -g claudekit-cli
 
-# Create a new marketing project
+# Tạo một dự án tiếp thị mới
 ck new --kit marketing
 
-# Start your first campaign
+# Bắt đầu chiến dịch đầu tiên của bạn
 /campaign create "Q1 Product Launch"
 ```
 
-## Unfair Advantage
+## Lợi Thế Vượt Trội
 
-Unlike traditional marketing tools, ClaudeKit Marketing has **full access to your codebase**:
+Không giống như các công cụ marketing truyền thống, ClaudeKit Marketing có **quyền truy cập đầy đủ vào codebase của bạn**:
 
-- **Product Screenshots** - Automatically extracted from actual UI code
-- **Feature Descriptions** - Generated from implementation, not imagination
-- **Technical Accuracy** - Marketing claims verified against real code
-- **Version Sync** - Content updates when features change
+- **Ảnh Chụp Màn Hình Sản Phẩm** - Tự động trích xuất từ code UI thực tế
+- **Mô Tả Tính Năng** - Được tạo từ triển khai thực, không phải tưởng tượng
+- **Độ Chính Xác Kỹ Thuật** - Tuyên bố marketing được xác minh dựa trên code thực
+- **Đồng Bộ Phiên Bản** - Nội dung tự động cập nhật khi tính năng thay đổi
 
-This means your marketing materials are always accurate, technically precise, and impossible for competitors to replicate without your codebase.
+Điều này có nghĩa là tài liệu marketing của bạn luôn chính xác, chính xác về kỹ thuật và không thể bị đối thủ sao chép nếu không có codebase của bạn.
 
 ## Core Features
 
-### Asset Management (Content Hub)
+### Quản Lý Tài Sản (Content Hub)
 
-Centralized hub for all marketing assets with intelligent organization:
+Trung tâm tập trung cho tất cả tài sản marketing với tổ chức thông minh:
 
 ```bash
-# Open visual dashboard
+# Mở dashboard trực quan
 /dashboard
 
-# Manages 6 asset categories:
-# - Copy & Writing Styles
-# - Storyboards (video narratives)
-# - Presentations (pitch decks, proposals)
-# - Infographics (data visualizations)
-# - Branding Guidelines (logos, colors, voice)
-# - Social Posts (platform-specific content)
+# Quản lý 6 danh mục tài sản:
+# - Copy & Phong Cách Viết
+# - Storyboard (câu chuyện video)
+# - Bài Thuyết Trình (pitch deck, đề xuất)
+# - Infographic (trực quan hóa dữ liệu)
+# - Hướng Dẫn Thương Hiệu (logo, màu sắc, giọng văn)
+# - Bài Đăng Mạng Xã Hội (nội dung theo nền tảng)
 ```
 
-**Screenshots**:
+**Ảnh chụp màn hình**:
 
-![Asset Management Hub](/docs/screenshots/assets-management.png)
-![Branding Guidelines](/docs/screenshots/assets-branding-guideline.png)
-![Storyboard Preview](/docs/screenshots/assets-storyboard-preview.png)
+![Trung tâm Quản lý Tài sản](/docs/screenshots/assets-management.png)
+![Hướng dẫn Thương hiệu](/docs/screenshots/assets-branding-guideline.png)
+![Xem trước Storyboard](/docs/screenshots/assets-storyboard-preview.png)
 
-See [Asset Management](/docs/marketing/features/asset-management) for full details.
+Xem [Quản Lý Tài Sản](/docs/marketing/features/asset-management) để biết chi tiết đầy đủ.
 
-### Content Creation
+### Tạo Nội Dung
 
-Generate high-quality marketing content with author voice extraction:
+Tạo nội dung marketing chất lượng cao với trích xuất giọng văn tác giả:
 
 ```bash
-# Blog posts with style matching
-/write:blog "10 SaaS Pricing Strategies" --style casual-founder
+# Bài blog với khớp phong cách
+/write:blog "10 Chiến Lược Giá SaaS" --style casual-founder
 
-# Content quality audit
+# Kiểm tra chất lượng nội dung
 /write:audit /assets/copy/blog-posts/pricing-guide.md
 
-# Publishing workflow
+# Quy trình xuất bản
 /write:publish /assets/copy/blog-posts/pricing-guide.md
 ```
 
-See [Write Commands](/docs/marketing/commands/write) for details.
+Xem [Lệnh Write](/docs/marketing/commands/write) để biết chi tiết.
 
-### Video Production
+### Sản Xuất Video
 
-Professional video workflows with Gemini Veo 3.1 + Imagen 4:
-
-```bash
-# Complete video creation
-/video:create "Product demo for homepage"
-
-# Platform-specific scripts
-/video:script --platform youtube --duration 60s
-
-# Visual storyboarding
-/video:storyboard "SaaS product launch campaign"
-```
-
-See [Video Commands](/docs/marketing/commands/video) for details.
-
-### Presentations
-
-Beautiful slide decks for every occasion:
+Quy trình video chuyên nghiệp với Gemini Veo 3.1 + Imagen 4:
 
 ```bash
-# Pitch deck generation
-/slide:create "Series A Fundraising Deck"
+# Tạo video hoàn chỉnh
+/video:create "Demo sản phẩm cho trang chủ"
 
-# Campaign proposals
-/slide:create "Q1 Marketing Campaign Proposal"
+# Tạo script video
+/video:script "Giải thích API rate limiting" --duration=60 --platform=youtube
 
-# Product demos
-/slide:create "Feature Launch Demo" --theme Modern
+# Tạo storyboard trực quan
+/video:storyboard /assets/videos/2024-12-30-api-demo/script.md
 ```
 
-See [Slide Commands](/docs/marketing/commands/slide) for details.
+Xem [Lệnh Video](/docs/marketing/commands/video) để biết chi tiết.
 
-### Campaign Management
+### Bài Thuyết Trình
 
-Create, manage, and optimize marketing campaigns with AI assistance:
+Tạo pitch deck, đề xuất chiến dịch và bài thuyết trình đẹp:
+
+```bash
+# Pitch deck cho nhà đầu tư
+/slide:create "Series A pitch deck - AI marketing automation"
+
+# Đề xuất chiến dịch
+/slide:create "Q1 product launch campaign với phân tích ngân sách"
+
+# Demo sản phẩm
+/slide:create "Technical demo API features cho doanh nghiệp"
+```
+
+Xem [Lệnh Slide](/docs/marketing/commands/slide) để biết chi tiết.
+
+### Quản Lý Chiến Dịch
+
+Tạo, quản lý và tối ưu hóa chiến dịch tiếp thị với hỗ trợ AI:
 
 ```bash
 /campaign create "Summer Sale 2025"
@@ -136,7 +137,7 @@ Create, manage, and optimize marketing campaigns with AI assistance:
 
 ### SEO Optimization
 
-Boost your search rankings with AI-powered SEO tools:
+Tăng xếp hạng tìm kiếm của bạn bằng các công cụ SEO được cung cấp bởi AI:
 
 ```bash
 /seo keywords "competitor analysis"
@@ -146,7 +147,7 @@ Boost your search rankings with AI-powered SEO tools:
 
 ### Analytics & Insights
 
-Track performance and get actionable insights:
+Theo dõi hiệu suất và nhận được những hiểu biết có thể hành động:
 
 ```bash
 /analyze traffic
@@ -156,6 +157,6 @@ Track performance and get actionable insights:
 
 ## Next Steps
 
-- [Marketing Agents](/docs/marketing/agents) - Meet your AI marketing team
-- [Marketing Commands](/docs/marketing/commands) - All available commands
-- [Marketing Workflows](/docs/marketing/workflows) - Step-by-step guides
+- [Marketing Agents](/docs/marketing/agents) - Gặp gỡ đội tiếp thị AI của bạn
+- [Marketing Commands](/docs/marketing/commands) - Tất cả các lệnh có sẵn
+- [Marketing Workflows](/docs/marketing/workflows) - Hướng dẫn từng bước

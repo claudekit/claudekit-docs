@@ -1,142 +1,143 @@
 ---
 title: "Content Marketing"
-description: "Strategic content planning, editorial workflows, and content optimization frameworks for building sustainable content programs."
+description: "Lập kế hoạch nội dung chiến lược, quy trình biên tập và framework tối ưu hóa nội dung để xây dựng chương trình nội dung bền vững."
+lang: vi
 section: marketing
 category: skills
 order: 2
 ---
 
-> Build content programs that attract, engage, and convert through strategic planning and systematic execution.
+> Xây dựng chương trình nội dung thu hút, tương tác và chuyển đổi thông qua lập kế hoạch chiến lược và thực thi có hệ thống.
 
-## What This Skill Does
+## Kỹ năng này làm gì
 
-**The Challenge**: Content creation without strategy leads to inconsistent publishing, topic gaps, and wasted resources. Teams struggle with editorial calendars, content audits, and repurposing workflows.
+**Thách thức**: Tạo nội dung không có chiến lược dẫn đến xuất bản không nhất quán, thiếu chủ đề và lãng phí tài nguyên. Các nhóm gặp khó khăn với lịch biên tập, kiểm toán nội dung và quy trình tái sử dụng.
 
-**The Solution**: Content Marketing skill provides strategic frameworks for content planning, editorial workflows, and content optimization. Includes content strategy templates, editorial calendars, blog post frameworks, and audit checklists.
+**Giải pháp**: Kỹ năng Content Marketing cung cấp framework chiến lược cho lập kế hoạch nội dung, quy trình biên tập và tối ưu hóa nội dung. Bao gồm mẫu chiến lược nội dung, lịch biên tập, framework blog post và checklist kiểm toán.
 
-## Activation
+## Kích hoạt
 
-**Implicit**: Activates automatically for Content Creator, Campaign Manager, and Attraction Specialist agents.
+**Ngầm**: Tự động kích hoạt cho agents Content Creator, Campaign Manager và Attraction Specialist.
 
-**Explicit**: Activate via prompt:
+**Rõ ràng**: Kích hoạt qua prompt:
 ```
-Activate content-marketing skill to develop content strategy and editorial calendar
+Kích hoạt skill content-marketing để [mô tả task]
 ```
 
-## Capabilities
+## Khả năng
 
-### 1. Content Strategy Development
-Define 3-5 content pillars aligned with business goals and map topic clusters.
+### 1. Phát triển chiến lược nội dung
+Định nghĩa 3-5 trụ cột nội dung phù hợp với mục tiêu kinh doanh và lập bản đồ cụm chủ đề.
 
 ```markdown
-# Content Pillar Example
-Pillar: "Developer Productivity Tools"
-├── Cluster 1: Code editors and IDE features
-├── Cluster 2: Version control workflows
-├── Cluster 3: CI/CD automation
-└── Cluster 4: Testing frameworks
+# Ví dụ trụ cột nội dung
+Trụ cột: "Công cụ năng suất nhà phát triển"
+├── Cụm 1: Tính năng code editors và IDE
+├── Cụm 2: Quy trình kiểm soát phiên bản
+├── Cụm 3: Tự động hóa CI/CD
+└── Cụm 4: Testing frameworks
 ```
 
-**Framework loaded**: `references/content-strategy-framework.md`
+**Framework tải**: `references/content-strategy-framework.md`
 
-### 2. Editorial Calendar Planning
-Create publishing schedules with content types, owners, and distribution channels.
+### 2. Lập kế hoạch lịch biên tập
+Tạo lịch xuất bản với loại nội dung, người phụ trách và kênh phân phối.
 
 ```markdown
-| Week | Content Type | Topic | Owner | Channel |
-|------|--------------|-------|-------|---------|
-| W1   | Blog post    | How to automate deployments | Sarah | Blog, LinkedIn |
-| W2   | Video        | CI/CD pipeline walkthrough | Mike | YouTube, Twitter |
-| W3   | Podcast      | Developer workflows interview | Team | Spotify, Blog |
+| Tuần | Loại nội dung | Chủ đề | Người phụ trách | Kênh |
+|------|---------------|--------|-----------------|------|
+| T1   | Blog post     | Cách tự động hóa deployments | Sarah | Blog, LinkedIn |
+| T2   | Video         | Hướng dẫn CI/CD pipeline | Mike | YouTube, Twitter |
+| T3   | Podcast       | Phỏng vấn quy trình nhà phát triển | Team | Spotify, Blog |
 ```
 
-**Template loaded**: `references/editorial-calendar-template.md`
+**Mẫu tải**: `references/editorial-calendar-template.md`
 
-### 3. Blog Post Framework Selection
-Choose from proven blog structures based on content intent.
+### 3. Lựa chọn framework blog post
+Chọn từ các cấu trúc blog đã chứng minh dựa trên ý định nội dung.
 
-**Available templates**:
-- **How-to Guide**: Step-by-step instructional content
-- **Listicle**: "X ways to achieve Y" format
-- **Case Study**: Problem-solution-results narrative
-- **Opinion/Commentary**: Thought leadership pieces
-- **Comparison**: "X vs Y" evaluation frameworks
-- **Beginner's Guide**: Comprehensive introductory content
+**Mẫu có sẵn**:
+- **Hướng dẫn how-to**: Nội dung hướng dẫn từng bước
+- **Listicle**: Định dạng "X cách để đạt Y"
+- **Case Study**: Câu chuyện vấn đề-giải pháp-kết quả
+- **Ý kiến/Bình luận**: Nội dung tư tưởng lãnh đạo
+- **So sánh**: Framework đánh giá "X vs Y"
+- **Hướng dẫn cho người mới**: Nội dung giới thiệu toàn diện
 
-**Templates loaded**: `references/blog-post-templates.md`
+**Mẫu tải**: `references/blog-post-templates.md`
 
-## Prerequisites
+## Yêu cầu trước
 
-- User's brand guidelines (optional but recommended)
-- Target audience personas
-- Business goals and KPIs
+- Hướng dẫn thương hiệu của người dùng (tùy chọn nhưng nên có)
+- Personas đối tượng mục tiêu
+- Mục tiêu kinh doanh và KPIs
 
-## Configuration
+## Cấu hình
 
-No configuration required. Skill works with user's existing project structure.
+Không cần cấu hình. Kỹ năng hoạt động với cấu trúc dự án hiện có của người dùng.
 
-**Optional**: Define content pillars in `docs/content-strategy.md` for consistent reference.
+**Tùy chọn**: Định nghĩa trụ cột nội dung trong `docs/content-strategy.md` để tham khảo nhất quán.
 
-## Best Practices
+## Thực hành tốt nhất
 
-**1. Lead with value, not promotion**
-Focus 80% on educational content, 20% on product promotion.
+**1. Dẫn đầu với giá trị, không phải quảng cáo**
+Tập trung 80% vào nội dung giáo dục, 20% vào quảng cáo sản phẩm.
 
-**2. Match content to buyer journey stage**
-- **Top of funnel**: Educational, awareness content
-- **Middle of funnel**: Comparison, use case content
-- **Bottom of funnel**: Product-specific, conversion content
+**2. Phù hợp nội dung với giai đoạn hành trình người mua**
+- **Đầu phễu**: Nội dung giáo dục, nhận thức
+- **Giữa phễu**: So sánh, use case
+- **Cuối phễu**: Đặc thù sản phẩm, chuyển đổi
 
-**3. Maintain consistent publishing schedule**
-Consistency beats frequency. Weekly schedule is more effective than sporadic bursts.
+**3. Duy trì lịch xuất bản nhất quán**
+Nhất quán quan trọng hơn tần suất. Lịch hàng tuần hiệu quả hơn đợt bùng nổ không đều.
 
-## Common Use Cases
+## Use cases phổ biến
 
-### Use Case 1: Quarterly Content Planning
-**Scenario**: Plan next quarter's content across blog, video, and social channels.
+### Use Case 1: Lập kế hoạch nội dung hàng quý
+**Kịch bản**: Lập kế hoạch nội dung quý tiếp theo trên blog, video và kênh mạng xã hội.
 
-**Workflow**:
-1. Audit existing content performance
-2. Identify gaps in content coverage
-3. Map topics to 3-5 content pillars
-4. Create editorial calendar with publishing dates
-5. Assign owners and distribution channels
+**Quy trình**:
+1. Kiểm toán hiệu suất nội dung hiện có
+2. Xác định khoảng trống trong phạm vi nội dung
+3. Lập bản đồ chủ đề với 3-5 trụ cột nội dung
+4. Tạo lịch biên tập với ngày xuất bản
+5. Phân công người phụ trách và kênh phân phối
 
-**Output**: 13-week editorial calendar with 40+ content ideas mapped to pillars.
+**Kết quả**: Lịch biên tập 13 tuần với hơn 40 ý tưởng nội dung được lập bản đồ với trụ cột.
 
-### Use Case 2: Content Audit and Optimization
-**Scenario**: Evaluate existing blog content and prioritize updates.
+### Use Case 2: Kiểm toán và tối ưu hóa nội dung
+**Kịch bản**: Đánh giá nội dung blog hiện có và ưu tiên cập nhật.
 
-**Workflow**:
-1. Load content audit checklist
-2. Analyze traffic, engagement, conversions per post
-3. Categorize as: Keep, Update, Consolidate, Redirect, Delete
-4. Prioritize updates by potential impact
-5. Create update schedule
+**Quy trình**:
+1. Tải checklist kiểm toán nội dung
+2. Phân tích lưu lượng, tương tác, chuyển đổi mỗi bài
+3. Phân loại: Giữ, Cập nhật, Hợp nhất, Chuyển hướng, Xóa
+4. Ưu tiên cập nhật theo tác động tiềm năng
+5. Tạo lịch cập nhật
 
-**Output**: Audit report with action items and prioritized update queue.
+**Kết quả**: Báo cáo kiểm toán với hành động và hàng đợi cập nhật được ưu tiên.
 
-## Troubleshooting
+## Xử lý sự cố
 
-**Issue**: Content calendar feels overwhelming
-**Solution**: Start with 1 pillar, 1 content type, weekly cadence. Expand after 4-6 weeks of consistency.
+**Vấn đề**: Lịch nội dung cảm thấy quá sức
+**Giải pháp**: Bắt đầu với 1 trụ cột, 1 loại nội dung, nhịp độ hàng tuần. Mở rộng sau 4-6 tuần nhất quán.
 
-**Issue**: Running out of topic ideas
-**Solution**: Use seo-optimization skill for keyword research and search intent analysis. Check competitors' content gaps.
+**Vấn đề**: Hết ý tưởng chủ đề
+**Giải pháp**: Sử dụng kỹ năng seo-optimization cho nghiên cứu từ khóa và phân tích ý định tìm kiếm. Kiểm tra khoảng trống nội dung đối thủ.
 
-**Issue**: Content not performing
-**Solution**: Activate analytics skill to identify high-performing topics. Double down on what works, cut what doesn't.
+**Vấn đề**: Nội dung không hoạt động
+**Giải pháp**: Kích hoạt kỹ năng analytics để xác định chủ đề hoạt động tốt. Tăng gấp đôi những gì hiệu quả, cắt những gì không.
 
-## Related Skills
+## Kỹ năng liên quan
 
-- [SEO Optimization](/docs/marketing/skills/seo-optimization) - Keyword research and search optimization
-- [Copywriting](/docs/marketing/skills/copywriting) - Writing frameworks and headline templates
-- [Brand Guidelines](/docs/marketing/skills/brand-guidelines) - Voice and messaging consistency
-- [Analytics](/docs/marketing/skills/analytics) - Content performance tracking
+- [SEO Optimization](/vi/docs/marketing/skills/seo-optimization) - Nghiên cứu từ khóa và tối ưu tìm kiếm
+- [Copywriting](/vi/docs/marketing/skills/copywriting) - Framework viết và mẫu tiêu đề
+- [Brand Guidelines](/vi/docs/marketing/skills/brand-guidelines) - Nhất quán giọng điệu và thông điệp
+- [Analytics](/vi/docs/marketing/skills/analytics) - Theo dõi hiệu suất nội dung
 
-## Related Commands
+## Lệnh liên quan
 
-- `/content/blog` - Generate blog post from outline
-- `/content/enhance` - Improve existing content
-- `/seo/keywords` - Research content topics
-- `/plan` - Create content production plan
+- `/content/blog` - Tạo blog post từ outline
+- `/content/enhance` - Cải thiện nội dung hiện có
+- `/seo/keywords` - Nghiên cứu chủ đề nội dung
+- `/plan` - Tạo kế hoạch sản xuất nội dung

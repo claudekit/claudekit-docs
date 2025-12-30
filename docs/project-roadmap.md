@@ -67,17 +67,22 @@
 - ✅ Build passing successfully (dist/ generated)
 
 **Content** (October - December 2025):
-- 280+ total documentation pages (English + Vietnamese)
-  - 97 Engineer docs (original)
-  - 88 Marketing docs (NEW)
-  - 9 CLI docs (NEW)
-- 12+ content categories with kit-agnostic organization
-- 60+ agent documentation pages (Engineer + Marketing)
-- 73+ command pages across multiple kits
-- 60+ skill documentation pages
-- 20+ workflow guides and tutorials
-- 10+ troubleshooting guides
-- Comprehensive CLI documentation
+- **451 total documentation pages** (275 English + 176 Vietnamese)
+  - **English**: 275 pages across 8 main categories
+  - **Vietnamese**: 176 pages (64% coverage, targeting 100%)
+  - **Engineer Kit**: 138 pages (18 agents + 66 commands + 49 skills + 4 config + 1 index)
+  - **Marketing Kit**: 88 pages (agents, commands, skills, workflows, features)
+  - **CLI Kit**: 9 pages (commands, setup, reference)
+  - **Getting Started**: Complete onboarding guides with installation, quick-start, project types
+  - **Workflows**: 20+ cross-kit workflow guides
+  - **Tools & Support**: Tools directory, FAQ, troubleshooting, community resources
+  - **Changelog**: Version history and release notes
+- **8 main content categories** (kit-agnostic organization)
+- **60+ agent documentation pages** (Engineer + Marketing)
+- **73+ command pages** across multiple kits
+- **49+ skill documentation pages**
+- **20+ workflow guides** and tutorials
+- **10+ troubleshooting guides** and support resources
 
 **Infrastructure**:
 - Astro v5.14.6 setup

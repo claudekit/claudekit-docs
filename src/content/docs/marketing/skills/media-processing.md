@@ -1,34 +1,35 @@
 ---
-title: "Media Processing"
-description: "Process multimedia files with FFmpeg, ImageMagick, and RMBG: video encoding, image manipulation, and AI background removal."
+title: "Xử lý phương tiện"
+description: "Xử lý các tệp đa phương tiện với FFmpeg, ImageMagick và RMBG: mã hóa video, thao tác hình ảnh và loại bỏ nền AI."
+lang: vi
 section: marketing
 category: skills
 order: 19
 ---
 
-> Convert, resize, optimize, and manipulate media files using industry-standard tools for video, audio, and images.
+> Chuyển đổi, thay đổi kích thước, tối ưu hóa và thao tác các tệp phương tiện bằng các công cụ tiêu chuẩn ngành cho video, âm thanh và hình ảnh.
 
-## What This Skill Does
+## Kỹ năng này làm gì
 
-**The Challenge**: Marketing requires processing diverse media formats—encoding videos for social platforms, resizing images for web, removing backgrounds, extracting audio. Using separate tools for each task is inefficient.
+**Thách thức**: Tiếp thị yêu cầu xử lý các định dạng phương tiện đa dạng—mã hóa video cho các nền tảng xã hội, thay đổi kích thước hình ảnh cho web, loại bỏ nền, trích xuất âm thanh. Sử dụng các công cụ riêng biệt cho mỗi tác vụ không hiệu quả.
 
-**The Solution**: Media Processing skill integrates FFmpeg (video/audio), ImageMagick (images), and RMBG (AI background removal). Supports 100+ formats, hardware acceleration, batch processing, and streaming manifest generation.
+**Giải pháp**: Kỹ năng Xử lý phương tiện tích hợp FFmpeg (video/audio), ImageMagick (hình ảnh) và RMBG (loại bỏ nền AI). Hỗ trợ 100+ định dạng, tăng tốc phần cứng, xử lý batch và tạo manifest phát trực tuyến.
 
-## Activation
+## Kích hoạt
 
-**Implicit**: Activates when agents need to manipulate media files (convert, resize, compress, extract).
+**Ngầm**: Kích hoạt khi agents cần thao tác với các tệp phương tiện (chuyển đổi, thay đổi kích thước, nén, trích xuất).
 
-**Explicit**: Activate via prompt:
+**Rõ ràng**: Kích hoạt qua prompt:
 ```
-Activate media-processing skill to convert video formats and optimize images
+Kích hoạt skill media-processing để [mô tả task]
 ```
 
-## Capabilities
+## Khả năng
 
-### 1. Video Processing with FFmpeg
-Encode, convert, extract audio, create thumbnails, and optimize for web/social.
+### 1. Xử lý Video với FFmpeg
+Mã hóa, chuyển đổi, trích xuất âm thanh, tạo hình ảnh thu nhỏ và tối ưu hóa cho web/xã hội.
 
-**Common operations**:
+**Hoạt động phổ biến**:
 ```bash
 # Convert format (copy streams, no re-encode)
 ffmpeg -i input.mkv -c copy output.mp4
@@ -46,18 +47,18 @@ ffmpeg -i video.mp4 -ss 00:00:05 -vframes 1 thumbnail.jpg
 ffmpeg -i input.mp4 -vf scale=1280:720 output.mp4
 ```
 
-**Key parameters**:
-- `-c:v libx264` - H.264 video codec (universal compatibility)
-- `-crf 22` - Quality (0-51, lower=better, 18-28 typical)
-- `-preset slow` - Encoding speed vs compression balance
-- `-c:a aac` - AAC audio codec
+**Tham số chính**:
+- `-c:v libx264` - Codec video H.264 (tương thích phổ quát)
+- `-crf 22` - Chất lượng (0-51, thấp hơn=tốt hơn, 18-28 điển hình)
+- `-preset slow` - Mô cân bằng tốc độ mã hóa vs nén
+- `-c:a aac` - Codec âm thanh AAC
 
-**Guide**: `references/ffmpeg-encoding.md`
+**Hướng dẫn**: `references/ffmpeg-encoding.md`
 
-### 2. Image Processing with ImageMagick
-Resize, convert formats, apply effects, and batch process images.
+### 2. Xử lý hình ảnh với ImageMagick
+Thay đổi kích thước, chuyển đổi định dạng, áp dụng hiệu ứng và xử lý batch các hình ảnh.
 
-**Common operations**:
+**Hoạt động phổ biến**:
 ```bash
 # Convert format
 magick input.png output.jpg
@@ -72,15 +73,15 @@ mogrify -resize 800x -quality 85 *.jpg
 magick input.jpg -pointsize 48 -fill white -gravity southeast -annotate +10+10 '© Brand' output.jpg
 ```
 
-**Resize syntax**:
-- `800x600` - Fit within (maintains aspect)
-- `800x600^` - Fill (may crop)
-- `800x600!` - Force exact size (distorts)
+**Cú pháp thay đổi kích thước**:
+- `800x600` - Khớp với (duy trì khía cạnh)
+- `800x600^` - Điền (có thể cắt)
+- `800x600!` - Buộc kích thước chính xác (méo)
 
-**Guide**: `references/imagemagick-editing.md`
+**Hướng dẫn**: `references/imagemagick-editing.md`
 
-### 3. Background Removal with RMBG
-AI-powered background removal for product photos and portraits.
+### 3. Loại bỏ nền với RMBG
+Loại bỏ nền do AI hỗ trợ cho ảnh sản phẩm và chân dung.
 
 ```bash
 # Basic removal (modnet model)
@@ -96,16 +97,16 @@ rmbg input.jpg -m u2netp -o output.png
 rmbg input.jpg -r 4096 -o output.png
 ```
 
-**Models**:
-- `modnet` - Default, balanced quality/speed
-- `briaai` - Highest quality, slower
-- `u2netp` - Fastest, good for batch processing
+**Mô hình**:
+- `modnet` - Mặc định, chất lượng cân bằng/tốc độ
+- `briaai` - Chất lượng cao nhất, chậm hơn
+- `u2netp` - Nhanh nhất, tốt cho xử lý batch
 
-**Guide**: `references/rmbg-background-removal.md`
+**Hướng dẫn**: `references/rmbg-background-removal.md`
 
-## Prerequisites
+## Yêu cầu trước
 
-**Installation**:
+**Cài đặt**:
 ```bash
 # macOS
 brew install ffmpeg imagemagick
@@ -119,34 +120,34 @@ npm install -g rmbg-cli
 ffmpeg -version && magick -version && rmbg --version
 ```
 
-## Configuration
+## Cấu hình
 
-No configuration needed. Tools work via command-line.
+Không cần cấu hình. Công cụ hoạt động thông qua dòng lệnh.
 
-**Tip**: Save common operations as shell scripts in `scripts/media/`.
+**Mẹo**: Lưu hoạt động phổ biến dưới dạng tập lệnh shell trong `scripts/media/`.
 
-## Best Practices
+## Thực hành tốt nhất
 
-**1. Preserve originals**
-Always work on copies. Use output files, never overwrite source files.
+**1. Bảo tồn bản gốc**
+Luôn làm việc trên các bản sao. Sử dụng các tệp đầu ra, không bao giờ ghi đè các tệp nguồn.
 
-**2. Choose right tool for task**
+**2. Chọn công cụ phù hợp cho tác vụ**
 - **Video/audio**: FFmpeg
-- **Still images**: ImageMagick
-- **Background removal**: RMBG
+- **Hình ảnh tĩnh**: ImageMagick
+- **Loại bỏ nền**: RMBG
 - **Batch images**: ImageMagick's `mogrify`
 
-**3. Optimize for platform**
+**3. Tối ưu hóa cho nền tảng**
 - YouTube: 1080p, H.264, 8Mbps bitrate
 - Instagram: 1080x1080, H.264, 5Mbps
 - TikTok: 1080x1920 (9:16), H.264, 8Mbps
 
-## Common Use Cases
+## Use cases phổ biến
 
-### Use Case 1: Social Media Video Optimization
-**Scenario**: Convert marketing video for Instagram Reels (9:16, 1080x1920, <100MB).
+### Use Case 1: Tối ưu hóa Video Mạng xã hội
+**Kịch bản**: Chuyển đổi video tiếp thị cho Instagram Reels (9:16, 1080x1920, <100MB).
 
-**Workflow**:
+**Quy trình**:
 ```bash
 # 1. Resize and crop to 9:16
 ffmpeg -i promo.mp4 -vf "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920" temp.mp4
@@ -158,12 +159,12 @@ ffmpeg -i temp.mp4 -c:v libx264 -crf 23 -maxrate 5M -bufsize 10M -c:a aac -b:a 1
 ls -lh reel.mp4
 ```
 
-**Output**: Instagram-ready video file.
+**Kết quả**: Tệp video sẵn sàng Instagram.
 
-### Use Case 2: Product Image Batch Processing
-**Scenario**: Prepare 50 product photos for ecommerce site (800x800, white background, optimized).
+### Use Case 2: Xử lý Batch Hình ảnh Sản phẩm
+**Kịch bản**: Chuẩn bị 50 ảnh sản phẩm cho trang web thương mại điện tử (800x800, nền trắng, được tối ưu hóa).
 
-**Workflow**:
+**Quy trình**:
 ```bash
 # 1. Remove backgrounds (batch)
 for img in *.jpg; do
@@ -177,26 +178,26 @@ mogrify -resize 800x800^ -gravity center -extent 800x800 -quality 85 nobg-*.jpg
 ls -lh nobg-*.jpg
 ```
 
-**Output**: 50 optimized product images ready for upload.
+**Kết quả**: 50 hình ảnh sản phẩm được tối ưu hóa sẵn sàng tải lên.
 
-## Troubleshooting
+## Xử lý sự cố
 
-**Issue**: FFmpeg "codec not found"
-**Solution**: Verify FFmpeg built with codec support: `ffmpeg -codecs | grep h264`
+**Vấn đề**: FFmpeg "codec not found"
+**Giải pháp**: Xác minh FFmpeg được xây dựng với hỗ trợ codec: `ffmpeg -codecs | grep h264`
 
-**Issue**: ImageMagick "not authorized" error
-**Solution**: Edit `/etc/ImageMagick-7/policy.xml`, change PDF policy from "none" to "read|write"
+**Vấn đề**: ImageMagick "not authorized" error
+**Giải pháp**: Chỉnh sửa `/etc/ImageMagick-7/policy.xml`, thay đổi chính sách PDF từ "none" thành "read|write"
 
-**Issue**: RMBG produces poor results
-**Solution**: Try different model (`-m briaai` for quality, `-m u2netp` for speed). Ensure input is high-resolution.
+**Vấn đề**: RMBG tạo ra kết quả kém
+**Giải pháp**: Thử mô hình khác (`-m briaai` để chất lượng, `-m u2netp` để tốc độ). Đảm bảo đầu vào có độ phân giải cao.
 
-## Related Skills
+## Kỹ năng liên quan
 
-- [AI Multimodal](/docs/marketing/skills/ai-multimodal) - Gemini-based media processing (alternative)
-- [Creativity](/docs/marketing/skills/creativity) - Creative direction for processed media
-- [Social Media](/docs/marketing/skills/social-media) - Platform-specific format requirements
+- [AI Multimodal](/vi/docs/marketing/skills/ai-multimodal) - Xử lý phương tiện dựa trên Gemini (thay thế)
+- [Creativity](/vi/docs/marketing/skills/creativity) - Định hướng sáng tạo cho phương tiện được xử lý
+- [Social Media](/vi/docs/marketing/skills/social-media) - Yêu cầu định dạng dành riêng cho nền tảng
 
-## Related Commands
+## Lệnh liên quan
 
-- `/design/video` - Video content planning and editing
-- `/content/enhance` - Optimize existing media assets
+- `/design/video` - Lập kế hoạch nội dung video và chỉnh sửa
+- `/content/enhance` - Tối ưu hóa các tài sản phương tiện hiện có

@@ -1,0 +1,261 @@
+CONFIGURATION AND DEPLOYMENT FILES INVENTORY
+Date: 2025-12-30
+Project: claudekit-docs
+
+SECTION 1: ROOT CONFIGURATION FILES
+
+=== astro.config.mjs ===
+Path: /Users/duynguyen/www/claudekit/claudekit-docs/astro.config.mjs
+Purpose: Core Astro SSG framework configuration
+
+Key Settings:
+- i18n: defaultLocale "en", locales ["en", "vi"]
+- Integrations: mdx, react, tailwind, pagefind, llms.txt generator
+- Markdown: GFM, Math, Directives, Custom Admonitions
+- Rehype: Slug, autolink headings, KaTeX
+- Code theme: One Dark Pro (dark mode)
+- Build format: "directory" (for Pagefind)
+- Output: "static" (full SSG)
+
+Notable: Custom llmsTxtGenerator() hook generates llms.txt and llms-full.txt
+
+=== tailwind.config.mjs ===
+Path: /Users/duynguyen/www/claudekit/claudekit-docs/tailwind.config.mjs
+Purpose: Tailwind CSS theming and design system
+
+Key Settings:
+- Colors: bg, text, accent (7 colors), border, ai theme (CSS variables)
+- Typography: Sans (Inter Variable), Mono (Geist Mono)
+- Font sizes: xs to 4xl via CSS variables
+- Spacing: 8px base grid, 0.5-24 units
+- Layout: sidebar 280px, ai-panel 380px, header 64px
+- Shadows, radius, transitions, easing
+- Content scan: ./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}
+
+Design: Polar v1.1 palette, dark mode only
+
+=== tsconfig.json ===
+Path: /Users/duynguyen/www/claudekit/claudekit-docs/tsconfig.json
+Purpose: TypeScript strict mode configuration
+
+Settings:
+- Extends: astro/tsconfigs/strict
+- Include: .astro/types.d.ts, all files
+- Exclude: dist/
+
+=== package.json ===
+Path: /Users/duynguyen/www/claudekit/claudekit-docs/package.json
+Purpose: Project metadata and dependencies
+
+Project:
+- Name: claudekit-docs
+- Version: 0.0.1
+- Type: module (ES modules)
+
+Scripts: dev, build, preview, astro
+
+Dependencies:
+- Astro v5.14.6
+- React v18.3.1
+- Tailwind CSS v3.4.17
+- @astrojs/mdx v4.3.7
+- astro-pagefind v1.8.5
+- OpenAI SDK v4.75.1
+- Radix UI (collapsible, dialog, dropdown, scroll-area)
+- Remark/Rehype plugins (gfm, math, slug, autolink-headings, katex)
+
+Dev: TypeScript v5.9.3, React types, remark-directive, unist-util-visit
+
+SECTION 2: DOCKER CONFIGURATION
+
+=== Dockerfile ===
+Path: /Users/duynguyen/www/claudekit/claudekit-docs/Dockerfile
+Purpose: Multi-stage Docker build
+
+Stage 1 (builder): oven/bun:1-alpine
+- Copies: package.json, bun.lock, configs (astro, tailwind, ts)
+- Copies: src/, public/
+- Run: bun install --frozen-lockfile + bun run build
+
+Stage 2 (runner): node:20-alpine
+- Install: serve (static file server)
+- Copy: dist/ from builder
+- Port: 3000
+- Health check: HTTP GET / every 30s
+- Start: serve dist -l 3000
+
+=== .dockerignore ===
+Path: /Users/duynguyen/www/claudekit/claudekit-docs/.dockerignore
+Purpose: Exclude files from Docker build context
+
+Excluded:
+- Dependencies: node_modules, logs
+- Artifacts: dist, .astro
+- IDE: .vscode, .idea, vim files
+- OS: .DS_Store, Thumbs.db
+- Development: .claude, .opencode, plans, docs, k8s, repomix
+
+SECTION 3: KUBERNETES MANIFESTS
+
+Location: /Users/duynguyen/www/claudekit/claudekit-docs/k8s/
+
+=== deployment.yaml ===
+Purpose: Manage pod replicas and rolling updates
+
+Configuration:
+- Replicas: 2
+- Image: ghcr.io/claudekit/claudekit-docs:latest
+- Pull Policy: Always
+- Port: 3000
+- CPU requests: 100m, limits: 500m
+- Memory requests: 128Mi, limits: 512Mi
+- Liveness probe: HTTP GET /, initial 10s, period 30s, timeout 5s
+- Readiness probe: HTTP GET /, initial 5s, period 10s, timeout 3s
+- Env: NODE_ENV=production
+- Image secret: github-registry
+
+=== service.yaml ===
+Purpose: Expose deployment to cluster
+
+Configuration:
+- Type: ClusterIP
+- Port: 80 (external)
+- Target port: 3000 (container)
+- Protocol: TCP
+- Selector: app=claudekit-docs
+
+=== ingress.yaml ===
+Purpose: Manage external HTTPS access
+
+Configuration:
+- Class: nginx
+- Host: docs.claudekit.cc
+- TLS: cert-manager (letsencrypt-prod)
+- Secret: claudekit-docs-tls
+- Path: / (Prefix)
+- Backend: claudekit-docs service on port 80
+- Annotations: SSL redirect enabled, force SSL enabled
+
+=== configmap.yaml ===
+Purpose: Store environment configuration
+
+Data:
+- SITE_URL: https://docs.claudekit.cc
+- NODE_ENV: production
+
+SECTION 4: GITHUB WORKFLOWS
+
+=== .github/workflows/deploy.yml ===
+Path: /Users/duynguyen/www/claudekit/claudekit-docs/.github/workflows/deploy.yml
+Purpose: CI/CD automated deployment
+
+Trigger: Push to main branch
+
+Environment variables:
+- GITHUB_TOKEN: secrets.CI_GITHUB_TOKEN
+- BRANCH_NAME: auto-detected
+
+Job: Deploy (ubuntu-latest)
+- Condition: main branch, not on failure/cancel
+
+Steps:
+1. Checkout (actions/checkout@v3, fetch-depth: 0)
+2. Deploy with DXUP (digitopvn/diginext-actions@v2)
+   - Cluster: dxupprod
+   - Registry: digitopdockerhub
+   - Environment: prod
+   - Port: 3000
+   - Tail: true
+   - API key: secrets.DX_API_KEY
+3. Discord notification (sarisia/actions-status-discord@v1)
+   - Always run (success/failure)
+   - Webhook: secrets.DISCORD_WEBHOOK_DEPLOY
+
+Secrets required:
+- CI_GITHUB_TOKEN
+- DX_API_KEY
+- DISCORD_WEBHOOK_DEPLOY
+
+SECTION 5: VS CODE CONFIGURATION
+
+=== .vscode/launch.json ===
+Path: /Users/duynguyen/www/claudekit/claudekit-docs/.vscode/launch.json
+Purpose: Debug launch configuration
+
+Configuration:
+- Type: node-terminal
+- Name: Development server
+- Command: ./node_modules/.bin/astro dev
+- Version: 0.2.0
+
+Usage: F5 or Run menu, Start Debugging
+
+=== .vscode/extensions.json ===
+Path: /Users/duynguyen/www/claudekit/claudekit-docs/.vscode/extensions.json
+Purpose: Recommended extensions
+
+Recommendations:
+- astro-build.astro-vscode (Astro language support)
+
+SECTION 6: DEPLOYMENT PIPELINE
+
+Development: bun run dev (localhost:4321)
+Build: bun run build (dist/ + llms files)
+Docker: Multi-stage build (bun, then node:20-alpine serve)
+Kubernetes: 2 replicas, ClusterIP service, nginx ingress with TLS
+CI/CD: GitHub Actions triggers DXUP deployment on main push
+
+Flow:
+Developer push -> GitHub Actions -> DXUP build -> Docker image
+Registry -> K8s pull -> Update deployment -> Route via ingress
+Discord notification
+
+SECTION 7: CRITICAL DEPLOYMENT SECRETS
+
+1. github-registry (K8s image pull)
+2. CI_GITHUB_TOKEN (GitHub Actions)
+3. DX_API_KEY (DXUP deployment)
+4. DISCORD_WEBHOOK_DEPLOY (Notifications)
+5. cert-manager: letsencrypt-prod issuer
+
+SECTION 8: CONFIGURATION DEPENDENCIES
+
+astro.config.mjs imports: tailwind, mdx, react, pagefind, remark-admonitions
+
+tailwind.config.mjs references: src/styles/global.css (CSS variables)
+
+package.json defines all npm dependencies, scripts (dev, build, preview, astro)
+
+Dockerfile copies configs, runs bun install and build, produces dist/
+
+k8s/deployment.yaml references ghcr.io image, port 3000
+
+.github/workflows/deploy.yml triggers on main, uses DXUP action
+
+SUMMARY OF ALL FILE PATHS
+
+Root configs:
+- /Users/duynguyen/www/claudekit/claudekit-docs/astro.config.mjs
+- /Users/duynguyen/www/claudekit/claudekit-docs/tailwind.config.mjs
+- /Users/duynguyen/www/claudekit/claudekit-docs/tsconfig.json
+- /Users/duynguyen/www/claudekit/claudekit-docs/package.json
+
+Docker:
+- /Users/duynguyen/www/claudekit/claudekit-docs/Dockerfile
+- /Users/duynguyen/www/claudekit/claudekit-docs/.dockerignore
+
+Kubernetes:
+- /Users/duynguyen/www/claudekit/claudekit-docs/k8s/deployment.yaml
+- /Users/duynguyen/www/claudekit/claudekit-docs/k8s/service.yaml
+- /Users/duynguyen/www/claudekit/claudekit-docs/k8s/ingress.yaml
+- /Users/duynguyen/www/claudekit/claudekit-docs/k8s/configmap.yaml
+
+GitHub:
+- /Users/duynguyen/www/claudekit/claudekit-docs/.github/workflows/deploy.yml
+
+VS Code:
+- /Users/duynguyen/www/claudekit/claudekit-docs/.vscode/launch.json
+- /Users/duynguyen/www/claudekit/claudekit-docs/.vscode/extensions.json
+
+Report generated: 2025-12-30
+Status: Complete

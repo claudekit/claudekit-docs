@@ -1,65 +1,66 @@
 ---
 title: "Content Hub"
-description: "Browser-based visual asset gallery for managing marketing assets with brand context, search/filter, and R2-ready cloud sync."
+description: "Bộ sưu tập hình ảnh tài sản dựa trên trình duyệt để quản lý tài sản tiếp thị với bối cảnh thương hiệu, tìm kiếm/bộ lọc và đồng bộ hóa R2."
+lang: vi
 section: marketing
 category: skills
 order: 16
 ---
 
-> Browse and manage marketing assets through visual gallery with brand context sidebar and action buttons.
+> Duyệt và quản lý tài sản tiếp thị thông qua bộ sưu tập hình ảnh với thanh bối cảnh thương hiệu và nút hành động.
 
-## What This Skill Does
+## Skill Này Làm Gì
 
-**The Challenge**: Marketing teams accumulate hundreds of assets (banners, logos, videos) across local folders. Finding the right asset or checking brand compliance requires manual searching through directories.
+**Thách Thức**: Các đội tiếp thị tích lũy hàng trăm tài sản (banner, logo, video) trên các thư mục cục bộ. Tìm tài sản phù hợp hoặc kiểm tra tuân thủ thương hiệu đòi hỏi tìm kiếm thủ công thông qua các thư mục.
 
-**The Solution**: Content Hub skill provides browser-based asset gallery with thumbnail grid, filter/search, brand context sidebar, and action buttons (preview, edit, generate). R2-ready manifest supports future cloud sync to Cloudflare R2.
+**Giải Pháp**: Skill Content Hub cung cấp bộ sưu tập hình ảnh dựa trên trình duyệt có lưới hình nhỏ, bộ lọc/tìm kiếm, thanh bối cảnh thương hiệu và nút hành động (xem trước, chỉnh sửa, tạo). Manifest sẵn sàng R2 hỗ trợ đồng bộ hóa đám mây trong tương lai với Cloudflare R2.
 
-## Activation
+## Kích Hoạt
 
-**Implicit**: Not auto-activated (on-demand tool).
+**Ẩn Danh**: Không được kích hoạt tự động (công cụ theo yêu cầu).
 
-**Explicit**: `/write:hub` or `node .claude/skills/content-hub/scripts/server.cjs --open`
+**Rõ Ràng**: `/write:hub` hoặc `node .claude/skills/content-hub/scripts/server.cjs --open`
 
-## Capabilities
+## Khả Năng
 
-### 1. Visual Asset Gallery
-Thumbnail grid showing all assets in `assets/` directory with type filtering.
+### 1. Bộ Sưu Tập Hình Ảnh Tài Sản
+Lưới hình nhỏ hiển thị tất cả tài sản trong thư mục `assets/` có bộ lọc loại.
 
-**Features**:
-- Thumbnail previews (images, videos, documents)
-- Filter by type (banners, designs, logos, videos)
-- Search by filename or description
-- Click to preview full-size
+**Tính Năng**:
+- Xem trước hình nhỏ (hình ảnh, video, tài liệu)
+- Bộ lọc theo loại (banner, thiết kế, logo, video)
+- Tìm kiếm theo tên tệp hoặc mô tả
+- Nhấp để xem toàn kích thước
 
-**Asset types auto-detected**:
-- Images: PNG, JPEG, SVG, WebP
-- Videos: MP4, MOV, WebM
-- Documents: PDF
+**Loại Tài Sản Phát Hiện Tự Động**:
+- Hình ảnh: PNG, JPEG, SVG, WebP
+- Video: MP4, MOV, WebM
+- Tài liệu: PDF
 
-### 2. Brand Context Sidebar
-Live display of brand colors and voice from `docs/brand-guidelines.md`.
+### 2. Thanh Bối Cảnh Thương Hiệu
+Hiển thị trực tiếp màu thương hiệu và giọng từ `docs/brand-guidelines.md`.
 
-**Displays**:
-- Color palette with hex codes
-- Brand voice dimensions
-- Messaging frameworks
-- Visual style notes
+**Hiển Thị**:
+- Bảng màu với mã hex
+- Các chiều giọng thương hiệu
+- Khung nhắn tin
+- Ghi chú kiểu hình ảnh
 
-**Use case**: Generate new assets with brand context visible for reference.
+**Trường Hợp Sử Dụng**: Tạo tài sản mới với bối cảnh thương hiệu có thể nhìn thấy để tham chiếu.
 
-### 3. Asset Actions
-Quick actions on each asset without leaving browser.
+### 3. Tác Vụ Tài Sản
+Hành động nhanh trên mỗi tài sản mà không cần rời khỏi trình duyệt.
 
-**Available actions**:
-- **Preview**: Full-size view in modal
-- **Edit in Claude**: Open file path for editing
-- **Copy Path**: Copy absolute path to clipboard
-- **Generate Similar**: Use as reference for AI generation
+**Tác Vụ Khả Dụng**:
+- **Xem Trước**: Xem toàn kích thước trong modal
+- **Chỉnh Sửa Trong Claude**: Mở đường dẫn tệp để chỉnh sửa
+- **Sao Chép Đường Dẫn**: Sao chép đường dẫn tuyệt đối vào clipboard
+- **Tạo Tương Tự**: Sử dụng làm tham chiếu cho tạo AI
 
-### 4. R2-Ready Manifest
-Asset metadata stored in `.assets/manifest.json` with Cloudflare R2 fields.
+### 4. Manifest Sẵn Sàng R2
+Siêu dữ liệu tài sản được lưu trữ trong `.assets/manifest.json` có các trường R2 Cloudflare.
 
-**Manifest schema**:
+**Lược Đồ Manifest**:
 ```json
 {
   "id": "unique-id",
@@ -75,93 +76,93 @@ Asset metadata stored in `.assets/manifest.json` with Cloudflare R2 fields.
 }
 ```
 
-**Future**: Cloud sync feature will upload to R2 (currently UI disabled).
+**Tương Lai**: Tính năng đồng bộ hóa đám mây sẽ tải lên R2 (hiện tại UI bị vô hiệu hóa).
 
-## Prerequisites
+## Điều Kiện Tiên Quyết
 
 - Node.js 18+
-- Assets in `assets/` directory
-- Brand guidelines in `docs/brand-guidelines.md` (optional but recommended)
+- Tài sản trong thư mục `assets/`
+- Hướng dẫn thương hiệu trong `docs/brand-guidelines.md` (tùy chọn nhưng được khuyến nghị)
 
-## Configuration
+## Cấu Hình
 
-**Start server**:
+**Máy Chủ Bắt Đầu**:
 ```bash
-# Open gallery in browser
+# Mở bộ sưu tập trong trình duyệt
 node .claude/skills/content-hub/scripts/server.cjs --open
 
-# Rescan assets directory
+# Quét lại thư mục tài sản
 node .claude/skills/content-hub/scripts/server.cjs --scan
 
-# Stop server
+# Dừng máy chủ
 node .claude/skills/content-hub/scripts/server.cjs --stop
 ```
 
-**API routes**:
-| Route | Purpose |
+**Tuyến API**:
+| Tuyến | Mục Đích |
 |-------|---------|
-| `/hub` | Gallery HTML |
-| `/api/assets` | Asset list JSON |
-| `/api/brand` | Brand context JSON |
-| `/api/scan` | Trigger rescan |
-| `/file/*` | Serve local files |
+| `/hub` | HTML Bộ Sưu Tập |
+| `/api/assets` | Danh sách Tài Sản JSON |
+| `/api/brand` | JSON Bối Cảnh Thương Hiệu |
+| `/api/scan` | Kích Hoạt Quét Lại |
+| `/file/*` | Phục Vụ Các Tệp Cục Bộ |
 
-## Best Practices
+## Phương Pháp Tốt Nhất
 
-**1. Use consistent asset naming**
-Follow `brand-guidelines` skill naming convention for easier searching.
+**1. Sử Dụng Tên Tài Sản Nhất Quán**
+Làm theo quy ước đặt tên skill `brand-guidelines` để tìm kiếm dễ dàng hơn.
 
-**2. Organize by type**
-Place assets in type-specific folders (banners/, logos/, videos/) for better filtering.
+**2. Tổ Chức Theo Loại**
+Đặt tài sản trong các thư mục cụ thể loại (banner/, logo/, video/) để bộ lọc tốt hơn.
 
-**3. Rescan after adding assets**
-Run `--scan` flag or use `/api/scan` endpoint to refresh gallery after adding new files.
+**3. Quét Lại Sau Khi Thêm Tài Sản**
+Chạy cờ `--scan` hoặc sử dụng điểm cuối `/api/scan` để làm mới bộ sưu tập sau khi thêm tệp mới.
 
-## Common Use Cases
+## Trường Hợp Sử Dụng Phổ Biến
 
-### Use Case 1: Find Asset for Social Post
-**Scenario**: Need product banner for Instagram post.
+### Trường Hợp Sử Dụng 1: Tìm Tài Sản Cho Bài Viết Phương Tiện Xã Hội
+**Tình Huống**: Cần banner sản phẩm cho bài viết Instagram.
 
-**Workflow**:
-1. Open gallery: `/write:hub`
-2. Filter by type: "banners"
-3. Search: "product"
-4. Preview candidates
-5. Copy path of selected asset
-6. Use in social media tool or design editor
+**Quy Trình Công Việc**:
+1. Mở bộ sưu tập: `/write:hub`
+2. Bộ lọc theo loại: "banner"
+3. Tìm kiếm: "sản phẩm"
+4. Xem trước các ứng cử viên
+5. Sao chép đường dẫn của tài sản đã chọn
+6. Sử dụng trong công cụ phương tiện xã hội hoặc trình soạn thảo thiết kế
 
-**Time saved**: 5-10 minutes vs manual directory browsing.
+**Tiết Kiệm Thời Gian**: 5-10 phút so với duyệt thư mục thủ công.
 
-### Use Case 2: Generate Brand-Aligned Asset
-**Scenario**: Create new banner with brand colors visible.
+### Trường Hợp Sử Dụng 2: Tạo Tài Sản Căn Chỉnh Thương Hiệu
+**Tình Huống**: Tạo banner mới với màu thương hiệu hiển thị.
 
-**Workflow**:
-1. Open gallery with brand sidebar visible
-2. Note brand colors and voice from sidebar
-3. Click "Generate Similar" on existing banner
-4. Use brand context in AI prompt
-5. Generated asset auto-matches brand guidelines
+**Quy Trình Công Việc**:
+1. Mở bộ sưu tập có thanh bối cảnh thương hiệu hiển thị
+2. Ghi chú màu thương hiệu và giọng từ thanh bên
+3. Nhấp vào "Tạo Tương Tự" trên banner hiện tại
+4. Sử dụng bối cảnh thương hiệu trong prompt AI
+5. Tài sản được tạo tự động khớp với hướng dẫn thương hiệu
 
-**Output**: New asset consistent with brand identity.
+**Kết Quả**: Tài sản mới nhất quán với nhận dạng thương hiệu.
 
-## Troubleshooting
+## Khắc Phục Sự Cố
 
-**Issue**: Gallery not showing new assets
-**Solution**: Run `node scripts/server.cjs --scan` to rescan `assets/` directory.
+**Vấn Đề**: Bộ sưu tập không hiển thị tài sản mới
+**Giải Pháp**: Chạy `node scripts/server.cjs --scan` để quét lại thư mục `assets/`.
 
-**Issue**: Brand context not displaying
-**Solution**: Verify `docs/brand-guidelines.md` exists and contains color/voice sections.
+**Vấn Đề**: Bối cảnh thương hiệu không hiển thị
+**Giải Pháp**: Xác minh `docs/brand-guidelines.md` tồn tại và chứa các phần màu/giọng.
 
-**Issue**: Server won't start (port in use)
-**Solution**: Check if server already running. Use `--stop` flag to stop existing instance.
+**Vấn Đề**: Máy chủ sẽ không bắt đầu (cổng đang được sử dụng)
+**Giải Pháp**: Kiểm tra nếu máy chủ đã chạy. Sử dụng cờ `--stop` để dừng phiên hiện tại.
 
-## Related Skills
+## Kỹ Năng Liên Quan
 
-- [Brand Guidelines](/docs/marketing/skills/brand-guidelines) - Asset validation and brand context
-- [AI Multimodal](/docs/marketing/skills/ai-multimodal) - Generate new assets
-- [Design](/docs/core/skills/design) - Design asset creation
+- [Brand Guidelines](/vi/docs/marketing/skills/brand-guidelines) - Xác nhận tài sản và bối cảnh thương hiệu
+- [AI Multimodal](/vi/docs/marketing/skills/ai-multimodal) - Tạo tài sản mới
+- [Design](/vi/docs/core/skills/design) - Tạo tài sản thiết kế
 
-## Related Commands
+## Lệnh Liên Quan
 
-- `/write:hub` - Open content hub gallery
-- `/dashboard` - Open marketing dashboard (includes asset gallery)
+- `/write:hub` - Mở thư viện content hub
+- `/dashboard` - Mở bảng điều khiển tiếp thị (bao gồm thư viện tài sản)

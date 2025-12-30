@@ -1,29 +1,30 @@
 ---
 title: "ClaudeKit CLI"
-description: "Command-line interface for creating and managing ClaudeKit projects"
+description: "CLI để tạo và quản lý các dự án ClaudeKit"
+lang: vi
 section: cli
 order: 1
 ---
 
 # ClaudeKit CLI
 
-> Fast, secure command-line tool for bootstrapping and managing ClaudeKit projects from private GitHub releases.
+> Công cụ dòng lệnh nhanh, an toàn để khởi động và quản lý các dự án được cung cấp bởi ClaudeKit từ các bản phát hành GitHub riêng tư.
 
-The ClaudeKit CLI (`ck`) helps you create and manage ClaudeKit-powered projects. Built with Bun and TypeScript, it provides a beautiful interface for project setup, updates, and maintenance.
+ClaudeKit CLI (`ck`) giúp bạn tạo và quản lý các dự án được cung cấp bởi ClaudeKit. Được xây dựng bằng Bun và TypeScript, nó cung cấp một giao diện đẹp cho thiết lập dự án, cập nhật và bảo trì.
 
 ## Key Features
 
-- Multi-tier GitHub authentication with secure credential storage
-- Streaming downloads with progress tracking and platform optimizations
-- Smart file merging with conflict detection
-- Automatic skills directory migration with parallel processing
-- System dependency auto-installation
-- Intelligent update notifications with 7-day cache
-- Beautiful CLI interface with interactive prompts
+- Xác thực GitHub đa tầng với lưu trữ thông tin đăng nhập an toàn
+- Tải xuống trực tuyến với theo dõi tiến trình và tối ưu hóa nền tảng
+- Sáp nhập tệp thông minh với phát hiện xung đột
+- Quá trình di chuyển thư mục kỹ năng tự động với xử lý song song
+- Cài đặt phụ thuộc hệ thống tự động
+- Thông báo cập nhật thông minh với bộ đệm 7 ngày
+- Giao diện CLI đẹp với các lời nhắc tương tác
 
 ## Quick Install
 
-Install the CLI globally using your preferred package manager:
+Cài đặt CLI trên toàn cầu bằng trình quản lý gói ưa thích của bạn:
 
 ```bash
 # npm (recommended)
@@ -39,7 +40,7 @@ pnpm add -g claudekit-cli
 yarn global add claudekit-cli
 ```
 
-For detailed installation instructions including prerequisites and verification steps, see [Installation](/docs/cli/installation).
+Để biết hướng dẫn cài đặt chi tiết bao gồm các điều kiện tiên quyết và các bước xác minh, hãy xem [Installation](/docs/cli/installation).
 
 ## Verify Installation
 
@@ -47,23 +48,23 @@ For detailed installation instructions including prerequisites and verification 
 ck --version
 ```
 
-You should see output like:
+Bạn sẽ thấy đầu ra như:
 
 ```
-CLI Version: 3.16.0
-Local Kit Version: 1.17.0 (ClaudeKit Engineer)
+CLI Version: 3.10.1
+Local Kit Version: 1.16.0 (ClaudeKit Engineer)
 ```
 
 ## Available Commands
 
 | Command | Description |
 |---------|-------------|
-| [`ck new`](/docs/cli/new) | Create a new ClaudeKit project |
-| [`ck init`](/docs/cli/init) | Initialize or update ClaudeKit in existing project |
-| [`ck doctor`](/docs/cli/doctor) | Run health checks and diagnostics |
-| [`ck versions`](/docs/cli/versions) | List available kit versions |
-| [`ck update`](/docs/cli/update) | Update the CLI to the latest version |
-| [`ck uninstall`](/docs/cli/uninstall) | Remove ClaudeKit installations |
+| [`ck new`](/docs/cli/new) | Tạo một dự án ClaudeKit mới |
+| [`ck init`](/docs/cli/init) | Khởi tạo hoặc cập nhật ClaudeKit trong dự án hiện có |
+| [`ck doctor`](/docs/cli/doctor) | Chạy kiểm tra sức khỏe và chẩn đoán |
+| [`ck versions`](/docs/cli/versions) | Liệt kê các phiên bản kit có sẵn |
+| [`ck update`](/docs/cli/update) | Cập nhật CLI lên phiên bản mới nhất |
+| [`ck uninstall`](/docs/cli/uninstall) | Xóa cài đặt ClaudeKit |
 
 ## Quick Start
 
@@ -88,7 +89,7 @@ ck new --install-skills
 ### Initialize Existing Project
 
 ```bash
-# Add ClaudeKit to your existing project
+# Thêm ClaudeKit vào dự án hiện có của bạn
 cd my-existing-project
 ck init
 
@@ -104,7 +105,7 @@ ck init --global
 ### Health Check
 
 ```bash
-# Run diagnostics
+# Chạy chẩn đoán
 ck doctor
 
 # Auto-fix issues
@@ -118,141 +119,47 @@ ck doctor --report
 
 ## Prerequisites
 
-Before using ClaudeKit CLI, you need:
+Trước khi sử dụng ClaudeKit CLI, bạn cần:
 
-1. **Purchase a ClaudeKit Starter Kit** from [ClaudeKit.cc](https://claudekit.cc)
-2. **Get Repository Access** - You'll receive access to the private GitHub repository after purchase
-3. **Install GitHub CLI** and authenticate with `gh auth login`
+1. **Purchase a ClaudeKit Starter Kit** từ [ClaudeKit.cc](https://claudekit.cc)
+2. **Get Repository Access** - Bạn sẽ nhận được quyền truy cập vào kho lưu trữ GitHub riêng tư sau khi mua
+3. **Install GitHub CLI** và xác thực bằng `gh auth login`
 
-Without a purchased kit and repository access, the CLI cannot download project templates.
+Nếu không có kit được mua và quyền truy cập kho lưu trữ, CLI không thể tải xuống các mẫu dự án.
 
 ## Authentication
 
-ClaudeKit CLI supports multiple authentication methods for downloading releases from private repositories.
+ClaudeKit CLI sử dụng hệ thống xác thực đa tầng:
 
-### Authentication Priority
+1. GitHub CLI (`gh auth token`)
+2. Environment Variables (`GITHUB_TOKEN`)
+3. Config File (`~/.claudekit/config.json`)
+4. OS Keychain (secure storage)
+5. User Prompt (with save option)
 
-1. **Environment Variables** (checked first): `GITHUB_TOKEN` or `GH_TOKEN`
-2. **GitHub CLI**: Uses `gh auth token` if installed and authenticated
-3. **Interactive Prompt**: Guides through setup when auth fails
-
-### Method 1: Environment Variables (Recommended for CI/CD)
-
-```bash
-export GITHUB_TOKEN=ghp_your_token_here
-# or
-export GH_TOKEN=ghp_your_token_here
-```
-
-**Important**: Use **Classic PAT** with `repo` scope. Fine-grained PATs don't work for collaborator repos.
-
-### Method 2: GitHub CLI
-
-```bash
-# Install GitHub CLI
-brew install gh  # macOS
-# or see: https://cli.github.com
-
-# Authenticate
-gh auth login
-```
-
-### Method 3: Git Clone Mode
-
-Bypass API authentication entirely using native git credentials:
-
-```bash
-ck init --use-git
-```
-
-Uses your existing git setup:
-- SSH keys (auto-detected from `~/.ssh/`)
-- HTTPS with credential manager
-- Git credential store
-
-For detailed setup instructions, see [Installation - Authentication](/docs/cli/installation#authentication).
+Để biết hướng dẫn thiết lập, hãy xem [Installation - Authentication](/docs/cli/installation#authentication).
 
 ## Kit Selection
 
-When creating a new project, choose between available kits:
+Khi tạo một dự án mới, hãy chọn từ các kit có sẵn:
 
 | Kit | Best For | Status |
 |-----|----------|--------|
-| **Engineer** | Software development, automation, testing | Available |
-| **Marketing** | Content creation, campaigns, analytics | Coming Soon |
+| **Engineer** | Phát triển phần mềm, tự động hóa, kiểm tra | Available |
+| **Marketing** | Tạo nội dung, chiến dịch, phân tích | Coming Soon |
 
 ## Global vs Local Installation
 
-ClaudeKit supports two installation modes:
+ClaudeKit hỗ trợ hai chế độ cài đặt:
 
-- **Local** (default): Installs to `.claude/` in your project directory
-- **Global**: Installs to `~/.claude/` for user-level configuration
+- **Local** (default): Cài đặt vào `.claude/` trong thư mục dự án của bạn
+- **Global**: Cài đặt vào `~/.claude/` để cấu hình cấp người dùng
 
-Use `ck init --global` for global installation, or `ck init` for local (project-specific) installation.
-
-## Config Sync
-
-Sync your local config files with upstream changes without losing customizations.
-
-```bash
-ck init --sync
-```
-
-### How It Works
-
-1. **Version Check**: Compares local vs upstream config versions
-2. **Download**: Fetches upstream config files
-3. **3-Way Merge**: Shows side-by-side diff for each changed file
-4. **Interactive Review**: Accept, reject, or edit each change
-5. **Backup**: Preserves originals before applying changes
-
-### Merge UI Controls
-
-| Key | Action |
-|-----|--------|
-| `a` | Accept upstream change |
-| `r` | Reject (keep local) |
-| `e` | Edit manually |
-| `s` | Skip file |
-| `q` | Quit sync |
-
-### When to Use
-
-- After ClaudeKit releases new features
-- When config files have diverged
-- To selectively adopt upstream improvements
-
-See [ck init - Config Sync](/docs/cli/init#config-sync) for detailed examples.
-
-## Git Clone Mode
-
-Alternative download method using native git instead of GitHub API.
-
-```bash
-ck init --use-git
-```
-
-### Benefits
-
-- **No API token required** - Uses existing git credentials
-- **SSH key support** - Works with existing SSH setup
-- **HTTPS fallback** - Uses git credential manager
-- **Corporate environments** - Works behind proxies that block API
-
-### SSH Detection
-
-The CLI auto-detects SSH keys in `~/.ssh/`:
-- `id_rsa`
-- `id_ed25519`
-- `id_ecdsa`
-
-If SSH fails, suggests HTTPS or provides setup instructions.
-
-See [ck init - Git Clone Mode](/docs/cli/init#git-clone-mode) for detailed examples.
+Sử dụng `ck init --global` để cài đặt toàn cầu, hoặc `ck init` để cài đặt cục bộ (dành riêng cho dự án).
 
 ## Configuration
 
-Configuration is stored in `~/.claudekit/config.json`:
+Cấu hình được lưu trữ trong `~/.claudekit/config.json`:
 
 ```json
 {
@@ -266,12 +173,12 @@ Configuration is stored in `~/.claudekit/config.json`:
 }
 ```
 
-For complete configuration reference, see [Configuration](/docs/cli/configuration).
+Để tham khảo cấu hình đầy đủ, hãy xem [Configuration](/docs/cli/configuration).
 
 ## Next Steps
 
-- [Installation](/docs/cli/installation) - Detailed setup guide
-- [ck new](/docs/cli/new) - Create your first project
-- [ck init](/docs/cli/init) - Add to existing projects
-- [ck doctor](/docs/cli/doctor) - Troubleshoot issues
-- [Configuration](/docs/cli/configuration) - Customize your setup
+- [Installation](/docs/cli/installation) - Hướng dẫn thiết lập chi tiết
+- [ck new](/docs/cli/new) - Tạo dự án đầu tiên của bạn
+- [ck init](/docs/cli/init) - Thêm vào dự án hiện có
+- [ck doctor](/docs/cli/doctor) - Khắc phục sự cố
+- [Configuration](/docs/cli/configuration) - Tùy chỉnh cài đặt của bạn

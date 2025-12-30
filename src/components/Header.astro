@@ -1,5 +1,6 @@
 ---
 import LanguageSwitcher from './LanguageSwitcher';
+import { KitSwitcher } from './KitSwitcher';
 import { getLangFromUrl, getLocalizedPath, useTranslations } from '../i18n/utils';
 import type { Locale } from '../i18n/locales';
 
@@ -63,8 +64,10 @@ const navIcons = {
           <span>{t('nav.getting-started')}</span>
         </a>
         <a
-          href={getLocalizedPath('/docs/agents', currentLocale)}
-          class:list={['nav-link', { active: currentSection === 'docs' }]}
+          href={getLocalizedPath('/docs/engineer/agents', currentLocale)}
+          class:list={['nav-link', 'docs-link', { active: currentSection === 'docs' || currentSection === 'engineer' || currentSection === 'marketing' }]}
+          data-engineer-path={getLocalizedPath('/docs/engineer/agents', currentLocale)}
+          data-marketing-path={getLocalizedPath('/docs/marketing/', currentLocale)}
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={navIcons['docs']} />
           <span>{t('nav.docs')}</span>
@@ -101,6 +104,7 @@ const navIcons = {
     </div>
 
     <div class="header-right">
+      <KitSwitcher client:load />
       <LanguageSwitcher client:load currentLocale={currentLocale} currentPath={currentPath} />
     </div>
   </div>
@@ -189,6 +193,41 @@ const navIcons = {
 
   // Initialize on DOMContentLoaded
   document.addEventListener('DOMContentLoaded', setupMobileMenu);
+
+  // Dynamic Docs link routing based on kit selection
+  function setupDocsLinkRouting() {
+    const STORAGE_KEY = 'claudekit-selected-kit';
+    const docsLink = document.querySelector('.docs-link');
+
+    if (!docsLink) return;
+
+    function updateDocsLink() {
+      const selectedKit = localStorage.getItem(STORAGE_KEY);
+      const engineerPath = docsLink.getAttribute('data-engineer-path');
+      const marketingPath = docsLink.getAttribute('data-marketing-path');
+
+      if (selectedKit === 'marketing' && marketingPath) {
+        docsLink.setAttribute('href', marketingPath);
+      } else if (engineerPath) {
+        docsLink.setAttribute('href', engineerPath);
+      }
+    }
+
+    // Update on page load
+    updateDocsLink();
+
+    // Update when storage changes (e.g., kit switched in another tab)
+    window.addEventListener('storage', (e) => {
+      if (e.key === STORAGE_KEY) {
+        updateDocsLink();
+      }
+    });
+
+    // Update when kit switcher changes (custom event)
+    window.addEventListener('kit-changed', updateDocsLink);
+  }
+
+  document.addEventListener('DOMContentLoaded', setupDocsLinkRouting);
 </script>
 
 <style>

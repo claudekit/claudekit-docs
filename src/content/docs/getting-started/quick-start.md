@@ -305,8 +305,8 @@ A: Yes. Edit `.claude/agents/*.md` to tune behavior. See [Custom Agents](/docs/h
 
 **Core Concepts**:
 - [Architecture](/docs/docs/agents) - How ClaudeKit works
-- [Agents Overview](/docs/agents/) - Meet your AI team
-- [Commands Guide](/docs/commands/) - All 30+ commands
+- [Agents Overview](/docs/engineer/agents/) - Meet your AI team
+- [Commands Guide](/docs/engineer/commands/) - All 30+ commands
 
 **Real-World Uses**:
 - [Starting New Project](/docs/workflows/new-project)

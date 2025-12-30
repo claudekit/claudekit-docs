@@ -1,0 +1,118 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <title>Campaign Lifecycle</title>
+  <desc>Circular lifecycle showing Create, Plan, Execute, Analyze, and Optimize stages with continuous iteration</desc>
+  <rect width="800" height="600" fill="#1E1E1E"/>
+
+  <!-- Center circle -->
+  <circle cx="400" cy="300" r="60" fill="#2D2D2D" stroke="#D97757" stroke-width="3"/>
+  <text x="400" y="295" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="14" text-anchor="middle" font-weight="700">Campaign</text>
+  <text x="400" y="315" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Lifecycle</text>
+
+  <!-- Stage 1: Create (Top) -->
+  <circle cx="400" cy="120" r="70" fill="#2D2D2D" stroke="#61AFEF" stroke-width="2"/>
+  <text x="400" y="105" fill="#61AFEF" font-family="Inter, sans-serif" font-size="28" text-anchor="middle">1</text>
+  <text x="400" y="125" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="15" text-anchor="middle" font-weight="600">Create</text>
+  <text x="400" y="142" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Define goals</text>
+
+  <!-- Stage 2: Plan (Top Right) -->
+  <circle cx="580" cy="210" r="70" fill="#2D2D2D" stroke="#E5C07B" stroke-width="2"/>
+  <text x="580" y="195" fill="#E5C07B" font-family="Inter, sans-serif" font-size="28" text-anchor="middle">2</text>
+  <text x="580" y="215" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="15" text-anchor="middle" font-weight="600">Plan</text>
+  <text x="580" y="232" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Strategy & content</text>
+
+  <!-- Stage 3: Execute (Bottom Right) -->
+  <circle cx="580" cy="390" r="70" fill="#2D2D2D" stroke="#98C379" stroke-width="2"/>
+  <text x="580" y="375" fill="#98C379" font-family="Inter, sans-serif" font-size="28" text-anchor="middle">3</text>
+  <text x="580" y="395" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="15" text-anchor="middle" font-weight="600">Execute</text>
+  <text x="580" y="412" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Launch & run</text>
+
+  <!-- Stage 4: Analyze (Bottom Left) -->
+  <circle cx="220" cy="390" r="70" fill="#2D2D2D" stroke="#E06C75" stroke-width="2"/>
+  <text x="220" y="375" fill="#E06C75" font-family="Inter, sans-serif" font-size="28" text-anchor="middle">4</text>
+  <text x="220" y="395" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="15" text-anchor="middle" font-weight="600">Analyze</text>
+  <text x="220" y="412" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Measure results</text>
+
+  <!-- Stage 5: Optimize (Top Left) -->
+  <circle cx="220" cy="210" r="70" fill="#2D2D2D" stroke="#D97757" stroke-width="2"/>
+  <text x="220" y="195" fill="#D97757" font-family="Inter, sans-serif" font-size="28" text-anchor="middle">5</text>
+  <text x="220" y="215" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="15" text-anchor="middle" font-weight="600">Optimize</text>
+  <text x="220" y="232" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Improve & iterate</text>
+
+  <!-- Circular arrows connecting stages -->
+  <defs>
+    <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="7" refY="2.5" orient="auto">
+      <polygon points="0 0, 8 2.5, 0 5" fill="#61AFEF"/>
+    </marker>
+    <marker id="arrow-yellow" markerWidth="8" markerHeight="8" refX="7" refY="2.5" orient="auto">
+      <polygon points="0 0, 8 2.5, 0 5" fill="#E5C07B"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="7" refY="2.5" orient="auto">
+      <polygon points="0 0, 8 2.5, 0 5" fill="#98C379"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="8" markerHeight="8" refX="7" refY="2.5" orient="auto">
+      <polygon points="0 0, 8 2.5, 0 5" fill="#E06C75"/>
+    </marker>
+    <marker id="arrow-coral" markerWidth="8" markerHeight="8" refX="7" refY="2.5" orient="auto">
+      <polygon points="0 0, 8 2.5, 0 5" fill="#D97757"/>
+    </marker>
+  </defs>
+
+  <!-- Arrow 1→2: Create to Plan -->
+  <path d="M 460 150 Q 520 180 520 210" fill="none" stroke="#61AFEF" stroke-width="2" marker-end="url(#arrow-blue)"/>
+
+  <!-- Arrow 2→3: Plan to Execute -->
+  <path d="M 580 280 L 580 320" fill="none" stroke="#E5C07B" stroke-width="2" marker-end="url(#arrow-yellow)"/>
+
+  <!-- Arrow 3→4: Execute to Analyze -->
+  <path d="M 520 420 Q 370 450 280 420" fill="none" stroke="#98C379" stroke-width="2" marker-end="url(#arrow-green)"/>
+
+  <!-- Arrow 4→5: Analyze to Optimize -->
+  <path d="M 220 320 L 220 280" fill="none" stroke="#E06C75" stroke-width="2" marker-end="url(#arrow-red)"/>
+
+  <!-- Arrow 5→1: Optimize to Create -->
+  <path d="M 280 180 Q 340 150 340 120" fill="none" stroke="#D97757" stroke-width="2" marker-end="url(#arrow-coral)"/>
+
+  <!-- Detail boxes for each stage -->
+  <!-- Create details -->
+  <rect x="380" y="20" width="120" height="60" fill="#1E1E1E" stroke="#61AFEF" stroke-width="1" rx="2" opacity="0.9"/>
+  <text x="440" y="38" fill="#61AFEF" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" font-weight="600">Create Tasks</text>
+  <text x="440" y="52" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="8" text-anchor="middle">• Set objectives</text>
+  <text x="440" y="64" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="8" text-anchor="middle">• Define KPIs</text>
+  <text x="440" y="76" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="8" text-anchor="middle">• Choose channels</text>
+
+  <!-- Plan details -->
+  <rect x="660" y="180" width="120" height="60" fill="#1E1E1E" stroke="#E5C07B" stroke-width="1" rx="2" opacity="0.9"/>
+  <text x="720" y="198" fill="#E5C07B" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" font-weight="600">Plan Tasks</text>
+  <text x="720" y="212" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="8" text-anchor="middle">• Create content</text>
+  <text x="720" y="224" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="8" text-anchor="middle">• Schedule posts</text>
+  <text x="720" y="236" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="8" text-anchor="middle">• Set budget</text>
+
+  <!-- Execute details -->
+  <rect x="660" y="360" width="120" height="60" fill="#1E1E1E" stroke="#98C379" stroke-width="1" rx="2" opacity="0.9"/>
+  <text x="720" y="378" fill="#98C379" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" font-weight="600">Execute Tasks</text>
+  <text x="720" y="392" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="8" text-anchor="middle">• Publish content</text>
+  <text x="720" y="404" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="8" text-anchor="middle">• Monitor live</text>
+  <text x="720" y="416" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="8" text-anchor="middle">• Engage users</text>
+
+  <!-- Analyze details -->
+  <rect x="20" y="360" width="120" height="60" fill="#1E1E1E" stroke="#E06C75" stroke-width="1" rx="2" opacity="0.9"/>
+  <text x="80" y="378" fill="#E06C75" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" font-weight="600">Analyze Tasks</text>
+  <text x="80" y="392" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="8" text-anchor="middle">• Track metrics</text>
+  <text x="80" y="404" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="8" text-anchor="middle">• Generate reports</text>
+  <text x="80" y="416" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="8" text-anchor="middle">• Find insights</text>
+
+  <!-- Optimize details -->
+  <rect x="20" y="180" width="120" height="60" fill="#1E1E1E" stroke="#D97757" stroke-width="1" rx="2" opacity="0.9"/>
+  <text x="80" y="198" fill="#D97757" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" font-weight="600">Optimize Tasks</text>
+  <text x="80" y="212" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="8" text-anchor="middle">• A/B test</text>
+  <text x="80" y="224" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="8" text-anchor="middle">• Refine targeting</text>
+  <text x="80" y="236" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="8" text-anchor="middle">• Update content</text>
+
+  <!-- AI Agent indicator -->
+  <rect x="300" y="510" width="200" height="50" fill="#2D2D2D" stroke="#D97757" stroke-width="1" rx="2"/>
+  <text x="400" y="530" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" font-weight="600">AI Agent: campaign-manager</text>
+  <text x="400" y="548" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Automates entire lifecycle with data-driven decisions</text>
+
+  <!-- Title -->
+  <text x="400" y="580" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="20" text-anchor="middle" font-weight="700">Marketing Campaign Lifecycle</text>
+</svg>

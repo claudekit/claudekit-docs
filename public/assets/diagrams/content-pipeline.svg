@@ -1,0 +1,123 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <title>Content Pipeline</title>
+  <desc>Linear pipeline showing content journey from Ideation to Measure with quality gates and agent automation</desc>
+  <rect width="800" height="600" fill="#1E1E1E"/>
+
+  <!-- Pipeline stages -->
+  <!-- Stage 1: Ideation -->
+  <rect x="40" y="180" width="120" height="140" fill="#2D2D2D" stroke="#D97757" stroke-width="2" rx="2"/>
+  <circle cx="100" cy="210" r="16" fill="#D97757" opacity="0.3"/>
+  <text x="100" y="217" fill="#D97757" font-family="Inter, sans-serif" font-size="20" text-anchor="middle">💡</text>
+  <text x="100" y="245" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="15" text-anchor="middle" font-weight="700">Ideation</text>
+  <text x="100" y="268" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">• Topic research</text>
+  <text x="100" y="283" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">• Keyword analysis</text>
+  <text x="100" y="298" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">• Content brief</text>
+
+  <!-- Stage 2: Draft -->
+  <rect x="190" y="180" width="120" height="140" fill="#2D2D2D" stroke="#61AFEF" stroke-width="2" rx="2"/>
+  <circle cx="250" cy="210" r="16" fill="#61AFEF" opacity="0.3"/>
+  <text x="250" y="217" fill="#61AFEF" font-family="Inter, sans-serif" font-size="20" text-anchor="middle">✏️</text>
+  <text x="250" y="245" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="15" text-anchor="middle" font-weight="700">Draft</text>
+  <text x="250" y="268" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">• Write content</text>
+  <text x="250" y="283" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">• Add visuals</text>
+  <text x="250" y="298" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">• Format layout</text>
+
+  <!-- Stage 3: Review -->
+  <rect x="340" y="180" width="120" height="140" fill="#2D2D2D" stroke="#E5C07B" stroke-width="2" rx="2"/>
+  <circle cx="400" cy="210" r="16" fill="#E5C07B" opacity="0.3"/>
+  <text x="400" y="217" fill="#E5C07B" font-family="Inter, sans-serif" font-size="20" text-anchor="middle">🔍</text>
+  <text x="400" y="245" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="15" text-anchor="middle" font-weight="700">Review</text>
+  <text x="400" y="268" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">• Quality check</text>
+  <text x="400" y="283" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">• SEO audit</text>
+  <text x="400" y="298" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">• Compliance</text>
+
+  <!-- Stage 4: Publish -->
+  <rect x="490" y="180" width="120" height="140" fill="#2D2D2D" stroke="#98C379" stroke-width="2" rx="2"/>
+  <circle cx="550" cy="210" r="16" fill="#98C379" opacity="0.3"/>
+  <text x="550" y="217" fill="#98C379" font-family="Inter, sans-serif" font-size="20" text-anchor="middle">🚀</text>
+  <text x="550" y="245" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="15" text-anchor="middle" font-weight="700">Publish</text>
+  <text x="550" y="268" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">• Deploy content</text>
+  <text x="550" y="283" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">• Share socials</text>
+  <text x="550" y="298" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">• Email notify</text>
+
+  <!-- Stage 5: Measure -->
+  <rect x="640" y="180" width="120" height="140" fill="#2D2D2D" stroke="#D97757" stroke-width="2" rx="2"/>
+  <circle cx="700" cy="210" r="16" fill="#D97757" opacity="0.3"/>
+  <text x="700" y="217" fill="#D97757" font-family="Inter, sans-serif" font-size="20" text-anchor="middle">📊</text>
+  <text x="700" y="245" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="15" text-anchor="middle" font-weight="700">Measure</text>
+  <text x="700" y="268" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">• Track views</text>
+  <text x="700" y="283" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">• Engagement</text>
+  <text x="700" y="298" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">• Conversions</text>
+
+  <!-- Pipeline arrows -->
+  <line x1="160" y1="250" x2="190" y2="250" stroke="#D97757" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="310" y1="250" x2="340" y2="250" stroke="#61AFEF" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="460" y1="250" x2="490" y2="250" stroke="#E5C07B" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="610" y1="250" x2="640" y2="250" stroke="#98C379" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Quality gates (diamonds under each stage) -->
+  <!-- Gate 1 -->
+  <path d="M 100 340 L 115 360 L 100 380 L 85 360 Z" fill="#2D2D2D" stroke="#D97757" stroke-width="1.5"/>
+  <text x="100" y="365" fill="#D97757" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">✓</text>
+
+  <!-- Gate 2 -->
+  <path d="M 250 340 L 265 360 L 250 380 L 235 360 Z" fill="#2D2D2D" stroke="#61AFEF" stroke-width="1.5"/>
+  <text x="250" y="365" fill="#61AFEF" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">✓</text>
+
+  <!-- Gate 3 -->
+  <path d="M 400 340 L 415 360 L 400 380 L 385 360 Z" fill="#2D2D2D" stroke="#E5C07B" stroke-width="1.5"/>
+  <text x="400" y="365" fill="#E5C07B" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">✓</text>
+
+  <!-- Gate 4 -->
+  <path d="M 550 340 L 565 360 L 550 380 L 535 360 Z" fill="#2D2D2D" stroke="#98C379" stroke-width="1.5"/>
+  <text x="550" y="365" fill="#98C379" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">✓</text>
+
+  <!-- Gate labels -->
+  <text x="100" y="400" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="8" text-anchor="middle">Brief approved</text>
+  <text x="250" y="400" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="8" text-anchor="middle">Draft complete</text>
+  <text x="400" y="400" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="8" text-anchor="middle">QA passed</text>
+  <text x="550" y="400" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="8" text-anchor="middle">Live & promoted</text>
+
+  <!-- Connecting lines from stages to gates -->
+  <line x1="100" y1="320" x2="100" y2="340" stroke="#D97757" stroke-width="1" stroke-dasharray="2,2"/>
+  <line x1="250" y1="320" x2="250" y2="340" stroke="#61AFEF" stroke-width="1" stroke-dasharray="2,2"/>
+  <line x1="400" y1="320" x2="400" y2="340" stroke="#E5C07B" stroke-width="1" stroke-dasharray="2,2"/>
+  <line x1="550" y1="320" x2="550" y2="340" stroke="#98C379" stroke-width="1" stroke-dasharray="2,2"/>
+
+  <!-- AI Agents row -->
+  <rect x="40" y="440" width="720" height="70" fill="#1E1E1E" stroke="#D97757" stroke-width="1" rx="2"/>
+  <text x="400" y="460" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" font-weight="600">AI Agent Automation</text>
+
+  <text x="100" y="480" fill="#D97757" font-family="Geist Mono, monospace" font-size="9" text-anchor="middle">ideation-agent</text>
+  <text x="250" y="480" fill="#61AFEF" font-family="Geist Mono, monospace" font-size="9" text-anchor="middle">content-writer</text>
+  <text x="400" y="480" fill="#E5C07B" font-family="Geist Mono, monospace" font-size="9" text-anchor="middle">editor-reviewer</text>
+  <text x="550" y="480" fill="#98C379" font-family="Geist Mono, monospace" font-size="9" text-anchor="middle">publisher-agent</text>
+  <text x="700" y="480" fill="#D97757" font-family="Geist Mono, monospace" font-size="9" text-anchor="middle">analytics-agent</text>
+
+  <text x="100" y="498" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="8" text-anchor="middle">Generates ideas</text>
+  <text x="250" y="498" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="8" text-anchor="middle">Creates drafts</text>
+  <text x="400" y="498" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="8" text-anchor="middle">Reviews quality</text>
+  <text x="550" y="498" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="8" text-anchor="middle">Deploys content</text>
+  <text x="700" y="498" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="8" text-anchor="middle">Tracks metrics</text>
+
+  <!-- Timeline indicator -->
+  <rect x="40" y="540" width="720" height="30" fill="#2D2D2D" stroke="#A0A0A0" stroke-width="1" rx="2"/>
+  <text x="400" y="560" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Typical timeline: 3-5 days (manual) | 4-8 hours (AI-assisted)</text>
+
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#D97757"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="40" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="24" text-anchor="middle" font-weight="700">Content Production Pipeline</text>
+  <text x="400" y="65" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">End-to-end workflow with quality gates and AI automation</text>
+  <text x="400" y="85" fill="#61AFEF" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">ClaudeKit Marketing Kit</text>
+
+  <!-- Pipeline progress indicator -->
+  <rect x="40" y="120" width="720" height="8" fill="#2D2D2D" rx="4"/>
+  <rect x="40" y="120" width="576" height="8" fill="#98C379" rx="4"/>
+  <text x="760" y="126" fill="#98C379" font-family="Inter, sans-serif" font-size="10" text-anchor="end">80% complete</text>
+</svg>

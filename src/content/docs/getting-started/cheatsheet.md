@@ -547,9 +547,9 @@ ck --version
 ## Resources
 
 - [Full Documentation](https://docs.claudekit.cc)
-- [All Commands](/docs/commands/)
-- [AI Agents](/docs/agents/)
-- [Workflows](/docs/docs/configuration/workflows)
+- [All Commands](/docs/engineer/commands/)
+- [AI Agents](/docs/engineer/agents/)
+- [Workflows](/docs/docs/engineer/configuration/workflows)
 - [Troubleshooting](/docs/support/troubleshooting/)
 - [GitHub Discussions](https://github.com/mrgoonie/claudekit-cli/discussions)
 

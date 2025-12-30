@@ -31,6 +31,17 @@ bun run preview       # Preview build
 - **Config**: `src/content/config.ts` (Zod schema)
 - **Docs**: `docs/` (codebase-summary, code-standards, system-architecture, project-roadmap)
 
+## Related Projects & Directories
+
+- **[ClaudeKit CLI](https://github.com/mrgoonie/claudekit-cli)** - CLI setup tool
+  Location: `../claudekit-cli`
+- **[ClaudeKit Engineer](https://github.com/claudekit/claudekit-engineer)** - Engineering toolkit
+  Location: `../claudekit-engineer`
+- **[ClaudeKit Marketing](https://github.com/claudekit/claudekit-marketing)** - Marketing toolkit
+  Location: `../claudekit-marketing`
+- **[ClaudeKit](https://github.com/mrgoonie/claudekit)** - Main website
+  Location: `../claudekit`
+
 ## Adding Documentation
 
 1. Create markdown file: `src/content/docs/<category>/<slug>.md`
@@ -70,7 +81,7 @@ From `src/content/config.ts`:
 
 # ❌ WRONG - Relative paths (WILL BREAK)
 [Quick Start](./quick-start)
-[Commands](../docs/commands/)
+[Commands](../docs/engineer/commands/)
 ```
 
 **Why:** Relative links resolve differently based on trailing slash in URL:

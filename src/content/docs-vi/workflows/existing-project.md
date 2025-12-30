@@ -318,8 +318,8 @@ Cung cấp mô tả chi tiết trong lệnh. Nhiều context = kết quả tốt
 
 Sau khi tích hợp thành công:
 
-1. **Khám Phá Lệnh**: Xem [Tài Liệu Lệnh](/vi/docs/commands/)
-2. **Tìm Hiểu Agents**: Hiểu [Specialized Agents](/vi/docs/agents/)
+1. **Khám Phá Lệnh**: Xem [Tài Liệu Lệnh](/vi/docs/engineer/commands/)
+2. **Tìm Hiểu Agents**: Hiểu [Specialized Agents](/vi/docs/engineer/agents/)
 3. **Workflows Nâng Cao**: Xem [Workflows Guide](/vi/docs/core-concepts/workflows)
 4. **Đào Tạo Team**: Chia sẻ best practices với team
 

@@ -1,0 +1,249 @@
+================================================================================
+CLAUDEKIT DOCUMENTATION INVENTORY - SCOUT REPORT SUMMARY
+================================================================================
+
+Date Generated: December 30, 2025 21:53 UTC
+Scope: Complete documentation content audit for English and Vietnamese docs
+Status: COMPLETE with actionable recommendations
+
+================================================================================
+KEY FINDINGS
+================================================================================
+
+TOTAL DOCUMENTS SCANNED: 469
+  - English: 275 documents
+  - Vietnamese: 194 documents
+  
+TRANSLATION COVERAGE: 70.5% (194/275)
+MISSING TRANSLATIONS: 81 documents across 7 categories
+
+CRITICAL GAPS IDENTIFIED: 2
+  1. Engineer Skills: 49 English → 1 Vietnamese (2% coverage)
+  2. Marketing Workflows: 11 English → 2 Vietnamese (18% coverage)
+
+FULLY TRANSLATED CATEGORIES: 3
+  ✓ Changelog (1/1)
+  ✓ Tools (2/2)
+  ✓ Support/Troubleshooting (6/6)
+
+================================================================================
+CATEGORY BREAKDOWN (by translation status)
+================================================================================
+
+CATEGORY                 EN    VI    COVERAGE   GAP    PRIORITY
+────────────────────────────────────────────────────────────────
+Changelog                1     1     100%       0      Complete ✓
+Tools                    2     2     100%       0      Complete ✓
+Marketing/Commands      25    25     100%       0      Complete ✓
+Marketing/Features       1     1     100%       0      Complete ✓
+────────────────────────────────────────────────────────────────
+Workflows               17    14      82.4%     3      HIGH
+Engineer/Agents         18    15      83.3%     3      MEDIUM
+Marketing/Skills        21    20      95.2%     1      LOW
+Marketing/Agents        33    28      84.8%     5      MEDIUM
+Engineer/Config          4     3      75.0%     1      MEDIUM
+────────────────────────────────────────────────────────────────
+CLI                      9     5      55.6%     4      HIGH
+Getting-Started          8     4      50.0%     4      HIGH
+Support Root             2     0      0.0%      2      HIGH
+────────────────────────────────────────────────────────────────
+Engineer/Commands       65    40      61.5%    25      MEDIUM
+Engineer (Overall)     138    84      60.9%    54      MEDIUM
+────────────────────────────────────────────────────────────────
+Engineer/Skills         49     1      2.0%     48      CRITICAL ★
+Marketing/Workflows     11     2     18.2%      9      CRITICAL ★
+────────────────────────────────────────────────────────────────
+TOTAL                  275   194      70.5%    81      
+
+================================================================================
+CRITICAL ACTIONS REQUIRED (Do First)
+================================================================================
+
+PHASE 1: CRITICAL GAPS (Weeks 1-2)
+──────────────────────────────────
+
+1. ENGINEER SKILLS MODULE
+   Issue: Only 1 of 49 skill modules translated (98% gap)
+   Impact: Engineers lack documentation for technologies
+   Effort: 36-40 hours (batch translation job)
+   Examples: web-frameworks.md, threejs.md, tailwindcss.md, shopify.md
+   
+2. MARKETING WORKFLOWS
+   Issue: Only 2 of 11 workflows translated (82% gap)
+   Impact: Marketing team missing 9 critical guides
+   Effort: 4-6 hours
+   Business Value: HIGH
+
+3. SUPPORT FAQ & INDEX
+   Issue: 0 of 2 root-level support docs translated
+   Impact: High-visibility FAQ pages not in Vietnamese
+   Effort: 1-2 hours (quick win)
+   
+SUBTOTAL PHASE 1: ~41-48 hours
+
+PHASE 2: HIGH-PRIORITY CONTENT (Week 3)
+────────────────────────────────────────
+
+4. GETTING-STARTED CATEGORY
+   Missing: concepts.md, cheatsheet.md, why-claudekit.md, upgrade-guide.md
+   Impact: Incomplete onboarding experience
+   Effort: 2-3 hours
+   
+5. ENGINEER COMMANDS CORE
+   Missing: 8 of 22 core commands
+   Effort: 3-4 hours
+   
+6. CLI DOCUMENTATION
+   Missing: configuration.md, doctor.md, uninstall.md, update.md
+   Effort: 2-3 hours
+   
+SUBTOTAL PHASE 2: ~7-10 hours
+
+TOTAL ESTIMATED EFFORT FOR ALL CRITICAL ITEMS: 56-68 hours
+
+================================================================================
+DOCUMENT ORGANIZATION
+================================================================================
+
+STRUCTURE: Mirror directory layout (docs/ and docs-vi/)
+
+ROOT CATEGORIES: 8
+  - changelog/     (1 file) ✓ COMPLETE
+  - tools/         (2 files) ✓ COMPLETE
+  - changelog/     (1 file) ✓ COMPLETE
+  - getting-started/ (8 files)
+  - cli/           (9 files)
+  - workflows/     (17 files)
+  - support/       (8 files) - with troubleshooting subdirectory
+  - engineer/      (138 files) - 4 subsections
+  - marketing/     (92 files) - 5 subsections
+
+ENGINEER SUBSECTIONS:
+  - agents/         (18 files, 83% translated)
+  - commands/       (65 files, 61% translated)
+    - core/         (22 files)
+    - fix/          (9 files)
+    - design/       (6 files)
+    - git/          (6 files)
+    - plan/         (7 files)
+    - docs-cmd/     (3 files)
+    - integrate/    (2 files)
+    - skill/        (5 files)
+    - content/      (4 files)
+    - review/       (1 file)
+  - skills/         (49 files, 2% translated) ★ CRITICAL
+  - configuration/  (4 files, 75% translated)
+
+MARKETING SUBSECTIONS:
+  - agents/         (33 files, 85% translated)
+  - commands/       (25 files) ✓ COMPLETE
+  - skills/         (21 files, 95% translated)
+  - workflows/      (11 files, 18% translated) ★ CRITICAL
+  - features/       (1 file) ✓ COMPLETE
+
+================================================================================
+TRANSLATION STANDARDS
+================================================================================
+
+FRONTMATTER (REQUIRED FOR ALL FILES):
+───────────────────────────────────
+---
+title: "Document Title in Vietnamese"
+description: "150-160 character SEO description in Vietnamese"
+category: "category-name"  # Same as English version
+order: 1                    # Same number as English version
+published: true
+---
+
+LINKS (CRITICAL - Use Absolute Paths Only):
+────────────────────────────────────────────
+✓ CORRECT:   [Text](/docs/category/slug)
+✓ CORRECT:   [Text](/vi/docs/category/slug)
+✗ WRONG:     [Text](./relative/path)
+✗ WRONG:     [Text](../paths/work)
+
+NAMING CONVENTIONS:
+──────────────────
+- File names: kebab-case (e.g., quick-start.md, database-admin.md)
+- Directory structure: Flat within categories with optional subdirs
+- Index files: Each category has index.md as root navigation
+
+================================================================================
+GENERATED REPORTS
+================================================================================
+
+Four comprehensive reports have been generated:
+
+1. INDEX-DOCS-INVENTORY.md (Master Index)
+   - Complete navigation guide
+   - Translation gap analysis
+   - Phased action plan with effort estimates
+   - Translator guidelines
+   - Location: plans/reports/INDEX-DOCS-INVENTORY.md
+
+2. DOCS-INVENTORY-SUMMARY.md (Quick Reference)
+   - 2-page executive overview
+   - Key metrics and statistics
+   - File structure diagram
+   - Translation strategy recommendations
+   - Location: plans/reports/DOCS-INVENTORY-SUMMARY.md
+
+3. scout-external-251230-2153-docs-inventory.md (Detailed Report)
+   - 405-line comprehensive analysis
+   - Category-by-category breakdown with tables
+   - Frontmatter consistency check
+   - Critical gap identification
+   - Document statistics by type
+   - Location: plans/reports/scout-external-251230-2153-docs-inventory.md
+
+4. SCOUT-REPORT-SUMMARY.txt (This File)
+   - Quick-reference text format
+   - Key findings at a glance
+   - Actionable next steps
+
+================================================================================
+NEXT STEPS
+================================================================================
+
+IMMEDIATE (Today):
+  [ ] Review DOCS-INVENTORY-SUMMARY.md for overview
+  [ ] Review INDEX-DOCS-INVENTORY.md for phased plan
+  [ ] Assess translation resources available
+
+SHORT TERM (This Week):
+  [ ] Establish translation workflow
+  [ ] Create translator guidelines document
+  [ ] Prioritize Phase 1 critical items
+  [ ] Allocate resources for Engineer Skills batch job
+
+MEDIUM TERM (Next 2 Weeks):
+  [ ] Begin Phase 1 translations (Critical gaps)
+  [ ] Begin Phase 2 translations (High-priority content)
+  [ ] Set up CI checks for untranslated docs
+  [ ] Create translation memory (glossary)
+
+LONG TERM (Ongoing):
+  [ ] Establish translation review process
+  [ ] Monitor translation progress using inventory
+  [ ] Update inventory as new docs are added
+  [ ] Maintain 100% translation parity going forward
+
+================================================================================
+STATISTICS & METADATA
+================================================================================
+
+Report Generated:     2025-12-30 21:53 UTC
+Documents Scanned:    469 (275 English, 194 Vietnamese)
+Categories:           8 primary + 23 subcategories
+Average Completion:   83.6% per category
+Critical Issues:      2 (Engineer Skills, Marketing Workflows)
+Estimated Total Effort: 56-68 hours
+
+File Paths:
+  English Docs:     /Users/duynguyen/www/claudekit/claudekit-docs/src/content/docs/
+  Vietnamese Docs:  /Users/duynguyen/www/claudekit/claudekit-docs/src/content/docs-vi/
+  Reports Location: /Users/duynguyen/www/claudekit/claudekit-docs/plans/reports/
+
+================================================================================
+Contact: Check generated reports for detailed information and recommendations
+================================================================================

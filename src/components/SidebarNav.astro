@@ -3,6 +3,9 @@ import { getCollection } from 'astro:content';
 import { getLangFromUrl, useTranslations, getLocalizedPath } from '../i18n/utils';
 import GettingStartedNav from './nav/GettingStartedNav.astro';
 import DocsNav from './nav/DocsNav.astro';
+import EngineerNav from './nav/EngineerNav.astro';
+import MarketingNav from './nav/MarketingNav.astro';
+import CLINav from './nav/CLINav.astro';
 import WorkflowsNav from './nav/WorkflowsNav.astro';
 import ChangelogNav from './nav/ChangelogNav.astro';
 import SupportNav from './nav/SupportNav.astro';
@@ -16,12 +19,14 @@ const { currentPath } = Astro.props;
 const currentLocale = getLangFromUrl(Astro.url);
 
 // Detect section from URL
-// Detect section from URL
 function getSectionFromUrl(path: string): string {
   // Remove language prefix if present (e.g., /vi/docs -> /docs)
   const cleanPath = path.replace(/^\/[a-z]{2}\//, '/');
 
   if (cleanPath.startsWith('/docs/getting-started')) return 'getting-started';
+  if (cleanPath.startsWith('/docs/engineer')) return 'engineer';
+  if (cleanPath.startsWith('/docs/marketing')) return 'marketing';
+  if (cleanPath.startsWith('/docs/cli')) return 'cli';
   if (cleanPath.startsWith('/docs/workflows')) return 'workflows';
   if (cleanPath.startsWith('/docs/tools')) return 'tools';
   if (cleanPath.startsWith('/docs/changelog')) return 'changelog';
@@ -42,6 +47,9 @@ const sectionDocs = allDocs.filter(doc => doc.data.section === section);
 <nav class="sidebar-nav" aria-label="Documentation navigation">
   {section === 'getting-started' && <GettingStartedNav docs={sectionDocs} currentPath={currentPath} />}
   {section === 'docs' && <DocsNav docs={sectionDocs} currentPath={currentPath} />}
+  {section === 'engineer' && <EngineerNav docs={sectionDocs} currentPath={currentPath} />}
+  {section === 'marketing' && <MarketingNav docs={sectionDocs} currentPath={currentPath} />}
+  {section === 'cli' && <CLINav docs={sectionDocs} currentPath={currentPath} />}
   {section === 'workflows' && <WorkflowsNav docs={sectionDocs} currentPath={currentPath} />}
   {section === 'tools' && <ToolsNav docs={sectionDocs} currentPath={currentPath} />}
   {section === 'changelog' && <ChangelogNav docs={sectionDocs} currentPath={currentPath} />}

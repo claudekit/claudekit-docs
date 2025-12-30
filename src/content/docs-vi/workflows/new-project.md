@@ -399,8 +399,8 @@ Sau khi bootstrap dự án:
 
 ## Tài Nguyên
 
-- [Tất Cả Lệnh](/vi/docs/commands/) - Tham khảo lệnh đầy đủ
-- [AI Agents](/vi/docs/agents/) - Hiểu specialized agents
+- [Tất Cả Lệnh](/vi/docs/engineer/commands/) - Tham khảo lệnh đầy đủ
+- [AI Agents](/vi/docs/engineer/agents/) - Hiểu specialized agents
 - [Workflows](/vi/docs/core-concepts/workflows) - Quy trình phát triển
 - [Use Cases](/vi/docs/use-cases/) - Ví dụ thực tế
 

@@ -721,10 +721,10 @@ Before production:
 - [Adding a New Feature](/docs/use-cases/adding-feature) - Feature development
 
 ### Related Commands
-- [/integrate:polar](/docs/commands/integrate/polar) - Polar integration
-- [/integrate:sepay](/docs/commands/integrate/sepay) - SePay integration
-- [/cook](/docs/commands/core/cook) - Custom features
-- [/test](/docs/commands/core/test) - Test suite
+- [/integrate:polar](/docs/engineer/commands/integrate/polar) - Polar integration
+- [/integrate:sepay](/docs/engineer/commands/integrate/sepay) - SePay integration
+- [/cook](/docs/engineer/commands/core/cook) - Custom features
+- [/test](/docs/engineer/commands/core/test) - Test suite
 
 ### Further Reading
 - [Stripe Documentation](https://stripe.com/docs)

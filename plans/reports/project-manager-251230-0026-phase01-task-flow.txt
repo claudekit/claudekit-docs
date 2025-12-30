@@ -1,0 +1,261 @@
+PHASE 01: TASK EXECUTION FLOW & DEPENDENCY DIAGRAM
+===================================================
+
+VISUAL DEPENDENCY MAP (ASCII)
+=============================
+
+┌─────────────────────────────────────────────────────────────────┐
+│         PHASE 01: PRE-MIGRATION ANALYSIS (10 min)               │
+└─────────────────────────────────────────────────────────────────┘
+
+                    SECTION A: FILE VERIFICATION
+                    (2 min - PARALLEL EXECUTION)
+
+  ┌───────────┐  ┌───────────┐  ┌───────────┐  ┌───────────┐
+  │  Step 2.1 │  │  Step 2.2 │  │  Step 2.3 │  │  Step 2.4 │
+  │  Agents   │  │ Commands  │  │  Skills   │  │ Config    │
+  │  (18)     │  │  (66)     │  │  (43)     │  │  (4)      │
+  └─────┬─────┘  └─────┬─────┘  └─────┬─────┘  └─────┬─────┘
+        │               │               │               │
+        └───────────────┴───────────────┴───────────────┘
+                        │
+        ┌───────────┐  ┌────────┐
+        │  Step 2.5 │  │ Step 2.6│
+        │   CLI     │  │  Total  │
+        │   (2)     │  │ = 133   │
+        └─────┬─────┘  └────┬───┘
+              │             │
+              └─────────────┴──────┐
+                                   ▼
+        ┌──────────────────────────────────────┐
+        │         Step 2.7 & 2.8               │
+        │  Vietnamese (86) & Engineer (15)     │
+        └──────────────────────┬───────────────┘
+                               │
+        ───────────────────────┼──────────────────────────
+                               │
+    SECTION B: DEEP ANALYSIS (8 min)
+
+    PATH B1: SKILLS DUPLICATES          PATH B2: CLI FILES       PATH B3: SPECIAL CASES
+    ─────────────────────────           ──────────────────       ──────────────────────
+
+    Step 2.9                            Step 2.13               Step 2.16
+    Extract Legacy                      List CLI                Find Index
+    Skills Filenames                    in docs/docs/cli        Files
+    │                                   │                       │
+    ▼                                   ▼                       ▼
+    Step 2.10                           Step 2.14               Step 2.17
+    Extract Engineer                    List CLI                Find section:docs
+    Skills Filenames                    in docs/cli             Samples
+    │                                   │                       │
+    ▼                                   ▼                       ▼
+    Step 2.11                           Step 2.15               Step 2.18
+    Find Duplicates                     Decide CLI              Find Custom
+    (comm -12)                          Strategy                Slugs
+    │                                   │                       │
+    ▼                                   ▼                       ▼
+    Step 2.12                           ↓                       Step 2.19
+    Document Decision                   (Option A              Document All
+    Keep/Skip/Merge                     Recommended)            Special Cases
+    │                                   │                       │
+    └───────────────────┬───────────────┴───────────────────────┘
+                        │
+                        ▼
+    ┌──────────────────────────────────────────┐
+    │     SECTION C: VALIDATION (2 min)        │
+    │                                          │
+    │  Step 3.1: Total English = 133? ✓        │
+    │  Step 3.2: Total Vietnamese = 86? ✓      │
+    │  Step 3.3: Engineer Skills = 15? ✓       │
+    │  Step 3.4: No blocking duplicates? ✓     │
+    │           (All checks must pass)         │
+    └──────────────┬───────────────────────────┘
+                   │
+                   ▼
+    ┌──────────────────────────────────────────┐
+    │  Step 3.5: Create Migration Manifest     │
+    │            (Aggregated results)          │
+    └──────────────┬───────────────────────────┘
+                   │
+                   ▼
+    ┌──────────────────────────────────────────┐
+    │  Step 3.6: Sign Off Validation           │
+    │            Checklist Complete            │
+    └──────────────┬───────────────────────────┘
+                   │
+                   ▼
+    ┌──────────────────────────────────────────┐
+    │  PHASE 01 COMPLETE - READY FOR PHASE 02  │
+    │  Input: Migration Manifest               │
+    │  Output: Phase 02 - File Migration       │
+    └──────────────────────────────────────────┘
+
+CRITICAL PATH (Longest Sequential Sequence)
+============================================
+2.3 (Verify Skills 43) → 2.9 (Extract Legacy)
+  → 2.11 (Find Duplicates) → 2.12 (Document Decision)
+  → 3.4 (Validate No Duplicates) → 3.5 (Create Manifest)
+  → 3.6 (Sign Off)
+
+Total Sequential Steps: 7 steps
+Estimated Time: ~8 minutes
+
+PARALLEL PATHS (Can execute simultaneously)
+============================================
+Path A (File Counting):
+  2.1, 2.2, 2.4, 2.5, 2.6, 2.7, 2.8 (can all run in parallel with each other)
+  Bottleneck: Need result of 2.6 (total = 133) for validation
+
+Path B1 (Skills Analysis):
+  Can run immediately after 2.3, 2.8 complete
+  Depends on: File count verification complete
+
+Path B2 (CLI Analysis):
+  Can run immediately after 2.5 complete
+  Can run in parallel with B1
+
+Path B3 (Special Cases):
+  Can run immediately, no dependencies
+  Can run in parallel with A, B1, B2
+
+Validation (Section C):
+  Must wait for ALL sections A, B1, B2, B3 complete
+
+TASK SEQUENCING RECOMMENDATIONS
+================================
+
+PHASE 01A: PARALLEL FILE COUNTING (2 min)
+─────────────────────────────────────────
+Execute simultaneously:
+  • Step 2.1: Count agents (expect 18)
+  • Step 2.2: Count commands (expect 66)
+  • Step 2.3: Count skills (expect 43)
+  • Step 2.4: Count configuration (expect 4)
+  • Step 2.5: Count CLI (expect 2)
+  • Step 2.6: Count total English (expect 133)
+  • Step 2.7: Count Vietnamese (expect 86)
+  • Step 2.8: Count engineer skills (expect 15)
+
+Verification: Sum checks = 133, Individual counts match expected
+
+PHASE 01B: PARALLEL ANALYSIS (3 min)
+────────────────────────────────────
+After Phase 01A validates, execute simultaneously:
+  • Step 2.9: Extract legacy skills filenames
+  • Step 2.13: List CLI files in docs/docs/cli
+  • Step 2.16: Find index.md files
+  (All these can run in parallel - no interdependencies)
+
+PHASE 01C: DEPENDENT ANALYSIS (2 min)
+──────────────────────────────────────
+After Phase 01B outputs available, execute:
+  • Step 2.10: Extract engineer skills filenames (depends on 2.8)
+  • Step 2.14: List CLI files in docs/cli
+
+Then execute:
+  • Step 2.11: Find duplicates (depends on 2.9, 2.10)
+  • Step 2.15: Decide CLI strategy (depends on 2.13, 2.14)
+
+Then execute:
+  • Step 2.12: Document skills decision (depends on 2.11)
+  • Step 2.17: Find section:docs samples
+  • Step 2.18: Find custom slug files
+
+Finally:
+  • Step 2.19: Document special cases (depends on 2.16, 2.17, 2.18)
+
+PHASE 01D: VALIDATION & SIGN-OFF (2 min)
+─────────────────────────────────────────
+After ALL Phase 01A-C complete:
+  • Step 3.1: Validate total English = 133
+  • Step 3.2: Validate total Vietnamese = 86
+  • Step 3.3: Validate engineer skills = 15
+  • Step 3.4: Validate no blocking duplicates
+
+  → IF ALL PASS:
+    • Step 3.5: Create migration manifest
+    • Step 3.6: Sign off validation
+    → PROCEED TO PHASE 02
+
+  → IF ANY FAIL:
+    → STOP AND RESOLVE ISSUES
+    → Document blocker
+    → Notify team
+
+TIME BREAKDOWN
+==============
+Phase 01A (File Counting):      2 min (parallel)
+Phase 01B (Initial Analysis):   1 min (parallel)
+Phase 01C (Dependent Analysis): 4 min (sequential within phase)
+Phase 01D (Validation/Signoff): 2 min (sequential)
+Buffer:                         1 min
+───────────────────────────────
+TOTAL ESTIMATED TIME:          10 minutes
+
+PASS/FAIL GATES
+===============
+
+Gate 1: Phase 01A File Counts
+├─ All counts match expected values?
+├─ YES → Proceed to Phase 01B
+└─ NO → STOP, Investigate and recount
+
+Gate 2: Phase 01B/C Analysis Complete
+├─ All outputs captured?
+├─ YES → Proceed to Phase 01D Validation
+└─ NO → STOP, Complete missing analysis
+
+Gate 3: Phase 01D Validation
+├─ Total English = 133? ✓
+├─ Total Vietnamese = 86? ✓
+├─ Engineer skills = 15? ✓
+├─ No blocking duplicates? ✓
+├─ ALL PASS? → Proceed to Phase 02
+└─ ANY FAIL? → STOP, Resolve and retry
+
+SUCCESS OUTCOME
+===============
+✓ Phase 01 Complete
+✓ Migration manifest created
+✓ All 26 tasks executed
+✓ Zero blockers identified
+✓ Ready for Phase 02: File Migration
+
+MANIFEST OUTPUT STRUCTURE
+==========================
+/tmp/migration-manifest.txt or equivalent:
+├─ File counts verification
+│  ├─ English totals (133)
+│  ├─ By category (agents, commands, skills, config, cli)
+│  └─ Vietnamese total (86)
+├─ Skills analysis
+│  ├─ Legacy skills list (43)
+│  ├─ Engineer skills list (15)
+│  ├─ Duplicates found: [list or "None"]
+│  └─ Merge decision: [keep-legacy / keep-existing / merge-manual]
+├─ CLI files analysis
+│  ├─ Files in docs/docs/cli (2)
+│  ├─ Files in docs/cli (9)
+│  └─ Migration decision: Option A [merge to /docs/cli/]
+├─ Special cases
+│  ├─ Index files found: [list or "None"]
+│  ├─ Custom slug files: [list or "None"]
+│  ├─ Non-standard frontmatter: [list or "None"]
+│  └─ Handling recommendations: [documented]
+└─ Validation checklist
+   ├─ Total English = 133 ✓
+   ├─ Total Vietnamese = 86 ✓
+   ├─ Engineer skills = 15 ✓
+   ├─ No blocking duplicates ✓
+   └─ READY FOR PHASE 02 ✓
+
+HANDOFF TO PHASE 02
+===================
+Input:  Migration manifest (from Phase 01)
+Action: Execute git mv commands for file migration
+Output: All 133 English files moved to /engineer/* paths
+Status: Ready for Phase 03 (Frontmatter updates)
+
+---
+Full report: plans/reports/project-manager-251230-0026-phase01-analysis.md
+Summary: plans/reports/project-manager-251230-0026-phase01-tasks-summary.txt

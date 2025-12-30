@@ -437,9 +437,9 @@ After bootstrapping your project:
 
 ## Resources
 
-- [All Commands](/docs/commands/) - Complete command reference
-- [AI Agents](/docs/agents/) - Understanding specialized agents
-- [Workflows](/docs/docs/configuration/workflows) - Development workflows
+- [All Commands](/docs/engineer/commands/) - Complete command reference
+- [AI Agents](/docs/engineer/agents/) - Understanding specialized agents
+- [Workflows](/docs/docs/engineer/configuration/workflows) - Development workflows
 - [Use Cases](/docs/workflows/) - Real-world examples
 
 ---

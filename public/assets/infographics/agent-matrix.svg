@@ -1,0 +1,199 @@
+<svg viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg">
+  <title>Agent Capability Matrix</title>
+  <desc>Grid showing all available agents with their capabilities, skills, and use cases</desc>
+  <rect width="1400" height="900" fill="#1E1E1E"/>
+
+  <!-- Title -->
+  <text x="700" y="45" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="32" text-anchor="middle" font-weight="700">ClaudeKit Agent Matrix</text>
+  <text x="700" y="75" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="14" text-anchor="middle">Complete overview of available AI agents and their capabilities</text>
+
+  <!-- Legend -->
+  <rect x="50" y="100" width="1300" height="40" fill="#2D2D2D" stroke="#A0A0A0" stroke-width="1" rx="2"/>
+  <circle cx="120" cy="120" r="8" fill="#61AFEF"/>
+  <text x="140" y="125" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11">Development</text>
+
+  <circle cx="280" cy="120" r="8" fill="#E5C07B"/>
+  <text x="300" y="125" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11">Marketing</text>
+
+  <circle cx="440" cy="120" r="8" fill="#98C379"/>
+  <text x="460" y="125" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11">Content</text>
+
+  <circle cx="600" cy="120" r="8" fill="#D97757"/>
+  <text x="620" y="125" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11">Operations</text>
+
+  <circle cx="760" cy="120" r="8" fill="#E06C75"/>
+  <text x="780" y="125" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11">Analytics</text>
+
+  <text x="950" y="125" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10">Capability Level:</text>
+  <text x="1080" y="125" fill="#98C379" font-family="Inter, sans-serif" font-size="10">●●● High</text>
+  <text x="1180" y="125" fill="#E5C07B" font-family="Inter, sans-serif" font-size="10">●● Medium</text>
+  <text x="1280" y="125" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10">● Basic</text>
+
+  <!-- Agent Grid (4 columns x 4 rows = 16 agents) -->
+
+  <!-- Row 1 -->
+  <!-- Agent 1: Fullstack Developer -->
+  <rect x="50" y="170" width="310" height="160" fill="#2D2D2D" stroke="#61AFEF" stroke-width="2" rx="2"/>
+  <circle cx="80" cy="200" r="12" fill="#61AFEF"/>
+  <text x="105" y="205" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="15" font-weight="700">Fullstack Developer</text>
+  <text x="80" y="230" fill="#61AFEF" font-family="Geist Mono, monospace" font-size="10">fullstack-developer</text>
+  <text x="80" y="250" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10">Capabilities:</text>
+  <text x="80" y="268" fill="#98C379" font-family="Inter, sans-serif" font-size="9">●●● Code generation</text>
+  <text x="80" y="283" fill="#98C379" font-family="Inter, sans-serif" font-size="9">●●● Testing</text>
+  <text x="80" y="298" fill="#E5C07B" font-family="Inter, sans-serif" font-size="9">●● Documentation</text>
+  <text x="80" y="318" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="9" font-style="italic">Best for: Feature development, bug fixes</text>
+
+  <!-- Agent 2: Content Writer -->
+  <rect x="390" y="170" width="310" height="160" fill="#2D2D2D" stroke="#98C379" stroke-width="2" rx="2"/>
+  <circle cx="420" cy="200" r="12" fill="#98C379"/>
+  <text x="445" y="205" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="15" font-weight="700">Content Writer</text>
+  <text x="420" y="230" fill="#98C379" font-family="Geist Mono, monospace" font-size="10">content-writer</text>
+  <text x="420" y="250" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10">Capabilities:</text>
+  <text x="420" y="268" fill="#98C379" font-family="Inter, sans-serif" font-size="9">●●● Blog posts</text>
+  <text x="420" y="283" fill="#98C379" font-family="Inter, sans-serif" font-size="9">●●● Documentation</text>
+  <text x="420" y="298" fill="#E5C07B" font-family="Inter, sans-serif" font-size="9">●● Social media</text>
+  <text x="420" y="318" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="9" font-style="italic">Best for: Content creation, docs writing</text>
+
+  <!-- Agent 3: Campaign Manager -->
+  <rect x="730" y="170" width="310" height="160" fill="#2D2D2D" stroke="#E5C07B" stroke-width="2" rx="2"/>
+  <circle cx="760" cy="200" r="12" fill="#E5C07B"/>
+  <text x="785" y="205" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="15" font-weight="700">Campaign Manager</text>
+  <text x="760" y="230" fill="#E5C07B" font-family="Geist Mono, monospace" font-size="10">campaign-manager</text>
+  <text x="760" y="250" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10">Capabilities:</text>
+  <text x="760" y="268" fill="#98C379" font-family="Inter, sans-serif" font-size="9">●●● Campaign planning</text>
+  <text x="760" y="283" fill="#98C379" font-family="Inter, sans-serif" font-size="9">●●● Automation</text>
+  <text x="760" y="298" fill="#E5C07B" font-family="Inter, sans-serif" font-size="9">●● A/B testing</text>
+  <text x="760" y="318" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="9" font-style="italic">Best for: Marketing campaigns, funnel mgmt</text>
+
+  <!-- Agent 4: QA Engineer -->
+  <rect x="1070" y="170" width="310" height="160" fill="#2D2D2D" stroke="#61AFEF" stroke-width="2" rx="2"/>
+  <circle cx="1100" cy="200" r="12" fill="#61AFEF"/>
+  <text x="1125" y="205" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="15" font-weight="700">QA Engineer</text>
+  <text x="1100" y="230" fill="#61AFEF" font-family="Geist Mono, monospace" font-size="10">qa-engineer</text>
+  <text x="1100" y="250" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10">Capabilities:</text>
+  <text x="1100" y="268" fill="#98C379" font-family="Inter, sans-serif" font-size="9">●●● Test automation</text>
+  <text x="1100" y="283" fill="#98C379" font-family="Inter, sans-serif" font-size="9">●●● Bug detection</text>
+  <text x="1100" y="298" fill="#E5C07B" font-family="Inter, sans-serif" font-size="9">●● Performance testing</text>
+  <text x="1100" y="318" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="9" font-style="italic">Best for: Quality assurance, test coverage</text>
+
+  <!-- Row 2 -->
+  <!-- Agent 5: SEO Specialist -->
+  <rect x="50" y="360" width="310" height="160" fill="#2D2D2D" stroke="#E5C07B" stroke-width="2" rx="2"/>
+  <circle cx="80" cy="390" r="12" fill="#E5C07B"/>
+  <text x="105" y="395" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="15" font-weight="700">SEO Specialist</text>
+  <text x="80" y="420" fill="#E5C07B" font-family="Geist Mono, monospace" font-size="10">seo-specialist</text>
+  <text x="80" y="440" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10">Capabilities:</text>
+  <text x="80" y="458" fill="#98C379" font-family="Inter, sans-serif" font-size="9">●●● Keyword research</text>
+  <text x="80" y="473" fill="#98C379" font-family="Inter, sans-serif" font-size="9">●●● On-page optimization</text>
+  <text x="80" y="488" fill="#E5C07B" font-family="Inter, sans-serif" font-size="9">●● Technical SEO</text>
+  <text x="80" y="508" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="9" font-style="italic">Best for: Search optimization, rankings</text>
+
+  <!-- Agent 6: Email Marketer -->
+  <rect x="390" y="360" width="310" height="160" fill="#2D2D2D" stroke="#E5C07B" stroke-width="2" rx="2"/>
+  <circle cx="420" cy="390" r="12" fill="#E5C07B"/>
+  <text x="445" y="395" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="15" font-weight="700">Email Marketer</text>
+  <text x="420" y="420" fill="#E5C07B" font-family="Geist Mono, monospace" font-size="10">email-marketer</text>
+  <text x="420" y="440" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10">Capabilities:</text>
+  <text x="420" y="458" fill="#98C379" font-family="Inter, sans-serif" font-size="9">●●● Email sequences</text>
+  <text x="420" y="473" fill="#98C379" font-family="Inter, sans-serif" font-size="9">●●● Segmentation</text>
+  <text x="420" y="488" fill="#E5C07B" font-family="Inter, sans-serif" font-size="9">●● Personalization</text>
+  <text x="420" y="508" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="9" font-style="italic">Best for: Email automation, nurture flows</text>
+
+  <!-- Agent 7: DevOps Specialist -->
+  <rect x="730" y="360" width="310" height="160" fill="#2D2D2D" stroke="#D97757" stroke-width="2" rx="2"/>
+  <circle cx="760" cy="390" r="12" fill="#D97757"/>
+  <text x="785" y="395" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="15" font-weight="700">DevOps Specialist</text>
+  <text x="760" y="420" fill="#D97757" font-family="Geist Mono, monospace" font-size="10">devops-specialist</text>
+  <text x="760" y="440" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10">Capabilities:</text>
+  <text x="760" y="458" fill="#98C379" font-family="Inter, sans-serif" font-size="9">●●● CI/CD pipelines</text>
+  <text x="760" y="473" fill="#98C379" font-family="Inter, sans-serif" font-size="9">●●● Infrastructure</text>
+  <text x="760" y="488" fill="#E5C07B" font-family="Inter, sans-serif" font-size="9">●● Monitoring</text>
+  <text x="760" y="508" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="9" font-style="italic">Best for: Deployment, infrastructure mgmt</text>
+
+  <!-- Agent 8: Analytics Reporter -->
+  <rect x="1070" y="360" width="310" height="160" fill="#2D2D2D" stroke="#E06C75" stroke-width="2" rx="2"/>
+  <circle cx="1100" cy="390" r="12" fill="#E06C75"/>
+  <text x="1125" y="395" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="15" font-weight="700">Analytics Reporter</text>
+  <text x="1100" y="420" fill="#E06C75" font-family="Geist Mono, monospace" font-size="10">analytics-reporter</text>
+  <text x="1100" y="440" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10">Capabilities:</text>
+  <text x="1100" y="458" fill="#98C379" font-family="Inter, sans-serif" font-size="9">●●● Data analysis</text>
+  <text x="1100" y="473" fill="#98C379" font-family="Inter, sans-serif" font-size="9">●●● Reporting</text>
+  <text x="1100" y="488" fill="#E5C07B" font-family="Inter, sans-serif" font-size="9">●● Visualization</text>
+  <text x="1100" y="508" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="9" font-style="italic">Best for: Performance tracking, insights</text>
+
+  <!-- Row 3 -->
+  <!-- Agent 9: Code Reviewer -->
+  <rect x="50" y="550" width="310" height="160" fill="#2D2D2D" stroke="#61AFEF" stroke-width="2" rx="2"/>
+  <circle cx="80" cy="580" r="12" fill="#61AFEF"/>
+  <text x="105" y="585" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="15" font-weight="700">Code Reviewer</text>
+  <text x="80" y="610" fill="#61AFEF" font-family="Geist Mono, monospace" font-size="10">code-reviewer</text>
+  <text x="80" y="630" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10">Capabilities:</text>
+  <text x="80" y="648" fill="#98C379" font-family="Inter, sans-serif" font-size="9">●●● Code analysis</text>
+  <text x="80" y="663" fill="#98C379" font-family="Inter, sans-serif" font-size="9">●●● Best practices</text>
+  <text x="80" y="678" fill="#E5C07B" font-family="Inter, sans-serif" font-size="9">●● Security audit</text>
+  <text x="80" y="698" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="9" font-style="italic">Best for: PR reviews, code quality</text>
+
+  <!-- Agent 10: Social Media Manager -->
+  <rect x="390" y="550" width="310" height="160" fill="#2D2D2D" stroke="#E5C07B" stroke-width="2" rx="2"/>
+  <circle cx="420" cy="580" r="12" fill="#E5C07B"/>
+  <text x="445" y="585" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="15" font-weight="700">Social Media Mgr</text>
+  <text x="420" y="610" fill="#E5C07B" font-family="Geist Mono, monospace" font-size="10">social-media-manager</text>
+  <text x="420" y="630" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10">Capabilities:</text>
+  <text x="420" y="648" fill="#98C379" font-family="Inter, sans-serif" font-size="9">●●● Post scheduling</text>
+  <text x="420" y="663" fill="#98C379" font-family="Inter, sans-serif" font-size="9">●●● Content calendar</text>
+  <text x="420" y="678" fill="#E5C07B" font-family="Inter, sans-serif" font-size="9">●● Engagement</text>
+  <text x="420" y="698" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="9" font-style="italic">Best for: Social campaigns, engagement</text>
+
+  <!-- Agent 11: Data Analyst -->
+  <rect x="730" y="550" width="310" height="160" fill="#2D2D2D" stroke="#E06C75" stroke-width="2" rx="2"/>
+  <circle cx="760" cy="580" r="12" fill="#E06C75"/>
+  <text x="785" y="585" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="15" font-weight="700">Data Analyst</text>
+  <text x="760" y="610" fill="#E06C75" font-family="Geist Mono, monospace" font-size="10">data-analyst</text>
+  <text x="760" y="630" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10">Capabilities:</text>
+  <text x="760" y="648" fill="#98C379" font-family="Inter, sans-serif" font-size="9">●●● SQL queries</text>
+  <text x="760" y="663" fill="#98C379" font-family="Inter, sans-serif" font-size="9">●●● Pattern detection</text>
+  <text x="760" y="678" fill="#E5C07B" font-family="Inter, sans-serif" font-size="9">●● Predictions</text>
+  <text x="760" y="698" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="9" font-style="italic">Best for: Data insights, forecasting</text>
+
+  <!-- Agent 12: Project Manager -->
+  <rect x="1070" y="550" width="310" height="160" fill="#2D2D2D" stroke="#D97757" stroke-width="2" rx="2"/>
+  <circle cx="1100" cy="580" r="12" fill="#D97757"/>
+  <text x="1125" y="585" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="15" font-weight="700">Project Manager</text>
+  <text x="1100" y="610" fill="#D97757" font-family="Geist Mono, monospace" font-size="10">project-manager</text>
+  <text x="1100" y="630" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10">Capabilities:</text>
+  <text x="1100" y="648" fill="#98C379" font-family="Inter, sans-serif" font-size="9">●●● Task planning</text>
+  <text x="1100" y="663" fill="#98C379" font-family="Inter, sans-serif" font-size="9">●●● Coordination</text>
+  <text x="1100" y="678" fill="#E5C07B" font-family="Inter, sans-serif" font-size="9">●● Reporting</text>
+  <text x="1100" y="698" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="9" font-style="italic">Best for: Sprint planning, team coord</text>
+
+  <!-- Bottom summary -->
+  <rect x="50" y="740" width="1300" height="140" fill="#2D2D2D" stroke="#D97757" stroke-width="1" rx="2"/>
+  <text x="700" y="770" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="18" text-anchor="middle" font-weight="600">Agent Ecosystem Stats</text>
+
+  <text x="200" y="810" fill="#61AFEF" font-family="Inter, sans-serif" font-size="14" text-anchor="middle" font-weight="600">12+ Agents</text>
+  <text x="200" y="830" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Available now</text>
+
+  <text x="450" y="810" fill="#E5C07B" font-family="Inter, sans-serif" font-size="14" text-anchor="middle" font-weight="600">50+ Skills</text>
+  <text x="450" y="830" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Pre-configured</text>
+
+  <text x="700" y="810" fill="#98C379" font-family="Inter, sans-serif" font-size="14" text-anchor="middle" font-weight="600">100% Customizable</text>
+  <text x="700" y="830" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Create your own</text>
+
+  <text x="950" y="810" fill="#D97757" font-family="Inter, sans-serif" font-size="14" text-anchor="middle" font-weight="600">File-based</text>
+  <text x="950" y="830" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Version controlled</text>
+
+  <text x="1200" y="810" fill="#E06C75" font-family="Inter, sans-serif" font-size="14" text-anchor="middle" font-weight="600">AI-powered</text>
+  <text x="1200" y="830" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Claude 3.5 Sonnet</text>
+
+  <text x="700" y="865" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" font-style="italic">
+    Each agent can be combined with others for complex multi-agent workflows
+  </text>
+
+  <!-- NOTE: This SVG is a placeholder. Final PNG infographic should include: -->
+  <!-- - Professional grid layout with consistent spacing -->
+  <!-- - Agent icons/avatars for each agent type -->
+  <!-- - Capability bars or star ratings for visual comparison -->
+  <!-- - Color-coded categories with legend -->
+  <!-- - Detailed skill lists expandable on hover (for interactive version) -->
+  <!-- - Export as high-res PNG (2800x1800px minimum) -->
+</svg>

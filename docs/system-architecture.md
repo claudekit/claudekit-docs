@@ -192,14 +192,16 @@ Desktop (>= 1024px):
 #### 3.2 Component Architecture
 
 **Astro Components** (Static):
-- Header.astro: Top navigation bar
+- Header.astro: Top navigation bar with dynamic routing
 - Sidebar.astro: Container with scroll area
 - SidebarNav.astro: Navigation tree logic
 - AIPanel.astro: Dialog wrapper for chat
+- WorkflowsNav.astro: Workflows section with kit badge
 
 **React Islands** (Interactive):
 - AIChat.tsx: Message history, send input
 - LanguageSwitcher.tsx: Locale toggle
+- KitSwitcher.tsx: Engineer/Marketing kit switcher with persistence
 
 **Shared Patterns**:
 - Props interface for type safety
@@ -254,11 +256,51 @@ const isActive = docPath === currentPath;
 - Active class adds 2px blue left border
 - Matches Polar documentation aesthetics
 
-#### 4.2 Known Issues
+#### 4.2 Header Navigation & Kit Routing (Phase 1)
+
+**Dynamic Docs Link Routing**:
+- Header contains "Docs" link that routes to different sections based on selected kit
+- Uses localStorage key `claudekit-selected-kit` to persist selection
+- Custom event `kit-changed` notifies other components of kit changes
+- Routes: Engineer → `/docs/engineer/agents`, Marketing → `/docs/marketing/`
+
+**Implementation**:
+```typescript
+// Header.astro - Server-side rendering
+const docsLink = document.querySelector('.docs-link');
+docsLink.setAttribute('data-engineer-path', '/docs/engineer/agents');
+docsLink.setAttribute('data-marketing-path', '/docs/marketing/');
+
+// Client-side routing (inline script)
+window.addEventListener('kit-changed', updateDocsLink);
+window.addEventListener('storage', (e) => {
+  if (e.key === 'claudekit-selected-kit') updateDocsLink();
+});
+```
+
+**KitSwitcher Component** (React):
+- Located in header right section
+- Displays Engineer and Marketing kit buttons
+- Manages localStorage persistence
+- Dispatches custom `kit-changed` event for cross-component communication
+- Respects mobile layout (labels hidden on small screens)
+
+**Kit Detection**:
+1. Check localStorage first (`claudekit-selected-kit`)
+2. Fall back to URL path detection (`/marketing/` → marketing kit)
+3. Default to engineer kit if not found
+
+**Navigation Section Badges**:
+- WorkflowsNav displays "Engineer Workflows" badge
+- Badge colored with accent-blue (`var(--color-accent-blue)`)
+- Positioned at section header above nav items
+
+#### 4.3 Known Issues
 
 1. **Flat Navigation**: Commands have nested structure (`commands/fix/hard.md`) but sidebar shows flat list
 2. **Missing Category**: `troubleshooting` in schema but not in SidebarNav
 3. **No Breadcrumbs**: Users can't see path hierarchy
+4. **Marketing Nav Missing**: WorkflowsNav only shows engineer workflows (marketing TBD)
 
 ### 5. AI Integration System (Planned)
 

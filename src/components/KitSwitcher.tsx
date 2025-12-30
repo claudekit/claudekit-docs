@@ -43,6 +43,9 @@ export function KitSwitcher() {
     setCurrentKit(kit);
     localStorage.setItem(STORAGE_KEY, kit);
 
+    // Dispatch custom event for other components to listen
+    window.dispatchEvent(new CustomEvent('kit-changed', { detail: { kit } }));
+
     // Navigate to the kit's landing page
     const targetPath = kit === 'marketing'
       ? '/docs/marketing/'

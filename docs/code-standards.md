@@ -247,6 +247,17 @@ export default function AIChat({ initialMessages = [] }: AIChatProps) {
 - Prefer `client:visible` or `client:idle` for non-critical components
 - TypeScript strict mode
 
+**Cross-Component Communication** (Phase 1 - KitSwitcher):
+- Use custom DOM events for component-to-component messaging
+- Dispatch from React islands, listen in Astro/vanilla JS
+- localStorage for persistent state shared across tabs
+- Example: `window.dispatchEvent(new CustomEvent('kit-changed', { detail: { kit } }))`
+
+**localStorage Conventions**:
+- Use kebab-case keys: `claudekit-selected-kit`, `sidebar-section-${name}`
+- Store simple values: strings, booleans, JSON-serialized objects
+- Document key format and default values in component comments
+
 ### Layout Patterns
 
 **BaseLayout.astro**:

@@ -14,7 +14,12 @@ const currentLocale = getLangFromUrl(Astro.url);
 const sortedDocs = docs.sort((a, b) => (a.data.order || 999) - (b.data.order || 999));
 ---
 
-<div class="nav-section">
+<div class="workflows-nav">
+  <div class="nav-header">
+    <span class="nav-kit-badge">Engineer Workflows</span>
+  </div>
+
+  <div class="nav-section">
   <ul class="nav-items">
     {sortedDocs.map(doc => {
       const href = getDocPath(doc.slug, currentLocale);
@@ -32,9 +37,40 @@ const sortedDocs = docs.sort((a, b) => (a.data.order || 999) - (b.data.order || 
       );
     })}
   </ul>
+  </div>
 </div>
 
 <style>
+  .workflows-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .nav-header {
+    padding: var(--space-2) var(--space-3);
+    margin-bottom: var(--space-2);
+  }
+
+  .nav-kit-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-1) var(--space-3);
+    background: var(--color-accent-blue, #60A5FA);
+    color: white;
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .nav-section {
+    display: flex;
+    flex-direction: column;
+  }
+
   .nav-items {
     list-style: none;
     padding: 0;

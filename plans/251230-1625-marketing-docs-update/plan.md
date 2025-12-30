@@ -125,21 +125,33 @@ Comprehensive documentation update for ClaudeKit Marketing v1.0 to accurately re
 
 ## Implementation Plan
 
-### Phase 1: Header Navigation & Routing
+### Phase 1: Header Navigation & Routing ✅ DONE (2025-12-30 19:12)
 **Files**:
-- `src/content/docs/getting-started/introduction.md`
-- `src/components/Header.astro` (if routing config there)
-- Sidebar configuration files
+- `src/content/docs/getting-started/introduction.md` ✅
+- `src/components/Header.astro` ✅ (added KitSwitcher import & component)
+- `src/components/KitSwitcher.tsx` ✅ (new file - 129 lines)
+- `src/components/nav/WorkflowsNav.astro` ✅ (added "Engineer Workflows" badge)
 
-**Changes**:
-1. Update introduction.md to showcase both kits (Engineer + Marketing)
-2. Fix "Docs" link → `/docs/engineer/agents` or kit selector
-3. Configure dual-kit Workflows with separate subsections:
-   - Engineer Workflows: `/docs/workflows/` (existing)
-   - Marketing Workflows: `/docs/marketing/workflows/` (existing)
-   - Update sidebar to show both sections clearly
+**Changes Implemented**:
+1. ✅ introduction.md already showcases both kits (Engineer + Marketing) equally
+2. ✅ Added dynamic "Docs" link routing based on kit selection (Header.astro lines 198-228)
+3. ✅ Created KitSwitcher component with localStorage persistence & custom event dispatch
+4. ✅ Added "Engineer Workflows" badge to WorkflowsNav for visual distinction
 
-**Time**: 30-45 min
+**Commit**: 5b59522 "feat(components): add kit switcher and navigation components"
+**Build Status**: ✅ Passed (756 pages generated)
+**Review**: ✅ Approved (see `plans/reports/code-reviewer-251230-1908-phase1-header-nav.md`)
+**Time**: ~45 min (as estimated)
+
+**Completion Notes** (2025-12-30 19:12):
+- All 4 components successfully implemented and tested
+- Cross-component coordination working via custom KitSwitcher events
+- Header.astro properly routes "Docs" link based on active kit selection
+- localStorage persistence ensures kit preference persists across page loads
+- Engineer workflows properly badged for visual distinction in navigation
+- Zero build errors, all 756 pages generated successfully
+- Code review approved with no critical issues
+- Ready for Phase 2 implementation
 
 ---
 

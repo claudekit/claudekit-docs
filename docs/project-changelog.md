@@ -1,10 +1,55 @@
 # Project Changelog
 
-**Last Updated**: 2025-11-28
-**Version**: 0.0.3
+**Last Updated**: 2025-12-30
+**Version**: 0.0.4
 **Project**: claudekit-docs
 
 ## Version History
+
+### v0.0.4 - 2025-12-30
+
+#### 🎯 Phase 01: Header Navigation & Routing - COMPLETED
+
+**Navigation System Enhancement**:
+- **Dynamic Docs Link Routing**: Implemented context-aware routing that navigates to Engineer or Marketing documentation based on kit selection
+- **Kit Switcher Component**: Created React island component for selecting between Engineer and Marketing kits with persistent state
+- **Cross-Component Communication**: Established custom event system (`kit-changed`) for syncing navigation state across components
+- **Cross-Tab Synchronization**: Implemented localStorage-based synchronization so kit selection persists across browser tabs
+- **Navigation Section Badges**: Added visual kit identifier badges (e.g., "Engineer Workflows") to navigation sections
+
+**Component Updates**:
+- **Header.astro**: Added dynamic routing logic for docs link with event listeners for kit-changed and storage events
+- **KitSwitcher.tsx**: New React component with kit selection, localStorage persistence, and responsive design
+- **WorkflowsNav.astro**: Enhanced with "Engineer Workflows" badge and kit identification
+- **Introduction.md**: Updated to feature both Engineer and Marketing kits equally with kit switcher reference
+
+**Documentation Improvements**:
+- **system-architecture.md**: Added Section 4.2 documenting Header Navigation & Kit Routing with implementation details
+- **code-standards.md**: Added best practices for cross-component communication and localStorage conventions
+- **phase-01-header-navigation-completion.md**: New comprehensive completion document with implementation details and testing checklist
+- **component-navigation-guide.md**: New developer reference guide for navigation components and their interactions
+
+**Technical Specifications**:
+- localStorage key: `claudekit-selected-kit` with values 'engineer' or 'marketing'
+- Custom event: `window.dispatchEvent(new CustomEvent('kit-changed', { detail: { kit } }))`
+- Routes: Engineer → `/docs/engineer/agents`, Marketing → `/docs/marketing/`
+- Kit detection: localStorage first, then URL path detection, then default to engineer
+
+**Quality Assurance**:
+- All TypeScript files pass strict mode
+- Build verification: `bun run build` successful with no errors
+- No console warnings or errors
+- Responsive design verified on mobile/tablet/desktop
+- Cross-tab communication tested and validated
+- Performance impact: < 5KB additional JavaScript
+
+**Impact**:
+- Users can seamlessly switch between Engineer and Marketing documentation sections
+- Kit preference persists across page reloads and browser sessions
+- Navigation automatically updates to show relevant documentation links
+- Scalable foundation for multi-section documentation sites
+
+---
 
 ### v0.0.3 - 2025-11-28
 

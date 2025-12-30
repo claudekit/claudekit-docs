@@ -30,54 +30,75 @@ New to ClaudeKit? Watch this step-by-step walkthrough covering CLI installation,
 
 ## What is ClaudeKit?
 
-ClaudeKit transforms Claude Code from a general AI assistant into a focused engineering toolkit. Instead of writing prompts from scratch, you invoke battle-tested workflows optimized for speed and quality.
+ClaudeKit extends Claude Code with specialized toolkits for engineering and marketing. Instead of writing prompts from scratch, you invoke battle-tested workflows optimized for speed and quality.
 
-**Core Components**:
-- **Agents**: Specialized AI assistants (planner, researcher, tester, debugger)
-- **Commands**: Slash commands for common tasks (`/cook`, `/fix`, `/plan`, `/bootstrap`)
-- **Skills**: Reusable knowledge modules (Next.js, Better Auth, Docker)
+### Two Powerful Kits
+
+**Engineer Kit** - Development & automation toolkit:
+- **Agents**: Specialized AI assistants (planner, researcher, tester, debugger, backend-developer)
+- **Commands**: Development workflows (`/cook`, `/fix`, `/plan`, `/test`, `/code`)
+- **Skills**: Technical knowledge modules (Next.js, PostgreSQL, Docker, DevOps)
+
+**Marketing Kit** - Marketing & content automation toolkit:
+- **Agents**: Content creators (copywriter, ui-ux-designer, campaign-manager, seo-specialist)
+- **Commands**: Marketing workflows (`/write:blog`, `/video:create`, `/slide:create`, `/campaign:*`)
+- **Asset Management**: Centralized hub for copy, storyboards, slides, brand guidelines
+- **Skills**: Marketing expertise (copywriting, SEO, analytics, video production)
 
 ## How It Works
 
-1. **Invoke Command**: Type `/cook "add user authentication"`
-2. **Agent Activates**: System spawns planner → researcher → developer → tester
-3. **Workflow Executes**: Agents collaborate, write code, run tests, commit changes
-4. **You Review**: Check output, provide feedback, iterate
+**Engineer Kit Example:**
+1. Type `/cook "add user authentication"`
+2. System spawns planner → researcher → developer → tester
+3. Agents collaborate, write code, run tests, commit changes
+4. You review output, provide feedback, iterate
+
+**Marketing Kit Example:**
+1. Type `/write:blog "introducing our new API"`
+2. System extracts your writing style from `/assets/writing-styles/`
+3. Copywriter agent drafts blog post matching your voice
+4. Content stored in Asset Management hub for reuse
 
 ## Why Use ClaudeKit?
 
-- **Speed**: 10x faster than manual prompting
-- **Quality**: Battle-tested workflows reduce bugs and rework
-- **Consistency**: Same approach across team members
-- **Learning**: See how experts structure engineering tasks
+**For Engineers:**
+- **Speed**: 10x faster than manual prompting for feature development
+- **Quality**: Battle-tested workflows reduce bugs and technical debt
+- **Consistency**: Same development patterns across team
 
-## Quick Example
+**For Marketers:**
+- **Brand Consistency**: Centralized asset management ensures unified messaging
+- **Context-Aware**: Content grounded in actual product/codebase
+- **Production-Ready**: Video storyboards with Gemini Veo 3.1, slides in .pptx format
 
-```bash
-# Without ClaudeKit
-You: "I need to add authentication to my Next.js app"
-Claude: "Sure! What auth library? What features?"
-[20+ message back-and-forth]
+## Choose Your Kit
 
-# With ClaudeKit
-You: /cook "add authentication with Better Auth"
-ClaudeKit:
-  ✓ Planner creates implementation plan
-  ✓ Researcher analyzes codebase
-  ✓ Developer writes code following best practices
-  ✓ Tester runs tests and fixes issues
-  ✓ Git commits changes
-[Done in 1 command]
-```
+Use the kit switcher in the header to explore:
+
+**Engineer Kit** → Start at [Engineer Docs](/docs/engineer/agents)
+- Feature development workflows
+- Testing and debugging agents
+- Infrastructure automation
+
+**Marketing Kit** → Start at [Marketing Docs](/docs/marketing/)
+- Content creation workflows
+- Video production pipelines
+- Campaign orchestration
 
 ## Next Steps
 
 1. **[Understand Concepts](/docs/getting-started/concepts)** - How agents, commands, and skills work
 2. **[Install ClaudeKit](/docs/getting-started/installation)** - Set up the CLI
-3. **[Quick Start](/docs/getting-started/quick-start)** - Build your first feature in 15 minutes
+3. **[Quick Start](/docs/getting-started/quick-start)** - Build your first feature or campaign
 
-## Want to Learn More?
+## Explore Workflows
 
-- [Why ClaudeKit](/docs/getting-started/why-claudekit) - Comparisons, ROI calculations, pricing
-- [Use Cases](/docs/workflows) - Real-world workflows
-- [FAQ](/docs/support/faq) - Common questions answered
+**Engineer Workflows**:
+- [New Project Setup](/docs/workflows/new-project) - Bootstrap projects with best practices
+- [Feature Development](/docs/workflows/feature-development) - End-to-end feature implementation
+- [Code Review](/docs/workflows/code-review) - Automated code quality checks
+
+**Marketing Workflows**:
+- [Content Creation](/docs/marketing/workflows/content-workflow) - Blog posts, copy, social media
+- [Video Production](/docs/marketing/workflows/dashboard-workflow) - Script to storyboard to video
+- [Campaign Management](/docs/marketing/workflows/campaign-workflow) - Multi-channel campaigns

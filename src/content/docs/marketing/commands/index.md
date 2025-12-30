@@ -9,7 +9,7 @@ published: true
 
 # Marketing Commands
 
-21 specialized commands for marketing automation, content creation, and campaign management. Each command activates specialized AI agents with deep marketing expertise.
+19 specialized commands for marketing automation, content creation, and campaign management. Each command activates specialized AI agents with deep marketing expertise.
 
 ## Quick Reference Matrix
 
@@ -24,24 +24,22 @@ published: true
 | [/social](/docs/marketing/commands/social) | Social media content | Platform-specific posts | social-media-manager |
 | [/analyze](/docs/marketing/commands/analyze) | Analytics and performance | Data-driven insights | analytics-analyst |
 
-### Workflow Commands (4 commands)
+### Content Creation Commands (6 commands)
 
 | Command | Purpose | Best For | Time Saved |
 |---------|---------|----------|------------|
-| [/plan](/docs/marketing/commands/plan) | Create implementation plans | Complex features | 2-4 hours |
-| [/cook](/docs/marketing/commands/cook) | All-in-one implementation | Complete features | 4-8 hours |
+| [/write](/docs/marketing/commands/write) | Blog posts, content audit, publishing | Long-form content | 2-4 hours |
+| [/video](/docs/marketing/commands/video) | Video scripts, storyboards, production | Video marketing | 4-8 hours |
+| [/slide](/docs/marketing/commands/slide) | Presentation decks, pitch decks | Sales & proposals | 2-3 hours |
 | [/brainstorm](/docs/marketing/commands/brainstorm) | Collaborative ideation | Strategy sessions | 1-2 hours |
 | [/design](/docs/marketing/commands/design) | AI image generation | Visual assets | 30-60 min |
 
-### Utility Commands (11 commands)
+### Utility Commands (8 commands)
 
 | Command | Purpose | When to Use |
 |---------|---------|-------------|
-| [/fix](/docs/marketing/commands/fix) | Intelligent issue routing | Bugs, errors, failures |
-| [/code](/docs/marketing/commands/code) | Execute existing plans | After planning phase |
 | [/scout](/docs/marketing/commands/scout) | Fast codebase search | Finding relevant files |
 | [/review](/docs/marketing/commands/review) | Code quality analysis | Before commits |
-| [/test](/docs/marketing/commands/test) | Run test suites | Validation checks |
 | [/ask](/docs/marketing/commands/ask) | Architectural consultation | Technical decisions |
 | [/bootstrap](/docs/marketing/commands/bootstrap) | Project initialization | New projects |
 | [/git](/docs/marketing/commands/git) | Git operations | PR creation, commits |
@@ -53,29 +51,17 @@ published: true
 
 ### Planning & Strategy
 
-Start here for new features or campaigns:
+Start here for new campaigns or creative briefs:
 
 ```bash
-# Research and plan a feature
-/plan implement email drip campaign with analytics
-
 # Brainstorm solutions collaboratively
 /brainstorm how to improve conversion rates
 
 # Get architectural guidance
 /ask what's the best way to structure our marketing automation?
-```
 
-### Implementation
-
-Execute your plans:
-
-```bash
-# Implement existing plan
-/code plans/251229-email-campaign.md
-
-# Plan + implement in one command
-/cook add blog post SEO optimization workflow
+# Create customer personas
+/persona create "enterprise software buyers"
 ```
 
 ### Content Creation
@@ -83,8 +69,17 @@ Execute your plans:
 Generate marketing assets:
 
 ```bash
-# Create blog content
-/content blog "AI marketing automation guide"
+# Create blog content with brand voice matching
+/write:blog "AI marketing automation guide"
+
+# Audit existing content quality
+/write:audit /assets/blog-posts/latest-post.md
+
+# Generate video with script and storyboard
+/video:create "30-second product demo for social media"
+
+# Create presentation deck
+/slide:create "Q1 campaign proposal with budget breakdown"
 
 # Generate email sequences
 /email nurture "SaaS trial users"
@@ -127,22 +122,18 @@ Optimize and measure:
 /analyze conversions
 ```
 
-### Issue Resolution
+### Visual Management
 
-Fix problems intelligently:
+Use the dashboard for visual oversight:
 
 ```bash
-# Type errors
-/fix TypeScript compilation errors in campaign module
+# Launch marketing dashboard
+/dashboard
 
-# UI issues
-/fix Button not responsive on mobile
-
-# CI/CD failures
-/fix GitHub Actions build failing
-
-# Complex issues
-/fix:hard Refactor campaign architecture
+# Manage campaigns visually
+# Access asset library
+# View analytics reports
+# Run automation workflows
 ```
 
 ## Common Workflows
@@ -173,55 +164,63 @@ Fix problems intelligently:
 # Step 1: Keyword research
 /seo keywords "best marketing automation tools"
 
-# Step 2: Generate content
-/content blog "Marketing automation tools comparison 2025"
+# Step 2: Generate content with brand voice
+/write:blog "Marketing automation tools comparison 2025"
 
-# Step 3: Generate images
+# Step 3: Audit content quality
+/write:audit /assets/blog-posts/2025-01-01-marketing-automation.md
+
+# Step 4: Generate featured image
 /design featured image for blog post
 
-# Step 4: Optimize
-/seo audit https://yourblog.com/marketing-automation
+# Step 5: Optimize and publish
+/write:publish /assets/blog-posts/2025-01-01-marketing-automation.md --platform=wordpress
 
-# Step 5: Commit
+# Step 6: Commit
 /git:cm
 ```
 
-**Time**: 20 minutes vs 4-6 hours manually
+**Time**: 25 minutes vs 4-6 hours manually
 
-### 3. Build Marketing Dashboard
+### 3. Create Video Marketing Content
 
 ```bash
-# Step 1: Plan architecture
-/plan build marketing dashboard with campaign tracking
+# Step 1: Generate video script
+/video:script "explain our API features in 60 seconds" --platform=youtube
 
-# Step 2: Implement
-/code
+# Step 2: Create visual storyboard
+/video:storyboard /assets/videos/2025-01-01-api-features/script.md
 
-# Step 3: Launch dashboard
-/dashboard dev
+# Step 3: Generate complete video
+/video:create "API features demo with dashboard walkthrough"
 
-# Step 4: Test
-/test
+# Step 4: Review in dashboard
+/dashboard
+# Navigate to Asset Management → Videos
 
-# Step 5: Review and commit
-/review
+# Step 5: Commit and share
 /git:cm
 ```
 
-**Time**: 2 hours vs 2-3 days manually
+**Time**: 30 minutes vs 8-12 hours manually
 
-### 4. Fix Campaign Issues
+### 4. Build Sales Presentation
 
 ```bash
-# Quick diagnosis
-/debug email open rates dropping
+# Step 1: Create pitch deck
+/slide:create "Series A pitch deck - AI marketing automation, $3M raise"
 
-# Intelligent routing
-/fix campaign analytics not tracking conversions
+# Step 2: Generate speaker notes
+/slide:create "pitch deck" --speaker-notes
 
-# For complex issues
-/fix:hard Refactor entire email delivery system
+# Step 3: Review and customize
+# Open /assets/slides/presentation.pptx in PowerPoint
+
+# Step 4: Commit final version
+/git:cm
 ```
+
+**Time**: 20 minutes vs 3-4 hours manually
 
 ### 5. Bootstrap New Marketing Project
 
@@ -244,34 +243,27 @@ Fix problems intelligently:
 
 ## Command Variants
 
-Many commands support variants for specialized behavior:
+Some commands support variants for specialized behavior:
 
-### Speed Variants
+### Content Variants
 ```bash
-/plan:fast    # Quick planning (simple features)
-/cook:fast    # Fast implementation
-/fix:fast     # Quick fixes
+/write:blog      # Blog post generation
+/write:audit     # Content quality audit
+/write:publish   # Publishing workflow
+
+/video:create    # Complete video workflow
+/video:script    # Script generation only
+/video:storyboard # Visual storyboarding only
 ```
 
-### Complexity Variants
+### Platform Variants
 ```bash
-/plan:hard    # Complex planning (multi-phase)
-/cook:hard    # Complex implementation
-/fix:hard     # Deep architectural fixes
-```
+/social:linkedin    # LinkedIn-specific content
+/social:twitter     # Twitter/X content
+/social:instagram   # Instagram content
 
-### Parallelization Variants
-```bash
-/plan:parallel    # Parallel phase execution
-/cook:parallel    # Parallel feature development
-/fix:parallel     # Fix multiple issues simultaneously
-```
-
-### Automation Variants
-```bash
-/plan:auto        # Automated planning
-/cook:auto        # Full automation
-/bootstrap:auto   # Automated bootstrap
+/video:script "topic" --platform=youtube
+/video:script "topic" --platform=tiktok
 ```
 
 ## Output Conventions
@@ -369,22 +361,25 @@ Use `/use-mcp` to interact with connected MCP servers.
 
 ## Best Practices
 
-### 1. Start Small
+### 1. Be Specific
 ```bash
 # Good: Specific, focused
-/plan add email open rate tracking
+/write:blog "how to improve API response times with caching strategies"
 
 # Avoid: Vague, too broad
-/plan improve marketing
+/write:blog "make APIs better"
 ```
 
-### 2. Use Variants Wisely
+### 2. Use Appropriate Commands
 ```bash
-# Simple feature → fast variant
-/cook:fast add newsletter signup form
+# Blog content → /write
+/write:blog "marketing automation guide"
 
-# Complex feature → standard variant
-/cook implement multi-channel campaign automation
+# Video content → /video
+/video:create "30-second product demo"
+
+# Presentations → /slide
+/slide:create "Q1 campaign proposal"
 ```
 
 ### 3. Let AI Clarify
@@ -410,14 +405,14 @@ Commands will ask questions when needed:
 
 ### 5. Chain Commands
 ```bash
-# Research → Plan → Implement → Test → Commit
-/brainstorm email automation strategy
+# Research → Create → Audit → Publish
+/brainstorm content ideas for Q1 campaign
 # (review brainstorm output)
-/plan implement email automation
-# (review plan)
-/code
-# (tests run automatically)
-/git:cm
+/write:blog "top content idea from brainstorm"
+# (review draft)
+/write:audit /assets/blog-posts/latest-draft.md
+# (improve based on audit)
+/write:publish /assets/blog-posts/latest-draft.md --platform=wordpress
 ```
 
 ## Getting Help
@@ -446,29 +441,41 @@ Commands will ask questions when needed:
 
 ## Performance Tips
 
-### Parallel Execution
-Use parallel variants for independent tasks:
+### Batch Content Creation
+Create multiple assets in one session:
 ```bash
-# Fix multiple unrelated issues
-/fix:parallel type errors + UI bugs + test failures
+# Generate blog series
+/write:blog "Part 1: Introduction to marketing automation"
+/write:blog "Part 2: Email automation workflows"
+/write:blog "Part 3: Analytics and optimization"
+
+# Create social promotion
+/social linkedin "announce blog series"
+/social twitter "thread about blog series"
 ```
 
-### Scout Before Coding
-Find relevant files first:
+### Audit Before Publishing
+Always audit content quality:
 ```bash
-# Search codebase efficiently
-/scout find campaign-related components
+# Create draft
+/write:blog "topic"
 
-# Then implement
-/code
+# Audit quality (get actionable feedback)
+/write:audit /assets/blog-posts/draft.md
+
+# Fix issues, then publish
+/write:publish /assets/blog-posts/draft.md
 ```
 
-### Use Dashboard for Visibility
+### Use Dashboard for Asset Management
 ```bash
 # Launch visual interface
 /dashboard
 
-# Manage campaigns, content, assets visually
+# Navigate to Asset Management
+# Browse all generated content
+# Preview videos, slides, images
+# Organize into collections
 # Access at http://localhost:5173
 ```
 
@@ -480,14 +487,16 @@ Find relevant files first:
 3. [Marketing Concepts](/docs/marketing/core-concepts)
 
 **Ready to Create?**
-- [Campaign Management](/docs/marketing/commands/campaign)
-- [Content Creation](/docs/marketing/commands/content)
-- [SEO Optimization](/docs/marketing/commands/seo)
+- [Blog Writing](/docs/marketing/commands/write) - `/write:blog`, audit, publish
+- [Video Production](/docs/marketing/commands/video) - Scripts, storyboards, generation
+- [Presentations](/docs/marketing/commands/slide) - Pitch decks, proposals
+- [Campaign Management](/docs/marketing/commands/campaign) - Campaign orchestration
+- [SEO Optimization](/docs/marketing/commands/seo) - Audits, keywords
 
 **Advanced Topics**:
 - [Custom Marketing Agents](/docs/marketing/agents/custom)
 - [Marketing Workflows](/docs/marketing/workflows)
-- [Dashboard Features](/docs/marketing/commands/dashboard)
+- [Dashboard & Asset Management](/docs/marketing/commands/dashboard)
 
 ## Related Resources
 
@@ -498,4 +507,4 @@ Find relevant files first:
 
 ---
 
-**21 commands. Infinite marketing possibilities.** Your AI marketing team is ready.
+**19 commands. Infinite marketing possibilities.** Your AI marketing team is ready.

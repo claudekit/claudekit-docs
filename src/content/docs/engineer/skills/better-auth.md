@@ -81,7 +81,7 @@ Just email/password, minimal config."
 npm install better-auth
 ```
 
-```env
+```bash
 BETTER_AUTH_SECRET=your-32-char-secret
 BETTER_AUTH_URL=http://localhost:3000
 ```

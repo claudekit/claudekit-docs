@@ -40,6 +40,12 @@ claude
 
 # For new projects (greenfield)
 ck init --kit engineer --dir /path/to/project
+
+# Sync config files with upstream (interactive merge)
+ck init --sync
+
+# Use git clone instead of API (no token needed)
+ck init --use-git
 ```
 
 ## Core Commands

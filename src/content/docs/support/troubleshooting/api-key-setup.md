@@ -1,11 +1,7 @@
 ---
 title: API Key Setup
-description: "Documentation for API Key Setup
-description:
-section: support
-category: support/troubleshooting
-order: 5
-published: true"
+description: "Documentation for API Key Setup"
+lang: vi
 section: support
 category: support/troubleshooting
 order: 5
@@ -77,6 +73,7 @@ echo $GEMINI_API_KEY
 echo 'export GEMINI_API_KEY=AIza...' >> ~/.bashrc
 source ~/.bashrc
 ```
+
 
 ### Verify Gemini Setup
 
@@ -514,9 +511,9 @@ nano .env
 
 ## Related Issues
 
-- [Agent Issues](/docs/support/troubleshooting/agent-issues) - Agents failing due to missing keys
-- [Command Errors](/docs/support/troubleshooting/command-errors) - Commands failing silently
-- [Performance Issues](/docs/support/troubleshooting/performance-issues) - Rate limiting causing slowness
+- [Agent Issues](/docs/troubleshooting/agent-issues) - Agents failing due to missing keys
+- [Command Errors](/docs/troubleshooting/command-errors) - Commands failing silently
+- [Performance Issues](/docs/troubleshooting/performance-issues) - Rate limiting causing slowness
 
 ---
 

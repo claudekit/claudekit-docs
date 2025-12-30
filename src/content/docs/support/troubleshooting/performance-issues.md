@@ -1,11 +1,7 @@
 ---
 title: Performance Issues
-description: "Documentation for Performance Issues
-description:
-section: support
-category: support/troubleshooting
-order: 6
-published: true"
+description: "Documentation for Performance Issues"
+lang: vi
 section: support
 category: support/troubleshooting
 order: 6
@@ -571,9 +567,9 @@ EOF
 
 ## Related Issues
 
-- [Installation Issues](/docs/support/troubleshooting/installation-issues) - Slow installation problems
-- [Command Errors](/docs/support/troubleshooting/command-errors) - Commands failing vs hanging
-- [Agent Issues](/docs/support/troubleshooting/agent-issues) - Specific agent slowness
+- [Installation Issues](/docs/troubleshooting/installation-issues) - Slow installation problems
+- [Command Errors](/docs/troubleshooting/command-errors) - Commands failing vs hanging
+- [Agent Issues](/docs/troubleshooting/agent-issues) - Specific agent slowness
 
 ---
 

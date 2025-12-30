@@ -1,11 +1,7 @@
 ---
-title: Installation Issues
-description: "Documentation for Installation Issues
-description:
-section: support
-category: support/troubleshooting
-order: 2
-published: true"
+title: Cài Đặt Issues
+description: "Documentation for Cài Đặt Issues"
+lang: vi
 section: support
 category: support/troubleshooting
 order: 2
@@ -16,40 +12,40 @@ published: true
 
 ClaudeKit installation problems? Get unblocked in minutes with platform-specific fixes.
 
-## Quick Fix: Hook Path Errors / User Prompt Submit Error
+## Sửa Nhanh: Lỗi Đường Dẫn Hook / User Prompt Submit Error
 
-**Symptom**: "User prompt submit error", hooks fail with path errors, or `%CLAUDE_PROJECT_DIR%` not found
+**Triệu chứng**: "User prompt submit error", hooks lỗi với lỗi đường dẫn, hoặc `%CLAUDE_PROJECT_DIR%` không tìm thấy
 
-**Cause**: You ran `ck init` (local mode) from the wrong directory—likely your home folder or user directory instead of a project folder.
+**Nguyên nhân**: Bạn đã chạy `ck init` (chế độ local) từ thư mục sai—có thể là thư mục home hoặc thư mục user thay vì thư mục dự án.
 
-**Solution**:
+**Giải pháp**:
 
 ```bash
-# Step 1: Remove broken installation
-# Navigate to where you accidentally installed
-cd ~  # or wherever you ran ck init
-rm -rf .claude/  # Remove the broken local installation
+# Bước 1: Xóa cài đặt bị lỗi
+# Di chuyển đến nơi bạn đã vô tình cài đặt
+cd ~  # hoặc bất cứ nơi nào bạn chạy ck init
+rm -rf .claude/  # Xóa cài đặt local bị lỗi
 
-# Step 2: Reinstall correctly
-# For GLOBAL (recommended for most users):
+# Bước 2: Cài đặt lại đúng cách
+# Cho GLOBAL (khuyến nghị cho đa số người dùng):
 ck init -g --kit engineer
 
-# For LOCAL (project-specific):
+# Cho LOCAL (chỉ cho dự án cụ thể):
 cd /path/to/your/actual/project
 ck init --kit engineer
 ```
 
-**Prevention**:
-- Use `ck init -g` (global) if you want ClaudeKit available everywhere
-- Only use `ck init` (local) when inside an actual project directory
+**Phòng ngừa**:
+- Dùng `ck init -g` (global) nếu bạn muốn ClaudeKit có sẵn ở mọi nơi
+- Chỉ dùng `ck init` (local) khi đang ở trong thư mục dự án thực sự
 
-See [Installation Guide - Which Mode Should I Use?](/docs/getting-started/installation#which-installation-mode-should-i-use) for detailed guidance.
+Xem [Hướng Dẫn Cài Đặt - Nên Chọn Chế Độ Nào?](/vi/docs/getting-started/installation#nên-chọn-chế-độ-cài-đặt-nào) để biết thêm chi tiết.
 
 ---
 
-## Quick Fix: Command Not Found
+## Sửa Nhanh: Không Tìm Thấy Lệnh
 
-**Symptom**: `ck: command not found` or `claudekit-cli: command not found`
+**Triệu chứng**: `ck: command not found` hoặc `claudekit-cli: command not found`
 
 **Solution**:
 
@@ -413,12 +409,12 @@ ck --version
 # Check available commands
 ck --help
 
-# Expected: Lists init, versions, diagnose commands
+# Expected: Lists new, update, diagnose commands
 
 # Test with demo project
 mkdir test-project
 cd test-project
-ck init --kit engineer
+ck new --kit engineer
 
 # Expected: Downloads ClaudeKit Engineer successfully
 ```
@@ -444,9 +440,9 @@ ck init --kit engineer
 
 ## Related Issues
 
-- [Command Errors](/docs/support/troubleshooting/command-errors) - After installation, commands not working
-- [API Key Setup](/docs/support/troubleshooting/api-key-setup) - Configure credentials after install
-- [Performance Issues](/docs/support/troubleshooting/performance-issues) - Slow installation or downloads
+- [Command Errors](/docs/troubleshooting/command-errors) - After installation, commands not working
+- [API Key Setup](/docs/troubleshooting/api-key-setup) - Configure credentials after install
+- [Performance Issues](/docs/troubleshooting/performance-issues) - Slow installation or downloads
 
 ---
 

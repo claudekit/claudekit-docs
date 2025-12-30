@@ -16,9 +16,12 @@ order: 3
 
 ## Activation
 
-**Implicit**: Activates automatically for SEO Specialist, Attraction Specialist, and Content Creator agents.
+**Implicit**: Auto-activated by SEO Specialist, Attraction Specialist, and Content Creator agents based on task context.
 
-**Explicit**: `/skill:add seo-optimization`
+**Explicit**: Activate via prompt:
+```
+Activate seo-optimization and analytics skills to audit site performance and identify keyword opportunities
+```
 
 ## Capabilities
 
@@ -75,31 +78,39 @@ node scripts/audit-core-web-vitals.cjs -s sitemap.xml -f md -o cwv-report.md
 
 **Remediation guide**: `references/core-web-vitals-remediation.md`
 
-## Prerequisites
+## Environment Setup
 
-**For keyword research**:
-- `REVIEWWEB_API_KEY` in `.env` file
-- Node.js 18+
+Dependencies auto-installed during `ck init`.
 
-**For Google Search Console**:
-- Google Cloud project with Search Console API enabled
-- OAuth 2.0 credentials (Desktop app type)
-- `googleapis` npm package: `npm install googleapis`
+**Required Environment Variables**:
+- `REVIEWWEB_API_KEY` - ReviewWeb.site API key for keyword research
 
-**For Core Web Vitals**:
-- PageSpeed Insights API key (optional, has free tier)
+**Optional Environment Variables**:
+- `PAGESPEED_API_KEY` - PageSpeed Insights API key (free tier available)
 
-## Configuration
+**Configuration Priority** (highest to lowest):
+1. Project `.env` file
+2. Global `~/.env` file
+3. System environment variables
 
-**Environment variables** (`.env`):
+Setup:
 ```bash
-REVIEWWEB_API_KEY=your_api_key_here
-PAGESPEED_API_KEY=your_key_here  # Optional
+# Project-specific (recommended)
+echo "REVIEWWEB_API_KEY=your_api_key_here" >> .env
+echo "PAGESPEED_API_KEY=your_key_here" >> .env
+
+# Global (all projects)
+echo "REVIEWWEB_API_KEY=your_api_key_here" >> ~/.env
 ```
 
-**Secrets directory**: `.claude/secrets/`
-- `google_client_secret.json` - OAuth credentials
-- `google_tokens.json` - Generated after authentication
+**Required Files**:
+Place credentials in `.claude/secrets/`:
+- `google_client_secret.json` - OAuth 2.0 credentials for Search Console API
+- `google_tokens.json` - OAuth tokens (auto-generated after first auth)
+
+**Prerequisites**:
+- Google Cloud project with Search Console API enabled
+- OAuth 2.0 credentials (Desktop app type) for Search Console access
 
 ## Best Practices
 

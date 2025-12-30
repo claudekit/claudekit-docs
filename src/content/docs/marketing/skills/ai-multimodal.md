@@ -16,9 +16,12 @@ order: 17
 
 ## Activation
 
-**Implicit**: Activates automatically when agents need to analyze images, transcribe audio, process videos, or generate visual content.
+**Implicit**: Auto-activated by agents when tasks involve analyzing images, transcribing audio, processing videos, or generating visual content.
 
-**Explicit**: `/skill:add ai-multimodal`
+**Explicit**: Activate via prompt:
+```
+Activate ai-multimodal skill to analyze video content and generate storyboard images with Imagen 4
+```
 
 ## Capabilities
 
@@ -111,15 +114,25 @@ python scripts/gemini_batch_process.py --task generate-video --prompt "Product u
 
 **Guide**: `references/video-generation.md`
 
-## Prerequisites
+## Environment Setup
 
-**API access**:
-- `GEMINI_API_KEY` from [Google AI Studio](https://aistudio.google.com/apikey)
-- Python 3.8+ with `google-genai`, `python-dotenv`, `pillow`
+Dependencies auto-installed during `ck init`.
 
-**Installation**:
+**Required Environment Variables**:
+- `GEMINI_API_KEY` - Get from [Google AI Studio](https://aistudio.google.com/apikey)
+
+**Configuration Priority** (highest to lowest):
+1. Project `.env` file
+2. Global `~/.env` file
+3. System environment variables
+
+Setup:
 ```bash
-pip install google-genai python-dotenv pillow
+# Project-specific (recommended)
+echo "GEMINI_API_KEY=your_key_here" >> .env
+
+# Global (all projects)
+echo "GEMINI_API_KEY=your_key_here" >> ~/.env
 ```
 
 **Verify setup**:
@@ -127,12 +140,8 @@ pip install google-genai python-dotenv pillow
 python scripts/check_setup.py
 ```
 
-## Configuration
-
-**Environment variable** (`.env`):
-```bash
-GEMINI_API_KEY=your_key_here
-```
+**Prerequisites**:
+- Google AI Studio API key with Gemini access enabled
 
 **Available scripts**:
 - `gemini_batch_process.py` - Main CLI for all tasks

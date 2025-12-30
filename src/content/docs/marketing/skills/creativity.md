@@ -18,7 +18,10 @@ order: 15
 
 **Implicit**: Activates when agents discuss creative direction, campaign concepts, visual styles, or content design.
 
-**Explicit**: `/skill:add creativity`
+**Explicit**: Activate via prompt:
+```
+Activate creativity skill to generate innovative campaign concepts
+```
 
 ## Capabilities
 

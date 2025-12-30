@@ -18,7 +18,10 @@ order: 8
 
 **Implicit**: Activates automatically for Copywriter, Content Creator, and Email Wizard agents.
 
-**Explicit**: `/skill:add copywriting`
+**Explicit**: Activate via prompt:
+```
+Activate copywriting skill to write compelling ad copy and landing page content
+```
 
 ## Capabilities
 

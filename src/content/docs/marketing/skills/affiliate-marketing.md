@@ -18,7 +18,10 @@ order: 11
 
 **Implicit**: Activates automatically for Growth Specialist and Campaign Manager agents when discussing partner/affiliate strategies.
 
-**Explicit**: `/skill:add affiliate-marketing`
+**Explicit**: Activate via prompt:
+```
+Activate affiliate-marketing skill to create affiliate program strategy
+```
 
 ## Capabilities
 

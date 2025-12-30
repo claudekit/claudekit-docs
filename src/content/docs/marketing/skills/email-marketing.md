@@ -18,7 +18,10 @@ order: 5
 
 **Implicit**: Activates automatically for Email Wizard, Nurture Specialist, and Content Creator agents.
 
-**Explicit**: `/skill:add email-marketing`
+**Explicit**: Activate via prompt:
+```
+Activate email-marketing skill to create welcome sequence and automation workflow
+```
 
 ## Capabilities
 

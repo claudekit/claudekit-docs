@@ -18,7 +18,10 @@ order: 19
 
 **Implicit**: Activates when agents need to manipulate media files (convert, resize, compress, extract).
 
-**Explicit**: `/skill:add media-processing`
+**Explicit**: Activate via prompt:
+```
+Activate media-processing skill to convert video formats and optimize images
+```
 
 ## Capabilities
 

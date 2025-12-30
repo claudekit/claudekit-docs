@@ -18,7 +18,10 @@ order: 14
 
 **Implicit**: Activates automatically for Content Creator, Social Media Manager, Email Wizard, and UI/UX Designer agents.
 
-**Explicit**: `/skill:add brand-guidelines`
+**Explicit**: Activate via prompt:
+```
+Activate brand-guidelines skill to create comprehensive brand style guide
+```
 
 ## Capabilities
 

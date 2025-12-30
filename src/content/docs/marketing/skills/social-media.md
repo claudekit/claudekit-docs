@@ -18,7 +18,10 @@ order: 6
 
 **Implicit**: Activates automatically for Social Media Manager, Content Creator, and Community Manager agents.
 
-**Explicit**: `/skill:add social-media`
+**Explicit**: Activate via prompt:
+```
+Activate social-media skill to create platform-specific content calendar
+```
 
 ## Capabilities
 

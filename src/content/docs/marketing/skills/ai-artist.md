@@ -18,7 +18,10 @@ order: 18
 
 **Implicit**: Activates when agents craft prompts for AI generation tasks.
 
-**Explicit**: `/skill:add ai-artist`
+**Explicit**: Activate via prompt:
+```
+Activate ai-artist skill to generate marketing visuals and brand assets
+```
 
 ## Capabilities
 

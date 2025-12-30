@@ -18,7 +18,10 @@ order: 9
 
 **Implicit**: Activates when user signals ideation mode ("let's explore", "what are our options", "brainstorm with me").
 
-**Explicit**: `/skill:add brainstorming` or `/brainstorm`
+**Explicit**: Activate via prompt:
+```
+Activate brainstorming skill to facilitate ideation session
+``` or `/brainstorm`
 
 ## Capabilities
 

@@ -6,7 +6,7 @@ category: skills
 order: 1
 ---
 
-Marketing Kit includes 20+ specialized skills that power agents with domain expertise, automation workflows, and AI capabilities. Skills activate implicitly based on context or explicitly via `/skill:add` command.
+Marketing Kit includes 20+ specialized skills that power agents with domain expertise, automation workflows, and AI capabilities. Skills activate implicitly based on context or explicitly via natural language prompts.
 
 ## Skill Categories
 
@@ -56,11 +56,15 @@ Skills activate automatically based on agent context and task type. No explicit 
 **Example**: Content Creator agent implicitly loads `content-marketing`, `copywriting`, `brand-guidelines` skills.
 
 ### Explicit Activation
-Add skills to current session when needed.
+Activate skills via natural language prompts when needed.
 
-```bash
-/skill:add seo-optimization  # Add single skill
-/skill:add analytics email-marketing  # Add multiple
+**Examples**:
+```
+Activate seo-optimization skill to audit site performance and identify keyword opportunities
+```
+
+```
+Activate analytics, email-marketing, and social-media skills to analyze campaign performance
 ```
 
 ## Common Skill Combinations

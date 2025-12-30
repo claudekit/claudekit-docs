@@ -18,7 +18,10 @@ order: 21
 
 **Implicit**: Activates when agents need to research topics, analyze competitors, or validate technical approaches.
 
-**Explicit**: `/skill:add research` or `/scout` command
+**Explicit**: Activate via prompt:
+```
+Activate research skill to analyze competitor strategies and market trends
+``` or `/scout` command
 
 ## Capabilities
 

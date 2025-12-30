@@ -18,7 +18,10 @@ order: 13
 
 **Implicit**: Activates when agents discuss customer referrals, viral loops, or word-of-mouth marketing.
 
-**Explicit**: `/skill:add referral-program-building`
+**Explicit**: Activate via prompt:
+```
+Activate referral-program-building skill to design viral referral system
+```
 
 ## Capabilities
 

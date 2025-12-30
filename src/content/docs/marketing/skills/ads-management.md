@@ -16,9 +16,12 @@ order: 10
 
 ## Activation
 
-**Implicit**: Activates automatically for Ads Specialist and Campaign Manager agents.
+**Implicit**: Auto-activated by Ads Specialist and Campaign Manager agents based on task context.
 
-**Explicit**: `/skill:add ads-management`
+**Explicit**: Activate via prompt:
+```
+Activate ads-management skill to create Google Ads campaign with audience targeting
+```
 
 ## Capabilities
 

@@ -18,7 +18,10 @@ order: 7
 
 **Implicit**: Activates automatically for Campaign Manager, Growth Specialist, and Project Manager agents.
 
-**Explicit**: `/skill:add campaign-management`
+**Explicit**: Activate via prompt:
+```
+Activate campaign-management skill to orchestrate multi-channel campaign
+```
 
 ## Capabilities
 

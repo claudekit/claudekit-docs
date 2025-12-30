@@ -18,7 +18,10 @@ order: 12
 
 **Implicit**: Activates when agents discuss engagement, retention, loyalty programs, or behavioral design.
 
-**Explicit**: `/skill:add gamification-marketing`
+**Explicit**: Activate via prompt:
+```
+Activate gamification-marketing skill to design engagement mechanics
+```
 
 ## Capabilities
 

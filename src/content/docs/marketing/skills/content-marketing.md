@@ -18,7 +18,10 @@ order: 2
 
 **Implicit**: Activates automatically for Content Creator, Campaign Manager, and Attraction Specialist agents.
 
-**Explicit**: `/skill:add content-marketing`
+**Explicit**: Activate via prompt:
+```
+Activate content-marketing skill to develop content strategy and editorial calendar
+```
 
 ## Capabilities
 

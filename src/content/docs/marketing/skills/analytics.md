@@ -16,9 +16,12 @@ order: 4
 
 ## Activation
 
-**Implicit**: Activates automatically for Analytics Analyst, Campaign Manager, and Growth Specialist agents.
+**Implicit**: Auto-activated by Analytics Analyst, Campaign Manager, and Growth Specialist agents based on task context.
 
-**Explicit**: `/skill:add analytics`
+**Explicit**: Activate via prompt:
+```
+Activate analytics skill to analyze GA4 traffic and generate performance report
+```
 
 ## Capabilities
 
@@ -74,24 +77,36 @@ Compare attribution models to understand channel contribution.
 
 **Model guide**: `references/attribution-models.md`
 
-## Prerequisites
+## Environment Setup
 
-**For GA4 API access**:
-- Google Cloud project with GA4 APIs enabled
-- Service account credentials OR OAuth 2.0 credentials
-- Credentials file in `.claude/secrets/`:
-  - `ga_service_account.json` (service account)
-  - OR `google_client_secret.json` (OAuth)
+Dependencies auto-installed during `ck init`.
 
-**For report generation**:
-- Data sources configured (GA4, ad platforms, email, CRM)
-
-## Configuration
-
-**Credentials location**: `.claude/secrets/`
+**Required Files**:
+Place credentials in `.claude/secrets/`:
 - `ga_service_account.json` - Service account (recommended for automation)
-- `google_client_secret.json` - OAuth (interactive setup)
-- `google_tokens.json` - OAuth tokens (auto-generated)
+- OR `google_client_secret.json` - OAuth 2.0 (interactive setup)
+- `google_tokens.json` - OAuth tokens (auto-generated after first auth)
+
+**Optional Environment Variables**:
+- `GA4_PROPERTY_ID` - Default GA4 property ID for queries
+
+**Configuration Priority** (highest to lowest):
+1. Project `.env` file
+2. Global `~/.env` file
+3. System environment variables
+
+Setup:
+```bash
+# Project-specific (recommended)
+echo "GA4_PROPERTY_ID=123456789" >> .env
+
+# Global (all projects)
+echo "GA4_PROPERTY_ID=123456789" >> ~/.env
+```
+
+**Prerequisites**:
+- Google Cloud project with GA4 Admin API + Data API enabled
+- Service account with GA4 property access OR OAuth 2.0 client credentials
 
 **Report templates**: `references/report-templates.md`
 

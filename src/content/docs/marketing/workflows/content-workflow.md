@@ -18,6 +18,8 @@ What makes this workflow powerful is the automatic quality gates. Every piece of
 
 This workflow handles blog posts, landing pages, emails, social posts, and ad copy. Whether you're creating one piece or managing a content calendar with dozens of assets, this process ensures consistency and quality.
 
+**Unfair Advantage**: ClaudeKit Marketing has full access to your codebase, enabling product-aware content generation with automatically extracted screenshots, feature descriptions verified against implementation, and marketing claims validated against actual code. See [Marketing Overview](/docs/marketing/) for details.
+
 ## Metadata
 
 - **Time Estimate:** 2-5 days per piece (varies by type and length)

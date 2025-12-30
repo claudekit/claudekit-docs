@@ -16,6 +16,8 @@ The Dashboard Workflow helps you create a centralized command center for marketi
 
 Instead of checking multiple tools for campaign status, traffic data, and team progress, the dashboard provides a single source of truth. Whether you're monitoring active campaigns, tracking KPIs, or coordinating team work, the dashboard keeps everyone aligned.
 
+**Asset Management Integration**: The `/dashboard` command also serves as the visual interface for the [Asset Management](/docs/marketing/features/asset-management) system (Content Hub), providing browse, preview, and search capabilities for all marketing assets (copy, storyboards, slides, infographics, branding guidelines, social posts).
+
 ## Metadata
 
 - **Time Estimate:** 2-4 hours setup, 5-10 minutes daily monitoring

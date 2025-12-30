@@ -60,6 +60,8 @@ ck init [OPTIONS]
 | `--exclude <pattern>` | Exclude files matching pattern (repeatable) | None |
 | `--only <pattern>` | Update only specific directories (repeatable) | All |
 | `--prefix` | Apply `/ck:` namespace to commands | `false` |
+| `--sync` | Sync config files with interactive 3-way merge | `false` |
+| `--use-git` | Use git clone instead of GitHub API | `false` |
 | `--install-skills` | Auto-install skill dependencies | `false` |
 | `--skip-setup` | Skip API key setup wizard | `false` |
 | `--force-overwrite-settings` | Overwrite settings.json completely | `false` |
@@ -443,6 +445,135 @@ ck init --release v1.16.0
 - Global path: `~/.claude/`
 - WSL fully supported
 - May need sudo for system dependencies
+
+## Config Sync
+
+Sync your local config files with upstream changes without losing customizations.
+
+```bash
+ck init --sync
+```
+
+### How It Works
+
+1. **Version Check**: Compares local vs upstream config versions
+2. **Download**: Fetches upstream config files
+3. **3-Way Merge**: Shows side-by-side diff for each changed file
+4. **Interactive Review**: Accept, reject, or edit each change
+5. **Backup**: Preserves originals before applying changes
+
+### Merge UI Controls
+
+| Key | Action |
+|-----|--------|
+| `a` | Accept upstream change |
+| `r` | Reject (keep local) |
+| `e` | Edit manually |
+| `s` | Skip file |
+| `q` | Quit sync |
+
+### When to Use
+
+- After ClaudeKit releases new features
+- When config files have diverged
+- To selectively adopt upstream improvements
+
+### Example
+
+```bash
+# Sync with interactive merge
+ck init --sync
+
+# Sync specific version
+ck init --sync --release v1.17.0
+
+# Sync in global mode
+ck init --sync --global
+```
+
+## Git Clone Mode
+
+Alternative download method using native git instead of GitHub API.
+
+```bash
+ck init --use-git
+```
+
+### Benefits
+
+- **No API token required** - Uses existing git credentials
+- **SSH key support** - Works with existing SSH setup
+- **HTTPS fallback** - Uses git credential manager
+- **Corporate environments** - Works behind proxies that block API
+
+### SSH Detection
+
+The CLI auto-detects SSH keys in `~/.ssh/`:
+- `id_rsa`
+- `id_ed25519`
+- `id_ecdsa`
+
+If SSH fails, suggests HTTPS or provides setup instructions.
+
+### When to Use
+
+- GitHub API token issues or rate limits
+- Corporate proxy/firewall restrictions
+- Prefer SSH authentication
+- Working in air-gapped environments
+
+### Example
+
+```bash
+# Use git clone with SSH (auto-detected)
+ck init --use-git
+
+# Use git clone with specific version
+ck init --use-git --release v1.17.0
+
+# Force HTTPS if SSH fails
+ck init --use-git
+# (CLI will prompt for HTTPS if SSH unavailable)
+```
+
+## Settings Merge Behavior
+
+When updating ClaudeKit, the CLI respects your customizations in `.claude/settings.json`.
+
+### User Deletions Respected
+
+If you've deleted a setting key, the CLI won't re-add it during updates unless you use `--force-overwrite-settings`.
+
+**Example:**
+
+If you deleted `model` from settings:
+
+```json
+{
+  "autoUpdate": true
+  // "model" was deleted by user
+}
+```
+
+After `ck init`, your deletion is preserved:
+
+```json
+{
+  "autoUpdate": true,
+  "newFeature": true
+  // "model" still deleted
+}
+```
+
+### Force Overwrite
+
+To completely replace settings with upstream defaults:
+
+```bash
+ck init --force-overwrite-settings
+```
+
+**Warning**: This discards all your customizations in `settings.json`.
 
 ## Next Steps
 

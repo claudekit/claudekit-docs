@@ -50,8 +50,8 @@ ck --version
 You should see output like:
 
 ```
-CLI Version: 3.10.1
-Local Kit Version: 1.16.0 (ClaudeKit Engineer)
+CLI Version: 3.16.0
+Local Kit Version: 1.17.0 (ClaudeKit Engineer)
 ```
 
 ## Available Commands
@@ -128,15 +128,49 @@ Without a purchased kit and repository access, the CLI cannot download project t
 
 ## Authentication
 
-ClaudeKit CLI uses a multi-tier authentication system:
+ClaudeKit CLI supports multiple authentication methods for downloading releases from private repositories.
 
-1. GitHub CLI (`gh auth token`)
-2. Environment Variables (`GITHUB_TOKEN`)
-3. Config File (`~/.claudekit/config.json`)
-4. OS Keychain (secure storage)
-5. User Prompt (with save option)
+### Authentication Priority
 
-For setup instructions, see [Installation - Authentication](/docs/cli/installation#authentication).
+1. **Environment Variables** (checked first): `GITHUB_TOKEN` or `GH_TOKEN`
+2. **GitHub CLI**: Uses `gh auth token` if installed and authenticated
+3. **Interactive Prompt**: Guides through setup when auth fails
+
+### Method 1: Environment Variables (Recommended for CI/CD)
+
+```bash
+export GITHUB_TOKEN=ghp_your_token_here
+# or
+export GH_TOKEN=ghp_your_token_here
+```
+
+**Important**: Use **Classic PAT** with `repo` scope. Fine-grained PATs don't work for collaborator repos.
+
+### Method 2: GitHub CLI
+
+```bash
+# Install GitHub CLI
+brew install gh  # macOS
+# or see: https://cli.github.com
+
+# Authenticate
+gh auth login
+```
+
+### Method 3: Git Clone Mode
+
+Bypass API authentication entirely using native git credentials:
+
+```bash
+ck init --use-git
+```
+
+Uses your existing git setup:
+- SSH keys (auto-detected from `~/.ssh/`)
+- HTTPS with credential manager
+- Git credential store
+
+For detailed setup instructions, see [Installation - Authentication](/docs/cli/installation#authentication).
 
 ## Kit Selection
 
@@ -155,6 +189,66 @@ ClaudeKit supports two installation modes:
 - **Global**: Installs to `~/.claude/` for user-level configuration
 
 Use `ck init --global` for global installation, or `ck init` for local (project-specific) installation.
+
+## Config Sync
+
+Sync your local config files with upstream changes without losing customizations.
+
+```bash
+ck init --sync
+```
+
+### How It Works
+
+1. **Version Check**: Compares local vs upstream config versions
+2. **Download**: Fetches upstream config files
+3. **3-Way Merge**: Shows side-by-side diff for each changed file
+4. **Interactive Review**: Accept, reject, or edit each change
+5. **Backup**: Preserves originals before applying changes
+
+### Merge UI Controls
+
+| Key | Action |
+|-----|--------|
+| `a` | Accept upstream change |
+| `r` | Reject (keep local) |
+| `e` | Edit manually |
+| `s` | Skip file |
+| `q` | Quit sync |
+
+### When to Use
+
+- After ClaudeKit releases new features
+- When config files have diverged
+- To selectively adopt upstream improvements
+
+See [ck init - Config Sync](/docs/cli/init#config-sync) for detailed examples.
+
+## Git Clone Mode
+
+Alternative download method using native git instead of GitHub API.
+
+```bash
+ck init --use-git
+```
+
+### Benefits
+
+- **No API token required** - Uses existing git credentials
+- **SSH key support** - Works with existing SSH setup
+- **HTTPS fallback** - Uses git credential manager
+- **Corporate environments** - Works behind proxies that block API
+
+### SSH Detection
+
+The CLI auto-detects SSH keys in `~/.ssh/`:
+- `id_rsa`
+- `id_ed25519`
+- `id_ecdsa`
+
+If SSH fails, suggests HTTPS or provides setup instructions.
+
+See [ck init - Git Clone Mode](/docs/cli/init#git-clone-mode) for detailed examples.
 
 ## Configuration
 

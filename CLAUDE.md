@@ -31,7 +31,7 @@ bun run preview       # Preview build
 - **Config**: `src/content/config.ts` (Zod schema)
 - **Docs**: `docs/` (codebase-summary, code-standards, system-architecture, project-roadmap)
 
-## Related Projects
+## Related Projects & Directories
 
 - **[ClaudeKit CLI](https://github.com/mrgoonie/claudekit-cli)** - CLI setup tool
   Location: `../claudekit-cli`

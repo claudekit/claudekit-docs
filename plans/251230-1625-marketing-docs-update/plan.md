@@ -327,6 +327,52 @@ Comprehensive documentation update for ClaudeKit Marketing v1.0 to accurately re
 
 ---
 
+### Phase 6: Vietnamese Translation 🚧 PENDING
+**Files**: Vietnamese translations for all Marketing docs created in Phases 2-5
+- `src/content/docs-vi/marketing/features/asset-management.md` (translate from 569 lines)
+- `src/content/docs-vi/marketing/commands/write.md` (translate from 331 lines)
+- `src/content/docs-vi/marketing/commands/video.md` (translate from 469 lines)
+- `src/content/docs-vi/marketing/commands/slide.md` (translate from 416 lines)
+- `src/content/docs-vi/marketing/commands/index.md` (update with new commands)
+- `src/content/docs-vi/marketing/commands/dashboard.md` (update with Asset Management)
+- `src/content/docs-vi/marketing/index.md` (update with unfair advantage + features)
+- `src/content/docs-vi/marketing/workflows/dashboard-workflow.md` (update)
+- `src/content/docs-vi/marketing/workflows/content-workflow.md` (update)
+- 21 skill docs in `src/content/docs-vi/marketing/skills/*.md` (activation patterns + env setup)
+
+**Changes Required**:
+1. **Translate new content** (4 new files):
+   - Asset Management feature page (569 lines)
+   - /write command docs (331 lines)
+   - /video command docs (469 lines)
+   - /slide command docs (416 lines)
+
+2. **Update existing Vietnamese docs** (27 files):
+   - Marketing index with unfair advantage section
+   - Commands index (remove Engineer commands, add new ones)
+   - Dashboard command (Asset Management context)
+   - 21 skill docs (activation patterns + environment setup)
+   - 2 workflow docs (codebase-context highlights)
+
+3. **Mirror English structure**:
+   - Same frontmatter (title, description, category, order, published)
+   - Same headings and sections
+   - Absolute links (no relative paths)
+   - Screenshot references (same paths as English)
+
+**Translation Guidelines**:
+- Professional tone, technical accuracy
+- Keep code examples, commands, file paths in English
+- Translate UI strings, descriptions, explanations
+- Maintain markdown formatting
+- Preserve all internal links (absolute paths)
+- Keep screenshot alt text descriptive in Vietnamese
+
+**Estimated Time**: 8-12 hours (large volume, technical content)
+**Priority**: Medium (English docs complete, Vietnamese adds i18n coverage)
+
+---
+
 ### Phases Completion Summary
 
 | Phase | Status | Time | Commit | Build |
@@ -336,8 +382,10 @@ Comprehensive documentation update for ClaudeKit Marketing v1.0 to accurately re
 | Phase 3: Asset Management Documentation | ✅ DONE | 1 hour | 094dda0 | ✅ 468 pages |
 | Phase 4: Skills Activation Corrections | ✅ DONE | 2 hours | 1d0d6ec | ✅ 468 pages |
 | Phase 5: Context & Feature Highlighting | ✅ DONE | 15 min | 5bf4c99 | ✅ 468 pages |
+| Phase 6: Vietnamese Translation | 🚧 PENDING | Est. 8-12 hours | - | - |
 
-**Total Time**: ~6.25 hours (within 7-11 hour estimate)
+**Total Time (Phases 1-5)**: ~6.25 hours (within 7-11 hour estimate)
+**Total Estimated (with Phase 6)**: ~14-18 hours
 
 ---
 
@@ -417,18 +465,20 @@ Comprehensive documentation update for ClaudeKit Marketing v1.0 to accurately re
 
 ---
 
-## Implementation Complete ✅
+## Implementation Status
 
-**Status**: All 5 phases successfully completed
+**Phases 1-5**: ✅ Complete (English documentation)
+**Phase 6**: 🚧 Pending (Vietnamese translation)
 **Date**: 2025-12-30
-**Total Time**: 6.25 hours (within 7-11 hour estimate)
+**Time (Phases 1-5)**: 6.25 hours (within 7-11 hour estimate)
 **Build**: ✅ Passed
 **Branch**: feat/marketing-docs (5 commits ahead of origin)
 
 **Next Steps**:
-1. Final review (optional)
-2. Create PR to dev branch
-3. Merge after approval
+1. ✅ Phases 1-5: Complete & reviewed
+2. 🚧 Phase 6: Vietnamese translation (31 files)
+3. Create PR to dev branch after Phase 6
+4. Merge after approval
 
 ---
 1. `src/content/docs/getting-started/introduction.md` - Both kits showcase

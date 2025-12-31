@@ -1,0 +1,177 @@
+<svg viewBox="0 0 1400 1000" xmlns="http://www.w3.org/2000/svg">
+  <title>Marketing Funnel Stages</title>
+  <desc>Detailed funnel visualization with conversion rates, KPIs, and optimization strategies at each stage</desc>
+  <rect width="1400" height="1000" fill="#1E1E1E"/>
+
+  <!-- Title -->
+  <text x="700" y="45" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="32" text-anchor="middle" font-weight="700">Marketing Funnel Deep Dive</text>
+  <text x="700" y="75" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="13" text-anchor="middle">Complete breakdown of funnel stages with KPIs and optimization tactics</text>
+
+  <!-- Funnel Visualization -->
+  <!-- TOFU Stage -->
+  <path d="M 200 140 L 1200 140 L 1100 280 L 300 280 Z" fill="#2D2D2D" stroke="#61AFEF" stroke-width="3"/>
+  <text x="700" y="185" fill="#61AFEF" font-family="Inter, sans-serif" font-size="28" text-anchor="middle" font-weight="700">TOFU - Top of Funnel</text>
+  <text x="700" y="215" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="15" text-anchor="middle">Awareness & Discovery</text>
+  <text x="700" y="245" fill="#98C379" font-family="Inter, sans-serif" font-size="18" text-anchor="middle" font-weight="600">100,000 Visitors</text>
+
+  <!-- MOFU Stage -->
+  <path d="M 300 280 L 1100 280 L 1000 420 L 400 420 Z" fill="#2D2D2D" stroke="#E5C07B" stroke-width="3"/>
+  <text x="700" y="325" fill="#E5C07B" font-family="Inter, sans-serif" font-size="28" text-anchor="middle" font-weight="700">MOFU - Middle of Funnel</text>
+  <text x="700" y="355" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="15" text-anchor="middle">Consideration & Engagement</text>
+  <text x="700" y="385" fill="#98C379" font-family="Inter, sans-serif" font-size="18" text-anchor="middle" font-weight="600">15,000 Leads (15% conversion)</text>
+
+  <!-- BOFU Stage -->
+  <path d="M 400 420 L 1000 420 L 900 560 L 500 560 Z" fill="#2D2D2D" stroke="#D97757" stroke-width="3"/>
+  <text x="700" y="465" fill="#D97757" font-family="Inter, sans-serif" font-size="28" text-anchor="middle" font-weight="700">BOFU - Bottom of Funnel</text>
+  <text x="700" y="495" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="15" text-anchor="middle">Decision & Conversion</text>
+  <text x="700" y="525" fill="#98C379" font-family="Inter, sans-serif" font-size="18" text-anchor="middle" font-weight="600">750 Customers (5% conversion)</text>
+
+  <!-- Conversion arrows between stages -->
+  <line x1="700" y1="280" x2="700" y2="260" stroke="#E5C07B" stroke-width="2"/>
+  <text x="750" y="272" fill="#E5C07B" font-family="Inter, sans-serif" font-size="14" font-weight="600">15%</text>
+
+  <line x1="700" y1="420" x2="700" y2="400" stroke="#D97757" stroke-width="2"/>
+  <text x="750" y="412" fill="#D97757" font-family="Inter, sans-serif" font-size="14" font-weight="600">5%</text>
+
+  <!-- Stage Details Boxes -->
+  <!-- TOFU Details -->
+  <rect x="50" y="140" width="140" height="250" fill="#1E1E1E" stroke="#61AFEF" stroke-width="2" rx="2"/>
+  <text x="120" y="165" fill="#61AFEF" font-family="Inter, sans-serif" font-size="14" text-anchor="middle" font-weight="700">TOFU Tactics</text>
+
+  <text x="70" y="190" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11" font-weight="600">Content:</text>
+  <text x="70" y="208" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10">• Blog posts</text>
+  <text x="70" y="223" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10">• SEO content</text>
+  <text x="70" y="238" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10">• Social media</text>
+  <text x="70" y="253" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10">• Paid ads</text>
+
+  <text x="70" y="275" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11" font-weight="600">KPIs:</text>
+  <text x="70" y="293" fill="#98C379" font-family="Inter, sans-serif" font-size="10">• Traffic: 100k/mo</text>
+  <text x="70" y="308" fill="#98C379" font-family="Inter, sans-serif" font-size="10">• Bounce: &lt;45%</text>
+  <text x="70" y="323" fill="#98C379" font-family="Inter, sans-serif" font-size="10">• Time: 2:30+</text>
+  <text x="70" y="338" fill="#98C379" font-family="Inter, sans-serif" font-size="10">• Pages/visit: 3+</text>
+
+  <text x="70" y="360" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11" font-weight="600">Tools:</text>
+  <text x="70" y="378" fill="#61AFEF" font-family="Geist Mono, monospace" font-size="9">content-writer</text>
+
+  <!-- MOFU Details -->
+  <rect x="50" y="280" width="140" height="250" fill="#1E1E1E" stroke="#E5C07B" stroke-width="2" rx="2"/>
+  <text x="120" y="305" fill="#E5C07B" font-family="Inter, sans-serif" font-size="14" text-anchor="middle" font-weight="700">MOFU Tactics</text>
+
+  <text x="70" y="330" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11" font-weight="600">Content:</text>
+  <text x="70" y="348" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10">• Webinars</text>
+  <text x="70" y="363" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10">• Email series</text>
+  <text x="70" y="378" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10">• Case studies</text>
+  <text x="70" y="393" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10">• Whitepapers</text>
+
+  <text x="70" y="415" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11" font-weight="600">KPIs:</text>
+  <text x="70" y="433" fill="#98C379" font-family="Inter, sans-serif" font-size="10">• Leads: 15k</text>
+  <text x="70" y="448" fill="#98C379" font-family="Inter, sans-serif" font-size="10">• Email OR: 35%</text>
+  <text x="70" y="463" fill="#98C379" font-family="Inter, sans-serif" font-size="10">• CTR: 8%</text>
+  <text x="70" y="478" fill="#98C379" font-family="Inter, sans-serif" font-size="10">• MQL rate: 25%</text>
+
+  <text x="70" y="500" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11" font-weight="600">Tools:</text>
+  <text x="70" y="518" fill="#E5C07B" font-family="Geist Mono, monospace" font-size="9">email-marketer</text>
+
+  <!-- BOFU Details -->
+  <rect x="50" y="420" width="140" height="250" fill="#1E1E1E" stroke="#D97757" stroke-width="2" rx="2"/>
+  <text x="120" y="445" fill="#D97757" font-family="Inter, sans-serif" font-size="14" text-anchor="middle" font-weight="700">BOFU Tactics</text>
+
+  <text x="70" y="470" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11" font-weight="600">Content:</text>
+  <text x="70" y="488" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10">• Free trials</text>
+  <text x="70" y="503" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10">• Demos</text>
+  <text x="70" y="518" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10">• Sales calls</text>
+  <text x="70" y="533" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10">• Pricing pages</text>
+
+  <text x="70" y="555" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11" font-weight="600">KPIs:</text>
+  <text x="70" y="573" fill="#98C379" font-family="Inter, sans-serif" font-size="10">• Trials: 750</text>
+  <text x="70" y="588" fill="#98C379" font-family="Inter, sans-serif" font-size="10">• Demos: 500</text>
+  <text x="70" y="603" fill="#98C379" font-family="Inter, sans-serif" font-size="10">• Close: 5%</text>
+  <text x="70" y="618" fill="#98C379" font-family="Inter, sans-serif" font-size="10">• CAC: $120</text>
+
+  <text x="70" y="640" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11" font-weight="600">Tools:</text>
+  <text x="70" y="658" fill="#D97757" font-family="Geist Mono, monospace" font-size="9">sales-assistant</text>
+
+  <!-- Right side: Optimization strategies -->
+  <!-- TOFU Optimization -->
+  <rect x="1210" y="140" width="140" height="130" fill="#1E1E1E" stroke="#61AFEF" stroke-width="2" rx="2"/>
+  <text x="1280" y="165" fill="#61AFEF" font-family="Inter, sans-serif" font-size="13" text-anchor="middle" font-weight="700">Optimize TOFU</text>
+  <text x="1230" y="185" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="9">✓ Improve SEO</text>
+  <text x="1230" y="200" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="9">✓ A/B test ads</text>
+  <text x="1230" y="215" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="9">✓ Content calendar</text>
+  <text x="1230" y="230" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="9">✓ Social posting</text>
+  <text x="1230" y="245" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="9">✓ Influencer collab</text>
+  <text x="1230" y="260" fill="#98C379" font-family="Inter, sans-serif" font-size="9">Goal: +20% traffic</text>
+
+  <!-- MOFU Optimization -->
+  <rect x="1210" y="280" width="140" height="130" fill="#1E1E1E" stroke="#E5C07B" stroke-width="2" rx="2"/>
+  <text x="1280" y="305" fill="#E5C07B" font-family="Inter, sans-serif" font-size="13" text-anchor="middle" font-weight="700">Optimize MOFU</text>
+  <text x="1230" y="325" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="9">✓ Segment lists</text>
+  <text x="1230" y="340" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="9">✓ Personalize</text>
+  <text x="1230" y="355" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="9">✓ Lead scoring</text>
+  <text x="1230" y="370" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="9">✓ Retargeting</text>
+  <text x="1230" y="385" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="9">✓ Nurture flows</text>
+  <text x="1230" y="400" fill="#98C379" font-family="Inter, sans-serif" font-size="9">Goal: +5% CVR</text>
+
+  <!-- BOFU Optimization -->
+  <rect x="1210" y="420" width="140" height="130" fill="#1E1E1E" stroke="#D97757" stroke-width="2" rx="2"/>
+  <text x="1280" y="445" fill="#D97757" font-family="Inter, sans-serif" font-size="13" text-anchor="middle" font-weight="700">Optimize BOFU</text>
+  <text x="1230" y="465" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="9">✓ Trial UX</text>
+  <text x="1230" y="480" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="9">✓ Onboarding</text>
+  <text x="1230" y="495" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="9">✓ Sales training</text>
+  <text x="1230" y="510" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="9">✓ Pricing tests</text>
+  <text x="1230" y="525" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="9">✓ Reduce friction</text>
+  <text x="1230" y="540" fill="#98C379" font-family="Inter, sans-serif" font-size="9">Goal: +2% close</text>
+
+  <!-- Bottom metrics summary -->
+  <rect x="50" y="700" width="1300" height="270" fill="#2D2D2D" stroke="#D97757" stroke-width="2" rx="2"/>
+  <text x="700" y="735" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="24" text-anchor="middle" font-weight="700">Funnel Performance Metrics</text>
+
+  <!-- Metrics grid -->
+  <rect x="100" y="760" width="350" height="180" fill="#1E1E1E" stroke="#61AFEF" stroke-width="1" rx="2"/>
+  <text x="275" y="785" fill="#61AFEF" font-family="Inter, sans-serif" font-size="16" text-anchor="middle" font-weight="700">Traffic Sources</text>
+  <text x="130" y="815" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="13">Organic Search:</text>
+  <text x="380" y="815" fill="#98C379" font-family="Inter, sans-serif" font-size="13">42%</text>
+  <text x="130" y="840" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="13">Paid Ads:</text>
+  <text x="380" y="840" fill="#98C379" font-family="Inter, sans-serif" font-size="13">28%</text>
+  <text x="130" y="865" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="13">Social Media:</text>
+  <text x="380" y="865" fill="#98C379" font-family="Inter, sans-serif" font-size="13">18%</text>
+  <text x="130" y="890" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="13">Direct:</text>
+  <text x="380" y="890" fill="#98C379" font-family="Inter, sans-serif" font-size="13">8%</text>
+  <text x="130" y="915" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="13">Referral:</text>
+  <text x="380" y="915" fill="#98C379" font-family="Inter, sans-serif" font-size="13">4%</text>
+
+  <rect x="500" y="760" width="350" height="180" fill="#1E1E1E" stroke="#E5C07B" stroke-width="1" rx="2"/>
+  <text x="675" y="785" fill="#E5C07B" font-family="Inter, sans-serif" font-size="16" text-anchor="middle" font-weight="700">Engagement Metrics</text>
+  <text x="530" y="815" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="13">Avg Session:</text>
+  <text x="780" y="815" fill="#98C379" font-family="Inter, sans-serif" font-size="13">2:45</text>
+  <text x="530" y="840" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="13">Pages/Session:</text>
+  <text x="780" y="840" fill="#98C379" font-family="Inter, sans-serif" font-size="13">3.8</text>
+  <text x="530" y="865" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="13">Email Open Rate:</text>
+  <text x="780" y="865" fill="#98C379" font-family="Inter, sans-serif" font-size="13">35%</text>
+  <text x="530" y="890" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="13">Email CTR:</text>
+  <text x="780" y="890" fill="#98C379" font-family="Inter, sans-serif" font-size="13">8.2%</text>
+  <text x="530" y="915" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="13">Lead Quality:</text>
+  <text x="780" y="915" fill="#98C379" font-family="Inter, sans-serif" font-size="13">High</text>
+
+  <rect x="900" y="760" width="400" height="180" fill="#1E1E1E" stroke="#D97757" stroke-width="1" rx="2"/>
+  <text x="1100" y="785" fill="#D97757" font-family="Inter, sans-serif" font-size="16" text-anchor="middle" font-weight="700">Revenue & ROI</text>
+  <text x="930" y="815" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="13">Total Customers:</text>
+  <text x="1220" y="815" fill="#98C379" font-family="Inter, sans-serif" font-size="13">750</text>
+  <text x="930" y="840" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="13">Avg Deal Size:</text>
+  <text x="1220" y="840" fill="#98C379" font-family="Inter, sans-serif" font-size="13">$2,400</text>
+  <text x="930" y="865" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="13">Total Revenue:</text>
+  <text x="1220" y="865" fill="#98C379" font-family="Inter, sans-serif" font-size="13">$1.8M</text>
+  <text x="930" y="890" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="13">CAC:</text>
+  <text x="1220" y="890" fill="#E06C75" font-family="Inter, sans-serif" font-size="13">$120</text>
+  <text x="930" y="915" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="13">ROI:</text>
+  <text x="1220" y="915" fill="#98C379" font-family="Inter, sans-serif" font-size="13">15x</text>
+
+  <!-- NOTE: This SVG is a placeholder. Final PNG infographic should include: -->
+  <!-- - Professional funnel visualization with smooth gradients -->
+  <!-- - Interactive hover states showing detailed metrics -->
+  <!-- - Real data visualization charts (bar/line graphs) -->
+  <!-- - Customer journey personas at each stage -->
+  <!-- - Timeline indicators showing typical progression -->
+  <!-- - Benchmark comparisons (your funnel vs industry avg) -->
+  <!-- - Export as high-res PNG (2800x2000px minimum) -->
+</svg>

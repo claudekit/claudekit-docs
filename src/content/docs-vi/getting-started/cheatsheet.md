@@ -541,8 +541,8 @@ ck --version
 ## Tài Nguyên
 
 - [Tài Liệu Đầy Đủ](https://docs.claudekit.cc)
-- [Tất Cả Lệnh](/vi/docs/commands/)
-- [AI Agents](/vi/docs/agents/)
+- [Tất Cả Lệnh](/vi/docs/engineer/commands/)
+- [AI Agents](/vi/docs/engineer/agents/)
 - [Workflows](/vi/docs/core-concepts/workflows)
 - [Troubleshooting](/vi/docs/troubleshooting/)
 - [GitHub Discussions](https://github.com/mrgoonie/claudekit-cli/discussions)

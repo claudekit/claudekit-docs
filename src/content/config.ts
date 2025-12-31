@@ -6,11 +6,16 @@ const docsSchema = z.object({
   section: z.enum([
     'getting-started',
     'docs',
+    'engineer',      // Kit-specific: Engineer Kit content
+    'marketing',     // Kit-specific: Marketing Kit content
+    'cli',           // Shared: CLI documentation
+    'shared',        // Shared: Cross-kit concepts
     'workflows',
     'tools',
     'changelog',
     'support'
   ]),
+  kit: z.enum(['engineer', 'marketing', 'shared']).optional(), // Kit ownership
   category: z.string().optional(), // e.g., 'agents', 'commands/core'
   order: z.number().optional().default(999),
   published: z.boolean().default(true),

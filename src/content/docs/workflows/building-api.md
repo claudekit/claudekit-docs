@@ -1,11 +1,7 @@
 ---
 title: Building a REST API
-description: "Documentation for Building a REST API
-description:
-section: workflows
-category: workflows
-order: 6
-published: true"
+description: "Documentation for Building a REST API"
+lang: vi
 section: workflows
 category: workflows
 order: 6
@@ -764,14 +760,14 @@ npx prisma db pull
 ## Next Steps
 
 ### Related Use Cases
-- [Implementing Authentication](/docs/workflows/implementing-auth) - Auth deep dive
-- [Integrating Payments](/docs/workflows/integrating-payment) - Add payments
-- [Optimizing Performance](/docs/workflows/optimizing-performance) - Speed up API
+- [Implementing Authentication](/docs/use-cases/implementing-auth) - Auth deep dive
+- [Integrating Payments](/docs/use-cases/integrating-payment) - Add payments
+- [Optimizing Performance](/docs/use-cases/optimizing-performance) - Speed up API
 
 ### Related Commands
-- [/bootstrap](/docs/commands/core/bootstrap) - Initialize projects
-- [/cook](/docs/commands/core/cook) - Implement features
-- [/test](/docs/commands/core/test) - Test suite
+- [/bootstrap](/docs/engineer/commands/core/bootstrap) - Initialize projects
+- [/cook](/docs/engineer/commands/core/cook) - Implement features
+- [/test](/docs/engineer/commands/core/test) - Test suite
 
 ### Further Reading
 - [API Best Practices](https://restfulapi.net/)

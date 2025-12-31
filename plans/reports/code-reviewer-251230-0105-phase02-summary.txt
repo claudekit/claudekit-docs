@@ -1,0 +1,153 @@
+================================================================================
+CODE REVIEW SUMMARY: PHASE 02 - ENGINEER DOCS FILE MIGRATION
+================================================================================
+
+Report Date: 2025-12-30 01:05 UTC
+Plan ID: 251230-0006-engineer-docs-migration
+Phase: 02 - File Migration
+Status: COMPLETED WITH CRITICAL BLOCKERS
+Review: code-reviewer-251230-0105-phase02-file-migration.md
+
+================================================================================
+CRITICAL ISSUE COUNT: 3
+================================================================================
+
+Issue #1: FRONTMATTER NOT UPDATED (BLOCKING Phase 03)
+  - 138/138 migrated files still have "section: docs" (should be "section: engineer")
+  - 138/138 missing "kit: engineer" field
+  - Navigation broken for entire Engineer section
+  - Severity: CRITICAL
+
+Issue #2: OLD DOCS/DOCS CLEANUP INCOMPLETE (BLOCKING Phase 03)
+  - 10 files remain in src/content/docs/docs/
+  - Astro collection might process both old+new paths causing conflicts
+  - Risk of data duplication or collection errors
+  - Severity: CRITICAL
+
+Issue #3: KIT FIELD MISSING (BREAKING KIT-AGNOSTIC ARCHITECTURE)
+  - 0/138 engineer files have "kit: engineer" field
+  - KitSwitcher cannot distinguish engineer vs marketing content
+  - Schema validation passes but runtime filtering fails
+  - Severity: HIGH
+
+================================================================================
+FILE MIGRATION RESULTS
+================================================================================
+
+✅ COMPLETED:
+  - Agents: 18/18 files migrated
+  - Commands: 66/66 files migrated (nested structure preserved)
+  - Skills: 49/49 files (35 legacy + 14 existing)
+  - Configuration: 4/4 files migrated
+  - Git History: 123 file renames tracked
+  - Build Success: 476 pages generated
+
+❌ INCOMPLETE:
+  - Frontmatter Updates: 0/138 files updated (Phase 03 task)
+  - Old Directory Cleanup: 10/10 files remain
+  - Vietnamese Migration: 0/86 files (Phase 04 task)
+
+================================================================================
+METRICS
+================================================================================
+
+Files Migrated:           137/137 (100%)
+Git Renames:              123
+Frontmatter Updated:      0/138 (0%)
+Section Field Correct:    15/138 (11% - existing files only)
+Kit Field Added:          0/138 (0%)
+Old docs/docs Cleaned:    INCOMPLETE (10 files remain)
+Build Success:            476 pages generated
+Critical Errors:          3
+High Priority Issues:     1
+Medium Priority Issues:   3
+
+================================================================================
+ARCHITECTURE ASSESSMENT
+================================================================================
+
+✓ File structure follows kit-agnostic design (files in /engineer/* path)
+✓ Nested command structure preserved
+✓ Git history maintained correctly
+✓ No over-engineering or unnecessary transforms
+
+✗ Frontmatter doesn't match file location (section/kit mismatch)
+✗ Navigation filtering broken (missing kit field)
+✗ Migration incomplete without frontmatter updates
+
+================================================================================
+SECURITY ANALYSIS
+================================================================================
+
+✓ No sensitive files exposed
+✓ No new vulnerabilities introduced
+✓ Git history preserved (no forced rewrites)
+✓ File permissions unchanged
+✓ No secrets in migrated content
+
+================================================================================
+PERFORMANCE
+================================================================================
+
+✓ Build time acceptable: 17.20 seconds
+✓ Pages generated: 476 (expected)
+✓ No performance regressions
+⚠ Minor hook error: llms.txt path bug (non-blocking)
+
+================================================================================
+RECOMMENDED ACTIONS
+================================================================================
+
+BLOCKING (before Phase 03):
+  1. Remove 10 leftover files in docs/docs/
+     git rm src/content/docs/docs/cli/*.md
+     git rm src/content/docs/docs/skills/**/*.md
+
+  2. Verify skills merge resolution
+     - Document which 8 duplicates were removed
+     - Compare with Phase 01 analysis
+
+  3. Execute Phase 03 immediately
+     - Update 138 files: section: docs → section: engineer
+     - Add kit: engineer to all 138 engineer files
+     - Verify 100% before proceeding
+
+NON-BLOCKING:
+  - Fix astro.config.mjs path concatenation bug (low priority)
+  - Update phase-02 plan with actual completion status ✓ (DONE)
+
+================================================================================
+PHASE PROGRESSION
+================================================================================
+
+Phase 01: Pre-Migration Analysis      ✓ COMPLETE
+Phase 02: File Migration               ⏸  HOLD - Blockers found
+Phase 03: Frontmatter Updates          ⏳ PENDING - Blocked by Phase 02
+Phase 04: Vietnamese Migration         ⏳ PENDING - Blocked by Phase 02
+Phase 05: Redirect Configuration       ⏳ PENDING
+Phase 06: Internal Link Updates        ⏳ PENDING
+Phase 07: Validation & Testing         ⏳ PENDING
+
+================================================================================
+CONCLUSION
+================================================================================
+
+File migration executed successfully from a git operations perspective (123
+files moved with history preserved). However, the migration is INCOMPLETE:
+
+CRITICAL REQUIREMENT: Frontmatter updates (Phase 03) are MANDATORY before
+the site navigation works correctly. Engineer button shows no docs because
+files still have "section: docs" instead of "section: engineer".
+
+The three critical blockers MUST be resolved before proceeding:
+  1. Update frontmatter on all 138 engineer files
+  2. Clean old docs/docs directory (10 files remain)
+  3. Add missing kit field for kit-agnostic filtering
+
+RECOMMENDATION: Complete blockers + execute Phase 03 as next action.
+
+================================================================================
+Report: d:\www\claudekit\claudekit-docs\plans\reports\code-reviewer-251230-0105-phase02-file-migration.md
+Updated Plan: d:\www\claudekit\claudekit-docs\plans\251230-0006-engineer-docs-migration\phase-02-file-migration.md
+Date: 2025-12-30 01:05 UTC
+

@@ -641,14 +641,14 @@ Improvement: +36 points maintainability
 - [Optimizing Performance](/docs/use-cases/optimizing-performance) - Speed improvements
 
 ### Related Commands
-- [/cook](/docs/commands/core/cook) - Implement refactoring
-- [/test](/docs/commands/core/test) - Verify changes
-- [/docs:update](/docs/commands/docs/update) - Update docs
+- [/cook](/docs/engineer/commands/core/cook) - Implement refactoring
+- [/test](/docs/engineer/commands/core/test) - Verify changes
+- [/docs:update](/docs/engineer/commands/docs/update) - Update docs
 
 ### Related Agents
-- [Code Reviewer](/docs/agents/code-reviewer) - Code quality analysis
-- [Tester](/docs/agents/tester) - Testing coverage
-- [Docs Manager](/docs/agents/docs-manager) - Documentation
+- [Code Reviewer](/docs/engineer/agents/code-reviewer) - Code quality analysis
+- [Tester](/docs/engineer/agents/tester) - Testing coverage
+- [Docs Manager](/docs/engineer/agents/docs-manager) - Documentation
 
 ---
 

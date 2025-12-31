@@ -644,16 +644,16 @@ git checkout -b feature/password-reset
 - [Building an API](/docs/workflows/building-api) - Create REST APIs
 
 ### Related Commands
-- [/plan](/docs/commands/core/plan) - Create implementation plans
-- [/cook](/docs/commands/core/cook) - Implement features
-- [/test](/docs/commands/core/test) - Run test suites
-- [/docs:update](/docs/commands/docs/update) - Update documentation
-- [/git:cm](/docs/commands/git/commit) - Commit changes
+- [/plan](/docs/engineer/commands/core/plan) - Create implementation plans
+- [/cook](/docs/engineer/commands/core/cook) - Implement features
+- [/test](/docs/engineer/commands/core/test) - Run test suites
+- [/docs:update](/docs/engineer/commands/docs/update) - Update documentation
+- [/git:cm](/docs/engineer/commands/git/commit) - Commit changes
 
 ### Further Reading
 - [Command Reference](/docs/commands) - All available commands
 - [Agent Guide](/docs/agents) - Understanding agents
-- [Workflows](/docs/docs/configuration/workflows) - Development patterns
+- [Workflows](/docs/docs/engineer/configuration/workflows) - Development patterns
 
 ---
 

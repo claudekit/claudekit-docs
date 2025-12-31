@@ -1,6 +1,6 @@
 ---
 title: "CCS - Claude Code Switch"
-description: "Switch between multiple Claude accounts and AI models instantly. Avoid rate limits and optimize costs with intelligent delegation."
+description: "Chuyển đổi giữa nhiều tài khoản Claude và mô hình AI ngay lập tức. Tránh giới hạn tốc độ và tối ưu chi phí với ủy quyền thông minh."
 section: tools
 category: tools
 order: 2
@@ -9,146 +9,146 @@ published: true
 
 # CCS - Claude Code Switch
 
-**One command, zero downtime, multiple accounts**
+**Một lệnh duy nhất, không downtime, nhiều tài khoản**
 
-Switch between Claude accounts, GLM, Kimi and more instantly. Stop hitting rate limits. Keep working continuously.
+Chuyển đổi tức thì giữa các tài khoản Claude, GLM, Kimi và nhiều mô hình khác. Không còn đụng giới hạn. Công việc luôn liền mạch.
 
-## The Problem
+## Vấn đề
 
-You're deep in implementation. Context loaded. Solution crystallizing. Then:
+Bạn đang triển khai rất tập trung. Ngữ cảnh đã nạp. Giải pháp đang hình thành. Rồi đột nhiên:
 
-🔴 **"You've reached your usage limit."**
+🔴 **"Bạn đã đạt giới hạn sử dụng."**
 
-Momentum gone. Context lost. Productivity crater.
+Mất hứng. Mất ngữ cảnh. Năng suất tụt dốc.
 
-Session limits shouldn't kill your flow state.
+Giới hạn phiên không nên phá vỡ trạng thái tập trung của bạn.
 
-## The Solution
+## Giải pháp
 
-CCS enables **parallel workflows** instead of sequential switching:
+CCS cho phép bạn chạy **đa luồng công việc song song**, thay vì phải chuyển đổi tuần tự:
 
 ```bash
-# Terminal 1: Main work (Work Account)
-ccs work "implement authentication system"
+# Terminal 1: Công việc chính (Tài khoản Công ty)
+ccs work "triển khai hệ thống xác thực"
 
-# Terminal 2: Side task (Personal Account)
+# Terminal 2: Tác vụ phụ (Tài khoản Cá nhân)
 ccs personal "review PR #123"
 
-# Terminal 3: Cost-optimized task (GLM - 81% cheaper)
-ccs glm "add tests for all service files"
+# Terminal 3: Tác vụ tối ưu chi phí (GLM - rẻ hơn 81%)
+ccs glm "thêm tests cho tất cả service files"
 ```
 
-All running simultaneously. No context switching. No downtime.
+Tất cả chạy đồng thời. Không chuyển ngữ cảnh. Không downtime.
 
-## Installation
+## Cài đặt
 
 ```bash
-# Install globally
+# Cài đặt global
 npm install -g @kaitranntt/ccs
 
-# Verify installation
+# Kiểm tra cài đặt
 ccs --version
 ```
 
-## Quick Start
+## Bắt đầu nhanh
 
-### Basic Usage
+### Cách dùng cơ bản
 
 ```bash
-ccs                    # Claude subscription (default)
-ccs glm                # GLM (cost-optimized)
-ccs kimi               # Kimi (with thinking support)
+ccs                    # Claude subscription (mặc định)
+ccs glm                # GLM (tối ưu chi phí)
+ccs kimi               # Kimi (hỗ trợ thinking)
 ```
 
-### Delegation with -p Flag
+### Ủy quyền với flag `-p`
 
 ```bash
-# Delegate task to GLM
-ccs glm -p "fix linting errors in src/"
+# Ủy quyền task cho GLM
+ccs glm -p "sửa lỗi linting trong src/"
 
-# Delegate to Kimi for analysis
-ccs kimi -p "analyze project structure and document"
+# Ủy quyền cho Kimi để phân tích
+ccs kimi -p "phân tích cấu trúc dự án và tài liệu hóa"
 
-# Continue previous session
-ccs glm:continue -p "run the tests and fix failures"
+# Tiếp tục phiên trước
+ccs glm:continue -p "chạy tests và sửa lỗi"
 ```
 
-### Multi-Account Setup
+### Thiết lập đa tài khoản
 
 ```bash
-# Create account profiles
+# Tạo account profiles
 ccs auth create work
 ccs auth create personal
 
-# Run concurrently in separate terminals
-# Terminal 1 - Work
-ccs work "implement feature"
+# Chạy đồng thời trong các terminal riêng
+# Terminal 1 - Công việc
+ccs work "triển khai tính năng"
 
-# Terminal 2 - Personal (concurrent)
+# Terminal 2 - Cá nhân (đồng thời)
 ccs personal "review code"
 ```
 
-## Core Features
+## Tính năng cốt lõi
 
-### 1. Model Switching
+### 1. Chuyển đổi mô hình
 
-Switch between AI models instantly:
+Chuyển đổi tức thì giữa các mô hình AI:
 
 ```bash
-ccs           # Claude (default)
-ccs glm       # GLM-4.6 (cost-optimized)
+ccs           # Claude (mặc định)
+ccs glm       # GLM-4.6 (tối ưu chi phí)
 ccs kimi      # Kimi (long-context)
 ccs gemini    # Gemini 2.5 Pro (OAuth)
 ccs codex     # GPT-5.1 Codex Max (OAuth)
 ```
 
-### 2. AI-Powered Delegation
+### 2. Uỷ nhiệm thông minh bằng AI
 
-Delegate tasks to cost-optimized models with `-p` flag:
-
-```bash
-# Simple task (GLM)
-ccs glm -p "add tests for UserService"
-
-# Long-context task (Kimi)
-ccs kimi -p "analyze all files in src/ and document architecture"
-
-# Continue previous session
-ccs glm:continue -p "run the tests and fix any failures"
-```
-
-### 3. Slash Command Support
-
-Use slash commands inside delegated sessions:
+Uỷ nhiệm tác vụ cho mô hình tối ưu chi phí với `-p`:
 
 ```bash
-# Execute /cook command in GLM session
-ccs glm -p "/cook create responsive landing page"
+# Task đơn giản (GLM)
+ccs glm -p "thêm tests cho UserService"
 
-# Use ClaudeKit commands
-ccs glm -p "/fix:test run all tests and fix failures"
+# Task long-context (Kimi)
+ccs kimi -p "phân tích tất cả files trong src/ và tài liệu hóa"
+
+# Tiếp tục phiên trước
+ccs glm:continue -p "chạy tests và sửa lỗi"
 ```
 
-### 4. Parallel Workflows
+### 3. Hỗ trợ Slash Commands
 
-Run multiple sessions simultaneously:
+Dùng slash commands bên trong phiên uỷ nhiệm:
 
 ```bash
-# Terminal 1: Planning (Claude)
-ccs "Plan a REST API with authentication"
+# Thực thi lệnh /cook trong phiên GLM
+ccs glm -p "/cook tạo landing page responsive"
 
-# Terminal 2: Execution (GLM, cost-optimized)
-ccs glm "Implement the user authentication endpoints"
-
-# Terminal 3: Analysis (Kimi)
-ccs kimi "Design a caching strategy with trade-off analysis"
+# Sử dụng lệnh ClaudeKit
+ccs glm -p "/fix:test chạy tất cả tests và sửa lỗi"
 ```
 
-## Configuration
+### 4. Quy trình song song
 
-Location: `~/.ccs/config.json`
+Chạy nhiều phiên cùng lúc:
 
-### Auto-Created Structure
+```bash
+# Terminal 1: Lập kế hoạch (Claude)
+ccs "Lập kế hoạch REST API với xác thực"
+
+# Terminal 2: Thực thi (GLM, tối ưu chi phí)
+ccs glm "Triển khai user authentication endpoints"
+
+# Terminal 3: Phân tích (Kimi)
+ccs kimi "Thiết kế chiến lược caching với phân tích trade-off"
+```
+
+## Cấu hình
+
+Vị trí: `~/.ccs/config.json`
+
+### Cấu trúc tự động tạo
 
 ```json
 {
@@ -161,25 +161,25 @@ Location: `~/.ccs/config.json`
 }
 ```
 
-### API Keys Setup
+### Thiết lập API keys
 
-Before using alternative models, update API keys:
+Trước khi dùng mô hình thay thế, hãy cập nhật API key:
 
 **GLM:**
 ```bash
-# Edit ~/.ccs/glm.settings.json
-# Add your Z.AI Coding Plan API Key
+# Chỉnh sửa ~/.ccs/glm.settings.json
+# Thêm Z.AI Coding Plan API Key của bạn
 ```
 
 **Kimi:**
 ```bash
-# Edit ~/.ccs/kimi.settings.json
-# Add your Kimi API key
+# Chỉnh sửa ~/.ccs/kimi.settings.json
+# Thêm Kimi API key của bạn
 ```
 
-### Custom Claude CLI Path
+### Tuỳ chỉnh đường dẫn Claude CLI
 
-If Claude is in a non-standard location:
+Cập nhật lại đường dẫn đến thư mục tuỳ chỉnh của bạn:
 
 ```bash
 # Unix/macOS
@@ -189,197 +189,112 @@ export CCS_CLAUDE_PATH="/path/to/claude"
 $env:CCS_CLAUDE_PATH = "D:\Tools\Claude\claude.exe"
 ```
 
-## Usage Examples
+## Ví dụ sử dụng
 
-### Basic Switching
+### Chuyển đổi cơ bản
 
 ```bash
-# Use Claude (default)
-ccs "implement user authentication"
+# Dùng Claude (mặc định)
+ccs "triển khai xác thực người dùng"
 
-# Use GLM (cost-optimized)
-ccs glm "add tests for all controllers"
+# Dùng GLM (tối ưu chi phí)
+ccs glm "thêm tests cho tất cả controllers"
 
-# Use Kimi (long-context)
-ccs kimi "analyze entire project structure"
+# Dùng Kimi (long-context)
+ccs kimi "phân tích toàn bộ cấu trúc dự án"
 ```
 
-### Cost-Optimized Workflow
+### Quy trình tối ưu chi phí
 
 ```bash
-# Complex planning (use Claude)
-ccs "Plan authentication system with OAuth and JWT"
+# Lập kế hoạch phức tạp (dùng Claude)
+ccs "Lập kế hoạch hệ thống xác thực với OAuth và JWT"
 
-# Simple execution (delegate to GLM - 81% cheaper)
-ccs glm -p "Implement the user login endpoint"
+# Thực thi đơn giản (ủy quyền cho GLM - rẻ hơn 81%)
+ccs glm -p "Triển khai user login endpoint"
 
-# Testing (delegate to GLM)
-ccs glm -p "Add unit tests for auth service"
+# Kiểm thử (ủy quyền cho GLM)
+ccs glm -p "Thêm unit tests cho auth service"
 
-# Review (use Claude)
-ccs "Review the authentication implementation"
+# Review (dùng Claude)
+ccs "Review triển khai authentication"
 ```
 
-### Multi-Account Workflow
+### Tiếp tục phiên
 
 ```bash
-# Create profiles
-ccs auth create client-a
-ccs auth create client-b
-ccs auth create personal
+# Bắt đầu task
+ccs glm -p "refactor auth.js để dùng async/await"
 
-# Switch during work
-ccs client-a "Morning: Client A work"
-ccs client-b "Afternoon: Client B work"
-ccs personal "Evening: Side project"
+# Tiếp tục trong phiên tiếp theo
+ccs glm:continue -p "cũng cập nhật ví dụ trong README"
+
+# Tiếp tục lại
+ccs glm:continue -p "thêm error handling"
 ```
 
-### Session Continuation
+## Tích hợp với ClaudeKit
+
+### Quy trình khuyến nghị
 
 ```bash
-# Start a task
-ccs glm -p "refactor auth.js to use async/await"
+# 1. Lập kế hoạch với Claude
+ccs "/plan thêm tích hợp thanh toán"
 
-# Continue in next session
-ccs glm:continue -p "also update the README examples"
+# 2. Triển khai với GLM (tối ưu chi phí)
+ccs glm -p "/cook triển khai Stripe payment flow"
 
-# Continue again
-ccs glm:continue -p "add error handling"
+# 3. Kiểm thử với GLM
+ccs glm -p "/fix:test chạy payment tests"
+
+# 4. Review với Claude
+ccs "/review kiểm tra triển khai payment"
 ```
 
-## Integration with ClaudeKit
+### Chiến lược tối ưu chi phí
 
-### Recommended Workflow
+**Dùng Claude cho:**
+- Lập kế hoạch phức tạp (`/plan`)
+- Quyết định kiến trúc
+- Review code (`/review`)
+- Giải quyết vấn đề sáng tạo
 
-```bash
-# 1. Plan with Claude
-ccs "/plan add payment integration"
+**Dùng GLM cho:**
+- Triển khai đơn giản
+- Chạy test, sửa lỗi (`/fix:test`)
+- Cập nhật tài liệu
+- Công việc lặp lại
 
-# 2. Implement with GLM (cost-optimized)
-ccs glm -p "/cook implement Stripe payment flow"
+**Dùng Kimi cho:**
+- Phân tích long-context
+- Review toàn bộ codebase
+- Tài liệu hóa kiến trúc
+- Refactoring nhiều files
 
-# 3. Test with GLM
-ccs glm -p "/fix:test run payment tests"
-
-# 4. Review with Claude
-ccs "/review check payment implementation"
-```
-
-### Cost Optimization Strategy
-
-**Use Claude for:**
-- Complex planning (`/plan`)
-- Architecture decisions
-- Code review (`/review`)
-- Creative problem solving
-
-**Use GLM for:**
-- Simple implementations
-- Testing and bug fixes (`/fix:test`)
-- Documentation updates
-- Repetitive tasks
-
-**Use Kimi for:**
-- Long-context analysis
-- Entire codebase reviews
-- Architecture documentation
-- Multi-file refactoring
-
-## Advanced Features
-
-### OAuth Authentication
-
-Zero-config auth for supported models:
+## Gỡ cài đặt
 
 ```bash
-# Interactive OAuth (browser opens)
-ccs gemini
-
-# Authenticate only (save tokens)
-ccs gemini --auth
-
-# Headless mode (for SSH/servers)
-ccs gemini --headless
-
-# Logout (clear tokens)
-ccs gemini --logout
-```
-
-### Help & Version
-
-```bash
-# Show version
-ccs --version
-
-# Show all commands
-ccs --help
-```
-
-### Health Check
-
-```bash
-# Check CCS installation
-ccs doctor
-
-# Shows:
-# - Binary status
-# - Port availability
-# - Configuration validity
-```
-
-## Troubleshooting
-
-### OAuth Timeout
-
-```bash
-# If browser doesn't load in time
-ccs gemini --auth --headless
-# Get URL manually
-```
-
-### Port Conflict
-
-```bash
-# Check port availability
-ccs doctor
-
-# Kill process using port 8317
-lsof -ti:8317 | xargs kill  # Unix
-```
-
-### Session Not Continuing
-
-```bash
-# Ensure you use :continue suffix
-ccs glm:continue -p "next task"
-
-# Check session ID in previous output
-```
-
-## Uninstall
-
-```bash
-# Remove CCS
+# Xóa CCS
 npm uninstall -g @kaitranntt/ccs
 
-# Remove config (optional)
+# Xóa cấu hình (tùy chọn)
 rm -rf ~/.ccs
 ```
 
-## Resources
+## Tài nguyên
 
 - **GitHub:** [kaitranntt/ccs](https://github.com/kaitranntt/ccs)
-- **Documentation:** [Full docs](https://github.com/kaitranntt/ccs#readme)
-- **Issues:** [Report bugs](https://github.com/kaitranntt/ccs/issues)
-- **Troubleshooting:** [Guide](https://github.com/kaitranntt/ccs/blob/main/docs/en/troubleshooting.md)
+- **Tài liệu:** [Docs đầy đủ](https://github.com/kaitranntt/ccs#readme)
+- **Issues:** [Báo cáo lỗi](https://github.com/kaitranntt/ccs/issues)
+- **Xử lý sự cố:** [Hướng dẫn](https://github.com/kaitranntt/ccs/blob/main/docs/en/troubleshooting.md)
 
-## Next Steps
+## Bước tiếp theo
 
-- [Installation Guide](/docs/getting-started/installation) - Setup ClaudeKit
-- [Workflows](/docs/workflows/) - Learn ClaudeKit workflows
-- [FAQ](/docs/support/faq) - Common questions
+- [Hướng Dẫn Cài Đặt](/vi/docs/getting-started/installation) - Thiết lập ClaudeKit
+- [Quy Trình](/vi/docs/workflows/) - Học quy trình ClaudeKit
+- [FAQ](/vi/docs/support/troubleshooting) - Câu hỏi thường gặp
 
 ---
 
-**Key Takeaway:** CCS transforms rate limits from blockers into opportunities for cost optimization and parallel workflows. Use it to maintain flow state and reduce AI costs by 81%.
+**Tóm lại**: CCS biến giới hạn rate limit từ rào cản thành cơ hội tối ưu chi phí và vận hành song song. Giữ trạng thái tập trung và giảm chi phí AI đến 81%.
 

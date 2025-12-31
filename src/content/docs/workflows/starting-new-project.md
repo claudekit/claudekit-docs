@@ -1,11 +1,7 @@
 ---
 title: Starting a New Project
-description: "Documentation for Starting a New Project
-description:
-section: workflows
-category: workflows
-order: 1
-published: true"
+description: "Documentation for Starting a New Project"
+lang: vi
 section: workflows
 category: workflows
 order: 1
@@ -196,7 +192,7 @@ Next steps:
 
 ```bash
 # Interactive setup
-ck init
+ck new
 
 ? Project name: task-api
 ? Template: Node.js API
@@ -660,7 +656,7 @@ A production-ready REST API with:
 
 ```bash
 /plan [add task reminders and notifications]
-/code @plans/reminders.md
+/cook [implement the feature]
 /test
 /git:cm
 ```

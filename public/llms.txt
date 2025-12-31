@@ -1,228 +1,370 @@
 # ClaudeKit Documentation
 
-> AI Development Team - 14 specialized agents that plan, code, test, and ship production features in minutes
+> AI Development Team - Best Claude Code starter kits for solo builders with 60+ specialized agents, 100+ slash commands, and 90+ built-in skills
 
-ClaudeKit is a comprehensive toolkit built on Claude Code, providing 14 AI agents, 30+ slash commands, and 45 built-in skills to accelerate software development. This documentation covers everything from installation to advanced workflows.
+ClaudeKit is a comprehensive toolkit built on Claude Code, providing AI agents, slash commands, and built-in skills to accelerate software development. This documentation covers everything from installation to advanced workflows across Engineer, Marketing, and CLI kits.
 
 ## Getting Started
 
 Essential guides to begin using ClaudeKit:
 
-- [Introduction](/docs/getting-started/introduction.md): Overview and value proposition
-- [Installation](/docs/getting-started/installation.md): Setup instructions
-- [Quick Start](/docs/getting-started/quick-start.md): Ship your first feature in 6 minutes
-- [Cheatsheet](/docs/getting-started/cheatsheet.md): Command reference
-- [Greenfield Projects](/docs/getting-started/greenfield-projects.md): Starting new projects
-- [Brownfield Projects](/docs/getting-started/brownfield-projects.md): Working with existing codebases
-
-## Core Concepts
-
-Understanding ClaudeKit's architecture and workflows:
-
-- [CLAUDE.md Configuration](/docs/core-concepts/claude-md.md): Project configuration file
-- [Workflows](/docs/core-concepts/workflows.md): Development workflows and orchestration
+- [Getting Started Hub](https://docs.claudekit.cc/docs/getting-started): Complete onboarding guide
+- [Introduction](https://docs.claudekit.cc/docs/getting-started/introduction): Overview and value proposition
+- [Why ClaudeKit](https://docs.claudekit.cc/docs/getting-started/why-claudekit): Benefits and use cases
+- [Concepts](https://docs.claudekit.cc/docs/getting-started/concepts): Core concepts and architecture
+- [Installation](https://docs.claudekit.cc/docs/getting-started/installation): Setup instructions
+- [Quick Start](https://docs.claudekit.cc/docs/getting-started/quick-start): Ship your first feature in 6 minutes
+- [Upgrade Guide](https://docs.claudekit.cc/docs/getting-started/upgrade-guide): Migration from previous versions
+- [Cheatsheet](https://docs.claudekit.cc/docs/getting-started/cheatsheet): Command reference
 
 ## CLI Reference
 
 Command-line interface documentation:
 
-- [CLI Overview](/docs/cli/index.md): CLI capabilities
-- [Installation](/docs/cli/installation.md): CLI setup
-- [ck new](/docs/cli/new.md): Create new projects
+- [CLI Overview](https://docs.claudekit.cc/docs/cli): CLI capabilities and reference
+- [Installation](https://docs.claudekit.cc/docs/cli/installation): CLI setup and requirements
+- [ck new](https://docs.claudekit.cc/docs/cli/new): Create new projects with templates
+- [ck init](https://docs.claudekit.cc/docs/cli/init): Initialize ClaudeKit in existing projects
+- [ck update](https://docs.claudekit.cc/docs/cli/update): Update ClaudeKit components
+- [ck uninstall](https://docs.claudekit.cc/docs/cli/uninstall): Remove ClaudeKit
+- [ck doctor](https://docs.claudekit.cc/docs/cli/doctor): Diagnose and fix issues
+- [ck versions](https://docs.claudekit.cc/docs/cli/versions): Version management
+- [Configuration](https://docs.claudekit.cc/docs/cli/configuration): CLI configuration options
 
-## AI Agents
+## Engineer Kit
 
-Specialized agents for different development tasks:
+Complete documentation for the Engineer toolkit with 18 agents, 66 commands, and 49 skills:
 
-- [Agents Overview](/docs/agents/index.md): Complete agent reference
+- [Engineer Overview](https://docs.claudekit.cc/docs/engineer): Engineer kit introduction
 
-### Planning & Research
-- [planner](/docs/agents/planner.md): Research and implementation planning
-- [researcher](/docs/agents/researcher.md): Best practices research with parallel search
-- [brainstormer](/docs/agents/brainstormer.md): Solution exploration and ideation
-- [scout](/docs/agents/scout.md): Codebase navigation and file discovery
+### Engineer Agents
 
-### Development & Quality
-- [tester](/docs/agents/tester.md): Testing and validation
-- [code-reviewer](/docs/agents/code-reviewer.md): Code quality and security review
-- [debugger](/docs/agents/debugger.md): Root cause analysis and bug fixing
+Specialized agents for software development:
 
-### Design & Content
-- [ui-ux-designer](/docs/agents/ui-ux-designer.md): Interface design and wireframes
-- [copywriter](/docs/agents/copywriter.md): Conversion-focused content creation
+- [Agents Overview](https://docs.claudekit.cc/docs/engineer/agents): Complete agent reference
 
-### Infrastructure & Management
-- [database-admin](/docs/agents/database-admin.md): Database optimization and administration
-- [git-manager](/docs/agents/git-manager.md): Version control and commits
-- [docs-manager](/docs/agents/docs-manager.md): Documentation management and updates
-- [project-manager](/docs/agents/project-manager.md): Progress tracking and coordination
-- [journal-writer](/docs/agents/journal-writer.md): Decision and progress documentation
+#### Planning & Research
+- [planner](https://docs.claudekit.cc/docs/engineer/agents/planner): Research and implementation planning
+- [researcher](https://docs.claudekit.cc/docs/engineer/agents/researcher): Best practices research with parallel search
+- [brainstormer](https://docs.claudekit.cc/docs/engineer/agents/brainstormer): Solution exploration and ideation
+- [scout](https://docs.claudekit.cc/docs/engineer/agents/scout): Codebase navigation and file discovery
+- [scout-external](https://docs.claudekit.cc/docs/engineer/agents/scout-external): External codebase exploration
 
-## Slash Commands
+#### Development & Quality
+- [tester](https://docs.claudekit.cc/docs/engineer/agents/tester): Testing and validation
+- [code-reviewer](https://docs.claudekit.cc/docs/engineer/agents/code-reviewer): Code quality and security review
+- [debugger](https://docs.claudekit.cc/docs/engineer/agents/debugger): Root cause analysis and bug fixing
+- [fullstack-developer](https://docs.claudekit.cc/docs/engineer/agents/fullstack-developer): Full-stack implementation
 
-- [Commands Overview](/docs/commands/index.md): Complete command reference
+#### Design & Content
+- [ui-ux-designer](https://docs.claudekit.cc/docs/engineer/agents/ui-ux-designer): Interface design and wireframes
+- [copywriter](https://docs.claudekit.cc/docs/engineer/agents/copywriter): Conversion-focused content creation
 
-### Core Commands
+#### Infrastructure & Management
+- [database-admin](https://docs.claudekit.cc/docs/engineer/agents/database-admin): Database optimization and administration
+- [git-manager](https://docs.claudekit.cc/docs/engineer/agents/git-manager): Version control and commits
+- [docs-manager](https://docs.claudekit.cc/docs/engineer/agents/docs-manager): Documentation management
+- [project-manager](https://docs.claudekit.cc/docs/engineer/agents/project-manager): Progress tracking and coordination
+- [journal-writer](https://docs.claudekit.cc/docs/engineer/agents/journal-writer): Decision documentation
+- [mcp-manager](https://docs.claudekit.cc/docs/engineer/agents/mcp-manager): MCP server management
 
-End-to-end development workflows:
+### Engineer Commands
 
-- [/cook](/docs/commands/core/cook.md): Implement features end-to-end with planning, coding, testing
-- [/bootstrap](/docs/commands/core/bootstrap.md): Start new projects with best practices
-- [/debug](/docs/commands/core/debug.md): Debug issues with systematic analysis
-- [/journal](/docs/commands/core/journal.md): Document decisions and progress
-- [/scout](/docs/commands/core/scout.md): Explore codebase and locate files
-- [/ask](/docs/commands/core/ask.md): Answer technical and architectural questions
+- [Commands Overview](https://docs.claudekit.cc/docs/engineer/commands): Complete command reference
 
-### Fix Commands
+#### Core Commands
+- [/cook](https://docs.claudekit.cc/docs/engineer/commands/core/cook): End-to-end feature implementation
+- [/cook:auto](https://docs.claudekit.cc/docs/engineer/commands/core/cook-auto): Automated cooking workflow
+- [/cook:auto-fast](https://docs.claudekit.cc/docs/engineer/commands/core/cook-auto-fast): Fast automated cooking
+- [/cook:auto-parallel](https://docs.claudekit.cc/docs/engineer/commands/core/cook-auto-parallel): Parallel automated cooking
+- [/code](https://docs.claudekit.cc/docs/engineer/commands/core/code): Quality-gated implementation
+- [/code:no-test](https://docs.claudekit.cc/docs/engineer/commands/core/code-no-test): Implementation without tests
+- [/code:parallel](https://docs.claudekit.cc/docs/engineer/commands/core/code-parallel): Parallel code execution
+- [/bootstrap](https://docs.claudekit.cc/docs/engineer/commands/core/bootstrap): Start new projects
+- [/bootstrap:auto](https://docs.claudekit.cc/docs/engineer/commands/core/bootstrap-auto): Automated bootstrapping
+- [/bootstrap:auto-fast](https://docs.claudekit.cc/docs/engineer/commands/core/bootstrap-auto-fast): Fast automated bootstrapping
+- [/bootstrap:auto-parallel](https://docs.claudekit.cc/docs/engineer/commands/core/bootstrap-auto-parallel): Parallel bootstrapping
+- [/debug](https://docs.claudekit.cc/docs/engineer/commands/core/debug): Systematic debugging
+- [/journal](https://docs.claudekit.cc/docs/engineer/commands/core/journal): Document decisions
+- [/scout](https://docs.claudekit.cc/docs/engineer/commands/core/scout): Explore codebase
+- [/scout:ext](https://docs.claudekit.cc/docs/engineer/commands/core/scout-ext): External exploration
+- [/ask](https://docs.claudekit.cc/docs/engineer/commands/core/ask): Technical questions
+- [/test](https://docs.claudekit.cc/docs/engineer/commands/core/test): Run tests
+- [/brainstorm](https://docs.claudekit.cc/docs/engineer/commands/core/brainstorm): Idea exploration
+- [/review:codebase](https://docs.claudekit.cc/docs/engineer/commands/core/review-codebase): Codebase review
+- [/use-mcp](https://docs.claudekit.cc/docs/engineer/commands/core/use-mcp): MCP tool usage
+- [/watzup](https://docs.claudekit.cc/docs/engineer/commands/core/watzup): Project status
+- [/ck-help](https://docs.claudekit.cc/docs/engineer/commands/core/ck-help): Get help
 
-Bug fixing and error resolution:
+#### Fix Commands
+- [Fix Overview](https://docs.claudekit.cc/docs/engineer/commands/fix): Fix commands reference
+- [/fix:hard](https://docs.claudekit.cc/docs/engineer/commands/fix/hard): Complex bug fixing
+- [/fix:fast](https://docs.claudekit.cc/docs/engineer/commands/fix/fast): Quick fixes
+- [/fix:parallel](https://docs.claudekit.cc/docs/engineer/commands/fix/parallel): Parallel fixing
+- [/fix:types](https://docs.claudekit.cc/docs/engineer/commands/fix/types): TypeScript type errors
+- [/fix:ui](https://docs.claudekit.cc/docs/engineer/commands/fix/ui): UI issues
+- [/fix:ci](https://docs.claudekit.cc/docs/engineer/commands/fix/ci): CI/CD failures
+- [/fix:logs](https://docs.claudekit.cc/docs/engineer/commands/fix/logs): Log analysis
+- [/fix:test](https://docs.claudekit.cc/docs/engineer/commands/fix/test): Test failures
 
-- [/fix:hard](/docs/commands/fix/hard.md): Multi-agent bug fixing for complex issues
-- [/fix:fast](/docs/commands/fix/fast.md): Quick fixes for simple issues
-- [/fix:types](/docs/commands/fix/types.md): TypeScript type errors
-- [/fix:ui](/docs/commands/fix/ui.md): UI and layout issues
-- [/fix:ci](/docs/commands/fix/ci.md): CI/CD pipeline failures
-- [/fix:logs](/docs/commands/fix/logs.md): Analyze logs and fix issues
+#### Design Commands
+- [/design:good](https://docs.claudekit.cc/docs/engineer/commands/design/good): High-quality UI design
+- [/design:fast](https://docs.claudekit.cc/docs/engineer/commands/design/fast): Quick design iterations
+- [/design:3d](https://docs.claudekit.cc/docs/engineer/commands/design/3d): 3D designs with Three.js
+- [/design:screenshot](https://docs.claudekit.cc/docs/engineer/commands/design/screenshot): Design from screenshots
+- [/design:video](https://docs.claudekit.cc/docs/engineer/commands/design/video): Design from videos
+- [/design:describe](https://docs.claudekit.cc/docs/engineer/commands/design/describe): Analyze designs
 
-### Design Commands
+#### Content Commands
+- [/content:good](https://docs.claudekit.cc/docs/engineer/commands/content/good): High-quality copy
+- [/content:fast](https://docs.claudekit.cc/docs/engineer/commands/content/fast): Quick copy generation
+- [/content:cro](https://docs.claudekit.cc/docs/engineer/commands/content/cro): Conversion optimization
+- [/content:enhance](https://docs.claudekit.cc/docs/engineer/commands/content/enhance): Improve existing copy
 
-UI/UX design and visual content creation:
+#### Documentation Commands
+- [/docs:init](https://docs.claudekit.cc/docs/engineer/commands/docs-cmd/init): Initialize documentation
+- [/docs:update](https://docs.claudekit.cc/docs/engineer/commands/docs-cmd/update): Update documentation
+- [/docs:summarize](https://docs.claudekit.cc/docs/engineer/commands/docs-cmd/summarize): Generate summary
 
-- [/design:good](/docs/commands/design/good.md): High-quality UI design with wireframes
-- [/design:fast](/docs/commands/design/fast.md): Quick design iterations
-- [/design:3d](/docs/commands/design/3d.md): Interactive 3D designs with Three.js
-- [/design:screenshot](/docs/commands/design/screenshot.md): Design from screenshots
-- [/design:video](/docs/commands/design/video.md): Design from video references
-- [/design:describe](/docs/commands/design/describe.md): Describe and analyze existing designs
+#### Git Commands
+- [/git:cm](https://docs.claudekit.cc/docs/engineer/commands/git/cm): Create commits
+- [/git:commit](https://docs.claudekit.cc/docs/engineer/commands/git/commit): Conventional commits
+- [/git:cp](https://docs.claudekit.cc/docs/engineer/commands/git/cp): Commit and push
+- [/git:commit-push](https://docs.claudekit.cc/docs/engineer/commands/git/commit-push): Commit and push changes
+- [/git:merge](https://docs.claudekit.cc/docs/engineer/commands/git/merge): Merge branches
+- [/git:pr](https://docs.claudekit.cc/docs/engineer/commands/git/pull-request): Create pull requests
 
-### Content Commands
+#### Plan Commands
+- [Plan Overview](https://docs.claudekit.cc/docs/engineer/commands/plan): Plan commands reference
+- [/plan:two](https://docs.claudekit.cc/docs/engineer/commands/plan/two): Two-approach planning
+- [/plan:ci](https://docs.claudekit.cc/docs/engineer/commands/plan/ci): CI/CD analysis
+- [/plan:cro](https://docs.claudekit.cc/docs/engineer/commands/plan/cro): CRO planning
+- [/plan:fast](https://docs.claudekit.cc/docs/engineer/commands/plan/fast): Quick planning
+- [/plan:hard](https://docs.claudekit.cc/docs/engineer/commands/plan/hard): Complex planning
+- [/plan:parallel](https://docs.claudekit.cc/docs/engineer/commands/plan/parallel): Parallel planning
 
-Copywriting and content optimization:
+#### Integration Commands
+- [/integrate:polar](https://docs.claudekit.cc/docs/engineer/commands/integrate/polar): Polar.sh integration
+- [/integrate:sepay](https://docs.claudekit.cc/docs/engineer/commands/integrate/sepay): SePay integration
 
-- [/content:good](/docs/commands/content/good.md): High-quality conversion-focused copy
-- [/content:fast](/docs/commands/content/fast.md): Quick copy generation
-- [/content:cro](/docs/commands/content/cro.md): Conversion rate optimization
-- [/content:enhance](/docs/commands/content/enhance.md): Improve existing copy
+#### Review Commands
+- [/review:codebase](https://docs.claudekit.cc/docs/engineer/commands/review/codebase): Codebase review
 
-### Documentation Commands
+#### Skill Commands
+- [/skill:add](https://docs.claudekit.cc/docs/engineer/commands/skill/add): Add skills
 
-Documentation creation and maintenance:
+### Engineer Skills
 
-- [/docs:init](/docs/commands/docs/init.md): Initialize project documentation
-- [/docs:update](/docs/commands/docs/update.md): Update documentation after code changes
-- [/docs:summarize](/docs/commands/docs/summarize.md): Generate codebase summary
+- [Skills Overview](https://docs.claudekit.cc/docs/engineer/skills): Complete skill reference
 
-### Git Commands
+#### Frontend Development
+- [Next.js](https://docs.claudekit.cc/docs/engineer/skills/nextjs): React framework with SSR/SSG
+- [shadcn/ui](https://docs.claudekit.cc/docs/engineer/skills/shadcn-ui): Accessible UI components
+- [Tailwind CSS](https://docs.claudekit.cc/docs/engineer/skills/tailwindcss): Utility-first CSS
+- [Three.js](https://docs.claudekit.cc/docs/engineer/skills/threejs): 3D graphics
+- [UI Styling](https://docs.claudekit.cc/docs/engineer/skills/ui-styling): Styling patterns
+- [Web Frameworks](https://docs.claudekit.cc/docs/engineer/skills/web-frameworks): Framework guides
+- [Frontend Development](https://docs.claudekit.cc/docs/engineer/skills/frontend-development): Frontend patterns
+- [Frontend Design](https://docs.claudekit.cc/docs/engineer/skills/frontend-design): Design implementation
+- [Frontend Design Pro](https://docs.claudekit.cc/docs/engineer/skills/frontend-design-pro): Advanced design
+- [UI/UX Pro Max](https://docs.claudekit.cc/docs/engineer/skills/ui-ux-pro-max): Professional UI/UX
+- [Aesthetic](https://docs.claudekit.cc/docs/engineer/skills/aesthetic): Design aesthetics
 
-Version control automation:
+#### Backend Development
+- [Backend Development](https://docs.claudekit.cc/docs/engineer/skills/backend-development): Server-side patterns
+- [PostgreSQL/PSQL](https://docs.claudekit.cc/docs/engineer/skills/postgresql-psql): Database and CLI
+- [Databases](https://docs.claudekit.cc/docs/engineer/skills/databases): Database patterns
+- [Better Auth](https://docs.claudekit.cc/docs/engineer/skills/better-auth): Authentication
 
-- [/git:cm](/docs/commands/git/commit.md): Create conventional commits
-- [/git:cp](/docs/commands/git/commit-push.md): Commit and push changes
-- [/git:pr](/docs/commands/git/pull-request.md): Create pull requests with descriptions
+#### Mobile Development
+- [Mobile Development](https://docs.claudekit.cc/docs/engineer/skills/mobile-development): Mobile app patterns
 
-### Integration Commands
+#### DevOps & Infrastructure
+- [Docker](https://docs.claudekit.cc/docs/engineer/skills/docker): Container platform
+- [DevOps](https://docs.claudekit.cc/docs/engineer/skills/devops): DevOps practices
 
-Third-party service integrations:
+#### E-commerce
+- [Shopify](https://docs.claudekit.cc/docs/engineer/skills/shopify): Shopify integrations
+- [Payment Integration](https://docs.claudekit.cc/docs/engineer/skills/payment-integration): Payment systems
 
-- [/integrate:polar](/docs/commands/integrate/polar.md): Polar.sh payment integration
-- [/integrate:sepay](/docs/commands/integrate/sepay.md): SePay.vn payment integration
+#### Design & Media
+- [Canvas Design](https://docs.claudekit.cc/docs/engineer/skills/canvas-design): Visual design
+- [FFmpeg](https://docs.claudekit.cc/docs/engineer/skills/ffmpeg): Video/audio processing
+- [ImageMagick](https://docs.claudekit.cc/docs/engineer/skills/imagemagick): Image manipulation
+- [Media Processing](https://docs.claudekit.cc/docs/engineer/skills/media-processing): Media handling
+- [AI Artist](https://docs.claudekit.cc/docs/engineer/skills/ai-artist): AI art generation
+- [AI Multimodal](https://docs.claudekit.cc/docs/engineer/skills/ai-multimodal): Multimodal AI
+- [Gemini Vision](https://docs.claudekit.cc/docs/engineer/skills/gemini-vision): Image understanding
 
-### Plan Commands
+#### Development Tools
+- [MCP Builder](https://docs.claudekit.cc/docs/engineer/skills/mcp-builder): MCP server creation
+- [MCP Management](https://docs.claudekit.cc/docs/engineer/skills/mcp-management): MCP administration
+- [Skill Creator](https://docs.claudekit.cc/docs/engineer/skills/skill-creator): Create custom skills
+- [Chrome DevTools](https://docs.claudekit.cc/docs/engineer/skills/chrome-devtools): Browser debugging
+- [Claude Code Skill](https://docs.claudekit.cc/docs/engineer/skills/claude-code-skill): Claude Code patterns
+- [Common Utilities](https://docs.claudekit.cc/docs/engineer/skills/common-utilities): Utility functions
+- [Repomix](https://docs.claudekit.cc/docs/engineer/skills/repomix): Repository mixing
+- [Template Skill](https://docs.claudekit.cc/docs/engineer/skills/template-skill): Skill templates
 
-Planning and analysis:
+#### Problem Solving
+- [Systematic Debugging](https://docs.claudekit.cc/docs/engineer/skills/systematic-debugging): Debugging methodology
+- [Debugging](https://docs.claudekit.cc/docs/engineer/skills/debugging): Debug patterns
+- [Problem Solving](https://docs.claudekit.cc/docs/engineer/skills/problem-solving): Solution strategies
+- [Sequential Thinking](https://docs.claudekit.cc/docs/engineer/skills/sequential-thinking): Step-by-step analysis
+- [Code Review](https://docs.claudekit.cc/docs/engineer/skills/code-review): Review practices
+- [Planning](https://docs.claudekit.cc/docs/engineer/skills/planning): Planning strategies
+- [Research](https://docs.claudekit.cc/docs/engineer/skills/research): Research methods
 
-- [/plan:two](/docs/commands/plan/two.md): Create plan with two alternative approaches
-- [/plan:ci](/docs/commands/plan/ci.md): Analyze CI/CD failures and create fix plan
+#### Documentation
+- [Document Skills](https://docs.claudekit.cc/docs/engineer/skills/document-skills): Documentation creation
+- [Docs Seeker](https://docs.claudekit.cc/docs/engineer/skills/docs-seeker): Documentation search
+- [PDF Skills](https://docs.claudekit.cc/docs/engineer/skills/pdf-skills): PDF handling
+- [Markdown Novel Viewer](https://docs.claudekit.cc/docs/engineer/skills/markdown-novel-viewer): Markdown viewing
 
-### Skill Commands
+#### Project Management
+- [Plans Kanban](https://docs.claudekit.cc/docs/engineer/skills/plans-kanban): Kanban planning
+- [Google ADK Python](https://docs.claudekit.cc/docs/engineer/skills/google-adk-python): Google ADK
 
-Custom skill management:
+## Marketing Kit
 
-- [/skill:create](/docs/commands/skill/create.md): Create new custom skills
-- [/skill:fix-logs](/docs/commands/skill/fix-logs.md): Fix skill issues from logs
+Complete documentation for the Marketing toolkit with 33 agents, 23 commands, and 21 skills:
 
-## Built-in Skills
+- [Marketing Overview](https://docs.claudekit.cc/docs/marketing): Marketing kit introduction
 
-- [Skills Overview](/docs/skills/index.md): Complete skill reference
+### Marketing Agents
 
-### Frontend Development
+- [Agents Overview](https://docs.claudekit.cc/docs/marketing/agents): Complete agent reference
 
-- [Next.js](/docs/skills/nextjs.md): React framework with SSR and SSG
-- [shadcn/ui](/docs/skills/shadcn-ui.md): Accessible UI component library
-- [Tailwind CSS](/docs/skills/tailwindcss.md): Utility-first CSS framework
+#### Content & Creative
+- [content-creator](https://docs.claudekit.cc/docs/marketing/agents/content-creator): Content creation
+- [content-reviewer](https://docs.claudekit.cc/docs/marketing/agents/content-reviewer): Content quality review
+- [copywriter](https://docs.claudekit.cc/docs/marketing/agents/copywriter): Marketing copy
+- [email-wizard](https://docs.claudekit.cc/docs/marketing/agents/email-wizard): Email campaigns
 
-### Authentication
+#### Campaign Management
+- [campaign-manager](https://docs.claudekit.cc/docs/marketing/agents/campaign-manager): Campaign orchestration
+- [campaign-debugger](https://docs.claudekit.cc/docs/marketing/agents/campaign-debugger): Campaign troubleshooting
+- [community-manager](https://docs.claudekit.cc/docs/marketing/agents/community-manager): Community engagement
+- [social-media-manager](https://docs.claudekit.cc/docs/marketing/agents/social-media-manager): Social media
 
-- [Better Auth](/docs/skills/better-auth.md): Framework-agnostic authentication
+#### SEO & Analytics
+- [seo-specialist](https://docs.claudekit.cc/docs/marketing/agents/seo-specialist): SEO optimization
+- [analytics-analyst](https://docs.claudekit.cc/docs/marketing/agents/analytics-analyst): Analytics and insights
 
-### Database
+#### Sales & Conversion
+- [lead-qualifier](https://docs.claudekit.cc/docs/marketing/agents/lead-qualifier): Lead qualification
+- [sale-enabler](https://docs.claudekit.cc/docs/marketing/agents/sale-enabler): Sales enablement
+- [funnel-architect](https://docs.claudekit.cc/docs/marketing/agents/funnel-architect): Funnel design
+- [attraction-specialist](https://docs.claudekit.cc/docs/marketing/agents/attraction-specialist): Lead attraction
+- [upsell-maximizer](https://docs.claudekit.cc/docs/marketing/agents/upsell-maximizer): Upselling
+- [continuity-specialist](https://docs.claudekit.cc/docs/marketing/agents/continuity-specialist): Customer retention
 
-- [PostgreSQL](/docs/skills/postgresql-psql.md): PostgreSQL database and psql CLI
+#### Development Support
+- [brainstormer](https://docs.claudekit.cc/docs/marketing/agents/brainstormer): Ideation
+- [planner](https://docs.claudekit.cc/docs/marketing/agents/planner): Planning
+- [researcher](https://docs.claudekit.cc/docs/marketing/agents/researcher): Research
+- [tester](https://docs.claudekit.cc/docs/marketing/agents/tester): Testing
+- [debugger](https://docs.claudekit.cc/docs/marketing/agents/debugger): Debugging
+- [code-reviewer](https://docs.claudekit.cc/docs/marketing/agents/code-reviewer): Code review
+- [fullstack-developer](https://docs.claudekit.cc/docs/marketing/agents/fullstack-developer): Development
+- [ui-ux-designer](https://docs.claudekit.cc/docs/marketing/agents/ui-ux-designer): UI/UX design
+- [database-admin](https://docs.claudekit.cc/docs/marketing/agents/database-admin): Database
+- [git-manager](https://docs.claudekit.cc/docs/marketing/agents/git-manager): Version control
+- [docs-manager](https://docs.claudekit.cc/docs/marketing/agents/docs-manager): Documentation
+- [project-manager](https://docs.claudekit.cc/docs/marketing/agents/project-manager): Project management
+- [journal-writer](https://docs.claudekit.cc/docs/marketing/agents/journal-writer): Journaling
+- [scout](https://docs.claudekit.cc/docs/marketing/agents/scout): Codebase exploration
+- [scout-external](https://docs.claudekit.cc/docs/marketing/agents/scout-external): External exploration
+- [mcp-manager](https://docs.claudekit.cc/docs/marketing/agents/mcp-manager): MCP management
 
-### E-commerce
+### Marketing Commands
 
-- [Shopify](/docs/skills/shopify.md): Shopify apps and integrations
+- [/cook](https://docs.claudekit.cc/docs/marketing/commands/cook): Marketing implementation
+- [/campaign](https://docs.claudekit.cc/docs/marketing/commands/campaign): Campaign management
+- [/content](https://docs.claudekit.cc/docs/marketing/commands/content): Content creation
+- [/email](https://docs.claudekit.cc/docs/marketing/commands/email): Email campaigns
+- [/video](https://docs.claudekit.cc/docs/marketing/commands/video): Video marketing
+- [/dashboard](https://docs.claudekit.cc/docs/marketing/commands/dashboard): Dashboard creation
+- [/analyze](https://docs.claudekit.cc/docs/marketing/commands/analyze): Analytics
+- [/fix](https://docs.claudekit.cc/docs/marketing/commands/fix): Issue resolution
+- [/use-mcp](https://docs.claudekit.cc/docs/marketing/commands/use-mcp): MCP tools
 
-### Design & Media
+### Marketing Workflows
 
-- [Canvas Design](/docs/skills/canvas-design.md): Visual design and artwork
-- [FFmpeg](/docs/skills/ffmpeg.md): Video and audio processing
-- [ImageMagick](/docs/skills/imagemagick.md): Image manipulation
-- [Gemini Vision](/docs/skills/gemini-vision.md): AI image understanding
+- [Workflows Overview](https://docs.claudekit.cc/docs/marketing/workflows): Workflow reference
+- [Marketing Workflow](https://docs.claudekit.cc/docs/marketing/workflows/marketing-workflow): General marketing
+- [Campaign Workflow](https://docs.claudekit.cc/docs/marketing/workflows/campaign-workflow): Campaign creation
+- [Content Workflow](https://docs.claudekit.cc/docs/marketing/workflows/content-workflow): Content production
+- [Email Workflow](https://docs.claudekit.cc/docs/marketing/workflows/email-workflow): Email marketing
+- [Social Workflow](https://docs.claudekit.cc/docs/marketing/workflows/social-workflow): Social media
+- [SEO Workflow](https://docs.claudekit.cc/docs/marketing/workflows/seo-workflow): SEO optimization
+- [Analytics Workflow](https://docs.claudekit.cc/docs/marketing/workflows/analytics-workflow): Analytics
+- [Brand Workflow](https://docs.claudekit.cc/docs/marketing/workflows/brand-workflow): Brand management
+- [Dashboard Workflow](https://docs.claudekit.cc/docs/marketing/workflows/dashboard-workflow): Dashboard creation
+- [Sales Workflow](https://docs.claudekit.cc/docs/marketing/workflows/sales-workflow): Sales processes
 
-### DevOps
+### Marketing Features
 
-- [Docker](/docs/skills/docker.md): Container platform
+- [Asset Management](https://docs.claudekit.cc/docs/marketing/features/asset-management): Digital assets
 
-### Development Tools
+## Workflows
 
-- [MCP Builder](/docs/skills/mcp-builder.md): Model Context Protocol servers
-- [Skill Creator](/docs/skills/skill-creator.md): Create custom skills
-- [Systematic Debugging](/docs/skills/systematic-debugging.md): Structured debugging methodology
+Cross-kit workflow guides:
 
-### Documentation
+- [Workflows Overview](https://docs.claudekit.cc/docs/workflows): Complete workflow guide
+- [Feature Development](https://docs.claudekit.cc/docs/workflows/feature-development): Feature implementation
+- [Adding Features](https://docs.claudekit.cc/docs/workflows/adding-feature): Feature addition
+- [Bug Fixing](https://docs.claudekit.cc/docs/workflows/bug-fixing): Bug resolution
+- [Fixing Bugs](https://docs.claudekit.cc/docs/workflows/fixing-bugs): Bug fixing patterns
+- [Documentation](https://docs.claudekit.cc/docs/workflows/documentation): Documentation workflow
+- [Building APIs](https://docs.claudekit.cc/docs/workflows/building-api): API development
+- [Implementing Auth](https://docs.claudekit.cc/docs/workflows/implementing-auth): Authentication
+- [Integrating Payment](https://docs.claudekit.cc/docs/workflows/integrating-payment): Payment systems
+- [Optimizing Performance](https://docs.claudekit.cc/docs/workflows/optimizing-performance): Performance
+- [Refactoring Code](https://docs.claudekit.cc/docs/workflows/refactoring-code): Code refactoring
+- [Starting New Project](https://docs.claudekit.cc/docs/workflows/starting-new-project): New projects
+- [New Project](https://docs.claudekit.cc/docs/workflows/new-project): Project setup
+- [Existing Project](https://docs.claudekit.cc/docs/workflows/existing-project): Existing codebases
+- [Maintaining Old Project](https://docs.claudekit.cc/docs/workflows/maintaining-old-project): Legacy maintenance
+- [Understanding Codebases with GKG](https://docs.claudekit.cc/docs/workflows/understanding-codebases-with-gkg): Codebase analysis
+- [Gemini Integration](https://docs.claudekit.cc/docs/workflows/gemini): Gemini AI
 
-- [Document Skills](/docs/skills/document-skills.md): Technical documentation creation
+## Tools
 
-## Use Cases
+Available tools and utilities:
 
-Real-world examples and workflows:
+- [Tools Overview](https://docs.claudekit.cc/docs/tools): Tools directory
+- [CCS (ClaudeKit Command Shell)](https://docs.claudekit.cc/docs/tools/ccs): Command shell
 
-- [Use Cases Overview](/docs/use-cases/index.md): All use case guides
+## Support
 
-### Feature Development
-- [Adding Features](/docs/use-cases/adding-feature.md): Implement new features end-to-end
-- [Building APIs](/docs/use-cases/building-api.md): Create REST and GraphQL APIs
-- [Implementing Auth](/docs/use-cases/implementing-auth.md): Authentication systems
-- [Payment Integration](/docs/use-cases/integrating-payment.md): Payment gateway integration
+Help and troubleshooting resources:
 
-### Code Quality
-- [Fixing Bugs](/docs/use-cases/fixing-bugs.md): Systematic bug resolution
-- [Code Refactoring](/docs/use-cases/refactoring-code.md): Code cleanup and improvement
-- [Performance Optimization](/docs/use-cases/optimizing-performance.md): Speed and efficiency improvements
+- [Support Hub](https://docs.claudekit.cc/docs/support): Support resources
+- [FAQ](https://docs.claudekit.cc/docs/support/faq): Frequently asked questions
 
-### Project Management
-- [Starting New Project](/docs/use-cases/starting-new-project.md): Bootstrap new codebases
-- [Maintaining Old Projects](/docs/use-cases/maintaining-old-project.md): Legacy code maintenance
+### Troubleshooting
 
-## Troubleshooting
+- [Troubleshooting Overview](https://docs.claudekit.cc/docs/support/troubleshooting): All troubleshooting guides
+- [Installation Issues](https://docs.claudekit.cc/docs/support/troubleshooting/installation-issues): Setup problems
+- [Command Errors](https://docs.claudekit.cc/docs/support/troubleshooting/command-errors): Command failures
+- [Agent Issues](https://docs.claudekit.cc/docs/support/troubleshooting/agent-issues): Agent problems
+- [API Key Setup](https://docs.claudekit.cc/docs/support/troubleshooting/api-key-setup): API configuration
+- [Performance Issues](https://docs.claudekit.cc/docs/support/troubleshooting/performance-issues): Performance optimization
 
-Common issues and solutions:
+## Changelog
 
-- [Troubleshooting Overview](/docs/troubleshooting/index.md): All troubleshooting guides
-- [Installation Issues](/docs/troubleshooting/installation-issues.md): Setup and installation problems
-- [Command Errors](/docs/troubleshooting/command-errors.md): Slash command failures
-- [Agent Issues](/docs/troubleshooting/agent-issues.md): Agent execution problems
-- [API Key Setup](/docs/troubleshooting/api-key-setup.md): API key configuration
-- [Performance Issues](/docs/troubleshooting/performance-issues.md): Speed and performance problems
+Version history and release notes:
+
+- [Changelog](https://docs.claudekit.cc/docs/changelog): Complete changelog
 
 ## Additional Resources
 
 - Website: https://docs.claudekit.cc
 - Main Site: https://claudekit.cc
-- GitHub: https://github.com/claudekit/claudekit-docs
+- GitHub: https://github.com/claudekit
 
 ---
 
-Last Updated: 2025-11-11
+Last Updated: 2025-12-30
 Maintainers: ClaudeKit Team

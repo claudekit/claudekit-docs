@@ -1,0 +1,181 @@
+<svg viewBox="0 0 1200 1600" xmlns="http://www.w3.org/2000/svg">
+  <title>Command Cheatsheet</title>
+  <desc>Quick reference guide for top 20 ClaudeKit CLI commands with examples and descriptions</desc>
+  <rect width="1200" height="1600" fill="#1E1E1E"/>
+
+  <!-- Title -->
+  <text x="600" y="50" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="36" text-anchor="middle" font-weight="700">ClaudeKit CLI Cheatsheet</text>
+  <text x="600" y="85" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="14" text-anchor="middle">Top 20 commands you'll use every day</text>
+
+  <!-- Quick Start Section -->
+  <rect x="50" y="120" width="1100" height="80" fill="#2D2D2D" stroke="#D97757" stroke-width="2" rx="2"/>
+  <text x="600" y="150" fill="#D97757" font-family="Inter, sans-serif" font-size="18" text-anchor="middle" font-weight="700">Quick Start</text>
+  <text x="600" y="175" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="13" text-anchor="middle">npm install -g @claudekit/cli</text>
+  <text x="600" y="195" fill="#98C379" font-family="Geist Mono, monospace" font-size="13" text-anchor="middle">ck new my-project</text>
+
+  <!-- Commands Grid (2 columns, 10 rows) -->
+  <!-- Column 1 -->
+  <text x="50" y="240" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="20" font-weight="700">Project Setup</text>
+
+  <!-- Command 1 -->
+  <rect x="50" y="260" width="530" height="90" fill="#2D2D2D" stroke="#61AFEF" stroke-width="1" rx="2"/>
+  <text x="70" y="285" fill="#61AFEF" font-family="Geist Mono, monospace" font-size="14" font-weight="600">ck new [name]</text>
+  <text x="70" y="310" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="11">Create a new ClaudeKit project</text>
+  <text x="70" y="330" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="10">$ ck new my-app</text>
+
+  <!-- Command 2 -->
+  <rect x="50" y="365" width="530" height="90" fill="#2D2D2D" stroke="#61AFEF" stroke-width="1" rx="2"/>
+  <text x="70" y="390" fill="#61AFEF" font-family="Geist Mono, monospace" font-size="14" font-weight="600">ck init</text>
+  <text x="70" y="415" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="11">Initialize ClaudeKit in existing project</text>
+  <text x="70" y="435" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="10">$ ck init --kit engineer</text>
+
+  <!-- Command 3 -->
+  <rect x="50" y="470" width="530" height="90" fill="#2D2D2D" stroke="#61AFEF" stroke-width="1" rx="2"/>
+  <text x="70" y="495" fill="#61AFEF" font-family="Geist Mono, monospace" font-size="14" font-weight="600">ck install [kit]</text>
+  <text x="70" y="520" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="11">Install additional kit</text>
+  <text x="70" y="540" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="10">$ ck install marketing</text>
+
+  <text x="50" y="590" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="20" font-weight="700">Agent Management</text>
+
+  <!-- Command 4 -->
+  <rect x="50" y="610" width="530" height="90" fill="#2D2D2D" stroke="#E5C07B" stroke-width="1" rx="2"/>
+  <text x="70" y="635" fill="#E5C07B" font-family="Geist Mono, monospace" font-size="14" font-weight="600">ck agent [name]</text>
+  <text x="70" y="660" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="11">Run specific agent</text>
+  <text x="70" y="680" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="10">$ ck agent fullstack-developer</text>
+
+  <!-- Command 5 -->
+  <rect x="50" y="715" width="530" height="90" fill="#2D2D2D" stroke="#E5C07B" stroke-width="1" rx="2"/>
+  <text x="70" y="740" fill="#E5C07B" font-family="Geist Mono, monospace" font-size="14" font-weight="600">ck agent:list</text>
+  <text x="70" y="765" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="11">List all available agents</text>
+  <text x="70" y="785" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="10">$ ck agent:list</text>
+
+  <!-- Command 6 -->
+  <rect x="50" y="820" width="530" height="90" fill="#2D2D2D" stroke="#E5C07B" stroke-width="1" rx="2"/>
+  <text x="70" y="845" fill="#E5C07B" font-family="Geist Mono, monospace" font-size="14" font-weight="600">ck agent:create [name]</text>
+  <text x="70" y="870" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="11">Create custom agent</text>
+  <text x="70" y="890" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="10">$ ck agent:create my-custom-agent</text>
+
+  <text x="50" y="940" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="20" font-weight="700">Workflow Commands</text>
+
+  <!-- Command 7 -->
+  <rect x="50" y="960" width="530" height="90" fill="#2D2D2D" stroke="#98C379" stroke-width="1" rx="2"/>
+  <text x="70" y="985" fill="#98C379" font-family="Geist Mono, monospace" font-size="14" font-weight="600">ck plan [task]</text>
+  <text x="70" y="1010" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="11">Create execution plan for task</text>
+  <text x="70" y="1030" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="10">$ ck plan "Add authentication"</text>
+
+  <!-- Command 8 -->
+  <rect x="50" y="1065" width="530" height="90" fill="#2D2D2D" stroke="#98C379" stroke-width="1" rx="2"/>
+  <text x="70" y="1090" fill="#98C379" font-family="Geist Mono, monospace" font-size="14" font-weight="600">ck execute [plan]</text>
+  <text x="70" y="1115" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="11">Execute a saved plan</text>
+  <text x="70" y="1135" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="10">$ ck execute plans/auth-plan.md</text>
+
+  <!-- Command 9 -->
+  <rect x="50" y="1170" width="530" height="90" fill="#2D2D2D" stroke="#98C379" stroke-width="1" rx="2"/>
+  <text x="70" y="1195" fill="#98C379" font-family="Geist Mono, monospace" font-size="14" font-weight="600">ck review</text>
+  <text x="70" y="1220" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="11">Review code changes</text>
+  <text x="70" y="1240" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="10">$ ck review --pr 123</text>
+
+  <text x="50" y="1290" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="20" font-weight="700">Utilities</text>
+
+  <!-- Command 10 -->
+  <rect x="50" y="1310" width="530" height="90" fill="#2D2D2D" stroke="#D97757" stroke-width="1" rx="2"/>
+  <text x="70" y="1335" fill="#D97757" font-family="Geist Mono, monospace" font-size="14" font-weight="600">ck docs [topic]</text>
+  <text x="70" y="1360" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="11">Open documentation</text>
+  <text x="70" y="1380" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="10">$ ck docs agents</text>
+
+  <!-- Column 2 -->
+  <text x="620" y="240" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="20" font-weight="700">Content & Marketing</text>
+
+  <!-- Command 11 -->
+  <rect x="620" y="260" width="530" height="90" fill="#2D2D2D" stroke="#E5C07B" stroke-width="1" rx="2"/>
+  <text x="640" y="285" fill="#E5C07B" font-family="Geist Mono, monospace" font-size="14" font-weight="600">ck content:create [type]</text>
+  <text x="640" y="310" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="11">Generate content</text>
+  <text x="640" y="330" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="10">$ ck content:create blog-post</text>
+
+  <!-- Command 12 -->
+  <rect x="620" y="365" width="530" height="90" fill="#2D2D2D" stroke="#E5C07B" stroke-width="1" rx="2"/>
+  <text x="640" y="390" fill="#E5C07B" font-family="Geist Mono, monospace" font-size="14" font-weight="600">ck campaign:new [name]</text>
+  <text x="640" y="415" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="11">Create new campaign</text>
+  <text x="640" y="435" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="10">$ ck campaign:new product-launch</text>
+
+  <!-- Command 13 -->
+  <rect x="620" y="470" width="530" height="90" fill="#2D2D2D" stroke="#E5C07B" stroke-width="1" rx="2"/>
+  <text x="640" y="495" fill="#E5C07B" font-family="Geist Mono, monospace" font-size="14" font-weight="600">ck seo:audit</text>
+  <text x="640" y="520" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="11">Run SEO audit</text>
+  <text x="640" y="540" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="10">$ ck seo:audit --url example.com</text>
+
+  <text x="620" y="590" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="20" font-weight="700">Development</text>
+
+  <!-- Command 14 -->
+  <rect x="620" y="610" width="530" height="90" fill="#2D2D2D" stroke="#61AFEF" stroke-width="1" rx="2"/>
+  <text x="640" y="635" fill="#61AFEF" font-family="Geist Mono, monospace" font-size="14" font-weight="600">ck generate [type]</text>
+  <text x="640" y="660" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="11">Generate code components</text>
+  <text x="640" y="680" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="10">$ ck generate component Button</text>
+
+  <!-- Command 15 -->
+  <rect x="620" y="715" width="530" height="90" fill="#2D2D2D" stroke="#61AFEF" stroke-width="1" rx="2"/>
+  <text x="640" y="740" fill="#61AFEF" font-family="Geist Mono, monospace" font-size="14" font-weight="600">ck test</text>
+  <text x="640" y="765" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="11">Run test suite</text>
+  <text x="640" y="785" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="10">$ ck test --coverage</text>
+
+  <!-- Command 16 -->
+  <rect x="620" y="820" width="530" height="90" fill="#2D2D2D" stroke="#61AFEF" stroke-width="1" rx="2"/>
+  <text x="640" y="845" fill="#61AFEF" font-family="Geist Mono, monospace" font-size="14" font-weight="600">ck deploy</text>
+  <text x="640" y="870" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="11">Deploy to production</text>
+  <text x="640" y="890" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="10">$ ck deploy --env production</text>
+
+  <text x="620" y="940" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="20" font-weight="700">Configuration</text>
+
+  <!-- Command 17 -->
+  <rect x="620" y="960" width="530" height="90" fill="#2D2D2D" stroke="#D97757" stroke-width="1" rx="2"/>
+  <text x="640" y="985" fill="#D97757" font-family="Geist Mono, monospace" font-size="14" font-weight="600">ck config set [key] [value]</text>
+  <text x="640" y="1010" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="11">Set configuration value</text>
+  <text x="640" y="1030" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="10">$ ck config set api.key sk-xxx</text>
+
+  <!-- Command 18 -->
+  <rect x="620" y="1065" width="530" height="90" fill="#2D2D2D" stroke="#D97757" stroke-width="1" rx="2"/>
+  <text x="640" y="1090" fill="#D97757" font-family="Geist Mono, monospace" font-size="14" font-weight="600">ck config list</text>
+  <text x="640" y="1115" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="11">Show all config values</text>
+  <text x="640" y="1135" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="10">$ ck config list</text>
+
+  <!-- Command 19 -->
+  <rect x="620" y="1170" width="530" height="90" fill="#2D2D2D" stroke="#D97757" stroke-width="1" rx="2"/>
+  <text x="640" y="1195" fill="#D97757" font-family="Geist Mono, monospace" font-size="14" font-weight="600">ck update</text>
+  <text x="640" y="1220" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="11">Update ClaudeKit CLI</text>
+  <text x="640" y="1240" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="10">$ ck update</text>
+
+  <!-- Command 20 -->
+  <rect x="620" y="1310" width="530" height="90" fill="#2D2D2D" stroke="#D97757" stroke-width="1" rx="2"/>
+  <text x="640" y="1335" fill="#D97757" font-family="Geist Mono, monospace" font-size="14" font-weight="600">ck --help</text>
+  <text x="640" y="1360" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="11">Show help for any command</text>
+  <text x="640" y="1380" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="10">$ ck agent --help</text>
+
+  <!-- Footer Tips -->
+  <rect x="50" y="1430" width="1100" height="140" fill="#2D2D2D" stroke="#98C379" stroke-width="1" rx="2"/>
+  <text x="600" y="1460" fill="#98C379" font-family="Inter, sans-serif" font-size="16" text-anchor="middle" font-weight="700">Pro Tips</text>
+
+  <text x="100" y="1490" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="12">💡 Use</text>
+  <text x="145" y="1490" fill="#61AFEF" font-family="Geist Mono, monospace" font-size="12">ck [command] --help</text>
+  <text x="290" y="1490" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="12">for detailed options</text>
+
+  <text x="100" y="1515" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="12">🔧 All commands support</text>
+  <text x="265" y="1515" fill="#E5C07B" font-family="Geist Mono, monospace" font-size="12">--verbose</text>
+  <text x="340" y="1515" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="12">flag for debug output</text>
+
+  <text x="100" y="1540" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="12">⚡ Use</text>
+  <text x="145" y="1540" fill="#98C379" font-family="Geist Mono, monospace" font-size="12">ck alias</text>
+  <text x="215" y="1540" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="12">to create shortcuts for frequently used commands</text>
+
+  <text x="600" y="1563" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" font-style="italic">
+    Full documentation: docs.claudekit.cc
+  </text>
+
+  <!-- NOTE: This SVG is a placeholder. Final PNG infographic should include: -->
+  <!-- - Professional command card layout with icons -->
+  <!-- - Color-coded categories with visual separation -->
+  <!-- - Command flags and options tables -->
+  <!-- - Real terminal screenshots showing command outputs -->
+  <!-- - Keyboard shortcut indicators -->
+  <!-- - Difficulty indicators (beginner/intermediate/advanced) -->
+  <!-- - Export as high-res PNG (2400x3200px for printable poster) -->
+</svg>

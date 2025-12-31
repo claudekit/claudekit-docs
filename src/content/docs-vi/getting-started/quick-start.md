@@ -288,8 +288,8 @@ A: Có. Sửa `.claude/agents/*.md` để điều chỉnh hành vi. Xem [Custom 
 
 **Khái Niệm Cốt Lõi**:
 - [Kiến Trúc](/docs/core-concepts/architecture) - Cách ClaudeKit hoạt động
-- [Tổng Quan Agents](/docs/agents/) - Gặp gỡ đội ngũ AI
-- [Hướng Dẫn Commands](/docs/commands/) - Tất cả 30+ lệnh
+- [Tổng Quan Agents](/docs/engineer/agents/) - Gặp gỡ đội ngũ AI
+- [Hướng Dẫn Commands](/docs/engineer/commands/) - Tất cả 30+ lệnh
 
 **Sử Dụng Thực Tế**:
 - [Bắt Đầu Dự Án Mới](/docs/use-cases/starting-new-project)

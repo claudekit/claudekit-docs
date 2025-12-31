@@ -666,16 +666,16 @@ After fixing bugs, improve processes:
 - [Refactoring Code](/docs/use-cases/refactoring-code) - Code quality
 
 ### Related Commands
-- [/fix:fast](/docs/commands/fix/fast) - Quick bug fixes
-- [/fix:hard](/docs/commands/fix/hard) - Complex debugging
-- [/fix:logs](/docs/commands/fix/logs) - Log analysis
-- [/fix:ui](/docs/commands/fix/ui) - UI bug fixes
-- [/fix:ci](/docs/commands/fix/ci) - CI/CD fixes
-- [/test](/docs/commands/core/test) - Test suite
+- [/fix:fast](/docs/engineer/commands/fix/fast) - Quick bug fixes
+- [/fix:hard](/docs/engineer/commands/fix/hard) - Complex debugging
+- [/fix:logs](/docs/engineer/commands/fix/logs) - Log analysis
+- [/fix:ui](/docs/engineer/commands/fix/ui) - UI bug fixes
+- [/fix:ci](/docs/engineer/commands/fix/ci) - CI/CD fixes
+- [/test](/docs/engineer/commands/core/test) - Test suite
 
 ### Further Reading
-- [Debugger Agent](/docs/agents/debugger) - Debugging capabilities
-- [Tester Agent](/docs/agents/tester) - Testing features
+- [Debugger Agent](/docs/engineer/agents/debugger) - Debugging capabilities
+- [Tester Agent](/docs/engineer/agents/tester) - Testing features
 - [Troubleshooting](/docs/troubleshooting) - Common issues
 
 ---

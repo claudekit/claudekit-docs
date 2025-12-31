@@ -1,11 +1,7 @@
 ---
-title: Troubleshooting
-description: "Documentation for Troubleshooting
-description:
-section: support
-category: support/troubleshooting
-order: 1
-published: true"
+title: Khắc Phục Sự Cố
+description: "Documentation for Khắc Phục Sự Cố"
+lang: vi
 section: support
 category: support/troubleshooting
 order: 1
@@ -19,11 +15,11 @@ Quick fixes for common issues. Most problems resolve in under 5 minutes.
 ## Quick Diagnosis
 
 **Problem category?**
-- [Installation fails](#installation) → [Installation Issues](/docs/support/troubleshooting/installation-issues)
-- [Command not found or errors](#commands) → [Command Errors](/docs/support/troubleshooting/command-errors)
-- [Agent not working](#agents) → [Agent Issues](/docs/support/troubleshooting/agent-issues)
-- [API key errors](#api-keys) → [API Key Setup](/docs/support/troubleshooting/api-key-setup)
-- [Slow or hanging](#performance) → [Performance Issues](/docs/support/troubleshooting/performance-issues)
+- [Installation fails](#installation) → [Installation Issues](/docs/troubleshooting/installation-issues)
+- [Command not found or errors](#commands) → [Command Errors](/docs/troubleshooting/command-errors)
+- [Agent not working](#agents) → [Agent Issues](/docs/troubleshooting/agent-issues)
+- [API key errors](#api-keys) → [API Key Setup](/docs/troubleshooting/api-key-setup)
+- [Slow or hanging](#performance) → [Performance Issues](/docs/troubleshooting/performance-issues)
 
 ## Installation
 
@@ -41,7 +37,7 @@ npm install -g claudekit-cli
 ck --version
 ```
 
-[More installation fixes →](/docs/support/troubleshooting/installation-issues)
+[More installation fixes →](/docs/troubleshooting/installation-issues)
 
 ## Commands
 
@@ -60,7 +56,7 @@ ls .claude/commands/**/*.md
 cat .claude/commands/core/cook.md
 ```
 
-[More command fixes →](/docs/support/troubleshooting/command-errors)
+[More command fixes →](/docs/troubleshooting/command-errors)
 
 ## Agents
 
@@ -79,7 +75,7 @@ ls .claude/agents/*.md
 cat .claude/agents/planner.md
 ```
 
-[More agent fixes →](/docs/support/troubleshooting/agent-issues)
+[More agent fixes →](/docs/troubleshooting/agent-issues)
 
 ## API Keys
 
@@ -95,7 +91,7 @@ echo 'SEARCH_API_KEY=your-key' >> .env
 export GEMINI_API_KEY=your-key
 ```
 
-[Complete API key guide →](/docs/support/troubleshooting/api-key-setup)
+[Complete API key guide →](/docs/troubleshooting/api-key-setup)
 
 ## Performance
 
@@ -111,7 +107,7 @@ export GEMINI_API_KEY=your-key
 /cook add feature --verbose
 ```
 
-[More performance fixes →](/docs/support/troubleshooting/performance-issues)
+[More performance fixes →](/docs/troubleshooting/performance-issues)
 
 ## Common Quick Fixes
 

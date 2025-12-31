@@ -1,0 +1,161 @@
+<svg viewBox="0 0 1200 1000" xmlns="http://www.w3.org/2000/svg">
+  <title>Workflow Selection Guide</title>
+  <desc>Decision tree to help users choose the right workflow for their project needs</desc>
+  <rect width="1200" height="1000" fill="#1E1E1E"/>
+
+  <!-- Title -->
+  <text x="600" y="45" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="32" text-anchor="middle" font-weight="700">Which Workflow Should I Use?</text>
+  <text x="600" y="75" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="13" text-anchor="middle">Decision tree to choose the right workflow for your project</text>
+
+  <!-- Start -->
+  <rect x="480" y="110" width="240" height="60" fill="#2D2D2D" stroke="#D97757" stroke-width="3" rx="20"/>
+  <text x="600" y="145" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="16" text-anchor="middle" font-weight="700">What's your goal?</text>
+
+  <!-- First Decision Level -->
+  <!-- Decision: Project Type -->
+  <path d="M 600 220 L 680 260 L 600 300 L 520 260 Z" fill="#2D2D2D" stroke="#61AFEF" stroke-width="2"/>
+  <text x="600" y="253" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="13" text-anchor="middle" font-weight="600">New project</text>
+  <text x="600" y="270" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="13" text-anchor="middle" font-weight="600">or existing?</text>
+
+  <!-- Arrow: Start to Decision -->
+  <line x1="600" y1="170" x2="600" y2="220" stroke="#D97757" stroke-width="2"/>
+
+  <!-- Branch 1: New Project -->
+  <rect x="100" y="360" width="200" height="90" fill="#2D2D2D" stroke="#98C379" stroke-width="2" rx="2"/>
+  <text x="200" y="390" fill="#98C379" font-family="Inter, sans-serif" font-size="16" text-anchor="middle" font-weight="700">New Project</text>
+  <text x="200" y="415" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="12" text-anchor="middle">ck new</text>
+  <text x="200" y="435" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Sets up complete structure</text>
+
+  <!-- Branch 2: Existing Project -->
+  <rect x="900" y="360" width="200" height="90" fill="#2D2D2D" stroke="#E5C07B" stroke-width="2" rx="2"/>
+  <text x="1000" y="390" fill="#E5C07B" font-family="Inter, sans-serif" font-size="16" text-anchor="middle" font-weight="700">Existing Project</text>
+  <text x="1000" y="415" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="12" text-anchor="middle">ck init</text>
+  <text x="1000" y="435" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Adds to current project</text>
+
+  <!-- Arrows from decision -->
+  <line x1="520" y1="260" x2="270" y2="360" stroke="#98C379" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <text x="380" y="300" fill="#98C379" font-family="Inter, sans-serif" font-size="12" font-weight="600">New</text>
+
+  <line x1="680" y1="260" x2="930" y2="360" stroke="#E5C07B" stroke-width="2" marker-end="url(#arrow-yellow)"/>
+  <text x="820" y="300" fill="#E5C07B" font-family="Inter, sans-serif" font-size="12" font-weight="600">Existing</text>
+
+  <!-- Second Decision Level: Type of work -->
+  <path d="M 200 520 L 260 555 L 200 590 L 140 555 Z" fill="#2D2D2D" stroke="#61AFEF" stroke-width="2"/>
+  <text x="200" y="548" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" font-weight="600">Type of</text>
+  <text x="200" y="563" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" font-weight="600">work?</text>
+
+  <path d="M 1000 520 L 1060 555 L 1000 590 L 940 555 Z" fill="#2D2D2D" stroke="#61AFEF" stroke-width="2"/>
+  <text x="1000" y="548" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" font-weight="600">Type of</text>
+  <text x="1000" y="563" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" font-weight="600">work?</text>
+
+  <!-- Arrows to second decision -->
+  <line x1="200" y1="450" x2="200" y2="520" stroke="#98C379" stroke-width="2"/>
+  <line x1="1000" y1="450" x2="1000" y2="520" stroke="#E5C07B" stroke-width="2"/>
+
+  <!-- Final Outcomes -->
+  <!-- Development Workflows -->
+  <rect x="50" y="660" width="180" height="110" fill="#2D2D2D" stroke="#61AFEF" stroke-width="2" rx="2"/>
+  <text x="140" y="685" fill="#61AFEF" font-family="Inter, sans-serif" font-size="14" text-anchor="middle" font-weight="700">Development</text>
+  <text x="140" y="710" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">• Code generation</text>
+  <text x="140" y="730" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">• Testing</text>
+  <text x="140" y="750" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">• Deployment</text>
+
+  <rect x="250" y="660" width="180" height="110" fill="#2D2D2D" stroke="#E5C07B" stroke-width="2" rx="2"/>
+  <text x="340" y="685" fill="#E5C07B" font-family="Inter, sans-serif" font-size="14" text-anchor="middle" font-weight="700">Marketing</text>
+  <text x="340" y="710" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">• Campaigns</text>
+  <text x="340" y="730" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">• Content</text>
+  <text x="340" y="750" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">• Analytics</text>
+
+  <!-- Existing Project Workflows -->
+  <rect x="770" y="660" width="180" height="110" fill="#2D2D2D" stroke="#98C379" stroke-width="2" rx="2"/>
+  <text x="860" y="685" fill="#98C379" font-family="Inter, sans-serif" font-size="14" text-anchor="middle" font-weight="700">Feature Add</text>
+  <text x="860" y="710" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">• Single feature</text>
+  <text x="860" y="730" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">• Quick iteration</text>
+  <text x="860" y="750" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">• Fast deployment</text>
+
+  <rect x="970" y="660" width="180" height="110" fill="#2D2D2D" stroke="#D97757" stroke-width="2" rx="2"/>
+  <text x="1060" y="685" fill="#D97757" font-family="Inter, sans-serif" font-size="14" text-anchor="middle" font-weight="700">Refactoring</text>
+  <text x="1060" y="710" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">• Code quality</text>
+  <text x="1060" y="730" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">• Performance</text>
+  <text x="1060" y="750" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">• Tech debt</text>
+
+  <!-- Arrows to outcomes -->
+  <line x1="140" y1="555" x2="120" y2="660" stroke="#61AFEF" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <text x="100" y="600" fill="#61AFEF" font-family="Inter, sans-serif" font-size="10">Dev</text>
+
+  <line x1="260" y1="555" x2="360" y2="660" stroke="#E5C07B" stroke-width="2" marker-end="url(#arrow-yellow)"/>
+  <text x="320" y="600" fill="#E5C07B" font-family="Inter, sans-serif" font-size="10">Marketing</text>
+
+  <line x1="940" y1="555" x2="840" y2="660" stroke="#98C379" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <text x="870" y="600" fill="#98C379" font-family="Inter, sans-serif" font-size="10">Feature</text>
+
+  <line x1="1060" y1="555" x2="1080" y2="660" stroke="#D97757" stroke-width="2" marker-end="url(#arrow-coral)"/>
+  <text x="1090" y="600" fill="#D97757" font-family="Inter, sans-serif" font-size="10">Refactor</text>
+
+  <!-- Recommended Commands -->
+  <rect x="50" y="800" width="1100" height="170" fill="#1E1E1E" stroke="#D97757" stroke-width="1" rx="2"/>
+  <text x="600" y="830" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="18" text-anchor="middle" font-weight="700">Recommended Commands</text>
+
+  <!-- Development -->
+  <rect x="80" y="850" width="240" height="100" fill="#2D2D2D" stroke="#61AFEF" stroke-width="1" rx="2"/>
+  <text x="200" y="870" fill="#61AFEF" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" font-weight="600">Development</text>
+  <text x="200" y="890" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">ck new my-app</text>
+  <text x="200" y="908" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">ck install engineer</text>
+  <text x="200" y="926" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">ck agent fullstack-dev</text>
+
+  <!-- Marketing -->
+  <rect x="350" y="850" width="240" height="100" fill="#2D2D2D" stroke="#E5C07B" stroke-width="1" rx="2"/>
+  <text x="470" y="870" fill="#E5C07B" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" font-weight="600">Marketing</text>
+  <text x="470" y="890" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">ck new my-campaign</text>
+  <text x="470" y="908" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">ck install marketing</text>
+  <text x="470" y="926" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">ck campaign:new launch</text>
+
+  <!-- Feature Add -->
+  <rect x="620" y="850" width="240" height="100" fill="#2D2D2D" stroke="#98C379" stroke-width="1" rx="2"/>
+  <text x="740" y="870" fill="#98C379" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" font-weight="600">Feature Add</text>
+  <text x="740" y="890" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">ck init</text>
+  <text x="740" y="908" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">ck plan "Add feature"</text>
+  <text x="740" y="926" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">ck execute plan.md</text>
+
+  <!-- Refactoring -->
+  <rect x="890" y="850" width="240" height="100" fill="#2D2D2D" stroke="#D97757" stroke-width="1" rx="2"/>
+  <text x="1010" y="870" fill="#D97757" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" font-weight="600">Refactoring</text>
+  <text x="1010" y="890" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">ck init</text>
+  <text x="1010" y="908" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">ck agent code-reviewer</text>
+  <text x="1010" y="926" fill="#E5E5E5" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">ck review --all</text>
+
+  <!-- Central workflow hub -->
+  <rect x="450" y="360" width="300" height="120" fill="#2D2D2D" stroke="#D97757" stroke-width="2" rx="2"/>
+  <text x="600" y="390" fill="#D97757" font-family="Inter, sans-serif" font-size="16" text-anchor="middle" font-weight="700">Parallel Workflows?</text>
+  <text x="600" y="415" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Need multiple workflows running?</text>
+  <text x="600" y="440" fill="#98C379" font-family="Geist Mono, monospace" font-size="12" text-anchor="middle">Use orchestrator workflow</text>
+  <text x="600" y="460" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Manages multi-agent coordination</text>
+
+  <!-- Connection from both decisions -->
+  <line x1="600" y1="300" x2="600" y2="360" stroke="#D97757" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#arrow-coral)"/>
+
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#61AFEF"/>
+    </marker>
+    <marker id="arrow-yellow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#E5C07B"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#98C379"/>
+    </marker>
+    <marker id="arrow-coral" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#D97757"/>
+    </marker>
+  </defs>
+
+  <!-- NOTE: This SVG is a placeholder. Final PNG infographic should include: -->
+  <!-- - Professional flowchart with clear decision paths -->
+  <!-- - Icons for each workflow type -->
+  <!-- - Color-coded paths for easy following -->
+  <!-- - Use case examples for each workflow -->
+  <!-- - Time estimates for each workflow type -->
+  <!-- - Complexity indicators (easy/medium/hard) -->
+  <!-- - Export as high-res PNG (2400x2000px minimum) -->
+</svg>

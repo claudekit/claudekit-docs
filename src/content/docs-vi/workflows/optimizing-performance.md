@@ -791,10 +791,10 @@ Metrics:
 - [Building a REST API](/docs/use-cases/building-api) - API development
 
 ### Related Commands
-- [/debug](/docs/commands/core/debug) - Performance profiling
-- [/cook](/docs/commands/core/cook) - Implement optimizations
-- [/fix:hard](/docs/commands/fix/hard) - Complex fixes
-- [/test](/docs/commands/core/test) - Performance testing
+- [/debug](/docs/engineer/commands/core/debug) - Performance profiling
+- [/cook](/docs/engineer/commands/core/cook) - Implement optimizations
+- [/fix:hard](/docs/engineer/commands/fix/hard) - Complex fixes
+- [/test](/docs/engineer/commands/core/test) - Performance testing
 
 ### Further Reading
 - [Web.dev Performance](https://web.dev/performance/)

@@ -1,0 +1,121 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <title>Kit Comparison Infographic</title>
+  <desc>Side-by-side comparison of Engineer Kit vs Marketing Kit features, use cases, and capabilities</desc>
+  <rect width="1200" height="800" fill="#1E1E1E"/>
+
+  <!-- Title -->
+  <text x="600" y="50" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="32" text-anchor="middle" font-weight="700">ClaudeKit: Engineer vs Marketing</text>
+  <text x="600" y="80" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="14" text-anchor="middle">Choose the right kit for your workflow</text>
+
+  <!-- Divider line -->
+  <line x1="600" y1="110" x2="600" y2="760" stroke="#A0A0A0" stroke-width="2" stroke-dasharray="5,5"/>
+
+  <!-- Engineer Kit Side (Left) -->
+  <rect x="60" y="120" width="480" height="620" fill="#2D2D2D" stroke="#61AFEF" stroke-width="2" rx="4"/>
+
+  <!-- Engineer Kit Header -->
+  <rect x="80" y="140" width="440" height="80" fill="#61AFEF" opacity="0.2" rx="2"/>
+  <text x="300" y="175" fill="#61AFEF" font-family="Inter, sans-serif" font-size="28" text-anchor="middle" font-weight="700">Engineer Kit</text>
+  <text x="300" y="205" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="13" text-anchor="middle">Development & Engineering Workflows</text>
+
+  <!-- Best For -->
+  <text x="300" y="250" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="16" text-anchor="middle" font-weight="600">Best For</text>
+  <text x="300" y="275" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">• Full-stack developers</text>
+  <text x="300" y="295" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">• Software engineers</text>
+  <text x="300" y="315" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">• DevOps teams</text>
+  <text x="300" y="335" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">• Technical projects</text>
+
+  <!-- Core Features -->
+  <rect x="100" y="360" width="400" height="150" fill="#1E1E1E" stroke="#61AFEF" stroke-width="1" rx="2"/>
+  <text x="300" y="385" fill="#61AFEF" font-family="Inter, sans-serif" font-size="14" text-anchor="middle" font-weight="600">Core Features</text>
+
+  <text x="120" y="410" fill="#98C379" font-family="Inter, sans-serif" font-size="13">✓</text>
+  <text x="145" y="410" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11">Multi-agent orchestration</text>
+
+  <text x="120" y="430" fill="#98C379" font-family="Inter, sans-serif" font-size="13">✓</text>
+  <text x="145" y="430" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11">Code generation & review</text>
+
+  <text x="120" y="450" fill="#98C379" font-family="Inter, sans-serif" font-size="13">✓</text>
+  <text x="145" y="450" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11">Testing automation</text>
+
+  <text x="120" y="470" fill="#98C379" font-family="Inter, sans-serif" font-size="13">✓</text>
+  <text x="145" y="470" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11">Documentation generation</text>
+
+  <text x="120" y="490" fill="#98C379" font-family="Inter, sans-serif" font-size="13">✓</text>
+  <text x="145" y="490" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11">CI/CD integration</text>
+
+  <!-- Agents -->
+  <rect x="100" y="525" width="400" height="100" fill="#1E1E1E" stroke="#61AFEF" stroke-width="1" rx="2"/>
+  <text x="300" y="545" fill="#61AFEF" font-family="Inter, sans-serif" font-size="14" text-anchor="middle" font-weight="600">Included Agents</text>
+  <text x="300" y="565" fill="#A0A0A0" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">fullstack-developer</text>
+  <text x="300" y="582" fill="#A0A0A0" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">qa-engineer</text>
+  <text x="300" y="599" fill="#A0A0A0" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">devops-specialist</text>
+  <text x="300" y="616" fill="#A0A0A0" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">code-reviewer</text>
+
+  <!-- Use Cases -->
+  <rect x="100" y="640" width="400" height="80" fill="#61AFEF" opacity="0.15" rx="2"/>
+  <text x="300" y="660" fill="#61AFEF" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" font-weight="600">Use Cases</text>
+  <text x="300" y="680" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Building web apps • API development</text>
+  <text x="300" y="697" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Infrastructure setup • Bug fixes</text>
+  <text x="300" y="714" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Code refactoring • Performance optimization</text>
+
+  <!-- Marketing Kit Side (Right) -->
+  <rect x="660" y="120" width="480" height="620" fill="#2D2D2D" stroke="#E5C07B" stroke-width="2" rx="4"/>
+
+  <!-- Marketing Kit Header -->
+  <rect x="680" y="140" width="440" height="80" fill="#E5C07B" opacity="0.2" rx="2"/>
+  <text x="900" y="175" fill="#E5C07B" font-family="Inter, sans-serif" font-size="28" text-anchor="middle" font-weight="700">Marketing Kit</text>
+  <text x="900" y="205" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="13" text-anchor="middle">Campaign & Content Workflows</text>
+
+  <!-- Best For -->
+  <text x="900" y="250" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="16" text-anchor="middle" font-weight="600">Best For</text>
+  <text x="900" y="275" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">• Marketing teams</text>
+  <text x="900" y="295" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">• Content creators</text>
+  <text x="900" y="315" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">• Growth hackers</text>
+  <text x="900" y="335" fill="#A0A0A0" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">• Digital agencies</text>
+
+  <!-- Core Features -->
+  <rect x="700" y="360" width="400" height="150" fill="#1E1E1E" stroke="#E5C07B" stroke-width="1" rx="2"/>
+  <text x="900" y="385" fill="#E5C07B" font-family="Inter, sans-serif" font-size="14" text-anchor="middle" font-weight="600">Core Features</text>
+
+  <text x="720" y="410" fill="#98C379" font-family="Inter, sans-serif" font-size="13">✓</text>
+  <text x="745" y="410" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11">Campaign automation</text>
+
+  <text x="720" y="430" fill="#98C379" font-family="Inter, sans-serif" font-size="13">✓</text>
+  <text x="745" y="430" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11">Content generation</text>
+
+  <text x="720" y="450" fill="#98C379" font-family="Inter, sans-serif" font-size="13">✓</text>
+  <text x="745" y="450" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11">SEO optimization</text>
+
+  <text x="720" y="470" fill="#98C379" font-family="Inter, sans-serif" font-size="13">✓</text>
+  <text x="745" y="470" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11">Email automation</text>
+
+  <text x="720" y="490" fill="#98C379" font-family="Inter, sans-serif" font-size="13">✓</text>
+  <text x="745" y="490" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="11">Analytics & reporting</text>
+
+  <!-- Agents -->
+  <rect x="700" y="525" width="400" height="100" fill="#1E1E1E" stroke="#E5C07B" stroke-width="1" rx="2"/>
+  <text x="900" y="545" fill="#E5C07B" font-family="Inter, sans-serif" font-size="14" text-anchor="middle" font-weight="600">Included Agents</text>
+  <text x="900" y="565" fill="#A0A0A0" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">content-writer</text>
+  <text x="900" y="582" fill="#A0A0A0" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">campaign-manager</text>
+  <text x="900" y="599" fill="#A0A0A0" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">seo-specialist</text>
+  <text x="900" y="616" fill="#A0A0A0" font-family="Geist Mono, monospace" font-size="10" text-anchor="middle">analytics-reporter</text>
+
+  <!-- Use Cases -->
+  <rect x="700" y="640" width="400" height="80" fill="#E5C07B" opacity="0.15" rx="2"/>
+  <text x="900" y="660" fill="#E5C07B" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" font-weight="600">Use Cases</text>
+  <text x="900" y="680" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Blog content • Social campaigns</text>
+  <text x="900" y="697" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Email sequences • Landing pages</text>
+  <text x="900" y="714" fill="#E5E5E5" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">SEO audits • Performance tracking</text>
+
+  <!-- Bottom note -->
+  <text x="600" y="785" fill="#D97757" font-family="Inter, sans-serif" font-size="11" text-anchor="middle" font-style="italic">💡 Can use both kits together for full-stack marketing + engineering workflows</text>
+
+  <!-- NOTE: This SVG is a placeholder. Final PNG infographic should be designed with: -->
+  <!-- - Professional color-coded sections with icons -->
+  <!-- - Feature comparison matrix with checkmarks and X marks -->
+  <!-- - Visual pricing comparison if applicable -->
+  <!-- - Screenshots or mockups of each kit in action -->
+  <!-- - Professional typography and spacing -->
+  <!-- - Export as high-res PNG (2400x1600px minimum) -->
+</svg>

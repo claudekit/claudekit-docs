@@ -35,3 +35,24 @@
 # Troubleshooting → Support
 /docs/troubleshooting /docs/support/troubleshooting 301
 /docs/troubleshooting/* /docs/support/troubleshooting/:splat 301
+
+# Engineer Documentation Migration (Phases 02-04) - Added 2025-12-30
+# Legacy /docs/docs/* → /docs/engineer/*
+
+# English redirects - Engineer docs
+/docs/agents/*              /docs/engineer/agents/:splat          301
+/docs/commands/*            /docs/engineer/commands/:splat        301
+/docs/skills/*              /docs/engineer/skills/:splat          301
+/docs/configuration/*       /docs/engineer/configuration/:splat   301
+
+# Vietnamese equivalents
+/vi/docs/agents/*           /vi/docs/engineer/agents/:splat       301
+/vi/docs/commands/*         /vi/docs/engineer/commands/:splat     301
+/vi/docs/skills/*           /vi/docs/engineer/skills/:splat       301
+/vi/docs/configuration/*    /vi/docs/engineer/configuration/:splat 301
+
+# Legacy index pages
+/docs/agents                /docs/engineer/agents                 301
+/docs/commands              /docs/engineer/commands               301
+/docs/skills                /docs/engineer/skills                 301
+/docs/configuration         /docs/engineer/configuration          301

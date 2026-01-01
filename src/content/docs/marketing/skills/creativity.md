@@ -1,143 +1,142 @@
 ---
-title: "Sáng tạo"
-description: "Hướng dẫn sáng tạo cho tiếp thị kỹ thuật số với 55 mẫu phong cách, tâm lý học màu sắc, hướng dẫn voice-over và xu hướng hình ảnh 2025-2026."
-lang: vi
+title: "Creativity"
+description: "Creative direction for digital marketing with 55 style templates, color psychology, voiceover guidance, and 2025-2026 visual trends."
 section: marketing
 category: skills
 order: 15
 ---
 
-> Định hướng các chiến dịch sáng tạo một cách có hệ thống với các mẫu phong cách đã chứng minh, khung tâm lý học màu sắc và thực tiễn tốt nhất theo nền tảng cho tiếp thị kỹ thuật số.
+> Systematically direct creative campaigns with proven style templates, color psychology frameworks, and platform-specific best practices for digital marketing.
 
-## Kỹ năng này làm gì
+## What This Skill Does
 
-**Thách thức**: Định hướng sáng tạo đòi hỏi cân bằng nhận diện thương hiệu, sở thích khán giả, yêu cầu nền tảng và nhận thức về xu hướng. Hầu hết các nhóm thiếu khung công tác có hệ thống cho các quyết định sáng tạo.
+**The Challenge**: Creative direction requires balancing brand identity, audience preferences, platform requirements, and trend awareness. Most teams lack systematic frameworks for creative decisions.
 
-**Giải pháp**: Kỹ năng Sáng tạo cung cấp 55 mẫu phong cách sáng tạo với từ khóa sẵn sàng sao chép, khung tâm lý học màu sắc, hướng dẫn phong cách voice-over, xu hướng âm nhạc và xu hướng thiết kế hình ảnh 2025-2026. Bao gồm các thông số kỹ thuật theo nền tảng và mẫu brief sáng tạo.
+**The Solution**: Creativity skill provides 55 creative style templates with copy-ready keywords, color psychology frameworks, voiceover style guidance, music trends, and 2025-2026 visual design trends. Includes platform-specific specs and creative brief templates.
 
-## Kích hoạt
+## Activation
 
-**Ngầm**: Kích hoạt khi các agents thảo luận về định hướng sáng tạo, các khái niệm chiến dịch, phong cách hình ảnh hoặc thiết kế nội dung.
+**Implicit**: Activates when agents discuss creative direction, campaign concepts, visual styles, or content design.
 
-**Rõ ràng**: Kích hoạt qua prompt:
+**Explicit**: Activate via prompt:
 ```
-Kích hoạt skill creativity để [mô tả task]
+Activate creativity skill to [describe task]
 ```
 
-## Khả năng
+## Capabilities
 
-### 1. Lựa chọn phong cách sáng tạo
-55 phong cách được định sẵn với từ khóa, bảng màu và độ phù hợp nền tảng.
+### 1. Creative Style Selection
+55 pre-defined styles with keywords, color palettes, and platform suitability.
 
-**Danh mục phong cách**:
-- **Cao cấp/Sang trọng**: Minimalist sạch sẽ, Quiet Luxury, Dark Moody Cinematic
+**Style Categories**:
+- **Premium/Luxury**: Clean Minimalist, Quiet Luxury, Dark Moody Cinematic
 - **Tech/SaaS**: Futuristic Sci-Fi, Gradient Smooth, Bold Geometric
-- **Thanh niên/Gen Z**: Raw Unpolished, Humor, Nostalgic 90s, Neon Cyber
-- **Wellness/Hữu cơ**: Earthy Natural, Emotional Storytelling, Pastel Soft
-- **B2B/Tài chính**: Authoritative Expert, Data Visualization, Formal Professional
-- **Cộng đồng**: User-Generated, Conversational Casual, Behind-the-Scenes
+- **Youth/Gen Z**: Raw Unpolished, Humor, Nostalgic 90s, Neon Cyber
+- **Wellness/Organic**: Earthy Natural, Emotional Storytelling, Pastel Soft
+- **B2B/Finance**: Authoritative Expert, Data Visualization, Formal Professional
+- **Community**: User-Generated, Conversational Casual, Behind-the-Scenes
 
-**Danh mục phong cách**:
-- Phần 1: `references/creative-styles-part1.md` (Phong cách 1-25)
-- Phần 2: `references/creative-styles-part2.md` (Phong cách 26-55)
+**Style Catalog**:
+- Part 1: `references/creative-styles-part1.md` (Styles 1-25)
+- Part 2: `references/creative-styles-part2.md` (Styles 26-55)
 
-### 2. Khung tâm lý học màu sắc
-Ý nghĩa màu sắc, kết hợp và các liên kết cảm xúc.
+### 2. Color Psychology Framework
+Color meanings, combinations, and emotional associations.
 
-**Thống kê chính**:
-- Màu sắc dẫn 85% quyết định mua hàng
-- Nhận diện thương hiệu +80% với các màu sắc nhất quán
-- Xanh = niềm tin (được sử dụng bởi 33% thương hiệu hàng đầu)
-- Đỏ = cấp bách (tăng nhịp tim 12%)
+**Key Stats**:
+- Color drives 85% of purchase decisions
+- +80% brand recognition with consistent colors
+- Blue = trust (used by 33% of top brands)
+- Red = urgency (increases heart rate 12%)
 
-**Hướng dẫn màu sắc**: `references/color-psychology.md`
+**Color Guide**: `references/color-psychology.md`
 
-### 3. Thông số kỹ thuật sáng tạo dành riêng cho nền tảng
-Tỉ lệ khung hình, độ dài và ghi chú phong cách theo nền tảng.
+### 3. Platform-Specific Creative Specs
+Aspect ratios, duration, and style notes by platform.
 
-**Thông số nền tảng**:
-| Nền tảng | Tỷ lệ | Độ dài | Ghi chú phong cách |
-|----------|-------|--------|------------|
-| TikTok | 9:16 | 15-60s | Raw, trending sounds, hook trong 3s |
+**Platform Specs**:
+| Platform | Ratio | Duration | Style Notes |
+|----------|-------|----------|-------------|
+| TikTok | 9:16 | 15-60s | Raw, trending sounds, hook in 3s |
 | Instagram Reels | 9:16 | 15-90s | Polished-authentic, music-driven |
 | YouTube | 16:9 | 30s-10m | Story arc, high production value |
 | LinkedIn | 1:1, 4:5 | 30s-2m | Professional, value-first |
 | Stories | 9:16 | 15s | Immediate hook, swipe CTA |
 
-**Thông số đầy đủ**: Thông số nền tảng được đề cập trong kỹ năng mạng xã hội
+**Full Specs**: Platform specs referenced in social-media skill
 
-## Yêu cầu trước
+## Prerequisites
 
-- Hướng dẫn thương hiệu (để kiểm tra căn chỉnh)
-- Mục tiêu chiến dịch và khán giả mục tiêu
-- Ràng buộc ngân sách (ảnh hưởng đến độ phức tạp sản xuất)
+- Brand guidelines (to verify alignment)
+- Campaign goals and target audience
+- Budget constraints (impacts production complexity)
 
-## Cấu hình
+## Configuration
 
-Không cần cấu hình. Kỹ năng cung cấp khung công tác sáng tạo và tài liệu tham khảo.
+No configuration needed. Skill provides creative frameworks and reference docs.
 
-**Tùy chọn**: Lưu các brief sáng tạo dành riêng cho chiến dịch trong `assets/briefs/` để tái sử dụng.
+**Optional**: Save campaign-specific creative briefs in `assets/briefs/` for reuse.
 
-## Thực hành tốt nhất
+## Best Practices
 
-**1. Xác thực đánh bại đã đánh bại**
-92% người tiêu dùng thích nội dung xác thực hơn quảng cáo đã đánh bại. Ưu tiên thực tế hơn hoàn hảo.
+**1. Authenticity Beats Polish**
+92% of consumers prefer authentic content over polished ads. Prioritize real over perfect.
 
-**2. Thiết kế cho âm thanh tắt trước tiên**
-80% video trên mạng xã hội được xem với âm thanh tắt. Thêm phụ đề và kể chuyện hình ảnh.
+**2. Design for Sound-Off First**
+80% of social videos viewed with sound off. Add captions and visual storytelling.
 
-**3. Móc trong 3 giây đầu tiên**
-Khoảng thời gian chú ý trung bình: 8 giây. Dẫn đầu với vấn đề hoặc lời hứa ngay lập tức.
+**3. Hook in First 3 Seconds**
+Average attention span: 8 seconds. Lead with problem or promise immediately.
 
-## Use cases phổ biến
+## Common Use Cases
 
-### Use Case 1: Creative Brief quảng cáo TikTok
-**Kịch bản**: Tạo hướng dẫn sáng tạo cho quảng cáo ra mắt sản phẩm TikTok.
+### Use Case 1: TikTok Ad Creative Brief
+**Scenario**: Create creative direction for TikTok product launch ad.
 
-**Quy trình**:
-1. Chọn phong cách: "Raw Unpolished" (phù hợp với tính xác thực TikTok)
-2. Thông số nền tảng: 9:16 dọc, 15-30 giây
-3. Bảng màu: Màu thương hiệu + trending (kiểm tra TikTok Creative Center)
-4. Voice-over: Trò chuyện, Gen Z slang có thể chấp nhận được
-5. Âm nhạc: Trending sound (kiểm tra thư viện TikTok)
-6. Hook: Lợi ích sản phẩm trong 3 giây đầu tiên
-7. CTA: "Link in bio" hoặc "Shop now"
+**Workflow**:
+1. Select style: "Raw Unpolished" (fits TikTok authenticity)
+2. Platform specs: 9:16 vertical, 15-30 seconds
+3. Color palette: Brand colors + trending (check TikTok Creative Center)
+4. Voice-over: Conversational, acceptable Gen Z slang
+5. Music: Trending sound (check TikTok library)
+6. Hook: Product benefit in first 3 seconds
+7. CTA: "Link in bio" or "Shop now"
 
-**Kết quả**: Creative brief với tài liệu tham khảo phong cách, thông số kỹ thuật và ghi chú sản xuất.
+**Output**: Creative brief with style references, technical specs, and production notes.
 
-### Use Case 2: Làm mới thương hiệu hướng dẫn hình ảnh
-**Kịch bản**: Hiện đại hóa nhận diện hình ảnh trong khi duy trì nhận diện thương hiệu.
+### Use Case 2: Brand Refresh Visual Direction
+**Scenario**: Modernize visual identity while maintaining brand recognition.
 
-**Quy trình**:
-1. Xem xét thương hiệu hiện tại (cái gì hoạt động, cái gì lỗi thời)
-2. Xu hướng nghiên cứu: `references/visual-trends.md` (xu hướng 2025-2026)
-3. Chọn 2-3 phong cách tương thích (ví dụ: Minimalist Clean + Bold Typography + Gradient accents)
-4. Định nghĩa tiến hóa màu sắc (giữ màu chính, cập nhật phụ)
-5. Tạo mood board với tài liệu tham khảo phong cách
-6. Ghi lại trong cập nhật hướng dẫn thương hiệu
+**Workflow**:
+1. Review current brand (what works, what's outdated)
+2. Research trends: `references/visual-trends.md` (2025-2026 trends)
+3. Select 2-3 compatible styles (e.g., Minimalist Clean + Bold Typography + Gradient accents)
+4. Define color evolution (keep primary colors, update secondaries)
+5. Create mood board with style references
+6. Document in brand guidelines update
 
-**Kết quả**: Tài liệu hướng dẫn hình ảnh với so sánh trước/sau và lộ trình triển khai.
+**Output**: Visual direction document with before/after comparisons and rollout roadmap.
 
-## Xử lý sự cố
+## Troubleshooting
 
-**Vấn đề**: Sáng tạo cảm thấy chung chung, không phân biệt
-**Giải pháp**: Lớp 2-3 phong cách (ví dụ: Minimalist + Neon accents + Hand-drawn elements). Các kết hợp độc đáo tạo thương hiệu đáng nhớ.
+**Issue**: Creative feels generic, undifferentiated
+**Solution**: Layer 2-3 styles (e.g., Minimalist + Neon accents + Hand-drawn elements). Unique combinations create memorable brands.
 
-**Vấn đề**: Engagement thấp mặc dù tuân theo thực tiễn tốt nhất
-**Giải pháp**: Kiểm tra các biến thể sáng tạo (3-5). Những gì hoạt động cho người khác có thể không hoạt động cho khán giả của bạn. A/B test liên tục.
+**Issue**: Low engagement despite following best practices
+**Solution**: Test creative variations (3-5). What works for others may not work for your audience. A/B test continuously.
 
-**Vấn đề**: Sáng tạo không phù hợp với hướng dẫn thương hiệu
-**Giải pháp**: Sử dụng kỹ năng brand-guidelines để trích xuất ngữ cảnh thương hiệu. Bao gồm trong creative brief để đảm bảo căn chỉnh.
+**Issue**: Creative doesn't align with brand guidelines
+**Solution**: Use brand-guidelines skill to extract brand context. Include in creative brief to ensure alignment.
 
-## Kỹ năng liên quan
+## Related Skills
 
-- [Brand Guidelines](/vi/docs/marketing/skills/brand-guidelines) - Căn chỉnh và xác thực thương hiệu
-- [AI Multimodal](/vi/docs/marketing/skills/ai-multimodal) - Tạo nội dung sáng tạo với Imagen 4
-- [AI Artist](/vi/docs/marketing/skills/ai-artist) - Kỹ thuật nhắc nhở cho hình ảnh
-- [Social Media](/vi/docs/marketing/skills/social-media) - Yêu cầu sáng tạo dành riêng cho nền tảng
+- [Brand Guidelines](/docs/marketing/skills/brand-guidelines) - Brand alignment and validation
+- [AI Multimodal](/docs/marketing/skills/ai-multimodal) - Generate creative content with Imagen 4
+- [AI Artist](/docs/marketing/skills/ai-artist) - Prompt engineering for imagery
+- [Social Media](/docs/marketing/skills/social-media) - Platform-specific creative requirements
 
-## Lệnh liên quan
+## Related Commands
 
-- `/design/good` - Tạo creative brief
-- `/design/screenshot` - Phân tích ảnh chụp màn hình thiết kế
-- `/design/video` - Lập kế hoạch sáng tạo video
+- `/design/good` - Generate creative brief
+- `/design/screenshot` - Analyze design screenshots
+- `/design/video` - Plan video creative

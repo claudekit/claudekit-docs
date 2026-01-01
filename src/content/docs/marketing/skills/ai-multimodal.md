@@ -1,204 +1,203 @@
 ---
 title: "AI Multimodal"
-description: "Xử lý và tạo nội dung đa phương tiện với Google Gemini API: phiên âm âm thanh, phân tích hình ảnh, xử lý video, Imagen 4 và Veo 3."
-lang: vi
+description: "Process and generate multimedia content with Google Gemini API: audio transcription, image analysis, video processing, Imagen 4, and Veo 3."
 section: marketing
 category: skills
 order: 17
 ---
 
-> Tạo hình ảnh và video, phân tích các tệp đa phương tiện và xử lý tài liệu bằng các khả năng AI đa phương tiện của Google Gemini.
+> Generate images and videos, analyze multimedia files, and process documents using Google Gemini's multimodal AI capabilities.
 
-## Skill Này Làm Gì
+## What This Skill Does
 
-**Thách Thức**: Tiếp thị đòi hỏi xử lý các phương tiện đa dạng (âm thanh, hình ảnh, video, PDF) và tạo nội dung hình ảnh. Sử dụng các công cụ riêng biệt cho mỗi định dạng không hiệu quả và tốn kém.
+**Challenge**: Marketing requires processing diverse media (audio, images, videos, PDFs) and creating visual content. Using separate tools for each format is inefficient and expensive.
 
-**Giải Pháp**: Skill AI Multimodal tích hợp Google Gemini API để phiên âm âm thanh (9,5h), phân tích hình ảnh, xử lý video (6h), trích xuất PDF, tạo hình ảnh Imagen 4 và tạo video Veo 3 (clip 8 giây có âm thanh). Một API, cửa sổ bối cảnh 2M token.
+**Solution**: The AI Multimodal skill integrates Google Gemini API for audio transcription (9.5h), image analysis, video processing (6h), PDF extraction, Imagen 4 image generation, and Veo 3 video generation (8-second clips with audio). One API, 2M token context window.
 
-## Kích Hoạt
+## Activation
 
-**Ẩn Danh**: Kích hoạt tự động khi các agent cần phân tích hình ảnh, phiên âm âm thanh, xử lý video hoặc tạo nội dung hình ảnh.
+**Implicit**: Activates automatically when agents need image analysis, audio transcription, video processing, or visual content generation.
 
-**Rõ Ràng**: `/skill:add ai-multimodal`
+**Explicit**: `/skill:add ai-multimodal`
 
-## Khả Năng
+## Capabilities
 
-### 1. Phiên Âm Âm Thanh và Phân Tích
-Phiên âm các tệp âm thanh với dấu thời gian, phát hiện người nói và phân tích không phải lời nói.
+### 1. Audio Transcription and Analysis
+Transcribe audio files with timestamps, speaker detection, and non-speech analysis.
 
 ```bash
-# Phiên âm âm thanh
+# Transcribe audio
 python scripts/gemini_batch_process.py --files meeting.mp3 --task transcribe
 
-# Phân tích podcast cho các chủ đề
-python scripts/gemini_batch_process.py --files podcast.mp3 --task analyze --prompt "Xác định các chủ đề chính và dấu thời gian"
+# Analyze podcast for topics
+python scripts/gemini_batch_process.py --files podcast.mp3 --task analyze --prompt "Identify key topics and timestamps"
 ```
 
-**Định Dạng**: WAV, MP3, AAC (tối đa 9,5 giờ)
+**Formats**: WAV, MP3, AAC (up to 9.5 hours)
 
-**Kết Quả**: Markdown với định dạng dấu thời gian `[HH:MM:SS -> HH:MM:SS]`
+**Output**: Markdown with timestamp format `[HH:MM:SS -> HH:MM:SS]`
 
-**Quan Trọng**: Các tệp >15 phút có thể cắt ngắn do giới hạn token đầu ra. Chia thành các chunk 15 phút để phiên âm đầy đủ.
+**Important**: Files >15 minutes may be truncated due to output token limits. Split into 15-minute chunks for full transcription.
 
-**Hướng Dẫn**: `references/audio-processing.md`
+**Guide**: `references/audio-processing.md`
 
-### 2. Hiểu Biết Hình Ảnh và Phân Tích
-Phân tích hình ảnh cho nội dung, trích xuất văn bản, phát hiện đối tượng và trả lời các câu hỏi hình ảnh.
+### 2. Image Understanding and Analysis
+Analyze images for content, text extraction, object detection, and visual Q&A.
 
 ```bash
-# Phân tích ảnh chụp màn hình
-python scripts/gemini_batch_process.py --files screenshot.png --task analyze --prompt "Mô tả bố cục UI và xác định tất cả các phần tử tương tác"
+# Analyze screenshot
+python scripts/gemini_batch_process.py --files screenshot.png --task analyze --prompt "Describe UI layout and identify all interactive elements"
 
-# Trích xuất văn bản từ hình ảnh
-python scripts/gemini_batch_process.py --files poster.jpg --task extract --prompt "Trích xuất tất cả văn bản ở định dạng cấu trúc"
+# Extract text from image
+python scripts/gemini_batch_process.py --files poster.jpg --task extract --prompt "Extract all text in structured format"
 ```
 
-**Định Dạng**: PNG, JPEG, WebP, SVG (tối đa 3.6k hình ảnh)
+**Formats**: PNG, JPEG, WebP, SVG (up to 3.6k images)
 
-**Khả Năng**: Ghi chú, phân loại, OCR, phát hiện đối tượng, hỏi đáp hình ảnh
+**Capabilities**: Captioning, classification, OCR, object detection, visual Q&A
 
-**Hướng Dẫn**: `references/vision-understanding.md`
+**Guide**: `references/vision-understanding.md`
 
-### 3. Phân Tích Video
-Xử lý video để phát hiện cảnh, câu hỏi đáp thời gian tạm thời và phiên âm có bối cảnh hình ảnh.
+### 3. Video Analysis
+Process videos for scene detection, temporal Q&A, and context-aware transcription.
 
 ```bash
-# Phân tích video tiếp thị
-python scripts/gemini_batch_process.py --files promo.mp4 --task analyze --prompt "Xác định các cảnh, thông báo chính và dấu thời gian được đề xuất cho các vết cắt"
+# Analyze marketing video
+python scripts/gemini_batch_process.py --files promo.mp4 --task analyze --prompt "Identify scenes, key messages, and suggested timestamps for cuts"
 
-# Phân tích URL YouTube
+# Analyze YouTube URL
 python scripts/gemini_batch_process.py --files https://youtube.com/watch?v=xyz --task analyze
 ```
 
-**Định Dạng**: MP4, MOV, WebM (tối đa 6 giờ)
+**Formats**: MP4, MOV, WebM (up to 6 hours)
 
-**Cho Video Dài**: Trích xuất âm thanh với FFmpeg, chia thành các chunk 15 phút, phiên âm riêng biệt.
+**For Long Videos**: Extract audio with FFmpeg, split into 15-minute chunks, transcribe separately.
 
-**Hướng Dẫn**: `references/video-analysis.md`
+**Guide**: `references/video-analysis.md`
 
-### 4. Tạo Hình Ảnh với Imagen 4
-Tạo hình ảnh tiếp thị từ các mô tả văn bản.
-
-```bash
-# Tạo hình ảnh phương tiện xã hội
-python scripts/gemini_batch_process.py --task generate --prompt "Ảnh chụp màn hình dashboard SaaS hiện đại, giao diện sạch, lược đồ màu xanh và trắng, chuyên nghiệp"
-
-# Tạo hàng loạt
-python scripts/gemini_batch_process.py --task generate --prompt "Hình ảnh hero sản phẩm" --count 4
-```
-
-**Mô Hình**:
-- `imagen-4.0-generate-001` (chất lượng tiêu chuẩn)
-- `imagen-4.0-ultra-generate-001` (chất lượng cao nhất)
-- `imagen-4.0-fast-generate-001` (nhanh nhất)
-
-**Tỷ Lệ Khung Hình**: 1:1, 16:9, 9:16, 4:3, 3:4
-
-**Hướng Dẫn**: `references/image-generation.md`
-
-### 5. Tạo Video với Veo 3
-Tạo các clip video 8 giây với âm thanh asynchronous.
+### 4. Image Generation with Imagen 4
+Generate marketing images from text descriptions.
 
 ```bash
-# Tạo clip video
-python scripts/gemini_batch_process.py --task generate-video --prompt "Unboxing sản phẩm, chuyển động camera mượt mà, chiếu sáng chuyên nghiệp, tâm trạng vui vẻ"
+# Generate social media image
+python scripts/gemini_batch_process.py --task generate --prompt "Modern SaaS dashboard screenshot, clean interface, blue and white color scheme, professional"
+
+# Batch generate
+python scripts/gemini_batch_process.py --task generate --prompt "Product hero image" --count 4
 ```
 
-**Mô Hình**: `veo-3.1-generate-preview`
+**Models**:
+- `imagen-4.0-generate-001` (standard quality)
+- `imagen-4.0-ultra-generate-001` (highest quality)
+- `imagen-4.0-fast-generate-001` (fastest)
 
-**Độ Dài**: 8 giây với âm thanh
+**Aspect Ratios**: 1:1, 16:9, 9:16, 4:3, 3:4
 
-**Kết Quả**: Tệp MP4
+**Guide**: `references/image-generation.md`
 
-**Hướng Dẫn**: `references/video-generation.md`
+### 5. Video Generation with Veo 3
+Generate 8-second video clips with audio asynchronously.
 
-## Điều Kiện Tiên Quyết
+```bash
+# Generate video clip
+python scripts/gemini_batch_process.py --task generate-video --prompt "Product unboxing, smooth camera motion, professional lighting, cheerful mood"
+```
 
-**Truy Cập API**:
-- `GEMINI_API_KEY` từ [Google AI Studio](https://aistudio.google.com/apikey)
-- Python 3.8+ với `google-genai`, `python-dotenv`, `pillow`
+**Model**: `veo-3.1-generate-preview`
 
-**Cài Đặt**:
+**Duration**: 8 seconds with audio
+
+**Output**: MP4 file
+
+**Guide**: `references/video-generation.md`
+
+## Prerequisites
+
+**API Access**:
+- `GEMINI_API_KEY` from [Google AI Studio](https://aistudio.google.com/apikey)
+- Python 3.8+ with `google-genai`, `python-dotenv`, `pillow`
+
+**Installation**:
 ```bash
 pip install google-genai python-dotenv pillow
 ```
 
-**Xác Minh Cài Đặt**:
+**Verify Installation**:
 ```bash
 python scripts/check_setup.py
 ```
 
-## Cấu Hình
+## Configuration
 
-**Biến Môi Trường** (`.env`):
+**Environment Variables** (`.env`):
 ```bash
 GEMINI_API_KEY=your_key_here
 ```
 
-**Script Khả Dụng**:
-- `gemini_batch_process.py` - CLI chính cho tất cả các tác vụ
-- `media_optimizer.py` - Nén/thay đổi kích thước phương tiện cho giới hạn API
-- `document_converter.py` - Chuyển đổi PDF thành markdown
-- `check_setup.py` - Xác minh khóa API và các phụ thuộc
+**Available Scripts**:
+- `gemini_batch_process.py` - Main CLI for all tasks
+- `media_optimizer.py` - Compress/resize media for API limits
+- `document_converter.py` - Convert PDF to markdown
+- `check_setup.py` - Verify API keys and dependencies
 
-## Phương Pháp Tốt Nhất
+## Best Practices
 
-**1. Chọn Mô Hình Phù Hợp Cho Tác Vụ**
-- `gemini-2.5-flash` cho tốc độ (phiên âm, phân tích)
-- `gemini-2.5-pro` cho lý luận phức tạp
-- `imagen-4.0-generate-001` cho hình ảnh tiêu chuẩn
-- `imagen-4.0-ultra-generate-001` chỉ cho hình ảnh hero (chi phí cao hơn)
+**1. Choose Right Model For Task**
+- `gemini-2.5-flash` for speed (transcription, analysis)
+- `gemini-2.5-pro` for complex reasoning
+- `imagen-4.0-generate-001` for standard images
+- `imagen-4.0-ultra-generate-001` for hero images only (higher cost)
 
-**2. Tối Ưu Hóa Phương Tiện Trước Tải Lên**
-Sử dụng `media_optimizer.py` để nén các tệp >20MB trước khi xử lý.
+**2. Optimize Media Before Upload**
+Use `media_optimizer.py` to compress files >20MB before processing.
 
-**3. Chia Audio/Video Dài**
-Các chunk 15 phút ngăn cắt ngắn phiên âm. Sử dụng FFmpeg để chia.
+**3. Split Long Audio/Video**
+15-minute chunks prevent transcription truncation. Use FFmpeg to split.
 
-## Trường Hợp Sử Dụng Phổ Biến
+## Common Use Cases
 
-### Trường Hợp Sử Dụng 1: Phiên Âm Podcast Với Chủ Đề
-**Tình Huống**: Phiên âm tập podcast 45 phút với dấu thời gian và trích xuất chủ đề.
+### Use Case 1: Transcribe Podcast With Topics
+**Scenario**: Transcribe 45-minute podcast episode with timestamps and extract topics.
 
-**Quy Trình Công Việc**:
-1. Chia âm thanh thành 3 chunk 15 phút (FFmpeg)
-2. Phiên âm mỗi cái: `python scripts/gemini_batch_process.py --files chunk1.mp3 --task transcribe`
-3. Kết hợp phiên âm
-4. Trích xuất chủ đề: `--task analyze --prompt "Xác định 5 chủ đề chính với dấu thời gian"`
+**Workflow**:
+1. Split audio into 3 × 15-minute chunks (FFmpeg)
+2. Transcribe each: `python scripts/gemini_batch_process.py --files chunk1.mp3 --task transcribe`
+3. Combine transcriptions
+4. Extract topics: `--task analyze --prompt "Identify top 5 topics with timestamps"`
 
-**Kết Quả**: Phiên âm đầy đủ với tóm tắt chủ đề.
+**Outcome**: Full transcription with topic summary.
 
-### Trường Hợp Sử Dụng 2: Tạo Hình Ảnh Phương Tiện Xã Hội
-**Tình Huống**: Tạo 4 biến thể ảnh thông báo sản phẩm.
+### Use Case 2: Generate Social Media Images
+**Scenario**: Generate 4 variations of product announcement image.
 
-**Quy Trình Công Việc**:
-1. Xác định prompt với bối cảnh thương hiệu: "Thông báo sản phẩm công nghệ hiện đại, nền tảng gradient xanh, kiểu chữ sạch, chuyên nghiệp, 16:9"
-2. Tạo hàng loạt: `python scripts/gemini_batch_process.py --task generate --prompt "..." --count 4`
-3. Xem xét đầu ra
-4. Chọn biến thể tốt nhất để đăng bài
+**Workflow**:
+1. Define prompt with brand context: "Modern tech product announcement, gradient blue background, clean typography, professional, 16:9"
+2. Batch generate: `python scripts/gemini_batch_process.py --task generate --prompt "..." --count 4`
+3. Review outputs
+4. Select best variation for posting
 
-**Kết Quả**: 4 hình ảnh duy nhất khớp với hướng dẫn thương hiệu.
+**Outcome**: 4 unique images matching brand guidelines.
 
-## Khắc Phục Sự Cố
+## Troubleshooting
 
-**Vấn Đề**: API trả về 401 Không được Phép
-**Giải Pháp**: Xác minh `GEMINI_API_KEY` trong tệp `.env`. Nhận khóa mới từ Google AI Studio nếu cần.
+**Issue**: API returns 401 Unauthorized
+**Solution**: Verify `GEMINI_API_KEY` in `.env` file. Get new key from Google AI Studio if needed.
 
-**Vấn Đề**: Phiên âm bị cắt ngắn cho âm thanh dài
-**Giải Pháp**: Chia âm thanh thành các chunk 15 phút bằng FFmpeg hoặc `media_optimizer.py`.
+**Issue**: Transcription truncated for long audio
+**Solution**: Split audio into 15-minute chunks using FFmpeg or `media_optimizer.py`.
 
-**Vấn Đề**: Tạo hình ảnh không khớp với thương hiệu
-**Giải Pháp**: Bao gồm các màu thương hiệu cụ thể, từ khóa kiểu và tham chiếu tài sản hiện có trong prompt. Sử dụng skill `ai-artist` để tối ưu hóa prompt.
+**Issue**: Image generation doesn't match brand
+**Solution**: Include specific brand colors, style keywords, and reference existing assets in prompt. Use `ai-artist` skill to optimize prompts.
 
-## Kỹ Năng Liên Quan
+## Related Skills
 
-- [AI Artist](/vi/docs/marketing/skills/ai-artist) - Kỹ thuật viết prompt để có đầu ra tốt hơn
-- [Media Processing](/vi/docs/marketing/skills/media-processing) - FFmpeg để thao tác âm thanh/video
-- [Brand Guidelines](/vi/docs/marketing/skills/brand-guidelines) - Tạo hình ảnh căn chỉnh thương hiệu
-- [Creativity](/vi/docs/marketing/skills/creativity) - Hướng dẫn sáng tạo cho nội dung được tạo
+- [AI Artist](/docs/marketing/skills/ai-artist) - Prompt engineering for better outputs
+- [Media Processing](/docs/marketing/skills/media-processing) - FFmpeg for audio/video manipulation
+- [Brand Guidelines](/docs/marketing/skills/brand-guidelines) - Brand-aligned image generation
+- [Creativity](/docs/marketing/skills/creativity) - Creative direction for generated content
 
-## Lệnh Liên Quan
+## Related Commands
 
-- `/design/good` - Tạo hình ảnh chất lượng cao
-- `/design/video` - Lập kế hoạch nội dung video
-- `/content/enhance` - Cải thiện nội dung bằng phân tích AI
+- `/design/good` - Generate high-quality images
+- `/design/video` - Plan video content
+- `/content/enhance` - Improve content with AI analysis

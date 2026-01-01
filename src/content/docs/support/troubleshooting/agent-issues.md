@@ -1,7 +1,6 @@
 ---
 title: Agent Issues
-description: "Documentation for Agent Issues"
-lang: vi
+description: "Debug and fix ClaudeKit agent problems - agents not responding or behaving unexpectedly"
 section: support
 category: support/troubleshooting
 order: 4

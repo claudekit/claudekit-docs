@@ -1,7 +1,6 @@
 ---
 title: Performance Issues
-description: "Documentation for Performance Issues"
-lang: vi
+description: "Optimize ClaudeKit performance - fix slow commands, memory issues, and timeout problems"
 section: support
 category: support/troubleshooting
 order: 6

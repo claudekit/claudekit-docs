@@ -1,7 +1,6 @@
 ---
-title: Khắc Phục Sự Cố
-description: "Documentation for Khắc Phục Sự Cố"
-lang: vi
+title: Troubleshooting
+description: "Quick fixes for common ClaudeKit issues - most problems resolve in under 5 minutes"
 section: support
 category: support/troubleshooting
 order: 1

@@ -1,48 +1,47 @@
 ---
 title: "/dashboard"
-description: "Khởi chạy ứng dụng web Marketing Dashboard để quản lý chiến dịch trực quan, thư viện nội dung và quy trình làm việc tự động hóa"
-lang: vi
+description: "Launch the Marketing Dashboard web app for visual campaign management, content library, and automation workflows"
 section: marketing
 category: commands
 order: 22
 published: true
 ---
 
-> Giao diện trực quan cho các hoạt động tiếp thị
+> Visual interface for marketing operations
 
-## Khởi động nhanh
+## Quick Start
 
 ```bash
 /dashboard
 ```
 
-**Điều gì xảy ra**:
-1. Bắt đầu Vue 3 frontend (cổng 5173)
-2. Bắt đầu Hono API backend (cổng 3457)
-3. Khởi tạo cơ sở dữ liệu SQLite
-4. Mở trình duyệt để bảng điều khiển
+**What happens**:
+1. Starts Vue 3 frontend (port 5173)
+2. Starts Hono API backend (port 3457)
+3. Initializes SQLite database
+4. Opens browser to dashboard
 
-**URL**:
+**URLs**:
 - Frontend: http://localhost:5173
 - API: http://localhost:3457
 - Health: http://localhost:3457/health
 
-## Cú pháp
+## Syntax
 
 ```bash
 /dashboard [mode]
 ```
 
-### Chế độ
+### Modes
 
-| Chế độ | Mô tả | Trường hợp sử dụng |
-|------|-------|----------|
-| `dev` | Phát triển với HMR | Mặc định, phát triển tích cực |
-| `build` | Xây dựng cho sản xuất | Tạo bó được tối ưu hóa |
-| `prod` | Chế độ sản xuất | Phục vụ bó sản xuất |
-| `stop` | Dừng máy chủ | Làm sạch |
+| Mode | Description | Use Case |
+|------|-------------|----------|
+| `dev` | Development with HMR | Default, active development |
+| `build` | Build for production | Create optimized bundles |
+| `prod` | Production mode | Serve production bundles |
+| `stop` | Stop servers | Cleanup |
 
-## Tính năng bảng điều khiển
+## Dashboard Features
 
 ### Campaign Board
 - Kanban view with drag-drop
@@ -56,66 +55,66 @@ published: true
 - Search by title, keywords
 - Quick preview and edit
 
-### Trung Tâm Quản Lý Tài Sản
+### Asset Management Hub
 
-Phần Quản Lý Tài Sản cung cấp quyền truy cập tập trung vào tất cả tài sản marketing được tạo bởi lệnh ClaudeKit. Duyệt, xem trước và tổ chức báo cáo markdown, storyboard, slide, hình ảnh, video và tài liệu thương hiệu.
+The Asset Management section provides centralized access to all marketing assets created by ClaudeKit commands. Browse, preview, and organize markdown reports, storyboards, slides, images, videos, and branding documents.
 
-![Trung tâm Quản lý Tài sản](/docs/screenshots/assets-management.png)
+![Asset Management Hub](/docs/screenshots/assets-management.png)
 
-**Danh Mục Tài Sản:**
+**Asset Categories:**
 
-**Hướng Dẫn Thương Hiệu**
-- Tài liệu giọng văn thương hiệu
-- Hướng dẫn phong cách và mẫu
-- Bảng màu và typography
-- Tài sản logo và quy tắc sử dụng
+**Branding Guidelines**
+- Brand voice documentation
+- Style guides and templates
+- Color palettes and typography
+- Logo assets and usage rules
 
-![Hướng dẫn Thương hiệu](/docs/screenshots/assets-branding-guideline.png)
+![Branding Guidelines](/docs/screenshots/assets-branding-guideline.png)
 
-**Storyboard (Sản Xuất Video)**
-- Phân tích cảnh trực quan
-- Lập kế hoạch từng shot
-- Xem trước timeline
-- Xuất sang sản xuất
+**Storyboards (Video Production)**
+- Visual scene breakdowns
+- Shot-by-shot planning
+- Timeline previews
+- Export to production
 
-![Xem trước Storyboard](/docs/screenshots/assets-storyboard-preview.png)
+![Storyboard Preview](/docs/screenshots/assets-storyboard-preview.png)
 
-![Tùy chọn Storyboard](/docs/screenshots/assets-storyboard-options.png)
+![Storyboard Options](/docs/screenshots/assets-storyboard-options.png)
 
-**Slide Bài Thuyết Trình**
-- Pitch deck (.pptx)
-- Đề xuất chiến dịch
-- Demo sản phẩm
-- Báo cáo hiệu suất
+**Presentation Slides**
+- Pitch decks (.pptx)
+- Campaign proposals
+- Product demos
+- Performance reports
 
-![Xem trước Slide](/docs/screenshots/assets-slides-preview.png)
+![Slide Preview](/docs/screenshots/assets-slides-preview.png)
 
-**Infographic & Hình Ảnh**
-- Đồ họa mạng xã hội
-- Trực quan hóa dữ liệu
-- Hình ảnh nổi bật blog
-- Creative chiến dịch
+**Infographics & Visuals**
+- Social media graphics
+- Data visualizations
+- Blog featured images
+- Campaign creatives
 
-![Xem trước Infographic](/docs/screenshots/assets-infographic-preview.png)
+![Infographic Preview](/docs/screenshots/assets-infographic-preview.png)
 
-**Bài Đăng Mạng Xã Hội**
-- Nội dung theo nền tảng
-- Bài đăng đã lên lịch
-- Chỉ số hiệu suất
-- Theo dõi tương tác
+**Social Media Posts**
+- Platform-specific content
+- Scheduled posts
+- Performance metrics
+- Engagement tracking
 
-![Xem trước Bài đăng Mạng xã hội](/docs/screenshots/assets-social-post-preview.png)
+![Social Post Preview](/docs/screenshots/assets-social-post-preview.png)
 
-**Tính Năng Trung Tâm Tài Sản:**
-- **Chế độ Xem Trước**: Xem markdown, hình ảnh, video inline
-- **Hành Động Nhanh**: Tải xuống, chia sẻ, chỉnh sửa, nhân bản
-- **Tìm Kiếm & Lọc**: Tìm tài sản theo loại, ngày, chiến dịch, thẻ
-- **Thao Tác Hàng Loạt**: Xuất, lưu trữ, xóa nhiều tài sản
-- **Lịch Sử Phiên Bản**: Theo dõi thay đổi và khôi phục phiên bản trước
-- **Bộ Sưu Tập**: Tổ chức tài sản vào thư mục tùy chỉnh
+**Asset Hub Features:**
+- **Preview Mode**: View markdown, images, videos inline
+- **Quick Actions**: Download, share, edit, duplicate
+- **Search & Filter**: Find assets by type, date, campaign, tags
+- **Bulk Operations**: Export, archive, delete multiple assets
+- **Version History**: Track changes and restore previous versions
+- **Collections**: Organize assets into custom folders
 
 ### Automation Panel
-Công thức tự động hóa được xây dựng sẵn:
+Pre-built automation recipes:
 - Blog Post Generator
 - Social Media Pack
 - Campaign Brief Creator
@@ -130,16 +129,16 @@ Công thức tự động hóa được xây dựng sẵn:
 - **AI**: Claude API integration
 - **Build**: Optimized 56 KB gzipped
 
-## Ví dụ
+## Examples
 
-### Bắt đầu phát triển
+### Start Development
 ```bash
 /dashboard dev
 # or just
 /dashboard
 ```
 
-**Kết quả**:
+**Output**:
 ```markdown
 Starting Marketing Dashboard...
 
@@ -155,12 +154,12 @@ Dashboard ready!
 Press Ctrl+C to stop
 ```
 
-### Xây dựng cho sản xuất
+### Build for Production
 ```bash
 /dashboard build
 ```
 
-**Kết quả**:
+**Output**:
 ```markdown
 Building for production...
 
@@ -175,12 +174,12 @@ Deploy with:
 /dashboard prod
 ```
 
-### Chế độ sản xuất
+### Production Mode
 ```bash
 /dashboard prod
 ```
 
-**Kết quả**:
+**Output**:
 ```markdown
 Starting production server...
 
@@ -192,12 +191,12 @@ Production ready!
 → Health check: http://localhost:3457/health
 ```
 
-### Dừng máy chủ
+### Stop Servers
 ```bash
 /dashboard stop
 ```
 
-**Kết quả**:
+**Output**:
 ```markdown
 Stopping servers...
 
@@ -207,37 +206,37 @@ Stopping servers...
 Dashboard stopped.
 ```
 
-## Thiết lập khóa API
+## API Key Setup
 
-Bắt buộc cho các tính năng AI:
+Required for AI features:
 
-**Qua bảng điều khiển**:
-1. Mở http://localhost:5173
-2. Đi tới Cài đặt
-3. Nhập khóa API Claude
-4. Lưu vào sessionStorage
+**Via Dashboard**:
+1. Open http://localhost:5173
+2. Go to Settings
+3. Enter Claude API key
+4. Save to sessionStorage
 
-**Qua môi trường**:
+**Via Environment**:
 ```bash
 export CLAUDE_API_KEY=your-key-here
 /dashboard
 ```
 
-## Lưu trữ dữ liệu
+## Data Storage
 
-Tất cả dữ liệu được lưu trữ cục bộ:
-- Cơ sở dữ liệu: `server/marketing.db` (SQLite)
-- Tài sản: `assets/` directory
-- Cấu hình: `.env` file
+All data stored locally:
+- Database: `server/marketing.db` (SQLite)
+- Assets: `assets/` directory
+- Config: `.env` file
 
-**Sao lưu**:
+**Backup**:
 ```bash
 cp server/marketing.db server/marketing.db.backup
 ```
 
-## Tích hợp quy trình làm việc
+## Workflow Integration
 
-### Quản lý chiến dịch trực quan
+### Visual Campaign Management
 ```bash
 # Start dashboard
 /dashboard
@@ -247,7 +246,7 @@ cp server/marketing.db server/marketing.db.backup
 # Run automation recipes
 ```
 
-### Lệnh + Bảng điều khiển Combo
+### Command + Dashboard Combo
 ```bash
 # Create via command
 /campaign create "Q1 Launch"
@@ -260,55 +259,55 @@ cp server/marketing.db server/marketing.db.backup
 # Export reports
 ```
 
-## Hiệu suất
+## Performance
 
 - **Cold start**: 3-5 seconds
 - **HMR updates**: <100ms
 - **API response**: <50ms avg
 - **Bundle size**: 56 KB gzipped
 
-## Yêu cầu
+## Requirements
 
 - Node.js 18+
 - NPM dependencies (auto-installs)
 - 100 MB disk space
 - Modern browser (Chrome, Firefox, Safari, Edge)
 
-## Khắc phục sự cố
+## Troubleshooting
 
-### Xung đột cổng
+### Port Conflicts
 ```bash
 # Change ports in server/index.js and app/vite.config.ts
 # Or stop conflicting services
 ```
 
-### Cơ sở dữ liệu bị khóa
+### Database Locked
 ```bash
 /dashboard stop
 rm server/marketing.db.lock
 /dashboard
 ```
 
-### Vấn đề khóa API
+### API Key Issues
 ```bash
 # Check key in Settings page
 # Or set environment variable
 export CLAUDE_API_KEY=sk-ant-...
 ```
 
-## Lệnh liên quan
+## Related Commands
 
-- [/campaign](/vi/docs/marketing/commands/campaign) - Tạo chiến dịch (CLI)
-- [/content](/vi/docs/marketing/commands/content) - Tạo nội dung (CLI)
-- [/analyze](/vi/docs/marketing/commands/analyze) - Xem phân tích (CLI + dashboard)
+- [/campaign](/docs/marketing/commands/campaign) - Create campaigns (CLI)
+- [/content](/docs/marketing/commands/content) - Create content (CLI)
+- [/analyze](/docs/marketing/commands/analyze) - View analytics (CLI + dashboard)
 
-## Tệp liên quan
+## Related Files
 
-- Kỹ năng: `.claude/skills/marketing-dashboard/`
-- Kịch bản: `start.sh`, `build.sh`, `stop.sh`
-- Máy chủ: `server/index.js`
+- Skill: `.claude/skills/marketing-dashboard/`
+- Scripts: `start.sh`, `build.sh`, `stop.sh`
+- Server: `server/index.js`
 - Frontend: `app/src/`
 
 ---
 
-**Quản lý trực quan.** Chiến dịch, nội dung và tự động hóa trong một giao diện.
+**Visual management.** Campaigns, content, and automation in one interface.

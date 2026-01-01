@@ -1,7 +1,6 @@
 ---
-title: Cài Đặt Issues
-description: "Documentation for Cài Đặt Issues"
-lang: vi
+title: Installation Issues
+description: "Platform-specific solutions for ClaudeKit installation problems"
 section: support
 category: support/troubleshooting
 order: 2
@@ -12,40 +11,40 @@ published: true
 
 ClaudeKit installation problems? Get unblocked in minutes with platform-specific fixes.
 
-## Sửa Nhanh: Lỗi Đường Dẫn Hook / User Prompt Submit Error
+## Quick Fix: Hook Path Error / User Prompt Submit Error
 
-**Triệu chứng**: "User prompt submit error", hooks lỗi với lỗi đường dẫn, hoặc `%CLAUDE_PROJECT_DIR%` không tìm thấy
+**Symptom**: "User prompt submit error", hooks failing with path errors, or `%CLAUDE_PROJECT_DIR%` not found
 
-**Nguyên nhân**: Bạn đã chạy `ck init` (chế độ local) từ thư mục sai—có thể là thư mục home hoặc thư mục user thay vì thư mục dự án.
+**Cause**: You ran `ck init` (local mode) from the wrong directory—possibly home or user directory instead of project directory.
 
-**Giải pháp**:
+**Solution**:
 
 ```bash
-# Bước 1: Xóa cài đặt bị lỗi
-# Di chuyển đến nơi bạn đã vô tình cài đặt
-cd ~  # hoặc bất cứ nơi nào bạn chạy ck init
-rm -rf .claude/  # Xóa cài đặt local bị lỗi
+# Step 1: Remove broken installation
+# Navigate to where you accidentally installed
+cd ~  # or wherever you ran ck init
+rm -rf .claude/  # Remove broken local installation
 
-# Bước 2: Cài đặt lại đúng cách
-# Cho GLOBAL (khuyến nghị cho đa số người dùng):
+# Step 2: Reinstall correctly
+# For GLOBAL (recommended for most users):
 ck init -g --kit engineer
 
-# Cho LOCAL (chỉ cho dự án cụ thể):
+# For LOCAL (only for specific projects):
 cd /path/to/your/actual/project
 ck init --kit engineer
 ```
 
-**Phòng ngừa**:
-- Dùng `ck init -g` (global) nếu bạn muốn ClaudeKit có sẵn ở mọi nơi
-- Chỉ dùng `ck init` (local) khi đang ở trong thư mục dự án thực sự
+**Prevention**:
+- Use `ck init -g` (global) if you want ClaudeKit available everywhere
+- Only use `ck init` (local) when inside an actual project directory
 
-Xem [Hướng Dẫn Cài Đặt - Nên Chọn Chế Độ Nào?](/vi/docs/getting-started/installation#nên-chọn-chế-độ-cài-đặt-nào) để biết thêm chi tiết.
+See [Installation Guide - Which Mode to Choose?](/docs/getting-started/installation#which-installation-mode-to-choose) for more details.
 
 ---
 
-## Sửa Nhanh: Không Tìm Thấy Lệnh
+## Quick Fix: Command Not Found
 
-**Triệu chứng**: `ck: command not found` hoặc `claudekit-cli: command not found`
+**Symptom**: `ck: command not found` or `claudekit-cli: command not found`
 
 **Solution**:
 

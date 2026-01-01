@@ -1,7 +1,6 @@
 ---
 title: Command Errors
-description: "Documentation for Command Errors"
-lang: vi
+description: "Fix ClaudeKit command errors - slash commands not working or failing with errors"
 section: support
 category: support/troubleshooting
 order: 3

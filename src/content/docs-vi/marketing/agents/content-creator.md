@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "Content Creator"
 description: "Chuyên gia nội dung đa định dạng của bạn cho blog, media xã hội, video, quảng cáo, và trang đích"
 section: marketing

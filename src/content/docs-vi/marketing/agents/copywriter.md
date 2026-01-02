@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "Copywriter"
 description: "Tạo copy chuyển đổi cao, xứng đáng lan truyền dừng cuộn và thúc đẩy hành động trên tất cả các kênh"
 section: marketing

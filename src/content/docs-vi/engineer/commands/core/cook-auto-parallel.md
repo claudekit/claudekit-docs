@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: /cook:auto:parallel
 description: Triển khai tính năng với thực thi song song sử dụng plan:parallel và các agent fullstack-developer
 section: engineer

@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "Content Reviewer"
 description: "Đánh giá chất lượng nội dung toàn diện và thực thi best practice marketing trước khi khởi động"
 section: marketing

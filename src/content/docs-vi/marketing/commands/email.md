@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "/email"
 description: "Tạo nội dung email chuyển đổi cao với viết quảng cáo được tạo bằng AI cho newsletter, cold outreach, launch sequences, và nurture campaigns"
 section: marketing

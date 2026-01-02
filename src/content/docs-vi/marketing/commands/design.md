@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "/design"
 description: "Tạo nội dung hình ảnh trên brand với AI, tăng cường prompt, và xác minh tự động cho tài sản marketing"
 section: marketing

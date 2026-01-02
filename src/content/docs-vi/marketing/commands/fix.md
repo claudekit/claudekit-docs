@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "/fix"
 description: "Định tuyến vấn đề thông minh tới các lệnh fix chuyên dụng dựa trên loại vấn đề - types, UI, CI/CD, tests, logs, và complex issues"
 section: marketing

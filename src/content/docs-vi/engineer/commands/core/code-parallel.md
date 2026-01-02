@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: /code:parallel
 description: Thực thi các phase song song hoặc tuần tự từ kế hoạch hiện có dựa trên phân tích dependency graph
 section: engineer

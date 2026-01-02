@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "Project Manager Agent"
 description: "Track progress, consolidate reports, and keep marketing projects on schedule with comprehensive oversight."
 section: marketing

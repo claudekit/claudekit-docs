@@ -95,6 +95,33 @@ Since Astro serves URLs without trailing slashes by default, relative links brea
 grep -r "/docs/old/path" src/content/docs/
 ```
 
+## CRITICAL: Static Assets (Images, PDFs, etc.)
+
+**All static assets MUST be placed in `public/` folder. Astro serves from `public/` only.**
+
+```markdown
+# ✅ CORRECT - File at public/docs/screenshots/example.png
+![Example](/docs/screenshots/example.png)
+
+# ✅ CORRECT - File at public/assets/diagram.jpg
+![Diagram](/assets/diagram.jpg)
+
+# ❌ WRONG - File in docs/ folder (NOT public/docs/)
+# This path won't resolve! Astro doesn't serve from repo root.
+```
+
+**Asset locations:**
+- Screenshots: `public/docs/screenshots/`
+- General assets: `public/assets/`
+
+**Before commit, verify all image refs resolve:**
+```bash
+# List all image paths and check each exists in public/
+for p in $(grep -rhoP '!\[.*?\]\(\K/[^)]+' src/content/ | sort -u); do
+  [ ! -f "public$p" ] && echo "MISSING: $p"
+done
+```
+
 ## Tech Stack
 
 - **Astro v5.14.6**: SSG with islands architecture
@@ -111,12 +138,37 @@ grep -r "/docs/old/path" src/content/docs/
 - **Fonts**: Inter (body), Geist Mono (code)
 - **Inspiration**: Polar docs aesthetics
 
-## i18n
+## CRITICAL: i18n Rules
 
-- **Default**: `en` (no prefix)
-- **Vietnamese**: `vi` (prefix: `/vi/`)
-- **UI Strings**: `src/i18n/ui.ts` (18 keys × 2 locales)
-- **Workflow**: Create EN first, mirror structure in `docs-vi/`, translate
+**Locations:**
+- English: `src/content/docs/` → routes `/docs/*`
+- Vietnamese: `src/content/docs-vi/` → routes `/vi/docs/*`
+- UI strings: `src/i18n/ui.ts`
+
+**Rules by locale:**
+
+| | English (`docs/`) | Vietnamese (`docs-vi/`) |
+|---|---|---|
+| Frontmatter | NO `lang:` tag | MUST have `lang: vi` |
+| Content | English only | Vietnamese only |
+| Internal links | `/docs/...` | `/vi/docs/...` |
+
+**Workflow:** Create EN first → mirror structure in `docs-vi/` → translate
+
+**Before commit, verify i18n compliance:**
+```bash
+# Check: VI files missing lang: vi
+grep -rL "lang: vi" src/content/docs-vi/ --include="*.md" | head -20
+
+# Check: EN files with wrong lang tag
+grep -rl "lang: vi" src/content/docs/ --include="*.md"
+
+# Check: EN files linking to /vi/docs/
+grep -r "/vi/docs/" src/content/docs/ --include="*.md"
+
+# Check: VI files linking to /docs/ (without /vi/ prefix)
+grep -rP '\]\(/docs/' src/content/docs-vi/ --include="*.md"
+```
 
 ## Git Workflow
 

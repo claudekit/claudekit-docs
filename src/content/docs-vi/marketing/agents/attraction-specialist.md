@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "Attraction Specialist"
 description: "Chuyên gia TOFU tạo ra leads của bạn cho nghiên cứu từ khóa, phân tích đối thủ, trang đích và lead magnet"
 section: marketing

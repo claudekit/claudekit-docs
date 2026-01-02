@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "/persona"
 description: "Tạo và quản lý customer personas với AI-powered audience research, market validation, và ICP profiling"
 section: marketing

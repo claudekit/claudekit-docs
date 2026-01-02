@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "Tester Agent"
 description: "Validate code quality through comprehensive testing, coverage analysis, and quality assurance."
 section: marketing

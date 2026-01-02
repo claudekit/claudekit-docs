@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "Sales Enabler"
 description: "Your sales collateral expert for pitches, proposals, objection handling, and deal acceleration"
 section: marketing

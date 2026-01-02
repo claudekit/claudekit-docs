@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: /design:fast
 description: Documentation for fast
 section: engineer

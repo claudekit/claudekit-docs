@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: /journal
 description: Documentation for journal
 section: engineer

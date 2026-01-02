@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "/brainstorm"
 description: "Các buổi họp não được hỗ trợ bởi AI hợp tác cho chiến lược, giải pháp và ra quyết định với quy trình có cấu trúc 5 pha"
 section: marketing

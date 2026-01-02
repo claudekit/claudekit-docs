@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: /scout
 description: Documentation for scout
 section: engineer

@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "SEO Specialist"
 description: "Chuyên gia SEO kỹ thuật của bạn cho kiểm tra, tối ưu hóa, schema markup và xếp hạng tìm kiếm"
 section: marketing

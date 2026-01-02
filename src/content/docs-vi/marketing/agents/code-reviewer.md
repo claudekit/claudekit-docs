@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "Code Reviewer"
 description: "Đánh giá chất lượng code toàn diện cho tự động hóa marketing, theo dõi, và công cụ chiến dịch"
 section: marketing

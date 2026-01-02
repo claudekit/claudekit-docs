@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "Campaign Debugger"
 description: "Điều tra các vấn đề marketing, chẩn đoán các vấn đề hiệu suất, và tối ưu hóa hiệu quả chiến dịch"
 section: marketing

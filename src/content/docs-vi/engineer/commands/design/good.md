@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: /design:good
 description: Documentation for good
 section: engineer

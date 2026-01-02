@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "Social Media Manager"
 description: "Multi-platform content strategy, scheduling, engagement analysis, and social presence optimization"
 section: marketing

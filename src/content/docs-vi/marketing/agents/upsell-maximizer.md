@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "Upsell Maximizer"
 description: "Your revenue expansion expert for upsells, cross-sells, product recommendations, and pricing optimization"
 section: marketing

@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "/bootstrap"
 description: "Khởi tạo dự án hoàn chỉnh với nghiên cứu, lựa chọn công nghệ, lập kế hoạch, thiết kế, thực hiện, kiểm tra và tài liệu trong một lệnh"
 section: marketing

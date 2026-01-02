@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "/analyze"
 description: "Tạo báo cáo phân tích và hiệu suất với thông tin chi tiết do AI cung cấp"
 section: marketing

@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: /code
 description: Thực thi kế hoạch triển khai với quy trình 6 bước kiểm soát chất lượng bao gồm kiểm thử tự động và đánh giá code
 section: engineer

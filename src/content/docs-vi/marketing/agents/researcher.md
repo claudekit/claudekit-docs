@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "Researcher"
 description: "Chuyên gia thông tin thị trường của bạn cho phân tích cạnh tranh, xu hướng và thông tin chiến lược"
 section: marketing

@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "/git"
 description: "Tạo pull requests với so sánh branch tự động, conventional commit messages, và GitHub CLI integration"
 section: marketing

@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: /plan:parallel
 description: Tạo kế hoạch triển khai với các giai đoạn có thể thực thi song song sử dụng đồ thị phụ thuộc và ma trận sở hữu file
 section: engineer

@@ -1,55 +1,54 @@
 ---
-title: Cài Đặt
-description: "Documentation for Cài Đặt"
-lang: vi
+title: Installation
+description: "Documentation for Installation"
 section: getting-started
 category: getting-started
 order: 2
 published: true
 ---
 
-# Cài Đặt
+# Installation
 
-Hướng dẫn này sẽ giúp bạn cài đặt ClaudeKit và thiết lập môi trường phát triển. Bạn có thể chọn giữa cài đặt thủ công hoặc sử dụng ClaudeKit CLI.
+This guide will help you install ClaudeKit and set up your development environment. You can choose between manual installation or using the ClaudeKit CLI.
 
-## Yêu Cầu
+## Requirements
 
-Trước khi cài đặt ClaudeKit, đảm bảo bạn có:
+Before installing ClaudeKit, ensure you have:
 
-- **Node.js** v18 trở lên
-- **npm** v10 trở lên (hoặc bun, pnpm, yarn)
-- **Git** để quản lý phiên bản
-- **Claude Code CLI** đã cài đặt (`claude`)
-- **Google Gemini API Key** từ [Google AI Studio](https://aistudio.google.com)
+- **Node.js** v18 or higher
+- **npm** v10 or higher (or bun, pnpm, yarn)
+- **Git** for version control
+- **Claude Code CLI** installed (`claude`)
+- **Google Gemini API Key** from [Google AI Studio](https://aistudio.google.com)
 
-## Phương Pháp 1: Cài Đặt Thủ Công
+## Method 1: Manual Installation
 
-Phương pháp này cho bạn quyền kiểm soát hoàn toàn quá trình cài đặt.
+This method gives you complete control over the installation process.
 
-### Bước 1: Clone hoặc Tải ClaudeKit Engineer
+### Step 1: Clone or Download ClaudeKit Engineer
 
 ```bash
-# Tùy chọn A: Clone repo (yêu cầu quyền truy cập GitHub)
+# Option A: Clone repo (requires GitHub access)
 git clone https://github.com/claudekit/claudekit-engineer.git
 
-# Tùy chọn B: Tải từ GitHub Releases
-# Truy cập: https://github.com/claudekit/claudekit-engineer/releases
+# Option B: Download from GitHub Releases
+# Visit: https://github.com/claudekit/claudekit-engineer/releases
 ```
 
-### Bước 2: Sao Chép Các File ClaudeKit
+### Step 2: Copy ClaudeKit Files
 
-Sao chép các thư mục và file sau từ `claudekit-engineer` vào thư mục gốc dự án:
+Copy the following directories and files from `claudekit-engineer` to your project root:
 
-| Đường dẫn | Mô tả |
+| Path | Description |
 |-----------|-------|
-| `.claude/` | Cấu hình chính - hooks, skills, commands, workflows |
-| `docs/` | Mẫu tài liệu |
-| `plans/` | Mẫu kế hoạch |
-| `CLAUDE.md` | Hướng dẫn dự án cho Claude |
+| `.claude/` | Main configuration - hooks, skills, commands, workflows |
+| `docs/` | Documentation templates |
+| `plans/` | Planning templates |
+| `CLAUDE.md` | Project instructions for Claude |
 
-**Các file ẩn quan trọng trong `.claude/`:**
-- `.ck.json` - Cấu hình ClaudeKit (đặt tên plan, đường dẫn, ngôn ngữ)
-- `.ckignore` - Thư mục loại trừ khỏi context (giống `.gitignore` cho LLM)
+**Important hidden files in `.claude/`:**
+- `.ck.json` - ClaudeKit configuration (plan naming, paths, language)
+- `.ckignore` - Directories excluded from context (like `.gitignore` for LLM)
 
 **Linux/macOS:**
 ```bash
@@ -58,9 +57,9 @@ cp -r claudekit-engineer/docs your-project/
 cp -r claudekit-engineer/plans your-project/
 cp claudekit-engineer/CLAUDE.md your-project/
 
-# Xác minh file ẩn đã được sao chép
+# Verify hidden files were copied
 ls -la your-project/.claude/
-# Phải thấy: .ck.json, .ckignore, settings.json, v.v.
+# Should see: .ck.json, .ckignore, settings.json, etc.
 ```
 
 **Windows (PowerShell):**
@@ -70,60 +69,60 @@ Copy-Item -Recurse claudekit-engineer\docs your-project\
 Copy-Item -Recurse claudekit-engineer\plans your-project\
 Copy-Item claudekit-engineer\CLAUDE.md your-project\
 
-# Xác minh file ẩn đã được sao chép
+# Verify hidden files were copied
 Get-ChildItem -Force your-project\.claude\
-# Phải thấy: .ck.json, .ckignore, settings.json, v.v.
+# Should see: .ck.json, .ckignore, settings.json, etc.
 ```
 
-> ⚠️ **Lưu ý:** Trình quản lý file có thể ẩn dotfiles (`.ck.json`, `.ckignore`). Sử dụng terminal/PowerShell hoặc bật "hiển thị file ẩn".
+> ⚠️ **Note:** File managers may hide dotfiles (`.ck.json`, `.ckignore`). Use terminal/PowerShell or enable "show hidden files".
 
-### Bước 3: Cấu Hình API Key Gemini (Tuỳ Chọn)
+### Step 3: Configure Gemini API Key (Optional)
 
-**TẠI SAO?**  
-ClaudeKit từng sử dụng [Human MCP](https://www.npmjs.com/package/@goonnguyen/human-mcp) để phân tích hình ảnh và video vì Gemini có khả năng xử lý vision tốt. Tuy nhiên, Anthropic đã ra mắt [**Agent Skills**](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview) hỗ trợ context engineering tốt hơn, nên toàn bộ công cụ Human MCP đã được chuyển thành Agent Skills.
+**WHY?**
+ClaudeKit previously used [Human MCP](https://www.npmjs.com/package/@goonnguyen/human-mcp) for image and video analysis because Gemini has better vision capabilities. However, Anthropic launched [**Agent Skills**](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview) with better context engineering support, so all Human MCP tools have been converted to Agent Skills.
 
-**Lưu ý:** Gemini API hiện đang có hạn mức miễn phí khá rộng rãi.
+**Note:** Gemini API currently offers a generous free tier.
 
-1. Vào [Google AI Studio](https://aistudio.google.com) và lấy API Key của bạn
-2. Sao chép file `.claude/skills/.env.example` thành `.claude/skills/.env` rồi dán key vào biến môi trường `GEMINI_API_KEY`
+1. Go to [Google AI Studio](https://aistudio.google.com) and get your API Key
+2. Copy `.claude/skills/.env.example` to `.claude/skills/.env` and paste your key into the `GEMINI_API_KEY` environment variable
 
-Vậy là bạn đã sẵn sàng sử dụng.
+You're ready to use it.
 
-### Bước 4: Khởi Động Claude Code
+### Step 4: Start Claude Code
 
-Khởi động Claude Code trong dự án làm việc của bạn:
+Launch Claude Code in your working project:
 
 ```bash
-# Chế độ tiêu chuẩn
+# Standard mode
 claude
 
-# Bỏ qua permissions (sử dụng cẩn thận)
+# Skip permissions (use cautiously)
 claude --dangerously-skip-permissions
 ```
 
-### Bước 5: Khởi Tạo Tài Liệu
+### Step 5: Initialize Documentation
 
-Chạy lệnh `/docs:init` để quét và tạo specs cho dự án:
+Run the `/docs:init` command to scan and generate specs for your project:
 
 ```bash
 /docs:init
 ```
 
-Lệnh này tạo ra các file markdown trong thư mục `docs`:
+This command creates markdown files in the `docs` directory:
 - `codebase-summary.md`
 - `code-standards.md`
 - `system-architecture.md`
-- Và nhiều hơn nữa...
+- And more...
 
-Bây giờ dự án của bạn đã sẵn sàng để phát triển!
+Your project is now ready for development!
 
-## Phương Pháp 2: ClaudeKit CLI
+## Method 2: ClaudeKit CLI
 
-CLI cung cấp cách tự động để thiết lập các dự án ClaudeKit.
+The CLI provides an automated way to set up ClaudeKit projects.
 
-### Cài Đặt
+### Installation
 
-Cài đặt ClaudeKit CLI toàn cục:
+Install ClaudeKit CLI globally:
 
 ```bash
 # npm
@@ -132,154 +131,154 @@ npm install -g claudekit-cli
 # bun
 bun add -g claudekit-cli
 
-# Xác minh cài đặt
+# Verify installation
 ck --version
 ```
 
-### Nên Chọn Chế Độ Cài Đặt Nào?
+### Which Installation Mode Should I Choose?
 
-| Trường hợp | Chế độ | Lệnh |
+| Use Case | Mode | Command |
 |------------|--------|------|
-| **Cài đặt lần đầu** | Global ⭐ | `ck init -g --kit engineer` |
-| **Muốn dùng ClaudeKit cho TẤT CẢ dự án** | Global ⭐ | `ck init -g --kit engineer` |
-| **Chỉ cho một dự án cụ thể** | Local | `ck init --kit engineer` |
-| **Môi trường CI/CD** | Local | `ck init --kit engineer` |
+| **First-time installation** | Global ⭐ | `ck init -g --kit engineer` |
+| **Want to use ClaudeKit for ALL projects** | Global ⭐ | `ck init -g --kit engineer` |
+| **Only for a specific project** | Local | `ck init --kit engineer` |
+| **CI/CD environment** | Local | `ck init --kit engineer` |
 
 ---
 
-### Tùy Chọn A: Cài Đặt Global ⭐ Khuyến Nghị Cho Đa Số Người Dùng
+### Option A: Global Installation ⭐ Recommended for Most Users
 
-> **Sử dụng khi:** Bạn muốn ClaudeKit có sẵn cho TẤT CẢ dự án mà không cần copy file vào từng dự án.
+> **Use when:** You want ClaudeKit available for ALL projects without copying files to each project.
 >
-> **Chạy từ:** Bất kỳ thư mục nào (ví dụ: home folder, desktop, bất cứ đâu)
+> **Run from:** Any directory (e.g., home folder, desktop, anywhere)
 
 ```bash
-# Chế độ tương tác
+# Interactive mode
 ck init -g
 
-# Với lựa chọn kit
+# With kit selection
 ck init -g --kit engineer
 
-# Phiên bản cụ thể
+# Specific version
 ck init -g --kit engineer --version v1.0.0
 ```
 
-**File được cài đặt ở đâu:**
+**Where files are installed:**
 - **macOS/Linux**: `~/.claude/`
 - **Windows**: `%LOCALAPPDATA%\.claude\`
 
-> ✅ **Mẹo:** Chế độ global lý tưởng cho phát triển cá nhân. Cài một lần, dùng mọi nơi.
+> ✅ **Tip:** Global mode is ideal for personal development. Install once, use everywhere.
 
 ---
 
-### Tùy Chọn B: Cài Đặt Local (Dành Riêng Cho Dự Án)
+### Option B: Local Installation (Project-Specific)
 
-> **Sử dụng khi:** Bạn muốn file ClaudeKit CHỈ trong một dự án cụ thể.
+> **Use when:** You want ClaudeKit files ONLY in a specific project.
 >
-> **Chạy từ:** Thư mục gốc của dự án (ví dụ: `/projects/my-app/`)
+> **Run from:** Your project's root directory (e.g., `/projects/my-app/`)
 
 ```bash
-# Di chuyển đến dự án trước!
+# Move to project first!
 cd /path/to/your/project
 
-# Chế độ tương tác
+# Interactive mode
 ck init
 
-# Với lựa chọn kit
+# With kit selection
 ck init --kit engineer
 
-# Với mẫu loại trừ
+# With exclude patterns
 ck init --exclude "local-config/**" --exclude "*.local"
 ```
 
-**File được cài đặt ở đâu:** Trong thư mục dự án hiện tại (`./.claude/`)
+**Where files are installed:** In the current project directory (`./.claude/`)
 
-> ⚠️ **Cảnh báo:** Chạy `ck init` (không có `-g`) từ **thư mục home** hoặc **thư mục user** sẽ cài ClaudeKit tại đó, có thể gây lỗi đường dẫn hook. Nếu muốn ClaudeKit có sẵn ở mọi nơi, hãy dùng `ck init -g`.
+> ⚠️ **Warning:** Running `ck init` (without `-g`) from **home directory** or **user directory** will install ClaudeKit there, which may cause hook path errors. If you want ClaudeKit available everywhere, use `ck init -g`.
 
 ---
 
-### Cập Nhật CLI
+### Updating CLI
 
-Để cập nhật công cụ dòng lệnh `ck` lên phiên bản mới nhất:
+To update the `ck` command-line tool to the latest version:
 
 ```bash
 ck update
 ```
 
-**Lưu ý:** Lệnh này chỉ cập nhật CLI, không cập nhật file ClaudeKit Engineer. Dùng `ck init` (local) hoặc `ck init -g` (global) để cập nhật file ClaudeKit Engineer.
+**Note:** This command only updates the CLI, not ClaudeKit Engineer files. Use `ck init` (local) or `ck init -g` (global) to update ClaudeKit Engineer files.
 
-### Xác Thực
+### Authentication
 
-CLI yêu cầu **GitHub Personal Access Token (PAT)** để tải xuống các bản phát hành từ repository riêng tư (`claudekit-engineer` và `claudekit-marketing`).
+The CLI requires a **GitHub Personal Access Token (PAT)** to download releases from private repositories (`claudekit-engineer` and `claudekit-marketing`).
 
-**Chuỗi Dự Phòng Xác Thực:**
+**Authentication Fallback Chain:**
 
-1. **GitHub CLI**: Sử dụng `gh auth token` nếu GitHub CLI đã cài đặt và xác thực
-2. **Biến Môi Trường**: Kiểm tra `GITHUB_TOKEN` hoặc `GH_TOKEN`
-3. **OS Keychain**: Lấy token đã lưu từ keychain hệ thống
-4. **Nhắc Người Dùng**: Nhắc nhập token và đề nghị lưu an toàn
+1. **GitHub CLI**: Uses `gh auth token` if GitHub CLI is installed and authenticated
+2. **Environment Variables**: Checks `GITHUB_TOKEN` or `GH_TOKEN`
+3. **OS Keychain**: Retrieves saved token from system keychain
+4. **User Prompt**: Prompts for token input and offers to save securely
 
-**Tạo Personal Access Token:**
+**Creating a Personal Access Token:**
 
-1. Vào GitHub Settings → Developer settings → Personal access tokens → Tokens (classic)
-2. Tạo token mới với scope `repo` (cho repository riêng tư)
-3. Sao chép token
+1. Go to GitHub Settings → Developer settings → Personal access tokens → Tokens (classic)
+2. Create new token with `repo` scope (for private repositories)
+3. Copy the token
 
-**Thiết Lập Token Qua Biến Môi Trường:**
+**Setting Token via Environment Variable:**
 
 ```bash
 export GITHUB_TOKEN=ghp_your_token_here
 ```
 
-## Xác Minh Cài Đặt
+## Verify Installation
 
-Sau khi cài đặt (bất kỳ phương pháp nào), xác minh mọi thứ đã được thiết lập đúng:
+After installation (either method), verify everything is set up correctly:
 
 ```bash
-# Kiểm tra Claude Code có sẵn
+# Check Claude Code is available
 claude --version
 
-# Kiểm tra thư mục .claude tồn tại
+# Check .claude directory exists
 ls -la .claude/
 ```
 
-## Cập Nhật ClaudeKit
+## Updating ClaudeKit
 
-Giữ ClaudeKit Engineer luôn cập nhật:
+Keep ClaudeKit Engineer up to date:
 
 ```bash
-# Cập nhật ClaudeKit Engineer lên phiên bản mới nhất
+# Update ClaudeKit Engineer to latest version
 ck init
 
-# Cập nhật lên phiên bản cụ thể
+# Update to specific version
 ck init --version v1.2.0
 ```
 
-**Loại trừ các file cụ thể khi cập nhật:**
+**Exclude specific files when updating:**
 
 ```bash
-# Không ghi đè CLAUDE.md
+# Don't overwrite CLAUDE.md
 ck init --exclude CLAUDE.md
 ```
 
-**Cập nhật CLI:**
+**Update CLI:**
 
 ```bash
-# Cập nhật công cụ dòng lệnh ck
+# Update ck command-line tool
 ck update
 ```
 
-## Khắc Phục Sự Cố
+## Troubleshooting
 
-### Lỗi Quyền
+### Permission Errors
 
-Trên macOS/Linux, bạn có thể cần sudo:
+On macOS/Linux, you may need sudo:
 
 ```bash
 sudo npm install -g claudekit-cli
 ```
 
-Hoặc cấu hình npm để sử dụng thư mục khác:
+Or configure npm to use a different directory:
 
 ```bash
 mkdir ~/.npm-global
@@ -287,27 +286,27 @@ npm config set prefix '~/.npm-global'
 export PATH=~/.npm-global/bin:$PATH
 ```
 
-### Không Tìm Thấy Claude Code
+### Claude Code Not Found
 
-Nếu lệnh `claude` không được tìm thấy:
+If the `claude` command is not found:
 
-1. Cài đặt Claude Code CLI từ [claude.ai/code](https://claude.ai/code)
-2. Khởi động lại terminal
-3. Xác minh với `claude --version`
+1. Install Claude Code CLI from [claude.ai/code](https://claude.ai/code)
+2. Restart terminal
+3. Verify with `claude --version`
 
-### Xác Thực GitHub Thất Bại
+### GitHub Authentication Failed
 
-Nếu CLI không thể xác thực:
+If CLI cannot authenticate:
 
-1. Cài đặt GitHub CLI: `brew install gh` (macOS) hoặc xem [cli.github.com](https://cli.github.com)
-2. Xác thực: `gh auth login`
-3. Xác minh: `gh auth status`
-4. Hoặc thiết lập biến môi trường: `export GITHUB_TOKEN=your_token`
+1. Install GitHub CLI: `brew install gh` (macOS) or see [cli.github.com](https://cli.github.com)
+2. Authenticate: `gh auth login`
+3. Verify: `gh auth status`
+4. Or set environment variable: `export GITHUB_TOKEN=your_token`
 
-## Bước Tiếp Theo
+## Next Steps
 
-Bây giờ ClaudeKit đã được cài đặt, tiếp tục với:
+Now that ClaudeKit is installed, continue with:
 
-- [Hướng Dẫn Bắt Đầu Nhanh](/docs/getting-started/quick-start) - Xây dựng dự án đầu tiên
-- [Giải Thích CLAUDE.md](/docs/core-concepts/claude-md) - Hiểu file cấu hình
-- [Workflows](/docs/core-concepts/workflows) - Tìm hiểu về quy trình phát triển
+- [Quick Start Guide](/docs/getting-started/quick-start) - Build your first project
+- [CLAUDE.md Explained](/docs/core-concepts/claude-md) - Understand the configuration file
+- [Workflows](/docs/core-concepts/workflows) - Learn about development workflows

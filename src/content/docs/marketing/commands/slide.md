@@ -1,416 +1,415 @@
 ---
-title: "/slide - Tạo Bài Thuyết Trình"
-description: "Tạo pitch deck chuyên nghiệp, đề xuất chiến dịch và bài thuyết trình marketing với nội dung và thiết kế hỗ trợ AI ở định dạng .pptx"
-lang: vi
+title: "/slide - Create Presentations"
+description: "Generate professional pitch decks, campaign proposals, and marketing presentations with AI-powered content and design in .pptx format"
 section: marketing
 category: commands
 order: 5
 published: true
 ---
 
-# /slide:create - Tạo Bài Thuyết Trình Đẹp
+# /slide:create - Create Beautiful Presentations
 
-Tạo bài thuyết trình chuyên nghiệp cho pitch deck, đề xuất chiến dịch, bài thuyết trình sáng tạo và báo cáo nội bộ. Tạo nội dung hỗ trợ AI với mẫu thiết kế đẹp, xuất file .pptx có thể chỉnh sửa.
+Generate professional presentations for pitch decks, campaign proposals, creative briefs, and internal reports. AI-powered content creation with beautiful design templates, export to editable .pptx files.
 
-## Lệnh
+## Commands
 
-### /slide:create - Tạo Bài Thuyết Trình
+### /slide:create - Create Presentation
 
-Tạo bộ slide hoàn chỉnh từ prompt đơn giản hoặc brief chi tiết.
+Generate complete slide decks from simple prompts or detailed briefs.
 
-**Cú pháp:**
+**Syntax:**
 ```bash
-/slide:create "<chủ đề bài thuyết trình hoặc brief>"
+/slide:create "<presentation topic or brief>"
 ```
 
-**Chức năng:**
-1. Phân tích mục tiêu bài thuyết trình và đối tượng mục tiêu
-2. Tạo dàn ý có cấu trúc với thông điệp chính
-3. Tạo nội dung hấp dẫn cho mỗi slide
-4. Thiết kế slide với mẫu chuyên nghiệp và hình ảnh
-5. Xuất file .pptx có thể chỉnh sửa sẵn sàng để tùy chỉnh
+**Features:**
+1. Analyze presentation goals and target audience
+2. Generate structured outline with key messages
+3. Create compelling content for each slide
+4. Design slides with professional templates and visuals
+5. Export to editable .pptx file ready for customization
 
-**Ví dụ:**
+**Examples:**
 ```bash
-# Pitch deck cho nhà đầu tư
-/slide:create "pitch deck Series A cho nền tảng tự động hóa marketing AI"
+# Investor pitch deck
+/slide:create "Series A pitch deck for AI marketing automation platform"
 
-# Đề xuất chiến dịch
-/slide:create "đề xuất chiến dịch ra mắt sản phẩm Q1 2025 với phân tích ngân sách"
+# Campaign proposal
+/slide:create "Q1 2025 product launch campaign proposal with budget breakdown"
 
-# Bài thuyết trình demo sản phẩm
-/slide:create "demo kỹ thuật về tính năng giới hạn tốc độ API cho khách hàng doanh nghiệp"
+# Product demo presentation
+/slide:create "technical demo of API rate limiting feature for enterprise clients"
 
-# Báo cáo nội bộ
-/slide:create "đánh giá hiệu suất marketing Q4 với các chỉ số chính và chiến lược 2025"
+# Internal report
+/slide:create "Q4 marketing performance review with key metrics and 2025 strategy"
 
 # Sales enablement
-/slide:create "phân tích đối thủ cạnh tranh so sánh nền tảng của chúng tôi vs. đối thủ cho đội bán hàng"
+/slide:create "competitive analysis comparing our platform vs. competitors for sales team"
 ```
 
-**Đầu ra:**
+**Output:**
 ```
 /assets/slides/YYYY-MM-DD-slug/
-├── presentation.pptx          # File PowerPoint có thể chỉnh sửa
-├── outline.md                 # Cấu trúc slide và thông điệp chính
-├── script.md                  # Ghi chú diễn giả cho mỗi slide
+├── presentation.pptx          # Editable PowerPoint file
+├── outline.md                 # Slide structure and key messages
+├── script.md                  # Speaker notes for each slide
 ├── images/
-│   ├── slide-01-cover.png     # Hình ảnh xem trước
+│   ├── slide-01-cover.png     # Preview images
 │   ├── slide-02-problem.png
 │   ├── slide-03-solution.png
 │   └── ...
-└── metadata.json              # Theme, font, bảng màu
+└── metadata.json              # Theme, fonts, color palette
 ```
 
 ---
 
-## Loại Bài Thuyết Trình & Mẫu
+## Presentation Types & Templates
 
-### 1. Pitch Deck (Bài Thuyết Trình Nhà Đầu Tư)
+### 1. Pitch Deck (Investor Presentation)
 
-**Trường hợp sử dụng**: Gọi vốn, gặp nhà đầu tư, Demo Day
+**Use Case**: Fundraising, investor meetings, Demo Day
 
-**Cấu Trúc Slide** (10-15 slide, 10-15 phút):
-1. **Cover** - Tên công ty, tagline, thông tin diễn giả
-2. **Vấn đề** - Điểm đau thị trường, tác động định lượng
-3. **Giải pháp** - Sản phẩm/dịch vụ của bạn, lợi thế vượt trội
-4. **Demo Sản Phẩm** - Ảnh chụp màn hình, tính năng chính (2-3 slide)
-5. **Cơ Hội Thị Trường** - TAM/SAM/SOM, xu hướng thị trường
-6. **Mô Hình Kinh Doanh** - Dòng doanh thu, giá
-7. **Traction** - Chỉ số chính, quỹ đạo tăng trưởng
-8. **Cạnh Tranh** - Cảnh quan cạnh tranh, sự khác biệt
-9. **Đội Ngũ** - Người sáng lập, cố vấn, tuyển dụng chủ chốt
-10. **Tài Chính** - Dự báo doanh thu, tốc độ đốt tiền
-11. **Yêu Cầu Vốn** - Số tiền, sử dụng vốn, cột mốc
-12. **Tầm Nhìn** - Mục tiêu dài hạn, chiến lược thoát
+**Slide Structure** (10-15 slides, 10-15 minutes):
+1. **Cover** - Company name, tagline, presenter info
+2. **Problem** - Market pain points, quantified impact
+3. **Solution** - Your product/service, unique value proposition
+4. **Product Demo** - Screenshots, key features (2-3 slides)
+5. **Market Opportunity** - TAM/SAM/SOM, market trends
+6. **Business Model** - Revenue streams, pricing
+7. **Traction** - Key metrics, growth trajectory
+8. **Competition** - Competitive landscape, differentiation
+9. **Team** - Founders, advisors, key hires
+10. **Financials** - Revenue projections, burn rate
+11. **Ask** - Funding amount, use of funds, milestones
+12. **Vision** - Long-term goals, exit strategy
 
-**Yếu Tố Thiết Kế**:
-- Bố cục sạch, chuyên nghiệp (nhiều khoảng trắng)
-- Văn bản tối thiểu (tối đa 6 điểm mỗi slide)
-- Ảnh chụp màn hình sản phẩm chất lượng cao
-- Trực quan hóa dữ liệu (biểu đồ, đồ thị)
-- Bảng màu nhất quán (màu thương hiệu)
+**Design Elements**:
+- Clean, professional layout (lots of white space)
+- Minimal text (max 6 bullets per slide)
+- High-quality product screenshots
+- Data visualizations (charts, graphs)
+- Consistent color palette (brand colors)
 
-**Ví dụ lệnh**:
+**Example Command**:
 ```bash
-/slide:create "pitch deck Series A - SaaS tự động hóa marketing AI, gọi vốn $3M, tăng trưởng 15x YoY, 500+ khách hàng"
+/slide:create "Series A pitch deck - AI marketing automation SaaS, raising $3M, 15x YoY growth, 500+ customers"
 ```
 
 ---
 
-### 2. Đề Xuất Chiến Dịch
+### 2. Campaign Proposal
 
-**Trường hợp sử dụng**: Pitch khách hàng, phê duyệt chiến dịch nội bộ, bài thuyết trình agency
+**Use Case**: Client pitches, internal campaign approvals, agency presentations
 
-**Cấu Trúc Slide** (15-20 slide, 20-30 phút):
-1. **Cover** - Tên chiến dịch, khách hàng/thương hiệu, ngày
-2. **Tóm Tắt Điều Hành** - Mục tiêu chiến dịch, kết quả mong đợi
-3. **Phân Tích Tình Hình** - Trạng thái hiện tại, thách thức
-4. **Đối Tượng Mục Tiêu** - Persona, nhân khẩu học, tâm lý học
-5. **Mục Tiêu Chiến Dịch** - Mục tiêu SMART (Cụ thể, Đo lường được, Đạt được, Liên quan, Có thời hạn)
-6. **Ý Tưởng Lớn** - Khái niệm cốt lõi, hướng sáng tạo
-7. **Chiến Lược Chiến Dịch** - Kênh, chiến thuật, timeline
-8. **Thực Hiện Sáng Tạo** - Mockup, copy, hình ảnh (3-5 slide)
-9. **Kế Hoạch Truyền Thông** - Kết hợp kênh, reach/frequency
-10. **Phân Tích Ngân Sách** - Phân bổ chi phí, dự báo ROI
-11. **Chỉ Số Thành Công** - KPI, kế hoạch đo lường
-12. **Timeline & Cột Mốc** - Biểu đồ Gantt, ngày quan trọng
-13. **Đội Ngũ & Trách Nhiệm** - Vai trò, liên hệ
-14. **Rủi Ro & Giảm Thiểu** - Vấn đề tiềm ẩn, kế hoạch dự phòng
-15. **Bước Tiếp Theo** - Quy trình phê duyệt, danh sách kiểm tra ra mắt
+**Slide Structure** (15-20 slides, 20-30 minutes):
+1. **Cover** - Campaign name, client/brand, date
+2. **Executive Summary** - Campaign goals, expected outcomes
+3. **Situation Analysis** - Current state, challenges
+4. **Target Audience** - Personas, demographics, psychographics
+5. **Campaign Objectives** - SMART goals (Specific, Measurable, Achievable, Relevant, Time-bound)
+6. **Big Idea** - Core concept, creative direction
+7. **Campaign Strategy** - Channels, tactics, timeline
+8. **Creative Execution** - Mockups, copy, visuals (3-5 slides)
+9. **Media Plan** - Channel mix, reach/frequency
+10. **Budget Breakdown** - Cost allocation, ROI projections
+11. **Success Metrics** - KPIs, measurement plan
+12. **Timeline & Milestones** - Gantt chart, key dates
+13. **Team & Responsibilities** - Roles, contacts
+14. **Risks & Mitigation** - Potential issues, contingency plans
+15. **Next Steps** - Approval process, launch checklist
 
-**Yếu Tố Thiết Kế**:
-- Hình ảnh đậm, sáng tạo (mockup chiến dịch)
-- Màu và font thương hiệu khách hàng
-- Bảng concept chiến dịch (mood board)
-- Bảng ngân sách và timeline
-- So sánh trước/sau
+**Design Elements**:
+- Bold, creative visuals (campaign mockups)
+- Client brand colors and fonts
+- Campaign mood boards
+- Budget and timeline tables
+- Before/after comparisons
 
-**Ví dụ lệnh**:
+**Example Command**:
 ```bash
-/slide:create "chiến dịch ra mắt sản phẩm Q1 - tính năng API mới, đối tượng developer, ngân sách $50K, timeline 6 tuần"
+/slide:create "Q1 product launch campaign - new API feature, developer audience, $50K budget, 6-week timeline"
 ```
 
 ---
 
-### 3. Bài Thuyết Trình Demo Sản Phẩm
+### 3. Product Demo Presentation
 
-**Trường hợp sử dụng**: Bài thuyết trình bán hàng, webinar, bài nói hội nghị
+**Use Case**: Sales presentations, webinars, conference talks
 
-**Cấu Trúc Slide** (8-12 slide, 15-20 phút):
-1. **Cover** - Tên sản phẩm, trọng tâm demo
-2. **Agenda** - Sẽ trình bày gì, kết quả mong đợi
-3. **Vấn Đề** - Điểm đau của khách hàng
-4. **Tổng Quan** - Giới thiệu sản phẩm, lợi ích chính (1 slide)
-5. **Demo Tính Năng** - Demo trực tiếp với chú thích (4-6 slide)
-   - Tính năng 1: Ảnh chụp màn hình + giải thích
-   - Tính năng 2: Ảnh chụp màn hình + use case
-   - Tính năng 3: Ảnh chụp màn hình + lợi ích
-   - Tích hợp: Cách phù hợp với quy trình làm việc
-6. **Giá** - Gói, package, máy tính ROI
-7. **Social Proof** - Logo khách hàng, testimonial
-8. **Bước Tiếp Theo** - Đăng ký dùng thử, đặt lịch gặp, thông tin liên hệ
+**Slide Structure** (8-12 slides, 15-20 minutes):
+1. **Cover** - Product name, demo focus
+2. **Agenda** - What you'll cover, expected outcomes
+3. **Problem** - Customer pain points
+4. **Overview** - Product introduction, key benefits (1 slide)
+5. **Feature Demo** - Live demo with annotations (4-6 slides)
+   - Feature 1: Screenshot + explanation
+   - Feature 2: Screenshot + use case
+   - Feature 3: Screenshot + benefits
+   - Integrations: How it fits into workflow
+6. **Pricing** - Tiers, packages, ROI calculator
+7. **Social Proof** - Customer logos, testimonials
+8. **Next Steps** - Trial signup, schedule meeting, contact info
 
-**Yếu Tố Thiết Kế**:
-- Ảnh chụp màn hình sản phẩm lớn (toàn màn hình)
-- Chú thích và gọi chú ý trên ảnh chụp màn hình
-- Hướng dẫn từng bước
-- So sánh trước/sau
-- Logo và trích dẫn khách hàng
+**Design Elements**:
+- Large product screenshots (full-screen)
+- Annotations and callouts on screenshots
+- Step-by-step walkthroughs
+- Before/after comparisons
+- Customer logos and quotes
 
-**Ví dụ lệnh**:
+**Example Command**:
 ```bash
-/slide:create "demo giới hạn tốc độ API cho khách hàng doanh nghiệp - hướng dẫn dashboard, cấu hình, giám sát"
+/slide:create "API rate limiting demo for enterprise customers - dashboard walkthrough, configuration, monitoring"
 ```
 
 ---
 
-### 4. Báo Cáo / Đánh Giá Nội Bộ
+### 4. Internal Report / Review
 
-**Trường hợp sử dụng**: Đánh giá theo quý, cập nhật đội, gặp hội đồng
+**Use Case**: Quarterly reviews, team updates, board meetings
 
-**Cấu Trúc Slide** (10-15 slide, 15-20 phút):
-1. **Cover** - Tiêu đề báo cáo, khoảng thời gian, phòng ban
-2. **Tóm Tắt Điều Hành** - Điểm nổi bật chính, chỉ số tiêu đề
-3. **Tổng Quan Hiệu Suất** - Chỉ số kiểu dashboard
-4. **Thành Công Chính** - Thành tựu lớn (với hình ảnh)
-5. **Thách Thức** - Vấn đề gặp phải, bài học rút ra
-6. **Phân Tích Sâu Chỉ Số** - 3-5 slide về chỉ số chính
-   - Traffic/Tương tác
-   - Chuyển đổi/Doanh thu
-   - Chi phí Thu hút Khách hàng
-   - Giữ chân/Churn
-7. **Hiệu Suất Chiến Dịch** - Kết quả chiến dịch riêng lẻ
-8. **Insight & Bài Học** - Takeaway dựa trên dữ liệu
-9. **Khuyến Nghị** - Hành động cho quý tiếp theo
-10. **Q&A** - Slide thảo luận mở
+**Slide Structure** (10-15 slides, 15-20 minutes):
+1. **Cover** - Report title, time period, department
+2. **Executive Summary** - Key highlights, headline metrics
+3. **Performance Overview** - Dashboard-style metrics
+4. **Key Wins** - Major achievements (with visuals)
+5. **Challenges** - Issues faced, lessons learned
+6. **Metric Deep Dives** - 3-5 slides on key metrics
+   - Traffic/Engagement
+   - Conversions/Revenue
+   - Customer Acquisition Cost
+   - Retention/Churn
+7. **Campaign Performance** - Individual campaign results
+8. **Insights & Learnings** - Data-driven takeaways
+9. **Recommendations** - Action items for next quarter
+10. **Q&A** - Discussion slide
 
-**Yếu Tố Thiết Kế**:
-- Slide nhiều dữ liệu (biểu đồ, đồ thị, bảng)
-- Chỉ số mã màu (xanh lá/đỏ cho hiệu suất)
-- Đường xu hướng và so sánh (YoY, QoQ)
-- Văn bản tối thiểu, để dữ liệu nói
-- Phong cách chuyên nghiệp, doanh nghiệp
+**Design Elements**:
+- Data-heavy slides (charts, graphs, tables)
+- Color-coded metrics (green/red for performance)
+- Trend lines and comparisons (YoY, QoQ)
+- Minimal text, let data speak
+- Professional, corporate style
 
-**Ví dụ lệnh**:
+**Example Command**:
 ```bash
-/slide:create "đánh giá hiệu suất marketing Q4 2024 - kết quả chiến dịch, tác động pipeline, khuyến nghị 2025"
+/slide:create "Q4 2024 marketing performance review - campaign results, pipeline impact, 2025 recommendations"
 ```
 
 ---
 
-## Tùy Chỉnh Thiết Kế
+## Design Customization
 
-### Tùy Chọn Theme
+### Theme Options
 
-**Theme được xây dựng sẵn** (chỉ định với cờ `--theme`):
+**Pre-built Themes** (specify with `--theme` flag):
 
-| Theme | Phong cách | Tốt nhất cho | Màu |
+| Theme | Style | Best For | Colors |
 |-------|-------|----------|--------|
-| **Modern** | Sạch, tối giản, nhiều khoảng trắng | Công ty công nghệ, SaaS | Xanh dương, xám, trắng |
-| **Bold** | Tương phản cao, màu sống động | Agency sáng tạo, chiến dịch | Đỏ, đen, vàng |
-| **Professional** | Doanh nghiệp, truyền thống | Doanh nghiệp, tài chính, pháp lý | Navy, xám, trắng |
-| **Startup** | Vui tươi, nhiều gradient | Giai đoạn đầu, tiêu dùng | Tím, hồng, xanh lơ |
-| **Dark** | Nền tối, accent neon | Công cụ developer, game | Đen, cyan, magenta |
-| **Minimalist** | Cực đơn giản, tập trung typography | Xa xỉ, thiết kế, tư vấn | Đen, trắng, một accent |
+| **Modern** | Clean, minimalist, lots of white space | Tech companies, SaaS | Blue, gray, white |
+| **Bold** | High contrast, vibrant colors | Creative agencies, campaigns | Red, black, yellow |
+| **Professional** | Corporate, traditional | Enterprise, finance, legal | Navy, gray, white |
+| **Startup** | Playful, lots of gradients | Early-stage, consumer | Purple, pink, cyan |
+| **Dark** | Dark background, neon accents | Developer tools, gaming | Black, cyan, magenta |
+| **Minimalist** | Ultra-simple, typography-focused | Luxury, design, consulting | Black, white, one accent |
 
-**Ví dụ với theme**:
+**Example with Theme**:
 ```bash
-/slide:create "pitch deck cho startup công cụ developer" --theme=dark
+/slide:create "pitch deck for developer tools startup" --theme=dark
 ```
 
-### Branding Tùy Chỉnh
+### Custom Branding
 
-**Cung cấp hướng dẫn thương hiệu** trong `/assets/brand-guidelines.md`:
+**Provide brand guidelines** in `/assets/brand-guidelines.md`:
 
 ```markdown
-# Hướng Dẫn Thương Hiệu
+# Brand Guidelines
 
-## Màu
-- Chính: #4F46E5 (Indigo)
-- Phụ: #06B6D4 (Cyan)
+## Colors
+- Primary: #4F46E5 (Indigo)
+- Secondary: #06B6D4 (Cyan)
 - Accent: #F59E0B (Amber)
-- Văn bản: #1F2937 (Xám tối)
-- Nền: #FFFFFF (Trắng)
+- Text: #1F2937 (Dark Gray)
+- Background: #FFFFFF (White)
 
 ## Typography
-- Tiêu đề: Inter Bold
-- Nội dung: Inter Regular
-- Monospace: JetBrains Mono (ví dụ code)
+- Headings: Inter Bold
+- Body: Inter Regular
+- Monospace: JetBrains Mono (code examples)
 
 ## Logo
 - File: /assets/brand/logo.png
-- Sử dụng: Góc trên bên trái, slide 1 cover
-- Kích thước: 120x40px
+- Usage: Top-left corner, slide 1 cover
+- Size: 120x40px
 
-## Phong Cách Hình Ảnh
-- Ảnh chụp màn hình sản phẩm: Sạch, độ phân giải cao, với bóng đổ tinh tế
-- Icon: Phong cách outline, nét 2px
-- Biểu đồ: Dùng màu thương hiệu, đường lưới tối thiểu
+## Imagery Style
+- Product screenshots: Clean, high-res, with subtle shadows
+- Icons: Outline style, 2px stroke
+- Charts: Use brand colors, minimal gridlines
 ```
 
-Lệnh `/slide:create` sẽ tự động áp dụng branding của bạn.
+The `/slide:create` command will automatically apply your branding.
 
 ---
 
-## Tùy Chọn Nâng Cao
+## Advanced Options
 
-### Dàn Ý Tùy Chỉnh
+### Custom Outline
 
-**Cung cấp dàn ý tùy chỉnh** thay vì tự động tạo:
+**Provide custom outline** instead of auto-generating:
 
 ```bash
 /slide:create @outline.md
 ```
 
-**Ví dụ `outline.md`**:
+**Example `outline.md`**:
 ```markdown
-# Dàn Ý Bài Thuyết Trình
+# Presentation Outline
 
 ## Slide 1: Cover
-Tiêu đề: "Giới Hạn Tốc Độ API Đơn Giản"
-Phụ đề: "Bảo Vệ Cấp Doanh Nghiệp Trong 3 Dòng Code"
+Title: "API Rate Limiting Made Simple"
+Subtitle: "Enterprise-Grade Protection In 3 Lines Of Code"
 
-## Slide 2: Vấn Đề
-Tiêu đề: "Thách Thức Bảo Mật API"
-Điểm:
-- API đối mặt với tăng đột biến traffic không thể đoán trước
-- Không có bảo vệ, hạ tầng thất bại
-- Giải pháp truyền thống phức tạp và đắt đỏ
+## Slide 2: Problem
+Title: "API Security Challenges"
+Points:
+- APIs face unpredictable traffic spikes
+- Without protection, infrastructure fails
+- Traditional solutions are complex and expensive
 
-## Slide 3: Giải Pháp
-Tiêu đề: "Giới Hạn Tốc Độ Thông Minh"
-Nội dung: Tổng quan sản phẩm với ảnh chụp màn hình dashboard
-Tính năng: Giám sát thời gian thực, giới hạn linh hoạt, zero downtime
+## Slide 3: Solution
+Title: "Intelligent Rate Limiting"
+Content: Product overview with dashboard screenshot
+Features: Real-time monitoring, flexible limits, zero downtime
 
-[... Tiếp tục cho tất cả slide ...]
+[... Continue for all slides ...]
 ```
 
-### Ghi Chú Diễn Giả
+### Speaker Notes
 
-**Tự động tạo ghi chú diễn giả** cho mỗi slide:
+**Auto-generate speaker notes** for each slide:
 
 ```bash
 /slide:create "pitch deck" --speaker-notes
 ```
 
-**Đầu ra** (`script.md`):
+**Output** (`script.md`):
 ```markdown
-# Ghi Chú Diễn Giả
+# Speaker Notes
 
-## Slide 1: Cover (30 giây)
-Giới thiệu: "Chào buổi sáng mọi người. Tôi là [Tên], CEO của [Công ty]. Chúng tôi đang xây dựng tương lai bảo mật API."
-Điểm chính: Hook khán giả với vấn đề chúng tôi giải quyết
-Chuyển tiếp: "Để tôi bắt đầu với một câu hỏi..."
+## Slide 1: Cover (30 seconds)
+Introduction: "Good morning everyone. I'm [Name], CEO of [Company]. We're building the future of API security."
+Key Point: Hook audience with the problem we solve
+Transition: "Let me start with a question..."
 
-## Slide 2: Vấn Đề (1 phút)
-Script: "Có bao nhiêu bạn đã trải qua sự cố API do tăng đột biến traffic? [Tạm dừng để giơ tay]
-Điều này phổ biến hơn bạn nghĩ. Năm ngoái, 67% công ty báo cáo sự cố liên quan đến API..."
-Điểm dữ liệu để nhấn mạnh: Thống kê 67%
-Chuyển tiếp: "Đây là vấn đề chúng tôi đang giải quyết."
+## Slide 2: Problem (1 minute)
+Script: "How many of you have experienced API downtime due to traffic spikes? [Pause for hands]
+This is more common than you think. Last year, 67% of companies reported API-related outages..."
+Data Point to Emphasize: 67% statistic
+Transition: "This is the problem we're solving."
 
-[... Tiếp tục cho mỗi slide ...]
+[... Continue for each slide ...]
 ```
 
 ---
 
-## Thông Số Kỹ Thuật
+## Technical Specs
 
-### Định Dạng Đầu Ra
+### Output Format
 
-**Thông số PowerPoint (.pptx)**:
-- Định dạng: Office Open XML (.pptx)
-- Tương thích: PowerPoint 2016+, Google Slides, Keynote
-- Kích thước Slide: 16:9 (1920x1080px) hoặc 4:3 (1024x768px)
-- Font: Nhúng (không cần cài đặt font)
-- Hình ảnh: PNG/JPEG độ phân giải cao, nhúng trong file
-- Kích thước File: Thường 5-15 MB (tùy hình ảnh)
+**PowerPoint (.pptx) Specifications**:
+- Format: Office Open XML (.pptx)
+- Compatible: PowerPoint 2016+, Google Slides, Keynote
+- Slide Size: 16:9 (1920x1080px) or 4:3 (1024x768px)
+- Fonts: Embedded (no font installation needed)
+- Images: High-res PNG/JPEG, embedded in file
+- File Size: Typically 5-15 MB (depends on images)
 
-**Yếu Tố Có Thể Chỉnh Sửa**:
-- Tất cả hộp văn bản (có thể chỉnh sửa đầy đủ)
-- Hình ảnh (có thể thay thế)
-- Màu (màu theme, dễ thay đổi)
-- Layout (sắp xếp lại, thêm/xóa slide)
-- Biểu đồ (liên kết với dữ liệu Excel nhúng)
+**Editable Elements**:
+- All text boxes (fully editable)
+- Images (replaceable)
+- Colors (theme colors, easy to change)
+- Layouts (rearrange, add/delete slides)
+- Charts (linked to embedded Excel data)
 
-### Tùy Chọn Xuất
+### Export Options
 
-**Nhiều định dạng** (chỉ định với cờ `--export`):
+**Multiple Formats** (specify with `--export` flag):
 
 ```bash
-# Xuất PDF (để in/chia sẻ)
+# Export to PDF (for printing/sharing)
 /slide:create "pitch deck" --export=pdf
 
-# Xuất hình ảnh slide (để nhúng trong tài liệu)
-/slide:create "đề xuất chiến dịch" --export=png
+# Export slide images (for embedding in docs)
+/slide:create "campaign proposal" --export=png
 
-# Xuất Google Slides (tải lên Drive)
-/slide:create "bài thuyết trình demo" --export=google-slides
+# Export to Google Slides (upload to Drive)
+/slide:create "demo presentation" --export=google-slides
 ```
 
 ---
 
-## Kỹ Năng Liên Quan
+## Related Skills
 
-Lệnh `/slide:create` tự động kích hoạt các kỹ năng này:
+The `/slide:create` command automatically activates these skills:
 
-- **[copywriting](/docs/marketing/skills/copywriting)** - Nội dung slide hấp dẫn
-- **[content-marketing](/docs/marketing/skills/content-marketing)** - Chiến lược bài thuyết trình
-- **[ai-artist](/docs/marketing/skills/ai-artist)** - Tạo thiết kế trực quan
+- **[copywriting](/docs/marketing/skills/copywriting)** - Compelling slide content
+- **[content-marketing](/docs/marketing/skills/content-marketing)** - Presentation strategy
+- **[ai-artist](/docs/marketing/skills/ai-artist)** - Visual design generation
 
-## Agent Liên Quan
+## Related Agents
 
-Các agent này cộng tác trong quy trình `/slide:create`:
+These agents collaborate in the `/slide:create` workflow:
 
-- **[copywriter](/docs/marketing/agents/copywriter)** - Viết nội dung slide thuyết phục
-- **[ui-ux-designer](/docs/marketing/agents/ui-ux-designer)** - Thiết kế layout đẹp
+- **[copywriter](/docs/marketing/agents/copywriter)** - Write persuasive slide content
+- **[ui-ux-designer](/docs/marketing/agents/ui-ux-designer)** - Design beautiful layouts
 
-## Quy Trình Làm Việc
+## Workflows
 
-Xem hướng dẫn quy trình đầy đủ:
+See full workflow guides:
 
-- [Quy Trình Chiến Dịch](/docs/marketing/workflows/campaign-workflow) - Bài thuyết trình đề xuất chiến dịch
+- [Campaign Workflow](/docs/marketing/workflows/campaign-workflow) - Campaign proposal presentations
 
 ---
 
-## Khắc Phục Sự Cố
+## Troubleshooting
 
-### Slide Thiếu Ảnh Chụp Màn Hình Sản Phẩm
+### Slides Missing Product Screenshots
 
-**Vấn đề**: Slide được tạo sử dụng hình ảnh placeholder thay vì ảnh chụp màn hình sản phẩm thực tế.
+**Issue**: Generated slides use placeholder images instead of actual product screenshots.
 
-**Giải pháp**:
-1. Thêm ảnh chụp màn hình sản phẩm vào `/assets/screenshots/product/`
-2. Tham chiếu tính năng cụ thể trong prompt: "bao gồm ảnh chụp màn hình dashboard hiển thị cấu hình giới hạn tốc độ"
-3. Sử dụng cờ `--screenshots=/path/to/screenshots/` để chỉ định thư mục tùy chỉnh
-4. Thay thế placeholder thủ công trong file .pptx sau khi tạo
+**Solution**:
+1. Add product screenshots to `/assets/screenshots/product/`
+2. Reference specific features in prompt: "include dashboard screenshot showing rate limiting configuration"
+3. Use `--screenshots=/path/to/screenshots/` flag to specify custom directory
+4. Manually replace placeholders in .pptx file after generation
 
-### Nội Dung Quá Dài
+### Content Too Long
 
-**Vấn đề**: Slide có quá nhiều văn bản, vi phạm quy tắc "tối đa 6 điểm".
+**Issue**: Slides have too much text, violating "max 6 bullets" rule.
 
-**Giải pháp**:
-1. Thêm cờ `--concise` cho điểm ngắn hơn
-2. Chỉ định trong prompt: "giữ slide tối thiểu, tối đa 5 từ mỗi điểm"
-3. Chỉnh sửa file .pptx để rút gọn văn bản sau khi tạo
-4. Sử dụng `--speaker-notes` để chuyển chi tiết sang phần ghi chú
+**Solution**:
+1. Add `--concise` flag for shorter bullet points
+2. Specify in prompt: "keep slides minimal, max 5 words per bullet"
+3. Edit .pptx file to condense text after generation
+4. Use `--speaker-notes` to move details to notes section
 
-### Thiết Kế Không Khớp Thương Hiệu
+### Design Doesn't Match Brand
 
-**Vấn đề**: Slide được tạo không sử dụng màu/font thương hiệu công ty.
+**Issue**: Generated slides don't use company brand colors/fonts.
 
-**Giải pháp**:
-1. Tạo `/assets/brand-guidelines.md` với màu, font, logo
-2. Sử dụng cờ `--theme=custom` để áp dụng hướng dẫn thương hiệu
-3. Cung cấp file brand kit trong `/assets/brand/` (logo.png, colors.json)
-4. Áp dụng mẫu PowerPoint công ty thủ công sau khi tạo
+**Solution**:
+1. Create `/assets/brand-guidelines.md` with colors, fonts, logo
+2. Use `--theme=custom` flag to apply brand guidelines
+3. Provide brand kit files in `/assets/brand/` (logo.png, colors.json)
+4. Manually apply company PowerPoint template after generation
 
-### Biểu Đồ/Đồ Thị Không Tạo
+### Charts/Graphs Not Generated
 
-**Vấn đề**: Slide trực quan hóa dữ liệu thiếu biểu đồ.
+**Issue**: Data visualization slides missing charts.
 
-**Giải pháp**:
-1. Cung cấp dữ liệu trong prompt: "doanh thu Q4 $500K, Q1 $750K, Q2 $1.2M"
-2. Đính kèm file dữ liệu CSV: `/slide:create @outline.md --data=metrics.csv`
-3. Sử dụng loại biểu đồ đơn giản hơn (bar, line thay vì sankey/sunburst phức tạp)
-4. Thêm biểu đồ thủ công vào .pptx sử dụng bảng dữ liệu Excel nhúng
+**Solution**:
+1. Provide data in prompt: "Q4 revenue $500K, Q1 $750K, Q2 $1.2M"
+2. Attach CSV data file: `/slide:create @outline.md --data=metrics.csv`
+3. Use simpler chart types (bar, line instead of complex sankey/sunburst)
+4. Manually add charts to .pptx using embedded Excel data table

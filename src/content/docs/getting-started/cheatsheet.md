@@ -450,55 +450,7 @@ ck --version
 /plan <what-you-want-to-do>
 ```
 
-## Language-Specific Quick Reference
-
-### Tiếng Việt
-
-```bash
-# Khởi tạo dự án có sẵn
-/docs:init
-
-# Tính năng mới (cần review plan)
-/cook <mô-tả-tính-năng>
-
-# Tính năng mới (tự động, ko review)
-/cook:auto <mô-tả>
-
-# Tính năng mới (nhanh hơn, ít plan hơn)
-/cook:auto:fast <mô-tả>
-
-# Chỉ lên plan, không code
-/plan <mô-tả>
-
-# Code theo plan có sẵn
-/code <plan.md>
-
-# Sửa lỗi nhanh
-/fix:fast <mô-tả-lỗi>
-
-# Sửa lỗi khó (suy nghĩ lâu hơn)
-/fix:hard <mô-tả-lỗi>
-
-# Tự lấy logs và sửa
-/fix:logs
-
-# Chạy test và sửa tới chết
-/fix:test
-
-# Lấy logs GitHub Actions và sửa
-/fix:ci <github-action-url>
-
-# Tạo dự án mới (cần review plan)
-/bootstrap <ý-tưởng>
-
-# Tạo dự án mới (tự động tới chết)
-/bootstrap:auto <ý-tưởng>
-
-# Chạy test và báo cáo (không sửa)
-/test
-```
-
-### English
+## Quick Command Reference
 
 ```bash
 # Initialize existing project

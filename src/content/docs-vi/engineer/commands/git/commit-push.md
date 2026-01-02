@@ -1,169 +1,170 @@
 ---
 title: /git:cp
-description: Documentation for commit-push
+description: Tài liệu hướng dẫn lệnh commit-push
 section: engineer
 kit: engineer
 category: commands/git
 order: 31
 published: true
+lang: vi
 ---
 
 # /git:cp
 
-Stage all changes, create a conventional commit with a professional message, and push to the remote repository in one streamlined command. Perfect for quick iteration cycles.
+Thực hiện stage tất cả các thay đổi, tạo một bản commit theo tiêu chuẩn conventional với thông điệp chuyên nghiệp, và đẩy (push) lên kho lưu trữ từ xa chỉ trong một lệnh duy nhất. Hoàn hảo cho các chu kỳ lặp lại nhanh chóng.
 
-## Syntax
+## Cú pháp
 
 ```bash
 /git:cp
 ```
 
-## How It Works
+## Cách hoạt động
 
-This command combines `/git:cm` (commit) with `git push`:
+Lệnh này kết hợp `/git:cm` (commit) với `git push`:
 
 ### 1. Stage & Commit (`/git:cm`)
 
-- Analyzes all changes (staged + unstaged)
-- Creates conventional commit message
-- Stages relevant files
-- Creates commit
+- Phân tích tất cả các thay đổi (staged + unstaged)
+- Tạo thông điệp commit theo tiêu chuẩn conventional
+- Stage các tệp liên quan
+- Tạo commit
 
-### 2. Push to Remote
+### 2. Đẩy lên kho lưu trữ từ xa (Push)
 
-- Pushes to current branch's upstream
-- Or prompts to set upstream if not configured
-- Verifies push success
+- Đẩy lên nhánh upstream của nhánh hiện tại
+- Hoặc yêu cầu thiết lập upstream nếu chưa được cấu hình
+- Xác minh việc đẩy lên thành công
 
-## When to Use
+## Khi nào nên sử dụng
 
-### ✅ Perfect For
+### ✅ Hoàn hảo cho
 
-**Rapid Development**
+**Phát triển nhanh**
 ```bash
-# Quick iteration cycle
-/cook [add feature]
-/git:cp  # Commit and push immediately
+# Chu kỳ lặp lại nhanh
+/cook [thêm tính năng]
+/git:cp  # Commit và push ngay lập tức
 ```
 
-**Solo Development**
+**Phát triển cá nhân**
 ```bash
-# Working alone on feature branch
-/git:cp  # No need for local review
+# Làm việc một mình trên nhánh tính năng
+/git:cp  # Không cần xem lại cục bộ
 ```
 
-**Small Changes**
+**Các thay đổi nhỏ**
 ```bash
-# Typo fixes, minor updates
-/fix:fast [typo]
-/git:cp  # Push right away
+# Sửa lỗi đánh máy, cập nhật nhỏ
+/fix:fast [lỗi đánh máy]
+/git:cp  # Đẩy lên ngay
 ```
 
-**Continuous Integration**
+**Tích hợp liên tục (CI)**
 ```bash
-# Trigger CI on every change
-/git:cp  # CI runs automatically after push
+# Kích hoạt CI sau mỗi thay đổi
+/git:cp  # CI tự động chạy sau khi push
 ```
 
-### ❌ When to Avoid
+### ❌ Khi nào nên tránh
 
-**Team Collaboration**
+**Hợp tác nhóm**
 ```bash
-❌ /git:cp  # Pushing unreviewed code
+❌ /git:cp  # Đẩy mã nguồn chưa được xem lại
 
-✅ /git:cm  # Commit locally
-✅ Create PR  # Team reviews first
+✅ /git:cm  # Commit cục bộ
+✅ Tạo PR   # Nhóm xem xét trước khi merge
 ```
 
-**Uncertain Changes**
+**Các thay đổi chưa chắc chắn**
 ```bash
-❌ /git:cp  # Not sure if fix works
+❌ /git:cp  # Không chắc bản sửa lỗi có hoạt động không
 
-✅ /git:cm  # Commit locally
-✅ Test more
-✅ Then: git push
+✅ /git:cm  # Commit cục bộ
+✅ Kiểm tra thêm
+✅ Sau đó: git push
 ```
 
-**Shared Branches**
+**Các nhánh chung (Shared Branches)**
 ```bash
-❌ /git:cp  # On main/develop
+❌ /git:cp  # Trên nhánh main/develop
 
-✅ Use feature branches
-✅ Create PR for review
+✅ Sử dụng các nhánh tính năng (feature branches)
+✅ Tạo PR để xem xét
 ```
 
-## Examples
+## Ví dụ
 
-### Feature Development
+### Phát triển tính năng
 
 ```bash
-# 1. Implement feature
-/cook [add user notifications]
+# 1. Triển khai tính năng
+/cook [thêm thông báo người dùng]
 
-✓ Feature implemented
-✓ Tests generated (95% coverage)
-✓ Documentation updated
+✓ Tính năng đã được triển khai
+✓ Các bài kiểm tra đã được tạo (độ bao phủ 95%)
+✓ Tài liệu đã được cập nhật
 
-# 2. Commit and push
+# 2. Commit và push
 /git:cp
 
-Analyzing changes...
-✓ Staged 8 files
-✓ Created commit: "feat: add user notifications system"
-✓ Pushed to origin/feature/notifications
+Đang phân tích các thay đổi...
+✓ Đã stage 8 tệp
+✓ Đã tạo commit: "feat: add user notifications system"
+✓ Đã đẩy lên origin/feature/notifications
 
-Changes are now on GitHub!
+Các thay đổi hiện đã có trên GitHub!
 ```
 
-### Bug Fix Workflow
+### Quy trình sửa lỗi
 
 ```bash
-# 1. Fix bug
-/fix:fast [button text typo]
+# 1. Sửa lỗi
+/fix:fast [lỗi đánh máy văn bản nút]
 
-✓ Fixed typo in SubmitButton.tsx
+✓ Đã sửa lỗi đánh máy trong SubmitButton.tsx
 
-# 2. Commit and push
+# 2. Commit và push
 /git:cp
 
 ✓ Commit: "fix: correct button text typo"
-✓ Pushed to origin/bugfix/button-text
+✓ Đã đẩy lên origin/bugfix/button-text
 
-# 3. CI automatically runs
-✓ Tests passed
-✓ Ready for deployment
+# 3. CI tự động chạy
+✓ Các bài kiểm tra đã vượt qua
+✓ Sẵn sàng để triển khai
 ```
 
-### Continuous Deployment
+### Triển khai liên tục (CD)
 
 ```bash
-# Development with auto-deploy to staging
+# Phát triển với tính năng tự động triển khai lên staging
 
-# Change 1
-/cook [update header]
-/git:cp  # → Deploys to staging
+# Thay đổi 1
+/cook [cập nhật header]
+/git:cp  # → Triển khai lên staging
 
-# Change 2
-/fix:ui [alignment issue]
-/git:cp  # → Deploys to staging
+# Thay đổi 2
+/fix:ui [vấn đề căn lề]
+/git:cp  # → Triển khai lên staging
 
-# Change 3
+# Thay đổi 3
 /docs:update
-/git:cp  # → Deploys to staging
+/git:cp  # → Triển khai lên staging
 ```
 
-## What Happens
+## Điều gì xảy ra
 
-### Step-by-Step
+### Từng bước một
 
 ```
-1. Analyzing changes...
-   - 5 files modified
-   - 2 files created
-   - 1 file deleted
+1. Đang phân tích các thay đổi...
+   - 5 tệp đã sửa đổi
+   - 2 tệp đã tạo mới
+   - 1 tệp đã xóa
 
-2. Creating commit...
-   ✓ Commit message generated:
+2. Đang tạo commit...
+   ✓ Thông điệp commit đã được tạo:
      "feat: add real-time notifications
 
      - Implement WebSocket connection
@@ -172,332 +173,332 @@ Changes are now on GitHub!
      - Add mark-as-read functionality
      - Include comprehensive tests"
 
-3. Staging files...
+3. Đang stage các tệp...
    ✓ src/services/notification.service.ts
    ✓ src/components/NotificationBell.tsx
    ✓ src/websocket/notification-handler.ts
    ✓ tests/notification.test.ts
    ✓ docs/api/notifications.md
 
-4. Creating commit...
-   ✓ Commit created: a1b2c3d
+4. Đang tạo commit...
+   ✓ Commit đã được tạo: a1b2c3d
 
-5. Pushing to remote...
-   ✓ Pushed to origin/feature/notifications
+5. Đang đẩy lên remote...
+   ✓ Đã đẩy lên origin/feature/notifications
 
-6. Verifying...
-   ✓ Remote updated successfully
-   ✓ CI triggered automatically
+6. Đang xác minh...
+   ✓ Remote đã được cập nhật thành công
+   ✓ CI đã được kích hoạt tự động
 
-Complete! View at:
+Hoàn thành! Xem tại:
 https://github.com/user/repo/commit/a1b2c3d
 ```
 
-## Configuration
+## Cấu hình
 
-### Setting Upstream
+### Thiết lập Upstream
 
-If upstream not set:
+Nếu upstream chưa được thiết lập:
 
 ```
-⚠ No upstream branch set
+⚠ Chưa thiết lập nhánh upstream
 
-Set upstream to origin/feature-name? (y/n)
+Thiết lập upstream thành origin/feature-name? (y/n)
 > y
 
-✓ Upstream set
-✓ Pushing...
-✓ Complete
+✓ Đã thiết lập upstream
+✓ Đang đẩy lên...
+✓ Hoàn thành
 ```
 
-Manual setup:
+Thiết lập thủ công:
 ```bash
 git branch --set-upstream-to=origin/feature-name
 ```
 
-### Push Options
+### Các tùy chọn Push
 
-ClaudeKit automatically handles:
-- First push (`git push -u origin branch-name`)
-- Subsequent pushes (`git push`)
-- Force push warnings
-- Push conflicts
+ClaudeKit tự động xử lý:
+- Lần đẩy đầu tiên (`git push -u origin branch-name`)
+- Các lần đẩy tiếp theo (`git push`)
+- Cảnh báo đẩy đè (force push)
+- Xung đột khi đẩy
 
-## Safety Checks
+## Kiểm tra an toàn
 
-### Pre-Push Validation
-
-```
-Running pre-push checks...
-
-✓ All tests passed (87/87)
-✓ No TypeScript errors
-✓ Lint checks passed
-✓ No sensitive files detected
-
-Safe to push.
-```
-
-### Conflict Detection
+### Xác minh trước khi Push
 
 ```
-⚠ Warning: Remote has changes
+Đang chạy các kiểm tra trước khi push...
 
-Remote branch has 3 new commits.
-Pull before pushing? (y/n)
+✓ Tất cả các bài kiểm tra đã vượt qua (87/87)
+✓ Không có lỗi TypeScript
+✓ Các kiểm tra lint đã vượt qua
+✓ Không phát hiện các tệp nhạy cảm
+
+An toàn để đẩy lên.
 ```
 
-### Force Push Prevention
+### Phát hiện xung đột
 
 ```
-❌ Error: Would require force push
+⚠ Cảnh báo: Kho lưu trữ từ xa có các thay đổi mới
 
-Your branch is behind 'origin/main' by 2 commits.
-
-Options:
-1. Pull and rebase: git pull --rebase
-2. Create new branch
-3. Cancel
-
-Choose:
+Nhánh từ xa có 3 commit mới.
+Pull trước khi đẩy lên? (y/n)
 ```
 
-## Best Practices
+### Ngăn chặn đẩy đè (Force Push)
 
-### Verify Tests First
+```
+❌ Lỗi: Yêu cầu đẩy đè (force push)
+
+Nhánh của bạn đang đi sau 'origin/main' 2 commit.
+
+Các tùy chọn:
+1. Pull và rebase: git pull --rebase
+2. Tạo nhánh mới
+3. Hủy bỏ
+
+Lựa chọn:
+```
+
+## Thực hành tốt nhất
+
+### Xác minh bài kiểm tra trước
 
 ```bash
-# Always test before pushing
+# Luôn kiểm tra trước khi đẩy lên
 /test
 
-✓ All tests passed
+✓ Tất cả các bài kiểm tra đã vượt qua
 
-# Now safe to push
+# Bây giờ an toàn để đẩy lên
 /git:cp
 ```
 
-### Review Changes
+### Xem lại các thay đổi
 
 ```bash
-# Check what you're pushing
+# Kiểm tra những gì bạn sắp đẩy lên
 git diff
 
-# Review commit
+# Xem lại commit
 git show HEAD
 
-# Then push
-git push  # or /git:cp on next change
+# Sau đó đẩy lên
+git push  # hoặc /git:cp cho thay đổi tiếp theo
 ```
 
-### Use Feature Branches
+### Sử dụng các nhánh tính năng
 
 ```bash
-# Create feature branch
+# Tạo nhánh tính năng
 git checkout -b feature/new-dashboard
 
-# Develop and push
-/cook [build dashboard]
-/git:cp  # Safe on feature branch
+# Phát triển và đẩy lên
+/cook [xây dựng dashboard]
+/git:cp  # An toàn trên nhánh tính năng
 
-# Create PR when ready
+# Tạo PR khi đã sẵn sàng
 /git:pr
 ```
 
-### Small, Frequent Commits
+### Commit nhỏ và thường xuyên
 
-✅ **Good:**
+✅ **Tốt:**
 ```bash
-/cook [add login form]
+/cook [thêm form đăng nhập]
 /git:cp
 
-/cook [add registration form]
+/cook [thêm form đăng ký]
 /git:cp
 
-/cook [add password reset]
+/cook [thêm đặt lại mật khẩu]
 /git:cp
 ```
 
-❌ **Bad:**
+❌ **Xấu:**
 ```bash
-# Work for 3 days
-# Make 50 changes
-/git:cp  # Huge, unclear commit
+# Làm việc trong 3 ngày
+# Thực hiện 50 thay đổi
+/git:cp  # Commit quá lớn, không rõ ràng
 ```
 
-## Workflow Patterns
+## Các mẫu quy trình làm việc
 
-### Feature Development
+### Phát triển tính năng
 
 ```bash
-# Day 1
+# Ngày 1
 git checkout -b feature/payments
-/cook [implement Stripe integration]
+/cook [triển khai tích hợp Stripe]
 /git:cp
 
-# Day 2
-/cook [add payment UI]
+# Ngày 2
+/cook [thêm giao diện thanh toán]
 /git:cp
 
-# Day 3
+# Ngày 3
 /test
 /git:cp
 
-# Create PR
+# Tạo PR
 /git:pr
 ```
 
 ### Hotfix
 
 ```bash
-# Critical bug in production
+# Lỗi nghiêm trọng trên production
 git checkout -b hotfix/login-error
-/fix:fast [login error]
-/git:cp  # Push immediately
+/fix:fast [lỗi đăng nhập]
+/git:cp  # Đẩy lên ngay lập tức
 
-# Create PR to main
+# Tạo PR vào main
 /git:pr main
 
-# Merge and deploy
+# Merge và triển khai
 ```
 
-### Documentation Updates
+### Cập nhật tài liệu
 
 ```bash
-# Update docs
+# Cập nhật tài liệu
 /docs:update
-/git:cp  # Push docs immediately
+/git:cp  # Đẩy tài liệu lên ngay lập tức
 
-# Changes live on docs site
+# Các thay đổi sẽ xuất hiện trực tiếp trên trang tài liệu
 ```
 
-## Troubleshooting
+## Xử lý sự cố
 
-### Push Rejected
+### Push bị từ chối
 
-**Problem:** `! [rejected] main -> main (non-fast-forward)`
+**Vấn đề:** `! [rejected] main -> main (non-fast-forward)`
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Don't force push!
-# Instead, pull and rebase
+# Đừng đẩy đè!
+# Thay vào đó, pull và rebase
 git pull --rebase origin main
 
-# Resolve conflicts if any
-# Then push
+# Giải quyết xung đột nếu có
+# Sau đó đẩy lên
 git push
 ```
 
-### Upstream Not Set
+### Upstream chưa được thiết lập
 
-**Problem:** "No upstream branch"
+**Vấn đề:** "No upstream branch"
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Set upstream
+# Thiết lập upstream
 git push -u origin branch-name
 
-# Or let /git:cp do it
+# Hoặc để /git:cp thực hiện
 /git:cp
-> y  # When prompted to set upstream
+> y  # Khi được hỏi thiết lập upstream
 ```
 
-### Failed Pre-Push Hooks
+### Pre-Push Hooks thất bại
 
-**Problem:** Pre-push hook prevents push
+**Vấn đề:** Hook pre-push ngăn cản việc đẩy lên
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Fix the issues
+# Sửa các vấn đề
 npm run lint:fix
 npm test
 
-# Then retry
+# Sau đó thử lại
 /git:cp
 ```
 
-### Large Files
+### Tệp lớn
 
-**Problem:** "File exceeds GitHub's 100 MB limit"
+**Vấn đề:** "File exceeds GitHub's 100 MB limit"
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Use Git LFS
+# Sử dụng Git LFS
 git lfs track "*.mp4"
 git add .gitattributes
 
-# Or remove large file
+# Hoặc loại bỏ tệp lớn
 git rm --cached large-file.mp4
 echo "large-file.mp4" >> .gitignore
 
-# Then push
+# Sau đó đẩy lên
 /git:cp
 ```
 
-## Comparison
+## So sánh
 
-| Command | Local Commit | Push | Use Case |
+| Lệnh | Commit cục bộ | Đẩy lên (Push) | Trường hợp sử dụng |
 |---------|-------------|------|----------|
-| `/git:cm` | ✓ | ✗ | Review before push |
-| `/git:cp` | ✓ | ✓ | Quick iteration |
-| `git push` | ✗ | ✓ | After manual commit |
+| `/git:cm` | ✓ | ❌ | Xem lại trước khi đẩy lên |
+| `/git:cp` | ✓ | ✓ | Chu kỳ lặp lại nhanh |
+| `git push` | ❌ | ✓ | Sau khi commit thủ công |
 
-## Advanced Usage
+## Cách dùng nâng cao
 
-### Multiple Remotes
+### Nhiều Remote
 
 ```bash
-# Push to specific remote
+# Đẩy lên một remote cụ thể
 git push staging
 git push production
 
-# /git:cp uses default (origin)
+# /git:cp sử dụng mặc định (origin)
 ```
 
-### Branch Protection
+### Bảo vệ nhánh (Branch Protection)
 
-Some repos have branch protection:
+Một số kho lưu trữ có tính năng bảo vệ nhánh:
 
 ```
-❌ Cannot push to protected branch 'main'
+❌ Không thể đẩy lên nhánh được bảo vệ 'main'
 
-Create feature branch instead:
+Hãy tạo nhánh tính năng thay thế:
 git checkout -b feature/your-changes
-/git:cp  # Now works
+/git:cp  # Bây giờ hoạt động
 ```
 
-### CI Integration
+### Tích hợp CI
 
-After `/git:cp`, CI automatically:
-1. Runs tests
-2. Builds project
-3. Deploys to staging
-4. Notifies team
+Sau khi `/git:cp`, CI sẽ tự động:
+1. Chạy các bài kiểm tra
+2. Build dự án
+3. Triển khai lên staging
+4. Thông báo cho nhóm
 
-Monitor: `gh run watch`
+Theo dõi: `gh run watch`
 
-## When NOT to Use
+## Khi nào KHÔNG nên sử dụng
 
-❌ **Don't use `/git:cp` when:**
-- Working on shared branches (main, develop)
-- Changes need team review
-- Uncertain if changes work
-- Multiple unrelated changes
-- Experimental code
-- Breaking changes
+❌ **Đừng sử dụng `/git:cp` khi:**
+- Đang làm việc trên các nhánh chung (main, develop)
+- Các thay đổi cần nhóm xem xét
+- Chưa chắc chắn liệu các thay đổi có hoạt động hay không
+- Có nhiều thay đổi không liên quan
+- Mã nguồn mang tính thử nghiệm
+- Các thay đổi gây phá vỡ (breaking changes)
 
-✅ **Use instead:**
+✅ **Sử dụng thay thế:**
 ```bash
-/git:cm  # Commit locally
-# Test, review, get feedback
-git push  # Manual push when ready
+/git:cm  # Commit cục bộ
+# Kiểm tra, xem lại, nhận phản hồi
+git push  # Đẩy lên thủ công khi đã sẵn sàng
 ```
 
-## Next Steps
+## Bước tiếp theo
 
-- [/git:pr](/docs/engineer/commands/git/pull-request) - Create pull request
-- [/git:cm](/docs/engineer/commands/git/commit) - Commit without pushing
-- [Git Workflow](/docs/guides/git-workflow) - Team workflows
+- [/git:pr](/vi/docs/engineer/commands/git/pull-request) - Tạo pull request
+- [/git:cm](/vi/docs/engineer/commands/git/commit) - Commit mà không push
+- [Git Workflow](/vi/docs/guides/git-workflow) - Quy trình làm việc nhóm
 
 ---
 
-**Key Takeaway**: `/git:cp` streamlines rapid development by combining commit and push, perfect for feature branches and solo development, but use cautiously on shared branches.
+**Điểm mấu chốt**: `/git:cp` hợp lý hóa quá trình phát triển nhanh bằng cách kết hợp commit và push, hoàn hảo cho các nhánh tính năng và phát triển cá nhân, nhưng hãy thận trọng khi sử dụng trên các nhánh chung.

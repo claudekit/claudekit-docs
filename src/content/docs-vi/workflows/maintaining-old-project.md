@@ -1,428 +1,425 @@
 ---
-title: Maintaining an Old Project
-description: "Documentation for Maintaining an Old Project
-description:
-section: workflows
-category: workflows
-order: 2
-published: true"
+title: Bảo Trì Dự Án Cũ
+description: "Tìm hiểu cách tích hợp ClaudeKit vào một dự án hiện có, hiểu mã nguồn cũ (legacy code) và cải thiện nó một cách hệ thống."
+lang: vi
 section: workflows
 category: workflows
 order: 2
 published: true
 ---
 
-# Maintaining an Old Project
+# Bảo Trì Dự Án Cũ
 
-Learn how to integrate ClaudeKit into an existing project, understand legacy code, and systematically improve it. This guide walks through a real-world scenario of reviving a 2-year-old project.
+Tìm hiểu cách tích hợp ClaudeKit vào một dự án hiện có, hiểu mã nguồn cũ (legacy code) và cải thiện nó một cách hệ thống. Hướng dẫn này đi qua một kịch bản thực tế về việc hồi sinh một dự án Node.js đã 2 năm tuổi.
 
-## Scenario
+## Kịch Bản
 
-**The Challenge:** Inherited a 2-year-old Node.js project
-- No documentation
-- Test coverage: 12%
-- Last commit: 18 months ago
-- Multiple deprecated dependencies
-- No one remembers how it works
-- Production deployment broken
+**Thử thách:** Tiếp nhận một dự án Node.js 2 năm tuổi
+- Không có tài liệu
+- Độ bao phủ kiểm thử (Test coverage): 12%
+- Commit cuối cùng: 18 tháng trước
+- Nhiều thư viện (dependencies) đã lỗi thời/ngừng hỗ trợ
+- Không ai nhớ cách nó hoạt động
+- Triển khai production bị lỗi
 
-**Goal:** Understand, document, fix, and improve the project
+**Mục tiêu:** Hiểu, viết tài liệu, sửa lỗi và cải thiện dự án
 
-**Time:** 2-3 hours for initial setup, ongoing improvements
+**Thời gian:** 2-3 giờ cho thiết lập ban đầu, và tiếp tục cải thiện sau đó
 
-## Step 1: Initial Assessment
+## Bước 1: Đánh Giá Ban Đầu
 
-### Clone and Explore
+### Clone và Khám Phá
 
 ```bash
-# Clone the project
+# Clone dự án
 git clone https://github.com/company/legacy-project.git
 cd legacy-project
 
-# Check what's here
+# Kiểm tra những gì có ở đây
 ls -la
 cat package.json
-cat README.md  # Usually outdated or missing
+cat README.md  # Thường là cũ hoặc thiếu
 ```
 
-### Start Claude Code
+### Khởi Động Claude Code
 
 ```bash
 claude
 ```
 
-### Generate Documentation
+### Tạo Tài Liệu
 
-This is the **most important first step**:
+Đây là **bước quan trọng nhất đầu tiên**:
 
 ```bash
 /docs:init
 ```
 
-**What happens (5-8 minutes):**
+**Điều gì xảy ra (5-8 phút):**
 
 ```
-Analyzing codebase...
+Đang phân tích codebase...
 [████████████████████████] 100%
 
-Files scanned: 1,247
-Lines of code: 45,829
+Số tệp đã quét: 1,247
+Số dòng code: 45,829
 Dependencies: 73 packages
 
-Generating documentation...
+Đang tạo tài liệu...
 
 ✓ docs/codebase-summary.md
 ✓ docs/code-standards.md
 ✓ docs/system-architecture.md
 ✓ docs/project-overview-pdr.md
-✓ docs/technical-debt.md (NEW!)
-✓ docs/migration-recommendations.md (NEW!)
+✓ docs/technical-debt.md (MỚI!)
+✓ docs/migration-recommendations.md (MỚI!)
 
-Documentation complete!
+Tạo tài liệu hoàn tất!
 
-Key Findings:
-⚠ 15 deprecated dependencies
-⚠ No tests for 88% of code
-⚠ 3 security vulnerabilities
-⚠ Inconsistent code style
-✓ Well-structured architecture
-✓ Good separation of concerns
+Phát hiện chính:
+⚠ 15 dependencies đã lỗi thời
+⚠ 88% code chưa có tests
+⚠ 3 lỗ hổng bảo mật
+⚠ Style code không nhất quán
+✓ Kiến trúc được cấu trúc tốt
+✓ Phân tách mối quan tâm (separation of concerns) tốt
 ```
 
-### Review Generated Documentation
+### Xem Lại Tài Liệu Đã Tạo
 
 ```bash
-# Read the overview
+# Đọc bản tóm tắt
 cat docs/codebase-summary.md
 ```
 
-**Example output:**
+**Ví dụ output:**
 
 ```markdown
 # Codebase Summary
 
-## Project Type
+## Loại Dự Án
 E-commerce backend API
 
 ## Tech Stack
-- **Backend**: Node.js 14 (outdated), Express 4
-- **Database**: MongoDB 4.2 (needs upgrade)
+- **Backend**: Node.js 14 (cũ), Express 4
+- **Database**: MongoDB 4.2 (cần nâng cấp)
 - **Cache**: Redis 5
-- **Queue**: Bull (job processing)
+- **Queue**: Bull (xử lý công việc)
 
-## Architecture
-- Layered architecture (routes → controllers → services → models)
-- Microservices attempted but incomplete
-- Background jobs for email, payments
+## Kiến Trúc
+- Kiến trúc phân lớp (routes → controllers → services → models)
+- Đang cố gắng làm microservices nhưng chưa hoàn thiện
+- Chạy ngầm (background jobs) cho email, thanh toán
 
-## Key Features
-1. User authentication (Passport.js + JWT)
-2. Product catalog with search
-3. Shopping cart and checkout
-4. Payment processing (Stripe)
-5. Order management
-6. Email notifications
+## Tính Năng Chính
+1. Xác thực người dùng (Passport.js + JWT)
+2. Danh mục sản phẩm với tìm kiếm
+3. Giỏ hàng và thanh toán
+4. Xử lý thanh toán (Stripe)
+5. Quản lý đơn hàng
+6. Thông báo qua email
 
-## Critical Issues
-1. **Security**: Using outdated crypto methods
-2. **Performance**: N+1 queries in product listings
-3. **Reliability**: No error handling in payment flow
-4. **Maintainability**: Mixed ES5 and ES6 code
+## Các Vấn Đề Nghiêm Trọng
+1. **Bảo mật**: Sử dụng các phương pháp crypto cũ
+2. **Hiệu suất**: Lỗi N+1 query trong danh sách sản phẩm
+3. **Độ tin cậy**: Thiếu xử lý lỗi trong luồng thanh toán
+4. **Khả năng bảo trì**: Code trộn lẫn ES5 và ES6
 
-## Dependencies Status
-- 15 packages have major updates available
-- 3 packages have security vulnerabilities
-- bcrypt, jsonwebtoken, mongoose need updates
+## Trạng Thái Dependencies
+- 15 packages có bản cập nhật lớn (major updates)
+- 3 packages có lỗ hổng bảo mật
+- bcrypt, jsonwebtoken, mongoose cần được cập nhật
 
-## Test Coverage: 12%
-- Unit tests: 8 files
-- Integration tests: 2 files
-- E2E tests: 0 files
+## Độ Bao Phủ Kiểm Thử: 12%
+- Unit tests: 8 tệp
+- Integration tests: 2 tệp
+- E2E tests: 0 tệp
 ```
 
-## Step 2: Understand the System
+## Bước 2: Hiểu Hệ Thống
 
-### Ask Questions
+### Đặt Câu Hỏi
 
-Now that ClaudeKit has context, ask specific questions:
+Bây giờ ClaudeKit đã có ngữ cảnh, hãy đặt các câu hỏi cụ thể:
 
 ```bash
-/ask [how does the payment processing work?]
+/ask [luồng xử lý thanh toán hoạt động như thế nào?]
 ```
 
-**Response:**
-```
-Payment Processing Flow:
+**Phản hồi:**
 
-1. User submits order (POST /api/orders)
+```
+Luồng xử lý thanh toán:
+
+1. Người dùng gửi đơn hàng (POST /api/orders)
    File: src/controllers/order.controller.js:45
 
-2. Order validated
+2. Đơn hàng được kiểm tra (validated)
    File: src/services/order.service.js:120
 
-3. Stripe payment intent created
+3. Tạo Stripe payment intent
    File: src/services/payment.service.js:78
 
-4. Webhook handles payment confirmation
+4. Webhook xử lý xác nhận thanh toán
    File: src/routes/webhooks/stripe.js:23
 
-5. Order status updated to 'paid'
-   Background job sends confirmation email
+5. Trạng thái đơn hàng cập nhật thành 'paid'
+   Chạy ngầm (background job) gửi email xác nhận
 
-Critical Issues Found:
-⚠ No retry logic if Stripe fails
-⚠ Webhook not verified (security risk)
-⚠ Race condition in order updates
-⚠ Email failures block order completion
+Các vấn đề nghiêm trọng tìm thấy:
+⚠ Thiếu logic thử lại (retry) nếu Stripe lỗi
+⚠ Webhook chưa được xác thực (rủi ro bảo mật)
+⚠ Lỗi race condition khi cập nhật đơn hàng
+⚠ Lỗi gửi email làm chặn quá trình hoàn tất đơn hàng
 
-Recommendation: Use /fix:hard to address these issues
+Khuyến nghị: Sử dụng /fix:hard để giải quyết các vấn đề này
 ```
 
-More questions:
+Thêm các câu hỏi khác:
 
 ```bash
-/ask [what's the authentication flow?]
-/ask [how are background jobs processed?]
-/ask [what's causing the slow product search?]
+/ask [luồng xác thực như thế nào?]
+/ask [các công việc chạy ngầm được xử lý ra sao?]
+/ask [điều gì làm cho việc tìm kiếm sản phẩm bị chậm?]
 ```
 
-## Step 3: Update Dependencies
+## Bước 3: Cập Nhật Dependencies
 
-### Check for Updates
+### Kiểm Tra Các Bản Cập Nhật
 
 ```bash
 npm outdated
 ```
 
-### Create Update Plan
+### Tạo Kế Hoạch Cập Nhật
 
 ```bash
-/plan [update all dependencies to latest stable versions]
+/plan [cập nhật tất cả dependencies lên phiên bản ổn định mới nhất]
 ```
 
-**Generated plan includes:**
-- Breaking changes for each package
-- Migration steps
-- Test strategy
-- Rollback plan
+**Kế hoạch được tạo bao gồm:**
+- Các thay đổi gây phá vỡ (breaking changes) cho từng package
+- Các bước di chuyển (migration steps)
+- Chiến lược kiểm thử
+- Kế hoạch hoàn tác (rollback)
 
-### Implement Updates
+### Triển Khai Cập Nhật
 
 ```bash
-/cook [update dependencies following the plan]
+/cook [cập nhật dependencies theo kế hoạch]
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-1. Updating package.json
-   ✓ Node.js: 14 → 18 (update .nvmrc)
+1. Cập nhật package.json
+   ✓ Node.js: 14 → 18 (cập nhật .nvmrc)
    ✓ Express: 4.17 → 4.18
    ✓ Mongoose: 5.13 → 7.6
    ✓ Jest: 26 → 29
-   ... (updating all 73 packages)
+   ... (cập nhật tất cả 73 packages)
 
-2. Handling breaking changes
-   ✓ Updated Mongoose queries (removed deprecated methods)
-   ✓ Fixed Jest config for v29
-   ✓ Updated bcrypt calls
-   ✓ Modernized async/await patterns
+2. Xử lý các thay đổi gây phá vỡ
+   ✓ Cập nhật các câu truy vấn Mongoose (xóa các phương thức cũ)
+   ✓ Sửa cấu hình Jest cho v29
+   ✓ Cập nhật các lệnh gọi bcrypt
+   ✓ Hiện đại hóa các mẫu async/await
 
-3. Security fixes
-   ✓ Updated jsonwebtoken (CVE-2022-23529)
-   ✓ Updated minimist (CVE-2021-44906)
-   ✓ Updated node-fetch (CVE-2022-0235)
+3. Vá lỗi bảo mật
+   ✓ Cập nhật jsonwebtoken (CVE-2022-23529)
+   ✓ Cập nhật minimist (CVE-2021-44906)
+   ✓ Cập nhật node-fetch (CVE-2022-0235)
 
-4. Running tests
-   ⚠ 23 tests failing due to breaking changes
+4. Chạy tests
+   ⚠ 23 tests thất bại do các thay đổi phá vỡ
 
-5. Fixing test failures
-   ✓ Updated test mocks for Mongoose 7
-   ✓ Fixed async test patterns
-   ✓ Updated snapshot tests
+5. Sửa các lỗi test
+   ✓ Cập nhật test mocks cho Mongoose 7
+   ✓ Sửa các mẫu test async
+   ✓ Cập nhật snapshot tests
 
-6. Final test run
-   ✓ All 45 tests passing
-   ✓ 0 vulnerabilities
-   ✓ All dependencies up to date
+6. Chạy test cuối cùng
+   ✓ Tất cả 45 tests đã vượt qua
+   ✓ 0 lỗ hổng bảo mật
+   ✓ Tất cả dependencies đã được cập nhật
 
-Ready to commit!
+Sẵn sàng để commit!
 ```
 
-### Verify Updates
+### Xác Minh Cập Nhật
 
 ```bash
-# Run tests
+# Chạy tests
 npm test
 
-# Check for vulnerabilities
+# Kiểm tra lỗ hổng bảo mật
 npm audit
 
-# Try running the app
+# Thử chạy ứng dụng
 npm run dev
 ```
 
-## Step 4: Add Missing Tests
+## Bước 4: Thêm Các Tests Còn Thiếu
 
-### Generate Test Suite
+### Tạo Bộ Kiểm Thử (Test Suite)
 
 ```bash
-/cook [generate comprehensive test suite for critical paths]
+/cook [tạo bộ kiểm thử toàn diện cho các luồng quan trọng]
 ```
 
-**Priority areas:**
-1. Authentication
-2. Payment processing
-3. Order management
-4. Product search
+**Các khu vực ưu tiên:**
+1. Xác thực (Authentication)
+2. Xử lý thanh toán
+3. Quản lý đơn hàng
+4. Tìm kiếm sản phẩm
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-Analyzing critical paths...
+Đang phân tích các luồng quan trọng...
 
-Identified 8 critical paths:
-1. User registration & login
-2. Password reset flow
-3. Product search & filtering
-4. Add to cart
-5. Checkout process
-6. Payment processing
-7. Order status tracking
-8. Admin operations
+Đã xác định 8 luồng quan trọng:
+1. Đăng ký & đăng nhập người dùng
+2. Luồng đặt lại mật khẩu
+3. Tìm kiếm & lọc sản phẩm
+4. Thêm vào giỏ hàng
+5. Quy trình thanh toán
+6. Xử lý thanh toán
+7. Theo dõi trạng thái đơn hàng
+8. Các thao tác quản trị (Admin)
 
-Generating tests...
+Đang tạo tests...
 
-Created 127 new tests:
-✓ Unit tests: 73 files
-  - Authentication: 15 tests
-  - Payment: 22 tests
-  - Orders: 18 tests
-  - Products: 18 tests
+Đã tạo 127 tests mới:
+✓ Unit tests: 73 tệp
+  - Xác thực: 15 tests
+  - Thanh toán: 22 tests
+  - Đơn hàng: 18 tests
+  - Sản phẩm: 18 tests
 
-✓ Integration tests: 35 files
+✓ Integration tests: 35 tệp
   - API endpoints: 35 tests
 
-✓ E2E tests: 19 files
-  - Complete user flows: 19 tests
+✓ E2E tests: 19 tệp
+  - Luồng người dùng hoàn chỉnh: 19 tests
 
-Running test suite...
-✓ 172/172 tests passed
-✓ Coverage: 78% (up from 12%)
+Đang chạy bộ kiểm thử...
+✓ 172/172 tests đã vượt qua
+✓ Độ bao phủ (Coverage): 78% (tăng từ 12%)
 
-Tests generated in tests/ directory
+Tests đã được tạo trong thư mục tests/
 ```
 
-## Step 5: Fix Critical Issues
+## Bước 5: Sửa Các Vấn Đề Nghiêm Trọng
 
-### Security Vulnerabilities
+### Lỗ Hổng Bảo Mật
 
 ```bash
-/fix:hard [Stripe webhook not verified - security risk]
+/fix:hard [Stripe webhook chưa được xác thực - rủi ro bảo mật]
 ```
 
-**Fix applied:**
+**Bản sửa lỗi đã áp dụng:**
 ```
-1. Added webhook signature verification
+1. Thêm xác thực chữ ký webhook
    File: src/routes/webhooks/stripe.js
 
-2. Added replay attack prevention
-   Using Stripe's timestamp validation
+2. Thêm phòng chống tấn công replay
+   Sử dụng timestamp validation của Stripe
 
-3. Added proper error handling
-   Logs and alerts for verification failures
+3. Thêm xử lý lỗi phù hợp
+   Ghi log và cảnh báo khi xác thực thất bại
 
-4. Generated tests
-   ✓ Valid signature accepted
-   ✓ Invalid signature rejected
-   ✓ Old timestamp rejected
-   ✓ Replay attack prevented
+4. Tạo tests
+   ✓ Chấp nhận chữ ký hợp lệ
+   ✓ Từ chối chữ ký không hợp lệ
+   ✓ Từ chối timestamp cũ
+   ✓ Ngăn chặn tấn công replay
 
-Security issue resolved!
+Vấn đề bảo mật đã được giải quyết!
 ```
 
-### Performance Issues
+### Vấn Đề Hiệu Suất
 
 ```bash
-/fix:hard [N+1 queries in product listing causing slow response times]
+/fix:hard [Lỗi N+1 query trong danh sách sản phẩm làm chậm phản hồi]
 ```
 
-**Fix applied:**
+**Bản sửa lỗi đã áp dụng:**
 ```
-1. Located issue
+1. Xác định vị trí vấn đề
    File: src/services/product.service.js:156
 
-2. Root cause
-   - Fetching products in loop
-   - Separate query for each product's category
-   - No database indexing
+2. Nguyên nhân gốc rễ
+   - Lấy sản phẩm trong vòng lặp
+   - Truy vấn riêng biệt cho từng category của sản phẩm
+   - Thiếu index trong database
 
-3. Implemented fixes
-   ✓ Added Mongoose populate() for categories
-   ✓ Created database indexes
-   ✓ Implemented query result caching (Redis)
-   ✓ Added pagination
+3. Triển khai các bản sửa lỗi
+   ✓ Thêm Mongoose populate() cho categories
+   ✓ Tạo các index trong database
+   ✓ Triển khai lưu trữ kết quả truy vấn (Redis cache)
+   ✓ Thêm phân trang (pagination)
 
-4. Performance improvement
-   Before: 3.2s for 50 products
-   After: 180ms for 50 products
-   Improvement: 94% faster
+4. Cải thiện hiệu suất
+   Trước đó: 3.2s cho 50 sản phẩm
+   Sau đó: 180ms cho 50 sản phẩm
+   Cải thiện: nhanh hơn 94%
 
-5. Added performance tests
-   ✓ Tests response time < 300ms
-   ✓ Tests pagination works
-   ✓ Tests cache invalidation
+5. Thêm các bài kiểm tra hiệu suất (performance tests)
+   ✓ Test thời gian phản hồi < 300ms
+   ✓ Test phân trang hoạt động đúng
+   ✓ Test việc xóa cache (invalidation)
 ```
 
-### Error Handling
+### Xử Lý Lỗi
 
 ```bash
-/fix:hard [payment flow has no error handling, orders get stuck]
+/fix:hard [luồng thanh toán thiếu xử lý lỗi, đơn hàng bị kẹt]
 ```
 
-**Fix applied:**
+**Bản sửa lỗi đã áp dụng:**
 ```
-1. Added comprehensive error handling
-   ✓ Try-catch blocks in payment service
-   ✓ Transaction rollback on failure
-   ✓ Retry logic with exponential backoff
-   ✓ Dead letter queue for failed jobs
+1. Thêm xử lý lỗi toàn diện
+   ✓ Các khối try-catch trong payment service
+   ✓ Hoàn tác giao dịch (Transaction rollback) khi lỗi
+   ✓ Logic thử lại (Retry) với exponential backoff
+   ✓ Hàng chờ Dead letter cho các công việc thất bại
 
-2. Added monitoring
-   ✓ Error logging to Sentry
-   ✓ Metrics for failed payments
-   ✓ Alerts for stuck orders
+2. Thêm giám sát (monitoring)
+   ✓ Ghi lỗi vào Sentry
+   ✓ Các chỉ số (metrics) cho thanh toán thất bại
+   ✓ Cảnh báo cho các đơn hàng bị kẹt
 
-3. Added recovery mechanisms
-   ✓ Manual retry endpoint for admins
-   ✓ Automatic cleanup of stale orders
-   ✓ Customer notification on failure
+3. Thêm các cơ chế khôi phục
+   ✓ Endpoint thử lại thủ công cho admin
+   ✓ Tự động dọn dẹp các đơn hàng cũ
+   ✓ Thông báo cho khách hàng khi có lỗi
 
-4. Generated tests
-   ✓ Payment success path
-   ✓ Payment failure handling
-   ✓ Retry logic
-   ✓ Timeout handling
+4. Tạo tests
+   ✓ Luồng thanh toán thành công
+   ✓ Xử lý thanh toán thất bại
+   ✓ Logic thử lại
+   ✓ Xử lý timeout
 ```
 
-## Step 6: Improve Code Quality
+## Bước 6: Cải Thiện Chất Lượng Code
 
-### Modernize Code
+### Hiện Đại Hóa Code
 
 ```bash
-/cook [refactor mixed ES5/ES6 code to modern ES6+ with async/await]
+/cook [tái cấu trúc code trộn lẫn ES5/ES6 sang ES6+ hiện đại với async/await]
 ```
 
-**Improvements:**
-- Convert callbacks to async/await
-- Use const/let instead of var
-- Use template literals
-- Use destructuring
-- Use arrow functions
-- Remove unnecessary code
+**Các cải tiến:**
+- Chuyển đổi callbacks sang async/await
+- Sử dụng const/let thay vì var
+- Sử dụng template literals
+- Sử dụng destructuring
+- Sử dụng arrow functions
+- Loại bỏ code không cần thiết
 
-**Example transformation:**
+**Ví dụ chuyển đổi:**
 
 ```javascript
-// Before (ES5 style)
+// Trước đó (ES5 style)
 var getUserOrders = function(userId, callback) {
   Order.find({userId: userId}, function(err, orders) {
     if (err) {
@@ -436,228 +433,228 @@ var getUserOrders = function(userId, callback) {
   });
 };
 
-// After (Modern ES6+)
+// Sau đó (Modern ES6+)
 const getUserOrders = async (userId) => {
   const orders = await Order.find({ userId });
   return orders.map(order => order._id);
 };
 ```
 
-### Add TypeScript (Optional)
+### Thêm TypeScript (Tùy chọn)
 
 ```bash
-/plan [migrate project to TypeScript]
+/plan [chuyển đổi dự án sang TypeScript]
 ```
 
-Review the plan, then:
+Xem lại kế hoạch, sau đó:
 
 ```bash
-/cook [implement TypeScript migration following the plan]
+/cook [triển khai chuyển đổi sang TypeScript theo kế hoạch]
 ```
 
-### Improve Documentation
+### Cải Thiện Tài Liệu
 
 ```bash
 /docs:update
 ```
 
-Adds:
-- Inline code comments
-- JSDoc annotations
-- API documentation
-- Usage examples
+Thêm:
+- Comment trong code
+- Các chú thích JSDoc
+- Tài liệu API
+- Các ví dụ sử dụng
 
-## Step 7: Fix Deployment
+## Bước 7: Sửa Lỗi Triển Khai (Deployment)
 
-### Diagnose Deployment Issues
-
-```bash
-/ask [why is the production deployment broken?]
-```
-
-**Analysis:**
-```
-Deployment Issues Found:
-
-1. Build script fails
-   - Missing TypeScript compiler
-   - Outdated build command
-
-2. Environment variables
-   - DATABASE_URL format changed in Mongoose 7
-   - Missing STRIPE_WEBHOOK_SECRET
-
-3. Database migrations
-   - No migration system in place
-   - Schema changes not versioned
-
-4. Health check endpoint missing
-   - Load balancer can't verify app health
-
-Recommendation: Fix these issues before deployment
-```
-
-### Fix Deployment Issues
+### Chẩn Đoán Lỗi Triển Khai
 
 ```bash
-/fix:hard [fix production deployment issues]
+/ask [tại sao việc triển khai production bị lỗi?]
 ```
 
-**Fixes applied:**
+**Phân tích:**
 ```
-1. Updated build process
-   ✓ Fixed package.json scripts
-   ✓ Added TypeScript to dependencies
-   ✓ Optimized build output
+Tìm thấy các vấn đề triển khai:
 
-2. Added migration system
-   ✓ Created migrate-mongo setup
-   ✓ Generated migration for schema changes
-   ✓ Added migration step to deployment
+1. Build script thất bại
+   - Thiếu trình biên dịch TypeScript
+   - Lệnh build đã lỗi thời
 
-3. Updated environment config
-   ✓ Fixed DATABASE_URL format
-   ✓ Added missing env variables
-   ✓ Created .env.example
+2. Biến môi trường (Environment variables)
+   - Định dạng DATABASE_URL thay đổi trong Mongoose 7
+   - Thiếu STRIPE_WEBHOOK_SECRET
 
-4. Added health check
-   ✓ GET /health endpoint
-   ✓ Checks database connection
-   ✓ Checks Redis connection
-   ✓ Returns service status
+3. Di chuyển database (Migrations)
+   - Chưa có hệ thống migration
+   - Các thay đổi schema chưa được quản lý phiên bản
 
-5. Updated deployment docs
+4. Thiếu health check endpoint
+   - Load balancer không thể xác nhận tình trạng ứng dụng
+
+Khuyến nghị: Sửa các vấn đề này trước khi triển khai
+```
+
+### Sửa Các Lỗi Triển Khai
+
+```bash
+/fix:hard [sửa các vấn đề triển khai production]
+```
+
+**Các bản sửa lỗi đã áp dụng:**
+```
+1. Cập nhật quy trình build
+   ✓ Sửa các script trong package.json
+   ✓ Thêm TypeScript vào dependencies
+   ✓ Tối ưu hóa kết quả build
+
+2. Thêm hệ thống migration
+   ✓ Thiết lập migrate-mongo
+   ✓ Tạo migration cho các thay đổi schema
+   ✓ Thêm bước migration vào quy trình triển khai
+
+3. Cập nhật cấu hình môi trường
+   ✓ Sửa định dạng DATABASE_URL
+   ✓ Thêm các biến môi trường còn thiếu
+   ✓ Tạo tệp .env.example
+
+4. Thêm health check
+   ✓ Endpoint GET /health
+   ✓ Kiểm tra kết nối database
+   ✓ Kiểm tra kết nối Redis
+   ✓ Trả về trạng thái dịch vụ
+
+5. Cập nhật tài liệu triển khai
    ✓ docs/deployment-guide.md
 
-Ready to deploy!
+Sẵn sàng để triển khai!
 ```
 
-### Deploy
+### Triển Khai
 
 ```bash
-# Test build locally
+# Kiểm tra build tại local
 npm run build
 npm run start:prod
 
-# Deploy to staging
+# Triển khai lên staging
 git push staging main
 
-# Verify staging
+# Xác minh staging
 curl https://staging.example.com/health
 
-# Deploy to production
+# Triển khai lên production
 git push production main
 
-# Monitor
-/fix:logs  # Watch production logs
+# Giám sát
+/fix:logs  # Theo dõi production logs
 ```
 
-## Step 8: Set Up Maintenance
+## Bước 8: Thiết Lập Bảo Trì
 
-### Add CI/CD
+### Thêm CI/CD
 
 ```bash
-/cook [create GitHub Actions workflow for CI/CD]
+/cook [tạo GitHub Actions workflow cho CI/CD]
 ```
 
-**Generated workflow:**
-- Run tests on PR
-- Check code quality
-- Deploy to staging on merge to develop
-- Deploy to production on merge to main
+**Workflow được tạo:**
+- Chạy tests khi có PR
+- Kiểm tra chất lượng code (Linting)
+- Triển khai lên staging khi merge vào develop
+- Triển khai lên production khi merge vào main
 
-### Add Monitoring
+### Thêm Giám Sát (Monitoring)
 
 ```bash
-/cook [add monitoring and alerting]
+/cook [thêm giám sát và cảnh báo]
 ```
 
-**Added:**
-- Error tracking (Sentry)
-- Performance monitoring (New Relic)
-- Uptime monitoring (UptimeRobot)
-- Log aggregation (Datadog)
+**Đã thêm:**
+- Theo dõi lỗi (Sentry)
+- Giám sát hiệu suất (New Relic)
+- Giám sát uptime (UptimeRobot)
+- Tập hợp logs (Datadog)
 
-### Create Runbook
+### Tạo Runbook
 
 ```bash
 /docs:update
 ```
 
-Creates `docs/runbook.md` with:
-- Common issues and solutions
-- Deployment procedures
-- Rollback procedures
-- Emergency contacts
+Tạo `docs/runbook.md` với:
+- Các vấn đề thường gặp và giải pháp
+- Quy trình triển khai
+- Quy trình hoàn tác (Rollback)
+- Thông tin liên hệ khẩn cấp
 
-## Progress Tracking
+## Theo Dõi Tiến Độ
 
-| Phase | Time | Before | After |
-|-------|------|--------|-------|
-| Documentation | 10 min | None | Complete |
-| Dependencies | 30 min | 15 outdated | All updated |
-| Tests | 45 min | 12% coverage | 78% coverage |
-| Security | 20 min | 3 vulnerabilities | 0 vulnerabilities |
-| Performance | 30 min | 3.2s response | 180ms response |
-| Code Quality | 40 min | Mixed ES5/ES6 | Modern ES6+ |
-| Deployment | 25 min | Broken | Working |
-| **Total** | **3h 20min** | **Unmaintainable** | **Production-ready** |
+| Giai Đoạn | Thời Gian | Trước Đó | Sau Đó |
+|-----------|-----------|----------|--------|
+| Tài liệu | 10 phút | Không có | Hoàn tất |
+| Dependencies | 30 phút | 15 lỗi thời | Đã cập nhật tất cả |
+| Tests | 45 phút | 12% coverage | 78% coverage |
+| Bảo mật | 20 phút | 3 lỗ hổng | 0 lỗ hổng |
+| Hiệu suất | 30 phút | 3.2s phản hồi | 180ms phản hồi |
+| Chất lượng code | 40 phút | Trộn lẫn ES5/ES6 | ES6+ hiện đại |
+| Triển khai | 25 phút | Bị lỗi | Hoạt động tốt |
+| **Tổng cộng** | **3h 20phút** | **Khó bảo trì** | **Sẵn sàng cho Production** |
 
-## Key Improvements
+## Các Cải Thiện Chính
 
-✅ **Documentation**: From 0% to 100%
-✅ **Tests**: From 12% to 78% coverage
-✅ **Dependencies**: All updated, 0 vulnerabilities
-✅ **Performance**: 94% faster
-✅ **Code Quality**: Modern, consistent code
-✅ **Deployment**: Fixed and automated
-✅ **Monitoring**: Full observability
-✅ **Security**: All issues resolved
+✅ **Tài liệu**: Từ 0% lên 100%
+✅ **Tests**: Từ 12% lên 78% độ bao phủ
+✅ **Dependencies**: Đã cập nhật tất cả, 0 lỗ hổng bảo mật
+✅ **Hiệu suất**: Nhanh hơn 94%
+✅ **Chất lượng code**: Code hiện đại, nhất quán
+✅ **Triển khai**: Đã sửa và tự động hóa
+✅ **Giám sát**: Khả năng quan sát (observability) đầy đủ
+✅ **Bảo mật**: Tất cả vấn đề đã được giải quyết
 
-## Ongoing Maintenance
+## Bảo Trì Liên Tục
 
-### Weekly Tasks
+### Công Việc Hàng Tuần
 
 ```bash
-# Check for updates
+# Kiểm tra các bản cập nhật
 npm outdated
 
-# Run security audit
+# Chạy kiểm tra bảo mật
 npm audit
 
-# Review test coverage
+# Xem lại độ bao phủ tests
 npm run test:coverage
 
-# Update docs if needed
+# Cập nhật tài liệu nếu cần
 /docs:update
 ```
 
-### Monthly Tasks
+### Công Việc Hàng Tháng
 
 ```bash
-# Review technical debt
+# Xem lại nợ kỹ thuật (technical debt)
 cat docs/technical-debt.md
 
-# Plan improvements
-/plan [next month's improvements]
+# Lên kế hoạch cải thiện
+/plan [các cải thiện cho tháng tới]
 
-# Update dependencies
-/cook [update dependencies]
+# Cập nhật dependencies
+/cook [cập nhật dependencies]
 ```
 
-### When Adding Features
+### Khi Thêm Tính Năng
 
 ```bash
-# 1. Plan feature
-/plan [new feature description]
+# 1. Lập kế hoạch tính năng
+/plan [mô tả tính năng mới]
 
-# 2. Implement
-/cook [implement feature]
+# 2. Triển khai
+/cook [triển khai tính năng]
 
 # 3. Test
 /test
 
-# 4. Update docs
+# 4. Cập nhật tài liệu
 /docs:update
 
 # 5. Commit
@@ -667,66 +664,66 @@ cat docs/technical-debt.md
 git push
 ```
 
-## Common Challenges
+## Các Thách Thức Thường Gặp
 
-### "I don't understand the code"
-
-```bash
-/ask [explain how X works]
-/ask [what does this function do?]
-/ask [why is this pattern used here?]
-```
-
-### "Too many issues to fix"
-
-Prioritize:
-1. Security issues (/fix:hard)
-2. Production blockers (/fix:hard)
-3. Performance problems (/fix:hard)
-4. Test coverage (/cook [add tests])
-5. Code quality (/cook [refactor])
-6. Documentation (/docs:update)
-
-### "Breaking changes in dependencies"
+### "Tôi không hiểu code này"
 
 ```bash
-/plan [migrate from package X v1 to v2]
-# Review plan carefully
-/cook [implement migration]
-/test  # Comprehensive testing
+/ask [giải thích cách X hoạt động]
+/ask [hàm này làm nhiệm vụ gì?]
+/ask [tại sao mẫu hình (pattern) này được dùng ở đây?]
 ```
 
-## Next Steps
+### "Có quá nhiều vấn đề cần sửa"
 
-### Improve Further
+Ưu tiên theo thứ tự:
+1. Các vấn đề bảo mật (/fix:hard)
+2. Các lỗi chặn triển khai production (/fix:hard)
+3. Các vấn đề hiệu suất (/fix:hard)
+4. Độ bao phủ tests (/cook [add tests])
+5. Chất lượng code (/cook [refactor])
+6. Tài liệu (/docs:update)
+
+### "Có thay đổi phá vỡ trong dependencies"
 
 ```bash
-# Add feature flags
-/cook [implement feature flag system]
-
-# Add A/B testing
-/cook [add A/B testing framework]
-
-# Improve observability
-/cook [add distributed tracing]
+/plan [di chuyển từ package X v1 sang v2]
+# Xem lại kế hoạch cẩn thận
+/cook [triển khai di chuyển]
+/test  # Kiểm thử toàn diện
 ```
 
-### Train Team
+## Bước Tiếp Theo
 
-1. Document everything (`/docs:update`)
-2. Create onboarding guide
-3. Share architecture docs
-4. Set up development environment guide
+### Cải Thiện Thêm
 
-## Key Takeaways
+```bash
+# Thêm feature flags
+/cook [triển khai hệ thống feature flag]
 
-1. **Start with `/docs:init`** - Critical for understanding legacy code
-2. **Fix security first** - Protect users and business
-3. **Add tests gradually** - Focus on critical paths
-4. **Update incrementally** - Don't break everything at once
-5. **Document as you go** - Future you will thank you
-6. **Automate maintenance** - CI/CD and monitoring
+# Thêm A/B testing
+/cook [thêm framework A/B testing]
+
+# Cải thiện khả năng quan sát
+/cook [thêm distributed tracing]
+```
+
+### Đào Tạo Nhóm
+
+1. Viết tài liệu mọi thứ (`/docs:update`)
+2. Tạo hướng dẫn onboarding
+3. Chia sẻ tài liệu kiến trúc
+4. Thiết lập hướng dẫn môi trường phát triển
+
+## Các Bài Học Chính
+
+1. **Bắt đầu với `/docs:init`** - Cực kỳ quan trọng để hiểu mã nguồn cũ
+2. **Sửa bảo mật trước tiên** - Bảo vệ người dùng và doanh nghiệp
+3. **Thêm tests dần dần** - Tập trung vào các luồng quan trọng
+4. **Cập nhật từng bước** - Đừng làm hỏng mọi thứ cùng một lúc
+5. **Viết tài liệu song song** - Bạn trong tương lai sẽ cảm ơn chính mình
+6. **Tự động hóa bảo trì** - Sử dụng CI/CD và giám sát
 
 ---
 
-**Success!** You've transformed an unmaintainable legacy project into a modern, well-tested, documented codebase that's easy to maintain and extend.
+**Thành công!** Bạn đã biến một dự án cũ không thể bảo trì thành một codebase hiện đại, được kiểm thử tốt, có tài liệu đầy đủ và dễ dàng mở rộng.

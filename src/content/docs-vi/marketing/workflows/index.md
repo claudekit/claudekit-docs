@@ -1,12 +1,13 @@
 ---
-title: "Marketing Workflows"
+title: "Quy trình Công việc Marketing"
 description: "Hướng dẫn từng bước để thực hiện các quy trình marketing hoàn chỉnh với ClaudeKit Marketing Kit"
+lang: vi
 section: marketing
 category: workflows
 order: 1
 ---
 
-# Marketing Workflows
+# Quy trình Công việc Marketing
 
 Marketing workflows là các quy trình hoàn chỉnh, từ đầu đến cuối, hướng dẫn bạn thực hiện các tác vụ marketing phổ biến bằng ClaudeKit agents và commands. Mỗi workflow cung cấp hướng dẫn từng bước, ví dụ thực tế và các phương pháp tốt nhất.
 
@@ -21,7 +22,7 @@ Workflows giúp bạn:
 
 ## Các Workflows Có Sẵn
 
-### Campaign & Strategy
+### Chiến dịch & Chiến lược
 
 **[Campaign Workflow](/vi/docs/marketing/workflows/campaign-workflow)** - Chu kỳ campaign hoàn chỉnh từ brief đến post-mortem
 - Thời gian: 4-8 tuần
@@ -33,7 +34,7 @@ Workflows giúp bạn:
 - Độ khó: Nâng cao
 - Phù hợp nhất cho: Vận hành marketing toàn diện
 
-### Content Production
+### Sản xuất Nội dung
 
 **[Content Workflow](/vi/docs/marketing/workflows/content-workflow)** - Quy trình sản xuất nội dung 6 giai đoạn với các cổng chất lượng
 - Thời gian: 2-5 ngày mỗi bài
@@ -50,7 +51,7 @@ Workflows giúp bạn:
 - Độ khó: Cơ bản
 - Phù hợp nhất cho: Nội dung xã hội đa nền tảng
 
-### Growth & Optimization
+### Tăng trưởng & Tối ưu hóa
 
 **[Sales Workflow](/vi/docs/marketing/workflows/sales-workflow)** - Quy trình chuyển đổi từ lead sang khách hàng
 - Thời gian: Liên tục
@@ -67,7 +68,7 @@ Workflows giúp bạn:
 - Độ khó: Trung bình
 - Phù hợp nhất cho: Phân tích dữ liệu, theo dõi hiệu suất, insights
 
-### Brand & Operations
+### Thương hiệu & Vận hành
 
 **[Brand Workflow](/vi/docs/marketing/workflows/brand-workflow)** - Tính nhất quán thương hiệu và thực thi hướng dẫn
 - Thời gian: 1-2 tuần thiết lập, liên tục
@@ -85,7 +86,7 @@ Workflows giúp bạn:
 
 **Xây Dựng Nhận Thức?**
 - Bắt đầu với Campaign Workflow hoặc Marketing Workflow
-- Thêm SEO Workflow cho phạm vi охват tự nhiên
+- Thêm SEO Workflow cho phạm vi tiếp cận tự nhiên
 - Sử dụng Social Workflow cho tương tác
 
 **Tạo Leads?**

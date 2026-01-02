@@ -1,16 +1,15 @@
 ---
 title: "ck init"
-description: "Khởi tạo hoặc cập nhật ClaudeKit trong các dự án hiện có với hợp nhất tệp thông minh và bảo tồn tùy chỉnh"
-lang: vi
+description: "Initialize or update ClaudeKit in existing projects with smart file merging and customization preservation"
 section: cli
 order: 4
 ---
 
 # ck init
 
-> Khởi tạo hoặc cập nhật ClaudeKit trong dự án hiện có với hợp nhất tệp thông minh và bảo tồn tùy chỉnh tự động.
+> Initialize or update ClaudeKit in existing projects with smart file merging and automatic customization preservation.
 
-## Bắt đầu nhanh chóng
+## Quick Start
 
 ```bash
 # Interactive mode (recommended)
@@ -26,62 +25,62 @@ ck init --global
 ck init --fresh
 ```
 
-**Quan trọng**: Chạy `ck init` từ thư mục gốc dự án của bạn.
+**Important**: Run `ck init` from your project's root directory.
 
-## Điều gì xảy ra
+## What Happens
 
-Lệnh `ck init`:
+The `ck init` command:
 
-1. Phát hiện cài đặt ClaudeKit hiện có (cục bộ hoặc toàn cầu)
-2. Nhắc lựa chọn bộ và phiên bản
-3. Tải xuống bản phát hành đã chọn
-4. Hợp nhất các tệp mới trong khi bảo tồn tùy chỉnh của bạn
-5. Di chuyển thư mục kỹ năng nếu cấu trúc thay đổi
-6. Cập nhật siêu dữ liệu cài đặt
-7. Tùy chọn cài đặt các phụ thuộc kỹ năng
+1. Detects existing ClaudeKit installation (local or global)
+2. Prompts for kit and version selection
+3. Downloads selected release
+4. Merges new files while preserving your customizations
+5. Migrates skills directory if structure changed
+6. Updates installation metadata
+7. Optionally installs skill dependencies
 
-## Cú pháp
+## Syntax
 
 ```bash
 ck init [OPTIONS]
 ```
 
-### Tùy chọn
+### Options
 
-| Flag | Mô tả | Mặc định |
+| Flag | Description | Default |
 |------|-------------|---------|
-| `--kit <name>` | Bộ để cài đặt (`engineer` hoặc `marketing`) | Interactive prompt |
-| `--dir <path>` | Thư mục đích | Current directory |
-| `--release <tag>` | Phiên bản bản phát hành cụ thể | Latest stable |
-| `--beta` | Bao gồm các phiên bản beta trong lựa chọn | `false` |
-| `--refresh` | Buộc làm mới bộ nhớ đệm bản phát hành | `false` |
-| `--global` / `-g` | Cài đặt vào thư mục người dùng (`~/.claude/`) | `false` (local) |
-| `--yes` / `-y` | Chế độ không tương tác với các giá trị mặc định | `false` |
-| `--fresh` | Xóa `.claude/` hiện có trước khi cài đặt | `false` |
-| `--exclude <pattern>` | Loại trừ các tệp khớp với mô hình (có thể lặp lại) | None |
-| `--only <pattern>` | Chỉ cập nhật thư mục cụ thể (có thể lặp lại) | All |
-| `--prefix` | Áp dụng không gian tên `/ck:` cho các lệnh | `false` |
-| `--install-skills` | Tự động cài đặt các phụ thuộc kỹ năng | `false` |
-| `--skip-setup` | Bỏ qua trình hướng dẫn thiết lập khóa API | `false` |
-| `--force-overwrite-settings` | Ghi đè settings.json hoàn toàn | `false` |
-| `--docs-dir <name>` | Tên thư mục tài liệu tùy chỉnh | `docs` |
-| `--plans-dir <name>` | Tên thư mục kế hoạch tùy chỉnh | `plans` |
-| `--dry-run` | Xem trước các thay đổi mà không áp dụng | `false` |
-| `--force-overwrite` | Ghi đè các tệp được sửa đổi (sử dụng cẩn thận) | `false` |
-| `--verbose` | Bật ghi nhật ký chi tiết | `false` |
+| `--kit <name>` | Kit to install (`engineer` or `marketing`) | Interactive prompt |
+| `--dir <path>` | Target directory | Current directory |
+| `--release <tag>` | Specific release version | Latest stable |
+| `--beta` | Include beta versions in selection | `false` |
+| `--refresh` | Force cache refresh for releases | `false` |
+| `--global` / `-g` | Install to user directory (`~/.claude/`) | `false` (local) |
+| `--yes` / `-y` | Non-interactive mode with defaults | `false` |
+| `--fresh` | Remove existing `.claude/` before installing | `false` |
+| `--exclude <pattern>` | Exclude files matching pattern (repeatable) | None |
+| `--only <pattern>` | Only update specific directories (repeatable) | All |
+| `--prefix` | Apply `/ck:` namespace to commands | `false` |
+| `--install-skills` | Auto-install skill dependencies | `false` |
+| `--skip-setup` | Skip API key setup wizard | `false` |
+| `--force-overwrite-settings` | Completely overwrite settings.json | `false` |
+| `--docs-dir <name>` | Custom docs directory name | `docs` |
+| `--plans-dir <name>` | Custom plans directory name | `plans` |
+| `--dry-run` | Preview changes without applying | `false` |
+| `--force-overwrite` | Overwrite modified files (use with caution) | `false` |
+| `--verbose` | Enable detailed logging | `false` |
 
-## Ví dụ
+## Examples
 
-### Cập nhật dự án hiện có
+### Update Existing Project
 
-Cập nhật dự án của bạn lên phiên bản mới nhất:
+Update your project to latest version:
 
 ```bash
 cd my-project
 ck init
 ```
 
-**Kết quả mong đợi:**
+**Expected output:**
 
 ```
 🔧 ClaudeKit - Initialize/Update Project
@@ -104,69 +103,69 @@ Installing
 ✨ Project initialized successfully
 ```
 
-### Chế độ không tương tác
+### Non-Interactive Mode
 
-Cập nhật với các giá trị mặc định (sử dụng phiên bản mới nhất, bỏ qua tất cả các lời nhắc):
+Update with defaults (use latest version, skip all prompts):
 
 ```bash
 ck init --yes
 ```
 
-**Hành vi mặc định với `--yes`:**
+**Default behavior with `--yes`:**
 
-| Lời nhắc | Giá trị mặc định |
+| Prompt | Default Value |
 |--------|---------------|
-| Lựa chọn bộ | `engineer` (cái đầu tiên có sẵn) |
-| Thư mục đích | `.` (thư mục hiện tại) |
-| Phiên bản | Bản phát hành ổn định mới nhất |
-| Thiết lập Gemini | Bỏ qua |
-| Tính năng tùy chọn | Bỏ qua |
+| Kit selection | `engineer` (first available) |
+| Target directory | `.` (current directory) |
+| Version | Latest stable release |
+| Gemini setup | Skip |
+| Optional features | Skip |
 
-### Cài đặt toàn cầu
+### Global Installation
 
-Cài đặt ClaudeKit ở mức người dùng (`~/.claude/`):
+Install ClaudeKit at user level (`~/.claude/`):
 
 ```bash
 ck init --global
 ```
 
-**Đường dẫn cụ thể theo nền tảng:**
+**Platform-specific paths:**
 
 - **macOS/Linux**: `~/.claude/`
 - **Windows**: `%USERPROFILE%\.claude\`
 
-Chế độ toàn cầu hữu ích cho:
-- Chia sẻ cấu hình trên các dự án
-- Sử dụng các lệnh ClaudeKit ở mọi nơi
-- Quản lý kỹ năng tập trung
+Global mode is useful for:
+- Sharing configuration across projects
+- Using ClaudeKit commands everywhere
+- Centralized skill management
 
-### Cài đặt Fresh
+### Fresh Installation
 
-Xóa tất cả các tệp ClaudeKit hiện có và cài đặt lại:
+Remove all existing ClaudeKit files and reinstall:
 
 ```bash
 ck init --fresh
 ```
 
-**Cảnh báo**: Cái này xóa vĩnh viễn:
-- Thư mục `.claude/` và tất cả nội dung
-- Các lệnh, quy trình làm việc và cấu hình tùy chỉnh
-- Tùy chỉnh kỹ năng
+**Warning**: This permanently deletes:
+- `.claude/` directory and all contents
+- Custom commands, workflows, and configs
+- Skill customizations
 
-Các tệp được bảo vệ vẫn được bảo tồn:
+Protected files are still preserved:
 - `.env`, `.env.local`
 - `*.key`, `*.pem`, `*.p12`
 - `settings.json`, `CLAUDE.md`
 
-### Cập nhật lựa chọn
+### Selective Update
 
-Chỉ cập nhật các thư mục cụ thể:
+Only update specific directories:
 
 ```bash
 ck init --only commands --only workflows
 ```
 
-Thư mục khả dụng:
+Available directories:
 - `commands`
 - `agents`
 - `skills`
@@ -175,21 +174,21 @@ Thư mục khả dụng:
 
 ### Dry Run
 
-Xem trước những gì sẽ thay đổi mà không áp dụng:
+Preview what will change without applying:
 
 ```bash
 ck init --dry-run
 ```
 
-Hiển thị:
-- Các tệp sẽ được thêm
-- Các tệp sẽ được cập nhật
-- Các tệp sẽ được bảo tồn
-- Trạng thái quyền sở hữu của mỗi tệp
+Shows:
+- Files that will be added
+- Files that will be updated
+- Files that will be preserved
+- Ownership status of each file
 
-### Cờ kết hợp
+### Combined Flags
 
-Các kết hợp phổ biến:
+Common combinations:
 
 ```bash
 # Global + non-interactive
@@ -202,18 +201,18 @@ ck init --beta --install-skills
 ck init --fresh --release v1.16.0 --yes
 ```
 
-## Chế độ cục bộ vs toàn cầu
+## Local vs Global Mode
 
-### Chế độ cục bộ (Mặc định)
+### Local Mode (Default)
 
-Cài đặt vào `.claude/` trong thư mục dự án:
+Install to `.claude/` in project directory:
 
 ```bash
 cd my-project
 ck init
 ```
 
-**Cấu trúc:**
+**Structure:**
 
 ```
 my-project/
@@ -225,20 +224,20 @@ my-project/
 └── ...
 ```
 
-**Sử dụng khi:**
-- Làm việc trên một dự án
-- Cần cấu hình cụ thể dự án
-- Cộng tác với nhóm (cam kết với git)
+**Use when:**
+- Working on a single project
+- Need project-specific configuration
+- Collaborating with team (commit to git)
 
-### Chế độ toàn cầu
+### Global Mode
 
-Cài đặt vào `~/.claude/` (thư mục người dùng):
+Install to `~/.claude/` (user directory):
 
 ```bash
 ck init --global
 ```
 
-**Cấu trúc:**
+**Structure:**
 
 ```
 ~/.claude/
@@ -248,100 +247,100 @@ ck init --global
 └── ...
 ```
 
-**Sử dụng khi:**
-- Sử dụng ClaudeKit trên nhiều dự án
-- Muốn cấu hình tập trung
-- Cần kỹ năng có sẵn trên toàn cầu
+**Use when:**
+- Using ClaudeKit across multiple projects
+- Want centralized configuration
+- Need globally available skills
 
-**Lưu ý**: Các cài đặt cục bộ có ưu tiên hơn cài đặt toàn cầu nếu cả hai tồn tại.
+**Note**: Local installations take precedence over global if both exist.
 
-## Mô hình phổ biến
+## Common Patterns
 
-### Cập nhật lên Beta mới nhất
+### Update to Latest Beta
 
-Nhận các tính năng prerelease mới nhất:
+Get latest prerelease features:
 
 ```bash
 ck init --beta
 ```
 
-### Phiên bản cụ thể
+### Specific Version
 
-Ghim phiên bản ổn định đã biết:
+Pin to known stable version:
 
 ```bash
 ck init --release v1.16.0
 ```
 
-### Chỉ cập nhật lệnh
+### Commands-Only Update
 
-Làm mới các lệnh trong khi giữ các tùy chỉnh khác:
+Refresh commands while keeping other customizations:
 
 ```bash
 ck init --only commands
 ```
 
-### Cài đặt lại đầy đủ
+### Full Reinstall
 
-Lựa chọn hạch nhân - bắt đầu lại từ đầu:
+Nuclear option - start fresh:
 
 ```bash
 ck init --fresh --yes --install-skills
 ```
 
-### Cập nhật CI/CD
+### CI/CD Update
 
-Cập nhật tự động trong quy trình CI:
+Automated update in CI pipelines:
 
 ```bash
 ck init --yes --release v1.16.0 --skip-setup
 ```
 
-## Bảo tồn tùy chỉnh
+## Customization Preservation
 
-`ck init` bảo tồn tùy chỉnh một cách thông minh trong các cập nhật.
+`ck init` intelligently preserves customizations across updates.
 
-### Được bảo vệ theo mặc định
+### Protected by Default
 
-Luôn được bảo tồn trong các cập nhật:
+Always preserved during updates:
 
 - `.env`, `.env.local`, `.env.*.local`
 - `*.key`, `*.pem`, `*.p12`, `*.pfx`
 - `settings.json`, `settings.local.json`
-- `CLAUDE.md` (trong chế độ toàn cầu)
-- Các tệp trong `node_modules/`, `.git/`, `dist/`, `build/`
+- `CLAUDE.md` (in global mode)
+- Files in `node_modules/`, `.git/`, `dist/`, `build/`
 
-### Phát hiện tệp tùy chỉnh
+### Custom File Detection
 
-Được phát hiện và bảo tồn tự động:
+Automatically detected and preserved:
 
-- Các lệnh gạch chéo tùy chỉnh (không có trong bản kê khai bản phát hành)
-- Quy trình làm việc cá nhân
-- Kỹ năng do người dùng tạo
-- Các tệp ClaudeKit được sửa đổi (phát hiện dựa trên checksum)
+- Custom slash commands (not in release manifest)
+- Personal workflows
+- User-created skills
+- Modified ClaudeKit files (checksum-based detection)
 
-### Theo dõi quyền sở hữu
+### Ownership Tracking
 
-Các tệp được theo dõi với quyền sở hữu:
+Files are tracked with ownership:
 
-- **ck-owned**: Các tệp ClaudeKit ban đầu, chưa được sửa đổi (có thể được cập nhật)
-- **ck-modified**: Các tệp ClaudeKit bạn đã chỉnh sửa (được bảo tồn theo mặc định)
-- **user-created**: Các tệp tùy chỉnh của bạn (luôn được bảo tồn)
+- **ck-owned**: Original ClaudeKit files, unmodified (can be updated)
+- **ck-modified**: ClaudeKit files you've edited (preserved by default)
+- **user-created**: Your custom files (always preserved)
 
-### Di chuyển kỹ năng
+### Skill Migration
 
-Di chuyển tự động khi cấu trúc thư mục thay đổi:
+Automatically migrates when directory structure changes:
 
-**Ví dụ:**
+**Example:**
 
 ```
-Trước (phẳng):
+Before (flat):
 .claude/skills/
   ├── gemini-vision/
   ├── postgresql-psql/
   └── cloudflare-dns/
 
-Sau (được phân loại):
+After (categorized):
 .claude/skills/
   ├── ai-multimodal/
   │   └── gemini-vision/
@@ -351,85 +350,85 @@ Sau (được phân loại):
       └── cloudflare-dns/
 ```
 
-Các tùy chỉnh trong bất kỳ kỹ năng nào đều được phát hiện và bảo tồn trong quá trình di chuyển.
+Customizations in any skills are detected and preserved during migration.
 
-## Xử lý sự cố
+## Troubleshooting
 
 ### "Directory does not exist"
 
-**Vấn đề:** Thư mục đích không tìm thấy.
+**Issue:** Target directory not found.
 
-**Giải pháp:**
+**Solution:**
 
-Sử dụng `ck new` để tạo dự án mới:
+Use `ck new` to create new project:
 
 ```bash
 ck new --kit engineer --dir ./my-project
 ```
 
-Hoặc tạo thư mục trước:
+Or create directory first:
 
 ```bash
 mkdir my-project && cd my-project
 ck init
 ```
 
-### "Local .claude/settings.json detected" (Chế độ toàn cầu)
+### "Local .claude/settings.json detected" (Global Mode)
 
-**Vấn đề:** Cài đặt cục bộ tồn tại khi cố gắng cài đặt toàn cầu.
+**Issue:** Local installation exists when trying to install globally.
 
-**Giải pháp:**
+**Solution:**
 
-Chọn một trong các tùy chọn được nhắc:
+Choose one of the prompted options:
 
-1. **Xóa cục bộ** - Xóa `.claude/` và sử dụng toàn cầu
-2. **Giữ cả hai** - Cài đặt cục bộ sẽ có ưu tiên
-3. **Hủy** - Hủy bỏ cài đặt
+1. **Remove local** - Delete `.claude/` and use global
+2. **Keep both** - Local installation will take precedence
+3. **Cancel** - Abort installation
 
-Hoặc sử dụng cờ để buộc:
+Or use flag to force:
 
 ```bash
-# Xóa cục bộ trước khi cài đặt toàn cầu
+# Remove local before global install
 rm -rf .claude
 ck init --global
 ```
 
-## Bước tiếp theo
+## Next Steps
 
-Sau khi khởi tạo:
+After initialization:
 
-1. **Xác minh cài đặt:**
+1. **Verify installation:**
 
 ```bash
 ck --version
 ```
 
-2. **Chạy kiểm tra sức khỏe:**
+2. **Run health check:**
 
 ```bash
 ck doctor
 ```
 
-3. **Xem xét các tệp được cập nhật:**
+3. **Review updated files:**
 
 ```bash
 ls -la .claude/
 ```
 
-4. **Kiểm tra một lệnh:**
+4. **Test a command:**
 
-Mở dự án của bạn trong Claude Code và thử lệnh gạch chéo như `/plan`.
+Open your project in Claude Code and try a slash command like `/plan`.
 
-5. **Cài đặt các phụ thuộc kỹ năng (nếu chưa thực hiện):**
+5. **Install skill dependencies (if not done):**
 
 ```bash
 ck init --install-skills
 ```
 
-## Lệnh liên quan
+## Related Commands
 
-- [`ck new`](/vi/docs/cli/new) - Tạo dự án mới
-- [`ck doctor`](/vi/docs/cli/doctor) - Chẩn đoán các vấn đề
-- [`ck versions`](/vi/docs/cli/versions) - Duyệt các phiên bản
-- [`ck uninstall`](/vi/docs/cli/uninstall) - Xóa cài đặt
-- [Configuration](/vi/docs/cli/configuration) - Cấu hình các giá trị mặc định
+- [`ck new`](/docs/cli/new) - Create new project
+- [`ck doctor`](/docs/cli/doctor) - Diagnose issues
+- [`ck versions`](/docs/cli/versions) - Browse versions
+- [`ck uninstall`](/docs/cli/uninstall) - Remove installation
+- [Configuration](/docs/cli/configuration) - Configure defaults

@@ -1,457 +1,451 @@
 ---
 title: /content:cro
-description: Documentation for cro
+description: Tài liệu hướng dẫn cho lệnh cro
 section: engineer
 kit: engineer
 category: docs/commands/content
 order: 50
 published: true
+lang: vi
 ---
 
 # /content:cro
 
-Analyze existing content and optimize it for conversion. This command uses conversion rate optimization (CRO) best practices, psychological triggers, and A/B testing strategies to improve your copy's effectiveness.
+Phân tích nội dung hiện có và tối ưu hóa cho chuyển đổi. Lệnh này sử dụng các phương pháp tối ưu hóa tỷ lệ chuyển đổi (CRO) tốt nhất, các yếu tố kích thích tâm lý và chiến lược thử nghiệm A/B để cải thiện hiệu quả của bản viết (copy).
 
-## Syntax
-
-```bash
-/content:cro [content issues or URL]
-```
-
-## How It Works
-
-The `/content:cro` command follows a data-driven optimization workflow:
-
-### 1. Content Analysis
-
-- Reads existing content (from file, URL, or description)
-- Identifies conversion goals (signup, purchase, download, etc.)
-- Analyzes current messaging and CTAs
-- Maps user journey and friction points
-
-### 2. Psychological Analysis
-
-- Identifies psychological triggers used (or missing)
-- Analyzes emotional resonance
-- Evaluates trust signals
-- Checks for cognitive biases leveraged
-
-### 3. CRO Audit
-
-Invokes **copywriter** agent to audit:
-- Headlines and value propositions
-- Call-to-action effectiveness
-- Social proof and testimonials
-- Urgency and scarcity elements
-- Visual hierarchy and flow
-- Mobile optimization
-
-### 4. Optimization Recommendations
-
-Provides specific improvements:
-- Rewritten headlines (3-5 variations)
-- Improved CTAs
-- Added psychological triggers
-- Enhanced social proof
-- Optimized user flow
-
-### 5. A/B Testing Strategy
-
-Creates testing plan:
-- Test variations
-- Metrics to track
-- Sample size requirements
-- Expected lift predictions
-
-## Examples
-
-### Landing Page Optimization
+## Cú pháp
 
 ```bash
-/content:cro [analyze landing page at https://example.com/signup]
+/content:cro [vấn đề về nội dung hoặc URL]
 ```
 
-**What happens:**
+## Cách thức hoạt động
+
+Lệnh `/content:cro` tuân theo quy trình tối ưu hóa dựa trên dữ liệu:
+
+### 1. Phân tích Nội dung
+
+- Đọc nội dung hiện có (từ tệp, URL hoặc mô tả)
+- Xác định mục tiêu chuyển đổi (đăng ký, mua hàng, tải xuống, v.v.)
+- Phân tích thông điệp và lời kêu gọi hành động (CTA) hiện tại
+- Lập bản đồ hành trình người dùng và các điểm gây cản trở (friction points)
+
+### 2. Phân tích Tâm lý
+
+- Xác định các kích thích tâm lý đang được sử dụng (hoặc còn thiếu)
+- Phân tích sự cộng hưởng cảm xúc
+- Đánh giá các tín hiệu tin cậy
+- Kiểm tra các định kiến nhận thức đang được tận dụng
+
+### 3. Kiểm định CRO
+
+Triệu tập agent **copywriter** để kiểm định:
+- Tiêu đề và đề xuất giá trị
+- Hiệu quả của lời kêu gọi hành động
+- Bằng chứng xã hội (social proof) và lời chứng thực
+- Các yếu tố cấp bách và khan hiếm
+- Hệ thống phân cấp hình ảnh và luồng thông tin
+- Tối ưu hóa cho thiết bị di động
+
+### 4. Đề xuất Tối ưu hóa
+
+Cung cấp các cải tiến cụ thể:
+- Viết lại tiêu đề (3-5 biến thể)
+- Cải thiện CTA
+- Thêm các kích thích tâm lý
+- Tăng cường bằng chứng xã hội
+- Tối ưu hóa luồng người dùng
+
+### 5. Chiến lược Thử nghiệm A/B
+
+Tạo kế hoạch thử nghiệm:
+- Các biến thể thử nghiệm
+- Các chỉ số cần theo dõi
+- Yêu cầu về kích thước mẫu
+- Dự đoán mức độ tăng trưởng kỳ vọng
+
+## Ví dụ
+
+### Tối ưu hóa Trang Đích (Landing Page)
+
+```bash
+/content:cro [phân tích trang đích tại https://example.com/signup]
 ```
-1. Content Analysis
+
+**Điều gì xảy ra:**
+```
+1. Phân tích Nội dung
    Agent: copywriter
 
-   Current State:
-   - Headline: "Sign up for our app"
+   Trạng thái hiện tại:
+   - Tiêu đề: "Sign up for our app"
    - CTA: "Get Started"
-   - No social proof visible
-   - Benefits listed but not compelling
-   - No urgency elements
+   - Không có bằng chứng xã hội hiển thị
+   - Các lợi ích được liệt kê nhưng không hấp dẫn
+   - Không có yếu tố cấp bách
 
-2. Psychological Analysis
-   Missing triggers:
-   - Loss aversion
-   - Social proof
-   - Scarcity/urgency
-   - Authority signals
+2. Phân tích Tâm lý
+   Các yếu tố còn thiếu:
+   - Tâm lý sợ mất mát (Loss aversion)
+   - Bằng chứng xã hội
+   - Sự khan hiếm/cấp bách
+   - Tín hiệu về uy tín
 
-   Current triggers:
-   ✓ Reciprocity (free trial)
-   ✗ Weak value proposition
+   Các yếu tố hiện tại:
+   ✓ Sự đáp trả (Reciprocity - dùng thử miễn phí)
+   ✗ Đề xuất giá trị yếu
 
-3. Optimization Recommendations
+3. Đề xuất Tối ưu hóa
 
-   HEADLINE VARIANTS:
-   A: "Join 50,000+ developers building faster"
-   B: "Ship your next feature 10x faster"
-   C: "The last development tool you'll need"
+   BIẾN THỂ TIÊU ĐỀ:
+   A: "Gia nhập hơn 50.000+ lập trình viên đang xây dựng nhanh hơn"
+   B: "Phát hành tính năng tiếp theo của bạn nhanh hơn gấp 10 lần"
+   C: "Công cụ phát triển cuối cùng mà bạn sẽ cần"
 
-   CTA IMPROVEMENTS:
-   Before: "Get Started"
-   After: "Start Free Trial → No credit card"
+   CẢI THIỆN CTA:
+   Trước: "Get Started"
+   Sau: "Bắt đầu dùng thử miễn phí → Không cần thẻ tín dụng"
 
-   ADD SOCIAL PROOF:
-   - "Trusted by 50,000+ developers"
-   - Customer logos (GitHub, Shopify, etc.)
-   - Testimonials with photos
+   THÊM BẰNG CHỨNG XÃ HỘI:
+   - "Được tin dùng bởi 50.000+ lập trình viên"
+   - Logo khách hàng (GitHub, Shopify, v.v.)
+   - Lời chứng thực kèm ảnh
 
-   ADD URGENCY:
-   - "Limited spots in beta"
-   - "Join before prices increase Nov 1"
+   THÊM SỰ CẤP BÁCH:
+   - "Số lượng suất thử nghiệm beta có hạn"
+   - "Tham gia trước khi tăng giá vào ngày 1 tháng 11"
 
-   RESTRUCTURE FLOW:
-   1. Attention-grabbing headline
-   2. Social proof
-   3. Clear benefits (not features)
-   4. Visual demo/screenshot
-   5. Strong CTA
-   6. Risk reversal (money-back guarantee)
+   CẤU TRÚC LẠI LUỒNG THÔNG TIN:
+   1. Tiêu đề gây chú ý
+   2. Bằng chứng xã hội
+   3. Lợi ích rõ ràng (không phải tính năng)
+   4. Demo trực quan/ảnh chụp màn hình
+   5. CTA mạnh mẽ
+   6. Loại bỏ rủi ro (cam kết hoàn tiền)
 
-4. A/B Testing Plan
+4. Kế hoạch Thử nghiệm A/B
 
-   Test 1: Headlines
-   - Control: Current headline
-   - Variant A: "Join 50,000+ developers"
-   - Variant B: "Ship 10x faster"
-   - Metric: Signup rate
-   - Duration: 2 weeks, 1000+ visitors/variant
-   - Expected lift: 15-30%
+   Thử nghiệm 1: Tiêu đề
+   - Đối chứng: Tiêu đề hiện tại
+   - Biến thể A: "Gia nhập hơn 50.000+ lập trình viên"
+   - Biến thể B: "Phát hành nhanh hơn gấp 10 lần"
+   - Chỉ số: Tỷ lệ đăng ký
+   - Thời gian: 2 tuần, 1000+ khách truy cập/biến thể
+   - Tăng trưởng dự kiến: 15-30%
 
-   Test 2: CTA Button
-   - Control: "Get Started"
-   - Variant: "Start Free Trial"
-   - Metric: Click-through rate
-   - Expected lift: 10-20%
+   Thử nghiệm 2: Nút CTA
+   - Đối chứng: "Get Started"
+   - Biến thể: "Bắt đầu dùng thử miễn phí"
+   - Chỉ số: Tỷ lệ nhấp (CTR)
+   - Tăng trưởng dự kiến: 10-20%
 
-✓ CRO Analysis complete
+✓ Hoàn tất phân tích CRO
 ```
 
-### Product Page Copy
+### Nội dung Trang Sản phẩm
 
 ```bash
-/content:cro [optimize product page copy for ClaudeKit Pro subscription]
+/content:cro [tối ưu hóa nội dung trang sản phẩm cho gói đăng ký ClaudeKit Pro]
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-1. Analysis
-   Product: ClaudeKit Pro ($49/month)
-   Goal: Increase subscription conversions
+1. Phân tích
+   Sản phẩm: ClaudeKit Pro ($49/tháng)
+   Mục tiêu: Tăng chuyển đổi đăng ký
 
-   Current issues:
-   - Features-focused (not benefit-focused)
-   - No pricing anchoring
-   - Weak urgency
-   - Missing objection handling
+   Vấn đề hiện tại:
+   - Tập trung vào tính năng (không phải lợi ích)
+   - Không có mốc neo giá (pricing anchoring)
+   - Sự cấp bách yếu
+   - Thiếu xử lý phản đối (objection handling)
 
-2. Optimization Strategy
+2. Chiến lược Tối ưu hóa
 
-   PRICING PRESENTATION:
-   Before:
-   "$49/month"
+   TRÌNH BÀY GIÁ:
+   Trước:
+   "$49/tháng"
 
-   After (with anchoring):
-   "Just $1.63/day"
-   "Save $118/year (annual plan)"
-   Compare to: "$199/month for hiring freelancer"
+   Sau (kèm mốc neo):
+   "Chỉ $1.63/ngày"
+   "Tiết kiệm $118/năm (gói hàng năm)"
+   So sánh với: "$199/tháng nếu thuê freelancer"
 
-   TRANSFORM FEATURES TO BENEFITS:
-   Before: "AI-powered code generation"
-   After: "Ship features 10x faster, get home on time"
+   CHUYỂN ĐỔI TÍNH NĂNG THÀNH LỢI ÍCH:
+   Trước: "Tạo mã nguồn bằng AI"
+   Sau: "Phát hành tính năng nhanh hơn 10 lần, về nhà đúng giờ"
 
-   Before: "Automated testing"
-   After: "Sleep soundly knowing bugs are caught instantly"
+   Trước: "Kiểm thử tự động"
+   Sau: "Ngủ ngon hơn khi biết lỗi được phát hiện ngay lập tức"
 
-   ADD RISK REVERSAL:
-   - 30-day money-back guarantee
-   - Cancel anytime
-   - No questions asked refund
+   THÊM LOẠI BỎ RỦI RO:
+   - Cam kết hoàn tiền trong 30 ngày
+   - Hủy bất cứ lúc nào
+   - Hoàn tiền không cần lý do
 
-   SOCIAL PROOF:
-   - "4.9/5 stars from 2,000+ developers"
-   - "Featured on Product Hunt #1"
-   - Real testimonials with metrics
+   BẰNG CHỨNG XÃ HỘI:
+   - "4.9/5 sao từ hơn 2.000+ lập trình viên"
+   - "Đứng đầu #1 trên Product Hunt"
+   - Lời chứng thực thực tế kèm số liệu
 
-3. Psychological Triggers Added
+3. Các kích thích tâm lý đã thêm
+   ✓ Sợ mất mát: "Đừng lãng phí 20 giờ/tuần cho các tác vụ thủ công"
+   ✓ Bằng chứng xã hội: Lời chứng thực + số lượng người dùng
+   ✓ Khan hiếm: "Giá ưu đãi beta kết thúc vào ngày 1 tháng 12"
+   ✓ Uy tín: "Được sử dụng bởi các đội ngũ tại Google, Meta, Amazon"
+   ✓ Đáp trả: Dùng thử miễn phí 14 ngày
+   ✓ Cam kết: "Không yêu cầu thẻ tín dụng"
 
-   ✓ Loss Aversion: "Don't waste 20 hours/week on manual tasks"
-   ✓ Social Proof: Testimonials + user count
-   ✓ Scarcity: "Limited beta pricing ends Dec 1"
-   ✓ Authority: "Used by teams at Google, Meta, Amazon"
-   ✓ Reciprocity: Free 14-day trial
-   ✓ Commitment: "No credit card required"
+4. Đề xuất Thử nghiệm A/B
+   Thử nghiệm 1: Hiển thị giá
+   A: "$49/tháng"
+   B: "$1.63/ngày - Rẻ hơn một ly cà phê"
+   Tăng trưởng dự kiến: 8-15%
 
-4. A/B Tests Recommended
+   Thử nghiệm 2: Vị trí cam kết
+   A: Cam kết ở dưới cùng
+   B: Cam kết ngay cạnh CTA
+   Tăng trưởng dự kiến: 5-10%
 
-   Test 1: Pricing Display
-   A: "$49/month"
-   B: "$1.63/day - Less than coffee"
-   Expected lift: 8-15%
-
-   Test 2: Guarantee Position
-   A: Guarantee at bottom
-   B: Guarantee next to CTA
-   Expected lift: 5-10%
-
-✓ CRO complete (3 minutes)
+✓ Hoàn tất CRO (3 phút)
 ```
 
-### Email Campaign
+### Chiến dịch Email
 
 ```bash
-/content:cro [improve conversion on welcome email sequence]
+/content:cro [cải thiện chuyển đổi cho chuỗi email chào mừng]
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-1. Email Sequence Analysis
+1. Phân tích Chuỗi Email
+   Hiện tại: 3 email trong 7 ngày
+   Mục tiêu: Kích hoạt người dùng dùng thử
 
-   Current: 3 emails over 7 days
-   Goal: Activate trial users
+   Các vấn đề tìm thấy:
+   - Email 1: Quá dài, CTA bị chôn vùi
+   - Email 2: Nói về tính năng, không phải lợi ích
+   - Email 3: Sự cấp bách yếu, không có bằng chứng xã hội
 
-   Issues found:
-   - Email 1: Too long, buried CTA
-   - Email 2: Features, not benefits
-   - Email 3: Weak urgency, no social proof
+2. Đề xuất Tối ưu hóa
+   EMAIL 1 (Ngày 0 - Chào mừng)
 
-2. Optimization Recommendations
+   Trước:
+   Tiêu đề: "Welcome to ClaudeKit!"
 
-   EMAIL 1 (Day 0 - Welcome)
+   Sau:
+   Tiêu đề: "Agent AI đầu tiên của bạn đã sẵn sàng 🚀"
+   Alt: "Đây là hướng dẫn thiết lập đầy đủ cho bạn"
 
-   Before:
-   Subject: "Welcome to ClaudeKit!"
+   Cải thiện nội dung:
+   - Cắt từ 300 từ xuống 100 từ
+   - Một CTA duy nhất rõ ràng: "Tạo Agent đầu tiên của bạn"
+   - Thêm thành quả nhanh: "Thiết lập trong 5 phút"
 
-   After:
-   Subject: "Your first AI agent is ready 🚀"
-   Alt: "Here's your complete setup guide"
+   EMAIL 2 (Ngày 3 - Giá trị)
+   Tiêu đề: "Xem cách [Công ty] đã tiết kiệm 20 giờ/tuần"
 
-   Body improvements:
-   - Cut from 300 words to 100 words
-   - Single clear CTA: "Create Your First Agent"
-   - Add quick win: "5-minute setup"
+   Thay đổi:
+   - Câu chuyện khách hàng thực tế (khi có sự cho phép)
+   - Số liệu cụ thể
+   - CTA: "Nhận kết quả tương tự"
 
-   EMAIL 2 (Day 3 - Value)
+   EMAIL 3 (Ngày 6 - Chuyển đổi)
+   Tiêu đề: "Thời gian dùng thử của bạn kết thúc sau 24 giờ ⏰"
 
-   Subject: "See how [Company] saved 20 hours/week"
+   Thêm:
+   - Sự cấp bách (hết hạn dùng thử)
+   - Sợ mất mát (mất quyền truy cập vào các agent)
+   - Ưu đãi đặc biệt (giảm 20% nếu nâng cấp ngay)
+   - Bằng chứng xã hội (gia nhập hơn 50.000+ người dùng)
 
-   Changes:
-   - Real customer story (with permission)
-   - Specific metrics
-   - CTA: "Get Similar Results"
-
-   EMAIL 3 (Day 6 - Conversion)
-
-   Subject: "Your trial ends in 24 hours ⏰"
-
-   Add:
-   - Urgency (trial ending)
-   - Loss aversion (lose access to agents)
-   - Special offer (20% off if upgrade now)
-   - Social proof (join 50,000+ users)
-
-3. A/B Testing Plan
-
-   Test: Subject Lines (Email 1)
+3. Kế hoạch Thử nghiệm A/B
+   Thử nghiệm: Tiêu đề (Email 1)
    A: "Welcome to ClaudeKit!"
-   B: "Your first AI agent is ready 🚀"
-   Metric: Open rate
-   Expected lift: 20-35%
+   B: "Agent AI đầu tiên của bạn đã sẵn sàng 🚀"
+   Chỉ số: Tỷ lệ mở
+   Tăng trưởng dự kiến: 20-35%
 
-   Test: CTA Text (Email 2)
-   A: "Learn More"
-   B: "Get Similar Results"
-   Metric: Click rate
-   Expected lift: 15-25%
+   Thử nghiệm: Văn bản CTA (Email 2)
+   A: "Tìm hiểu thêm"
+   B: "Nhận kết quả tương tự"
+   Chỉ số: Tỷ lệ nhấp
+   Tăng trưởng dự kiến: 15-25%
 
-✓ Email sequence optimized
+✓ Đã tối ưu hóa chuỗi email
 ```
 
-## When to Use
+## Khi nào nên sử dụng
 
-### ✅ Use /content:cro for:
+### ✅ Sử dụng /content:cro cho:
 
-**Landing Pages**
+**Trang Đích (Landing Pages)**
 ```bash
-/content:cro [optimize homepage for signups]
+/content:cro [tối ưu hóa trang chủ để tăng lượt đăng ký]
 ```
 
-**Product Pages**
+**Trang Sản phẩm**
 ```bash
-/content:cro [improve pricing page conversion]
+/content:cro [cải thiện chuyển đổi trang bảng giá]
 ```
 
-**Email Campaigns**
+**Chiến dịch Email**
 ```bash
-/content:cro [optimize onboarding email sequence]
+/content:cro [tối ưu hóa chuỗi email hướng dẫn người dùng mới]
 ```
 
-**CTAs**
+**Lời kêu gọi hành động (CTAs)**
 ```bash
-/content:cro [improve signup button conversion]
+/content:cro [cải thiện chuyển đổi của nút đăng ký]
 ```
 
-**Sales Pages**
+**Trang Bán hàng**
 ```bash
-/content:cro [optimize checkout flow copy]
+/content:cro [tối ưu hóa nội dung luồng thanh toán]
 ```
 
-### ❌ Don't use for:
+### ❌ Không sử dụng cho:
 
-**Brand New Content**
-- Use `/content:fast` or `/content:good` instead
+**Nội dung mới hoàn toàn**
+- Sử dụng `/content:fast` hoặc `/content:good` thay thế
 
-**Blog Posts**
-- Use `/content:enhance` for improving blog content
+**Bài viết Blog**
+- Sử dụng `/content:enhance` để cải thiện nội dung blog
 
-**Technical Documentation**
-- Use `/docs:update` instead
+**Tài liệu Kỹ thuật**
+- Sử dụng `/docs:update` thay thế
 
-## Optimization Frameworks Used
+## Các khung tối ưu hóa được sử dụng
 
-### 1. AIDA Framework
-
-```
-Attention: Compelling headline
-Interest: Engaging subheadline and benefits
-Desire: Social proof, testimonials, guarantees
-Action: Clear, compelling CTA
-```
-
-### 2. PAS Framework
+### 1. Khung AIDA
 
 ```
-Problem: Identify user pain point
-Agitate: Emphasize consequences of inaction
-Solution: Present your product as the solution
+Attention (Chú ý): Tiêu đề hấp dẫn
+Interest (Thú vị): Phụ đề và lợi ích lôi cuốn
+Desire (Mong muốn): Bằng chứng xã hội, lời chứng thực, cam kết
+Action (Hành động): CTA rõ ràng, thuyết phục
 ```
 
-### 3. Before-After-Bridge
+### 2. Khung PAS
 
 ```
-Before: Current unsatisfactory state
-After: Desired ideal state
-Bridge: How your product gets them there
+Problem (Vấn đề): Xác định điểm đau của người dùng
+Agitate (Kích động): Nhấn mạnh hậu quả của việc không hành động
+Solution (Giải pháp): Trình bày sản phẩm của bạn như một giải pháp
 ```
 
-## Psychological Triggers
-
-### Loss Aversion
+### 3. Before-After-Bridge (Trước-Sau-Cầu nối)
 
 ```
-Before: "Get 50% more features"
-After: "Don't lose 50% of your productivity"
+Before (Trước): Trạng thái không hài lòng hiện tại
+After (Sau): Trạng thái lý tưởng mong muốn
+Bridge (Cầu nối): Cách sản phẩm của bạn đưa họ đến đó
 ```
 
-### Social Proof
+## Các kích thích tâm lý
+
+### Sợ mất mát (Loss Aversion)
 
 ```
-Add:
-- User counts: "Join 50,000+ developers"
-- Testimonials with photos and names
-- Trust badges: "Featured in TechCrunch"
-- Customer logos
+Trước: "Nhận thêm 50% tính năng"
+Sau: "Đừng để mất 50% năng suất của bạn"
 ```
 
-### Scarcity & Urgency
+### Bằng chứng xã hội (Social Proof)
 
 ```
-- "Limited spots available"
-- "Price increases in 48 hours"
-- "Only 12 left at this price"
-- "Offer ends midnight tonight"
+Thêm:
+- Số lượng người dùng: "Gia nhập hơn 50.000+ lập trình viên"
+- Lời chứng thực kèm ảnh và tên
+- Huy hiệu tin cậy: "Được giới thiệu trên TechCrunch"
+- Logo khách hàng
 ```
 
-### Authority
+### Khan hiếm & Cấp bách
 
 ```
-- "Recommended by Y Combinator"
-- "Used by Fortune 500 companies"
-- Expert endorsements
-- Industry awards
+- "Chỉ còn vài suất trống"
+- "Giá sẽ tăng sau 48 giờ"
+- "Chỉ còn 12 sản phẩm với mức giá này"
+- "Ưu đãi kết thúc vào nửa đêm nay"
 ```
 
-### Reciprocity
+### Uy tín (Authority)
 
 ```
-- Free trial
-- Free tools or resources
-- Free consultation
-- Valuable content
+- "Được đề xuất bởi Y Combinator"
+- "Được sử dụng bởi các công ty trong danh sách Fortune 500"
+- Sự chứng thực từ chuyên gia
+- Giải thưởng trong ngành
 ```
 
-## A/B Testing Best Practices
-
-### Test One Thing at a Time
-
-✅ **Good:**
-```
-Test 1: Headline only
-Test 2: CTA button only
-Test 3: Social proof placement only
-```
-
-❌ **Bad:**
-```
-Test: Change headline + CTA + layout + colors
-(Can't tell what caused the improvement)
-```
-
-### Minimum Sample Size
+### Sự đáp trả (Reciprocity)
 
 ```
-Small changes (5-10% lift):
-- Need 10,000+ visitors per variant
-- Run for 2-4 weeks
-
-Large changes (30%+ lift):
-- Need 1,000+ visitors per variant
-- Can conclude in 1-2 weeks
+- Dùng thử miễn phí
+- Công cụ hoặc tài nguyên miễn phí
+- Tư vấn miễn phí
+- Nội dung có giá trị
 ```
 
-### Statistical Significance
+## Phương pháp thử nghiệm A/B tốt nhất
 
+### Thử nghiệm từng thứ một
+
+✅ **Tốt:**
 ```
-Don't stop test early!
-
-Minimum requirements:
-- 95% confidence level
-- Complete 2+ full weeks (account for day-of-week effects)
-- Reach minimum sample size
-```
-
-## Output Files
-
-After `/content:cro` completes:
-
-### Analysis Report
-
-```
-plans/content-cro-[page-name]-YYYYMMDD.md
+Thử nghiệm 1: Chỉ tiêu đề
+Thử nghiệm 2: Chỉ nút CTA
+Thử nghiệm 3: Chỉ vị trí bằng chứng xã hội
 ```
 
-Contains:
-- Current state analysis
-- Issues identified
-- Optimization recommendations
-- A/B test plans
-- Expected improvements
+❌ **Tệ:**
+```
+Thử nghiệm: Thay đổi tiêu đề + CTA + bố cục + màu sắc
+(Không thể biết yếu tố nào tạo ra sự cải thiện)
+```
 
-### Optimized Copy Variations
+### Kích thước mẫu tối thiểu
+
+```
+Thay đổi nhỏ (tăng trưởng 5-10%):
+- Cần hơn 10.000 khách truy cập mỗi biến thể
+- Chạy trong 2-4 tuần
+
+Thay đổi lớn (tăng trưởng 30%+):
+- Cần hơn 1.000 khách truy cập mỗi biến thể
+- Có thể kết luận trong 1-2 tuần
+```
+
+### Ý nghĩa thống kê
+
+```
+Đừng dừng thử nghiệm sớm!
+
+Yêu cầu tối thiểu:
+- Mức độ tin cậy 95%
+- Hoàn thành hơn 2 tuần đầy đủ (để tính đến hiệu ứng ngày trong tuần)
+- Đạt kích thước mẫu tối thiểu
+```
+
+## Tệp đầu ra
+
+Sau khi `/content:cro` hoàn tất:
+
+### Báo cáo Phân tích
+
+```
+plans/content-cro-[tên-trang]-YYYYMMDD.md
+```
+
+Chứa:
+- Phân tích trạng thái hiện tại
+- Các vấn đề được xác định
+- Đề xuất tối ưu hóa
+- Kế hoạch thử nghiệm A/B
+- Cải thiện kỳ vọng
+
+### Các biến thể nội dung đã tối ưu hóa
 
 ```
 content/optimized/
@@ -461,170 +455,170 @@ content/optimized/
 └── complete-optimized-page.md
 ```
 
-## Metrics to Track
+## Các chỉ số cần theo dõi
 
-### Primary Metrics
+### Chỉ số chính
 
-- **Conversion Rate**: % of visitors who complete goal action
-- **Click-Through Rate**: % who click CTA
-- **Bounce Rate**: % who leave without engaging
-- **Time on Page**: Average engagement time
+- **Tỷ lệ chuyển đổi**: % khách truy cập hoàn thành hành động mục tiêu
+- **Tỷ lệ nhấp (CTR)**: % người nhấp vào CTA
+- **Tỷ lệ thoát (Bounce Rate)**: % người rời đi mà không tương tác
+- **Thời gian trên trang**: Thời gian tương tác trung bình
 
-### Secondary Metrics
+### Chỉ số phụ
 
-- **Scroll Depth**: How far users scroll
-- **Heat Maps**: Where users click
-- **Form Abandonment**: Where users drop off
-- **Exit Rate**: Where users leave
+- **Độ sâu cuộn**: Người dùng cuộn xuống bao xa
+- **Bản đồ nhiệt (Heat Maps)**: Nơi người dùng nhấp vào
+- **Tỷ lệ bỏ dở biểu mẫu**: Nơi người dùng dừng lại trong biểu mẫu
+- **Tỷ lệ thoát trang (Exit Rate)**: Nơi người dùng rời khỏi trang web
 
-## Common CRO Patterns
+## Các mẫu CRO phổ biến
 
-### Above the Fold
-
-```
-Must include:
-1. Clear headline (value proposition)
-2. Supporting subheadline
-3. Visual (hero image/video)
-4. Primary CTA
-5. Trust signal (logo, social proof)
-```
-
-### Pricing Page
+### Phần trên màn hình đầu tiên (Above the Fold)
 
 ```
-Optimize:
-- Show value, not just price
-- Use pricing anchoring
-- Add social proof
-- Include guarantee
-- Clear feature comparison
-- Address objections
+Phải bao gồm:
+1. Tiêu đề rõ ràng (đề xuất giá trị)
+2. Phụ đề hỗ trợ
+3. Hình ảnh trực quan (ảnh/video minh họa)
+4. CTA chính
+5. Tín hiệu tin cậy (logo, bằng chứng xã hội)
 ```
 
-### Checkout Flow
+### Trang Bảng giá
 
 ```
-Reduce friction:
-- Remove unnecessary fields
-- Show progress indicator
-- Include trust badges
-- Offer guest checkout
-- Display security assurance
+Tối ưu hóa:
+- Hiển thị giá trị, không chỉ là giá
+- Sử dụng mốc neo giá
+- Thêm bằng chứng xã hội
+- Bao gồm cam kết bảo đảm
+- So sánh tính năng rõ ràng
+- Giải quyết các phản đối
 ```
 
-## Best Practices
+### Luồng Thanh toán
 
-### Headlines That Convert
-
-✅ **Good:**
 ```
-"Ship Features 10x Faster With AI"
-"Join 50,000+ Developers Building Better"
-"The Last Dev Tool You'll Ever Need"
-```
-
-❌ **Bad:**
-```
-"Welcome to Our Platform"
-"We Are the Best"
-"Revolutionary Technology"
+Giảm lực cản:
+- Loại bỏ các trường thông tin không cần thiết
+- Hiển thị chỉ báo tiến trình
+- Bao gồm huy hiệu tin cậy
+- Cho phép thanh toán với tư cách khách (guest checkout)
+- Hiển thị đảm bảo an ninh
 ```
 
-### CTAs That Work
+## Thực hành tốt nhất
 
-✅ **Good:**
-```
-"Start Free Trial → No credit card"
-"Get Instant Access"
-"Show Me How It Works"
-```
+### Tiêu đề tạo chuyển đổi
 
-❌ **Bad:**
+✅ **Tốt:**
 ```
-"Submit"
-"Click Here"
-"Learn More"
+"Phát hành tính năng nhanh hơn 10 lần với AI"
+"Gia nhập hơn 50.000+ lập trình viên đang xây dựng tốt hơn"
+"Công cụ phát triển cuối cùng mà bạn sẽ cần"
 ```
 
-### Social Proof
-
-✅ **Specific:**
+❌ **Tệ:**
 ```
-"Trusted by 50,000+ developers at Google, Meta, Amazon"
-"4.9/5 stars from 2,341 reviews"
-"Helped teams ship 10x faster"
+"Chào mừng đến với nền tảng của chúng tôi"
+"Chúng tôi là người giỏi nhất"
+"Công nghệ mang tính cách mạng"
 ```
 
-❌ **Vague:**
+### CTA hiệu quả
+
+✅ **Tốt:**
 ```
-"Trusted by many companies"
-"Highly rated"
-"Popular choice"
+"Bắt đầu dùng thử miễn phí → Không cần thẻ tín dụng"
+"Nhận quyền truy cập ngay lập tức"
+"Cho tôi xem cách nó hoạt động"
 ```
 
-## Troubleshooting
+❌ **Tệ:**
+```
+"Gửi"
+"Nhấp vào đây"
+"Tìm hiểu thêm"
+```
 
-### Low Conversion Despite Optimization
+### Bằng chứng xã hội
 
-**Check:**
-- Is offer compelling?
-- Is pricing competitive?
-- Does product match promise?
-- Is traffic qualified?
+✅ **Cụ thể:**
+```
+"Được tin dùng bởi hơn 50.000+ lập trình viên tại Google, Meta, Amazon"
+"4.9/5 sao từ 2.341 đánh giá"
+"Giúp các đội ngũ phát hành nhanh hơn gấp 10 lần"
+```
 
-**Solution:**
+❌ **Mơ hồ:**
+```
+"Được tin dùng bởi nhiều công ty"
+"Được đánh giá cao"
+"Lựa chọn phổ biến"
+```
+
+## Xử lý sự cố
+
+### Tỷ lệ chuyển đổi thấp dù đã tối ưu hóa
+
+**Kiểm tra:**
+- Đề xuất có đủ hấp dẫn không?
+- Giá cả có cạnh tranh không?
+- Sản phẩm có khớp với lời hứa không?
+- Lưu lượng truy cập có đúng đối tượng không?
+
+**Giải pháp:**
 ```bash
-# Analyze deeper issues
-/content:cro [full funnel analysis including traffic sources]
+# Phân tích các vấn đề sâu hơn
+/content:cro [phân tích toàn bộ phễu bao gồm các nguồn lưu lượng truy cập]
 ```
 
-### A/B Test Shows No Winner
+### Thử nghiệm A/B không tìm thấy người chiến thắng
 
-**Possible reasons:**
-- Sample size too small
-- Change too subtle
-- Test run too short
-- Traffic quality issues
+**Nguyên nhân có thể:**
+- Kích thước mẫu quá nhỏ
+- Thay đổi quá tinh vi
+- Thời gian thử nghiệm quá ngắn
+- Vấn đề về chất lượng lưu lượng truy cập
 
-**Solution:**
+**Giải pháp:**
 ```
-- Extend test duration
-- Increase traffic
-- Test bigger changes
-- Segment results by traffic source
+- Kéo dài thời gian thử nghiệm
+- Tăng lưu lượng truy cập
+- Thử nghiệm các thay đổi lớn hơn
+- Phân khúc kết quả theo nguồn lưu lượng truy cập
 ```
 
-## Next Steps
+## Các bước tiếp theo
 
-After optimization:
+Sau khi tối ưu hóa:
 
 ```bash
-# 1. Analyze content
-/content:cro [page description]
+# 1. Phân tích nội dung
+/content:cro [mô tả trang]
 
-# 2. Review recommendations
+# 2. Xem xét các đề xuất
 cat plans/content-cro-*.md
 
-# 3. Implement changes
-/cook [implement CRO recommendations]
+# 3. Thực hiện các thay đổi
+/cook [thực hiện các đề xuất CRO]
 
-# 4. Set up A/B tests
-# (Use your testing platform)
+# 4. Thiết lập thử nghiệm A/B
+# (Sử dụng nền tảng thử nghiệm của bạn)
 
-# 5. Monitor results
-# Track metrics for 2-4 weeks
+# 5. Theo dõi kết quả
+# Theo dõi các chỉ số trong 2-4 tuần
 
-# 6. Iterate
-/content:cro [further optimize winning variant]
+# 6. Lặp lại
+/content:cro [tối ưu hóa thêm biến thể chiến thắng]
 ```
 
-## Related Commands
+## Các lệnh liên quan
 
-- [/content:enhance](/docs/engineer/commands/content/enhance) - Improve existing copy
-- [/content:good](/docs/engineer/commands/content/good) - Write new optimized copy
-- [/plan:cro](/docs/engineer/commands/plan/cro) - Create CRO strategy plan
+- [/content:enhance](/docs/engineer/commands/content/enhance) - Cải thiện bản viết hiện có
+- [/content:good](/docs/engineer/commands/content/good) - Viết bản viết mới đã được tối ưu hóa
+- [/plan:cro](/docs/engineer/commands/plan/cro) - Tạo kế hoạch chiến lược CRO
 
 ---
 
-**Key Takeaway**: `/content:cro` analyzes your content through a conversion optimization lens, providing specific recommendations, rewritten variations, and A/B testing strategies to maximize conversion rates using proven psychological triggers and CRO best practices.
+**Thông điệp chính**: `/content:cro` phân tích nội dung của bạn qua lăng kính tối ưu hóa chuyển đổi, cung cấp các đề xuất cụ thể, các biến thể được viết lại và chiến lược thử nghiệm A/B để tối đa hóa tỷ lệ chuyển đổi bằng cách sử dụng các kích thích tâm lý đã được chứng minh và các thực hành CRO tốt nhất.

@@ -1,117 +1,118 @@
 ---
 title: gemini-vision
-description: Documentation for gemini-vision
+description: Tài liệu hướng dẫn sử dụng kỹ năng gemini-vision
 section: engineer
 kit: engineer
 category: skills/ai
 order: 20
 published: true
+lang: vi
 ---
 
-# gemini-vision Skill
+# Kỹ năng gemini-vision
 
-Google Gemini API for image understanding - captioning, classification, visual QA, object detection, segmentation.
+Google Gemini API cho khả năng hiểu hình ảnh - chú thích, phân loại, hỏi đáp thị giác, phát hiện đối tượng, phân đoạn (segmentation).
 
-## When to Use
+## Khi nào nên sử dụng
 
-Use gemini-vision when you need:
-- Image captioning
-- Object detection
-- Visual question answering
-- Document OCR
-- Multi-image comparison
-- Segmentation masks
+Sử dụng gemini-vision khi bạn cần:
+- Chú thích hình ảnh (captioning)
+- Phát hiện đối tượng (object detection)
+- Hỏi đáp dựa trên hình ảnh (visual question answering)
+- Trích xuất văn bản tài liệu (OCR)
+- So sánh nhiều hình ảnh
+- Tạo mặt nạ phân đoạn (segmentation masks)
 
-## Quick Start
+## Bắt đầu nhanh
 
-### Invoke the Skill
-
-```
-"Use gemini-vision to analyze product images and extract:
-- Product name
-- Color
-- Condition
-- Defects if any"
-```
-
-### What You Get
-
-The skill will help you:
-1. Set up Gemini API
-2. Process images
-3. Extract information
-4. Handle responses
-5. Manage API costs
-
-## Common Use Cases
-
-### Product Analysis
+### Cách gọi kỹ năng
 
 ```
-"Use gemini-vision to analyze product photos:
-- Identify product type
-- Extract visible text
-- Assess quality
-- Detect damage"
+"Sử dụng gemini-vision để phân tích hình ảnh sản phẩm và trích xuất:
+- Tên sản phẩm
+- Màu sắc
+- Tình trạng
+- Các lỗi (nếu có)"
 ```
 
-### Document OCR
+### Kết quả nhận được
+
+Kỹ năng này sẽ giúp bạn:
+1. Thiết lập Gemini API
+2. Xử lý hình ảnh
+3. Trích xuất thông tin
+4. Xử lý phản hồi
+5. Quản lý chi phí API
+
+## Các trường hợp sử dụng phổ biến
+
+### Phân tích sản phẩm
 
 ```
-"Use gemini-vision to extract text from invoice.jpg and structure as JSON"
+"Sử dụng gemini-vision để phân tích ảnh sản phẩm:
+- Xác định loại sản phẩm
+- Trích xuất văn bản hiển thị
+- Đánh giá chất lượng
+- Phát hiện hư hỏng"
 ```
 
-### Multi-Image Comparison
+### Trích xuất văn bản (OCR)
 
 ```
-"Use gemini-vision to compare before/after photos and list differences"
+"Sử dụng gemini-vision để trích xuất văn bản từ invoice.jpg và cấu trúc dưới dạng JSON"
 ```
 
-### Object Detection
+### So sánh nhiều hình ảnh
 
 ```
-"Use gemini-vision with gemini-2.0-flash to detect all objects in image with bounding boxes"
+"Sử dụng gemini-vision để so sánh ảnh trước/sau và liệt kê các điểm khác biệt"
 ```
 
-## Supported Formats
+### Phát hiện đối tượng
 
-- **Images**: PNG, JPEG, WEBP, HEIC, HEIF
-- **Documents**: PDF (up to 1,000 pages)
-- **Size**: 20MB max inline, File API for larger
+```
+"Sử dụng gemini-vision với gemini-2.0-flash để phát hiện tất cả các đối tượng trong ảnh kèm theo khung bao (bounding boxes)"
+```
 
-## Available Models
+## Các định dạng hỗ trợ
 
-- **gemini-2.5-pro**: Most capable, segmentation + detection
-- **gemini-2.5-flash**: Fast, efficient
-- **gemini-2.0-flash**: Object detection
-- **gemini-1.5-pro/flash**: Previous generation
+- **Hình ảnh**: PNG, JPEG, WEBP, HEIC, HEIF
+- **Tài liệu**: PDF (lên đến 1.000 trang)
+- **Kích thước**: Tối đa 20MB cho dữ liệu trực tiếp (inline), sử dụng File API cho kích thước lớn hơn
 
-## API Setup
+## Các mô hình khả dụng
 
-### Get API Key
+- **gemini-2.5-pro**: Khả năng mạnh nhất, hỗ trợ phân đoạn + phát hiện
+- **gemini-2.5-flash**: Nhanh, hiệu quả
+- **gemini-2.0-flash**: Phát hiện đối tượng
+- **gemini-1.5-pro/flash**: Thế hệ trước
 
-1. Visit [Google AI Studio](https://aistudio.google.com/apikey)
-2. Create API key
-3. Set environment variable:
+## Thiết lập API
+
+### Lấy API Key
+
+1. Truy cập [Google AI Studio](https://aistudio.google.com/apikey)
+2. Tạo API key
+3. Thiết lập biến môi trường:
 
 ```bash
 export GEMINI_API_KEY="your-key-here"
 ```
 
-Or in `.env` file:
+Hoặc trong tệp `.env`:
 ```
 GEMINI_API_KEY=your-key-here
 ```
 
-### Install SDK
+### Cài đặt SDK
 
 ```bash
 pip install google-genai
 ```
 
-## Usage Examples
+## Ví dụ sử dụng
 
-### Basic Analysis
+### Phân tích cơ bản
 
 ```python
 from google import genai
@@ -126,165 +127,165 @@ response = client.models.generate_content(
 print(response.text)
 ```
 
-### Structured Output
+### Kết quả có cấu trúc
 
 ```
-"Use gemini-vision to analyze receipt.jpg and return JSON with:
+"Sử dụng gemini-vision để phân tích receipt.jpg và trả về JSON gồm:
 {
-  'store': 'store name',
-  'date': 'purchase date',
-  'items': ['item list'],
-  'total': 'total amount'
+  'store': 'tên cửa hàng',
+  'date': 'ngày mua hàng',
+  'items': ['danh sách mặt hàng'],
+  'total': 'tổng tiền'
 }"
 ```
 
-### Batch Processing
+### Xử lý hàng loạt (Batch Processing)
 
 ```
-"Use gemini-vision to process folder of product images and create CSV with product details"
+"Sử dụng gemini-vision để xử lý thư mục ảnh sản phẩm và tạo tệp CSV với thông tin chi tiết sản phẩm"
 ```
 
-## Token Costs
+## Chi phí Token
 
-Images consume tokens based on size:
-- **Small** (≤384px): 258 tokens
-- **Large**: Tiled into 768x768 chunks, 258 tokens each
+Hình ảnh tiêu tốn token dựa trên kích thước:
+- **Nhỏ** (≤384px): 258 tokens
+- **Lớn**: Chia thành các khối 768x768, mỗi khối 258 tokens
 
-**Example**: 960x540 image = ~1,548 tokens
+**Ví dụ**: Ảnh 960x540 = ~1,548 tokens
 
-## Best Practices
+## Phương pháp hay nhất
 
-### Image Quality
+### Chất lượng hình ảnh
 
-- Use clear, well-lit images
-- Ensure correct rotation
-- Higher resolution for text extraction
-- Compress large files
+- Sử dụng hình ảnh rõ nét, đủ ánh sáng
+- Đảm bảo xoay đúng hướng
+- Độ phân giải cao hơn để trích xuất văn bản
+- Nén các tệp lớn
 
-### Prompting
-
-```
-"Use gemini-vision to analyze image:
-- Be specific in questions
-- Request structured output (JSON/CSV)
-- Provide examples for accuracy
-- Specify required fields"
-```
-
-### Cost Optimization
-
-- Resize images before upload
-- Use File API for repeated analysis
-- Choose appropriate model (Flash for speed)
-- Batch related images
-
-## Advanced Features
-
-### Object Detection (2.0+)
+### Cách viết Prompt
 
 ```
-"Use gemini-vision with gemini-2.0-flash to:
-- Detect all objects
-- Return bounding boxes
-- Label each object
-- Calculate confidence scores"
+"Sử dụng gemini-vision để phân tích hình ảnh:
+- Đặt câu hỏi cụ thể
+- Yêu cầu đầu ra có cấu trúc (JSON/CSV)
+- Cung cấp ví dụ để tăng độ chính xác
+- Chỉ định các trường thông tin bắt buộc"
 ```
 
-### Segmentation (2.5+)
+### Tối ưu hóa chi phí
+
+- Thay đổi kích thước ảnh trước khi tải lên
+- Sử dụng File API cho các phân tích lặp lại
+- Chọn mô hình phù hợp (Flash cho tốc độ)
+- Nhóm các hình ảnh liên quan
+
+## Tính năng nâng cao
+
+### Phát hiện đối tượng (2.0+)
 
 ```
-"Use gemini-vision with gemini-2.5-pro to:
-- Create segmentation masks
-- Identify distinct objects
-- Separate foreground/background"
+"Sử dụng gemini-vision với gemini-2.0-flash để:
+- Phát hiện tất cả đối tượng
+- Trả về khung bao (bounding boxes)
+- Gán nhãn cho mỗi đối tượng
+- Tính toán điểm tin cậy (confidence scores)"
 ```
 
-### Multi-Image Analysis
+### Phân đoạn (Segmentation) (2.5+)
 
 ```
-"Use gemini-vision to compare these 5 product photos and identify which one shows damage"
+"Sử dụng gemini-vision với gemini-2.5-pro để:
+- Tạo mặt nạ phân đoạn
+- Xác định các đối tượng riêng biệt
+- Tách biệt tiền cảnh/hậu cảnh"
 ```
 
-## Integration Examples
-
-### E-commerce Product Listing
+### Phân tích đa hình ảnh
 
 ```
-"Use gemini-vision to:
-1. Analyze product photo
-2. Extract product attributes
-3. Generate description
-4. Categorize product
-5. Output as JSON for database"
+"Sử dụng gemini-vision để so sánh 5 ảnh sản phẩm này và xác định ảnh nào bị hỏng"
 ```
 
-### Quality Control
+## Ví dụ tích hợp
+
+### Danh sách sản phẩm Thương mại điện tử
 
 ```
-"Use gemini-vision for manufacturing QC:
-- Detect defects
-- Compare to reference image
-- Classify defect types
-- Generate inspection report"
+"Sử dụng gemini-vision để:
+1. Phân tích ảnh sản phẩm
+2. Trích xuất thuộc tính sản phẩm
+3. Tạo mô tả
+4. Phân loại sản phẩm
+5. Xuất ra JSON cho cơ sở dữ liệu"
 ```
 
-### Document Processing
+### Kiểm soát chất lượng (QC)
 
 ```
-"Use gemini-vision to:
-1. Extract text from scanned invoice
-2. Parse line items
-3. Calculate totals
-4. Validate against expected format"
+"Sử dụng gemini-vision cho QC sản xuất:
+- Phát hiện lỗi
+- So sánh với ảnh tham chiếu
+- Phân loại các loại lỗi
+- Tạo báo cáo kiểm tra"
 ```
 
-## Error Handling
+### Xử lý tài liệu
 
-Common errors:
-- **401**: Invalid API key
-- **429**: Rate limit exceeded
-- **400**: Invalid image format/size
-- **403**: Restricted content
-
-## Quick Examples
-
-**Simple Caption:**
 ```
-"Use gemini-vision to caption this image"
+"Sử dụng gemini-vision để:
+1. Trích xuất văn bản từ hóa đơn đã quét
+2. Phân tích các mặt hàng
+3. Tính toán tổng số
+4. Xác thực theo định dạng mong đợi"
 ```
 
-**Product Catalog:**
+## Xử lý lỗi
+
+Các lỗi phổ biến:
+- **401**: API key không hợp lệ
+- **429**: Vượt quá giới hạn tốc độ (Rate limit)
+- **400**: Định dạng/kích thước ảnh không hợp lệ
+- **403**: Nội dung bị hạn chế
+
+## Các ví dụ nhanh
+
+**Chú thích đơn giản:**
 ```
-"Use gemini-vision to analyze product images and create catalog with:
-- Product name
-- Description
-- Key features
-- Suggested price range"
+"Sử dụng gemini-vision để chú thích hình ảnh này"
 ```
 
-**Document Extraction:**
+**Danh mục sản phẩm:**
 ```
-"Use gemini-vision to extract all text and tables from multi-page PDF invoice"
+"Sử dụng gemini-vision để phân tích ảnh sản phẩm và tạo danh mục với:
+- Tên sản phẩm
+- Mô tả
+- Các tính năng chính
+- Khoảng giá đề xuất"
 ```
 
-## Rate Limits
+**Trích xuất tài liệu:**
+```
+"Sử dụng gemini-vision để trích xuất toàn bộ văn bản và bảng từ hóa đơn PDF nhiều trang"
+```
 
-Free tier:
-- 15 RPM (requests per minute)
-- 1 million TPM (tokens per minute)
-- 1,500 RPD (requests per day)
+## Giới hạn tốc độ (Rate Limits)
 
-Paid tiers scale up significantly.
+Gói miễn phí:
+- 15 RPM (yêu cầu mỗi phút)
+- 1 triệu TPM (token mỗi phút)
+- 1,500 RPD (yêu cầu mỗi ngày)
 
-## Next Steps
+Các gói trả phí có quy mô lớn hơn đáng kể.
 
-- [Document Processing](/docs/engineer/skills/document-skills)
-- [AI Integration Examples](/docs/use-cases/)
-- [API Reference](https://ai.google.dev/gemini-api/docs/image-understanding)
+## Bước tiếp theo
+
+- [Xử lý tài liệu](/docs/engineer/skills/document-skills)
+- [Ví dụ tích hợp AI](/docs/use-cases/)
+- [Tài liệu tham khảo API](https://ai.google.dev/gemini-api/docs/image-understanding)
 
 ---
 
-**Bottom Line:** gemini-vision analyzes images with AI. Extract text, detect objects, answer visual questions - all with simple prompts.
+**Tóm lại:** gemini-vision phân tích hình ảnh bằng AI. Trích xuất văn bản, phát hiện đối tượng, trả lời các câu hỏi thị giác - tất cả chỉ với các câu lệnh đơn giản.
 
 ---
 

@@ -1,26 +1,27 @@
 ---
 title: /fix:ci
-description: Documentation for ci
+description: Tài liệu hướng dẫn lệnh fix:ci
 section: engineer
 kit: engineer
 category: docs/commands/fix
 order: 22
 published: true
+lang: vi
 ---
 
 # /fix:ci
 
-Automatically fix GitHub Actions CI failures by analyzing workflow logs, identifying root causes, and implementing solutions. Essential for maintaining green CI/CD pipelines.
+Tự động sửa các lỗi GitHub Actions CI bằng cách phân tích nhật ký (logs) quy trình làm việc, xác định nguyên nhân gốc rễ và triển khai các giải pháp. Đây là công cụ thiết yếu để duy trì các đường ống CI/CD luôn "xanh".
 
-## Syntax
+## Cú Pháp
 
 ```bash
 /fix:ci [github-workflow-url]
 ```
 
-## Prerequisites
+## Điều Kiện Tiên Quyết
 
-You need the GitHub CLI (`gh`) installed:
+Bạn cần cài đặt GitHub CLI (`gh`):
 
 ```bash
 # macOS
@@ -32,193 +33,193 @@ winget install GitHub.cli
 # Linux
 sudo apt install gh
 
-# Authenticate
+# Đăng nhập
 gh auth login
 ```
 
-## How It Works
+## Cách Hoạt Động
 
-### 1. Log Retrieval
+### 1. Truy Xuất Nhật Ký (Logs)
 
-- Uses `gh` CLI to fetch workflow run logs
-- Downloads all job logs
-- Parses error messages and stack traces
-- Identifies failed steps
+- Sử dụng `gh` CLI để lấy nhật ký chạy quy trình làm việc (workflow run logs)
+- Tải xuống tất cả nhật ký công việc (job logs)
+- Phân tích các thông báo lỗi và dấu vết ngăn xếp (stack traces)
+- Xác định các bước bị thất bại
 
-### 2. Error Analysis
+### 2. Phân Tích Lỗi
 
-- Categorizes failures (tests, build, lint, deploy, etc.)
-- Identifies root causes
-- Distinguishes between flaky and real failures
-- Maps errors to specific files/lines
+- Phân loại các lỗi (kiểm tra, xây dựng, lint, triển khai, v.v.)
+- Xác định nguyên nhân gốc rễ
+- Phân biệt giữa lỗi không ổn định (flaky) và lỗi thực tế
+- Ánh xạ lỗi tới các tệp/dòng cụ thể
 
-### 3. Solution Research
+### 3. Nghiên Cứu Giải Pháp
 
-- Searches for similar CI issues
-- Reviews GitHub Actions documentation
-- Checks for known issues with actions
-- Identifies best practices
+- Tìm kiếm các vấn đề CI tương tự
+- Xem lại tài liệu của GitHub Actions
+- Kiểm tra các vấn đề đã biết với các action
+- Xác định các thực hành tốt nhất
 
-### 4. Implementation
+### 4. Triển Khai
 
-- Fixes code issues (if code problem)
-- Updates workflow configuration (if CI config problem)
-- Adds missing dependencies
-- Adjusts environment settings
+- Sửa các vấn đề về mã (nếu là lỗi do mã nguồn)
+- Cập nhật cấu hình quy trình làm việc (nếu là lỗi do cấu hình CI)
+- Thêm các phụ thuộc (dependencies) bị thiếu
+- Điều chỉnh các cài đặt môi trường
 
-### 5. Verification
+### 5. Xác Minh
 
-- Runs tests locally if possible
-- Validates workflow syntax
-- Suggests manual verification steps
+- Chạy các bài kiểm tra cục bộ nếu có thể
+- Xác minh cú pháp quy trình làm việc
+- Đề xuất các bước xác minh thủ công
 
-## Examples
+## Ví Dụ
 
-### Test Failures
+### Thất Bại Khi Kiểm Tra (Tests)
 
 ```bash
 /fix:ci https://github.com/user/repo/actions/runs/123456789
 ```
 
-**CI Output:**
+**Đầu ra CI:**
 ```
 Error: Cannot find module '@testing-library/react'
   at require (src/components/Button.test.tsx:1:1)
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-1. Analyzing logs...
-   - Job: test
-   - Step: Run tests
-   - Error: Missing dependency
+1. Đang phân tích nhật ký...
+   - Công việc (Job): test
+   - Bước (Step): Run tests
+   - Lỗi: Thiếu phụ thuộc
 
-2. Root Cause:
-   @testing-library/react not in package.json
-   Recently removed in commit abc123
+2. Nguyên nhân gốc rễ:
+   @testing-library/react không có trong package.json
+   Vừa bị xóa trong commit abc123
 
-3. Fix: Add missing dependency
+3. Sửa lỗi: Thêm phụ thuộc bị thiếu
    npm install --save-dev @testing-library/react
 
-4. Update package.json
-   ✓ Added @testing-library/react@14.0.0
+4. Cập nhật package.json
+   ✓ Đã thêm @testing-library/react@14.0.0
 
-5. Commit fix
-   ✓ fix(ci): add missing test dependency
+5. Commit sửa lỗi
+   ✓ fix(ci): thêm phụ thuộc kiểm tra bị thiếu
 
-Would you like to push and re-run CI? (y/n)
+Bạn có muốn push và chạy lại CI không? (y/n)
 ```
 
-### Build Failures
+### Thất Bại Khi Xây Dựng (Build)
 
 ```bash
 /fix:ci https://github.com/user/repo/actions/runs/987654321
 ```
 
-**CI Output:**
+**Đầu ra CI:**
 ```
 Error: TypeScript compilation failed
 src/auth/login.ts:45:12 - error TS2339: Property 'user' does not exist on type 'Response'
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-1. Analyzing TypeScript errors...
-   - 5 type errors found
-   - All in src/auth/ directory
+1. Đang phân tích lỗi TypeScript...
+   - Tìm thấy 5 lỗi kiểu
+   - Tất cả nằm trong thư mục src/auth/
 
-2. Root Cause:
-   Updated Response type doesn't include 'user' property
-   Need to use 'data.user' instead
+2. Nguyên nhân gốc rễ:
+   Kiểu Response đã cập nhật không bao gồm thuộc tính 'user'
+   Cần sử dụng 'data.user' thay thế
 
-3. Fixes Applied:
-   ✓ src/auth/login.ts - Changed to response.data.user
-   ✓ src/auth/register.ts - Changed to response.data.user
-   ✓ src/auth/logout.ts - Changed to response.data.user
+3. Các sửa đổi đã áp dụng:
+   ✓ src/auth/login.ts - Đã đổi thành response.data.user
+   ✓ src/auth/register.ts - Đã đổi thành response.data.user
+   ✓ src/auth/logout.ts - Đã đổi thành response.data.user
 
-4. Verification:
-   ✓ TypeScript compiles locally
-   ✓ All type checks pass
+4. Xác minh:
+   ✓ TypeScript biên dịch thành công tại cục bộ
+   ✓ Tất cả kiểm tra kiểu đã vượt qua
 
-Push changes? (y/n)
+Push các thay đổi? (y/n)
 ```
 
-### Lint Failures
+### Thất Bại Khi Lint
 
 ```bash
 /fix:ci https://github.com/user/repo/actions/runs/456789123
 ```
 
-**CI Output:**
+**Đầu ra CI:**
 ```
 /home/runner/work/repo/src/utils/helper.ts
   12:7  error  'result' is assigned a value but never used  @typescript-eslint/no-unused-vars
   45:1  error  Expected linebreak to be 'LF' but found 'CRLF'  prettier/prettier
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-1. Found 15 linting errors
-   - 8 unused variables
-   - 7 formatting issues
+1. Tìm thấy 15 lỗi linting
+   - 8 biến không được sử dụng
+   - 7 vấn đề về định dạng
 
-2. Auto-fixing...
-   ✓ Removed unused variables
-   ✓ Fixed line endings (CRLF → LF)
-   ✓ Applied Prettier formatting
+2. Tự động sửa lỗi...
+   ✓ Đã xóa các biến không sử dụng
+   ✓ Đã sửa các ký tự xuống dòng (CRLF → LF)
+   ✓ Đã áp dụng định dạng Prettier
 
-3. Running lint locally...
-   ✓ ESLint: No errors
-   ✓ Prettier: All files formatted
+3. Chạy lint tại cục bộ...
+   ✓ ESLint: Không có lỗi
+   ✓ Prettier: Tất cả các tệp đã được định dạng
 
-Ready to commit and push? (y/n)
+Sẵn sàng commit và push? (y/n)
 ```
 
-### Workflow Configuration Issues
+### Vấn Đề Cấu Hình Quy Trình Làm Việc
 
 ```bash
 /fix:ci https://github.com/user/repo/actions/runs/321654987
 ```
 
-**CI Output:**
+**Đầu ra CI:**
 ```
 Error: The workflow is not valid.
 .github/workflows/ci.yml (Line: 25, Col: 7): Unexpected value 'node-version'
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-1. Workflow syntax error detected
-   File: .github/workflows/ci.yml
-   Line: 25
+1. Phát hiện lỗi cú pháp quy trình làm việc
+   Tệp: .github/workflows/ci.yml
+   Dòng: 25
 
-2. Issue:
-   - 'node-version' should be under 'with:' block
-   - Indentation incorrect
+2. Vấn đề:
+   - 'node-version' phải nằm trong khối 'with:'
+   - Thụt lề không chính xác
 
-3. Fixed workflow file:
-   Before:
+3. Tệp quy trình làm việc đã sửa:
+   Trước:
      - uses: actions/setup-node@v3
        node-version: '18'
 
-   After:
+   Sau:
      - uses: actions/setup-node@v3
        with:
          node-version: '18'
 
-4. Validated workflow syntax
-   ✓ Workflow is valid
+4. Đã xác minh cú pháp quy trình làm việc
+   ✓ Quy trình làm việc hợp lệ
 
-Commit fix? (y/n)
+Commit sửa lỗi? (y/n)
 ```
 
-### Flaky Tests
+### Các Bài Kiểm Tra Không Ổn Định (Flaky)
 
 ```bash
 /fix:ci https://github.com/user/repo/actions/runs/147258369
 ```
 
-**CI Output:**
+**Đầu ra CI:**
 ```
 FAIL src/api/users.test.ts
   ● UserService › should create user
@@ -229,166 +230,166 @@ FAIL src/api/users.test.ts
     Received: "user-124"
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-1. Test failure analysis
-   - Test: "should create user"
-   - Failure: ID mismatch
-   - History: Failed 3 times this week
+1. Phân tích thất bại bài kiểm tra
+   - Bài kiểm tra: "should create user"
+   - Thất bại: Không khớp ID
+   - Lịch sử: Thất bại 3 lần trong tuần này
 
-2. Root Cause: Flaky test
-   - Test relies on database auto-increment
-   - Non-deterministic ID generation
-   - Race condition in parallel tests
+2. Nguyên nhân gốc rễ: Bài kiểm tra không ổn định (flaky)
+   - Bài kiểm tra dựa trên tự động tăng (auto-increment) của cơ sở dữ liệu
+   - Tạo ID không tất định
+   - Tình trạng tranh chấp (race condition) khi chạy kiểm tra song song
 
-3. Fix: Use mocked IDs
-   Before:
+3. Sửa lỗi: Sử dụng các ID giả (mocked)
+   Trước:
      const user = await userService.create(data)
      expect(user.id).toBe('user-123')
 
-   After:
+   Sau:
      const user = await userService.create(data)
      expect(user.id).toMatch(/^user-\d+$/)
 
-4. Added test isolation
-   ✓ Each test uses separate database
-   ✓ IDs reset between tests
+4. Thêm sự cô lập bài kiểm tra
+   ✓ Mỗi bài kiểm tra sử dụng cơ sở dữ liệu riêng
+   ✓ Reset các ID giữa các bài kiểm tra
 
-Re-run tests locally? (y/n)
+Chạy lại các bài kiểm tra tại cục bộ? (y/n)
 ```
 
-## Common CI Failures
+## Các Lỗi CI Thường Gặp
 
-### Dependency Issues
+### Vấn Đề Phụ Thuộc (Dependency)
 
 ```bash
-# Package not installed
+# Package chưa được cài đặt
 Error: Cannot find module 'express'
-→ Fix: npm install express
+→ Cách sửa: npm install express
 
-# Version mismatch
+# Không khớp phiên bản
 Error: Requires Node.js >= 18, got 16
-→ Fix: Update Node version in workflow
+→ Cách sửa: Cập nhật phiên bản Node trong workflow
 
-# Lock file out of sync
+# File lock không đồng bộ
 Error: package-lock.json is out of date
-→ Fix: npm install, commit lock file
+→ Cách sửa: npm install, commit lại file lock
 ```
 
-### Environment Issues
+### Vấn Đề Môi Trường
 
 ```bash
-# Missing environment variable
+# Thiếu biến môi trường
 Error: STRIPE_API_KEY is not defined
-→ Fix: Add to GitHub Secrets
+→ Cách sửa: Thêm vào GitHub Secrets
 
-# Wrong working directory
+# Sai thư mục làm việc
 Error: ENOENT: no such file or directory 'src/app'
-→ Fix: Add 'working-directory' to step
+→ Cách sửa: Thêm 'working-directory' vào bước thực thi
 
-# Insufficient permissions
+# Không đủ quyền hạn
 Error: Permission denied
-→ Fix: Add permissions to workflow
+→ Cách sửa: Thêm quyền (permissions) vào workflow
 ```
 
-### Test Issues
+### Vấn Đề Kiểm Tra (Tests)
 
 ```bash
-# Timeout
+# Quá thời gian (Timeout)
 Error: Test exceeded 5000ms timeout
-→ Fix: Increase timeout or optimize test
+→ Cách sửa: Tăng thời gian chờ hoặc tối ưu hóa bài kiểm tra
 
-# Flaky test
+# Kiểm tra không ổn định (Flaky)
 Error: Intermittent failures
-→ Fix: Add retries or fix race condition
+→ Cách sửa: Thêm cơ chế thử lại (retries) hoặc sửa tình trạng tranh chấp
 
-# Missing test setup
+# Thiếu thiết lập kiểm tra
 Error: Database not initialized
-→ Fix: Add setup script before tests
+→ Cách sửa: Thêm script thiết lập trước khi chạy bài kiểm tra
 ```
 
-### Build Issues
+### Vấn Đề Xây Dựng (Build)
 
 ```bash
-# Out of memory
+# Hết bộ nhớ
 Error: JavaScript heap out of memory
-→ Fix: Increase NODE_OPTIONS=--max-old-space-size
+→ Cách sửa: Tăng NODE_OPTIONS=--max-old-space-size
 
-# Build artifacts missing
+# Thiếu tệp tin build (artifacts)
 Error: dist/ directory not found
-→ Fix: Add build step before deploy
+→ Cách sửa: Thêm bước build trước khi triển khai
 
-# Asset size too large
+# Kích thước tài nguyên quá lớn
 Error: Bundle size exceeds limit
-→ Fix: Optimize bundle or increase limit
+→ Cách sửa: Tối ưu hóa bundle hoặc tăng giới hạn
 ```
 
-## Best Practices
+## Thực Hành Tốt Nhất
 
-### Provide Full Workflow URL
+### Cung Cấp URL Quy Trình Làm Việc Đầy Đủ
 
-✅ **Complete URL:**
+✅ **URL đầy đủ:**
 ```bash
 /fix:ci https://github.com/user/repo/actions/runs/123456789
 ```
 
-❌ **Incomplete:**
+❌ **Không đầy đủ:**
 ```bash
 /fix:ci 123456789
 ```
 
-### Check Locally First
+### Kiểm Tra Tại Cục Bộ Trước
 
-Before pushing fixes:
+Trước khi push các bản sửa lỗi:
 
 ```bash
-# Run tests
+# Chạy các bài kiểm tra
 npm test
 
-# Check types
+# Kiểm tra kiểu (types)
 npm run type-check
 
-# Run linter
+# Chạy linter
 npm run lint
 
-# Build
+# Xây dựng (build)
 npm run build
 ```
 
-### Review Changes
+### Xem Lại Các Thay Đổi
 
 ```bash
-# After /fix:ci makes changes
+# Sau khi /fix:ci thực hiện các thay đổi
 git diff
 
-# Verify changes make sense
-# Then commit and push
+# Xác minh các thay đổi là hợp lý
+# Sau đó commit và push
 ```
 
-### Monitor Re-run
+### Giám Sát Việc Chạy Lại
 
-After pushing fix:
+Sau khi push bản sửa lỗi:
 
 ```bash
-# Watch the re-run
+# Theo dõi việc chạy lại
 gh run watch
 
-# Check if fix worked
-# If still failing, investigate further
+# Kiểm tra xem bản sửa lỗi có hoạt động không
+# Nếu vẫn thất bại, hãy tiếp tục điều tra
 ```
 
-## Workflow Integration
+## Tích Hợp Quy Trình Làm Việc
 
-### Standard CI Fix Workflow
+### Quy Trình Sửa CI Tiêu Chuẩn
 
 ```bash
-# 1. CI fails
-# (Receive notification)
+# 1. CI thất bại
+# (Nhận thông báo)
 
-# 2. Analyze and fix
+# 2. Phân tích và sửa lỗi
 /fix:ci https://github.com/user/repo/actions/runs/123
 
-# 3. Review changes
+# 3. Xem lại các thay đổi
 git diff
 
 # 4. Commit
@@ -397,138 +398,138 @@ git diff
 # 5. Push
 git push
 
-# 6. Monitor re-run
+# 6. Theo dõi việc chạy lại
 gh run watch
 
-# 7. Verify success
-✓ All checks passed
+# 7. Xác nhận thành công
+✓ Tất cả các kiểm tra đã vượt qua
 ```
 
-### For Multiple Failures
+### Cho Nhiều Lỗi Thất Bại
 
 ```bash
-# Fix one at a time
+# Sửa từng lỗi một
 /fix:ci https://github.com/user/repo/actions/runs/123
 
-# After fix is verified
+# Sau khi bản sửa lỗi được xác nhận
 /fix:ci https://github.com/user/repo/actions/runs/124
 
-# Or batch fix if related
-"Fix both issues in runs 123 and 124"
+# Hoặc sửa hàng loạt nếu có liên quan
+"Sửa cả hai vấn đề trong các lượt chạy 123 và 124"
 ```
 
-## Advanced Usage
+## Sử Dụng Nâng Cao
 
-### Specific Job Analysis
+### Phân Tích Công Việc (Job) Cụ Thể
 
 ```bash
 /fix:ci https://github.com/user/repo/actions/runs/123 --job=test
 ```
 
-### Rerun After Fix
+### Tự Động Chạy Lại Sau Khi Sửa
 
 ```bash
 /fix:ci https://github.com/user/repo/actions/runs/123 --auto-rerun
 ```
 
-### Create Issue If Can't Fix
+### Tạo Issue Nếu Không Thể Sửa
 
 ```bash
 /fix:ci https://github.com/user/repo/actions/runs/123 --create-issue
 ```
 
-## Troubleshooting
+## Xử Lý Sự Cố
 
-### Can't Access Logs
+### Không Thể Truy Cập Nhật Ký
 
-**Problem:** "gh: Not authenticated"
+**Vấn đề:** "gh: Not authenticated"
 
-**Solution:**
+**Giải pháp:**
 ```bash
 gh auth login
 gh auth status
 
-# Grant necessary permissions
+# Cấp các quyền cần thiết
 gh auth refresh -s repo -s workflow
 ```
 
-### Fix Doesn't Work
+### Bản Sửa Lỗi Không Hoạt Động
 
-**Problem:** Fix applied but CI still fails
+**Vấn đề:** Bản sửa lỗi đã được áp dụng nhưng CI vẫn thất bại
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Get more details
-/debug [CI failure in job X]
+# Nhận thêm chi tiết
+/debug [thất bại CI trong công việc X]
 
-# Use comprehensive fix
-/fix:hard [describe the CI issue]
+# Sử dụng lệnh sửa lỗi toàn diện
+/fix:hard [mô tả vấn đề CI]
 ```
 
-### Workflow File Syntax Errors
+### Lỗi Cú Pháp Tệp Quy Trình Làm Việc
 
-**Problem:** Can't parse workflow file
+**Vấn đề:** Không thể phân tích tệp quy trình làm việc
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Validate workflow locally
+# Xác minh quy trình làm việc tại cục bộ
 gh workflow view
 
-# Use GitHub's validator
+# Sử dụng công cụ xác thực của GitHub
 # https://github.com/user/repo/actions
 ```
 
-## Common Scenarios
+## Các Tình Huống Phổ Biến
 
-### After Dependency Update
+### Sau Khi Cập Nhật Phụ Thuộc
 
 ```bash
-# Update dependencies
+# Cập nhật phụ thuộc
 npm update
 
-# CI fails
+# CI thất bại
 /fix:ci [workflow-url]
 
-# Usually: Update lock file, fix breaking changes
+# Thường là: Cập nhật file lock, sửa các thay đổi gây phá vỡ
 ```
 
-### After Refactoring
+### Sau Khi Tái Cấu Trúc (Refactoring)
 
 ```bash
-# Large refactor pushed
-# CI fails with multiple test failures
+# Đã push một đợt tái cấu trúc lớn
+# CI thất bại với nhiều lỗi kiểm tra
 
 /fix:ci [workflow-url]
 
-# Fixes import paths, updates tests
+# Sửa các đường dẫn import, cập nhật các bài kiểm tra
 ```
 
-### Deployment Failures
+### Thất Bại Khi Triển Khai (Deployment)
 
 ```bash
-# Build succeeds but deploy fails
+# Xây dựng thành công nhưng triển khai thất bại
 /fix:ci [workflow-url]
 
-# Usually: Environment variables, permissions, or credentials
+# Thường là: Biến môi trường, quyền hạn hoặc thông tin xác thực
 ```
 
-## Metrics
+## Số Liệu
 
-Average fix times:
-- **Test failures**: 2-5 minutes
-- **Build errors**: 3-7 minutes
-- **Lint issues**: 1-2 minutes
-- **Config errors**: 1-3 minutes
-- **Flaky tests**: 5-10 minutes
+Thời gian sửa lỗi trung bình:
+- **Lỗi kiểm tra**: 2-5 phút
+- **Lỗi xây dựng**: 3-7 phút
+- **Vấn đề lint**: 1-2 phút
+- **Lỗi cấu hình**: 1-3 phút
+- **Bài kiểm tra không ổn định**: 5-10 phút
 
-Success rate: ~85% automated fix rate
+Tỷ lệ thành công: Tỷ lệ sửa lỗi tự động khoảng 85%
 
-## Next Steps
+## Bước Tiếp Theo
 
-- [/plan:ci](/docs/engineer/commands/plan/ci) - Create fix plan without implementing
-- [/fix:hard](/docs/engineer/commands/fix/hard) - For complex CI issues
-- [/test](/docs/engineer/commands/core/test) - Run tests locally
+- [/plan:ci](/docs/engineer/commands/plan/ci) - Tạo kế hoạch sửa lỗi mà không triển khai
+- [/fix:hard](/docs/engineer/commands/fix/hard) - Cho các vấn đề CI phức tạp
+- [/test](/docs/engineer/commands/core/test) - Chạy các bài kiểm tra tại cục bộ
 
 ---
 
-**Key Takeaway**: `/fix:ci` automates the tedious process of analyzing GitHub Actions failures and implementing fixes, getting your CI pipeline back to green quickly.
+**Điểm mấu chốt**: `/fix:ci` tự động hóa quy trình phân tích thất bại GitHub Actions tẻ nhạt và triển khai các bản sửa lỗi, giúp đưa đường ống CI của bạn trở lại trạng thái xanh một cách nhanh chóng.

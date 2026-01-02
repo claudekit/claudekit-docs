@@ -1,446 +1,447 @@
 ---
-title: document-skills
-description: Documentation for document-skills
+title: Kỹ năng xử lý tài liệu (document-skills)
+description: Tài liệu hướng dẫn sử dụng kỹ năng document-skills
 section: engineer
 kit: engineer
 category: skills/tools
 order: 14
 published: true
+lang: vi
 ---
 
-# document-skills
+# Kỹ năng xử lý tài liệu (document-skills)
 
-Read, parse, and create PDF, Word, PowerPoint, and Excel documents. Extract text, tables, images, and metadata.
+Đọc, phân tích và tạo các tài liệu PDF, Word, PowerPoint và Excel. Trích xuất văn bản, bảng biểu, hình ảnh và siêu dữ liệu (metadata).
 
-## Supported Formats
+## Các định dạng được hỗ trợ
 
-- **PDF** - Extract and create PDFs
-- **DOCX** - Word documents
-- **PPTX** - PowerPoint presentations
-- **XLSX** - Excel spreadsheets
+- **PDF** - Trích xuất và tạo file PDF
+- **DOCX** - Tài liệu Word
+- **PPTX** - Bản thuyết trình PowerPoint
+- **XLSX** - Bảng tính Excel
 
-## When to Use
+## Khi nào nên sử dụng
 
-Use document-skills when working with:
-- Office documents
-- PDF files
-- Data extraction
-- Document generation
-- Format conversion
-- Report creation
+Sử dụng document-skills khi làm việc với:
+- Các tài liệu văn phòng (Office)
+- Các file PDF
+- Trích xuất dữ liệu
+- Tạo tài liệu tự động
+- Chuyển đổi định dạng
+- Tạo báo cáo
 
-## Quick Start
+## Bắt đầu nhanh
 
-### Invoke the Skill
-
-```
-"Use document-skills/pdf to extract all tables from quarterly-report.pdf and save as CSV"
-```
-
-### What You Get
-
-The skill will help you:
-1. Read document content
-2. Extract structured data
-3. Parse tables
-4. Get images
-5. Create new documents
-6. Convert formats
-7. Preserve formatting
-
-## PDF Skills
-
-### Extract Text
+### Cách gọi kỹ năng
 
 ```
-"Use document-skills/pdf to extract all text from contract.pdf"
+"Sử dụng document-skills/pdf để trích xuất tất cả các bảng từ quarterly-report.pdf và lưu dưới dạng CSV"
 ```
 
-### Extract Tables
+### Kết quả nhận được
+
+Kỹ năng này sẽ giúp bạn:
+1. Đọc nội dung tài liệu
+2. Trích xuất dữ liệu có cấu trúc
+3. Phân tích bảng biểu
+4. Lấy hình ảnh
+5. Tạo tài liệu mới
+6. Chuyển đổi định dạng
+7. Giữ nguyên định dạng
+
+## Các kỹ năng PDF
+
+### Trích xuất văn bản
 
 ```
-"Use document-skills/pdf to:
-- Extract all tables
-- Convert to CSV
-- Preserve structure
-- Handle merged cells"
+"Sử dụng document-skills/pdf để trích xuất tất cả văn bản từ contract.pdf"
 ```
 
-### Extract Forms
+### Trích xuất bảng biểu
 
 ```
-"Use document-skills/pdf to extract form fields and values from application.pdf"
+"Sử dụng document-skills/pdf để:
+- Trích xuất tất cả các bảng
+- Chuyển đổi sang CSV
+- Giữ nguyên cấu trúc
+- Xử lý các ô bị gộp (merged cells)"
 ```
 
-### Create PDF
+### Trích xuất biểu mẫu (Form)
 
 ```
-"Use document-skills/pdf to create PDF with:
-- Custom content
-- Formatting
-- Images
-- Tables"
+"Sử dụng document-skills/pdf để trích xuất các trường biểu mẫu và giá trị từ application.pdf"
 ```
 
-### Merge PDFs
+### Tạo file PDF
 
 ```
-"Use document-skills/pdf to merge multiple PDFs into single file"
+"Sử dụng document-skills/pdf để tạo PDF với:
+- Nội dung tùy chỉnh
+- Định dạng văn bản
+- Hình ảnh
+- Bảng biểu"
 ```
 
-### Split PDF
+### Gộp các file PDF
 
 ```
-"Use document-skills/pdf to split PDF by:
-- Page numbers
-- Page ranges
-- Bookmarks"
+"Sử dụng document-skills/pdf để gộp nhiều file PDF thành một file duy nhất"
 ```
 
-## Word (DOCX) Skills
-
-### Read Content
+### Chia nhỏ file PDF
 
 ```
-"Use document-skills/docx to extract text from report.docx with formatting preserved"
+"Sử dụng document-skills/pdf để chia nhỏ PDF theo:
+- Số trang
+- Khoảng trang
+- Dấu trang (bookmarks)"
 ```
 
-### Track Changes
+## Các kỹ năng Word (DOCX)
+
+### Đọc nội dung
 
 ```
-"Use document-skills/docx to:
-- Extract tracked changes
-- List all comments
-- Show revision history
-- Export to markdown"
+"Sử dụng document-skills/docx để trích xuất văn bản từ report.docx và giữ nguyên định dạng"
 ```
 
-### Create Document
+### Theo dõi thay đổi (Track Changes)
 
 ```
-"Use document-skills/docx to create Word document with:
-- Headings and paragraphs
-- Bullet lists
-- Tables
-- Images
-- Formatting"
+"Sử dụng document-skills/docx để:
+- Trích xuất các thay đổi được theo dõi
+- Liệt kê tất cả các bình luận
+- Hiển thị lịch sử chỉnh sửa
+- Xuất sang định dạng markdown"
 ```
 
-### Convert Format
+### Tạo tài liệu
 
 ```
-"Use document-skills/docx to convert Word doc to:
+"Sử dụng document-skills/docx để tạo tài liệu Word với:
+- Các tiêu đề và đoạn văn
+- Danh sách dấu chấm (bullet lists)
+- Bảng biểu
+- Hình ảnh
+- Định dạng văn bản"
+```
+
+### Chuyển đổi định dạng
+
+```
+"Sử dụng document-skills/docx để chuyển đổi file Word sang:
 - Markdown
-- Plain text
+- Văn bản thuần túy (plain text)
 - HTML
 - PDF"
 ```
 
-## PowerPoint (PPTX) Skills
+## Các kỹ năng PowerPoint (PPTX)
 
-### Read Slides
-
-```
-"Use document-skills/pptx to extract content from presentation.pptx:
-- Slide titles
-- Bullet points
-- Notes
-- Images"
-```
-
-### Create Presentation
+### Đọc các slide
 
 ```
-"Use document-skills/pptx to create PowerPoint with:
-- Title slides
-- Content slides
-- Charts
-- Images
-- Layouts"
+"Sử dụng document-skills/pptx để trích xuất nội dung từ presentation.pptx:
+- Tiêu đề slide
+- Các ý chính (bullet points)
+- Ghi chú
+- Hình ảnh"
 ```
 
-### Extract Data
+### Tạo bản thuyết trình
 
 ```
-"Use document-skills/pptx to extract:
-- All text content
-- Chart data
-- Table data
-- Speaker notes"
+"Sử dụng document-skills/pptx để tạo file PowerPoint với:
+- Slide tiêu đề
+- Các slide nội dung
+- Biểu đồ
+- Hình ảnh
+- Các bố cục (layouts)"
 ```
 
-## Excel (XLSX) Skills
-
-### Read Data
+### Trích xuất dữ liệu
 
 ```
-"Use document-skills/xlsx to read data from spreadsheet.xlsx:
-- All sheets
-- Specific ranges
-- Formatted values
-- Formulas"
+"Sử dụng document-skills/pptx để trích xuất:
+- Toàn bộ nội dung văn bản
+- Dữ liệu biểu đồ
+- Dữ liệu bảng
+- Ghi chú của người thuyết trình"
 ```
 
-### Extract Tables
+## Các kỹ năng Excel (XLSX)
+
+### Đọc dữ liệu
 
 ```
-"Use document-skills/xlsx to:
-- Extract tables
-- Convert to JSON
-- Preserve formatting
-- Handle multiple sheets"
+"Sử dụng document-skills/xlsx để đọc dữ liệu từ spreadsheet.xlsx:
+- Tất cả các trang (sheets)
+- Các phạm vi cụ thể (ranges)
+- Các giá trị đã được định dạng
+- Các công thức"
 ```
 
-### Create Spreadsheet
+### Trích xuất bảng biểu
 
 ```
-"Use document-skills/xlsx to create Excel with:
-- Multiple sheets
-- Formulas
-- Formatting
-- Charts
-- Data validation"
+"Sử dụng document-skills/xlsx để:
+- Trích xuất các bảng
+- Chuyển đổi sang JSON
+- Giữ nguyên định dạng
+- Xử lý nhiều trang tính"
 ```
 
-### Analyze Data
+### Tạo bảng tính
 
 ```
-"Use document-skills/xlsx to analyze:
-- Calculate totals
-- Find patterns
-- Generate summaries
-- Create reports"
+"Sử dụng document-skills/xlsx để tạo file Excel với:
+- Nhiều trang tính
+- Các công thức
+- Định dạng
+- Biểu đồ
+- Xác thực dữ liệu (data validation)"
 ```
 
-## Common Use Cases
-
-### Data Extraction
+### Phân tích dữ liệu
 
 ```
-"Use document-skills to:
-1. Read PDF invoice
-2. Extract line items
-3. Parse amounts
-4. Convert to JSON
-5. Save to database"
+"Sử dụng document-skills/xlsx để phân tích:
+- Tính toán tổng số
+- Tìm kiếm các quy luật (patterns)
+- Tạo bản tóm tắt
+- Tạo các báo cáo"
 ```
 
-### Document Generation
+## Các trường hợp sử dụng phổ biến
+
+### Trích xuất dữ liệu
 
 ```
-"Use document-skills to:
-1. Create Word template
-2. Fill with data
-3. Add tables
-4. Export to PDF
-5. Send to client"
+"Sử dụng document-skills để:
+1. Đọc hóa đơn PDF
+2. Trích xuất các hạng mục hàng hóa
+3. Phân tích số tiền
+4. Chuyển đổi sang JSON
+5. Lưu vào cơ sở dữ liệu"
 ```
 
-### Format Conversion
+### Tạo tài liệu tự động
 
 ```
-"Use document-skills to convert:
-- PDF to text
-- Word to markdown
-- Excel to JSON
-- PowerPoint to images"
+"Sử dụng document-skills để:
+1. Tạo mẫu file Word
+2. Điền dữ liệu vào mẫu
+3. Thêm các bảng biểu
+4. Xuất sang PDF
+5. Gửi cho khách hàng"
 ```
 
-### Report Creation
+### Chuyển đổi định dạng
 
 ```
-"Use document-skills to generate monthly report:
-- Extract data from Excel
-- Create PowerPoint slides
-- Add charts
-- Export to PDF"
+"Sử dụng document-skills để chuyển đổi:
+- PDF sang văn bản
+- Word sang markdown
+- Excel sang JSON
+- PowerPoint sang hình ảnh"
 ```
 
-## Advanced Features
-
-### Text Extraction
-
-Capabilities:
-- Preserve formatting
-- Handle columns
-- Extract metadata
-- OCR support
-- Font information
-
-### Table Parsing
-
-Features:
-- Detect table structure
-- Handle merged cells
-- Preserve formatting
-- Export to CSV/JSON
-- Multi-page tables
-
-### Image Handling
-
-Support for:
-- Extract embedded images
-- Add images to documents
-- Image positioning
-- Size and scaling
-- Format conversion
-
-### Formatting
-
-Preserve:
-- Text styles
-- Colors
-- Fonts
-- Alignment
-- Spacing
-
-## Best Practices
-
-### Large Documents
+### Tạo báo cáo
 
 ```
-"Use document-skills to handle large PDF:
-- Process in chunks
-- Extract specific pages
-- Optimize memory
-- Stream processing"
+"Sử dụng document-skills để tạo báo cáo hàng tháng:
+- Trích xuất dữ liệu từ Excel
+- Tạo các slide PowerPoint
+- Thêm biểu đồ
+- Xuất sang PDF"
 ```
 
-### Scanned Documents
+## Các tính năng nâng cao
+
+### Trích xuất văn bản
+
+Khả năng:
+- Giữ nguyên định dạng
+- Xử lý các cột văn bản
+- Trích xuất siêu dữ liệu (metadata)
+- Hỗ trợ OCR (nhận dạng chữ cái)
+- Thông tin về phông chữ
+
+### Phân tích bảng biểu
+
+Tính năng:
+- Phát hiện cấu trúc bảng
+- Xử lý các ô bị gộp
+- Giữ nguyên định dạng
+- Xuất sang CSV/JSON
+- Xử lý bảng trải dài nhiều trang
+
+### Xử lý hình ảnh
+
+Hỗ trợ:
+- Trích xuất hình ảnh nhúng
+- Thêm hình ảnh vào tài liệu
+- Định vị hình ảnh
+- Kích thước và tỷ lệ
+- Chuyển đổi định dạng
+
+### Định dạng
+
+Giữ nguyên:
+- Các kiểu văn bản
+- Màu sắc
+- Phông chữ
+- Căn lề
+- Khoảng cách
+
+## Phương pháp hay nhất
+
+### Tài liệu lớn
 
 ```
-"Use document-skills with OCR to:
-- Extract text from scanned PDFs
-- Handle image quality
-- Improve accuracy
-- Validate results"
+"Sử dụng document-skills để xử lý file PDF lớn:
+- Xử lý theo từng phần (chunks)
+- Trích xuất các trang cụ thể
+- Tối ưu hóa bộ nhớ
+- Xử lý luồng (stream processing)"
 ```
 
-### Complex Tables
+### Tài liệu quét (Scanned Documents)
 
 ```
-"Use document-skills for complex tables:
-- Detect merged cells
-- Handle nested tables
-- Preserve relationships
-- Validate structure"
+"Sử dụng document-skills với OCR để:
+- Trích xuất văn bản từ PDF đã quét
+- Xử lý chất lượng hình ảnh
+- Cải thiện độ chính xác
+- Xác thực kết quả"
 ```
 
-## Integration Examples
-
-### With Databases
+### Bảng biểu phức tạp
 
 ```
-"Use document-skills to:
-1. Extract data from Excel
-2. Validate format
-3. Insert into PostgreSQL
-4. Log results"
+"Sử dụng document-skills cho các bảng phức tạp:
+- Phát hiện các ô bị gộp
+- Xử lý các bảng lồng nhau
+- Giữ nguyên các mối quan hệ dữ liệu
+- Xác thực cấu trúc"
 ```
 
-### With APIs
+## Ví dụ tích hợp
+
+### Với Cơ sở dữ liệu
 
 ```
-"Use document-skills to:
-1. Generate PDF invoice
-2. Upload to cloud storage
-3. Send via email API
-4. Update database"
+"Sử dụng document-skills để:
+1. Trích xuất dữ liệu từ Excel
+2. Xác thực định dạng
+3. Chèn vào PostgreSQL
+4. Ghi nhật ký kết quả"
 ```
 
-### With AI
+### Với API
 
 ```
-"Use document-skills then use gemini-vision to:
-1. Extract images from PDF
-2. Analyze with AI
-3. Extract information
-4. Create summary"
+"Sử dụng document-skills để:
+1. Tạo hóa đơn PDF
+2. Tải lên lưu trữ đám mây
+3. Gửi qua API email
+4. Cập nhật cơ sở dữ liệu"
 ```
 
-## Error Handling
-
-### Corrupted Files
+### Với AI
 
 ```
-"Use document-skills to handle:
-- Validate document structure
-- Attempt recovery
-- Report errors clearly
-- Provide alternatives"
+"Sử dụng document-skills sau đó sử dụng gemini-vision để:
+1. Trích xuất hình ảnh từ PDF
+2. Phân tích bằng AI
+3. Trích xuất thông tin
+4. Tạo bản tóm tắt"
 ```
 
-### Missing Data
+## Xử lý lỗi
+
+### File bị hỏng
 
 ```
-"Use document-skills to:
-- Detect empty fields
-- Validate required data
-- Provide defaults
-- Log warnings"
+"Sử dụng document-skills để xử lý:
+- Xác thực cấu trúc tài liệu
+- Cố gắng khôi phục
+- Báo cáo lỗi rõ ràng
+- Cung cấp các phương án thay thế"
 ```
 
-## Quick Examples
+### Thiếu dữ liệu
 
-**Simple Extraction:**
 ```
-"Use document-skills/pdf to extract text from file.pdf"
-```
-
-**Complex Processing:**
-```
-"Use document-skills to:
-1. Read Excel data
-2. Validate entries
-3. Generate Word report
-4. Create PDF summary
-5. Extract as JSON"
+"Sử dụng document-skills để:
+- Phát hiện các trường trống
+- Xác thực dữ liệu bắt buộc
+- Cung cấp các giá trị mặc định
+- Ghi nhật ký các cảnh báo"
 ```
 
-**Batch Processing:**
+## Ví dụ nhanh
+
+**Trích xuất đơn giản:**
 ```
-"Use document-skills to process folder of PDFs:
-- Extract all tables
-- Combine data
-- Create summary Excel
-- Generate report"
+"Sử dụng document-skills/pdf để trích xuất văn bản từ file.pdf"
 ```
 
-## Format Comparison
+**Xử lý phức tạp:**
+```
+"Sử dụng document-skills để:
+1. Đọc dữ liệu Excel
+2. Xác thực các mục nhập
+3. Tạo báo cáo Word
+4. Tạo bản tóm tắt PDF
+5. Trích xuất dưới dạng JSON"
+```
 
-| **Format** | **Best For** | **Extract** | **Create** |
+**Xử lý hàng loạt:**
+```
+"Sử dụng document-skills để xử lý thư mục chứa các file PDF:
+- Trích xuất tất cả các bảng
+- Kết hợp dữ liệu
+- Tạo file Excel tổng hợp
+- Tạo báo cáo"
+```
+
+## So sánh định dạng
+
+| **Định dạng** | **Tốt nhất cho** | **Trích xuất** | **Tạo mới** |
 |------------|--------------|-------------|------------|
-| PDF | Reports, forms | ✓ | ✓ |
-| DOCX | Documents, templates | ✓ | ✓ |
-| PPTX | Presentations | ✓ | ✓ |
-| XLSX | Data, calculations | ✓ | ✓ |
+| PDF | Báo cáo, biểu mẫu | ✓ | ✓ |
+| DOCX | Tài liệu, văn bản mẫu | ✓ | ✓ |
+| PPTX | Bản thuyết trình | ✓ | ✓ |
+| XLSX | Dữ liệu, tính toán | ✓ | ✓ |
 
-## Troubleshooting
+## Xử lý sự cố
 
-### PDF Issues
+### Các vấn đề PDF
 
-- Password protected → Provide password
-- Scanned PDF → Use OCR
-- Corrupted → Try repair tools
+- Có mật khẩu bảo vệ → Cung cấp mật khẩu
+- PDF đã quét → Sử dụng OCR
+- Bị hỏng → Thử các công cụ sửa chữa
 
-### Excel Issues
+### Các vấn đề Excel
 
-- Large files → Process in chunks
-- Complex formulas → Extract values
-- Multiple sheets → Specify sheet
+- File lớn → Xử lý theo từng phần
+- Công thức phức tạp → Trích xuất các giá trị
+- Nhiều trang tính → Chỉ định rõ trang tính
 
-### Word Issues
+### Các vấn đề Word
 
-- Old format (.doc) → Convert to .docx
-- Embedded objects → Extract separately
-- Macros → Handle with caution
+- Định dạng cũ (.doc) → Chuyển đổi sang .docx
+- Các đối tượng nhúng → Trích xuất riêng biệt
+- Macros → Xử lý thận trọng
 
-## Next Steps
+## Bước tiếp theo
 
-- [Data Processing Examples](/docs/use-cases/)
-- [AI Integration](/docs/engineer/skills/)
-- [Automation Workflows](/docs/use-cases/)
+- [Ví dụ xử lý dữ liệu](/docs/use-cases/)
+- [Tích hợp AI](/docs/engineer/skills/)
+- [Luồng công việc tự động](/docs/use-cases/)
 
 ---
 
-**Bottom Line:** document-skills handles all major document formats. Extract data, create documents, convert formats - all automated.
+**Tóm lại:** document-skills xử lý tất cả các định dạng tài liệu chính. Trích xuất dữ liệu, tạo tài liệu, chuyển đổi định dạng - tất cả đều được tự động hóa.

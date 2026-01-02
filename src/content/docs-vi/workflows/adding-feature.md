@@ -1,349 +1,345 @@
 ---
-title: Adding a New Feature
-description: "Documentation for Adding a New Feature
-description:
-section: workflows
-category: workflows
-order: 3
-published: true"
+title: Thêm Tính Năng Mới
+description: "Tài liệu hướng dẫn Thêm Tính Năng Mới"
+lang: vi
 section: workflows
 category: workflows
 order: 3
 published: true
 ---
 
-# Adding a New Feature
+# Thêm Tính Năng Mới
 
-Learn the complete workflow for adding new features to your project with ClaudeKit - from initial planning through production deployment with full testing and documentation.
+Tìm hiểu quy trình hoàn chỉnh để thêm tính năng mới vào dự án của bạn với ClaudeKit - từ lập kế hoạch ban đầu đến triển khai thực tế với đầy đủ kiểm thử và tài liệu.
 
-## Overview
+## Tổng quan
 
-**Goal**: Add a complete feature with planning, implementation, tests, and docs
-**Time**: 15-30 minutes (vs 2-4 hours manually)
-**Agents Used**: planner, scout, tester, code-reviewer, docs-manager
-**Commands**: /plan, /code, /test, /docs:update, /git:cm
+**Mục tiêu**: Thêm một tính năng hoàn chỉnh bao gồm lập kế hoạch, triển khai, kiểm thử và tài liệu.
+**Thời gian**: 15-30 phút (so với 2-4 giờ làm thủ công)
+**Các Agent sử dụng**: planner, scout, tester, code-reviewer, docs-manager
+**Các lệnh**: /plan, /code, /test, /docs:update, /git:cm
 
-## Prerequisites
+## Điều kiện tiên quyết
 
-- Existing project with ClaudeKit configured
-- Clear feature requirements
-- Development environment set up
-- Git repository initialized
+- Dự án hiện tại đã được cấu hình ClaudeKit
+- Yêu cầu tính năng rõ ràng
+- Môi trường phát triển đã được thiết lập
+- Kho lưu trữ Git đã được khởi tạo
 
-## Step-by-Step Workflow
+## Quy trình từng bước
 
-### Step 1: Define Feature Requirements
+### Bước 1: Xác định yêu cầu tính năng
 
-Start by clearly defining what you want to build:
+Bắt đầu bằng cách xác định rõ ràng những gì bạn muốn xây dựng:
 
 ```bash
-# Start Claude Code
+# Khởi động Claude Code
 claude
 
-# Define your feature
-# Example: Adding password reset functionality
+# Xác định tính năng của bạn
+# Ví dụ: Thêm chức năng đặt lại mật khẩu
 ```
 
-**Good feature descriptions:**
-- "Add password reset flow with email verification"
-- "Implement product search with filters and pagination"
-- "Create admin dashboard for user management"
+**Mô tả tính năng tốt:**
+- "Thêm luồng đặt lại mật khẩu với xác minh email"
+- "Triển khai tìm kiếm sản phẩm với bộ lọc và phân trang"
+- "Tạo bảng điều khiển quản trị để quản lý người dùng"
 
-**Poor descriptions:**
-- "Add password stuff"
-- "Make search better"
-- "Admin panel"
+**Mô tả chưa tốt:**
+- "Thêm mấy thứ liên quan mật khẩu"
+- "Làm cho tìm kiếm tốt hơn"
+- "Bảng quản trị"
 
-### Step 2: Research and Plan
+### Bước 2: Nghiên cứu và Lập kế hoạch
 
-Use the planner agent to create a detailed implementation plan:
+Sử dụng agent planner để tạo kế hoạch triển khai chi tiết:
 
 ```bash
-/plan [add password reset flow with email verification]
+/plan [thêm luồng đặt lại mật khẩu với xác minh email]
 ```
 
-**What happens**:
+**Điều gì sẽ xảy ra**:
 ```
-[1/3] Spawning researcher agents...
-  ✓ Researcher 1: Email service best practices
-  ✓ Researcher 2: Token generation patterns
-  ✓ Researcher 3: Security considerations
+[1/3] Đang khởi tạo các agent nghiên cứu...
+  ✓ Researcher 1: Các thực hành tốt nhất cho dịch vụ email
+  ✓ Researcher 2: Các mẫu tạo mã token
+  ✓ Researcher 3: Các cân nhắc về bảo mật
 
-[2/3] Analyzing project structure...
-  ✓ Located authentication module
-  ✓ Found email service configuration
-  ✓ Identified user model
+[2/3] Đang phân tích cấu trúc dự án...
+  ✓ Tìm thấy module xác thực
+  ✓ Tìm thấy cấu hình dịch vụ email
+  ✓ Xác định được model người dùng
 
-[3/3] Creating implementation plan...
-  ✓ Plan saved: plans/password-reset-20251030.md
+[3/3] Đang tạo kế hoạch triển khai...
+  ✓ Kế hoạch đã lưu: plans/password-reset-20251030.md
 
-Review plan at: plans/password-reset-20251030.md
+Xem lại kế hoạch tại: plans/password-reset-20251030.md
 ```
 
-### Step 3: Review the Plan
+### Bước 3: Xem lại Kế hoạch
 
 ```bash
-# Read the generated plan
+# Đọc kế hoạch đã tạo
 cat plans/password-reset-20251030.md
 ```
 
-**Plan structure**:
+**Cấu trúc kế hoạch**:
 ```markdown
-# Password Reset Implementation Plan
+# Kế hoạch triển khai Đặt lại mật khẩu
 
-## 1. Database Changes
-- Add reset_token field to users table
-- Add reset_token_expires timestamp
-- Create migration script
+## 1. Thay đổi cơ sở dữ liệu
+- Thêm trường reset_token vào bảng users
+- Thêm trường reset_token_expires (timestamp)
+- Tạo script migration
 
-## 2. Backend Implementation
-- POST /api/auth/forgot-password endpoint
-- POST /api/auth/reset-password endpoint
-- Email service integration
-- Token generation utility
-- Token validation middleware
+## 2. Triển khai Backend
+- Endpoint POST /api/auth/forgot-password
+- Endpoint POST /api/auth/reset-password
+- Tích hợp dịch vụ email
+- Tiện ích tạo token
+- Middleware xác thực token
 
-## 3. Security Considerations
-- Token expiry (15 minutes)
-- Rate limiting (5 requests/hour)
-- HTTPS enforcement
-- Token single-use enforcement
+## 3. Cân nhắc bảo mật
+- Hết hạn token (15 phút)
+- Giới hạn tốc độ (5 yêu cầu/giờ)
+- Bắt buộc sử dụng HTTPS
+- Bắt buộc token chỉ sử dụng một lần
 
-## 4. Testing Strategy
-- Unit tests for token generation
-- Integration tests for endpoints
-- Email sending mocks
-- Security tests for edge cases
+## 4. Chiến lược kiểm thử
+- Kiểm thử đơn vị (Unit tests) cho việc tạo token
+- Kiểm thử tích hợp (Integration tests) cho các endpoint
+- Mock dịch vụ gửi email
+- Kiểm thử bảo mật cho các trường hợp biên
 
-## 5. Documentation
-- API endpoint documentation
-- User guide for reset flow
-- Admin troubleshooting guide
+## 5. Tài liệu
+- Tài liệu endpoint API
+- Hướng dẫn người dùng cho luồng đặt lại mật khẩu
+- Hướng dẫn khắc phục sự cố cho quản trị viên
 ```
 
-**Review checklist**:
-- ✅ All requirements covered
-- ✅ Security considerations included
-- ✅ Database changes documented
-- ✅ Testing strategy defined
+**Danh sách kiểm tra**:
+- ✅ Tất cả yêu cầu đã được bao quát
+- ✅ Đã bao gồm các cân nhắc bảo mật
+- ✅ Các thay đổi cơ sở dữ liệu đã được ghi lại
+- ✅ Chiến lược kiểm thử đã được xác định
 
-If plan needs adjustment, provide feedback:
+Nếu kế hoạch cần điều chỉnh, hãy đưa ra phản hồi:
 ```bash
-"Please add SMS verification as an alternative to email"
+"Vui lòng thêm xác minh qua SMS như một lựa chọn thay thế cho email"
 ```
 
-### Step 4: Scout Existing Code (Optional)
+### Bước 4: Khảo sát mã nguồn hiện có (Tùy chọn)
 
-For complex features, scout the codebase first:
+Đối với các tính năng phức tạp, hãy khảo sát codebase trước:
 
 ```bash
-/scout "Show me existing authentication code" 3
+/scout "Cho tôi xem mã nguồn xác thực hiện có" 3
 ```
 
-**Output**:
+**Kết quả**:
 ```
-Found 8 relevant files:
+Tìm thấy 8 tệp liên quan:
 
-Priority 1 (Core):
-- src/auth/login.js (authentication logic)
-- src/models/user.js (user model)
-- src/middleware/auth.js (JWT middleware)
+Ưu tiên 1 (Cốt lõi):
+- src/auth/login.js (logic xác thực)
+- src/models/user.js (model người dùng)
+- src/middleware/auth.js (middleware JWT)
 
-Priority 2 (Related):
-- src/services/email.js (email service)
-- src/routes/auth.routes.js (auth routes)
+Ưu tiên 2 (Liên quan):
+- src/services/email.js (dịch vụ email)
+- src/routes/auth.routes.js (routes xác thực)
 
-Priority 3 (Reference):
+Ưu tiên 3 (Tham khảo):
 - tests/auth/login.test.js
 - docs/api/authentication.md
 - config/email.config.js
 ```
 
-This helps understand existing patterns before implementing.
+Việc này giúp hiểu các mẫu (patterns) hiện có trước khi triển khai.
 
-### Step 5: Implement the Feature
+### Bước 5: Triển khai Tính năng
 
-Use the cook command to implement based on the plan:
+Sử dụng lệnh cook để triển khai dựa trên kế hoạch:
 
 ```bash
-/cook [implement password reset with email verification]
+/cook [triển khai đặt lại mật khẩu với xác minh email]
 ```
 
-**Implementation process**:
+**Quy trình triển khai**:
 ```
-[1/6] Scouting relevant files...
-  ✓ Located 8 files for modification
-  ✓ Identified integration points
+[1/6] Đang khảo sát các tệp liên quan...
+  ✓ Xác định được 8 tệp cần sửa đổi
+  ✓ Xác định được các điểm tích hợp
 
-[2/6] Implementing database changes...
-  ✓ Created migration: 20251030_add_reset_tokens.sql
-  ✓ Updated user model
+[2/6] Đang triển khai thay đổi cơ sở dữ liệu...
+  ✓ Tạo migration: 20251030_add_reset_tokens.sql
+  ✓ Cập nhật model người dùng
 
-[3/6] Implementing endpoints...
+[3/6] Đang triển khai các endpoint...
   ✓ POST /api/auth/forgot-password
   ✓ POST /api/auth/reset-password
-  ✓ Token validation middleware
+  ✓ Middleware xác thực token
 
-[4/6] Implementing email service...
-  ✓ Password reset email template
-  ✓ Email sending logic
-  ✓ Template variables
+[4/6] Đang triển khai dịch vụ email...
+  ✓ Template email đặt lại mật khẩu
+  ✓ Logic gửi email
+  ✓ Các biến template
 
-[5/6] Adding security measures...
-  ✓ Rate limiting middleware
-  ✓ Token expiry validation
-  ✓ Single-use token enforcement
+[5/6] Đang thêm các biện pháp bảo mật...
+  ✓ Middleware giới hạn tốc độ
+  ✓ Xác thực hết hạn token
+  ✓ Bắt buộc token chỉ dùng một lần
 
-[6/6] Integration complete
-  ✓ 5 files created
-  ✓ 3 files modified
+[6/6] Tích hợp hoàn tất
+  ✓ 5 tệp được tạo mới
+  ✓ 3 tệp được sửa đổi
 
-Files created:
+Các tệp đã tạo:
 - src/auth/password-reset.controller.js
 - src/middleware/rate-limit.js
 - src/templates/password-reset.html
 - migrations/20251030_add_reset_tokens.sql
 - tests/auth/password-reset.test.js
 
-Files modified:
+Các tệp đã sửa đổi:
 - src/routes/auth.routes.js
 - src/models/user.js
 - src/services/email.js
 ```
 
-### Step 6: Run Tests
+### Bước 6: Chạy Kiểm thử
 
-Automatically generate and run comprehensive tests:
+Tự động tạo và chạy các bài kiểm thử toàn diện:
 
 ```bash
 /test
 ```
 
-**Test execution**:
+**Thực thi kiểm thử**:
 ```
-Running test suite...
+Đang chạy bộ kiểm thử...
 
-✓ Unit Tests (28 tests)
-  ✓ Token generation (8 tests)
-  ✓ Token validation (7 tests)
-  ✓ Email template rendering (5 tests)
-  ✓ Rate limiting logic (8 tests)
+✓ Kiểm thử đơn vị (28 bài)
+  ✓ Tạo token (8 bài)
+  ✓ Xác thực token (7 bài)
+  ✓ Render template email (5 bài)
+  ✓ Logic giới hạn tốc độ (8 bài)
 
-✓ Integration Tests (15 tests)
-  ✓ Forgot password endpoint (8 tests)
-  ✓ Reset password endpoint (7 tests)
+✓ Kiểm thử tích hợp (15 bài)
+  ✓ Endpoint quên mật khẩu (8 bài)
+  ✓ Endpoint đặt lại mật khẩu (7 bài)
 
-✓ Security Tests (10 tests)
-  ✓ Token expiry enforcement (3 tests)
-  ✓ Rate limiting (3 tests)
-  ✓ Single-use tokens (4 tests)
+✓ Kiểm thử bảo mật (10 bài)
+  ✓ Bắt buộc hết hạn token (3 bài)
+  ✓ Giới hạn tốc độ (3 bài)
+  ✓ Token dùng một lần (4 bài)
 
 Test Suites: 3 passed, 3 total
 Tests:       53 passed, 53 total
 Time:        4.382 s
 Coverage:    89.3%
 
-✅ All tests passed
+✅ Tất cả bài kiểm thử đã vượt qua
 ```
 
-**If tests fail**:
+**Nếu kiểm thử thất bại**:
 ```bash
 /fix:test
 ```
 
-### Step 7: Code Review
+### Bước 7: Review Mã nguồn
 
-Review code quality automatically:
+Tự động kiểm tra chất lượng mã nguồn:
 
 ```bash
-# Code reviewer runs automatically after /cook
-# Or invoke manually
+# Bộ review mã nguồn chạy tự động sau lệnh /cook
+# Hoặc gọi thủ công
 /review
 ```
 
-**Review results**:
+**Kết quả review**:
 ```
-Code Review Complete
+Review mã nguồn hoàn tất
 
-✓ Security
-  ✓ Tokens hashed before storage
-  ✓ Rate limiting implemented
-  ✓ Input validation present
-  ✓ HTTPS enforcement configured
+✓ Bảo mật
+  ✓ Token được băm trước khi lưu trữ
+  ✓ Đã triển khai giới hạn tốc độ
+  ✓ Đã có xác thực đầu vào
+  ✓ Đã cấu hình bắt buộc HTTPS
 
-✓ Performance
-  ✓ Database queries optimized
-  ✓ Indexes on lookup fields
-  ✓ Email sending async
+✓ Hiệu suất
+  ✓ Các truy vấn cơ sở dữ liệu đã được tối ưu hóa
+  ✓ Đã có index cho các trường tìm kiếm
+  ✓ Gửi email bất đồng bộ
 
-✓ Code Quality
-  ✓ Error handling comprehensive
-  ✓ Logging appropriate
-  ✓ Code follows project standards
+✓ Chất lượng mã nguồn
+  ✓ Xử lý lỗi toàn diện
+  ✓ Ghi log phù hợp
+  ✓ Mã nguồn tuân thủ tiêu chuẩn dự án
 
-⚠ Recommendations
-  - Consider adding SMS fallback
-  - Add admin override capability
-  - Implement audit logging
+⚠ Khuyến nghị
+  - Cân nhắc thêm phương án dự phòng SMS
+  - Thêm khả năng ghi đè cho quản trị viên
+  - Triển khai ghi log kiểm toán (audit logging)
 
-Overall: APPROVED ✓
+Tổng quan: ĐÃ DUYỆT ✓
 ```
 
-### Step 8: Update Documentation
+### Bước 8: Cập nhật Tài liệu
 
-Sync documentation with new feature:
+Đồng bộ tài liệu với tính năng mới:
 
 ```bash
 /docs:update
 ```
 
-**Documentation updates**:
+**Cập nhật tài liệu**:
 ```
-Updating documentation...
+Đang cập nhật tài liệu...
 
-✓ API Documentation
-  - Added /api/auth/forgot-password
-  - Added /api/auth/reset-password
-  - Updated authentication flow diagram
+✓ Tài liệu API
+  - Thêm /api/auth/forgot-password
+  - Thêm /api/auth/reset-password
+  - Cập nhật sơ đồ luồng xác thực
 
-✓ User Guides
-  - Created password-reset-guide.md
-  - Updated authentication.md
+✓ Hướng dẫn người dùng
+  - Tạo password-reset-guide.md
+  - Cập nhật authentication.md
 
-✓ Architecture Docs
-  - Updated system-architecture.md
-  - Added security-controls.md section
+✓ Tài liệu kiến trúc
+  - Cập nhật system-architecture.md
+  - Thêm phần security-controls.md
 
-✓ Code Documentation
-  - JSDoc comments added
-  - README.md updated
+✓ Tài liệu mã nguồn
+  - Thêm các comment JSDoc
+  - Cập nhật README.md
 
-Documentation sync complete
+Đồng bộ tài liệu hoàn tất
 ```
 
-### Step 9: Manual Testing (Optional)
+### Bước 9: Kiểm thử thủ công (Tùy chọn)
 
-Test the feature manually:
+Kiểm thử tính năng một cách thủ công:
 
 ```bash
-# Start development server
+# Khởi động server phát triển
 npm run dev
 
-# Test forgot password
+# Kiểm thử quên mật khẩu
 curl -X POST http://localhost:3000/api/auth/forgot-password \
   -H "Content-Type: application/json" \
   -d '{"email": "user@example.com"}'
 
-# Expected response:
+# Phản hồi mong đợi:
 # {
-#   "message": "Password reset email sent",
-#   "expiresIn": "15 minutes"
+#   "message": "Email đặt lại mật khẩu đã được gửi",
+#   "expiresIn": "15 phút"
 # }
 
-# Check email (development)
-# Open: http://localhost:8025 (mailhog/mailcatcher)
+# Kiểm tra email (môi trường phát triển)
+# Mở: http://localhost:8025 (mailhog/mailcatcher)
 
-# Test reset with token from email
+# Kiểm thử đặt lại với token từ email
 curl -X POST http://localhost:3000/api/auth/reset-password \
   -H "Content-Type: application/json" \
   -d '{
@@ -351,310 +347,310 @@ curl -X POST http://localhost:3000/api/auth/reset-password \
     "newPassword": "NewSecure123!"
   }'
 
-# Expected response:
+# Phản hồi mong đợi:
 # {
-#   "message": "Password successfully reset"
+#   "message": "Đặt lại mật khẩu thành công"
 # }
 ```
 
-### Step 10: Commit Changes
+### Bước 10: Commit thay đổi
 
-Commit with conventional commit message:
+Commit với thông điệp theo chuẩn conventional commit:
 
 ```bash
 /git:cm
 ```
 
-**Generated commit**:
+**Commit được tạo**:
 ```
-feat: implement password reset with email verification
+feat: triển khai đặt lại mật khẩu với xác minh email
 
-- Add forgot-password endpoint with rate limiting
-- Implement reset-password endpoint with token validation
-- Create email template for reset notifications
-- Add database migration for reset tokens
-- Implement single-use token enforcement
-- Add comprehensive test suite (53 tests, 89% coverage)
-- Update API documentation
+- Thêm endpoint quên mật khẩu với giới hạn tốc độ
+- Triển khai endpoint đặt lại mật khẩu với xác thực token
+- Tạo template email cho thông báo đặt lại mật khẩu
+- Thêm migration cơ sở dữ liệu cho reset token
+- Triển khai bắt buộc token chỉ dùng một lần
+- Thêm bộ kiểm thử toàn diện (53 bài, độ bao phủ 89.3%)
+- Cập nhật tài liệu API
 
-Security features:
-- 15-minute token expiry
-- Rate limiting (5 requests/hour per email)
-- Single-use token enforcement
-- Bcrypt token hashing
+Các tính năng bảo mật:
+- Token hết hạn sau 15 phút
+- Giới hạn tốc độ (5 yêu cầu/giờ cho mỗi email)
+- Bắt buộc token dùng một lần
+- Băm token bằng Bcrypt
 ```
 
-### Step 11: Create Pull Request (Optional)
+### Bước 11: Tạo Pull Request (Tùy chọn)
 
-If working with a team:
+Nếu làm việc cùng nhóm:
 
 ```bash
 /git:pr main feature/password-reset
 ```
 
-**Generated PR**:
+**PR được tạo**:
 ```markdown
-## Summary
-Implements password reset functionality with email verification
+## Tóm tắt
+Triển khai chức năng đặt lại mật khẩu với xác minh qua email
 
-- User can request password reset via email
-- Token-based verification (15-min expiry)
-- Rate limiting to prevent abuse
-- Comprehensive test coverage (89%)
+- Người dùng có thể yêu cầu đặt lại mật khẩu qua email
+- Xác thực dựa trên token (hết hạn sau 15 phút)
+- Giới hạn tốc độ để ngăn chặn lạm dụng
+- Độ bao phủ kiểm thử toàn diện (89%)
 
-## Test Plan
-- [x] All automated tests pass
-- [x] Manual testing completed
-- [x] Security review passed
-- [x] Documentation updated
+## Kế hoạch kiểm thử
+- [x] Tất cả kiểm thử tự động đã vượt qua
+- [x] Đã hoàn thành kiểm thử thủ công
+- [x] Đã vượt qua review bảo mật
+- [x] Tài liệu đã được cập nhật
 
-## Security Considerations
-- Tokens expire after 15 minutes
-- Single-use tokens enforced
-- Rate limiting: 5 requests/hour
-- Tokens hashed in database
+## Cân nhắc bảo mật
+- Token hết hạn sau 15 phút
+- Bắt buộc token dùng một lần
+- Giới hạn tốc độ: 5 yêu cầu/giờ
+- Token được băm trong cơ sở dữ liệu
 
-## Screenshots
-[Email template preview]
-[API response examples]
+## Ảnh chụp màn hình
+[Xem trước template email]
+[Ví dụ phản hồi API]
 ```
 
-## Complete Example
+## Ví dụ Hoàn chỉnh
 
-Real-world scenario: Adding search functionality to an e-commerce site.
+Tình huống thực tế: Thêm chức năng tìm kiếm cho trang thương mại điện tử.
 
-### Initial Command
+### Lệnh ban đầu
 
 ```bash
-/plan [add product search with filters, sorting, and pagination]
+/plan [thêm tìm kiếm sản phẩm với bộ lọc, sắp xếp và phân trang]
 ```
 
-### Plan Review
+### Xem lại Kế hoạch
 
-**Generated plan includes**:
-- Elasticsearch integration
-- Search endpoint design
-- Filter implementation (category, price, rating)
-- Sorting options (relevance, price, newest)
-- Pagination strategy
-- Search analytics
-- Autocomplete suggestions
+**Kế hoạch được tạo bao gồm**:
+- Tích hợp Elasticsearch
+- Thiết kế endpoint tìm kiếm
+- Triển khai bộ lọc (danh mục, giá, đánh giá)
+- Các tùy chọn sắp xếp (độ liên quan, giá, mới nhất)
+- Chiến lược phân trang
+- Phân tích tìm kiếm
+- Gợi ý tự động hoàn thành (Autocomplete)
 
-### Implementation
+### Triển khai
 
 ```bash
-/cook [implement product search as planned]
+/cook [triển khai tìm kiếm sản phẩm theo kế hoạch]
 ```
 
-**Results after 8 minutes**:
-- Elasticsearch service integration
-- Search indexing service
-- GET /api/products/search endpoint
-- Filter query builder
-- Sort and pagination logic
-- Search result ranking
-- Autocomplete API
-- 67 tests (91% coverage)
-- Complete API documentation
+**Kết quả sau 8 phút**:
+- Tích hợp dịch vụ Elasticsearch
+- Dịch vụ đánh chỉ mục tìm kiếm
+- Endpoint GET /api/products/search
+- Trình xây dựng truy vấn bộ lọc
+- Logic sắp xếp và phân trang
+- Xếp hạng kết quả tìm kiếm
+- API tự động hoàn thành
+- 67 bài kiểm thử (độ bao phủ 91%)
+- Tài liệu API hoàn chỉnh
 
-### Time Comparison
+### So sánh thời gian
 
-**Manual implementation**: 6-8 hours
-- Research: 1-2 hours
-- Implementation: 3-4 hours
-- Testing: 1-2 hours
-- Documentation: 1 hour
+**Triển khai thủ công**: 6-8 giờ
+- Nghiên cứu: 1-2 giờ
+- Triển khai: 3-4 giờ
+- Kiểm thử: 1-2 giờ
+- Tài liệu: 1 giờ
 
-**With ClaudeKit**: 25 minutes
-- Planning: 5 minutes
-- Implementation: 12 minutes
-- Testing: 5 minutes
-- Documentation: 3 minutes
+**Với ClaudeKit**: 25 phút
+- Lập kế hoạch: 5 phút
+- Triển khai: 12 phút
+- Kiểm thử: 5 phút
+- Tài liệu: 3 phút
 
-**Time saved**: 5.5-7.5 hours (93% faster)
+**Thời gian tiết kiệm được**: 5.5-7.5 giờ (nhanh hơn 93%)
 
-## Common Variations
+## Các biến thể thường gặp
 
-### Variation 1: API Endpoint Only
+### Biến thể 1: Chỉ Endpoint API
 
 ```bash
-# Skip planning for simple endpoints
-/cook [add GET /api/users/:id/profile endpoint]
+# Bỏ qua lập kế hoạch cho các endpoint đơn giản
+/cook [thêm endpoint GET /api/users/:id/profile]
 ```
 
-### Variation 2: Database-Heavy Feature
+### Biến thể 2: Tính năng nặng về Cơ sở dữ liệu
 
 ```bash
-# Plan complex database changes first
-/plan [implement multi-tenant architecture with tenant isolation]
-/cook [implement multi-tenant architecture]
+# Lập kế hoạch cho các thay đổi DB phức tạp trước
+/plan [triển khai kiến trúc đa khách thuê (multi-tenant) với sự cô lập khách thuê]
+/cook [triển khai kiến trúc đa khách thuê]
 ```
 
-### Variation 3: UI + Backend Feature
+### Biến thể 3: Tính năng UI + Backend
 
 ```bash
-# Split into separate features
-/cook [implement backend API for notifications]
-/cook [implement frontend notification panel]
+# Chia thành các tính năng nhỏ hơn
+/cook [triển khai backend API cho thông báo]
+/cook [triển khai bảng thông báo ở frontend]
 ```
 
-### Variation 4: Third-Party Integration
+### Biến thể 4: Tích hợp bên thứ ba
 
 ```bash
-# Research included automatically
-/plan [integrate Twilio SMS notifications]
-/cook [integrate Twilio SMS as planned]
+# Nghiên cứu được bao gồm tự động
+/plan [tích hợp thông báo SMS Twilio]
+/cook [tích hợp Twilio SMS theo kế hoạch]
 ```
 
-## Troubleshooting
+## Khắc phục sự cố
 
-### Issue: Feature Too Large
+### Vấn đề: Tính năng quá lớn
 
-**Problem**: Implementation taking too long or changing too many files
+**Biểu hiện**: Việc triển khai mất quá nhiều thời gian hoặc thay đổi quá nhiều tệp.
 
-**Solution**:
+**Giải pháp**:
 ```bash
-# Break into smaller features
-/plan [add user management - phase 1: user CRUD]
-/cook [implement user CRUD]
+# Chia nhỏ thành các tính năng bé hơn
+/plan [thêm quản lý người dùng - giai đoạn 1: CRUD người dùng]
+/cook [triển khai CRUD người dùng]
 
-/plan [add user management - phase 2: roles and permissions]
-/cook [implement roles and permissions]
+/plan [thêm quản lý người dùng - giai đoạn 2: vai trò và quyền hạn]
+/cook [triển khai vai trò và quyền hạn]
 ```
 
-### Issue: Tests Failing
+### Vấn đề: Kiểm thử thất bại
 
-**Problem**: Generated tests don't pass
+**Biểu hiện**: Các bài kiểm thử được tạo ra không vượt qua.
 
-**Solution**:
+**Giải pháp**:
 ```bash
 /fix:test
 
-# Debugger analyzes failures and fixes
-# Re-runs tests automatically
+# Debugger sẽ phân tích lỗi và sửa chữa
+# Tự động chạy lại các bài kiểm thử
 ```
 
-### Issue: Missing Edge Cases
+### Vấn đề: Thiếu các trường hợp biên (Edge Cases)
 
-**Problem**: Implementation doesn't cover all scenarios
+**Biểu hiện**: Việc triển khai không bao quát hết tất cả các kịch bản.
 
-**Solution**:
+**Giải pháp**:
 ```bash
-# Add specific requirements
-/cook [add error handling for network failures in password reset]
+# Thêm các yêu cầu cụ thể
+/cook [thêm xử lý lỗi cho sự cố mạng trong luồng đặt lại mật khẩu]
 ```
 
-### Issue: Performance Concerns
+### Vấn đề: Lo ngại về hiệu suất
 
-**Problem**: Feature works but too slow
+**Biểu hiện**: Tính năng hoạt động nhưng quá chậm.
 
-**Solution**:
+**Giải pháp**:
 ```bash
-# Add optimization
-/cook [optimize search queries with database indexes and caching]
+# Thêm tối ưu hóa
+/cook [tối ưu hóa các truy vấn tìm kiếm với index DB và bộ nhớ đệm]
 ```
 
-### Issue: Documentation Unclear
+### Vấn đề: Tài liệu không rõ ràng
 
-**Problem**: Generated docs don't explain feature well
+**Biểu hiện**: Tài liệu được tạo ra không giải thích rõ tính năng.
 
-**Solution**:
+**Giải pháp**:
 ```bash
-# Regenerate with focus
-/docs:update [focus on password reset flow with diagrams]
+# Tạo lại với trọng tâm cụ thể
+/docs:update [tập trung vào luồng đặt lại mật khẩu kèm sơ đồ]
 ```
 
-## Best Practices
+## Thực hành tốt nhất
 
-### 1. Plan Complex Features
+### 1. Lập kế hoạch cho các tính năng phức tạp
 
-For features requiring multiple components:
+Đối với các tính năng yêu cầu nhiều thành phần:
 ```bash
-# Always plan first
-/plan [feature description]
-# Review plan
-# Then implement
-/cook [feature description]
+# Luôn lập kế hoạch trước
+/plan [mô tả tính năng]
+# Xem lại kế hoạch
+# Sau đó mới triển khai
+/cook [mô tả tính năng]
 ```
 
-### 2. Small, Focused Features
+### 2. Tính năng nhỏ và tập trung
 
-Break large features into smaller pieces:
+Chia nhỏ các tính năng lớn:
 ```bash
-✅ Good:
-/cook [add user profile picture upload]
-/cook [add image thumbnail generation]
+✅ Tốt:
+/cook [thêm chức năng tải ảnh đại diện người dùng]
+/cook [thêm chức năng tạo ảnh thu nhỏ (thumbnail)]
 
-❌ Too large:
-/cook [add complete media management system]
+❌ Quá lớn:
+/cook [thêm hệ thống quản lý phương tiện hoàn chỉnh]
 ```
 
-### 3. Test Immediately
+### 3. Kiểm thử ngay lập tức
 
-Don't skip testing:
+Đừng bỏ qua việc kiểm thử:
 ```bash
-/cook [feature]
-/test           # Always run tests
-/fix:test       # Fix failures immediately
+/cook [tính năng]
+/test           # Luôn chạy kiểm thử
+/fix:test       # Sửa lỗi ngay lập tức
 ```
 
-### 4. Document as You Go
+### 4. Viết tài liệu song song
 
-Keep docs current:
+Giữ tài liệu luôn mới:
 ```bash
-/cook [feature]
-/docs:update    # Update docs immediately
+/cook [tính năng]
+/docs:update    # Cập nhật tài liệu ngay
 ```
 
-### 5. Review Before Committing
+### 5. Xem lại trước khi Commit
 
-Always review generated code:
+Luôn kiểm tra mã nguồn được tạo ra:
 ```bash
-# Review all changes
+# Xem lại tất cả thay đổi
 git status
 git diff
 
-# Understand what changed
-# Only then commit
+# Hiểu những gì đã thay đổi
+# Chỉ sau đó mới commit
 /git:cm
 ```
 
-### 6. Use Feature Branches
+### 6. Sử dụng Feature Branches
 
-Work safely:
+Làm việc một cách an toàn:
 ```bash
-# Create feature branch
+# Tạo nhánh tính năng
 git checkout -b feature/password-reset
 
-# Implement
-/cook [feature]
+# Triển khai
+/cook [tính năng]
 
 # Commit
 /git:cm
 
-# Create PR
+# Tạo PR
 /git:pr main feature/password-reset
 ```
 
-## Next Steps
+## Bước tiếp theo
 
-### Related Use Cases
-- [Fixing Bugs](/docs/use-cases/fixing-bugs) - Debug and fix issues
-- [Refactoring Code](/docs/use-cases/refactoring-code) - Improve code quality
-- [Building an API](/docs/use-cases/building-api) - Create REST APIs
+### Các trường hợp sử dụng liên quan
+- [Sửa Lỗi](/vi/docs/workflows/fixing-bugs) - Debug và sửa lỗi
+- [Refactor Mã Nguồn](/vi/docs/workflows/refactoring-code) - Cải thiện chất lượng mã nguồn
+- [Xây dựng API](/vi/docs/workflows/index) - Tạo các REST API
 
-### Related Commands
-- [/plan](/docs/engineer/commands/core/plan) - Create implementation plans
-- [/cook](/docs/engineer/commands/core/cook) - Implement features
-- [/test](/docs/engineer/commands/core/test) - Run test suites
-- [/docs:update](/docs/engineer/commands/docs/update) - Update documentation
-- [/git:cm](/docs/engineer/commands/git/commit) - Commit changes
+### Các lệnh liên quan
+- [/plan](/vi/docs/engineer/commands/core/plan) - Tạo kế hoạch triển khai
+- [/cook](/vi/docs/engineer/commands/core/cook) - Triển khai tính năng
+- [/test](/vi/docs/engineer/commands/core/test) - Chạy bộ kiểm thử
+- [/docs:update](/vi/docs/engineer/commands/docs/update) - Cập nhật tài liệu
+- [/git:cm](/vi/docs/engineer/commands/git/commit) - Commit thay đổi
 
-### Further Reading
-- [Command Reference](/docs/commands) - All available commands
-- [Agent Guide](/docs/agents) - Understanding agents
-- [Workflows](/docs/core-concepts/workflows) - Development patterns
+### Đọc thêm
+- [Tham khảo lệnh](/vi/docs/engineer/commands) - Tất cả lệnh có sẵn
+- [Hướng dẫn về Agent](/vi/docs/engineer/agents) - Hiểu về các agent
+- [Workflows](/vi/docs/core-concepts/workflows) - Các mẫu phát triển
 
 ---
 
-**Key Takeaway**: Use ClaudeKit's systematic workflow (plan → implement → test → document → commit) to add production-ready features 10x faster than manual development.
+**Thông điệp chính**: Sử dụng quy trình làm việc hệ thống của ClaudeKit (kế hoạch → triển khai → kiểm thử → tài liệu → commit) để thêm các tính năng sẵn sàng cho sản xuất nhanh hơn 10 lần so với phát triển thủ công.

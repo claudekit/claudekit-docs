@@ -1,547 +1,505 @@
 ---
 title: /skill:create
-description: Documentation for create
+description: Tạo các skill agent mới mở rộng khả năng của Claude với kiến thức chuyên môn, quy trình làm việc hoặc tích hợp công cụ
 section: engineer
 kit: engineer
 category: commands/skill
 order: 80
 published: true
+lang: vi
 ---
 
 # /skill:create
 
-Create new agent skills that extend Claude's capabilities with specialized knowledge, workflows, or tool integrations. This command follows a comprehensive 4-phase process: research, implementation, review, and evaluation.
+Tạo các skill agent mới mở rộng khả năng của Claude với kiến thức chuyên môn, quy trình làm việc hoặc tích hợp công cụ. Lệnh này tuân theo quy trình 4 giai đoạn toàn diện: nghiên cứu, triển khai, xem xét và đánh giá.
 
-## Syntax
+## Cú pháp
 
 ```bash
 /skill:create [prompt-or-llms-or-github-url]
 ```
 
-## Input Types
+## Các loại đầu vào
 
-### 1. Natural Language Prompt
+### 1. Prompt ngôn ngữ tự nhiên
 
 ```bash
-/skill:create [create skill for MongoDB database operations]
+/skill:create [tạo skill cho các thao tác cơ sở dữ liệu MongoDB]
 ```
 
-### 2. llms.txt URL
+### 2. URL llms.txt
 
 ```bash
 /skill:create https://docs.polar.sh/llms.txt
 ```
 
-### 3. GitHub Repository
+### 3. Repository GitHub
 
 ```bash
 /skill:create https://github.com/cloudflare/workers-sdk
 ```
 
-## How It Works
+## Cách hoạt động
 
-The `/skill:create` command follows a 4-phase workflow:
+Lệnh `/skill:create` tuân theo quy trình làm việc 4 giai đoạn:
 
-### Phase 1: Research (2-3 minutes)
+### Giai đoạn 1: Nghiên cứu (2-3 phút)
 
-Invokes **researcher** agent to:
-- Fetch documentation (llms.txt, GitHub, web)
-- Analyze domain knowledge required
-- Identify key concepts and patterns
-- Map out skill structure
-- Determine MCP integration needs
-- Research best practices
+Kích hoạt agent **researcher** để:
+- Thu thập tài liệu (llms.txt, GitHub, web)
+- Phân tích kiến thức chuyên môn cần thiết
+- Xác định các khái niệm và pattern chính
+- Lập sơ đồ cấu trúc skill
+- Xác định nhu cầu tích hợp MCP
+- Nghiên cứu các thực hành tốt nhất (best practices)
 
-### Phase 2: Implementation (3-5 minutes)
+### Giai đoạn 2: Triển khai (3-5 phút)
 
-Invokes **skill-creator** agent to:
-- Write skill prompt file
-- Structure knowledge sections
-- Create usage examples
-- Define when to use skill
-- Add tool integration instructions
-- Include best practices
-- Format in markdown
+Kích hoạt agent **skill-creator** để:
+- Viết file prompt cho skill
+- Cấu trúc các phần kiến thức
+- Tạo các ví dụ sử dụng
+- Xác định khi nào nên sử dụng skill
+- Thêm hướng dẫn tích hợp công cụ
+- Bao gồm các thực hành tốt nhất
+- Định dạng bằng markdown
 
-### Phase 3: Review (1-2 minutes)
+### Giai đoạn 3: Xem xét (1-2 phút)
 
-Invokes **code-reviewer** agent to:
-- Validate skill structure
-- Check completeness
-- Verify examples work
-- Ensure clear instructions
-- Validate formatting
-- Suggest improvements
+Kích hoạt agent **code-reviewer** để:
+- Xác thực cấu trúc skill
+- Kiểm tra tính đầy đủ
+- Xác minh các ví dụ hoạt động đúng
+- Đảm bảo hướng dẫn rõ ràng
+- Xác thực định dạng
+- Đề xuất cải tiến
 
-### Phase 4: Evaluation (1 minute)
+### Giai đoạn 4: Đánh giá (1 phút)
 
-Invokes **tester** agent to:
-- Test skill activation
-- Verify skill prompt loads
-- Check examples are clear
-- Validate tool integrations
-- Test edge cases
-- Generate usage report
+Kích hoạt agent **tester** để:
+- Kiểm tra việc kích hoạt skill
+- Xác minh prompt của skill được tải đúng
+- Kiểm tra các ví dụ rõ ràng
+- Xác thực tích hợp công cụ
+- Kiểm tra các trường hợp biên (edge cases)
+- Tạo báo cáo sử dụng
 
-## Examples
+## Ví dụ
 
-### Create MongoDB Skill
+### Tạo Skill MongoDB
 
 ```bash
-/skill:create [create skill for MongoDB operations including CRUD, aggregations, and indexing]
+/skill:create [tạo skill cho các thao tác MongoDB bao gồm CRUD, aggregation và indexing]
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-Phase 1: Research (2 minutes 15 seconds)
+Giai đoạn 1: Nghiên cứu (2 phút 15 giây)
 ---
 Agent: researcher
 
-Gathering information...
+Đang thu thập thông tin...
 
-MongoDB documentation analyzed:
-✓ CRUD operations
+Tài liệu MongoDB đã được phân tích:
+✓ Các thao tác CRUD
 ✓ Aggregation pipelines
-✓ Indexing strategies
-✓ Schema design patterns
-✓ Performance optimization
+✓ Chiến lược Indexing
+✓ Pattern thiết kế Schema
+✓ Tối ưu hóa hiệu suất
 ✓ Replication & sharding
-✓ Security best practices
+✓ Thực hành bảo mật tốt nhất
 
-MCP server check:
-✓ Found: @modelcontextprotocol/server-mongodb
-✓ Available tools: query, insert, update, delete, aggregate
-✓ Connection requirements: MongoDB URI
+Kiểm tra server MCP:
+✓ Tìm thấy: @modelcontextprotocol/server-mongodb
+✓ Các công cụ có sẵn: query, insert, update, delete, aggregate
+✓ Yêu cầu kết nối: MongoDB URI
 
-Best practices identified:
+Các thực hành tốt nhất đã xác định:
 ✓ Connection pooling
-✓ Error handling patterns
-✓ Query optimization
-✓ Index selection
-✓ Schema validation
+✓ Pattern xử lý lỗi
+✓ Tối ưu hóa truy vấn
+✓ Lựa chọn Index
+✓ Xác thực Schema
 
-Phase 2: Implementation (3 minutes 45 seconds)
+Giai đoạn 2: Triển khai (3 phút 45 giây)
 ---
 Agent: skill-creator
 
-Creating skill file...
+Đang tạo file skill...
 
-Structure:
-1. Skill Overview
-2. When to Use This Skill
-3. Prerequisites
-4. MongoDB Operations Guide
-   - CRUD operations
+Cấu trúc:
+1. Tổng quan Skill
+2. Khi nào sử dụng Skill này
+3. Điều kiện tiên quyết
+4. Hướng dẫn thao tác MongoDB
+   - Các thao tác CRUD
    - Aggregation pipelines
    - Indexing
-   - Schema design
-   - Performance optimization
-5. MCP Integration
-6. Examples
-7. Best Practices
-8. Common Patterns
-9. Troubleshooting
+   - Thiết kế Schema
+   - Tối ưu hóa hiệu suất
+5. Tích hợp MCP
+6. Ví dụ
+7. Thực hành tốt nhất
+8. Các pattern phổ biến
+9. Xử lý sự cố
 
-File created:
-.claude/skills/mongodb.md (2,847 words)
+File đã được tạo:
+.claude/skills/mongodb.md (2,847 từ)
 
-Key sections included:
-✓ Clear use cases
-✓ Step-by-step operations
-✓ Code examples (15+)
-✓ Aggregation pipeline examples
-✓ Index creation patterns
-✓ MCP tool usage
-✓ Error handling
-✓ Performance tips
+Các phần chính bao gồm:
+✓ Các trường hợp sử dụng rõ ràng
+✓ Thao tác từng bước
+✓ Ví dụ mã nguồn (15+)
+✓ Ví dụ về aggregation pipeline
+✓ Pattern tạo index
+✓ Cách sử dụng công cụ MCP
+✓ Xử lý lỗi
+✓ Mẹo hiệu suất
 
-Phase 3: Review (1 minute 30 seconds)
+Giai đoạn 3: Xem xét (1 phút 30 giây)
 ---
 Agent: code-reviewer
 
-Reviewing skill quality...
+Đang xem xét chất lượng skill...
 
-Structure: ✅ Excellent
-- Clear sections
-- Logical flow
-- Good hierarchy
+Cấu trúc: ✅ Tuyệt vời
+- Các phần rõ ràng
+- Luồng logic tốt
+- Phân cấp tốt
 
-Completeness: ✅ Comprehensive
-- All CRUD operations covered
-- Aggregation examples included
-- Indexing strategies explained
-- MCP integration documented
+Tính đầy đủ: ✅ Toàn diện
+- Bao phủ tất cả các thao tác CRUD
+- Bao gồm các ví dụ aggregation
+- Giải thích các chiến lược indexing
+- Tài liệu hóa tích hợp MCP
 
-Examples: ✅ High Quality
-- 15 working examples
-- Various complexity levels
-- Real-world scenarios
-- Copy-paste ready
+Ví dụ: ✅ Chất lượng cao
+- 15 ví dụ hoạt động tốt
+- Nhiều mức độ phức tạp khác nhau
+- Các kịch bản thực tế
+- Sẵn sàng để copy-paste
 
-Clarity: ✅ Clear
-- Technical but accessible
-- Step-by-step instructions
-- Good use of code blocks
+Độ rõ ràng: ✅ Rõ ràng
+- Kỹ thuật nhưng dễ tiếp cận
+- Hướng dẫn từng bước
+- Sử dụng tốt các khối mã (code blocks)
 
-Suggestions:
-1. Add section on transactions
-2. Include change streams example
-3. Add troubleshooting for connection issues
+Đề xuất:
+1. Thêm phần về transaction
+2. Bao gồm ví dụ về change stream
+3. Thêm xử lý sự cố cho các vấn đề kết nối
 
-Applying suggestions...
-✓ Transactions section added
-✓ Change streams example included
-✓ Troubleshooting expanded
+Đang áp dụng các đề xuất...
+✓ Đã thêm phần transaction
+✓ Đã bao gồm ví dụ change stream
+✓ Đã mở rộng phần xử lý sự cố
 
-Phase 4: Evaluation (45 seconds)
+Giai đoạn 4: Đánh giá (45 giây)
 ---
 Agent: tester
 
-Testing skill...
+Đang kiểm tra skill...
 
-Activation test:
-✓ Skill loads correctly
-✓ No syntax errors
-✓ Markdown formatting valid
+Kiểm tra kích hoạt:
+✓ Skill tải chính xác
+✓ Không có lỗi cú pháp
+✓ Định dạng Markdown hợp lệ
 
-Example validation:
-✓ All 17 examples use correct syntax
-✓ MongoDB queries valid
-✓ MCP tool calls properly formatted
+Xác thực ví dụ:
+✓ Tất cả 17 ví dụ sử dụng đúng cú pháp
+✓ Các truy vấn MongoDB hợp lệ
+✓ Các lời gọi công cụ MCP được định dạng đúng
 
-Tool integration:
-✓ MCP server referenced correctly
-✓ Connection instructions clear
-✓ Authentication covered
+Tích hợp công cụ:
+✓ Server MCP được tham chiếu chính xác
+✓ Hướng dẫn kết nối rõ ràng
+✓ Đã bao phủ phần xác thực
 
-Documentation quality:
-✓ Professional tone
-✓ Technical accuracy verified
-✓ Easy to follow
+Chất lượng tài liệu:
+✓ Giọng văn chuyên nghiệp
+✓ Độ chính xác kỹ thuật đã được xác minh
+✓ Dễ dàng theo dõi
 
-Score: 9.2/10
+Điểm số: 9.2/10
 
-Areas of excellence:
-+ Comprehensive CRUD coverage
-+ Excellent aggregation examples
-+ Clear MCP integration
-+ Good troubleshooting section
+Các điểm xuất sắc:
++ Bao phủ CRUD toàn diện
++ Ví dụ aggregation tuyệt vời
++ Tích hợp MCP rõ ràng
++ Phần xử lý sự cố tốt
 
-Minor improvements needed:
-- Add more replica set examples
-- Include sharding guidance
+Các cải tiến nhỏ cần thiết:
+- Thêm nhiều ví dụ về replica set
+- Bao gồm hướng dẫn về sharding
 
-✓ Skill creation complete (8 minutes 15 seconds)
+✓ Hoàn tất tạo skill (8 phút 15 giây)
 
-Summary:
+Tóm tắt:
 ---
-✓ Skill created: .claude/skills/mongodb.md
-✓ 2,847 words
-✓ 17 examples
-✓ 8 major sections
-✓ MCP integration included
-✓ Reviewed and tested
-✓ Quality score: 9.2/10
+✓ Skill đã tạo: .claude/skills/mongodb.md
+✓ 2,847 từ
+✓ 17 ví dụ
+✓ 8 phần chính
+✓ Bao gồm tích hợp MCP
+✓ Đã được xem xét và kiểm tra
+✓ Điểm chất lượng: 9.2/10
 
-Next steps:
-1. Review skill: cat .claude/skills/mongodb.md
-2. Test skill: /ask [mongodb question]
-3. Iterate if needed: /skill:fix-logs
+Các bước tiếp theo:
+1. Xem lại skill: cat .claude/skills/mongodb.md
+2. Kiểm tra skill: /ask [câu hỏi về mongodb]
+3. Lặp lại nếu cần: /skill:fix-logs
 ```
 
-### Create Skill from llms.txt
+### Tạo Skill từ llms.txt
 
 ```bash
 /skill:create https://docs.polar.sh/llms.txt
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-Phase 1: Research (1 minute 30 seconds)
+Giai đoạn 1: Nghiên cứu (1 phút 30 giây)
 ---
 Agent: researcher
 
-Fetching llms.txt...
+Đang tải llms.txt...
 URL: https://docs.polar.sh/llms.txt
 
-Content retrieved:
-- 5,249 lines
-- Polar.sh payment platform
-- Subscription management
-- Webhook handling
-- Customer portal
-- API documentation
+Nội dung đã lấy:
+- 5,249 dòng
+- Nền tảng thanh toán Polar.sh
+- Quản lý đăng ký (subscription)
+- Xử lý webhook
+- Cổng thông tin khách hàng
+- Tài liệu API
 
-Analyzing structure...
-✓ Clear API sections
-✓ Code examples included
-✓ Authentication documented
-✓ Webhooks explained
+Đang phân tích cấu trúc...
+✓ Các phần API rõ ràng
+✓ Bao gồm các ví dụ mã nguồn
+✓ Đã tài liệu hóa phần xác thực
+✓ Giải thích về webhook
 
-Phase 2: Implementation (4 minutes)
+Giai đoạn 2: Triển khai (4 phút)
 ---
 Agent: skill-creator
 
-Creating Polar.sh skill...
+Đang tạo skill Polar.sh...
 
-Skill structure:
-1. Overview (what Polar.sh does)
-2. When to use this skill
-3. Prerequisites (API keys)
-4. Core Features
-   - Subscriptions
-   - One-time payments
-   - Customer portal
+Cấu trúc skill:
+1. Tổng quan (Polar.sh làm gì)
+2. Khi nào sử dụng skill này
+3. Điều kiện tiên quyết (API keys)
+4. Các tính năng cốt lõi
+   - Đăng ký (Subscriptions)
+   - Thanh toán một lần
+   - Cổng thông tin khách hàng
    - Webhooks
-5. Implementation Guide
-   - Setup
-   - Creating checkouts
-   - Webhook handling
-   - Customer management
-6. Code Examples (SDK usage)
-7. Best Practices
-8. Security Guidelines
-9. Testing
-10. Troubleshooting
+5. Hướng dẫn triển khai
+   - Thiết lập
+   - Tạo checkout
+   - Xử lý webhook
+   - Quản lý khách hàng
+6. Ví dụ mã nguồn (sử dụng SDK)
+7. Thực hành tốt nhất
+8. Hướng dẫn bảo mật
+9. Kiểm tra
+10. Xử lý sự cố
 
-File created:
-.claude/skills/polar.md (3,124 words)
+File đã được tạo:
+.claude/skills/polar.md (3,124 từ)
 
-✓ 23 code examples extracted from llms.txt
-✓ API endpoints documented
-✓ Webhook events listed
-✓ Security best practices added
-
-Phase 3: Review (1 minute 20 seconds)
----
-Agent: code-reviewer
-
-Review findings:
-
-Strengths:
-✓ Comprehensive API coverage
-✓ Real code examples from docs
-✓ Security well documented
-✓ Clear integration steps
-
-Enhancements applied:
-+ Added pricing tier examples
-+ Included webhook signature verification
-+ Added troubleshooting section
-+ Improved error handling examples
-
-Phase 4: Evaluation (50 seconds)
----
-Agent: tester
-
-Evaluation results:
-
-✓ All API examples valid
-✓ Webhook handling comprehensive
-✓ Security practices sound
-✓ Documentation clear
-
-Score: 9.4/10
-
-✓ Skill ready to use (7 minutes 40 seconds)
+✓ 23 ví dụ mã nguồn được trích xuất từ llms.txt
+✓ Các endpoint API được tài liệu hóa
+✓ Liệt kê các sự kiện webhook
+✓ Thêm các thực hành bảo mật tốt nhất
 ```
 
-### Create Skill from GitHub
+### Tạo Skill từ GitHub
 
 ```bash
 /skill:create https://github.com/cloudflare/workers-sdk
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-Phase 1: Research (2 minutes 45 seconds)
+Giai đoạn 1: Nghiên cứu (2 phút 45 giây)
 ---
 Agent: researcher
 
-Analyzing GitHub repository...
+Đang phân tích repository GitHub...
 Repo: cloudflare/workers-sdk
 
-Using Repomix to analyze codebase...
-✓ 847 files analyzed
-✓ Documentation extracted
-✓ README.md processed
-✓ Examples folder scanned
-✓ API patterns identified
+Sử dụng Repomix để phân tích codebase...
+✓ 847 file đã được phân tích
+✓ Tài liệu đã được trích xuất
+✓ README.md đã được xử lý
+✓ Thư mục ví dụ đã được quét
+✓ Các pattern API được xác định
 
-Key findings:
+Các phát hiện chính:
 - Cloudflare Workers SDK
-- Wrangler CLI tool
-- Workers API documentation
-- D1 database integration
-- KV storage operations
+- Công cụ CLI Wrangler
+- Tài liệu API Workers
+- Tích hợp cơ sở dữ liệu D1
+- Thao tác lưu trữ KV
 - Durable Objects
-- R2 storage
+- Lưu trữ R2
 
-Phase 2: Implementation (5 minutes)
+Giai đoạn 2: Triển khai (5 phút)
 ---
 Agent: skill-creator
 
-Creating Cloudflare Workers skill...
+Đang tạo skill Cloudflare Workers...
 
-Skill sections:
-1. Cloudflare Workers Overview
-2. When to Use This Skill
-3. Wrangler CLI Guide
-4. Worker Development
-   - Basic workers
-   - Request handling
-   - Environment variables
-5. Cloudflare Services
+Các phần của skill:
+1. Tổng quan về Cloudflare Workers
+2. Khi nào sử dụng Skill này
+3. Hướng dẫn CLI Wrangler
+4. Phát triển Worker
+   - Các worker cơ bản
+   - Xử lý Request
+   - Biến môi trường
+5. Các dịch vụ Cloudflare
    - D1 (SQLite)
    - KV (Key-Value)
    - R2 (Object Storage)
    - Durable Objects
-6. Deployment
-7. Testing & Debugging
-8. Best Practices
-9. Common Patterns
-10. Troubleshooting
+6. Triển khai (Deployment)
+7. Kiểm tra & Debug
+8. Thực hành tốt nhất
+9. Các pattern phổ biến
+10. Xử lý sự cố
 
-File created:
-.claude/skills/cloudflare-workers.md (4,126 words)
+File đã được tạo:
+.claude/skills/cloudflare-workers.md (4,126 từ)
 
-✓ 31 code examples
-✓ CLI commands documented
-✓ Service integration guides
-✓ Deployment workflow
-
-Phase 3-4: Review & Evaluation
----
-✓ Review complete
-✓ Examples validated
-✓ CLI commands tested
-
-Score: 9.1/10
-
-✓ Skill creation complete (10 minutes)
+✓ 31 ví dụ mã nguồn
+✓ Các lệnh CLI được tài liệu hóa
+✓ Hướng dẫn tích hợp dịch vụ
+✓ Quy trình triển khai
 ```
 
-## Skill File Structure
+## Cấu trúc file Skill
 
-Every created skill follows this structure:
+Mọi skill được tạo đều tuân theo cấu trúc này:
 
 ```markdown
-# [Skill Name]
+# [Tên Skill]
 
-[Brief description of what the skill helps with]
+[Mô tả ngắn gọn về những gì skill giúp ích]
 
-## When to Use This Skill
+## Khi nào sử dụng Skill này
 
-Use this skill when:
-- [Specific use case 1]
-- [Specific use case 2]
-- [Specific use case 3]
+Sử dụng skill này khi:
+- [Trường hợp sử dụng cụ thể 1]
+- [Trường hợp sử dụng cụ thể 2]
+- [Trường hợp sử dụng cụ thể 3]
 
-## Prerequisites
+## Điều kiện tiên quyết
 
-- [Requirement 1]
-- [Requirement 2]
+- [Yêu cầu 1]
+- [Yêu cầu 2]
 
-## [Main Knowledge Section 1]
+## [Phần kiến thức chính 1]
 
-### [Subsection]
+### [Phần phụ]
 
-[Detailed information with examples]
+[Thông tin chi tiết với các ví dụ]
 
 ```code
-// Working code example
+// Ví dụ mã nguồn hoạt động được
 ```
 
-## [Main Knowledge Section 2]
+## [Phần kiến thức chính 2]
 
-[More content...]
+[Nội dung thêm...]
 
-## MCP Integration (if applicable)
+## Tích hợp MCP (nếu có)
 
-[How to use MCP tools with this skill]
+[Cách sử dụng các công cụ MCP với skill này]
 
-## Examples
+## Ví dụ
 
-### Example 1: [Scenario]
+### Ví dụ 1: [Kịch bản]
 ```code
-// Complete working example
+// Ví dụ hoạt động hoàn chỉnh
 ```
 
-### Example 2: [Scenario]
+### Ví dụ 2: [Kịch bản]
 ```code
-// Another example
+// Một ví dụ khác
 ```
 
-## Best Practices
+## Thực hành tốt nhất
 
-- [Practice 1]
-- [Practice 2]
+- [Thực hành 1]
+- [Thực hành 2]
 
-## Common Patterns
+## Các pattern phổ biến
 
-[Reusable patterns and solutions]
+[Các pattern và giải pháp có thể tái sử dụng]
 
-## Troubleshooting
+## Xử lý sự cố
 
-**Problem:** [Common issue]
-**Solution:** [How to fix]
+**Vấn đề:** [Vấn đề thường gặp]
+**Giải pháp:** [Cách khắc phục]
 ```
 
-## Skill Quality Criteria
+## Tiêu chí chất lượng Skill
 
-Skills are evaluated on:
+Các skill được đánh giá dựa trên:
 
-### 1. Completeness (25%)
+### 1. Tính đầy đủ (25%)
 
-- All major topics covered
-- Edge cases addressed
-- Error handling included
-- Security considerations
+- Bao phủ tất cả các chủ đề chính
+- Giải quyết các trường hợp biên
+- Bao gồm xử lý lỗi
+- Cân nhắc về bảo mật
 
-### 2. Clarity (25%)
+### 2. Độ rõ ràng (25%)
 
-- Clear explanations
-- Logical structure
-- Easy to follow
-- Good formatting
+- Giải thích rõ ràng
+- Cấu trúc logic
+- Dễ dàng theo dõi
+- Định dạng tốt
 
-### 3. Examples (25%)
+### 3. Ví dụ (25%)
 
-- Working code examples
-- Various complexity levels
-- Real-world scenarios
-- Copy-paste ready
+- Các ví dụ mã nguồn hoạt động được
+- Nhiều mức độ phức tạp khác nhau
+- Các kịch bản thực tế
+- Sẵn sàng để copy-paste
 
-### 4. Usefulness (25%)
+### 4. Tính hữu dụng (25%)
 
-- Practical application
-- Time-saving
-- Reduces errors
-- Fills knowledge gap
+- Ứng dụng thực tế
+- Tiết kiệm thời gian
+- Giảm thiểu lỗi
+- Lấp đầy khoảng trống kiến thức
 
-## MCP Integration
+## Tích hợp MCP
 
-When skill requires tools, MCP integration is included:
+Khi skill yêu cầu các công cụ, tích hợp MCP sẽ được bao gồm:
 
 ```markdown
-## MCP Server Integration
+## Tích hợp Server MCP
 
-This skill works best with the [tool-name] MCP server.
+Skill này hoạt động tốt nhất với server MCP [tên-công-cụ].
 
-### Installation
+### Cài đặt
 
 ```bash
-npm install @modelcontextprotocol/server-[name]
+npm install @modelcontextprotocol/server-[tên]
 ```
 
-### Configuration
+### Cấu trúc
 
-Add to claude_desktop_config.json:
+Thêm vào claude_desktop_config.json:
 
 ```json
 {
   "mcpServers": {
-    "[name]": {
+    "[tên]": {
       "command": "node",
       "args": ["path/to/server"],
       "env": {
@@ -552,219 +510,219 @@ Add to claude_desktop_config.json:
 }
 ```
 
-### Available Tools
+### Các công cụ có sẵn
 
-- `tool_name_1` - Description
-- `tool_name_2` - Description
+- `tên_công_cụ_1` - Mô tả
+- `tên_công_cụ_2` - Mô tả
 ```
 
-## Best Practices for Skill Creation
+## Thực hành tốt nhất để tạo Skill
 
-### Provide Detailed Input
+### Cung cấp đầu vào chi tiết
 
-✅ **Good:**
+✅ **Tốt:**
 ```bash
-/skill:create [create skill for implementing WebSocket real-time features including connection management, reconnection logic, message queuing, and scaling with Redis pub/sub]
+/skill:create [tạo skill để triển khai các tính năng WebSocket thời gian thực bao gồm quản lý kết nối, logic kết nối lại, hàng đợi tin nhắn và mở rộng quy mô với Redis pub/sub]
 ```
 
-❌ **Vague:**
+❌ **Mơ hồ:**
 ```bash
 /skill:create [websockets]
 ```
 
-### Use Official Documentation
+### Sử dụng tài liệu chính thức
 
 ```bash
-# Best: Official llms.txt
+# Tốt nhất: llms.txt chính thức
 /skill:create https://docs.service.com/llms.txt
 
-# Good: Official GitHub
+# Tốt: GitHub chính thức
 /skill:create https://github.com/official/repo
 
-# OK: Natural language (but less comprehensive)
-/skill:create [create skill for X]
+# Tạm được: Ngôn ngữ tự nhiên (nhưng ít toàn diện hơn)
+/skill:create [tạo skill cho X]
 ```
 
-### Specify Domain if Broad
+### Chỉ định phạm vi nếu quá rộng
 
 ```bash
-# Too broad
+# Quá rộng
 /skill:create [Python]
 
-# Better
-/skill:create [Python async programming with asyncio]
+# Tốt hơn
+/skill:create [lập trình async Python với asyncio]
 
-# Best
-/skill:create [Python async programming with asyncio including event loops, coroutines, async/await patterns, and concurrent task management]
+# Tốt nhất
+/skill:create [lập trình async Python với asyncio bao gồm event loops, coroutines, pattern async/await và quản lý tác vụ đồng thời]
 ```
 
-## After Skill Creation
+## Sau khi tạo Skill
 
-Standard workflow:
+Quy trình làm việc tiêu chuẩn:
 
 ```bash
-# 1. Create skill
-/skill:create [description or URL]
+# 1. Tạo skill
+/skill:create [mô tả hoặc URL]
 
-# 2. Review skill
-cat .claude/skills/[skill-name].md
+# 2. Xem lại skill
+cat .claude/skills/[tên-skill].md
 
-# 3. Test skill
-/ask [question related to skill]
-# Skill should automatically activate
+# 3. Kiểm tra skill
+/ask [câu hỏi liên quan đến skill]
+# Skill sẽ tự động kích hoạt
 
-# 4. If issues found
-/skill:fix-logs .claude/skills/[skill-name].md
+# 4. Nếu tìm thấy vấn đề
+/skill:fix-logs .claude/skills/[tên-skill].md
 
-# 5. Iterate until satisfied
+# 5. Lặp lại cho đến khi hài lòng
 
 # 6. Commit skill
 /git:cm
 ```
 
-## Output Files
+## Các file đầu ra
 
-After `/skill:create` completes:
+Sau khi `/skill:create` hoàn tất:
 
-### Skill File
-
-```
-.claude/skills/[skill-name].md
-```
-
-Complete skill prompt ready to use
-
-### Research Report
+### File Skill
 
 ```
-plans/skill-research-[name]-[date].md
+.claude/skills/[tên-skill].md
 ```
 
-Research findings and analysis
+Prompt skill hoàn chỉnh sẵn sàng để sử dụng.
 
-### Evaluation Report
+### Báo cáo nghiên cứu
 
 ```
-plans/skill-evaluation-[name]-[date].md
+plans/skill-research-[tên]-[ngày].md
 ```
 
-Quality score and recommendations
+Các phát hiện và phân tích nghiên cứu.
 
-## Common Use Cases
+### Báo cáo đánh giá
 
-### 1. Framework/Library Skills
+```
+plans/skill-evaluation-[tên]-[ngày].md
+```
+
+Điểm chất lượng và các đề xuất.
+
+## Các trường hợp sử dụng phổ biến
+
+### 1. Skill cho Framework/Thư viện
 
 ```bash
 /skill:create https://docs.nextjs.org/llms.txt
 /skill:create https://github.com/remix-run/remix
-/skill:create [create skill for TailwindCSS]
+/skill:create [tạo skill cho TailwindCSS]
 ```
 
-### 2. Cloud Platform Skills
+### 2. Skill cho Nền tảng Cloud
 
 ```bash
-/skill:create [create skill for AWS Lambda deployment]
+/skill:create [tạo skill để triển khai AWS Lambda]
 /skill:create https://github.com/cloudflare/workers-sdk
-/skill:create [Azure Functions development]
+/skill:create [phát triển Azure Functions]
 ```
 
-### 3. Database Skills
+### 3. Skill cho Cơ sở dữ liệu
 
 ```bash
-/skill:create [PostgreSQL query optimization]
+/skill:create [tối ưu hóa truy vấn PostgreSQL]
 /skill:create https://github.com/mongodb/mongo
-/skill:create [Redis caching patterns]
+/skill:create [các pattern caching Redis]
 ```
 
-### 4. Tool Integration Skills
+### 4. Skill cho Tích hợp công cụ
 
 ```bash
-/skill:create [Docker containerization best practices]
+/skill:create [các thực hành tốt nhất cho Docker containerization]
 /skill:create [GitHub Actions CI/CD]
-/skill:create [Kubernetes deployment]
+/skill:create [triển khai Kubernetes]
 ```
 
-### 5. Domain-Specific Skills
+### 5. Skill cho lĩnh vực cụ thể
 
 ```bash
-/skill:create [payment processing with Stripe]
-/skill:create [email marketing with SendGrid]
-/skill:create [analytics with Google Analytics]
+/skill:create [xử lý thanh toán với Stripe]
+/skill:create [email marketing với SendGrid]
+/skill:create [analytics với Google Analytics]
 ```
 
-## Skill Activation
+## Kích hoạt Skill
 
-Once created, skills activate automatically:
+Sau khi được tạo, các skill sẽ tự động kích hoạt:
 
 ```bash
-# Skill: mongodb.md exists
+# Skill: mongodb.md đã tồn tại
 
-# Ask MongoDB question
-/ask [how to create compound index in MongoDB]
+# Đặt câu hỏi về MongoDB
+/ask [cách tạo compound index trong MongoDB]
 
-# System automatically:
-1. Detects question relates to MongoDB
-2. Loads mongodb.md skill
-3. Uses skill knowledge to answer
-4. Provides accurate, detailed response
+# Hệ thống sẽ tự động:
+1. Phát hiện câu hỏi liên quan đến MongoDB
+2. Tải skill mongodb.md
+3. Sử dụng kiến thức từ skill để trả lời
+4. Cung cấp câu trả lời chi tiết, chính xác
 ```
 
-## Troubleshooting
+## Xử lý sự cố
 
-### Skill Not Activating
+### Skill không kích hoạt
 
-**Problem:** Skill exists but doesn't activate
+**Vấn đề:** Skill tồn tại nhưng không kích hoạt.
 
-**Check:**
+**Kiểm tra:**
 ```bash
-# 1. Verify skill exists
+# 1. Xác minh skill tồn tại
 ls .claude/skills/
 
-# 2. Check skill format
-cat .claude/skills/[name].md
-# Should have clear "When to Use" section
+# 2. Kiểm tra định dạng skill
+cat .claude/skills/[tên].md
+# Phải có phần "Khi nào sử dụng" rõ ràng
 
-# 3. Fix if needed
-/skill:fix-logs .claude/skills/[name].md
+# 3. Sửa nếu cần
+/skill:fix-logs .claude/skills/[tên].md
 ```
 
-### Low Quality Score
+### Điểm chất lượng thấp
 
-**Problem:** Skill scores below 8.0
+**Vấn đề:** Skill đạt điểm dưới 8.0.
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Review evaluation report
+# Xem báo cáo đánh giá
 cat plans/skill-evaluation-*.md
 
-# Address issues mentioned
+# Giải quyết các vấn đề được đề cập
 
-# Re-create with more detail
-/skill:create [more detailed prompt]
+# Tạo lại với nhiều chi tiết hơn
+/skill:create [prompt chi tiết hơn]
 ```
 
-### Missing Information
+### Thiếu thông tin
 
-**Problem:** Skill incomplete
+**Vấn đề:** Skill không đầy đủ.
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Add more context to input
-/skill:create [original prompt + specific areas to cover]
+# Thêm nhiều ngữ cảnh vào đầu vào
+/skill:create [prompt gốc + các lĩnh vực cụ thể cần bao phủ]
 
-# Or manually edit skill file
-# Then validate
-/skill:fix-logs .claude/skills/[name].md
+# Hoặc chỉnh sửa file skill thủ công
+# Sau đó xác thực lại
+/skill:fix-logs .claude/skills/[tên].md
 ```
 
-## Next Steps
+## Các bước tiếp theo
 
-After creating skills:
+Sau khi tạo các skill:
 
-- [/skill:fix-logs](/docs/engineer/commands/skill/fix-logs) - Fix skill based on logs
-- [/ask](/docs/engineer/commands/core/ask) - Use skill to answer questions
-- [Skill Creator Guide](/docs/guides/creating-skills) - Advanced skill creation
+- [/skill:fix-logs](/vi/docs/engineer/commands/skill/fix-logs) - Sửa skill dựa trên log
+- [/ask](/vi/docs/engineer/commands/core/ask) - Sử dụng skill để trả lời câu hỏi
+- [Hướng dẫn tạo Skill](/vi/docs/guides/creating-skills) - Tạo skill nâng cao
 
 ---
 
-**Key Takeaway**: `/skill:create` generates comprehensive agent skills through 4-phase process (research, implementation, review, evaluation) from natural language prompts, llms.txt URLs, or GitHub repositories—extending Claude's capabilities with specialized domain knowledge and tool integrations.
+**Điểm chính**: `/skill:create` tạo ra các skill agent toàn diện thông qua quy trình 4 giai đoạn (nghiên cứu, triển khai, xem xét, đánh giá) từ các prompt ngôn ngữ tự nhiên, URL llms.txt hoặc repository GitHub—mở rộng khả năng của Claude với kiến thức chuyên môn và tích hợp công cụ.

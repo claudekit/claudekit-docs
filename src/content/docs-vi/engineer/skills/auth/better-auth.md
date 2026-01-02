@@ -1,95 +1,96 @@
 ---
 title: better-auth
-description: Documentation for better-auth
+description: Tài liệu hướng dẫn sử dụng kỹ năng better-auth
 section: engineer
 kit: engineer
 category: skills/auth
 order: 10
 published: true
+lang: vi
 ---
 
-# better-auth Skill
+# Kỹ năng better-auth
 
-Framework-agnostic authentication and authorization framework for TypeScript. Works with any framework - Next.js, Nuxt, SvelteKit, Remix, Astro, Hono, Express.
+Framework xác thực (authentication) và phân quyền (authorization) độc lập với framework dành cho TypeScript. Hoạt động với mọi framework - Next.js, Nuxt, SvelteKit, Remix, Astro, Hono, Express.
 
-## When to Use
+## Khi nào nên sử dụng
 
-Use better-auth when you need:
-- Email/password authentication
-- Social OAuth (GitHub, Google, etc.)
-- Two-factor authentication (2FA)
+Sử dụng better-auth khi bạn cần:
+- Xác thực bằng Email/mật khẩu
+- OAuth mạng xã hội (GitHub, Google, v.v.)
+- Xác thực hai yếu tố (2FA)
 - Passkeys (WebAuthn)
-- Magic links
-- Multi-tenancy / Organizations
-- Framework flexibility
+- Magic links (Đăng nhập không mật khẩu qua email)
+- Đa người dùng (Multi-tenancy) / Tổ chức (Organizations)
+- Sự linh hoạt giữa các framework
 
-## Quick Start
+## Bắt đầu nhanh
 
-### Invoke the Skill
+### Cách gọi kỹ năng
 
 ```
-"Use better-auth to add authentication to my Next.js app with:
-- Email/password signup
+"Sử dụng better-auth để thêm xác thực vào ứng dụng Next.js của tôi với:
+- Đăng ký bằng Email/mật khẩu
 - GitHub OAuth
-- PostgreSQL with Drizzle"
+- PostgreSQL với Drizzle"
 ```
 
-### What You Get
+### Kết quả nhận được
 
-The skill will help you:
-1. Install and configure better-auth
-2. Set up database schema
-3. Create auth server instance
-4. Mount API routes
-5. Create client instance
-6. Implement sign-up/sign-in UI
-7. Add session management
-8. Protect routes
+Kỹ năng này sẽ giúp bạn:
+1. Cài đặt và cấu hình better-auth
+2. Thiết lập schema cơ sở dữ liệu
+3. Tạo instance server auth
+4. Gắn kết các route API
+5. Tạo instance client
+6. Triển khai giao diện Đăng ký/Đăng nhập
+7. Thêm quản lý phiên làm việc (session)
+8. Bảo vệ các route
 
-## Common Use Cases
+## Các trường hợp sử dụng phổ biến
 
-### Basic Email/Password Auth
-
-```
-"Use better-auth to implement email/password authentication with:
-- Auto sign-in after signup
-- Email verification
-- Password reset flow"
-```
-
-### Social OAuth
+### Xác thực Email/Mật khẩu cơ bản
 
 ```
-"Use better-auth to add GitHub and Google OAuth to my app"
+"Sử dụng better-auth để triển khai xác thực email/mật khẩu với:
+- Tự động đăng nhập sau khi đăng ký
+- Xác minh email
+- Luồng khôi phục mật khẩu"
 ```
 
-### Two-Factor Authentication
+### OAuth mạng xã hội
 
 ```
-"Use better-auth to add 2FA with TOTP codes and trusted devices"
+"Sử dụng better-auth để thêm GitHub và Google OAuth vào ứng dụng của tôi"
 ```
 
-### Multi-Tenant Application
+### Xác thực hai yếu tố
 
 ```
-"Use better-auth to build multi-tenant app with:
-- Organizations
-- Team member invitations
-- Role-based permissions"
+"Sử dụng better-auth để thêm 2FA với mã TOTP và các thiết bị tin cậy"
 ```
 
-## Key Features
+### Ứng dụng đa tổ chức (Multi-Tenant)
 
-### Authentication Methods
+```
+"Sử dụng better-auth để xây dựng ứng dụng đa tổ chức với:
+- Các tổ chức (Organizations)
+- Mời thành viên nhóm
+- Phân quyền dựa trên vai trò (RBAC)"
+```
 
-- **Email/Password** - Traditional signup/signin
-- **Social OAuth** - GitHub, Google, Apple, Discord, Facebook, etc.
-- **Magic Links** - Passwordless email authentication
-- **Passkeys** - WebAuthn biometric authentication
-- **2FA/TOTP** - Two-factor authentication
-- **Email OTP** - One-time password codes
+## Các tính năng chính
 
-### Framework Support
+### Phương thức xác thực
+
+- **Email/Mật khẩu** - Đăng ký/đăng nhập truyền thống
+- **OAuth mạng xã hội** - GitHub, Google, Apple, Discord, Facebook, v.v.
+- **Magic Links** - Xác thực email không cần mật khẩu
+- **Passkeys** - Xác thực sinh trắc học WebAuthn
+- **2FA/TOTP** - Xác thực hai yếu tố
+- **Email OTP** - Mã mật khẩu một lần qua email
+
+### Hỗ trợ Framework
 
 - Next.js (App Router & Pages Router)
 - Nuxt
@@ -98,104 +99,104 @@ The skill will help you:
 - Astro
 - Hono
 - Express
-- Any Node.js framework
+- Mọi framework Node.js
 
-### Database Support
+### Hỗ trợ Cơ sở dữ liệu
 
 - PostgreSQL
 - MySQL
 - SQLite
 - MongoDB
 
-### ORM Adapters
+### Adapter ORM
 
 - Drizzle
 - Prisma
 - Kysely
 - MongoDB native
 
-## Example Implementations
+## Ví dụ triển khai
 
 ### Next.js App Router
 
 ```
-"Use better-auth to set up authentication for Next.js 14 App Router with:
-- Email/password
+"Sử dụng better-auth để thiết lập xác thực cho Next.js 14 App Router với:
+- Email/mật khẩu
 - GitHub OAuth
 - PostgreSQL + Drizzle
-- Protected routes middleware
-- Server actions for auth"
+- Middleware bảo vệ route
+- Server actions cho xác thực"
 ```
 
 ### SvelteKit
 
 ```
-"Use better-auth to implement auth in SvelteKit with:
-- Magic link authentication
-- Session management
-- Protected routes"
+"Sử dụng better-auth để triển khai xác thực trong SvelteKit với:
+- Xác thực Magic link
+- Quản lý phiên làm việc
+- Bảo vệ các route"
 ```
 
-### Multi-Framework
+### Đa Framework
 
 ```
-"Use better-auth to create auth system that works with both:
-- Next.js frontend
-- Hono API backend
-- Shared PostgreSQL database"
+"Sử dụng better-auth để tạo hệ thống xác thực hoạt động với cả:
+- Frontend Next.js
+- Backend API Hono
+- Cơ sở dữ liệu PostgreSQL dùng chung"
 ```
 
-## Advanced Features
+## Tính năng nâng cao
 
-### Session Management
-
-```
-"Use better-auth to implement:
-- Server-side session validation
-- Client-side session hooks
-- Custom session expiration
-- Remember me functionality"
-```
-
-### Rate Limiting
+### Quản lý phiên làm việc (Session)
 
 ```
-"Use better-auth to add rate limiting to prevent:
-- Brute force attacks
-- Signup spam
-- API abuse"
+"Sử dụng better-auth để triển khai:
+- Xác thực phiên làm việc phía server
+- Hooks phiên làm việc phía client
+- Tùy chỉnh thời gian hết hạn phiên
+- Tính năng 'Ghi nhớ tôi' (Remember me)"
 ```
 
-### Email Verification
+### Giới hạn tốc độ (Rate Limiting)
 
 ```
-"Use better-auth to require email verification:
-- Send verification emails
-- Handle verification tokens
-- Block unverified users"
+"Sử dụng better-auth để thêm giới hạn tốc độ nhằm ngăn chặn:
+- Tấn công vét cạn (Brute force)
+- Spam đăng ký
+- Lạm dụng API"
 ```
 
-## Best Practices
+### Xác minh Email
 
-### Environment Variables
+```
+"Sử dụng better-auth để yêu cầu xác minh email:
+- Gửi email xác minh
+- Xử lý mã xác minh (tokens)
+- Chặn người dùng chưa xác minh"
+```
 
-Always use environment variables for:
-- `BETTER_AUTH_SECRET` - Secret key (min 32 chars)
-- `BETTER_AUTH_URL` - Application URL
-- OAuth client IDs and secrets
+## Phương pháp hay nhất
 
-### Security
+### Biến môi trường
 
-The skill ensures:
-- HTTPS in production
-- Secure cookie settings
-- CORS configuration
-- Password requirements
-- Session security
+Luôn sử dụng biến môi trường cho:
+- `BETTER_AUTH_SECRET` - Khóa bí mật (tối thiểu 32 ký tự)
+- `BETTER_AUTH_URL` - URL của ứng dụng
+- Client ID và Secret của OAuth
 
-### Database Migrations
+### Bảo mật
 
-After adding plugins:
+Kỹ năng này đảm bảo:
+- HTTPS trong môi trường sản xuất
+- Cấu hình cookie an toàn
+- Cấu hình CORS
+- Yêu cầu về độ mạnh mật khẩu
+- Bảo mật phiên làm việc
+
+### Di cư cơ sở dữ liệu (Database Migrations)
+
+Sau khi thêm các plugin:
 ```bash
 npx @better-auth/cli generate
 npx @better-auth/cli migrate
@@ -203,83 +204,83 @@ npx @better-auth/cli migrate
 
 ## Plugins
 
-### Available Plugins
+### Các plugin có sẵn
 
 - **twoFactor** - TOTP 2FA
-- **username** - Username authentication
-- **magicLink** - Passwordless email
-- **passkey** - WebAuthn biometric
-- **organization** - Multi-tenancy
-- **emailOTP** - One-time passwords
-- **anonymous** - Guest users
+- **username** - Xác thực bằng tên người dùng
+- **magicLink** - Email không mật khẩu
+- **passkey** - Sinh trắc học WebAuthn
+- **organization** - Đa người dùng/tổ chức
+- **emailOTP** - Mật khẩu một lần
+- **anonymous** - Người dùng khách
 
-### Adding Plugins
+### Thêm Plugin
 
 ```
-"Use better-auth to add these plugins:
-- Two-factor authentication
-- Organization support
-- Magic link signin"
+"Sử dụng better-auth để thêm các plugin này:
+- Xác thực hai yếu tố
+- Hỗ trợ tổ chức (Organization)
+- Đăng nhập bằng Magic link"
 ```
 
-## Troubleshooting
+## Xử lý sự cố
 
-### Common Issues
+### Các vấn đề thường gặp
 
 **"Unable to find auth instance"**
-- Check auth.ts location (root, lib/, utils/)
-- Verify export name
+- Kiểm tra vị trí file auth.ts (gốc, lib/, utils/)
+- Xác minh tên xuất (export name)
 
-**Database connection errors**
-- Verify credentials
-- Check database is running
-- Ensure correct adapter
+**Lỗi kết nối cơ sở dữ liệu**
+- Xác minh thông tin đăng nhập
+- Kiểm tra cơ sở dữ liệu đang chạy
+- Đảm bảo adapter chính xác
 
-**CORS errors**
-- Configure corsOptions
-- Match client/server URLs
+**Lỗi CORS**
+- Cấu hình corsOptions
+- Khớp URL client/server
 
-## Resources
+## Tài nguyên
 
-- [Official Docs](https://www.better-auth.com/docs)
+- [Tài liệu chính thức](https://www.better-auth.com/docs)
 - [GitHub](https://github.com/better-auth/better-auth)
 - [Plugins](https://www.better-auth.com/docs/plugins)
-- [Examples](https://www.better-auth.com/docs/examples)
+- [Ví dụ](https://www.better-auth.com/docs/examples)
 
-## Quick Examples
+## Các ví dụ nhanh
 
-**Minimal Setup:**
+**Thiết lập tối giản:**
 ```
-"Use better-auth for basic email/password auth with SQLite"
+"Sử dụng better-auth để xác thực email/mật khẩu cơ bản với SQLite"
 ```
 
-**Production Setup:**
+**Thiết lập môi trường sản xuất:**
 ```
-"Use better-auth for production with:
+"Sử dụng better-auth cho môi trường sản xuất với:
 - GitHub + Google OAuth
-- Email verification
-- 2FA support
+- Xác minh email
+- Hỗ trợ 2FA
 - PostgreSQL
-- Rate limiting
-- Proper error handling"
+- Giới hạn tốc độ
+- Xử lý lỗi đúng cách"
 ```
 
-**Enterprise Setup:**
+**Thiết lập doanh nghiệp:**
 ```
-"Use better-auth for enterprise app with:
-- Multi-tenancy
-- SSO integration
-- Role-based access control
-- Audit logging
-- Custom session management"
+"Sử dụng better-auth cho ứng dụng doanh nghiệp với:
+- Đa tổ chức (Multi-tenancy)
+- Tích hợp SSO
+- Phân quyền dựa trên vai trò (RBAC)
+- Nhật ký kiểm tra (Audit logging)
+- Quản lý phiên làm việc tùy chỉnh"
 ```
 
-## Next Steps
+## Bước tiếp theo
 
-- [Authentication Examples](/docs/use-cases/)
-- [Database Skills](/docs/engineer/skills/postgresql-psql)
-- [Next.js Integration](/docs/engineer/skills/nextjs)
+- [Ví dụ xác thực](/docs/use-cases/)
+- [Kỹ năng cơ sở dữ liệu](/docs/engineer/skills/postgresql-psql)
+- [Tích hợp Next.js](/docs/engineer/skills/nextjs)
 
 ---
 
-**Bottom Line:** better-auth provides production-ready authentication that works with any TypeScript framework. Just invoke the skill and describe your auth requirements.
+**Tóm lại:** better-auth cung cấp giải pháp xác thực sẵn sàng cho môi trường sản xuất, hoạt động với mọi framework TypeScript. Chỉ cần gọi kỹ năng và mô tả các yêu cầu xác thực của bạn.

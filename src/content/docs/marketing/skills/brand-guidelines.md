@@ -1,186 +1,185 @@
 ---
-title: "Hướng Dẫn Thương Hiệu"
-description: "Giọng thương hiệu, nhận dạng hình ảnh, quản lý tài sản và thực thi tính nhất quán với xác nhận tự động và trích xuất màu."
-lang: vi
+title: "Brand Guidelines"
+description: "Brand voice, visual identity, asset management, and consistency enforcement with automated validation and color extraction."
 section: marketing
 category: skills
 order: 14
 ---
 
-> Duy trì tính nhất quán thương hiệu trên tất cả các tài liệu tiếp thị với xác nhận tự động, tổ chức tài sản và khung âm thanh.
+> Maintain brand consistency across all marketing materials with automated validation, asset organization, and voice frameworks.
 
-## Skill Này Làm Gì
+## What This Skill Does
 
-**Thách Thức**: Sự không nhất quán thương hiệu làm suy yếu công nhân phân biệt và xói mòn niềm tin. Quản lý tài sản, thực thi hướng dẫn giọng nói và duy trì tiêu chuẩn hình ảnh trên các đội là thủ công và dễ xảy ra lỗi.
+**The Challenge**: Brand inconsistency weakens differentiation and erodes trust. Managing assets, enforcing voice guidelines, and maintaining visual standards across teams is manual and error-prone.
 
-**Giải Pháp**: Skill Hướng Dẫn Thương Hiệu cung cấp khung giọng thương hiệu, hệ thống nhận dạng hình ảnh, các mô hình tổ chức tài sản và các tập lệnh xác nhận tự động. Bao gồm trích xuất màu, quy ước đặt tên tài sản và tiêm bối cảnh thương hiệu cho nội dung được tạo AI.
+**The Solution**: Brand Guidelines skill provides brand voice frameworks, visual identity systems, asset organization patterns, and automated validation scripts. Includes color extraction, asset naming conventions, and brand context injection for AI-generated content.
 
-## Kích Hoạt
+## Activation
 
-**Ẩn Danh**: Kích hoạt tự động cho Content Creator, Social Media Manager, Email Wizard và UI/UX Designer agent.
+**Implicit**: Activates automatically for Content Creator, Social Media Manager, Email Wizard, and UI/UX Designer agents.
 
-**Rõ Ràng**: `/skill:add brand-guidelines`
+**Explicit**: `/skill:add brand-guidelines`
 
-## Khả Năng
+## Capabilities
 
-### 1. Khung Giọng Thương Hiệu
-Xác định và áp dụng tông giọng nhất quán trên tất cả nội dung.
+### 1. Brand Voice Framework
+Define and apply consistent tone across all content.
 
-**Các Chiều Giọng**:
-- **Tông Giọng**: Chính Thức ↔ Bình Thường
-- **Ngôn Ngữ**: Đơn Giản ↔ Phức Tạp
-- **Nhân Vật**: Nghiêm Túc ↔ Vui Tươi
-- **Cảm Xúc**: Dự Trữ ↔ Biểu Cảm
+**Voice Dimensions**:
+- **Tone**: Formal ↔ Casual
+- **Language**: Simple ↔ Complex
+- **Personality**: Serious ↔ Playful
+- **Emotion**: Reserved ↔ Expressive
 
-**Hướng Dẫn Khung**: `references/voice-framework.md`
+**Framework guide**: `references/voice-framework.md`
 
-**Tiêm Bối Cảnh Thương Hiệu**:
+**Brand Context Injection**:
 ```bash
-# Trích xuất bối cảnh thương hiệu cho prompt
+# Extract brand context for prompts
 node scripts/inject-brand-context.cjs
 
-# Định dạng JSON để sử dụng lập trình
+# JSON format for programmatic use
 node scripts/inject-brand-context.cjs --json
 ```
 
-### 2. Quản Lý Nhận Dạng Hình Ảnh
-Bảng màu, kiểu chữ, cách sử dụng logo và tổ chức tài sản.
+### 2. Visual Identity Management
+Color palettes, typography, logo usage, and asset organization.
 
-**Quản Lý Màu**:
+**Color Management**:
 ```bash
-# Hiển thị bảng thương hiệu
+# Display brand palette
 node scripts/extract-colors.cjs --palette
 
-# So sánh màu tài sản với bảng thương hiệu
+# Compare asset colors with brand palette
 node scripts/extract-colors.cjs path/to/image.png
 ```
 
-**Các Phần Tử Hình Ảnh**:
-- Biến thể logo (đầy đủ, biểu tượng, đơn sắc)
-- Bảng màu (chính, phụ, nhấn)
-- Kiểu chữ (tiêu đề, phần thân, mã)
-- Hướng dẫn kiểu ảnh
+**Visual Elements**:
+- Logo variations (full, icon, monochrome)
+- Color palettes (primary, secondary, accent)
+- Typography (headings, body, code)
+- Photography style guidelines
 
-**Hướng Dẫn Hình Ảnh**: `references/visual-identity.md`
+**Visual guide**: `references/visual-identity.md`
 
-### 3. Xác Nhận và Tổ Chức Tài Sản
-Kiểm tra tự động về tuân thủ tài sản và tổ chức tệp hệ thống.
+### 3. Asset Validation and Organization
+Automated checks for asset compliance and systematic file organization.
 
-**Xác Nhận Tài Sản**:
+**Asset Validation**:
 ```bash
-# Kiểm tra tuân thủ đặt tên, định dạng, kích thước
+# Check naming, format, size compliance
 node scripts/validate-asset.cjs path/to/asset.png
 
-# Kết Quả JSON cho CI/CD
+# JSON output for CI/CD
 node scripts/validate-asset.cjs path/to/asset.png --json
 ```
 
-**Quy Ước Đặt Tên**:
+**Naming Conventions**:
 ```
 {type}_{campaign}_{description}_{timestamp}_{variant}.{ext}
 
-Ví Dụ:
+Examples:
 banner_product-launch_hero_20251209_16-9.png
 logo_rebrand_horizontal_20251209.svg
 ```
 
-**Hướng Dẫn Tổ Chức**: `references/asset-organization.md`
+**Organization guide**: `references/asset-organization.md`
 
-## Điều Kiện Tiên Quyết
+## Prerequisites
 
-- Tài liệu hướng dẫn thương hiệu (`docs/brand-guidelines.md`)
-- Cấu trúc thư mục tài sản (tạo tự động nếu thiếu)
+- Brand guidelines documentation (`docs/brand-guidelines.md`)
+- Asset directory structure (auto-created if missing)
 
-## Cấu Hình
+## Configuration
 
-**Quy Trình Đồng Bộ Thương Hiệu**:
+**Brand Sync Workflow**:
 ```bash
-# 1. Chỉnh sửa docs/brand-guidelines.md
+# 1. Edit docs/brand-guidelines.md
 
-# 2. Đồng bộ hóa các token thiết kế
+# 2. Sync design tokens
 node scripts/sync-brand-to-tokens.cjs
 
-# 3. Xác minh đồng bộ hóa
+# 3. Verify sync
 node scripts/inject-brand-context.cjs --json | head -20
 ```
 
-**Tệp Đồng Bộ Hóa**:
-- `docs/brand-guidelines.md` → Nguồn sự thật
-- `assets/design-tokens.json` → Định nghĩa token
-- `assets/design-tokens.css` → Biến CSS
+**Synced Files**:
+- `docs/brand-guidelines.md` → Source of truth
+- `assets/design-tokens.json` → Token definitions
+- `assets/design-tokens.css` → CSS variables
 
-**Cấu Trúc Thư Mục**:
+**Directory Structure**:
 ```
-.assets/                  # Siêu dữ liệu theo dõi Git
-├── manifest.json         # Sổ đăng ký tài sản
-├── tags.json            # Hệ thống gắn thẻ
-├── versions/            # Lịch sử phiên bản
-└── metadata/            # Siêu dữ liệu cụ thể loại
+.assets/                  # Git-tracked metadata
+├── manifest.json         # Asset registry
+├── tags.json            # Tagging system
+├── versions/            # Version history
+└── metadata/            # Type-specific metadata
 
-assets/                   # Tệp Thô
-├── designs/             # Chiến dịch, web, in
-├── banners/             # Phương tiện xã hội, email, hạ cánh
-├── logos/               # Đầy đủ, biểu tượng, đơn sắc
-├── videos/              # Quảng cáo, hướng dẫn
-└── generated/           # Được tạo AI (dấu thời gian)
+assets/                   # Raw Files
+├── designs/             # Campaign, web, print
+├── banners/             # Social, email, landing
+├── logos/               # Full, icon, monochrome
+├── videos/              # Ads, tutorials
+└── generated/           # AI-generated (timestamped)
 ```
 
-## Phương Pháp Tốt Nhất
+## Best Practices
 
-**1. Tính Nhất Quán Vượt Qua Hoàn Hảo**
-Áp dụng hướng dẫn nhất quán, ngay cả khi chúng phát triển theo thời gian. Sự không nhất quán có hại hơn các quy tắc không hoàn hảo.
+**1. Consistency Over Perfection**
+Apply guidelines consistently, even if they evolve over time. Inconsistency is more harmful than imperfect rules.
 
-**2. Giọng Thích Nghi, Tính Cách Ở Lại**
-Tông giọng có thể thay đổi theo kênh (LinkedIn chuyên nghiệp, Twitter bình thường), nhưng tính cách cốt lõi vẫn không đổi.
+**2. Adaptive Voice, Persistent Personality**
+Tone can shift by channel (LinkedIn professional, Twitter casual), but core personality stays constant.
 
-**3. Kiểm Tra Hàng Quý**
-Xem xét tính nhất quán thương hiệu trên các kênh mỗi 3 tháng. Cập nhật hướng dẫn khi thương hiệu phát triển.
+**3. Quarterly Audits**
+Review brand consistency across channels every 3 months. Update guidelines as brand evolves.
 
-## Trường Hợp Sử Dụng Phổ Biến
+## Common Use Cases
 
-### Trường Hợp Sử Dụng 1: Tiêm Bối Cảnh Thương Hiệu Cho Nội Dung AI
-**Tình Huống**: Tạo bài đăng blog với giọng thương hiệu được áp dụng tự động.
+### Use Case 1: Brand Context Injection for AI Content
+**Scenario**: Generate blog post with automatically applied brand voice.
 
-**Quy Trình Công Việc**:
-1. Trích xuất bối cảnh thương hiệu: `node scripts/inject-brand-context.cjs`
-2. Chuyển bối cảnh vào prompt AI (giọng, màu, nhắn tin)
-3. Tạo nội dung duy trì tính nhất quán thương hiệu
-4. Xác nhận đầu ra dựa vào khung giọng
+**Workflow**:
+1. Extract brand context: `node scripts/inject-brand-context.cjs`
+2. Pass context to AI prompt (voice, colors, messaging)
+3. Generate content maintaining brand consistency
+4. Validate output against voice framework
 
-**Kết Quả**: Nội dung phù hợp giọng thương hiệu mà không cần chỉnh sửa thủ công.
+**Output**: Content aligned with brand voice without manual editing.
 
-### Trường Hợp Sử Dụng 2: Quy Trình Phê Duyệt Tài Sản
-**Tình Huống**: Đội thiết kế tạo banner phương tiện xã hội, cần kiểm tra tuân thủ thương hiệu.
+### Use Case 2: Asset Approval Workflow
+**Scenario**: Design team creates social media banner, needs brand compliance check.
 
-**Quy Trình Công Việc**:
-1. Nhà thiết kế tạo tài sản theo quy ước đặt tên
-2. Chạy xác nhận: `node scripts/validate-asset.cjs banner.png`
-3. Kiểm tra tuân thủ màu: `node scripts/extract-colors.cjs banner.png`
-4. So sánh với bảng thương hiệu (tập lệnh hiển thị độ lệch)
-5. Điều chỉnh màu nếu cần, xác nhận lại
-6. Đăng ký trong manifest.json
+**Workflow**:
+1. Designer creates asset following naming conventions
+2. Run validation: `node scripts/validate-asset.cjs banner.png`
+3. Check color compliance: `node scripts/extract-colors.cjs banner.png`
+4. Compare with brand palette (script shows deviation)
+5. Adjust colors if needed, re-validate
+6. Register in manifest.json
 
-**Kết Quả**: Tài sản phù hợp thương hiệu sẵn sàng sử dụng.
+**Output**: Brand-compliant asset ready for use.
 
-## Khắc Phục Sự Cố
+## Troubleshooting
 
-**Vấn Đề**: Nội dung được tạo AI không khớp với giọng thương hiệu
-**Giải Pháp**: Sử dụng `inject-brand-context.cjs` để trích xuất các tham số giọng. Bao gồm trong lời nhắc hệ thống cho tất cả tạo nội dung.
+**Issue**: AI-generated content doesn't match brand voice
+**Solution**: Use `inject-brand-context.cjs` to extract voice parameters. Include in system prompt for all content generation.
 
-**Vấn Đề**: Màu tài sản không khớp với bảng thương hiệu
-**Giải Pháp**: Chạy `extract-colors.cjs path/to/asset.png` để so sánh. Điều chỉnh trong công cụ thiết kế, xuất lại.
+**Issue**: Asset colors don't match brand palette
+**Solution**: Run `extract-colors.cjs path/to/asset.png` to compare. Adjust in design tool, re-export.
 
-**Vấn Đề**: Các thành viên đội sử dụng tên tài sản không nhất quán
-**Giải Pháp**: Ghi lại quy ước đặt tên trong README. Thêm hook trước commit để xác nhận tên (tùy chọn).
+**Issue**: Team members using inconsistent asset names
+**Solution**: Document naming convention in README. Add pre-commit hook to validate names (optional).
 
-## Kỹ Năng Liên Quan
+## Related Skills
 
-- [Content Marketing](/vi/docs/marketing/skills/content-marketing) - Áp dụng giọng để lập kế hoạch nội dung
-- [Social Media](/vi/docs/marketing/skills/social-media) - Thích nghi giọng cụ thể theo nền tảng
-- [AI Multimodal](/vi/docs/marketing/skills/ai-multimodal) - Tạo hình ảnh căn chỉnh thương hiệu với Imagen 4
+- [Content Marketing](/docs/marketing/skills/content-marketing) - Apply voice to content planning
+- [Social Media](/docs/marketing/skills/social-media) - Platform-specific voice adaptation
+- [AI Multimodal](/docs/marketing/skills/ai-multimodal) - Generate brand-aligned imagery with Imagen 4
 
-## Lệnh Liên Quan
+## Related Commands
 
-- `/brand:update` - Cập nhật hướng dẫn thương hiệu
-- `/content/good` - Tạo nội dung căn chỉnh thương hiệu
-- `/design/good` - Tạo thiết kế phù hợp thương hiệu
+- `/brand:update` - Update brand guidelines
+- `/content/good` - Generate brand-aligned content
+- `/design/good` - Create brand-compliant designs

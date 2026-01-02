@@ -1,228 +1,229 @@
 ---
 title: /bootstrap
-description: Documentation for bootstrap
+description: Tài liệu hướng dẫn cho lệnh bootstrap
 section: engineer
 kit: engineer
 category: commands/core
 order: 1
 published: true
+lang: vi
 ---
 
 # /bootstrap
 
-Initialize new projects with spec-driven and test-driven development. This command guides you through requirements gathering, research, planning, and implementation.
+Khởi tạo các dự án mới theo phương pháp phát triển dựa trên đặc tả và dựa trên kiểm thử. Lệnh này hướng dẫn bạn qua các giai đoạn thu thập yêu cầu, nghiên cứu, lập kế hoạch và triển khai.
 
-## Syntax
+## Cú pháp
 
 ```bash
-/bootstrap [project description]
+/bootstrap [mô-tả-dự-án]
 ```
 
-## How It Works
+## Cách thức hoạt động
 
-The `/bootstrap` command follows a comprehensive workflow:
+Lệnh `/bootstrap` tuân theo một quy trình làm việc toàn diện:
 
-### 1. Requirements Gathering (Interactive)
+### 1. Thu thập Yêu cầu (Tương tác)
 
-Asks you questions one by one to fully understand requirements:
+Hệ thống sẽ đặt các câu hỏi lần lượt để hiểu đầy đủ các yêu cầu của bạn:
 
 ```
-What type of application are you building?
+Bạn đang xây dựng loại ứng dụng nào?
 → REST API / Web App / Mobile App / CLI Tool
 
-What's your primary tech stack preference?
+Sở thích về tech stack chính của bạn là gì?
 → Node.js / Python / Go / Rust
 
-Do you need a database?
-→ PostgreSQL / MySQL / MongoDB / None
+Bạn có cần cơ sở dữ liệu không?
+→ PostgreSQL / MySQL / MongoDB / Không
 
-What authentication method?
-→ JWT / OAuth2 / Session-based / None
+Phương thức xác thực nào?
+→ JWT / OAuth2 / Dựa trên Session / Không
 ```
 
-### 2. Research Phase
+### 2. Giai đoạn Nghiên cứu
 
-Invokes **researcher** agents to:
-- Find best practices for chosen stack
-- Research recommended libraries
-- Review security considerations
-- Identify common patterns
+Triệu tập các agent **researcher** để:
+- Tìm kiếm các thực hành tốt nhất cho stack đã chọn
+- Nghiên cứu các thư viện được khuyên dùng
+- Xem xét các cân nhắc về bảo mật
+- Xác định các mẫu (patterns) phổ biến
 
-### 3. Planning Phase
+### 3. Giai đoạn Lập kế hoạch
 
-Invokes **planner** agent to:
-- Create detailed architecture
-- Define file structure
-- Plan implementation steps
-- Design test strategy
-- Document tech decisions
+Triệu tập agent **planner** để:
+- Tạo kiến trúc chi tiết
+- Xác định cấu trúc tệp tin
+- Lập kế hoạch các bước triển khai
+- Thiết kế chiến lược kiểm thử
+- Tài liệu hóa các quyết định kỹ thuật
 
-### 4. Implementation Phase
+### 4. Giai đoạn Triển khai
 
-Automatically:
-- Generates project structure
-- Implements core features
-- Creates configuration files
-- Sets up build system
-- Generates comprehensive tests
+Tự động thực hiện:
+- Tạo cấu trúc dự án
+- Triển khai các tính năng cốt lõi
+- Tạo các tệp cấu hình
+- Thiết lập hệ thống build
+- Tạo các bài kiểm thử toàn diện
 
-### 5. Validation Phase
+### 5. Giai đoạn Xác nhận
 
-Runs tests to ensure:
-- All features work correctly
-- Tests pass
-- Code follows standards
-- Documentation is complete
+Chạy các bài kiểm thử để đảm bảo:
+- Tất cả các tính năng hoạt động chính xác
+- Các bài kiểm thử vượt qua
+- Mã nguồn tuân thủ các tiêu chuẩn
+- Tài liệu đầy đủ
 
-## Examples
+## Ví dụ
 
-### Basic Usage
+### Cách sử dụng Cơ bản
 
 ```bash
-/bootstrap [build a REST API for task management]
+/bootstrap [xây dựng một REST API để quản lý công việc]
 ```
 
-**What happens:**
-1. Interactive Q&A about requirements
-2. Research best practices for REST APIs
-3. Create implementation plan
-4. Generate project structure
-5. Implement endpoints (CRUD operations)
-6. Generate tests
-7. Create API documentation
+**Điều gì xảy ra:**
+1. Hỏi đáp tương tác về các yêu cầu
+2. Nghiên cứu các thực hành tốt nhất cho REST API
+3. Tạo kế hoạch triển khai
+4. Tạo cấu trúc dự án
+5. Triển khai các điểm cuối (endpoints - các hoạt động CRUD)
+6. Tạo các bài kiểm thử
+7. Tạo tài liệu API
 
-### With Tech Stack Specified
+### Với Tech Stack được chỉ định
 
 ```bash
-/bootstrap [create a blog platform with Next.js and PostgreSQL]
+/bootstrap [tạo một nền tảng blog với Next.js và PostgreSQL]
 ```
 
-**What happens:**
-1. Confirms tech choices (Next.js, PostgreSQL)
-2. Asks about additional requirements (auth, comments, etc.)
-3. Researches Next.js 14 + PostgreSQL best practices
-4. Plans database schema
-5. Implements blog features
-6. Sets up Prisma ORM
-7. Generates E2E tests
+**Điều gì xảy ra:**
+1. Xác nhận các lựa chọn công nghệ (Next.js, PostgreSQL)
+2. Hỏi về các yêu cầu bổ sung (xác thực, bình luận, v.v.)
+3. Nghiên cứu các thực hành tốt nhất cho Next.js 14 + PostgreSQL
+4. Lập kế hoạch sơ đồ cơ sở dữ liệu
+5. Triển khai các tính năng blog
+6. Thiết lập Prisma ORM
+7. Tạo các bài kiểm thử E2E
 
-### CLI Tool
+### Công cụ dòng lệnh (CLI Tool)
 
 ```bash
-/bootstrap [build a CLI tool for managing environment variables]
+/bootstrap [xây dựng một công cụ CLI để quản lý các biến môi trường]
 ```
 
-**What happens:**
-1. Asks about CLI framework preference
-2. Researches CLI best practices
-3. Plans command structure
-4. Implements commands
-5. Adds help documentation
-6. Generates unit tests
+**Điều gì xảy ra:**
+1. Hỏi về sở thích framework CLI
+2. Nghiên cứu các thực hành tốt nhất cho CLI
+3. Lập kế hoạch cấu trúc lệnh
+4. Triển khai các lệnh
+5. Thêm tài liệu hướng dẫn (help)
+6. Tạo các bài kiểm thử unit
 
-## Automated Mode
+## Chế độ Tự động
 
-For fully automatic bootstrapping without Q&A:
+Để khởi tạo dự án hoàn toàn tự động mà không cần hỏi đáp:
 
 ```bash
-/bootstrap:auto [detailed project description with all requirements]
+/bootstrap:auto [mô tả dự án chi tiết với tất cả các yêu cầu]
 ```
 
-**Example:**
+**Ví dụ:**
 
 ```bash
 /bootstrap:auto [
-  Build a REST API for a todo application with:
+  Xây dựng một REST API cho ứng dụng todo với:
   - Node.js + Express.js
-  - PostgreSQL database with Prisma ORM
-  - JWT authentication
-  - CRUD operations for tasks
-  - User management
-  - Input validation with Joi
-  - Rate limiting
-  - Comprehensive test suite with Jest
-  - Swagger/OpenAPI documentation
+  - Cơ sở dữ liệu PostgreSQL với Prisma ORM
+  - Xác thực JWT
+  - Các hoạt động CRUD cho công việc (tasks)
+  - Quản lý người dùng
+  - Xác thực đầu vào (validation) với Joi
+  - Giới hạn tốc độ (rate limiting)
+  - Bộ kiểm thử toàn diện với Jest
+  - Tài liệu Swagger/OpenAPI
 ]
 ```
 
-**Important:** Automated mode requires a very detailed description including:
-- Tech stack specifics
-- Feature requirements
-- Authentication method
-- Database choice
-- Testing preferences
-- Any special considerations
+**Quan trọng:** Chế độ tự động yêu cầu một mô tả rất chi tiết bao gồm:
+- Các công nghệ cụ thể (tech stack)
+- Các yêu cầu về tính năng
+- Phương thức xác thực
+- Lựa chọn cơ sở dữ liệu
+- Sở thích về kiểm thử
+- Bất kỳ cân nhắc đặc biệt nào khác
 
-## Generated Structure
+## Cấu trúc được tạo ra
 
-After running `/bootstrap`, you'll have:
+Sau khi chạy lệnh `/bootstrap`, bạn sẽ có:
 
 ```
 my-project/
-├── .claude/              # ClaudeKit configuration
-│   ├── commands/         # Custom slash commands
-│   ├── agents/           # Agent definitions
-│   └── workflows/        # Development workflows
-├── src/                  # Source code
-│   ├── routes/          # API routes (for APIs)
-│   ├── models/          # Data models
-│   ├── middleware/      # Express middleware
-│   ├── utils/           # Utilities
-│   └── server.js        # Entry point
-├── tests/               # Test suite
-│   ├── unit/           # Unit tests
-│   ├── integration/    # Integration tests
-│   └── e2e/            # E2E tests
-├── docs/                # Documentation
-│   ├── api/            # API documentation
+├── .claude/              # Cấu hình ClaudeKit
+│   ├── commands/         # Các lệnh slash tùy chỉnh
+│   ├── agents/           # Định nghĩa agent
+│   └── workflows/        # Quy trình phát triển
+├── src/                  # Mã nguồn
+│   ├── routes/          # Các tuyến API (cho API)
+│   ├── models/          # Các mô hình dữ liệu
+│   ├── middleware/      # Middleware Express
+│   ├── utils/           # Các tiện ích
+│   └── server.js        # Điểm bắt đầu (entry point)
+├── tests/               # Bộ kiểm thử
+│   ├── unit/           # Kiểm thử unit
+│   ├── integration/    # Kiểm thử tích hợp
+│   └── e2e/            # Kiểm thử E2E
+├── docs/                # Tài liệu
+│   ├── api/            # Tài liệu API
 │   ├── code-standards.md
 │   ├── system-architecture.md
 │   └── codebase-summary.md
-├── plans/               # Implementation plans
-├── .env.example         # Environment template
-├── package.json         # Dependencies
-├── tsconfig.json        # TypeScript config
-└── README.md           # Project readme
+├── plans/               # Các kế hoạch triển khai
+├── .env.example         # Tệp mẫu môi trường
+├── package.json         # Các phụ thuộc (dependencies)
+├── tsconfig.json        # Cấu hình TypeScript
+└── README.md           # Tệp hướng dẫn dự án
 ```
 
-## Features
+## Các tính năng
 
-### Spec-Driven Development
+### Phát triển dựa trên Đặc tả (Spec-Driven Development)
 
-Creates detailed specifications before coding:
-- Architecture decisions documented
-- API contracts defined
-- Database schema planned
-- Test cases outlined
+Tạo các đặc tả chi tiết trước khi lập trình:
+- Các quyết định kiến trúc được tài liệu hóa
+- Các hợp đồng API được xác định
+- Sơ đồ cơ sở dữ liệu được lập kế hoạch
+- Các trường hợp kiểm thử được phác thảo
 
-### Test-Driven Development
+### Phát triển dựa trên Kiểm thử (Test-Driven Development)
 
-Generates tests alongside implementation:
-- Unit tests for functions
-- Integration tests for APIs
-- E2E tests for workflows
-- Test coverage >80%
+Tạo các bài kiểm thử song song với quá trình triển khai:
+- Kiểm thử unit cho các hàm
+- Kiểm thử tích hợp cho API
+- Kiểm thử E2E cho các quy trình công việc
+- Độ bao phủ kiểm thử (coverage) > 80%
 
-### Best Practices Built-In
+### Tích hợp sẵn các Thực hành tốt nhất
 
-Follows industry standards:
-- Error handling
-- Input validation
-- Security measures
-- Rate limiting
-- Logging
-- Environment configuration
+Tuân thủ các tiêu chuẩn ngành:
+- Xử lý lỗi (error handling)
+- Xác thực đầu vào
+- Các biện pháp bảo mật
+- Giới hạn tốc độ
+- Ghi nhật ký (logging)
+- Cấu hình môi trường
 
-## Configuration Options
+## Các tùy chọn Cấu hình
 
-Customize bootstrapping through Q&A:
+Tùy chỉnh việc khởi tạo thông qua hỏi đáp:
 
-### Application Type
+### Loại Ứng dụng
 - REST API
 - GraphQL API
-- Web Application
-- Mobile App
-- CLI Tool
+- Ứng dụng Web
+- Ứng dụng Di động
+- Công cụ CLI
 - Microservice
 
 ### Tech Stack
@@ -232,150 +233,150 @@ Customize bootstrapping through Q&A:
 - TypeScript
 - Rust (Actix, Rocket)
 
-### Database
+### Cơ sở dữ liệu
 - PostgreSQL
 - MySQL
 - MongoDB
 - SQLite
-- None (stateless)
+- Không (stateless)
 
-### Authentication
+### Xác thực
 - JWT
 - OAuth2 (Google, GitHub)
-- Session-based
+- Dựa trên Session
 - API Keys
-- None
+- Không
 
-### Additional Features
-- Real-time (WebSockets)
-- Caching (Redis)
-- File uploads
-- Email sending
-- Scheduled jobs
+### Các tính năng bổ sung
+- Thời gian thực (WebSockets)
+- Bộ nhớ đệm (Redis)
+- Tải lên tệp tin
+- Gửi email
+- Các công việc định kỳ (scheduled jobs)
 
-## Best Practices
+## Thực hành tốt nhất
 
-### Provide Clear Description
+### Cung cấp Mô tả Rõ ràng
 
-✅ **Good:**
+✅ **Tốt:**
 ```bash
-/bootstrap [build a REST API for managing inventory with user authentication and real-time stock updates]
+/bootstrap [xây dựng một REST API để quản lý kho hàng với xác thực người dùng và cập nhật tồn kho thời gian thực]
 ```
 
-❌ **Vague:**
+❌ **Mơ hồ:**
 ```bash
-/bootstrap [make an app]
+/bootstrap [làm một ứng dụng]
 ```
 
-### Answer Questions Thoughtfully
+### Trả lời các câu hỏi một cách Chu đáo
 
-During Q&A:
-- ✅ Think about scalability needs
-- ✅ Consider security requirements
-- ✅ Plan for testing
-- ✅ Be specific about features
+Trong quá trình hỏi đáp:
+- ✅ Nghĩ về các nhu cầu mở rộng
+- ✅ Xem xét các yêu cầu bảo mật
+- ✅ Lập kế hoạch cho việc kiểm thử
+- ✅ Cụ thể về các tính năng
 
-### Review Generated Plan
+### Xem xét Kế hoạch đã được tạo
 
-Before implementation starts:
-1. Check `plans/` directory
-2. Review architecture decisions
-3. Verify feature list matches expectations
-4. Provide feedback if needed
+Trước khi quá trình triển khai bắt đầu:
+1. Kiểm tra thư mục `plans/`
+2. Xem xét các quyết định kiến trúc
+3. Xác nhận danh sách tính năng khớp với mong đợi
+4. Cung cấp phản hồi nếu cần
 
-### Iterate on Requirements
+### Lặp lại các Yêu cầu
 
-If initial result isn't perfect:
+Nếu kết quả ban đầu chưa hoàn hảo:
 ```bash
-# Review what was generated
+# Xem xét những gì đã được tạo
 ls src/
 
-# Provide feedback
-"The user model needs role-based access control"
+# Cung cấp phản hồi
+"Mô hình người dùng cần có quyền truy cập dựa trên vai trò (role-based access control)"
 
-# System will adjust accordingly
+# Hệ thống sẽ điều chỉnh tương ứng
 ```
 
-## Common Use Cases
+## Các trường hợp sử dụng phổ biến
 
 ### Microservice
 
 ```bash
-/bootstrap [create a payment processing microservice with Stripe integration]
+/bootstrap [tạo một microservice xử lý thanh toán tích hợp với Stripe]
 ```
 
-### Full-Stack App
+### Ứng dụng Full-Stack
 
 ```bash
-/bootstrap [build a social media platform with posts, comments, and likes]
+/bootstrap [xây dựng một nền tảng mạng xã hội với các bài đăng, bình luận và lượt thích]
 ```
 
 ### API Gateway
 
 ```bash
-/bootstrap [implement an API gateway with authentication and rate limiting]
+/bootstrap [triển khai một API gateway với xác thực và giới hạn tốc độ]
 ```
 
 ### Background Worker
 
 ```bash
-/bootstrap [create a background job processor for email sending]
+/bootstrap [tạo một bộ xử lý công việc chạy ngầm để gửi email]
 ```
 
-## Troubleshooting
+## Xử lý sự cố
 
-### Too Many Questions
+### Quá nhiều câu hỏi
 
-**Problem:** Q&A taking too long
+**Vấn đề:** Quá trình hỏi đáp diễn ra quá lâu
 
-**Solution:** Use `/bootstrap:auto` with detailed description
+**Giải pháp:** Sử dụng `/bootstrap:auto` với mô tả chi tiết
 
-### Wrong Tech Stack Chosen
+### Chọn sai Tech Stack
 
-**Problem:** System chose technology you don't want
+**Vấn đề:** Hệ thống chọn công nghệ mà bạn không mong muốn
 
-**Solution:** Be explicit in initial description or during Q&A
+**Giải pháp:** Hãy nêu rõ ràng trong mô tả ban đầu hoặc trong quá trình hỏi đáp
 
-### Missing Features
+### Thiếu tính năng
 
-**Problem:** Some features not implemented
+**Vấn đề:** Một số tính năng không được triển khai
 
-**Solution:** Add features after bootstrapping using `/cook`
+**Giải pháp:** Thêm các tính năng sau khi bootstrap bằng lệnh `/cook`
 
-### Tests Failing
+### Kiểm thử thất bại
 
-**Problem:** Generated tests don't pass
+**Vấn đề:** Các bài kiểm thử được tạo ra không vượt qua
 
-**Solution:** Use `/fix:test` to diagnose and fix
+**Giải pháp:** Sử dụng `/fix:test` để chẩn đoán và sửa lỗi
 
-## After Bootstrapping
+## Sau khi Bootstrap
 
-Once project is initialized:
+Sau khi dự án đã được khởi tạo:
 
 ```bash
-# 1. Review generated code
+# 1. Xem xét mã nguồn đã tạo
 cat src/server.js
 
-# 2. Check tests pass
+# 2. Kiểm tra các bài kiểm thử vượt qua
 npm test
 
-# 3. Update documentation
+# 3. Cập nhật tài liệu
 /docs:update
 
-# 4. Add additional features
-/cook [add password reset functionality]
+# 4. Thêm các tính năng bổ sung
+/cook [thêm chức năng đặt lại mật khẩu]
 
-# 5. Commit initial structure
+# 5. Commit cấu trúc ban đầu
 /git:cm
 ```
 
-## Next Steps
+## Các bước tiếp theo
 
-- [/cook](/docs/engineer/commands/core/cook) - Add new features
-- [/plan](/docs/engineer/commands/core/plan) - Plan additions
-- [/test](/docs/engineer/commands/core/test) - Run test suite
-- [/docs:update](/docs/engineer/commands/docs/update) - Update docs
+- [/cook](/docs/engineer/commands/core/cook) - Thêm tính năng mới
+- [/plan](/docs/engineer/commands/core/plan) - Lập kế hoạch bổ sung
+- [/test](/docs/engineer/commands/core/test) - Chạy bộ kiểm thử
+- [/docs:update](/docs/engineer/commands/docs/update) - Cập nhật tài liệu
 
 ---
 
-**Key Takeaway**: `/bootstrap` handles the entire project initialization process, from requirements gathering to tested, documented code, following industry best practices.
+**Thông điệp chính**: `/bootstrap` xử lý toàn bộ quá trình khởi tạo dự án, từ việc thu thập yêu cầu đến mã nguồn đã được kiểm thử và tài liệu hóa, tuân theo các thực hành tốt nhất của ngành.

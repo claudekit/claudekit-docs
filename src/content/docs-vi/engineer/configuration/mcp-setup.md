@@ -1,12 +1,12 @@
 ---
 title: "Thiết lập MCP"
-description: "Documentation for Thiết lập MCP"
+description: "Tài liệu hướng dẫn thiết lập MCP (Model Context Protocol)"
 section: engineer
 kit: engineer
 category: docs/configuration
-order: 8
+order: 3
 published: true
-lastUpdated: 2025-11-17
+lang: vi
 ---
 
 # Thiết lập MCP

@@ -1,6 +1,7 @@
 ---
 title: "Công Cụ & Tiện Ích"
 description: "Các công cụ và tiện ích trong hệ sinh thái giúp nâng cao quy trình làm việc với ClaudeKit"
+lang: vi
 section: tools
 category: tools
 order: 1
@@ -31,7 +32,7 @@ Chuyển đổi giữa nhiều tài khoản Claude và các mô hình AI (GLM, K
 - Tối ưu chi phí cho các tác vụ đơn giản
 - Quy trình làm việc đa dự án
 
-[**Tìm hiểu thêm →**](./tools/ccs)
+[**Tìm hiểu thêm →**](/vi/docs/tools/ccs)
 
 ## Công cụ cộng đồng
 
@@ -67,5 +68,4 @@ Bạn có công cụ giúp nâng cao ClaudeKit? Chúng tôi rất muốn giới 
 
 ---
 
-**Tiếp theo:** Khám phá các công cụ riêng lẻ hoặc quay lại [Tài Liệu](/vi/docs/engineer/agents/)
-
+**Tiếp theo:** Khám phá các công cụ riêng lẻ hoặc quay lại [Tài Liệu](/vi/docs/agents)

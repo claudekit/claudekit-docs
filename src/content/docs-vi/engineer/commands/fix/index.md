@@ -1,11 +1,12 @@
 ---
 title: /fix
-description: Documentation for index
+description: Tài liệu hướng dẫn lệnh fix
 section: engineer
 kit: engineer
 category: docs/commands/fix
 order: 10
 published: true
+lang: vi
 ---
 
 # /fix

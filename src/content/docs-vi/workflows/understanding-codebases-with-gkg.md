@@ -1,6 +1,7 @@
 ---
 title: "Hiểu Codebase với GitLab Knowledge Graph"
 description: "Documentation for Hiểu Codebase với GitLab Knowledge Graph"
+lang: vi
 section: workflows
 category: workflows
 published: true

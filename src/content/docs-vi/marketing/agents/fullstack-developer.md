@@ -1,231 +1,232 @@
 ---
-title: "Fullstack Developer Agent"
-description: "Thực hiện các triển khai backend, frontend và cơ sở hạ tầng với mã sạch, sẵn sàng sản xuất."
+title: "Đại lý Phát triển Fullstack (Fullstack Developer)"
+description: "Thực hiện các triển khai backend, frontend và cơ sở hạ tầng với mã nguồn sạch, sẵn sàng cho môi trường sản xuất."
 section: marketing
 category: agents
 order: 12
+lang: vi
 ---
 
-# Fullstack Developer Agent
+# Fullstack Developer Agent (Đại lý Phát triển Fullstack)
 
-> **Chuyên gia thực hiện của bạn** - Biến các kế hoạch thành mã sẵn sàng sản xuất
+> **Chuyên gia thực thi của bạn** - Biến các kế hoạch thành mã nguồn sẵn sàng cho sản xuất.
 
-## Công Việc Của Agent Này
+## Đại lý này làm gì
 
-Bạn có một kế hoạch triển khai chi tiết cho hệ thống chiến dịch email của bạn. Schema cơ sở dữ liệu được thiết kế, các điểm cuối API được chỉ định, các thành phần giao diện người dùng được phác thảo. Nhưng bây giờ ai đó cần thực sự viết mã.
+Bạn đã có một kế hoạch triển khai chi tiết cho hệ thống chiến dịch email của mình. Sơ đồ cơ sở dữ liệu đã được thiết kế, các điểm cuối API đã được chỉ định, các thành phần giao diện người dùng đã được phác thảo. Nhưng bây giờ, cần có người thực sự bắt tay vào viết mã.
 
-**Vấn đề**: Triển khai mất thời gian. Viết API phía sau, các thành phần giao diện người dùng, di chuyển cơ sở dữ liệu, bài kiểm tra và tài liệu là nhàm chán. Giữ mức độ chất lượng cao trong khi di chuyển nhanh là một thách thức. Bạn cần mã hoạt động trong sản xuất, không chỉ hoạt động trong phát triển.
+**Vấn đề**: Việc triển khai thực tế rất mất thời gian. Viết các API backend, các thành phần frontend, các bản di chuyển cơ sở dữ liệu (migrations), các bài kiểm tra (tests) và tài liệu là một công việc đòi hỏi sự tỉ mỉ. Việc giữ chất lượng mã nguồn cao trong khi vẫn phải di chuyển nhanh là một thách thức lớn. Bạn cần mã nguồn thực sự hoạt động ổn định trên môi trường sản xuất, chứ không chỉ là chạy được ở môi trường phát triển.
 
-**Giải pháp**: Fullstack Developer Agent thực hiện các kế hoạch triển khai với mã sẵn sàng sản xuất. Nó xây dựng các API phía sau, các thành phần giao diện người dùng, tích hợp cơ sở dữ liệu và cơ sở hạ tầng—tuân theo các tiêu chuẩn và phương pháp hay nhất của dự án. Bạn nhận được các tính năng hoạt động, không phải các bằng chứng khái niệm.
+**Giải pháp**: Fullstack Developer Agent thực thi các kế hoạch triển khai với mã nguồn tiêu chuẩn sản xuất. Nó xây dựng các API backend, các thành phần frontend, tích hợp cơ sở dữ liệu và thiết lập cơ sở hạ tầng—tuân thủ nghiêm ngặt các tiêu chuẩn và thực hành tốt nhất của dự án. Bạn sẽ nhận được các tính năng hoạt động thực tế, chứ không chỉ là các bản demo (proof-of-concepts).
 
-## Bắt Đầu Nhanh
+## Bắt đầu nhanh
 
 Thực hiện một giai đoạn triển khai:
 
 ```bash
-# Sau khi planner tạo các giai đoạn
+# Sau khi Planner tạo ra các giai đoạn (phases)
 /dev "Implement phase 1: database schema and migrations"
 ```
 
-Agent đọc tệp giai đoạn, triển khai chính xác những gì được chỉ định, chạy các bài kiểm tra và báo cáo hoàn thành.
+Đại lý sẽ đọc tệp giai đoạn, triển khai chính xác những gì được chỉ định, chạy các bài kiểm tra và báo cáo kết quả hoàn thành.
 
-## Khả Năng
+## Khả năng
 
-### Backend Development
-Xây dựng các hệ thống phía sau mạnh mẽ:
-- **APIs**: Điểm cuối RESTful, trình phân giải GraphQL
-- **Services**: Logik kinh doanh, xử lý dữ liệu
-- **Database**: Truy vấn, di chuyển, tích hợp ORM
-- **Authentication**: JWT, OAuth, quản lý phiên
-- **Webhooks**: Xác minh chữ ký, xử lý sự kiện
-- **Background Jobs**: Xử lý hàng đợi, tác vụ được lên lịch
+### Phát triển Backend
+Xây dựng các hệ thống backend mạnh mẽ:
+- **APIs**: Các điểm cuối RESTful, các trình phân giải (resolvers) GraphQL.
+- **Services**: Logic nghiệp vụ, xử lý dữ liệu.
+- **Database**: Truy vấn, di chuyển dữ liệu (migrations), tích hợp ORM.
+- **Xác thực**: JWT, OAuth, quản lý phiên (sessions).
+- **Webhooks**: Xác minh chữ ký, xử lý sự kiện.
+- **Tác vụ nền**: Xử lý hàng đợi, các tác vụ được lên lịch (cron jobs).
 
-### Frontend Development
-Tạo các thành phần giao diện người dùng hiện đại:
-- **React/Next.js**: Thành phần, trang, bố cục
-- **TypeScript**: Mã an toàn về loại, dễ bảo trì
-- **Forms**: Xác thực, gửi, xử lý lỗi
-- **State Management**: React Query, Zustand, Context
-- **Styling**: Tailwind CSS, thiết kế đáp ứng
-- **Accessibility**: Tuân thủ WCAG AA
+### Phát triển Frontend
+Tạo ra các thành phần giao diện người dùng hiện đại:
+- **React/Next.js**: Các thành phần, trang, bố cục (layouts).
+- **TypeScript**: Mã nguồn an toàn về kiểu dữ liệu (type-safe), dễ bảo trì.
+- **Forms**: Xác thực dữ liệu, gửi biểu mẫu, xử lý lỗi.
+- **Quản lý trạng thái**: React Query, Zustand, Context API.
+- **Styling**: Tailwind CSS, thiết kế đáp ứng (responsive).
+- **Khả năng tiếp cận**: Tuân thủ tiêu chuẩn WCAG AA.
 
-### Database Integration
-Xử lý lớp dữ liệu một cách chính xác:
-- **Schema Design**: Bảng, mối quan hệ, ràng buộc
-- **Migrations**: Script lên/xuống với rollback
-- **Queries**: Được tối ưu hóa, được lập chỉ mục, được kiểm tra
-- **Transactions**: Đảm bảo tính toàn vẹn dữ liệu
-- **Seeding**: Dữ liệu phát triển và kiểm tra
-- **Connection Pooling**: Quản lý tài nguyên
+### Tích hợp Cơ sở dữ liệu
+Xử lý lớp dữ liệu một cách chuyên nghiệp:
+- **Thiết kế sơ đồ (Schema)**: Bảng, mối quan hệ, các ràng buộc (constraints).
+- **Migrations**: Các kịch bản nâng cấp/hạ cấp (up/down scripts) với khả năng hoàn tác (rollback).
+- **Truy vấn**: Được tối ưu hóa, lập chỉ mục và kiểm tra kỹ lưỡng.
+- **Giao dịch (Transactions)**: Đảm bảo tính toàn vẹn của dữ liệu.
+- **Seeding**: Tạo dữ liệu mẫu cho môi trường phát triển và kiểm tra.
+- **Connection Pooling**: Quản lý tài nguyên kết nối hiệu quả.
 
-### Testing Implementation
-Đảm bảo chất lượng mã:
-- **Unit Tests**: Kiểm tra thành phần và hàm
-- **Integration Tests**: Kiểm tra API và cơ sở dữ liệu
-- **E2E Tests**: Xác thực luồng người dùng toàn bộ
-- **Test Coverage**: Đáp ứng yêu cầu dự án
-- **Error Scenarios**: Xác thực xử lý lỗi
+### Triển khai Kiểm tra (Testing)
+Đảm bảo chất lượng mã nguồn:
+- **Unit Tests**: Kiểm tra các thành phần và hàm đơn lẻ.
+- **Integration Tests**: Kiểm tra sự phối hợp giữa API và cơ sở dữ liệu.
+- **E2E Tests**: Xác thực toàn bộ luồng trải nghiệm người dùng.
+- **Độ bao phủ (Test Coverage)**: Đáp ứng các yêu cầu khắt khe của dự án.
+- **Kịch bản lỗi**: Xác thực khả năng xử lý khi có sự cố xảy ra.
 
-### Infrastructure & DevOps
+### Cơ sở hạ tầng & DevOps
 Thiết lập các hệ thống hỗ trợ:
-- **Docker**: Container hóa và soạn
-- **CI/CD**: GitHub Actions, quy trình triển khai
-- **Environment Config**: Tệp `.env`, quản lý bí mật
-- **Monitoring**: Ghi nhật ký, theo dõi lỗi
-- **Performance**: Bộ nhớ cache, tối ưu hóa
+- **Docker**: Container hóa và điều phối (composition).
+- **CI/CD**: GitHub Actions, các quy trình triển khai tự động.
+- **Cấu hình môi trường**: Quản lý tệp `.env` và các bí mật (secrets).
+- **Giám sát**: Ghi nhật ký (logging), theo dõi lỗi.
+- **Hiệu suất**: Bộ nhớ đệm (caching), tối ưu hóa tài nguyên.
 
-## Khi Nào Sử Dụng
+## Khi nào nên sử dụng
 
 Sử dụng Fullstack Developer Agent khi bạn cần:
-- Thực hiện các giai đoạn từ các kế hoạch
-- Xây dựng các tính năng mới từ đầu đến cuối
-- Refactor mã hiện có để cải thiện chất lượng
-- Thêm bài kiểm tra vào mã chưa được kiểm tra
-- Triển khai di chuyển cơ sở dữ liệu
-- Thiết lập cơ sở hạ tầng hoặc CI/CD
-- Sửa lỗi với các giải pháp toàn diện
+- Thực hiện các giai đoạn triển khai từ kế hoạch có sẵn.
+- Xây dựng các tính năng mới từ đầu đến cuối (end-to-end).
+- Tái cấu trúc (refactor) mã nguồn hiện có để cải thiện chất lượng.
+- Thêm các bài kiểm tra vào mã nguồn chưa được test.
+- Triển khai di chuyển cơ sở dữ liệu.
+- Thiết lập cơ sở hạ tầng hoặc quy trình CI/CD.
+- Sửa lỗi (bugs) với các giải pháp toàn diện.
 
-## Ví Dụ Quy Trình Làm Việc
+## Ví dụ quy trình làm việc
 
-### Executing a Phase from Plan
+### Thực hiện một giai đoạn từ kế hoạch
 
 ```bash
-# Planner tạo các tệp giai đoạn trong plans/251229-email-campaign/
+# Planner đã tạo các tệp giai đoạn trong thư mục plans/251229-email-campaign/
 /dev "Execute phase-01-database-schema.md"
 ```
 
 **Nhà phát triển sẽ**:
-1. Đọc tệp giai đoạn từ thư mục kế hoạch
-2. Xác minh quyền sở hữu tệp (chỉ chạm vào các tệp được gán)
-3. Kiểm tra các phụ thuộc từ các giai đoạn trước
-4. Triển khai từng tác vụ tuần tự:
-   - Tạo các tệp schema cơ sở dữ liệu
-   - Viết script di chuyển (lên và xuống)
-   - Thêm các mô-đun và kiểu cơ sở dữ liệu
-   - Tạo dữ liệu hạt giống để phát triển
-5. Chạy kiểm tra loại và bài kiểm tra
-6. Sửa bất kỳ lỗi nào gặp phải
-7. Xác minh các tiêu chí thành công được đáp ứng
-8. Tạo báo cáo triển khai
+1. Đọc tệp giai đoạn từ thư mục kế hoạch.
+2. Xác minh quyền sở hữu tệp (chỉ chỉnh sửa các tệp được phân công).
+3. Kiểm tra các phụ thuộc từ các giai đoạn trước đó.
+4. Triển khai từng nhiệm vụ theo thứ tự:
+   - Tạo các tệp sơ đồ cơ sở dữ liệu.
+   - Viết các kịch bản migration (lên và xuống).
+   - Thêm các mô hình (models) và kiểu dữ liệu TypeScript.
+   - Tạo dữ liệu mẫu (seed data) cho môi trường phát triển.
+5. Chạy kiểm tra kiểu dữ liệu và các bài kiểm tra.
+6. Sửa bất kỳ lỗi nào phát sinh.
+7. Xác nhận các tiêu chí thành công đã được đáp ứng.
+8. Tạo báo cáo triển khai.
 
 **Bạn sẽ nhận được**:
 ```markdown
-## Phase Implementation Report
+## Báo cáo triển khai giai đoạn
 
-### Executed Phase
-- Phase: phase-01-database-schema
-- Plan: plans/251229-email-campaign
-- Status: completed ✅
+### Giai đoạn đã thực hiện
+- Giai đoạn: phase-01-database-schema
+- Kế hoạch: plans/251229-email-campaign
+- Trạng thái: hoàn thành ✅
 
-### Files Modified
-- db/schema/campaigns.ts (128 dòng được thêm)
-- db/migrations/001_create_campaigns.sql (45 dòng được thêm)
-- db/models/Campaign.ts (87 dòng được thêm)
-- db/seed/campaigns.ts (34 dòng được thêm)
+### Các tệp đã chỉnh sửa
+- db/schema/campaigns.ts (thêm 128 dòng)
+- db/migrations/001_create_campaigns.sql (thêm 45 dòng)
+- db/models/Campaign.ts (thêm 87 dòng)
+- db/seed/campaigns.ts (thêm 34 dòng)
 
-### Tasks Completed
-✅ Design campaigns table schema
-✅ Tạo script di chuyển (lên/xuống)
-✅ Thêm các kiểu và mô-đun TypeScript
-✅ Tạo dữ liệu hạt giống để phát triển
-✅ Thêm chỉ số để cải thiện hiệu suất
+### Các nhiệm vụ đã hoàn thành
+✅ Thiết kế sơ đồ bảng campaigns
+✅ Tạo các kịch bản migration (up/down)
+✅ Thêm các kiểu dữ liệu và mô hình TypeScript
+✅ Tạo dữ liệu mẫu cho phát triển
+✅ Thêm các chỉ mục (indexes) để tối ưu hiệu suất
 
-### Tests Status
-- Kiểm tra loại: ✅ Pass
-- Kiểm tra đơn vị: ✅ 12/12 pass (100% bảo hiểm)
-- Kiểm tra tích hợp: ✅ 5/5 pass
-- Kiểm tra di chuyển: ✅ Lên/xuống được xác minh
+### Trạng thái kiểm tra
+- Kiểm tra kiểu dữ liệu: ✅ Đạt
+- Unit tests: ✅ 12/12 đạt (độ bao phủ 100%)
+- Integration tests: ✅ 5/5 đạt
+- Kiểm tra migration: ✅ Đã xác minh nâng cấp/hoàn tác
 
-### Issues Encountered
-Không có - triển khai hoàn thành thành công
+### Vấn đề gặp phải
+Không có - việc triển khai hoàn tất thành công.
 
-### Next Steps
-- Giai đoạn 2 có thể tiếp tục (phụ thuộc được thỏa mãn)
-- Schema sẵn sàng cho triển khai API
-- Dữ liệu hạt giống có sẵn để phát triển
+### Các bước tiếp theo
+- Giai đoạn 2 có thể bắt đầu (các phụ thuộc đã được thỏa mãn)
+- Sơ đồ dữ liệu đã sẵn sàng cho việc triển khai API
+- Dữ liệu mẫu đã có sẵn cho quá trình phát triển
 ```
 
-### Building a Complete Feature
+### Xây dựng một tính năng hoàn chỉnh
 
 ```bash
 /dev "Implement webhook signature verification for Stripe and SePay"
 ```
 
 **Triển khai bao gồm**:
-- Backend: Điểm cuối xử lý webhook
-- Tiện ích: Logic xác minh chữ ký
-- Cơ sở dữ liệu: Schema nhật ký webhook
-- Bài kiểm tra: Bài kiểm tra đơn vị và tích hợp
-- Tài liệu: Tài liệu API được cập nhật
-- Xử lý lỗi: Các tình huống lỗi toàn diện
+- Backend: Các điểm cuối xử lý webhook.
+- Tiện ích (Utilities): Logic xác minh chữ ký.
+- Cơ sở dữ liệu: Sơ đồ nhật ký (log) cho webhook.
+- Kiểm tra: Các bài unit test và integration test.
+- Tài liệu: Cập nhật tài liệu API.
+- Xử lý lỗi: Các kịch bản lỗi toàn diện.
 
-## File Ownership Rules
+## Quy tắc sở hữu tệp
 
-**CRITICAL**: Nhà phát triển tôn trọng các ranh giới giai đoạn:
-- **Chỉ sửa đổi các tệp được liệt kê trong phần "File Ownership"** của tệp giai đoạn
-- **Không bao giờ chạm vào các tệp được sở hữu bởi các giai đoạn song song**
-- **Báo cáo xung đột nếu phát hiện vi phạm quyền sở hữu tệp**
-- **Dừng ngay lập tức nếu quyền sở hữu tệp không rõ ràng**
+**QUAN TRỌNG**: Nhà phát triển luôn tôn trọng ranh giới của từng giai đoạn:
+- **Chỉ chỉnh sửa các tệp được liệt kê trong phần "File Ownership"** của tệp giai đoạn.
+- **Không bao giờ chạm vào các tệp thuộc sở hữu của các giai đoạn đang chạy song song**.
+- **Báo cáo xung đột ngay lập tức nếu phát hiện vi phạm quyền sở hữu tệp**.
+- **Dừng lại ngay nếu quyền sở hữu tệp không rõ ràng**.
 
-Điều này ngăn chặn xung đột hợp nhất khi nhiều giai đoạn được thực hiện song song.
+Điều này giúp ngăn chặn xung đột khi gộp mã (merge conflicts) khi có nhiều giai đoạn được thực hiện cùng lúc.
 
-## Execution Process
+## Quy trình thực hiện
 
-**1. Phase Analysis**:
-- Đọc tệp giai đoạn được gán
-- Xác minh danh sách quyền sở hữu tệp
-- Kiểm tra thông tin song song
-- Hiểu các chiến lược phòng chống xung đột
+**1. Phân tích giai đoạn**:
+- Đọc tệp giai đoạn được phân công.
+- Xác minh danh sách quyền sở hữu tệp.
+- Kiểm tra thông tin về các tác vụ song song.
+- Hiểu các chiến lược ngăn ngừa xung đột.
 
-**2. Pre-Implementation Validation**:
-- Xác nhận không có chồng chéo tệp với các giai đoạn khác
-- Đọc tài liệu dự án (`codebase-summary.md`, `code-standards.md`)
-- Xác minh phụ thuộc từ các giai đoạn trước hoàn tất
-- Kiểm tra nếu các tệp tồn tại hoặc cần tạo
+**2. Xác thực trước khi triển khai**:
+- Xác nhận không có sự chồng chéo tệp với các giai đoạn khác.
+- Đọc tài liệu dự án (`codebase-summary.md`, `code-standards.md`).
+- Xác minh các phụ thuộc từ giai đoạn trước đã hoàn thành.
+- Kiểm tra xem tệp đã tồn tại hay cần tạo mới.
 
-**3. Implementation**:
-- Thực hiện các bước tuần tự từ tệp giai đoạn
-- Sửa đổi CHỈ các tệp trong "File Ownership"
-- Tuân theo kiến trúc và yêu cầu chính xác
-- Viết mã sạch, dễ bảo trì, được tài liệu
-- Thêm bài kiểm tra cho tất cả chức năng mới
+**3. Triển khai**:
+- Thực hiện các bước theo thứ tự trong tệp giai đoạn.
+- CHỈ chỉnh sửa các tệp trong phần "File Ownership".
+- Tuân thủ chính xác kiến trúc và yêu cầu đề ra.
+- Viết mã nguồn sạch, dễ bảo trì và có tài liệu đi kèm.
+- Thêm các bài kiểm tra cho tất cả các chức năng mới.
 
-**4. Quality Assurance**:
-- Chạy kiểm tra loại (`npm run typecheck`)
-- Chạy bài kiểm tra (`npm test`)
-- Sửa lỗi loại hoặc lỗi kiểm tra
-- Xác minh tiêu chí thành công từ tệp giai đoạn
+**4. Đảm bảo chất lượng (QA)**:
+- Chạy kiểm tra kiểu dữ liệu (`npm run typecheck`).
+- Chạy các bài kiểm tra (`npm test`).
+- Sửa các lỗi kiểu dữ liệu hoặc lỗi kiểm tra.
+- Xác nhận tiêu chí thành công của giai đoạn.
 
-**5. Completion Report**:
-- Danh sách các tệp được sửa đổi
-- Tài liệu các tác vụ hoàn thành
-- Báo cáo trạng thái kiểm tra
-- Lưu ý bất kỳ vấn đề còn lại
-- Cập nhật tệp giai đoạn với trạng thái
+**5. Báo cáo hoàn thành**:
+- Liệt kê các tệp đã chỉnh sửa.
+- Tài liệu hóa các nhiệm vụ đã hoàn thành.
+- Báo cáo trạng thái của các bài kiểm tra.
+- Ghi chú các vấn đề còn tồn đọng (nếu có).
+- Cập nhật trạng thái vào tệp giai đoạn.
 
-## Code Quality Standards
+## Tiêu chuẩn chất lượng mã nguồn
 
-Nhà phát triển tuân theo:
-- **Nguyên tắc YAGNI, KISS, DRY**
-- **Tiêu chuẩn mã dự án** (từ `docs/code-standards.md`)
-- **Sécurité loại** (Chế độ nghiêm ngặt TypeScript)
-- **Xử lý lỗi** (thử-bắt, ghi nhật ký thích hợp)
-- **Kiểm tra** (bài kiểm tra đơn vị + tích hợp)
-- **Tài liệu** (nhận xét JSDoc, cập nhật README)
-- **Accessibility** (WCAG AA khi áp dụng)
+Nhà phát triển tuân thủ:
+- **Các nguyên tắc YAGNI, KISS, DRY**.
+- **Tiêu chuẩn mã nguồn của dự án** (trong `docs/code-standards.md`).
+- **An toàn kiểu dữ liệu** (chế độ nghiêm ngặt của TypeScript).
+- **Xử lý lỗi** (try-catch, ghi nhật ký phù hợp).
+- **Kiểm tra** (unit + integration tests).
+- **Tài liệu** (các chú thích JSDoc, cập nhật README).
+- **Khả năng tiếp cận** (WCAG AA khi có thể áp dụng).
 
-## Parallel Execution Safety
+## An toàn khi thực thi song song
 
 Khi làm việc trên các giai đoạn song song:
-- **Hoạt động độc lập** mà không kiểm tra các giai đoạn khác
-- **Tôn trọng phụ thuộc** được liệt kê trong tệp giai đoạn được thỏa mãn
-- **Sử dụng các giao diện được xác định rõ** chỉ (không kết hợp trực tiếp)
-- **Báo cáo hoàn thành** để bật các giai đoạn phụ thuộc
-- **Không bao giờ sửa đổi tệp chia sẻ** mà không có quyền sở hữu rõ ràng
+- **Làm việc độc lập** mà không cần kiểm tra các giai đoạn khác.
+- **Tin tưởng vào các phụ thuộc** đã được liệt kê là đã hoàn thành.
+- **Chỉ sử dụng các giao diện (interfaces) đã được xác định rõ ràng** (không kết nối trực tiếp các tệp).
+- **Báo cáo hoàn thành** để kích hoạt các giai đoạn phụ thuộc tiếp theo.
+- **Không bao giờ chỉnh sửa các tệp dùng chung** mà không có quyền sở hữu rõ ràng.
 
-## Technology Stack
+## Ngăn xếp công nghệ (Tech Stack)
 
-Nhà phát triển có kinh nghiệm trong:
+Nhà phát triển thành thạo:
 
 **Backend**:
 - Node.js, TypeScript
@@ -239,7 +240,7 @@ Nhà phát triển có kinh nghiệm trong:
 - Tailwind CSS, shadcn/ui
 - React Query, Zustand
 
-**Testing**:
+**Kiểm tra (Testing)**:
 - Jest, Vitest
 - React Testing Library
 - Playwright, Cypress
@@ -249,28 +250,28 @@ Nhà phát triển có kinh nghiệm trong:
 - GitHub Actions
 - Cloudflare, Vercel
 
-## Related Agents
+## Các đại lý liên quan
 
-- [Planner](/docs/marketing/agents/planner) - Tạo các giai đoạn triển khai
-- [Tester](/docs/marketing/agents/tester) - Xác thực chất lượng triển khai
-- [Database Admin](/docs/marketing/agents/database-admin) - Tối ưu hóa mã cơ sở dữ liệu
-- [Git Manager](/docs/marketing/agents/git-manager) - Cam kết mã được triển khai
+- [Planner](/vi/docs/marketing/agents/planner) - Tạo ra các giai đoạn triển khai.
+- [Tester](/vi/docs/marketing/agents/tester) - Xác thực chất lượng triển khai.
+- [Database Admin](/vi/docs/marketing/agents/database-admin) - Tối ưu hóa mã nguồn cơ sở dữ liệu.
+- [Git Manager](/vi/docs/marketing/agents/git-manager) - Thực hiện commit mã nguồn đã triển khai.
 
-## Related Commands
+## Các lệnh liên quan
 
-- [`/dev`](/docs/marketing/commands/dev) - Thực hiện tác vụ phát triển
-- [`/implement`](/docs/marketing/commands/implement) - Triển khai tính năng
+- [`/dev`](/vi/docs/marketing/commands/dev) - Thực hiện tác vụ phát triển.
+- [`/implement`](/vi/docs/marketing/commands/implement) - Triển khai một tính năng.
 
-## Tips
+## Mẹo
 
-**Follow the Plan**: Các tệp giai đoạn chỉ định chính xác những gì để xây dựng. Không thêm các tính năng bổ sung hoặc lệch khỏi đặc điểm kỹ thuật. YAGNI (Bạn sẽ không cần nó).
+**Tuân thủ Kế hoạch**: Các tệp giai đoạn quy định chính xác những gì cần xây dựng. Đừng thêm các tính năng thừa hoặc làm sai lệch so với đặc tả. YAGNI (Bạn sẽ không cần đến nó đâu).
 
-**Test Everything**: Viết bài kiểm tra khi bạn mã, không phải sau. Nếu một bài kiểm tra sẽ khó viết, mã có thể cần refactoring.
+**Kiểm tra mọi thứ**: Hãy viết các bài kiểm tra trong lúc viết mã, chứ không phải sau đó. Nếu một bài kiểm tra khó viết, có lẽ mã nguồn đó cần được tái cấu trúc.
 
-**Respect File Ownership**: Trong thực hiện giai đoạn song song, chạm vào các tệp ngoài quyền sở hữu của bạn phá vỡ mọi thứ. Khi nghi ngờ, hỏi.
+**Tôn trọng quyền sở hữu tệp**: Trong quá trình thực thi song song, việc chạm vào các tệp ngoài quyền sở hữu của bạn sẽ phá hỏng mọi thứ. Khi nghi ngờ, hãy hỏi.
 
-**Check Dependencies**: Trước khi bắt đầu một giai đoạn, xác minh tất cả các giai đoạn trước đó nó phụ thuộc vào thực sự hoàn thành.
+**Kiểm tra phụ thuộc**: Trước khi bắt đầu một giai đoạn, hãy xác minh xem tất cả các giai đoạn trước đó mà nó phụ thuộc vào đã thực sự hoàn thành chưa.
 
-**Report Honestly**: Nếu bạn gặp phải một trở ngại hoặc không thể hoàn thành điều gì đó, hãy nói như vậy trong báo cáo. Đừng đánh dấu các tác vụ hoàn thành khi họ không phải.
+**Báo cáo trung thực**: Nếu bạn gặp bế tắc hoặc không thể hoàn thành việc gì đó, hãy nói rõ trong báo cáo. Đừng đánh dấu hoàn thành cho những nhiệm vụ chưa xong.
 
-Fullstack Developer Agent là công cụ thực hiện của bạn. Nó không tranh luận hoặc thiết kế lại—nó lấy các thông số kỹ thuật rõ ràng và tạo ra mã sạch, được kiểm tra, sẵn sàng sản xuất.
+Fullstack Developer Agent là "động cơ thực thi" của bạn. Nó không tranh luận hay thiết kế lại—nó tiếp nhận các đặc tả rõ ràng và tạo ra mã nguồn hoạt động tốt, đã được kiểm tra và sẵn sàng cho sản xuất.

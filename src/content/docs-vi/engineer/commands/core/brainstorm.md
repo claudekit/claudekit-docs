@@ -6,413 +6,410 @@ kit: engineer
 category: commands/core
 order: 9
 published: true
+lang: vi
 ---
 
 # /brainstorm
 
-Lệnh brainstorm cấp cao cho giải pháp kỹ thuật. Kích hoạt hợp tác đa agent để đánh giá các phương pháp theo nguyên tắc kỹ thuật, tạo ra đề xuất được ghi nhận.
+Lệnh brainstorm cấp cao cho giải pháp kỹ thuật. Kích hoạt sự hợp tác đa agent để đánh giá các phương pháp tiếp cận dựa trên các nguyên tắc kỹ thuật, tạo ra các đề xuất đã được kiểm chứng.
 
 ## Cú pháp
 
 ```bash
-/brainstorm [question]
+/brainstorm [câu-hỏi]
 ```
 
 ## Khi nào sử dụng
 
-- **Quyết định kiến trúc**: Chọn giữa các design pattern hoặc kiến trúc hệ thống
-- **Lựa chọn công nghệ**: Đánh giá framework, thư viện hoặc công cụ
-- **Thách thức thiết kế**: Giải quyết vấn đề phức tạp với nhiều cách tiếp cận hợp lệ
-- **Đánh giá rủi ro**: Xác định đánh đổi trước khi cam kết triển khai
-- **Đồng thuận nhóm**: Có phân tích có cấu trúc cho thảo luận với stakeholder
+- **Quyết định Kiến trúc**: Lựa chọn giữa các mẫu thiết kế (design patterns) hoặc kiến trúc hệ thống
+- **Lựa chọn Công nghệ**: Đánh giá các framework, thư viện hoặc công cụ
+- **Thách thức Thiết kế**: Giải quyết các vấn đề phức tạp với nhiều cách tiếp cận hợp lệ
+- **Đánh giá Rủi ro**: Xác định các sự đánh đổi (trade-offs) trước khi cam kết triển khai
+- **Đồng thuận Nhóm**: Có một phân tích có cấu trúc để thảo luận với các bên liên quan (stakeholders)
 
 ## Ví dụ nhanh
 
 ```bash
-/brainstorm [should we use Redis or PostgreSQL for session storage?]
+/brainstorm [nên sử dụng Redis hay PostgreSQL để lưu trữ session?]
 ```
 
 **Kết quả**:
 ```
-Discovery Phase:
-- Current user load: 10k DAU
-- Session data: ~2KB per user
-- Existing infrastructure: PostgreSQL primary
+Giai đoạn Khám phá:
+- Tải người dùng hiện tại: 10k DAU (người dùng hoạt động hàng ngày)
+- Dữ liệu session: ~2KB mỗi người dùng
+- Hạ tầng hiện có: PostgreSQL là chính
 
-Analysis Against Principles:
-YAGNI: PostgreSQL sessions sufficient for current scale
-KISS: Single database reduces operational complexity
-DRY: Reuse existing connection pooling
+Phân tích theo các Nguyên tắc:
+YAGNI: Session trên PostgreSQL là đủ cho quy mô hiện tại
+KISS: Một cơ sở dữ liệu duy nhất giúp giảm độ phức tạp vận hành
+DRY: Tái sử dụng hệ thống quản lý kết nối (connection pooling) hiện có
 
-Recommendation:
-PostgreSQL sessions with redis cache layer when >50k DAU
+Đề xuất:
+Sử dụng PostgreSQL cho session, thêm lớp đệm Redis khi vượt quá 50k DAU
 
-Report: plans/reports/brainstorm-251129-session-storage.md
+Báo cáo: plans/reports/brainstorm-251129-session-storage.md
 ```
 
-**Kết quả**: Phân tích có cấu trúc được lưu vào báo cáo markdown.
+**Kết quả**: Một phân tích có cấu trúc đã được lưu vào báo cáo markdown.
 
 ## Tham số
 
-- `[question]`: Câu hỏi kỹ thuật hoặc thách thức cần phân tích đa góc độ (bắt buộc)
+- `[câu-hỏi]`: Câu hỏi kỹ thuật hoặc thách thức cần phân tích từ nhiều góc độ (bắt buộc).
 
-## Nguyên tắc cốt lõi
+## Nguyên tắc Cốt lõi
 
-Mỗi brainstorm đánh giá giải pháp theo ba nguyên tắc:
+Mỗi phiên brainstorm sẽ đánh giá giải pháp dựa trên ba nguyên tắc:
 
 ### YAGNI (You Aren't Gonna Need It)
 
-Đừng xây dựng cho yêu cầu tương lai giả định. Nếu giải pháp đơn giản hơn hoạt động được:
+Đừng xây dựng cho các yêu cầu giả định trong tương lai. Nếu một giải pháp đơn giản hơn vẫn hoạt động hiệu quả:
 - Tránh tối ưu hóa sớm
-- Từ chối tính năng "phòng trường hợp"
-- Đặt câu hỏi về các abstraction không có nhu cầu ngay lập tức
+- Từ chối các tính năng được thêm vào "phòng trường hợp"
+- Đặt câu hỏi về các sự trừu tượng hóa (abstractions) không có nhu cầu tức thì
 
 ### KISS (Keep It Simple, Stupid)
 
-Ưu tiên giải pháp đơn giản hơn giải pháp phức tạp:
-- Ít thành phần = ít điểm lỗi
-- Code dễ đọc hơn code nén
-- Pattern chuẩn hơn implementation tùy chỉnh
+Ưu tiên các giải pháp đơn giản hơn là các giải pháp phức tạp:
+- Ít thành phần hơn = ít điểm gây lỗi hơn
+- Mã nguồn dễ đọc tốt hơn mã nguồn được tối ưu quá mức
+- Các mẫu (patterns) chuẩn tốt hơn các triển khai tùy chỉnh
 
 ### DRY (Don't Repeat Yourself)
 
-Loại bỏ trùng lặp có ý nghĩa:
-- Trích xuất logic lặp lại thành hàm
+Loại bỏ sự trùng lặp có ý nghĩa:
+- Trích xuất logic lặp lại thành các hàm
 - Tập trung hóa cấu hình
-- Nhưng: Đừng DRY quá sớm (ba lần xuất hiện trước)
+- Lưu ý: Đừng thực hiện DRY quá sớm (quy tắc: xuất hiện 3 lần mới thực hiện)
 
-## Quy trình hoạt động
+## Quy trình Hoạt động
 
-### Quy trình 6 giai đoạn
+### Quy trình 6 Giai đoạn
 
 **Giai đoạn 1: Khám phá**
 
-Làm rõ yêu cầu và ràng buộc:
-- Chúng ta đang giải quyết vấn đề gì?
-- Có ràng buộc gì? (ngân sách, thời gian, kỹ năng team)
+Làm rõ các yêu cầu và ràng buộc:
+- Chúng ta thực sự đang giải quyết vấn đề gì?
+- Có những ràng buộc nào? (ngân sách, thời gian, kỹ năng của đội ngũ)
 - Tiêu chí thành công là gì?
-- Đã thử những gì?
+- Những gì đã được thử nghiệm trước đó?
 
 **Giai đoạn 2: Nghiên cứu**
 
 Thu thập thông tin từ nhiều nguồn:
-- Tài liệu dự án (system-architecture.md, code-standards.md)
-- API bên ngoài qua MCP tools
-- Tra cứu tài liệu qua docs-seeker
-- Phân tích codebase qua scout
+- Tài liệu dự án (`system-architecture.md`, `code-standards.md`)
+- Các API bên ngoài thông qua các công cụ MCP
+- Tra cứu tài liệu thông qua `docs-seeker`
+- Phân tích mã nguồn thông qua `scout`
 
 **Giai đoạn 3: Phân tích**
 
-Đánh giá mỗi phương pháp theo nguyên tắc:
-- YAGNI: Điều này có thêm phức tạp không cần thiết không?
-- KISS: Có cách tiếp cận đơn giản hơn không?
-- DRY: Điều này có tạo trùng lặp không?
-- Thêm: Bảo mật, hiệu suất, khả năng bảo trì
+Đánh giá từng phương pháp tiếp cận theo các nguyên tắc:
+- YAGNI: Liệu điều này có thêm sự phức tạp không cần thiết không?
+- KISS: Có cách tiếp cận nào đơn giản hơn không?
+- DRY: Liệu điều này có tạo ra sự trùng lặp không?
+- Bổ sung: Bảo mật, hiệu suất, khả năng bảo trì
 
 **Giai đoạn 4: Tranh luận**
 
-Thách thức các giả định và sở thích:
-- Devil's advocate cho mỗi tùy chọn
-- Phát hiện đánh đổi ẩn
+Thử thách các giả định và sở thích cá nhân:
+- Đóng vai phản biện cho từng lựa chọn
+- Phát hiện các sự đánh đổi tiềm ẩn
 - Đặt câu hỏi về lựa chọn "hiển nhiên"
-- Xem xét edge case và failure mode
+- Xem xét các trường hợp biên (edge cases) và các kịch bản lỗi (failure modes)
 
 **Giai đoạn 5: Đồng thuận**
 
 Xây dựng sự thống nhất về đề xuất:
-- Tổng hợp các góc nhìn
-- Xếp hạng tùy chọn với lý do
-- Xác định điều không thể thương lượng
-- Ghi nhận đánh đổi chấp nhận được
+- Tổng hợp các góc nhìn khác nhau
+- Xếp hạng các tùy chọn kèm theo lý do
+- Xác định những điểm không thể thương lượng
+- Ghi nhận các sự đánh đổi được chấp nhận
 
-**Giai đoạn 6: Tài liệu**
+**Giai đoạn 6: Tài liệu hóa**
 
-Tạo báo cáo markdown toàn diện:
+Tạo một báo cáo markdown toàn diện:
 - Mô tả vấn đề
 - Các tùy chọn đã xem xét
-- Phân tích theo nguyên tắc
-- Đề xuất với lý do
-- Rủi ro và giảm thiểu
+- Phân tích dựa trên các nguyên tắc
+- Đề xuất kèm theo lý do
+- Rủi ro và chiến lược giảm thiểu
 - Chỉ số thành công
 
-## Lĩnh vực chuyên môn
+## Các Lĩnh vực Chuyên môn
 
-Brainstorming sử dụng nhiều góc nhìn:
+Brainstorming sử dụng nhiều góc nhìn khác nhau:
 
-| Lĩnh vực | Tập trung |
+| Lĩnh vực | Trọng tâm |
 |----------|-----------|
-| Kiến trúc | Thiết kế hệ thống, ranh giới component, interface |
-| Rủi ro | Failure mode, ảnh hưởng bảo mật, tech debt |
-| Phát triển | Ước tính thời gian, độ phức tạp triển khai |
-| UX/DX | Trải nghiệm người dùng, trải nghiệm lập trình viên |
+| Kiến trúc | Thiết kế hệ thống, ranh giới các thành phần, giao diện |
+| Rủi ro | Các kịch bản lỗi, tác động bảo mật, nợ kỹ thuật |
+| Phát triển | Ước tính thời gian, độ phức tạp khi triển khai |
+| UX/DX | Trải nghiệm người dùng, trải nghiệm của lập trình viên |
 | Hiệu suất | Khả năng mở rộng, độ trễ, sử dụng tài nguyên |
 | Vận hành | Triển khai, giám sát, gánh nặng bảo trì |
 
-## Công cụ hợp tác
+## Công cụ Hợp tác
 
-Quy trình brainstorm có thể gọi:
+Quy trình brainstorm có thể triệu tập các agent:
 
-- **planner**: Cấu trúc phân tích và tạo đề xuất
+- **planner**: Cấu trúc quá trình phân tích và tạo đề xuất
 - **docs-manager**: Truy cập và cập nhật tài liệu dự án
-- **searchapi MCP**: Nghiên cứu giải pháp và pattern bên ngoài
-- **docs-seeker**: Tra cứu tài liệu framework
+- **searchapi MCP**: Nghiên cứu các giải pháp và mẫu thiết kế bên ngoài
+- **docs-seeker**: Tra cứu tài liệu về các framework
 - **ai-multimodal**: Phân tích sơ đồ hoặc tài liệu tham khảo trực quan
-- **psql**: Truy vấn database schema để có ngữ cảnh
+- **psql**: Truy vấn sơ đồ cơ sở dữ liệu để có ngữ cảnh
 
 ## Vị trí lưu trữ
 
-Báo cáo được lưu vào file markdown:
+Các báo cáo được lưu vào tệp markdown:
 
-**Với kế hoạch đang hoạt động**:
+**Khi có một kế hoạch đang hoạt động**:
 ```
-{active-plan}/reports/brainstorm-YYMMDD-{topic}.md
-```
-
-**Không có kế hoạch đang hoạt động**:
-```
-plans/reports/brainstorm-YYMMDD-{topic}.md
+{kế-hoạch-hiện-tại}/reports/brainstorm-YYMMDD-{chủ-đề}.md
 ```
 
-## Cấu trúc báo cáo
+**Khi không có kế hoạch nào đang hoạt động**:
+```
+plans/reports/brainstorm-YYMMDD-{chủ-đề}.md
+```
+
+## Cấu trúc Báo cáo
 
 Báo cáo được tạo bao gồm:
 
 ```markdown
-# Brainstorm: {Topic}
+# Brainstorm: {Chủ đề}
 
-**Date**: YYMMDD
-**Question**: {Câu hỏi gốc}
+**Ngày**: YYMMDD
+**Câu hỏi**: {Câu hỏi gốc}
 
-## Problem Statement
-{Vấn đề và ràng buộc đã làm rõ}
+## Tuyên bố Vấn đề
+{Vấn đề và các ràng buộc đã được làm rõ}
 
-## Options Considered
+## Các Tùy chọn đã Xem xét
 
-### Option A: {Tên}
+### Tùy chọn A: {Tên}
 - Mô tả
 - Ưu điểm
 - Nhược điểm
 - Tuân thủ nguyên tắc: YAGNI ✓ KISS ✓ DRY ✓
 
-### Option B: {Tên}
+### Tùy chọn B: {Tên}
 ...
 
-## Recommendation
-{Tùy chọn được chọn với lý do}
+## Đề xuất
+{Tùy chọn được chọn kèm theo lý do}
 
-## Risks & Mitigations
+## Rủi ro & Giảm thiểu
 - Rủi ro 1: {mô tả} → Giảm thiểu: {cách tiếp cận}
 ...
 
-## Success Metrics
-- {Tiêu chí đo lường thành công}
+## Chỉ số Thành công
+- {Tiêu chí để đo lường thành công}
 
-## Next Steps
+## Các bước Tiếp theo
 1. {Hành động}
 ...
 ```
 
-## Ví dụ đầy đủ
+## Ví dụ Đầy đủ
 
-### Kịch bản: Chọn State Management
+### Kịch bản: Chọn Quản lý Trạng thái (State Management)
 
 ```bash
-/brainstorm [what state management should we use for a React dashboard with real-time updates?]
+/brainstorm [nên sử dụng quản lý trạng thái nào cho bảng điều khiển React có cập nhật thời gian thực?]
 ```
 
 **Kết quả các giai đoạn**:
 
-**Discovery**:
+**Khám phá (Discovery)**:
 ```
-Requirements clarified:
-- Dashboard with 20+ widgets
-- Real-time data via WebSocket
-- User preferences persistence
-- Team: 3 devs, familiar with React hooks
+Làm rõ các yêu cầu:
+- Bảng điều khiển với 20+ widgets
+- Dữ liệu thời gian thực qua WebSocket
+- Lưu giữ sở thích người dùng
+- Đội ngũ: 3 lập trình viên, quen thuộc với React hooks
 
-Constraints:
-- No Redux experience on team
-- Performance critical (60fps animations)
-- Must support offline mode
+Các ràng buộc:
+- Đội ngũ không có kinh nghiệm với Redux
+- Hiệu suất cực kỳ quan trọng (60fps cho hoạt ảnh)
+- Phải hỗ trợ chế độ ngoại tuyến
 ```
 
-**Research**:
+**Nghiên cứu (Research)**:
 ```
-Options identified:
+Các tùy chọn được xác định:
 - Redux Toolkit + RTK Query
 - Zustand
 - Jotai
 - React Query + Context
 - Recoil
 
-External sources consulted:
-- State management benchmarks 2024
-- React documentation on state patterns
-- Real-time dashboard case studies
+Các nguồn bên ngoài đã tham khảo:
+- Các điểm đo hiệu suất quản lý trạng thái 2024
+- Tài liệu React về các mẫu trạng thái
+- Nghiên cứu điển hình về bảng điều khiển thời gian thực
 ```
 
-**Analysis**:
+**Phân tích (Analysis)**:
 ```
-YAGNI Analysis:
-- Redux: Overkill for 20 widgets, adds boilerplate
-- Zustand: Minimal API, no unnecessary abstractions
-- React Query: Built-in caching eliminates manual sync
+Phân tích YAGNI:
+- Redux: Quá mức cần thiết cho 20 widgets, thêm nhiều mã mẫu (boilerplate)
+- Zustand: API tối giản, không có các sự trừu tượng hóa không cần thiết
+- React Query: Tích hợp sẵn bộ nhớ đệm giúp loại bỏ việc đồng bộ thủ công
 
-KISS Analysis:
-- Zustand: ~10 lines for basic store
-- Redux: Requires slices, actions, selectors
-- Jotai: Atomic model adds cognitive load
+Phân tích KISS:
+- Zustand: ~10 dòng mã cho một store cơ bản
+- Redux: Yêu cầu các slices, actions, selectors
+- Jotai: Mô hình nguyên tử (atomic) làm tăng gánh nặng nhận thức
 
-DRY Analysis:
-- React Query: Centralizes data fetching logic
-- All options support shared state
-```
-
-**Debate**:
-```
-Devil's Advocate Points:
-- Zustand: Less ecosystem than Redux
-  Counter: Ecosystem not needed for dashboard scope
-
-- React Query: Not for WebSocket
-  Counter: Can integrate with WS for cache invalidation
-
-- No Redux: Team won't learn industry standard
-  Counter: Modern React prefers lighter solutions
+Phân tích DRY:
+- React Query: Tập trung hóa logic lấy dữ liệu (data fetching)
+- Tất cả các tùy chọn đều hỗ trợ trạng thái dùng chung
 ```
 
-**Recommendation**:
+**Tranh luận (Debate)**:
+```
+Các quan điểm phản biện:
+- Zustand: Hệ sinh thái ít hơn Redux
+  Phản hồi: Hệ sinh thái là không cần thiết cho phạm vi của bảng điều khiển này
+
+- React Query: Không dành cho WebSocket
+  Phản hồi: Có thể tích hợp với WS để xóa bộ nhớ đệm khi có dữ liệu mới
+
+- Không dùng Redux: Đội ngũ sẽ không học được tiêu chuẩn ngành
+  Phản hồi: React hiện đại ưu tiên các giải pháp nhẹ nhàng hơn
+```
+
+**Đề xuất (Recommendation)**:
 ```
 Zustand + React Query
 
-Rationale:
-- Zustand: UI state (widget positions, preferences)
-- React Query: Server state (API data, caching)
-- WebSocket: Triggers React Query invalidation
+Lý do:
+- Zustand: Cho trạng thái giao diện (vị trí widget, sở thích)
+- React Query: Cho trạng thái máy chủ (dữ liệu API, bộ nhớ đệm)
+- WebSocket: Kích hoạt việc xóa bộ nhớ đệm trong React Query
 
-Principle alignment:
-- YAGNI: No unused Redux infrastructure
-- KISS: Two focused tools vs one complex one
-- DRY: React Query eliminates fetch boilerplate
+Sự phù hợp với các nguyên tắc:
+- YAGNI: Không có hạ tầng Redux không dùng đến
+- KISS: Hai công cụ chuyên biệt thay vì một công cụ phức tạp
+- DRY: React Query loại bỏ các mã mẫu fetch dữ liệu
 ```
 
-**Report saved**: `plans/reports/brainstorm-251129-state-management.md`
+**Báo cáo đã lưu**: `plans/reports/brainstorm-251129-state-management.md`
 
-## Trường hợp sử dụng phổ biến
+## Các trường hợp sử dụng phổ biến
 
-### Đánh giá kiến trúc
+### Đánh giá Kiến trúc
 
 ```bash
-/brainstorm [monorepo with Turborepo vs separate repos for 5 services?]
+/brainstorm [monorepo với Turborepo hay các repo riêng biệt cho 5 dịch vụ?]
 ```
+Nhận phân tích về độ phức tạp khi build, chia sẻ mã nguồn và các đánh đổi khi triển khai.
 
-Nhận phân tích về độ phức tạp build, chia sẻ code và đánh đổi deployment.
-
-### Lựa chọn công nghệ
+### Lựa chọn Công nghệ
 
 ```bash
-/brainstorm [Prisma vs Drizzle vs raw SQL for new Node.js API?]
+/brainstorm [Prisma vs Drizzle vs SQL thuần cho API Node.js mới?]
 ```
+Nhận so sánh dựa trên kinh nghiệm của đội ngũ, độ phức tạp của truy vấn và nhu cầu về an toàn kiểu dữ liệu (type safety).
 
-Nhận so sánh dựa trên kinh nghiệm team, độ phức tạp query và nhu cầu type safety.
-
-### Thách thức thiết kế
+### Thách thức Thiết kế
 
 ```bash
-/brainstorm [how to handle file uploads: direct to S3 vs through API server?]
+/brainstorm [cách xử lý tải lên tệp: trực tiếp lên S3 hay thông qua máy chủ API?]
 ```
+Nhận phân tích về bảo mật, chi phí và độ phức tạp cho từng cách tiếp cận.
 
-Nhận phân tích bảo mật, chi phí và độ phức tạp cho mỗi cách tiếp cận.
-
-### Chiến lược migration
+### Chiến lược Chuyển đổi (Migration)
 
 ```bash
-/brainstorm [gradual migration from Express to Fastify or full rewrite?]
+/brainstorm [chuyển đổi dần dần từ Express sang Fastify hay viết lại toàn bộ?]
 ```
-
-Nhận phân tích rủi ro và đề xuất tiếp cận từng giai đoạn.
+Nhận phân tích rủi ro và đề xuất cách tiếp cận theo từng giai đoạn.
 
 ## Điều /brainstorm KHÔNG làm
 
-- ❌ Triển khai code (dùng `/cook` hoặc `/code`)
-- ❌ Sửa bug (dùng `/debug` hoặc `/fix:*`)
-- ❌ Đưa ra quyết định cuối cùng (bạn quyết định, nó tư vấn)
-- ❌ Bỏ qua tài liệu (luôn tạo báo cáo)
+- ❌ Triển khai mã nguồn (sử dụng `/cook` hoặc `/code`)
+- ❌ Sửa lỗi (sử dụng `/debug` hoặc các lệnh `/fix:*`)
+- ❌ Đưa ra quyết định cuối cùng (bạn quyết định, hệ thống tư vấn)
+- ❌ Bỏ qua việc tài liệu hóa (luôn tạo báo cáo)
 
 ## Thực hành tốt nhất
 
-### Cung cấp ngữ cảnh
+### Cung cấp Ngữ cảnh
 
-Bao gồm ràng buộc trong câu hỏi:
+Bao gồm các ràng buộc trong câu hỏi của bạn:
 ```bash
 /brainstorm [
-  Authentication approach for:
-  - 50k users, 5k concurrent
-  - Team knows JWT basics
-  - Must support SSO later
-  - Budget: startup (minimize vendor costs)
+  Cách tiếp cận xác thực cho:
+  - 50k người dùng, 5k hoạt động đồng thời
+  - Đội ngũ biết cơ bản về JWT
+  - Phải hỗ trợ SSO sau này
+  - Ngân sách: Startup (tối thiểu hóa chi phí nhà cung cấp)
 ]
 ```
 
-### Đặt câu hỏi so sánh
+### Đặt các câu hỏi So sánh
 
 ✅ **Tốt**:
 ```bash
-/brainstorm [PostgreSQL vs MongoDB for user-generated content with nested comments?]
-/brainstorm [SSR vs SSG vs ISR for documentation site with daily updates?]
+/brainstorm [PostgreSQL vs MongoDB cho nội dung do người dùng tạo với các bình luận lồng nhau?]
+/brainstorm [SSR vs SSG vs ISR cho trang web tài liệu có cập nhật hàng ngày?]
 ```
 
 ❌ **Quá mơ hồ**:
 ```bash
-/brainstorm [what database should I use?]
-/brainstorm [how to build this?]
+/brainstorm [tôi nên dùng cơ sở dữ liệu nào?]
+/brainstorm [làm thế nào để xây dựng cái này?]
 ```
 
-### Xem báo cáo trước khi hành động
+### Xem xét Báo cáo trước khi hành động
 
-Báo cáo markdown chứa phân tích chi tiết không hiển thị trong terminal output:
+Báo cáo markdown chứa phân tích chi tiết không hiển thị hoàn toàn trong terminal:
 ```bash
-# Sau brainstorm
-cat plans/reports/brainstorm-251129-{topic}.md
+# Sau khi brainstorm
+cat plans/reports/brainstorm-251129-{chủ-đề}.md
 ```
 
-## Tích hợp với quy trình làm việc
+## Tích hợp vào Quy trình làm việc
 
-### Trước khi lập kế hoạch
+### Trước khi Lập kế hoạch
 
 ```bash
 # 1. Brainstorm cách tiếp cận
-/brainstorm [best auth strategy for multi-tenant SaaS?]
+/brainstorm [chiến lược xác thực tốt nhất cho SaaS đa khách hàng?]
 
-# 2. Xem báo cáo, thảo luận với team
+# 2. Xem báo cáo, thảo luận với đội ngũ
 cat plans/reports/brainstorm-251129-auth-strategy.md
 
 # 3. Tạo kế hoạch triển khai
-/plan [implement JWT auth with tenant isolation]
+/plan [triển khai xác thực JWT với sự cách ly giữa các khách hàng]
 
 # 4. Thực thi
 /code
 ```
 
-### Trong quá trình đánh giá kiến trúc
+### Trong quá trình Đánh giá Kiến trúc
 
 ```bash
-# 1. Đánh giá PR với thay đổi phức tạp
+# 1. Đánh giá PR với những thay đổi phức tạp
 git diff main
 
 # 2. Đặt câu hỏi về cách tiếp cận
-/brainstorm [is this service abstraction worth the complexity?]
+/brainstorm [liệu sự trừu tượng hóa dịch vụ này có đáng với độ phức tạp của nó không?]
 
-# 3. Điều chỉnh dựa trên đề xuất
+# 3. Điều chỉnh dựa trên các đề xuất
 ```
 
 ## Các lệnh liên quan
 
-- [/ask](/vi/docs/engineer/commands/core/ask) - Câu hỏi kiến trúc nhanh không cần báo cáo đầy đủ
-- [/plan](/vi/docs/engineer/commands/plan) - Tạo kế hoạch triển khai sau brainstorming
-- [/code](/vi/docs/engineer/commands/core/code) - Thực thi kế hoạch với các cổng kiểm soát chất lượng
-- [/cook](/vi/docs/engineer/commands/core/cook) - Triển khai tính năng từng bước
+- [/ask](/vi/docs/engineer/commands/core/ask) - Các câu hỏi kiến trúc nhanh không cần báo cáo đầy đủ
+- [/plan](/vi/docs/engineer/commands/plan) - Tạo kế hoạch triển khai sau khi brainstorm
+- [/code](/vi/docs/engineer/commands/core/code) - Thực thi kế hoạch với các bước kiểm soát chất lượng
+- [/cook](/vi/docs/engineer/commands/core/cook) - Triển khai tính năng theo từng bước
 
 ---
 
-**Điểm chính**: `/brainstorm` cung cấp phân tích đa góc độ có cấu trúc về quyết định kỹ thuật, ghi nhận đề xuất theo nguyên tắc YAGNI, KISS và DRY. Nó tư vấn - bạn quyết định.
+**Thông điệp chính**: `/brainstorm` cung cấp phân tích đa chiều có cấu trúc cho các quyết định kỹ thuật, ghi lại các đề xuất dựa trên các nguyên tắc YAGNI, KISS và DRY. Hệ thống tư vấn - bạn là người quyết định.

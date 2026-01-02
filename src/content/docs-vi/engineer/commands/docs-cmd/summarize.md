@@ -1,229 +1,230 @@
 ---
 title: /docs:summarize
-description: Documentation for summarize
+description: Tài liệu hướng dẫn lệnh summarize
 section: engineer
 kit: engineer
 category: commands/docs-cmd
 order: 62
 published: true
+lang: vi
 ---
 
 # /docs:summarize
 
-Generate a comprehensive summary of your codebase by analyzing project structure, files, and architecture. Creates or updates `./docs/codebase-summary.md` with detailed project overview, file statistics, and token counts.
+Tạo một bản tóm tắt toàn diện về codebase của bạn bằng cách phân tích cấu trúc dự án, các tệp tin và kiến trúc. Lệnh này tạo hoặc cập nhật tệp `./docs/codebase-summary.md` với cái nhìn tổng quan chi tiết về dự án, số liệu thống kê tệp và số lượng token.
 
-## Syntax
-
-```bash
-/docs:summarize
-```
-
-No arguments needed - the command analyzes your entire codebase automatically.
-
-## How It Works
-
-The `/docs:summarize` command uses the `docs-manager` agent:
-
-### 1. Codebase Compaction
-
-- Runs `repomix` to analyze entire project
-- Generates `./repomix-output.xml` with complete codebase
-- Calculates file counts and token statistics
-- Identifies project structure and patterns
-- Excludes build artifacts and dependencies
-
-### 2. Summary Generation
-
-- Parses compacted codebase data
-- Identifies key components and modules
-- Analyzes file organization patterns
-- Documents architectural decisions
-- Lists technology stack and dependencies
-
-### 3. Documentation Creation
-
-- Creates/updates `./docs/codebase-summary.md`
-- Includes project structure tree
-- Documents file organization
-- Lists key files and their purposes
-- Provides token count and statistics
-- Adds timestamp and version information
-
-### 4. Quality Assurance
-
-- Ensures consistent formatting
-- Validates file paths and references
-- Checks for completeness
-- Maintains documentation standards
-
-## When to Use
-
-### ✅ Perfect For
-
-**New Team Members**
-```bash
-# Onboarding new developers
-/docs:summarize
-```
-
-**Project Handoff**
-```bash
-# Preparing project for transfer
-/docs:summarize
-```
-
-**Architecture Review**
-```bash
-# Before major refactoring
-/docs:summarize
-```
-
-**AI Context Generation**
-```bash
-# Generate context for AI tools
-/docs:summarize
-```
-
-**Regular Maintenance**
-```bash
-# Weekly/monthly codebase review
-/docs:summarize
-```
-
-### ❌ Don't Use For
-
-**Full Documentation Update**
-```bash
-❌ /docs:summarize  # Only updates summary
-✅ /docs:update     # Updates all documentation
-```
-
-**Detailed API Docs**
-```bash
-❌ /docs:summarize  # High-level overview only
-✅ /docs:update [focus on API documentation]
-```
-
-## Examples
-
-### Basic Codebase Summary
+## Cú Pháp
 
 ```bash
 /docs:summarize
 ```
 
-**What happens:**
+Không cần tham số - lệnh sẽ tự động phân tích toàn bộ codebase của bạn.
+
+## Cách Hoạt Động
+
+Lệnh `/docs:summarize` sử dụng agent `docs-manager`:
+
+### 1. Nén Codebase (Codebase Compaction)
+
+- Chạy `repomix` để phân tích toàn bộ dự án
+- Tạo tệp `./repomix-output.xml` chứa toàn bộ codebase đã nén
+- Tính toán số lượng tệp và thống kê token
+- Xác định cấu trúc và các mẫu (patterns) của dự án
+- Loại bỏ các thành phần build (artifacts) và các phụ thuộc (dependencies)
+
+### 2. Tạo Bản Tóm Tắt
+
+- Phân tích dữ liệu codebase đã nén
+- Xác định các thành phần và module chính
+- Phân tích các mẫu tổ chức tệp
+- Ghi lại các quyết định về kiến trúc
+- Liệt kê bộ công nghệ (stack) và các phụ thuộc
+
+### 3. Tạo Tài Liệu
+
+- Tạo/cập nhật tệp `./docs/codebase-summary.md`
+- Bao gồm cây cấu trúc dự án
+- Tài liệu hóa việc tổ chức tệp
+- Liệt kê các tệp quan trọng và mục đích của chúng
+- Cung cấp số lượng token và số liệu thống kê
+- Thêm dấu thời gian (timestamp) và thông tin phiên bản
+
+### 4. Đảm Bảo Chất Lượng
+
+- Đảm bảo định dạng nhất quán
+- Xác minh đường dẫn tệp và các tham chiếu
+- Kiểm tra tính đầy đủ
+- Duy trì các tiêu chuẩn tài liệu
+
+## Khi Nào Nên Sử Dụng
+
+### ✅ Hoàn Hảo Cho
+
+**Thành Viên Mới Trong Nhóm**
+```bash
+# Hướng dẫn lập trình viên mới
+/docs:summarize
 ```
-1. Analyzing codebase
+
+**Bàn Giao Dự Án**
+```bash
+# Chuẩn bị dự án để chuyển giao
+/docs:summarize
+```
+
+**Xem Lại Kiến Trúc**
+```bash
+# Trước khi thực hiện tái cấu trúc (refactoring) lớn
+/docs:summarize
+```
+
+**Tạo Ngữ Cảnh Cho AI**
+```bash
+# Tạo ngữ cảnh cho các công cụ AI
+/docs:summarize
+```
+
+**Bảo Trì Định Kỳ**
+```bash
+# Xem lại codebase hàng tuần/hàng tháng
+/docs:summarize
+```
+
+### ❌ Không Sử Dụng Cho
+
+**Cập Nhật Toàn Bộ Tài Liệu**
+```bash
+❌ /docs:summarize  # Chỉ cập nhật bản tóm tắt
+✅ /docs:update     # Cập nhật tất cả tài liệu
+```
+
+**Tài Liệu API Chi Tiết**
+```bash
+❌ /docs:summarize  # Chỉ cung cấp cái nhìn tổng quan cấp cao
+✅ /docs:update [tập trung vào tài liệu API]
+```
+
+## Ví Dụ
+
+### Tóm Tắt Codebase Cơ Bản
+
+```bash
+/docs:summarize
+```
+
+**Điều gì xảy ra:**
+```
+1. Đang phân tích codebase
    $ repomix
-   - Scanning project files...
-   - Processing: 245 files
-   - Excluding: node_modules, dist, .git
+   - Đang quét các tệp dự án...
+   - Đang xử lý: 245 tệp
+   - Loại trừ: node_modules, dist, .git
 
-2. Generating compaction
-   ✓ Created: ./repomix-output.xml
-   - Size: 1.2 MB
+2. Đang tạo bản nén
+   ✓ Đã tạo: ./repomix-output.xml
+   - Kích thước: 1.2 MB
    - Tokens: 325,478
-   - Lines of code: 45,234
+   - Số dòng code: 45,234
 
-3. Creating summary
-   ✓ Updated: ./docs/codebase-summary.md
+3. Đang tạo bản tóm tắt
+   ✓ Đã cập nhật: ./docs/codebase-summary.md
 
-   Contents:
-   - Project Overview
-   - Technology Stack
-   - Project Structure (directory tree)
-   - Key Components
-   - File Organization
-   - Statistics and Metrics
+   Nội dung:
+   - Tổng quan dự án
+   - Bộ công nghệ (Technology Stack)
+   - Cấu trúc dự án (sơ đồ thư mục)
+   - Các thành phần chính
+   - Tổ chức tệp tin
+   - Thống kê và số liệu
 
-✓ Codebase summary generated (1m 23s)
+✓ Đã tạo bản tóm tắt codebase (1m 23s)
 ```
 
-### Large Monorepo
+### Monorepo Lớn
 
 ```bash
 /docs:summarize
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-1. Analyzing monorepo structure
+1. Đang phân tích cấu trúc monorepo
    $ repomix
-   - Packages found: 8
-   - Total files: 1,247
-   - Shared components: 156
+   - Số package tìm thấy: 8
+   - Tổng số tệp: 1,247
+   - Thành phần dùng chung: 156
 
-2. Processing packages
-   ✓ packages/api (234 files, 78K tokens)
-   ✓ packages/web (445 files, 125K tokens)
-   ✓ packages/mobile (334 files, 89K tokens)
-   ✓ packages/shared (156 files, 45K tokens)
-   ✓ packages/database (45 files, 12K tokens)
-   ✓ packages/auth (67 files, 23K tokens)
-   ✓ packages/payment (89 files, 34K tokens)
-   ✓ packages/analytics (78 files, 28K tokens)
+2. Đang xử lý các package
+   ✓ packages/api (234 tệp, 78K tokens)
+   ✓ packages/web (445 tệp, 125K tokens)
+   ✓ packages/mobile (334 tệp, 89K tokens)
+   ✓ packages/shared (156 tệp, 45K tokens)
+   ✓ packages/database (45 tệp, 12K tokens)
+   ✓ packages/auth (67 tệp, 23K tokens)
+   ✓ packages/payment (89 tệp, 34K tokens)
+   ✓ packages/analytics (78 tệp, 28K tokens)
 
-3. Generating comprehensive summary
-   ✓ Created: ./docs/codebase-summary.md
+3. Đang tạo bản tóm tắt toàn diện
+   ✓ Đã tạo: ./docs/codebase-summary.md
 
-   Sections:
-   - Monorepo Overview
-   - Package Structure
-   - Inter-package Dependencies
-   - Shared Libraries
-   - Build and Deployment
-   - Development Workflow
-   - Total Statistics
+   Các phần:
+   - Tổng quan Monorepo
+   - Cấu trúc Package
+   - Phụ thuộc giữa các package
+   - Thư viện dùng chung
+   - Build và Triển khai
+   - Quy trình phát triển
+   - Thống kê tổng thể
 
-   Metrics:
-   - Total tokens: 434,000
-   - Total files: 1,247
-   - Total lines: 156,789
+   Số liệu:
+   - Tổng số token: 434,000
+   - Tổng số tệp: 1,247
+   - Tổng số dòng: 156,789
 
-✓ Monorepo summary complete (2m 45s)
+✓ Hoàn tất tóm tắt Monorepo (2m 45s)
 ```
 
-### Microservices Architecture
+### Kiến Trúc Microservices
 
 ```bash
 /docs:summarize
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-1. Analyzing microservices
+1. Đang phân tích microservices
    $ repomix
-   - Services detected: 7
-   - Shared libraries: 3
-   - Configuration files: 23
+   - Số dịch vụ phát hiện: 7
+   - Thư viện dùng chung: 3
+   - Tệp cấu hình: 23
 
-2. Service breakdown
-   ✓ services/api-gateway (45 files, 15K tokens)
-   ✓ services/auth (67 files, 23K tokens)
-   ✓ services/users (89 files, 31K tokens)
-   ✓ services/payments (78 files, 28K tokens)
-   ✓ services/notifications (56 files, 19K tokens)
-   ✓ services/analytics (67 files, 24K tokens)
-   ✓ services/background-jobs (45 files, 16K tokens)
+2. Chi tiết từng dịch vụ
+   ✓ services/api-gateway (45 tệp, 15K tokens)
+   ✓ services/auth (67 tệp, 23K tokens)
+   ✓ services/users (89 tệp, 31K tokens)
+   ✓ services/payments (78 tệp, 28K tokens)
+   ✓ services/notifications (56 tệp, 19K tokens)
+   ✓ services/analytics (67 tệp, 24K tokens)
+   ✓ services/background-jobs (45 tệp, 16K tokens)
 
-3. Creating summary
-   ✓ Updated: ./docs/codebase-summary.md
+3. Đang tạo bản tóm tắt
+   ✓ Đã cập nhật: ./docs/codebase-summary.md
 
-   Structure:
-   - Microservices Architecture Overview
-   - Service Descriptions
-   - Communication Patterns
-   - Shared Infrastructure
-   - Data Flow Diagrams
-   - Deployment Configuration
+   Cấu trúc:
+   - Tổng quan kiến trúc Microservices
+   - Mô tả các dịch vụ
+   - Các mẫu giao tiếp
+   - Hạ tầng dùng chung
+   - Sơ đồ luồng dữ liệu
+   - Cấu hình triển khai
 
-   Statistics:
-   - Total services: 7
-   - Total tokens: 156,000
-   - Average service size: 22,000 tokens
+   Thống kê:
+   - Tổng số dịch vụ: 7
+   - Tổng số token: 156,000
+   - Kích thước dịch vụ trung bình: 22,000 tokens
 
-✓ Microservices summary generated (1m 56s)
+✓ Đã tạo bản tóm tắt Microservices (1m 56s)
 ```
 
 ### TypeScript Monorepo
@@ -232,59 +233,59 @@ The `/docs:summarize` command uses the `docs-manager` agent:
 /docs:summarize
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-1. Scanning TypeScript project
+1. Đang quét dự án TypeScript
    $ repomix
-   - TypeScript files: 456
-   - Type definitions: 67
-   - Test files: 234
-   - Configuration: 12
+   - Tệp TypeScript: 456
+   - Định nghĩa kiểu (types): 67
+   - Tệp kiểm tra (tests): 234
+   - Cấu hình: 12
 
-2. Analyzing structure
-   ✓ Core modules identified
-   ✓ Type hierarchies mapped
-   ✓ Test coverage calculated
-   ✓ Dependencies analyzed
+2. Đang phân tích cấu trúc
+   ✓ Đã xác định các module cốt lõi
+   ✓ Đã lập sơ đồ phân cấp kiểu
+   ✓ Đã tính toán độ bao phủ kiểm tra
+   ✓ Đã phân tích các phụ thuộc
 
-3. Summary created
+3. Bản tóm tắt đã được tạo
    ✓ ./docs/codebase-summary.md
 
-   Includes:
-   - TypeScript Configuration
-   - Module Structure
-   - Type System Overview
-   - Key Interfaces and Types
-   - Test Organization
-   - Build Configuration
+   Bao gồm:
+   - Cấu hình TypeScript
+   - Cấu trúc Module
+   - Tổng quan hệ thống kiểu (Type System)
+   - Các Interface và Type quan trọng
+   - Tổ chức kiểm tra (Tests)
+   - Cấu hình Build
 
-   Metrics:
-   - TypeScript version: 5.3.3
-   - Total tokens: 289,456
-   - Type files: 67
-   - Test coverage: 87%
+   Số liệu:
+   - Phiên bản TypeScript: 5.3.3
+   - Tổng số token: 289,456
+   - Số tệp kiểu: 67
+   - Độ bao phủ kiểm tra: 87%
 
-✓ TypeScript summary complete (1m 34s)
+✓ Hoàn tất tóm tắt TypeScript (1m 34s)
 ```
 
-## Generated Summary Structure
+## Cấu Trúc Bản Tóm Tắt Được Tạo
 
-The `./docs/codebase-summary.md` file includes:
+Tệp `./docs/codebase-summary.md` bao gồm:
 
-### Project Overview
-- Project name and description
-- Technology stack
-- Key features
-- Development status
+### Tổng Quan Dự Án
+- Tên và mô tả dự án
+- Bộ công nghệ (Technology stack)
+- Các tính năng chính
+- Trạng thái phát triển
 
-### Technology Stack
-- Programming languages
-- Frameworks and libraries
-- Build tools
-- Testing frameworks
-- Infrastructure tools
+### Bộ Công Nghệ
+- Ngôn ngữ lập trình
+- Framework và thư viện
+- Công cụ build
+- Framework kiểm tra (testing)
+- Công cụ hạ tầng
 
-### Project Structure
+### Cấu Trúc Dự Án
 ```
 project-root/
 ├── src/
@@ -297,47 +298,47 @@ project-root/
 └── config/
 ```
 
-### Key Components
-- Main application entry points
-- Core business logic modules
-- API endpoints and routes
-- Database models and schemas
-- Utility libraries
+### Các Thành Phần Chính
+- Các điểm vào (entry points) chính của ứng dụng
+- Các module logic nghiệp vụ cốt lõi
+- Các endpoint API và tuyến đường (routes)
+- Các model và schema cơ sở dữ liệu
+- Các thư viện tiện ích (utils)
 
-### File Organization
-- Naming conventions
-- Directory structure patterns
-- Module organization
-- Configuration files
+### Tổ Chức Tệp Tin
+- Quy ước đặt tên
+- Các mẫu cấu trúc thư mục
+- Tổ chức module
+- Các tệp cấu hình
 
-### Statistics and Metrics
-- Total files: 245
-- Total lines of code: 45,234
-- Total tokens: 325,478
-- Test coverage: 87%
-- Last updated: 2025-10-29
+### Thống Kê và Số Liệu
+- Tổng số tệp: 245
+- Tổng số dòng code: 45,234
+- Tổng số token: 325,478
+- Độ bao phủ kiểm tra: 87%
+- Cập nhật lần cuối: 2025-10-29
 
-## Repomix Integration
+## Tích Hợp Repomix
 
-### What is Repomix?
+### Repomix là gì?
 
-Repomix is a tool that packs entire repositories into single, AI-friendly files:
-- Generates comprehensive codebase snapshot
-- Calculates token counts for LLM context
-- Preserves project structure
-- Excludes unnecessary files
+Repomix là một công cụ đóng gói toàn bộ kho lưu trữ (repository) thành các tệp đơn lẻ, thân thiện với AI:
+- Tạo ảnh chụp nhanh (snapshot) toàn diện của codebase
+- Tính toán số lượng token cho ngữ cảnh LLM
+- Giữ nguyên cấu trúc dự án
+- Loại bỏ các tệp không cần thiết
 
-### Generated Files
+### Các Tệp Được Tạo
 
 **./repomix-output.xml**
-- Complete codebase compaction
-- XML format optimized for AI parsing
-- Includes all source files
-- Metadata and statistics
+- Codebase đã được nén hoàn chỉnh
+- Định dạng XML được tối ưu hóa cho AI phân tích
+- Bao gồm tất cả các tệp nguồn
+- Siêu dữ liệu (metadata) và thống kê
 
-### Repomix Configuration
+### Cấu Hình Repomix
 
-Default exclusions (via `.gitignore` and `.repomixignore`):
+Các loại trừ mặc định (thông qua `.gitignore` và `.repomixignore`):
 ```
 node_modules/
 dist/
@@ -348,248 +349,248 @@ coverage/
 .env
 ```
 
-## Agent Invoked
+## Agent Được Gọi
 
-The command uses the **docs-manager agent** with these capabilities:
+Lệnh này sử dụng **docs-manager agent** với các khả năng sau:
 
-- **Codebase Analysis**: Comprehensive project scanning
-- **Structure Identification**: Pattern recognition in file organization
-- **Statistics Generation**: File counts, token counts, metrics
-- **Documentation Creation**: Formatted markdown generation
-- **Quality Assurance**: Consistency and completeness validation
+- **Phân tích Codebase**: Quét dự án toàn diện
+- **Xác định cấu trúc**: Nhận diện mẫu trong tổ chức tệp
+- **Tạo thống kê**: Số lượng tệp, token, số liệu
+- **Tạo tài liệu**: Tạo tệp markdown đã được định dạng
+- **Đảm bảo chất lượng**: Xác minh tính nhất quán và đầy đủ
 
-## Best Practices
+## Thực Hành Tốt Nhất
 
-### Regular Updates
+### Cập Nhật Thường Xuyên
 
-✅ **Periodic summaries:**
+✅ **Tóm tắt định kỳ:**
 ```bash
-# Weekly or after major changes
+# Hàng tuần hoặc sau những thay đổi lớn
 /docs:summarize
 ```
 
-❌ **Too frequent:**
+❌ **Quá thường xuyên:**
 ```bash
-# After every tiny change
-/fix:fast [typo]
-/docs:summarize  # Wasteful
+# Sau mỗi thay đổi nhỏ
+/fix:fast [lỗi đánh máy]
+/docs:summarize  # Lãng phí
 ```
 
-### Before Major Work
+### Trước Những Công Việc Lớn
 
-✅ **Establish baseline:**
+✅ **Thiết lập mốc cơ sở (baseline):**
 ```bash
-# Before refactoring
+# Trước khi tái cấu trúc
 /docs:summarize
-# Perform refactoring
-/docs:summarize  # Compare changes
+# Thực hiện tái cấu trúc
+/docs:summarize  # So sánh các thay đổi
 ```
 
-### For Onboarding
+### Cho Việc Hướng Dẫn (Onboarding)
 
-✅ **Prepare for new developers:**
+✅ **Chuẩn bị cho lập trình viên mới:**
 ```bash
-# Update documentation
+# Cập nhật tài liệu
 /docs:summarize
 /docs:update
 
-# New team member gets complete picture
+# Thành viên mới có cái nhìn toàn diện về dự án
 ```
 
-## Workflow
+## Quy Trình Làm Việc
 
-### Onboarding New Developers
+### Hướng Dẫn Lập Trình Viên Mới
 
 ```bash
-# 1. Generate summary
+# 1. Tạo bản tóm tắt
 /docs:summarize
 
-# 2. Update full documentation
+# 2. Cập nhật tài liệu đầy đủ
 /docs:update
 
-# 3. Share documentation
-# Point new developers to ./docs/codebase-summary.md
+# 3. Chia sẻ tài liệu
+# Chỉ cho lập trình viên mới tệp ./docs/codebase-summary.md
 ```
 
-### Architecture Review
+### Xem Lại Kiến Trúc
 
 ```bash
-# 1. Generate current state
+# 1. Tạo trạng thái hiện tại
 /docs:summarize
 
-# 2. Review summary
+# 2. Xem lại bản tóm tắt
 cat docs/codebase-summary.md
 
-# 3. Plan refactoring based on insights
-/plan [refactor based on architecture review]
+# 3. Lập kế hoạch tái cấu trúc dựa trên những hiểu biết thu được
+/plan [tái cấu trúc dựa trên xem lại kiến trúc]
 ```
 
-### Project Handoff
+### Bàn Giao Dự Án
 
 ```bash
-# 1. Generate comprehensive summary
+# 1. Tạo bản tóm tắt toàn diện
 /docs:summarize
 
-# 2. Update all documentation
+# 2. Cập nhật tất cả tài liệu
 /docs:update
 
-# 3. Commit documentation
+# 3. Commit tài liệu
 /git:cm
 
-# 4. Share with receiving team
+# 4. Chia sẻ với nhóm tiếp nhận
 ```
 
-### Regular Maintenance
+### Bảo Trì Định Kỳ
 
 ```bash
-# Weekly/monthly task
+# Tác vụ hàng tuần/hàng tháng
 /docs:summarize
 
-# Review changes
+# Xem lại các thay đổi
 git diff docs/codebase-summary.md
 
-# Commit if significant changes
+# Commit nếu có thay đổi đáng kể
 /git:cm
 ```
 
-## Troubleshooting
+## Xử Lý Sự Cố
 
-### Repomix Not Found
+### Không Tìm Thấy Repomix
 
-**Problem:** `repomix` command not available
+**Vấn đề:** Lệnh `repomix` không khả dụng
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Install repomix
+# Cài đặt repomix
 npm install -g repomix
 
-# Then run command
+# Sau đó chạy lệnh
 /docs:summarize
 ```
 
-### Large Codebase Timeout
+### Codebase Lớn Bị Timeout
 
-**Problem:** Timeout on very large projects
+**Vấn đề:** Hết thời gian chờ (timeout) trên các dự án rất lớn
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Configure repomix to exclude more
+# Cấu hình repomix để loại trừ nhiều hơn
 echo "target/" >> .repomixignore
 echo "*.min.js" >> .repomixignore
 
-# Then retry
+# Thử lại
 /docs:summarize
 ```
 
-### Missing Files in Summary
+### Thiếu Tệp Trong Bản Tóm Tắt
 
-**Problem:** Some files not included
+**Vấn đề:** Một số tệp không được bao gồm
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Check .gitignore and .repomixignore
-# Remove exclusions if needed
-# Then regenerate
+# Kiểm tra .gitignore và .repomixignore
+# Loại bỏ các loại trừ nếu cần thiết
+# Sau đó tạo lại
 /docs:summarize
 ```
 
-## Token Count Usage
+## Sử Dụng Số Lượng Token
 
-### Why Token Counts Matter
+### Tại sao số lượng Token lại quan trọng
 
-Token counts help:
-- **AI Context Planning**: Know if codebase fits in LLM context window
-- **Documentation Scope**: Understand documentation requirements
-- **Code Review**: Estimate review effort
-- **Refactoring Planning**: Assess complexity
+Số lượng token giúp:
+- **Lập kế hoạch ngữ cảnh AI**: Biết liệu codebase có vừa với cửa sổ ngữ cảnh (context window) của LLM không
+- **Phạm vi tài liệu**: Hiểu các yêu cầu về tài liệu
+- **Xem lại mã (Code Review)**: Ước tính nỗ lực xem lại
+- **Lập kế hoạch tái cấu trúc**: Đánh giá độ phức tạp
 
-### Example Token Breakdown
+### Ví Dụ Phân Bổ Token
 
 ```
-Total tokens: 325,478
+Tổng số token: 325,478
 
-Breakdown:
-- API layer: 89,234 tokens (27%)
-- Services: 123,456 tokens (38%)
+Phân bổ:
+- Lớp API: 89,234 tokens (27%)
+- Các dịch vụ (Services): 123,456 tokens (38%)
 - Models: 45,678 tokens (14%)
-- Utils: 34,567 tokens (11%)
-- Tests: 32,543 tokens (10%)
+- Tiện ích (Utils): 34,567 tokens (11%)
+- Kiểm tra (Tests): 32,543 tokens (10%)
 ```
 
-### Context Window Planning
+### Lập Kế Hoạch Cửa Sổ Ngữ Cảnh
 
 ```
 Claude 3.5 Sonnet: 200K tokens
-Project size: 325K tokens
+Kích thước dự án: 325K tokens
 
-Strategy:
-- Analyze by module (< 200K each)
-- Use codebase summary for high-level decisions
-- Deep dive into specific modules as needed
+Chiến lược:
+- Phân tích theo từng module (< 200K mỗi module)
+- Sử dụng bản tóm tắt codebase cho các quyết định cấp cao
+- Đi sâu vào các module cụ thể khi cần thiết
 ```
 
-## Related Commands
+## Các Lệnh Liên Quan
 
-### Full Documentation Update
+### Cập Nhật Toàn Bộ Tài Liệu
 
 ```bash
-# Summary only
+# Chỉ tóm tắt
 /docs:summarize
 
-# All documentation
+# Tất cả tài liệu
 /docs:update
 ```
 
-### Initialize Documentation
+### Khởi Tạo Tài Liệu
 
 ```bash
-# First-time setup
+# Thiết lập lần đầu
 /docs:init
 
-# Regular updates
+# Cập nhật định kỳ
 /docs:summarize
 ```
 
-### Review Changes
+### Xem Lại Thay Đổi
 
 ```bash
-# Generate summary
+# Tạo bản tóm tắt
 /docs:summarize
 
-# Review recent work
+# Xem lại công việc gần đây
 /watzup
 ```
 
-## Output Files
+## Các Tệp Đầu Ra
 
-After running `/docs:summarize`:
+Sau khi chạy `/docs:summarize`:
 
 ```
 ./
 ├── docs/
-│   └── codebase-summary.md (created/updated)
-└── repomix-output.xml (generated)
+│   └── codebase-summary.md (được tạo/cập nhật)
+└── repomix-output.xml (được tạo)
 ```
 
-## Metrics
+## Số Liệu Thống Kê
 
-Typical `/docs:summarize` performance:
+Hiệu suất điển hình của `/docs:summarize`:
 
-- **Time**: 1-3 minutes (depending on codebase size)
-- **Files analyzed**: All source files (excluding node_modules, build artifacts)
-- **Output size**: 5-50 KB markdown file
-- **Token accuracy**: 99%+ accurate counting
-- **Update frequency**: Recommended weekly or after major changes
+- **Thời gian**: 1-3 phút (tùy thuộc vào kích thước codebase)
+- **Tệp được phân tích**: Tất cả các tệp nguồn (ngoại trừ node_modules, build artifacts)
+- **Kích thước đầu ra**: Tệp markdown từ 5-50 KB
+- **Độ chính xác token**: Đếm chính xác trên 99%
+- **Tần suất cập nhật**: Khuyến nghị hàng tuần hoặc sau các thay đổi lớn
 
-## Next Steps
+## Bước Tiếp Theo
 
-After using `/docs:summarize`:
+Sau khi sử dụng `/docs:summarize`:
 
-- [/docs:update](/docs/engineer/commands/docs/update) - Update all documentation
-- [/docs:init](/docs/engineer/commands/docs/init) - Initialize full documentation
-- [/watzup](/docs/engineer/commands/core/watzup) - Review recent changes
-- [/git:cm](/docs/engineer/commands/git/commit) - Commit documentation
+- [/docs:update](/docs/engineer/commands/docs/update) - Cập nhật tất cả tài liệu
+- [/docs:init](/docs/engineer/commands/docs/init) - Khởi tạo tài liệu đầy đủ
+- [/watzup](/docs/engineer/commands/core/watzup) - Xem lại các thay đổi gần đây
+- [/git:cm](/docs/engineer/commands/git/commit) - Commit tài liệu
 
 ---
 
-**Key Takeaway**: `/docs:summarize` provides a quick, comprehensive overview of your codebase structure, helping developers understand project organization and serving as valuable context for AI-assisted development.
+**Điểm mấu chốt**: `/docs:summarize` cung cấp cái nhìn tổng quan nhanh chóng và toàn diện về cấu trúc codebase của bạn, giúp lập trình viên hiểu cách tổ chức dự án và đóng vai trò là ngữ cảnh quý giá cho việc phát triển với sự hỗ trợ của AI.

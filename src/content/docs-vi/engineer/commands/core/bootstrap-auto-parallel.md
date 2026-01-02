@@ -6,6 +6,7 @@ kit: engineer
 category: commands/core
 order: 41
 published: true
+lang: vi
 ---
 
 # /bootstrap:auto:parallel
@@ -15,195 +16,195 @@ Khởi tạo dự án song song với điều phối đa agent. Tạo dự án h
 ## Cú pháp
 
 ```bash
-/bootstrap:auto:parallel [user-requirements]
+/bootstrap:auto:parallel [yêu-cầu-người-dùng]
 ```
 
 ## Khi nào sử dụng
 
 - **Khởi động dự án mới**: Bắt đầu dự án từ đầu
-- **Proof of Concept**: Phát triển prototype nhanh
-- **Microservices**: Scaffolding nhiều service
-- **Tự động hóa hoàn toàn**: Khi không cần cổng phê duyệt
-- **Ưu tiên tốc độ**: Song song hóa tối đa
+- **Thử nghiệm khái niệm (PoC)**: Phát triển bản mẫu (prototype) nhanh
+- **Microservices**: Tạo khung (scaffolding) cho nhiều dịch vụ
+- **Tự động hóa hoàn toàn**: Khi không cần các bước phê duyệt trung gian
+- **Ưu tiên tốc độ**: Tận dụng tối đa việc thực thi song song
 
 ## Ví dụ nhanh
 
 ```bash
-/bootstrap:auto:parallel [build a task management app with user auth, real-time updates, and mobile-responsive UI]
+/bootstrap:auto:parallel [xây dựng ứng dụng quản lý công việc với xác thực người dùng, cập nhật thời gian thực và giao diện web đáp ứng trên di động]
 ```
 
 **Kết quả**:
 ```
-Starting parallel bootstrap...
+Đang bắt đầu khởi tạo song song...
 
-Wave 1 (Parallel):
-├─ [researcher] Tech stack research...
-└─ [ui-designer] Design system...
+Sóng 1 (Song song):
+├─ [researcher] Nghiên cứu tech stack...
+└─ [ui-designer] Thiết kế hệ thống giao diện...
 
-Wave 2:
-└─ [planner] Architecture planning...
+Sóng 2:
+└─ [planner] Lập kế hoạch kiến trúc...
 
-Wave 3 (Parallel):
-├─ [fullstack-dev 1] Auth module...
-├─ [fullstack-dev 2] Task CRUD...
-└─ [fullstack-dev 3] Real-time updates...
+Sóng 3 (Song song):
+├─ [fullstack-dev 1] Module xác thực...
+├─ [fullstack-dev 2] CRUD công việc...
+└─ [fullstack-dev 3] Cập nhật thời gian thực...
 
-Wave 4:
-├─ [tester] Integration tests...
-└─ [docs-manager] Documentation...
+Sóng 4:
+├─ [tester] Kiểm thử tích hợp...
+└─ [docs-manager] Tài liệu hóa...
 
-Project delivered: task-manager/
+Dự án đã bàn giao: task-manager/
 ```
 
 ## Tham số
 
-- `[user-requirements]`: Mô tả dự án mong muốn bằng ngôn ngữ tự nhiên (bắt buộc)
+- `[yêu-cầu-người-dùng]`: Mô tả dự án mong muốn bằng ngôn ngữ tự nhiên (bắt buộc)
 
 ## Quy trình hoạt động
 
-### Workflow 10 bước
+### Quy trình 10 bước
 
 **Bước 1: Phân tích yêu cầu**
 ```
-Parsing requirements...
+Đang phân tích yêu cầu...
 
-Features identified:
-- User authentication
-- Task management (CRUD)
-- Real-time updates
-- Mobile-responsive UI
+Các tính năng được xác định:
+- Xác thực người dùng
+- Quản lý công việc (CRUD)
+- Cập nhật thời gian thực
+- Giao diện web đáp ứng (responsive)
 
-Constraints:
-- Modern stack (inferred)
-- Production-ready (inferred)
+Các ràng buộc:
+- Stack hiện đại (suy luận)
+- Sẵn sàng cho sản xuất (suy luận)
 ```
 
 **Bước 2: Nghiên cứu Tech Stack**
 ```
-[researcher] Analyzing tech options...
+[researcher] Đang phân tích các lựa chọn công nghệ...
 
-Recommended stack:
+Stack đề xuất:
 - Frontend: Next.js 14 + TypeScript
 - Backend: Node.js + PostgreSQL
 - Real-time: WebSockets
 - Auth: Better Auth
 ```
 
-**Bước 3: Lập kế hoạch kiến trúc**
+**Bước 3: Lập kế hoạch Kiến trúc**
 ```
-[planner] Creating architecture...
+[planner] Đang tạo kiến trúc...
 
-Architecture: Modular monolith
-- /app - Next.js routes
-- /lib - Business logic
-- /components - UI components
-- /api - API routes
+Kiến trúc: Modular monolith
+- /app - Các tuyến (routes) Next.js
+- /lib - Logic nghiệp vụ
+- /components - Các thành phần giao diện
+- /api - Các tuyến API
 ```
 
-**Bước 4: UI/UX Design (song song với 2-3)**
+**Bước 4: Thiết kế UI/UX (song song với bước 2-3)**
 ```
-[ui-designer] Creating design system...
+[ui-designer] Đang tạo hệ thống thiết kế...
 
 Design tokens:
-- Colors, typography, spacing
-- Component patterns
-- Responsive breakpoints
+- Màu sắc, kiểu chữ, khoảng cách
+- Các mẫu thành phần (components)
+- Các điểm ngắt (breakpoints) cho responsive
 ```
 
 **Bước 5: Tạo kế hoạch triển khai song song**
 ```
-Creating /plan:parallel plan...
+Đang tạo kế hoạch /plan:parallel...
 
-Phases identified:
-- Phase 1: Auth (no deps)
-- Phase 2: Task CRUD (no deps)
-- Phase 3: Real-time (depends on 2)
-- Phase 4: UI polish (depends on 1,2,3)
+Các giai đoạn được xác định:
+- Giai đoạn 1: Xác thực (không phụ thuộc)
+- Giai đoạn 2: CRUD Công việc (không phụ thuộc)
+- Giai đoạn 3: Thời gian thực (phụ thuộc vào 2)
+- Giai đoạn 4: Hoàn thiện giao diện (phụ thuộc vào 1, 2, 3)
 ```
 
-**Bước 6: Giải quyết dependency**
+**Bước 6: Giải quyết phụ thuộc (Dependency)**
 ```
-Building execution waves...
+Đang xây dựng các sóng thực thi...
 
-Wave 1: Phase 1 + Phase 2 (parallel)
-Wave 2: Phase 3 (sequential)
-Wave 3: Phase 4 (sequential)
+Sóng 1: Giai đoạn 1 + Giai đoạn 2 (song song)
+Sóng 2: Giai đoạn 3 (tuần tự)
+Sóng 3: Giai đoạn 4 (tuần tự)
 ```
 
 **Bước 7: Thực thi song song**
 ```
-Launching fullstack-developer agents...
+Đang khởi chạy các agent fullstack-developer...
 
-[Agent 1] Phase 1: Auth module
-[Agent 2] Phase 2: Task CRUD
+[Agent 1] Giai đoạn 1: Module Xác thực
+[Agent 2] Giai đoạn 2: CRUD Công việc
 
-Progress:
-[██████████] Agent 1: Complete (8 min)
-[████████──] Agent 2: 80% (9 min)
+Tiến độ:
+[██████████] Agent 1: Hoàn tất (8 phút)
+[████████──] Agent 2: 80% (9 phút)
 ```
 
-**Bước 8: Integration Testing**
+**Bước 8: Kiểm thử tích hợp (Integration Testing)**
 ```
-[tester] Running integration tests...
+[tester] Đang chạy kiểm thử tích hợp...
 
-Tests: 24/24 passed
-Coverage: 78%
+Kiểm thử: 24/24 đã vượt qua
+Độ bao phủ: 78%
 ```
 
-**Bước 9: Tài liệu**
+**Bước 9: Tài liệu hóa**
 ```
-[docs-manager] Generating docs...
+[docs-manager] Đang tạo tài liệu...
 
-Created:
+Đã tạo:
 - README.md
-- API documentation
-- Development guide
+- Tài liệu API
+- Hướng dẫn phát triển
 ```
 
 **Bước 10: Bàn giao dự án**
 ```
-Project complete!
-Location: task-manager/
+Dự án đã hoàn thành!
+Vị trí: task-manager/
 ```
 
-## Sóng thực thi song song
+## Các sóng thực thi song song
 
 ```
-Wave 1 (Parallel):
-├── researcher: Tech stack research
-└── ui-designer: Design system
+Sóng 1 (Song song):
+├── researcher: Nghiên cứu tech stack
+└── ui-designer: Thiết kế hệ thống giao diện
                     │
                     ▼
-Wave 2 (Sequential):
-└── planner: Architecture planning
+Sóng 2 (Tuần tự):
+└── planner: Lập kế hoạch kiến trúc
                     │
                     ▼
-Wave 3 (Parallel):
-├── fullstack-dev 1: Auth module
-├── fullstack-dev 2: Task CRUD
-└── fullstack-dev 3: Real-time
+Sóng 3 (Song song):
+├── fullstack-dev 1: Module xác thực
+├── fullstack-dev 2: CRUD công việc
+└── fullstack-dev 3: Thời gian thực
                     │
                     ▼
-Wave 4 (Sequential):
-├── tester: Integration tests
-└── docs-manager: Documentation
+Sóng 4 (Tuần tự):
+├── tester: Kiểm thử tích hợp
+└── docs-manager: Tài liệu hóa
 ```
 
-## Agent được gọi
+## Các Agent được triệu tập
 
-| Agent | Vai trò | Wave |
+| Agent | Vai trò | Sóng |
 |-------|---------|------|
 | researcher | Nghiên cứu tech stack | 1 |
-| ui-designer | Design system | 1 |
+| ui-designer | Thiết kế hệ thống giao diện | 1 |
 | planner | Lập kế hoạch kiến trúc | 2 |
 | fullstack-developer (x3) | Triển khai song song | 3 |
-| tester | Integration testing | 4 |
-| docs-manager | Tài liệu | 4 |
+| tester | Kiểm thử tích hợp | 4 |
+| docs-manager | Tài liệu hóa | 4 |
 
-## Cấu trúc output
+## Cấu trúc đầu ra (Output)
 
 ```
-{project-name}/
+{tên-dự-án}/
 ├── src/
 │   ├── app/
 │   ├── components/
@@ -227,95 +228,95 @@ Wave 4 (Sequential):
 
 ## Ví dụ đầy đủ
 
-### Kịch bản: E-commerce Platform
+### Kịch bản: Nền tảng Thương mại Điện tử
 
 ```bash
-/bootstrap:auto:parallel [build e-commerce platform with product catalog, shopping cart, checkout, and admin dashboard]
+/bootstrap:auto:parallel [xây dựng nền tảng thương mại điện tử với danh mục sản phẩm, giỏ hàng, quy trình thanh toán và bảng điều khiển quản trị]
 ```
 
 **Thực thi**:
 
 ```
 ═══════════════════════════════════════
-        PARALLEL BOOTSTRAP
+        KHỞI TẠO SONG SONG
 ═══════════════════════════════════════
 
-Requirements:
-- Product catalog
-- Shopping cart
-- Checkout flow
-- Admin dashboard
+Yêu cầu:
+- Danh mục sản phẩm
+- Giỏ hàng
+- Quy trình thanh toán
+- Bảng điều khiển quản trị
 
-Wave 1: Research + Design (Parallel)
+Sóng 1: Nghiên cứu + Thiết kế (Song song)
 ─────────────────────────────────────
-[researcher] Tech stack analysis...
-✓ Recommended: Next.js + Stripe + PostgreSQL
+[researcher] Phân tích tech stack...
+✓ Đề xuất: Next.js + Stripe + PostgreSQL
 
-[ui-designer] Design system...
-✓ E-commerce patterns: Product cards, cart, checkout
+[ui-designer] Thiết kế hệ thống giao diện...
+✓ Các mẫu TMĐT: Thẻ sản phẩm, giỏ hàng, thanh toán
 
-Wave 2: Architecture
+Sóng 2: Kiến trúc
 ─────────────────────────────────────
-[planner] Creating architecture...
-✓ Modular e-commerce structure
-✓ 4 independent modules identified
+[planner] Đang tạo kiến trúc...
+✓ Cấu trúc TMĐT dạng module
+✓ Đã xác định 4 module độc lập
 
-Wave 3: Implementation (Parallel)
+Sóng 3: Triển khai (Song song)
 ─────────────────────────────────────
-[fullstack-dev 1] Product catalog...
-[fullstack-dev 2] Shopping cart...
-[fullstack-dev 3] Checkout + Stripe...
-[fullstack-dev 4] Admin dashboard...
+[fullstack-dev 1] Danh mục sản phẩm...
+[fullstack-dev 2] Giỏ hàng...
+[fullstack-dev 3] Thanh toán + Stripe...
+[fullstack-dev 4] Bảng điều khiển quản trị...
 
-Progress:
-[██████████] Agent 1: Complete (12 min)
-[██████████] Agent 2: Complete (8 min)
-[██████████] Agent 3: Complete (15 min)
-[██████████] Agent 4: Complete (14 min)
+Tiến độ:
+[██████████] Agent 1: Hoàn tất (12 phút)
+[██████████] Agent 2: Hoàn tất (8 phút)
+[██████████] Agent 3: Hoàn tất (15 phút)
+[██████████] Agent 4: Hoàn tất (14 phút)
 
-Wave 4: Testing + Docs
+Sóng 4: Kiểm thử + Tài liệu
 ─────────────────────────────────────
-[tester] Integration tests...
-✓ 42 tests passed
+[tester] Kiểm thử tích hợp...
+✓ 42/42 bài kiểm thử đã vượt qua
 
-[docs-manager] Documentation...
-✓ README, API docs, admin guide
+[docs-manager] Tài liệu hóa...
+✓ README, tài liệu API, hướng dẫn quản trị
 
 ═══════════════════════════════════════
-        PROJECT COMPLETE
+        DỰ ÁN ĐÃ HOÀN TẤT
 ═══════════════════════════════════════
 
-Location: ecommerce-platform/
-Files: 87 files created
-Tests: 42/42 passed
-Coverage: 75%
-Time: 18 minutes (vs ~45 min sequential)
+Vị trí: ecommerce-platform/
+Tệp tin: 87 tệp đã được tạo
+Kiểm thử: 42/42 đã vượt qua
+Độ bao phủ: 75%
+Thời gian: 18 phút (so với ~45 phút nếu thực hiện tuần tự)
 
-Next steps:
+Các bước tiếp theo:
 1. cd ecommerce-platform
 2. npm install
 3. npm run dev
 ═══════════════════════════════════════
 ```
 
-## Use Cases
+## Các trường hợp sử dụng
 
 ### Ứng dụng Full-Stack
 
 ```bash
-/bootstrap:auto:parallel [SaaS dashboard with user management, billing, and analytics]
+/bootstrap:auto:parallel [bảng điều khiển SaaS với quản lý người dùng, thanh toán và phân tích]
 ```
 
 ### Kiến trúc Microservices
 
 ```bash
-/bootstrap:auto:parallel [microservices: auth-service, user-service, notification-service with shared API gateway]
+/bootstrap:auto:parallel [microservices: auth-service, user-service, notification-service với API gateway dùng chung]
 ```
 
-### Dự án API-First
+### Dự án Ưu tiên API (API-First)
 
 ```bash
-/bootstrap:auto:parallel [REST API with OpenAPI spec, JWT auth, rate limiting, and PostgreSQL]
+/bootstrap:auto:parallel [REST API với đặc tả OpenAPI, xác thực JWT, giới hạn tốc độ và PostgreSQL]
 ```
 
 ## So sánh
@@ -333,34 +334,34 @@ Next steps:
 ```bash
 # Tốt: Yêu cầu cụ thể
 /bootstrap:auto:parallel [
-  Task management app with:
-  - User auth (email + Google OAuth)
-  - Project organization
-  - Real-time collaboration
-  - Mobile-responsive
-  - Dark mode support
+  Ứng dụng quản lý công việc với:
+  - Xác thực người dùng (email + Google OAuth)
+  - Tổ chức dự án
+  - Cộng tác thời gian thực
+  - Đáp ứng trên di động
+  - Hỗ trợ chế độ tối (dark mode)
 ]
 
 # Kém hiệu quả: Mơ hồ
-/bootstrap:auto:parallel [build a task app]
+/bootstrap:auto:parallel [xây dựng ứng dụng công việc]
 ```
 
-### Kiểm tra cấu trúc output
+### Kiểm tra cấu trúc đầu ra
 
-Sau bootstrap:
+Sau khi hoàn tất bootstrap:
 ```bash
-cd {project-name}
+cd {tên-dự-án}
 ls -la
 cat README.md
 ```
 
 ## Các lệnh liên quan
 
-- [/bootstrap](/vi/docs/engineer/commands/core/bootstrap) - Bootstrap với cổng phê duyệt
-- [/bootstrap:auto](/vi/docs/engineer/commands/core/bootstrap-auto) - Auto bootstrap (tuần tự)
-- [/plan:parallel](/vi/docs/engineer/commands/plan/parallel) - Tạo kế hoạch song song
+- [/bootstrap](/vi/docs/engineer/commands/core/bootstrap) - Khởi tạo với các bước phê duyệt
+- [/bootstrap:auto](/vi/docs/engineer/commands/core/bootstrap-auto) - Khởi tạo tự động (tuần tự)
+- [/plan:parallel](/vi/docs/engineer/commands/plan/parallel) - Tạo kế hoạch thực thi song song
 - [/code:parallel](/vi/docs/engineer/commands/core/code-parallel) - Thực thi kế hoạch song song
 
 ---
 
-**Điểm chính**: `/bootstrap:auto:parallel` tạo dự án hoàn chỉnh sử dụng sóng thực thi agent song song, giảm đáng kể thời gian thiết lập dự án thông qua điều phối đa agent phối hợp.
+**Thông điệp chính**: `/bootstrap:auto:parallel` khởi tạo các dự án hoàn chỉnh bằng cách sử dụng các sóng thực thi agent song song, giúp giảm đáng kể thời gian thiết lập dự án thông qua sự điều phối phối hợp giữa nhiều agent.

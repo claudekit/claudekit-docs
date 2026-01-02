@@ -3,9 +3,10 @@ title: /fix:parallel
 description: Sửa nhiều lỗi độc lập đồng thời sử dụng agent fullstack-developer song song để giải quyết nhanh hơn
 section: engineer
 kit: engineer
-category: commands/fix
+category: docs/commands/fix
 order: 10
 published: true
+lang: vi
 ---
 
 # /fix:parallel
@@ -15,71 +16,71 @@ Lệnh sửa lỗi song song. Giải quyết nhiều lỗi độc lập đồng 
 ## Cú pháp
 
 ```bash
-/fix:parallel [issues]
+/fix:parallel [các vấn đề]
 ```
 
 ## Khi nào sử dụng
 
-- **Nhiều bug không liên quan**: 2+ lỗi không ảnh hưởng cùng file
-- **Sửa lỗi độc lập**: Bug không cần ngữ cảnh chung
-- **Cấp bách thời gian**: Cần nhiều fix nhanh chóng
-- **Sửa hàng loạt**: Xử lý backlog các lỗi nhỏ
+- **Nhiều lỗi không liên quan**: 2+ lỗi không ảnh hưởng đến cùng một tệp
+- **Sửa lỗi độc lập**: Lỗi không cần ngữ cảnh chung
+- **Cấp bách về thời gian**: Cần nhiều bản sửa lỗi nhanh chóng
+- **Sửa lỗi hàng loạt**: Xử lý danh sách các lỗi nhỏ tồn đọng
 
 ## Ví dụ nhanh
 
 ```bash
 /fix:parallel [
-1. Button not clickable on mobile
-2. API timeout on /users endpoint
-3. Typo in footer copyright
+1. Nút không thể nhấp trên di động
+2. Timeout API tại endpoint /users
+3. Lỗi đánh máy trong phần bản quyền ở footer
 ]
 ```
 
 **Kết quả**:
 ```
-Parsing issues...
-Found 3 issues to fix
+Đang phân tích các vấn đề...
+Tìm thấy 3 vấn đề cần sửa
 
-Validating independence...
-✓ Issue 1: src/components/Button.tsx
-✓ Issue 2: src/api/users.ts
-✓ Issue 3: src/components/Footer.tsx
-No file conflicts detected.
+Đang xác minh tính độc lập...
+✓ Vấn đề 1: src/components/Button.tsx
+✓ Vấn đề 2: src/api/users.ts
+✓ Vấn đề 3: src/components/Footer.tsx
+Không phát hiện xung đột tệp.
 
-Launching 3 parallel agents...
+Đang khởi chạy 3 agent song song...
 
-Agent 1: Fixing mobile button...
-Agent 2: Fixing API timeout...
-Agent 3: Fixing footer typo...
+Agent 1: Đang sửa nút trên di động...
+Agent 2: Đang sửa lỗi timeout API...
+Agent 3: Đang sửa lỗi đánh máy ở footer...
 
-Progress:
-[██████████] Agent 3: Complete (12s)
-[██████████] Agent 1: Complete (28s)
-[██████████] Agent 2: Complete (45s)
+Tiến độ:
+[██████████] Agent 3: Hoàn thành (12 giây)
+[██████████] Agent 1: Hoàn thành (28 giây)
+[██████████] Agent 2: Hoàn thành (45 giây)
 
-All agents complete.
+Tất cả các agent đã hoàn thành.
 
-Summary:
-✓ Issue 1: Fixed - Added touch event handler
-✓ Issue 2: Fixed - Increased timeout to 30s
-✓ Issue 3: Fixed - Changed "Copywrite" to "Copyright"
+Tóm tắt:
+✓ Vấn đề 1: Đã sửa - Thêm trình xử lý sự kiện chạm
+✓ Vấn đề 2: Đã sửa - Tăng thời gian chờ lên 30 giây
+✓ Vấn đề 3: Đã sửa - Đổi "Copywrite" thành "Copyright"
 
-Total time: 45s (vs ~90s sequential)
+Tổng thời gian: 45 giây (so với khoảng 90 giây nếu chạy tuần tự)
 ```
 
 ## Tham số
 
-- `[issues]`: Danh sách lỗi cần sửa (bắt buộc). Sử dụng định dạng đánh số hoặc gạch đầu dòng.
+- `[các vấn đề]`: Danh sách các lỗi cần sửa (bắt buộc). Sử dụng định dạng đánh số hoặc gạch đầu dòng.
 
-## Định dạng lỗi
+## Định dạng danh sách lỗi
 
 ### Danh sách đánh số
 
 ```bash
 /fix:parallel [
-1. Button not responding on Safari
-2. Date picker shows wrong timezone
-3. Search results not paginating
+1. Nút không phản hồi trên Safari
+2. Trình chọn ngày hiển thị sai múi giờ
+3. Kết quả tìm kiếm không phân trang
 ]
 ```
 
@@ -87,16 +88,16 @@ Total time: 45s (vs ~90s sequential)
 
 ```bash
 /fix:parallel [
-- Missing loading spinner on submit
-- Incorrect currency symbol for EUR
-- Broken link in navigation
+- Thiếu biểu tượng tải khi gửi form
+- Sai ký hiệu tiền tệ cho EUR
+- Liên kết bị hỏng trong thanh điều hướng
 ]
 ```
 
-### Định dạng inline
+### Định dạng trên cùng một dòng
 
 ```bash
-/fix:parallel [fix mobile menu toggle; fix email validation regex; fix footer alignment]
+/fix:parallel [sửa menu di động; sửa regex xác thực email; sửa căn lề footer]
 ```
 
 ## Quy trình hoạt động
@@ -106,26 +107,26 @@ Total time: 45s (vs ~90s sequential)
 Trích xuất các lỗi riêng lẻ từ đầu vào:
 
 ```
-Input: "1. Button bug 2. API error 3. Typo"
-Parsed:
-- Issue 1: Button bug
-- Issue 2: API error
-- Issue 3: Typo
+Đầu vào: "1. Lỗi nút 2. Lỗi API 3. Lỗi đánh máy"
+Kết quả phân tích:
+- Vấn đề 1: Lỗi nút
+- Vấn đề 2: Lỗi API
+- Vấn đề 3: Lỗi đánh máy
 ```
 
-### Bước 2: Xác nhận độc lập
+### Bước 2: Xác nhận tính độc lập
 
-Kiểm tra các lỗi không ảnh hưởng cùng file:
+Kiểm tra xem các lỗi có ảnh hưởng đến cùng một tệp hay không:
 
 ```
-Analyzing file dependencies...
+Đang phân tích các phụ thuộc tệp...
 
-Issue 1: Likely affects src/components/Button.tsx
-Issue 2: Likely affects src/api/endpoints.ts
-Issue 3: Likely affects src/components/Footer.tsx
+Vấn đề 1: Có khả năng ảnh hưởng đến src/components/Button.tsx
+Vấn đề 2: Có khả năng ảnh hưởng đến src/api/endpoints.ts
+Vấn đề 3: Có khả năng ảnh hưởng đến src/components/Footer.tsx
 
-Overlap check: None detected ✓
-Issues are independent.
+Kiểm tra chồng chéo: Không phát hiện ✓
+Các vấn đề là độc lập.
 ```
 
 ### Bước 3: Khởi chạy agent song song
@@ -133,37 +134,37 @@ Issues are independent.
 Tạo một agent fullstack-developer cho mỗi lỗi:
 
 ```
-Launching agents...
+Đang khởi chạy các agent...
 
-Agent 1: fullstack-developer → Issue 1
-Agent 2: fullstack-developer → Issue 2
-Agent 3: fullstack-developer → Issue 3
+Agent 1: fullstack-developer → Vấn đề 1
+Agent 2: fullstack-developer → Vấn đề 2
+Agent 3: fullstack-developer → Vấn đề 3
 
-All agents running in parallel.
+Tất cả các agent đang chạy song song.
 ```
 
-### Bước 4: Theo dõi tiến trình
+### Bước 4: Theo dõi tiến độ
 
-Theo dõi mỗi agent với timeout (10 phút mỗi agent):
+Theo dõi từng agent với thời gian chờ (10 phút cho mỗi agent):
 
 ```
-Progress:
-[████████──] Agent 1: Investigating... (15s)
-[██████████] Agent 2: Complete (22s)
-[██████────] Agent 3: Implementing fix... (18s)
+Tiến độ:
+[████████──] Agent 1: Đang điều tra... (15 giây)
+[██████████] Agent 2: Hoàn thành (22 giây)
+[██████────] Agent 3: Đang triển khai bản sửa lỗi... (18 giây)
 ```
 
 ### Bước 5: Tổng hợp kết quả
 
-Thu thập kết quả từ tất cả agent:
+Thu thập kết quả từ tất cả các agent:
 
 ```
-Results collected:
-- Agent 1: Success - 1 file changed
-- Agent 2: Success - 2 files changed
-- Agent 3: Success - 1 file changed
+Kết quả thu thập được:
+- Agent 1: Thành công - 1 tệp thay đổi
+- Agent 2: Thành công - 2 tệp thay đổi
+- Agent 3: Thành công - 1 tệp thay đổi
 
-Total: 4 files changed
+Tổng cộng: 4 tệp đã thay đổi
 ```
 
 ### Bước 6: Báo cáo tóm tắt
@@ -172,236 +173,236 @@ Cung cấp báo cáo sửa lỗi tổng hợp:
 
 ```
 ═══════════════════════════════════════
-        PARALLEL FIX SUMMARY
+        TÓM TẮT SỬA LỖI SONG SONG
 ═══════════════════════════════════════
 
-Issue 1: Button not responding on Safari
-Status: ✓ Fixed
-Files: src/components/Button.tsx
-Changes: Added -webkit-tap-highlight-color
+Vấn đề 1: Nút không phản hồi trên Safari
+Trạng thái: ✓ Đã sửa
+Tệp: src/components/Button.tsx
+Thay đổi: Thêm -webkit-tap-highlight-color
 
-Issue 2: Date picker wrong timezone
-Status: ✓ Fixed
-Files: src/utils/date.ts, src/components/DatePicker.tsx
-Changes: Added timezone normalization
+Vấn đề 2: Trình chọn ngày sai múi giờ
+Trạng thái: ✓ Đã sửa
+Tệp: src/utils/date.ts, src/components/DatePicker.tsx
+Thay đổi: Thêm chuẩn hóa múi giờ
 
-Issue 3: Search pagination broken
-Status: ✓ Fixed
-Files: src/hooks/useSearch.ts
-Changes: Fixed offset calculation
+Vấn đề 3: Phân trang tìm kiếm bị hỏng
+Trạng thái: ✓ Đã sửa
+Tệp: src/hooks/useSearch.ts
+Thay đổi: Sửa công thức tính offset
 
 ───────────────────────────────────────
-Total time: 45 seconds
-Sequential estimate: ~2 minutes
-Speedup: 2.7x
+Tổng thời gian: 45 giây
+Ước tính chạy tuần tự: ~2 phút
+Tốc độ tăng: 2.7 lần
 ═══════════════════════════════════════
 ```
 
 ## Ví dụ đầy đủ
 
-### Kịch bản: Dọn dẹp Sprint
+### Kịch bản: Dọn dẹp cuối giai đoạn (Sprint)
 
 ```bash
 /fix:parallel [
-1. Login button disabled state not showing
-2. Profile image not loading for new users
-3. Search autocomplete not closing on blur
-4. Footer social links point to wrong URLs
+1. Trạng thái vô hiệu hóa của nút đăng nhập không hiển thị
+2. Ảnh đại diện không tải cho người dùng mới
+3. Gợi ý tìm kiếm không đóng khi mất tiêu điểm (blur)
+4. Các liên kết mạng xã hội ở footer trỏ sai URL
 ]
 ```
 
 **Thực thi**:
 
 ```
-Parsing issues...
-Found 4 issues
+Đang phân tích các vấn đề...
+Tìm thấy 4 vấn đề
 
-Validating independence...
-Issue 1: src/components/auth/LoginButton.tsx
-Issue 2: src/components/profile/Avatar.tsx
-Issue 3: src/components/search/Autocomplete.tsx
-Issue 4: src/components/layout/Footer.tsx
+Đang xác minh tính độc lập...
+Vấn đề 1: src/components/auth/LoginButton.tsx
+Vấn đề 2: src/components/profile/Avatar.tsx
+Vấn đề 3: src/components/search/Autocomplete.tsx
+Vấn đề 4: src/components/layout/Footer.tsx
 
-No overlapping files ✓
+Không có tệp chồng chéo ✓
 
-Launching 4 parallel agents...
+Đang khởi chạy 4 agent song song...
 
-[Agent 1] LoginButton: Investigating disabled state...
-[Agent 2] Avatar: Checking image loading logic...
-[Agent 3] Autocomplete: Analyzing blur behavior...
-[Agent 4] Footer: Reviewing social links...
+[Agent 1] LoginButton: Đang điều tra trạng thái vô hiệu hóa...
+[Agent 2] Avatar: Đang kiểm tra logic tải ảnh...
+[Agent 3] Autocomplete: Đang phân tích hành vi blur...
+[Agent 4] Footer: Đang xem xét các liên kết mạng xã hội...
 
-Progress:
-[██████████] Agent 4: Complete (8s)
-[██████████] Agent 1: Complete (15s)
-[██████████] Agent 3: Complete (22s)
-[██████████] Agent 2: Complete (35s)
+Tiến độ:
+[██████████] Agent 4: Hoàn thành (8 giây)
+[██████████] Agent 1: Hoàn thành (15 giây)
+[██████████] Agent 3: Hoàn thành (22 giây)
+[██████████] Agent 2: Hoàn thành (35 giây)
 
 ═══════════════════════════════════════
-        RESULTS
+               KẾT QUẢ
 ═══════════════════════════════════════
 
-✓ Issue 1: Fixed disabled prop binding
-✓ Issue 2: Added fallback for undefined avatar
-✓ Issue 3: Added onBlur handler with delay
-✓ Issue 4: Updated social media URLs
+✓ Vấn đề 1: Đã sửa ràng buộc prop disabled
+✓ Vấn đề 2: Thêm phương án dự phòng cho avatar bị thiếu
+✓ Vấn đề 3: Thêm trình xử lý onBlur với độ trễ
+✓ Vấn đề 4: Cập nhật các URL mạng xã hội
 
-Files changed: 4
-Tests passing: ✓
-Total time: 35s
+Số tệp thay đổi: 4
+Kiểm tra vượt qua: ✓
+Tổng thời gian: 35 giây
 ═══════════════════════════════════════
 ```
 
 ## Phát hiện phụ thuộc
 
-Nếu các lỗi chia sẻ file, `/fix:parallel` định tuyến đến `/fix:hard`:
+Nếu các lỗi chia sẻ cùng một tệp, `/fix:parallel` sẽ chuyển hướng sang `/fix:hard`:
 
 ```bash
 /fix:parallel [
-1. Auth token not refreshing
-2. Login redirect broken
+1. Token xác thực không làm mới
+2. Chuyển hướng đăng nhập bị hỏng
 ]
 ```
 
 ```
-Validating independence...
+Đang xác minh tính độc lập...
 
-Issue 1: Likely affects src/auth/token.ts, src/auth/session.ts
-Issue 2: Likely affects src/auth/login.ts, src/auth/session.ts
+Vấn đề 1: Có khả năng ảnh hưởng đến src/auth/token.ts, src/auth/session.ts
+Vấn đề 2: Có khả năng ảnh hưởng đến src/auth/login.ts, src/auth/session.ts
 
-⚠️ Overlap detected: src/auth/session.ts
+⚠️ Phát hiện chồng chéo: src/auth/session.ts
 
-Issues are not independent.
-→ Routing to /fix:hard instead
+Các vấn đề không độc lập.
+→ Đang chuyển hướng sang /fix:hard thay thế
 
-Both issues may share context in auth/session.ts.
-Sequential fixing recommended for consistency.
+Cả hai vấn đề có thể chia sẻ cùng ngữ cảnh trong auth/session.ts.
+Khuyến nghị sửa lỗi tuần tự để đảm bảo tính nhất quán.
 ```
 
 ## Giới hạn
 
-### Số agent tối đa
+### Số lượng agent tối đa
 
 ```
-Max parallel agents: 5
+Số agent song song tối đa: 5
 ```
 
-Nếu nhiều hơn 5 lỗi, chia thành các wave:
+Nếu có nhiều hơn 5 lỗi, chúng sẽ được chia thành các đợt (waves):
 
 ```
-Found 8 issues
+Tìm thấy 8 vấn đề
 
-Wave 1 (parallel): Issues 1-5
-Wave 2 (parallel): Issues 6-8
+Đợt 1 (song song): Vấn đề 1-5
+Đợt 2 (song song): Vấn đề 6-8
 
-Executing Wave 1...
+Đang thực thi Đợt 1...
 ```
 
-### Yêu cầu độc lập
+### Yêu cầu về tính độc lập
 
-Các lỗi không được chia sẻ file:
-
-```
-✓ Độc lập: Button fix + API fix + Footer fix
-✗ Phụ thuộc: Auth fix + Session fix (chia sẻ auth module)
-```
-
-### Timeout
-
-Mỗi agent có timeout 10 phút:
+Các lỗi không được phép thay đổi cùng một tệp:
 
 ```
-Agent timeout: 10 minutes
+✓ Độc lập: Sửa nút + Sửa API + Sửa Footer
+✗ Phụ thuộc: Sửa xác thực + Sửa phiên làm việc (chia sẻ module auth)
+```
 
-Agent 3 timed out.
-Partial results collected.
+### Thời gian chờ (Timeout)
+
+Mỗi agent có thời gian chờ tối đa là 10 phút:
+
+```
+Thời gian chờ của agent: 10 phút
+
+Agent 3 đã hết thời gian chờ.
+Đã thu thập kết quả một phần.
 ```
 
 ## Thực hành tốt nhất
 
-### Nhóm lỗi liên quan ở nơi khác
+### Nhóm các lỗi liên quan ở nơi khác
 
 ```bash
-# Không tốt: Lỗi liên quan
+# Không tốt: Các lỗi có liên quan đến nhau
 /fix:parallel [
-1. Auth token expiring
-2. Session not persisting
+1. Token xác thực hết hạn
+2. Phiên làm việc không được duy trì
 ]
 
-# Tốt: Dùng /fix:hard cho lỗi liên quan
-/fix:hard [auth token expiring and session not persisting]
+# Tốt: Sử dụng /fix:hard cho các lỗi có liên quan
+/fix:hard [lỗi token xác thực hết hạn và phiên làm việc không được duy trì]
 ```
 
-### Giữ lỗi cụ thể
+### Mô tả lỗi cụ thể
 
 ```bash
-# Tốt: Cụ thể, có thể hành động
+# Tốt: Cụ thể, có thể thực hiện được ngay
 /fix:parallel [
-1. Button color wrong on hover (should be #2563eb)
-2. Missing aria-label on search input
-3. Footer copyright says 2024
+1. Màu nút sai khi di chuột qua (nên là #2563eb)
+2. Thiếu aria-label cho ô nhập tìm kiếm
+3. Bản quyền ở footer vẫn ghi năm 2024
 ]
 
-# Kém hiệu quả: Mơ hồ
+# Không tốt: Mơ hồ
 /fix:parallel [
-1. UI looks wrong
-2. Accessibility issues
-3. Update footer
+1. Giao diện trông hơi sai
+2. Vấn đề về khả năng tiếp cận
+3. Cập nhật footer
 ]
 ```
 
-### Không vượt quá 5 lỗi
+### Không vượt quá 5 lỗi một lúc
 
 ```bash
 # Tối ưu: 2-5 lỗi
 /fix:parallel [
-1. Issue one
-2. Issue two
-3. Issue three
+1. Vấn đề thứ nhất
+2. Vấn đề thứ hai
+3. Vấn đề thứ ba
 ]
 
-# Quá nhiều: Cân nhắc nhiều lần chạy
+# Quá nhiều: Nên chia thành nhiều lần chạy
 /fix:parallel [1-5]
 /fix:parallel [6-10]
 ```
 
-## Khi KHÔNG nên sử dụng
+## Khi nào KHÔNG nên sử dụng
 
-### Lỗi liên quan
+### Các lỗi có liên quan
 
-Các lỗi ảnh hưởng code chung:
+Các lỗi ảnh hưởng đến phần mã nguồn chung:
 
 ```bash
 # Không dùng parallel cho:
-- Auth token + Session handling (chia sẻ auth code)
-- Database query + Connection pool (chia sẻ DB layer)
-- API route + Middleware (chia sẻ request flow)
+- Token xác thực + Xử lý phiên làm việc (chia sẻ mã nguồn auth)
+- Truy vấn DB + Connection pool (chia sẻ lớp DB)
+- API route + Middleware (chia sẻ luồng yêu cầu)
 
-# Dùng thay thế:
-/fix:hard [describe related issues together]
+# Sử dụng thay thế:
+/fix:hard [mô tả các vấn đề liên quan cùng nhau]
 ```
 
 ### Điều tra phức tạp
 
-Lỗi cần phân tích sâu:
+Các lỗi cần phân tích sâu:
 
 ```bash
 # Không dùng parallel cho:
-- "App crashes randomly" (cần điều tra)
-- "Performance degraded" (cần profiling)
+- "Ứng dụng bị treo ngẫu nhiên" (cần điều tra)
+- "Hiệu suất bị giảm sút" (cần đo đạc hiệu năng)
 
-# Dùng thay thế:
-/fix:hard [issue needing investigation]
+# Sử dụng thay thế:
+/fix:hard [vấn đề cần điều tra kỹ]
 ```
 
 ## Các lệnh liên quan
 
 - [/fix](/vi/docs/engineer/commands/fix) - Định tuyến thông minh (có thể định tuyến đến đây)
-- [/fix:fast](/vi/docs/engineer/commands/fix/fast) - Một lỗi đơn giản
-- [/fix:hard](/vi/docs/engineer/commands/fix/hard) - Lỗi phức tạp hoặc liên quan
+- [/fix:fast](/vi/docs/engineer/commands/fix/fast) - Cho một lỗi đơn giản duy nhất
+- [/fix:hard](/vi/docs/engineer/commands/fix/hard) - Cho lỗi phức tạp hoặc các lỗi có liên quan
 - [/code:parallel](/vi/docs/engineer/commands/core/code-parallel) - Thực thi kế hoạch song song
 - [/cook:auto:parallel](/vi/docs/engineer/commands/core/cook-auto-parallel) - Triển khai tính năng song song
 
 ---
 
-**Điểm chính**: `/fix:parallel` tăng tốc sửa lỗi bằng cách giải quyết nhiều lỗi độc lập đồng thời. Cung cấp danh sách lỗi không liên quan, và các agent song song xử lý chúng đồng thời để giải quyết nhanh hơn.
+**Điểm mấu chốt**: `/fix:parallel` tăng tốc quá trình sửa lỗi bằng cách giải quyết nhiều lỗi độc lập cùng một lúc. Hãy cung cấp danh sách các lỗi không liên quan, và các agent song song sẽ xử lý chúng đồng thời để mang lại kết quả nhanh hơn.

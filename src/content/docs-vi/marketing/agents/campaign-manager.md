@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "Campaign Manager"
 description: "Điều phối chiến dịch marketing đa kênh với lập kế hoạch thống nhất, theo dõi và tối ưu hóa"
 section: marketing

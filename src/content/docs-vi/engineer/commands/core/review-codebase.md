@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: /review:codebase
 description: Phân tích codebase toàn diện với agent researcher, scout, và code-reviewer để đánh giá chất lượng
 section: engineer

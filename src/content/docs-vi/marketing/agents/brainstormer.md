@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "Brainstormer"
 description: "Chuyển đổi ý tưởng mơ hồ thành chiến lược marketing được xác thực thông qua khám phá có hệ thống và cuộc tranh luận"
 section: marketing

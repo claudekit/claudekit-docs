@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "Scout External Agent"
 description: "Advanced codebase exploration using external AI tools for complex multi-directory searches."
 section: marketing

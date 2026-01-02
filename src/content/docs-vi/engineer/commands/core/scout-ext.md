@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: /scout:ext
 description: Khám phá codebase sử dụng công cụ agentic bên ngoài như Gemini CLI cho khả năng tìm kiếm nâng cao và context lớn
 section: engineer

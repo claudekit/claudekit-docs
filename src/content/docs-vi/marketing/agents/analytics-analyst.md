@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "Analytics Analyst Agent"
 description: "Tạo báo cáo hiệu suất, phân tích lưu lượng truy cập, theo dõi chuyển đổi và xác định xu hướng marketing."
 section: marketing

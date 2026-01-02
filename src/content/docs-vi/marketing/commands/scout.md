@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "/scout"
 description: "Fast, token-efficient codebase search với parallel agent spawning tìm relevant files cho implementation tasks"
 section: marketing

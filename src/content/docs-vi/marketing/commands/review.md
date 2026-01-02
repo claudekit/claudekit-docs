@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "/review"
 description: "Code quality analysis and review với security, performance, và architecture checks trước commits"
 section: marketing

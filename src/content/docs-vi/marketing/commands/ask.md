@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "/ask"
 description: "Tư vấn kiến trúc chuyên gia với 4 cố vấn chuyên biệt để đưa ra quyết định kỹ thuật, thiết kế hệ thống và lập kế hoạch khả năng mở rộng"
 section: marketing

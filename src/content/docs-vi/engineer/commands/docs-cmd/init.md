@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: /docs:init
 description: Documentation for init
 section: engineer

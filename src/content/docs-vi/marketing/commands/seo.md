@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "/seo"
 description: "Technical SEO audits, keyword research, content optimization, và schema markup generation powered by AI analysis"
 section: marketing

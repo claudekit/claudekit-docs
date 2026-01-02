@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "/campaign"
 description: "Tạo, quản lý và phân tích các chiến dịch tiếp thị với quản lý chiến dịch do AI cung cấp, kiến trúc phễu và theo dõi hiệu suất"
 section: marketing

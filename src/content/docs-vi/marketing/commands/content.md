@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "/content"
 description: "Tạo bài đăng blog được tối ưu hóa cho SEO, trang đích và nội dung tiếp thị với nghiên cứu do AI cung cấp, viết và tối ưu hóa"
 section: marketing

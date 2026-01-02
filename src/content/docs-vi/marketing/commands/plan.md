@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "/plan"
 description: "Tạo detailed implementation plans với AI-powered research, complexity assessment, và progressive disclosure structure"
 section: marketing

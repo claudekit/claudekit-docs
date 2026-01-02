@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: /debug
 description: Documentation for debug
 section: engineer

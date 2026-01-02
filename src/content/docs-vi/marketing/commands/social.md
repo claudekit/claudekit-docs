@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "/social"
 description: "Tạo nội dung mạng xã hội được tối ưu hóa cho từng nền tảng với AI copywriting"
 section: marketing

@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "/use-mcp"
 description: "Thực thi MCP thông qua Gemini CLI để giữ lại ngân sách ngữ cảnh"
 section: marketing

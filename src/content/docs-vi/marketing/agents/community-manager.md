@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "Community Manager"
 description: "Quản lý cộng đồng Discord và Slack, phân tích cảm xúc, tối ưu hóa engagement, và hỗ trợ thành viên"
 section: marketing

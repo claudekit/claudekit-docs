@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "/code"
 description: "Thực hiện kế hoạch thực hiện với quy trình 6 bước: phân tích, thực hiện, kiểm tra, đánh giá mã, phê duyệt người dùng và hoàn tất"
 section: marketing

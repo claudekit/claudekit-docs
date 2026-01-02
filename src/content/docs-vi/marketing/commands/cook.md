@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "/cook"
 description: "Thực hiện tính năng toàn bộ với lập kế hoạch, nghiên cứu, mã hóa, kiểm tra và tài liệu trong một lệnh duy nhất"
 section: marketing

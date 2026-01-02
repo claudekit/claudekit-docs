@@ -1,4 +1,5 @@
 ---
+lang: vi
 title: "/test"
 description: "Chạy bộ test và phân tích kết quả - chỉ kiểm tra, không triển khai"
 section: marketing

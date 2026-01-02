@@ -1,351 +1,352 @@
 ---
-title: mcp-builder
-description: Documentation for mcp-builder
+title: Kỹ năng xây dựng MCP (mcp-builder)
+description: Tài liệu hướng dẫn sử dụng kỹ năng mcp-builder
 section: engineer
 kit: engineer
 category: skills/tools
 order: 13
 published: true
+lang: vi
 ---
 
-# mcp-builder Skill
+# Kỹ năng xây dựng MCP (mcp-builder)
 
-Build high-quality MCP (Model Context Protocol) servers that enable Claude to interact with external services through well-designed tools.
+Xây dựng các máy chủ MCP (Model Context Protocol) chất lượng cao cho phép Claude tương tác với các dịch vụ bên ngoài thông qua các công cụ được thiết kế bài bản.
 
-## What is MCP?
+## MCP là gì?
 
-Model Context Protocol allows Claude to:
-- Call external APIs
-- Access databases
-- Read/write files
-- Interact with services
-- Execute tools
-- Fetch resources
+Giao thức ngữ cảnh mô hình (Model Context Protocol) cho phép Claude:
+- Gọi các API bên ngoài
+- Truy cập cơ sở dữ liệu
+- Đọc/ghi tệp tin
+- Tương tác với các dịch vụ
+- Thực thi các công cụ (tools)
+- Lấy các tài nguyên (resources)
 
-## When to Use
+## Khi nào nên sử dụng
 
-Use mcp-builder when creating MCP servers for:
-- Custom API integrations
-- Database access
-- File system operations
-- External service connections
-- Custom tools for Claude
-- Resource providers
+Sử dụng mcp-builder khi tạo các máy chủ MCP cho:
+- Tích hợp API tùy chỉnh
+- Truy cập cơ sở dữ liệu
+- Các thao tác với hệ thống tệp tin
+- Kết nối các dịch vụ bên ngoài
+- Các công cụ tùy chỉnh cho Claude
+- Các nhà cung cấp tài nguyên
 
-## Quick Start
+## Bắt đầu nhanh
 
-### Invoke the Skill
-
-```
-"Use mcp-builder to create MCP server for Stripe API with:
-- Payment tools
-- Subscription management
-- Webhook handling
-- TypeScript implementation"
-```
-
-### What You Get
-
-The skill will help you:
-1. Design server architecture
-2. Create tool definitions
-3. Implement handlers
-4. Add authentication
-5. Handle errors properly
-6. Write documentation
-7. Set up testing
-
-## Common Use Cases
-
-### API Integration
+### Cách gọi kỹ năng
 
 ```
-"Use mcp-builder to create MCP server for GitHub API:
-- Repository management
-- Issue tracking
-- Pull request tools
-- Authentication with tokens"
+"Sử dụng mcp-builder để tạo máy chủ MCP cho Stripe API với:
+- Các công cụ thanh toán
+- Quản lý gói đăng ký
+- Xử lý webhook
+- Triển khai bằng TypeScript"
 ```
 
-### Database Access
+### Kết quả nhận được
+
+Kỹ năng này sẽ giúp bạn:
+1. Thiết kế kiến trúc máy chủ
+2. Tạo các định nghĩa công cụ (tool definitions)
+3. Triển khai các trình xử lý (handlers)
+4. Thêm xác thực
+5. Xử lý lỗi đúng cách
+6. Viết tài liệu hướng dẫn
+7. Thiết lập kiểm thử (testing)
+
+## Các trường hợp sử dụng phổ biến
+
+### Tích hợp API
 
 ```
-"Use mcp-builder for PostgreSQL MCP server:
-- Query execution
-- Schema introspection
-- Connection pooling
-- Read-only safety"
+"Sử dụng mcp-builder để tạo máy chủ MCP cho GitHub API:
+- Quản lý kho lưu trữ
+- Theo dõi vấn đề (issues)
+- Các công cụ pull request
+- Xác thực bằng mã thông báo (tokens)"
 ```
 
-### File System
+### Truy cập cơ sở dữ liệu
 
 ```
-"Use mcp-builder to create file management MCP server:
-- Read/write files
-- Directory operations
-- Search functionality
-- Safe path handling"
+"Sử dụng mcp-builder cho máy chủ MCP PostgreSQL:
+- Thực thi truy vấn
+- Kiểm tra cấu trúc schema
+- Nhóm kết nối (connection pooling)
+- An toàn với chế độ chỉ đọc"
 ```
 
-### Custom Tools
+### Hệ thống tệp tin
 
 ```
-"Use mcp-builder for custom business logic:
-- Invoice generation
-- Report creation
-- Data transformation
-- Workflow automation"
+"Sử dụng mcp-builder để tạo máy chủ MCP quản lý tệp tin:
+- Đọc/ghi tệp tin
+- Các thao tác thư mục
+- Tính năng tìm kiếm
+- Xử lý đường dẫn an toàn"
 ```
 
-## MCP Server Types
+### Các công cụ tùy chỉnh
+
+```
+"Sử dụng mcp-builder cho logic kinh doanh tùy chỉnh:
+- Tạo hóa đơn
+- Tạo báo cáo
+- Biến đổi dữ liệu
+- Tự động hóa quy trình công việc"
+```
+
+## Các loại máy chủ MCP
 
 ### Python (FastMCP)
 
 ```
-"Use mcp-builder to create Python MCP server with FastMCP:
-- Tool decorators
-- Resource handlers
-- Type hints
-- Async operations"
+"Sử dụng mcp-builder để tạo máy chủ MCP Python với FastMCP:
+- Các trình trang trí công cụ (tool decorators)
+- Các trình xử lý tài nguyên
+- Gợi ý kiểu dữ liệu (type hints)
+- Các thao tác bất đồng bộ (async)"
 ```
 
-**Best for:**
-- Data processing
-- ML/AI integration
-- Scientific computing
-- Python ecosystem tools
+**Tốt nhất cho:**
+- Xử lý dữ liệu
+- Tích hợp ML/AI
+- Tính toán khoa học
+- Các công cụ trong hệ sinh thái Python
 
 ### TypeScript (MCP SDK)
 
 ```
-"Use mcp-builder to create TypeScript MCP server:
-- Type safety
-- Modern async/await
-- NPM ecosystem
-- Easy deployment"
+"Sử dụng mcp-builder để tạo máy chủ MCP TypeScript:
+- An toàn kiểu dữ liệu (type safety)
+- Sử dụng async/await hiện đại
+- Hệ sinh thái NPM
+- Dễ dàng triển khai"
 ```
 
-**Best for:**
-- API wrappers
-- Web services
-- Node.js integrations
-- JavaScript tooling
+**Tốt nhất cho:**
+- Các bản bao bọc API (API wrappers)
+- Dịch vụ web
+- Tích hợp Node.js
+- Các công cụ JavaScript
 
-## Key Components
+## Các thành phần chính
 
-### Tools
+### Công cụ (Tools)
 
-Functions Claude can call:
-- Input schema
-- Output format
-- Error handling
-- Documentation
+Các hàm mà Claude có thể gọi:
+- Cấu trúc đầu vào (Input schema)
+- Định dạng đầu ra
+- Xử lý lỗi
+- Tài liệu hướng dẫn
 
-### Resources
+### Tài nguyên (Resources)
 
-Data Claude can read:
-- URIs
-- Content types
-- Dynamic updates
-- Metadata
+Dữ liệu mà Claude có thể đọc:
+- Các URI
+- Các loại nội dung
+- Cập nhật động
+- Siêu dữ liệu (metadata)
 
-### Prompts
+### Lời nhắc (Prompts)
 
-Templates Claude can use:
-- Pre-defined prompts
-- Parameter injection
-- Context building
+Các mẫu mà Claude có thể sử dụng:
+- Các lời nhắc đã được định nghĩa sẵn
+- Tiêm tham số (parameter injection)
+- Xây dựng ngữ cảnh
 
-## Example Implementations
+## Ví dụ triển khai
 
-### Stripe Integration
-
-```
-"Use mcp-builder to create Stripe MCP server with tools for:
-- Create customer
-- Create subscription
-- Process payment
-- Handle webhooks
-- List transactions"
-```
-
-### Slack Integration
+### Tích hợp Stripe
 
 ```
-"Use mcp-builder for Slack MCP server:
-- Send messages
-- List channels
-- Search messages
-- Upload files
-- React to messages"
+"Sử dụng mcp-builder để tạo máy chủ MCP Stripe với các công cụ cho:
+- Tạo khách hàng
+- Tạo gói đăng ký
+- Xử lý thanh toán
+- Xử lý webhook
+- Liệt kê các giao dịch"
 ```
 
-### Database Tools
+### Tích hợp Slack
 
 ```
-"Use mcp-builder for database MCP server:
-- Execute queries
-- Get schema info
-- Run migrations
-- Backup data
-- Safety checks"
+"Sử dụng mcp-builder cho máy chủ MCP Slack:
+- Gửi tin nhắn
+- Liệt kê các kênh
+- Tìm kiếm tin nhắn
+- Tải tệp lên
+- Phản hồi tin nhắn"
 ```
 
-### File Processing
+### Các công cụ cơ sở dữ liệu
 
 ```
-"Use mcp-builder to create document processor:
-- PDF extraction
-- Image conversion
-- Text analysis
-- Format conversion"
+"Sử dụng mcp-builder cho máy chủ MCP cơ sở dữ liệu:
+- Thực thi truy vấn
+- Lấy thông tin schema
+- Chạy các bản di cư (migrations)
+- Sao lưu dữ liệu
+- Kiểm tra an toàn"
 ```
 
-## Best Practices
-
-### Tool Design
-
-The skill ensures:
-- Clear tool names
-- Descriptive parameters
-- Proper input validation
-- Good error messages
-- Complete documentation
-
-### Security
-
-Implements:
-- Authentication
-- Authorization
-- Input sanitization
-- Rate limiting
-- Safe defaults
-
-### Error Handling
-
-Provides:
-- Clear error messages
-- Proper error codes
-- Recovery suggestions
-- Logging
-- Graceful failures
-
-### Documentation
-
-Creates:
-- Tool descriptions
-- Parameter docs
-- Usage examples
-- Setup guide
-- Troubleshooting
-
-## Advanced Features
-
-### Authentication
+### Xử lý tệp tin
 
 ```
-"Use mcp-builder to add authentication:
-- API key validation
-- OAuth2 flow
-- Token refresh
-- Session management"
+"Sử dụng mcp-builder để tạo bộ xử lý tài liệu:
+- Trích xuất PDF
+- Chuyển đổi hình ảnh
+- Phân tích văn bản
+- Chuyển đổi định dạng"
 ```
 
-### Caching
+## Phương pháp hay nhất
+
+### Thiết kế công cụ
+
+Kỹ năng này đảm bảo:
+- Tên công cụ rõ ràng
+- Các tham số mang tính mô tả
+- Xác thực đầu vào phù hợp
+- Thông báo lỗi tốt
+- Tài liệu đầy đủ
+
+### Bảo mật
+
+Triển khai:
+- Xác thực (Authentication)
+- Ủy quyền (Authorization)
+- Làm sạch đầu vào (sanitization)
+- Giới hạn tốc độ (rate limiting)
+- Các thiết lập mặc định an toàn
+
+### Xử lý lỗi
+
+Cung cấp:
+- Thông báo lỗi rõ ràng
+- Mã lỗi phù hợp
+- Gợi ý khôi phục
+- Ghi nhật ký (logging)
+- Xử lý thất bại êm ái
+
+### Tài liệu hướng dẫn
+
+Tạo ra:
+- Mô tả công cụ
+- Tài liệu về tham số
+- Ví dụ sử dụng
+- Hướng dẫn thiết lập
+- Xử lý sự cố
+
+## Các tính năng nâng cao
+
+### Xác thực
 
 ```
-"Use mcp-builder to implement caching:
-- Response caching
-- Cache invalidation
-- TTL configuration
-- Performance optimization"
+"Sử dụng mcp-builder để thêm xác thực:
+- Xác thực khóa API
+- Luồng OAuth2
+- Làm mới mã thông báo (token refresh)
+- Quản lý phiên làm việc"
 ```
 
-### Rate Limiting
+### Lưu bộ nhớ đệm (Caching)
 
 ```
-"Use mcp-builder to add rate limiting:
-- Per-user limits
-- Endpoint limits
-- Retry logic
-- Backoff strategy"
+"Sử dụng mcp-builder để triển khai bộ nhớ đệm:
+- Lưu bộ nhớ đệm phản hồi
+- Vô hiệu hóa bộ nhớ đệm
+- Cấu hình TTL (thời gian sống)
+- Tối ưu hóa hiệu suất"
 ```
 
-### Webhooks
+### Giới hạn tốc độ (Rate Limiting)
 
 ```
-"Use mcp-builder to handle webhooks:
-- Signature verification
-- Event processing
-- Async handling
-- Error recovery"
+"Sử dụng mcp-builder để thêm giới hạn tốc độ:
+- Giới hạn trên mỗi người dùng
+- Giới hạn điểm cuối (endpoint)
+- Logic thử lại
+- Chiến lược backoff"
 ```
 
-## Development Workflow
-
-### 1. Design Phase
+### Webhook
 
 ```
-"Use mcp-builder to design MCP server:
-- Define tools needed
-- Specify inputs/outputs
-- Plan authentication
-- Document API"
+"Sử dụng mcp-builder để xử lý webhook:
+- Xác minh chữ ký
+- Xử lý sự kiện
+- Xử lý bất đồng bộ
+- Khôi phục sau lỗi"
 ```
 
-### 2. Implementation
+## Quy trình phát triển
+
+### 1. Giai đoạn thiết kế
 
 ```
-"Use mcp-builder to implement:
-- Create server structure
-- Implement tools
-- Add error handling
-- Write tests"
+"Sử dụng mcp-builder để thiết kế máy chủ MCP:
+- Định nghĩa các công cụ cần thiết
+- Chỉ định đầu vào/đầu ra
+- Lập kế hoạch xác thực
+- Tài liệu hóa API"
 ```
 
-### 3. Testing
+### 2. Triển khai
 
 ```
-"Use mcp-builder to test server:
-- Unit tests for tools
-- Integration tests
-- Error scenarios
-- Performance tests"
+"Sử dụng mcp-builder để triển khai:
+- Tạo cấu trúc máy chủ
+- Triển khai các công cụ
+- Thêm xử lý lỗi
+- Viết các bản kiểm thử"
 ```
 
-### 4. Deployment
+### 3. Kiểm thử
 
 ```
-"Use mcp-builder to deploy:
-- Package server
-- Configuration
-- Monitoring
-- Documentation"
+"Sử dụng mcp-builder để kiểm thử máy chủ:
+- Kiểm thử đơn vị cho các công cụ
+- Kiểm thử tích hợp
+- Các kịch bản lỗi
+- Kiểm thử hiệu suất"
 ```
 
-## Testing
-
-### Unit Tests
+### 4. Triển khai (Deployment)
 
 ```
-"Use mcp-builder to create tests for:
-- Each tool function
-- Error conditions
-- Input validation
-- Output format"
+"Sử dụng mcp-builder để triển khai:
+- Đóng gói máy chủ
+- Cấu hình
+- Giám sát
+- Tài liệu hướng dẫn"
 ```
 
-### Integration Tests
+## Kiểm thử (Testing)
+
+### Kiểm thử đơn vị (Unit Tests)
 
 ```
-"Use mcp-builder to test integration:
-- Real API calls
-- Authentication flow
-- Error handling
-- Edge cases"
+"Sử dụng mcp-builder để tạo các bản kiểm thử cho:
+- Mỗi hàm công cụ
+- Các điều kiện lỗi
+- Xác thực đầu vào
+- Định dạng đầu ra"
 ```
 
-## Configuration
+### Kiểm thử tích hợp (Integration Tests)
+
+```
+"Sử dụng mcp-builder để kiểm thử tích hợp:
+- Các cuộc gọi API thực tế
+- Luồng xác thực
+- Xử lý lỗi
+- Các trường hợp biên (edge cases)"
+```
+
+## Cấu hình
 
 ### Claude Desktop
 
@@ -360,77 +361,77 @@ Creates:
 }
 ```
 
-### Environment Variables
+### Biến môi trường
 
 ```
-"Use mcp-builder to configure:
-- API keys
-- Database URLs
-- Service endpoints
-- Feature flags"
+"Sử dụng mcp-builder để cấu hình:
+- Các khóa API
+- Các URL cơ sở dữ liệu
+- Các điểm cuối dịch vụ
+- Các cờ tính năng (feature flags)"
 ```
 
-## Troubleshooting
+## Xử lý sự cố
 
-### Common Issues
+### Các vấn đề thường gặp
 
-**Server not connecting**
-- Check configuration path
-- Verify server starts
-- Review logs
+**Máy chủ không kết nối được**
+- Kiểm tra đường dẫn cấu hình
+- Xác minh máy chủ đã khởi động
+- Xem lại nhật ký (logs)
 
-**Tools not appearing**
-- Check tool definitions
-- Verify schema format
-- Review documentation
+**Công cụ không xuất hiện**
+- Kiểm tra định nghĩa công cụ
+- Xác minh định dạng schema
+- Xem lại tài liệu hướng dẫn
 
-**Authentication failing**
-- Verify credentials
-- Check token format
-- Review auth flow
+**Xác thực không thành công**
+- Xác minh thông tin đăng nhập
+- Kiểm tra định dạng mã thông báo
+- Xem lại luồng xác thực
 
-## Quick Examples
+## Ví dụ nhanh
 
-**Simple API Wrapper:**
+**Bản bao bọc API đơn giản:**
 ```
-"Use mcp-builder to wrap REST API as MCP server"
-```
-
-**Database Tools:**
-```
-"Use mcp-builder for PostgreSQL query tools with read-only safety"
+"Sử dụng mcp-builder để bao bọc REST API thành máy chủ MCP"
 ```
 
-**Custom Business Logic:**
+**Các công cụ cơ sở dữ liệu:**
 ```
-"Use mcp-builder to create MCP server for:
-- Generate invoices
-- Calculate taxes
-- Send notifications
-- Update records"
+"Sử dụng mcp-builder cho các công cụ truy vấn PostgreSQL với tính năng an toàn chỉ đọc"
 ```
 
-**Multi-Service Integration:**
+**Logic kinh doanh tùy chỉnh:**
 ```
-"Use mcp-builder to combine:
+"Sử dụng mcp-builder để tạo máy chủ MCP cho:
+- Tạo hóa đơn
+- Tính thuế
+- Gửi thông báo
+- Cập nhật hồ sơ"
+```
+
+**Tích hợp đa dịch vụ:**
+```
+"Sử dụng mcp-builder để kết hợp:
 - GitHub API
 - Jira API
-- Slack notifications
-- Into single MCP server"
+- Thông báo Slack
+- Thành một máy chủ MCP duy nhất"
 ```
 
-## Resources
+## Tài nguyên
 
-- [MCP Specification](https://modelcontextprotocol.io)
+- [Thông số kỹ thuật MCP](https://modelcontextprotocol.io)
 - [FastMCP (Python)](https://github.com/jlowin/fastmcp)
 - [MCP SDK (TypeScript)](https://github.com/modelcontextprotocol/typescript-sdk)
 
-## Next Steps
+## Bước tiếp theo
 
-- [Custom Tools Examples](/docs/use-cases/)
-- [API Integration Guide](/docs/use-cases/)
-- [Database Skills](/docs/engineer/skills/postgresql-psql)
+- [Ví dụ về các công cụ tùy chỉnh](/docs/use-cases/)
+- [Hướng dẫn tích hợp API](/docs/use-cases/)
+- [Kỹ năng cơ sở dữ liệu](/docs/engineer/skills/postgresql-psql)
 
 ---
 
-**Bottom Line:** mcp-builder creates production-ready MCP servers. Just describe the tools you need and the skill handles the implementation.
+**Tóm lại:** mcp-builder tạo ra các máy chủ MCP sẵn sàng cho môi trường sản xuất. Chỉ cần mô tả các công cụ bạn cần và kỹ năng này sẽ xử lý việc triển khai.

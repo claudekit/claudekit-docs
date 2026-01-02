@@ -1,143 +1,142 @@
 ---
-title: "Xây dựng Chương trình Giới thiệu"
-description: "Xây dựng các chương trình giới thiệu viral cho SaaS với phần thưởng hai chiều, tích hợp nền tảng, ngăn chặn gian lận và theo dõi quy thuộc."
-lang: vi
+title: "Referral Program Building"
+description: "Build viral referral programs for SaaS with dual rewards, platform integrations, fraud prevention, and attribution tracking."
 section: marketing
 category: skills
 order: 13
 ---
 
-> Xây dựng các chương trình giới thiệu thúc đẩy tỷ lệ chuyển đổi cao hơn 2-3 lần với khả năng giữ chân tốt hơn 37% bằng cách sử dụng các cơ chế viral đã chứng minh.
+> Build referral programs that drive 2-3x higher conversion rates with 37% better retention using proven viral mechanics.
 
-## Kỹ năng này làm gì
+## What This Skill Does
 
-**Thách thức**: Các giới thiệu khách hàng là những khách hàng tiềm năng có chất lượng cao nhất, nhưng hầu hết các chương trình đều thất bại do cấu trúc phần thưởng kém, cơ chế phức tạp hoặc thiếu tích hợp vào quy trình làm việc của người dùng.
+**Challenge**: Customer referrals are the highest quality leads, but most programs fail due to poor reward structures, complex mechanics, or lack of integration into user workflows.
 
-**Giải pháp**: Kỹ năng Xây dựng Chương trình Giới thiệu cung cấp mẫu cấu trúc phần thưởng, so sánh nền tảng (Rewardful, ReferralCandy, Viral Loops), mô hình triển khai kỹ thuật, quy tắc ngăn chặn gian lận và các nghiên cứu trường hợp (Dropbox 3900% tăng trưởng, PayPal 100M người dùng).
+**Solution**: Referral Program Building skill provides reward structure templates, platform comparisons (Rewardful, ReferralCandy, Viral Loops), technical implementation models, fraud prevention rules, and case studies (Dropbox 3900% growth, PayPal 100M users).
 
-## Kích hoạt
+## Activation
 
-**Ngầm**: Kích hoạt khi agents thảo luận về giới thiệu khách hàng, vòng lặp viral hoặc tiếp thị miệng.
+**Implicit**: Activated when agents discuss customer referrals, viral loops, or word-of-mouth marketing.
 
-**Rõ ràng**: Kích hoạt qua prompt:
+**Explicit**: Activate via prompt:
 ```
-Kích hoạt skill referral-program-building để [mô tả task]
+Activate referral-program-building skill to [describe task]
 ```
 
-## Khả năng
+## Capabilities
 
-### 1. Thiết kế cấu trúc phần thưởng
-Chọn mô hình khuyến khích dựa trên loại sản phẩm và kinh tế khách hàng.
+### 1. Reward Structure Design
+Choose incentive model based on product type and customer economics.
 
-**Cấu trúc phần thưởng**:
-- **Two-sided**: Cả giới thiệu và ngôn từ nhận được phần thưởng (68% tham gia cao hơn)
-- **Product-aligned**: Sử dụng sản phẩm làm phần thưởng (mô hình lưu trữ Dropbox)
-- **Tiered**: Phần thưởng tăng dần cho nhiều giới thiệu
-- **Multi-step**: Phần thưởng mở khóa tại đăng ký, kích hoạt, mua hàng
+**Reward structures**:
+- **Two-sided**: Both referrer and referee receive rewards (68% higher participation)
+- **Product-aligned**: Use product as reward (Dropbox storage model)
+- **Tiered**: Escalating rewards for multiple referrals
+- **Multi-step**: Rewards unlock at signup, activation, purchase
 
-**Hướng dẫn cấu trúc**: `references/reward-structures.md`
+**Structure guide**: `references/reward-structures.md`
 
-### 2. Lựa chọn nền tảng
-So sánh các nền tảng giới thiệu theo tích hợp, giá cả và bộ tính năng.
+### 2. Platform Selection
+Compare referral platforms by integrations, pricing, and feature sets.
 
-**Tham chiếu nhanh nền tảng**:
-| Nền tảng | Tốt nhất cho | Giá | Thời gian thiết lập |
+**Platform quick reference**:
+| Platform | Best for | Price | Setup time |
 |----------|----------|-------|------------|
-| **Rewardful** | Đăng ký SaaS | $49/mo | 1 giờ |
-| **ReferralCandy** | Thương mại điện tử | $49/mo | 1-click |
-| **Viral Loops** | Chiến dịch tùy chỉnh | Custom | Visual builder |
-| **FirstPromoter** | Hoa hồng định kỳ | Custom | Dashboard |
+| **Rewardful** | SaaS subscriptions | $49/mo | 1 hour |
+| **ReferralCandy** | E-commerce | $49/mo | 1-click |
+| **Viral Loops** | Custom campaigns | Custom | Visual builder |
+| **FirstPromoter** | Recurring commissions | Custom | Dashboard |
 
-**Hướng dẫn lựa chọn**: `references/platform-selection.md`
+**Selection guide**: `references/platform-selection.md`
 
-### 3. Mô hình triển khai kỹ thuật
-Các lược đồ cơ sở dữ liệu, mô hình API và logic quy thuộc.
+### 3. Technical Implementation Models
+Database schemas, API patterns, and attribution logic.
 
-**Các thành phần cốt lõi**:
-- Liên kết giới thiệu duy nhất cho mỗi người dùng
-- Quy thuộc dựa trên cookie (cửa sổ 30-90 ngày)
-- Tự động hóa thực hiện phần thưởng
-- Quy tắc phát hiện gian lận
+**Core components**:
+- Unique referral links per user
+- Cookie-based attribution (30-90 day window)
+- Automated reward fulfillment
+- Fraud detection rules
 
-**Hướng dẫn triển khai**: `references/technical-implementation.md`
+**Implementation guide**: `references/technical-implementation.md`
 
-## Yêu cầu trước
+## Prerequisites
 
-- Sản phẩm với quy trình chuyển đổi đã chứng minh
-- Dữ liệu LTV của khách hàng (để tính toán phần thưởng bền vững)
-- Tài nguyên kỹ thuật cho tích hợp
+- Product with proven conversion funnel
+- Customer LTV data (to calculate sustainable rewards)
+- Technical resources for integration
 
-## Cấu hình
+## Configuration
 
-**Danh sách kiểm tra chương trình giới thiệu**:
-- [ ] Giá trị phần thưởng được xác định (cả giới thiệu và ngôn từ)
-- [ ] Cửa sổ quy thuộc được đặt (30-90 ngày điển hình)
-- [ ] Các quy tắc ngăn chặn gian lận được thiết lập
-- [ ] Vị trí onboarding được chọn (sau đăng ký, trong ứng dụng, email)
-- [ ] Theo dõi và phân tích được cấu hình
+**Referral program checklist**:
+- [ ] Reward values defined (both referrer and referee)
+- [ ] Attribution window set (30-90 days typical)
+- [ ] Fraud prevention rules established
+- [ ] Onboarding placement chosen (post-signup, in-app, email)
+- [ ] Tracking and analytics configured
 
-## Thực hành tốt nhất
+## Best Practices
 
-**1. Phần thưởng hai chiều hoạt động tốt nhất**
-Mô hình Dropbox: giới thiệu nhận 500MB lưu trữ, ngôn từ nhận 500MB. Cả hai đều được hưởng lợi như nhau.
+**1. Two-sided rewards work best**
+Dropbox model: referrer gets 500MB storage, referee gets 500MB. Both benefit equally.
 
-**2. Tích hợp vào quy trình làm việc của người dùng**
-Đừng ẩn giới thiệu trong cài đặt. Đặt ở nơi người dùng trải nghiệm giá trị (sau sử dụng tính năng, khoảnh khắc thành công).
+**2. Integrate into user workflow**
+Don't hide referrals in settings. Place where users experience value (after feature use, success moments).
 
-**3. Sự đơn giản là chìa khóa**
-Giải thích chương trình trong 2-3 dòng. Các quy tắc phức tạp giết chết sự tham gia.
+**3. Simplicity is key**
+Explain program in 2-3 lines. Complex rules kill participation.
 
-## Use cases phổ biến
+## Common Use Cases
 
-### Use Case 1: Ra mắt chương trình giới thiệu SaaS
-**Kịch bản**: Ra mắt chương trình refer-a-friend cho SaaS quản lý dự án.
+### Use Case 1: Launch SaaS Referral Program
+**Scenario**: Launch refer-a-friend program for project management SaaS.
 
-**Quy trình**:
-1. Định nghĩa phần thưởng: Giới thiệu nhận $50 tín dụng, ngôn từ nhận 1 tháng miễn phí
-2. Chọn nền tảng: Rewardful (tích hợp Stripe)
-3. Đặt quy thuộc: Cửa sổ cookie 60 ngày
-4. Đặt CTA giới thiệu: Trang hoàn thành dự án (khoảnh khắc thành công)
-5. Chiến dịch email: Thông báo cho khách hàng hiện có
-6. Theo dõi KPIs: Tỷ lệ tham gia (mục tiêu 5-9%), tỷ lệ giới thiệu (mục tiêu 5-10%)
+**Workflow**:
+1. Define rewards: Referrer gets $50 credit, referee gets 1 month free
+2. Choose platform: Rewardful (Stripe integration)
+3. Set attribution: 60-day cookie window
+4. Place referral CTA: Project completion page (success moment)
+5. Email campaign: Announce to existing customers
+6. Track KPIs: Participation rate (target 5-9%), referral rate (target 5-10%)
 
-**Số liệu thành công**: 30-50% CAC thấp hơn so với các kênh trả tiền, 16-25% LTV cao hơn cho các khách hàng được giới thiệu.
+**Success metrics**: 30-50% lower CAC vs paid channels, 16-25% higher LTV for referred customers.
 
-### Use Case 2: Tối ưu hóa vòng lặp Viral
-**Kịch bản**: Chương trình hiện có có tỷ lệ tham gia 2%, muốn tăng lên 8%.
+### Use Case 2: Optimize Viral Loop
+**Scenario**: Existing program has 2% participation, want to increase to 8%.
 
-**Quy trình**:
-1. Kiểm toán chương trình hiện có:
-   - Giá trị phần thưởng (có hấp dẫn không?)
-   - Vị trí (ẩn trong cài đặt?)
-   - Friction (quá nhiều bước?)
-2. Cải tiến:
-   - Tăng giá trị phần thưởng (thử 2x hiện tại)
-   - Chuyển đến trang lưu lượng cao (bảng điều khiển)
-   - Điền sẵn tin nhắn chia sẻ (giảm friction)
-   - Thêm chứng minh xã hội ("5.000 người dùng giới thiệu bạn bè")
-3. A/B kiểm tra các thay đổi, đo đạc lift
+**Workflow**:
+1. Audit existing program:
+   - Reward value (attractive enough?)
+   - Placement (hidden in settings?)
+   - Friction (too many steps?)
+2. Improvements:
+   - Increase reward value (try 2x current)
+   - Move to high-traffic page (dashboard)
+   - Pre-populate share message (reduce friction)
+   - Add social proof ("5,000 users referred friends")
+3. A/B test changes, measure lift
 
-**Kết quả**: Tăng 3-4x tham gia điển hình với tối ưu hóa.
+**Result**: 3-4x participation increase typical with optimization.
 
-## Xử lý sự cố
+## Troubleshooting
 
-**Vấn đề**: Tỷ lệ tham gia thấp (<3%)
-**Giải pháp**: Tăng giá trị phần thưởng, đơn giản hóa cơ chế, cải thiện vị trí (chuyển đến khu vực lưu lượng cao).
+**Issue**: Low participation rate (<3%)
+**Solution**: Increase reward value, simplify mechanics, improve placement (move to high-traffic area).
 
-**Vấn đề**: Gian lận cao (đăng ký giả để nhận phần thưởng)
-**Giải pháp**: Triển khai giữ phần thưởng (không thanh toán cho đến khi ngôn từ kích hoạt/mua), yêu cầu xác minh email, xem xét thủ công các đăng ký hàng loạt.
+**Issue**: High fraud (fake signups for rewards)
+**Solution**: Implement reward hold (don't pay until referee activates/purchases), require email verification, manually review bulk signups.
 
-**Vấn đề**: Người dùng giới thiệu nhưng ngôn từ không chuyển đổi
-**Giải pháp**: Tối ưu hóa onboarding ngôn từ (lần đầu tiên trải nghiệm người dùng). Người dùng được giới thiệu nên thấy giá trị nhanh chóng.
+**Issue**: Users refer but referees don't convert
+**Solution**: Optimize referee onboarding (first-time user experience). Referred users should see value quickly.
 
-## Kỹ năng liên quan
+## Related Skills
 
-- [Affiliate Marketing](/vi/docs/marketing/skills/affiliate-marketing) - Giới thiệu do đối tác điều khiển
-- [Gamification Marketing](/vi/docs/marketing/skills/gamification-marketing) - Bảng xếp hạng giới thiệu và thách thức
-- [Email Marketing](/vi/docs/marketing/skills/email-marketing) - Email chiến dịch giới thiệu
+- [Affiliate Marketing](/docs/marketing/skills/affiliate-marketing) - Partner-driven referrals
+- [Gamification Marketing](/docs/marketing/skills/gamification-marketing) - Referral leaderboards and challenges
+- [Email Marketing](/docs/marketing/skills/email-marketing) - Referral campaign emails
 
-## Lệnh liên quan
+## Related Commands
 
-- `/campaign/create` - Chiến dịch ra mắt giới thiệu
-- `/plan` - Lập kế hoạch triển khai
-- `/analyze:report` - Phân tích hiệu suất giới thiệu
+- `/campaign/create` - Launch referral campaign
+- `/plan` - Implementation planning
+- `/analyze:report` - Analyze referral performance

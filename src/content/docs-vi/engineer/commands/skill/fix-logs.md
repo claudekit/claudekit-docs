@@ -1,96 +1,97 @@
 ---
 title: /skill:fix-logs
-description: Documentation for fix-logs
+description: Sửa các skill agent dựa trên các lỗi và vấn đề được tìm thấy trong logs.txt
 section: engineer
 kit: engineer
 category: commands/skill
 order: 81
 published: true
+lang: vi
 ---
 
 # /skill:fix-logs
 
-Fix agent skills based on errors and issues found in `logs.txt`. This command analyzes skill failures, identifies problems, updates the skill prompt, and validates fixes.
+Sửa các skill agent dựa trên các lỗi và vấn đề được tìm thấy trong `logs.txt`. Lệnh này phân tích các thất bại của skill, xác định vấn đề, cập nhật prompt của skill và xác thực các bản sửa lỗi.
 
-## Syntax
+## Cú pháp
 
 ```bash
 /skill:fix-logs [skill-path]
 ```
 
-## Input Types
+## Các loại đầu vào
 
-### 1. Skill File Path
+### 1. Đường dẫn file Skill
 
 ```bash
 /skill:fix-logs .claude/skills/mongodb.md
 ```
 
-### 2. Natural Language (finds skill automatically)
+### 2. Ngôn ngữ tự nhiên (tự động tìm skill)
 
 ```bash
-/skill:fix-logs [fix MongoDB skill based on logs]
+/skill:fix-logs [sửa skill MongoDB dựa trên logs]
 ```
 
-## How It Works
+## Cách hoạt động
 
-The `/skill:fix-logs` command follows a diagnostic workflow:
+Lệnh `/skill:fix-logs` tuân theo quy trình chẩn đoán:
 
-### 1. Log Analysis
+### 1. Phân tích Log
 
-- Reads `logs.txt` file
-- Identifies skill-related errors
-- Extracts error messages and context
-- Categorizes issues (syntax, logic, missing info, etc.)
-- Maps errors to skill sections
+- Đọc file `logs.txt`
+- Xác định các lỗi liên quan đến skill
+- Trích xuất thông báo lỗi và ngữ cảnh
+- Phân loại vấn đề (cú pháp, logic, thiếu thông tin, v.v.)
+- Ánh xạ lỗi vào các phần của skill
 
-### 2. Skill Diagnosis
+### 2. Chẩn đoán Skill
 
-Invokes **debugger** agent to:
-- Analyze current skill content
-- Compare with error patterns
-- Identify root causes
-- Determine missing information
-- Find incorrect examples
-- Locate unclear instructions
+Kích hoạt agent **debugger** để:
+- Phân tích nội dung skill hiện tại
+- So sánh với các pattern lỗi
+- Xác định nguyên nhân gốc rễ
+- Xác định thông tin bị thiếu
+- Tìm các ví dụ sai
+- Xác định các hướng dẫn không rõ ràng
 
-### 3. Fix Planning
+### 3. Lập kế hoạch sửa lỗi
 
-Creates fix strategy:
-- List issues to address
-- Plan content additions
-- Identify sections to rewrite
-- Determine examples to fix
-- Map tool integration corrections
+Tạo chiến lược sửa lỗi:
+- Liệt kê các vấn đề cần giải quyết
+- Lập kế hoạch bổ sung nội dung
+- Xác định các phần cần viết lại
+- Xác định các ví dụ cần sửa
+- Ánh xạ các điều chỉnh tích hợp công cụ
 
-### 4. Skill Update
+### 4. Cập nhật Skill
 
-Invokes **skill-creator** agent to:
-- Update problematic sections
-- Add missing information
-- Fix code examples
-- Clarify instructions
-- Improve tool integration docs
-- Enhance error handling guidance
+Kích hoạt agent **skill-creator** để:
+- Cập nhật các phần có vấn đề
+- Bổ sung thông tin thiếu
+- Sửa các ví dụ mã nguồn
+- Làm rõ các hướng dẫn
+- Cải thiện tài liệu tích hợp công cụ
+- Nâng cao hướng dẫn xử lý lỗi
 
-### 5. Validation
+### 5. Xác thực
 
-Invokes **tester** agent to:
-- Verify fixes address logged issues
-- Test updated examples
-- Validate skill structure
-- Check completeness
-- Generate validation report
+Kích hoạt agent **tester** để:
+- Xác minh các bản sửa lỗi đã giải quyết được vấn đề trong log
+- Kiểm tra các ví dụ đã cập nhật
+- Xác thực cấu trúc skill
+- Kiểm tra tính đầy đủ
+- Tạo báo cáo xác thực
 
-## Examples
+## Ví dụ
 
-### Fix Skill After Usage Errors
+### Sửa Skill sau các lỗi sử dụng
 
 ```bash
 /skill:fix-logs .claude/skills/polar.md
 ```
 
-**logs.txt content:**
+**Nội dung logs.txt:**
 ```
 [2025-10-30 10:23:45] ERROR: Polar skill - webhook signature verification failed
 User asked: "How do I verify Polar webhooks?"
@@ -110,54 +111,54 @@ User asked: "What webhook events does Polar send?"
 Skill missing: subscription.canceled, payment.refunded events
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-Phase 1: Log Analysis (20 seconds)
+Giai đoạn 1: Phân tích Log (20 giây)
 ---
 Agent: debugger
 
-Reading logs.txt...
+Đang đọc logs.txt...
 
-Errors found: 4
+Tìm thấy lỗi: 4
 Skill: polar.md
 
-Error categorization:
+Phân loại lỗi:
 
-1. INCORRECT EXAMPLE - Webhook verification (Line 156)
-   Issue: Generic example, not Polar-specific
-   Impact: Users get non-working code
-   Severity: High
+1. VÍ DỤ SAI - Xác thực Webhook (Dòng 156)
+   Vấn đề: Ví dụ chung chung, không phải của riêng Polar
+   Tác động: Người dùng nhận được mã nguồn không hoạt động
+   Mức độ: Cao
 
-2. INCORRECT IMPORT - SDK import (Line 45)
-   Issue: Wrong package name
-   Impact: Import fails, users confused
-   Severity: Critical
+2. IMPORT SAI - Import SDK (Dòng 45)
+   Vấn đề: Sai tên package
+   Tác động: Import thất bại, gây bối rối cho người dùng
+   Mức độ: Nghiêm trọng
 
-3. MISSING CONTENT - Subscription cancellation (Section 4)
-   Issue: No code example provided
-   Impact: Users don't know how to cancel
-   Severity: Medium
+3. THIẾU NỘI DUNG - Hủy đăng ký (Phần 4)
+   Vấn đề: Không cung cấp ví dụ mã nguồn
+   Tác động: Người dùng không biết cách hủy đăng ký
+   Mức độ: Trung bình
 
-4. INCOMPLETE LIST - Webhook events (Section 7)
-   Issue: Missing 2 events
-   Impact: Users don't handle all events
-   Severity: Medium
+4. DANH SÁCH THIẾU - Các sự kiện Webhook (Phần 7)
+   Vấn đề: Thiếu 2 sự kiện
+   Tác động: Người dùng không xử lý được tất cả các sự kiện
+   Mức độ: Trung bình
 
-Phase 2: Skill Diagnosis (30 seconds)
+Giai đoạn 2: Chẩn đoán Skill (30 giây)
 ---
 Agent: debugger
 
-Analyzing .claude/skills/polar.md...
+Đang phân tích .claude/skills/polar.md...
 
-Current state:
-- 3,124 words
-- 23 code examples
-- 10 sections
+Trạng thái hiện tại:
+- 3,124 từ
+- 23 ví dụ mã nguồn
+- 10 phần
 
-Issues confirmed:
+Xác nhận vấn đề:
 
-Issue 1: Line 156
-Current:
+Vấn đề 1: Dòng 156
+Hiện tại:
 ```typescript
 const isValid = verifyWebhookSignature(
   req.body,
@@ -166,7 +167,7 @@ const isValid = verifyWebhookSignature(
 );
 ```
 
-Should be:
+Nên là:
 ```typescript
 const isValid = polar.webhooks.verify(
   req.body,
@@ -175,66 +176,66 @@ const isValid = polar.webhooks.verify(
 );
 ```
 
-Issue 2: Line 45
-Current:
+Vấn đề 2: Dòng 45
+Hiện tại:
 ```typescript
 import { Polar } from 'polar-sh';
 ```
 
-Should be:
+Nên là:
 ```typescript
 import { Polar } from '@polar-sh/sdk';
 ```
 
-Issue 3: Section 4
-Missing: Subscription cancellation example
-Need: Complete code with explanation
+Vấn đề 3: Phần 4
+Thiếu: Ví dụ hủy đăng ký
+Cần: Mã nguồn hoàn chỉnh kèm giải thích
 
-Issue 4: Section 7
-Current: 8 webhook events
-Missing: subscription.canceled, payment.refunded
+Vấn đề 4: Phần 7
+Hiện tại: 8 sự kiện webhook
+Thiếu: subscription.canceled, payment.refunded
 
-Phase 3: Fix Planning (15 seconds)
+Giai đoạn 3: Lập kế hoạch sửa lỗi (15 giây)
 ---
 Agent: planner
 
-Fix plan created:
+Đã tạo kế hoạch sửa lỗi:
 
-1. Update webhook verification (Line 156)
-   - Replace generic code
-   - Add Polar-specific example
-   - Include error handling
+1. Cập nhật xác thực webhook (Dòng 156)
+   - Thay thế mã nguồn chung chung
+   - Thêm ví dụ cụ thể của Polar
+   - Bao gồm xử lý lỗi
 
-2. Fix SDK import (Line 45)
-   - Correct package name
-   - Add installation command
-   - Verify all imports
+2. Sửa import SDK (Dòng 45)
+   - Sửa tên package
+   - Thêm lệnh cài đặt
+   - Xác minh tất cả các import
 
-3. Add subscription cancellation (Section 4)
-   - Create new subsection
-   - Add complete example
-   - Explain cancel_at_period_end
-   - Show immediate vs end-of-period
+3. Thêm phần hủy đăng ký (Phần 4)
+   - Tạo phần phụ mới
+   - Thêm ví dụ hoàn chỉnh
+   - Giải thích về cancel_at_period_end
+   - Hiển thị sự khác biệt giữa hủy ngay lập tức vs cuối kỳ
 
-4. Complete webhook events (Section 7)
-   - Add subscription.canceled
-   - Add payment.refunded
-   - Update event handler examples
+4. Hoàn thiện các sự kiện webhook (Phần 7)
+   - Thêm subscription.canceled
+   - Thêm payment.refunded
+   - Cập nhật các ví dụ xử lý sự kiện
 
-5. Add validation
-   - Test all code examples
-   - Verify imports work
-   - Check webhook list complete
+5. Thêm xác thực
+   - Kiểm tra tất cả các ví dụ mã nguồn
+   - Xác minh các import hoạt động
+   - Kiểm tra danh sách webhook đã đầy đủ
 
-Phase 4: Skill Update (2 minutes)
+Giai đoạn 4: Cập nhật Skill (2 phút)
 ---
 Agent: skill-creator
 
-Applying fixes...
+Đang áp dụng các bản sửa lỗi...
 
-Fix 1: Webhook Verification ✓
+Sửa lỗi 1: Xác thực Webhook ✓
 ---
-Before:
+Trước:
 ```typescript
 const isValid = verifyWebhookSignature(
   req.body,
@@ -243,13 +244,13 @@ const isValid = verifyWebhookSignature(
 );
 ```
 
-After:
+Sau:
 ```typescript
 import { Polar } from '@polar-sh/sdk';
 
 const polar = new Polar(process.env.POLAR_SECRET_KEY);
 
-// Verify webhook signature
+// Xác thực chữ ký webhook
 const isValid = polar.webhooks.verify(
   req.body,
   req.headers['polar-signature'] as string,
@@ -257,20 +258,20 @@ const isValid = polar.webhooks.verify(
 );
 
 if (!isValid) {
-  return res.status(401).json({ error: 'Invalid signature' });
+  return res.status(401).json({ error: 'Chữ ký không hợp lệ' });
 }
 ```
 
-Fix 2: SDK Import ✓
+Sửa lỗi 2: Import SDK ✓
 ---
-Before:
+Trước:
 ```typescript
 import { Polar } from 'polar-sh';
 ```
 
-After:
+Sau:
 ```typescript
-// Install SDK
+// Cài đặt SDK
 // npm install @polar-sh/sdk
 
 import { Polar } from '@polar-sh/sdk';
@@ -278,151 +279,151 @@ import { Polar } from '@polar-sh/sdk';
 const polar = new Polar(process.env.POLAR_SECRET_KEY);
 ```
 
-Fix 3: Subscription Cancellation Added ✓
+Sửa lỗi 3: Đã thêm Hủy đăng ký ✓
 ---
-New section added to "Subscription Management":
+Đã thêm phần mới vào "Quản lý đăng ký":
 
-### Cancel Subscription
+### Hủy đăng ký
 
 ```typescript
-// Cancel at end of current period (recommended)
+// Hủy vào cuối kỳ hiện tại (khuyên dùng)
 await polar.subscriptions.cancel(subscriptionId, {
   cancelAtPeriodEnd: true
 });
 
-// User retains access until period ends
-// No refund issued
+// Người dùng vẫn có quyền truy cập cho đến khi hết hạn kỳ
+// Không hoàn tiền
 
-// Cancel immediately (rare, usually for refunds)
+// Hủy ngay lập tức (hiếm, thường dùng để hoàn tiền)
 await polar.subscriptions.cancel(subscriptionId, {
   cancelAtPeriodEnd: false
 });
 
-// Access revoked immediately
-// May issue prorated refund based on your settings
+// Quyền truy cập bị thu hồi ngay lập tức
+// Có thể hoàn tiền theo tỷ lệ dựa trên cài đặt của bạn
 ```
 
-**When to use each:**
+**Khi nào sử dụng mỗi loại:**
 
-Cancel at period end:
-- User requests cancellation
-- Want to provide full service for paid period
-- No refund needed
+Hủy vào cuối kỳ:
+- Người dùng yêu cầu hủy
+- Muốn cung cấp đầy đủ dịch vụ cho kỳ đã thanh toán
+- Không cần hoàn tiền
 
-Cancel immediately:
-- Fraud detected
-- Terms of service violation
-- User requests refund
+Hủy ngay lập tức:
+- Phát hiện gian lận
+- Vi phạm điều khoản dịch vụ
+- Người dùng yêu cầu hoàn tiền
 
-Fix 4: Webhook Events Completed ✓
+Sửa lỗi 4: Hoàn thiện sự kiện Webhook ✓
 ---
-Added to webhook events list:
+Đã thêm vào danh sách sự kiện webhook:
 
 ```typescript
 switch (event.type) {
   case 'subscription.created':
-    // User subscribed
+    // Người dùng đã đăng ký
     await activateSubscription(event.data);
     break;
 
   case 'subscription.updated':
-    // Subscription changed (tier, status)
+    // Đăng ký thay đổi (gói, trạng thái)
     await updateSubscription(event.data);
     break;
 
-  case 'subscription.canceled':  // ← ADDED
-    // User canceled subscription
+  case 'subscription.canceled':  // ← ĐÃ THÊM
+    // Người dùng đã hủy đăng ký
     await handleCancellation(event.data);
     break;
 
   case 'payment.succeeded':
-    // Payment successful
+    // Thanh toán thành công
     await recordPayment(event.data);
     break;
 
   case 'payment.failed':
-    // Payment failed
+    // Thanh toán thất bại
     await handleFailedPayment(event.data);
     break;
 
-  case 'payment.refunded':  // ← ADDED
-    // Payment refunded
+  case 'payment.refunded':  // ← ĐÃ THÊM
+    // Đã hoàn tiền
     await processRefund(event.data);
     break;
 
-  // ... other events
+  // ... các sự kiện khác
 }
 ```
 
-Additional improvements:
+Các cải tiến bổ sung:
 ---
-✓ Updated installation instructions
-✓ Added error handling examples
-✓ Improved code comments
-✓ Fixed 3 other minor typos
-✓ Enhanced troubleshooting section
+✓ Cập nhật hướng dẫn cài đặt
+✓ Thêm các ví dụ xử lý lỗi
+✓ Cải thiện chú thích mã nguồn
+✓ Sửa 3 lỗi đánh máy nhỏ khác
+✓ Nâng cao phần xử lý sự cố
 
-Phase 5: Validation (45 seconds)
+Giai đoạn 5: Xác thực (45 giây)
 ---
 Agent: tester
 
-Validating fixes...
+Đang xác thực các bản sửa lỗi...
 
-Issue 1: Webhook verification ✅
-- Code syntax valid
-- Polar SDK method correct
-- Error handling included
-- Example complete
+Vấn đề 1: Xác thực webhook ✅
+- Cú pháp mã nguồn hợp lệ
+- Method SDK Polar chính xác
+- Đã bao gồm xử lý lỗi
+- Ví dụ hoàn chỉnh
 
-Issue 2: SDK import ✅
-- Package name correct
-- Installation command added
-- Import statement valid
+Vấn đề 2: Import SDK ✅
+- Tên package chính xác
+- Đã thêm lệnh cài đặt
+- Câu lệnh import hợp lệ
 
-Issue 3: Subscription cancellation ✅
-- Both methods documented
-- Clear when to use each
-- Code examples work
-- Error handling included
+Vấn đề 3: Hủy đăng ký ✅
+- Cả hai phương pháp đều được tài liệu hóa
+- Rõ ràng khi nào nên sử dụng mỗi loại
+- Các ví dụ mã nguồn hoạt động tốt
+- Đã bao gồm xử lý lỗi
 
-Issue 4: Webhook events ✅
-- All events now listed
-- Handlers for new events
-- Event data types documented
+Vấn đề 4: Các sự kiện webhook ✅
+- Tất cả các sự kiện hiện đã được liệt kê
+- Đã có trình xử lý cho các sự kiện mới
+- Các kiểu dữ liệu sự kiện đã được tài liệu hóa
 
-Additional validation:
-✓ All 25 code examples verified
-✓ No syntax errors
-✓ Imports consistent
-✓ TypeScript types correct
+Xác thực bổ sung:
+✓ Tất cả 25 ví dụ mã nguồn đã được xác minh
+✓ Không có lỗi cú pháp
+✓ Các import nhất quán
+✓ Các kiểu dữ liệu TypeScript chính xác
 
-✓ All issues resolved (3 minutes 50 seconds)
+✓ Đã giải quyết tất cả các vấn đề (3 phút 50 giây)
 
-Summary:
+Tóm tắt:
 ---
-Issues fixed: 4/4 (100%)
-Sections updated: 3
-Examples added: 2
-Examples fixed: 3
-Lines changed: 87
-Quality improvement: 9.2 → 9.8
+Vấn đề đã sửa: 4/4 (100%)
+Các phần đã cập nhật: 3
+Các ví dụ đã thêm: 2
+Các ví dụ đã sửa: 3
+Số dòng thay đổi: 87
+Cải thiện chất lượng: 9.2 → 9.8
 
-Files updated:
+Các file đã cập nhật:
 ✓ .claude/skills/polar.md
 
-Next steps:
-1. Test skill with original questions
-2. Verify all logged errors resolved
-3. Archive logs.txt
+Các bước tiếp theo:
+1. Kiểm tra skill với các câu hỏi ban đầu
+2. Xác minh tất cả các lỗi trong log đã được giải quyết
+3. Lưu trữ (archive) logs.txt
 ```
 
-### Fix Skill with Missing Documentation
+### Sửa Skill thiếu tài liệu
 
 ```bash
 /skill:fix-logs .claude/skills/cloudflare-workers.md
 ```
 
-**logs.txt content:**
+**Nội dung logs.txt:**
 ```
 [2025-10-30 11:15:22] ERROR: Cloudflare Workers skill - no D1 migration example
 User asked: "How to create D1 database migrations?"
@@ -437,96 +438,96 @@ User asked: "When to use Durable Objects vs KV?"
 Skill response: Mentioned both but didn't explain trade-offs
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-Phase 1: Log Analysis
+Giai đoạn 1: Phân tích Log
 ---
-3 errors identified
-All related to incomplete documentation
+3 lỗi đã được xác định
+Tất cả liên quan đến tài liệu không đầy đủ
 
-Issues:
-1. D1 migrations - No wrangler commands
-2. KV bindings - Missing env-specific config
-3. Durable Objects - Trade-offs not explained
+Vấn đề:
+1. Migration D1 - Thiếu các lệnh wrangler
+2. Binding KV - Thiếu cấu hình cụ thể theo môi trường
+3. Durable Objects - Chưa giải thích các đánh đổi (trade-offs)
 
-Phase 2-4: Diagnosis & Fixes
+Giai đoạn 2-4: Chẩn đoán & Sửa lỗi
 ---
 
-Fix 1: Add D1 Migration Guide
-✓ Added section with wrangler commands
-✓ Included migration file examples
-✓ Explained migration workflow
+Sửa lỗi 1: Thêm hướng dẫn Migration D1
+✓ Đã thêm phần với các lệnh wrangler
+✓ Bao gồm các ví dụ file migration
+✓ Giải thích quy trình làm việc của migration
 
-Fix 2: Clarify KV Bindings
-✓ Added complete wrangler.toml example
-✓ Showed dev vs production bindings
-✓ Explained namespace naming
+Sửa lỗi 2: Làm rõ Binding KV
+✓ Thêm ví dụ wrangler.toml hoàn chỉnh
+✓ Hiển thị binding cho dev vs production
+✓ Giải thích cách đặt tên namespace
 
-Fix 3: Add Durable Objects Comparison
-✓ Created comparison table
-✓ Explained when to use each
-✓ Added decision tree
-✓ Included example use cases
+Sửa lỗi 3: Thêm so sánh Durable Objects
+✓ Tạo bảng so sánh
+✓ Giải thích khi nào nên sử dụng mỗi loại
+✓ Thêm sơ đồ quyết định
+✓ Bao gồm các trường hợp sử dụng ví dụ
 
-Phase 5: Validation
+Giai đoạn 5: Xác thực
 ---
-✓ All examples tested
-✓ wrangler commands verified
-✓ Configuration examples valid
+✓ Tất cả các ví dụ đã được kiểm tra
+✓ Các lệnh wrangler đã được xác minh
+✓ Các ví dụ cấu hình hợp lệ
 
-Quality: 9.1 → 9.7
+Chất lượng: 9.1 → 9.7
 ```
 
-### Fix Multiple Skills
+### Sửa nhiều Skill cùng lúc
 
 ```bash
-/skill:fix-logs [fix all skills based on logs]
+/skill:fix-logs [sửa tất cả các skill dựa trên logs]
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-Phase 1: Log Analysis
+Giai đoạn 1: Phân tích Log
 ---
-Analyzing logs.txt...
+Đang phân tích logs.txt...
 
-Errors found: 12
-Skills affected: 4
-- polar.md (4 errors)
-- mongodb.md (3 errors)
-- cloudflare-workers.md (3 errors)
-- nextjs.md (2 errors)
+Tìm thấy lỗi: 12
+Các skill bị ảnh hưởng: 4
+- polar.md (4 lỗi)
+- mongodb.md (3 lỗi)
+- cloudflare-workers.md (3 lỗi)
+- nextjs.md (2 lỗi)
 
-Processing each skill...
+Đang xử lý từng skill...
 
-Phase 2-5: Fix Each Skill
+Giai đoạn 2-5: Sửa từng Skill
 ---
-Fixing polar.md... ✓ (3 min 50 sec)
-Fixing mongodb.md... ✓ (2 min 15 sec)
-Fixing cloudflare-workers.md... ✓ (3 min 05 sec)
-Fixing nextjs.md... ✓ (1 min 30 sec)
+Đang sửa polar.md... ✓ (3 phút 50 giây)
+Đang sửa mongodb.md... ✓ (2 phút 15 giây)
+Đang sửa cloudflare-workers.md... ✓ (3 phút 05 giây)
+Đang sửa nextjs.md... ✓ (1 phút 30 giây)
 
-Total time: 10 minutes 40 seconds
-All issues resolved: 12/12
+Tổng thời gian: 10 phút 40 giây
+Tất cả vấn đề đã được giải quyết: 12/12
 
-Archive logs? (y/n) y
-✓ Moved to logs.txt.2025-10-30.bak
+Lưu trữ logs? (y/n) y
+✓ Đã chuyển sang logs.txt.2025-10-30.bak
 ```
 
-## Log File Format
+## Định dạng file Log
 
-For best results, `logs.txt` should contain:
+Để có kết quả tốt nhất, `logs.txt` nên chứa:
 
 ```
-[TIMESTAMP] ERROR: Skill-name - Brief description
-User asked: "Actual user question"
-Skill response: What went wrong
-Expected: What should have happened (optional)
+[DẤU THỜI GIAN] ERROR: Tên-skill - Mô tả ngắn gọn
+User asked: "Câu hỏi thực tế của người dùng"
+Skill response: Điều gì đã xảy ra sai
+Expected: Điều gì lẽ ra nên xảy ra (tùy chọn)
 
-[TIMESTAMP] ERROR: Skill-name - Another issue
+[DẤU THỜI GIAN] ERROR: Tên-skill - Một vấn đề khác
 ...
 ```
 
-Example:
+Ví dụ:
 ```
 [2025-10-30 14:23:45] ERROR: MongoDB skill - aggregation pipeline syntax
 User asked: "How to do $lookup with multiple conditions?"
@@ -539,45 +540,45 @@ Skill response: Only mentioned compound indexes
 Expected: Should explain both types with examples
 ```
 
-## Common Issues Fixed
+## Các vấn đề thường gặp được sửa
 
-### 1. Incorrect Code Examples
+### 1. Các ví dụ mã nguồn sai
 
-**Before:**
+**Trước:**
 ```typescript
-// Wrong import
+// Import sai
 import { Client } from 'service';
 ```
 
-**After:**
+**Sau:**
 ```typescript
-// Correct import with installation
+// Import đúng kèm hướng dẫn cài đặt
 // npm install @service/sdk
 
 import { Client } from '@service/sdk';
 ```
 
-### 2. Missing Information
+### 2. Thiếu thông tin
 
-**Before:**
+**Trước:**
 ```markdown
-## Authentication
+## Xác thực
 
-Use API keys for authentication.
+Sử dụng API keys để xác thực.
 ```
 
-**After:**
+**Sau:**
 ```markdown
-## Authentication
+## Xác thực
 
-### Getting API Keys
+### Lấy API Keys
 
-1. Sign up at service.com
-2. Go to Settings → API Keys
-3. Click "Create New Key"
-4. Copy key (shown only once)
+1. Đăng ký tại service.com
+2. Đi tới Settings → API Keys
+3. Nhấp "Create New Key"
+4. Sao chép key (chỉ hiển thị một lần)
 
-### Using API Keys
+### Sử dụng API Keys
 
 ```typescript
 const client = new Client({
@@ -585,228 +586,212 @@ const client = new Client({
 });
 ```
 
-Store API key in `.env`:
+Lưu API key trong `.env`:
 ```
 SERVICE_API_KEY=sk_live_...
 ```
 ```
 
-### 3. Unclear Instructions
+### 3. Hướng dẫn không rõ ràng
 
-**Before:**
+**Trước:**
 ```markdown
-Configure webhooks in dashboard.
+Cấu hình webhooks trong dashboard.
 ```
 
-**After:**
+**Sau:**
 ```markdown
-### Configure Webhooks
+### Cấu hình Webhooks
 
-1. Navigate to Dashboard → Settings → Webhooks
-2. Click "Add Endpoint"
-3. Enter your webhook URL: `https://your-api.com/webhooks/service`
-4. Select events to receive:
+1. Điều hướng tới Dashboard → Settings → Webhooks
+2. Nhấp "Add Endpoint"
+3. Nhập URL webhook của bạn: `https://your-api.com/webhooks/service`
+4. Chọn các sự kiện muốn nhận:
    - ✅ `payment.succeeded`
    - ✅ `payment.failed`
    - ✅ `subscription.created`
-5. Click "Create Endpoint"
-6. Copy webhook secret for signature verification
-
-### Verify Webhook Signatures
-
-```typescript
-import { verifySignature } from '@service/sdk';
-
-app.post('/webhooks/service', (req, res) => {
-  const signature = req.headers['service-signature'];
-
-  if (!verifySignature(req.body, signature, WEBHOOK_SECRET)) {
-    return res.status(401).json({ error: 'Invalid signature' });
-  }
-
-  // Process webhook...
-});
-```
+5. Nhấp "Create Endpoint"
+6. Sao chép webhook secret để xác thực chữ ký
 ```
 
-## Fix Categories
+## Các loại sửa lỗi
 
-### Syntax Errors
+### Lỗi cú pháp
 
-- Incorrect imports
-- Wrong API calls
-- Invalid configurations
-- Type errors
+- Import sai
+- Lời gọi API sai
+- Cấu hình không hợp lệ
+- Lỗi kiểu dữ liệu (type errors)
 
-### Logic Errors
+### Lỗi logic
 
-- Incorrect algorithms
-- Wrong patterns
-- Flawed examples
-- Incomplete flows
+- Thuật toán sai
+- Pattern sai
+- Ví dụ bị lỗi
+- Các luồng không đầy đủ
 
-### Missing Content
+### Thiếu nội dung
 
-- No examples
-- Missing sections
-- Incomplete lists
-- No error handling
+- Không có ví dụ
+- Thiếu các phần
+- Danh sách không đầy đủ
+- Không có xử lý lỗi
 
-### Clarity Issues
+### Vấn đề về độ rõ ràng
 
-- Unclear instructions
-- Vague explanations
-- Missing context
-- Poor structure
+- Hướng dẫn không rõ ràng
+- Giải thích mơ hồ
+- Thiếu ngữ cảnh
+- Cấu trúc kém
 
-## Best Practices
+## Thực hành tốt nhất
 
-### Regular Log Review
+### Kiểm tra Log thường xuyên
 
 ```bash
-# After using skills, check logs
+# Sau khi sử dụng các skill, hãy kiểm tra logs
 cat logs.txt
 
-# If errors found, fix immediately
-/skill:fix-logs [skill-path]
+# Nếu tìm thấy lỗi, hãy sửa ngay
+/skill:fix-logs [đường-dẫn-skill]
 
-# Archive old logs
+# Lưu trữ các log cũ
 mv logs.txt logs.txt.$(date +%Y%m%d).bak
 ```
 
-### Detailed Error Logging
+### Ghi Log lỗi chi tiết
 
-When errors occur, log them well:
+Khi có lỗi xảy ra, hãy ghi log thật tốt:
 
 ```
-✅ Good log entry:
+✅ Log tốt:
 [2025-10-30 10:23:45] ERROR: Polar skill - webhook verification
 User asked: "How do I verify Polar webhooks?"
 Skill response: Used verifyWebhookSignature() function
 Issue: Function doesn't exist in Polar SDK
 Expected: Should use polar.webhooks.verify()
 
-❌ Poor log entry:
-Webhook verification wrong
+❌ Log kém:
+Xác thực Webhook bị sai
 ```
 
-### Test After Fixes
+### Kiểm tra sau khi sửa
 
 ```bash
-# 1. Fix skill
+# 1. Sửa skill
 /skill:fix-logs .claude/skills/polar.md
 
-# 2. Test with original question
-/ask [how do I verify Polar webhooks]
+# 2. Kiểm tra với câu hỏi gốc
+/ask [làm thế nào để xác thực Polar webhooks]
 
-# 3. Verify response correct
+# 3. Xác minh câu trả lời đã đúng
 
-# 4. If still wrong, check logs again
+# 4. Nếu vẫn sai, kiểm tra lại logs
 ```
 
-## Output Files
+## Các file đầu ra
 
-After `/skill:fix-logs` completes:
+Sau khi `/skill:fix-logs` hoàn tất:
 
-### Updated Skill
-
-```
-.claude/skills/[skill-name].md
-```
-
-Fixed and improved
-
-### Fix Report
+### Skill đã cập nhật
 
 ```
-plans/skill-fix-[name]-[date].md
+.claude/skills/[tên-skill].md
 ```
 
-Details of what was fixed
+Đã được sửa và cải thiện.
 
-### Validation Report
+### Báo cáo sửa lỗi
 
 ```
-plans/skill-validation-[name]-[date].md
+plans/skill-fix-[tên]-[ngày].md
 ```
 
-Verification of fixes
+Chi tiết về những gì đã được sửa.
 
-## Troubleshooting
+### Báo cáo xác thực
 
-### No Logs File
+```
+plans/skill-validation-[tên]-[ngày].md
+```
 
-**Problem:** logs.txt doesn't exist
+Xác minh các bản sửa lỗi.
 
-**Solution:**
+## Xử lý sự cố
+
+### Không có file Logs
+
+**Vấn đề:** logs.txt không tồn tại.
+
+**Giải pháp:**
 ```bash
-# Create logs.txt manually
+# Tạo logs.txt thủ công
 touch logs.txt
 
-# Add errors in format shown above
+# Thêm các lỗi theo định dạng hiển thị ở trên
 
-# Then run fix
-/skill:fix-logs [skill-path]
+# Sau đó chạy lệnh sửa
+/skill:fix-logs [đường-dẫn-skill]
 ```
 
-### Fixes Don't Work
+### Các bản sửa lỗi không hoạt động
 
-**Problem:** Applied fixes but issues persist
+**Vấn đề:** Đã áp dụng các bản sửa lỗi nhưng vấn đề vẫn còn.
 
-**Check:**
+**Kiểm tra:**
 ```bash
-# 1. Verify skill file updated
-cat .claude/skills/[name].md
+# 1. Xác minh file skill đã được cập nhật
+cat .claude/skills/[tên].md
 
-# 2. Test skill activation
-/ask [test question]
+# 2. Kiểm tra kích hoạt skill
+/ask [câu hỏi kiểm tra]
 
-# 3. Check if question triggers skill
-# Skill should activate based on "When to Use" section
+# 3. Kiểm tra xem câu hỏi có kích hoạt skill không
+# Skill nên kích hoạt dựa trên phần "Khi nào sử dụng"
 
-# 4. If not activating, update triggers
+# 4. Nếu không kích hoạt, hãy cập nhật các điều kiện kích hoạt (triggers)
 ```
 
-### Can't Find Issue in Skill
+### Không tìm thấy vấn đề trong Skill
 
-**Problem:** Log mentions issue but skill seems correct
+**Vấn đề:** Log đề cập đến vấn đề nhưng skill có vẻ vẫn đúng.
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Provide more context
-/skill:fix-logs [skill-path with detailed description of issue from logs]
+# Cung cấp thêm ngữ cảnh
+/skill:fix-logs [đường-dẫn-skill với mô tả chi tiết vấn đề từ logs]
 
-# Or manually search
-grep -n "keyword" .claude/skills/[name].md
+# Hoặc tìm kiếm thủ công
+grep -n "từ-khóa" .claude/skills/[tên].md
 ```
 
-## After Fixing
+## Sau khi sửa lỗi
 
-Standard workflow:
+Quy trình làm việc tiêu chuẩn:
 
 ```bash
-# 1. Fix skill
-/skill:fix-logs .claude/skills/[name].md
+# 1. Sửa skill
+/skill:fix-logs .claude/skills/[tên].md
 
-# 2. Review changes
-git diff .claude/skills/[name].md
+# 2. Xem lại các thay đổi
+git diff .claude/skills/[tên].md
 
-# 3. Test skill
-/ask [original failing question]
+# 3. Kiểm tra skill
+/ask [câu hỏi đã từng bị lỗi]
 
-# 4. If satisfied, commit
+# 4. Nếu hài lòng, commit
 /git:cm
 
-# 5. Archive logs
+# 5. Lưu trữ log
 mv logs.txt logs.txt.$(date +%Y%m%d).bak
 ```
 
-## Next Steps
+## Các bước tiếp theo
 
-- [/skill:create](/docs/engineer/commands/skill/create) - Create new skills
-- [/ask](/docs/engineer/commands/core/ask) - Use fixed skills
-- [Skill Development Guide](/docs/guides/skill-development) - Advanced topics
+- [/skill:create](/vi/docs/engineer/commands/skill/create) - Tạo skill mới
+- [/ask](/vi/docs/engineer/commands/core/ask) - Sử dụng các skill đã sửa
+- [Hướng dẫn phát triển Skill](/vi/docs/guides/skill-development) - Các chủ đề nâng cao
 
 ---
 
-**Key Takeaway**: `/skill:fix-logs` analyzes `logs.txt` to identify skill failures, diagnoses root causes, applies targeted fixes to skill documentation, and validates corrections—keeping your agent skills accurate and effective based on real usage errors.
+**Điểm chính**: `/skill:fix-logs` phân tích `logs.txt` để xác định các thất bại của skill, chẩn đoán nguyên nhân gốc rễ, áp dụng các bản sửa lỗi mục tiêu vào tài liệu skill và xác thực các điều chỉnh—giữ cho các skill agent của bạn luôn chính xác và hiệu quả dựa trên các lỗi sử dụng thực tế.

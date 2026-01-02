@@ -1,7 +1,6 @@
 ---
 title: Building a REST API
 description: "Documentation for Building a REST API"
-lang: vi
 section: workflows
 category: workflows
 order: 6

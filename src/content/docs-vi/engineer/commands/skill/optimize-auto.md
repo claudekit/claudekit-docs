@@ -6,6 +6,7 @@ kit: engineer
 category: commands/skill
 order: 84
 published: true
+lang: vi
 ---
 
 # /skill:optimize:auto

@@ -1,186 +1,187 @@
 ---
-title: ffmpeg
-description: Documentation for ffmpeg
+title: Kỹ năng ffmpeg
+description: Tài liệu hướng dẫn sử dụng kỹ năng ffmpeg
 section: engineer
 kit: engineer
 category: skills/tools
 order: 21
 published: true
+lang: vi
 ---
 
-# ffmpeg Skill
+# Kỹ năng ffmpeg
 
-Comprehensive multimedia framework for video/audio encoding, conversion, streaming, and filtering.
+Một framework đa phương tiện toàn diện để mã hóa (encoding), chuyển đổi, truyền phát (streaming) và lọc video/âm thanh.
 
-## When to Use
+## Khi nào nên sử dụng
 
-Use ffmpeg when you need:
-- Convert video formats
-- Compress videos
-- Extract audio
-- Create streams
-- Apply filters
-- Batch process media
-- Generate thumbnails
+Sử dụng ffmpeg khi bạn cần:
+- Chuyển đổi định dạng video
+- Nén video
+- Trích xuất âm thanh
+- Tạo các luồng truyền phát (streams)
+- Áp dụng các bộ lọc (filters)
+- Xử lý hàng loạt tệp đa phương tiện
+- Tạo hình thu nhỏ (thumbnails)
 
-## Quick Start
+## Bắt đầu nhanh
 
-### Invoke the Skill
-
-```
-"Use ffmpeg to:
-- Convert video.mkv to MP4
-- Compress to 720p
-- Reduce file size
-- Maintain good quality"
-```
-
-### What You Get
-
-The skill will help you:
-1. Choose right codecs
-2. Set optimal quality
-3. Apply filters
-4. Optimize file size
-5. Handle batch processing
-
-## Common Use Cases
-
-### Format Conversion
+### Cách gọi kỹ năng
 
 ```
-"Use ffmpeg to convert all MKV files to MP4 with H.264 codec"
+"Sử dụng ffmpeg để:
+- Chuyển đổi video.mkv sang MP4
+- Nén xuống độ phân giải 720p
+- Giảm kích thước tệp
+- Duy trì chất lượng tốt"
 ```
 
-### Video Compression
+### Kết quả nhận được
+
+Kỹ năng này sẽ giúp bạn:
+1. Chọn đúng codec
+2. Thiết lập chất lượng tối ưu
+3. Áp dụng các bộ lọc
+4. Tối ưu hóa kích thước tệp
+5. Xử lý hàng loạt
+
+## Các trường hợp sử dụng phổ biến
+
+### Chuyển đổi định dạng
 
 ```
-"Use ffmpeg to compress 4K video to 1080p with good quality"
+"Sử dụng ffmpeg để chuyển đổi tất cả các tệp MKV sang MP4 với codec H.264"
 ```
 
-### Extract Audio
+### Nén Video
 
 ```
-"Use ffmpeg to extract audio from video as MP3"
+"Sử dụng ffmpeg để nén video 4K xuống 1080p với chất lượng tốt"
 ```
 
-### Create GIF
+### Trích xuất âm thanh
 
 ```
-"Use ffmpeg to create high-quality GIF from video clip"
+"Sử dụng ffmpeg để trích xuất âm thanh từ video dưới dạng MP3"
 ```
 
-## Popular Operations
+### Tạo ảnh GIF
 
-### Convert Format
+```
+"Sử dụng ffmpeg để tạo ảnh GIF chất lượng cao từ một đoạn video"
+```
+
+## Các thao tác phổ biến
+
+### Chuyển đổi định dạng
 
 ```bash
-# Simple conversion
+# Chuyển đổi đơn giản
 ffmpeg -i input.mkv -c copy output.mp4
 
-# With re-encoding
+# Có mã hóa lại (re-encoding)
 ffmpeg -i input.avi -c:v libx264 -c:a aac output.mp4
 ```
 
-### Compress Video
+### Nén Video
 
 ```bash
-# Quality-based (CRF 23 = default, lower = better)
+# Dựa trên chất lượng (CRF 23 = mặc định, thấp hơn = tốt hơn)
 ffmpeg -i input.mp4 -c:v libx264 -crf 22 -preset slow output.mp4
 
-# Target file size with two-pass
+# Đặt kích thước tệp mục tiêu với two-pass
 ffmpeg -i input.mp4 -c:v libx264 -b:v 2M -pass 1 -f null /dev/null
 ffmpeg -i input.mp4 -c:v libx264 -b:v 2M -pass 2 output.mp4
 ```
 
-### Extract Audio
+### Trích xuất âm thanh
 
 ```bash
-# Keep original format
+# Giữ nguyên định dạng gốc
 ffmpeg -i video.mp4 -vn -c:a copy audio.m4a
 
-# Convert to MP3
+# Chuyển đổi sang MP3
 ffmpeg -i video.mp4 -vn -q:a 0 audio.mp3
 ```
 
-### Trim Video
+### Cắt Video
 
 ```bash
-# Without re-encoding (fast)
+# Không mã hóa lại (nhanh)
 ffmpeg -i input.mp4 -ss 00:01:00 -to 00:02:00 -c copy output.mp4
 
-# With re-encoding (precise)
+# Có mã hóa lại (chính xác)
 ffmpeg -i input.mp4 -ss 00:01:00 -t 00:01:00 -c:v libx264 output.mp4
 ```
 
-## Common Codecs
+## Các Codec phổ biến
 
 ### Video Codecs
 
-- **H.264 (libx264)**: Universal compatibility
-- **H.265 (libx265)**: Better compression, 4K
-- **VP9**: Open-source, YouTube
-- **AV1**: Next-gen, best compression
+- **H.264 (libx264)**: Tương thích phổ quát
+- **H.265 (libx265)**: Nén tốt hơn, dành cho 4K
+- **VP9**: Mã nguồn mở, được YouTube sử dụng
+- **AV1**: Thế hệ mới, nén tốt nhất
 
 ### Audio Codecs
 
-- **AAC**: Industry standard
-- **MP3**: Universal compatibility
-- **Opus**: Best for streaming/voice
-- **FLAC**: Lossless quality
+- **AAC**: Tiêu chuẩn công nghiệp
+- **MP3**: Tương thích phổ quát
+- **Opus**: Tốt nhất cho truyền phát/giọng nói
+- **FLAC**: Chất lượng không mất dữ liệu (lossless)
 
-## Video Filters
+## Bộ lọc Video (Video Filters)
 
-### Scale/Resize
+### Thay đổi tỷ lệ/Kích thước (Scale/Resize)
 
 ```bash
-# Specific dimensions
+# Kích thước cụ thể
 ffmpeg -i input.mp4 -vf scale=1280:720 output.mp4
 
-# Keep aspect ratio
+# Giữ nguyên tỷ lệ khung hình
 ffmpeg -i input.mp4 -vf scale=1280:-1 output.mp4
 
-# Half resolution
+# Một nửa độ phân giải
 ffmpeg -i input.mp4 -vf scale=iw/2:ih/2 output.mp4
 ```
 
-### Crop
+### Cắt khung hình (Crop)
 
 ```bash
-# Manual crop
+# Cắt thủ công
 ffmpeg -i input.mp4 -vf "crop=1280:720:0:0" output.mp4
 
-# Auto-detect black borders
+# Tự động phát hiện viền đen
 ffmpeg -i input.mp4 -vf cropdetect output.mp4
 ```
 
-### Other Filters
+### Các bộ lọc khác
 
 ```bash
-# Denoise
+# Khử nhiễu (Denoise)
 ffmpeg -i input.mp4 -vf hqdn3d output.mp4
 
-# Rotate 90° clockwise
+# Xoay 90° theo chiều kim đồng hồ
 ffmpeg -i input.mp4 -vf "transpose=1" output.mp4
 
-# Add watermark
+# Thêm hình mờ (watermark)
 ffmpeg -i video.mp4 -i logo.png -filter_complex "overlay=10:10" output.mp4
 ```
 
-## Audio Filters
+## Bộ lọc âm thanh (Audio Filters)
 
 ```bash
-# Increase volume
+# Tăng âm lượng
 ffmpeg -i input.mp4 -af "volume=10dB" output.mp4
 
-# Normalize audio
+# Chuẩn hóa âm thanh (Normalize)
 ffmpeg -i input.mp4 -af loudnorm output.mp4
 
-# Mix audio tracks
+# Trộn các bản âm thanh
 ffmpeg -i audio1.mp3 -i audio2.mp3 -filter_complex amix output.mp3
 ```
 
-## Streaming
+## Truyền phát (Streaming)
 
 ### RTMP (Twitch/YouTube)
 
@@ -200,9 +201,9 @@ ffmpeg -i input.mp4 \
   playlist.m3u8
 ```
 
-## Advanced Use Cases
+## Các trường hợp sử dụng nâng cao
 
-### Create GIF
+### Tạo ảnh GIF
 
 ```bash
 ffmpeg -i input.mp4 \
@@ -210,42 +211,42 @@ ffmpeg -i input.mp4 \
   output.gif
 ```
 
-### Extract Frames
+### Trích xuất các khung hình
 
 ```bash
-# All frames
+# Tất cả các khung hình
 ffmpeg -i input.mp4 frame_%04d.png
 
-# 1 frame per second
+# 1 khung hình mỗi giây
 ffmpeg -i input.mp4 -vf fps=1 frame_%04d.png
 
-# Single frame at 5s
+# Một khung hình duy nhất tại giây thứ 5
 ffmpeg -ss 00:00:05 -i input.mp4 -frames:v 1 frame.png
 ```
 
-### Video from Images
+### Tạo video từ hình ảnh
 
 ```bash
 ffmpeg -framerate 30 -i frame_%04d.png \
   -c:v libx264 -pix_fmt yuv420p output.mp4
 ```
 
-### Concatenate Videos
+### Nối các Video
 
-Create `concat.txt`:
+Tạo file `concat.txt`:
 ```
 file 'input1.mp4'
 file 'input2.mp4'
 ```
 
-Run:
+Chạy lệnh:
 ```bash
 ffmpeg -f concat -safe 0 -i concat.txt -c copy output.mp4
 ```
 
-## Batch Processing
+## Xử lý hàng loạt
 
-### Convert All Files
+### Chuyển đổi tất cả các tệp
 
 ```bash
 for file in *.mkv; do
@@ -253,7 +254,7 @@ for file in *.mkv; do
 done
 ```
 
-### Resize All Videos
+### Thay đổi kích thước tất cả video
 
 ```bash
 for file in *.mp4; do
@@ -261,9 +262,9 @@ for file in *.mp4; do
 done
 ```
 
-## Hardware Acceleration
+## Tăng tốc phần cứng
 
-### NVIDIA GPU
+### GPU NVIDIA
 
 ```bash
 ffmpeg -hwaccel cuda -i input.mp4 \
@@ -277,89 +278,89 @@ ffmpeg -hwaccel qsv -i input.mp4 \
   -c:v h264_qsv -preset fast output.mp4
 ```
 
-## Quality Settings
+## Thiết lập chất lượng
 
-### CRF Values
+### Các giá trị CRF
 
-- 0 = Lossless (huge file)
-- 17-18 = Visually lossless
-- 20-23 = High quality (recommended)
-- 24-28 = Medium quality
-- 30+ = Low quality
+- 0 = Không mất dữ liệu (file cực lớn)
+- 17-18 = Gần như không mất dữ liệu về mặt thị giác
+- 20-23 = Chất lượng cao (khuyến nghị)
+- 24-28 = Chất lượng trung bình
+- 30+ = Chất lượng thấp
 
-### Presets (speed vs compression)
+### Presets (tốc độ vs độ nén)
 
 - ultrafast, superfast, veryfast, faster, fast
-- medium (default)
+- medium (mặc định)
 - slow, slower, veryslow
 
-## Quick Examples
+## Ví dụ nhanh
 
-**Simple Conversion:**
+**Chuyển đổi đơn giản:**
 ```
-"Use ffmpeg to convert video.mkv to MP4"
-```
-
-**Compress for Web:**
-```
-"Use ffmpeg to compress video for web:
-- 1080p resolution
-- Good quality
-- Small file size
-- H.264 codec"
+"Sử dụng ffmpeg để chuyển đổi video.mkv sang MP4"
 ```
 
-**Extract Audio:**
+**Nén cho Web:**
 ```
-"Use ffmpeg to extract audio from all videos in folder as MP3"
+"Sử dụng ffmpeg để nén video cho web:
+- Độ phân giải 1080p
+- Chất lượng tốt
+- Kích thước tệp nhỏ
+- Codec H.264"
 ```
 
-**Create Thumbnail:**
+**Trích xuất âm thanh:**
 ```
-"Use ffmpeg to create thumbnail from video at 5 second mark"
+"Sử dụng ffmpeg để trích xuất âm thanh từ tất cả video trong thư mục dưới dạng MP3"
 ```
 
-## Best Practices
+**Tạo hình thu nhỏ:**
+```
+"Sử dụng ffmpeg để tạo hình thu nhỏ từ video tại giây thứ 5"
+```
 
-1. **Test on short clip first**
-2. **Use CRF for quality**
-3. **Copy streams when possible** (`-c copy`)
-4. **Choose appropriate presets**
-5. **Don't upscale unnecessarily**
-6. **Match audio quality to video**
-7. **Use hardware acceleration**
-8. **Verify output quality**
+## Phương pháp hay nhất
 
-## Troubleshooting
+1. **Thử nghiệm trên một đoạn ngắn trước**
+2. **Sử dụng CRF để đảm bảo chất lượng**
+3. **Sao chép luồng (copy streams) khi có thể** (`-c copy`)
+4. **Chọn preset phù hợp**
+5. **Đừng tăng độ phân giải (upscale) nếu không cần thiết**
+6. **Chất lượng âm thanh nên tương xứng với video**
+7. **Sử dụng tăng tốc phần cứng**
+8. **Kiểm tra chất lượng đầu ra**
 
-### Unknown encoder
+## Xử lý sự cố
+
+### Unknown encoder (Không nhận dạng được bộ mã hóa)
 
 ```bash
-# Check available encoders
+# Kiểm tra các bộ mã hóa có sẵn
 ffmpeg -encoders | grep h264
 ```
 
-### Compatibility issues
+### Các vấn đề về tương thích
 
-Use safe defaults:
+Sử dụng các giá trị mặc định an toàn:
 ```bash
 ffmpeg -i input.mkv -c:v libx264 -profile:v high \
   -pix_fmt yuv420p -c:a aac output.mp4
 ```
 
-### Performance issues
+### Vấn đề hiệu suất
 
-- Use hardware acceleration
-- Choose faster presets
-- Reduce resolution
-- Enable multi-threading
+- Sử dụng tăng tốc phần cứng
+- Chọn các preset nhanh hơn
+- Giảm độ phân giải
+- Bật đa luồng (multi-threading)
 
-## Next Steps
+## Bước tiếp theo
 
-- [Media Examples](/docs/use-cases/)
-- [Image Processing](/docs/engineer/skills/imagemagick)
-- [Streaming Guide](/docs/use-cases/)
+- [Ví dụ về đa phương tiện](/docs/use-cases/)
+- [Xử lý hình ảnh](/docs/engineer/skills/imagemagick)
+- [Hướng dẫn truyền phát](/docs/use-cases/)
 
 ---
 
-**Bottom Line:** ffmpeg handles all video/audio needs. Convert, compress, stream - one tool for everything.
+**Tóm lại:** ffmpeg xử lý mọi nhu cầu về video/âm thanh. Chuyển đổi, nén, truyền phát - một công cụ cho tất cả.

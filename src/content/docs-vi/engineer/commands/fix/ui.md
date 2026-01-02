@@ -1,102 +1,103 @@
 ---
 title: /fix:ui
-description: Documentation for ui
+description: Tài liệu hướng dẫn lệnh fix:ui
 section: engineer
 kit: engineer
 category: docs/commands/fix
 order: 24
 published: true
+lang: vi
 ---
 
 # /fix:ui
 
-Fix UI/UX issues by analyzing screenshots, videos, or descriptions. This command combines visual analysis with code debugging to resolve interface problems quickly.
+Sửa các vấn đề UI/UX bằng cách phân tích ảnh chụp màn hình, video hoặc mô tả. Lệnh này kết hợp phân tích thị giác với gỡ lỗi mã nguồn để giải quyết các vấn đề về giao diện một cách nhanh chóng.
 
-## Syntax
-
-```bash
-/fix:ui [screenshot/video] [description]
-```
-
-## How It Works
-
-### 1. Visual Analysis (if media provided)
-
-- Analyzes screenshots using AI vision
-- Extracts layout, colors, spacing
-- Identifies visual inconsistencies
-- Compares to design intent
-
-### 2. Code Location
-
-- Finds relevant component files
-- Identifies CSS/styling files
-- Locates responsive breakpoints
-- Maps state management
-
-### 3. Root Cause Identification
-
-- Analyzes CSS rules
-- Checks responsive design
-- Reviews component logic
-- Identifies conflicts
-
-### 4. Fix Implementation
-
-- Updates styles
-- Adjusts layouts
-- Fixes responsive issues
-- Updates component logic
-
-### 5. Visual Validation
-
-- Suggests manual testing steps
-- Provides preview commands
-- Recommends browser testing
-
-## Examples
-
-### With Screenshot
+## Cú pháp
 
 ```bash
-/fix:ui [screenshot.png] - Button is misaligned on mobile, text overflows
+/fix:ui [ảnh-chụp-màn-hình/video] [mô tả]
 ```
 
-**Visual Analysis:**
+## Cách hoạt động
+
+### 1. Phân tích thị giác (nếu có media)
+
+- Phân tích ảnh chụp màn hình bằng AI vision
+- Trích xuất bố cục (layout), màu sắc, khoảng cách
+- Xác định các điểm không nhất quán về mặt thị giác
+- So sánh với ý định thiết kế
+
+### 2. Định vị mã nguồn
+
+- Tìm các tệp component liên quan
+- Xác định các tệp CSS/styling
+- Định vị các điểm phản hồi (responsive breakpoints)
+- Ánh xạ quản lý trạng thái (state management)
+
+### 3. Xác định nguyên nhân gốc rễ
+
+- Phân tích các quy tắc CSS
+- Kiểm tra thiết kế phản hồi (responsive design)
+- Xem xét logic component
+- Xác định các xung đột
+
+### 4. Triển khai bản sửa lỗi
+
+- Cập nhật các style
+- Điều chỉnh bố cục
+- Sửa các vấn đề về responsive
+- Cập nhật logic component
+
+### 5. Xác minh thị giác
+
+- Đề xuất các bước kiểm tra thủ công
+- Cung cấp các lệnh xem trước (preview)
+- Khuyến nghị kiểm tra trên trình duyệt
+
+## Ví dụ
+
+### Kèm theo ảnh chụp màn hình
+
+```bash
+/fix:ui [screenshot.png] - Nút bị lệch trên di động, văn bản bị tràn
 ```
-Analyzing screenshot...
 
-Detected Issues:
-1. Button positioned 20px from right edge (should be centered)
-2. Text "Continue to Payment" truncated to "Continue to Pay..."
-3. Padding inconsistent (top: 12px, bottom: 8px)
-4. Button width: 150px (should be responsive)
+**Phân tích thị giác:**
+```
+Đang phân tích ảnh chụp màn hình...
 
-Device: iPhone 12 Pro (390px width)
-Viewport: Mobile portrait
+Các vấn đề được phát hiện:
+1. Nút nằm cách lề phải 20px (đáng lẽ phải nằm giữa)
+2. Văn bản "Continue to Payment" bị cắt thành "Continue to Pay..."
+3. Khoảng cách (padding) không nhất quán (trên: 12px, dưới: 8px)
+4. Chiều rộng nút: 150px (đáng lẽ phải phản hồi - responsive)
+
+Thiết bị: iPhone 12 Pro (chiều rộng 390px)
+Khung nhìn: Di động dọc
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-1. Located component
-   File: src/components/CheckoutButton.tsx
-   Styles: src/styles/checkout.css
+1. Đã định vị component
+   Tệp: src/components/CheckoutButton.tsx
+   Style: src/styles/checkout.css
 
-2. Root Cause:
-   - Fixed width instead of responsive
-   - Text using px instead of rem
-   - Missing mobile breakpoint
-   - Absolute positioning
+2. Nguyên nhân gốc rễ:
+   - Chiều rộng cố định thay vì phản hồi
+   - Văn bản sử dụng px thay vì rem
+   - Thiếu breakpoint cho di động
+   - Định vị tuyệt đối (absolute positioning)
 
-3. Fixes Applied:
-   ✓ Changed width: 150px → width: 100%
-   ✓ Added max-width: 320px
-   ✓ Changed font-size: 16px → font-size: 1rem
-   ✓ Fixed positioning: absolute → relative
-   ✓ Added padding: 12px (consistent)
-   ✓ Added text-overflow: ellipsis with tooltip
+3. Các bản sửa lỗi đã áp dụng:
+   ✓ Thay đổi width: 150px → width: 100%
+   ✓ Thêm max-width: 320px
+   ✓ Thay đổi font-size: 16px → font-size: 1rem
+   ✓ Sửa định vị: absolute → relative
+   ✓ Thêm padding: 12px (nhất quán)
+   ✓ Thêm text-overflow: ellipsis kèm tooltip
 
-4. Added responsive styles:
+4. Thêm các style phản hồi:
    @media (max-width: 768px) {
      .checkout-button {
        width: calc(100% - 32px);
@@ -104,284 +105,284 @@ Viewport: Mobile portrait
      }
    }
 
-Test on mobile device to verify fix.
+Hãy kiểm tra trên thiết bị di động để xác minh bản sửa lỗi.
 ```
 
-### With Description Only
+### Chỉ kèm theo mô tả
 
 ```bash
-/fix:ui Modal dialog doesn't close when clicking backdrop on mobile Safari
+/fix:ui Hộp thoại Modal không đóng khi nhấp vào lớp nền (backdrop) trên Safari di động
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-1. Located modal component
-   File: src/components/Modal.tsx
+1. Đã định vị component modal
+   Tệp: src/components/Modal.tsx
 
-2. Root Cause:
-   - Click event not registering on iOS
-   - Missing touch event handler
-   - Z-index issue with backdrop
+2. Nguyên nhân gốc rễ:
+   - Sự kiện click không được đăng ký trên iOS
+   - Thiếu trình xử lý sự kiện chạm (touch event handler)
+   - Vấn đề z-index với lớp nền
 
-3. Fixes Applied:
-   ✓ Added touchEnd event listener
-   ✓ Increased backdrop z-index
-   ✓ Added -webkit-tap-highlight-color
-   ✓ Fixed event propagation
+3. Các bản sửa lỗi đã áp dụng:
+   ✓ Thêm trình lắng nghe sự kiện touchEnd
+   ✓ Tăng z-index của lớp nền
+   ✓ Thêm -webkit-tap-highlight-color
+   ✓ Sửa việc lan truyền sự kiện (event propagation)
 
-4. Browser-specific fixes:
-   /* iOS Safari fix */
+4. Các bản sửa lỗi dành riêng cho trình duyệt:
+   /* Sửa lỗi cho Safari iOS */
    .modal-backdrop {
      cursor: pointer;
      -webkit-tap-highlight-color: transparent;
    }
 
-Test on iOS Safari to confirm.
+Hãy kiểm tra trên Safari iOS để xác nhận.
 ```
 
-### With Video
+### Kèm theo Video
 
 ```bash
-/fix:ui [screen-recording.mp4] - Animation is janky, dropdown flickers
+/fix:ui [screen-recording.mp4] - Hiệu ứng chuyển động bị giật, menu thả xuống bị nhấp nháy
 ```
 
-**Video Analysis:**
+**Phân tích Video:**
 ```
-Analyzing video frames...
+Đang phân tích các khung hình video...
 
-Detected Issues:
-- Frame rate drops during animation (60fps → 15fps)
-- Dropdown flickers 3 times before stabilizing
-- Repaints occurring on every frame
-- CSS transitions triggering layout recalculation
+Các vấn đề được phát hiện:
+- Tốc độ khung hình giảm khi chuyển động (60fps → 15fps)
+- Menu thả xuống nhấp nháy 3 lần trước khi ổn định
+- Việc vẽ lại (repaint) xảy ra trên mọi khung hình
+- Các hiệu ứng chuyển đổi CSS gây ra việc tính toán lại bố cục
 
-Timeline:
-0:00 - User clicks dropdown
-0:01 - Flicker #1
-0:02 - Flicker #2
-0:03 - Flicker #3
-0:04 - Stabilizes
+Dòng thời gian:
+0:00 - Người dùng nhấp vào menu
+0:01 - Nhấp nháy lần 1
+0:02 - Nhấp nháy lần 2
+0:03 - Nhấp nháy lần 3
+0:04 - Ổn định
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-1. Located components
+1. Đã định vị các component
    - src/components/Dropdown.tsx
    - src/animations/slide-down.css
 
-2. Performance Issues:
-   - Using height animation (causes reflow)
-   - No will-change property
-   - Box-shadow animating (expensive)
-   - Multiple re-renders
+2. Các vấn đề hiệu suất:
+   - Sử dụng hiệu ứng chuyển động chiều cao (gây ra reflow)
+   - Thiếu thuộc tính will-change
+   - Đang chuyển động box-shadow (tốn kém tài nguyên)
+   - Nhiều lần render lại (re-renders)
 
-3. Optimizations Applied:
-   ✓ Changed height → transform: scaleY()
-   ✓ Added will-change: transform
-   ✓ Removed box-shadow animation
-   ✓ Added GPU acceleration
-   ✓ Implemented React.memo for dropdown items
-   ✓ Debounced position calculations
+3. Các tối ưu hóa đã áp dụng:
+   ✓ Thay đổi height → transform: scaleY()
+   ✓ Thêm will-change: transform
+   ✓ Loại bỏ chuyển động box-shadow
+   ✓ Thêm tăng tốc GPU
+   ✓ Triển khai React.memo cho các mục menu
+   ✓ Debounce việc tính toán vị trí
 
-4. Performance Improvement:
-   Before: 15 FPS, 150ms animation time
-   After: 60 FPS, 200ms animation time (smoother)
+4. Cải thiện hiệu suất:
+   Trước: 15 FPS, thời gian chuyển động 150ms
+   Sau: 60 FPS, thời gian chuyển động 200ms (mượt mà hơn)
 
-Test with DevTools Performance tab.
+Hãy kiểm tra bằng tab Performance trong DevTools.
 ```
 
-## Common UI Issues
+## Các vấn đề UI thường gặp
 
-### Layout Issues
+### Vấn đề bố cục
 
 ```bash
-# Misalignment
-/fix:ui [screenshot] - Elements not aligned vertically
+# Sai lệch vị trí
+/fix:ui [screenshot] - Các phần tử không được căn thẳng hàng theo chiều dọc
 
-# Overflow
-/fix:ui Content overflowing container on small screens
+# Tràn nội dung
+/fix:ui Nội dung tràn ra ngoài container trên màn hình nhỏ
 
-# Spacing
-/fix:ui Inconsistent padding between sections
+# Khoảng cách
+/fix:ui Khoảng cách (padding) không nhất quán giữa các phần
 ```
 
-### Responsive Issues
+### Vấn đề phản hồi (Responsive)
 
 ```bash
-# Mobile layout
-/fix:ui [mobile-screenshot] - Layout breaks on iPhone SE
+# Bố cục di động
+/fix:ui [mobile-screenshot] - Bố cục bị hỏng trên iPhone SE
 
-# Tablet view
-/fix:ui Navigation menu overlaps content on iPad
+# Chế độ máy tính bảng
+/fix:ui Menu điều hướng chồng lên nội dung trên iPad
 
-# Desktop scaling
-/fix:ui Text too small on 4K monitors
+# Co giãn trên máy tính để bàn
+/fix:ui Văn bản quá nhỏ trên màn hình 4K
 ```
 
-### Visual Bugs
+### Lỗi hiển thị (Visual Bugs)
 
 ```bash
 # Z-index
-/fix:ui Modal appearing behind header
+/fix:ui Hộp thoại Modal hiển thị phía sau header
 
-# Colors
-/fix:ui Button color too light, hard to read text
+# Màu sắc
+/fix:ui Màu nút quá nhạt, khó đọc văn bản
 
-# Animations
-/fix:ui Loading spinner stuttering on slow devices
+# Hiệu ứng chuyển động
+/fix:ui Vòng quay tải (loading spinner) bị giật trên các thiết bị chậm
 ```
 
-### Interaction Issues
+### Vấn đề tương tác
 
 ```bash
-# Click/Touch
-/fix:ui Button not responding to clicks on mobile
+# Nhấp/Chạm
+/fix:ui Nút không phản hồi khi nhấp trên di động
 
-# Hover states
-/fix:ui Hover effect staying active after click
+# Trạng thái Hover
+/fix:ui Hiệu ứng hover vẫn hoạt động sau khi nhấp
 
-# Focus states
-/fix:ui Can't see keyboard focus indicator
+# Trạng thái Focus
+/fix:ui Không thấy chỉ báo tiêu điểm (focus) từ bàn phím
 ```
 
-## Best Practices
+## Thực hành tốt nhất
 
-### Provide Visual Context
+### Cung cấp ngữ cảnh thị giác
 
-✅ **With Screenshot:**
+✅ **Kèm theo ảnh chụp màn hình:**
 ```bash
-/fix:ui [screenshot.png] - Clear description of issue
+/fix:ui [screenshot.png] - Mô tả rõ ràng về vấn đề
 ```
 
-✅ **With Video:**
+✅ **Kèm theo video:**
 ```bash
-/fix:ui [recording.mp4] - Shows the interaction problem
+/fix:ui [recording.mp4] - Hiển thị vấn đề tương tác
 ```
 
-❌ **Text Only (when visual issue):**
+❌ **Chỉ văn bản (khi là vấn đề thị giác):**
 ```bash
-/fix:ui Something looks wrong
+/fix:ui Có cái gì đó trông hơi sai
 ```
 
-### Specify Device/Browser
+### Chỉ định thiết bị/trình duyệt
 
 ```bash
-/fix:ui [screenshot] - Button misaligned on mobile Safari, iPhone 12 Pro
+/fix:ui [screenshot] - Nút bị lệch trên Safari di động, iPhone 12 Pro
 ```
 
-### Include Expected Behavior
+### Bao gồm hành vi mong đợi
 
 ```bash
-/fix:ui [screenshot] - Modal should be centered on screen, currently offset to left by ~50px
+/fix:ui [screenshot] - Modal nên nằm giữa màn hình, hiện đang bị lệch sang trái khoảng 50px
 ```
 
-### Describe Interaction
+### Mô tả tương tác
 
 ```bash
-/fix:ui When hovering over dropdown, items flicker. Should smoothly expand without flicker.
+/fix:ui Khi di chuột qua menu thả xuống, các mục bị nhấp nháy. Đáng lẽ phải mở rộng mượt mà.
 ```
 
-## Testing Recommendations
+## Khuyến nghị kiểm tra
 
-After fix is applied:
+Sau khi bản sửa lỗi được áp dụng:
 
-### Manual Testing
+### Kiểm tra thủ công
 
 ```bash
-# Desktop browsers
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+# Trình duyệt máy tính
+- Chrome (mới nhất)
+- Firefox (mới nhất)
+- Safari (mới nhất)
+- Edge (mới nhất)
 
-# Mobile devices
-- iOS Safari (iPhone)
+# Thiết bị di động
+- Safari iOS (iPhone)
 - Chrome (Android)
 - Samsung Internet
 
-# Screen sizes
-- Mobile: 375px, 414px
-- Tablet: 768px, 1024px
-- Desktop: 1920px, 2560px
+# Kích thước màn hình
+- Di động: 375px, 414px
+- Máy tính bảng: 768px, 1024px
+- Máy tính để bàn: 1920px, 2560px
 ```
 
-### Automated Testing
+### Kiểm tra tự động
 
 ```bash
-# Visual regression
+# Hồi quy thị giác (Visual regression)
 npm run test:visual
 
-# Cross-browser
+# Đa trình duyệt
 npm run test:browsers
 
-# Responsive
+# Phản hồi (Responsive)
 npm run test:responsive
 ```
 
-## Integration with Design Tools
+## Tích hợp với công cụ thiết kế
 
-### Figma Integration
+### Tích hợp Figma
 
 ```bash
-# Compare with Figma design
-/fix:ui [screenshot] compare with [figma-url]
+# So sánh với thiết kế Figma
+/fix:ui [screenshot] so sánh với [figma-url]
 ```
 
-### Storybook Integration
+### Tích hợp Storybook
 
 ```bash
-# Test component in isolation
+# Kiểm tra component riêng biệt
 npm run storybook
 
-# Check component states
+# Kiểm tra các trạng thái của component
 ```
 
-## Advanced Scenarios
+## Các kịch bản nâng cao
 
-### Dark Mode Issues
+### Vấn đề chế độ tối (Dark Mode)
 
 ```bash
-/fix:ui [dark-mode-screenshot] - Text not visible in dark mode
+/fix:ui [dark-mode-screenshot] - Văn bản không hiển thị trong chế độ tối
 ```
 
-**Fixes:**
-- Color contrast adjustments
-- Missing dark mode styles
-- Theme variable issues
+**Các cách sửa:**
+- Điều chỉnh độ tương phản màu sắc
+- Thêm các style cho chế độ tối còn thiếu
+- Sửa lỗi biến chủ đề (theme variables)
 
-### RTL (Right-to-Left) Layout
+### Bố cục RTL (Phải sang trái)
 
 ```bash
-/fix:ui [rtl-screenshot] - Arabic text layout broken
+/fix:ui [rtl-screenshot] - Bố cục văn bản tiếng Ả Rập bị hỏng
 ```
 
-**Fixes:**
-- Add RTL-specific styles
-- Fix logical properties
-- Mirror layout elements
+**Các cách sửa:**
+- Thêm các style dành riêng cho RTL
+- Sửa các thuộc tính logic
+- Đảo ngược các phần tử bố cục
 
-### Accessibility Issues
+### Vấn đề về khả năng tiếp cận (Accessibility)
 
 ```bash
-/fix:ui [screenshot] - Focus indicator not visible for keyboard users
+/fix:ui [screenshot] - Chỉ báo tiêu điểm (focus) không hiển thị cho người dùng bàn phím
 ```
 
-**Fixes:**
-- Enhanced focus styles
-- ARIA attributes
-- Keyboard navigation
+**Các cách sửa:**
+- Tăng cường style cho focus
+- Thêm các thuộc tính ARIA
+- Cải thiện điều hướng bàn phím
 
-## Common Solutions
+## Các giải pháp phổ biến
 
-### Flexbox Alignment
+### Căn chỉnh Flexbox
 
 ```css
-/* Before */
+/* Trước */
 .container {
   display: flex;
 }
 
-/* After */
+/* Sau */
 .container {
   display: flex;
   align-items: center;
@@ -389,45 +390,45 @@ npm run storybook
 }
 ```
 
-### Responsive Width
+### Chiều rộng phản hồi
 
 ```css
-/* Before */
+/* Trước */
 .button {
   width: 200px;
 }
 
-/* After */
+/* Sau */
 .button {
   width: 100%;
   max-width: 200px;
 }
 ```
 
-### Z-index Stacking
+### Xếp chồng Z-index
 
 ```css
-/* Before */
+/* Trước */
 .modal {
   z-index: 100;
 }
 
-/* After */
+/* Sau */
 .modal {
   z-index: 1000;
   position: fixed;
 }
 ```
 
-### Text Overflow
+### Tràn văn bản (Text Overflow)
 
 ```css
-/* Before */
+/* Trước */
 .text {
   width: 150px;
 }
 
-/* After */
+/* Sau */
 .text {
   width: 150px;
   overflow: hidden;
@@ -436,32 +437,32 @@ npm run storybook
 }
 ```
 
-## Performance Optimization
+## Tối ưu hóa hiệu suất
 
-### Animation Performance
+### Hiệu suất chuyển động (Animation Performance)
 
 ```css
-/* Avoid (causes reflow) */
+/* Nên tránh (gây ra reflow) */
 .element {
   transition: height 0.3s;
 }
 
-/* Use (GPU accelerated) */
+/* Nên dùng (tăng tốc GPU) */
 .element {
   transition: transform 0.3s;
   will-change: transform;
 }
 ```
 
-### Reduce Repaints
+### Giảm việc vẽ lại (Repaints)
 
 ```css
-/* Avoid */
+/* Nên tránh */
 .hover:hover {
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* Use */
+/* Nên dùng */
 .hover {
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   opacity: 0;
@@ -472,53 +473,53 @@ npm run storybook
 }
 ```
 
-## Troubleshooting
+## Xử lý sự cố
 
-### Can't Reproduce Issue
+### Không thể tái hiện vấn đề
 
-**Problem:** Issue visible in screenshot but not in code
+**Vấn đề:** Vấn đề hiển thị trong ảnh chụp màn hình nhưng không thấy trong mã nguồn
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Check specific browser/device
-/fix:ui [screenshot] - Happens only on Safari iOS
+# Kiểm tra trình duyệt/thiết bị cụ thể
+/fix:ui [screenshot] - Chỉ xảy ra trên Safari iOS
 
-# Check user's environment
-# - Browser version
-# - Screen size
-# - Zoom level
+# Kiểm tra môi trường người dùng
+# - Phiên bản trình duyệt
+# - Kích thước màn hình
+# - Mức độ thu phóng (zoom level)
 ```
 
-### Fix Works Locally But Not in Production
+### Sửa lỗi hoạt động tại cục bộ nhưng không hoạt động trên Production
 
-**Problem:** Fix works in development
+**Vấn đề:** Bản sửa lỗi hoạt động tốt trong môi trường phát triển
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Check build process
+# Kiểm tra quy trình build
 npm run build
 npm run preview
 
-# Check for CSS purging issues
-# Check for minification problems
+# Kiểm tra các vấn đề về CSS purging
+# Kiểm tra các vấn đề về rút gọn mã (minification)
 ```
 
-### Multiple Related Issues
+### Nhiều vấn đề liên quan
 
-**Problem:** Several UI issues in same area
+**Vấn đề:** Có nhiều vấn đề UI trong cùng một khu vực
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Fix all at once
-/fix:ui [screenshots] - List all issues: 1) alignment, 2) color contrast, 3) spacing
+# Sửa tất cả cùng một lúc
+/fix:ui [screenshots] - Liệt kê tất cả vấn đề: 1) căn lề, 2) độ tương phản màu, 3) khoảng cách
 ```
 
-## Next Steps
+## Bước tiếp theo
 
-- [/design:screenshot](/docs/engineer/commands/design/screenshot) - Convert design to code
-- [/fix:fast](/docs/engineer/commands/fix/fast) - Quick CSS fixes
-- [/test](/docs/engineer/commands/core/test) - Visual regression tests
+- [/design:screenshot](/docs/engineer/commands/design/screenshot) - Chuyển thiết kế thành mã nguồn
+- [/fix:fast](/docs/engineer/commands/fix/fast) - Các bản sửa lỗi CSS nhanh
+- [/test](/docs/engineer/commands/core/test) - Các bài kiểm tra hồi quy thị giác
 
 ---
 
-**Key Takeaway**: `/fix:ui` combines visual analysis with code debugging to quickly resolve UI/UX issues across devices and browsers, with support for screenshots and videos.
+**Điểm mấu chốt**: `/fix:ui` kết hợp phân tích thị giác với gỡ lỗi mã nguồn để nhanh chóng giải quyết các vấn đề UI/UX trên nhiều thiết bị và trình duyệt, hỗ trợ cả ảnh chụp màn hình và video.

@@ -1,262 +1,256 @@
 ---
 title: /content:enhance
-description: Documentation for enhance
+description: Tài liệu hướng dẫn cho lệnh enhance
 section: engineer
 kit: engineer
 category: docs/commands/content
 order: 51
 published: true
+lang: vi
 ---
 
 # /content:enhance
 
-Analyze and enhance existing copy to improve clarity, impact, SEO optimization, and readability. This command refines your content while maintaining your brand voice and core message.
+Phân tích và nâng cao bản viết (copy) hiện có để cải thiện sự rõ ràng, tác động, tối ưu hóa SEO và khả năng đọc. Lệnh này tinh chỉnh nội dung của bạn trong khi vẫn duy trì tiếng nói thương hiệu và thông điệp cốt lõi.
 
-## Syntax
-
-```bash
-/content:enhance [content description or file path]
-```
-
-## How It Works
-
-The `/content:enhance` command follows a comprehensive enhancement workflow:
-
-### 1. Content Analysis
-
-- Reads existing content (file, URL, or description)
-- Identifies content type (blog, docs, marketing, etc.)
-- Analyzes current quality and effectiveness
-- Detects brand voice and tone
-
-### 2. Multi-Dimensional Audit
-
-Invokes **copywriter** agent to audit:
-- **Clarity**: Is message clear and easy to understand?
-- **Impact**: Does it engage and persuade?
-- **SEO**: Is it optimized for search engines?
-- **Readability**: Is it easy to read and scan?
-- **Grammar**: Are there errors or awkward phrasing?
-- **Structure**: Is information well-organized?
-
-### 3. Enhancement Recommendations
-
-Provides specific improvements:
-- Clearer headlines and subheadings
-- Stronger opening and closing
-- Improved transitions
-- Better word choices
-- SEO keyword integration
-- Readability improvements
-
-### 4. Revised Content
-
-Delivers enhanced version:
-- Original structure preserved (or improved)
-- Brand voice maintained
-- All improvements applied
-- Before/after comparison
-
-## Examples
-
-### Blog Post Enhancement
+## Cú pháp
 
 ```bash
-/content:enhance [improve blog post at ./blog/ai-development.md]
+/content:enhance [mô tả nội dung hoặc đường dẫn tệp]
 ```
 
-**What happens:**
+## Cách thức hoạt động
+
+Lệnh `/content:enhance` tuân theo quy trình nâng cao toàn diện:
+
+### 1. Phân tích Nội dung
+
+- Đọc nội dung hiện có (tệp, URL hoặc mô tả)
+- Xác định loại nội dung (blog, tài liệu, tiếp thị, v.v.)
+- Phân tích chất lượng và hiệu quả hiện tại
+- Nhận diện tiếng nói và tông điệu thương hiệu
+
+### 2. Kiểm định Đa chiều
+
+Triệu tập agent **copywriter** để kiểm định:
+- **Sự rõ ràng**: Thông điệp có rõ ràng và dễ hiểu không?
+- **Tác động**: Nó có thu hút và thuyết phục không?
+- **SEO**: Nó đã được tối ưu hóa cho các công cụ tìm kiếm chưa?
+- **Khả năng đọc**: Nó có dễ đọc và dễ quét (scannable) không?
+- **Ngữ pháp**: Có lỗi hoặc cách diễn đạt vụng về không?
+- **Cấu trúc**: Thông tin có được sắp xếp hợp lý không?
+
+### 3. Đề xuất Nâng cao
+
+Cung cấp các cải tiến cụ thể:
+- Tiêu đề và tiêu đề phụ rõ ràng hơn
+- Phần mở đầu và kết thúc mạnh mẽ hơn
+- Cải thiện các từ nối
+- Lựa chọn từ ngữ tốt hơn
+- Tích hợp từ khóa SEO
+- Cải thiện khả năng đọc
+
+### 4. Nội dung đã sửa đổi
+
+Cung cấp phiên bản đã nâng cao:
+- Bảo tồn (hoặc cải thiện) cấu trúc gốc
+- Duy trì tiếng nói thương hiệu
+- Áp dụng tất cả các cải tiến
+- So sánh trước/sau
+
+## Ví dụ
+
+### Nâng cao bài viết Blog
+
+```bash
+/content:enhance [cải thiện bài viết blog tại ./blog/ai-development.md]
 ```
-1. Content Analysis
+
+**Điều gì xảy ra:**
+```
+1. Phân tích Nội dung
    Agent: copywriter
 
-   Reading: ./blog/ai-development.md
-   Type: Technical blog post
-   Length: 1,200 words
-   Target audience: Developers
+   Đang đọc: ./blog/ai-development.md
+   Loại: Bài viết blog kỹ thuật
+   Độ dài: 1.200 từ
+   Đối tượng mục tiêu: Lập trình viên
 
-   Current state:
-   - Headline: Generic
-   - Opening: Slow, buried lede
-   - Structure: Wall of text, few subheadings
-   - Readability: Grade 14 (college level)
-   - SEO: No keywords, weak meta
+   Trạng thái hiện tại:
+   - Tiêu đề: Chung chung
+   - Mở đầu: Chậm chạp, thông tin chính bị chôn vùi
+   - Cấu trúc: Khối văn bản lớn, ít tiêu đề phụ
+   - Khả năng đọc: Cấp độ 14 (đại học)
+   - SEO: Không có từ khóa, meta yếu
 
-2. Issues Identified
+2. Các vấn đề được xác định
 
-   CLARITY (Score: 6/10):
-   - Jargon not explained
-   - Complex sentences
-   - Vague pronouns
+   SỰ RÕ RÀNG (Điểm: 6/10):
+   - Thuật ngữ chuyên môn không được giải thích
+   - Câu phức tạp
+   - Đại từ mơ hồ
 
-   IMPACT (Score: 5/10):
-   - Weak opening hook
-   - No compelling examples
-   - Passive voice throughout
+   TÁC ĐỘNG (Điểm: 5/10):
+   - Đoạn mở đầu thiếu lôi cuốn
+   - Không có ví dụ thuyết phục
+   - Sử dụng thể bị động xuyên suốt
 
-   SEO (Score: 3/10):
-   - No primary keyword
-   - Missing meta description
-   - No internal links
-   - Headers not optimized
+   SEO (Điểm: 3/10):
+   - Không có từ khóa chính
+   - Thiếu mô tả meta
+   - Không có liên kết nội bộ
+   - Các thẻ tiêu đề chưa tối ưu
 
-   READABILITY (Score: 4/10):
-   - Flesch score: 32 (difficult)
-   - Long paragraphs (8-10 lines)
-   - Few bullet points
-   - No visual breaks
+   KHẢ NĂNG ĐỌC (Điểm: 4/10):
+   - Điểm Flesch: 32 (khó)
+   - Các đoạn văn dài (8-10 dòng)
+   - Ít danh sách liệt kê
+   - Không có khoảng nghỉ trực quan
 
-3. Enhancement Applied
+3. Các nâng cao đã áp dụng
 
-   HEADLINE:
-   Before: "AI Development Tools"
-   After: "How AI Development Tools Cut Coding Time by 70%"
-   (+Specific, benefit-focused, includes number)
+   TIÊU ĐỀ:
+   Trước: "AI Development Tools"
+   Sau: "Cách các công cụ phát triển AI cắt giảm 70% thời gian lập trình"
+   (+Cụ thể, tập trung vào lợi ích, bao gồm con số)
 
-   OPENING:
-   Before: "AI tools are becoming popular..."
-   After: "Spent 3 hours debugging yesterday? AI tools
-   now catch those bugs in seconds. Here's how..."
-   (+Hook with specific scenario, immediate value)
+   MỞ ĐẦU:
+   Trước: "AI tools are becoming popular..."
+   Sau: "Bạn đã mất 3 giờ để sửa lỗi hôm qua? Các công cụ AI\n   giờ đây có thể phát hiện lỗi đó trong vài giây. Đây là cách..."
+   (+Lôi cuốn bằng tình huống cụ thể, giá trị tức thì)
 
-   STRUCTURE:
-   - Added 6 descriptive subheadings
-   - Broke long paragraphs into 2-3 lines
-   - Added bullet lists (3 places)
-   - Inserted code examples
-   - Added "Key Takeaway" boxes
+   CẤU TRÚC:
+   - Thêm 6 tiêu đề phụ mô tả
+   - Chia các đoạn văn dài thành 2-3 dòng
+   - Thêm danh sách liệt kê (3 vị trí)
+   - Chèn các ví dụ mã nguồn
+   - Thêm các ô "Thông điệp chính"
 
-   READABILITY:
-   - Flesch score: 32 → 58 (easier)
-   - Grade level: 14 → 9
-   - Avg sentence: 25 words → 16 words
-   - Passive voice: 15% → 3%
+   KHẢ NĂNG ĐỌC:
+   - Điểm Flesch: 32 → 58 (dễ hơn)
+   - Cấp độ lớp: 14 → 9
+   - Câu trung bình: 25 từ → 16 từ
+   - Thể bị động: 15% → 3%
 
-   SEO OPTIMIZATION:
-   - Primary keyword: "AI development tools"
-   - Added meta description (155 chars)
-   - Optimized H2s with keywords
-   - Added 3 internal links
-   - Image alt text added
+   TỐI ƯU HÓA SEO:
+   - Từ khóa chính: "AI development tools"
+   - Thêm mô tả meta (155 ký tự)
+   - Tối ưu hóa các thẻ H2 với từ khóa
+   - Thêm 3 liên kết nội bộ
+   - Thêm văn bản thay thế (alt text) cho hình ảnh
 
-   WORD IMPROVEMENTS:
-   - "utilize" → "use" (6 places)
-   - "in order to" → "to" (4 places)
-   - Removed filler words (23 instances)
-   - Simplified jargon
+   CẢI THIỆN TỪ NGỮ:
+   - "utilize" → "use" (6 vị trí)
+   - "in order to" → "to" (4 vị trí)
+   - Loại bỏ các từ thừa (23 trường hợp)
+   - Đơn giản hóa thuật ngữ chuyên môn
 
-4. Before/After Metrics
+4. Chỉ số Trước/Sau
 
-   Readability:        4/10 → 8/10
-   SEO Score:          3/10 → 9/10
-   Clarity:            6/10 → 9/10
-   Impact:             5/10 → 8/10
-   Estimated read time: 8 min → 5 min
+   Khả năng đọc:       4/10 → 8/10
+   Điểm SEO:           3/10 → 9/10
+   Sự rõ ràng:         6/10 → 9/10
+   Tác động:           5/10 → 8/10
+   Thời gian đọc ước tính: 8 phút → 5 phút
 
-✓ Enhancement complete (2 minutes)
+✓ Hoàn tất nâng cao (2 phút)
 
-Files created:
+Các tệp đã tạo:
 - blog/ai-development-enhanced.md
 - blog/ai-development-changes.diff
 ```
 
-### Marketing Page Copy
+### Bản viết Trang Tiếp thị
 
 ```bash
-/content:enhance [improve About Us page copy]
+/content:enhance [cải thiện bản viết trang Giới thiệu về chúng tôi]
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-1. Analysis
-   Content: About Us page
-   Current length: 500 words
-   Issues: Generic, corporate jargon, no personality
+1. Phân tích
+   Nội dung: Trang Giới thiệu về chúng tôi
+   Độ dài hiện tại: 500 từ
+   Vấn đề: Chung chung, thuật ngữ doanh nghiệp sáo rỗng, thiếu cá tính
 
-2. Enhancement Strategy
+2. Chiến lược Nâng cao
 
-   TONE SHIFT:
-   Before: Corporate, formal, distant
-   After: Professional but approachable, human
+   THAY ĐỔI TÔNG ĐIỆU:
+   Trước: Doanh nghiệp, trang trọng, xa cách
+   Sau: Chuyên nghiệp nhưng dễ tiếp cận, nhân văn
 
-   BEFORE:
-   "Our company was founded in 2020 with the mission
-   to provide innovative solutions to businesses
-   worldwide. We leverage cutting-edge technology..."
+   TRƯỚC:
+   "Công ty chúng tôi được thành lập vào năm 2020 với sứ mệnh\n   cung cấp các giải pháp sáng tạo cho các doanh nghiệp\n   trên toàn thế giới. Chúng tôi tận dụng công nghệ tiên tiến..."
 
-   AFTER:
-   "In 2020, we got frustrated watching developers
-   waste hours on repetitive tasks. So we built
-   ClaudeKit—AI agents that actually work."
+   SAU:
+   "Vào năm 2020, chúng tôi cảm thấy bế tắc khi nhìn các lập trình viên\n   lãng phí hàng giờ cho các tác vụ lặp đi lặp lại. Vì vậy, chúng tôi đã xây dựng\n   ClaudeKit—các agent AI thực sự hoạt động hiệu quả."
 
-   (+Specific, relatable, conversational)
+   (+Cụ thể, dễ đồng cảm, phong cách trò chuyện)
 
-3. Improvements Applied
+3. Các cải tiến đã áp dụng
 
-   STORY STRUCTURE:
-   - Problem we saw
-   - Why we started
-   - What makes us different
-   - Who we help today
-   - Where we're going
+   CẤU TRÚC CÂU CHUYỆN:
+   - Vấn đề chúng tôi đã thấy
+   - Tại sao chúng tôi bắt đầu
+   - Điều gì làm chúng tôi khác biệt
+   - Chúng tôi giúp đỡ ai hôm nay
+   - Chúng tôi đang đi về đâu
 
-   REMOVE JARGON:
-   ❌ "Leverage cutting-edge technology"
-   ✓ "Use AI that actually works"
+   LOẠI BỎ THUẬT NGỮ SÁO RỖNG:
+   ❌ "Tận dụng công nghệ tiên tiến"
+   ✓ "Sử dụng AI thực sự hiệu quả"
 
-   ❌ "Synergistic solutions"
-   ✓ "Tools that work together"
+   ❌ "Giải pháp cộng hưởng"
+   ✓ "Các công cụ phối hợp nhịp nhàng với nhau"
 
-   ❌ "Best-in-class offerings"
-   ✓ "The best tools we could build"
+   ❌ "Sản phẩm tốt nhất phân khúc"
+   ✓ "Những công cụ tốt nhất mà chúng tôi có thể xây dựng"
 
-   ADD PERSONALITY:
-   - Specific founding story
-   - Real customer examples
-   - Team member quotes
-   - Behind-the-scenes details
+   THÊM CÁ TÍNH:
+   - Câu chuyện thành lập cụ thể
+   - Ví dụ khách hàng thực tế
+   - Trích dẫn từ các thành viên trong nhóm
+   - Các chi tiết hậu trường
 
-   STRENGTHEN CREDIBILITY:
-   - Concrete metrics (50,000+ users)
-   - Customer logos
-   - Specific achievements
-   - Team credentials (where relevant)
+   TĂNG CƯỜNG UY TÍN:
+   - Số liệu cụ thể (50.000+ người dùng)
+   - Logo khách hàng
+   - Các thành tựu cụ thể
+   - Chứng chỉ của nhóm (nếu liên quan)
 
-✓ Enhanced copy delivered
+✓ Bản viết đã nâng cao đã được bàn giao
 ```
 
-### Documentation Page
+### Trang Tài liệu
 
 ```bash
-/content:enhance [improve API documentation for authentication]
+/content:enhance [cải thiện tài liệu API cho phần xác thực]
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-1. Analysis
-   Type: Technical documentation
-   Audience: Developers integrating API
+1. Phân tích
+   Loại: Tài liệu kỹ thuật
+   Đối tượng: Lập trình viên tích hợp API
 
-   Issues found:
-   - Assumes too much knowledge
-   - Missing practical examples
-   - Unclear error messages
-   - No troubleshooting section
+   Các vấn đề tìm thấy:
+   - Giả định người dùng đã biết quá nhiều
+   - Thiếu ví dụ thực tế
+   - Thông báo lỗi không rõ ràng
+   - Không có phần xử lý sự cố
 
-2. Enhancements
+2. Các nâng cao
 
-   ADD QUICK START:
-   - Minimal working example first
-   - Then explain details
-   - Progressive disclosure
+   THÊM PHẦN BẮT ĐẦU NHANH:
+   - Ví dụ hoạt động tối thiểu trước tiên
+   - Sau đó mới giải thích chi tiết
+   - Tiết lộ thông tin dần dần
 
-   BEFORE:
-   "The authentication endpoint accepts POST requests
-   with JSON payload containing username and password
-   fields which must be validated..."
+   TRƯỚC:
+   "Điểm cuối xác thực chấp nhận các yêu cầu POST\n   với tải trọng JSON chứa các trường tên người dùng và mật khẩu\n   phải được xác thực..."
 
-   AFTER:
-   "Quick Start:
+   SAU:
+   "Bắt đầu nhanh:
 
    ```bash
    curl -X POST https://api.example.com/auth \
@@ -264,279 +258,278 @@ Files created:
      -d '{"email": "user@example.com", "password": "secret"}'
    ```
 
-   This returns your API token. Use it in subsequent requests..."
+   Lệnh này trả về token API của bạn. Sử dụng nó trong các yêu cầu tiếp theo..."
 
-   IMPROVE STRUCTURE:
-   1. Quick start (working code first)
-   2. Authentication flow explained
-   3. Request/response details
-   4. Error handling
-   5. Troubleshooting
-   6. Security best practices
+   CẢI THIỆN CẤU TRÚC:
+   1. Bắt đầu nhanh (mã nguồn hoạt động trước)
+   2. Giải thích luồng xác thực
+   3. Chi tiết yêu cầu/phản hồi
+   4. Xử lý lỗi
+   5. Xử lý sự cố
+   6. Thực hành bảo mật tốt nhất
 
-   ADD EXAMPLES:
-   - cURL examples
+   THÊM VÍ DỤ:
+   - Ví dụ cURL
    - JavaScript/Node.js
    - Python
-   - Common use cases
+   - Các trường hợp sử dụng phổ biến
 
-   CLARIFY ERRORS:
-   Before: "401 Unauthorized"
-   After:
+   LÀM RÕ CÁC LỖI:
+   Trước: "401 Unauthorized"
+   Sau:
    "401 Unauthorized
-   - Missing API key in header
-   - API key expired (renew in dashboard)
-   - Invalid API key format"
+   - Thiếu API key trong tiêu đề (header)
+   - API key đã hết hạn (gia hạn trong bảng điều khiển)
+   - Định dạng API key không hợp lệ"
 
-✓ Documentation enhanced
+✓ Tài liệu đã được nâng cao
 ```
 
-## When to Use
+## Khi nào nên sử dụng
 
-### ✅ Use /content:enhance for:
+### ✅ Sử dụng /content:enhance cho:
 
-**Existing Blog Posts**
+**Các bài viết Blog hiện có**
 ```bash
-/content:enhance [improve old blog posts for SEO]
+/content:enhance [cải thiện các bài viết blog cũ để tối ưu SEO]
 ```
 
-**Marketing Copy**
+**Bản viết Tiếp thị**
 ```bash
-/content:enhance [refine homepage copy]
+/content:enhance [tinh chỉnh nội dung trang chủ]
 ```
 
-**Documentation**
+**Tài liệu hướng dẫn**
 ```bash
-/content:enhance [make API docs clearer]
+/content:enhance [làm cho tài liệu API rõ ràng hơn]
 ```
 
-**Email Content**
+**Nội dung Email**
 ```bash
-/content:enhance [improve newsletter readability]
+/content:enhance [cải thiện khả năng đọc của bản tin newsletter]
 ```
 
-**Product Descriptions**
+**Mô tả Sản phẩm**
 ```bash
-/content:enhance [enhance product page copy]
+/content:enhance [nâng cao bản viết trang sản phẩm]
 ```
 
-### ❌ Don't use for:
+### ❌ Không sử dụng cho:
 
-**Creating New Content**
-- Use `/content:fast` or `/content:good` instead
+**Tạo nội dung mới**
+- Sử dụng `/content:fast` hoặc `/content:good` thay thế
 
-**Conversion Optimization**
-- Use `/content:cro` for CRO-focused improvements
+**Tối ưu hóa chuyển đổi**
+- Sử dụng `/content:cro` cho các cải tiến tập trung vào CRO
 
-**Quick Grammar Fixes**
-- Just fix directly or use grammar tool
+**Sửa lỗi ngữ pháp nhanh**
+- Chỉ cần sửa trực tiếp hoặc sử dụng công cụ kiểm tra ngữ pháp
 
-## Enhancement Dimensions
+## Các khía cạnh nâng cao
 
-### 1. Clarity
+### 1. Sự rõ ràng
 
-**Before:**
+**Trước:**
 ```
-"Our platform enables users to leverage advanced
-AI capabilities to optimize their development
-workflow efficiency."
-```
-
-**After:**
-```
-"Build features 10x faster with AI that writes,
-tests, and reviews your code."
+"Nền tảng của chúng tôi cho phép người dùng tận dụng các khả năng
+AI tiên tiến để tối ưu hóa hiệu quả quy trình phát triển của họ."
 ```
 
-### 2. Impact
+**Sau:**
+```
+"Xây dựng các tính năng nhanh hơn gấp 10 lần với AI có khả năng viết,
+kiểm thử và đánh giá mã nguồn của bạn."
+```
 
-**Before:**
+### 2. Tác động
+
+**Trước:**
 ```
-"We offer various features for developers."
+"Chúng tôi cung cấp nhiều tính năng khác nhau cho các lập trình viên."
 ```
 
-**After:**
+**Sau:**
 ```
-"Ship your next feature in hours, not weeks.
-50,000+ developers already do."
+"Phát hành tính năng tiếp theo của bạn trong vài giờ, không phải vài tuần.
+Hơn 50.000 lập trình viên đã và đang làm điều đó."
 ```
 
 ### 3. SEO
 
-**Optimization techniques:**
-- Primary keyword in H1
-- Secondary keywords in H2s
-- Natural keyword density (1-2%)
-- Meta description (150-160 chars)
-- Internal linking
-- Image alt text
-- URL slug optimization
+**Các kỹ thuật tối ưu hóa:**
+- Từ khóa chính trong thẻ H1
+- Từ khóa phụ trong các thẻ H2
+- Mật độ từ khóa tự nhiên (1-2%)
+- Mô tả meta (150-160 ký tự)
+- Liên kết nội bộ
+- Văn bản thay thế cho hình ảnh (alt text)
+- Tối ưu hóa slug URL
 
-### 4. Readability
+### 4. Khả năng đọc
 
-**Improvements:**
-- Shorter sentences (15-20 words avg)
-- Shorter paragraphs (2-4 lines)
-- Bullet points for lists
-- Subheadings every 300 words
-- Active voice (minimize passive)
-- Simple words (avoid jargon)
-- Visual breaks (images, code blocks)
+**Các cải tiến:**
+- Câu ngắn hơn (trung bình 15-20 từ)
+- Đoạn văn ngắn hơn (2-4 dòng)
+- Sử dụng danh sách liệt kê
+- Tiêu đề phụ sau mỗi 300 từ
+- Thể chủ động (giảm thiểu thể bị động)
+- Từ ngữ đơn giản (tránh thuật ngữ chuyên môn quá mức)
+- Khoảng nghỉ trực quan (hình ảnh, khối mã nguồn)
 
-## Readability Metrics
+## Các chỉ số về khả năng đọc
 
-### Flesch Reading Ease
-
-```
-90-100: Very easy (5th grade)
-60-70:  Easy (8th-9th grade) ← Target for most content
-30-50:  Difficult (college)
-0-30:   Very difficult
-```
-
-### Target by Content Type
+### Điểm Flesch Reading Ease
 
 ```
-Blog posts:        60-70 (Easy)
-Marketing copy:    70-80 (Fairly easy)
-Documentation:     50-60 (Standard)
-Technical papers:  30-50 (Difficult) - OK
+90-100: Rất dễ (lớp 5)
+60-70:  Dễ (lớp 8-9) ← Mục tiêu cho hầu hết nội dung
+30-50:  Khó (đại học)
+0-30:   Rất khó
 ```
 
-## SEO Best Practices
-
-### Keyword Usage
+### Mục tiêu theo loại nội dung
 
 ```
-Title tag:         Include primary keyword
-H1:               Primary keyword
-H2s:              Secondary keywords (1-2)
-First paragraph:   Primary keyword naturally
-Throughout:        1-2% keyword density
-Meta description:  Primary keyword
+Bài viết blog:      60-70 (Dễ)
+Bản viết tiếp thị:  70-80 (Khá dễ)
+Tài liệu hướng dẫn: 50-60 (Tiêu chuẩn)
+Báo cáo kỹ thuật:   30-50 (Khó) - Có thể chấp nhận
 ```
 
-### On-Page SEO
+## Thực hành SEO tốt nhất
+
+### Sử dụng từ khóa
 
 ```
-✓ Descriptive URLs (/ai-development-tools)
-✓ Internal links (3-5 per post)
-✓ External links (1-2 authoritative)
-✓ Image optimization (alt text, compression)
-✓ Mobile-friendly formatting
-✓ Fast load time (remove bloat)
+Thẻ Title:         Bao gồm từ khóa chính
+H1:               Từ khóa chính
+H2:               Từ khóa phụ (1-2)
+Đoạn văn đầu tiên: Từ khóa chính một cách tự nhiên
+Xuyên suốt:       Mật độ từ khóa 1-2%
+Mô tả Meta:       Từ khóa chính
 ```
 
-## Enhancement Patterns
-
-### Blog Post Structure
+### SEO trên trang (On-Page SEO)
 
 ```
-1. Compelling headline (with number or benefit)
-2. Hook (problem or surprising fact)
-3. Quick value preview
-4. Main content (subheadings every 300 words)
-5. Practical examples
-6. Key takeaways
-7. Clear CTA
+✓ URL mô tả (/ai-development-tools)
+✓ Liên kết nội bộ (3-5 liên kết mỗi bài viết)
+✓ Liên kết ngoài (1-2 liên kết uy tín)
+✓ Tối ưu hóa hình ảnh (alt text, nén ảnh)
+✓ Định dạng thân thiện với di động
+✓ Thời gian tải trang nhanh (loại bỏ mã thừa)
 ```
 
-### Marketing Copy Structure
+## Các mẫu nâng cao
+
+### Cấu trúc bài viết Blog
 
 ```
-1. Attention-grabbing headline
-2. Subheadline (elaborate benefit)
-3. Problem identification
-4. Solution presentation
-5. Social proof
-6. Features as benefits
-7. Objection handling
-8. Strong CTA
+1. Tiêu đề hấp dẫn (có con số hoặc lợi ích)
+2. Phần lôi cuốn (vấn đề hoặc sự thật gây ngạc nhiên)
+3. Xem trước giá trị nhanh
+4. Nội dung chính (tiêu đề phụ sau mỗi 300 từ)
+5. Các ví dụ thực tế
+6. Các thông điệp chính
+7. CTA rõ ràng
 ```
 
-### Documentation Structure
+### Cấu trúc bản viết Tiếp thị
 
 ```
-1. Quick start (minimal working example)
-2. Overview (what it does)
-3. Detailed usage
-4. Parameters/options
-5. Examples (multiple languages)
-6. Error handling
-7. Troubleshooting
-8. Best practices
+1. Tiêu đề gây chú ý
+2. Phụ đề (mô tả chi tiết lợi ích)
+3. Xác định vấn đề
+4. Trình bày giải pháp
+5. Bằng chứng xã hội
+6. Tính năng dưới dạng lợi ích
+7. Xử lý phản đối
+8. CTA mạnh mẽ
 ```
 
-## Output Files
-
-After `/content:enhance` completes:
-
-### Enhanced Content
+### Cấu trúc Tài liệu hướng dẫn
 
 ```
-content/enhanced/[original-name]-enhanced.md
+1. Bắt đầu nhanh (ví dụ hoạt động tối thiểu)
+2. Tổng quan (nó làm được gì)
+3. Cách sử dụng chi tiết
+4. Các tham số/tùy chọn
+5. Các ví dụ (nhiều ngôn ngữ)
+6. Xử lý lỗi
+7. Xử lý sự cố
+8. Thực hành tốt nhất
 ```
 
-Full enhanced version ready to use
+## Tệp đầu ra
 
-### Change Report
+Sau khi `/content:enhance` hoàn tất:
 
-```
-content/enhanced/[original-name]-changes.diff
-```
-
-Shows all changes made
-
-### Analysis Report
+### Nội dung đã nâng cao
 
 ```
-plans/content-enhance-[name]-YYYYMMDD.md
+content/enhanced/[tên-gốc]-enhanced.md
 ```
 
-Contains:
-- Original analysis scores
-- Issues identified
-- Enhancements applied
-- Before/after metrics
+Phiên bản đầy đủ đã nâng cao sẵn sàng để sử dụng.
 
-## Best Practices
-
-### Preserve Brand Voice
+### Báo cáo thay đổi
 
 ```
-Original tone: Professional, helpful
-✓ Keep: Professional, helpful
-✗ Change to: Casual, quirky (unless requested)
+content/enhanced/[tên-gốc]-changes.diff
 ```
 
-### Maintain Accuracy
+Hiển thị tất cả các thay đổi đã thực hiện.
+
+### Báo cáo Phân tích
 
 ```
-✓ Improve clarity of technical details
-✗ Simplify so much that it's inaccurate
+plans/content-enhance-[tên]-YYYYMMDD.md
 ```
 
-### Don't Over-Optimize
+Chứa:
+- Điểm phân tích gốc
+- Các vấn đề được xác định
+- Các nâng cao đã áp dụng
+- Chỉ số trước/sau
+
+## Thực hành tốt nhất
+
+### Bảo tồn tiếng nói thương hiệu
 
 ```
-✗ Keyword stuffing for SEO
-✗ Dumbing down for readability
-✓ Balance clarity, accuracy, optimization
+Tông điệu gốc: Chuyên nghiệp, hữu ích
+✓ Giữ lại: Chuyên nghiệp, hữu ích
+✗ Thay đổi thành: Suồng sã, kỳ quặc (trừ khi được yêu cầu)
 ```
 
-## Common Improvements
+### Duy trì tính chính xác
 
-### Remove Filler Words
+```
+✓ Cải thiện sự rõ ràng của các chi tiết kỹ thuật
+✗ Đơn giản hóa quá mức dẫn đến không chính xác
+```
+
+### Đừng tối ưu hóa quá đà
+
+```
+✗ Nhồi nhét từ khóa cho SEO
+✗ Làm cho nội dung trở nên ngớ ngẩn để dễ đọc
+✓ Cân bằng giữa sự rõ ràng, tính chính xác và sự tối ưu hóa
+```
+
+## Các cải thiện phổ biến
+
+### Loại bỏ từ thừa
 
 ```
 ❌ "In order to" → ✓ "To"
 ❌ "Due to the fact that" → ✓ "Because"
 ❌ "At this point in time" → ✓ "Now"
 ❌ "In the event that" → ✓ "If"
-❌ "For the purpose of" → ✓ "For" or "To"
+❌ "For the purpose of" → ✓ "For" hoặc "To"
 ```
 
-### Strengthen Verbs
+### Tăng cường động từ
 
 ```
 ❌ "Is able to" → ✓ "Can"
@@ -545,105 +538,105 @@ Original tone: Professional, helpful
 ❌ "Provide assistance" → ✓ "Help"
 ```
 
-### Active Voice
+### Thể chủ động
 
 ```
-❌ "The code is written by developers"
-✓ "Developers write the code"
+❌ "Mã nguồn được viết bởi lập trình viên"
+✓ "Lập trình viên viết mã nguồn"
 
-❌ "Bugs are caught by tests"
-✓ "Tests catch bugs"
+❌ "Lỗi được phát hiện bởi các bài kiểm thử"
+✓ "Các bài kiểm thử phát hiện lỗi"
 ```
 
-## Troubleshooting
+## Xử lý sự cố
 
-### Enhancement Changed Meaning
+### Nâng cao làm thay đổi ý nghĩa
 
-**Problem:** Enhanced version says something different
+**Vấn đề:** Phiên bản nâng cao nói điều gì đó khác đi.
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Review change report
-cat content/enhanced/[name]-changes.diff
+# Xem báo cáo thay đổi
+cat content/enhanced/[tên]-changes.diff
 
-# Specify what to preserve
-/content:enhance [same content, but preserve technical accuracy of X section]
+# Chỉ định những gì cần giữ lại
+/content:enhance [cùng nội dung, nhưng giữ nguyên độ chính xác kỹ thuật của phần X]
 ```
 
-### Too Much Changed
+### Thay đổi quá nhiều
 
-**Problem:** Enhancement too aggressive
+**Vấn đề:** Nâng cao quá mạnh tay.
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Request lighter touch
-/content:enhance [same content, but make minimal changes for readability only]
+# Yêu cầu thay đổi nhẹ nhàng hơn
+/content:enhance [cùng nội dung, nhưng chỉ thay đổi tối thiểu để cải thiện khả năng đọc]
 ```
 
-### Lost Brand Voice
+### Mất tiếng nói thương hiệu
 
-**Problem:** Doesn't sound like us anymore
+**Vấn đề:** Không còn nghe giống như chúng tôi nữa.
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Specify tone
-/content:enhance [same content, maintain formal professional tone]
+# Chỉ định tông điệu
+/content:enhance [cùng nội dung, duy trì tông điệu chuyên nghiệp trang trọng]
 ```
 
-## After Enhancement
+## Sau khi nâng cao
 
-Standard workflow:
+Quy trình tiêu chuẩn:
 
 ```bash
-# 1. Enhance content
-/content:enhance [content description]
+# 1. Nâng cao nội dung
+/content:enhance [mô tả nội dung]
 
-# 2. Review changes
-cat content/enhanced/[name]-changes.diff
+# 2. Xem xét các thay đổi
+cat content/enhanced/[tên]-changes.diff
 
-# 3. Review enhanced version
-cat content/enhanced/[name]-enhanced.md
+# 3. Xem xét phiên bản đã nâng cao
+cat content/enhanced/[tên]-enhanced.md
 
-# 4. Check metrics improvement
+# 4. Kiểm tra sự cải thiện chỉ số
 cat plans/content-enhance-*.md
 
-# 5. If satisfied, replace original
-mv content/enhanced/[name]-enhanced.md [original-location]
+# 5. Nếu hài lòng, thay thế bản gốc
+mv content/enhanced/[tên]-enhanced.md [vị trí-gốc]
 
-# 6. Commit changes
+# 6. Commit các thay đổi
 /git:cm
 ```
 
-## Metrics to Track
+## Các chỉ số cần theo dõi
 
-After publishing enhanced content:
+Sau khi xuất bản nội dung đã nâng cao:
 
-### Engagement Metrics
+### Chỉ số tương tác
 
-- Time on page (should increase)
-- Bounce rate (should decrease)
-- Scroll depth (should increase)
-- Social shares (may increase)
+- Thời gian trên trang (nên tăng)
+- Tỷ lệ thoát (nên giảm)
+- Độ sâu cuộn (nên tăng)
+- Lượt chia sẻ mạng xã hội (có thể tăng)
 
-### SEO Metrics
+### Chỉ số SEO
 
-- Search rankings (track target keywords)
-- Organic traffic (monitor over 30-60 days)
-- Click-through rate from search
-- Featured snippet appearances
+- Thứ hạng tìm kiếm (theo dõi các từ khóa mục tiêu)
+- Lưu lượng truy cập tự nhiên (theo dõi trong 30-60 ngày)
+- Tỷ lệ nhấp từ tìm kiếm
+- Xuất hiện trong các đoạn trích nổi bật (featured snippets)
 
-### Conversion Metrics
+### Chỉ số Chuyển đổi
 
-- Goal completions (signups, downloads, etc.)
-- CTA click rate
-- Next page navigation
+- Hoàn thành mục tiêu (đăng ký, tải xuống, v.v.)
+- Tỷ lệ nhấp vào CTA
+- Chuyển hướng sang trang tiếp theo
 
-## Next Steps
+## Các bước tiếp theo
 
-- [/content:cro](/docs/engineer/commands/content/cro) - Optimize for conversion
-- [/content:good](/docs/engineer/commands/content/good) - Write new quality content
-- [/docs:update](/docs/engineer/commands/docs/update) - Update documentation
+- [/content:cro](/docs/engineer/commands/content/cro) - Tối ưu hóa cho chuyển đổi
+- [/content:good](/docs/engineer/commands/content/good) - Viết nội dung chất lượng mới
+- [/docs:update](/docs/engineer/commands/docs/update) - Cập nhật tài liệu hướng dẫn
 
 ---
 
-**Key Takeaway**: `/content:enhance` improves existing content across multiple dimensions (clarity, impact, SEO, readability) while preserving your core message and brand voice, making your content more effective and discoverable.
+**Thông điệp chính**: `/content:enhance` cải thiện nội dung hiện có trên nhiều phương diện (sự rõ ràng, tác động, SEO, khả năng đọc) trong khi vẫn bảo tồn thông điệp cốt lõi và tiếng nói thương hiệu của bạn, làm cho nội dung của bạn hiệu quả hơn và dễ khám phá hơn.

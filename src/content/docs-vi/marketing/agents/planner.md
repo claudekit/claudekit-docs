@@ -1,173 +1,174 @@
 ---
-title: "Planner Agent"
-description: "Nghiên cứu, phân tích và tạo kế hoạch thực thi toàn diện cho tính năng và giải pháp kỹ thuật."
+title: "Đại lý Lập kế hoạch (Planner)"
+description: "Nghiên cứu, phân tích và tạo các kế hoạch triển khai toàn diện cho các tính năng và giải pháp kỹ thuật."
 section: marketing
 category: agents
 order: 1
+lang: vi
 ---
 
-# Planner Agent
+# Planner Agent (Đại lý Lập kế hoạch)
 
-> **Kiến trúc sư chiến lược của bạn** - Biến yêu cầu phức tạp thành kế hoạch rõ ràng, khả thi
+> **Kiến trúc sư chiến lược của bạn** - Biến các yêu cầu phức tạp thành các kế hoạch rõ ràng và khả thi.
 
-## Agent Này Làm Gì
+## Đại lý này làm gì
 
-Bạn biết cảm giác chìm đắm đó khi ai đó nói "chỉ cần xây dựng hệ thống thanh toán" và bạn nhìn chằm chằm vào màn hình trống tự hỏi bắt đầu từ đâu? Planner Agent là câu trả lời cho sự tê liệt đó.
+Bạn có bao giờ cảm thấy bế tắc khi ai đó nói "hãy xây dựng một hệ thống thanh toán" và bạn chỉ biết nhìn chằm chằm vào màn hình trống, không biết phải bắt đầu từ đâu? Planner Agent chính là câu trả lời cho sự bế tắc đó.
 
-**Vấn Đề**: Bắt đầu một tính năng phức tạp mà không có kế hoạch dẫn đến viết lại, bỏ lỡ yêu cầu và nợ kỹ thuật. Bạn lãng phí nhiều giờ triển khai giải pháp sai vì bạn không nghiên cứu phương án thay thế trước.
+**Vấn đề**: Việc bắt đầu một tính năng phức tạp mà không có kế hoạch thường dẫn đến việc phải viết lại mã nguồn, bỏ sót các yêu cầu quan trọng và tạo ra nợ kỹ thuật. Bạn có thể lãng phí hàng giờ để triển khai một giải pháp sai lầm chỉ vì không nghiên cứu các phương án thay thế ngay từ đầu.
 
-**Giải Pháp**: Planner Agent nghiên cứu, phân tích và tạo kế hoạch thực thi toàn diện trước khi bạn viết một dòng code duy nhất. Nó đánh giá đánh đổi, xác định phụ thuộc và cho bạn lộ trình rõ ràng từ đầu đến cuối.
+**Giải pháp**: Planner Agent thực hiện nghiên cứu, phân tích và tạo ra các kế hoạch triển khai toàn diện trước khi bạn viết bất kỳ dòng mã nào. Nó đánh giá các sự đánh đổi, xác định các phụ thuộc và cung cấp cho bạn một lộ trình rõ ràng từ lúc bắt đầu cho đến khi hoàn thành.
 
-## Bắt Đầu Nhanh
+## Bắt đầu nhanh
 
-Khởi động planner khi bắt đầu bất kỳ tính năng không nhỏ nào:
+Khởi chạy Planner khi bắt đầu bất kỳ tính năng quan trọng nào:
 
 ```bash
-# Agent sẽ nghiên cứu và tạo kế hoạch chi tiết
-/planner "Triển khai OAuth2 authentication cho Google và GitHub"
+# Đại lý sẽ nghiên cứu và tạo một kế hoạch chi tiết
+/planner "Implement OAuth2 authentication for Google and GitHub"
 ```
 
-Bạn sẽ nhận được kế hoạch có cấu trúc với quyết định kiến trúc, giai đoạn triển khai và tiêu chí thành công.
+Bạn sẽ nhận được một kế hoạch có cấu trúc bao gồm các quyết định về kiến trúc, các giai đoạn triển khai và các tiêu chí thành công.
 
-## Khả Năng
+## Khả năng
 
-### Lập Kế Hoạch Chiến Lược
-Tạo kế hoạch thực thi chi tiết với:
-- Quyết định kiến trúc và lý do
-- Đề xuất technology stack
-- Bước triển khai theo từng giai đoạn
-- Ánh xạ phụ thuộc và phân tích đường quan trọng
-- Đánh giá rủi ro và chiến lược giảm thiểu
+### Lập kế hoạch chiến lược
+Tạo ra các kế hoạch triển khai chi tiết bao gồm:
+- Các quyết định về kiến trúc và lý do lựa chọn.
+- Đề xuất về ngăn xếp công nghệ (tech stack).
+- Các bước triển khai theo từng giai đoạn.
+- Bản đồ các phụ thuộc và phân tích đường găng (critical path).
+- Đánh giá rủi ro và các chiến lược giảm thiểu.
 
-### Nghiên Cứu Kỹ Thuật
-Điều tra giải pháp trước khi triển khai:
-- Đánh giá nhiều cách tiếp cận và đánh đổi
-- Nghiên cứu thực hành tốt nhất và pattern
-- Phân tích hệ quả bảo mật
-- Xem xét khả năng mở rộng và hiệu suất
-- Review codebase hiện tại cho điểm tích hợp
+### Nghiên cứu kỹ thuật
+Điều tra các giải pháp trước khi bắt tay vào triển khai:
+- Đánh giá nhiều cách tiếp cận và các sự đánh đổi.
+- Nghiên cứu các thực hành tốt nhất (best practices) và các mô hình thiết kế.
+- Phân tích các tác động về bảo mật.
+- Xem xét khả năng mở rộng và hiệu suất.
+- Xem xét mã nguồn hiện có để tìm các điểm tích hợp.
 
-### Phân Tích Yêu Cầu
-Biến đổi yêu cầu mơ hồ thành spec cụ thể:
-- Chia nhỏ tính năng phức tạp thành nhiệm vụ
-- Xác định phạm vi MVP (quy tắc 80/20)
-- Định nghĩa tiêu chí chấp nhận
-- Ánh xạ user journey
-- Tài liệu hóa edge case và kịch bản lỗi
+### Phân tích yêu cầu
+Biến các yêu cầu mơ hồ thành các đặc tả cụ thể:
+- Chia nhỏ các tính năng phức tạp thành các nhiệm vụ nhỏ hơn.
+- Xác định phạm vi sản phẩm khả thi tối thiểu (MVP) (quy tắc 80/20).
+- Định nghĩa các tiêu chí chấp nhận (acceptance criteria).
+- Lập bản đồ hành trình người dùng (user journeys).
+- Tài liệu hóa các trường hợp biên (edge cases) và các kịch bản lỗi.
 
-## Khi Nào Dùng
+## Khi nào nên sử dụng
 
 Sử dụng Planner Agent khi bạn cần:
-- Bắt đầu tính năng mới hoặc refactoring lớn
-- Đánh giá cách tiếp cận kỹ thuật trước cam kết
-- Hiểu phạm vi đầy đủ của thay đổi phức tạp
-- Đưa ra quyết định kiến trúc với tự tin
-- Lên kế hoạch database migration hoặc thay đổi cơ sở hạ tầng
-- Nghiên cứu tích hợp bên thứ ba
+- Bắt đầu một tính năng mới hoặc một đợt tái cấu trúc (refactoring) lớn.
+- Đánh giá các phương án kỹ thuật trước khi cam kết thực hiện.
+- Hiểu rõ toàn bộ phạm vi của một thay đổi phức tạp.
+- Đưa ra các quyết định kiến trúc một cách tự tin.
+- Lập kế hoạch di chuyển cơ sở dữ liệu hoặc thay đổi hạ tầng.
+- Nghiên cứu các tích hợp với bên thứ ba.
 
-## Quy Trình Ví Dụ
+## Ví dụ quy trình làm việc
 
-### Lập Kế Hoạch Tính Năng Mới
-
-```bash
-# Yêu cầu người dùng: "Thêm hỗ trợ webhook cho thông báo thanh toán"
-/planner "Thiết kế hệ thống webhook cho thông báo thanh toán Stripe và SePay"
-```
-
-**Planner sẽ**:
-1. Nghiên cứu thực hành tốt nhất webhook và pattern bảo mật
-2. Thiết kế kiến trúc webhook endpoint
-3. Lên kế hoạch triển khai xác minh chữ ký
-4. Định nghĩa logic retry và xử lý lỗi
-5. Tạo schema database cho webhook log
-6. Ánh xạ tích hợp với flow thanh toán hiện tại
-7. Tài liệu hóa chiến lược testing
-8. Ước tính thời gian triển khai
-
-### Đánh Giá Cách Tiếp Cận Kỹ Thuật
+### Lập kế hoạch cho một tính năng mới
 
 ```bash
-/planner "Chúng ta nên dùng PostgreSQL hay MongoDB cho dữ liệu analytics của chúng tôi?"
+# Yêu cầu từ người dùng: "Add webhook support for payment notifications"
+/planner "Design webhook system for Stripe and SePay payment notifications"
 ```
 
-**Bạn sẽ nhận**:
-- So sánh chi tiết cả hai database
-- Đặc điểm hiệu suất cho use case của bạn
-- Phân tích chi phí và độ phức tạp vận hành
-- Đề xuất đường migration
-- Đề xuất cuối cùng với lý do
+**Planner sẽ thực hiện**:
+1. Nghiên cứu các thực hành tốt nhất về webhook và các mô hình bảo mật.
+2. Thiết kế kiến trúc cho điểm cuối (endpoint) của webhook.
+3. Lập kế hoạch triển khai xác minh chữ ký (signature verification).
+4. Định nghĩa logic thử lại (retry logic) và xử lý lỗi.
+5. Tạo sơ đồ cơ sở dữ liệu cho nhật ký (logs) của webhook.
+6. Lập bản đồ tích hợp với các luồng thanh toán hiện có.
+7. Tài liệu hóa chiến lược kiểm tra (testing).
+8. Ước tính thời gian triển khai.
 
-## Thực Hành Tốt Nhất
+### Đánh giá các phương án kỹ thuật
 
-1. **Bắt Đầu với Kế Hoạch, Không Phải Code**: Khởi động planner trước khi mở editor. Phiên lập kế hoạch 30 phút tiết kiệm nhiều giờ refactoring.
+```bash
+/planner "Should we use PostgreSQL or MongoDB for our analytics data?"
+```
 
-2. **Cụ Thể**: Cho bối cảnh về dự án, tech stack và ràng buộc của bạn. "Thêm authentication" mơ hồ. "Triển khai JWT-based authentication cho Next.js app với PostgreSQL backend" có kết quả tốt hơn.
+**Bạn sẽ nhận được**:
+- So sánh chi tiết giữa cả hai loại cơ sở dữ liệu.
+- Các đặc tính hiệu suất cho trường hợp sử dụng cụ thể của bạn.
+- Phân tích chi phí và độ phức tạp vận hành.
+- Đề xuất lộ trình di chuyển dữ liệu.
+- Khuyến nghị cuối cùng kèm theo lý do xác đáng.
 
-3. **Review và Điều Chỉnh**: Kế hoạch là tài liệu sống. Nếu bạn phát hiện vấn đề trong triển khai, cập nhật kế hoạch và đánh giá lại.
+## Thực hành tốt nhất
 
-4. **Dùng Kế Hoạch Như Tài Liệu**: Planner tạo file markdown trong thư mục `plans/` của bạn. Chúng trở thành hồ sơ lịch sử của quyết định kiến trúc.
+1. **Bắt đầu với Kế hoạch, Đừng bắt đầu với Mã nguồn**: Hãy khởi chạy Planner trước khi mở trình soạn thảo mã. Một buổi lập kế hoạch 30 phút có thể giúp bạn tiết kiệm hàng giờ tái cấu trúc sau này.
 
-## Mô Hình Tư Duy Planner Sử Dụng
+2. **Càng cụ thể càng tốt**: Hãy cung cấp ngữ cảnh về dự án, ngăn xếp công nghệ và các ràng buộc của bạn. Thay vì nói "Thêm xác thực" (quá mơ hồ), hãy dùng "Triển khai xác thực dựa trên JWT cho ứng dụng Next.js với cơ sở dữ liệu PostgreSQL" để có kết quả tốt hơn.
 
-Planner Agent áp dụng framework tư duy đã được chứng minh:
+3. **Xem xét và Điều chỉnh**: Kế hoạch là những tài liệu sống. Nếu bạn phát hiện ra vấn đề trong quá trình triển khai, hãy cập nhật kế hoạch và đánh giá lại.
 
-- **Decomposition**: Chia mục tiêu lớn thành nhiệm vụ cụ thể, có thể test
-- **Working Backwards**: Bắt đầu từ kết quả mong muốn và ánh xạ đường đi
-- **Second-Order Thinking**: Xem xét hệ quả ("Điều gì xảy ra sau khi chúng ta ship cái này?")
-- **Root Cause Analysis**: Đào sâu qua yêu cầu bề mặt để tìm vấn đề thực sự
-- **Quy Tắc 80/20**: Xác định 20% tính năng mang lại 80% giá trị
-- **Risk Management**: Hỏi "Điều gì có thể sai?" một cách chủ động
+4. **Sử dụng Kế hoạch làm Tài liệu**: Planner tạo ra các tệp markdown trong thư mục `plans/` của bạn. Đây chính là hồ sơ lịch sử về các quyết định kiến trúc đã đưa ra.
 
-## Cấu Trúc Đầu Ra
+## Các mô hình tư duy mà Planner sử dụng
+
+Planner Agent áp dụng các khung tư duy đã được chứng minh:
+
+- **Phân rã (Decomposition)**: Chia nhỏ các mục tiêu lớn thành các nhiệm vụ cụ thể, có thể kiểm tra được.
+- **Tư duy ngược (Working Backwards)**: Bắt đầu từ kết quả mong muốn và lập bản đồ con đường dẫn đến đó.
+- **Tư duy bậc hai (Second-Order Thinking)**: Xem xét các hệ quả tiếp theo ("Điều gì sẽ xảy ra sau khi chúng ta triển khai cái này?").
+- **Phân tích nguyên nhân gốc rễ (Root Cause Analysis)**: Đào sâu bên dưới các yêu cầu bề mặt để tìm ra vấn đề thực sự.
+- **Quy tắc 80/20**: Xác định 20% tính năng mang lại 80% giá trị.
+- **Quản trị rủi ro**: Chủ động đặt câu hỏi "Điều gì có thể đi sai?".
+
+## Cấu trúc đầu ra
 
 Mỗi kế hoạch bao gồm:
 
 ```markdown
-## Tổng Quan
-- Mục tiêu và bối cảnh kinh doanh
+## Tổng quan
+- Mục tiêu và ngữ cảnh kinh doanh
 - Tiêu chí thành công
 - Ước tính thời gian
 
-## Quyết Định Kiến Trúc
-- Lựa chọn công nghệ với lý do
-- Thiết kế hệ thống và data flow
-- Điểm tích hợp
+## Quyết định Kiến trúc
+- Lựa chọn công nghệ kèm lý do
+- Thiết kế hệ thống và luồng dữ liệu
+- Các điểm tích hợp
 
-## Giai Đoạn Triển Khai
+## Các giai đoạn triển khai
 Giai đoạn 1: [Nền tảng]
 - Danh sách nhiệm vụ với tiêu chí chấp nhận
-- Phụ thuộc và chướng ngại
-- Yêu cầu testing
+- Các phụ thuộc và yếu tố gây nghẽn
+- Yêu cầu về kiểm tra (testing)
 
-Giai đoạn 2: [Tính Năng Cốt Lõi]
+Giai đoạn 2: [Các tính năng cốt lõi]
 ...
 
-## Đánh Giá Rủi Ro
-- Rủi ro kỹ thuật và giảm thiểu
-- Xem xét bảo mật
-- Hệ quả hiệu suất
+## Đánh giá rủi ro
+- Rủi ro kỹ thuật và biện pháp giảm thiểu
+- Các cân nhắc về bảo mật
+- Tác động đến hiệu suất
 
-## Chiến Lược Testing
-- Yêu cầu unit test
-- Kịch bản integration test
-- Checklist manual testing
+## Chiến lược Kiểm tra
+- Yêu cầu về unit test
+- Các kịch bản integration test
+- Danh sách kiểm tra thủ công (manual testing)
 ```
 
-## Agents Liên Quan
+## Các đại lý liên quan
 
-- [Project Manager](/vi/docs/marketing/agents/project-manager) - Theo dõi tiến độ so với kế hoạch
-- [Docs Manager](/vi/docs/marketing/agents/docs-manager) - Cập nhật tài liệu từ kế hoạch
-- [Scout](/vi/docs/marketing/agents/scout) - Khám phá codebase cho bối cảnh lập kế hoạch
+- [Project Manager](/vi/docs/marketing/agents/project-manager) - Theo dõi tiến độ so với kế hoạch.
+- [Docs Manager](/vi/docs/marketing/agents/docs-manager) - Cập nhật tài liệu dựa trên kế hoạch.
+- [Scout](/vi/docs/marketing/agents/scout) - Khám phá mã nguồn để cung cấp ngữ cảnh cho việc lập kế hoạch.
 
-## Lệnh Liên Quan
+## Các lệnh liên quan
 
-- [`/plan`](/vi/docs/marketing/commands/plan) - Tạo kế hoạch thực thi mới
-- [`/research`](/vi/docs/marketing/commands/research) - Nghiên cứu kỹ thuật sâu
+- [`/plan`](/vi/docs/marketing/commands/plan) - Tạo một kế hoạch triển khai mới.
+- [`/research`](/vi/docs/marketing/commands/research) - Thực hiện nghiên cứu kỹ thuật chuyên sâu.
 
 ## Mẹo
 
-**Tuân theo YAGNI, KISS và DRY**: Planner hoạt động theo những nguyên tắc này. Nó sẽ không over-engineer giải pháp hoặc đề xuất xây dựng tính năng bạn chưa cần.
+**Tuân thủ các nguyên tắc YAGNI, KISS và DRY**: Planner hoạt động dựa trên các nguyên tắc này. Nó sẽ không đề xuất các giải pháp quá phức tạp hoặc các tính năng mà bạn chưa thực sự cần đến.
 
-**Tin Tưởng Quy Trình**: Nếu kế hoạch đề xuất bắt đầu với cách tiếp cận đơn giản, chống lại việc phức tạp hóa nó. Bạn luôn có thể lặp sau.
+**Tin tưởng vào quy trình**: Nếu kế hoạch đề xuất bắt đầu bằng một cách tiếp cận đơn giản, hãy kiềm chế mong muốn làm phức tạp hóa nó. Bạn luôn có thể cải tiến thêm sau này.
 
-**Review Kế Hoạch Lịch Sử**: Kiểm tra thư mục `plans/` cho quyết định kiến trúc trước. Planner tham khảo những cái này cho tính nhất quán.
+**Xem lại các kế hoạch cũ**: Hãy kiểm tra thư mục `plans/` để xem các quyết định kiến trúc trước đây. Planner sẽ tham khảo chúng để đảm bảo tính nhất quán.

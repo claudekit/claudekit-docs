@@ -1,6 +1,7 @@
 ---
-title: "Marketing Skills Overview"
+title: "Tổng quan Kỹ năng Marketing"
 description: "Hướng dẫn toàn diện về 20+ kỹ năng chuyên môn của Marketing Kit cho tạo nội dung, SEO, phân tích và tự động hóa marketing bằng AI."
+lang: vi
 section: marketing
 category: skills
 order: 1
@@ -10,7 +11,7 @@ Marketing Kit bao gồm hơn 20 kỹ năng chuyên môn cung cấp cho agents ki
 
 ## Phân loại kỹ năng
 
-### Core Marketing (7 kỹ năng)
+### Marketing Cốt lõi (7 kỹ năng)
 Hoạt động marketing chuyên nghiệp và quy trình làm việc nội dung.
 
 | Kỹ năng | Mục đích | Tính năng chính |
@@ -23,7 +24,7 @@ Hoạt động marketing chuyên nghiệp và quy trình làm việc nội dung.
 | [Campaign Management](/vi/docs/marketing/skills/campaign-management) | Thực thi chiến dịch đa kênh | Campaign briefs, phân bổ ngân sách, danh sách kiểm tra ra mắt, tổng kết |
 | [Copywriting](/vi/docs/marketing/skills/copywriting) | Copy tập trung chuyển đổi | Công thức copy (AIDA, PAS, BAB), mẫu tiêu đề, tối ưu CTA |
 
-### Specialized Marketing (8 kỹ năng)
+### Marketing Chuyên sâu (8 kỹ năng)
 Chiến thuật nâng cao và chiến lược tăng trưởng.
 
 | Kỹ năng | Mục đích | Tính năng chính |
@@ -37,7 +38,7 @@ Chiến thuật nâng cao và chiến lược tăng trưởng.
 | [Creativity](/vi/docs/marketing/skills/creativity) | Định hướng sáng tạo và chiến lược thị giác | 55 phong cách sáng tạo, tâm lý màu sắc, hướng dẫn lồng tiếng |
 | [Content Hub](/vi/docs/marketing/skills/content-hub) | Thư viện tài sản hình ảnh và quản lý | Thư viện trên trình duyệt, ngữ cảnh thương hiệu, manifest sẵn sàng R2 |
 
-### AI & Technical (5 kỹ năng)
+### AI & Kỹ thuật (5 kỹ năng)
 AI đa phương thức và tự động hóa trình duyệt.
 
 | Kỹ năng | Mục đích | Tính năng chính |
@@ -101,7 +102,7 @@ Kỹ năng lưu cấu hình trong thư mục dự án của người dùng:
 └── templates/            # Mẫu tái sử dụng
 ```
 
-### API Keys & Secrets
+### Khóa API & Thông tin bảo mật
 
 Một số kỹ năng yêu cầu API keys lưu trong `.env` hoặc `.claude/secrets/`:
 

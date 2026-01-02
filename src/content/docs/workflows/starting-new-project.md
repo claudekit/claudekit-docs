@@ -1,7 +1,6 @@
 ---
 title: Starting a New Project
 description: "Documentation for Starting a New Project"
-lang: vi
 section: workflows
 category: workflows
 order: 1

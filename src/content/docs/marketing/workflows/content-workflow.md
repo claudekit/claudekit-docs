@@ -1,7 +1,6 @@
 ---
 title: "Content Workflow"
-description: "Quy trình sản xuất nội dung 6 giai đoạn từ bản nháp đến xuất bản với các cổng chất lượng tự động và chấm điểm"
-lang: vi
+description: "6-stage content production process from draft to publication with automated quality gates and scoring"
 section: marketing
 category: workflows
 order: 3
@@ -9,27 +8,27 @@ order: 3
 
 # Content Workflow
 
-> **Bạn sẽ:** Sản xuất nội dung marketing chất lượng cao nhất quán đạt điểm 8.0 trở lên thông qua quy trình 6 giai đoạn có hệ thống với audit tự động, kiểm tra tuân thủ thương hiệu và tối ưu hóa.
+> **You will:** Produce consistently high-quality marketing content scoring 8.0+ through a systematic 6-stage process with automated audits, brand compliance checks, and optimization.
 
-## Tổng Quan
+## Overview
 
-Content Workflow là hệ thống đảm bảo chất lượng của bạn cho nội dung marketing. Nó đưa nội dung từ bản nháp thô đến tài liệu được đánh bóng, xuất bản qua sáu giai đoạn: Draft, Review, Edit, Audit, Approved và Published.
+Content Workflow is your quality assurance system for marketing content. It takes content from raw draft to polished, published piece through six stages: Draft, Review, Edit, Audit, Approved, and Published.
 
-Điều làm cho workflow này mạnh mẽ là các cổng chất lượng tự động. Mỗi phần nội dung được chấm điểm qua bốn chiều - Copywriting, SEO, Platform optimization và Brand compliance. Nếu điểm số dưới 8.0, hệ thống tự động đề xuất cải thiện trước khi bạn thậm chí nhìn thấy nó.
+What makes this workflow powerful is the automated quality gates. Each piece of content is scored across four dimensions - Copywriting, SEO, Platform optimization, and Brand compliance. If the score falls below 8.0, the system automatically suggests improvements before you even see it.
 
-Workflow này xử lý blog posts, landing pages, emails, social posts và ad copy. Cho dù bạn đang tạo một phần hoặc quản lý lịch nội dung với hàng chục tài liệu, quy trình này đảm bảo tính nhất quán và chất lượng.
+This workflow handles blog posts, landing pages, emails, social posts, and ad copy. Whether you're creating a single piece or managing a content calendar with dozens of documents, this process ensures consistency and quality.
 
-**Lợi Thế Vượt Trội**: ClaudeKit Marketing có quyền truy cập đầy đủ vào codebase của bạn, cho phép tạo nội dung nhận biết sản phẩm với ảnh chụp màn hình được trích xuất tự động, mô tả tính năng được xác minh dựa trên triển khai và tuyên bố marketing được xác thực dựa trên code thực tế. Xem [Tổng Quan Marketing](/docs/marketing/) để biết chi tiết.
+**Superior Advantage**: ClaudeKit Marketing has full access to your codebase, enabling product-aware content creation with automatically extracted screenshots, implementation-verified feature descriptions, and marketing claims validated against actual code. See [Marketing Overview](/docs/marketing/) for details.
 
 ## Metadata
 
-- **Ước Tính Thời Gian:** 2-5 ngày mỗi bài (thay đổi theo loại và độ dài)
-- **Độ Khó:** Cơ bản
-- **Điều Kiện Tiên Quyết:**
-  - ClaudeKit Marketing Kit đã cài đặt
-  - Content brief đã chuẩn bị
-  - Target keywords đã xác định
-  - Brand guidelines đã ghi chép
+- **Time Estimate:** 2-5 days per piece (varies by type and length)
+- **Difficulty:** Basic
+- **Prerequisites:**
+  - ClaudeKit Marketing Kit installed
+  - Content brief prepared
+  - Target keywords identified
+  - Brand guidelines documented
 
 ## Workflow
 
@@ -50,14 +49,14 @@ flowchart LR
     I -.-> F
 ```
 
-## Hướng Dẫn Từng Bước
+## Step-by-Step Guide
 
-### Bước 1: Tạo Bản Nháp
+### Step 1: Create Draft
 
-Bắt đầu với bản nháp thô. Tập trung vào việc ghi lại ý tưởng, đừng lo lắng về sự hoàn hảo. Content-creator agent xử lý nền tảng SEO, tích hợp từ khóa và cấu trúc cơ bản.
+Start with a raw draft. Focus on capturing ideas, don't worry about perfection. The content-creator agent handles SEO foundation, keyword integration, and basic structure.
 
 ```bash
-# Tạo bản nháp ban đầu
+# Create initial draft
 "Create blog post draft.
 Topic: How to Build a Marketing Dashboard
 Keywords: marketing dashboard, analytics tracking, KPI visualization
@@ -66,25 +65,25 @@ Word count: 2000
 Save to: content/drafts/marketing-dashboard-guide.md"
 ```
 
-**Điều gì xảy ra:** Content-creator agent nghiên cứu chủ đề, cấu trúc nội dung với tiêu đề H2/H3, tích hợp target keywords một cách tự nhiên, viết cho đối tượng cụ thể của bạn và lưu bản nháp vào vị trí đã chỉ định.
+**What happens:** Content-creator agent researches the topic, structures content with H2/H3 headers, integrates target keywords naturally, writes for your specific audience, and saves the draft to the specified location.
 
-**Điểm Kiểm Tra:** Bản nháp nên có:
-- Chủ đề và góc độ rõ ràng
-- Target keywords có mặt (nhưng không nhồi nhét)
-- Cấu trúc logic với tiêu đề
-- Được viết cho đối tượng đã chỉ định
-- Gần đúng số từ mục tiêu
+**Checkpoint:** Draft should have:
+- Clear topic and angle
+- Target keywords present (but not stuffed)
+- Logical structure with headers
+- Written for specified audience
+- Close to target word count
 
-**Thời Gian:** 1-2 giờ
+**Time:** 1-2 hours
 
 ---
 
-### Bước 2: Xem Xét Nội Dung
+### Step 2: Review Content
 
-Content-reviewer agent thực hiện kiểm tra chất lượng toàn diện bao gồm brand voice, độ chính xác thực tế, ngữ pháp, tối ưu SEO và các yếu tố chuyển đổi.
+Content-reviewer agent performs comprehensive quality checks including brand voice, factual accuracy, grammar, SEO optimization, and conversion elements.
 
 ```bash
-# Chạy content review
+# Run content review
 "Review content at content/drafts/marketing-dashboard-guide.md.
 Check:
 - Brand voice alignment
@@ -95,25 +94,25 @@ Check:
 Report issues and recommendations."
 ```
 
-**Điều gì xảy ra:** Reviewer phân tích nội dung của bạn so với brand guidelines, kiểm tra thực tế các tuyên bố, xác định vấn đề ngữ pháp, xác thực các yếu tố SEO (title tags, headers, keyword usage) và đánh giá CTAs. Bạn nhận được báo cáo chi tiết với các vấn đề cụ thể và đề xuất.
+**What happens:** Reviewer analyzes your content against brand guidelines, fact-checks claims, identifies grammar issues, validates SEO elements (title tags, headers, keyword usage), and evaluates CTAs. You receive a detailed report with specific issues and suggestions.
 
-**Điểm Kiểm Tra:** Báo cáo review nên xác định:
-- Sự không nhất quán về brand voice
-- Lỗi thực tế hoặc tuyên bố không được hỗ trợ
-- Lỗi ngữ pháp/chính tả
-- Cơ hội tối ưu SEO
-- CTAs thiếu hoặc yếu
+**Checkpoint:** Review report should identify:
+- Brand voice inconsistencies
+- Factual errors or unsupported claims
+- Grammar/spelling mistakes
+- SEO optimization opportunities
+- Missing or weak CTAs
 
-**Thời Gian:** 30 phút
+**Time:** 30 minutes
 
 ---
 
-### Bước 3: Chỉnh Sửa và Tinh Chỉnh
+### Step 3: Edit and Refine
 
-Sử dụng phản hồi review, content-creator sửa đổi bản nháp để giải quyết tất cả vấn đề trong khi duy trì brand voice và tối ưu SEO.
+Using review feedback, content-creator revises the draft to address all issues while maintaining brand voice and SEO optimization.
 
 ```bash
-# Áp dụng phản hồi review
+# Apply review feedback
 "Edit content at content/drafts/marketing-dashboard-guide.md.
 Address feedback:
 - Strengthen introduction hook
@@ -124,109 +123,109 @@ Maintain: brand voice, SEO keywords
 Save revised version."
 ```
 
-**Điều gì xảy ra:** Content-creator có hệ thống giải quyết từng phần phản hồi, tinh chỉnh thông điệp, tối ưu cho SEO và đánh bóng copy. Phiên bản sửa đổi ghi đè bản nháp.
+**What happens:** Content-creator systematically addresses each piece of feedback, refines messaging, optimizes for SEO, and polishes copy. The revised version overwrites the draft.
 
-**Điểm Kiểm Tra:** Bản nháp sửa đổi nên:
-- Giải quyết tất cả phản hồi review
-- Duy trì brand voice nhất quán
-- Giữ target keywords được tích hợp
-- Cho thấy cải thiện có thể đo lường
-- Sẵn sàng cho audit tự động
+**Checkpoint:** Revised draft should:
+- Address all review feedback
+- Maintain consistent brand voice
+- Keep target keywords integrated
+- Show measurable improvement
+- Be ready for automated audit
 
-**Thời Gian:** 1-2 giờ
+**Time:** 1-2 hours
 
 ---
 
-### Bước 4: Audit Tự Động
+### Step 4: Automated Audit
 
-Đây là nơi phép màu xảy ra. Lệnh `/write/audit` chấm điểm nội dung của bạn qua bốn chiều và lệnh `/write/publish` tự động sửa các vấn đề nếu điểm số dưới 8.0.
+This is where the magic happens. The `/write/audit` command scores your content across four dimensions and the `/write/publish` command automatically fixes issues if the score falls below 8.0.
 
 ```bash
-# Audit tự động kích hoạt sau khi tạo nội dung
-# Nhưng bạn cũng có thể chạy thủ công:
+# Automated audit triggers after content creation
+# But you can also run manually:
 "Run /write/audit on content/drafts/marketing-dashboard-guide.md.
 If score <8.0, run /write/publish to auto-fix.
 Present final version with before/after scores."
 ```
 
-**Điều gì xảy ra:** Lệnh audit phân tích nội dung của bạn và chấm điểm:
-- **Copywriting:** Sức mạnh hook, khả năng đọc, luồng, thuyết phục
-- **SEO:** Tối ưu từ khóa, meta tags, cấu trúc, links
-- **Platform:** Tính phù hợp định dạng, tối ưu kỹ thuật
-- **Brand:** Tính nhất quán voice, tuân thủ phong cách, thông điệp
+**What happens:** The audit command analyzes your content and scores:
+- **Copywriting:** Hook strength, readability, flow, persuasiveness
+- **SEO:** Keyword optimization, meta tags, structure, links
+- **Platform:** Format suitability, technical optimization
+- **Brand:** Voice consistency, style compliance, messaging
 
-Nếu bất kỳ chiều nào chấm điểm dưới 8.0, `/write/publish` tự động cải thiện hooks, thêm hashtags (cho social), củng cố CTAs và cải thiện khả năng đọc.
+If any dimension scores below 8.0, `/write/publish` automatically improves hooks, adds hashtags (for social), strengthens CTAs, and improves readability.
 
-**Điểm Kiểm Tra:** Sau audit:
-- Điểm tổng thể nên >= 8.0
-- Tất cả bốn chiều >= 8.0
-- Điểm số trước/sau được ghi chép
-- Cải thiện cụ thể được liệt kê
-- Nội dung sẵn sàng để phê duyệt
+**Checkpoint:** After audit:
+- Overall score should be >= 8.0
+- All four dimensions >= 8.0
+- Before/after scores documented
+- Specific improvements listed
+- Content ready for approval
 
-**Thời Gian:** 10-15 phút (tự động)
+**Time:** 10-15 minutes (automated)
 
 ---
 
-### Bước 5: Phê Duyệt Cuối Cùng
+### Step 5: Final Approval
 
-Content-reviewer thực hiện kiểm tra chất lượng cuối cùng và một người phê duyệt nội dung để xuất bản.
+Content-reviewer performs final quality check and a human approves content for publication.
 
 ```bash
-# Review cuối cùng trước khi xuất bản
+# Final review before publishing
 "Final review of content/drafts/marketing-dashboard-guide.md.
 Verify audit score >=8.0.
 Confirm ready for publication.
 If approved, schedule for March 15, 2025 at 9am EST."
 ```
 
-**Điều gì xảy ra:** Reviewer xác nhận điểm audit, thực hiện kiểm tra chất lượng cuối cùng, xác minh tất cả các yếu tố có mặt và chuẩn bị nội dung để xuất bản. Phê duyệt của con người được yêu cầu trước khi xuất bản.
+**What happens:** Reviewer confirms audit score, performs final quality check, verifies all elements are present, and prepares content for publishing. Human approval is required before publication.
 
-**Điểm Kiểm Tra:** Phê duyệt cuối cùng yêu cầu:
-- Điểm audit >= 8.0 được xác minh
-- Tất cả tiêu chí chất lượng được đáp ứng
-- Ngày/giờ xuất bản đã đặt
-- Các kênh phân phối được xác nhận
-- Phê duyệt của con người đã nhận
+**Checkpoint:** Final approval requires:
+- Audit score >= 8.0 verified
+- All quality criteria met
+- Publication date/time set
+- Distribution channels confirmed
+- Human approval received
 
-**Thời Gian:** 15-30 phút
+**Time:** 15-30 minutes
 
 ---
 
-### Bước 6: Xuất Bản và Phân Phối
+### Step 6: Publish and Distribute
 
-Sau khi được phê duyệt, social media managers hoặc email wizards xuất bản nội dung lên các nền tảng phù hợp, bật tracking và giám sát hiệu suất ban đầu.
+After approval, social media managers or email wizards publish content to appropriate platforms, enable tracking, and monitor initial performance.
 
 ```bash
-# Xuất bản nội dung đã phê duyệt
+# Publish approved content
 "Publish approved content at content/drafts/marketing-dashboard-guide.md.
 Channels: Blog, LinkedIn, Twitter, Email newsletter
 Tracking: campaign-id-Q1-content
 Monitor for 48 hours."
 ```
 
-**Điều gì xảy ra:** Nội dung được xuất bản lên blog của bạn, phân phối đến các kênh xã hội, bao gồm trong email newsletters, các tham số tracking được thêm vào và hiệu suất ban đầu được giám sát trong 48 giờ.
+**What happens:** Content is published to your blog, distributed to social channels, included in email newsletters, tracking parameters are added, and initial performance is monitored for 48 hours.
 
-**Điểm Kiểm Tra:** Sau khi xuất bản:
-- Nội dung live trên tất cả các kênh
-- Tracking hoạt động chính xác
-- Social posts đã lên lịch
-- Email đã gửi (nếu áp dụng)
-- Tương tác ban đầu được giám sát
+**Checkpoint:** After publishing:
+- Content live on all channels
+- Tracking working correctly
+- Social posts scheduled
+- Email sent (if applicable)
+- Initial engagement monitored
 
-**Thời Gian:** 1-2 giờ
+**Time:** 1-2 hours
 
 ---
 
-## Ví Dụ Thực Tế
+## Real-World Example
 
-### Điểm Khởi Đầu
-Bạn cần tạo một blog post về "AI Marketing Automation" để thúc đẩy organic traffic và tạo leads cho sản phẩm SaaS của bạn.
+### Starting Point
+You need to create a blog post about "AI Marketing Automation" to drive organic traffic and generate leads for your SaaS product.
 
-### Thực Thi
+### Execution
 
 ```bash
-# Ngày 1: Draft
+# Day 1: Draft
 "Create blog post draft.
 Topic: AI Marketing Automation: Complete 2025 Guide
 Keywords: AI marketing automation, marketing AI tools, automated marketing campaigns
@@ -234,12 +233,12 @@ Audience: Marketing directors at mid-size companies
 Word count: 2500
 Save to: content/drafts/ai-marketing-automation-guide.md"
 
-# Ngày 1: Review
+# Day 1: Review
 "Review content at content/drafts/ai-marketing-automation-guide.md.
 Check: brand voice, accuracy, grammar, SEO, CTAs
 Report issues."
 
-# Ngày 2: Edit
+# Day 2: Edit
 "Edit content at content/drafts/ai-marketing-automation-guide.md.
 Address feedback:
 - Add case study examples
@@ -248,32 +247,32 @@ Address feedback:
 - Add comparison table
 - Enhance CTA with free trial mention"
 
-# Ngày 2: Audit (tự động kích hoạt)
-# Điểm: Copywriting 7.8, SEO 8.5, Platform 8.2, Brand 8.1
-# Hệ thống tự động chạy /write/publish để sửa điểm copywriting
-# Điểm mới: Copywriting 8.3, SEO 8.5, Platform 8.2, Brand 8.1
+# Day 2: Audit (automatically triggers)
+# Score: Copywriting 7.8, SEO 8.5, Platform 8.2, Brand 8.1
+# System automatically runs /write/publish to fix copywriting score
+# New score: Copywriting 8.3, SEO 8.5, Platform 8.2, Brand 8.1
 
-# Ngày 3: Phê duyệt cuối cùng
+# Day 3: Final approval
 "Final review of content/drafts/ai-marketing-automation-guide.md.
 Score: 8.3/10 overall. Approved for publishing.
 Schedule: March 20, 2025, 9am EST"
 
-# Ngày 3: Publish
+# Day 3: Publish
 "Publish content/drafts/ai-marketing-automation-guide.md.
 Channels: Blog, LinkedIn (article), Twitter (thread), Newsletter
 Tracking: Q1-organic-content-campaign"
 ```
 
-### Kết Quả
-Blog post xuất bản đạt điểm 8.3/10, live đúng lịch, thúc đẩy 2,400 organic visits trong tháng đầu tiên, tạo 47 leads qua CTA nhúng và trở thành driver traffic #3 trên website.
+### Results
+Blog post published with 8.3/10 score, went live on schedule, drove 2,400 organic visits in the first month, generated 47 leads through embedded CTA, and became the #3 traffic driver on the website.
 
 ---
 
-## Các Biến Thể Phổ Biến
+## Common Variations
 
-### Social Post Nhanh (1-2 giờ)
+### Quick Social Post (1-2 hours)
 
-Cho nội dung xã hội nhanh, nén workflow:
+For quick social content, compress the workflow:
 
 ```bash
 "Create LinkedIn post about our new product feature.
@@ -283,148 +282,148 @@ Run /write/audit and /write/publish automatically.
 Publish today at 2pm EST."
 ```
 
-Tất cả 6 giai đoạn xảy ra trong một session với auto-audit trước khi xuất bản.
+All 6 stages happen in one session with auto-audit before publishing.
 
 ---
 
-### Email Campaign (2-3 ngày)
+### Email Campaign (2-3 days)
 
-Cho email sequences, xử lý nhiều phần đồng thời:
+For email sequences, handle multiple pieces simultaneously:
 
 ```bash
-# Ngày 1: Draft tất cả emails
+# Day 1: Draft all emails
 "Create 5-email welcome sequence.
 Audience: New trial users
 Topics: Welcome, Feature tour, Use case, Social proof, Conversion
 Save to: content/emails/welcome-sequence/"
 
-# Ngày 1-2: Batch review và edit
+# Day 1-2: Batch review and edit
 "Review all emails in content/emails/welcome-sequence/.
 Apply edits to all based on feedback."
 
-# Ngày 2: Batch audit
+# Day 2: Batch audit
 "Audit all emails in welcome-sequence folder.
 Auto-fix any scores <8.0."
 
-# Ngày 3: Schedule sequence
+# Day 3: Schedule sequence
 "Publish welcome sequence.
 Schedule: Day 0, 2, 4, 6, 8 after signup"
 ```
 
-Xử lý toàn bộ sequence như một batch để hiệu quả.
+Handle the entire sequence as a batch for efficiency.
 
 ---
 
-### Nội Dung Dài (1-2 tuần)
+### Long-Form Content (1-2 weeks)
 
-Cho các hướng dẫn toàn diện hoặc ebooks, thêm các chu kỳ lặp:
+For comprehensive guides or ebooks, add iteration cycles:
 
 ```bash
-# Tuần 1: Cấu trúc và draft
+# Week 1: Structure and draft
 "Create ebook outline: The Complete Marketing Automation Playbook
 10 chapters, 50+ pages
 Create drafts for chapters 1-3"
 
-# Tuần 1-2: Rolling review và edit
+# Week 1-2: Rolling review and edit
 "Review chapters 1-3, edit based on feedback
 Draft chapters 4-6"
 
-# Tuần 2: Comprehensive audit
+# Week 2: Comprehensive audit
 "Audit complete ebook.
 Focus: Consistency across chapters, SEO for each section, cohesive CTAs"
 
-# Tuần 2: Design và publish
+# Week 2: Design and publish
 "Finalize ebook with design team.
 Create landing page and promotion plan."
 ```
 
-Chia các dự án lớn thành các phần quản lý được với rolling reviews.
+Break large projects into manageable pieces with rolling reviews.
 
 ---
 
-## Khắc Phục Sự Cố
+## Troubleshooting
 
-### Vấn Đề: Điểm audit bị kẹt dưới 8.0 sau auto-fix
+### Issue: Audit score stuck below 8.0 after auto-fix
 
-**Nguyên Nhân:** Nội dung có vấn đề cấu trúc hoặc thông điệp cơ bản mà auto-fix không thể giải quyết
+**Cause:** Content has structural issues or fundamental messaging problems that auto-fix cannot resolve
 
-**Giải Pháp:** Xem xét báo cáo audit dimensions để xem cái nào thấp nhất:
-- **Copywriting Thấp:** Viết lại introduction và conclusion với hooks/CTAs mạnh hơn
-- **SEO Thấp:** Thêm target keywords vào title, H2s và đoạn đầu tiên; thêm internal links
-- **Platform Thấp:** Điều chỉnh formatting, thêm visuals, tối ưu cho mobile
-- **Brand Thấp:** Căn chỉnh tone và voice với brand guidelines; loại bỏ ngôn ngữ off-brand
+**Solution:** Review audit dimension reports to see which is lowest:
+- **Low Copywriting:** Rewrite introduction and conclusion with stronger hooks/CTAs
+- **Low SEO:** Add target keywords to title, H2s, and first paragraph; add internal links
+- **Low Platform:** Adjust formatting, add visuals, optimize for mobile
+- **Low Brand:** Align tone and voice with brand guidelines; remove off-brand language
 
-Thực hiện sửa thủ công, sau đó chạy lại audit.
-
----
-
-### Vấn Đề: Review feedback mâu thuẫn với brand guidelines
-
-**Nguyên Nhân:** Content-reviewer cần brand guidelines cập nhật hoặc có ngữ cảnh không chính xác
-
-**Giải Pháp:** Cập nhật tài liệu brand guidelines của bạn trong `.claude/brand-guidelines.md`. Bao gồm:
-- Ví dụ về voice và tone
-- Các cụm từ được phê duyệt/không được phê duyệt
-- Sở thích phong cách
-- Thuật ngữ ngành cụ thể
-
-Chạy review lại sau khi cập nhật guidelines.
+Make manual fixes, then re-run audit.
 
 ---
 
-### Vấn Đề: Nội dung đã xuất bản hiển thị định dạng khác
+### Issue: Review feedback conflicts with brand guidelines
 
-**Nguyên Nhân:** Hạn chế nền tảng hoặc vấn đề HTML rendering
+**Cause:** Content-reviewer needs updated brand guidelines or has incorrect context
 
-**Giải Pháp:** Tạo các phiên bản cụ thể cho nền tảng:
+**Solution:** Update your brand guidelines documentation in `.claude/brand-guidelines.md`. Include:
+- Voice and tone examples
+- Approved/disapproved phrases
+- Style preferences
+- Industry-specific terminology
+
+Re-run review after updating guidelines.
+
+---
+
+### Issue: Published content displays different formatting
+
+**Cause:** Platform limitations or HTML rendering issues
+
+**Solution:** Create platform-specific versions:
 ```bash
 "Adapt content for LinkedIn native article format.
 Adjust: Line breaks, formatting, link handling.
 Test in LinkedIn preview before publishing."
 ```
 
-Preview trên nền tảng thực tế trước khi lên lịch.
+Preview on actual platform before scheduling.
 
 ---
 
-## Phương Pháp Tốt Nhất
+## Best Practices
 
-**Không Bao Giờ Bỏ Qua Audit**
-15 phút dành cho audit/auto-fix tiết kiệm hàng giờ chỉnh sửa thủ công và ngăn ngừa xuất bản nội dung chất lượng thấp. Luôn chạy `/write/audit` trước khi tuyên bố nội dung "hoàn thành."
+**Never Skip Audit**
+The 15 minutes spent on audit/auto-fix saves hours of manual editing and prevents publishing low-quality content. Always run `/write/audit` before declaring content "done."
 
-**Batch Nội Dung Tương Tự**
-Tạo 10 social posts? Draft tất cả 10, review tất cả 10, audit tất cả 10. Batching nhanh hơn 3-5 lần so với xử lý từng cái một và cải thiện tính nhất quán giữa các phần.
+**Batch Similar Content**
+Creating 10 social posts? Draft all 10, review all 10, audit all 10. Batching is 3-5x faster than handling one-by-one and improves consistency across pieces.
 
-**Xây Dựng Thư Viện Nội Dung**
-Lưu nội dung điểm cao làm templates. Một blog post đạt điểm 8.5+ trở thành template cho các chủ đề tương tự. Tái sử dụng cấu trúc, copy các mẫu thành công, duy trì chất lượng.
-
----
-
-## Workflows Liên Quan
-
-- [Campaign Workflow](/vi/docs/marketing/workflows/campaign-workflow) - Tạo nội dung như một phần của campaigns lớn hơn
-- [SEO Workflow](/vi/docs/marketing/workflows/seo-workflow) - Tối ưu nội dung cho thứ hạng tìm kiếm
-- [Social Workflow](/vi/docs/marketing/workflows/social-workflow) - Phân phối nội dung qua các nền tảng xã hội
-- [Brand Workflow](/vi/docs/marketing/workflows/brand-workflow) - Đảm bảo tính nhất quán thương hiệu
+**Build Content Library**
+Save high-scoring content as templates. A blog post scoring 8.5+ becomes a template for similar topics. Reuse structure, copy successful patterns, maintain quality.
 
 ---
 
-## Agents Được Sử Dụng
+## Related Workflows
 
-- [content-creator](/vi/docs/marketing/agents/content-creator) - Tạo draft và chỉnh sửa
-- [content-reviewer](/vi/docs/marketing/agents/content-reviewer) - Kiểm tra chất lượng và phê duyệt
-- [seo-specialist](/vi/docs/marketing/agents/seo-specialist) - Tối ưu SEO
-- [social-media-manager](/vi/docs/marketing/agents/social-media-manager) - Xuất bản xã hội
-- [email-wizard](/vi/docs/marketing/agents/email-wizard) - Phân phối email
+- [Campaign Workflow](/docs/marketing/workflows/campaign-workflow) - Create content as part of larger campaigns
+- [SEO Workflow](/docs/marketing/workflows/seo-workflow) - Optimize content for search rankings
+- [Social Workflow](/docs/marketing/workflows/social-workflow) - Distribute content across social platforms
+- [Brand Workflow](/docs/marketing/workflows/brand-workflow) - Ensure brand consistency
 
 ---
 
-## Commands Được Sử Dụng
+## Agents Used
 
-- `/write:blog` - Tạo blog post drafts
-- `/write:cro` - Tạo landing pages tối ưu chuyển đổi
-- `/write/audit` - Chấm điểm chất lượng nội dung (tự động kích hoạt)
-- `/write/publish` - Tự động sửa các vấn đề nội dung (tự động kích hoạt)
-- `/content:good` - Tạo nội dung chất lượng cao
-- `/youtube:blog` - Chuyển đổi YouTube videos thành blog posts
-- `/youtube:social` - Chuyển đổi YouTube videos thành social posts
+- [content-creator](/docs/marketing/agents/content-creator) - Create drafts and edits
+- [content-reviewer](/docs/marketing/agents/content-reviewer) - Quality checks and approval
+- [seo-specialist](/docs/marketing/agents/seo-specialist) - SEO optimization
+- [social-media-manager](/docs/marketing/agents/social-media-manager) - Social publishing
+- [email-wizard](/docs/marketing/agents/email-wizard) - Email distribution
+
+---
+
+## Commands Used
+
+- `/write:blog` - Create blog post drafts
+- `/write:cro` - Create conversion-optimized landing pages
+- `/write/audit` - Score content quality (automatically triggers)
+- `/write/publish` - Auto-fix content issues (automatically triggers)
+- `/content:good` - Create high-quality content
+- `/youtube:blog` - Convert YouTube videos to blog posts
+- `/youtube:social` - Convert YouTube videos to social posts

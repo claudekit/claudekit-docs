@@ -1,132 +1,133 @@
 ---
 title: /integrate:sepay
-description: Documentation for sepay
+description: Tài liệu hướng dẫn tích hợp SePay
 section: engineer
 kit: engineer
 category: commands/integrate
 order: 71
 published: true
+lang: vi
 ---
 
 # /integrate:sepay
 
-Implement complete payment integration with SePay.vn, Vietnam's leading payment gateway. This command handles QR code payments, bank transfers, webhook processing, and all necessary backend logic for Vietnamese market monetization.
+Triển khai tích hợp thanh toán hoàn chỉnh với SePay.vn, cổng thanh toán hàng đầu Việt Nam. Lệnh này xử lý thanh toán qua mã QR, chuyển khoản ngân hàng, xử lý webhook và tất cả các logic backend cần thiết để thương mại hóa tại thị trường Việt Nam.
 
-## Syntax
-
-```bash
-/integrate:sepay [integration requirements]
-```
-
-## How It Works
-
-The `/integrate:sepay` command follows a comprehensive integration workflow:
-
-### 1. Requirements Analysis
-
-- Identifies payment methods needed (QR, bank transfer, card)
-- Determines payment flow (one-time, subscription, top-up)
-- Analyzes existing codebase architecture
-- Plans database schema for Vietnamese payment data
-
-### 2. SePay Research
-
-Invokes **researcher** agent to:
-- Review latest SePay API documentation
-- Check Vietnam-specific payment regulations
-- Identify localization requirements
-- Study webhook handling patterns
-- Research VND currency handling
-
-### 3. Implementation Planning
-
-Creates detailed plan for:
-- API routes and endpoints
-- Database models (Vietnamese fields)
-- Webhook handlers
-- QR code generation
-- Bank transfer tracking
-- Payment confirmation flow
-- Error handling (Vietnamese language)
-- Testing strategy
-
-### 4. Code Implementation
-
-Invokes **code** agent to implement:
-- SePay SDK integration
-- Payment creation endpoints
-- QR code generation and display
-- Bank transfer instructions
-- Webhook processing
-- Payment status polling
-- Database operations with VND support
-- Vietnamese localization
-
-### 5. Testing & Compliance
-
-- Generates comprehensive tests
-- Implements webhook signature verification
-- Adds Vietnamese bank ID validation
-- Tests payment lifecycle
-- Validates Vietnamese regulatory compliance
-
-## Examples
-
-### Basic QR Code Payment Integration
+## Cú pháp
 
 ```bash
-/integrate:sepay [add SePay QR code payments for course purchases, support Vietcombank, Techcombank, BIDV]
+/integrate:sepay [yêu cầu tích hợp]
 ```
 
-**What happens:**
+## Cách hoạt động
+
+Lệnh `/integrate:sepay` tuân theo một quy trình tích hợp toàn diện:
+
+### 1. Phân tích yêu cầu
+
+- Xác định các phương thức thanh toán cần thiết (QR, chuyển khoản, thẻ)
+- Xác định luồng thanh toán (một lần, đăng ký, nạp tiền)
+- Phân tích kiến trúc mã nguồn hiện có
+- Lập kế hoạch lược đồ cơ sở dữ liệu cho dữ liệu thanh toán tại Việt Nam
+
+### 2. Nghiên cứu SePay
+
+Sử dụng agent **researcher** để:
+- Xem xét tài liệu API SePay mới nhất
+- Kiểm tra các quy định thanh toán cụ thể tại Việt Nam
+- Xác định các yêu cầu địa phương hóa
+- Nghiên cứu các mẫu xử lý webhook
+- Nghiên cứu việc xử lý tiền tệ VND
+
+### 3. Lập kế hoạch triển khai
+
+Tạo kế hoạch chi tiết cho:
+- Các route và endpoint API
+- Các model cơ sở dữ liệu (các trường tiếng Việt)
+- Các trình xử lý webhook
+- Tạo mã QR
+- Theo dõi chuyển khoản ngân hàng
+- Luồng xác nhận thanh toán
+- Xử lý lỗi (tiếng Việt)
+- Chiến lược kiểm tra
+
+### 4. Triển khai mã nguồn
+
+Sử dụng agent **code** để triển khai:
+- Tích hợp SePay SDK
+- Các endpoint tạo thanh toán
+- Tạo và hiển thị mã QR
+- Hướng dẫn chuyển khoản ngân hàng
+- Xử lý webhook
+- Kiểm tra trạng thái thanh toán (polling)
+- Các thao tác cơ sở dữ liệu hỗ trợ VND
+- Địa phương hóa tiếng Việt
+
+### 5. Kiểm tra & Tuân thủ
+
+- Tạo các bài kiểm tra toàn diện
+- Triển khai xác minh chữ ký webhook
+- Thêm kiểm tra ID ngân hàng Việt Nam
+- Kiểm tra vòng đời thanh toán
+- Xác nhận tuân thủ các quy định tại Việt Nam
+
+## Ví dụ
+
+### Tích hợp thanh toán QR Code cơ bản
+
+```bash
+/integrate:sepay [thêm thanh toán QR SePay cho việc mua khóa học, hỗ trợ Vietcombank, Techcombank, BIDV]
 ```
-Phase 1: Analysis (30 seconds)
+
+**Điều gì xảy ra:**
+```
+Giai đoạn 1: Phân tích (30 giây)
 ---
 Agent: planner
 
-Requirements identified:
-✓ QR code payment method
-✓ Course purchase (one-time payment)
-✓ Support major Vietnamese banks
-✓ VND currency handling
-✓ Payment confirmation flow
-✓ Webhook processing
+Yêu cầu đã xác định:
+✓ Phương thức thanh toán QR code
+✓ Mua khóa học (thanh toán một lần)
+✓ Hỗ trợ các ngân hàng lớn tại Việt Nam
+✓ Xử lý tiền tệ VND
+✓ Luồng xác nhận thanh toán
+✓ Xử lý webhook
 
-Vietnam-specific requirements:
-✓ Bank account validation
-✓ Vietnamese language support
-✓ VND formatting (no decimals)
-✓ Transaction reference format
-✓ Bank transfer instructions
+Yêu cầu cụ thể tại Việt Nam:
+✓ Xác thực tài khoản ngân hàng
+✓ Hỗ trợ tiếng Việt
+✓ Định dạng VND (không có số thập phân)
+✓ Định dạng nội dung chuyển khoản
+✓ Hướng dẫn chuyển khoản ngân hàng
 
-Architecture decisions:
-- Backend: Node.js/Express detected
-- Database: PostgreSQL detected
-- Frontend: React detected
-- Currency: VND (no decimals)
+Quyết định kiến trúc:
+- Backend: Phát hiện Node.js/Express
+- Cơ sở dữ liệu: Phát hiện PostgreSQL
+- Frontend: Phát hiện React
+- Tiền tệ: VND (không số thập phân)
 
-Phase 2: Research (45 seconds)
+Giai đoạn 2: Nghiên cứu (45 giây)
 ---
 Agent: researcher
 
-SePay API features analyzed:
-✓ QR Code API (Dynamic QR)
-✓ Bank Transfer API
-✓ Webhook events (payment.success, payment.expired)
-✓ Transaction verification
-✓ Supported banks (18 major Vietnamese banks)
-✓ QR code expiry (15 minutes default)
+Phân tích tính năng API SePay:
+✓ API Mã QR (QR động)
+✓ API Chuyển khoản ngân hàng
+✓ Các sự kiện Webhook (payment.success, payment.expired)
+✓ Xác minh giao dịch
+✓ Các ngân hàng hỗ trợ (18 ngân hàng lớn tại Việt Nam)
+✓ Thời gian hết hạn mã QR (mặc định 15 phút)
 
-Vietnamese payment regulations:
-✓ Transaction reference format: ABC123
-✓ Max transaction: 500,000,000 VND
-✓ Min transaction: 1,000 VND
-✓ VAT handling (10% standard)
-✓ Invoice requirements
+Quy định thanh toán tại Việt Nam:
+✓ Định dạng nội dung chuyển khoản: ABC123
+✓ Giao dịch tối đa: 500.000.000 VND
+✓ Giao dịch tối thiểu: 1.000 VND
+✓ Xử lý thuế VAT (chuẩn 10%)
+✓ Yêu cầu hóa đơn
 
-Phase 3: Implementation Plan
+Giai đoạn 3: Kế hoạch triển khai
 ---
-Files to create:
+Các tệp cần tạo:
 
 1. Backend:
    - src/routes/payment.routes.ts
@@ -139,7 +140,7 @@ Files to create:
    - src/utils/vnd-formatter.ts
    - src/utils/bank-validator.ts
 
-2. Database:
+2. Cơ sở dữ liệu:
    - migrations/add-sepay-tables.sql
 
 3. Frontend:
@@ -150,26 +151,26 @@ Files to create:
    - src/hooks/usePayment.ts
    - src/utils/vnd-format.ts
 
-4. Configuration:
-   - .env.example (add SePay credentials)
+4. Cấu hình:
+   - .env.example (thêm thông tin xác thực SePay)
    - config/sepay.config.ts
-   - locales/vi.json (Vietnamese translations)
+   - locales/vi.json (bản dịch tiếng Việt)
 
-5. Tests:
+5. Kiểm tra:
    - tests/integration/payment.test.ts
    - tests/webhooks/sepay.webhook.test.ts
    - tests/utils/vnd-formatter.test.ts
 
-Phase 4: Code Implementation (2-3 minutes)
+Giai đoạn 4: Triển khai mã nguồn (2-3 phút)
 ---
 Agent: code
 
-✓ SePay SDK installed (sepay-node-sdk)
-✓ Database migrations created
-✓ Models implemented (Payment, Transaction)
-✓ SePay service with error handling
-✓ Transaction service with VND support
-✓ API routes created:
+✓ Đã cài đặt SePay SDK (sepay-node-sdk)
+✓ Đã tạo các migration cơ sở dữ liệu
+✓ Đã triển khai các model (Payment, Transaction)
+✓ Dịch vụ SePay với xử lý lỗi
+✓ Dịch vụ giao dịch hỗ trợ VND
+✓ Đã tạo các route API:
   - POST /api/payment/create
   - GET /api/payment/:id
   - GET /api/payment/:id/qr
@@ -177,46 +178,46 @@ Agent: code
   - POST /api/payment/:id/verify
   - GET /api/payment/history
 
-✓ Webhook endpoint implemented:
+✓ Đã triển khai endpoint Webhook:
   - POST /api/webhooks/sepay
-  - Signature verification
-  - Event handlers for:
+  - Xác minh chữ ký
+  - Trình xử lý sự kiện cho:
     • payment.success
     • payment.expired
     • payment.failed
     • payment.pending
 
-✓ Frontend components created:
-  - QR code display with countdown
-  - Bank transfer instructions
-  - Payment status tracking
-  - Vietnamese formatting
+✓ Đã tạo các component Frontend:
+  - Hiển thị mã QR với đồng hồ đếm ngược
+  - Hướng dẫn chuyển khoản ngân hàng
+  - Theo dõi trạng thái thanh toán
+  - Định dạng tiếng Việt
 
-✓ Vietnamese localization:
-  - Error messages in Vietnamese
-  - Bank names in Vietnamese
-  - Payment instructions in Vietnamese
-  - Success/failure messages
+✓ Địa phương hóa tiếng Việt:
+  - Thông báo lỗi bằng tiếng Việt
+  - Tên ngân hàng bằng tiếng Việt
+  - Hướng dẫn thanh toán bằng tiếng Việt
+  - Thông báo thành công/thất bại
 
-✓ VND utilities:
-  - Format: 1,000,000 ₫
-  - Parse: Handle comma separators
-  - Validate: No decimals, min/max
+✓ Tiện ích VND:
+  - Định dạng: 1.000.000 ₫
+  - Parse: Xử lý dấu phân cách dấu chấm
+  - Xác thực: Không số thập phân, tối thiểu/tối đa
 
-Phase 5: Database Schema
+Giai đoạn 5: Lược đồ cơ sở dữ liệu
 ---
-Created tables:
+Các bảng đã tạo:
 
 payments:
-- id (uuid, primary key)
-- user_id (uuid, foreign key)
-- sepay_transaction_id (text, unique)
-- order_id (text) -- course purchase ID
-- amount (bigint) -- in VND, no decimals
-- currency (text) -- always 'VND'
+- id (uuid, khóa chính)
+- user_id (uuid, khóa ngoại)
+- sepay_transaction_id (text, duy nhất)
+- order_id (text) -- ID đơn hàng khóa học
+- amount (bigint) -- bằng VND, không số thập phân
+- currency (text) -- luôn là 'VND'
 - status (text) -- 'pending', 'success', 'expired', 'failed'
 - payment_method (text) -- 'qr', 'bank_transfer'
-- bank_code (text) -- 'VCB', 'TCB', 'BIDV', etc.
+- bank_code (text) -- 'VCB', 'TCB', 'BIDV', v.v.
 - qr_code_url (text)
 - qr_expires_at (timestamp)
 - paid_at (timestamp)
@@ -224,9 +225,9 @@ payments:
 - updated_at (timestamp)
 
 transactions:
-- id (uuid, primary key)
-- payment_id (uuid, foreign key)
-- transaction_ref (text) -- Vietnamese bank ref
+- id (uuid, khóa chính)
+- payment_id (uuid, khóa ngoại)
+- transaction_ref (text) -- Tham chiếu ngân hàng Việt Nam
 - bank_transaction_id (text)
 - sender_account (text)
 - sender_name (text)
@@ -236,9 +237,9 @@ transactions:
 - verified_at (timestamp)
 - created_at (timestamp)
 
-Phase 6: Configuration
+Giai đoạn 6: Cấu hình
 ---
-Environment variables added:
+Các biến môi trường đã thêm:
 
 SEPAY_APP_ID=your_app_id
 SEPAY_SECRET_KEY=your_secret_key
@@ -248,167 +249,167 @@ SEPAY_ACCOUNT_NAME=YOUR_COMPANY_NAME
 SEPAY_BANK_CODE=VCB
 FRONTEND_URL=http://localhost:3000
 
-Phase 7: Frontend Integration
+Giai đoạn 7: Tích hợp Frontend
 ---
-Payment QR Code component:
+Component mã QR thanh toán:
 
 <PaymentQR paymentId={paymentId} />
 
-Displays:
-- QR code image (auto-refreshes)
-- Amount in VND format: 1,000,000 ₫
-- Countdown timer (15:00)
-- Bank transfer instructions
-- Payment status updates (real-time)
-- Auto-redirect on success
+Hiển thị:
+- Hình ảnh mã QR (tự động làm mới)
+- Số tiền theo định dạng VND: 1.000.000 ₫
+- Đồng hồ đếm ngược (15:00)
+- Hướng dẫn chuyển khoản ngân hàng
+- Cập nhật trạng thái thanh toán (thời gian thực)
+- Tự động chuyển hướng khi thành công
 
-Bank Transfer Instructions:
+Hướng dẫn chuyển khoản ngân hàng:
 
 <BankTransferInstructions payment={payment} />
 
-Shows:
-- Bank name (Vietnamese)
-- Account number
-- Account holder name
-- Transfer amount
-- Transfer content (unique ref)
-- Copy buttons for each field
+Hiển thị:
+- Tên ngân hàng (tiếng Việt)
+- Số tài khoản
+- Tên chủ tài khoản
+- Số tiền chuyển khoản
+- Nội dung chuyển khoản (tham chiếu duy nhất)
+- Nút sao chép cho mỗi trường
 
-Example:
+Ví dụ:
 ---
 Ngân hàng: Vietcombank (VCB)
 Số tài khoản: 0123456789
 Tên tài khoản: CONG TY CLAUDEKIT
-Số tiền: 1,000,000 ₫
+Số tiền: 1.000.000 ₫
 Nội dung: COURSE ABC123
 
 [Sao chép tất cả]
 ---
 
-Phase 8: Payment Flow
+Giai đoạn 8: Luồng thanh toán
 ---
-1. User clicks "Thanh toán" (Pay)
-2. Backend creates SePay payment
-3. Frontend displays QR code
-4. User scans QR with banking app
-5. User confirms payment in app
-6. Bank sends transaction to SePay
-7. SePay webhook notifies backend
-8. Backend verifies payment
-9. Database updated (status: success)
-10. Frontend shows success message
-11. Course access granted
+1. Người dùng nhấp vào "Thanh toán"
+2. Backend tạo thanh toán SePay
+3. Frontend hiển thị mã QR
+4. Người dùng quét QR bằng ứng dụng ngân hàng
+5. Người dùng xác nhận thanh toán trong ứng dụng
+6. Ngân hàng gửi giao dịch tới SePay
+7. Webhook SePay thông báo cho backend
+8. Backend xác minh thanh toán
+9. Cơ sở dữ liệu được cập nhật (status: success)
+10. Frontend hiển thị thông báo thành công
+11. Quyền truy cập khóa học được cấp
 
-Timeout handling:
-- QR expires after 15 minutes
-- User can generate new QR
-- Expired payments marked 'expired'
+Xử lý hết hạn:
+- Mã QR hết hạn sau 15 phút
+- Người dùng có thể tạo mã QR mới
+- Các thanh toán hết hạn được đánh dấu 'expired'
 
-Phase 9: Testing (1 minute)
+Giai đoạn 9: Kiểm tra (1 phút)
 ---
 Agent: tester
 
-Generated tests:
-✓ Payment creation tests (12 tests)
-✓ QR code generation tests (8 tests)
-✓ Webhook processing tests (18 tests)
-✓ VND formatting tests (15 tests)
-✓ Bank validation tests (10 tests)
-✓ Transaction verification tests (14 tests)
-✓ Payment expiry tests (9 tests)
-✓ Error handling tests (12 tests)
+Các bài kiểm tra đã tạo:
+✓ Kiểm tra tạo thanh toán (12 bài)
+✓ Kiểm tra tạo mã QR (8 bài)
+✓ Kiểm tra xử lý webhook (18 bài)
+✓ Kiểm tra định dạng VND (15 bài)
+✓ Kiểm tra xác thực ngân hàng (10 bài)
+✓ Kiểm tra xác minh giao dịch (14 bài)
+✓ Kiểm tra hết hạn thanh toán (9 bài)
+✓ Kiểm tra xử lý lỗi (12 bài)
 
-All 98 tests passed
-Coverage: 96%
+Tất cả 98 bài kiểm tra đã vượt qua
+Độ bao phủ: 96%
 
-Phase 10: Documentation
+Giai đoạn 10: Tài liệu
 ---
-Created documentation:
+Tài liệu đã tạo:
 
 docs/payment/sepay-integration.md:
-- Setup instructions
-- Bank account configuration
-- Environment variables
-- API endpoints
-- Webhook events
-- Testing with SePay sandbox
-- Vietnamese bank codes
-- Troubleshooting guide
-- Production deployment checklist
+- Hướng dẫn thiết lập
+- Cấu hình tài khoản ngân hàng
+- Các biến môi trường
+- Các endpoint API
+- Các sự kiện Webhook
+- Kiểm tra với sandbox SePay
+- Mã ngân hàng Việt Nam
+- Hướng dẫn xử lý sự cố
+- Danh sách kiểm tra triển khai thực tế
 
-✓ Integration complete (4 minutes 15 seconds)
+✓ Tích hợp hoàn tất (4 phút 15 giây)
 
-Summary:
+Tóm tắt:
 ---
-✓ 16 files created
-✓ 7 API endpoints implemented
-✓ 4 webhook events handled
-✓ 2 database tables
-✓ 5 React components
-✓ Vietnamese localization
-✓ 98 tests (96% coverage)
-✓ Complete documentation
+✓ 16 tệp được tạo
+✓ 7 endpoint API được triển khai
+✓ 4 sự kiện webhook được xử lý
+✓ 2 bảng cơ sở dữ liệu
+✓ 5 component React
+✓ Địa phương hóa tiếng Việt
+✓ 98 bài kiểm tra (độ bao phủ 96%)
+✓ Tài liệu hoàn chỉnh
 
-Next steps:
-1. Register SePay account at sepay.vn
-2. Get App ID and Secret Key
-3. Configure bank account
-4. Add credentials to .env
-5. Run migrations: npm run migrate
-6. Test with SePay sandbox
-7. Deploy to staging
+Bước tiếp theo:
+1. Đăng ký tài khoản SePay tại sepay.vn
+2. Lấy App ID và Secret Key
+3. Cấu hình tài khoản ngân hàng
+4. Thêm thông tin xác thực vào .env
+5. Chạy migration: npm run migrate
+6. Kiểm tra với sandbox SePay
+7. Triển khai lên staging
 ```
 
-### Subscription Billing with Auto-Renewal
+### Thanh toán gói đăng ký với tự động gia hạn
 
 ```bash
-/integrate:sepay [implement monthly subscription billing 299,000 VND/month with auto bank transfer reminders]
+/integrate:sepay [triển khai thanh toán gói đăng ký hàng tháng 299.000 VND/tháng với lời nhắc chuyển khoản ngân hàng tự động]
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-Phase 1: Analysis
+Giai đoạn 1: Phân tích
 ---
-Requirements:
-✓ Monthly subscription (299,000 VND)
-✓ Auto-renewal reminders via email
-✓ Bank transfer payment method
-✓ Grace period (3 days)
-✓ Suspension after grace period
-✓ Reactivation flow
+Yêu cầu:
+✓ Gói đăng ký hàng tháng (299.000 VND)
+✓ Lời nhắc tự động gia hạn qua email
+✓ Phương thức thanh toán chuyển khoản ngân hàng
+✓ Thời gian ân hạn (3 ngày)
+✓ Tạm đình chỉ sau thời gian ân hạn
+✓ Luồng kích hoạt lại
 
-Vietnamese subscription pattern:
-- Manual bank transfer each month
-- Email reminder 3 days before expiry
-- Fixed transfer content for tracking
-- No auto-charge (regulatory)
+Mô hình đăng ký tại Việt Nam:
+- Chuyển khoản ngân hàng thủ công mỗi tháng
+- Nhắc nhở qua email 3 ngày trước khi hết hạn
+- Nội dung chuyển khoản cố định để theo dõi
+- Không tự động trừ tiền (do quy định)
 
-Phase 2: Implementation
+Giai đoạn 2: Triển khai
 ---
-Additional components:
+Các thành phần bổ sung:
 
-1. Subscription Management:
+1. Quản lý gói đăng ký:
    - src/services/subscription.service.ts
    - src/models/subscription.model.ts
    - src/jobs/subscription-reminder.job.ts
    - src/jobs/subscription-expiry.job.ts
 
-2. Email Notifications:
+2. Thông báo Email:
    - templates/email/subscription-reminder-vi.html
    - templates/email/subscription-expired-vi.html
    - templates/email/payment-confirmed-vi.html
 
 3. Cron Jobs:
-   - Daily check for subscriptions expiring in 3 days
-   - Daily check for expired subscriptions
-   - Send email reminders with payment instructions
+   - Kiểm tra hàng ngày các gói đăng ký hết hạn trong 3 ngày tới
+   - Kiểm tra hàng ngày các gói đăng ký đã hết hạn
+   - Gửi lời nhắc qua email với hướng dẫn thanh toán
 
-4. Payment Verification:
-   - Manual verification endpoint
-   - Auto-verification via webhook
-   - Admin dashboard for verification
+4. Xác minh thanh toán:
+   - Endpoint xác minh thủ công
+   - Tự động xác minh qua webhook
+   - Dashboard admin để xác minh
 
-Database schema additions:
+Bổ sung lược đồ cơ sở dữ liệu:
 subscriptions:
 - id, user_id, plan_id
 - status ('active', 'grace_period', 'suspended')
@@ -427,7 +428,7 @@ subscription_payments:
 - paid_at
 - created_at
 
-Email reminder example:
+Ví dụ email nhắc nhở:
 ---
 Tiêu đề: Gia hạn gói ClaudeKit Pro
 
@@ -438,7 +439,7 @@ Gói ClaudeKit Pro của bạn sẽ hết hạn vào 3 ngày nữa
 
 Để tiếp tục sử dụng, vui lòng thanh toán:
 
-Số tiền: 299,000 ₫
+Số tiền: 299.000 ₫
 Ngân hàng: Vietcombank (VCB)
 Số tài khoản: 0123456789
 Nội dung: SUB[user_id]
@@ -448,64 +449,64 @@ Nội dung: SUB[user_id]
 Cảm ơn bạn đã tin dùng ClaudeKit!
 ---
 
-✓ Subscription billing complete (5 minutes)
+✓ Hoàn tất thanh toán gói đăng ký (5 phút)
 ```
 
-## SePay Features Implemented
+## Các tính năng SePay đã triển khai
 
-### 1. QR Code Payment
+### 1. Thanh toán mã QR
 
 ```typescript
-// Create payment and generate QR
+// Tạo thanh toán và tạo mã QR
 const payment = await sepay.createPayment({
-  amount: 1000000, // 1,000,000 VND
+  amount: 1000000, // 1.000.000 VND
   orderId: 'ORDER123',
   description: 'Course purchase',
   returnUrl: `${FRONTEND_URL}/payment/success`,
 });
 
-// Get QR code URL
+// Lấy URL mã QR
 const qrCodeUrl = payment.qrCodeUrl;
 
-// Frontend displays QR
+// Frontend hiển thị QR
 <img src={qrCodeUrl} alt="Scan to pay" />
 ```
 
-### 2. Bank Transfer Instructions
+### 2. Hướng dẫn chuyển khoản ngân hàng
 
 ```typescript
-// Generate transfer instructions
+// Tạo hướng dẫn chuyển khoản
 const instructions = {
   bankCode: 'VCB', // Vietcombank
   accountNumber: process.env.SEPAY_ACCOUNT_NUMBER,
   accountName: process.env.SEPAY_ACCOUNT_NAME,
   amount: 1000000,
-  content: `COURSE${orderId}`, // Unique reference
+  content: `COURSE${orderId}`, // Tham chiếu duy nhất
 };
 
-// Display to user with copy buttons
+// Hiển thị cho người dùng với các nút sao chép
 ```
 
-### 3. Payment Verification
+### 3. Xác minh thanh toán
 
 ```typescript
-// Check payment status
+// Kiểm tra trạng thái thanh toán
 const status = await sepay.verifyPayment(transactionId);
 
 if (status === 'success') {
-  // Grant access
+  // Cấp quyền truy cập
   await grantCourseAccess(userId, courseId);
 }
 ```
 
-### 4. Webhook Processing
+### 4. Xử lý Webhook
 
 ```typescript
-// Webhook handler with signature verification
+// Trình xử lý webhook với xác minh chữ ký
 app.post('/api/webhooks/sepay', async (req, res) => {
   const signature = req.headers['sepay-signature'];
 
-  // Verify signature
+  // Xác minh chữ ký
   const isValid = sepay.verifyWebhookSignature(
     req.body,
     signature,
@@ -531,9 +532,9 @@ app.post('/api/webhooks/sepay', async (req, res) => {
 });
 ```
 
-## Vietnamese Bank Codes
+## Mã ngân hàng Việt Nam
 
-Supported major banks:
+Các ngân hàng lớn được hỗ trợ:
 
 ```
 VCB  - Vietcombank
@@ -554,12 +555,12 @@ NAB  - NamABank
 ABB  - AnBinhBank
 ```
 
-## VND Currency Handling
+## Xử lý tiền tệ VND
 
-### Formatting
+### Định dạng
 
 ```typescript
-// Format VND (no decimals)
+// Định dạng VND (không số thập phân)
 function formatVND(amount: number): string {
   return new Intl.NumberFormat('vi-VN', {
     style: 'currency',
@@ -569,43 +570,43 @@ function formatVND(amount: number): string {
   }).format(amount);
 }
 
-// Usage
+// Cách dùng
 formatVND(1000000); // "1.000.000 ₫"
 formatVND(299000);  // "299.000 ₫"
 ```
 
-### Parsing
+### Parse
 
 ```typescript
-// Parse VND string to number
+// Chuyển chuỗi VND thành số
 function parseVND(str: string): number {
   return parseInt(str.replace(/[^\d]/g, ''), 10);
 }
 
-// Usage
+// Cách dùng
 parseVND("1.000.000 ₫"); // 1000000
 parseVND("299,000");     // 299000
 ```
 
-### Validation
+### Xác thực
 
 ```typescript
-// Validate VND amount
+// Xác thực số tiền VND
 function validateVND(amount: number): boolean {
-  const MIN = 1000;        // 1,000 VND
-  const MAX = 500000000;   // 500,000,000 VND
+  const MIN = 1000;        // 1.000 VND
+  const MAX = 500000000;   // 500.000.000 VND
 
   return (
     amount >= MIN &&
     amount <= MAX &&
-    Number.isInteger(amount) // No decimals
+    Number.isInteger(amount) // Không có số thập phân
   );
 }
 ```
 
-## Vietnamese Localization
+## Địa phương hóa tiếng Việt
 
-### Payment Status Messages
+### Thông báo trạng thái thanh toán
 
 ```typescript
 const messages = {
@@ -616,7 +617,7 @@ const messages = {
 };
 ```
 
-### Error Messages
+### Thông báo lỗi
 
 ```typescript
 const errors = {
@@ -627,106 +628,106 @@ const errors = {
 };
 ```
 
-## Testing
+## Kiểm tra
 
-### Sandbox Mode
+### Chế độ Sandbox
 
 ```bash
-# Use SePay sandbox credentials
+# Sử dụng thông tin xác thực sandbox SePay
 SEPAY_APP_ID=test_app_id
 SEPAY_SECRET_KEY=test_secret_key
 SEPAY_WEBHOOK_SECRET=test_webhook_secret
 ```
 
-### Test Bank Accounts
+### Tài khoản ngân hàng thử nghiệm
 
 ```
-Test accounts provided by SePay:
-- Account: 0123456789 (always success)
-- Account: 9876543210 (always fail)
-- Account: 5555555555 (expires after 1 min)
+Các tài khoản thử nghiệm do SePay cung cấp:
+- Tài khoản: 0123456789 (luôn thành công)
+- Tài khoản: 9876543210 (luôn thất bại)
+- Tài khoản: 5555555555 (hết hạn sau 1 phút)
 ```
 
-### Webhook Testing
+### Kiểm tra Webhook
 
 ```bash
-# Forward webhooks to local (SePay CLI)
+# Chuyển tiếp webhook về local (SePay CLI)
 sepay webhooks forward --url http://localhost:3000/api/webhooks/sepay
 
-# Trigger test event
+# Kích hoạt sự kiện thử nghiệm
 sepay trigger payment.success --transaction-id TXN123
 ```
 
-## Common Use Cases
+## Các trường hợp sử dụng phổ biến
 
-### 1. Course Purchase
-
-```bash
-/integrate:sepay [one-time payment for course, support QR and bank transfer]
-```
-
-### 2. Subscription
+### 1. Mua khóa học
 
 ```bash
-/integrate:sepay [monthly subscription 299,000 VND with email reminders]
+/integrate:sepay [thanh toán một lần cho khóa học, hỗ trợ QR và chuyển khoản ngân hàng]
 ```
 
-### 3. Wallet Top-Up
+### 2. Gói đăng ký
 
 ```bash
-/integrate:sepay [wallet top-up any amount 10,000-10,000,000 VND]
+/integrate:sepay [gói đăng ký hàng tháng 299.000 VND với nhắc nhở qua email]
 ```
 
-### 4. Service Payment
+### 3. Nạp tiền vào ví
 
 ```bash
-/integrate:sepay [pay for services with instant confirmation]
+/integrate:sepay [nạp tiền vào ví với số tiền bất kỳ 10.000-10.000.000 VND]
 ```
 
-## Troubleshooting
+### 4. Thanh toán dịch vụ
 
-### QR Code Expired
+```bash
+/integrate:sepay [thanh toán dịch vụ với xác nhận tức thì]
+```
 
-**Problem:** User didn't pay within 15 minutes
+## Xử lý sự cố
 
-**Solution:**
+### Mã QR hết hạn
+
+**Vấn đề:** Người dùng không thanh toán trong vòng 15 phút
+
+**Giải pháp:**
 ```typescript
-// Provide "Generate New QR" button
+// Cung cấp nút "Tạo mã QR mới"
 const newPayment = await sepay.createPayment({
   amount: originalAmount,
   orderId: orderId,
 });
 
-// Update UI with new QR
+// Cập nhật giao diện với QR mới
 setQrCodeUrl(newPayment.qrCodeUrl);
 ```
 
-### Payment Not Detected
+### Thanh toán không được phát hiện
 
-**Problem:** User paid but webhook not received
+**Vấn đề:** Người dùng đã thanh toán nhưng không nhận được webhook
 
-**Solution:**
+**Giải pháp:**
 ```typescript
-// Provide manual verification button
+// Cung cấp nút xác minh thủ công
 <button onClick={async () => {
   const status = await sepay.verifyPayment(transactionId);
   if (status === 'success') {
-    // Grant access
+    // Cấp quyền truy cập
   }
 }}>
   Kiểm tra thanh toán
 </button>
 ```
 
-### Wrong Transfer Amount
+### Sai số tiền chuyển khoản
 
-**Problem:** User transferred incorrect amount
+**Vấn đề:** Người dùng chuyển sai số tiền
 
-**Solution:**
+**Giải pháp:**
 ```typescript
-// Webhook receives actual amount
+// Webhook nhận được số tiền thực tế
 if (event.data.amount < expectedAmount) {
-  // Notify user of shortage
+  // Thông báo cho người dùng về việc thiếu hụt
   await sendEmail(user, 'amount_mismatch', {
     expected: expectedAmount,
     received: event.data.amount,
@@ -735,70 +736,70 @@ if (event.data.amount < expectedAmount) {
 }
 ```
 
-## Production Checklist
+## Danh sách kiểm tra triển khai thực tế
 
-Before going live:
+Trước khi chạy chính thức:
 
 ```
-□ Register business account at sepay.vn
-□ Complete business verification (1-3 days)
-□ Get production credentials
-□ Configure webhook endpoint (HTTPS required)
-□ Test with real bank account (small amount)
-□ Set up webhook monitoring
-□ Configure email notifications
-□ Add Vietnamese terms of service
-□ Add refund policy (in Vietnamese)
-□ Test with multiple banks
-□ Set up customer support (Vietnamese language)
-□ Configure invoice generation (VAT if applicable)
-□ Test subscription renewal flow
-□ Set up payment reconciliation process
-□ Add admin dashboard for payment verification
+□ Đăng ký tài khoản doanh nghiệp tại sepay.vn
+□ Hoàn tất xác minh doanh nghiệp (1-3 ngày)
+□ Lấy thông tin xác thực production
+□ Cấu hình endpoint webhook (yêu cầu HTTPS)
+□ Kiểm tra với tài khoản ngân hàng thật (số tiền nhỏ)
+□ Thiết lập giám sát webhook
+□ Cấu hình thông báo email
+□ Thêm điều khoản dịch vụ tiếng Việt
+□ Thêm chính sách hoàn tiền (bằng tiếng Việt)
+□ Kiểm tra với nhiều ngân hàng
+□ Thiết lập hỗ trợ khách hàng (tiếng Việt)
+□ Cấu hình tạo hóa đơn (VAT nếu có)
+□ Kiểm tra luồng gia hạn đăng ký
+□ Thiết lập quy trình đối soát thanh toán
+□ Thêm dashboard admin để xác minh thanh toán
 ```
 
-## Next Steps
+## Bước tiếp theo
 
-After integration:
+Sau khi tích hợp:
 
 ```bash
-# 1. Integration complete
-/integrate:sepay [requirements]
+# 1. Tích hợp hoàn tất
+/integrate:sepay [yêu cầu]
 
-# 2. Register SePay account
-# Visit sepay.vn and register
+# 2. Đăng ký tài khoản SePay
+# Truy cập sepay.vn và đăng ký
 
-# 3. Add credentials
+# 3. Thêm thông tin xác thực
 cp .env.example .env
-# Add SEPAY_APP_ID, SEPAY_SECRET_KEY, etc.
+# Thêm SEPAY_APP_ID, SEPAY_SECRET_KEY, v.v.
 
-# 4. Run migrations
+# 4. Chạy migration
 npm run migrate
 
-# 5. Test in sandbox mode
+# 5. Kiểm tra ở chế độ sandbox
 npm run dev
-# Make test payment
+# Thực hiện thanh toán thử nghiệm
 
-# 6. Run tests
+# 6. Chạy các bài kiểm tra
 /test
 
-# 7. Deploy to staging
+# 7. Triển khai lên staging
 /deploy [staging]
 
-# 8. Test with real bank (small amount)
+# 8. Kiểm tra với ngân hàng thật (số tiền nhỏ)
 
-# 9. Switch to production credentials
+# 9. Chuyển sang thông tin xác thực production
 
-# 10. Deploy to production
+# 10. Triển khai lên production
 /deploy [production]
 ```
 
-## Related Commands
+## Các lệnh liên quan
 
-- [/integrate:polar](/docs/engineer/commands/integrate/polar) - International payments
-- [/cook](/docs/engineer/commands/core/cook) - Implement custom features
-- [/test](/docs/engineer/commands/core/test) - Run test suite
+- [/integrate:polar](/vi/docs/engineer/commands/integrate/polar) - Thanh toán quốc tế
+- [/cook](/vi/docs/engineer/commands/core/cook) - Triển khai các tính năng tùy chỉnh
+- [/test](/vi/docs/engineer/commands/core/test) - Chạy bộ kiểm tra
 
 ---
 
-**Key Takeaway**: `/integrate:sepay` provides complete SePay.vn payment integration optimized for Vietnamese market with QR codes, bank transfers, VND formatting, Vietnamese localization, and all necessary backend/frontend code—production-ready for Vietnam in minutes.
+**Điểm mấu chốt**: `/integrate:sepay` cung cấp khả năng tích hợp thanh toán SePay.vn hoàn chỉnh, tối ưu cho thị trường Việt Nam với mã QR, chuyển khoản ngân hàng, định dạng VND, địa phương hóa tiếng Việt và tất cả mã nguồn backend/frontend cần thiết—sẵn sàng cho sản xuất tại Việt Nam chỉ trong vài phút.

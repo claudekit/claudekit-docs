@@ -1,146 +1,142 @@
 ---
-title: Implementing Authentication
-description: "Documentation for Implementing Authentication
-description:
-section: workflows
-category: workflows
-order: 7
-published: true"
+title: "Triển khai Xác thực"
+description: "Tài liệu hướng dẫn triển khai hệ thống xác thực bảo mật"
+lang: vi
 section: workflows
 category: workflows
 order: 7
 published: true
 ---
 
-# Implementing Authentication
+# Triển khai Xác thực
 
-Learn how to implement secure authentication systems with ClaudeKit - from basic JWT authentication to OAuth2, 2FA, and passwordless login.
+Tìm hiểu cách triển khai các hệ thống xác thực bảo mật với ClaudeKit - từ xác thực JWT cơ bản đến OAuth2, 2FA và đăng nhập không mật khẩu.
 
-## Overview
+## Tổng quan
 
-**Goal**: Implement secure, production-ready authentication
-**Time**: 20-40 minutes (vs 4-8 hours manually)
-**Agents Used**: planner, researcher, tester, code-reviewer
-**Commands**: /plan, /code, /test, /docs:update
+**Mục tiêu**: Triển khai hệ thống xác thực bảo mật, sẵn sàng cho môi trường production.
+**Thời gian**: 20-40 phút (so với 4-8 giờ làm thủ công)
+**Các Agent sử dụng**: planner, researcher, tester, code-reviewer
+**Các lệnh**: /plan, /code, /test, /docs:update
 
-## Prerequisites
+## Điều kiện tiên quyết
 
-- Existing API or web application
-- Database configured (PostgreSQL, MongoDB, etc.)
-- Email service for verification (optional)
-- OAuth provider accounts (optional: Google, GitHub, etc.)
+- API hoặc ứng dụng web hiện có
+- Cơ sở dữ liệu đã được cấu hình (PostgreSQL, MongoDB, v.v.)
+- Dịch vụ email để xác minh (tùy chọn)
+- Tài khoản nhà cung cấp OAuth (tùy chọn: Google, GitHub, v.v.)
 
-## Authentication Methods
+## Các phương thức xác thực
 
-| Method | Use Case | Security | Complexity | Time |
+| Phương thức | Trường hợp sử dụng | Độ bảo mật | Độ phức tạp | Thời gian |
 |--------|----------|----------|------------|------|
-| JWT | API authentication | High | Low | 15-20 min |
-| Session-based | Traditional web apps | High | Medium | 20-25 min |
-| OAuth2 | Social login | Very High | Medium | 25-35 min |
-| Passwordless | Magic links, OTP | High | Medium | 20-30 min |
-| 2FA | Additional security | Very High | Medium | 15-20 min |
-| Biometric | Mobile apps | Very High | High | 30-40 min |
+| JWT | Xác thực API | Cao | Thấp | 15-20 phút |
+| Session-based | Ứng dụng web truyền thống | Cao | Trung bình | 20-25 phút |
+| OAuth2 | Đăng nhập mạng xã hội | Rất cao | Trung bình | 25-35 phút |
+| Passwordless | Magic links, OTP | Cao | Trung bình | 20-30 phút |
+| 2FA | Bảo mật bổ sung | Rất cao | Trung bình | 15-20 phút |
+| Biometric | Ứng dụng di động | Rất cao | Cao | 30-40 phút |
 
-## Step-by-Step Workflow
+## Quy trình từng bước
 
-### Step 1: Plan Authentication Strategy
+### Bước 1: Lập kế hoạch chiến lược xác thực
 
-Choose authentication method and plan implementation:
+Chọn phương thức xác thực và lập kế hoạch triển khai:
 
 ```bash
-/plan [implement JWT authentication with email/password and password reset]
+/plan [triển khai xác thực JWT với email/mật khẩu và đặt lại mật khẩu]
 ```
 
-**Generated plan**:
+**Kế hoạch được tạo**:
 ```markdown
-# JWT Authentication Implementation Plan
+# Kế hoạch triển khai xác thực JWT
 
-## Components
+## Các thành phần
 
-### 1. User Model
+### 1. Model Người dùng
 - id (UUID)
-- email (unique, indexed)
-- password (hashed with bcrypt)
+- email (duy nhất, đã đánh index)
+- password (được băm bằng bcrypt)
 - emailVerified (boolean)
-- resetToken (nullable)
-- resetTokenExpiry (nullable)
+- resetToken (có thể null)
+- resetTokenExpiry (có thể null)
 - createdAt, updatedAt
 
-### 2. Endpoints
-- POST /api/auth/register - User registration
-- POST /api/auth/login - User login
-- POST /api/auth/logout - User logout
-- GET /api/auth/me - Get current user
-- POST /api/auth/verify-email - Email verification
-- POST /api/auth/forgot-password - Request password reset
-- POST /api/auth/reset-password - Reset password
-- POST /api/auth/refresh-token - Refresh JWT token
+### 2. Các Endpoint
+- POST /api/auth/register - Đăng ký người dùng
+- POST /api/auth/login - Đăng nhập
+- POST /api/auth/logout - Đăng xuất
+- GET /api/auth/me - Lấy thông tin người dùng hiện tại
+- POST /api/auth/verify-email - Xác minh email
+- POST /api/auth/forgot-password - Yêu cầu đặt lại mật khẩu
+- POST /api/auth/reset-password - Đặt lại mật khẩu
+- POST /api/auth/refresh-token - Làm mới token JWT
 
 ### 3. Middleware
-- authenticateJWT - Verify JWT token
-- requireAuth - Protect routes
-- checkEmailVerified - Require verified email
+- authenticateJWT - Xác thực token JWT
+- requireAuth - Bảo vệ các route
+- checkEmailVerified - Yêu cầu email đã xác minh
 
-### 4. Security Features
-- Password hashing (bcrypt, 12 rounds)
-- JWT token (access + refresh)
-- Token expiry (15 min access, 7 day refresh)
-- Rate limiting on auth endpoints
-- Email verification
-- Password strength validation
-- Account lockout after failed attempts
+### 4. Tính năng bảo mật
+- Băm mật khẩu (bcrypt, 12 rounds)
+- Token JWT (access + refresh)
+- Thời gian hết hạn token (15 phút access, 7 ngày refresh)
+- Giới hạn tốc độ (Rate limiting) cho các endpoint auth
+- Xác minh email
+- Kiểm tra độ mạnh mật khẩu
+- Khóa tài khoản sau nhiều lần thất bại
 
-### 5. Testing
-- Unit tests for auth service
-- Integration tests for endpoints
-- Security tests (brute force, token theft)
-- E2E authentication flows
+### 5. Kiểm thử
+- Kiểm thử đơn vị cho dịch vụ auth
+- Kiểm thử tích hợp cho các endpoint
+- Kiểm thử bảo mật (brute force, đánh cắp token)
+- Luồng xác thực E2E
 ```
 
-### Step 2: Implement Basic JWT Authentication
+### Bước 2: Triển khai xác thực JWT cơ bản
 
 ```bash
-/cook [implement JWT authentication with registration and login]
+/cook [triển khai xác thực JWT với đăng ký và đăng nhập]
 ```
 
-**Implementation**:
+**Triển khai**:
 ```
-[1/6] Setting up user model...
-  ✓ Created User schema/model
-  ✓ Added password hashing hooks
-  ✓ Created database migration
+[1/6] Thiết lập model người dùng...
+  ✓ Tạo User schema/model
+  ✓ Thêm các hook băm mật khẩu
+  ✓ Tạo migration cơ sở dữ liệu
 
-[2/6] Implementing JWT service...
-  ✓ Token generation (access + refresh)
-  ✓ Token verification
-  ✓ Token refresh logic
-  ✓ Secure token storage
+[2/6] Triển khai dịch vụ JWT...
+  ✓ Tạo token (access + refresh)
+  ✓ Xác thực token
+  ✓ Logic làm mới token
+  ✓ Lưu trữ token an toàn
 
-[3/6] Creating auth endpoints...
+[3/6] Tạo các endpoint auth...
   ✓ POST /api/auth/register
   ✓ POST /api/auth/login
   ✓ POST /api/auth/logout
   ✓ GET /api/auth/me
   ✓ POST /api/auth/refresh-token
 
-[4/6] Adding middleware...
-  ✓ JWT authentication middleware
-  ✓ Route protection
-  ✓ Error handling
+[4/6] Thêm middleware...
+  ✓ Middleware xác thực JWT
+  ✓ Bảo vệ route
+  ✓ Xử lý lỗi
 
-[5/6] Implementing validation...
-  ✓ Email format validation
-  ✓ Password strength (min 8 chars, uppercase, number, symbol)
-  ✓ Input sanitization
+[5/6] Triển khai xác thực dữ liệu...
+  ✓ Xác thực định dạng email
+  ✓ Độ mạnh mật khẩu (tối thiểu 8 ký tự, chữ hoa, số, ký hiệu)
+  ✓ Làm sạch dữ liệu đầu vào (sanitization)
 
-[6/6] Testing...
-  ✓ 32 tests generated
-  ✓ All tests pass
-  ✓ Coverage: 93%
+[6/6] Kiểm thử...
+  ✓ 32 bài kiểm thử được tạo
+  ✓ Tất cả bài kiểm thử vượt qua
+  ✓ Độ bao phủ: 93%
 
-✅ JWT authentication implemented
+✅ Đã triển khai xác thực JWT thành công
 
-Files created:
+Các tệp đã tạo:
 - src/models/User.js
 - src/services/auth.service.js
 - src/middleware/auth.middleware.js
@@ -149,519 +145,500 @@ Files created:
 - tests/auth/auth.test.js
 ```
 
-### Step 3: Add Email Verification
+### Bước 3: Thêm xác minh Email
 
 ```bash
-/cook [add email verification to registration process]
+/cook [thêm xác minh email vào quá trình đăng ký]
 ```
 
-**Implementation**:
+**Triển khai**:
 ```
-[1/4] Email verification setup...
-  ✓ Add verificationToken to User model
-  ✓ Generate verification tokens
-  ✓ Create verification endpoint
+[1/4] Thiết lập xác minh email...
+  ✓ Thêm verificationToken vào model User
+  ✓ Tạo các mã token xác minh
+  ✓ Tạo endpoint xác minh
 
-[2/4] Email service integration...
-  ✓ Email template for verification
-  ✓ Send verification email on registration
-  ✓ Resend verification email endpoint
+[2/4] Tích hợp dịch vụ email...
+  ✓ Template email xác minh
+  ✓ Gửi email khi đăng ký
+  ✓ Endpoint gửi lại email xác minh
 
 [3/4] Middleware...
-  ✓ requireEmailVerified middleware
-  ✓ Apply to protected routes
+  ✓ Middleware requireEmailVerified
+  ✓ Áp dụng cho các route cần bảo vệ
 
-[4/4] Testing...
-  ✓ Verification flow tests (8 tests)
-  ✓ Email sending mocked
+[4/4] Kiểm thử...
+  ✓ Kiểm thử luồng xác minh (8 bài)
+  ✓ Mock việc gửi email
 
-✅ Email verification added
+✅ Đã thêm xác minh email thành công
 
-Usage:
-1. User registers → receives verification email
-2. User clicks link → account verified
-3. Only verified users access protected routes
+Cách sử dụng:
+1. Người dùng đăng ký → nhận email xác minh
+2. Người dùng nhấn link → tài khoản được xác minh
+3. Chỉ người dùng đã xác minh mới vào được các route được bảo vệ
 ```
 
-### Step 4: Implement Password Reset
+### Bước 4: Triển khai đặt lại mật khẩu
 
 ```bash
-/cook [implement password reset with email verification]
+/cook [triển khai đặt lại mật khẩu với xác minh email]
 ```
 
-**Implementation**:
+**Triển khai**:
 ```
-[1/5] Database changes...
-  ✓ Add resetToken field
-  ✓ Add resetTokenExpiry field
-  ✓ Migration created
+[1/5] Thay đổi cơ sở dữ liệu...
+  ✓ Thêm trường resetToken
+  ✓ Thêm trường resetTokenExpiry
+  ✓ Tạo migration
 
-[2/5] Reset flow endpoints...
+[2/5] Các endpoint luồng đặt lại...
   ✓ POST /api/auth/forgot-password
   ✓ POST /api/auth/reset-password
-  ✓ Token validation logic
+  ✓ Logic xác thực token
 
-[3/5] Email templates...
-  ✓ Password reset email
-  ✓ Password changed confirmation
+[3/5] Template email...
+  ✓ Email đặt lại mật khẩu
+  ✓ Xác nhận thay đổi mật khẩu thành công
 
-[4/5] Security measures...
-  ✓ Token expiry (15 minutes)
-  ✓ Single-use tokens
-  ✓ Rate limiting (5 requests/hour)
+[4/5] Biện pháp bảo mật...
+  ✓ Hết hạn token (15 phút)
+  ✓ Token chỉ dùng một lần
+  ✓ Giới hạn tốc độ (5 yêu cầu/giờ)
 
-[5/5] Testing...
-  ✓ Reset flow tests (12 tests)
-  ✓ Security tests (token expiry, reuse)
+[5/5] Kiểm thử...
+  ✓ Kiểm thử luồng đặt lại (12 bài)
+  ✓ Kiểm thử bảo mật (hết hạn, dùng lại token)
 
-✅ Password reset implemented
+✅ Đã triển khai đặt lại mật khẩu thành công
 ```
 
-### Step 5: Add OAuth2 (Social Login)
+### Bước 5: Thêm OAuth2 (Đăng nhập mạng xã hội)
 
 ```bash
-/cook [add OAuth2 login with Google and GitHub]
+/cook [thêm đăng nhập OAuth2 với Google và GitHub]
 ```
 
-**Implementation**:
+**Triển khai**:
 ```
-[1/6] OAuth setup...
-  ✓ Installed passport.js
-  ✓ Configured Google strategy
-  ✓ Configured GitHub strategy
+[1/6] Thiết lập OAuth...
+  ✓ Cài đặt passport.js
+  ✓ Cấu hình Google strategy
+  ✓ Cấu hình GitHub strategy
 
-[2/6] OAuth endpoints...
+[2/6] Các endpoint OAuth...
   ✓ GET /api/auth/google
   ✓ GET /api/auth/google/callback
   ✓ GET /api/auth/github
   ✓ GET /api/auth/github/callback
 
-[3/6] User model updates...
-  ✓ Add oauthProvider field
-  ✓ Add oauthId field
-  ✓ Link OAuth accounts to existing users
+[3/6] Cập nhật model User...
+  ✓ Thêm trường oauthProvider
+  ✓ Thêm trường oauthId
+  ✓ Liên kết tài khoản OAuth với người dùng hiện có
 
-[4/6] Account linking...
-  ✓ Link OAuth to email if exists
-  ✓ Create new user if doesn't exist
-  ✓ Merge accounts logic
+[4/6] Liên kết tài khoản...
+  ✓ Liên kết OAuth với email nếu đã tồn tại
+  ✓ Tạo người dùng mới nếu chưa tồn tại
+  ✓ Logic gộp tài khoản
 
-[5/6] Frontend integration...
-  ✓ OAuth buttons
-  ✓ Redirect handling
-  ✓ Token extraction
+[5/6] Tích hợp Frontend...
+  ✓ Các nút bấm OAuth
+  ✓ Xử lý chuyển hướng
+  ✓ Trích xuất token
 
-[6/6] Testing...
-  ✓ OAuth flow tests (16 tests)
-  ✓ Account linking tests
+[6/6] Kiểm thử...
+  ✓ Kiểm thử luồng OAuth (16 bài)
+  ✓ Kiểm thử liên kết tài khoản
 
-✅ OAuth2 implemented
+✅ Đã triển khai OAuth2 thành công
 
-Configuration needed (.env):
+Cần cấu hình (.env):
 GOOGLE_CLIENT_ID=your-client-id
 GOOGLE_CLIENT_SECRET=your-secret
 GITHUB_CLIENT_ID=your-client-id
 GITHUB_CLIENT_SECRET=your-secret
 ```
 
-### Step 6: Add Two-Factor Authentication (2FA)
+### Bước 6: Thêm Xác thực Hai yếu tố (2FA)
 
 ```bash
-/cook [implement TOTP-based 2FA with QR code setup]
+/cook [triển khai 2FA dựa trên TOTP với thiết lập mã QR]
 ```
 
-**Implementation**:
+**Triển khai**:
 ```
-[1/5] 2FA setup...
-  ✓ Installed speakeasy (TOTP library)
-  ✓ Installed qrcode (QR generation)
-  ✓ Add twoFactorSecret to User model
-  ✓ Add twoFactorEnabled field
+[1/5] Thiết lập 2FA...
+  ✓ Cài đặt speakeasy (thư viện TOTP)
+  ✓ Cài đặt qrcode (tạo mã QR)
+  ✓ Thêm twoFactorSecret vào model User
+  ✓ Thêm trường twoFactorEnabled
 
-[2/5] 2FA endpoints...
-  ✓ POST /api/auth/2fa/setup - Generate QR code
-  ✓ POST /api/auth/2fa/verify - Verify and enable
-  ✓ POST /api/auth/2fa/disable - Disable 2FA
-  ✓ POST /api/auth/login/2fa - Login with 2FA code
+[2/5] Các endpoint 2FA...
+  ✓ POST /api/auth/2fa/setup - Tạo mã QR
+  ✓ POST /api/auth/2fa/verify - Xác minh và kích hoạt
+  ✓ POST /api/auth/2fa/disable - Hủy kích hoạt 2FA
+  ✓ POST /api/auth/login/2fa - Đăng nhập với mã 2FA
 
-[3/5] Modified login flow...
-  ✓ Check if 2FA enabled
-  ✓ Require 2FA code
-  ✓ Validate TOTP token
+[3/5] Sửa đổi luồng đăng nhập...
+  ✓ Kiểm tra nếu 2FA đã được bật
+  ✓ Yêu cầu mã 2FA
+  ✓ Xác thực token TOTP
 
-[4/5] Backup codes...
-  ✓ Generate 10 backup codes
-  ✓ Store hashed backup codes
-  ✓ Use backup code endpoint
+[4/5] Mã dự phòng (Backup codes)...
+  ✓ Tạo 10 mã dự phòng
+  ✓ Lưu trữ mã dự phòng đã băm
+  ✓ Endpoint sử dụng mã dự phòng
 
-[5/5] Testing...
-  ✓ 2FA flow tests (14 tests)
-  ✓ Backup code tests
+[5/5] Kiểm thử...
+  ✓ Kiểm thử luồng 2FA (14 bài)
+  ✓ Kiểm thử mã dự phòng
 
-✅ 2FA implemented
+✅ Đã triển khai 2FA thành công
 
-Flow:
-1. User enables 2FA → scans QR code
-2. User enters 6-digit code → 2FA activated
-3. Future logins require 2FA code
-4. Backup codes for emergencies
+Luồng:
+1. Người dùng bật 2FA → quét mã QR
+2. Người dùng nhập mã 6 số → 2FA được kích hoạt
+3. Các lần đăng nhập sau yêu cầu mã 2FA
+4. Mã dự phòng dùng cho trường hợp khẩn cấp
 ```
 
-### Step 7: Add Passwordless Authentication
+### Bước 7: Thêm Đăng nhập không mật khẩu (Passwordless)
 
 ```bash
-/cook [implement passwordless login with magic links]
+/cook [triển khai đăng nhập không mật khẩu với magic links]
 ```
 
-**Implementation**:
+**Triển khai**:
 ```
-[1/4] Magic link setup...
-  ✓ Generate secure login tokens
-  ✓ Store tokens with expiry (10 min)
-  ✓ Email template for magic link
+[1/4] Thiết lập Magic link...
+  ✓ Tạo các token đăng nhập bảo mật
+  ✓ Lưu trữ token kèm thời gian hết hạn (10 phút)
+  ✓ Template email cho magic link
 
-[2/4] Endpoints...
+[2/4] Các endpoint...
   ✓ POST /api/auth/magic-link/request
   ✓ GET /api/auth/magic-link/verify
-  ✓ Token validation and cleanup
+  ✓ Xác thực token và dọn dẹp
 
-[3/4] Security...
-  ✓ Single-use tokens
-  ✓ Short expiry (10 minutes)
-  ✓ Rate limiting
+[3/4] Bảo mật...
+  ✓ Token chỉ dùng một lần
+  ✓ Thời gian hết hạn ngắn (10 phút)
+  ✓ Giới hạn tốc độ
 
-[4/4] Testing...
-  ✓ Magic link flow tests (10 tests)
+[4/4] Kiểm thử...
+  ✓ Kiểm thử luồng magic link (10 bài)
 
-✅ Passwordless authentication added
+✅ Đã thêm đăng nhập không mật khẩu thành công
 
-Usage:
-1. User enters email
-2. Receives magic link email
-3. Clicks link → automatically logged in
+Cách sử dụng:
+1. Người dùng nhập email
+2. Nhận email chứa magic link
+3. Nhấn link → tự động đăng nhập
 ```
 
-### Step 8: Add Security Features
+### Bước 8: Thêm các tính năng bảo mật nâng cao
 
-#### Account Lockout
-
+#### Khóa tài khoản
 ```bash
-/cook [add account lockout after 5 failed login attempts]
+/cook [thêm chức năng khóa tài khoản sau 5 lần đăng nhập sai]
 ```
 
-#### Session Management
-
+#### Quản lý phiên (Session Management)
 ```bash
-/cook [implement session management with active session tracking]
+/cook [triển khai quản lý phiên với theo dõi các phiên hoạt động]
 ```
 
 #### IP Whitelisting
-
 ```bash
-/cook [add IP whitelisting option for high-security accounts]
+/cook [thêm tùy chọn danh sách trắng IP cho các tài khoản bảo mật cao]
 ```
 
-### Step 9: Testing Authentication
+### Bước 9: Kiểm thử hệ thống xác thực
 
 ```bash
 /test
 ```
 
-**Test results**:
+**Kết quả kiểm thử**:
 ```
-✓ Unit Tests (48 tests)
-  ✓ Password hashing (8 tests)
-  ✓ JWT generation/verification (12 tests)
-  ✓ Token refresh (6 tests)
-  ✓ 2FA TOTP (10 tests)
-  ✓ Magic link generation (6 tests)
-  ✓ OAuth account linking (6 tests)
+✓ Kiểm thử đơn vị (48 bài)
+  ✓ Băm mật khẩu (8 bài)
+  ✓ Tạo/Xác thực JWT (12 bài)
+  ✓ Làm mới token (6 bài)
+  ✓ 2FA TOTP (10 bài)
+  ✓ Tạo magic link (6 bài)
+  ✓ Liên kết tài khoản OAuth (6 bài)
 
-✓ Integration Tests (56 tests)
-  ✓ Registration (10 tests)
-  ✓ Login (12 tests)
-  ✓ Password reset (12 tests)
-  ✓ OAuth flows (14 tests)
-  ✓ 2FA flows (8 tests)
+✓ Kiểm thử tích hợp (56 bài)
+  ✓ Đăng ký (10 bài)
+  ✓ Đăng nhập (12 bài)
+  ✓ Đặt lại mật khẩu (12 bài)
+  ✓ Luồng OAuth (14 bài)
+  ✓ Luồng 2FA (8 bài)
 
-✓ Security Tests (24 tests)
-  ✓ Brute force protection (6 tests)
-  ✓ Token theft scenarios (8 tests)
-  ✓ SQL injection attempts (4 tests)
-  ✓ XSS attempts (6 tests)
+✓ Kiểm thử bảo mật (24 bài)
+  ✓ Chống brute force (6 bài)
+  ✓ Kịch bản đánh cắp token (8 bài)
+  ✓ Thử nghiệm SQL injection (4 bài)
+  ✓ Thử nghiệm XSS (6 bài)
 
 Test Suites: 3 passed, 3 total
 Tests:       128 passed, 128 total
 Coverage:    94.7%
 
-✅ All tests passed
+✅ Tất cả bài kiểm thử đã vượt qua
 ```
 
-### Step 10: Security Review
+### Bước 10: Review bảo mật
 
 ```bash
 /review
 ```
 
-**Security checklist**:
+**Danh sách kiểm tra bảo mật**:
 ```
-✓ Passwords hashed with bcrypt (12 rounds)
-✓ JWT tokens properly signed
-✓ Refresh tokens securely stored
-✓ Rate limiting on auth endpoints
-✓ SQL injection protection
-✓ XSS protection
-✓ CSRF protection
-✓ Secure password requirements
-✓ Email verification implemented
-✓ Account lockout after failed attempts
-✓ 2FA option available
-✓ Session timeout configured
-✓ Secure token storage
-✓ HTTPS enforcement
-✓ Audit logging enabled
+✓ Mật khẩu được băm bằng bcrypt (12 rounds)
+✓ Token JWT được ký đúng cách
+✓ Token làm mới được lưu trữ an toàn
+✓ Giới hạn tốc độ cho các endpoint auth
+✓ Chống SQL injection
+✓ Chống XSS
+✓ Chống CSRF
+✓ Yêu cầu mật khẩu an toàn
+✓ Xác minh email đã triển khai
+✓ Khóa tài khoản sau nhiều lần thử sai
+✓ Đã có tùy chọn 2FA
+✓ Đã cấu hình timeout cho phiên
+✓ Lưu trữ token bảo mật
+✓ Bắt buộc HTTPS
+✓ Đã bật ghi log kiểm toán (audit logging)
 
-Security Score: 9.4/10 (Excellent)
+Điểm bảo mật: 9.4/10 (Tuyệt vời)
 ```
 
-### Step 11: Documentation
+### Bước 11: Cập nhật tài liệu
 
 ```bash
 /docs:update
 ```
 
-**Generated documentation**:
+**Tài liệu được tạo**:
 ```
-✓ Authentication guide
-✓ API endpoint documentation
-✓ Security best practices
-✓ OAuth setup guide
-✓ 2FA setup guide
-✓ Testing guide
-✓ Troubleshooting guide
-```
-
-## Complete Example: E-Commerce Authentication
-
-### Requirements
-
-```
-Implement authentication for e-commerce site with:
-- User registration/login
-- Email verification
-- Password reset
-- Social login (Google, Facebook)
-- Guest checkout
-- Remember me option
-- Account deletion
-- GDPR compliance
+✓ Hướng dẫn xác thực
+✓ Tài liệu các endpoint API
+✓ Các thực hành tốt nhất về bảo mật
+✓ Hướng dẫn thiết lập OAuth
+✓ Hướng dẫn thiết lập 2FA
+✓ Hướng dẫn kiểm thử
+✓ Hướng dẫn khắc phục sự cố
 ```
 
-### Implementation
+## Ví dụ hoàn chỉnh: Xác thực cho trang Thương mại điện tử
 
+### Yêu cầu
+```
+Triển khai hệ thống xác thực cho trang TMĐT với:
+- Đăng ký/đăng nhập người dùng
+- Xác minh email
+- Đặt lại mật khẩu
+- Đăng nhập mạng xã hội (Google, Facebook)
+- Thanh toán cho khách (Guest checkout)
+- Tùy chọn "Ghi nhớ tôi"
+- Xóa tài khoản
+- Tuân thủ GDPR
+```
+
+### Triển khai
 ```bash
-# Plan authentication
-/plan [design authentication system for e-commerce with all requirements]
+# Lập kế hoạch xác thực
+/plan [thiết kế hệ thống xác thực cho TMĐT với tất cả các yêu cầu trên]
 
-# Implement base auth
-/cook [implement JWT authentication with email verification]
+# Triển khai auth cơ bản
+/cook [triển khai xác thực JWT với xác minh email]
 
-# Add OAuth
-/cook [add Google and Facebook OAuth login]
+# Thêm OAuth
+/cook [thêm đăng nhập OAuth Google và Facebook]
 
 # Guest checkout
-/cook [implement guest checkout with optional account creation]
+/cook [triển khai thanh toán cho khách với tùy chọn tạo tài khoản sau đó]
 
 # Remember me
-/cook [add remember me functionality with long-lived tokens]
+/cook [thêm chức năng ghi nhớ đăng nhập với token dài hạn]
 
-# Account management
-/cook [implement account deletion with data export (GDPR)]
+# Quản lý tài khoản
+/cook [triển khai xóa tài khoản kèm xuất dữ liệu (GDPR)]
 
-# Test everything
+# Kiểm thử tất cả
 /test
 
-# Document
+# Cập nhật tài liệu
 /docs:update
 ```
 
-### Time Comparison
+### So sánh thời gian
 
-**Manual implementation**: 6-10 hours
-- JWT setup: 1-2 hours
-- Email verification: 1 hour
-- Password reset: 1 hour
-- OAuth setup: 2-3 hours
-- Testing: 1-2 hours
-- Security review: 1-2 hours
+**Triển khai thủ công**: 6-10 giờ
+- Thiết lập JWT: 1-2 giờ
+- Xác minh email: 1 giờ
+- Đặt lại mật khẩu: 1 giờ
+- Thiết lập OAuth: 2-3 giờ
+- Kiểm thử: 1-2 giờ
+- Review bảo mật: 1-2 giờ
 
-**With ClaudeKit**: 38 minutes
-- Planning: 5 minutes
-- JWT + email: 10 minutes
-- Password reset: 5 minutes
-- OAuth: 12 minutes
-- Testing: 6 minutes
+**Với ClaudeKit**: 38 phút
+- Lập kế hoạch: 5 phút
+- JWT + email: 10 phút
+- Đặt lại mật khẩu: 5 phút
+- OAuth: 12 phút
+- Kiểm thử: 6 phút
 
-**Time saved**: 5.5-9.5 hours (88% faster)
+**Thời gian tiết kiệm được**: 5.5-9.5 giờ (nhanh hơn 88%)
 
-## Authentication Patterns
+## Các mẫu xác thực (Patterns)
 
-### Pattern 1: API-First Authentication
-
+### Mẫu 1: Xác thực ưu tiên API (API-First)
 ```bash
-/cook [implement JWT authentication optimized for mobile apps]
+/cook [triển khai xác thực JWT tối ưu cho ứng dụng di động]
 ```
 
-### Pattern 2: SSO (Single Sign-On)
-
+### Mẫu 2: SSO (Single Sign-On)
 ```bash
-/cook [implement SSO with SAML for enterprise integration]
+/cook [triển khai SSO với SAML để tích hợp doanh nghiệp]
 ```
 
-### Pattern 3: Multi-Tenant Authentication
-
+### Mẫu 3: Xác thực đa khách thuê (Multi-Tenant)
 ```bash
-/cook [implement multi-tenant authentication with organization isolation]
+/cook [triển khai xác thực đa khách thuê với sự cô lập giữa các tổ chức]
 ```
 
-### Pattern 4: Role-Based Access Control (RBAC)
-
+### Mẫu 4: Phân quyền dựa trên vai trò (RBAC)
 ```bash
-/cook [add role-based permissions with admin, user, and guest roles]
+/cook [thêm quyền dựa trên vai trò với các role admin, user và guest]
 ```
 
-## Best Practices
+## Thực hành tốt nhất
 
-### 1. Secure Password Storage
-
+### 1. Lưu trữ mật khẩu an toàn
 ```javascript
-✅ Good:
-- bcrypt with 12+ rounds
-- Async password hashing
-- Never store plain text
+✅ Tốt:
+- bcrypt với ít nhất 12 rounds
+- Băm mật khẩu bất đồng bộ
+- Không bao giờ lưu mật khẩu dạng text thuần
 
-❌ Bad:
-- MD5/SHA1 hashing
-- No salt
-- Plain text passwords
+❌ Xấu:
+- Băm bằng MD5/SHA1
+- Không dùng salt
+- Lưu mật khẩu text thuần
 ```
 
-### 2. JWT Token Security
-
+### 2. Bảo mật Token JWT
 ```javascript
-✅ Good:
-- Short access token expiry (15 min)
-- Refresh token rotation
-- Secure token storage (httpOnly cookies)
-- Token blacklisting on logout
+✅ Tốt:
+- Token access thời hạn ngắn (15 phút)
+- Xoay vòng token làm mới (Refresh token rotation)
+- Lưu trữ token bảo mật (httpOnly cookies)
+- Danh sách đen token khi đăng xuất
 
-❌ Bad:
-- Long-lived tokens
-- Tokens in localStorage
-- No token refresh
-- No logout mechanism
+❌ Xấu:
+- Token thời hạn dài
+- Lưu token trong localStorage
+- Không có cơ chế làm mới token
+- Không có cơ chế đăng xuất
 ```
 
-### 3. Input Validation
-
+### 3. Xác thực đầu vào
 ```bash
-/cook [add comprehensive input validation to all auth endpoints]
+/cook [thêm xác thực đầu vào toàn diện cho tất cả các endpoint auth]
 ```
 
-### 4. Rate Limiting
-
+### 4. Giới hạn tốc độ (Rate Limiting)
 ```javascript
-Auth endpoints rate limits:
-- Login: 5 attempts per 15 minutes
-- Registration: 3 per hour
-- Password reset: 3 per hour
-- Email verification: 5 per hour
+Giới hạn cho các endpoint auth:
+- Đăng nhập: 5 lần mỗi 15 phút
+- Đăng ký: 3 lần mỗi giờ
+- Đặt lại mật khẩu: 3 lần mỗi giờ
+- Xác minh email: 5 lần mỗi giờ
 ```
 
-### 5. Audit Logging
-
+### 5. Ghi log kiểm toán (Audit Logging)
 ```bash
-/cook [add audit logging for all authentication events]
+/cook [thêm ghi log kiểm toán cho tất cả các sự kiện xác thực]
 ```
 
-## Troubleshooting
+## Khắc phục sự cố
 
-### Issue: Tokens Expiring Too Fast
-
-**Solution**:
+### Vấn đề: Token hết hạn quá nhanh
+**Giải pháp**:
 ```bash
-/cook [increase JWT access token expiry to 30 minutes]
+/cook [tăng thời gian hết hạn token JWT access lên 30 phút]
 ```
 
-### Issue: OAuth Callback Failing
-
-**Solution**:
+### Vấn đề: OAuth Callback thất bại
+**Giải pháp**:
 ```bash
-/fix:fast [OAuth callback returning 400 error]
+/fix:fast [OAuth callback trả về lỗi 400]
 ```
 
-### Issue: Password Reset Not Working
-
-**Solution**:
+### Vấn đề: Không gửi được email đặt lại mật khẩu
+**Giải pháp**:
 ```bash
-/fix:fast [password reset emails not being sent]
+/fix:fast [email đặt lại mật khẩu không gửi được]
 ```
 
-### Issue: 2FA QR Code Not Displaying
-
-**Solution**:
+### Vấn đề: Mã QR 2FA không hiển thị
+**Giải pháp**:
 ```bash
-/fix:ui [2FA QR code not rendering in mobile view]
+/fix:ui [mã QR 2FA không hiển thị trên giao diện di động]
 ```
 
-## Security Checklist
+## Danh sách kiểm tra bảo mật (Security Checklist)
 
-Before production deployment:
-
+Trước khi triển khai lên production:
 ```bash
-✓ All passwords hashed with bcrypt
-✓ JWT tokens use strong secret
-✓ Refresh token rotation enabled
-✓ Rate limiting configured
-✓ HTTPS enforced
-✓ CORS properly configured
-✓ Input validation on all endpoints
-✓ SQL injection protection
-✓ XSS protection
-✓ CSRF protection
-✓ Email verification working
-✓ Password reset tested
-✓ OAuth redirect URIs whitelisted
-✓ 2FA tested with multiple apps
-✓ Account lockout working
-✓ Audit logging enabled
-✓ Error messages don't leak info
-✓ Session timeout configured
-✓ Secure cookies (httpOnly, secure)
-✓ Token blacklist on logout
+✓ Tất cả mật khẩu được băm bằng bcrypt
+✓ Token JWT sử dụng secret mạnh
+✓ Đã bật xoay vòng token làm mới
+✓ Đã cấu hình giới hạn tốc độ
+✓ Đã bắt buộc HTTPS
+✓ CORS được cấu hình đúng
+✓ Xác thực đầu vào cho tất cả endpoint
+✓ Chống SQL injection
+✓ Chống XSS
+✓ Chống CSRF
+✓ Xác minh email hoạt động tốt
+✓ Đã kiểm thử việc đặt lại mật khẩu
+✓ Các URL chuyển hướng OAuth đã nằm trong whitelist
+✓ 2FA đã được thử nghiệm với nhiều ứng dụng
+✓ Chức năng khóa tài khoản hoạt động tốt
+✓ Đã bật ghi log kiểm toán
+✓ Thông báo lỗi không làm rò rỉ thông tin
+✓ Đã cấu hình session timeout
+✓ Cookie bảo mật (httpOnly, secure)
+✓ Danh sách đen token khi đăng xuất hoạt động
 ```
 
-## Next Steps
+## Bước tiếp theo
 
-### Related Use Cases
-- [Building a REST API](/docs/use-cases/building-api) - Create APIs
-- [Integrating Payments](/docs/use-cases/integrating-payment) - Add payments
-- [Adding a New Feature](/docs/use-cases/adding-feature) - Build features
+### Các trường hợp sử dụng liên quan
+- [Xây dựng REST API](/vi/docs/workflows/index) - Tạo các API
+- [Tích hợp Thanh toán](/vi/docs/workflows/integrating-payment) - Thêm thanh toán
+- [Thêm Tính Năng Mới](/vi/docs/workflows/adding-feature) - Xây dựng tính năng
 
-### Related Commands
-- [/cook](/docs/engineer/commands/core/cook) - Implement features
-- [/test](/docs/engineer/commands/core/test) - Test suite
-- [/fix:fast](/docs/engineer/commands/fix/fast) - Quick fixes
+### Các lệnh liên quan
+- [/cook](/vi/docs/engineer/commands/core/cook) - Triển khai tính năng
+- [/test](/vi/docs/engineer/commands/core/test) - Bộ kiểm thử
+- [/fix:fast](/vi/docs/engineer/commands/fix/fast) - Sửa lỗi nhanh
 
-### Integration Guides
-- [/integrate:polar](/docs/engineer/commands/integrate/polar) - Polar payments
-- [Better Auth Skill](/docs/skills) - Better Auth framework
+### Hướng dẫn tích hợp
+- [/integrate:polar](/vi/docs/engineer/commands/integrate/polar) - Thanh toán Polar
+- [Better Auth Skill](/vi/docs/skills) - Framework Better Auth
 
-### Further Reading
-- [JWT Best Practices](https://jwt.io/introduction)
-- [OAuth 2.0 Specification](https://oauth.net/2/)
+### Đọc thêm
+- [Các thực hành tốt nhất về JWT](https://jwt.io/introduction)
+- [Đặc tả OAuth 2.0](https://oauth.net/2/)
 - [OWASP Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
 
 ---
 
-**Key Takeaway**: ClaudeKit enables rapid implementation of secure, production-ready authentication with industry best practices built-in - from basic JWT to OAuth2 and 2FA in under an hour.
+**Thông điệp chính**: ClaudeKit cho phép triển khai nhanh chóng các hệ thống xác thực bảo mật, sẵn sàng cho sản xuất với các thực hành tốt nhất được tích hợp sẵn - từ JWT cơ bản đến OAuth2 và 2FA trong vòng chưa đầy một giờ.

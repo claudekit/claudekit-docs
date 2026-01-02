@@ -1,6 +1,7 @@
 ---
 title: "Dự Án Brownfield"
 description: "Documentation for Dự Án Brownfield"
+lang: vi
 section: workflows
 category: workflows
 order: 7

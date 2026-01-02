@@ -1,683 +1,679 @@
 ---
-title: Fixing Bugs
-description: "Documentation for Fixing Bugs
-description:
-section: workflows
-category: workflows
-order: 4
-published: true"
+title: Sửa Lỗi
+description: "Tài liệu hướng dẫn Sửa Lỗi"
+lang: vi
 section: workflows
 category: workflows
 order: 4
 published: true
 ---
 
-# Fixing Bugs
+# Sửa Lỗi
 
-Learn how to systematically investigate, fix, and verify bug fixes using ClaudeKit's debugging workflow - from log analysis to production deployment.
+Tìm hiểu cách điều tra, sửa chữa và xác minh các lỗi một cách có hệ thống bằng quy trình gỡ lỗi của ClaudeKit - từ phân tích log đến triển khai thực tế.
 
-## Overview
+## Tổng quan
 
-**Goal**: Debug and fix issues systematically with root cause analysis
-**Time**: 5-20 minutes (vs 1-4 hours manually)
-**Agents Used**: debugger, tester, code-reviewer
-**Commands**: /fix:fast, /fix:hard, /fix:logs, /fix:ui, /fix:ci, /test
+**Mục tiêu**: Gỡ lỗi và sửa các vấn đề một cách hệ thống với phân tích nguyên nhân gốc rễ.
+**Thời gian**: 5-20 phút (so với 1-4 giờ làm thủ công)
+**Các Agent sử dụng**: debugger, tester, code-reviewer
+**Các lệnh**: /fix:fast, /fix:hard, /fix:logs, /fix:ui, /fix:ci, /test
 
-## Prerequisites
+## Điều kiện tiên quyết
 
-- Bug reproduction steps or error logs
-- Development environment set up
-- Access to relevant logs (if production bug)
-- Test suite in place
+- Các bước tái hiện lỗi hoặc log lỗi
+- Môi trường phát triển đã được thiết lập
+- Truy cập vào các log liên quan (nếu là lỗi trên production)
+- Đã có sẵn bộ kiểm thử (test suite)
 
-## Choosing the Right Command
+## Lựa chọn lệnh phù hợp
 
-ClaudeKit provides different debugging commands for different scenarios:
+ClaudeKit cung cấp các lệnh gỡ lỗi khác nhau cho từng tình huống:
 
-| Command | Use Case | Complexity | Time |
+| Lệnh | Trường hợp sử dụng | Độ phức tạp | Thời gian |
 |---------|----------|------------|------|
-| `/fix:fast` | Simple bugs, quick fixes | Low | 2-5 min |
-| `/fix:hard` | Complex bugs, multi-file changes | High | 10-20 min |
-| `/fix:logs` | Production issues from logs | Medium | 5-15 min |
-| `/fix:ui` | Visual/layout bugs | Low-Medium | 3-10 min |
-| `/fix:ci` | CI/CD pipeline failures | Medium | 5-15 min |
-| `/fix:types` | TypeScript type errors | Low | 2-5 min |
+| `/fix:fast` | Lỗi đơn giản, sửa nhanh | Thấp | 2-5 phút |
+| `/fix:hard` | Lỗi phức tạp, thay đổi nhiều tệp | Cao | 10-20 phút |
+| `/fix:logs` | Vấn đề production từ log | Trung bình | 5-15 phút |
+| `/fix:ui` | Lỗi giao diện/bố cục | Thấp-Trung bình | 3-10 phút |
+| `/fix:ci` | Thất bại trong pipeline CI/CD | Trung bình | 5-15 phút |
+| `/fix:types` | Lỗi kiểu dữ liệu TypeScript | Thấp | 2-5 phút |
 
-## Step-by-Step Workflow
+## Quy trình từng bước
 
-### Step 1: Reproduce the Bug
+### Bước 1: Tái hiện lỗi
 
-Before fixing, confirm you can reproduce the issue:
+Trước khi sửa, hãy xác nhận rằng bạn có thể tái hiện được vấn đề:
 
 ```bash
-# Example: Bug report
-# "Users can't login with valid credentials"
+# Ví dụ: Báo cáo lỗi
+# "Người dùng không thể đăng nhập với thông tin hợp lệ"
 
-# Test manually
+# Kiểm thử thủ công
 curl -X POST http://localhost:3000/api/auth/login \
   -H "Content-Type: application/json" \
   -d '{"email": "test@example.com", "password": "password123"}'
 
-# Expected: 200 OK with token
-# Actual: 401 Unauthorized
+# Mong đợi: 200 OK kèm token
+# Thực tế: 401 Unauthorized
 ```
 
-Document the issue:
-- What happens (actual behavior)
-- What should happen (expected behavior)
-- Steps to reproduce
-- Error messages or logs
+Ghi lại vấn đề:
+- Điều gì đang xảy ra (hành vi thực tế)
+- Điều gì nên xảy ra (hành vi mong đợi)
+- Các bước để tái hiện
+- Thông báo lỗi hoặc log
 
-### Step 2: Choose Debugging Approach
+### Bước 2: Chọn phương pháp gỡ lỗi
 
-#### Option A: Quick Fix (/fix:fast)
+#### Lựa chọn A: Sửa nhanh (/fix:fast)
 
-For simple, isolated bugs:
+Dành cho các lỗi đơn giản, biệt lập:
 
 ```bash
-/fix:fast [users getting 401 error on login with valid credentials]
+/fix:fast [người dùng nhận lỗi 401 khi đăng nhập với thông tin hợp lệ]
 ```
 
-**What happens**:
+**Điều gì xảy ra**:
 ```
-[1/4] Analyzing issue...
-  ✓ Located login controller
-  ✓ Found authentication middleware
-  ✓ Identified issue: password comparison using == instead of bcrypt.compare
+[1/4] Đang phân tích vấn đề...
+  ✓ Xác định được controller đăng nhập
+  ✓ Tìm thấy middleware xác thực
+  ✓ Phát hiện vấn đề: so sánh mật khẩu dùng == thay vì bcrypt.compare
 
-[2/4] Implementing fix...
-  ✓ Updated src/auth/login.controller.js
-  ✓ Fixed password validation logic
+[2/4] Đang triển khai sửa lỗi...
+  ✓ Cập nhật src/auth/login.controller.js
+  ✓ Sửa logic xác thực mật khẩu
 
-[3/4] Running tests...
-  ✓ All auth tests pass (24/24)
-  ✓ Coverage maintained: 87%
+[3/4] Đang chạy kiểm thử...
+  ✓ Tất cả bài kiểm thử auth đã vượt qua (24/24)
+  ✓ Độ bao phủ được duy trì: 87%
 
-[4/4] Verification...
-  ✓ Manual test: Login successful
-  ✓ Token generation working
-  ✓ No regressions detected
+[4/4] Xác minh...
+  ✓ Kiểm thử thủ công: Đăng nhập thành công
+  ✓ Tạo token hoạt động bình thường
+  ✓ Không phát hiện lỗi mới (regressions)
 
-✅ Bug fixed
+✅ Đã sửa lỗi thành công
 
-Files modified:
+Các tệp đã sửa đổi:
 - src/auth/login.controller.js
 
-Change summary:
-- Line 47: Replace == with bcrypt.compare()
-- Added async/await for password validation
+Tóm tắt thay đổi:
+- Dòng 47: Thay thế == bằng bcrypt.compare()
+- Thêm async/await cho việc xác thực mật khẩu
 ```
 
-#### Option B: Complex Fix (/fix:hard)
+#### Lựa chọn B: Sửa lỗi phức tạp (/fix:hard)
 
-For bugs requiring investigation and multiple changes:
+Dành cho các lỗi cần điều tra sâu và thay đổi nhiều tệp:
 
 ```bash
-/fix:hard [memory leak in WebSocket connections causing server crashes]
+/fix:hard [rò rỉ bộ nhớ trong kết nối WebSocket gây treo server]
 ```
 
-**What happens**:
+**Điều gì xảy ra**:
 ```
-[1/6] Investigation phase...
-  ✓ Analyzing WebSocket implementation
-  ✓ Checking connection cleanup
-  ✓ Reviewing event listeners
-  ✓ Inspecting memory patterns
+[1/6] Giai đoạn điều tra...
+  ✓ Phân tích triển khai WebSocket
+  ✓ Kiểm tra việc dọn dẹp kết nối
+  ✓ Xem lại các event listener
+  ✓ Kiểm tra các mẫu sử dụng bộ nhớ
 
-Root cause identified:
-- Event listeners not removed on disconnect
-- Connection objects not garbage collected
-- Socket references held in memory
+Nguyên nhân gốc rễ đã được xác định:
+- Các event listener không được gỡ bỏ khi ngắt kết nối
+- Các đối tượng kết nối không được dọn dẹp bộ nhớ (garbage collection)
+- Các tham chiếu socket vẫn được giữ trong bộ nhớ
 
-[2/6] Creating fix plan...
-  ✓ Plan saved: plans/fix-websocket-leak-20251030.md
+[2/6] Tạo kế hoạch sửa lỗi...
+  ✓ Kế hoạch đã lưu: plans/fix-websocket-leak-20251030.md
 
-[3/6] Implementing fixes...
-  ✓ Add cleanup on disconnect
-  ✓ Remove event listeners properly
-  ✓ Implement connection pooling
-  ✓ Add memory monitoring
+[3/6] Triển khai sửa lỗi...
+  ✓ Thêm dọn dẹp khi ngắt kết nối
+  ✓ Gỡ bỏ event listener đúng cách
+  ✓ Triển khai connection pooling
+  ✓ Thêm giám sát bộ nhớ
 
-[4/6] Running tests...
-  ✓ Connection cleanup tests (12 new tests)
-  ✓ Memory leak tests (5 new tests)
-  ✓ All existing tests pass
+[4/6] Đang chạy kiểm thử...
+  ✓ Kiểm thử dọn dẹp kết nối (12 bài mới)
+  ✓ Kiểm thử rò rỉ bộ nhớ (5 bài mới)
+  ✓ Tất cả bài kiểm thử hiện có đã vượt qua
 
-[5/6] Performance validation...
-  ✓ Memory usage stable over 1000 connections
-  ✓ No leaks detected in 10-minute stress test
+[5/6] Xác minh hiệu suất...
+  ✓ Sử dụng bộ nhớ ổn định qua 1000 kết nối
+  ✓ Không phát hiện rò rỉ trong bài kiểm thử áp lực 10 phút
 
-[6/6] Documentation updated...
-  ✓ Added WebSocket lifecycle docs
-  ✓ Updated architecture diagram
+[6/6] Cập nhật tài liệu...
+  ✓ Thêm tài liệu vòng đời WebSocket
+  ✓ Cập nhật sơ đồ kiến trúc
 
-✅ Complex bug fixed
+✅ Đã sửa lỗi phức tạp thành công
 
-Files modified:
+Các tệp đã sửa đổi:
 - src/websocket/server.js
 - src/websocket/connection-manager.js
 - src/utils/cleanup.js
 
-Tests added:
+Các bài kiểm thử đã thêm:
 - tests/websocket/cleanup.test.js
 - tests/websocket/memory.test.js
 ```
 
-#### Option C: Production Log Analysis (/fix:logs)
+#### Lựa chọn C: Phân tích log Production (/fix:logs)
 
-For bugs discovered in production:
+Dành cho các lỗi được phát hiện trên môi trường production:
 
 ```bash
-# Copy production logs
+# Sao chép log production
 # logs/production.log
 
-/fix:logs [analyze production error logs and fix the issue]
+/fix:logs [phân tích log lỗi production và sửa vấn đề]
 ```
 
-**What happens**:
+**Điều gì xảy ra**:
 ```
-[1/5] Analyzing logs...
-  ✓ Read logs/production.log
-  ✓ Parsed 1,247 error entries
-  ✓ Grouped by error type
+[1/5] Đang phân tích log...
+  ✓ Đọc logs/production.log
+  ✓ Phân tích 1,247 mục lỗi
+  ✓ Nhóm theo loại lỗi
 
-Error distribution:
-- TypeError: Cannot read property 'id' (847 occurrences)
-- Database connection timeout (312 occurrences)
-- Rate limit exceeded (88 occurrences)
+Phân bổ lỗi:
+- TypeError: Cannot read property 'id' (847 lần)
+- Database connection timeout (312 lần)
+- Rate limit exceeded (88 lần)
 
-[2/5] Root cause analysis...
-  ✓ Primary issue: User object undefined in middleware
-  ✓ Occurs when JWT token expired but not caught
-  ✓ Affects: src/middleware/auth.js:34
+[2/5] Phân tích nguyên nhân gốc rễ...
+  ✓ Vấn đề chính: Đối tượng User bị undefined trong middleware
+  ✓ Xảy ra khi token JWT hết hạn nhưng không được bắt lỗi
+  ✓ Ảnh hưởng tại: src/middleware/auth.js:34
 
-[3/5] Implementing fix...
-  ✓ Add token expiry validation
-  ✓ Improve error handling
-  ✓ Add logging for debugging
+[3/5] Triển khai sửa lỗi...
+  ✓ Thêm xác thực hết hạn token
+  ✓ Cải thiện xử lý lỗi
+  ✓ Thêm ghi log để gỡ lỗi
 
-[4/5] Testing fix...
-  ✓ Expired token test added
-  ✓ Error handling test added
-  ✓ All tests pass
+[4/5] Kiểm thử bản sửa lỗi...
+  ✓ Thêm bài kiểm thử token hết hạn
+  ✓ Thêm bài kiểm thử xử lý lỗi
+  ✓ Tất cả bài kiểm thử đã vượt qua
 
-[5/5] Prevention measures...
-  ✓ Added monitoring alert
-  ✓ Updated error response
-  ✓ Documented in troubleshooting guide
+[5/5] Các biện pháp ngăn ngừa...
+  ✓ Thêm cảnh báo giám sát
+  ✓ Cập nhật phản hồi lỗi
+  ✓ Ghi lại trong hướng dẫn khắc phục sự cố
 
-✅ Production issue resolved
+✅ Đã giải quyết vấn đề production
 
-Next steps:
-1. Deploy fix to staging
-2. Monitor for 24 hours
-3. Deploy to production
+Các bước tiếp theo:
+1. Triển khai bản sửa lên môi trường staging
+2. Giám sát trong 24 giờ
+3. Triển khai lên production
 ```
 
-#### Option D: UI Bug Fix (/fix:ui)
+#### Lựa chọn D: Sửa lỗi UI (/fix:ui)
 
-For visual or layout issues:
+Dành cho các vấn đề về hiển thị hoặc bố cục:
 
 ```bash
-# Provide screenshot or description
-/fix:ui [button misaligned on mobile devices]
+# Cung cấp ảnh chụp màn hình hoặc mô tả
+/fix:ui [nút bấm bị lệch trên thiết bị di động]
 ```
 
-**What happens**:
+**Điều gì xảy ra**:
 ```
-[1/4] Analyzing UI issue...
-  ✓ Located button component
-  ✓ Checked responsive styles
-  ✓ Issue: Missing media query for mobile
+[1/4] Đang phân tích lỗi UI...
+  ✓ Xác định được component nút bấm
+  ✓ Kiểm tra style responsive
+  ✓ Vấn đề: Thiếu media query cho di động
 
-[2/4] Implementing fix...
-  ✓ Added mobile breakpoint styles
-  ✓ Fixed button alignment
-  ✓ Improved touch target size
+[2/4] Triển khai sửa lỗi...
+  ✓ Thêm style cho breakpoint di động
+  ✓ Sửa căn lề nút bấm
+  ✓ Cải thiện kích thước vùng chạm (touch target)
 
-[3/4] Testing across devices...
-  ✓ Desktop: ✓
-  ✓ Tablet: ✓
-  ✓ Mobile: ✓
+[3/4] Kiểm thử trên các thiết bị...
+  ✓ Máy tính: ✓
+  ✓ Máy tính bảng: ✓
+  ✓ Di động: ✓
 
-[4/4] Visual regression check...
-  ✓ No other layout changes
-  ✓ All components render correctly
+[4/4] Kiểm tra sự thay đổi giao diện (Visual regression)...
+  ✓ Không có thay đổi bố cục nào khác
+  ✓ Tất cả component hiển thị đúng
 
-✅ UI bug fixed
+✅ Đã sửa lỗi UI thành công
 
-Files modified:
+Các tệp đã sửa đổi:
 - src/components/Button.css
 ```
 
-#### Option E: CI/CD Fix (/fix:ci)
+#### Lựa chọn E: Sửa lỗi CI/CD (/fix:ci)
 
-For build or deployment failures:
+Dành cho các thất bại trong build hoặc triển khai:
 
 ```bash
-# Provide GitHub Actions URL
+# Cung cấp URL GitHub Actions
 /fix:ci [https://github.com/user/repo/actions/runs/12345]
 ```
 
-**What happens**:
+**Điều gì xảy ra**:
 ```
-[1/5] Fetching CI logs...
-  ✓ Downloaded workflow logs
-  ✓ Parsed 847 lines
+[1/5] Đang lấy log CI...
+  ✓ Tải log workflow
+  ✓ Phân tích 847 dòng log
 
-[2/5] Analyzing failure...
-  Error found at line 234:
+[2/5] Phân tích thất bại...
+  Tìm thấy lỗi tại dòng 234:
   "Error: Cannot find module '@babel/preset-react'"
 
-  Root cause: Missing dependency in package.json
+  Nguyên nhân gốc rễ: Thiếu dependency trong package.json
 
-[3/5] Implementing fix...
-  ✓ Added @babel/preset-react to devDependencies
-  ✓ Updated .babelrc configuration
+[3/5] Triển khai sửa lỗi...
+  ✓ Thêm @babel/preset-react vào devDependencies
+  ✓ Cập nhật cấu hình .babelrc
 
-[4/5] Local verification...
-  ✓ npm install successful
-  ✓ Build passes locally
-  ✓ Tests pass
+[4/5] Xác minh cục bộ...
+  ✓ npm install thành công
+  ✓ Build vượt qua trên máy cục bộ
+  ✓ Kiểm thử vượt qua
 
-[5/5] CI validation...
-  ✓ Pushing fix to trigger CI
-  ✓ Monitoring workflow...
-  ✓ CI build successful ✓
+[5/5] Xác minh trên CI...
+  ✓ Push bản sửa để kích hoạt CI
+  ✓ Giám sát workflow...
+  ✓ Build CI thành công ✓
 
-✅ CI fixed
+✅ Đã sửa lỗi CI thành công
 
-Files modified:
+Các tệp đã sửa đổi:
 - package.json
 - .babelrc
 ```
 
-### Step 3: Verify the Fix
+### Bước 3: Xác minh bản sửa lỗi
 
-Always verify fixes thoroughly:
+Luôn xác minh các bản sửa lỗi một cách kỹ lưỡng:
 
 ```bash
-# Run test suite
+# Chạy bộ kiểm thử
 /test
 
-# Manual testing
+# Kiểm thử thủ công
 npm run dev
-# Test the specific bug scenario
+# Thử nghiệm kịch bản lỗi cụ thể
 
-# Check for regressions
+# Kiểm tra lỗi mới (regressions)
 npm run test:integration
 ```
 
-### Step 4: Document the Fix
+### Bước 4: Ghi lại tài liệu cho bản sửa lỗi
 
-Update documentation with the fix:
+Cập nhật tài liệu kèm theo bản sửa:
 
 ```bash
-# Update docs
-/docs:update [document the login bug fix and prevention measures]
+# Cập nhật tài liệu
+/docs:update [ghi lại tài liệu về việc sửa lỗi đăng nhập và các biện pháp ngăn ngừa]
 ```
 
-**Generated documentation**:
+**Tài liệu được tạo**:
 ```markdown
-## Bug Fix: Login Authentication Issue
+## Sửa lỗi: Vấn đề xác thực đăng nhập
 
-### Issue
-Users unable to login with valid credentials due to incorrect password comparison.
+### Vấn đề
+Người dùng không thể đăng nhập bằng thông tin hợp lệ do so sánh mật khẩu sai.
 
-### Root Cause
-Password validation using == operator instead of bcrypt.compare()
+### Nguyên nhân gốc rễ
+Sử dụng toán tử == thay vì bcrypt.compare() để kiểm tra mật khẩu.
 
-### Fix Applied
-Updated authentication logic to use proper async bcrypt comparison.
+### Bản sửa đã áp dụng
+Cập nhật logic xác thực để sử dụng so sánh bcrypt bất đồng bộ đúng cách.
 
-### Prevention
-- Added test for bcrypt password validation
-- Updated code review checklist
-- Documented password handling best practices
+### Ngăn ngừa
+- Thêm bài kiểm thử cho việc xác thực mật khẩu bcrypt
+- Cập nhật danh sách kiểm tra khi review mã nguồn
+- Ghi lại các thực hành tốt nhất khi xử lý mật khẩu
 ```
 
-### Step 5: Commit the Fix
+### Bước 5: Commit bản sửa lỗi
 
 ```bash
 /git:cm
 ```
 
-**Generated commit**:
+**Commit được tạo**:
 ```
-fix: resolve login authentication with valid credentials
+fix: giải quyết lỗi xác thực đăng nhập với thông tin hợp lệ
 
-- Fix password comparison to use bcrypt.compare instead of ==
-- Add async/await for proper password validation
-- Add test cases for password validation logic
-- Update authentication documentation
+- Sửa việc so sánh mật khẩu sang dùng bcrypt.compare thay vì ==
+- Thêm async/await để xác thực mật khẩu đúng cách
+- Thêm các trường hợp kiểm thử cho logic xác thực mật khẩu
+- Cập nhật tài liệu xác thực
 
-Fixes: #123
-```
-
-## Complete Example: E-Commerce Cart Bug
-
-### Bug Report
-
-```
-Title: Shopping cart duplicating items on page refresh
-Severity: High
-Impact: Users seeing incorrect cart totals
-
-Steps to reproduce:
-1. Add item to cart
-2. Refresh page
-3. Item appears twice in cart
-4. Price incorrectly calculated
-
-Environment: Production
-Browser: All browsers
+Sửa lỗi: #123
 ```
 
-### Investigation
+## Ví dụ hoàn chỉnh: Lỗi giỏ hàng thương mại điện tử
+
+### Báo cáo lỗi
+
+```
+Tiêu đề: Giỏ hàng bị nhân đôi sản phẩm khi tải lại trang
+Mức độ: Cao
+Ảnh hưởng: Người dùng thấy tổng tiền giỏ hàng không chính xác
+
+Các bước tái hiện:
+1. Thêm sản phẩm vào giỏ
+2. Tải lại trang
+3. Sản phẩm xuất hiện hai lần trong giỏ
+4. Giá tiền bị tính sai
+
+Môi trường: Production
+Trình duyệt: Tất cả trình duyệt
+```
+
+### Điều tra
 
 ```bash
-/fix:hard [shopping cart duplicating items on page refresh]
+/fix:hard [giỏ hàng bị nhân đôi sản phẩm khi tải lại trang]
 ```
 
-### Analysis Results
+### Kết quả phân tích
 
 ```
-Root Cause Analysis:
-1. Cart stored in localStorage
-2. Also stored in database
-3. On page load, both sources loaded and merged
-4. Merge logic not checking for duplicates
+Phân tích nguyên nhân gốc rễ:
+1. Giỏ hàng được lưu trong localStorage
+2. Đồng thời cũng được lưu trong cơ sở dữ liệu
+3. Khi tải trang, cả hai nguồn đều được nạp và gộp lại
+4. Logic gộp không kiểm tra sản phẩm trùng lặp
 
-Contributing factors:
-- Missing unique key check
-- No deduplication logic
-- Improper state synchronization
+Các yếu tố góp phần:
+- Thiếu kiểm tra khóa (key) duy nhất
+- Không có logic loại bỏ trùng lặp (deduplication)
+- Đồng bộ hóa trạng thái (state synchronization) không đúng cách
 ```
 
-### Implementation
+### Triển khai
 
 ```
-Fixes applied:
+Các bản sửa đã áp dụng:
 
 1. src/store/cart.js
-   - Add deduplication in loadCart()
-   - Check by product ID before adding
-   - Prioritize database as source of truth
+   - Thêm loại bỏ trùng lặp trong loadCart()
+   - Kiểm tra ID sản phẩm trước khi thêm
+   - Ưu tiên cơ sở dữ liệu làm nguồn sự thật (source of truth)
 
 2. src/utils/cart-sync.js
-   - Implement proper sync strategy
-   - Add conflict resolution
-   - Clear localStorage after DB sync
+   - Triển khai chiến lược đồng bộ hóa đúng cách
+   - Thêm xử lý xung đột
+   - Xóa localStorage sau khi đồng bộ với DB
 
 3. tests/cart/sync.test.js
-   - Add duplicate detection tests
-   - Test localStorage/DB sync
-   - Test refresh scenarios
+   - Thêm các bài kiểm thử phát hiện trùng lặp
+   - Kiểm thử đồng bộ localStorage/DB
+   - Kiểm thử kịch bản tải lại trang
 
 4. docs/architecture/state-management.md
-   - Document cart sync strategy
-   - Add troubleshooting guide
+   - Ghi lại chiến lược đồng bộ giỏ hàng
+   - Thêm hướng dẫn khắc phục sự cố
 ```
 
-### Verification
+### Xác minh
 
 ```bash
-# Automated tests
-✓ 15 new tests added
-✓ All tests pass (187/187)
-✓ Coverage: 89%
+# Kiểm thử tự động
+✓ 15 bài kiểm thử mới được thêm vào
+✓ Tất cả bài kiểm thử vượt qua (187/187)
+✓ Độ bao phủ: 89%
 
-# Manual testing
-✓ Add item to cart
-✓ Refresh page
-✓ Single item in cart ✓
-✓ Correct price ✓
-✓ Quantity correct ✓
+# Kiểm thử thủ công
+✓ Thêm sản phẩm vào giỏ
+✓ Tải lại trang
+✓ Chỉ còn một sản phẩm trong giỏ ✓
+✓ Giá tiền chính xác ✓
+✓ Số lượng chính xác ✓
 
-# Regression testing
-✓ Cart updates on quantity change
-✓ Cart persists on navigation
-✓ Cart syncs across tabs
+# Kiểm thử lỗi mới (Regression testing)
+✓ Giỏ hàng cập nhật khi đổi số lượng
+✓ Giỏ hàng được duy trì khi chuyển trang
+✓ Giỏ hàng đồng bộ giữa các tab
 ```
 
-### Time Comparison
+### So sánh thời gian
 
-**Manual debugging**: 3-4 hours
-- Reproduce: 15 minutes
-- Investigation: 60-90 minutes
-- Implementation: 45-60 minutes
-- Testing: 30-45 minutes
-- Documentation: 30 minutes
+**Gỡ lỗi thủ công**: 3-4 giờ
+- Tái hiện: 15 phút
+- Điều tra: 60-90 phút
+- Triển khai: 45-60 phút
+- Kiểm thử: 30-45 phút
+- Tài liệu: 30 phút
 
-**With ClaudeKit**: 18 minutes
-- Reproduce: 5 minutes
-- /fix:hard: 12 minutes
-- Verification: 1 minute
+**Với ClaudeKit**: 18 phút
+- Tái hiện: 5 phút
+- /fix:hard: 12 phút
+- Xác minh: 1 phút
 
-**Time saved**: 3+ hours (90% faster)
+**Thời gian tiết kiệm được**: 3+ giờ (nhanh hơn 90%)
 
-## Common Variations
+## Các biến thể thường gặp
 
-### Variation 1: Type Error Fix
+### Biến thể 1: Sửa lỗi kiểu dữ liệu (Type Error)
 
 ```bash
 /fix:types
 
-# Automatically fixes TypeScript errors
-# Updates type definitions
-# Runs type checker
+# Tự động sửa các lỗi TypeScript
+# Cập nhật các định nghĩa kiểu
+# Chạy trình kiểm tra kiểu (type checker)
 ```
 
-### Variation 2: Performance Bug
+### Biến thể 2: Lỗi hiệu suất
 
 ```bash
-/fix:hard [API endpoint taking 8+ seconds to respond]
+/fix:hard [endpoint API mất hơn 8 giây để phản hồi]
 
-# Analyzes performance
-# Identifies bottlenecks
-# Implements optimization
-# Validates improvement
+# Phân tích hiệu suất
+# Xác định các nút thắt cổ chai
+# Triển khai tối ưu hóa
+# Xác minh sự cải thiện
 ```
 
-### Variation 3: Security Bug
+### Biến thể 3: Lỗi bảo mật
 
 ```bash
-/fix:fast [SQL injection vulnerability in search endpoint]
+/fix:fast [lỗ hổng SQL injection trong endpoint tìm kiếm]
 
-# Identifies vulnerability
-# Implements parameterized queries
-# Adds input validation
-# Runs security tests
+# Xác định lỗ hổng
+# Triển khai các truy vấn có tham số (parameterized queries)
+# Thêm xác thực đầu vào
+# Chạy các bài kiểm thử bảo mật
 ```
 
-### Variation 4: Integration Bug
+### Biến thể 4: Lỗi tích hợp
 
 ```bash
-/fix:logs [Stripe webhook failing with 400 errors]
+/fix:logs [Stripe webhook thất bại với lỗi 400]
 
-# Analyzes webhook logs
-# Identifies signature mismatch
-# Fixes verification logic
-# Tests webhook handling
+# Phân tích log webhook
+# Xác định sự sai lệch chữ ký (signature mismatch)
+# Sửa logic xác thực
+# Kiểm thử việc xử lý webhook
 ```
 
-## Troubleshooting
+## Khắc phục sự cố
 
-### Issue: Can't Reproduce Bug
+### Vấn đề: Không thể tái hiện lỗi
 
-**Problem**: Bug doesn't occur in development
+**Biểu hiện**: Lỗi không xảy ra trong môi trường phát triển.
 
-**Solution**:
+**Giải pháp**:
 ```bash
-# Use production logs
-/fix:logs [analyze production logs to identify the issue]
+# Sử dụng log production
+/fix:logs [phân tích log production để xác định vấn đề]
 
-# Or try production-like environment
+# Hoặc thử môi trường giống production
 docker-compose -f docker-compose.prod.yml up
 ```
 
-### Issue: Fix Breaks Other Features
+### Vấn đề: Bản sửa gây ra lỗi cho các tính năng khác
 
-**Problem**: Fix causes regressions
+**Biểu hiện**: Bản sửa lỗi gây ra lỗi mới (regressions).
 
-**Solution**:
+**Giải pháp**:
 ```bash
-# Run comprehensive tests
+# Chạy kiểm thử toàn diện
 /test
 
-# If tests fail
+# Nếu kiểm thử thất bại
 /fix:test
 
-# Review all changes
+# Xem lại tất cả thay đổi
 git diff
 
-# Consider alternative approach
-/fix:hard [fix the login bug without changing the middleware]
+# Cân nhắc cách tiếp cận khác
+/fix:hard [sửa lỗi đăng nhập mà không làm thay đổi middleware]
 ```
 
-### Issue: Root Cause Unclear
+### Vấn đề: Nguyên nhân gốc rễ không rõ ràng
 
-**Problem**: Can't identify why bug occurs
+**Biểu hiện**: Không thể xác định tại sao lỗi xảy ra.
 
-**Solution**:
+**Giải pháp**:
 ```bash
-# Use hard fix for investigation
-/fix:hard [detailed description of symptoms]
+# Sử dụng hard fix để điều tra
+/fix:hard [mô tả chi tiết các triệu chứng]
 
-# Provides thorough analysis
-# Creates investigation plan
-# Identifies root cause
+# Cung cấp phân tích kỹ lưỡng
+# Tạo kế hoạch điều tra
+# Xác định nguyên nhân gốc rễ
 ```
 
-### Issue: Intermittent Bug
+### Vấn đề: Lỗi chập chờn (Intermittent Bug)
 
-**Problem**: Bug only happens sometimes
+**Biểu hiện**: Lỗi chỉ thỉnh thoảng mới xảy ra.
 
-**Solution**:
+**Giải pháp**:
 ```bash
-# Add logging first
-/cook [add detailed logging around the problematic area]
+# Thêm ghi log trước
+/cook [thêm log chi tiết xung quanh khu vực có vấn đề]
 
-# Reproduce multiple times
-# Collect logs
-/fix:logs [analyze collected logs]
+# Tái hiện nhiều lần
+# Thu thập log
+/fix:logs [phân tích các log đã thu thập]
 ```
 
-## Best Practices
+## Thực hành tốt nhất
 
-### 1. Always Reproduce First
+### 1. Luôn tái hiện trước khi sửa
 
-Before fixing:
+Trước khi sửa:
 ```bash
-✅ Reproduce the bug locally
-✅ Document exact steps
-✅ Capture error messages
-✅ Note environment details
+✅ Tái hiện lỗi cục bộ
+✅ Ghi lại chính xác các bước
+✅ Lưu lại các thông báo lỗi
+✅ Ghi chú các chi tiết về môi trường
 
-❌ Don't fix without reproducing
+❌ Đừng sửa mà không tái hiện được lỗi
 ```
 
-### 2. Add Tests for Bugs
+### 2. Thêm bài kiểm thử cho các lỗi
 
-Prevent regressions:
+Ngăn chặn lỗi quay trở lại:
 ```bash
-# After fixing
-/test  # Includes new regression test
+# Sau khi sửa
+/test  # Bao gồm cả bài kiểm thử regression mới
 
-# Or add specific test
-/cook [add test case for the login bug to prevent regression]
+# Hoặc thêm bài kiểm thử cụ thể
+/cook [thêm trường hợp kiểm thử cho lỗi đăng nhập để ngăn chặn lỗi tái diễn]
 ```
 
-### 3. Check for Related Issues
+### 3. Kiểm tra các vấn đề liên quan
 
-Fix similar bugs:
+Sửa các lỗi tương tự:
 ```bash
-# Search codebase
-/scout "similar pattern to the bug" 3
+# Khảo sát codebase
+/scout "mẫu tương tự với lỗi này" 3
 
-# Fix all instances
-/fix:fast [fix all instances of the password comparison bug]
+# Sửa tất cả các trường hợp
+/fix:fast [sửa tất cả các trường hợp so sánh mật khẩu bị lỗi]
 ```
 
-### 4. Document in Changelog
+### 4. Ghi lại trong Changelog
 
-Track bug fixes:
+Theo dõi các bản sửa lỗi:
 ```bash
-# Commit with fix: prefix
+# Commit với tiền tố fix:
 /git:cm
 
-# Automatically added to CHANGELOG.md
-# Links to issue number
+# Tự động được thêm vào CHANGELOG.md
+# Liên kết đến số thứ tự issue
 ```
 
-### 5. Monitor After Deployment
+### 5. Giám sát sau khi triển khai
 
-Verify fix in production:
+Xác minh bản sửa trên production:
 ```bash
-# After deploying fix
-# Monitor logs for 24-48 hours
-# Check error rates
-# Verify user reports stopped
+# Sau khi triển khai bản sửa
+# Giám sát log trong 24-48 giờ
+# Kiểm tra tỷ lệ lỗi
+# Xác nhận các báo cáo từ người dùng đã dừng lại
 ```
 
-### 6. Root Cause Analysis
+### 6. Phân tích nguyên nhân gốc rễ (RCA)
 
-Understand why bug occurred:
+Hiểu rõ tại sao lỗi lại xảy ra:
 ```bash
-# Use /fix:hard for analysis
-# Documents root cause
-# Suggests prevention measures
-# Updates development guidelines
+# Sử dụng /fix:hard để phân tích
+# Ghi lại nguyên nhân gốc rễ
+# Đề xuất các biện pháp ngăn ngừa
+# Cập nhật các hướng dẫn phát triển
 ```
 
-## Prevention Strategies
+## Chiến lược ngăn ngừa
 
-After fixing bugs, improve processes:
+Sau khi sửa lỗi, hãy cải thiện quy trình:
 
-### 1. Add Validation
-
-```bash
-/cook [add input validation to prevent similar issues]
-```
-
-### 2. Improve Error Handling
+### 1. Thêm xác thực (Validation)
 
 ```bash
-/cook [enhance error handling with better logging and user messages]
+/cook [thêm xác thực đầu vào để ngăn chặn các vấn đề tương tự]
 ```
 
-### 3. Add Monitoring
+### 2. Cải thiện xử lý lỗi
 
 ```bash
-/cook [add monitoring alerts for this type of error]
+/cook [tăng cường xử lý lỗi với log tốt hơn và thông báo rõ hơn cho người dùng]
 ```
 
-### 4. Update Code Standards
+### 3. Thêm giám sát
 
 ```bash
-/docs:update [add this bug pattern to code review checklist]
+/cook [thêm cảnh báo giám sát cho loại lỗi này]
 ```
 
-## Next Steps
+### 4. Cập nhật tiêu chuẩn mã nguồn
 
-### Related Use Cases
-- [Adding a New Feature](/docs/use-cases/adding-feature) - Implement features
-- [Optimizing Performance](/docs/use-cases/optimizing-performance) - Speed improvements
-- [Refactoring Code](/docs/use-cases/refactoring-code) - Code quality
+```bash
+/docs:update [thêm mẫu lỗi này vào danh sách kiểm tra khi review mã nguồn]
+```
 
-### Related Commands
-- [/fix:fast](/docs/engineer/commands/fix/fast) - Quick bug fixes
-- [/fix:hard](/docs/engineer/commands/fix/hard) - Complex debugging
-- [/fix:logs](/docs/engineer/commands/fix/logs) - Log analysis
-- [/fix:ui](/docs/engineer/commands/fix/ui) - UI bug fixes
-- [/fix:ci](/docs/engineer/commands/fix/ci) - CI/CD fixes
-- [/test](/docs/engineer/commands/core/test) - Test suite
+## Bước tiếp theo
 
-### Further Reading
-- [Debugger Agent](/docs/engineer/agents/debugger) - Debugging capabilities
-- [Tester Agent](/docs/engineer/agents/tester) - Testing features
-- [Troubleshooting](/docs/troubleshooting) - Common issues
+### Các trường hợp sử dụng liên quan
+- [Thêm Tính Năng Mới](/vi/docs/workflows/adding-feature) - Triển khai các tính năng
+- [Tối Ưu Hóa Hiệu Suất](/vi/docs/workflows/optimizing-performance) - Cải thiện tốc độ
+- [Refactor Mã Nguồn](/vi/docs/workflows/refactoring-code) - Chất lượng mã nguồn
+
+### Các lệnh liên quan
+- [/fix:fast](/vi/docs/engineer/commands/fix/fast) - Sửa lỗi nhanh
+- [/fix:hard](/vi/docs/engineer/commands/fix/hard) - Gỡ lỗi phức tạp
+- [/fix:logs](/vi/docs/engineer/commands/fix/logs) - Phân tích log
+- [/fix:ui](/vi/docs/engineer/commands/fix/ui) - Sửa lỗi giao diện
+- [/fix:ci](/vi/docs/engineer/commands/fix/ci) - Sửa lỗi CI/CD
+- [/test](/vi/docs/engineer/commands/core/test) - Bộ kiểm thử
+
+### Đọc thêm
+- [Debugger Agent](/vi/docs/engineer/agents/debugger) - Khả năng gỡ lỗi
+- [Tester Agent](/vi/docs/engineer/agents/tester) - Các tính năng kiểm thử
+- [Troubleshooting](/vi/docs/troubleshooting) - Các vấn đề thường gặp
 
 ---
 
-**Key Takeaway**: ClaudeKit's debugging workflow provides systematic bug resolution with root cause analysis, automated testing, and prevention measures - turning hours of debugging into minutes.
+**Thông điệp chính**: Quy trình gỡ lỗi của ClaudeKit cung cấp giải pháp sửa lỗi hệ thống với phân tích nguyên nhân gốc rễ, kiểm thử tự động và các biện pháp ngăn ngừa - biến hàng giờ gỡ lỗi thành vài phút.

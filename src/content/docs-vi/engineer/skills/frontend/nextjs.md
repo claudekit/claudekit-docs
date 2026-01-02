@@ -1,64 +1,65 @@
 ---
-title: Next.js Skill
-description: Documentation for nextjs
+title: Kỹ năng Next.js
+description: Tài liệu hướng dẫn sử dụng kỹ năng nextjs
 section: engineer
 kit: engineer
 category: skills/frontend
 order: 2
 published: true
+lang: vi
 ---
 
-# Next.js Skill
+# Kỹ năng Next.js
 
-A comprehensive Next.js v15+ skill for building modern web applications with server-side rendering, static generation, and the App Router pattern.
+Kỹ năng Next.js v15+ toàn diện để xây dựng các ứng dụng web hiện đại với kết xuất phía máy chủ (server-side rendering), tạo trang tĩnh (static generation) và mô hình App Router.
 
-## What Next.js Provides
+## Những gì Next.js cung cấp
 
-- **Server Components**: React Server Components for zero-bundle size on the client
-- **App Router**: File-system based routing with layouts and nested routes
-- **Data Fetching**: Server-side data fetching with async/await
-- **Image Optimization**: Automatic image optimization with next/image
-- **API Routes**: Built-in API endpoints with route handlers
-- **Metadata Management**: SEO-friendly metadata and Open Graph tags
-- **Performance**: Automatic code splitting and lazy loading
-- **TypeScript**: First-class TypeScript support
+- **Server Components**: React Server Components giúp giảm kích thước bundle phía client về 0
+- **App Router**: Hệ thống định tuyến dựa trên tệp tin với các layout và route lồng nhau
+- **Data Fetching**: Lấy dữ liệu phía máy chủ với async/await
+- **Tối ưu hóa hình ảnh**: Tự động tối ưu hóa hình ảnh với next/image
+- **API Routes**: Các điểm cuối API tích hợp sẵn với trình xử lý route (route handlers)
+- **Quản lý Metadata**: Metadata thân thiện với SEO và các thẻ Open Graph
+- **Hiệu suất**: Tự động chia nhỏ mã (code splitting) và tải chậm (lazy loading)
+- **TypeScript**: Hỗ trợ TypeScript ưu tiên hàng đầu
 
-## Setup
+## Thiết lập
 
-### Prerequisites
+### Điều kiện tiên quyết
 
-- Node.js 20+ installed
-- npm, pnpm, or yarn package manager
-- Basic knowledge of React and TypeScript
+- Đã cài đặt Node.js 20+
+- Trình quản lý gói npm, pnpm hoặc yarn
+- Kiến thức cơ bản về React và TypeScript
 
-### Installation
+### Cài đặt
 
 ```bash
-# Create new Next.js project
+# Tạo dự án Next.js mới
 npx create-next-app@latest my-app
 
-# Options during setup:
+# Các tùy chọn trong quá trình thiết lập:
 # - TypeScript: Yes
 # - ESLint: Yes
-# - Tailwind CSS: Yes (recommended)
-# - src/ directory: Yes (recommended)
-# - App Router: Yes (use App Router)
-# - Import alias: @/* (recommended)
+# - Tailwind CSS: Yes (khuyến nghị)
+# - src/ directory: Yes (khuyến nghị)
+# - App Router: Yes (sử dụng App Router)
+# - Import alias: @/* (khuyến nghị)
 
-# Navigate to project
+# Di chuyển vào thư mục dự án
 cd my-app
 
-# Start development server
+# Chạy server phát triển
 npm run dev
 ```
 
-### Manual Setup
+### Thiết lập thủ công
 
 ```bash
-# Install Next.js in existing project
+# Cài đặt Next.js vào dự án hiện có
 npm install next@latest react@latest react-dom@latest
 
-# Add scripts to package.json
+# Thêm các script vào package.json
 {
   "scripts": {
     "dev": "next dev",
@@ -69,21 +70,21 @@ npm install next@latest react@latest react-dom@latest
 }
 ```
 
-## Usage
+## Cách sử dụng
 
-### Basic Example: Creating Pages
+### Ví dụ cơ bản: Tạo các trang
 
-**App Router Structure:**
+**Cấu trúc App Router:**
 ```
 src/app/
 ├── layout.tsx          # Root layout
-├── page.tsx            # Home page (/)
+├── page.tsx            # Trang chủ (/)
 ├── about/
-│   └── page.tsx        # About page (/about)
+│   └── page.tsx        # Trang giới thiệu (/about)
 └── blog/
-    ├── page.tsx        # Blog list (/blog)
+    ├── page.tsx        # Danh sách blog (/blog)
     └── [slug]/
-        └── page.tsx    # Blog post (/blog/[slug])
+        └── page.tsx    # Bài viết blog (/blog/[slug])
 ```
 
 **Root Layout (src/app/layout.tsx):**
@@ -95,8 +96,8 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'My Next.js App',
-  description: 'Built with Next.js 15',
+  title: 'Ứng dụng Next.js của tôi',
+  description: 'Xây dựng với Next.js 15',
 };
 
 export default function RootLayout({
@@ -105,44 +106,44 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="vi">
       <body className={inter.className}>{children}</body>
     </html>
   );
 }
 ```
 
-**Home Page (src/app/page.tsx):**
+**Trang chủ (src/app/page.tsx):**
 ```typescript
 export default function HomePage() {
   return (
     <main className="container mx-auto p-8">
-      <h1 className="text-4xl font-bold">Welcome to Next.js</h1>
+      <h1 className="text-4xl font-bold">Chào mừng đến với Next.js</h1>
       <p className="mt-4 text-lg">
-        Start building amazing web applications.
+        Bắt đầu xây dựng các ứng dụng web tuyệt vời.
       </p>
     </main>
   );
 }
 ```
 
-### Advanced Example: Server Components with Data Fetching
+### Ví dụ nâng cao: Server Components với Data Fetching
 
-**Blog Post Page (src/app/blog/[slug]/page.tsx):**
+**Trang bài viết blog (src/app/blog/[slug]/page.tsx):**
 ```typescript
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 
-// Define params type
+// Định nghĩa kiểu cho props
 type Props = {
   params: Promise<{ slug: string }>;
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
-// Fetch post data
+// Hàm lấy dữ liệu bài viết
 async function getPost(slug: string) {
   const res = await fetch(`https://api.example.com/posts/${slug}`, {
-    // Revalidate every 60 seconds
+    // Xác thực lại mỗi 60 giây
     next: { revalidate: 60 }
   });
 
@@ -150,12 +151,12 @@ async function getPost(slug: string) {
   return res.json();
 }
 
-// Generate metadata
+// Tạo metadata
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = await getPost(slug);
 
-  if (!post) return { title: 'Post Not Found' };
+  if (!post) return { title: 'Không tìm thấy bài viết' };
 
   return {
     title: post.title,
@@ -168,7 +169,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-// Generate static params for SSG
+// Tạo static params cho SSG
 export async function generateStaticParams() {
   const posts = await fetch('https://api.example.com/posts').then(res => res.json());
 
@@ -177,7 +178,7 @@ export async function generateStaticParams() {
   }));
 }
 
-// Page component
+// Component trang
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
   const post = await getPost(slug);
@@ -196,9 +197,9 @@ export default async function BlogPostPage({ params }: Props) {
 
 ### Client Components
 
-**Interactive Component (src/components/Counter.tsx):**
+**Component tương tác (src/components/Counter.tsx):**
 ```typescript
-'use client'; // Mark as client component
+'use client'; // Đánh dấu là client component
 
 import { useState } from 'react';
 
@@ -207,12 +208,12 @@ export default function Counter() {
 
   return (
     <div className="p-4 border rounded-lg">
-      <p className="text-2xl font-bold">Count: {count}</p>
+      <p className="text-2xl font-bold">Số đếm: {count}</p>
       <button
         onClick={() => setCount(count + 1)}
         className="mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
       >
-        Increment
+        Tăng lên
       </button>
     </div>
   );
@@ -221,7 +222,7 @@ export default function Counter() {
 
 ### API Routes
 
-**Route Handler (src/app/api/posts/route.ts):**
+**Trình xử lý Route (src/app/api/posts/route.ts):**
 ```typescript
 import { NextRequest, NextResponse } from 'next/server';
 
@@ -239,10 +240,10 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   const body = await request.json();
 
-  // Validate body
+  // Xác thực dữ liệu
   if (!body.title || !body.content) {
     return NextResponse.json(
-      { error: 'Title and content are required' },
+      { error: 'Tiêu đề và nội dung là bắt buộc' },
       { status: 400 }
     );
   }
@@ -253,7 +254,7 @@ export async function POST(request: NextRequest) {
 }
 ```
 
-**Dynamic Route Handler (src/app/api/posts/[id]/route.ts):**
+**Trình xử lý Route động (src/app/api/posts/[id]/route.ts):**
 ```typescript
 import { NextRequest, NextResponse } from 'next/server';
 
@@ -268,7 +269,7 @@ export async function GET(request: NextRequest, context: Context) {
 
   if (!post) {
     return NextResponse.json(
-      { error: 'Post not found' },
+      { error: 'Không tìm thấy bài viết' },
       { status: 404 }
     );
   }
@@ -277,7 +278,7 @@ export async function GET(request: NextRequest, context: Context) {
 }
 ```
 
-### Image Optimization
+### Tối ưu hóa hình ảnh
 
 ```typescript
 import Image from 'next/image';
@@ -290,12 +291,12 @@ export default function ProductCard({ product }) {
         alt={product.name}
         width={500}
         height={300}
-        // Priority for above-the-fold images
+        // Ưu tiên cho các hình ảnh xuất hiện ngay khi tải trang
         priority
-        // Placeholder blur effect
+        // Hiệu ứng làm mờ khi đang tải
         placeholder="blur"
         blurDataURL={product.blurDataURL}
-        // Responsive sizes
+        // Kích thước phản hồi (responsive)
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       />
       <h2>{product.name}</h2>
@@ -313,126 +314,126 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
-  // Check authentication
+  // Kiểm tra xác thực
   const token = request.cookies.get('token')?.value;
 
   if (!token && request.nextUrl.pathname.startsWith('/dashboard')) {
     return NextResponse.redirect(new URL('/login', request.url));
   }
 
-  // Add custom header
+  // Thêm header tùy chỉnh
   const response = NextResponse.next();
   response.headers.set('x-custom-header', 'my-value');
 
   return response;
 }
 
-// Configure which routes use middleware
+// Cấu hình các route sử dụng middleware
 export const config = {
   matcher: ['/dashboard/:path*', '/api/:path*'],
 };
 ```
 
-## Integration with ClaudeKit
+## Tích hợp với ClaudeKit
 
-ClaudeKit agents use the Next.js skill to:
+Các agent của ClaudeKit sử dụng kỹ năng Next.js để:
 
-### 1. Project Scaffolding
-
-```bash
-# Bootstrap command creates Next.js projects
-/bootstrap [Next.js app with authentication]
-```
-
-The Planner agent will:
-- Set up Next.js with TypeScript and Tailwind
-- Configure App Router structure
-- Implement authentication flow
-- Create reusable layouts and components
-
-### 2. Feature Development
+### 1. Khởi tạo dự án
 
 ```bash
-# Cook command implements features
-/cook [add blog section with MDX support]
+# Lệnh bootstrap tạo dự án Next.js
+/bootstrap [Ứng dụng Next.js với xác thực]
 ```
 
-The Developer agent will:
-- Create blog routes with App Router
-- Set up MDX with next-mdx-remote
-- Implement static generation
-- Add metadata and SEO
+Agent Planner sẽ:
+- Thiết lập Next.js với TypeScript và Tailwind
+- Cấu hình cấu trúc App Router
+- Triển khai luồng xác thực
+- Tạo các layout và component có thể tái sử dụng
 
-### 3. UI Implementation
+### 2. Phát triển tính năng
 
 ```bash
-# Design command creates UI
-/design:good [modern dashboard layout]
+# Lệnh cook triển khai các tính năng
+/cook [thêm phần blog hỗ trợ MDX]
 ```
 
-The UI/UX Designer agent will:
-- Use Next.js layouts for consistent structure
-- Implement Server Components for data
-- Add Client Components for interactivity
-- Optimize images with next/image
+Agent Developer sẽ:
+- Tạo các blog route với App Router
+- Thiết lập MDX với next-mdx-remote
+- Triển khai tạo trang tĩnh (static generation)
+- Thêm metadata và SEO
 
-## Best Practices
+### 3. Triển khai giao diện
+
+```bash
+# Lệnh design tạo giao diện người dùng
+/design:good [bố cục dashboard hiện đại]
+```
+
+Agent UI/UX Designer sẽ:
+- Sử dụng các layout của Next.js cho cấu trúc đồng nhất
+- Triển khai Server Components để lấy dữ liệu
+- Thêm Client Components cho tính tương tác
+- Tối ưu hóa hình ảnh với next/image
+
+## Phương pháp hay nhất
 
 ### Server vs Client Components
 
-**Use Server Components (default) for:**
-- Data fetching from APIs or databases
-- Accessing backend resources directly
-- Keeping sensitive information on server
-- Large dependencies that don't need client-side
+**Sử dụng Server Components (mặc định) cho:**
+- Lấy dữ liệu từ API hoặc cơ sở dữ liệu
+- Truy cập trực tiếp các tài nguyên backend
+- Giữ thông tin nhạy cảm trên server
+- Các phụ thuộc lớn không cần thiết ở phía client
 
-**Use Client Components ('use client') for:**
-- Interactive elements (onClick, onChange)
+**Sử dụng Client Components ('use client') cho:**
+- Các yếu tố tương tác (onClick, onChange)
 - React hooks (useState, useEffect)
-- Browser-only APIs (localStorage, geolocation)
-- Event listeners
+- Các API chỉ dành cho trình duyệt (localStorage, geolocation)
+- Các trình lắng nghe sự kiện (Event listeners)
 
-### Data Fetching Strategies
+### Chiến lược lấy dữ liệu (Data Fetching)
 
-**Static Generation (SSG):**
+**Tạo trang tĩnh (Static Generation - SSG):**
 ```typescript
-// Pre-render at build time
+// Kết xuất trước tại thời điểm build
 export default async function Page() {
   const data = await fetch('https://api.example.com/data');
   return <div>{data}</div>;
 }
 ```
 
-**Revalidation (ISR):**
+**Xác thực lại (ISR):**
 ```typescript
-// Revalidate every 60 seconds
+// Xác thực lại mỗi 60 giây
 const data = await fetch('https://api.example.com/data', {
   next: { revalidate: 60 }
 });
 ```
 
-**Dynamic Rendering:**
+**Kết xuất động (Dynamic Rendering):**
 ```typescript
-// Render on each request
+// Kết xuất trên mỗi yêu cầu
 const data = await fetch('https://api.example.com/data', {
   cache: 'no-store'
 });
 ```
 
-### Performance Optimization
+### Tối ưu hóa hiệu suất
 
-**1. Code Splitting:**
+**1. Chia nhỏ mã (Code Splitting):**
 ```typescript
-// Dynamic imports for heavy components
+// Import động cho các component nặng
 import dynamic from 'next/dynamic';
 
 const HeavyComponent = dynamic(() => import('@/components/HeavyComponent'), {
-  loading: () => <p>Loading...</p>,
-  ssr: false, // Disable SSR for client-only components
+  loading: () => <p>Đang tải...</p>,
+  ssr: false, // Tắt SSR cho các component chỉ dành cho client
 });
 ```
 
-**2. Font Optimization:**
+**2. Tối ưu hóa Phông chữ:**
 ```typescript
 import { Inter, Roboto_Mono } from 'next/font/google';
 
@@ -449,21 +450,21 @@ const robotoMono = Roboto_Mono({
 });
 ```
 
-**3. Metadata for SEO:**
+**3. Metadata cho SEO:**
 ```typescript
 export const metadata: Metadata = {
   title: {
-    template: '%s | My App',
-    default: 'My App',
+    template: '%s | Ứng dụng của tôi',
+    default: 'Ứng dụng của tôi',
   },
-  description: 'My application description',
+  description: 'Mô tả ứng dụng của tôi',
   keywords: ['nextjs', 'react', 'typescript'],
-  authors: [{ name: 'Your Name' }],
+  authors: [{ name: 'Tên của bạn' }],
   openGraph: {
     type: 'website',
-    locale: 'en_US',
+    locale: 'vi_VN',
     url: 'https://example.com',
-    siteName: 'My App',
+    siteName: 'Ứng dụng của tôi',
   },
   twitter: {
     card: 'summary_large_image',
@@ -472,9 +473,9 @@ export const metadata: Metadata = {
 };
 ```
 
-### Error Handling
+### Xử lý lỗi
 
-**Error Boundary (error.tsx):**
+**Ranh giới lỗi (error.tsx):**
 ```typescript
 'use client';
 
@@ -487,57 +488,57 @@ export default function Error({
 }) {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
-      <h2 className="text-2xl font-bold mb-4">Something went wrong!</h2>
+      <h2 className="text-2xl font-bold mb-4">Đã có lỗi xảy ra!</h2>
       <button
         onClick={() => reset()}
         className="px-4 py-2 bg-blue-500 text-white rounded"
       >
-        Try again
+        Thử lại
       </button>
     </div>
   );
 }
 ```
 
-**Not Found (not-found.tsx):**
+**Trang Không tìm thấy (not-found.tsx):**
 ```typescript
 export default function NotFound() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
-      <h2 className="text-2xl font-bold mb-4">404 - Page Not Found</h2>
-      <p className="text-gray-600">Could not find requested resource</p>
+      <h2 className="text-2xl font-bold mb-4">404 - Không tìm thấy trang</h2>
+      <p className="text-gray-600">Không thể tìm thấy tài nguyên yêu cầu</p>
       <a href="/" className="mt-4 text-blue-500 hover:underline">
-        Return Home
+        Quay lại Trang chủ
       </a>
     </div>
   );
 }
 ```
 
-### Environment Variables
+### Biến môi trường
 
-**Configuration (.env.local):**
+**Cấu hình (.env.local):**
 ```bash
-# Public variables (accessible in browser)
+# Biến công khai (có thể truy cập từ trình duyệt)
 NEXT_PUBLIC_API_URL=https://api.example.com
 
-# Private variables (server-only)
+# Biến riêng tư (chỉ dành cho server)
 DATABASE_URL=postgresql://user:pass@localhost:5432/db
 API_SECRET_KEY=your-secret-key
 ```
 
-**Usage:**
+**Cách sử dụng:**
 ```typescript
-// Client-side (must have NEXT_PUBLIC_ prefix)
+// Phía client (phải có tiền tố NEXT_PUBLIC_)
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
-// Server-side (any variable)
+// Phía server (mọi biến số)
 const dbUrl = process.env.DATABASE_URL;
 ```
 
-## Common Patterns
+## Các mô hình phổ biến
 
-### Authentication with Server Actions
+### Xác thực với Server Actions
 
 **src/app/actions/auth.ts:**
 ```typescript
@@ -550,26 +551,26 @@ export async function login(formData: FormData) {
   const email = formData.get('email');
   const password = formData.get('password');
 
-  // Validate and authenticate
+  // Xác thực và kiểm tra
   const user = await authenticate(email, password);
 
   if (!user) {
-    return { error: 'Invalid credentials' };
+    return { error: 'Thông tin đăng nhập không hợp lệ' };
   }
 
-  // Set cookie
+  // Thiết lập cookie
   const cookieStore = await cookies();
   cookieStore.set('token', user.token, {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
-    maxAge: 60 * 60 * 24 * 7, // 1 week
+    maxAge: 60 * 60 * 24 * 7, // 1 tuần
   });
 
   redirect('/dashboard');
 }
 ```
 
-### Loading States
+### Trạng thái Loading
 
 **loading.tsx:**
 ```typescript
@@ -618,21 +619,21 @@ export default function DashboardLayout({
 }
 ```
 
-## Related Skills
+## Các kỹ năng liên quan
 
-- [Tailwind CSS](/docs/engineer/skills/tailwindcss) - Styling Next.js applications
-- [shadcn/ui](/docs/engineer/skills/shadcn-ui) - Pre-built UI components
-- [TypeScript](/docs/engineer/skills/typescript) - Type-safe development
-- [React](/docs/engineer/skills/react) - Core React patterns
+- [Tailwind CSS](/docs/engineer/skills/tailwindcss) - Tạo kiểu cho ứng dụng Next.js
+- [shadcn/ui](/docs/engineer/skills/shadcn-ui) - Các thành phần giao diện được xây dựng sẵn
+- [TypeScript](/docs/engineer/skills/typescript) - Phát triển an toàn kiểu dữ liệu
+- [React](/docs/engineer/skills/react) - Các mô hình React cốt lõi
 
-## Reference
+## Tài liệu tham khảo
 
-- **Official Docs**: https://nextjs.org/docs
+- **Tài liệu chính thức**: https://nextjs.org/docs
 - **llms.txt**: https://nextjs.org/docs/llms.txt
-- **App Router Guide**: https://nextjs.org/docs/app
-- **API Reference**: https://nextjs.org/docs/app/api-reference
-- **Examples**: https://github.com/vercel/next.js/tree/canary/examples
+- **Hướng dẫn App Router**: https://nextjs.org/docs/app
+- **Tham khảo API**: https://nextjs.org/docs/app/api-reference
+- **Ví dụ**: https://github.com/vercel/next.js/tree/canary/examples
 
 ---
 
-**Key Takeaway**: Next.js combines the best of server-side rendering, static generation, and client-side interactivity, making it the ideal choice for modern web applications. ClaudeKit agents leverage these capabilities to build fast, SEO-friendly, and maintainable applications.
+**Điểm chính**: Next.js kết hợp những ưu điểm tốt nhất của kết xuất phía máy chủ, tạo trang tĩnh và tính tương tác phía client, khiến nó trở thành lựa chọn lý tưởng cho các ứng dụng web hiện đại. Các agent của ClaudeKit tận dụng những khả năng này để xây dựng các ứng dụng nhanh, thân thiện với SEO và dễ bảo trì.

@@ -1,131 +1,132 @@
 ---
-title: Code Reviewer Agent
-description: Comprehensive code quality assessment with security audits, performance analysis, and actionable recommendations
+title: Agent Code Reviewer
+description: Đánh giá chất lượng mã nguồn toàn diện với kiểm tra bảo mật, phân tích hiệu suất và các đề xuất có thể thực hiện được
 section: engineer
 kit: engineer
 category: agents
 order: 7
 published: true
+lang: vi
 ---
 
-# Code Reviewer Agent
+# Agent Code Reviewer
 
-The code reviewer agent performs comprehensive code quality assessments including security audits, performance analysis, type safety validation, and provides categorized recommendations with priority levels.
+Agent code reviewer thực hiện các đánh giá chất lượng mã nguồn toàn diện bao gồm kiểm tra bảo mật, phân tích hiệu suất, xác nhận an toàn kiểu (type safety) và cung cấp các đề xuất được phân loại theo mức độ ưu tiên.
 
-## Purpose
+## Mục đích
 
-Assess code quality, identify security vulnerabilities, validate type safety, analyze performance, and ensure code meets project standards before merging.
+Đánh giá chất lượng mã nguồn, xác định các lỗ hổng bảo mật, xác nhận an toàn kiểu, phân tích hiệu suất và đảm bảo mã nguồn đáp ứng các tiêu chuẩn dự án trước khi hợp nhất (merge).
 
-## When Activated
+## Khi nào được kích hoạt
 
-The code reviewer agent activates when:
+Agent code reviewer được kích hoạt khi:
 
-- Using `/review [scope]` command
-- After implementing features
-- Before creating pull requests
-- When code quality issues detected
-- During security assessment
-- When performance bottlenecks suspected
-- After refactoring
-- Before production deployment
+- Sử dụng lệnh `/review [scope]`
+- Sau khi triển khai các tính năng
+- Trước khi tạo pull request
+- Khi phát hiện các vấn đề về chất lượng mã nguồn
+- Trong quá trình đánh giá bảo mật
+- Khi nghi ngờ có nút thắt cổ chai về hiệu suất
+- Sau khi tái cấu trúc (refactoring)
+- Trước khi triển khai sản phẩm thực tế (production)
 
-## Capabilities
+## Khả năng
 
-### Code Quality Assessment
+### Đánh giá chất lượng mã nguồn
 
-- **Architecture Review**: Design patterns, SOLID principles
-- **Code Organization**: File structure, module boundaries
-- **Naming Conventions**: Variables, functions, classes
-- **Code Duplication**: DRY violations, refactoring opportunities
-- **Complexity Analysis**: Cyclomatic complexity, cognitive load
-- **Documentation**: Comments, JSDoc, README files
+- **Xem xét kiến trúc**: Các mẫu thiết kế (design patterns), nguyên tắc SOLID
+- **Tổ chức mã nguồn**: Cấu trúc tệp, ranh giới mô-đun
+- **Quy ước đặt tên**: Biến, hàm, lớp
+- **Trùng lặp mã nguồn**: Vi phạm DRY, cơ hội tái cấu trúc
+- **Phân tích độ phức tạp**: Độ phức tạp vòng (cyclomatic complexity), tải nhận thức (cognitive load)
+- **Tài liệu**: Nhận xét, JSDoc, tệp README
 
-### Security Audit
+### Kiểm tra bảo mật
 
-- **OWASP Top 10**: Common security vulnerabilities
-- **Authentication**: Token handling, session management
-- **Authorization**: Access control, permission checks
-- **Input Validation**: SQL injection, XSS, CSRF prevention
-- **Secrets Management**: API keys, credentials exposure
-- **Dependencies**: Known vulnerabilities in packages
+- **OWASP Top 10**: Các lỗ hổng bảo mật phổ biến
+- **Xác thực (Authentication)**: Xử lý token, quản lý phiên
+- **Ủy quyền (Authorization)**: Kiểm soát truy cập, kiểm tra quyền
+- **Xác nhận đầu vào**: Ngăn chặn SQL injection, XSS, CSRF
+- **Quản lý bí mật (Secrets)**: Khóa API, lộ thông tin đăng nhập
+- **Phụ thuộc (Dependencies)**: Các lỗ hổng đã biết trong các gói phần mềm
 
-### Performance Analysis
+### Phân tích hiệu suất
 
-- **Algorithm Efficiency**: Big O complexity, optimization
-- **Database Queries**: N+1 problems, missing indexes
-- **Memory Usage**: Leaks, unnecessary allocations
-- **Bundle Size**: Code splitting, tree shaking
-- **Caching**: Opportunities for performance improvement
-- **Async Operations**: Promise handling, race conditions
+- **Hiệu quả thuật toán**: Độ phức tạp Big O, tối ưu hóa
+- **Truy vấn cơ sở dữ liệu**: Vấn đề N+1, thiếu chỉ mục
+- **Sử dụng bộ nhớ**: Rò rỉ, phân bổ không cần thiết
+- **Kích thước gói (Bundle Size)**: Chia nhỏ mã nguồn (code splitting), tree shaking
+- **Bộ nhớ đệm (Caching)**: Các cơ hội để cải thiện hiệu suất
+- **Hoạt động không đồng bộ**: Xử lý Promise, tình trạng tranh đua (race conditions)
 
-### Type Safety Validation
+### Xác nhận an toàn kiểu
 
-- **TypeScript**: Strict mode compliance, any usage
-- **Dart**: Null safety, type annotations
-- **Type Coverage**: Percentage of typed code
-- **Type Assertions**: Unsafe casts, type guards
-- **Generic Types**: Proper usage, constraints
+- **TypeScript**: Tuân thủ chế độ nghiêm ngặt (strict mode), sử dụng kiểu `any`
+- **Dart**: An toàn null (null safety), chú thích kiểu
+- **Độ bao phủ kiểu**: Tỷ lệ phần trăm mã nguồn được định kiểu
+- **Khẳng định kiểu (Type Assertions)**: Ép kiểu không an toàn, bộ bảo vệ kiểu (type guards)
+- **Kiểu Generic**: Sử dụng đúng cách, các ràng buộc
 
-### Build & Deployment
+### Xây dựng & Triển khai
 
-- **Compilation**: Zero errors in production build
-- **Linting**: Code style consistency
-- **Dead Code**: Unused imports, unreachable code
-- **Dependencies**: Outdated packages, security patches
-- **Configuration**: Environment variables, feature flags
+- **Biên dịch**: Không có lỗi trong bản build sản xuất
+- **Linting**: Tính nhất quán của phong cách mã nguồn
+- **Mã nguồn chết (Dead Code)**: Các lệnh import không sử dụng, mã nguồn không thể truy cập
+- **Phụ thuộc**: Các gói phần mềm lỗi thời, các bản vá bảo mật
+- **Cấu hình**: Biến môi trường, feature flags
 
-## Review Categories
+## Các loại đánh giá
 
-### Critical (Must Fix)
+### Nghiêm trọng (Bắt buộc sửa)
 
-Issues that pose immediate risk:
-- Security vulnerabilities
-- Data loss potential
-- Authentication bypass
-- Production crash scenarios
-- Breaking API changes
+Các vấn đề gây ra rủi ro tức thì:
+- Lỗ hổng bảo mật
+- Khả năng mất dữ liệu
+- Vượt qua kiểm tra xác thực
+- Các kịch bản gây sập hệ thống sản xuất
+- Thay đổi API gây hỏng (breaking changes)
 
-### High Priority (Should Fix)
+### Ưu tiên cao (Nên sửa)
 
-Issues affecting reliability:
-- Performance degradation
-- Type safety violations
-- Memory leaks
-- Error handling gaps
-- Test coverage gaps (<80%)
+Các vấn đề ảnh hưởng đến độ tin cậy:
+- Suy giảm hiệu suất
+- Vi phạm an toàn kiểu
+- Rò rỉ bộ nhớ
+- Thiếu sót trong xử lý lỗi
+- Thiếu hụt độ bao phủ kiểm thử (<80%)
 
-### Medium Priority (Recommended)
+### Ưu tiên trung bình (Khuyến nghị)
 
-Issues affecting maintainability:
-- Code smells
-- Naming inconsistencies
-- Missing documentation
-- Code duplication
-- Complex functions (>50 lines)
+Các vấn đề ảnh hưởng đến khả năng bảo trì:
+- Mã nguồn có "mùi" (Code smells)
+- Đặt tên không nhất quán
+- Thiếu tài liệu
+- Trùng lặp mã nguồn
+- Các hàm phức tạp (>50 dòng)
 
-### Low Priority (Optional)
+### Ưu tiên thấp (Tùy chọn)
 
-Minor improvements:
-- Style inconsistencies
-- Minor optimizations
-- Comment improvements
-- Variable naming tweaks
+Các cải tiến nhỏ:
+- Không nhất quán về phong cách
+- Tối ưu hóa nhỏ
+- Cải thiện nhận xét
+- Tinh chỉnh đặt tên biến
 
-## Example Usage
+## Ví dụ sử dụng
 
-### Feature Review
+### Review tính năng
 
-**Input:**
+**Đầu vào:**
 ```bash
-/review [user authentication module]
+/review [mô-đun xác thực người dùng]
 ```
 
-**Process:**
+**Quá trình:**
 ```
-1. Scope Analysis (10s)
-   Discovering files...
+1. Phân tích phạm vi (10 giây)
+   Đang tìm kiếm các tệp...
 
-   Found:
+   Đã tìm thấy:
    - src/auth/login.ts
    - src/auth/register.ts
    - src/auth/jwt.ts
@@ -133,92 +134,91 @@ Minor improvements:
    - src/auth/validators.ts
    - tests/auth/*.test.ts
 
-   Total: 6 source files, 3 test files
-   Lines: 1,247 (excluding tests)
+   Tổng cộng: 6 tệp nguồn, 3 tệp kiểm thử
+   Số dòng: 1.247 (không bao gồm kiểm thử)
 
-2. Code Quality Analysis (45s)
-   Running parallel scouts...
+2. Phân tích chất lượng mã nguồn (45 giây)
+   Đang chạy các scout song song...
 
-   Scout 1: Security patterns
-   Scout 2: Type safety
-   Scout 3: Performance issues
-   Scout 4: Test coverage
-   Scout 5: Documentation
+   Scout 1: Các mẫu bảo mật
+   Scout 2: An toàn kiểu
+   Scout 3: Các vấn đề hiệu suất
+   Scout 4: Độ bao phủ kiểm thử
+   Scout 5: Tài liệu
 
-3. Security Audit (30s)
-   Checking OWASP Top 10...
-   Analyzing authentication flow...
-   Reviewing token handling...
-   Checking input validation...
+3. Kiểm tra bảo mật (30 giây)
+   Kiểm tra OWASP Top 10...
+   Phân tích luồng xác thực...
+   Xem xét xử lý token...
+   Kiểm tra xác nhận đầu vào...
 
-4. Report Generation (15s)
-   Categorizing findings...
-   Generating recommendations...
-   Creating action items...
+4. Tạo báo cáo (15 giây)
+   Phân loại các phát hiện...
+   Tạo các đề xuất...
+   Tạo các mục hành động...
 
-   Review complete: 12 issues found
-   - Critical: 2
-   - High: 3
-   - Medium: 5
-   - Low: 2
+   Review hoàn tất: tìm thấy 12 vấn đề
+   - Nghiêm trọng: 2
+   - Ưu tiên cao: 3
+   - Ưu tiên trung bình: 5
+   - Ưu tiên thấp: 2
 ```
 
-**Generated Report:**
+**Báo cáo được tạo:**
 
 ```markdown
-# Code Review Report: User Authentication Module
+# Báo cáo Code Review: Mô-đun xác thực người dùng
 
-## Summary
+## Tóm tắt
 
-| Category | Count | Status |
+| Loại | Số lượng | Trạng thái |
 |----------|-------|--------|
-| Critical | 2 | ✗ Must fix |
-| High | 3 | ⚠ Should fix |
-| Medium | 5 | ℹ Recommended |
-| Low | 2 | ○ Optional |
-| **Total** | **12** | |
+| Nghiêm trọng | 2 | ✗ Bắt buộc sửa |
+| Ưu tiên cao | 3 | ⚠ Nên sửa |
+| Ưu tiên trung bình | 5 | ℹ Khuyến nghị |
+| Ưu tiên thấp | 2 | ○ Tùy chọn |
+| **Tổng cộng** | **12** | |
 
-**Overall Assessment**: Not ready for production - critical security issues must be addressed.
+**Đánh giá tổng thể**: Chưa sẵn sàng cho sản xuất - các vấn đề bảo mật nghiêm trọng phải được giải quyết.
 
 ---
 
-## Critical Issues (Must Fix Before Merge)
+## Các vấn đề nghiêm trọng (Phải sửa trước khi Merge)
 
-### 1. JWT Secret Stored in Source Code
+### 1. JWT Secret được lưu trữ trong mã nguồn
 
-**Severity**: Critical - Security Vulnerability
-**Category**: Secrets Management / OWASP A07:2021 - Identification and Authentication Failures
+**Mức độ nghiêm trọng**: Nghiêm trọng - Lỗ hổng bảo mật
+**Phân loại**: Quản lý bí mật / OWASP A07:2021 - Lỗi nhận dạng và xác thực
 
-**Location:** `src/auth/jwt.ts:5`
+**Vị trí:** `src/auth/jwt.ts:5`
 
-**Issue:**
+**Vấn đề:**
 ```typescript
 // src/auth/jwt.ts
-const JWT_SECRET = 'super-secret-key-123'; // ✗ CRITICAL
-
-export const signToken = (payload: any) => {
+const JWT_SECRET = 'super-secret-key-123'; // ✗ NGHIÊM TRỌNG
+\nexport const signToken = (payload: any) => {
   return jwt.sign(payload, JWT_SECRET, { expiresIn: '24h' });
 };
 ```
 
-**Why This is Critical:**
-- Secret is committed to version control (visible in git history)
-- Anyone with repository access can forge valid tokens
-- Changing secret invalidates all existing user sessions
-- Attackers can authenticate as any user
+**Tại sao điều này nghiêm trọng:**
+- Bí mật được đưa vào hệ thống quản lý phiên bản (có thể thấy trong lịch sử git)
+- Bất kỳ ai có quyền truy cập kho lưu trữ đều có thể giả mạo các token hợp lệ
+- Thay đổi bí mật sẽ làm mất hiệu lực tất cả các phiên người dùng hiện có
+- Kẻ tấn công có thể xác thực dưới danh nghĩa bất kỳ người dùng nào
 
-**Impact:**
-- Complete authentication bypass
-- Unauthorized access to all user accounts
-- Data breach potential
+**Tác động:**
+- Vượt qua hoàn toàn hệ thống xác thực
+- Truy cập trái phép vào tất cả tài khoản người dùng
+- Khả năng vi phạm dữ liệu
 
-**Fix:**
+**Khắc phục:**
 ```typescript
 // src/auth/jwt.ts
-const JWT_SECRET = process.env.JWT_SECRET; // ✓ Load from environment
+const JWT_SECRET = process.env.JWT_SECRET; // ✓ Tải từ môi trường
 
 if (!JWT_SECRET) {
-  throw new Error('JWT_SECRET environment variable is required');
+  throw new Error('Biến môi trường JWT_SECRET là bắt buộc');
 }
 
 export const signToken = (payload: any) => {
@@ -226,123 +226,122 @@ export const signToken = (payload: any) => {
 };
 ```
 
-**Required Actions:**
-1. Remove secret from source code
-2. Generate new cryptographically secure secret:
+**Hành động bắt buộc:**
+1. Xóa bí mật khỏi mã nguồn
+2. Tạo bí mật mới an toàn về mặt mật mã:
    ```bash
-   openssl rand -base64 64
-   ```
-3. Store in environment variables:
+   openssl rand -base64 64\n   ```
+3. Lưu trữ trong các biến môi trường:
    ```bash
-   # .env (not committed)
-   JWT_SECRET=<generated-secret>
+   # .env (không được commit)
+   JWT_SECRET=<bí-mật-được-tạo>
    ```
-4. Add to CI/CD secrets
-5. Update all environments (dev, staging, prod)
-6. Rotate secret in production (invalidates existing sessions)
-7. Add pre-commit hook to prevent secrets:
+4. Thêm vào các bí mật (secrets) CI/CD
+5. Cập nhật tất cả các môi trường (dev, staging, prod)
+6. Thay đổi bí mật trong sản xuất (làm mất hiệu lực các phiên hiện có)
+7. Thêm pre-commit hook để ngăn chặn lộ bí mật:
    ```bash
    npm install --save-dev @commitlint/cli detect-secrets
    ```
 
-**Validation:**
-- [ ] Secret removed from all git history
-- [ ] Environment variables configured
-- [ ] Application starts without errors
-- [ ] Token signing/verification works
-- [ ] Pre-commit hook prevents future issues
+**Xác nhận:**
+- [ ] Bí mật đã được xóa khỏi tất cả lịch sử git
+- [ ] Các biến môi trường đã được cấu hình
+- [ ] Ứng dụng khởi động không có lỗi
+- [ ] Ký/xác nhận token hoạt động bình thường
+- [ ] Pre-commit hook ngăn chặn các vấn đề trong tương lai
 
 ---
 
-### 2. SQL Injection Vulnerability
+### 2. Lỗ hổng SQL Injection
 
-**Severity**: Critical - Security Vulnerability
-**Category**: OWASP A03:2021 - Injection
+**Mức độ nghiêm trọng**: Nghiêm trọng - Lỗ hổng bảo mật
+**Phân loại**: OWASP A03:2021 - Injection
 
-**Location:** `src/auth/login.ts:23`
+**Vị trí:** `src/auth/login.ts:23`
 
-**Issue:**
+**Vấn đề:**
 ```typescript
 // src/auth/login.ts
 export const loginUser = async (email: string, password: string) => {
-  // ✗ CRITICAL: SQL Injection vulnerability
+  // ✗ NGHIÊM TRỌNG: Lỗ hổng SQL Injection
   const query = `SELECT * FROM users WHERE email = '${email}'`;
   const result = await db.raw(query);
 
   if (!result.rows[0]) {
-    throw new Error('User not found');
+    throw new Error('Không tìm thấy người dùng');
   }
 
-  // ... password verification
+  // ... xác nhận mật khẩu
 };
 ```
 
-**Why This is Critical:**
-- Attacker can bypass authentication with: `' OR '1'='1`
-- Can extract entire database: `' UNION SELECT * FROM users --`
-- Can delete data: `'; DROP TABLE users; --`
-- No input sanitization
+**Tại sao điều này nghiêm trọng:**
+- Kẻ tấn công có thể vượt qua xác thực bằng: `' OR '1'='1`
+- Có thể trích xuất toàn bộ cơ sở dữ liệu: `' UNION SELECT * FROM users --`
+- Có thể xóa dữ liệu: `'; DROP TABLE users; --`
+- Không có quá trình làm sạch (sanitization) đầu vào
 
-**Example Attack:**
+**Ví dụ tấn công:**
 ```bash
-# Bypass authentication
+# Vượt qua xác thực
 POST /api/auth/login
 {
-  "email": "admin@example.com' OR '1'='1' --",
-  "password": "anything"
+  \"email\": \"admin@example.com' OR '1'='1' --\",
+  \"password\": \"bất kỳ cái gì\"
 }
 
-# Extract all users
+# Trích xuất tất cả người dùng
 POST /api/auth/login
 {
-  "email": "' UNION SELECT id, email, password, null FROM users --",
-  "password": ""
+  \"email\": \"' UNION SELECT id, email, password, null FROM users --\",
+  \"password\": \"\"
 }
 ```
 
-**Impact:**
-- Complete database compromise
-- Authentication bypass
-- Data exfiltration
-- Data destruction
+**Tác động:**
+- Toàn bộ cơ sở dữ liệu bị xâm phạm
+- Vượt qua xác thực
+- Rò rỉ dữ liệu
+- Phá hủy dữ liệu
 
-**Fix:**
+**Khắc phục:**
 ```typescript
 // src/auth/login.ts
 export const loginUser = async (email: string, password: string) => {
-  // ✓ Use parameterized queries
+  // ✓ Sử dụng các truy vấn được tham số hóa
   const result = await db('users')
     .where({ email })
     .first();
 
   if (!result) {
-    throw new Error('User not found');
+    throw new Error('Không tìm thấy người dùng');
   }
 
-  // Verify password
+  // Xác nhận mật khẩu
   const isValid = await bcrypt.compare(password, result.password);
 
   if (!isValid) {
-    throw new Error('Invalid password');
+    throw new Error('Mật khẩu không hợp lệ');
   }
 
   return result;
 };
 ```
 
-**Alternative (with raw queries):**
+**Thay thế (với truy vấn thô):**
 ```typescript
-// If raw SQL is necessary, use parameterized queries
+// Nếu SQL thô là bắt buộc, hãy sử dụng các truy vấn được tham số hóa
 const result = await db.raw(
   'SELECT * FROM users WHERE email = ?',
-  [email] // ✓ Parameters are escaped
+  [email] // ✓ Các tham số được thoát (escaped)
 );
 ```
 
-**Required Actions:**
-1. Replace all string concatenation queries
-2. Use ORM query builders or parameterized queries
-3. Add input validation:
+**Hành động bắt buộc:**
+1. Thay thế tất cả các truy vấn nối chuỗi
+2. Sử dụng trình tạo truy vấn ORM hoặc các truy vấn được tham số hóa
+3. Thêm xác nhận đầu vào:
    ```typescript
    import { z } from 'zod';
 
@@ -351,35 +350,35 @@ const result = await db.raw(
      password: z.string().min(8).max(100)
    });
    ```
-4. Add security scanning to CI/CD:
+4. Thêm quét bảo mật vào CI/CD:
    ```bash
    npm install --save-dev eslint-plugin-security
    ```
-5. Audit all database queries in codebase
-6. Add prepared statement enforcement
+5. Kiểm tra tất cả các truy vấn cơ sở dữ liệu trong mã nguồn
+6. Thực thi việc sử dụng prepared statement
 
-**Validation:**
-- [ ] No string concatenation in queries
-- [ ] Input validation on all endpoints
-- [ ] Security linting passes
-- [ ] Penetration testing shows no injection
+**Xác nhận:**
+- [ ] Không còn nối chuỗi trong các truy vấn
+- [ ] Xác nhận đầu vào trên tất cả các điểm cuối
+- [ ] Linting bảo mật vượt qua
+- [ ] Kiểm tra xâm nhập không cho thấy dấu hiệu injection
 
 ---
 
-## High Priority Issues (Should Fix)
+## Các vấn đề ưu tiên cao (Nên sửa)
 
-### 3. Missing Password Complexity Requirements
+### 3. Thiếu yêu cầu về độ phức tạp của mật khẩu
 
-**Severity**: High - Security
-**Category**: OWASP A07:2021 - Identification and Authentication Failures
+**Mức độ nghiêm trọng**: Cao - Bảo mật
+**Phân loại**: OWASP A07:2021 - Lỗi nhận dạng và xác thực
 
-**Location:** `src/auth/register.ts:15`
+**Vị trí:** `src/auth/register.ts:15`
 
-**Issue:**
+**Vấn đề:**
 ```typescript
 // src/auth/register.ts
 export const registerUser = async (data: RegisterDTO) => {
-  // ✗ No password validation
+  // ✗ Không có xác nhận mật khẩu
   const hashedPassword = await bcrypt.hash(data.password, 10);
 
   return db('users').insert({
@@ -389,39 +388,39 @@ export const registerUser = async (data: RegisterDTO) => {
 };
 ```
 
-**Why This Matters:**
-- Users can set weak passwords: "123456", "password"
-- No minimum length enforcement
-- No complexity requirements
-- Vulnerable to brute force attacks
+**Tại sao điều này quan trọng:**
+- Người dùng có thể đặt mật khẩu yếu: \"123456\", \"password\"
+- Không thực thi độ dài tối thiểu
+- Không có yêu cầu về độ phức tạp
+- Dễ bị tấn công vét cạn (brute force)
 
-**Impact:**
-- Account takeover via brute force
-- Credential stuffing attacks
-- Password guessing
+**Tác động:**
+- Chiếm đoạt tài khoản qua brute force
+- Các cuộc tấn công nhồi nhét thông tin đăng nhập (credential stuffing)
+- Đoán mật khẩu
 
-**Fix:**
+**Khắc phục:**
 ```typescript
 // src/auth/validators.ts
 import { z } from 'zod';
 
 export const passwordSchema = z.string()
-  .min(12, 'Password must be at least 12 characters')
-  .max(128, 'Password must be less than 128 characters')
-  .regex(/[a-z]/, 'Password must contain lowercase letter')
-  .regex(/[A-Z]/, 'Password must contain uppercase letter')
-  .regex(/[0-9]/, 'Password must contain number')
-  .regex(/[^a-zA-Z0-9]/, 'Password must contain special character');
+  .min(12, 'Mật khẩu phải có ít nhất 12 ký tự')
+  .max(128, 'Mật khẩu phải ít hơn 128 ký tự')
+  .regex(/[a-z]/, 'Mật khẩu phải chứa chữ cái viết thường')
+  .regex(/[A-Z]/, 'Mật khẩu phải chứa chữ cái viết hoa')
+  .regex(/[0-9]/, 'Mật khẩu phải chứa số')
+  .regex(/[^a-zA-Z0-9]/, 'Mật khẩu phải chứa ký tự đặc biệt');
 
 // src/auth/register.ts
 export const registerUser = async (data: RegisterDTO) => {
-  // ✓ Validate password
+  // ✓ Xác nhận mật khẩu
   const validatedPassword = passwordSchema.parse(data.password);
 
-  // ✓ Check against common passwords
+  // ✓ Kiểm tra các mật khẩu phổ biến
   const isCommon = await checkCommonPassword(validatedPassword);
   if (isCommon) {
-    throw new Error('Password is too common');
+    throw new Error('Mật khẩu quá phổ biến');
   }
 
   const hashedPassword = await bcrypt.hash(validatedPassword, 10);
@@ -433,66 +432,57 @@ export const registerUser = async (data: RegisterDTO) => {
 };
 ```
 
-**Additional Improvements:**
+**Cải thiện bổ sung:**
 ```typescript
-// Check against Have I Been Pwned API
+// Kiểm tra với API Have I Been Pwned
 import { pwnedPassword } from 'hibp';
 
 const isPwned = await pwnedPassword(password);
 if (isPwned > 0) {
-  throw new Error('Password has been exposed in data breaches');
+  throw new Error('Mật khẩu này đã từng bị lộ trong các vụ vi phạm dữ liệu');
 }
 ```
 
-**Required Actions:**
-1. Implement password complexity rules
-2. Add common password blacklist
-3. Consider HIBP integration
-4. Add password strength indicator in UI
-5. Enforce password policy on registration
+**Hành động bắt buộc:**
+1. Triển khai các quy tắc về độ phức tạp mật khẩu
+2. Thêm danh sách đen các mật khẩu phổ biến
+3. Xem xét tích hợp HIBP
+4. Thêm chỉ báo độ mạnh mật khẩu trong UI
+5. Thực thi chính sách mật khẩu khi đăng ký
 
-**Validation:**
-- [ ] Weak passwords rejected
-- [ ] Common passwords blocked
-- [ ] Password policy documented
-- [ ] Tests cover edge cases
+**Xác nhận:**
+- [ ] Các mật khẩu yếu bị từ chối
+- [ ] Các mật khẩu phổ biến bị chặn
+- [ ] Chính sách mật khẩu đã được ghi chép
+- [ ] Các kiểm thử bao phủ các trường hợp biên
 
 ---
 
-### 4. No Rate Limiting on Login Endpoint
+### 4. Không có giới hạn tỷ lệ (Rate Limiting) trên điểm cuối đăng nhập
 
-**Severity**: High - Security
-**Category**: OWASP A07:2021 - Identification and Authentication Failures
+**Mức độ nghiêm trọng**: Cao - Bảo mật
+**Phân loại**: OWASP A07:2021 - Lỗi nhận dạng và xác thực
 
-**Location:** `src/routes/auth.routes.ts:10`
+**Vị trí:** `src/routes/auth.routes.ts:10`
 
-**Issue:**
+**Vấn đề:**
 ```typescript
 // src/routes/auth.routes.ts
-router.post('/login', loginController); // ✗ No rate limiting
+router.post('/login', loginController); // ✗ Không có rate limiting
 ```
 
-**Why This Matters:**
-- Allows unlimited login attempts
-- Vulnerable to brute force attacks
-- No protection against credential stuffing
-- No IP-based throttling
+**Tại sao điều này quan trọng:**
+- Cho phép số lần thử đăng nhập không giới hạn
+- Dễ bị tấn công brute force
+- Không có sự bảo vệ chống lại việc nhồi nhét thông tin đăng nhập
+- Không có sự điều tiết dựa trên IP
 
-**Attack Scenario:**
-```bash
-# Attacker can try thousands of passwords
-for password in wordlist.txt; do
-  curl -X POST https://api.example.com/auth/login \
-    -d "{\"email\":\"victim@example.com\",\"password\":\"$password\"}"
-done
-```
+**Tác động:**
+- Chiếm đoạt tài khoản qua brute force
+- Suy giảm dịch vụ (DDoS)
+- Cạn kiệt tài nguyên
 
-**Impact:**
-- Account takeover via brute force
-- Service degradation (DDoS)
-- Resource exhaustion
-
-**Fix:**
+**Khắc phục:**
 ```typescript
 // src/middleware/rate-limit.ts
 import rateLimit from 'express-rate-limit';
@@ -506,78 +496,78 @@ export const loginRateLimit = rateLimit({
     client: redis,
     prefix: 'rl:login:'
   }),
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 5, // 5 attempts per window
+  windowMs: 15 * 60 * 1000, // 15 phút
+  max: 5, // 5 lần thử trong mỗi cửa sổ
   standardHeaders: true,
   legacyHeaders: false,
-  message: 'Too many login attempts, please try again later',
-  skipSuccessfulRequests: true // Only count failed attempts
+  message: 'Quá nhiều lần thử đăng nhập, vui lòng thử lại sau',
+  skipSuccessfulRequests: true // Chỉ tính các lần thử thất bại
 });
 
 // src/routes/auth.routes.ts
 import { loginRateLimit } from '@/middleware/rate-limit';
 
-router.post('/login', loginRateLimit, loginController); // ✓ Rate limited
+router.post('/login', loginRateLimit, loginController); // ✓ Có rate limited
 ```
 
-**Additional Security:**
+**Bảo mật bổ sung:**
 ```typescript
-// Account lockout after failed attempts
+// Khóa tài khoản sau các lần thử thất bại
 // src/auth/login.ts
 export const loginUser = async (email: string, password: string) => {
   const user = await db('users').where({ email }).first();
 
   if (!user) {
-    // Increment failed attempts for non-existent users too (prevent enumeration)
+    // Tăng số lần thử thất bại cho cả người dùng không tồn tại (ngăn chặn việc dò tìm)
     await redis.incr(`login:failed:${email}`);
-    throw new Error('Invalid credentials');
+    throw new Error('Thông tin đăng nhập không hợp lệ');
   }
 
-  // Check if account is locked
+  // Kiểm tra xem tài khoản có bị khóa không
   const failedAttempts = await redis.get(`login:failed:${email}`);
   if (parseInt(failedAttempts || '0') >= 5) {
     const lockoutExpiry = await redis.ttl(`login:failed:${email}`);
-    throw new Error(`Account locked. Try again in ${lockoutExpiry} seconds`);
+    throw new Error(`Tài khoản bị khóa. Thử lại sau ${lockoutExpiry} giây`);
   }
 
   const isValid = await bcrypt.compare(password, user.password);
 
   if (!isValid) {
-    // Increment failed attempts
+    // Tăng số lần thử thất bại
     await redis.incr(`login:failed:${email}`);
-    await redis.expire(`login:failed:${email}`, 900); // 15 min expiry
-    throw new Error('Invalid credentials');
+    await redis.expire(`login:failed:${email}`, 900); // 15 phút hết hạn
+    throw new Error('Thông tin đăng nhập không hợp lệ');
   }
 
-  // Reset failed attempts on successful login
+  // Đặt lại số lần thử thất bại khi đăng nhập thành công
   await redis.del(`login:failed:${email}`);
 
   return user;
 };
 ```
 
-**Required Actions:**
-1. Implement rate limiting on login endpoint
-2. Add account lockout mechanism
-3. Add CAPTCHA after 3 failed attempts
-4. Monitor for brute force patterns
-5. Alert on suspicious activity
+**Hành động bắt buộc:**
+1. Triển khai giới hạn tỷ lệ trên điểm cuối đăng nhập
+2. Thêm cơ chế khóa tài khoản
+3. Thêm CAPTCHA sau 3 lần thử thất bại
+4. Giám sát các mẫu brute force
+5. Cảnh báo về các hoạt động đáng ngờ
 
-**Validation:**
-- [ ] Rate limiting enforced
-- [ ] Account lockout works
-- [ ] Monitoring alerts configured
-- [ ] Load testing shows no bypass
+**Xác nhận:**
+- [ ] Giới hạn tỷ lệ được thực thi
+- [ ] Khóa tài khoản hoạt động
+- [ ] Các cảnh báo giám sát đã được cấu hình
+- [ ] Kiểm thử tải cho thấy không thể vượt qua
 
 ---
 
-### 5. TypeScript `any` Type Overuse
+### 5. Lạm dụng kiểu `any` trong TypeScript
 
-**Severity**: High - Type Safety
-**Category**: Code Quality
+**Mức độ nghiêm trọng**: Cao - An toàn kiểu
+**Phân loại**: Chất lượng mã nguồn
 
-**Issue:**
-Found 23 instances of `any` type across authentication module:
+**Vấn đề:**
+Tìm thấy 23 trường hợp sử dụng kiểu `any` trong mô-đun xác thực:
 
 ```typescript
 // src/auth/jwt.ts:7
@@ -596,19 +586,19 @@ export const validateInput = (schema: any, data: any) => { // ✗
 };
 ```
 
-**Why This Matters:**
-- Loses all type checking benefits
-- Errors only caught at runtime
-- Difficult to refactor safely
-- Poor IDE autocomplete
-- Reduces code confidence
+**Tại sao điều này quan trọng:**
+- Mất tất cả các lợi ích kiểm tra kiểu
+- Các lỗi chỉ bị phát hiện khi chạy (runtime)
+- Khó tái cấu trúc an toàn
+- Gợi ý mã nguồn IDE kém
+- Giảm độ tin cậy của mã nguồn
 
-**Impact:**
-- Runtime errors in production
-- Increased debugging time
-- Harder to maintain
+**Tác động:**
+- Lỗi runtime trong sản xuất
+- Tăng thời gian gỡ lỗi
+- Khó bảo trì hơn
 
-**Fix:**
+**Khắc phục:**
 ```typescript
 // src/auth/types.ts
 export interface JWTPayload {
@@ -641,82 +631,80 @@ import { AuthRequest } from './types';
 export const authenticate = async (
   req: AuthRequest,
   res: Response,
-  next: NextFunction
-): Promise<void> => {
+  next: NextFunction\n): Promise<void> => {
   const token = req.headers.authorization?.replace('Bearer ', '');
 
   if (!token) {
-    res.status(401).json({ error: 'No token provided' });
+    res.status(401).json({ error: 'Không có token được cung cấp' });
     return;
   }
 
   try {
     const payload = verifyToken(token);
-    req.user = payload; // ✓ Type-safe
+    req.user = payload; // ✓ An toàn kiểu
     next();
-  } catch (error) {
-    res.status(401).json({ error: 'Invalid token' });
+  } catch (error) {\n    res.status(401).json({ error: 'Token không hợp lệ' });
   }
 };
 ```
 
-**Required Actions:**
-1. Define explicit types for all functions
-2. Enable TypeScript strict mode:
+**Hành động bắt buộc:**
+1. Định nghĩa các kiểu rõ ràng cho tất cả các hàm
+2. Bật chế độ nghiêm ngặt của TypeScript:
    ```json
    {
-     "compilerOptions": {
-       "strict": true,
-       "noImplicitAny": true,
-       "strictNullChecks": true,
-       "strictFunctionTypes": true
+     \"compilerOptions\": {
+       \"strict\": true,
+       \"noImplicitAny\": true,
+       \"strictNullChecks\": true,
+       \"strictFunctionTypes\": true
      }
    }
    ```
-3. Add ESLint rule:
+3. Thêm quy tắc ESLint:
    ```json
    {
-     "rules": {
-       "@typescript-eslint/no-explicit-any": "error"
+     \"rules\": {
+       \"@typescript-eslint/no-explicit-any\": \"error\"
      }
    }
    ```
-4. Fix all `any` usages (23 instances)
+4. Sửa tất cả các trường hợp sử dụng `any` (23 trường hợp)
 
-**Validation:**
-- [ ] Zero `any` types remain
-- [ ] TypeScript strict mode passes
-- [ ] ESLint passes with no-explicit-any rule
-- [ ] Tests pass with strict types
+**Xác nhận:**
+- [ ] Không còn kiểu `any`
+- [ ] Chế độ nghiêm ngặt TypeScript vượt qua
+- [ ] ESLint vượt qua với quy tắc no-explicit-any
+- [ ] Các kiểm thử vượt qua với các kiểu nghiêm ngặt
 
 ---
 
-## Medium Priority Issues (Recommended)
+## Các vấn đề ưu tiên trung bình (Khuyến nghị)
 
-### 6. Missing Error Handling in Async Functions
+### 6. Thiếu xử lý lỗi trong các hàm không đồng bộ (Async)
 
-**Severity**: Medium - Reliability
-**Files**: 8 functions across 4 files
+**Mức độ nghiêm trọng**: Trung bình - Độ tin cậy
+**Tệp**: 8 hàm trong 4 tệp
 
-**Examples:**
+**Ví dụ:**
 ```typescript
 // src/auth/register.ts:23
 export const registerUser = async (data: RegisterDTO) => {
-  // ✗ No try-catch, errors bubble up unhandled
+  // ✗ Không có try-catch, các lỗi nổi lên mà không được xử lý
   const hashedPassword = await bcrypt.hash(data.password, 10);
   return db('users').insert({ email: data.email, password: hashedPassword });
 };
 
 // src/auth/jwt.ts:15
 export const verifyToken = async (token: string) => {
-  // ✗ jwt.verify can throw, not caught
+  // ✗ jwt.verify có thể ném ra lỗi, không được bắt lại
   return jwt.verify(token, JWT_SECRET);
 };
 ```
 
-**Fix:**
+**Khắc phục:**
 ```typescript
-// Create centralized error handler
+// Tạo bộ xử lý lỗi tập trung
 // src/errors/auth-errors.ts
 export class AuthError extends Error {
   constructor(
@@ -730,13 +718,13 @@ export class AuthError extends Error {
 }
 
 export class InvalidTokenError extends AuthError {
-  constructor(message = 'Invalid token') {
+  constructor(message = 'Token không hợp lệ') {
     super(message, 'INVALID_TOKEN', 401);
   }
 }
 
 export class UserExistsError extends AuthError {
-  constructor(message = 'User already exists') {
+  constructor(message = 'Người dùng đã tồn tại') {
     super(message, 'USER_EXISTS', 409);
   }
 }
@@ -746,7 +734,7 @@ import { UserExistsError } from '@/errors/auth-errors';
 
 export const registerUser = async (data: RegisterDTO) => {
   try {
-    // Check if user exists
+    // Kiểm tra người dùng tồn tại
     const existingUser = await db('users').where({ email: data.email }).first();
     if (existingUser) {
       throw new UserExistsError();
@@ -759,12 +747,11 @@ export const registerUser = async (data: RegisterDTO) => {
     });
   } catch (error) {
     if (error instanceof UserExistsError) {
-      throw error;
-    }
+      throw error;\n    }
 
-    // Log unexpected errors
-    logger.error('Registration failed', { error, email: data.email });
-    throw new AuthError('Registration failed', 'REGISTRATION_ERROR', 500);
+    // Ghi nhật ký các lỗi không mong muốn
+    logger.error('Đăng ký thất bại', { error, email: data.email });
+    throw new AuthError('Đăng ký thất bại', 'REGISTRATION_ERROR', 500);
   }
 };
 
@@ -776,31 +763,31 @@ export const verifyToken = (token: string): JWTPayload => {
     return jwt.verify(token, JWT_SECRET) as JWTPayload;
   } catch (error) {
     if (error instanceof jwt.TokenExpiredError) {
-      throw new InvalidTokenError('Token expired');
+      throw new InvalidTokenError('Token đã hết hạn');
     }
     if (error instanceof jwt.JsonWebTokenError) {
-      throw new InvalidTokenError('Malformed token');
+      throw new InvalidTokenError('Token sai định dạng');
     }
     throw new InvalidTokenError();
   }
 };
 ```
 
-**Required Actions:**
-1. Add error classes for all scenarios
-2. Wrap async operations in try-catch
-3. Log errors with context
-4. Return appropriate HTTP status codes
-5. Add error monitoring (Sentry)
+**Hành động bắt buộc:**
+1. Thêm các lớp lỗi cho tất cả các kịch bản
+2. Bao bọc các hoạt động không đồng bộ trong try-catch
+3. Ghi nhật ký lỗi với bối cảnh
+4. Trả về các mã trạng thái HTTP phù hợp
+5. Thêm giám sát lỗi (Sentry)
 
 ---
 
-### 7. Test Coverage Below Target (67%)
+### 7. Độ bao phủ kiểm thử dưới mục tiêu (67%)
 
-**Severity**: Medium - Quality
-**Target**: 80%+
+**Mức độ nghiêm trọng**: Trung bình - Chất lượng
+**Mục tiêu**: 80%+
 
-**Coverage Report:**
+**Báo cáo độ bao phủ:**
 ```
 File                     | Stmts | Branch | Funcs | Lines | Uncovered Lines
 -------------------------|-------|--------|-------|-------|------------------
@@ -813,77 +800,77 @@ src/auth/validators.ts   |  62.5 |   50.0 |   75  |  62.5 | 15-19, 34-45
 Total                    |  67.1 |   58.3 |   81  |  67.1 |
 ```
 
-**Missing Tests:**
-1. Error scenarios (invalid input, network failures)
-2. Edge cases (expired tokens, concurrent logins)
-3. Security scenarios (SQL injection attempts, XSS)
-4. Integration tests (full auth flow)
+**Các kiểm thử còn thiếu:**
+1. Các kịch bản lỗi (đầu vào không hợp lệ, lỗi mạng)
+2. Các trường hợp biên (token hết hạn, đăng nhập đồng thời)
+3. Các kịch bản bảo mật (thử nghiệm SQL injection, XSS)
+4. Kiểm thử tích hợp (toàn bộ luồng xác thực)
 
-**Fix:** See [Testing Guide](#testing-recommendations) below
+**Khắc phục:** Xem [Hướng dẫn kiểm thử](#các-khuyến nghị-kiểm-thử) bên dưới
 
 ---
 
-### 8. Code Duplication (3 instances)
+### 8. Trùng lặp mã nguồn (3 trường hợp)
 
-**Severity**: Medium - Maintainability
+**Mức độ nghiêm trọng**: Trung bình - Khả năng bảo trì
 
-**Example:**
+**Ví dụ:**
 ```typescript
-// Duplicated validation logic
+// Logic xác nhận bị trùng lặp
 // src/auth/register.ts:15
 if (!data.email || !isValidEmail(data.email)) {
-  throw new Error('Invalid email');
+  throw new Error('Email không hợp lệ');
 }
 
 // src/auth/login.ts:12
 if (!credentials.email || !isValidEmail(credentials.email)) {
-  throw new Error('Invalid email');
+  throw new Error('Email không hợp lệ');
 }
 
 // src/auth/reset-password.ts:8
 if (!email || !isValidEmail(email)) {
-  throw new Error('Invalid email');
+  throw new Error('Email không hợp lệ');
 }
 ```
 
-**Fix:** Centralize validation with Zod schemas (see issue #5 fix)
+**Khắc phục:** Tập trung hóa việc xác nhận với các lược đồ Zod (xem cách sửa vấn đề #5)
 
 ---
 
-### 9-10. Additional medium priority issues...
+### 9-10. Các vấn đề ưu tiên trung bình bổ sung...
 
 ---
 
-## Low Priority Issues (Optional)
+## Các vấn đề ưu tiên thấp (Tùy chọn)
 
-### 11. Inconsistent Function Naming
+### 11. Đặt tên hàm không nhất quán
 
-**Severity**: Low - Style
+**Mức độ nghiêm trọng**: Thấp - Phong cách
 
-**Issue:**
+**Vấn đề:**
 ```typescript
-// Mixing conventions
+// Trộn lẫn các quy ước
 export const registerUser = async () => {}  // camelCase
-export const LoginUser = async () => {}     // PascalCase (wrong)
-export const verify_token = async () => {}  // snake_case (wrong)
+export const LoginUser = async () => {}     // PascalCase (sai)
+export const verify_token = async () => {}  // snake_case (sai)
 ```
 
-**Fix:** Use camelCase consistently for functions
+**Khắc phục:** Sử dụng camelCase nhất quán cho các hàm
 
 ---
 
-### 12. Missing JSDoc Comments
+### 12. Thiếu các nhận xét JSDoc
 
-**Severity**: Low - Documentation
+**Mức độ nghiêm trọng**: Thấp - Tài liệu
 
-**Fix:**
+**Khắc phục:**
 ```typescript
 /**
- * Authenticates user with email and password
- * @param email - User email address
- * @param password - Plain text password
- * @returns User object with JWT token
- * @throws {AuthError} If credentials are invalid
+ * Xác thực người dùng bằng email và mật khẩu
+ * @param email - Địa chỉ email người dùng
+ * @param password - Mật khẩu văn bản thuần túy
+ * @returns Đối tượng người dùng kèm theo token JWT
+ * @throws {AuthError} Nếu thông tin đăng nhập không hợp lệ
  */
 export const loginUser = async (
   email: string,
@@ -895,292 +882,291 @@ export const loginUser = async (
 
 ---
 
-## Task Status Update
+## Cập nhật trạng thái tác vụ
 
-**Plan File:** `plans/auth-module-implementation-20241020.md`
+**Tệp kế hoạch:** `plans/auth-module-implementation-20241020.md`
 
-### Update Task Status:
+### Cập nhật trạng thái công việc:
 ```markdown
-## Implementation Tasks
+## Các tác vụ triển khai
 
-- [x] 1. User registration endpoint
-- [x] 2. User login endpoint
-- [x] 3. JWT token generation
-- [x] 4. Auth middleware
-- [x] 5. Input validation
-- [ ] 6. Security hardening (IN PROGRESS - 5 issues found)
-  - [ ] Fix JWT secret storage (Critical)
-  - [ ] Fix SQL injection (Critical)
-  - [ ] Add password complexity (High)
-  - [ ] Add rate limiting (High)
-  - [ ] Remove any types (High)
-- [ ] 7. Error handling (NOT STARTED - 8 missing handlers)
-- [ ] 8. Integration tests (NOT STARTED - coverage 67%, target 80%)
-- [ ] 9. Documentation (NOT STARTED)
+- [x] 1. Điểm cuối đăng ký người dùng
+- [x] 2. Điểm cuối đăng nhập người dùng
+- [x] 3. Tạo token JWT
+- [x] 4. Middleware xác thực
+- [x] 5. Xác nhận đầu vào
+- [ ] 6. Thắt chặt bảo mật (ĐANG THỰC HIỆN - tìm thấy 5 vấn đề)
+  - [ ] Sửa việc lưu trữ bí mật JWT (Nghiêm trọng)
+  - [ ] Sửa SQL injection (Nghiêm trọng)
+  - [ ] Thêm độ phức tạp mật khẩu (Ưu tiên cao)
+  - [ ] Thêm giới hạn tỷ lệ (Ưu tiên cao)
+  - [ ] Loại bỏ kiểu any (Ưu tiên cao)
+- [ ] 7. Xử lý lỗi (CHƯA BẮT ĐẦU - thiếu 8 trình xử lý)
+- [ ] 8. Kiểm thử tích hợp (CHƯA BẮT ĐẦU - độ bao phủ 67%, mục tiêu 80%)
+- [ ] 9. Tài liệu (CHƯA BẮT ĐẦU)
 ```
 
-### Next Steps:
-1. **DO NOT MERGE** - Critical issues must be fixed
-2. Run: `/fix:fast [fix critical security issues]`
-3. Run: `/test [verify security fixes]`
-4. Run: `/review [re-review after fixes]`
-5. Update documentation
-6. Request final review
+### Các bước tiếp theo:
+1. **KHÔNG ĐƯỢC MERGE** - Các vấn đề nghiêm trọng phải được sửa trước
+2. Chạy: `/fix:fast [sửa các vấn đề bảo mật nghiêm trọng được tìm thấy trong review]`
+3. Chạy: `/test [xác nhận các bản sửa lỗi bảo mật]`
+4. Chạy: `/review [review lại sau khi sửa lỗi]`
+5. Cập nhật tài liệu
+6. Yêu cầu review lần cuối
 
 ---
 
-## Testing Recommendations
+## Các khuyến nghị kiểm thử
 
-### Add Missing Tests
+### Thêm các kiểm thử còn thiếu
 
 ```typescript
 // tests/auth/login.test.ts
 describe('loginUser', () => {
-  // Happy path (exists but minimal)
-  it('logs in with valid credentials', async () => {
+  // Luồng thành công (đã có nhưng tối thiểu)
+  it('đăng nhập với thông tin hợp lệ', async () => {
     const result = await loginUser('user@example.com', 'Password123!');
     expect(result).toHaveProperty('token');
   });
 
-  // Error scenarios (MISSING)
-  it('rejects invalid email format', async () => {
+  // Các kịch bản lỗi (CÒN THIẾU)
+  it('từ chối định dạng email không hợp lệ', async () => {
     await expect(loginUser('invalid', 'password'))
-      .rejects.toThrow('Invalid email');
+      .rejects.toThrow('Email không hợp lệ');
   });
 
-  it('rejects non-existent user', async () => {
+  it('từ chối người dùng không tồn tại', async () => {
     await expect(loginUser('notfound@example.com', 'password'))
-      .rejects.toThrow('User not found');
+      .rejects.toThrow('Không tìm thấy người dùng');
   });
 
-  it('rejects incorrect password', async () => {
+  it('từ chối mật khẩu sai', async () => {
     await expect(loginUser('user@example.com', 'wrongpassword'))
-      .rejects.toThrow('Invalid password');
+      .rejects.toThrow('Mật khẩu không hợp lệ');
   });
 
-  it('handles database connection failure', async () => {
-    jest.spyOn(db, 'query').mockRejectedValue(new Error('DB error'));
+  it('xử lý lỗi kết nối cơ sở dữ liệu', async () => {
+    jest.spyOn(db, 'query').mockRejectedValue(new Error('Lỗi DB'));
     await expect(loginUser('user@example.com', 'password'))
       .rejects.toThrow();
   });
 
-  // Security scenarios (MISSING)
-  it('prevents SQL injection in email field', async () => {
-    const maliciousEmail = "' OR '1'='1' --";
+  // Các kịch bản bảo mật (CÒN THIẾU)
+  it('ngăn chặn SQL injection trong trường email', async () => {
+    const maliciousEmail = \"' OR '1'='1' --\";
     await expect(loginUser(maliciousEmail, 'password'))
       .rejects.toThrow();
   });
 
-  it('rate limits after 5 failed attempts', async () => {
+  it('giới hạn tỷ lệ sau 5 lần thử thất bại', async () => {
     for (let i = 0; i < 5; i++) {
       await loginUser('user@example.com', 'wrong').catch(() => {});
     }
 
     await expect(loginUser('user@example.com', 'Password123!'))
-      .rejects.toThrow('Too many attempts');
+      .rejects.toThrow('Quá nhiều lần thử');
   });
 
-  // Edge cases (MISSING)
-  it('handles expired token gracefully', async () => {
+  // Các trường hợp biên (CÒN THIẾU)
+  it('xử lý token hết hạn một cách khéo léo', async () => {
     const expiredToken = generateExpiredToken();
     await expect(verifyToken(expiredToken))
-      .rejects.toThrow('Token expired');
+      .rejects.toThrow('Token đã hết hạn');
   });
 });
 ```
 
 ---
 
-## Performance Recommendations
+## Các khuyến nghị về hiệu suất
 
-### Database Query Optimization
+### Tối ưu hóa truy vấn cơ sở dữ liệu
 
 ```typescript
-// Current (N+1 problem)
+// Hiện tại (vấn đề N+1)
 const users = await db('users').select('*');
 for (const user of users) {
-  user.posts = await db('posts').where({ userId: user.id }); // ✗ N queries
+  user.posts = await db('posts').where({ userId: user.id }); // ✗ N truy vấn
 }
 
-// Optimized
+// Tối ưu hóa
 const users = await db('users')
   .select('users.*')
   .leftJoin('posts', 'users.id', 'posts.userId')
-  .groupBy('users.id'); // ✓ 1 query
+  .groupBy('users.id'); // ✓ 1 truy vấn
 ```
 
-### Add Database Indexes
+### Thêm các chỉ mục cơ sở dữ liệu
 
 ```sql
--- Missing indexes identified
-CREATE INDEX idx_users_email ON users(email); -- Login queries
-CREATE INDEX idx_tokens_user_id ON tokens(user_id); -- Token lookups
-CREATE INDEX idx_sessions_expires_at ON sessions(expires_at); -- Cleanup job
+-- Các chỉ mục còn thiếu được xác định
+CREATE INDEX idx_users_email ON users(email); -- Các truy vấn đăng nhập
+CREATE INDEX idx_tokens_user_id ON tokens(user_id); -- Tra cứu token
+CREATE INDEX idx_sessions_expires_at ON sessions(expires_at); -- Tác vụ dọn dẹp
 ```
 
 ---
 
-## Security Checklist
+## Danh sách kiểm tra bảo mật (Security Checklist)
 
-- [ ] No secrets in source code
-- [ ] All inputs validated
-- [ ] SQL injection prevented
-- [ ] XSS prevention in place
-- [ ] CSRF tokens implemented
-- [ ] Rate limiting configured
-- [ ] Account lockout enabled
-- [ ] Password complexity enforced
-- [ ] Tokens securely generated
-- [ ] HTTPS enforced
-- [ ] Security headers configured
-- [ ] Dependencies scanned for vulnerabilities
-
----
-
-## Deployment Blockers
-
-**Cannot deploy to production until:**
-
-1. ✗ Critical security issues fixed (2)
-2. ✗ High priority issues addressed (3)
-3. ⚠ Test coverage above 80% (currently 67%)
-4. ✓ TypeScript compilation passes
-5. ✓ Linting passes (with warnings)
-
-**Estimated Time to Production-Ready:** 6-8 hours
+- [ ] Không có bí mật trong mã nguồn
+- [ ] Tất cả đầu vào được xác nhận
+- [ ] Đã ngăn chặn SQL injection
+- [ ] Đã triển khai ngăn chặn XSS
+- [ ] Đã triển khai CSRF tokens
+- [ ] Đã cấu hình giới hạn tỷ lệ
+- [ ] Đã bật khóa tài khoản
+- [ ] Đã thực thi độ phức tạp mật khẩu
+- [ ] Các token được tạo một cách an toàn
+- [ ] Đã thực thi HTTPS
+- [ ] Đã cấu hình các tiêu đề bảo mật
+- [ ] Các phụ thuộc đã được quét lỗ hổng
 
 ---
 
-## Tools Used
+## Các rào cản triển khai
 
-- **Parallel Scouts**: 5 agents analyzing different aspects
-- **Repomix**: Generated codebase summary for analysis
-- **Security Scanners**: ESLint security plugin, npm audit
-- **Type Checker**: TypeScript compiler strict mode
-- **Test Coverage**: Jest/Vitest coverage reports
+**Không thể triển khai sản phẩm thực tế cho đến khi:**
+
+1. ✗ Các vấn đề bảo mật nghiêm trọng được sửa (2)
+2. ✗ Các vấn đề ưu tiên cao được giải quyết (3)
+3. ⚠ Độ bao phủ kiểm thử trên 80% (hiện tại 67%)
+4. ✓ Biên dịch TypeScript vượt qua
+5. ✓ Linting vượt qua (với các cảnh báo)
+
+**Thời gian dự kiến để sẵn sàng cho sản xuất:** 6-8 giờ
 
 ---
 
-## Comparison with Codebase Standards
+## Công cụ đã sử dụng
 
-**Reference:** `docs/code-standards.md`
+- **Parallel Scouts**: 5 agent phân tích các khía cạnh khác nhau
+- **Repomix**: Tạo tóm tắt mã nguồn để phân tích
+- **Security Scanners**: Plugin bảo mật ESLint, npm audit
+- **Type Checker**: Chế độ nghiêm ngặt của trình biên dịch TypeScript
+- **Test Coverage**: Báo cáo độ bao phủ Jest/Vitest
 
-| Standard | Required | Current | Status |
+---
+
+## So sánh với các tiêu chuẩn mã nguồn
+
+**Tham khảo:** `docs/code-standards.md`
+
+| Tiêu chuẩn | Bắt buộc | Hiện tại | Trạng thái |
 |----------|----------|---------|--------|
-| Test Coverage | 80%+ | 67% | ✗ |
-| TypeScript Strict | Yes | Partial | ✗ |
-| No `any` Types | Yes | 23 found | ✗ |
-| Error Handling | All async | Missing 8 | ✗ |
-| Security Scan | Pass | 5 issues | ✗ |
-| Documentation | JSDoc | Missing | ⚠ |
-| Linting | Pass | 3 warnings | ⚠ |
+| Độ bao phủ kiểm thử | 80%+ | 67% | ✗ |
+| TypeScript Nghiêm ngặt | Có | Một phần | ✗ |
+| Không dùng kiểu `any` | Có | tìm thấy 23 | ✗ |
+| Xử lý lỗi | Tất cả async | Thiếu 8 | ✗ |
+| Quét bảo mật | Vượt qua | 5 vấn đề | ✗ |
+| Tài liệu | JSDoc | Thiếu | ⚠ |
+| Linting | Vượt qua | 3 cảnh báo | ⚠ |
 
-**Assessment:** Does not meet codebase standards
+**Đánh giá:** Không đáp ứng các tiêu chuẩn mã nguồn
 
 ---
 
-## Next Review
+## Lần Review tiếp theo
 
-After fixes are applied:
+Sau khi áp dụng các bản sửa lỗi:
 ```bash
-# Re-run review to verify fixes
-/review [user authentication module]
+# Chạy lại review để xác nhận các bản sửa lỗi
+/review [mô-đun xác thực người dùng]
 
-# Expected result:
-# - 0 critical issues
-# - 0-1 high priority issues
-# - <5 medium priority issues
-# - Test coverage 80%+
-# - Production ready ✓
+# Kết quả mong đợi:
+# - 0 vấn đề nghiêm trọng
+# - 0-1 vấn đề ưu tiên cao
+# - <5 vấn đề ưu tiên trung bình
+# - Độ bao phủ kiểm thử 80%+
+# - Sẵn sàng cho sản xuất ✓
 ```
 
 ---
 
-**Review Completed**: 2024-10-20 15:45:00 UTC
+**Review hoàn tất**: 2024-10-20 15:45:00 UTC
 **Reviewer**: ClaudeKit Code Reviewer Agent v1.0
-**Total Review Time**: 90 seconds
-**Files Analyzed**: 9 files (1,247 lines)
-**Issues Found**: 12 (2 critical, 3 high, 5 medium, 2 low)
-**Recommendation**: **Do not merge** - Fix critical issues first
-```
+**Tổng thời gian Review**: 90 giây
+**Số tệp được phân tích**: 9 tệp (1.247 dòng)
+**Số vấn đề được tìm thấy**: 12 (2 nghiêm trọng, 3 cao, 5 trung bình, 2 thấp)
+**Đề xuất**: **Không được merge** - Sửa các vấn đề nghiêm trọng trước
 
-## Best Practices
+## Thực hành tốt nhất
 
-### Review Workflow
+### Quy trình Review
 
 ```bash
-# 1. Implement feature
-/cook [implement user authentication]
+# 1. Triển khai tính năng
+/cook [triển khai xác thực người dùng]
 
-# 2. Run tests
+# 2. Chạy kiểm thử
 /test
 
 # 3. Code review
-/review [user authentication module]
+/review [mô-đun xác thực người dùng]
 
-# 4. Fix issues
-/fix:fast [fix critical security issues found in review]
+# 4. Sửa các vấn đề
+/fix:fast [sửa các vấn đề bảo mật nghiêm trọng được tìm thấy trong review]
 
-# 5. Re-test
+# 5. Kiểm thử lại
 /test
 
-# 6. Re-review
-/review [user authentication module]
+# 6. Review lại
+/review [mô-đun xác thực người dùng]
 
-# 7. If approved, create PR
-/pr [add user authentication]
+# 7. Nếu được phê duyệt, tạo PR
+/pr [thêm xác thực người dùng]
 ```
 
-### Review Scope
+### Phạm vi Review
 
-**Focused Review:**
+**Review tập trung:**
 ```bash
-/review [src/auth/] # Specific directory
-/review [user authentication] # Feature description
+/review [src/auth/] # Thư mục cụ thể
+/review [xác thực người dùng] # Mô tả tính năng
 /review [PR-123] # Pull request
 ```
 
-**Full Codebase Review:**
+**Review toàn bộ mã nguồn:**
 ```bash
-/review [entire codebase security audit]
-/review [performance analysis]
-/review [type safety improvements]
+/review [kiểm tra bảo mật toàn bộ mã nguồn]
+/review [phân tích hiệu suất]
+/review [cải thiện an toàn kiểu]
 ```
 
-## Success Metrics
+## Các chỉ số thành công
 
-A successful code review:
+Một code review thành công:
 
-- ✅ Identifies all critical security issues
-- ✅ Validates type safety compliance
-- ✅ Ensures test coverage meets target
-- ✅ Provides actionable recommendations
-- ✅ Categorizes issues by priority
-- ✅ Prevents production incidents
-- ✅ Improves code quality over time
+- ✅ Xác định tất cả các vấn đề bảo mật nghiêm trọng
+- ✅ Xác nhận việc tuân thủ an toàn kiểu
+- ✅ Đảm bảo độ bao phủ kiểm thử đạt mục tiêu
+- ✅ Cung cấp các đề xuất có thể thực hiện được
+- ✅ Phân loại các vấn đề theo mức độ ưu tiên
+- ✅ Ngăn chặn các sự cố trong sản xuất
+- ✅ Cải thiện chất lượng mã nguồn theo thời gian
 
-## Integration with Development
+## Tích hợp với quá trình phát triển
 
-### Pre-Merge Checklist
+### Danh sách kiểm tra trước khi Merge
 
 ```markdown
-## Code Review Checklist
+## Danh sách kiểm tra Code Review
 
-- [ ] Run `/review` and address all critical issues
-- [ ] Run `/test` and ensure coverage >80%
-- [ ] Fix all TypeScript strict mode errors
-- [ ] Address security vulnerabilities
-- [ ] Update documentation
-- [ ] Verify performance is acceptable
-- [ ] Ensure backward compatibility
+- [ ] Chạy `/review` và giải quyết tất cả các vấn đề nghiêm trọng
+- [ ] Chạy `/test` và đảm bảo độ bao phủ >80%
+- [ ] Sửa tất cả các lỗi chế độ nghiêm ngặt của TypeScript
+- [ ] Giải quyết các lỗ hổng bảo mật
+- [ ] Cập nhật tài liệu
+- [ ] Xác nhận hiệu suất ở mức chấp nhận được
+- [ ] Đảm bảo khả năng tương thích ngược
 ```
 
-## Next Steps
+## Các bước tiếp theo
 
-- [Planner](/docs/engineer/agents/planner) - Plan fixes for issues
-- [Fix Commands](/docs/engineer/commands/fix) - Apply fixes
-- [Testing](/docs/engineer/agents/tester) - Validate fixes
+- [Planner](/vi/docs/engineer/agents/planner) - Lập kế hoạch sửa chữa các vấn đề
+- [Các lệnh sửa lỗi](/vi/docs/engineer/commands/fix) - Áp dụng các bản sửa lỗi
+- [Kiểm thử](/vi/docs/engineer/agents/tester) - Xác nhận các bản sửa lỗi
 
 ---
 
-**Key Takeaway**: The code reviewer agent provides comprehensive quality assessment with security focus, categorized findings, and clear action items to ensure production-ready code.
+**Thông điệp chính**: Agent code reviewer cung cấp đánh giá chất lượng toàn diện với trọng tâm là bảo mật, các phát hiện được phân loại và các mục hành động rõ ràng để đảm bảo mã nguồn sẵn sàng cho sản xuất.

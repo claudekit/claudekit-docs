@@ -1,59 +1,60 @@
 ---
-title: Tailwind CSS Skill
-description: Documentation for tailwindcss
+title: Kỹ năng Tailwind CSS
+description: Tài liệu hướng dẫn sử dụng kỹ năng tailwindcss
 section: engineer
 kit: engineer
 category: skills/frontend
 order: 3
 published: true
+lang: vi
 ---
 
-# Tailwind CSS Skill
+# Kỹ năng Tailwind CSS
 
-A utility-first CSS framework that enables rapid UI development through composable classes, eliminating the need to write custom CSS.
+Một framework CSS ưu tiên tiện ích (utility-first) cho phép phát triển giao diện người dùng nhanh chóng thông qua các class có thể kết hợp, loại bỏ nhu cầu viết CSS tùy chỉnh.
 
-## What Tailwind CSS Provides
+## Những gì Tailwind CSS cung cấp
 
-- **Utility Classes**: Pre-designed classes for every CSS property
-- **Responsive Design**: Mobile-first breakpoints with simple prefixes
-- **Dark Mode**: Built-in dark mode support with class or media query strategy
-- **Customization**: Fully customizable design system via config file
-- **JIT Compiler**: Just-in-Time compilation for instant build times
-- **No Build Step**: CDN option for quick prototyping
-- **Tree Shaking**: Unused styles automatically removed in production
-- **Component Composition**: Build complex components from utility classes
+- **Utility Classes**: Các class được thiết kế sẵn cho mọi thuộc tính CSS
+- **Thiết kế đáp ứng (Responsive Design)**: Các breakpoint ưu tiên thiết bị di động với các tiền tố đơn giản
+- **Chế độ tối (Dark Mode)**: Hỗ trợ chế độ tối tích hợp sẵn với chiến lược class hoặc media query
+- **Khả năng tùy chỉnh**: Hệ thống thiết kế hoàn toàn có thể tùy chỉnh thông qua tệp cấu hình
+- **Trình biên dịch JIT**: Biên dịch Just-in-Time cho thời gian build tức thì
+- **Không cần bước Build**: Tùy chọn CDN để tạo mẫu nhanh
+- **Tree Shaking**: Các kiểu không sử dụng sẽ tự động được loại bỏ trong môi trường sản xuất
+- **Kết hợp Component**: Xây dựng các component phức tạp từ các utility class
 
-## Setup
+## Thiết lập
 
-### Prerequisites
+### Điều kiện tiên quyết
 
-- Node.js 16+ installed
-- A build tool (Vite, Next.js, webpack, etc.)
-- Basic CSS knowledge
+- Đã cài đặt Node.js 16+
+- Một công cụ build (Vite, Next.js, webpack, v.v.)
+- Kiến thức CSS cơ bản
 
-### Installation with Next.js
+### Cài đặt với Next.js
 
 ```bash
-# Next.js 13+ includes Tailwind by default
+# Next.js 13+ bao gồm Tailwind theo mặc định
 npx create-next-app@latest
 
-# Select "Yes" when prompted for Tailwind CSS
+# Chọn "Yes" khi được hỏi về Tailwind CSS
 ```
 
-### Installation with Vite
+### Cài đặt với Vite
 
 ```bash
-# Create Vite project
+# Tạo dự án Vite
 npm create vite@latest my-app
 
-# Install Tailwind and dependencies
+# Cài đặt Tailwind và các phụ thuộc
 npm install -D tailwindcss postcss autoprefixer
 
-# Initialize Tailwind config
+# Khởi tạo cấu hình Tailwind
 npx tailwindcss init -p
 ```
 
-**Configure tailwind.config.js:**
+**Cấu hình tailwind.config.js:**
 ```javascript
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -68,14 +69,14 @@ export default {
 }
 ```
 
-**Add Tailwind directives to CSS (src/index.css):**
+**Thêm các chỉ thị Tailwind vào CSS (src/index.css):**
 ```css
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 ```
 
-### CDN Setup (for prototyping only)
+### Thiết lập CDN (chỉ để tạo mẫu)
 
 ```html
 <!DOCTYPE html>
@@ -91,42 +92,42 @@ export default {
 </html>
 ```
 
-## Usage
+## Cách sử dụng
 
-### Basic Example: Simple Card Component
+### Ví dụ cơ bản: Component Card đơn giản
 
 ```tsx
 export default function ProductCard() {
   return (
     <div className="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white">
-      {/* Image */}
+      {/* Hình ảnh */}
       <img
         className="w-full h-48 object-cover"
         src="/product.jpg"
-        alt="Product"
+        alt="Sản phẩm"
       />
 
-      {/* Content */}
+      {/* Nội dung */}
       <div className="p-6">
         <h2 className="text-xl font-bold text-gray-900 mb-2">
-          Premium Product
+          Sản phẩm cao cấp
         </h2>
         <p className="text-gray-600 text-base mb-4">
-          High-quality product with excellent features and customer reviews.
+          Sản phẩm chất lượng cao với các tính năng tuyệt vời và đánh giá tốt từ khách hàng.
         </p>
 
-        {/* Price and button */}
+        {/* Giá và nút */}
         <div className="flex items-center justify-between">
           <span className="text-2xl font-bold text-green-600">
             $99.99
           </span>
           <button className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
-            Add to Cart
+            Thêm vào giỏ hàng
           </button>
         </div>
       </div>
 
-      {/* Tags */}
+      {/* Thẻ (Tags) */}
       <div className="px-6 pb-4 flex gap-2">
         <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">
           #electronics
@@ -140,7 +141,7 @@ export default function ProductCard() {
 }
 ```
 
-### Advanced Example: Responsive Dashboard Layout
+### Ví dụ nâng cao: Bố cục Dashboard đáp ứng
 
 ```tsx
 export default function DashboardLayout({ children }) {
@@ -150,9 +151,9 @@ export default function DashboardLayout({ children }) {
       <header className="bg-white shadow-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
+            <h1 className="text-2xl font-bold text-gray-900">Bảng điều khiển</h1>
             <button className="md:hidden p-2 rounded-lg hover:bg-gray-100">
-              {/* Mobile menu button */}
+              {/* Nút menu di động */}
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
@@ -161,48 +162,48 @@ export default function DashboardLayout({ children }) {
         </div>
       </header>
 
-      {/* Main content area */}
+      {/* Khu vực nội dung chính */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Stats cards */}
+          {/* Các thẻ thống kê */}
           <div className="bg-white rounded-lg shadow p-6">
             <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wide">
-              Total Revenue
+              Tổng doanh thu
             </h3>
             <p className="mt-2 text-3xl font-bold text-gray-900">
               $45,231
             </p>
             <p className="mt-2 text-sm text-green-600">
-              <span className="font-medium">+12%</span> from last month
+              <span className="font-medium">+12%</span> so với tháng trước
             </p>
           </div>
 
           <div className="bg-white rounded-lg shadow p-6">
             <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wide">
-              New Users
+              Người dùng mới
             </h3>
             <p className="mt-2 text-3xl font-bold text-gray-900">
               1,234
             </p>
             <p className="mt-2 text-sm text-green-600">
-              <span className="font-medium">+8%</span> from last month
+              <span className="font-medium">+8%</span> so với tháng trước
             </p>
           </div>
 
           <div className="bg-white rounded-lg shadow p-6">
             <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wide">
-              Active Sessions
+              Phiên hoạt động
             </h3>
             <p className="mt-2 text-3xl font-bold text-gray-900">
               567
             </p>
             <p className="mt-2 text-sm text-red-600">
-              <span className="font-medium">-3%</span> from last month
+              <span className="font-medium">-3%</span> so với tháng trước
             </p>
           </div>
         </div>
 
-        {/* Content */}
+        {/* Nội dung */}
         <div className="mt-8">
           {children}
         </div>
@@ -212,43 +213,43 @@ export default function DashboardLayout({ children }) {
 }
 ```
 
-### Responsive Design
+### Thiết kế đáp ứng (Responsive Design)
 
-Tailwind uses mobile-first breakpoints:
+Tailwind sử dụng các breakpoint ưu tiên thiết bị di động:
 
 ```tsx
 <div className="
-  w-full           /* Mobile: full width */
-  sm:w-1/2         /* Small screens (640px+): half width */
-  md:w-1/3         /* Medium screens (768px+): third width */
-  lg:w-1/4         /* Large screens (1024px+): quarter width */
-  xl:w-1/5         /* Extra large (1280px+): fifth width */
-  2xl:w-1/6        /* 2X large (1536px+): sixth width */
-  p-4              /* Padding on all sides */
-  md:p-8           /* Larger padding on medium+ screens */
+  w-full           /* Di động: toàn chiều rộng */
+  sm:w-1/2         /* Màn hình nhỏ (640px+): một nửa chiều rộng */
+  md:w-1/3         /* Màn hình trung bình (768px+): một phần ba chiều rộng */
+  lg:w-1/4         /* Màn hình lớn (1024px+): một phần tư chiều rộng */
+  xl:w-1/5         /* Rất lớn (1280px+): một phần năm chiều rộng */
+  2xl:w-1/6        /* Cực lớn (1536px+): một phần sáu chiều rộng */
+  p-4              /* Padding ở tất cả các cạnh */
+  md:p-8           /* Padding lớn hơn trên màn hình trung bình trở lên */
 ">
-  Responsive content
+  Nội dung đáp ứng
 </div>
 ```
 
-**Breakpoint reference:**
-- `sm:` - 640px and up
-- `md:` - 768px and up
-- `lg:` - 1024px and up
-- `xl:` - 1280px and up
-- `2xl:` - 1536px and up
+**Tham chiếu Breakpoint:**
+- `sm:` - 640px trở lên
+- `md:` - 768px trở lên
+- `lg:` - 1024px trở lên
+- `xl:` - 1280px trở lên
+- `2xl:` - 1536px trở lên
 
-### Dark Mode
+### Chế độ tối (Dark Mode)
 
-**Configure dark mode (tailwind.config.js):**
+**Cấu hình chế độ tối (tailwind.config.js):**
 ```javascript
 export default {
-  darkMode: 'class', // or 'media' for system preference
-  // ... rest of config
+  darkMode: 'class', // hoặc 'media' cho tùy chọn hệ thống
+  // ... phần còn lại của cấu hình
 }
 ```
 
-**Using dark mode classes:**
+**Sử dụng các class chế độ tối:**
 ```tsx
 <div className="
   bg-white dark:bg-gray-900
@@ -256,15 +257,15 @@ export default {
   border border-gray-200 dark:border-gray-700
 ">
   <h1 className="text-xl font-bold">
-    Title (adapts to dark mode)
+    Tiêu đề (thích ứng với chế độ tối)
   </h1>
   <p className="text-gray-600 dark:text-gray-400">
-    Description text
+    Văn bản mô tả
   </p>
 </div>
 ```
 
-**Toggle dark mode:**
+**Chuyển đổi chế độ tối:**
 ```tsx
 'use client';
 
@@ -274,7 +275,7 @@ export function ThemeToggle() {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    // Check stored preference
+    // Kiểm tra tùy chọn đã lưu
     const stored = localStorage.getItem('theme');
     const isDarkMode = stored === 'dark';
     setIsDark(isDarkMode);
@@ -308,14 +309,14 @@ export function ThemeToggle() {
 }
 ```
 
-### Custom Theme Configuration
+### Cấu hình Theme tùy chỉnh
 
-**Extending the default theme (tailwind.config.js):**
+**Mở rộng theme mặc định (tailwind.config.js):**
 ```javascript
 export default {
   theme: {
     extend: {
-      // Custom colors
+      // Màu tùy chỉnh
       colors: {
         brand: {
           50: '#f0f9ff',
@@ -325,25 +326,25 @@ export default {
         },
       },
 
-      // Custom spacing
+      // Khoảng cách tùy chỉnh
       spacing: {
         '128': '32rem',
         '144': '36rem',
       },
 
-      // Custom fonts
+      // Phông chữ tùy chỉnh
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
         mono: ['Fira Code', 'monospace'],
       },
 
-      // Custom animations
+      // Hiệu ứng động tùy chỉnh
       animation: {
         'spin-slow': 'spin 3s linear infinite',
         'bounce-slow': 'bounce 2s infinite',
       },
 
-      // Custom box shadows
+      // Đổ bóng tùy chỉnh
       boxShadow: {
         'inner-lg': 'inset 0 2px 4px 0 rgb(0 0 0 / 0.1)',
       },
@@ -352,7 +353,7 @@ export default {
 }
 ```
 
-**Using custom theme:**
+**Sử dụng theme tùy chỉnh:**
 ```tsx
 <div className="
   bg-brand-500
@@ -361,65 +362,65 @@ export default {
   animate-spin-slow
   w-128
 ">
-  Custom themed content
+  Nội dung với theme tùy chỉnh
 </div>
 ```
 
-## Integration with ClaudeKit
+## Tích hợp với ClaudeKit
 
-ClaudeKit agents use the Tailwind CSS skill to:
+Các agent của ClaudeKit sử dụng kỹ năng Tailwind CSS để:
 
-### 1. Rapid UI Prototyping
-
-```bash
-/design:fast [landing page with hero section]
-```
-
-The UI/UX Designer agent will:
-- Use Tailwind utility classes for rapid development
-- Implement responsive breakpoints
-- Apply consistent spacing and colors
-- Create reusable component patterns
-
-### 2. Design System Implementation
+### 1. Tạo mẫu UI nhanh chóng
 
 ```bash
-/design:good [component library with design tokens]
+/design:fast [landing page với phần hero]
 ```
 
-The agent will:
-- Configure custom theme in tailwind.config.js
-- Define brand colors, fonts, and spacing
-- Create component variants with Tailwind
-- Implement dark mode support
+Agent UI/UX Designer sẽ:
+- Sử dụng các utility class của Tailwind để phát triển nhanh chóng
+- Triển khai các breakpoint đáp ứng
+- Áp dụng khoảng cách và màu sắc nhất quán
+- Tạo các mẫu component có thể tái sử dụng
 
-### 3. Responsive Layout Creation
+### 2. Triển khai hệ thống thiết kế (Design System)
 
 ```bash
-/cook [responsive dashboard with sidebar]
+/design:good [thư viện component với các design token]
 ```
 
-The Developer agent will:
-- Use Tailwind grid and flexbox utilities
-- Implement mobile-first responsive design
-- Add breakpoint-specific styling
-- Optimize for all screen sizes
+Agent sẽ:
+- Cấu hình theme tùy chỉnh trong tailwind.config.js
+- Định nghĩa màu sắc thương hiệu, phông chữ và khoảng cách
+- Tạo các biến thể component với Tailwind
+- Triển khai hỗ trợ chế độ tối
 
-## Best Practices
+### 3. Tạo bố cục đáp ứng (Responsive Layout)
 
-### 1. Component Composition
+```bash
+/cook [dashboard đáp ứng với thanh bên]
+```
 
-**Extract repeated patterns:**
+Agent Developer sẽ:
+- Sử dụng các tiện ích grid và flexbox của Tailwind
+- Triển khai thiết kế đáp ứng ưu tiên di động
+- Thêm các kiểu dáng đặc thù cho từng breakpoint
+- Tối ưu hóa cho tất cả các kích thước màn hình
+
+## Phương pháp hay nhất
+
+### 1. Kết hợp Component
+
+**Trích xuất các mẫu lặp lại:**
 ```tsx
-// Instead of repeating classes
+// Thay vì lặp lại các class
 <button className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
-  Button 1
+  Nút 1
 </button>
 <button className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
-  Button 2
+  Nút 2
 </button>
 
-// Create a component
+// Tạo một component
 function Button({ children }) {
   return (
     <button className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors">
@@ -429,9 +430,9 @@ function Button({ children }) {
 }
 ```
 
-### 2. Use @apply for Complex Components
+### 2. Sử dụng @apply cho các Component phức tạp
 
-**When component classes get too long:**
+**Khi các class của component quá dài:**
 ```css
 /* src/styles/components.css */
 @layer components {
@@ -450,38 +451,38 @@ function Button({ children }) {
 }
 ```
 
-**Usage:**
+**Cách dùng:**
 ```tsx
 <button className="btn-primary">
   Click Me
 </button>
 
 <div className="card">
-  Card content
+  Nội dung Card
 </div>
 ```
 
-### 3. Consistent Spacing
+### 3. Khoảng cách nhất quán
 
-**Use spacing scale consistently:**
+**Sử dụng thang đo khoảng cách một cách nhất quán:**
 ```tsx
-// Good: Using Tailwind's spacing scale
-<div className="space-y-4">  {/* 1rem gap */}
-  <div className="p-4">Content 1</div>
-  <div className="p-4">Content 2</div>
-  <div className="p-4">Content 3</div>
+// Tốt: Sử dụng thang đo khoảng cách của Tailwind
+<div className="space-y-4">  {/* khoảng cách 1rem */}
+  <div className="p-4">Nội dung 1</div>
+  <div className="p-4">Nội dung 2</div>
+  <div className="p-4">Nội dung 3</div>
 </div>
 
-// Bad: Arbitrary values for common spacing
+// Không tốt: Các giá trị tùy ý cho khoảng cách phổ biến
 <div className="space-y-[17px]">
-  <div className="p-[15px]">Content 1</div>
+  <div className="p-[15px]">Nội dung 1</div>
 </div>
 ```
 
-### 4. Organize Long Class Names
+### 4. Sắp xếp các tên Class dài
 
 ```tsx
-// Use template literals for readability
+// Sử dụng template literals để dễ đọc
 const cardClasses = `
   max-w-sm rounded-lg overflow-hidden shadow-lg
   bg-white dark:bg-gray-800
@@ -490,11 +491,11 @@ const cardClasses = `
 `;
 
 <div className={cardClasses}>
-  Card content
+  Nội dung Card
 </div>
 
-// Or use a utility function
-import { cn } from '@/lib/utils'; // classnames merger
+// Hoặc sử dụng một hàm tiện ích
+import { cn } from '@/lib/utils'; // bộ trộn classnames
 
 <div className={cn(
   "max-w-sm rounded-lg overflow-hidden shadow-lg",
@@ -502,13 +503,13 @@ import { cn } from '@/lib/utils'; // classnames merger
   "hover:shadow-xl transition-shadow duration-300",
   isActive && "ring-2 ring-blue-500"
 )}>
-  Card content
+  Nội dung Card
 </div>
 ```
 
-### 5. Performance Optimization
+### 5. Tối ưu hóa hiệu suất
 
-**Purge unused styles:**
+**Loại bỏ các kiểu không sử dụng (Purge):**
 ```javascript
 // tailwind.config.js
 export default {
@@ -516,18 +517,18 @@ export default {
     './src/**/*.{js,jsx,ts,tsx}',
     './public/index.html',
   ],
-  // Tailwind will only include classes used in these files
+  // Tailwind sẽ chỉ bao gồm các class được sử dụng trong các tệp này
 }
 ```
 
-**Use JIT mode (enabled by default in v3+):**
-- Generates styles on-demand
-- Instant build times
-- All variants available without config
+**Sử dụng chế độ JIT (được bật mặc định từ v3+):**
+- Tạo các kiểu theo yêu cầu
+- Thời gian build tức thì
+- Tất cả các biến thể có sẵn mà không cần cấu hình
 
-## Common Patterns
+## Các mẫu phổ biến
 
-### Form Styling
+### Tạo kiểu cho Form
 
 ```tsx
 export function LoginForm() {
@@ -546,7 +547,7 @@ export function LoginForm() {
 
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-2">
-          Password
+          Mật khẩu
         </label>
         <input
           type="password"
@@ -558,17 +559,17 @@ export function LoginForm() {
         type="submit"
         className="w-full py-2 px-4 bg-blue-500 text-white font-medium rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
       >
-        Sign In
+        Đăng nhập
       </button>
     </form>
   );
 }
 ```
 
-### Grid Layouts
+### Bố cục Grid
 
 ```tsx
-// Responsive grid
+// Grid đáp ứng
 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
   {items.map(item => (
     <div key={item.id} className="bg-white rounded-lg p-4 shadow">
@@ -577,40 +578,40 @@ export function LoginForm() {
   ))}
 </div>
 
-// Auto-fit grid (fills available space)
+// Grid tự động khớp (lấp đầy không gian trống)
 <div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4">
-  {/* Cards will automatically wrap */}
+  {/* Các thẻ sẽ tự động xuống dòng */}
 </div>
 ```
 
-### Flexbox Layouts
+### Bố cục Flexbox
 
 ```tsx
-// Centered content
+// Căn giữa nội dung
 <div className="flex items-center justify-center min-h-screen">
   <div className="text-center">
-    <h1>Centered Content</h1>
+    <h1>Nội dung căn giữa</h1>
   </div>
 </div>
 
-// Space between items
+// Khoảng cách giữa các mục
 <div className="flex items-center justify-between">
-  <span>Left</span>
-  <span>Right</span>
+  <span>Trái</span>
+  <span>Phải</span>
 </div>
 
-// Vertical stack with gaps
+// Chồng dọc với các khoảng cách
 <div className="flex flex-col space-y-4">
-  <div>Item 1</div>
-  <div>Item 2</div>
-  <div>Item 3</div>
+  <div>Mục 1</div>
+  <div>Mục 2</div>
+  <div>Mục 3</div>
 </div>
 ```
 
-### Transitions and Animations
+### Hiệu ứng chuyển cảnh và Hoạt ảnh
 
 ```tsx
-// Hover effects
+// Hiệu ứng hover
 <button className="
   bg-blue-500 hover:bg-blue-600
   transform hover:scale-105
@@ -619,15 +620,15 @@ export function LoginForm() {
   Hover Me
 </button>
 
-// Loading spinner
+// Vòng quay loading
 <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900" />
 
-// Fade in
+// Hiệu ứng mờ dần (Fade in)
 <div className="opacity-0 animate-fade-in">
-  Content fades in
+  Nội dung mờ dần hiện ra
 </div>
 
-// Custom animation (add to config)
+// Hoạt ảnh tùy chỉnh (thêm vào cấu hình)
 // tailwind.config.js
 keyframes: {
   'fade-in': {
@@ -640,14 +641,14 @@ animation: {
 }
 ```
 
-## Plugins
+## Plugin
 
-**Install popular plugins:**
+**Cài đặt các plugin phổ biến:**
 ```bash
 npm install -D @tailwindcss/forms @tailwindcss/typography @tailwindcss/aspect-ratio
 ```
 
-**Configure (tailwind.config.js):**
+**Cấu hình (tailwind.config.js):**
 ```javascript
 export default {
   plugins: [
@@ -658,18 +659,18 @@ export default {
 }
 ```
 
-**Usage:**
+**Cách dùng:**
 ```tsx
 // @tailwindcss/typography
 <article className="prose prose-lg dark:prose-invert max-w-none">
-  <h1>Article Title</h1>
-  <p>Beautiful typography with no custom CSS.</p>
+  <h1>Tiêu đề bài viết</h1>
+  <p>Kiểu chữ đẹp mắt mà không cần CSS tùy chỉnh.</p>
 </article>
 
 // @tailwindcss/forms
 <input type="email" className="form-input rounded-lg" />
 <select className="form-select rounded-lg">
-  <option>Option 1</option>
+  <option>Tùy chọn 1</option>
 </select>
 
 // @tailwindcss/aspect-ratio
@@ -678,21 +679,21 @@ export default {
 </div>
 ```
 
-## Related Skills
+## Các kỹ năng liên quan
 
-- [Next.js](/docs/engineer/skills/nextjs) - React framework integration
-- [shadcn/ui](/docs/engineer/skills/shadcn-ui) - Pre-built components
-- [React](/docs/engineer/skills/react) - Component development
-- [TypeScript](/docs/engineer/skills/typescript) - Type-safe styling
+- [Next.js](/docs/engineer/skills/nextjs) - Tích hợp framework React
+- [shadcn/ui](/docs/engineer/skills/shadcn-ui) - Các component được xây dựng sẵn
+- [React](/docs/engineer/skills/react) - Phát triển component
+- [TypeScript](/docs/engineer/skills/typescript) - Tạo kiểu an toàn cho giao diện
 
-## Reference
+## Tài liệu tham khảo
 
-- **Official Docs**: https://tailwindcss.com/docs
-- **Tailwind UI**: https://tailwindui.com (premium components)
+- **Tài liệu chính thức**: https://tailwindcss.com/docs
+- **Tailwind UI**: https://tailwindui.com (các component trả phí)
 - **Playground**: https://play.tailwindcss.com
 - **Cheat Sheet**: https://nerdcave.com/tailwind-cheat-sheet
-- **Color Palette**: https://tailwindcss.com/docs/customizing-colors
+- **Bảng màu**: https://tailwindcss.com/docs/customizing-colors
 
 ---
 
-**Key Takeaway**: Tailwind CSS accelerates UI development by providing a comprehensive set of utility classes, eliminating the need for custom CSS while maintaining full design flexibility. ClaudeKit agents leverage Tailwind to rapidly prototype and build production-ready interfaces.
+**Điểm chính**: Tailwind CSS tăng tốc quá trình phát triển UI bằng cách cung cấp một bộ đầy đủ các utility class, loại bỏ nhu cầu về CSS tùy chỉnh trong khi vẫn duy trì tính linh hoạt hoàn toàn trong thiết kế. Các agent của ClaudeKit tận dụng Tailwind để nhanh chóng tạo mẫu và xây dựng các giao diện sẵn sàng cho môi trường sản xuất.

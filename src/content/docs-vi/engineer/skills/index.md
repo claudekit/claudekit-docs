@@ -1,716 +1,710 @@
 ---
-title: Kỹ Năng Tổng Quan
-description: Documentation for index
+title: Kỹ Năng (Skills)
+description: Tài liệu hướng dẫn sử dụng Skills trong ClaudeKit
 section: engineer
 kit: engineer
 category: docs/skills
 order: 1
 published: true
+lang: vi
 ---
 
-# Skills Overview
+# Kỹ Năng (Skills)
 
-Skills are specialized capabilities that extend Claude Code's functionality. ClaudeKit includes 46+ pre-built skills covering everything from authentication to AI integration.
+Skills là các năng lực chuyên biệt giúp mở rộng khả năng của Claude Code. ClaudeKit bao gồm hơn 46 kỹ năng được xây dựng sẵn, bao quát mọi lĩnh vực từ xác thực người dùng đến tích hợp AI.
 
-## What Are Skills?
+## Skills Là Gì?
 
-Skills are folders of instructions, scripts, and resources that Claude loads dynamically to improve performance on specialized tasks. They teach Claude how to complete specific tasks in a repeatable way.
+Skills là các thư mục chứa hướng dẫn, tập lệnh (scripts) và tài nguyên mà Claude tải lên một cách linh hoạt để cải thiện hiệu suất cho các tác vụ chuyên biệt. Chúng dạy cho Claude cách hoàn thành các công việc cụ thể một cách nhất quán và có thể lặp lại.
 
-**Key Benefits:**
-- Pre-built expertise for common frameworks
-- Consistent implementation patterns
-- Best practices baked in
-- Immediate access to specialized knowledge
-- No configuration needed
+**Lợi ích chính:**
+- Chuyên môn có sẵn cho các framework phổ biến.
+- Các mẫu (patterns) triển khai nhất quán.
+- Tích hợp sẵn các phương pháp hay nhất (best practices).
+- Truy cập tức thì vào kiến thức chuyên ngành.
+- Không cần cấu hình phức tạp.
 
 ---
 
-## Skill Categories
+## Danh Mục Skills
 
-### Meta Skills
+### Kỹ Năng Meta (Meta Skills)
 
-Skills for creating and managing other skills.
+Các kỹ năng dùng để tạo và quản lý các kỹ năng khác.
 
 #### [skill-creator](/docs/engineer/skills/skill-creator)
-Create new custom skills that extend Claude's capabilities with specialized knowledge, workflows, or tool integrations.
+Tạo các kỹ năng tùy chỉnh mới để mở rộng khả năng của Claude với kiến thức chuyên môn, quy trình làm việc hoặc tích hợp công cụ.
 
-**Use when:** Building custom skills for your project-specific needs
+**Sử dụng khi:** Xây dựng các kỹ năng tùy chỉnh cho nhu cầu cụ thể của dự án.
 
-**Example:**
+**Ví dụ:**
 ```
-"Use skill-creator to create a skill for GraphQL schema generation"
+"Sử dụng skill-creator để tạo một kỹ năng tạo schema GraphQL"
 ```
 
-[→ Full skill-creator guide](/docs/engineer/skills/skill-creator)
+[→ Hướng dẫn đầy đủ về skill-creator](/docs/engineer/skills/skill-creator)
 
 ---
 
 #### template-skill
-Basic template as starting point for new skills.
+Mẫu cơ bản để bắt đầu tạo các kỹ năng mới.
 
 ---
 
-### Authentication & Security
+### Xác Thực & Bảo Mật (Authentication & Security)
 
 #### [better-auth](/docs/engineer/skills/better-auth)
-Framework-agnostic authentication framework for TypeScript with email/password, OAuth, 2FA, passkeys, and multi-tenancy.
+Framework xác thực đa nền tảng cho TypeScript với các tính năng email/mật khẩu, OAuth, 2FA, passkeys và đa người thuê (multi-tenancy).
 
-**Use when:** Implementing authentication in TypeScript/JavaScript apps
+**Sử dụng khi:** Triển khai xác thực trong các ứng dụng TypeScript/JavaScript.
 
-**Features:**
-- Email/password authentication
-- Social OAuth (GitHub, Google, etc.)
-- Two-factor authentication
-- Passkeys (WebAuthn)
-- Magic links
-- Organization/multi-tenancy
-- Works with any framework
+**Tính năng:**
+- Xác thực email/mật khẩu.
+- Đăng nhập mạng xã hội OAuth (GitHub, Google, v.v.).
+- Xác thực hai yếu tố (2FA).
+- Passkeys (WebAuthn).
+- Magic links.
+- Quản lý tổ chức/đa người thuê.
+- Hoạt động với mọi framework.
 
-**Example:**
+**Ví dụ:**
 ```
-"Use better-auth to implement GitHub OAuth with 2FA"
+"Sử dụng better-auth để triển khai GitHub OAuth với 2FA"
 ```
 
-[→ Full better-auth guide](/docs/engineer/skills/better-auth)
+[→ Hướng dẫn đầy đủ về better-auth](/docs/engineer/skills/better-auth)
 
 ---
 
-### Design & Visual
+### Thiết Kế & Hình Ảnh (Design & Visual)
 
 #### canvas-design
-Create beautiful visual art in PNG and PDF formats using design philosophy.
+Tạo các tác phẩm nghệ thuật hình ảnh đẹp mắt ở định dạng PNG và PDF dựa trên triết lý thiết kế chuyên nghiệp.
 
-**Use when:** Creating posters, designs, or visual content
+**Sử dụng khi:** Tạo poster, bản thiết kế hoặc nội dung hình ảnh.
 
-**Capabilities:**
-- Original visual designs
-- Design systems
-- Brand guidelines
-- Professional layouts
-- No copyright violations
+**Khả năng:**
+- Thiết kế hình ảnh nguyên bản.
+- Hệ thống thiết kế (Design systems).
+- Bộ nhận diện thương hiệu.
+- Bố cục chuyên nghiệp.
+- Không vi phạm bản quyền.
 
-**Example:**
+**Ví dụ:**
 ```
-"Use canvas-design to create a landing page hero section"
+"Sử dụng canvas-design để tạo phần hero cho trang landing page"
 ```
 
 ---
 
-### Document Processing
+### Xử Lý Tài Liệu (Document Processing)
 
 #### [document-skills](/docs/engineer/skills/document-skills)
-Read, parse, and create various document formats.
+Đọc, phân tích và tạo các định dạng tài liệu khác nhau.
 
-**Supported Formats:**
-- **PDF** - Extract text, tables, forms, create new PDFs
-- **DOCX** - Word documents with formatting, tracked changes
-- **PPTX** - PowerPoint presentations with layouts, charts
-- **XLSX** - Excel spreadsheets with formulas, formatting
+**Định dạng hỗ trợ:**
+- **PDF** - Trích xuất văn bản, bảng biểu, biểu mẫu, tạo file PDF mới.
+- **DOCX** - Tài liệu Word với định dạng, theo dõi thay đổi.
+- **PPTX** - Bản trình bày PowerPoint với bố cục, biểu đồ.
+- **XLSX** - Bảng tính Excel với công thức, định dạng.
 
-**Use when:** Working with office documents
+**Sử dụng khi:** Làm việc với các tài liệu văn phòng.
 
-**Example:**
+**Ví dụ:**
 ```
-"Use document-skills/pdf to extract form fields from contract.pdf"
+"Sử dụng document-skills/pdf để trích xuất các trường biểu mẫu từ file contract.pdf"
 ```
 
-[→ Full document-skills guide](/docs/engineer/skills/document-skills)
+[→ Hướng dẫn đầy đủ về document-skills](/docs/engineer/skills/document-skills)
 
 ---
 
-### Development Tools
+### Công Cụ Phát Triển (Development Tools)
 
 #### [mcp-builder](/docs/engineer/skills/mcp-builder)
-Create high-quality MCP (Model Context Protocol) servers for integrating external services.
+Tạo các máy chủ MCP (Model Context Protocol) chất lượng cao để tích hợp với các dịch vụ bên ngoài.
 
-**Use when:** Building MCP servers in Python (FastMCP) or Node/TypeScript
+**Sử dụng khi:** Xây dựng máy chủ MCP bằng Python (FastMCP) hoặc Node/TypeScript.
 
-**What it creates:**
-- MCP server boilerplate
-- Tool definitions
-- Resource handlers
-- Authentication
-- Documentation
+**Sản phẩm tạo ra:**
+- Khung mã nguồn máy chủ MCP.
+- Định nghĩa các công cụ (tools).
+- Bộ xử lý tài nguyên (resources).
+- Xác thực (Authentication).
+- Tài liệu hướng dẫn.
 
-**Example:**
+**Ví dụ:**
 ```
-"Use mcp-builder to create MCP server for Stripe API"
+"Sử dụng mcp-builder để tạo máy chủ MCP cho Stripe API"
 ```
 
-[→ Full mcp-builder guide](/docs/engineer/skills/mcp-builder)
+[→ Hướng dẫn đầy đủ về mcp-builder](/docs/engineer/skills/mcp-builder)
 
 ---
 
 #### repomix
-Pack entire repository into single file for context sharing.
+Đóng gói toàn bộ repository vào một file duy nhất để chia sẻ context.
 
-**Use when:** Sharing codebase context with AI or documentation
+**Sử dụng khi:** Chia sẻ context của toàn bộ codebase với AI hoặc làm tài liệu.
 
 ---
 
-### Debugging & Problem Solving
+### Gỡ Lỗi & Giải Quyết Vấn Đề (Debugging & Problem Solving)
 
 #### [systematic-debugging](/docs/engineer/skills/systematic-debugging)
-Four-phase debugging framework ensuring root cause investigation before fixes.
+Khung gỡ lỗi bốn giai đoạn đảm bảo tìm ra nguyên nhân gốc rễ trước khi thực hiện sửa lỗi.
 
-**Use when:** Any bug, test failure, or unexpected behavior
+**Sử dụng khi:** Gặp bất kỳ lỗi nào, thất bại khi chạy test, hoặc hành vi không mong muốn.
 
-**Process:**
-1. Root cause investigation
-2. Pattern analysis
-3. Hypothesis testing
-4. Implementation
+**Quy trình:**
+1. Điều tra nguyên nhân gốc rễ.
+2. Phân tích mẫu (pattern).
+3. Kiểm tra giả thuyết.
+4. Triển khai sửa lỗi.
 
-**Example:**
+**Ví dụ:**
 ```
-"Use systematic-debugging to investigate test failure"
+"Sử dụng systematic-debugging để điều tra tại sao test bị thất bại"
 ```
 
-[→ Full systematic-debugging guide](/docs/engineer/skills/systematic-debugging)
+[→ Hướng dẫn đầy đủ về systematic-debugging](/docs/engineer/skills/systematic-debugging)
 
 ---
 
 #### root-cause-tracing
-Backward tracing technique for finding error origins.
+Kỹ thuật truy vết ngược để tìm nguồn gốc của lỗi.
 
 #### verification-before-completion
-Verify implementation completeness before claiming done.
+Xác minh tính hoàn thiện của việc triển khai trước khi công bố hoàn tất.
 
 #### defense-in-depth
-Layered validation and error handling.
+Xác thực nhiều lớp và xử lý lỗi tầng tầng lớp lớp.
 
 ---
 
-### Problem Solving Strategies
+### Chiến Lược Giải Quyết Vấn Đề (Problem Solving Strategies)
 
 #### collision-zone-thinking
-Find where conflicting requirements meet.
+Tìm điểm giao thoa giữa các yêu cầu xung đột nhau.
 
 #### inversion-exercise
-Solve problems by inverting them.
+Giải quyết vấn đề bằng cách đảo ngược chúng.
 
 #### meta-pattern-recognition
-Identify patterns across different domains.
+Nhận diện các mẫu chung giữa các lĩnh vực khác nhau.
 
 #### scale-game
-Think at different scales to find solutions.
+Suy nghĩ ở các quy mô khác nhau để tìm giải pháp.
 
 #### simplification-cascades
-Break complex problems into simple parts.
+Chia nhỏ các vấn đề phức tạp thành các phần đơn giản.
 
 #### when-stuck
-Strategies for getting unstuck.
+Các chiến lược để vượt qua khi bị tắc nghẽn.
 
 ---
 
 ### Frontend Frameworks & UI
 
 #### [nextjs](/docs/engineer/skills/nextjs)
-Comprehensive Next.js implementation guide.
+Hướng dẫn triển khai Next.js toàn diện.
 
-**Use when:** Building Next.js applications
+**Sử dụng khi:** Xây dựng ứng dụng Next.js.
 
-**Covers:**
-- App Router patterns
-- Server Components
-- Server Actions
-- Routing
-- Data fetching
-- Optimization
+**Bao gồm:**
+- Các mẫu App Router.
+- Server Components.
+- Server Actions.
+- Định tuyến (Routing).
+- Lấy dữ liệu (Data fetching).
+- Tối ưu hóa (Optimization).
 
-[→ Full Next.js guide](/docs/engineer/skills/nextjs)
+[→ Hướng dẫn đầy đủ về Next.js](/docs/engineer/skills/nextjs)
 
 ---
 
 #### [shadcn-ui](/docs/engineer/skills/shadcn-ui)
-Beautiful, accessible component library for React.
+Thư viện thành phần giao diện đẹp và dễ tiếp cận cho React.
 
-**Use when:** Building UI with Tailwind CSS
+**Sử dụng khi:** Xây dựng giao diện với Tailwind CSS.
 
-**Features:**
-- Copy-paste components
-- Customizable
-- Accessible
-- TypeScript support
+**Tính năng:**
+- Các thành phần copy-paste.
+- Dễ dàng tùy chỉnh.
+- Hỗ trợ đầy đủ cho người khuyết tật (Accessible).
+- Hỗ trợ TypeScript.
 
-[→ Full shadcn-ui guide](/docs/engineer/skills/shadcn-ui)
+[→ Hướng dẫn đầy đủ về shadcn-ui](/docs/engineer/skills/shadcn-ui)
 
 ---
 
 #### [tailwindcss](/docs/engineer/skills/tailwindcss)
-Utility-first CSS framework.
+Framework CSS ưu tiên tiện ích (utility-first).
 
-**Use when:** Styling applications
+**Sử dụng khi:** Thiết kế phong cách cho ứng dụng.
 
-[→ Full Tailwind CSS guide](/docs/engineer/skills/tailwindcss)
+[→ Hướng dẫn đầy đủ về Tailwind CSS](/docs/engineer/skills/tailwindcss)
 
 ---
 
 #### remix-icon
-Open-source icon system.
+Hệ thống biểu tượng nguồn mở.
 
 ---
 
-### Backend & Databases
+### Backend & Cơ Sở Dữ Liệu
 
 #### [postgresql-psql](/docs/engineer/skills/postgresql-psql)
-PostgreSQL database administration and optimization.
+Quản trị và tối ưu hóa cơ sở dữ liệu PostgreSQL.
 
-**Use when:** Working with PostgreSQL databases
+**Sử dụng khi:** Làm việc với cơ sở dữ liệu PostgreSQL.
 
-**Covers:**
-- Query optimization
-- Schema design
-- Performance tuning
-- Backup/restore
-- Replication
+**Bao gồm:**
+- Tối ưu hóa truy vấn.
+- Thiết kế schema.
+- Điều chỉnh hiệu suất.
+- Sao lưu/Khôi phục.
+- Nhân bản (Replication).
 
-[→ Full postgresql-psql guide](/docs/engineer/skills/postgresql-psql)
+[→ Hướng dẫn đầy đủ về PostgreSQL](/docs/engineer/skills/postgresql-psql)
 
 ---
 
 #### mongodb
-MongoDB database operations and best practices.
+Các hoạt động và phương pháp hay nhất cho cơ sở dữ liệu MongoDB.
 
 ---
 
-### DevOps & Infrastructure
+### DevOps & Cơ Sở Hạ Tầng
 
 #### [docker](/docs/engineer/skills/docker)
-Containerization platform for building, running, and deploying applications.
+Nền tảng container hóa để xây dựng, chạy và triển khai ứng dụng.
 
-**Use when:** Containerizing apps, creating Dockerfiles, Docker Compose
+**Sử dụng khi:** Đóng gói ứng dụng, tạo Dockerfile, Docker Compose.
 
-**Covers:**
-- Dockerfile best practices
-- Multi-stage builds
-- Docker Compose
-- Security hardening
-- CI/CD integration
-- Production deployment
+**Bao gồm:**
+- Phương pháp viết Dockerfile tốt nhất.
+- Build nhiều giai đoạn (Multi-stage builds).
+- Docker Compose.
+- Tăng cường bảo mật.
+- Tích hợp CI/CD.
+- Triển khai sản phẩm (Production deployment).
 
-[→ Full docker guide](/docs/engineer/skills/docker)
+[→ Hướng dẫn đầy đủ về Docker](/docs/engineer/skills/docker)
 
 ---
 
 #### gcloud
-Google Cloud Platform tools and services.
+Các công cụ và dịch vụ của Google Cloud Platform.
 
-**Use when:** Working with GCP infrastructure
+**Sử dụng khi:** Làm việc với cơ sở hạ tầng GCP.
 
 #### turborepo
-High-performance build system for JavaScript/TypeScript monorepos.
+Hệ thống build hiệu suất cao cho các monorepo JavaScript/TypeScript.
 
 ---
 
-### Cloud Services
+### Dịch Vụ Đám Mây (Cloud Services)
 
 #### cloudflare
-Cloudflare services and APIs.
+Các dịch vụ và API của Cloudflare.
 
 #### cloudflare-workers
-Serverless execution environment on Cloudflare's edge network.
+Môi trường thực thi serverless trên mạng lưới cạnh của Cloudflare.
 
 #### cloudflare-r2
-S3-compatible object storage without egress fees.
+Lưu trữ đối tượng tương thích với S3 không mất phí băng thông ra.
 
 #### cloudflare-browser-rendering
-Headless Chrome automation on Cloudflare.
+Tự động hóa trình duyệt Chrome không đầu trên Cloudflare.
 
 ---
 
 ### AI & Machine Learning
 
 #### google-adk-python
-Google AI Development Kit for Python applications.
+Bộ công cụ phát triển AI của Google cho ứng dụng Python.
 
 #### gemini-vision
-Google Gemini Vision API for image analysis.
+Google Gemini Vision API để phân tích hình ảnh.
 
-**Use when:** Analyzing images, extracting text from images
+**Sử dụng khi:** Phân tích hình ảnh, trích xuất văn bản từ ảnh.
 
-**Capabilities:**
-- Image understanding
-- OCR
-- Object detection
-- Scene analysis
+**Khả năng:**
+- Hiểu nội dung hình ảnh.
+- OCR (Nhận dạng ký tự quang học).
+- Phát hiện vật thể.
+- Phân tích bối cảnh.
 
 #### gemini-audio
-Audio generation and processing with Gemini.
+Tạo và xử lý âm thanh với Gemini.
 
-**Features:**
-- Text-to-speech
-- Audio analysis
-- Voice generation
+**Tính năng:**
+- Chuyển văn bản thành giọng nói.
+- Phân tích âm thanh.
+- Tạo giọng nói.
 
 #### gemini-document-processing
-Process documents with Gemini AI.
+Xử lý tài liệu với Gemini AI.
 
 #### gemini-image-gen
-Generate images using Gemini models.
+Tạo hình ảnh sử dụng các mô hình Gemini.
 
 #### gemini-video-understanding
-Analyze and understand video content.
+Phân tích và hiểu nội dung video.
 
 ---
 
-### Media Processing
+### Xử Lý Phương Tiện (Media Processing)
 
 #### ffmpeg
-Process videos and audio with FFmpeg command-line tools.
+Xử lý video và âm thanh với các công cụ dòng lệnh FFmpeg.
 
-**Use when:** Converting, editing, or manipulating media files
+**Sử dụng khi:** Chuyển đổi, chỉnh sửa hoặc thao tác các file phương tiện.
 
-**Capabilities:**
-- Format conversion
-- Video editing
-- Audio extraction
-- Streaming
-- Compression
+**Khả năng:**
+- Chuyển đổi định dạng.
+- Chỉnh sửa video.
+- Trích xuất âm thanh.
+- Phát trực tuyến (Streaming).
+- Nén file.
 
 #### imagemagick
-Advanced image processing via command-line.
+Xử lý hình ảnh nâng cao qua dòng lệnh.
 
-**Use when:** Batch image manipulation, format conversion
+**Sử dụng khi:** Thao tác hình ảnh hàng loạt, chuyển đổi định dạng.
 
-**Operations:**
-- Resize, crop, rotate
-- Format conversion
-- Effects and filters
-- Batch processing
+**Các hoạt động:**
+- Thay đổi kích thước, cắt, xoay.
+- Chuyển đổi định dạng.
+- Hiệu ứng và bộ lọc.
+- Xử lý hàng loạt.
 
 ---
 
-### Testing & Browser Automation
+### Kiểm Thử & Tự Động Hóa Trình Duyệt
 
 #### chrome-devtools
-Automate Chrome browser for testing and debugging.
+Tự động hóa trình duyệt Chrome để kiểm thử và gỡ lỗi.
 
-**Use when:** Web scraping, automated testing, performance analysis
+**Sử dụng khi:** Quét web (web scraping), kiểm thử tự động, phân tích hiệu suất.
 
-**Features:**
-- Puppeteer integration
-- Chrome DevTools Protocol
-- Performance profiling
-- Network monitoring
+**Tính năng:**
+- Tích hợp Puppeteer.
+- Chrome DevTools Protocol.
+- Phân tích cấu hình hiệu suất.
+- Giám sát mạng.
 
 ---
 
-### Documentation & Code Analysis
+### Tài Liệu & Phân Tích Code
 
 #### docs-seeker
-Find and retrieve documentation from various sources.
+Tìm và truy xuất tài liệu từ nhiều nguồn khác nhau.
 
-**Use when:** Need to look up API docs, framework guides
+**Sử dụng khi:** Cần tra cứu tài liệu API, hướng dẫn framework.
 
 #### claude-code
-Meta-skill for understanding Claude Code itself.
+Kỹ năng meta để hiểu về chính hệ thống Claude Code.
 
 ---
 
-### E-commerce
+### Thương Mại Điện Tử (E-commerce)
 
 #### shopify
-Shopify app development and API integration.
+Phát triển ứng dụng Shopify và tích hợp API.
 
-**Use when:** Building Shopify apps or integrations
+**Sử dụng khi:** Xây dựng ứng dụng hoặc tích hợp Shopify.
 
-**Covers:**
-- Shopify CLI
-- GraphQL Admin API
-- UI Extensions
-- App development
-
----
-
-## How to Use Skills
-
-Skills are invoked by mentioning them in conversation with Claude Code.
-
-### Basic Invocation
-
-```
-"Use [skill-name] to [task description]"
-```
-
-### Real Examples
-
-**Authentication:**
-```
-"Use better-auth to add GitHub OAuth to my Next.js app"
-```
-
-**Document Processing:**
-```
-"Use document-skills/pdf to extract all tables from quarterly-report.pdf"
-```
-
-**Containerization:**
-```
-"Use docker to create production Dockerfile for my Node.js app"
-```
-
-**Debugging:**
-```
-"Use systematic-debugging to investigate why tests are failing"
-```
-
-**AI Integration:**
-```
-"Use gemini-vision to analyze this product image and extract text"
-```
+**Bao gồm:**
+- Shopify CLI.
+- GraphQL Admin API.
+- UI Extensions.
+- Phát triển ứng dụng.
 
 ---
 
-## Skills vs Commands
+## Cách Sử Dụng Skills
 
-| **Aspect** | **Skills** | **Commands** |
+Skills được gọi bằng cách nhắc đến chúng trong cuộc hội thoại với Claude Code.
+
+### Cách Gọi Cơ Bản
+
+```
+"Sử dụng [tên-kỹ-năng] để [mô tả nhiệm vụ]"
+```
+
+### Ví Dụ Thực Tế
+
+**Xác thực:**
+```
+"Sử dụng better-auth để thêm GitHub OAuth vào ứng dụng Next.js của tôi"
+```
+
+**Xử lý tài liệu:**
+```
+"Sử dụng document-skills/pdf để trích xuất tất cả các bảng từ báo cáo quarterly-report.pdf"
+```
+
+**Container hóa:**
+```
+"Sử dụng docker để tạo Dockerfile cho ứng dụng Node.js của tôi"
+```
+
+**Gỡ lỗi:**
+```
+"Sử dụng systematic-debugging để điều tra tại sao các bài test bị thất bại"
+```
+
+**Tích hợp AI:**
+```
+"Sử dụng gemini-vision để phân tích hình ảnh sản phẩm này và trích xuất văn bản"
+```
+
+---
+
+## Skills so với Lệnh (Commands)
+
+| **Khía cạnh** | **Skills** | **Commands** |
 |------------|-----------|--------------|
-| **Invocation** | "Use [skill]..." | `/command` |
-| **Purpose** | Specialized knowledge | Workflow orchestration |
-| **Scope** | Single focused task | Multi-step processes |
-| **Examples** | better-auth, docker | /cook, /debug, /plan |
+| **Cách gọi** | "Sử dụng [skill]..." | `/lệnh` |
+| **Mục đích** | Kiến thức chuyên môn | Điều phối quy trình công việc |
+| **Phạm vi** | Một nhiệm vụ tập trung | Quy trình nhiều bước |
+| **Ví dụ** | better-auth, docker | /cook, /debug, /plan |
 
-**When to use Skills:** Need specific technical expertise
+**Khi nào dùng Skills:** Khi cần chuyên môn kỹ thuật cụ thể.
 
-**When to use Commands:** Need complete workflow with multiple agents
+**Khi nào dùng Commands:** Khi cần quy trình làm việc hoàn chỉnh với nhiều agents.
 
 ---
 
-## Common Use Cases
+## Các Trường Hợp Sử Dụng Phổ Biến
 
-### Authentication Setup
+### Thiết Lập Xác Thực
 
 ```
-"Use better-auth to implement authentication with:
-- Email/password signup
+"Sử dụng better-auth để triển khai xác thực với:
+- Đăng ký bằng Email/mật khẩu
 - GitHub OAuth
-- 2FA with TOTP
-- Session management"
+- 2FA với TOTP
+- Quản lý phiên làm việc (session)"
 ```
 
-### Containerization
+### Container Hóa
 
 ```
-"Use docker to:
-1. Create optimized multi-stage Dockerfile
-2. Set up Docker Compose with PostgreSQL
-3. Add health checks
-4. Configure for production"
+"Sử dụng docker để:
+1. Tạo Dockerfile đa giai đoạn được tối ưu hóa
+2. Thiết lập Docker Compose với PostgreSQL
+3. Thêm kiểm tra sức khỏe (health checks)
+4. Cấu hình cho môi trường sản xuất"
 ```
 
-### Document Analysis
+### Phân Tích Tài Liệu
 
 ```
-"Use document-skills/docx to:
-- Extract all comments and tracked changes
-- Preserve formatting
-- Export to markdown"
+"Sử dụng document-skills/docx để:
+- Trích xuất tất cả các bình luận và thay đổi được theo dõi
+- Giữ nguyên định dạng
+- Xuất ra định dạng markdown"
 ```
 
-### AI-Powered Features
+### Các Tính Năng Được Hỗ Trợ Bởi AI
 
 ```
-"Use gemini-vision to build feature that:
-- Analyzes product photos
-- Extracts product details
-- Validates image quality
-- Returns structured data"
+"Sử dụng gemini-vision để xây dựng tính năng:
+- Phân tích ảnh sản phẩm
+- Trích xuất thông tin chi tiết sản phẩm
+- Xác thực chất lượng hình ảnh
+- Trả về dữ liệu có cấu trúc"
 ```
 
-### Database Work
+### Làm Việc Với Cơ Sở Dữ Liệu
 
 ```
-"Use postgresql-psql to:
-- Analyze slow queries
-- Optimize schema
-- Add proper indexes
-- Set up replication"
+"Sử dụng postgresql-psql để:
+- Phân tích các truy vấn chậm
+- Tối ưu hóa schema
+- Thêm các index phù hợp
+- Thiết lập nhân bản (replication)"
 ```
 
-### Problem Solving
+### Giải Quyết Vấn Đề
 
 ```
-"I'm stuck on this architecture issue. Use collision-zone-thinking to find where requirements conflict"
+"Tôi đang bị kẹt ở vấn đề kiến trúc này. Sử dụng collision-zone-thinking để tìm nơi các yêu cầu bị xung đột"
 ```
 
 ---
 
-## Creating Custom Skills
+## Tạo Skills Tùy Chỉnh
 
-### Using skill-creator
+### Sử dụng skill-creator
 
 ```
-"Use skill-creator to create a skill called 'stripe-integration' that:
-- Handles Stripe webhooks
-- Manages subscriptions
-- Processes payments
-- Follows best practices"
+"Sử dụng skill-creator để tạo một kỹ năng tên là 'stripe-integration' để:
+- Xử lý Stripe webhooks
+- Quản lý các gói đăng ký
+- Xử lý thanh toán
+- Tuân theo các phương pháp hay nhất"
 ```
 
-**The skill-creator will:**
-1. Ask clarifying questions
-2. Design skill structure
-3. Create SKILL.md file
-4. Add bundled resources if needed
-5. Save to `.claude/skills/`
+**Skill-creator sẽ:**
+1. Đưa ra các câu hỏi làm rõ.
+2. Thiết kế cấu trúc kỹ năng.
+3. Tạo file SKILL.md.
+4. Thêm các tài nguyên đi kèm nếu cần.
+5. Lưu vào `.claude/skills/`.
 
-### Skill Anatomy
+### Cấu Trúc Của Một Skill
 
-Every skill has:
+Mọi skill đều có:
 
 ```markdown
 ---
-name: skill-name
-description: Clear description of what skill does and when to use it
+name: tên-kỹ-năng
+description: Mô tả rõ ràng về chức năng và khi nào nên sử dụng
 ---
 
-# Skill Name
+# Tên Kỹ Năng
 
-Instructions that Claude follows when skill is active.
+Các hướng dẫn mà Claude sẽ tuân theo khi kỹ năng được kích hoạt.
 
-## When to Use
-List specific scenarios
+## Khi Nào Sử Dụng
+Liệt kê các tình huống cụ thể
 
-## Examples
-Real usage examples
+## Ví Dụ
+Các ví dụ sử dụng thực tế
 
-## Best Practices
-Guidelines to follow
+## Phương Pháp Hay Nhất
+Các hướng dẫn cần tuân theo
 ```
 
 ---
 
-## Best Practices
+## Phương Pháp Hay Nhất (Best Practices)
 
-### Be Specific
+### Hãy Cụ Thể
 
-✅ **Good:**
+✅ **Tốt:**
 ```
-"Use docker to create production Dockerfile for Next.js 14 app with:
-- Multi-stage build
+"Sử dụng docker để tạo Dockerfile cho ứng dụng Next.js 14 với:
+- Build đa giai đoạn
 - Node 20 Alpine
-- Non-root user
-- Health checks"
+- Người dùng không có quyền root
+- Kiểm tra sức khỏe (health checks)"
 ```
 
-❌ **Vague:**
+❌ **Mơ hồ:**
 ```
-"Use docker to containerize this"
-```
-
-### Provide Context
-
-✅ **Good:**
-```
-"Use better-auth to add authentication to my Next.js app. I need:
-- GitHub and Google OAuth
-- Email/password backup
-- Role-based permissions
-- PostgreSQL with Drizzle"
+"Sử dụng docker để container hóa ứng dụng này"
 ```
 
-❌ **Minimal:**
+### Cung Cấp Bối Cảnh
+
+✅ **Tốt:**
 ```
-"Use better-auth"
+"Sử dụng better-auth để thêm xác thực vào ứng dụng Next.js của tôi. Tôi cần:
+- GitHub và Google OAuth
+- Sao lưu bằng Email/mật khẩu
+- Phân quyền dựa trên vai trò
+- PostgreSQL với Drizzle"
 ```
 
-### Specify Output
-
-✅ **Good:**
+❌ **Tối thiểu:**
 ```
-"Use document-skills/pdf to extract tables from contract.pdf and save as CSV in ./exports/"
+"Sử dụng better-auth"
 ```
 
-❌ **Unclear:**
+### Xác Định Kết Quả Đầu Ra
+
+✅ **Tốt:**
 ```
-"Use document-skills to read this PDF"
+"Sử dụng document-skills/pdf để trích xuất bảng từ contract.pdf và lưu dưới dạng CSV vào thư mục ./exports/"
 ```
 
----
-
-## Skill Combinations
-
-Skills work together seamlessly:
-
-**Document + AI:**
+❌ **Không rõ ràng:**
 ```
-"First use document-skills/pdf to extract text from spec.pdf,
-then use gemini-document-processing to summarize key requirements"
-```
-
-**Auth + Database:**
-```
-"Use better-auth for authentication, then use postgresql-psql to optimize the auth schema"
-```
-
-**Debug + Test:**
-```
-"Use systematic-debugging to find root cause, then use chrome-devtools to verify fix in browser"
+"Sử dụng document-skills để đọc file PDF này"
 ```
 
 ---
 
-## Quick Reference
+## Kết Hợp Các Skills
 
-### Most Used Skills
+Các skills có thể làm việc cùng nhau một cách mượt mà:
 
-| **Task** | **Skill** | **Example** |
+**Tài liệu + AI:**
+```
+"Trước tiên sử dụng document-skills/pdf để trích xuất văn bản từ spec.pdf,
+sau đó sử dụng gemini-document-processing để tóm tắt các yêu cầu chính"
+```
+
+**Xác thực + Cơ sở dữ liệu:**
+```
+"Sử dụng better-auth cho xác thực, sau đó sử dụng postgresql-psql để tối ưu hóa schema xác thực"
+```
+
+**Gỡ lỗi + Kiểm thử:**
+```
+"Sử dụng systematic-debugging để tìm nguyên nhân gốc rễ, sau đó sử dụng chrome-devtools để xác minh việc sửa lỗi trên trình duyệt"
+```
+
+---
+
+## Tra Cứu Nhanh
+
+### Các Skills Được Sử Dụng Nhiều Nhất
+
+| **Nhiệm vụ** | **Skill** | **Ví dụ** |
 |----------|-----------|-------------|
-| Authentication | `better-auth` | "Use better-auth for OAuth" |
-| Containers | `docker` | "Use docker to create Dockerfile" |
-| Documents | `document-skills` | "Use document-skills/pdf..." |
-| Debugging | `systematic-debugging` | "Use systematic-debugging..." |
-| Next.js | `nextjs` | "Use nextjs for App Router" |
-| Database | `postgresql-psql` | "Use postgresql-psql..." |
-| AI Vision | `gemini-vision` | "Use gemini-vision to analyze" |
-| UI Components | `shadcn-ui` | "Use shadcn-ui for form" |
-| MCP Server | `mcp-builder` | "Use mcp-builder..." |
-| Custom Skill | `skill-creator` | "Use skill-creator to make..." |
+| Xác thực | `better-auth` | "Sử dụng better-auth cho OAuth" |
+| Containers | `docker` | "Sử dụng docker để tạo Dockerfile" |
+| Tài liệu | `document-skills` | "Sử dụng document-skills/pdf..." |
+| Gỡ lỗi | `systematic-debugging` | "Sử dụng systematic-debugging..." |
+| Next.js | `nextjs` | "Sử dụng nextjs cho App Router" |
+| Cơ sở dữ liệu | `postgresql-psql` | "Sử dụng postgresql-psql..." |
+| AI Vision | `gemini-vision` | "Sử dụng gemini-vision để phân tích" |
+| UI Components | `shadcn-ui` | "Sử dụng shadcn-ui cho biểu mẫu" |
+| Máy chủ MCP | `mcp-builder` | "Sử dụng mcp-builder..." |
+| Skill Tùy Chỉnh | `skill-creator` | "Sử dụng skill-creator để tạo..." |
 
 ---
 
-## Troubleshooting
+## Xử Lý Sự Cố
 
-### Skill Not Working
+### Skill Không Hoạt Động
 
-**Check:**
-1. Skill name spelled correctly
-2. Clear description of task
-3. Sufficient context provided
-4. Expected output specified
+**Kiểm tra:**
+1. Tên kỹ năng được viết đúng chính tả.
+2. Mô tả nhiệm vụ rõ ràng.
+3. Cung cấp đủ bối cảnh.
+4. Xác định kết quả đầu ra mong muốn.
 
-### Need Different Skill
+### Cần Kỹ Năng Khác
 
-**Options:**
-1. Check if similar skill exists
-2. Use `skill-creator` to build it
-3. Request on Discord/GitHub
-
-### Want More Details
-
-**For comprehensive guides, see:**
-- [Next.js](/docs/engineer/skills/nextjs)
-- [Tailwind CSS](/docs/engineer/skills/tailwindcss)
-- [shadcn/ui](/docs/engineer/skills/shadcn-ui)
+**Lựa chọn:**
+1. Kiểm tra xem có kỹ năng tương tự nào tồn tại không.
+2. Sử dụng `skill-creator` để xây dựng nó.
+3. Gửi yêu cầu trên Discord/GitHub.
 
 ---
 
-## All 46+ Skills Summary
+## Tổng Hợp Tất Cả 46+ Skills
 
 **Meta:** skill-creator, template-skill
 
-**Auth/Security:** better-auth
+**Xác thực/Bảo mật:** better-auth
 
-**Design:** canvas-design
+**Thiết kế:** canvas-design
 
-**Documents:** pdf, docx, pptx, xlsx
+**Tài liệu:** pdf, docx, pptx, xlsx
 
-**Development:** mcp-builder, repomix, claude-code, docs-seeker
+**Phát triển:** mcp-builder, repomix, claude-code, docs-seeker
 
-**Debugging:** systematic-debugging, root-cause-tracing, verification-before-completion, defense-in-depth
+**Gỡ lỗi:** systematic-debugging, root-cause-tracing, verification-before-completion, defense-in-depth
 
-**Problem Solving:** collision-zone-thinking, inversion-exercise, meta-pattern-recognition, scale-game, simplification-cascades, when-stuck
+**Giải quyết vấn đề:** collision-zone-thinking, inversion-exercise, meta-pattern-recognition, scale-game, simplification-cascades, when-stuck
 
 **Frontend:** nextjs, shadcn-ui, tailwindcss, remix-icon
 
@@ -718,32 +712,27 @@ then use gemini-document-processing to summarize key requirements"
 
 **DevOps:** docker, gcloud, turborepo
 
-**Cloud:** cloudflare, cloudflare-workers, cloudflare-r2, cloudflare-browser-rendering
+**Đám mây:** cloudflare, cloudflare-workers, cloudflare-r2, cloudflare-browser-rendering
 
 **AI/ML:** google-adk-python, gemini-vision, gemini-audio, gemini-document-processing, gemini-image-gen, gemini-video-understanding
 
-**Media:** ffmpeg, imagemagick
+**Phương tiện:** ffmpeg, imagemagick
 
-**Testing:** chrome-devtools
+**Kiểm thử:** chrome-devtools
 
-**E-commerce:** shopify
-
----
-
-## Get Started
-
-**Try it now:**
-```
-"Use better-auth to add authentication to my app"
-"Use docker to containerize my application"
-"Use systematic-debugging to investigate this error"
-```
-
-**Need help?**
-- Join [Discord](https://claudekit.cc/discord)
-- Check [Commands](/docs/engineer/commands/) for workflows
-- Read [Agents](/docs/engineer/agents/) for orchestration
+**Thương mại điện tử:** shopify
 
 ---
 
-**Bottom Line:** Skills provide instant expertise. Just mention the skill and describe what you need.
+## Bắt Đầu
+
+**Thử ngay bây giờ:**
+```
+"Sử dụng better-auth để thêm xác thực vào ứng dụng của tôi"
+"Sử dụng docker để đóng gói ứng dụng của tôi"
+"Sử dụng systematic-debugging để điều tra lỗi này"
+```
+
+---
+
+**Điểm Chính**: Skills mang lại năng lực chuyên môn tức thì. Chỉ cần nhắc tên kỹ năng và mô tả những gì bạn cần.

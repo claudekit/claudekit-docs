@@ -1,32 +1,33 @@
 ---
 title: Lệnh Tổng Quan
-description: Documentation for index
+description: Tài liệu hướng dẫn các lệnh trong ClaudeKit
 section: engineer
 kit: engineer
 category: docs/commands
 order: 0
 published: true
+lang: vi
 ---
 
-# Commands Overview
+# Tổng Quan Các Lệnh
 
-ClaudeKit provides a comprehensive set of slash commands to accelerate your development workflow. Each command is designed for specific tasks and automatically orchestrates the appropriate agents.
+ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy trình phát triển của bạn. Mỗi lệnh được thiết kế cho các tác vụ cụ thể và tự động điều phối các agent phù hợp.
 
-## Command Categories
+## Các Nhóm Lệnh
 
-### Core Development
+### Phát Triển Cốt Lõi (Core)
 
-- **[/bootstrap](/docs/engineer/commands/core/bootstrap)** - Initialize new projects with spec-driven development
-- **[/cook](/docs/engineer/commands/core/cook)** - Develop new features
-- **[/plan](/docs/engineer/commands/core/plan)** - Create implementation plans
-- **[/brainstorm](/docs/engineer/commands/core/brainstorm)** - Explore feature feasibility
-- **[/ask](/docs/engineer/commands/core/ask)** - Ask questions about the codebase
-- **[/watzup](/docs/engineer/commands/core/watzup)** - Get project status and recent changes
-- **[/scout](/docs/engineer/commands/core/scout)** - Find files across large codebases
-- **[/test](/docs/engineer/commands/core/test)** - Run test suite and get results
-- **[/debug](/docs/engineer/commands/core/debug)** - Investigate and diagnose issues
+- **[/bootstrap](/docs/engineer/commands/core/bootstrap)** - Khởi tạo dự án mới với phát triển hướng đặc tả (spec-driven development)
+- **[/cook](/docs/engineer/commands/core/cook)** - Phát triển tính năng mới
+- **[/plan](/docs/engineer/commands/core/plan)** - Tạo kế hoạch triển khai
+- **[/brainstorm](/docs/engineer/commands/core/brainstorm)** - Khám phá tính khả thi của tính năng
+- **[/ask](/docs/engineer/commands/core/ask)** - Đặt câu hỏi về codebase
+- **[/watzup](/docs/engineer/commands/core/watzup)** - Xem trạng thái dự án và các thay đổi gần đây
+- **[/scout](/docs/engineer/commands/core/scout)** - Tìm kiếm tệp tin trong toàn bộ codebase lớn
+- **[/test](/docs/engineer/commands/core/test)** - Chạy bộ thử nghiệm và nhận kết quả
+- **[/debug](/docs/engineer/commands/core/debug)** - Điều tra và chẩn đoán lỗi
 
-### Bug Fixing
+### Sửa Lỗi (Bug Fixing)
 
 - **[/fix](/docs-vi/commands/fix/)** - Sửa lỗi thông minh (tự động chọn phương pháp fast/hard)
 - **[/fix:fast](/docs-vi/commands/fix/fast)** - Sửa lỗi nhỏ nhanh chóng
@@ -37,413 +38,413 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 - **[/fix:ui](/docs-vi/commands/fix/ui)** - Sửa lỗi UI/UX
 - **[/fix:types](/docs-vi/commands/fix/types)** - Sửa lỗi TypeScript type
 
-### Documentation
+### Tài Liệu (Documentation)
 
-- **[/docs:init](/docs/engineer/commands/docs/init)** - Initialize project documentation
-- **[/docs:update](/docs/engineer/commands/docs/update)** - Update project documentation
-- **[/docs:summarize](/docs/engineer/commands/docs/summarize)** - Summarize project documentation
+- **[/docs:init](/docs/engineer/commands/docs/init)** - Khởi tạo tài liệu dự án
+- **[/docs:update](/docs/engineer/commands/docs/update)** - Cập nhật tài liệu dự án
+- **[/docs:summarize](/docs/engineer/commands/docs/summarize)** - Tóm tắt tài liệu dự án
 
-### Git Operations
+### Thao Tác Git
 
-- **[/git:cm](/docs/engineer/commands/git/commit)** - Stage and commit changes
-- **[/git:cp](/docs/engineer/commands/git/commit-push)** - Stage, commit, and push
-- **[/git:pr](/docs/engineer/commands/git/pull-request)** - Create pull request
+- **[/git:cm](/docs/engineer/commands/git/commit)** - Stage và commit các thay đổi
+- **[/git:cp](/docs/engineer/commands/git/commit-push)** - Stage, commit và push
+- **[/git:pr](/docs/engineer/commands/git/pull-request)** - Tạo pull request
 
-### Planning
+### Lập Kế Hoạch (Planning)
 
-- **[/plan:ci](/docs/engineer/commands/plan/ci)** - Analyze CI failures and create fix plan
-- **[/plan:two](/docs/engineer/commands/plan/two)** - Create plan with 2 approaches
-- **[/plan:cro](/docs/engineer/commands/plan/cro)** - Create conversion optimization plan
+- **[/plan:ci](/docs/engineer/commands/plan/ci)** - Phân tích lỗi CI và tạo kế hoạch sửa chữa
+- **[/plan:two](/docs/engineer/commands/plan/two)** - Tạo kế hoạch với 2 phương án tiếp cận
+- **[/plan:cro](/docs/engineer/commands/plan/cro)** - Tạo kế hoạch tối ưu hóa chuyển đổi
 
-### Design & UI
+### Thiết Kế & UI
 
-- **[/design:3d](/docs/engineer/commands/design/3d)** - Create 3D designs with Three.js
-- **[/design:describe](/docs/engineer/commands/design/describe)** - Extract design from screenshots
-- **[/design:fast](/docs/engineer/commands/design/fast)** - Quick design creation
-- **[/design:good](/docs/engineer/commands/design/good)** - Complete, refined design
-- **[/design:screenshot](/docs/engineer/commands/design/screenshot)** - Screenshot to code
-- **[/design:video](/docs/engineer/commands/design/video)** - Video to code
+- **[/design:3d](/docs/engineer/commands/design/3d)** - Tạo thiết kế 3D với Three.js
+- **[/design:describe](/docs/engineer/commands/design/describe)** - Trích xuất thiết kế từ ảnh chụp màn hình
+- **[/design:fast](/docs/engineer/commands/design/fast)** - Tạo thiết kế nhanh chóng
+- **[/design:good](/docs/engineer/commands/design/good)** - Tạo thiết kế hoàn thiện và tinh chỉnh
+- **[/design:screenshot](/docs/engineer/commands/design/screenshot)** - Chuyển ảnh chụp màn hình thành mã nguồn
+- **[/design:video](/docs/engineer/commands/design/video)** - Chuyển video thành mã nguồn
 
-### Content & Marketing
+### Nội Dung & Marketing
 
-- **[/content:cro](/docs/engineer/commands/content/cro)** - Conversion-optimized content
-- **[/content:enhance](/docs/engineer/commands/content/enhance)** - Enhance existing content
-- **[/content:fast](/docs/engineer/commands/content/fast)** - Quick content creation
-- **[/content:good](/docs/engineer/commands/content/good)** - High-quality content with research
+- **[/content:cro](/docs/engineer/commands/content/cro)** - Nội dung tối ưu hóa chuyển đổi
+- **[/content:enhance](/docs/engineer/commands/content/enhance)** - Cải thiện nội dung hiện có
+- **[/content:fast](/docs/engineer/commands/content/fast)** - Tạo nội dung nhanh chóng
+- **[/content:good](/docs/engineer/commands/content/good)** - Nội dung chất lượng cao kèm nghiên cứu
 
-### Integrations
+### Tích Hợp (Integrations)
 
-- **[/integrate:polar](/docs/engineer/commands/integrate/polar)** - Integrate Polar.sh payments
-- **[/integrate:sepay](/docs/engineer/commands/integrate/sepay)** - Integrate SePay.vn payments (Vietnam)
+- **[/integrate:polar](/docs/engineer/commands/integrate/polar)** - Tích hợp thanh toán Polar.sh
+- **[/integrate:sepay](/docs/engineer/commands/integrate/sepay)** - Tích hợp thanh toán SePay.vn (Việt Nam)
 
-### Journaling
+### Nhật Ký (Journaling)
 
-- **[/journal](/docs/engineer/commands/core/journal)** - Write development journal entries
+- **[/journal](/docs/engineer/commands/core/journal)** - Viết nhật ký phát triển
 
-## Quick Command Reference
+## Tham Khảo Nhanh
 
-### Most Used Commands
+### Các Lệnh Thường Dùng
 
 ```bash
-# Feature Development
-/plan [feature description]      # Plan the feature
-/cook [feature description]      # Implement the feature
+# Phát triển tính năng
+/plan [mô tả tính năng]      # Lập kế hoạch tính năng
+/cook [mô tả tính năng]      # Triển khai tính năng
 
-# Bug Fixing
-/fix:fast [simple bug]           # Quick fix
-/fix:hard [complex issue]        # Thorough investigation + fix
-/fix:ci [github-ci-url]          # Fix CI failures
+# Sửa lỗi
+/fix:fast [lỗi đơn giản]     # Sửa nhanh
+/fix:hard [lỗi phức tạp]     # Điều tra kỹ lưỡng + sửa lỗi
+/fix:ci [url-github-ci]      # Sửa lỗi CI thất bại
 
-# Documentation
-/docs:init                       # First-time setup
-/docs:update                     # After making changes
+# Tài liệu
+/docs:init                   # Thiết lập lần đầu
+/docs:update                 # Sau khi thay đổi mã nguồn
 
-# Git Workflow
-/git:cm                          # Commit changes
-/git:cp                          # Commit and push
-/git:pr [to-branch]              # Create pull request
+# Quy trình Git
+/git:cm                      # Commit thay đổi
+/git:cp                      # Commit và push
+/git:pr [nhánh-đích]         # Tạo pull request
 
-# Project Status
-/watzup                          # What's the current state?
-/ask [question]                  # Ask about codebase
+# Trạng thái dự án
+/watzup                      # Trạng thái hiện tại như thế nào?
+/ask [câu hỏi]               # Hỏi về codebase
 ```
 
-## Command Syntax
+## Cú Pháp Lệnh
 
-### Basic Syntax
+### Cú Pháp Cơ Bản
 
 ```bash
-/command [required-argument] [optional-argument]
+/lệnh [tham-số-bắt-buộc] [tham-số-tùy-chọn]
 ```
 
-### Examples
+### Ví Dụ
 
 ```bash
-# No arguments
+# Không tham số
 /test
 /watzup
 /docs:init
 
-# Required argument
-/cook [add user authentication]
-/debug [login button not working]
-/ask [how does routing work?]
+# Tham số bắt buộc
+/cook [thêm xác thực người dùng]
+/debug [nút đăng nhập không hoạt động]
+/ask [quy trình điều hướng hoạt động như thế nào?]
 
-# Optional arguments
-/git:pr                          # PR to default branch
-/git:pr [develop]                # PR to develop
-/git:pr [main] [feature-branch]  # PR from feature to main
+# Tham số tùy chọn
+/git:pr                          # PR vào nhánh mặc định
+/git:pr [develop]                # PR vào nhánh develop
+/git:pr [main] [feature-branch]  # PR từ nhánh feature vào main
 
-# Multiple arguments
-/scout [authentication files] [3]  # Find auth files, use 3 agents
+# Nhiều tham số
+/scout [các tệp xác thực] [3]    # Tìm tệp xác thực, dùng 3 agent
 ```
 
-## Command Workflows
+## Quy Trình Làm Việc
 
-### Starting a New Project
+### Bắt Đầu Dự Án Mới
 
 ```bash
-1. /bootstrap [project description]
-   # OR
+1. /bootstrap [mô tả dự án]
+   # HOẶC
    ck new --kit engineer
 
-2. # Customize requirements through Q&A
+2. # Tùy chỉnh yêu cầu thông qua Q&A
 
-3. # System automatically:
-   - Researches best practices
-   - Creates implementation plan
-   - Implements features
-   - Generates tests
-   - Sets up documentation
+3. # Hệ thống tự động:
+   - Nghiên cứu các thực hành tốt nhất (best practices)
+   - Tạo kế hoạch triển khai
+   - Triển khai các tính năng
+   - Tạo các bài kiểm tra (tests)
+   - Thiết lập tài liệu
 ```
 
-### Developing a Feature
+### Phát Triển Tính Năng
 
 ```bash
-1. /plan [feature description]
-   # Creates detailed implementation plan
+1. /plan [mô tả tính năng]
+   # Tạo kế hoạch triển khai chi tiết
 
-2. # Review plan in plans/ directory
+2. # Xem lại kế hoạch trong thư mục plans/
 
-3. /cook [implement the feature]
-   # Implements based on plan
-   # Generates tests
-   # Updates docs
+3. /cook [triển khai tính năng]
+   # Triển khai dựa trên kế hoạch
+   # Tạo các bài kiểm tra
+   # Cập nhật tài liệu
 
 4. /test
-   # Validates implementation
+   # Kiểm tra lại việc triển khai
 
 5. /git:cm
-   # Commits with conventional message
+   # Commit với thông điệp chuẩn (conventional commit)
 ```
 
-### Fixing a Bug
+### Sửa Lỗi
 
 ```bash
-# Simple bug (you know the fix)
-/fix:fast [typo in validation message]
+# Lỗi đơn giản (bạn đã biết cách sửa)
+/fix:fast [lỗi đánh máy trong thông báo xác thực]
 
-# Complex bug (needs investigation)
-/fix:hard [users can't login after password reset]
-# - Uses scout to find related files
-# - Analyzes code and logs
-# - Researches solutions
-# - Creates fix plan
-# - Implements fix
-# - Tests thoroughly
+# Lỗi phức tạp (cần điều tra)
+/fix:hard [người dùng không thể đăng nhập sau khi đặt lại mật khẩu]
+# - Dùng scout để tìm các tệp liên quan
+# - Phân tích mã nguồn và nhật ký (logs)
+# - Nghiên cứu giải pháp
+# - Tạo kế hoạch sửa lỗi
+# - Triển khai sửa lỗi
+# - Kiểm tra kỹ lưỡng
 
-# CI failure
+# Lỗi CI
 /fix:ci [https://github.com/user/repo/actions/runs/123]
-# - Reads CI logs
-# - Identifies failure cause
-# - Implements fix
-# - Verifies CI passes
+# - Đọc nhật ký CI
+# - Xác định nguyên nhân thất bại
+# - Triển khai sửa lỗi
+# - Xác minh CI vượt qua
 ```
 
-### Updating Documentation
+### Cập Nhật Tài Liệu
 
 ```bash
-# After implementing features
+# Sau khi triển khai các tính năng
 /docs:update
 
-# When onboarding new team members
+# Khi hướng dẫn thành viên mới
 /docs:summarize
 
-# When starting with existing codebase
+# Khi bắt đầu với một codebase hiện có
 /docs:init
 ```
 
-## Command Best Practices
+## Thực Hành Tốt Nhất
 
-### Use the Right Command for the Task
+### Sử Dụng Đúng Lệnh Cho Từng Tác Vụ
 
-✅ **Correct Usage**
+✅ **Sử dụng đúng**
 ```bash
-# Small fixes
-/fix:fast [typo in button text]
+# Sửa lỗi nhỏ
+/fix:fast [lỗi đánh máy trên văn bản nút]
 
-# Complex issues
-/fix:hard [memory leak in websocket connection]
+# Vấn đề phức tạp
+/fix:hard [rò rỉ bộ nhớ trong kết nối websocket]
 
-# UI issues with screenshot
-/fix:ui [screenshot.png] - button misaligned on mobile
+# Vấn đề UI kèm ảnh chụp màn hình
+/fix:ui [screenshot.png] - nút bị lệch trên thiết bị di động
 ```
 
-❌ **Incorrect Usage**
+❌ **Sử dụng sai**
 ```bash
-# Don't use fast for complex issues
-/fix:fast [entire authentication system broken]
+# Đừng dùng fast cho vấn đề phức tạp
+/fix:fast [toàn bộ hệ thống xác thực bị hỏng]
 
-# Don't use hard for simple fixes
-/fix:hard [typo in comment]
+# Đừng dùng hard cho việc sửa lỗi đơn giản
+/fix:hard [lỗi đánh máy trong ghi chú]
 ```
 
-### Provide Clear Descriptions
+### Cung Cấp Mô Tả Rõ Ràng
 
-✅ **Clear**
+✅ **Rõ ràng**
 ```bash
-/plan [add OAuth2 authentication with Google and GitHub providers]
-/cook [implement JWT token refresh with 15-minute expiry]
-/debug [API returns 500 error when creating user with empty email]
+/plan [thêm xác thực OAuth2 với nhà cung cấp Google và GitHub]
+/cook [triển khai làm mới mã JWT với thời gian hết hạn 15 phút]
+/debug [API trả về lỗi 500 khi tạo người dùng với email trống]
 ```
 
-❌ **Vague**
+❌ **Mơ hồ**
 ```bash
-/plan [add auth]
-/cook [make it work]
-/debug [something's broken]
+/plan [thêm xác thực]
+/cook [làm cho nó hoạt động]
+/debug [cái gì đó bị hỏng]
 ```
 
-### Review Before Committing
+### Kiểm Tra Trước Khi Commit
 
 ```bash
-# 1. Implement
-/cook [add rate limiting]
+# 1. Triển khai
+/cook [thêm giới hạn tốc độ - rate limiting]
 
-# 2. Test
+# 2. Thử nghiệm
 /test
 
-# 3. Review changes
+# 3. Xem lại các thay đổi
 git diff
 
-# 4. Commit only if satisfied
+# 4. Chỉ commit khi hài lòng
 /git:cm
 ```
 
-### Use Sequential Commands for Complex Tasks
+### Sử Dụng Chuỗi Lệnh Cho Các Tác Vụ Phức Tạp
 
 ```bash
-# 1. Understand codebase
-/ask [how is authentication currently implemented?]
+# 1. Hiểu codebase
+/ask [xác thực hiện tại được triển khai như thế nào?]
 
-# 2. Plan changes
-/plan [migrate from session-based to JWT authentication]
+# 2. Lập kế hoạch thay đổi
+/plan [chuyển từ xác thực dựa trên session sang JWT]
 
-# 3. Review plan
+# 3. Xem lại kế hoạch
 cat plans/latest-plan.md
 
-# 4. Implement
-/cook [migrate to JWT authentication]
+# 4. Triển khai
+/cook [chuyển sang xác thực JWT]
 
-# 5. Test
+# 5. Thử nghiệm
 /test
 
-# 6. Fix if needed
+# 6. Sửa nếu cần
 /fix:test
 
 # 7. Commit
 /git:cm
 ```
 
-## Command Flags and Options
+## Các Cờ Và Tùy Chọn
 
-Some commands support flags:
+Một số lệnh hỗ trợ các cờ (flags):
 
 ### /bootstrap
 
 ```bash
-/bootstrap [project description]              # Interactive Q&A
-/bootstrap:auto [detailed description]        # Fully automatic
+/bootstrap [mô tả dự án]              # Q&A tương tác
+/bootstrap:auto [mô tả chi tiết]       # Hoàn toàn tự động
 ```
 
 ### /git:pr
 
 ```bash
-/git:pr                      # PR to default branch (main)
-/git:pr [develop]            # PR to develop branch
-/git:pr [main] [feature]     # PR from feature to main
+/git:pr                      # PR vào nhánh mặc định (main)
+/git:pr [develop]            # PR vào nhánh develop
+/git:pr [main] [feature]     # PR từ nhánh feature vào main
 ```
 
 ### /plan
 
 ```bash
-/plan [feature]              # Single approach
-/plan:two [feature]          # Two different approaches
+/plan [tính năng]              # Một phương án tiếp cận
+/plan:two [tính năng]          # Hai phương án tiếp cận khác nhau
 ```
 
-## Understanding Command Output
+## Hiểu Kết Quả Đầu Ra Của Lệnh
 
-Commands provide structured output:
+Các lệnh cung cấp đầu ra có cấu trúc:
 
-### Planning Commands
+### Các Lệnh Lập Kế Hoạch
 
 ```
-planner Agent: Analyzing codebase...
+planner Agent: Đang phân tích codebase...
 
-Research Results:
-- OAuth2 best practices reviewed
-- Existing auth patterns identified
-- Security considerations documented
+Kết quả nghiên cứu:
+- Đã xem lại các thực hành tốt nhất về OAuth2
+- Đã xác định các mẫu xác thực hiện có
+- Đã ghi nhận các cân nhắc về bảo mật
 
-Implementation Plan Created:
+Kế hoạch triển khai đã được tạo:
 📄 plans/oauth-implementation.md
 
-Plan Summary:
-1. Install dependencies (passport, passport-google-oauth20)
-2. Configure OAuth2 providers
-3. Implement callback routes
-4. Add session management
-5. Generate tests
-6. Update documentation
+Tóm tắt kế hoạch:
+1. Cài đặt các phụ thuộc (passport, passport-google-oauth20)
+2. Cấu hình các nhà cung cấp OAuth2
+3. Triển khai các tuyến đường (routes) callback
+4. Thêm quản lý session
+5. Tạo các bài kiểm tra
+6. Cập nhật tài liệu
 
-Estimated time: 2-3 hours
-Files to create: 5
-Files to modify: 3
+Thời gian dự kiến: 2-3 giờ
+Số tệp cần tạo mới: 5
+Số tệp cần chỉnh sửa: 3
 
-Next: Review plan, then run /code
+Tiếp theo: Xem lại kế hoạch, sau đó chạy /code
 ```
 
-### Implementation Commands
+### Các Lệnh Triển Khai
 
 ```
-Code Agent: Implementing from plan...
+Code Agent: Đang triển khai từ kế hoạch...
 
-Dependencies Installed:
+Các phụ thuộc đã cài đặt:
 ✓ passport (0.6.0)
 ✓ passport-google-oauth20 (2.0.0)
 
-Files Created:
+Các tệp đã tạo:
 ✓ src/auth/oauth-config.js
 ✓ src/auth/google-strategy.js
 ✓ src/routes/auth-callback.js
 
-Tests Generated:
+Các bài kiểm tra đã tạo:
 ✓ tests/auth/oauth.test.js (15 tests)
 
-Documentation Updated:
+Tài liệu đã được cập nhật:
 ✓ docs/api/authentication.md
 
-Implementation complete!
+Triển khai hoàn tất!
 
-Next: Run /test to validate
+Tiếp theo: Chạy /test để xác minh
 ```
 
-### Test Commands
+### Các Lệnh Thử Nghiệm
 
 ```
-tester Agent: Running test suite...
+tester Agent: Đang chạy bộ thử nghiệm...
 
-Test Results:
+Kết quả thử nghiệm:
 ✓ Unit tests: 45 passed
 ✓ Integration tests: 12 passed
 ✓ E2E tests: 8 passed
 
-Coverage: 87.3%
+Độ bao phủ (Coverage): 87.3%
 
-All tests passed!
+Tất cả các bài kiểm tra đã vượt qua!
 
-Next: Review changes, then /git:cm
+Tiếp theo: Xem lại các thay đổi, sau đó chạy /git:cm
 ```
 
-## Troubleshooting Commands
+## Xử Lý Sự Cố
 
-### Command Not Found
+### Không Tìm Thấy Lệnh
 
-**Problem**: `/command` not recognized
+**Vấn đề**: `/lệnh` không được nhận diện
 
-**Solutions:**
-1. Verify you're in a ClaudeKit project (`ls .claude/`)
-2. Check command exists (`ls .claude/commands/`)
-3. Run `ck init` to get latest commands
-4. Restart Claude Code
+**Giải pháp:**
+1. Xác minh bạn đang ở trong một dự án ClaudeKit (`ls .claude/`)
+2. Kiểm tra xem lệnh có tồn tại không (`ls .claude/commands/`)
+3. Chạy `ck init` để cập nhật các lệnh mới nhất
+4. Khởi động lại Claude Code
 
-### Command Fails
+### Lệnh Thất Bại
 
-**Problem**: Command errors during execution
+**Vấn đề**: Lệnh gặp lỗi trong quá trình thực thi
 
-**Solutions:**
-1. Check error message for specific issue
-2. Verify prerequisites (API keys, dependencies)
-3. Review agent logs
-4. Try command with simpler input
-5. Use `/debug` to investigate
+**Giải pháp:**
+1. Kiểm tra thông báo lỗi để biết vấn đề cụ thể
+2. Xác minh các điều kiện tiên quyết (API keys, phụ thuộc)
+3. Xem lại nhật ký của agent
+4. Thử lại lệnh với đầu vào đơn giản hơn
+5. Sử dụng `/debug` để điều tra
 
-### Unexpected Results
+### Kết Quả Không Như Mong Đợi
 
-**Problem**: Command doesn't do what expected
+**Vấn đề**: Lệnh không thực hiện đúng những gì mong đợi
 
-**Solutions:**
-1. Review command documentation
-2. Check if using correct command for task
-3. Provide more specific description
-4. Review generated plans before implementing
-5. Use feedback to refine
+**Giải pháp:**
+1. Xem lại tài liệu của lệnh
+2. Kiểm tra xem đã sử dụng đúng lệnh cho tác vụ chưa
+3. Cung cấp mô tả cụ thể hơn
+4. Xem lại các kế hoạch đã tạo trước khi triển khai
+5. Sử dụng phản hồi để tinh chỉnh
 
-## Next Steps
+## Bước Tiếp Theo
 
-Explore specific command categories:
+Khám phá các nhóm lệnh cụ thể:
 
-- [Core Commands](/docs/engineer/commands/core/) - Development essentials
-- [Fix Commands](/docs/engineer/commands/fix/) - Debugging and fixing
-- [Design Commands](/docs/engineer/commands/design/) - UI/UX creation
-- [Git Commands](/docs/engineer/commands/git/) - Version control
+- [Lệnh Cốt Lõi](/docs/engineer/commands/core/) - Các lệnh thiết yếu cho phát triển
+- [Lệnh Sửa Lỗi](/docs/engineer/commands/fix/) - Gỡ lỗi và sửa chữa
+- [Lệnh Thiết Kế](/docs/engineer/commands/design/) - Tạo UI/UX
+- [Lệnh Git](/docs/engineer/commands/git/) - Quản lý phiên bản
 
-Or learn about:
+Hoặc tìm hiểu thêm về:
 
-- [Agents](/docs/engineer/agents/) - How commands invoke agents
-- [Workflows](/docs/core-concepts/workflows) - Command execution flows
-- [Quick Start](/docs/getting-started/quick-start) - Hands-on tutorial
+- [Agent](/docs/engineer/agents/) - Cách các lệnh gọi agent
+- [Quy trình làm việc](/docs/core-concepts/workflows) - Các luồng thực thi lệnh
+- [Bắt đầu nhanh](/docs/getting-started/quick-start) - Hướng dẫn thực hành trực tiếp
 
 ---
 
-**Key Takeaway**: ClaudeKit commands provide a natural, intuitive interface to powerful agent orchestration, making complex development tasks simple and repeatable.
+**Điểm mấu chốt**: Các lệnh ClaudeKit cung cấp một giao diện tự nhiên, trực quan cho việc điều phối agent mạnh mẽ, giúp các tác vụ phát triển phức tạp trở nên đơn giản và có thể lặp lại.

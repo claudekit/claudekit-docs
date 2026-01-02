@@ -1,153 +1,154 @@
 ---
 title: /fix:types
-description: Documentation for types
+description: Tài liệu hướng dẫn lệnh fix:types
 section: engineer
 kit: engineer
 category: docs/commands/fix
 order: 25
 published: true
+lang: vi
 ---
 
 # /fix:types
 
-Automatically identify and fix all type errors in your TypeScript or Dart codebase. The command runs type checkers iteratively until all type errors are resolved, ensuring type safety without resorting to `any` types.
+Tự động xác định và sửa tất cả các lỗi kiểu (type errors) trong mã nguồn TypeScript hoặc Dart của bạn. Lệnh này chạy các trình kiểm tra kiểu lặp đi lặp lại cho đến khi tất cả các lỗi được giải quyết, đảm bảo an toàn kiểu dữ liệu mà không cần lạm dụng kiểu `any`.
 
-## Syntax
+## Cú pháp
 
 ```bash
 /fix:types
 ```
 
-No arguments needed - the command automatically detects your project type and runs the appropriate type checker.
+Không cần tham số - lệnh sẽ tự động phát hiện loại dự án và chạy trình kiểm tra kiểu phù hợp.
 
-## How It Works
+## Cách hoạt động
 
-The `/fix:types` command follows an iterative workflow:
+Lệnh `/fix:types` tuân theo một quy trình làm việc lặp lại:
 
-### 1. Type Check Execution
+### 1. Thực thi kiểm tra kiểu
 
-- Detects project type (TypeScript or Dart)
-- Runs appropriate type checker:
-  - TypeScript: `bun run typecheck` or `npm run typecheck`
-  - Dart: `dart analyze` or `flutter analyze`
-- Captures all type errors with file locations and descriptions
+- Phát hiện loại dự án (TypeScript hoặc Dart)
+- Chạy trình kiểm tra kiểu phù hợp:
+  - TypeScript: `bun run typecheck` hoặc `npm run typecheck`
+  - Dart: `dart analyze` hoặc `flutter analyze`
+- Ghi lại tất cả các lỗi kiểu kèm theo vị trí tệp và mô tả lỗi
 
-### 2. Error Analysis
+### 2. Phân tích lỗi
 
-- Categorizes errors by type and severity
-- Identifies patterns across multiple errors
-- Determines fix strategies for each error category
-- Prioritizes fixes by dependency order
+- Phân loại lỗi theo loại và mức độ nghiêm trọng
+- Xác định các mẫu (patterns) giữa nhiều lỗi khác nhau
+- Xác định chiến lược sửa lỗi cho từng danh mục lỗi
+- Ưu tiên các bản sửa lỗi theo thứ tự phụ thuộc
 
-### 3. Fix Implementation
+### 3. Triển khai sửa lỗi
 
-- Applies type fixes systematically
-- Adds proper type annotations
-- Fixes type mismatches and incompatibilities
-- Updates function signatures and interfaces
-- Resolves generic type constraints
+- Áp dụng các bản sửa lỗi kiểu một cách hệ thống
+- Thêm các chú thích kiểu (type annotations) phù hợp
+- Sửa các lỗi không khớp kiểu và không tương thích
+- Cập nhật chữ ký hàm (function signatures) và các interface
+- Giải quyết các ràng buộc kiểu generic
 
-### 4. Verification Loop
+### 4. Vòng lặp xác minh
 
-- Re-runs type checker after fixes
-- Identifies any remaining errors
-- Continues fixing until clean type check
-- Ensures no regressions introduced
+- Chạy lại trình kiểm tra kiểu sau khi sửa
+- Xác định bất kỳ lỗi nào còn sót lại
+- Tiếp tục sửa cho đến khi quá trình kiểm tra kiểu hoàn toàn sạch lỗi
+- Đảm bảo không có lỗi phát sinh (regressions)
 
-## When to Use
+## Khi nào nên sử dụng
 
-### ✅ Perfect For
+### ✅ Hoàn hảo cho
 
-**After Refactoring**
+**Sau khi tái cấu trúc (Refactoring)**
 ```bash
-# Just refactored user service
+# Vừa tái cấu trúc user service
 /fix:types
 ```
 
-**Adding New Features**
+**Thêm tính năng mới**
 ```bash
-# Added new API endpoints
+# Vừa thêm các endpoint API mới
 /fix:types
 ```
 
-**Upgrading Dependencies**
+**Nâng cấp phụ thuộc**
 ```bash
-# Updated TypeScript from 4.9 to 5.0
+# Cập nhật TypeScript từ 4.9 lên 5.0
 npm install typescript@latest
 /fix:types
 ```
 
-**Converting JavaScript to TypeScript**
+**Chuyển đổi JavaScript sang TypeScript**
 ```bash
-# Renamed .js files to .ts
+# Đổi tên các tệp .js thành .ts
 /fix:types
 ```
 
-**Strict Mode Migration**
+**Chuyển sang chế độ nghiêm ngặt (Strict Mode)**
 ```bash
-# Enabled strict mode in tsconfig.json
+# Bật chế độ strict trong tsconfig.json
 /fix:types
 ```
 
-### ❌ Don't Use For
+### ❌ Không sử dụng cho
 
-**Runtime Errors**
+**Lỗi khi chạy (Runtime Errors)**
 ```bash
-❌ /fix:types  # For runtime errors
-✅ /fix:logs [runtime error description]
+❌ /fix:types  # Cho lỗi runtime
+✅ /fix:logs [mô tả lỗi runtime]
 ```
 
-**Logic Bugs**
+**Lỗi logic**
 ```bash
-❌ /fix:types  # For incorrect calculations
-✅ /fix:fast [fix calculation logic]
+❌ /fix:types  # Cho các phép tính sai
+✅ /fix:fast [sửa logic tính toán]
 ```
 
-**No Type Checker Configured**
+**Chưa cấu hình trình kiểm tra kiểu**
 ```bash
-❌ /fix:types  # No typecheck script exists
-✅ First add type checker to project
+❌ /fix:types  # Chưa có script typecheck
+✅ Trước tiên hãy thêm trình kiểm tra kiểu vào dự án
 ```
 
-## Examples
+## Ví dụ
 
-### Simple Type Errors
+### Các lỗi kiểu đơn giản
 
 ```bash
 /fix:types
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-1. Running type checker
+1. Đang chạy trình kiểm tra kiểu
    $ bun run typecheck
 
-   Found 5 type errors:
+   Tìm thấy 5 lỗi kiểu:
    - src/auth/login.ts:45 - Type 'string | undefined' not assignable to 'string'
    - src/api/users.ts:89 - Property 'email' missing in type
    - src/utils/format.ts:23 - Argument of type 'number' not assignable to 'string'
    - src/models/user.ts:12 - Type 'null' not assignable to 'User'
    - src/services/auth.ts:67 - Cannot invoke object which is possibly 'undefined'
 
-2. Fixing errors
-   ✓ Added null check for login.ts
-   ✓ Added required email field to User interface
-   ✓ Fixed type mismatch in format function
-   ✓ Updated User type to allow null
-   ✓ Added optional chaining for auth service
+2. Đang sửa lỗi
+   ✓ Thêm kiểm tra null cho login.ts
+   ✓ Thêm trường email bắt buộc vào interface User
+   ✓ Sửa lỗi không khớp kiểu trong hàm format
+   ✓ Cập nhật kiểu User để cho phép null
+   ✓ Thêm optional chaining cho dịch vụ auth
 
-3. Verifying fixes
+3. Xác minh các bản sửa lỗi
    $ bun run typecheck
 
-   ✓ No type errors found
+   ✓ Không tìm thấy lỗi kiểu nào
 
-✓ All type errors fixed (1m 23s)
+✓ Tất cả các lỗi kiểu đã được sửa (1 phút 23 giây)
 ```
 
-### After Strict Mode Migration
+### Sau khi chuyển sang Strict Mode
 
 ```bash
-# Enable strict mode
+# Bật chế độ strict
 cat > tsconfig.json <<EOF
 {
   "compilerOptions": {
@@ -160,100 +161,100 @@ EOF
 /fix:types
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-1. Type checking with strict mode
-   Found 47 type errors across 23 files
+1. Kiểm tra kiểu với chế độ strict
+   Tìm thấy 47 lỗi kiểu trong 23 tệp
 
-   Common issues:
-   - 23 errors: Implicit 'any' types
-   - 15 errors: Possible 'null' or 'undefined'
-   - 9 errors: Missing return types
+   Các vấn đề phổ biến:
+   - 23 lỗi: Kiểu 'any' ngầm định
+   - 15 lỗi: Có khả năng 'null' hoặc 'undefined'
+   - 9 lỗi: Thiếu kiểu trả về
 
-2. Systematic fixes (iteration 1)
-   ✓ Added explicit types to function parameters (23 fixes)
-   ✓ Added null checks and optional chaining (15 fixes)
-   ✓ Added return type annotations (9 fixes)
+2. Sửa lỗi hệ thống (lần 1)
+   ✓ Thêm kiểu rõ ràng cho các tham số hàm (23 bản sửa lỗi)
+   ✓ Thêm kiểm tra null và optional chaining (15 bản sửa lỗi)
+   ✓ Thêm chú thích kiểu trả về (9 bản sửa lỗi)
 
-3. Re-checking
-   Found 3 remaining errors (nested types)
+3. Kiểm tra lại
+   Tìm thấy 3 lỗi còn lại (kiểu lồng nhau)
 
-4. Fixing remaining errors (iteration 2)
-   ✓ Fixed generic type constraints
-   ✓ Updated interface definitions
-   ✓ Fixed union type handling
+4. Sửa các lỗi còn lại (lần 2)
+   ✓ Sửa các ràng buộc kiểu generic
+   ✓ Cập nhật định nghĩa interface
+   ✓ Sửa lỗi xử lý kiểu union
 
-5. Final verification
+5. Xác minh cuối cùng
    $ bun run typecheck
-   ✓ No type errors found
+   ✓ Không tìm thấy lỗi kiểu nào
 
-✓ 47 type errors fixed in 2 iterations (3m 45s)
+✓ 47 lỗi kiểu đã được sửa sau 2 lần lặp (3 phút 45 giây)
 ```
 
-### Dependency Update Fixes
+### Sửa lỗi sau khi cập nhật phụ thuộc
 
 ```bash
-# Update React and TypeScript
+# Cập nhật React và TypeScript
 npm update react @types/react typescript
 
 /fix:types
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-1. Checking types after dependency update
-   Found 12 type errors:
-   - React.FC deprecated patterns (8 errors)
-   - Updated prop type definitions (3 errors)
-   - Changed utility types (1 error)
+1. Kiểm tra kiểu sau khi cập nhật phụ thuộc
+   Tìm thấy 12 lỗi kiểu:
+   - Các mẫu React.FC không còn được khuyến khích (8 lỗi)
+   - Cập nhật định nghĩa kiểu prop (3 lỗi)
+   - Thay đổi các kiểu tiện ích (1 lỗi)
 
-2. Applying fixes
-   ✓ Migrated from React.FC to explicit children props
-   ✓ Updated ComponentProps usage
-   ✓ Fixed Omit and Pick utility type usage
-   ✓ Updated event handler types
+2. Áp dụng sửa lỗi
+   ✓ Chuyển từ React.FC sang các prop children rõ ràng
+   ✓ Cập nhật cách sử dụng ComponentProps
+   ✓ Sửa cách dùng kiểu tiện ích Omit và Pick
+   ✓ Cập nhật kiểu cho các trình xử lý sự kiện (event handlers)
 
-3. Verification
+3. Xác minh
    $ bun run typecheck
-   ✓ No type errors found
+   ✓ Không tìm thấy lỗi kiểu nào
 
-✓ Updated to new type definitions (2m 11s)
+✓ Đã cập nhật lên các định nghĩa kiểu mới (2 phút 11 giây)
 ```
 
-### Flutter/Dart Type Fixes
+### Sửa lỗi kiểu Flutter/Dart
 
 ```bash
 /fix:types
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-1. Running Dart analyzer
+1. Đang chạy trình phân tích Dart
    $ flutter analyze
 
-   Found 8 type errors:
+   Tìm thấy 8 lỗi kiểu:
    - lib/models/user.dart:23 - The return type 'String?' isn't a 'String'
    - lib/services/api.dart:45 - A value of type 'Future<dynamic>' can't be assigned to 'Future<User>'
    - lib/widgets/profile.dart:67 - The argument type 'int' can't be assigned to 'String'
 
-2. Fixing Dart type errors
-   ✓ Added null safety operators (!)
-   ✓ Fixed generic type parameters in Future
-   ✓ Added toString() conversion for int to String
-   ✓ Updated nullable type annotations
+2. Sửa các lỗi kiểu Dart
+   ✓ Thêm các toán tử an toàn null (!)
+   ✓ Sửa các tham số kiểu generic trong Future
+   ✓ Thêm chuyển đổi toString() cho int sang String
+   ✓ Cập nhật các chú thích kiểu nullable
 
-3. Re-running analyzer
+3. Chạy lại trình phân tích
    $ flutter analyze
-   ✓ No issues found!
+   ✓ Không tìm thấy vấn đề nào!
 
-✓ Dart type errors fixed (1m 34s)
+✓ Các lỗi kiểu Dart đã được sửa (1 phút 34 giây)
 ```
 
-## Type Check Commands
+## Các lệnh kiểm tra kiểu
 
-The command automatically detects and runs:
+Lệnh này tự động phát hiện và chạy:
 
-### TypeScript Projects
+### Dự án TypeScript
 
 **Bun:**
 ```bash
@@ -275,7 +276,7 @@ yarn typecheck
 pnpm typecheck
 ```
 
-### Dart/Flutter Projects
+### Dự án Dart/Flutter
 
 **Flutter:**
 ```bash
@@ -287,83 +288,83 @@ flutter analyze
 dart analyze
 ```
 
-## Common Fix Patterns
+## Các mẫu sửa lỗi phổ biến
 
-### Null Safety
+### An toàn Null (Null Safety)
 
-**Before:**
+**Trước:**
 ```typescript
 function getUserName(user: User) {
-  return user.profile.name; // Error: profile possibly undefined
+  return user.profile.name; // Lỗi: profile có thể bị undefined
 }
 ```
 
-**After:**
+**Sau:**
 ```typescript
 function getUserName(user: User) {
   return user.profile?.name ?? 'Unknown';
 }
 ```
 
-### Type Annotations
+### Chú thích kiểu (Type Annotations)
 
-**Before:**
+**Trước:**
 ```typescript
-function calculateTotal(items) { // Error: Parameter implicitly has 'any' type
+function calculateTotal(items) { // Lỗi: Tham số ngầm định có kiểu 'any'
   return items.reduce((sum, item) => sum + item.price, 0);
 }
 ```
 
-**After:**
+**Sau:**
 ```typescript
 function calculateTotal(items: CartItem[]): number {
   return items.reduce((sum, item) => sum + item.price, 0);
 }
 ```
 
-### Generic Constraints
+### Ràng buộc Generic (Generic Constraints)
 
-**Before:**
+**Trước:**
 ```typescript
-function findById<T>(items: T[], id: string) { // Error: Property 'id' does not exist on type 'T'
+function findById<T>(items: T[], id: string) { // Lỗi: Thuộc tính 'id' không tồn tại trên kiểu 'T'
   return items.find(item => item.id === id);
 }
 ```
 
-**After:**
+**Sau:**
 ```typescript
 function findById<T extends { id: string }>(items: T[], id: string): T | undefined {
   return items.find(item => item.id === id);
 }
 ```
 
-### Union Type Handling
+### Xử lý kiểu Union
 
-**Before:**
+**Trước:**
 ```typescript
 function processValue(value: string | number) {
-  return value.toUpperCase(); // Error: Property 'toUpperCase' does not exist on type 'number'
+  return value.toUpperCase(); // Lỗi: Thuộc tính 'toUpperCase' không tồn tại trên kiểu 'number'
 }
 ```
 
-**After:**
+**Sau:**
 ```typescript
 function processValue(value: string | number): string {
   return typeof value === 'string' ? value.toUpperCase() : value.toString();
 }
 ```
 
-### Interface Completeness
+### Tính đầy đủ của Interface
 
-**Before:**
+**Trước:**
 ```typescript
-const user: User = { // Error: Property 'email' is missing
+const user: User = { // Lỗi: Thiếu thuộc tính 'email'
   name: 'John Doe',
   age: 30
 };
 ```
 
-**After:**
+**Sau:**
 ```typescript
 const user: User = {
   name: 'John Doe',
@@ -372,11 +373,11 @@ const user: User = {
 };
 ```
 
-## Best Practices
+## Thực hành tốt nhất
 
-### No `any` Types
+### Không dùng kiểu `any`
 
-✅ **Good - Proper types:**
+✅ **Tốt - Sử dụng kiểu đúng:**
 ```typescript
 interface ApiResponse<T> {
   data: T;
@@ -388,50 +389,50 @@ function fetchUser(): Promise<ApiResponse<User>> {
 }
 ```
 
-❌ **Bad - Using any:**
+❌ **Xấu - Sử dụng any:**
 ```typescript
-function fetchUser(): Promise<any> { // Defeats type safety!
+function fetchUser(): Promise<any> { // Làm mất an toàn kiểu dữ liệu!
   // ...
 }
 ```
 
-### Iterative Fixing
+### Sửa lỗi lặp lại
 
-✅ **Command handles iterations:**
+✅ **Lệnh tự động xử lý các lần lặp:**
 ```bash
-# Just run once
+# Chỉ chạy một lần
 /fix:types
 
-# Command will iterate until all errors fixed
+# Lệnh sẽ lặp lại cho đến khi tất cả các lỗi được sửa
 ```
 
-❌ **Don't run manually repeatedly:**
+❌ **Đừng chạy thủ công nhiều lần:**
 ```bash
-# Inefficient
+# Không hiệu quả
 /fix:types
 /fix:types
 /fix:types
 ```
 
-### After Major Changes
+### Sau những thay đổi lớn
 
-✅ **Fix types after refactoring:**
+✅ **Sửa kiểu sau khi tái cấu trúc:**
 ```bash
-# 1. Refactor code
-/cook [refactor user service to use new API]
+# 1. Tái cấu trúc mã nguồn
+/cook [tái cấu trúc user service để dùng API mới]
 
-# 2. Fix resulting type errors
+# 2. Sửa các lỗi kiểu phát sinh
 /fix:types
 
-# 3. Test
+# 3. Kiểm tra
 /test
 ```
 
-## Project Setup
+## Thiết lập dự án
 
-### TypeScript Configuration
+### Cấu hình TypeScript
 
-Ensure `package.json` has typecheck script:
+Đảm bảo `package.json` có script typecheck:
 
 ```json
 {
@@ -441,7 +442,7 @@ Ensure `package.json` has typecheck script:
 }
 ```
 
-Or with `tsconfig.json`:
+Hoặc với `tsconfig.json`:
 
 ```json
 {
@@ -455,9 +456,9 @@ Or with `tsconfig.json`:
 }
 ```
 
-### Dart Configuration
+### Cấu hình Dart
 
-Ensure `analysis_options.yaml` exists:
+Đảm bảo tệp `analysis_options.yaml` tồn tại:
 
 ```yaml
 analyzer:
@@ -469,162 +470,162 @@ analyzer:
     invalid_assignment: error
 ```
 
-## Workflow
+## Quy trình làm việc
 
-### Standard Development Flow
+### Luồng phát triển tiêu chuẩn
 
 ```bash
-# 1. Implement feature
-/cook [add user profile feature]
+# 1. Triển khai tính năng
+/cook [thêm tính năng profile người dùng]
 
-# 2. Fix type errors
+# 2. Sửa các lỗi kiểu
 /fix:types
 
-# 3. Run tests
+# 3. Chạy các bài kiểm tra
 /test
 
 # 4. Commit
 /git:cm
 ```
 
-### Refactoring Workflow
+### Quy trình tái cấu trúc
 
 ```bash
-# 1. Refactor
-/cook [refactor authentication to use OAuth]
+# 1. Tái cấu trúc
+/cook [tái cấu trúc xác thực để dùng OAuth]
 
-# 2. Fix types
+# 2. Sửa các lỗi kiểu
 /fix:types
 
-# 3. Fix any remaining issues
-/fix:hard [if complex issues remain]
+# 3. Sửa bất kỳ vấn đề nào còn sót lại
+/fix:hard [nếu vẫn còn các vấn đề phức tạp]
 
-# 4. Test thoroughly
+# 4. Kiểm tra kỹ lưỡng
 /test
 
 # 5. Commit
 /git:cm
 ```
 
-### Strict Mode Migration
+### Di chuyển sang chế độ Strict Mode
 
 ```bash
-# 1. Enable strict mode
+# 1. Bật chế độ strict
 echo '{"compilerOptions": {"strict": true}}' > tsconfig.json
 
-# 2. Fix all resulting errors
+# 2. Sửa tất cả các lỗi phát sinh
 /fix:types
 
-# 3. Verify with tests
+# 3. Xác minh bằng các bài kiểm tra
 /test
 
-# 4. Commit strict mode migration
+# 4. Commit việc di chuyển sang chế độ strict
 /git:cm
 ```
 
-## Troubleshooting
+## Xử lý sự cố
 
-### Too Many Errors
+### Quá nhiều lỗi
 
-**Problem:** Hundreds of type errors overwhelming
+**Vấn đề:** Hàng trăm lỗi kiểu gây quá tải
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Fix in stages
-# 1. Fix strict mode errors first
+# Sửa theo từng giai đoạn
+# 1. Sửa các lỗi strict mode trước
 /fix:types
 
-# 2. Then enable additional checks gradually
-# Update tsconfig.json one option at a time
+# 2. Sau đó bật dần các kiểm tra bổ sung
+# Cập nhật từng tùy chọn trong tsconfig.json một
 ```
 
-### Circular Dependencies
+### Phụ thuộc vòng (Circular Dependencies)
 
-**Problem:** Type errors due to circular imports
+**Vấn đề:** Lỗi kiểu do việc import vòng quanh
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Command will identify circular dependencies
-# Manually restructure imports to break cycles
-# Then run again
-/fix:types
-```
-
-### Generic Type Complexity
-
-**Problem:** Complex generic types causing issues
-
-**Solution:**
-```bash
-# Let command handle first pass
-/fix:types
-
-# If issues remain, simplify generics manually
-# Then run again to verify
+# Lệnh sẽ xác định các phụ thuộc vòng
+# Thủ công cấu trúc lại các lệnh import để phá vỡ vòng lặp
+# Sau đó chạy lại
 /fix:types
 ```
 
-### External Types Missing
+### Độ phức tạp của kiểu Generic
 
-**Problem:** Missing type definitions for packages
+**Vấn đề:** Các kiểu generic phức tạp gây ra lỗi
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Install type definitions
-npm install --save-dev @types/package-name
+# Để lệnh xử lý lượt đầu tiên
+/fix:types
 
-# Then fix remaining errors
+# Nếu vấn đề vẫn còn, hãy đơn giản hóa các generic thủ công
+# Sau đó chạy lại để xác minh
 /fix:types
 ```
 
-## Error Categories
+### Thiếu các kiểu bên ngoài (External Types)
 
-Common error types fixed:
+**Vấn đề:** Thiếu định nghĩa kiểu cho các gói (packages)
 
-### Implicit Any
-- Missing parameter types
-- Missing return types
-- Missing variable types
+**Giải pháp:**
+```bash
+# Cài đặt định nghĩa kiểu
+npm install --save-dev @types/ten-goi
 
-### Null Safety
-- Possible undefined values
-- Possible null values
-- Optional chaining needed
+# Sau đó sửa các lỗi còn lại
+/fix:types
+```
 
-### Type Mismatches
-- Wrong return types
-- Incompatible assignments
-- Generic constraint violations
+## Các danh mục lỗi
 
-### Missing Properties
-- Incomplete interface implementations
-- Missing required fields
-- Incorrect property names
+Các loại lỗi phổ biến được sửa:
 
-### Function Signatures
-- Wrong parameter types
-- Wrong parameter count
-- Wrong return type
+### Any ngầm định (Implicit Any)
+- Thiếu kiểu tham số
+- Thiếu kiểu trả về
+- Thiếu kiểu biến
 
-## Metrics
+### An toàn Null
+- Các giá trị có khả năng bị undefined
+- Các giá trị có khả năng bị null
+- Cần sử dụng optional chaining
 
-Typical `/fix:types` performance:
+### Không khớp kiểu (Type Mismatches)
+- Sai kiểu trả về
+- Gán giá trị không tương thích
+- Vi phạm ràng buộc generic
 
-- **Time**: 1-5 minutes (depending on error count)
-- **Errors per iteration**: 15-30
-- **Average iterations**: 1-3
-- **Success rate**: ~98% (some manual intervention may be needed)
-- **No `any` types added**: 100% of fixes use proper types
+### Thiếu thuộc tính
+- Triển khai interface không đầy đủ
+- Thiếu các trường bắt buộc
+- Tên thuộc tính không chính xác
 
-## Next Steps
+### Chữ ký hàm (Function Signatures)
+- Sai kiểu tham số
+- Sai số lượng tham số
+- Sai kiểu trả về
 
-After using `/fix:types`:
+## Số liệu
 
-- [/test](/docs/engineer/commands/core/test) - Run tests to verify fixes
-- [/fix:fast](/docs/engineer/commands/fix/fast) - For remaining simple issues
-- [/git:cm](/docs/engineer/commands/git/commit) - Commit type fixes
-- [/cook](/docs/engineer/commands/core/cook) - Continue feature development
+Hiệu suất điển hình của `/fix:types`:
+
+- **Thời gian**: 1-5 phút (tùy thuộc vào số lượng lỗi)
+- **Số lỗi mỗi lần lặp**: 15-30
+- **Số lần lặp trung bình**: 1-3
+- **Tỷ lệ thành công**: ~98% (có thể cần can thiệp thủ công trong một số trường hợp)
+- **Không thêm kiểu `any`**: 100% các bản sửa lỗi sử dụng kiểu dữ liệu phù hợp
+
+## Bước tiếp theo
+
+Sau khi sử dụng `/fix:types`:
+
+- [/test](/docs/engineer/commands/core/test) - Chạy các bài kiểm tra để xác minh các bản sửa lỗi
+- [/fix:fast](/docs/engineer/commands/fix/fast) - Cho các vấn đề đơn giản còn sót lại
+- [/git:cm](/docs/engineer/commands/git/commit) - Commit các bản sửa lỗi kiểu
+- [/cook](/docs/engineer/commands/core/cook) - Tiếp tục phát triển tính năng
 
 ---
 
-**Key Takeaway**: `/fix:types` provides automated type error resolution without compromising type safety by avoiding `any` types and implementing proper type annotations, null checks, and interface completeness.
+**Điểm mấu chốt**: `/fix:types` cung cấp giải pháp sửa lỗi kiểu tự động mà không làm giảm an toàn kiểu dữ liệu bằng cách tránh kiểu `any` và triển khai các chú thích kiểu, kiểm tra null và tính đầy đủ của interface một cách chính xác.

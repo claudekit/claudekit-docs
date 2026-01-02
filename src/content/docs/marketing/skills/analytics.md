@@ -1,45 +1,44 @@
 ---
 title: "Analytics"
-description: "Phân tích marketing với tích hợp GA4 API, theo dõi KPI, mô hình attribution và báo cáo dựa trên dữ liệu để tối ưu hóa hiệu suất."
-lang: vi
+description: "Marketing analytics with GA4 API integration, KPI tracking, attribution models, and data-driven reporting for performance optimization."
 section: marketing
 category: skills
 order: 4
 ---
 
-> Biến dữ liệu marketing thành insights hành động thông qua báo cáo tự động, phân tích attribution và theo dõi ROI.
+> Transform marketing data into actionable insights through automated reporting, attribution analysis, and ROI tracking.
 
-## Kỹ năng này làm gì
+## What This Skill Does
 
-**Thách thức**: Nhóm marketing chìm trong dữ liệu từ GA4, nền tảng quảng cáo, công cụ email và CRMs. Báo cáo thủ công tốn thời gian và attribution qua kênh phức tạp.
+**The Challenge**: Marketing teams drown in data from GA4, ad platforms, email tools, and CRMs. Manual reporting is time-consuming and cross-channel attribution is complex.
 
-**Giải pháp**: Kỹ năng Analytics cung cấp tích hợp GA4 API, framework KPI sẵn có, mô hình attribution và tạo báo cáo tự động. Bao gồm trực quan hóa Mermaid.js và ưu tiên đề xuất có thể hành động.
+**The Solution**: Analytics skill provides GA4 API integration, pre-built KPI frameworks, attribution models, and automated report generation. Includes Mermaid.js visualization and actionable recommendation prioritization.
 
-## Kích hoạt
+## Activation
 
-**Ngầm**: Tự động kích hoạt cho agents Analytics Analyst, Campaign Manager và Growth Specialist.
+**Implicit**: Activates automatically for Analytics Analyst, Campaign Manager, and Growth Specialist agents.
 
-**Rõ ràng**: Kích hoạt qua prompt:
+**Explicit**: Activate via prompt:
 ```
-Kích hoạt skill analytics để [mô tả task]
+Activate analytics skill to [describe task]
 ```
 
-## Khả năng
+## Capabilities
 
-### 1. Tích hợp Google Analytics 4 API
-Truy vấn dữ liệu GA4 theo chương trình cho báo cáo và dashboard tùy chỉnh.
+### 1. Google Analytics 4 API Integration
+Query GA4 data programmatically for custom reports and dashboards.
 
-**Thiết lập**:
+**Setup**:
 ```bash
 npm install @google-analytics/admin @google-analytics/data
 ```
 
-**Liệt kê accounts và properties**:
+**List accounts and properties**:
 ```bash
 node scripts/ga-list-accounts.cjs --summaries
 ```
 
-**Chạy báo cáo tùy chỉnh**:
+**Run custom report**:
 ```bash
 node scripts/ga-run-report.cjs \
   --property=PROPERTY_ID \
@@ -49,125 +48,125 @@ node scripts/ga-run-report.cjs \
   --end-date=today
 ```
 
-**Tài liệu API**:
+**API documentation**:
 - Admin API: `references/ga-admin-api.md`
 - Data API: `references/ga-data-api.md`
 
-### 2. Framework và theo dõi KPI
-Chỉ số định sẵn cho thu hút, tương tác, chuyển đổi và giữ chân.
+### 2. KPI Framework and Tracking
+Pre-defined metrics for acquisition, engagement, conversion, and retention.
 
-**KPIs marketing cốt lõi**:
-| Danh mục | Chỉ số |
+**Core marketing KPIs**:
+| Category | Metrics |
 |----------|---------|
-| Thu hút | CAC (Chi phí Thu hút Khách hàng), CPL (Chi phí mỗi Lead), Lưu lượng |
-| Tương tác | CTR (Tỷ lệ Click-Through), Thời gian trên Site, Bounce Rate |
-| Chuyển đổi | CVR (Tỷ lệ Chuyển đổi), ROAS (Return on Ad Spend), Doanh thu |
-| Giữ chân | LTV (Lifetime Value), Churn Rate, NPS (Net Promoter Score) |
+| Acquisition | CAC (Customer Acquisition Cost), CPL (Cost per Lead), Traffic |
+| Engagement | CTR (Click-Through Rate), Time on Site, Bounce Rate |
+| Conversion | CVR (Conversion Rate), ROAS (Return on Ad Spend), Revenue |
+| Retention | LTV (Lifetime Value), Churn Rate, NPS (Net Promoter Score) |
 
-**Framework tải**: `references/marketing-kpis.md`
+**Framework loading**: `references/marketing-kpis.md`
 
-### 3. Mô hình attribution
-So sánh mô hình attribution để hiểu đóng góp của kênh.
+### 3. Attribution Models
+Compare attribution models to understand channel contribution.
 
-**Mô hình có sẵn**:
-- **Last-click**: Credit đầy đủ cho touchpoint cuối
-- **First-click**: Credit đầy đủ cho touchpoint đầu
-- **Linear**: Credit đồng đều qua tất cả touchpoints
-- **Time-decay**: Credit nhiều hơn cho touchpoints gần đây
-- **Position-based**: 40% đầu, 40% cuối, 20% giữa
+**Available models**:
+- **Last-click**: Full credit to last touchpoint
+- **First-click**: Full credit to first touchpoint
+- **Linear**: Equal credit across all touchpoints
+- **Time-decay**: More credit to recent touchpoints
+- **Position-based**: 40% first, 40% last, 20% middle
 
-**Hướng dẫn mô hình**: `references/attribution-models.md`
+**Model guide**: `references/attribution-models.md`
 
-## Yêu cầu trước
+## Prerequisites
 
-**Cho truy cập GA4 API**:
-- Dự án Google Cloud với GA4 APIs được bật
-- Thông tin xác thực Service account HOẶC OAuth 2.0
-- File thông tin xác thực trong `.claude/secrets/`:
+**For GA4 API access**:
+- Google Cloud project with GA4 APIs enabled
+- Service account OR OAuth 2.0 credentials
+- Credentials file in `.claude/secrets/`:
   - `ga_service_account.json` (service account)
-  - HOẶC `google_client_secret.json` (OAuth)
+  - OR `google_client_secret.json` (OAuth)
 
-**Cho tạo báo cáo**:
-- Nguồn dữ liệu được cấu hình (GA4, nền tảng quảng cáo, email, CRM)
+**For report generation**:
+- Configured data sources (GA4, ad platforms, email, CRM)
 
-## Cấu hình
+## Configuration
 
-**Vị trí thông tin xác thực**: `.claude/secrets/`
-- `ga_service_account.json` - Service account (khuyến nghị cho tự động hóa)
-- `google_client_secret.json` - OAuth (thiết lập tương tác)
-- `google_tokens.json` - Tokens OAuth (tự động tạo)
+**Credentials location**: `.claude/secrets/`
+- `ga_service_account.json` - Service account (recommended for automation)
+- `google_client_secret.json` - OAuth (interactive setup)
+- `google_tokens.json` - OAuth tokens (auto-generated)
 
-**Mẫu báo cáo**: `references/report-templates.md`
+**Report templates**: `references/report-templates.md`
 
-## Thực hành tốt nhất
+## Best Practices
 
-**1. Theo dõi chỉ số dẫn đầu, không chỉ chỉ số theo sau**
-Giám sát chỉ số tương tác (dẫn đầu) để dự đoán chuyển đổi (theo sau).
+**1. Track leading metrics, not just lagging**
+Monitor engagement metrics (leading) to predict conversions (lagging).
 
-**2. So sánh táo với táo**
-Sử dụng khung thời gian và segments nhất quán. So sánh năm qua năm tính đến tính mùa vụ.
+**2. Compare apples to apples**
+Use consistent time frames and segments. Compare year-over-year accounting for seasonality.
 
-**3. Ý nghĩa thống kê trước kết luận**
-Đảm bảo kích thước mẫu hỗ trợ insights. Sử dụng khoảng tin cậy cho A/B tests.
+**3. Statistical significance before conclusions**
+Ensure sample size supports insights. Use confidence intervals for A/B tests.
 
-## Use cases phổ biến
+## Common Use Cases
 
-### Use Case 1: Báo cáo hiệu suất chiến dịch hàng tuần
-**Kịch bản**: Tạo báo cáo hàng tuần so sánh hiệu suất kênh.
+### Use Case 1: Weekly Campaign Performance Report
+**Scenario**: Generate weekly report comparing channel performance.
 
-**Quy trình**:
-1. Lấy dữ liệu GA4 cho 7 ngày qua
-2. Tính tỷ lệ chính (CAC, ROAS, CVR)
-3. So sánh với tuần trước và benchmarks
-4. Tạo biểu đồ Mermaid.js
-5. Ưu tiên đề xuất
+**Workflow**:
+1. Fetch GA4 data for past 7 days
+2. Calculate key ratios (CAC, ROAS, CVR)
+3. Compare with previous week and benchmarks
+4. Generate Mermaid.js charts
+5. Prioritize recommendations
 
-**Kết quả**: Báo cáo Markdown với:
-- Bảng hiệu suất kênh
-- Trực quan hóa xu hướng
-- Top 3 hành động với người phụ trách
+**Output**: Markdown report with:
+- Channel performance table
+- Trend visualizations
+- Top 3 actions with owners
 
-**Mẫu**: `references/report-templates.md` → Weekly Performance
+**Template**: `references/report-templates.md` → Weekly Performance
 
-### Use Case 2: Phân tích attribution cho chiến dịch đa chạm
-**Kịch bản**: Hiểu cách các kênh hoạt động cùng nhau trong hành trình khách hàng 30 ngày.
+### Use Case 2: Attribution Analysis for Multi-Touch Campaign
+**Scenario**: Understand how channels work together in 30-day customer journey.
 
-**Quy trình**:
-1. Xuất dữ liệu path GA4
-2. Áp dụng mô hình attribution (last-click, linear, position-based)
-3. So sánh đóng góp kênh qua mô hình
-4. Xác định kênh bị đánh giá thấp
-5. Đề xuất phân bổ lại ngân sách
+**Workflow**:
+1. Export GA4 path data
+2. Apply attribution models (last-click, linear, position-based)
+3. Compare channel contribution across models
+4. Identify undervalued channels
+5. Recommend budget reallocation
 
-**Kết quả**: Bảng so sánh attribution với đề xuất tối ưu ngân sách.
+**Output**: Attribution comparison table with budget optimization recommendations.
 
-## Xử lý sự cố
+## Troubleshooting
 
-**Vấn đề**: GA4 API trả về 403 Forbidden
-**Giải pháp**:
-1. Xác minh API được bật trong Google Cloud Console
-2. Kiểm tra service account có quyền truy cập GA4 property (tối thiểu vai trò Viewer)
-3. Xác nhận định dạng property ID: `properties/123456789`
+**Issue**: GA4 API returns 403 Forbidden
+**Solution**:
+1. Verify API is enabled in Google Cloud Console
+2. Check service account has access to GA4 property (minimum Viewer role)
+3. Confirm property ID format: `properties/123456789`
 
-**Vấn đề**: Báo cáo hiển thị đột biến dữ liệu bất ngờ
-**Giải pháp**:
-1. Kiểm tra bot traffic (lọc IPs nội bộ)
-2. Xác minh triển khai tracking (tag GTM firing)
-3. So sánh sự kiện thô vs chỉ số đã xử lý
+**Issue**: Reports show unexpected data spikes
+**Solution**:
+1. Check for bot traffic (filter internal IPs)
+2. Verify tracking implementation (GTM tag firing)
+3. Compare raw events vs processed metrics
 
-**Vấn đề**: Kết quả mô hình attribution không khớp giao diện GA4
-**Giải pháp**: GA4 sử dụng attribution dựa trên dữ liệu mặc định. Script sử dụng mô hình dựa trên quy tắc. Ghi lại sự khác biệt phương pháp.
+**Issue**: Attribution model results don't match GA4 interface
+**Solution**: GA4 uses data-driven attribution by default. Scripts use rule-based models. Document methodology differences.
 
-## Kỹ năng liên quan
+## Related Skills
 
-- [Campaign Management](/vi/docs/marketing/skills/campaign-management) - Theo dõi và tối ưu chiến dịch
-- [SEO Optimization](/vi/docs/marketing/skills/seo-optimization) - Phân tích lưu lượng tìm kiếm
-- [Email Marketing](/vi/docs/marketing/skills/email-marketing) - Chỉ số hiệu suất email
-- [Ads Management](/vi/docs/marketing/skills/ads-management) - Theo dõi ROAS chiến dịch trả tiền
+- [Campaign Management](/docs/marketing/skills/campaign-management) - Campaign tracking and optimization
+- [SEO Optimization](/docs/marketing/skills/seo-optimization) - Search traffic analysis
+- [Email Marketing](/docs/marketing/skills/email-marketing) - Email performance metrics
+- [Ads Management](/docs/marketing/skills/ads-management) - Paid campaign ROAS tracking
 
-## Lệnh liên quan
+## Related Commands
 
-- `/analytics/dashboard` - Tạo snapshot dashboard
-- `/analytics/keywords` - Phân tích hiệu suất tìm kiếm
-- `/analyze` - Phân tích dữ liệu chung
-- `/analyze:report` - Tạo báo cáo tùy chỉnh
+- `/analytics/dashboard` - Generate dashboard snapshot
+- `/analytics/keywords` - Analyze search performance
+- `/analyze` - General data analysis
+- `/analyze:report` - Create custom report

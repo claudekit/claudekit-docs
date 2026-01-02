@@ -1,19 +1,18 @@
 ---
-title: "Giới Thiệu"
-description: "ClaudeKit là gì và hoạt động như thế nào? Tìm hiểu kiến thức cơ bản trong 3 phút"
-lang: vi
+title: "Introduction"
+description: "What is ClaudeKit and how does it work? Learn the basics in 3 minutes"
 section: getting-started
 order: 1
 published: true
 ---
 
-# Giới Thiệu về ClaudeKit
+# Introduction to ClaudeKit
 
-**ClaudeKit** mở rộng Claude Code với các agents chuyên biệt, slash commands và skills có thể tái sử dụng.
+**ClaudeKit** extends Claude Code with specialized agents, slash commands, and reusable skills.
 
-## Video Hướng Dẫn
+## Tutorial Video
 
-Mới làm quen với ClaudeKit? Xem video hướng dẫn từng bước này bao gồm cài đặt CLI, thiết lập với lệnh `ck`, và demo xây dựng UI từ screenshot.
+New to ClaudeKit? Watch this step-by-step tutorial covering CLI installation, setup with `ck` command, and demo building UI from screenshots.
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 0.75rem; border: 1px solid var(--color-border); margin-bottom: 1rem;">
   <iframe
@@ -27,79 +26,79 @@ Mới làm quen với ClaudeKit? Xem video hướng dẫn từng bước này ba
   </iframe>
 </div>
 
-*Thêm tutorials: [@goonnguyen](https://www.youtube.com/@goonnguyen) | X: [@goon_nguyen](https://x.com/goon_nguyen)*
+*More tutorials: [@goonnguyen](https://www.youtube.com/@goonnguyen) | X: [@goon_nguyen](https://x.com/goon_nguyen)*
 
-## ClaudeKit Là Gì?
+## What is ClaudeKit?
 
-ClaudeKit mở rộng Claude Code với các bộ công cụ chuyên biệt cho kỹ thuật và marketing. Thay vì viết prompts từ đầu, bạn gọi các workflows đã được tối ưu hóa cho tốc độ và chất lượng.
+ClaudeKit extends Claude Code with specialized toolkits for engineering and marketing. Instead of writing prompts from scratch, you call workflows optimized for speed and quality.
 
-### Hai Bộ Công Cụ Mạnh Mẽ
+### Two Powerful Toolkits
 
-**Engineer Kit** - Bộ công cụ phát triển & tự động hóa:
-- **Agents**: Trợ lý AI chuyên biệt (planner, researcher, tester, debugger, backend-developer)
-- **Commands**: Workflows phát triển (`/cook`, `/fix`, `/plan`, `/test`, `/code`)
-- **Skills**: Modules kiến thức kỹ thuật (Next.js, PostgreSQL, Docker, DevOps)
+**Engineer Kit** - Development & automation toolkit:
+- **Agents**: Specialized AI assistants (planner, researcher, tester, debugger, backend-developer)
+- **Commands**: Development workflows (`/cook`, `/fix`, `/plan`, `/test`, `/code`)
+- **Skills**: Technical knowledge modules (Next.js, PostgreSQL, Docker, DevOps)
 
-**Marketing Kit** - Bộ công cụ marketing & tự động hóa nội dung:
-- **Agents**: Người sáng tạo nội dung (copywriter, ui-ux-designer, campaign-manager, seo-specialist)
-- **Commands**: Workflows marketing (`/write:blog`, `/video:create`, `/slide:create`, `/campaign:*`)
-- **Asset Management**: Hub tập trung cho copy, storyboards, slides, brand guidelines
-- **Skills**: Chuyên môn marketing (copywriting, SEO, analytics, video production)
+**Marketing Kit** - Marketing & content automation toolkit:
+- **Agents**: Content creators (copywriter, ui-ux-designer, campaign-manager, seo-specialist)
+- **Commands**: Marketing workflows (`/write:blog`, `/video:create`, `/slide:create`, `/campaign:*`)
+- **Asset Management**: Centralized hub for copy, storyboards, slides, brand guidelines
+- **Skills**: Marketing expertise (copywriting, SEO, analytics, video production)
 
-## Cách Hoạt Động
+## How It Works
 
-**Ví dụ Engineer Kit:**
-1. Gõ `/cook "add user authentication"`
-2. Hệ thống khởi chạy planner → researcher → developer → tester
-3. Agents cộng tác, viết code, chạy tests, commit thay đổi
-4. Bạn xem xét kết quả, đưa phản hồi, lặp lại
+**Engineer Kit Example:**
+1. Type `/cook "add user authentication"`
+2. System launches planner → researcher → developer → tester
+3. Agents collaborate, write code, run tests, commit changes
+4. You review results, provide feedback, iterate
 
-**Ví dụ Marketing Kit:**
-1. Gõ `/write:blog "introducing our new API"`
-2. Hệ thống trích xuất phong cách viết của bạn từ `/assets/writing-styles/`
-3. Copywriter agent soạn thảo bài blog phù hợp với giọng điệu của bạn
-4. Nội dung được lưu trong hub Asset Management để tái sử dụng
+**Marketing Kit Example:**
+1. Type `/write:blog "introducing our new API"`
+2. System extracts your writing style from `/assets/writing-styles/`
+3. Copywriter agent drafts blog matching your tone
+4. Content saved to Asset Management hub for reuse
 
-## Tại Sao Sử Dụng ClaudeKit?
+## Why Use ClaudeKit?
 
-**Cho Kỹ Sư:**
-- **Tốc Độ**: Nhanh hơn 10x so với prompting thủ công cho phát triển tính năng
-- **Chất Lượng**: Workflows đã được thử nghiệm giảm bugs và technical debt
-- **Nhất Quán**: Cùng patterns phát triển trong toàn đội
+**For Engineers:**
+- **Speed**: 10x faster than manual prompting for feature development
+- **Quality**: Battle-tested workflows reduce bugs and technical debt
+- **Consistency**: Same development patterns across entire team
 
-**Cho Marketers:**
-- **Nhất Quán Thương Hiệu**: Asset management tập trung đảm bảo messaging thống nhất
-- **Nhận Biết Ngữ Cảnh**: Nội dung dựa trên sản phẩm/codebase thực tế
-- **Sẵn Sàng Production**: Video storyboards với Gemini Veo 3.1, slides ở định dạng .pptx
+**For Marketers:**
+- **Brand Consistency**: Centralized asset management ensures unified messaging
+- **Context Awareness**: Content based on actual product/codebase
+- **Production Ready**: Video storyboards with Gemini Veo 3.1, slides in .pptx format
 
-## Chọn Bộ Công Cụ Của Bạn
+## Choose Your Toolkit
 
-Sử dụng kit switcher ở header để khám phá:
+Use the kit switcher in the header to explore:
 
-**Engineer Kit** → Bắt đầu tại [Tài Liệu Engineer](/docs/engineer/agents)
-- Workflows phát triển tính năng
-- Agents kiểm tra và debug
-- Tự động hóa infrastructure
+**Engineer Kit** → Start at [Engineer Docs](/docs/engineer/agents)
+- Feature development workflows
+- Testing and debugging agents
+- Infrastructure automation
 
-**Marketing Kit** → Bắt đầu tại [Tài Liệu Marketing](/docs/marketing/)
-- Workflows tạo nội dung
-- Pipelines sản xuất video
-- Điều phối chiến dịch
+**Marketing Kit** → Start at [Marketing Docs](/docs/marketing/)
+- Content creation workflows
+- Video production pipelines
+- Campaign orchestration
 
-## Bước Tiếp Theo
+## Next Steps
 
-1. **[Hiểu Các Khái Niệm](/docs/getting-started/concepts)** - Agents, commands, và skills hoạt động như thế nào
-2. **[Cài Đặt ClaudeKit](/docs/getting-started/installation)** - Thiết lập CLI
-3. **[Quick Start](/docs/getting-started/quick-start)** - Xây dựng tính năng hoặc chiến dịch đầu tiên
+1. **[Understand the Concepts](/docs/getting-started/concepts)** - How agents, commands, and skills work
+2. **[Install ClaudeKit](/docs/getting-started/installation)** - Set up the CLI
+3. **[Quick Start](/docs/getting-started/quick-start)** - Build your first feature or campaign
 
-## Khám Phá Workflows
+## Explore Workflows
 
 **Engineer Workflows**:
-- [Thiết Lập Dự Án Mới](/docs/workflows/new-project) - Bootstrap dự án với best practices
-- [Phát Triển Tính Năng](/docs/workflows/feature-development) - Triển khai tính năng end-to-end
-- [Code Review](/docs/workflows/code-review) - Kiểm tra chất lượng code tự động
+- [New Project Setup](/docs/workflows/new-project) - Bootstrap project with best practices
+- [Feature Development](/docs/workflows/feature-development) - Implement end-to-end features
+- [Code Review](/docs/workflows/code-review) - Automated code quality checks
 
 **Marketing Workflows**:
-- [Tạo Nội Dung](/docs/marketing/workflows/content-workflow) - Blog posts, copy, social media
-- [Sản Xuất Video](/docs/marketing/workflows/dashboard-workflow) - Script đến storyboard đến video
-- [Quản Lý Chiến Dịch](/docs/marketing/workflows/campaign-workflow) - Chiến dịch đa kênh
+- [Content Creation](/docs/marketing/workflows/content-workflow) - Blog posts, copy, social media
+- [Video Production](/docs/marketing/workflows/dashboard-workflow) - Script to storyboard to video
+- [Campaign Management](/docs/marketing/workflows/campaign-workflow) - Multi-channel campaigns

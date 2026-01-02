@@ -1,426 +1,427 @@
 ---
 title: /fix:fast
-description: Documentation for fast
+description: Tài liệu hướng dẫn lệnh fix:fast
 section: engineer
 kit: engineer
 category: docs/commands/fix
 order: 20
 published: true
+lang: vi
 ---
 
 # /fix:fast
 
-Fix minor bugs and issues quickly. This command skips extensive codebase analysis and planning, getting straight to implementation and testing. Perfect for simple fixes where you know what needs to be done.
+Sửa các lỗi nhỏ và vấn đề một cách nhanh chóng. Lệnh này bỏ qua việc phân tích và lập kế hoạch codebase sâu rộng, đi thẳng vào việc triển khai và thử nghiệm. Hoàn hảo cho các bản sửa lỗi đơn giản khi bạn biết chính xác những gì cần phải thực hiện.
 
-## Syntax
-
-```bash
-/fix:fast [bug description]
-```
-
-## How It Works
-
-The `/fix:fast` command follows a streamlined workflow:
-
-### 1. Quick Analysis
-
-- Reads the bug description
-- Identifies likely location from description
-- Minimal codebase scanning
-
-### 2. Direct Implementation
-
-- Implements the fix immediately
-- No extensive planning phase
-- Follows existing patterns
-
-### 3. Testing
-
-- Runs relevant tests
-- Validates the fix works
-- Checks for regressions
-
-### 4. Summary Report
-
-- Files changed
-- Tests status
-- Confidence level
-
-## When to Use
-
-### ✅ Perfect For
-
-**Simple Typos**
-```bash
-/fix:fast [typo in error message: "sucessful" should be "successful"]
-```
-
-**Minor UI Issues**
-```bash
-/fix:fast [button text says "Submitt" instead of "Submit"]
-```
-
-**Simple Logic Fixes**
-```bash
-/fix:fast [validation allows empty email field when it should be required]
-```
-
-**Configuration Updates**
-```bash
-/fix:fast [update API rate limit from 100 to 200 requests per minute]
-```
-
-**Obvious Bugs**
-```bash
-/fix:fast [forgot to add await keyword before database query in login handler]
-```
-
-### ❌ Don't Use For
-
-**Complex Issues**
-```bash
-❌ /fix:fast [users randomly getting logged out]
-✅ /fix:hard [users randomly getting logged out]
-```
-
-**System-Wide Problems**
-```bash
-❌ /fix:fast [memory leak causing crashes]
-✅ /fix:hard [memory leak causing crashes]
-```
-
-**Unknown Root Cause**
-```bash
-❌ /fix:fast [something is broken with payments]
-✅ /fix:hard [payment processing failing with unclear error]
-```
-
-**Multiple Related Issues**
-```bash
-❌ /fix:fast [authentication system has multiple issues]
-✅ /fix:hard [authentication system has multiple issues]
-```
-
-## Examples
-
-### Typo Fix
+## Cú Pháp
 
 ```bash
-/fix:fast [fix typo in welcome message: "Welcom" should be "Welcome"]
+/fix:fast [mô tả lỗi]
 ```
 
-**What happens:**
+## Cách Hoạt Động
+
+Lệnh `/fix:fast` tuân theo một quy trình làm việc tinh giản:
+
+### 1. Phân Tích Nhanh
+
+- Đọc mô tả lỗi
+- Xác định vị trí có khả năng xảy ra lỗi từ mô tả
+- Quét codebase ở mức tối thiểu
+
+### 2. Triển Khai Trực Tiếp
+
+- Triển khai bản sửa lỗi ngay lập tức
+- Không có giai đoạn lập kế hoạch chi tiết
+- Tuân theo các mẫu (patterns) hiện có
+
+### 3. Thử Nghiệm
+
+- Chạy các bài kiểm tra liên quan
+- Xác nhận bản sửa lỗi hoạt động đúng
+- Kiểm tra các lỗi phát sinh (regressions)
+
+### 4. Báo Cáo Tóm Tắt
+
+- Các tệp đã thay đổi
+- Trạng thái các bài kiểm tra
+- Mức độ tin cậy
+
+## Khi Nào Nên Sử Dụng
+
+### ✅ Hoàn Hảo Cho
+
+**Lỗi Đánh Máy Đơn Giản**
+```bash
+/fix:fast [lỗi đánh máy trong thông báo lỗi: "sucessful" nên là "successful"]
 ```
-1. Locates welcome message
-   - Found in: src/components/Welcome.tsx
 
-2. Fixes typo
-   - Changed: "Welcom to our app"
-   - To: "Welcome to our app"
-
-3. Runs tests
-   - UI tests: ✓ passed
-   - Integration tests: ✓ passed
-
-✓ Fix complete (12 seconds)
+**Các Vấn Đề UI Nhỏ**
+```bash
+/fix:fast [văn bản nút hiển thị "Submitt" thay vì "Submit"]
 ```
 
-### Validation Fix
+**Sửa Logic Đơn Giản**
+```bash
+/fix:fast [xác thực cho phép để trống trường email trong khi nó là bắt buộc]
+```
+
+**Cập Nhật Cấu Hình**
+```bash
+/fix:fast [cập nhật giới hạn tốc độ API từ 100 lên 200 yêu cầu mỗi phút]
+```
+
+**Các Lỗi Hiển Nhiên**
+```bash
+/fix:fast [quên thêm từ khóa await trước truy vấn cơ sở dữ liệu trong trình xử lý đăng nhập]
+```
+
+### ❌ Không Sử Dụng Cho
+
+**Các Vấn Đề Phức Tạp**
+```bash
+❌ /fix:fast [người dùng thỉnh thoảng bị đăng xuất ngẫu nhiên]
+✅ /fix:hard [người dùng thỉnh thoảng bị đăng xuất ngẫu nhiên]
+```
+
+**Các Vấn Đề Toàn Hệ Thống**
+```bash
+❌ /fix:fast [rò rỉ bộ nhớ gây ra treo ứng dụng]
+✅ /fix:hard [rò rỉ bộ nhớ gây ra treo ứng dụng]
+```
+
+**Chưa Biết Nguyên Nhân Gốc Rễ**
+```bash
+❌ /fix:fast [có gì đó bị hỏng với phần thanh toán]
+✅ /fix:hard [xử lý thanh toán thất bại với lỗi không rõ ràng]
+```
+
+**Nhiều Vấn Đề Liên Quan**
+```bash
+❌ /fix:fast [hệ thống xác thực có nhiều vấn đề]
+✅ /fix:hard [hệ thống xác thực có nhiều vấn đề]
+```
+
+## Ví Dụ
+
+### Sửa Lỗi Đánh Máy
 
 ```bash
-/fix:fast [email validation accepts invalid emails like "test@"]
+/fix:fast [sửa lỗi đánh máy trong thông báo chào mừng: "Welcom" nên là "Welcome"]
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-1. Locates validation function
-   - Found in: src/utils/validation.js
+1. Xác định vị trí thông báo chào mừng
+   - Tìm thấy tại: src/components/Welcome.tsx
 
-2. Updates regex pattern
-   - Old: /^[^\s@]+@[^\s@]+$/
-   - New: /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+2. Sửa lỗi đánh máy
+   - Thay đổi: "Welcom to our app"
+   - Thành: "Welcome to our app"
 
-3. Runs validation tests
-   - test("test@" rejected): ✓ passed
-   - test("test@domain.com" accepted): ✓ passed
-   - All 15 tests passed
+3. Chạy các bài kiểm tra
+   - Kiểm tra UI: ✓ passed
+   - Kiểm tra tích hợp: ✓ passed
 
-✓ Fix complete (18 seconds)
+✓ Hoàn thành sửa lỗi (12 giây)
 ```
 
-### Missing Await
+### Sửa Lỗi Xác Thực
 
 ```bash
-/fix:fast [forgot await in getUserData function causing Promise<User> instead of User]
+/fix:fast [xác thực email chấp nhận các email không hợp lệ như "test@"]
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-1. Locates function
-   - Found in: src/services/user.service.ts:45
+1. Xác định vị trí hàm xác thực
+   - Tìm thấy tại: src/utils/validation.js
 
-2. Adds await keyword
+2. Cập nhật mẫu regex
+   - Cũ: /^[^\\s@]+@[^\\s@]+$/
+   - Mới: /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/
+
+3. Chạy các bài kiểm tra xác thực
+   - test("test@" bị từ chối): ✓ passed
+   - test("test@domain.com" được chấp nhận): ✓ passed
+   - Tất cả 15 bài kiểm tra đã vượt qua
+
+✓ Hoàn thành sửa lỗi (18 giây)
+```
+
+### Thiếu Await
+
+```bash
+/fix:fast [quên await trong hàm getUserData gây ra Promise<User> thay vì User]
+```
+
+**Điều gì xảy ra:**
+```
+1. Xác định vị trí hàm
+   - Tìm thấy tại: src/services/user.service.ts:45
+
+2. Thêm từ khóa await
    - const user = db.getUser(id)
    - const user = await db.getUser(id)
 
-3. Checks TypeScript types
-   - Type now correctly resolves to User
-   - No more Promise<User> errors
+3. Kiểm tra kiểu TypeScript
+   - Kiểu hiện đã được giải quyết chính xác thành User
+   - Không còn lỗi Promise<User>
 
-4. Runs tests
-   - All tests passed
+4. Chạy các bài kiểm tra
+   - Tất cả các bài kiểm tra đã vượt qua
 
-✓ Fix complete (9 seconds)
+✓ Hoàn thành sửa lỗi (9 giây)
 ```
 
-### Configuration Update
+### Cập Nhật Cấu Hình
 
 ```bash
-/fix:fast [increase session timeout from 15 minutes to 30 minutes]
+/fix:fast [tăng thời gian chờ phiên làm việc từ 15 phút lên 30 phút]
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-1. Locates config
-   - Found in: config/session.ts
+1. Xác định vị trí cấu hình
+   - Tìm thấy tại: config/session.ts
 
-2. Updates value
+2. Cập nhật giá trị
    - sessionTimeout: 15 * 60 * 1000
    - sessionTimeout: 30 * 60 * 1000
 
-3. Validates config
-   - Config loads correctly
-   - Tests pass
+3. Xác minh cấu hình
+   - Cấu hình tải chính xác
+   - Các bài kiểm tra vượt qua
 
-✓ Fix complete (7 seconds)
+✓ Hoàn thành sửa lỗi (7 giây)
 ```
 
-## Speed Comparison
+## So Sánh Tốc Độ
 
-### /fix:fast vs /fix:hard
+### /fix:fast so với /fix:hard
 
-**Simple Typo:**
+**Lỗi đánh máy đơn giản:**
 ```
-/fix:fast:  10-20 seconds
-/fix:hard:  2-3 minutes (unnecessary overhead)
-```
-
-**Complex Bug:**
-```
-/fix:fast:  May produce incomplete fix
-/fix:hard:  5-10 minutes (proper investigation)
+/fix:fast:  10-20 giây
+/fix:hard:  2-3 phút (không cần thiết các bước dư thừa)
 ```
 
-**Rule of Thumb:**
-- Know exact fix? → `/fix:fast`
-- Need investigation? → `/fix:hard`
+**Lỗi phức tạp:**
+```
+/fix:fast:  Có thể tạo ra bản sửa lỗi không đầy đủ
+/fix:hard:  5-10 phút (điều tra đúng quy trình)
+```
 
-## What Gets Skipped
+**Quy tắc chung:**
+- Biết chính xác cách sửa? → `/fix:fast`
+- Cần điều tra? → `/fix:hard`
 
-To save time, `/fix:fast` skips:
+## Những Gì Bị Bỏ Qua
 
-1. **Extensive Codebase Scanning**
-   - No scout agents deployed
-   - Only looks at obvious locations
+Để tiết kiệm thời gian, `/fix:fast` bỏ qua:
 
-2. **Planning Phase**
-   - No detailed plan created
-   - Direct to implementation
+1. **Quét Codebase Sâu Rộng**
+   - Không triển khai các scout agent
+   - Chỉ tìm kiếm ở các vị trí hiển nhiên
 
-3. **Research**
-   - No internet research
-   - No documentation lookup
-   - Uses existing knowledge only
+2. **Giai Đoạn Lập Kế Hoạch**
+   - Không tạo kế hoạch chi tiết
+   - Đi thẳng vào triển khai
 
-4. **Root Cause Analysis**
-   - Fixes symptom, not necessarily root cause
-   - Assumes description is accurate
+3. **Nghiên Cứu**
+   - Không nghiên cứu internet
+   - Không tra cứu tài liệu
+   - Chỉ sử dụng kiến thức hiện có
 
-## Best Practices
+4. **Phân Tích Nguyên Nhân Gốc Rễ**
+   - Sửa triệu chứng, không nhất thiết là nguyên nhân gốc rễ
+   - Giả định mô tả của bạn là chính xác
 
-### Provide Exact Location
+## Thực Hành Tốt Nhất
 
-✅ **With Location:**
+### Cung Cấp Vị Trí Chính Xác
+
+✅ **Có vị trí:**
 ```bash
-/fix:fast [in src/auth/login.ts line 45, change timeout from 5000 to 10000]
+/fix:fast [trong tệp src/auth/login.ts dòng 45, đổi timeout từ 5000 thành 10000]
 ```
 
-❌ **Without Location:**
+❌ **Không có vị trí:**
 ```bash
-/fix:fast [change a timeout somewhere]
+/fix:fast [đổi một cái timeout ở đâu đó]
 ```
 
-### Be Specific About Fix
+### Cụ Thể Về Bản Sửa Lỗi
 
-✅ **Specific:**
+✅ **Cụ thể:**
 ```bash
-/fix:fast [button text "Loggin" in LoginButton.tsx should be "Login"]
+/fix:fast [văn bản nút "Loggin" trong LoginButton.tsx nên là "Login"]
 ```
 
-❌ **Vague:**
+❌ **Mơ hồ:**
 ```bash
-/fix:fast [fix button text]
+/fix:fast [sửa văn bản nút]
 ```
 
-### Verify Scope is Simple
+### Xác Minh Phạm Vi Đơn Giản
 
-Before using `/fix:fast`, ask:
-- Do I know exactly what needs to change?
-- Is it in one or two files?
-- Will fix take < 5 lines of code?
-- Am I confident this won't break anything?
+Trước khi sử dụng `/fix:fast`, hãy tự hỏi:
+- Tôi có biết chính xác những gì cần thay đổi không?
+- Nó nằm trong một hoặc hai tệp?
+- Bản sửa lỗi có tốn ít hơn 5 dòng mã không?
+- Tôi có tự tin rằng điều này sẽ không làm hỏng bất cứ thứ gì không?
 
-If yes to all → Use `/fix:fast`
-If no to any → Use `/fix:hard`
+Nếu có cho tất cả → Sử dụng `/fix:fast`
+Nếu không cho bất kỳ câu nào → Sử dụng `/fix:hard`
 
-## Common Use Cases
+## Các Trường Hợp Sử Dụng Phổ Biến
 
-### Code Typos
-
-```bash
-/fix:fast [variable name "usreName" should be "userName" in profile.service.ts]
-```
-
-### Import Statements
+### Lỗi Đánh Máy Trong Mã Nguồn
 
 ```bash
-/fix:fast [missing import for User type in auth.controller.ts]
+/fix:fast [tên biến "usreName" nên là "userName" trong profile.service.ts]
 ```
 
-### Simple Calculations
+### Các Câu Lệnh Import
 
 ```bash
-/fix:fast [discount calculation showing 15% instead of 20%, update in checkout.ts]
+/fix:fast [thiếu import cho kiểu User trong auth.controller.ts]
 ```
 
-### Text Updates
+### Các Tính Toán Đơn Giản
 
 ```bash
-/fix:fast [update copyright year from 2023 to 2024 in footer]
+/fix:fast [tính toán chiết khấu đang hiển thị 15% thay vì 20%, cập nhật trong checkout.ts]
 ```
 
-### Simple Conditionals
+### Cập Nhật Văn Bản
 
 ```bash
-/fix:fast [flip condition: if (isDisabled) should be if (!isDisabled) in SubmitButton]
+/fix:fast [cập nhật năm bản quyền từ 2023 thành 2024 trong footer]
 ```
 
-### Default Values
+### Các Câu Điều Kiện Đơn Giản
 
 ```bash
-/fix:fast [change default page size from 10 to 20 in pagination config]
+/fix:fast [đảo ngược điều kiện: if (isDisabled) nên là if (!isDisabled) trong SubmitButton]
 ```
 
-## Error Handling
-
-If `/fix:fast` can't complete the fix:
-
-```
-⚠ Warning: Fix may be more complex than expected
-
-Considerations:
-- Multiple files affected
-- Unclear location
-- May require deeper analysis
-
-Recommendation: Use /fix:hard instead
-
-Continue with /fix:fast anyway? (y/n)
-```
-
-You can:
-1. **Continue** - Try fixing anyway
-2. **Cancel** - Switch to `/fix:hard`
-
-## After Fixing
-
-Standard workflow after `/fix:fast`:
+### Các Giá Trị Mặc Định
 
 ```bash
-# 1. Fix applied
-/fix:fast [typo in button text]
+/fix:fast [thay đổi kích thước trang mặc định từ 10 thành 20 trong cấu hình phân trang]
+```
 
-# 2. Review changes
+## Xử Lý Lỗi
+
+Nếu `/fix:fast` không thể hoàn thành bản sửa lỗi:
+
+```
+⚠ Cảnh báo: Bản sửa lỗi có thể phức tạp hơn dự kiến
+
+Các cân nhắc:
+- Nhiều tệp bị ảnh hưởng
+- Vị trí không rõ ràng
+- Có thể yêu cầu phân tích sâu hơn
+
+Khuyến nghị: Sử dụng /fix:hard thay thế
+
+Vẫn tiếp tục với /fix:fast? (y/n)
+```
+
+Bạn có thể:
+1. **Tiếp tục (Continue)** - Thử sửa dù sao đi nữa
+2. **Hủy (Cancel)** - Chuyển sang `/fix:hard`
+
+## Sau Khi Sửa Lỗi
+
+Quy trình làm việc tiêu chuẩn sau `/fix:fast`:
+
+```bash
+# 1. Bản sửa lỗi đã được áp dụng
+/fix:fast [lỗi đánh máy văn bản nút]
+
+# 2. Xem lại các thay đổi
 git diff
 
-# 3. Run full test suite (optional)
+# 3. Chạy toàn bộ bộ kiểm tra (tùy chọn)
 /test
 
-# 4. Commit if satisfied
+# 4. Commit nếu hài lòng
 /git:cm
 ```
 
-## Troubleshooting
+## Xử Lý Sự Cố
 
-### Fix Didn't Work
+### Bản Sửa Lỗi Không Hoạt Động
 
-**Problem:** Issue still occurs after fix
+**Vấn đề:** Vấn đề vẫn xảy ra sau khi sửa
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Issue might be more complex
-/fix:hard [describe the issue again with more detail]
+# Vấn đề có thể phức tạp hơn
+/fix:hard [mô tả lại vấn đề với nhiều chi tiết hơn]
 ```
 
-### Wrong Location
+### Sai Vị Trí
 
-**Problem:** Fixed wrong file/location
+**Vấn đề:** Đã sửa sai tệp/vị trí
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Provide exact file path
-/fix:fast [in src/correct/file.ts line 42, fix the actual issue]
+# Cung cấp đường dẫn tệp chính xác
+/fix:fast [trong src/correct/file.ts dòng 42, sửa vấn đề thực tế]
 ```
 
-### Tests Failing
+### Các Bài Kiểm Tra Thất Bại
 
-**Problem:** Fix broke existing tests
+**Vấn đề:** Bản sửa lỗi làm hỏng các bài kiểm tra hiện có
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Investigate why tests failed
-/debug [test failures after fixing X]
+# Điều tra lý do tại sao các bài kiểm tra thất bại
+/debug [thất bại bài kiểm tra sau khi sửa X]
 
-# Or revert and use thorough approach
+# Hoặc hoàn tác và sử dụng phương pháp kỹ lưỡng
 git restore .
-/fix:hard [original issue description]
+/fix:hard [mô tả vấn đề ban đầu]
 ```
 
-### Incomplete Fix
+### Bản Sửa Lỗi Không Đầy Đủ
 
-**Problem:** Fix works but feels incomplete
+**Vấn đề:** Bản sửa lỗi hoạt động nhưng cảm thấy chưa đầy đủ
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Add follow-up improvements
-/cook [improve X with Y feature]
+# Thêm các cải tiến tiếp theo
+/cook [cải thiện X với tính năng Y]
 ```
 
-## Metrics
+## Số Liệu
 
-Typical `/fix:fast` performance:
+Hiệu suất điển hình của `/fix:fast`:
 
-- **Time**: 5-30 seconds
-- **Files changed**: 1-2
-- **Test coverage**: Existing tests only
-- **Success rate**: ~95% for simple issues
+- **Thời gian**: 5-30 giây
+- **Số tệp thay đổi**: 1-2
+- **Độ bao phủ kiểm tra**: Chỉ các bài kiểm tra hiện có
+- **Tỷ lệ thành công**: ~95% cho các vấn đề đơn giản
 
-Compare to `/fix:hard`:
+So sánh với `/fix:hard`:
 
-- **Time**: 2-10 minutes
-- **Files changed**: 1-10+
-- **Test coverage**: New tests generated
-- **Success rate**: ~99% for all issues
+- **Thời gian**: 2-10 phút
+- **Số tệp thay đổi**: 1-10+
+- **Độ bao phủ kiểm tra**: Các bài kiểm tra mới được tạo ra
+- **Tỷ lệ thành công**: ~99% cho tất cả các vấn đề
 
-## Next Steps
+## Bước Tiếp Theo
 
-After using `/fix:fast`:
+Sau khi sử dụng `/fix:fast`:
 
-- [/test](/docs/engineer/commands/core/test) - Run full test suite
-- [/fix:hard](/docs/engineer/commands/fix/hard) - For complex issues
-- [/git:cm](/docs/engineer/commands/git/commit) - Commit the fix
-- [/debug](/docs/engineer/commands/core/debug) - If issues persist
+- [/test](/docs/engineer/commands/core/test) - Chạy toàn bộ bộ kiểm tra
+- [/fix:hard](/docs/engineer/commands/fix/hard) - Cho các vấn đề phức tạp
+- [/git:cm](/docs/engineer/commands/git/commit) - Commit bản sửa lỗi
+- [/debug](/docs/engineer/commands/core/debug) - Nếu vấn đề vẫn tiếp diễn
 
 ---
 
-**Key Takeaway**: `/fix:fast` is perfect for simple, well-understood fixes where speed matters. For anything complex or unclear, use `/fix:hard` instead.
+**Điểm mấu chốt**: `/fix:fast` hoàn hảo cho các bản sửa lỗi đơn giản, đã được hiểu rõ khi mà tốc độ là ưu tiên hàng đầu. Đối với bất kỳ điều gì phức tạp hoặc chưa rõ ràng, hãy sử dụng `/fix:hard` thay thế.

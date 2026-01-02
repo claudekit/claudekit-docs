@@ -1,94 +1,95 @@
 ---
 title: /plan:ci
-description: Documentation for ci
+description: Tài liệu hướng dẫn lệnh plan:ci
 section: engineer
 kit: engineer
 category: commands/plan
 order: 10
 published: true
+lang: vi
 ---
 
 # /plan:ci
 
-Analyze GitHub Actions workflow logs and create a detailed implementation plan to fix CI/CD issues. This command identifies problems, root causes, and provides actionable steps but does NOT implement fixes automatically.
+Phân tích nhật ký (logs) quy trình công việc của GitHub Actions và tạo kế hoạch triển khai chi tiết để sửa các sự cố CI/CD. Lệnh này xác định các vấn đề, nguyên nhân gốc rễ và cung cấp các bước có thể thực hiện được nhưng KHÔNG tự động thực hiện các bản sửa lỗi.
 
-## Syntax
+## Cú pháp
 
 ```bash
 /plan:ci [github-actions-url]
 ```
 
-## How It Works
+## Cách hoạt động
 
-The `/plan:ci` command follows an analytical workflow:
+Lệnh `/plan:ci` tuân theo một quy trình làm việc phân tích:
 
-### 1. Log Retrieval
+### 1. Lấy nhật ký (Logs)
 
-- Fetches GitHub Actions workflow logs via URL or `gh` CLI
-- Identifies failed steps and error messages
-- Extracts relevant context (job names, timestamps, commands)
-- Collects environment information
+- Lấy nhật ký quy trình công việc của GitHub Actions thông qua URL hoặc `gh` CLI
+- Xác định các bước bị lỗi và thông báo lỗi
+- Trích xuất ngữ cảnh liên quan (tên job, dấu thời gian, lệnh)
+- Thu thập thông tin môi trường
 
-### 2. Error Analysis
+### 2. Phân tích lỗi
 
-Invokes **debugger** agent to:
-- Parse error messages and stack traces
-- Identify root causes (not just symptoms)
-- Categorize issues (build, test, deploy, env, etc.)
-- Map dependencies between failures
+Sử dụng agent **debugger** để:
+- Phân tích các thông báo lỗi và stack trace
+- Xác định nguyên nhân gốc rễ (không chỉ là triệu chứng)
+- Phân loại các vấn đề (build, test, deploy, môi trường, v.v.)
+- Lập bản đồ phụ thuộc giữa các lỗi
 
-### 3. Codebase Context
+### 3. Ngữ cảnh mã nguồn
 
-Invokes **scout** agent to:
-- Locate relevant workflow files (`.github/workflows/`)
-- Find related configuration (package.json, tsconfig.json, etc.)
-- Identify affected source files
-- Check recent changes (git log)
+Sử dụng agent **scout** để:
+- Định vị các tệp quy trình công việc liên quan (`.github/workflows/`)
+- Tìm cấu hình liên quan (package.json, tsconfig.json, v.v.)
+- Xác định các tệp nguồn bị ảnh hưởng
+- Kiểm tra các thay đổi gần đây (git log)
 
-### 4. Research Solutions
+### 4. Nghiên cứu giải pháp
 
-Invokes **researcher** agent to:
-- Search for similar CI issues
-- Review GitHub Actions documentation
-- Check action marketplace for fixes
-- Find best practices
+Sử dụng agent **researcher** để:
+- Tìm kiếm các vấn đề CI tương tự
+- Xem lại tài liệu GitHub Actions
+- Kiểm tra action marketplace để tìm các bản sửa lỗi
+- Tìm kiếm các thực hành tốt nhất
 
-### 5. Plan Creation
+### 5. Tạo kế hoạch
 
-Creates comprehensive plan including:
-- Root cause explanation
-- Step-by-step fix instructions
-- Files to modify
-- Commands to run
-- Testing strategy
-- Prevention measures
+Tạo kế hoạch toàn diện bao gồm:
+- Giải thích nguyên nhân gốc rễ
+- Hướng dẫn sửa lỗi từng bước
+- Các tệp cần sửa đổi
+- Các lệnh cần chạy
+- Chiến lược kiểm tra
+- Các biện pháp ngăn ngừa
 
-## Examples
+## Ví dụ
 
-### Build Failure Analysis
+### Phân tích lỗi Build
 
 ```bash
 /plan:ci https://github.com/user/repo/actions/runs/12345
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-Phase 1: Fetching Logs (10 seconds)
+Giai đoạn 1: Lấy nhật ký (10 giây)
 ---
 Agent: debugger
 
-Using GitHub CLI to fetch logs...
+Sử dụng GitHub CLI để lấy nhật ký...
 gh run view 12345 --log
 
-Workflow: CI/CD Pipeline
+Quy trình: CI/CD Pipeline
 Job: build
-Status: Failed
-Duration: 2m 15s
+Trạng thái: Thất bại
+Thời gian: 2m 15s
 
-Failed step: Build application
-Exit code: 1
+Bước thất bại: Build application
+Mã thoát: 1
 
-Error log:
+Nhật ký lỗi:
 ---
 Run npm run build
 > build
@@ -105,148 +106,148 @@ Found 1 error in src/components/Dashboard.tsx:45
 Error: Process completed with exit code 1.
 ---
 
-Phase 2: Error Analysis (15 seconds)
+Giai đoạn 2: Phân tích lỗi (15 giây)
 ---
 Agent: debugger
 
-Analyzing error...
+Đang phân tích lỗi...
 
-Error type: TypeScript compilation error
-Root cause: Property 'userName' does not exist on type 'User'
-Location: src/components/Dashboard.tsx:45:12
+Loại lỗi: Lỗi biên dịch TypeScript
+Nguyên nhân gốc rễ: Thuộc tính 'userName' không tồn tại trong kiểu 'User'
+Vị trí: src/components/Dashboard.tsx:45:12
 
-Possible causes:
-1. Property renamed from 'userName' to 'username'
-2. Type definition outdated
-3. Property removed from User type
-4. Merge conflict introduced incorrect property name
+Các nguyên nhân có thể:
+1. Thuộc tính bị đổi tên từ 'userName' thành 'username'
+2. Định nghĩa kiểu bị cũ
+3. Thuộc tính bị xóa khỏi kiểu User
+4. Xung đột merge dẫn đến tên thuộc tính không chính xác
 
-Checking recent changes...
+Kiểm tra các thay đổi gần đây...
 git log --oneline -10 -- src/types/user.ts
 
-Found: commit abc123 "refactor: rename userName to username"
+Tìm thấy: commit abc123 "refactor: rename userName to username"
 
-Root cause confirmed:
-User type was refactored but Dashboard.tsx not updated
+Nguyên nhân gốc rễ đã được xác nhận:
+Kiểu User đã được refactor nhưng Dashboard.tsx chưa được cập nhật
 
-Phase 3: Codebase Scout (10 seconds)
+Giai đoạn 3: Thăm dò mã nguồn (10 giây)
 ---
 Agent: scout
 
-Locating affected files...
+Đang định vị các tệp bị ảnh hưởng...
 
-Files with 'userName' references:
-✓ src/components/Dashboard.tsx (1 occurrence)
-✓ src/components/Profile.tsx (2 occurrences)
-✓ src/utils/user-helper.ts (1 occurrence)
+Các tệp có tham chiếu 'userName':
+✓ src/components/Dashboard.tsx (1 lần)
+✓ src/components/Profile.tsx (2 lần)
+✓ src/utils/user-helper.ts (1 lần)
 
-Files with 'username' (correct):
-✓ src/types/user.ts (type definition)
-✓ src/api/auth.ts (API calls)
-✓ 15 other files
+Các tệp dùng 'username' (chính xác):
+✓ src/types/user.ts (định nghĩa kiểu)
+✓ src/api/auth.ts (gọi API)
+✓ 15 tệp khác
 
-Inconsistency found:
-- 3 files still use old 'userName'
-- All should use 'username'
+Sự không nhất quán được tìm thấy:
+- 3 tệp vẫn sử dụng 'userName' cũ
+- Tất cả nên sử dụng 'username'
 
-Phase 4: Research (5 seconds)
+Giai đoạn 4: Nghiên cứu (5 giây)
 ---
 Agent: researcher
 
-Best practices found:
-✓ Use automated rename refactoring tools
-✓ Add ESLint rule to enforce consistent naming
-✓ Run type check before committing
+Các thực hành tốt nhất được tìm thấy:
+✓ Sử dụng các công cụ refactor đổi tên tự động
+✓ Thêm quy tắc ESLint để thực thi đặt tên nhất quán
+✓ Chạy kiểm tra kiểu trước khi commit
 
-Prevention strategies:
-✓ Pre-commit hook with type checking
-✓ IDE configuration for consistent naming
-✓ Code review checklist item
+Chiến lược ngăn ngừa:
+✓ Pre-commit hook với kiểm tra kiểu
+✓ Cấu hình IDE để đặt tên nhất quán
+✓ Mục danh sách kiểm tra code review
 
-Phase 5: Plan Created (5 seconds)
+Giai đoạn 5: Kế hoạch đã được tạo (5 giây)
 ---
 Agent: planner
 
-Plan saved to: plans/fix-ci-build-12345.md
+Kế hoạch được lưu tại: plans/fix-ci-build-12345.md
 
-IMPLEMENTATION PLAN
+KẾ HOẠCH TRIỂN KHAI
 ---
 
-## Root Cause
-Property 'userName' was renamed to 'username' in User type
-but 3 files were not updated in commit abc123.
+## Nguyên nhân gốc rễ
+Thuộc tính 'userName' đã được đổi tên thành 'username' trong kiểu User
+nhưng 3 tệp chưa được cập nhật trong commit abc123.
 
-## Files to Fix
+## Các tệp cần sửa
 
 1. src/components/Dashboard.tsx
-   Line 45: user.userName → user.username
+   Dòng 45: user.userName → user.username
 
 2. src/components/Profile.tsx
-   Line 23: user.userName → user.username
-   Line 67: user.userName → user.username
+   Dòng 23: user.userName → user.username
+   Dòng 67: user.userName → user.username
 
 3. src/utils/user-helper.ts
-   Line 12: data.userName → data.username
+   Dòng 12: data.userName → data.username
 
-## Step-by-Step Fix
+## Sửa lỗi từng bước
 
-### Step 1: Fix Property References
+### Bước 1: Sửa các tham chiếu thuộc tính
 ```bash
-# Update Dashboard.tsx
-# Change line 45: return user.userName
-# To:             return user.username
+# Cập nhật Dashboard.tsx
+# Thay đổi dòng 45: return user.userName
+# Thành:             return user.username
 
-# Update Profile.tsx
-# Change line 23 and 67 similarly
+# Cập nhật Profile.tsx
+# Thay đổi dòng 23 và 67 tương tự
 
-# Update user-helper.ts
-# Change line 12 similarly
+# Cập nhật user-helper.ts
+# Thay đổi dòng 12 tương tự
 ```
 
-### Step 2: Verify Type Checking Locally
+### Bước 2: Xác minh kiểm tra kiểu cục bộ
 ```bash
 npm run type-check
-# Should pass with no errors
+# Sẽ vượt qua và không có lỗi
 ```
 
-### Step 3: Run Build Locally
+### Bước 3: Chạy Build cục bộ
 ```bash
 npm run build
-# Should complete successfully
+# Sẽ hoàn tất thành công
 ```
 
-### Step 4: Run Tests
+### Bước 4: Chạy các bài kiểm tra
 ```bash
 npm test
-# Ensure no tests broken by changes
+# Đảm bảo không có bài kiểm tra nào bị hỏng bởi các thay đổi
 ```
 
-### Step 5: Commit and Push
+### Bước 5: Commit và Push
 ```bash
 git add src/components/Dashboard.tsx src/components/Profile.tsx src/utils/user-helper.ts
 git commit -m "fix: update userName to username in remaining files"
 git push
 ```
 
-### Step 6: Verify CI Passes
-Wait for GitHub Actions to run and verify build succeeds.
+### Bước 6: Xác minh CI vượt qua
+Đợi GitHub Actions chạy và xác minh build thành công.
 
-## Prevention Measures
+## Biện pháp ngăn ngừa
 
-### 1. Add Pre-commit Hook
+### 1. Thêm Pre-commit Hook
 ```bash
 # .husky/pre-commit
 npm run type-check
 ```
 
-### 2. Add GitHub Actions Type Check Step
+### 2. Thêm bước kiểm tra kiểu vào GitHub Actions
 ```yaml
 # .github/workflows/ci.yml
 - name: Type check
   run: npm run type-check
 ```
 
-### 3. Configure VS Code
+### 3. Cấu hình VS Code
 ```json
 // .vscode/settings.json
 {
@@ -255,40 +256,40 @@ npm run type-check
 }
 ```
 
-## Estimated Time
-- Fix implementation: 5 minutes
-- Testing: 5 minutes
-- Total: 10 minutes
+## Thời gian dự kiến
+- Triển khai bản sửa lỗi: 5 phút
+- Kiểm tra: 5 phút
+- Tổng cộng: 10 phút
 
-## Risk Level: Low
-- Straightforward property rename
-- Type system catches all instances
-- No runtime logic changes
+## Mức độ rủi ro: Thấp
+- Đổi tên thuộc tính đơn giản
+- Hệ thống kiểu phát hiện tất cả các trường hợp
+- Không thay đổi logic runtime
 
 ---
 
-✓ Plan complete (45 seconds total)
+✓ Kế hoạch hoàn tất (tổng cộng 45 giây)
 
-Next step: Review plan and implement fixes
-Use: /cook [implement plan from plans/fix-ci-build-12345.md]
+Bước tiếp theo: Xem lại kế hoạch và triển khai các bản sửa lỗi
+Sử dụng: /cook [triển khai kế hoạch từ plans/fix-ci-build-12345.md]
 ```
 
-### Test Failure Analysis
+### Phân tích lỗi kiểm tra (Test)
 
 ```bash
 /plan:ci https://github.com/user/repo/actions/runs/67890
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-Phase 1: Fetching Logs
+Giai đoạn 1: Lấy nhật ký
 ---
-Workflow: Test Suite
+Quy trình: Test Suite
 Job: test
-Status: Failed
-Duration: 4m 32s
+Trạng thái: Thất bại
+Thời gian: 4m 32s
 
-Failed tests:
+Các bài kiểm tra thất bại:
 ---
 FAIL src/auth/login.test.ts
   ✓ should validate email format (25ms)
@@ -305,43 +306,43 @@ Error: connect ECONNREFUSED 127.0.0.1:5432
 
 ---
 
-Phase 2: Error Analysis
+Giai đoạn 2: Phân tích lỗi
 ---
-Two types of errors identified:
+Hai loại lỗi được xác định:
 
-ERROR 1: Test Timeout
-- Tests taking > 2 seconds
-- Async callback not invoked
-- Likely cause: API not mocking properly
+LỖI 1: Hết thời gian bài kiểm tra (Test Timeout)
+- Các bài kiểm tra mất > 2 giây
+- Async callback không được gọi
+- Nguyên nhân có thể: API không được mock đúng cách
 
-ERROR 2: Database Connection Refused
-- PostgreSQL not running in CI
-- Port 5432 connection refused
-- Missing service configuration
+LỖI 2: Kết nối cơ sở dữ liệu bị từ chối
+- PostgreSQL không chạy trong CI
+- Kết nối cổng 5432 bị từ chối
+- Thiếu cấu hình dịch vụ
 
-Root causes:
-1. GitHub Actions workflow missing PostgreSQL service
-2. Tests not properly mocked (hitting real API)
-3. Test timeout too short for integration tests
+Nguyên nhân gốc rễ:
+1. Quy trình GitHub Actions thiếu dịch vụ PostgreSQL
+2. Các bài kiểm tra không được mock đúng cách (đang gọi API thật)
+3. Thời gian chờ bài kiểm tra quá ngắn cho các bài kiểm tra tích hợp
 
-Phase 3: Plan Created
+Giai đoạn 3: Kế hoạch đã được tạo
 ---
 
-## Root Cause Analysis
+## Phân tích nguyên nhân gốc rễ
 
-### Issue 1: Missing PostgreSQL Service
-CI workflow doesn't define PostgreSQL service container.
-Integration tests fail with connection refused.
+### Vấn đề 1: Thiếu dịch vụ PostgreSQL
+Quy trình CI không định nghĩa container dịch vụ PostgreSQL.
+Các bài kiểm tra tích hợp thất bại với lỗi kết nối bị từ chối.
 
-### Issue 2: Unmocked API Calls
-Login test making real HTTP request instead of using mocks.
-Exceeds 2-second timeout.
+### Vấn đề 2: Gọi API không được mock
+Bài kiểm tra đăng nhập thực hiện yêu cầu HTTP thật thay vì sử dụng mock.
+Vượt quá thời gian chờ 2 giây.
 
-## Solution Plan
+## Kế hoạch giải quyết
 
-### Fix 1: Add PostgreSQL Service to CI
+### Sửa lỗi 1: Thêm dịch vụ PostgreSQL vào CI
 
-Update `.github/workflows/ci.yml`:
+Cập nhật `.github/workflows/ci.yml`:
 
 ```yaml
 jobs:
@@ -377,18 +378,18 @@ jobs:
       - run: npm test
 ```
 
-### Fix 2: Mock API Calls in Login Test
+### Sửa lỗi 2: Mock các cuộc gọi API trong bài kiểm tra đăng nhập
 
-Update `src/auth/login.test.ts`:
+Cập nhật `src/auth/login.test.ts`:
 
 ```typescript
-// Before:
+// Trước:
 it('should authenticate valid credentials', async () => {
   const result = await login(email, password);
   expect(result).toBeDefined();
 });
 
-// After:
+// Sau:
 import { mockApiClient } from '../test-utils/mocks';
 
 it('should authenticate valid credentials', async () => {
@@ -401,13 +402,13 @@ it('should authenticate valid credentials', async () => {
 });
 ```
 
-### Fix 3: Increase Timeout for Integration Tests
+### Sửa lỗi 3: Tăng thời gian chờ cho các bài kiểm tra tích hợp
 
-Update `jest.config.js`:
+Cập nhật `jest.config.js`:
 
 ```javascript
 module.exports = {
-  testTimeout: 10000, // 10 seconds for integration tests
+  testTimeout: 10000, // 10 giây cho các bài kiểm tra tích hợp
   testMatch: [
     '**/__tests__/**/*.test.ts',
     '**/*.integration.test.ts'
@@ -415,45 +416,45 @@ module.exports = {
 };
 ```
 
-## Implementation Steps
+## Các bước triển khai
 
-1. Update GitHub Actions workflow (1 file)
-2. Add API mocks to login test (1 file)
-3. Update Jest config (1 file)
-4. Run tests locally to verify
-5. Commit and push
-6. Verify CI passes
+1. Cập nhật quy trình GitHub Actions (1 tệp)
+2. Thêm mock API vào bài kiểm tra đăng nhập (1 tệp)
+3. Cập nhật cấu hình Jest (1 tệp)
+4. Chạy các bài kiểm tra cục bộ để xác minh
+5. Commit và push
+6. Xác minh CI vượt qua
 
-## Estimated Time: 15 minutes
+## Thời gian dự kiến: 15 phút
 
-## Risk Level: Medium
-- Database service config requires careful setup
-- Must ensure test environment variables correct
-- Migration must run before tests
+## Mức độ rủi ro: Trung bình
+- Cấu hình dịch vụ cơ sở dữ liệu yêu cầu thiết lập cẩn thận
+- Phải đảm bảo các biến môi trường kiểm tra chính xác
+- Migration phải chạy trước khi kiểm tra
 
 ---
 
-✓ Plan complete
+✓ Kế hoạch hoàn tất
 
-Next: /cook [implement CI fixes from plan]
+Tiếp theo: /cook [triển khai các bản sửa lỗi CI từ kế hoạch]
 ```
 
-### Deployment Failure
+### Lỗi triển khai (Deployment)
 
 ```bash
 /plan:ci https://github.com/user/repo/actions/runs/11111
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-Phase 1: Fetching Logs
+Giai đoạn 1: Lấy nhật ký
 ---
-Workflow: Deploy to Production
+Quy trình: Deploy to Production
 Job: deploy
-Status: Failed
-Duration: 1m 8s
+Trạng thái: Thất bại
+Thời gian: 1m 8s
 
-Error:
+Lỗi:
 ---
 Run docker build -t myapp:latest .
 ERROR [build 5/8] RUN npm ci --only=production
@@ -465,28 +466,28 @@ npm ERR! network This is a problem related to network connectivity.
 Error: Process completed with exit code 1.
 ---
 
-Phase 2: Analysis
+Giai đoạn 2: Phân tích
 ---
-Error type: Network error during npm install
-Root cause: npm registry unreachable OR rate limited
+Loại lỗi: Lỗi mạng trong quá trình cài đặt npm
+Nguyên nhân gốc rễ: Không thể kết nối tới registry npm HOẶC bị giới hạn tốc độ (rate limited)
 
-Contributing factors:
-- No npm cache in CI
-- Rebuilding dependencies every time
-- Potential npm registry rate limiting
+Các yếu tố góp phần:
+- Không có bộ nhớ đệm (cache) npm trong CI
+- Xây dựng lại các phụ thuộc mọi lúc
+- Có khả năng bị giới hạn tốc độ bởi registry npm
 
-Phase 3: Plan Created
+Giai đoạn 3: Kế hoạch đã được tạo
 ---
 
-## Root Cause
-npm registry connection failed during Docker build.
-No caching strategy = slow builds + rate limit risk.
+## Nguyên nhân gốc rễ
+Kết nối tới registry npm thất bại trong quá trình build Docker.
+Không có chiến lược lưu trữ đệm = build chậm + rủi ro bị giới hạn tốc độ.
 
-## Solution Plan
+## Kế hoạch giải quyết
 
-### Fix 1: Add Dependency Caching
+### Sửa lỗi 1: Thêm lưu trữ đệm phụ thuộc (Dependency Caching)
 
-Update `.github/workflows/deploy.yml`:
+Cập nhật `.github/workflows/deploy.yml`:
 
 ```yaml
 - name: Cache node modules
@@ -501,7 +502,7 @@ Update `.github/workflows/deploy.yml`:
   run: npm ci --prefer-offline
 ```
 
-### Fix 2: Add Retry Logic
+### Sửa lỗi 2: Thêm logic thử lại (Retry Logic)
 
 ```yaml
 - name: Install dependencies with retry
@@ -512,16 +513,16 @@ Update `.github/workflows/deploy.yml`:
     command: npm ci
 ```
 
-### Fix 3: Use BuildKit Cache
+### Sửa lỗi 3: Sử dụng BuildKit Cache
 
-Update Dockerfile:
+Cập nhật Dockerfile:
 
 ```dockerfile
 # syntax=docker/dockerfile:1
 
 FROM node:20-alpine AS builder
 
-# Enable BuildKit cache mount
+# Kích hoạt mount cache BuildKit
 RUN --mount=type=cache,target=/root/.npm \
     npm ci --only=production
 
@@ -534,319 +535,319 @@ COPY --from=builder /app/node_modules ./node_modules
 CMD ["node", "dist/index.js"]
 ```
 
-### Fix 4: Consider Private Registry Mirror
+### Sửa lỗi 4: Xem xét sử dụng Registry Mirror riêng
 
-For enterprise: Set up Verdaccio or Artifactory as cache.
+Đối với doanh nghiệp: Thiết lập Verdaccio hoặc Artifactory làm cache.
 
 ```yaml
 env:
   NPM_CONFIG_REGISTRY: https://npm-cache.company.com
 ```
 
-## Implementation Steps
+## Các bước triển khai
 
-1. Add caching to workflow
-2. Add retry action
-3. Update Dockerfile with BuildKit
-4. Test build locally
-5. Deploy to staging first
-6. Verify production deployment
+1. Thêm lưu trữ đệm vào quy trình làm việc
+2. Thêm action thử lại
+3. Cập nhật Dockerfile với BuildKit
+4. Kiểm tra build cục bộ
+5. Triển khai lên staging trước
+6. Xác minh triển khai sản xuất
 
-## Estimated Time: 25 minutes
+## Thời gian dự kiến: 25 phút
 
-## Prevention
-- Monitor npm registry status
-- Consider npm Enterprise
-- Set up internal registry mirror
-- Use lock files (already using package-lock.json ✓)
+## Ngăn ngừa
+- Giám sát trạng thái registry npm
+- Xem xét npm Enterprise
+- Thiết lập mirror registry nội bộ
+- Sử dụng các tệp khóa (đã sử dụng package-lock.json ✓)
 
 ---
 
-✓ Plan complete
+✓ Kế hoạch hoàn tất
 ```
 
-## When to Use
+## Khi nào nên sử dụng
 
-### ✅ Use /plan:ci for:
+### ✅ Sử dụng /plan:ci cho:
 
-**Build Failures**
+**Lỗi Build**
 ```bash
 /plan:ci https://github.com/user/repo/actions/runs/12345
 ```
 
-**Test Failures**
+**Lỗi kiểm tra (Test)**
 ```bash
 /plan:ci https://github.com/user/repo/actions/runs/67890
 ```
 
-**Deployment Issues**
+**Sự cố triển khai (Deployment)**
 ```bash
 /plan:ci https://github.com/user/repo/actions/runs/11111
 ```
 
-**Linting/Type Errors**
+**Lỗi Linting/Kiểu (Type)**
 ```bash
 /plan:ci https://github.com/user/repo/actions/runs/22222
 ```
 
-**Environment Issues**
+**Vấn đề môi trường**
 ```bash
 /plan:ci https://github.com/user/repo/actions/runs/33333
 ```
 
-### ❌ Don't use for:
+### ❌ Không sử dụng cho:
 
-**Local Issues**
-- Debug locally first
-- Only use for actual CI failures
+**Các vấn đề cục bộ**
+- Hãy debug cục bộ trước
+- Chỉ sử dụng cho các thất bại CI thực tế
 
-**Minor Failures Already Fixed**
-- If you know the fix, just implement it
+**Các lỗi nhỏ đã được sửa**
+- Nếu bạn đã biết cách sửa, hãy triển khai nó luôn
 
-## Plan-Only Approach
+## Cách tiếp cận chỉ lập kế hoạch (Plan-Only)
 
-`/plan:ci` creates a plan but does NOT implement:
+`/plan:ci` tạo kế hoạch nhưng KHÔNG triển khai:
 
-**Why plan-only?**
-- CI issues need careful review
-- Multiple possible solutions
-- Environment-specific considerations
-- You decide which approach to take
+**Tại sao chỉ lập kế hoạch?**
+- Các vấn đề CI cần được xem xét cẩn thận
+- Có nhiều giải pháp khả thi
+- Các cân nhắc cụ thể cho từng môi trường
+- Bạn là người quyết định chọn cách tiếp cận nào
 
-**After getting plan:**
+**Sau khi nhận được kế hoạch:**
 ```bash
-# Option 1: Implement manually
+# Lựa chọn 1: Triển khai thủ công
 cat plans/fix-ci-*.md
-# Follow steps yourself
+# Tự mình làm theo các bước
 
-# Option 2: Use /cook to implement
-/cook [implement CI fix plan]
+# Lựa chọn 2: Sử dụng /cook để triển khai
+/cook [triển khai kế hoạch sửa lỗi CI]
 
-# Option 3: Use /fix:ci to auto-implement
+# Lựa chọn 3: Sử dụng /fix:ci để tự động triển khai
 /fix:ci https://github.com/user/repo/actions/runs/12345
 ```
 
-## Plan Structure
+## Cấu trúc kế hoạch
 
-Every plan includes:
+Mọi kế hoạch bao gồm:
 
-### 1. Root Cause Analysis
+### 1. Phân tích nguyên nhân gốc rễ
 
 ```markdown
-## Root Cause
-Clear explanation of why CI failed.
-Not just symptoms, but underlying issue.
+## Phân tích nguyên nhân gốc rễ
+Giải thích rõ ràng tại sao CI thất bại.
+Không chỉ là triệu chứng, mà là vấn đề cốt lõi.
 ```
 
-### 2. Solution Options
+### 2. Các tùy chọn giải pháp
 
 ```markdown
-## Solution Options
+## Các tùy chọn giải pháp
 
-### Option A: Quick Fix
-- Pros: Fast, minimal changes
-- Cons: May not prevent recurrence
+### Tùy chọn A: Sửa nhanh
+- Ưu điểm: Nhanh, thay đổi tối thiểu
+- Nhược điểm: Có thể không ngăn chặn được việc tái diễn
 
-### Option B: Proper Fix
-- Pros: Addresses root cause
-- Cons: More time, more changes
+### Tùy chọn B: Sửa đúng cách
+- Ưu điểm: Giải quyết nguyên nhân gốc rễ
+- Nhược điểm: Mất nhiều thời gian hơn, thay đổi nhiều hơn
 
-Recommendation: Option B
+Khuyến nghị: Tùy chọn B
 ```
 
-### 3. Files to Modify
+### 3. Các tệp cần sửa đổi
 
 ```markdown
-## Files to Change
+## Các tệp cần thay đổi
 
 1. .github/workflows/ci.yml
-   - Add PostgreSQL service
-   - Configure environment variables
+   - Thêm dịch vụ PostgreSQL
+   - Cấu hình các biến môi trường
 
 2. jest.config.js
-   - Increase timeout to 10s
+   - Tăng thời gian chờ lên 10 giây
 
 3. src/auth/login.test.ts
-   - Add API mocks
+   - Thêm các mock API
 ```
 
-### 4. Step-by-Step Instructions
+### 4. Hướng dẫn từng bước
 
 ```markdown
-## Implementation Steps
+## Các bước triển khai
 
-### Step 1: Update Workflow
+### Bước 1: Cập nhật quy trình làm việc
 ```yaml
-# Exact YAML to add
+# YAML chính xác cần thêm
 ```
 
-### Step 2: Update Tests
+### Bước 2: Cập nhật các bài kiểm tra
 ```typescript
-// Exact code changes
+// Các thay đổi mã nguồn chính xác
 ```
 
-### Step 3: Verify Locally
+### Bước 3: Xác minh cục bộ
 ```bash
 npm test
 ```
 ```
 
-### 5. Prevention Measures
+### 5. Các biện pháp ngăn ngừa
 
 ```markdown
-## Prevention
+## Ngăn ngừa
 
-To prevent this issue in future:
-- Add pre-commit type checking
-- Update CI to run on all branches
-- Add test coverage requirements
+Để ngăn chặn vấn đề này trong tương lai:
+- Thêm kiểm tra kiểu pre-commit
+- Cập nhật CI để chạy trên tất cả các nhánh
+- Thêm yêu cầu về độ bao phủ kiểm tra (test coverage)
 ```
 
-### 6. Risk Assessment
+### 6. Đánh giá rủi ro
 
 ```markdown
-## Risk Level: Low/Medium/High
+## Mức độ rủi ro: Thấp/Trung bình/Cao
 
-Risks:
-- Risk 1: Description
-- Risk 2: Description
+Rủi ro:
+- Rủi ro 1: Mô tả
+- Rủi ro 2: Mô tả
 
-Mitigation:
-- Deploy to staging first
-- Run full test suite
+Giảm thiểu:
+- Triển khai lên staging trước
+- Chạy toàn bộ bộ kiểm tra
 ```
 
-## Output Files
+## Các tệp đầu ra
 
-After `/plan:ci` completes:
+Sau khi `/plan:ci` hoàn tất:
 
-### Implementation Plan
+### Kế hoạch triển khai
 
 ```
 plans/fix-ci-[run-id]-[date].md
 ```
 
-Complete plan with all details
+Kế hoạch đầy đủ với tất cả chi tiết
 
-### Error Analysis
+### Phân tích lỗi
 
 ```
 plans/ci-error-analysis-[run-id].md
 ```
 
-Detailed error breakdown
+Bản phân tích chi tiết lỗi
 
-## Common CI Issues Detected
+## Các lỗi CI phổ biến thường gặp
 
-### Build Errors
+### Lỗi Build
 
-- TypeScript compilation errors
-- Missing dependencies
-- Build script failures
-- Environment variable issues
+- Lỗi biên dịch TypeScript
+- Thiếu các phụ thuộc (dependencies)
+- Thất bại tập lệnh build
+- Vấn đề biến môi trường
 
-### Test Failures
+### Lỗi kiểm tra (Test)
 
-- Flaky tests
-- Missing test dependencies
-- Database connection issues
-- Timeout errors
-- Mock/stub issues
+- Các bài kiểm tra không ổn định (flaky tests)
+- Thiếu các phụ thuộc kiểm tra
+- Vấn đề kết nối cơ sở dữ liệu
+- Lỗi hết thời gian chờ (timeout)
+- Vấn đề về mock/stub
 
-### Deployment Issues
+### Sự cố triển khai (Deployment)
 
-- Docker build failures
-- Registry connection issues
-- Missing secrets/credentials
-- Permission errors
+- Thất bại build Docker
+- Vấn đề kết nối registry
+- Thiếu bí mật (secrets)/thông tin xác thực
+- Lỗi phân quyền
 
-### Environment Issues
+### Vấn đề môi trường
 
-- Node version mismatches
-- Missing system dependencies
-- Service configuration missing
-- Port conflicts
+- Sai lệch phiên bản Node
+- Thiếu các phụ thuộc hệ thống
+- Thiếu cấu hình dịch vụ
+- Xung đột cổng (port)
 
-## Best Practices
+## Thực hành tốt nhất
 
-### Provide Full URL
+### Cung cấp URL đầy đủ
 
-✅ **Good:**
+✅ **Tốt:**
 ```bash
 /plan:ci https://github.com/user/repo/actions/runs/12345
 ```
 
-❌ **Bad:**
+❌ **Xấu:**
 ```bash
-/plan:ci 12345  # Missing repo context
+/plan:ci 12345  # Thiếu ngữ cảnh repo
 ```
 
-### Review Plan Before Implementing
+### Xem lại kế hoạch trước khi triển khai
 
 ```bash
-# 1. Get plan
+# 1. Lấy kế hoạch
 /plan:ci [url]
 
-# 2. READ the plan
+# 2. ĐỌC kế hoạch
 cat plans/fix-ci-*.md
 
-# 3. Understand the root cause
+# 3. Hiểu nguyên nhân gốc rễ
 
-# 4. Then implement
-/cook [implement from plan]
+# 4. Sau đó triển khai
+/cook [triển khai từ kế hoạch]
 ```
 
-### Test Locally First
+### Kiểm tra cục bộ trước
 
 ```bash
-# Before implementing in CI:
-npm run build   # Test build
-npm test        # Test tests
-npm run lint    # Test linting
+# Trước khi triển khai lên CI:
+npm run build   # Kiểm tra build
+npm test        # Kiểm tra tests
+npm run lint    # Kiểm tra linting
 
-# If local works but CI fails:
-# Issue is environment-specific
+# Nếu cục bộ chạy tốt nhưng CI thất bại:
+# Vấn đề nằm ở sự khác biệt môi trường
 ```
 
-## After Getting Plan
+## Sau khi nhận được kế hoạch
 
-Standard workflow:
+Quy trình làm việc tiêu chuẩn:
 
 ```bash
-# 1. Get analysis and plan
+# 1. Nhận phân tích và kế hoạch
 /plan:ci https://github.com/user/repo/actions/runs/12345
 
-# 2. Review plan
+# 2. Xem lại kế hoạch
 cat plans/fix-ci-12345.md
 
-# 3. Choose implementation approach
+# 3. Chọn cách tiếp cận triển khai
 
-# Option A: Implement manually
-# Follow steps in plan
+# Lựa chọn A: Triển khai thủ công
+# Làm theo các bước trong kế hoạch
 
-# Option B: Use /code (recommended - uses existing plan)
+# Lựa chọn B: Sử dụng /code (khuyến nghị - sử dụng kế hoạch hiện có)
 /code @plans/fix-ci-12345.md
 
-# Option C: Use /fix:ci (auto-implements)
+# Lựa chọn C: Sử dụng /fix:ci (tự động triển khai)
 /fix:ci https://github.com/user/repo/actions/runs/12345
 
-# 4. Test locally first
+# 4. Kiểm tra cục bộ trước
 npm test
 npm run build
 
-# 5. Commit and push
+# 5. Commit và push
 /git:cm
 
-# 6. Verify CI passes
-# Check GitHub Actions
+# 6. Xác minh CI vượt qua
+# Kiểm tra GitHub Actions
 ```
 
-## Next Steps
+## Các lệnh liên quan
 
-- [/fix:ci](/docs/engineer/commands/fix/ci) - Auto-implement CI fix
-- [/code](/docs/engineer/commands/core/code) - Implement existing plan
-- [/debug](/docs/engineer/commands/core/debug) - Debug complex issues
+- [/fix:ci](/vi/docs/engineer/commands/fix/ci) - Tự động triển khai sửa lỗi CI
+- [/code](/vi/docs/engineer/commands/core/code) - Triển khai kế hoạch hiện có
+- [/debug](/vi/docs/engineer/commands/core/debug) - Debug các vấn đề phức tạp
 
 ---
 
-**Key Takeaway**: `/plan:ci` analyzes GitHub Actions failures, identifies root causes, and creates detailed implementation plans with step-by-step instructions—giving you full control over how to fix CI/CD issues without automatic implementation.
+**Điểm mấu chốt**: `/plan:ci` phân tích các thất bại của GitHub Actions, xác định nguyên nhân gốc rễ và tạo các kế hoạch triển khai chi tiết với hướng dẫn từng bước—giúp bạn toàn quyền kiểm soát cách khắc phục các sự cố CI/CD mà không cần triển khai tự động.

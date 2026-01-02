@@ -1,7 +1,6 @@
 ---
 title: API Key Setup
-description: "Documentation for API Key Setup"
-lang: vi
+description: "Configure API keys for ClaudeKit - Gemini, SearchAPI, and OpenRouter credentials setup"
 section: support
 category: support/troubleshooting
 order: 5

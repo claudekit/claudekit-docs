@@ -6,214 +6,215 @@ kit: engineer
 category: skills/ai
 order: 24
 published: true
+lang: vi
 ---
 
-# canvas-design Skill
+# Kỹ năng canvas-design
 
-Create beautiful visual art, designs, and graphics in PNG and PDF formats using design philosophy.
+Tạo các tác phẩm nghệ thuật hình ảnh, bản thiết kế và đồ họa đẹp mắt ở định dạng PNG và PDF dựa trên triết lý thiết kế chuyên nghiệp.
 
-## When to Use
+## Khi nào nên sử dụng
 
-Use canvas-design when you need:
-- Landing page designs
-- Marketing materials
-- Posters and flyers
-- Social media graphics
-- Presentation slides
+Sử dụng canvas-design khi bạn cần:
+- Thiết kế trang landing page
+- Tài liệu marketing
+- Poster và tờ rơi (flyers)
+- Đồ họa cho mạng xã hội
+- Slide thuyết trình
 - Infographics
-- Brand visuals
+- Hình ảnh nhận diện thương hiệu
 
-## Quick Start
+## Bắt đầu nhanh
 
-### Invoke the Skill
-
-```
-"Use canvas-design to create landing page hero section with:
-- Modern gradient background
-- Bold headline
-- Call-to-action button
-- Professional layout"
-```
-
-### What You Get
-
-The skill will help you:
-1. Design visual layouts
-2. Choose color schemes
-3. Apply typography
-4. Create compositions
-5. Export high-quality files
-
-## Common Use Cases
-
-### Landing Pages
+### Cách gọi kỹ năng
 
 ```
-"Use canvas-design to create hero section for SaaS product with:
-- Gradient background
-- Product screenshot
-- Value proposition
-- CTA button"
+"Sử dụng canvas-design để tạo phần hero cho trang landing page với:
+- Nền gradient hiện đại
+- Tiêu đề in đậm
+- Nút kêu gọi hành động (Call-to-action)
+- Bố cục chuyên nghiệp"
 ```
 
-### Social Media
+### Kết quả nhận được
+
+Kỹ năng này sẽ giúp bạn:
+1. Thiết kế bố cục hình ảnh
+2. Lựa chọn bảng màu
+3. Áp dụng nghệ thuật chữ (typography)
+4. Tạo các bố cục nghệ thuật (compositions)
+5. Xuất file chất lượng cao
+
+## Các trường hợp sử dụng phổ biến
+
+### Trang Landing Page
 
 ```
-"Use canvas-design to create Instagram post (1080x1080) announcing new feature launch"
+"Sử dụng canvas-design để tạo phần hero cho sản phẩm SaaS với:
+- Nền gradient
+- Ảnh chụp màn hình sản phẩm
+- Tuyên bố giá trị (Value proposition)
+- Nút CTA"
 ```
 
-### Marketing Materials
+### Mạng xã hội
 
 ```
-"Use canvas-design to create promotional flyer for event with:
-- Event details
-- Brand colors
-- Professional layout
-- QR code"
+"Sử dụng canvas-design để tạo bài đăng Instagram (1080x1080) thông báo ra mắt tính năng mới"
 ```
 
-### Presentations
+### Tài liệu Marketing
 
 ```
-"Use canvas-design to create title slide for investor pitch with company branding"
+"Sử dụng canvas-design để tạo tờ rơi quảng cáo sự kiện với:
+- Chi tiết sự kiện
+- Màu sắc thương hiệu
+- Bố cục chuyên nghiệp
+- Mã QR"
 ```
 
-## Design Principles
-
-### Visual Hierarchy
-
-- **Primary**: Headline (largest, boldest)
-- **Secondary**: Subheading (medium)
-- **Tertiary**: Body text (smallest)
-- **Accent**: CTAs, highlights
-
-### Color Theory
+### Thuyết trình
 
 ```
-"Use canvas-design with color scheme:
-- Primary: #3B82F6 (blue)
-- Secondary: #10B981 (green)
-- Accent: #F59E0B (orange)
-- Neutral: #6B7280 (gray)"
+"Sử dụng canvas-design để tạo slide tiêu đề cho buổi thuyết trình gọi vốn với bộ nhận diện thương hiệu công ty"
 ```
 
-### Typography
+## Các nguyên lý thiết kế
 
-- **Headlines**: Bold, large (48-72px)
-- **Subheadings**: Medium (24-36px)
-- **Body**: Regular (16-20px)
-- **Font pairings**: Sans-serif + serif
+### Phân cấp thị giác (Visual Hierarchy)
 
-### Layout
+- **Cấp 1**: Tiêu đề (Headline - lớn nhất, đậm nhất)
+- **Cấp 2**: Tiêu đề phụ (Subheading - trung bình)
+- **Cấp 3**: Nội dung (Body text - nhỏ nhất)
+- **Nhấn mạnh (Accent)**: Các nút CTA, điểm làm nổi bật
 
-- **Rule of thirds**
-- **White space** for breathing room
-- **Alignment** for professional look
-- **Contrast** for readability
-
-## Common Designs
-
-### Hero Section
+### Lý thuyết màu sắc
 
 ```
-"Use canvas-design to create hero (1920x1080):
-- Gradient background (#667eea to #764ba2)
-- Headline: 'Build Better Products'
-- Subheading: 'AI-powered development tools'
-- CTA button: 'Get Started'
-- Product mockup on right"
+"Sử dụng canvas-design với bảng màu:
+- Chính: #3B82F6 (xanh dương)
+- Phụ: #10B981 (xanh lá)
+- Nhấn: #F59E0B (cam)
+- Trung tính: #6B7280 (xám)"
 ```
 
-### Social Post
+### Nghệ thuật chữ (Typography)
+
+- **Tiêu đề**: Đậm, lớn (48-72px)
+- **Tiêu đề phụ**: Trung bình (24-36px)
+- **Nội dung**: Thường (16-20px)
+- **Kết hợp phông chữ**: Sans-serif + serif
+
+### Bố cục (Layout)
+
+- **Quy tắc một phần ba (Rule of thirds)**
+- **Khoảng trắng (White space)** giúp thiết kế "thở"
+- **Căn lề (Alignment)** cho vẻ ngoài chuyên nghiệp
+- **Độ tương phản (Contrast)** cho khả năng đọc tốt
+
+## Các mẫu thiết kế phổ biến
+
+### Phần Hero (Đầu trang)
 
 ```
-"Use canvas-design for Instagram announcement:
-- Square 1080x1080
-- Brand colors
-- Product image
-- Announcement text
+"Sử dụng canvas-design để tạo hero (1920x1080):
+- Nền gradient (#667eea sang #764ba2)
+- Tiêu đề: 'Build Better Products'
+- Tiêu đề phụ: 'AI-powered development tools'
+- Nút CTA: 'Get Started'
+- Mockup sản phẩm ở bên phải"
+```
+
+### Bài đăng mạng xã hội
+
+```
+"Sử dụng canvas-design cho thông báo Instagram:
+- Hình vuông 1080x1080
+- Màu sắc thương hiệu
+- Hình ảnh sản phẩm
+- Nội dung thông báo
 - Logo"
 ```
 
 ### Infographic
 
 ```
-"Use canvas-design to create infographic showing:
-- 4 steps process
-- Icons for each step
-- Brief descriptions
-- Professional layout"
+"Sử dụng canvas-design để tạo infographic hiển thị:
+- Quy trình 4 bước
+- Biểu tượng cho mỗi bước
+- Mô tả ngắn gọn
+- Bố cục chuyên nghiệp"
 ```
 
-### Email Header
+### Tiêu đề Email
 
 ```
-"Use canvas-design for email header (600x200):
-- Newsletter title
-- Brand logo
-- Issue number
-- Subtle background"
+"Sử dụng canvas-design cho tiêu đề email (600x200):
+- Tên bản tin
+- Logo thương hiệu
+- Số thứ tự bản tin
+- Nền tinh tế"
 ```
 
-## Design Styles
+## Phong cách thiết kế
 
-### Modern Minimal
+### Tối giản hiện đại (Modern Minimal)
 
-- Clean lines
-- Lots of white space
-- Simple colors (1-2 colors)
-- Sans-serif fonts
-- Flat design
+- Đường nét sạch sẽ
+- Nhiều khoảng trắng
+- Màu sắc đơn giản (1-2 màu)
+- Phông chữ Sans-serif
+- Thiết kế phẳng (Flat design)
 
-### Bold & Vibrant
+### Mạnh mẽ & Rực rỡ (Bold & Vibrant)
 
-- Bright colors
-- Strong contrasts
-- Large typography
-- Gradients
-- Eye-catching
+- Màu sắc tươi sáng
+- Độ tương phản mạnh
+- Typography lớn
+- Hiệu ứng gradient
+- Bắt mắt
 
-### Professional Corporate
+### Chuyên nghiệp & Doanh nghiệp (Professional Corporate)
 
-- Conservative colors (blue, gray)
-- Structured layouts
-- Professional fonts
-- Subtle effects
-- Clean design
+- Màu sắc trang nhã (xanh dương, xám)
+- Bố cục có cấu trúc
+- Phông chữ chuyên nghiệp
+- Hiệu ứng tinh tế
+- Thiết kế sạch sẽ
 
-### Creative Artistic
+### Sáng tạo & Nghệ thuật (Creative Artistic)
 
-- Unique compositions
-- Creative typography
-- Illustrations
-- Texture overlays
-- Experimental
+- Bố cục độc đáo
+- Typography sáng tạo
+- Hình minh họa
+- Hiệu ứng chất liệu (texture overlays)
+- Tính thử nghiệm cao
 
-## File Formats
+## Định dạng File
 
 ### PNG
 
-- High quality
-- Transparency support
-- Web-friendly
-- Social media
+- Chất lượng cao
+- Hỗ trợ độ trong suốt (transparency)
+- Thân thiện với web
+- Mạng xã hội
 
 ```
-"Use canvas-design and export as PNG (300 DPI) for print"
+"Sử dụng canvas-design và xuất dưới dạng PNG (300 DPI) để in ấn"
 ```
 
 ### PDF
 
-- Vector quality
-- Print-ready
-- Multi-page support
-- Professional
+- Chất lượng vector
+- Sẵn sàng để in
+- Hỗ trợ nhiều trang
+- Chuyên nghiệp
 
 ```
-"Use canvas-design and export as PDF for presentation"
+"Sử dụng canvas-design và xuất dưới dạng PDF cho buổi thuyết trình"
 ```
 
-## Standard Sizes
+## Kích thước tiêu chuẩn
 
 ### Web
 
@@ -222,122 +223,122 @@ The skill will help you:
 - Banner: 1200x400
 - Card: 600x400
 
-### Social Media
+### Mạng xã hội
 
-- Instagram: 1080x1080 (square), 1080x1350 (portrait)
-- Facebook: 1200x630 (post), 820x312 (cover)
-- Twitter: 1600x900 (post), 1500x500 (header)
-- LinkedIn: 1200x627 (post), 1584x396 (cover)
+- Instagram: 1080x1080 (vuông), 1080x1350 (chân dung)
+- Facebook: 1200x630 (bài đăng), 820x312 (ảnh bìa)
+- Twitter: 1600x900 (bài đăng), 1500x500 (ảnh bìa)
+- LinkedIn: 1200x627 (bài đăng), 1584x396 (ảnh bìa)
 
-### Print
+### In ấn
 
-- Flyer: 8.5x11" (letter)
+- Tờ rơi (Flyer): 8.5x11" (khổ letter)
 - Poster: 24x36"
-- Business card: 3.5x2"
-- Banner: Custom
+- Danh thiếp: 3.5x2"
+- Banner: Tùy chỉnh
 
-## Best Practices
+## Phương pháp hay nhất
 
-### Composition
+### Bố cục
 
-1. **Start with purpose** - Know the goal
-2. **Use grid** - Align elements
-3. **Create focal point** - Guide attention
-4. **Balance elements** - Visual weight
-5. **Add white space** - Don't crowd
+1. **Bắt đầu với mục đích** - Biết rõ mục tiêu là gì
+2. **Sử dụng lưới (grid)** - Căn chỉnh các thành phần
+3. **Tạo điểm nhấn** - Dẫn dắt sự chú ý
+4. **Cân bằng các thành phần** - Trọng lượng thị giác
+5. **Thêm khoảng trắng** - Đừng để thiết kế quá chật chội
 
-### Color
+### Màu sắc
 
-1. **Limit palette** - 2-3 main colors
-2. **Use contrast** - Readability
-3. **Consider accessibility** - WCAG standards
-4. **Test combinations** - Color blindness
-5. **Brand consistency** - Use brand colors
+1. **Giới hạn bảng màu** - Chỉ nên dùng 2-3 màu chính
+2. **Sử dụng độ tương phản** - Giúp dễ đọc
+3. **Xem xét tính dễ tiếp cận** - Tiêu chuẩn WCAG
+4. **Kiểm tra các tổ hợp** - Đối với người mù màu
+5. **Tính nhất quán thương hiệu** - Sử dụng màu sắc thương hiệu
 
-### Typography
+### Nghệ thuật chữ (Typography)
 
-1. **Hierarchy** - Size indicates importance
-2. **Limit fonts** - 2-3 max
-3. **Readable** - Appropriate size
-4. **Align text** - Left, center, or right
-5. **Line height** - Comfortable spacing
+1. **Phân cấp** - Kích thước thể hiện tầm quan trọng
+2. **Giới hạn phông chữ** - Tối đa 2-3 loại
+3. **Dễ đọc** - Kích thước phù hợp
+4. **Căn lề văn bản** - Trái, giữa hoặc phải
+5. **Khoảng cách dòng** - Khoảng cách thoải mái
 
-### Images
+### Hình ảnh
 
-1. **High quality** - No pixelation
-2. **Appropriate** - Matches message
-3. **Optimize** - File size
-4. **Copyright** - Use licensed images
-5. **Consistent style** - Cohesive look
+1. **Chất lượng cao** - Không bị vỡ nét (pixelation)
+2. **Phù hợp** - Khớp với thông điệp
+3. **Tối ưu hóa** - Kích thước file
+4. **Bản quyền** - Sử dụng hình ảnh có bản quyền
+5. **Phong cách nhất quán** - Vẻ ngoài gắn kết
 
-## Quick Examples
+## Ví dụ nhanh
 
-**Simple Header:**
+**Tiêu đề đơn giản:**
 ```
-"Use canvas-design to create simple header with company logo and tagline"
-```
-
-**Product Feature:**
-```
-"Use canvas-design to showcase product feature:
-- Feature name as headline
-- Screenshot or illustration
-- 3 key benefits
-- Modern design"
+"Sử dụng canvas-design để tạo tiêu đề đơn giản với logo công ty và khẩu hiệu"
 ```
 
-**Event Poster:**
+**Tính năng sản phẩm:**
 ```
-"Use canvas-design for event poster with:
-- Event name (large)
-- Date, time, location
-- Key speakers
-- Registration QR code
-- Branded colors"
-```
-
-**Newsletter Banner:**
-```
-"Use canvas-design for email newsletter header showing this month's theme"
+"Sử dụng canvas-design để giới thiệu tính năng sản phẩm:
+- Tên tính năng là tiêu đề
+- Ảnh chụp màn hình hoặc hình minh họa
+- 3 lợi ích chính
+- Thiết kế hiện đại"
 ```
 
-## Common Elements
+**Poster Sự kiện:**
+```
+"Sử dụng canvas-design cho poster sự kiện với:
+- Tên sự kiện (lớn)
+- Ngày, giờ, địa điểm
+- Các diễn giả chính
+- Mã QR đăng ký
+- Màu sắc thương hiệu"
+```
 
-### Call-to-Action Buttons
+**Banner Bản tin:**
+```
+"Sử dụng canvas-design cho tiêu đề bản tin email hiển thị chủ đề của tháng này"
+```
 
-- Bold, contrasting color
-- Clear text (Get Started, Learn More)
-- Proper spacing
-- Rounded corners (modern)
+## Các thành phần phổ biến
 
-### Icons
+### Nút kêu gọi hành động (CTA)
 
-- Consistent style (outlined or filled)
-- Appropriate size
-- Aligned with text
-- Single color or brand colors
+- Màu sắc nổi bật, tương phản
+- Văn bản rõ ràng (Bắt đầu ngay, Tìm hiểu thêm)
+- Khoảng cách hợp lý
+- Bo góc (kiểu hiện đại)
 
-### Backgrounds
+### Biểu tượng (Icons)
 
-- Gradients (modern)
-- Solid colors (minimal)
-- Subtle patterns (texture)
-- Images (with overlay)
+- Phong cách nhất quán (nét mảnh hoặc đổ màu)
+- Kích thước phù hợp
+- Căn chỉnh với văn bản
+- Đơn sắc hoặc theo màu thương hiệu
 
-## Accessibility
+### Nền (Backgrounds)
 
-- **Color contrast**: Minimum 4.5:1 for text
-- **Font size**: Minimum 16px for body
-- **Alt text**: Describe images
-- **Readable fonts**: Avoid decorative for body
-- **Clear hierarchy**: Logical structure
+- Gradient (hiện đại)
+- Màu trơn (tối giản)
+- Họa tiết tinh tế (texture)
+- Hình ảnh (có lớp phủ mờ)
 
-## Next Steps
+## Tính dễ tiếp cận (Accessibility)
 
-- [Design Examples](/docs/use-cases/)
-- [Brand Guidelines](/docs/use-cases/)
-- [UI/UX Patterns](/docs/use-cases/)
+- **Độ tương phản màu**: Tối thiểu 4.5:1 cho văn bản
+- **Kích thước chữ**: Tối thiểu 16px cho phần nội dung
+- **Văn bản thay thế (Alt text)**: Mô tả hình ảnh
+- **Phông chữ dễ đọc**: Tránh các phông chữ trang trí quá mức cho phần nội dung
+- **Phân cấp rõ ràng**: Cấu trúc logic
+
+## Bước tiếp theo
+
+- [Ví dụ thiết kế](/docs/use-cases/)
+- [Hướng dẫn thương hiệu](/docs/use-cases/)
+- [Mẫu UI/UX](/docs/use-cases/)
 
 ---
 
-**Bottom Line:** canvas-design creates professional visual content. Landing pages, social media, marketing - all with great design principles.
+**Tóm lại:** canvas-design tạo ra nội dung hình ảnh chuyên nghiệp. Từ landing page, mạng xã hội đến marketing - tất cả đều tuân thủ các nguyên lý thiết kế tuyệt vời.

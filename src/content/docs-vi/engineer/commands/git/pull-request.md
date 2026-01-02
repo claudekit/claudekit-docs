@@ -1,127 +1,128 @@
 ---
 title: /git:pr
-description: Documentation for pull-request
+description: Tài liệu hướng dẫn lệnh pull-request
 section: engineer
 kit: engineer
 category: commands/git
 order: 32
 published: true
+lang: vi
 ---
 
 # /git:pr
 
-Create a pull request with an AI-generated comprehensive summary and test plan. Analyzes all commits since branch divergence, reviews complete change set, and generates professional PR description using GitHub CLI.
+Tạo một pull request (yêu cầu kéo) với bản tóm tắt toàn diện và kế hoạch kiểm tra được tạo bởi AI. Phân tích tất cả các commit kể từ khi nhánh bị phân tách, xem xét bộ thay đổi hoàn chỉnh và tạo mô tả PR chuyên nghiệp bằng GitHub CLI.
 
-## Syntax
+## Cú pháp
 
 ```bash
 /git:pr [target-branch] [source-branch]
 ```
 
-### Parameters
+### Tham số
 
-- `[target-branch]` (optional): Branch to merge into (defaults to `main`)
-- `[source-branch]` (optional): Branch to merge from (defaults to current branch)
+- `[target-branch]` (tùy chọn): Nhánh mục tiêu để merge vào (mặc định là `main`)
+- `[source-branch]` (tùy chọn): Nhánh nguồn để merge từ đó (mặc định là nhánh hiện tại)
 
-## How It Works
+## Cách hoạt động
 
-The `/git:pr` command uses the `git-manager` agent with this workflow:
+Lệnh `/git:pr` sử dụng agent `git-manager` với quy trình làm việc sau:
 
-### 1. Branch Analysis
+### 1. Phân tích nhánh
 
-- Identifies target and source branches
-- Checks branch tracking and remote status
-- Determines divergence point from base branch
-- Reviews all commits since divergence
+- Xác định nhánh mục tiêu và nhánh nguồn
+- Kiểm tra việc theo dõi nhánh và trạng thái remote
+- Xác định điểm phân tách từ nhánh cơ sở
+- Xem xét tất cả các commit kể từ khi phân tách
 
-### 2. Change Review
+### 2. Xem xét thay đổi
 
-- Runs `git status` to see current state
-- Runs `git diff` for staged/unstaged changes
-- Runs `git log` to review commit history
-- Runs `git diff [base]...HEAD` for complete changeset
-- Analyzes ALL commits (not just latest)
+- Chạy `git status` để xem trạng thái hiện tại
+- Chạy `git diff` cho các thay đổi staged/unstaged
+- Chạy `git log` để xem lại lịch sử commit
+- Chạy `git diff [base]...HEAD` cho bộ thay đổi hoàn chỉnh
+- Phân tích TẤT CẢ các commit (không chỉ commit mới nhất)
 
-### 3. PR Summary Generation
+### 3. Tạo bản tóm tắt PR
 
-- Reviews complete diff and commit messages
-- Identifies feature additions, bug fixes, refactoring
-- Creates bullet-point summary of changes
-- Generates test plan checklist
-- Follows professional PR format
+- Xem xét diff hoàn chỉnh và các thông điệp commit
+- Xác định các tính năng thêm mới, sửa lỗi, tái cấu trúc
+- Tạo bản tóm tắt các thay đổi theo dạng gạch đầu dòng
+- Tạo danh sách kiểm tra kế hoạch kiểm tra
+- Tuân theo định dạng PR chuyên nghiệp
 
-### 4. PR Creation
+### 4. Tạo PR
 
-- Creates/pushes branch if needed
-- Executes `gh pr create` with generated content
-- Returns PR URL for review
-- Handles authentication and permissions
+- Tạo/đẩy (push) nhánh lên remote nếu cần
+- Thực thi `gh pr create` với nội dung đã tạo
+- Trả về URL của PR để xem xét
+- Xử lý xác thực và quyền hạn
 
-## When to Use
+## Khi nào nên sử dụng
 
-### ✅ Perfect For
+### ✅ Hoàn hảo cho
 
-**Feature Completion**
+**Hoàn thành tính năng**
 ```bash
-# After implementing feature
+# Sau khi triển khai xong tính năng
 /git:pr
 ```
 
-**Bug Fix Ready**
+**Bản sửa lỗi đã sẵn sàng**
 ```bash
-# After fixing and testing bug
+# Sau khi sửa và kiểm tra lỗi
 /git:pr main hotfix/critical-bug
 ```
 
-**Release Preparation**
+**Chuẩn bị phát hành (Release)**
 ```bash
-# Merge develop to main
+# Merge nhánh develop vào main
 /git:pr main develop
 ```
 
-**Code Review Request**
+**Yêu cầu xem xét mã nguồn (Code Review)**
 ```bash
-# Request team review
+# Yêu cầu nhóm xem xét
 /git:pr
 ```
 
-### ❌ Don't Use For
+### ❌ Không sử dụng cho
 
-**Work in Progress**
+**Công việc đang dở dang (WIP)**
 ```bash
-❌ /git:pr  # Before feature is complete
-✅ Finish feature first, then create PR
+❌ /git:pr  # Trước khi tính năng hoàn thành
+✅ Hoàn thành tính năng trước, sau đó mới tạo PR
 ```
 
-**No Commits**
+**Chưa có commit nào**
 ```bash
-❌ /git:pr  # Nothing committed yet
-✅ /git:cm  # Commit first
+❌ /git:pr  # Chưa có gì được commit
+✅ /git:cm  # Hãy commit trước
 ```
 
-**GitHub CLI Not Installed**
+**Chưa cài đặt GitHub CLI**
 ```bash
 ❌ /git:pr
-✅ Install gh: brew install gh
+✅ Cài đặt gh: brew install gh
 ```
 
-## Examples
+## Ví dụ
 
-### Simple Feature PR
+### PR cho tính năng đơn giản
 
 ```bash
 /git:pr
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-1. Analyzing branch
-   Current branch: feature/user-profile
-   Target branch: main
-   Diverged at: commit abc1234
-   Commits ahead: 5
+1. Đang phân tích nhánh
+   Nhánh hiện tại: feature/user-profile
+   Nhánh mục tiêu: main
+   Điểm phân tách tại: commit abc1234
+   Số commit phía trước: 5
 
-2. Reviewing changes
+2. Đang xem xét các thay đổi
    $ git log main..HEAD
    - feat: add user profile page
    - feat: add profile avatar upload
@@ -130,163 +131,163 @@ The `/git:pr` command uses the `git-manager` agent with this workflow:
    - fix: handle missing avatar gracefully
 
    $ git diff main...HEAD
-   Files changed: 12
-   Insertions: +487
-   Deletions: -23
+   Số tệp thay đổi: 12
+   Số dòng thêm: +487
+   Số dòng xóa: -23
 
-3. Generating PR description
-   ✓ Created summary from all 5 commits
-   ✓ Generated test plan
+3. Đang tạo mô tả PR
+   ✓ Đã tạo bản tóm tắt từ tất cả 5 commit
+   ✓ Đã tạo kế hoạch kiểm tra
 
-4. Creating PR
+4. Đang tạo PR
    $ gh pr create --title "Add user profile page" --body "..."
 
-   ✓ Created: https://github.com/user/repo/pull/42
+   ✓ Đã tạo: https://github.com/user/repo/pull/42
 
-✓ Pull request created (34s)
+✓ Đã tạo pull request (34 giây)
 ```
 
-**Generated PR:**
+**PR được tạo:**
 ```markdown
-## Summary
+## Tóm tắt
 
-- Add user profile page with avatar upload capability
-- Implement profile data editing functionality
-- Add profile avatar upload with image validation
-- Include comprehensive test suite for profile components
-- Document profile API endpoints
-- Handle edge case for missing avatar with default image
+- Thêm trang hồ sơ người dùng với khả năng tải ảnh đại diện
+- Triển khai chức năng chỉnh sửa dữ liệu hồ sơ
+- Thêm tải ảnh đại diện với kiểm tra tính hợp lệ của ảnh
+- Bao gồm bộ kiểm tra toàn diện cho các component hồ sơ
+- Tài liệu hóa các endpoint API hồ sơ
+- Xử lý trường hợp thiếu ảnh đại diện bằng ảnh mặc định
 
-## Test plan
+## Kế hoạch kiểm tra
 
-- [ ] Verify profile page loads correctly
-- [ ] Test profile data editing and saving
-- [ ] Validate avatar upload with various image formats
-- [ ] Test avatar size limits and validation
-- [ ] Verify default avatar displays when none uploaded
-- [ ] Run full test suite (npm test)
-- [ ] Check API endpoint documentation accuracy
-- [ ] Test error handling for failed uploads
+- [ ] Xác minh trang hồ sơ tải chính xác
+- [ ] Kiểm tra việc chỉnh sửa và lưu dữ liệu hồ sơ
+- [ ] Xác thực việc tải ảnh đại diện với nhiều định dạng ảnh khác nhau
+- [ ] Kiểm tra giới hạn kích thước ảnh đại diện và xác thực
+- [ ] Xác minh ảnh đại diện mặc định hiển thị khi không có ảnh nào được tải lên
+- [ ] Chạy toàn bộ bộ kiểm tra (npm test)
+- [ ] Kiểm tra độ chính xác của tài liệu endpoint API
+- [ ] Kiểm tra xử lý lỗi khi tải lên thất bại
 ```
 
-### Hotfix PR
+### PR cho Hotfix
 
 ```bash
 /git:pr main hotfix/payment-timeout
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-1. Branch setup
-   Source: hotfix/payment-timeout
-   Target: main
-   Commits: 2
+1. Thiết lập nhánh
+   Nguồn: hotfix/payment-timeout
+   Mục tiêu: main
+   Số commit: 2
 
-2. Analyzing hotfix
+2. Phân tích hotfix
    $ git diff main...hotfix/payment-timeout
    - fix: increase payment gateway timeout
    - test: add timeout handling tests
 
-   Critical fix: Payment processing timeouts under load
+   Sửa lỗi nghiêm trọng: Timeout xử lý thanh toán khi tải cao
 
-3. Creating PR
-   Title: "Fix: Payment gateway timeout issues"
-   Labels: hotfix, urgent
+3. Đang tạo PR
+   Tiêu đề: "Fix: Payment gateway timeout issues"
+   Nhãn (Labels): hotfix, urgent
 
-   ✓ Created: https://github.com/user/repo/pull/43
+   ✓ Đã tạo: https://github.com/user/repo/pull/43
 
-✓ Hotfix PR ready for immediate review (18s)
+✓ PR hotfix đã sẵn sàng để xem xét ngay lập tức (18 giây)
 ```
 
-**Generated PR:**
+**PR được tạo:**
 ```markdown
-## Summary
+## Tóm tắt
 
-- Increase payment gateway timeout from 5s to 30s to handle slow connections
-- Add comprehensive timeout handling with retry logic
-- Include tests validating timeout behavior under various network conditions
+- Tăng thời gian chờ (timeout) của cổng thanh toán từ 5 giây lên 30 giây để xử lý các kết nối chậm
+- Thêm xử lý timeout toàn diện với logic thử lại (retry logic)
+- Bao gồm các bài kiểm tra xác thực hành vi timeout trong nhiều điều kiện mạng khác nhau
 
-## Test plan
+## Kế hoạch kiểm tra
 
-- [ ] Verify payments complete successfully under normal conditions
-- [ ] Test timeout handling with slow network simulation
-- [ ] Validate retry logic works correctly
-- [ ] Run full payment integration test suite
-- [ ] Monitor production metrics after deployment
-- [ ] Check error logging captures timeout events correctly
+- [ ] Xác minh thanh toán hoàn tất thành công trong điều kiện bình thường
+- [ ] Kiểm tra xử lý timeout với mô phỏng mạng chậm
+- [ ] Xác thực logic thử lại hoạt động chính xác
+- [ ] Chạy toàn bộ bộ kiểm tra tích hợp thanh toán
+- [ ] Giám sát các chỉ số production sau khi triển khai
+- [ ] Kiểm tra việc ghi nhật ký lỗi ghi lại các sự kiện timeout chính xác
 ```
 
-### Complex Feature PR
+### PR cho tính năng phức tạp
 
 ```bash
 /git:pr main feature/oauth-integration
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-1. Analyzing large feature
-   Commits: 23
-   Files changed: 45
-   Insertions: +2,345
-   Deletions: -567
+1. Phân tích tính năng lớn
+   Số commit: 23
+   Số tệp thay đổi: 45
+   Số dòng thêm: +2,345
+   Số dòng xóa: -567
 
-2. Reviewing comprehensive changes
-   ✓ Analyzed all 23 commits
-   ✓ Reviewed complete diff
-   ✓ Identified major components:
-     - OAuth2 authentication flow
-     - Google and GitHub providers
-     - Token management system
-     - User account linking
-     - Security enhancements
+2. Xem xét các thay đổi toàn diện
+   ✓ Đã phân tích tất cả 23 commit
+   ✓ Đã xem xét diff hoàn chỉnh
+   ✓ Xác định các thành phần chính:
+     - Luồng xác thực OAuth2
+     - Các nhà cung cấp Google và GitHub
+     - Hệ thống quản lý Token
+     - Liên kết tài khoản người dùng
+     - Các cải tiến bảo mật
 
-3. Generating detailed PR
-   ✓ Created comprehensive summary
-   ✓ Generated thorough test plan
-   ✓ Listed breaking changes
-   ✓ Documented migration steps
+3. Tạo PR chi tiết
+   ✓ Đã tạo bản tóm tắt toàn diện
+   ✓ Đã tạo kế hoạch kiểm tra kỹ lưỡng
+   ✓ Liệt kê các thay đổi gây phá vỡ (breaking changes)
+   ✓ Tài liệu hóa các bước di chuyển (migration steps)
 
-4. Creating PR
+4. Đang tạo PR
    ✓ https://github.com/user/repo/pull/44
 
-✓ Complex PR created with full documentation (1m 12s)
+✓ PR phức tạp đã được tạo với đầy đủ tài liệu (1 phút 12 giây)
 ```
 
-**Generated PR:**
+**PR được tạo:**
 ```markdown
-## Summary
+## Tóm tắt
 
-### OAuth2 Implementation
-- Implement OAuth2 authentication flow with authorization code grant
-- Add Google OAuth provider with profile data retrieval
-- Add GitHub OAuth provider with email and profile access
-- Create token management system with secure storage
+### Triển khai OAuth2
+- Triển khai luồng xác thực OAuth2 với authorization code grant
+- Thêm nhà cung cấp Google OAuth với tính năng lấy dữ liệu hồ sơ
+- Thêm nhà cung cấp GitHub OAuth với quyền truy cập email và hồ sơ
+- Tạo hệ thống quản lý token với lưu trữ bảo mật
 
-### User Experience
-- Allow account linking for existing users
-- Implement seamless signup flow for new users via OAuth
-- Add OAuth disconnect functionality in account settings
+### Trải nghiệm người dùng
+- Cho phép liên kết tài khoản cho người dùng hiện tại
+- Triển khai luồng đăng ký liền mạch cho người dùng mới qua OAuth
+- Thêm chức năng ngắt kết nối OAuth trong cài đặt tài khoản
 
-### Security Enhancements
-- Implement PKCE for OAuth flow security
-- Add CSRF protection for OAuth callbacks
-- Secure token storage with encryption
-- Add rate limiting for OAuth endpoints
+### Cải tiến bảo mật
+- Triển khai PKCE để bảo mật luồng OAuth
+- Thêm bảo vệ CSRF cho các callback OAuth
+- Bảo mật lưu trữ token bằng mã hóa
+- Thêm giới hạn tốc độ (rate limiting) cho các endpoint OAuth
 
-### Infrastructure
-- Create OAuth callback endpoints
-- Implement OAuth state management
-- Add comprehensive error handling
-- Include extensive test coverage (94%)
+### Hạ tầng
+- Tạo các endpoint callback OAuth
+- Triển khai quản lý trạng thái OAuth
+- Thêm xử lý lỗi toàn diện
+- Bao gồm độ bao phủ kiểm tra rộng rãi (94%)
 
-## Breaking Changes
+## Các thay đổi gây phá vỡ (Breaking Changes)
 
-- Authentication flow now requires `AUTH_CALLBACK_URL` environment variable
-- Users table schema updated with OAuth fields (migration required)
+- Luồng xác thực hiện yêu cầu biến môi trường `AUTH_CALLBACK_URL`
+- Sơ đồ bảng Users được cập nhật với các trường OAuth (yêu cầu migration)
 
-## Migration Guide
+## Hướng dẫn di chuyển (Migration Guide)
 
-1. Add environment variables:
+1. Thêm các biến môi trường:
    ```
    GOOGLE_CLIENT_ID=...
    GOOGLE_CLIENT_SECRET=...
@@ -295,416 +296,416 @@ The `/git:pr` command uses the `git-manager` agent with this workflow:
    AUTH_CALLBACK_URL=https://yourdomain.com/auth/callback
    ```
 
-2. Run database migration:
+2. Chạy database migration:
    ```
    npm run migrate
    ```
 
-## Test plan
+## Kế hoạch kiểm tra
 
-### OAuth Flow
-- [ ] Test Google OAuth signup flow
-- [ ] Test GitHub OAuth signup flow
-- [ ] Test Google OAuth login flow
-- [ ] Test GitHub OAuth login flow
-- [ ] Verify OAuth callback handling
+### Luồng OAuth
+- [ ] Kiểm tra luồng đăng ký Google OAuth
+- [ ] Kiểm tra luồng đăng ký GitHub OAuth
+- [ ] Kiểm tra luồng đăng nhập Google OAuth
+- [ ] Kiểm tra luồng đăng nhập GitHub OAuth
+- [ ] Xác minh xử lý callback OAuth
 
-### Account Linking
-- [ ] Test linking Google account to existing user
-- [ ] Test linking GitHub account to existing user
-- [ ] Verify unlinking OAuth accounts
-- [ ] Test multiple OAuth providers per user
+### Liên kết tài khoản
+- [ ] Kiểm tra liên kết tài khoản Google với người dùng hiện tại
+- [ ] Kiểm tra liên kết tài khoản GitHub với người dùng hiện tại
+- [ ] Xác minh việc hủy liên kết tài khoản OAuth
+- [ ] Kiểm tra nhiều nhà cung cấp OAuth cho mỗi người dùng
 
-### Security
-- [ ] Verify PKCE implementation
-- [ ] Test CSRF protection
-- [ ] Validate token encryption
-- [ ] Test rate limiting
-- [ ] Security audit of OAuth flow
+### Bảo mật
+- [ ] Xác minh triển khai PKCE
+- [ ] Kiểm tra bảo vệ CSRF
+- [ ] Xác thực mã hóa lưu trữ token
+- [ ] Kiểm tra giới hạn tốc độ
+- [ ] Kiểm toán bảo mật luồng OAuth
 
-### Edge Cases
-- [ ] Test OAuth with invalid credentials
-- [ ] Test OAuth callback errors
-- [ ] Test concurrent OAuth attempts
-- [ ] Verify expired token handling
+### Các trường hợp biên (Edge Cases)
+- [ ] Kiểm tra OAuth với thông tin xác thực không hợp lệ
+- [ ] Kiểm tra các lỗi callback OAuth
+- [ ] Kiểm tra các nỗ lực OAuth đồng thời
+- [ ] Xác minh xử lý token hết hạn
 
-### Integration
-- [ ] Run full test suite (npm test)
-- [ ] Test in staging environment
-- [ ] Verify database migrations
-- [ ] Check error logging and monitoring
+### Tích hợp
+- [ ] Chạy toàn bộ bộ kiểm tra (npm test)
+- [ ] Kiểm tra trong môi trường staging
+- [ ] Xác minh các database migration
+- [ ] Kiểm tra việc ghi nhật ký lỗi và giám sát
 ```
 
-### Release PR
+### PR Phát hành (Release)
 
 ```bash
 /git:pr main develop
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-1. Analyzing release
-   Source: develop
-   Target: main
-   Commits since last release: 67
-   Features: 12
-   Bug fixes: 8
-   Improvements: 5
+1. Phân tích bản phát hành
+   Nguồn: develop
+   Mục tiêu: main
+   Số commit kể từ lần phát hành trước: 67
+   Tính năng: 12
+   Sửa lỗi: 8
+   Cải tiến: 5
 
-2. Generating release summary
-   ✓ Grouped changes by type
-   ✓ Highlighted breaking changes
-   ✓ Listed new features
-   ✓ Documented bug fixes
+2. Tạo bản tóm tắt phát hành
+   ✓ Nhóm các thay đổi theo loại
+   ✓ Làm nổi bật các thay đổi gây phá vỡ
+   ✓ Liệt kê các tính năng mới
+   ✓ Tài liệu hóa các bản sửa lỗi
 
-3. Creating release PR
-   Title: "Release v2.1.0"
+3. Tạo PR phát hành
+   Tiêu đề: "Release v2.1.0"
 
    ✓ https://github.com/user/repo/pull/45
 
-✓ Release PR created (1m 45s)
+✓ PR phát hành đã được tạo (1 phút 45 giây)
 ```
 
-## GitHub CLI Integration
+## Tích hợp GitHub CLI
 
-### Requirements
+### Yêu cầu
 
-The command requires GitHub CLI (`gh`):
+Lệnh yêu cầu GitHub CLI (`gh`):
 
 ```bash
-# Install GitHub CLI
+# Cài đặt GitHub CLI
 brew install gh  # macOS
-# or
+# hoặc
 sudo apt install gh  # Linux
-# or
+# hoặc
 winget install --id GitHub.cli  # Windows
 
-# Authenticate
+# Xác thực
 gh auth login
 ```
 
-### Authentication
+### Xác thực
 
-If not authenticated:
+Nếu chưa xác thực:
 ```
-! GitHub CLI not authenticated
-Run: gh auth login
+! GitHub CLI chưa được xác thực
+Hãy chạy: gh auth login
 
-Follow prompts to authenticate with GitHub.
+Làm theo hướng dẫn để xác thực với GitHub.
 ```
 
-### Permissions Required
+### Quyền hạn yêu cầu
 
-- Repository write access
-- Pull request creation permissions
-- Branch push permissions (if branch doesn't exist on remote)
+- Quyền ghi (write access) vào kho lưu trữ
+- Quyền tạo pull request
+- Quyền push nhánh (nếu nhánh chưa tồn tại trên remote)
 
-## PR Format
+## Định dạng PR
 
-### Title
+### Tiêu đề
 
-Auto-generated based on commits:
-- Single feature: "Add user authentication"
-- Multiple features: "Release v2.1.0"
-- Bug fix: "Fix payment processing timeout"
+Được tạo tự động dựa trên các commit:
+- Một tính năng duy nhất: "Add user authentication"
+- Nhiều tính năng: "Release v2.1.0"
+- Sửa lỗi: "Fix payment processing timeout"
 
-### Body Structure
+### Cấu trúc nội dung
 
 ```markdown
-## Summary
-- Bullet-point list of changes
-- Organized by logical grouping
-- Focuses on WHAT changed and WHY
+## Tóm tắt
+- Danh sách các thay đổi theo dạng gạch đầu dòng
+- Được sắp xếp theo nhóm logic
+- Tập trung vào NHỮNG GÌ đã thay đổi và TẠI SAO
 
-## Test plan
-- [ ] Checklist item 1
-- [ ] Checklist item 2
-- [ ] Integration tests
+## Kế hoạch kiểm tra
+- [ ] Mục kiểm tra 1
+- [ ] Mục kiểm tra 2
+- [ ] Các bài kiểm tra tích hợp
 ```
 
-## Best Practices
+## Thực hành tốt nhất
 
-### Commit Before Creating PR
+### Commit trước khi tạo PR
 
-✅ **Good - Everything committed:**
+✅ **Tốt - Mọi thứ đã được commit:**
 ```bash
-# Commit all work
+# Commit tất cả công việc
 /git:cm
 
-# Push to remote
+# Push lên remote
 git push
 
-# Create PR
+# Tạo PR
 /git:pr
 ```
 
-❌ **Bad - Uncommitted changes:**
+❌ **Xấu - Còn các thay đổi chưa commit:**
 ```bash
-# Has uncommitted changes
-/git:pr  # May not include all changes
+# Còn các thay đổi chưa commit
+/git:pr  # Có thể không bao gồm tất cả các thay đổi
 ```
 
-### Provide Branch Context
+### Cung cấp ngữ cảnh nhánh
 
-✅ **Explicit branches:**
+✅ **Các nhánh rõ ràng:**
 ```bash
-# Merge hotfix to main
+# Merge hotfix vào main
 /git:pr main hotfix/critical-bug
 
-# Merge feature to develop
+# Merge feature vào develop
 /git:pr develop feature/new-api
 ```
 
-### Review Before Merging
+### Xem lại trước khi Merge
 
-✅ **Review the PR:**
+✅ **Xem lại PR:**
 ```bash
-# Create PR
+# Tạo PR
 /git:pr
 
-# Review on GitHub
-# Get team feedback
-# Address comments
-# Then merge
+# Xem lại trên GitHub
+# Nhận phản hồi từ nhóm
+# Giải quyết các bình luận
+# Sau đó mới merge
 ```
 
-## Workflow
+## Quy trình làm việc
 
-### Feature Development Flow
+### Luồng phát triển tính năng
 
 ```bash
-# 1. Create feature branch
+# 1. Tạo nhánh tính năng
 git checkout -b feature/user-dashboard
 
-# 2. Implement feature (multiple commits)
-/cook [add dashboard layout]
+# 2. Triển khai tính năng (nhiều commit)
+/cook [thêm bố cục dashboard]
 /git:cm
 
-/cook [add dashboard widgets]
+/cook [thêm các widget dashboard]
 /git:cm
 
-/cook [add dashboard filters]
+/cook [thêm các bộ lọc dashboard]
 /git:cm
 
-# 3. Run tests
+# 3. Chạy các bài kiểm tra
 /test
 
-# 4. Create PR
+# 4. Tạo PR
 /git:pr
 
-# 5. Address review feedback
-# ... make changes ...
+# 5. Giải quyết phản hồi từ việc xem xét
+# ... thực hiện thay đổi ...
 /git:cm
 git push
 
-# 6. Merge on GitHub after approval
+# 6. Merge trên GitHub sau khi được phê duyệt
 ```
 
-### Hotfix Flow
+### Luồng Hotfix
 
 ```bash
-# 1. Create hotfix branch from main
+# 1. Tạo nhánh hotfix từ main
 git checkout main
 git pull
 git checkout -b hotfix/payment-bug
 
-# 2. Fix issue
-/fix:fast [payment processing bug]
+# 2. Sửa lỗi
+/fix:fast [lỗi xử lý thanh toán]
 
-# 3. Test fix
+# 3. Kiểm tra lỗi
 /test
 
 # 4. Commit
 /git:cm
 
-# 5. Create PR immediately
+# 5. Tạo PR ngay lập tức
 /git:pr main hotfix/payment-bug
 
-# 6. Request urgent review
-# 7. Merge and deploy ASAP
+# 6. Yêu cầu xem xét khẩn cấp
+# 7. Merge và triển khai ASAP
 ```
 
-### Release Flow
+### Luồng phát hành (Release)
 
 ```bash
-# 1. Ensure develop is clean
+# 1. Đảm bảo nhánh develop sạch sẽ
 git checkout develop
 git pull
 
-# 2. Update version and changelog
-# Edit package.json and CHANGELOG.md
+# 2. Cập nhật phiên bản và changelog
+# Chỉnh sửa package.json và CHANGELOG.md
 /git:cm
 
-# 3. Create release PR
+# 3. Tạo PR phát hành
 /git:pr main develop
 
-# 4. Review changes thoroughly
-# 5. Run full test suite in staging
-# 6. Merge to main
-# 7. Tag release
+# 4. Xem xét kỹ lưỡng các thay đổi
+# 5. Chạy toàn bộ bộ kiểm tra trong môi trường staging
+# 6. Merge vào main
+# 7. Gắn tag cho bản phát hành
 git tag v2.1.0
 git push --tags
 ```
 
-## Troubleshooting
+## Xử lý sự cố
 
-### GitHub CLI Not Installed
+### Chưa cài đặt GitHub CLI
 
-**Problem:** `gh` command not found
+**Vấn đề:** Không tìm thấy lệnh `gh`
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Install GitHub CLI
+# Cài đặt GitHub CLI
 brew install gh  # macOS
 sudo apt install gh  # Linux
 
-# Authenticate
+# Xác thực
 gh auth login
 
-# Retry
+# Thử lại
 /git:pr
 ```
 
-### Not Authenticated
+### Chưa được xác thực
 
-**Problem:** GitHub authentication required
+**Vấn đề:** Yêu cầu xác thực GitHub
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Authenticate with GitHub
+# Xác thực với GitHub
 gh auth login
 
-# Follow prompts to authenticate
+# Làm theo hướng dẫn để xác thực
 
-# Retry
+# Thử lại
 /git:pr
 ```
 
-### No Commits Ahead
+### Không có commit nào phía trước
 
-**Problem:** Current branch has no new commits
+**Vấn đề:** Nhánh hiện tại không có commit mới nào
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Check branch status
+# Kiểm tra trạng thái nhánh
 git status
 git log main..HEAD
 
-# Ensure you have commits
-# Or create new feature first
+# Đảm bảo bạn đã có các commit
+# Hoặc tạo tính năng mới trước
 ```
 
-### Branch Not Pushed
+### Nhánh chưa được đẩy (Push)
 
-**Problem:** Local branch not on remote
+**Vấn đề:** Nhánh cục bộ không có trên remote
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Command automatically pushes
+# Lệnh sẽ tự động push
 /git:pr
 
-# Or push manually first
+# Hoặc push thủ công trước
 git push -u origin feature-branch
 /git:pr
 ```
 
-### PR Already Exists
+### PR đã tồn tại
 
-**Problem:** PR already exists for branch
+**Vấn đề:** PR đã tồn tại cho nhánh này
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# View existing PR
+# Xem PR hiện có
 gh pr view
 
-# Or close old PR and create new one
+# Hoặc đóng PR cũ và tạo cái mới
 gh pr close 42
 /git:pr
 ```
 
-## Related Commands
+## Các lệnh liên quan
 
-### Commit and Create PR
+### Commit và tạo PR
 
 ```bash
-# 1. Commit changes
+# 1. Commit các thay đổi
 /git:cm
 
-# 2. Create PR
+# 2. Tạo PR
 /git:pr
 ```
 
-### Commit, Push, and Create PR
+### Commit, Push và tạo PR
 
 ```bash
-# 1. Commit and push
+# 1. Commit và push
 /git:cp
 
-# 2. Create PR
+# 2. Tạo PR
 /git:pr
 ```
 
-### Fix and Create PR
+### Fix và tạo PR
 
 ```bash
-# 1. Fix issue
-/fix:fast [bug description]
+# 1. Sửa lỗi
+/fix:fast [mô tả lỗi]
 
-# 2. Test
+# 2. Kiểm tra
 /test
 
 # 3. Commit
 /git:cm
 
-# 4. Create PR
+# 4. Tạo PR
 /git:pr
 ```
 
-## Advanced Usage
+## Cách dùng nâng cao
 
-### Custom Target Branch
+### Nhánh mục tiêu tùy chỉnh
 
 ```bash
-# Merge to develop instead of main
+# Merge vào develop thay vì main
 /git:pr develop
 
-# Merge to staging
+# Merge vào staging
 /git:pr staging
 
-# Merge specific branches
+# Merge các nhánh cụ thể
 /git:pr production hotfix/urgent-fix
 ```
 
-### Draft PRs
+### PR nháp (Draft PRs)
 
 ```bash
-# Create PR first (work in progress)
+# Tạo PR trước (công việc đang tiến hành)
 /git:pr
 
-# Then mark as draft on GitHub
+# Sau đó đánh dấu là draft trên GitHub
 gh pr ready --undo
 ```
 
-## Metrics
+## Số liệu
 
-Typical `/git:pr` performance:
+Hiệu suất điển hình của `/git:pr`:
 
-- **Time**: 30 seconds - 2 minutes (depending on changeset size)
-- **Commits analyzed**: All commits since branch divergence
-- **Summary quality**: Professional, comprehensive
-- **Test plan coverage**: Typically 8-15 checklist items
-- **Success rate**: 99%+ (assuming gh CLI configured)
+- **Thời gian**: 30 giây - 2 phút (tùy thuộc vào kích thước bộ thay đổi)
+- **Số commit được phân tích**: Tất cả các commit kể từ khi phân tách nhánh
+- **Chất lượng bản tóm tắt**: Chuyên nghiệp, toàn diện
+- **Độ bao phủ kế hoạch kiểm tra**: Thường từ 8-15 mục kiểm tra
+- **Tỷ lệ thành công**: 99%+ (giả sử gh CLI đã được cấu hình)
 
-## Next Steps
+## Bước tiếp theo
 
-After using `/git:pr`:
+Sau khi sử dụng `/git:pr`:
 
-- Review PR on GitHub
-- Address reviewer feedback
-- Run CI/CD pipeline
-- Merge when approved
-- [/watzup](/docs/engineer/commands/core/watzup) - Review what was accomplished
+- Xem lại PR trên GitHub
+- Giải quyết phản hồi từ người xem xét
+- Chạy quy trình CI/CD
+- Merge khi được phê duyệt
+- [/watzup](/vi/docs/engineer/commands/core/watzup) - Xem lại những gì đã hoàn thành
 
 ---
 
-**Key Takeaway**: `/git:pr` creates professional pull requests by analyzing all commits since branch divergence and generating comprehensive summaries with actionable test plans, streamlining the code review process.
+**Điểm mấu chốt**: `/git:pr` tạo các pull request chuyên nghiệp bằng cách phân tích tất cả các commit kể từ khi phân tách nhánh và tạo các bản tóm tắt toàn diện với các kế hoạch kiểm tra có thể thực hiện được, giúp hợp lý hóa quy trình xem xét mã nguồn.

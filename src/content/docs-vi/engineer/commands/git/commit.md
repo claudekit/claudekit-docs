@@ -1,55 +1,56 @@
 ---
 title: /git:cm
-description: Documentation for commit
+description: Tài liệu hướng dẫn lệnh commit
 section: engineer
 kit: engineer
 category: commands/git
 order: 30
 published: true
+lang: vi
 ---
 
 # /git:cm
 
-Stage all files and create a conventional commit with a professionally crafted commit message following conventional commit standards.
+Thực hiện stage tất cả các tệp và tạo một bản commit chuyên nghiệp tuân thủ các tiêu chuẩn conventional commit.
 
-## Syntax
+## Cú pháp
 
 ```bash
 /git:cm
 ```
 
-## How It Works
+## Cách hoạt động
 
-The `/git:cm` command follows a structured git workflow:
+Lệnh `/git:cm` tuân theo một quy trình làm việc git có cấu trúc:
 
-### 1. Analysis Phase
+### 1. Giai đoạn phân tích
 
-- Runs `git status` to see untracked/modified files
-- Runs `git diff` to analyze all changes (staged + unstaged)
-- Runs `git log` to understand commit history and style
+- Chạy `git status` để xem các tệp chưa được theo dõi hoặc đã thay đổi
+- Chạy `git diff` để phân tích tất cả các thay đổi (staged + unstaged)
+- Chạy `git log` để hiểu lịch sử commit và phong cách viết message
 
-### 2. Change Categorization
+### 2. Phân loại thay đổi
 
-- Identifies nature of changes (feature, fix, refactor, docs, etc.)
-- Groups related changes
-- Determines semantic version impact
+- Xác định bản chất của các thay đổi (feature, fix, refactor, docs, v.v.)
+- Nhóm các thay đổi liên quan
+- Xác định tác động đến phiên bản ngữ nghĩa (semantic versioning)
 
-### 3. Message Generation
+### 3. Tạo thông điệp (Message)
 
-- Creates concise, descriptive commit message
-- Follows conventional commit format
-- Focuses on "why" rather than "what"
-- Matches repository's commit style
+- Tạo thông điệp commit ngắn gọn, mô tả đầy đủ
+- Tuân theo định dạng conventional commit
+- Tập trung vào lý do ("tại sao") thay vì hành động ("cái gì")
+- Phù hợp với phong cách commit của kho lưu trữ
 
-### 4. Staging and Committing
+### 4. Stage và Commit
 
-- Stages all relevant files (`git add`)
-- Creates commit with generated message
-- Runs `git status` to verify success
+- Stage tất cả các tệp liên quan (`git add`)
+- Tạo commit với thông điệp đã tạo
+- Chạy `git status` để xác minh thành công
 
-## Commit Message Format
+## Định dạng thông điệp commit
 
-ClaudeKit generates commits following [Conventional Commits](https://www.conventionalcommits.org/):
+ClaudeKit tạo các commit tuân theo [Conventional Commits](https://www.conventionalcommits.org/):
 
 ```
 <type>(<scope>): <subject>
@@ -57,22 +58,22 @@ ClaudeKit generates commits following [Conventional Commits](https://www.convent
 <body>
 ```
 
-### Types
+### Các loại (Types)
 
-- `feat`: New feature
-- `fix`: Bug fix
-- `docs`: Documentation changes
-- `style`: Formatting, missing semicolons, etc.
-- `refactor`: Code restructuring without changing behavior
-- `perf`: Performance improvements
-- `test`: Adding or updating tests
-- `build`: Build system or dependency changes
-- `ci`: CI/CD configuration changes
-- `chore`: Maintenance tasks
+- `feat`: Tính năng mới
+- `fix`: Sửa lỗi
+- `docs`: Thay đổi tài liệu
+- `style`: Định dạng, thiếu dấu chấm phẩy, v.v.
+- `refactor`: Cấu trúc lại mã nguồn mà không thay đổi hành vi
+- `perf`: Cải thiện hiệu suất
+- `test`: Thêm hoặc cập nhật các bài kiểm tra
+- `build`: Thay đổi hệ thống build hoặc các phụ thuộc
+- `ci`: Thay đổi cấu hình CI/CD
+- `chore`: Các nhiệm vụ bảo trì
 
-### Example Commits
+### Ví dụ Commit
 
-**Feature:**
+**Tính năng (Feature):**
 ```
 feat: add user registration endpoint
 
@@ -83,7 +84,7 @@ feat: add user registration endpoint
 - Include comprehensive test suite (92% coverage)
 ```
 
-**Bug Fix:**
+**Sửa lỗi (Bug Fix):**
 ```
 fix: resolve token refresh race condition
 
@@ -93,7 +94,7 @@ fix: resolve token refresh race condition
 - Update session cleanup to respect active refreshes
 ```
 
-**Refactor:**
+**Tái cấu trúc (Refactor):**
 ```
 refactor: extract payment processing into service layer
 
@@ -103,16 +104,16 @@ refactor: extract payment processing into service layer
 - Increase test coverage to 95%
 ```
 
-## Examples
+## Ví dụ
 
-### Simple Feature Addition
+### Thêm tính năng đơn giản
 
 ```bash
-# After implementing a feature
+# Sau khi triển khai một tính năng
 /git:cm
 ```
 
-**Generated commit:**
+**Commit được tạo:**
 ```
 feat: add rate limiting middleware
 
@@ -122,14 +123,14 @@ feat: add rate limiting middleware
 - Include bypass for admin users
 ```
 
-### Bug Fix
+### Sửa lỗi
 
 ```bash
-# After fixing a bug
+# Sau khi sửa một lỗi
 /git:cm
 ```
 
-**Generated commit:**
+**Commit được tạo:**
 ```
 fix: prevent memory leak in WebSocket connections
 
@@ -139,14 +140,14 @@ fix: prevent memory leak in WebSocket connections
 - Include stress tests validating 24-hour stability
 ```
 
-### Multiple Changes
+### Nhiều thay đổi
 
 ```bash
-# After making several related changes
+# Sau khi thực hiện nhiều thay đổi liên quan
 /git:cm
 ```
 
-**Generated commit:**
+**Commit được tạo:**
 ```
 feat: improve authentication security
 
@@ -157,365 +158,365 @@ feat: improve authentication security
 - Add security event logging
 ```
 
-## What Gets Committed
+## Những gì được commit
 
-The command stages and commits:
+Lệnh thực hiện stage và commit:
 
-✅ **Modified files** - Changes to existing files
-✅ **New files** - Newly created files
-✅ **Deleted files** - Removed files
-✅ **Test files** - Test updates and new tests
-✅ **Documentation** - Doc changes
+✅ **Các tệp đã sửa đổi** - Thay đổi đối với các tệp hiện có
+✅ **Các tệp mới** - Các tệp mới được tạo
+✅ **Các tệp đã xóa** - Các tệp đã bị loại bỏ
+✅ **Các tệp kiểm tra** - Cập nhật các bài kiểm tra và bài kiểm tra mới
+✅ **Tài liệu** - Thay đổi tài liệu
 
-❌ **Excluded by default:**
-- Files in `.gitignore`
-- Sensitive files (`.env`, `credentials.json`, etc.)
-- Build artifacts
+❌ **Bị loại trừ mặc định:**
+- Các tệp trong `.gitignore`
+- Các tệp nhạy cảm (`.env`, `credentials.json`, v.v.)
+- Các tệp build (artifacts)
 - Node_modules
-- Temporary files
+- Các tệp tạm thời
 
-## Security Checks
+## Kiểm tra bảo mật
 
-Before committing, ClaudeKit checks for:
+Trước khi commit, ClaudeKit sẽ kiểm tra:
 
-### Sensitive Files
-
-```
-⚠ Warning: Detected sensitive file
-
-File: config/.env.production
-Contains: API keys, database passwords
-
-This file should NOT be committed.
-Add to .gitignore? (y/n)
-```
-
-### Secrets in Code
+### Tệp nhạy cảm
 
 ```
-⚠ Warning: Possible secret detected
+⚠ Cảnh báo: Phát hiện tệp nhạy cảm
 
-File: src/config/api.ts
-Line 12: apiKey: "sk_live_..."
+Tệp: config/.env.production
+Chứa: API keys, database passwords
 
-Remove secret before committing? (y/n)
+Tệp này KHÔNG nên được commit.
+Thêm vào .gitignore? (y/n)
 ```
 
-### Large Files
+### Bí mật (Secrets) trong mã nguồn
 
 ```
-⚠ Warning: Large file detected
+⚠ Cảnh báo: Phát hiện bí mật có khả năng xảy ra
 
-File: public/video.mp4 (45 MB)
+Tệp: src/config/api.ts
+Dòng 12: apiKey: "sk_live_..."
 
-Consider using Git LFS.
-Continue anyway? (y/n)
+Loại bỏ bí mật trước khi commit? (y/n)
+```
+
+### Tệp lớn
+
+```
+⚠ Cảnh báo: Phát hiện tệp lớn
+
+Tệp: public/video.mp4 (45 MB)
+
+Hãy cân nhắc sử dụng Git LFS.
+Vẫn tiếp tục? (y/n)
 ```
 
 ## Pre-commit Hooks
 
-If pre-commit hooks are configured, they run automatically:
+Nếu các hook pre-commit được cấu hình, chúng sẽ tự động chạy:
 
 ```
-Running pre-commit hooks...
+Đang chạy pre-commit hooks...
 
-✓ ESLint: No errors
-✓ Prettier: All files formatted
+✓ ESLint: Không có lỗi
+✓ Prettier: Tất cả các tệp đã được định dạng
 ✓ Tests: 87/87 passed
-✓ TypeScript: No type errors
+✓ TypeScript: Không có lỗi kiểu
 
-Pre-commit checks passed
+Các kiểm tra pre-commit đã vượt qua
 ```
 
-If hooks fail:
+Nếu các hook thất bại:
 ```
-❌ Pre-commit hooks failed
+❌ Pre-commit hooks thất bại
 
-ESLint errors:
-- src/auth/login.ts:45 - unused variable 'token'
+Lỗi ESLint:
+- src/auth/login.ts:45 - biến 'token' không được sử dụng
 
-Fix errors and try again.
+Sửa lỗi và thử lại.
 ```
 
-## Workflow
+## Quy trình làm việc
 
-### Standard Development Flow
+### Luồng phát triển tiêu chuẩn
 
 ```bash
-# 1. Implement feature
-/cook [add user profile page]
+# 1. Triển khai tính năng
+/cook [thêm trang hồ sơ người dùng]
 
-# 2. Review changes
+# 2. Xem xét thay đổi
 git diff
 
-# 3. Run tests
+# 3. Chạy các bài kiểm tra
 /test
 
 # 4. Commit
 /git:cm
 
-# 5. Push (if ready)
+# 5. Push (nếu đã sẵn sàng)
 git push
 ```
 
-### With Code Review
+### Với Code Review
 
 ```bash
-# 1. Make changes
-# ... implement feature ...
+# 1. Thực hiện thay đổi
+# ... triển khai tính năng ...
 
-# 2. Commit locally
+# 2. Commit cục bộ
 /git:cm
 
-# 3. Review in commit
+# 3. Xem lại trong commit
 git show HEAD
 
-# 4. Push to feature branch
+# 4. Push lên nhánh tính năng
 git push origin feature/user-profile
 
-# 5. Create PR
+# 5. Tạo PR
 /git:pr
 ```
 
-## Customization
+## Tùy chỉnh
 
-### Commit Message Style
+### Phong cách thông điệp commit
 
-ClaudeKit analyzes your commit history and matches the style:
+ClaudeKit phân tích lịch sử commit của bạn và khớp với phong cách đó:
 
-**If your repo uses:**
+**Nếu kho lưu trữ của bạn sử dụng:**
 ```
 Add user authentication
 Update README
 Fix login bug
 ```
 
-**ClaudeKit generates:**
+**ClaudeKit sẽ tạo:**
 ```
 Add rate limiting middleware
 ```
 
-**If your repo uses:**
+**Nếu kho lưu trữ của bạn sử dụng:**
 ```
 feat: add user authentication
 fix: resolve login issue
 docs: update README
 ```
 
-**ClaudeKit generates:**
+**ClaudeKit sẽ tạo:**
 ```
 feat: add rate limiting middleware
 ```
 
-### Scope Detection
+### Tự động phát hiện Scope
 
-ClaudeKit automatically detects scope from files changed:
+ClaudeKit tự động phát hiện scope từ các tệp đã thay đổi:
 
 ```
-Files changed: src/auth/login.ts, src/auth/register.ts
-Generated: feat(auth): add OAuth2 support
+Các tệp đã thay đổi: src/auth/login.ts, src/auth/register.ts
+Kết quả: feat(auth): add OAuth2 support
 
-Files changed: docs/api/users.md
-Generated: docs(api): document user endpoints
+Các tệp đã thay đổi: docs/api/users.md
+Kết quả: docs(api): document user endpoints
 
-Files changed: tests/integration/payment.test.ts
-Generated: test(payment): add Stripe webhook tests
+Các tệp đã thay đổi: tests/integration/payment.test.ts
+Kết quả: test(payment): add Stripe webhook tests
 ```
 
-## Best Practices
+## Thực hành tốt nhất
 
-### Commit Frequently
+### Commit thường xuyên
 
-✅ **Good - Atomic commits:**
+✅ **Tốt - Commit nguyên tử (Atomic):**
 ```bash
-# Implement feature
+# Triển khai tính năng
 /git:cm  # "feat: add login form"
 
-# Add tests
+# Thêm bài kiểm tra
 /git:cm  # "test: add login form validation tests"
 
-# Update docs
+# Cập nhật tài liệu
 /git:cm  # "docs: document login API"
 ```
 
-❌ **Bad - Massive commits:**
+❌ **Xấu - Commit khổng lồ:**
 ```bash
-# Implement 10 features over 3 days
-/git:cm  # Huge, unclear commit
+# Triển khai 10 tính năng trong 3 ngày
+/git:cm  # Commit quá lớn, không rõ ràng
 ```
 
-### Review Before Committing
+### Xem lại trước khi commit
 
 ```bash
-# Always review changes first
+# Luôn xem lại các thay đổi trước
 git diff
 git status
 
-# Then commit
+# Sau đó commit
 /git:cm
 ```
 
-### Don't Commit Broken Code
+### Đừng commit mã nguồn lỗi
 
 ```bash
-# Run tests first
+# Chạy các bài kiểm tra trước
 /test
 
-# Only commit if tests pass
-✓ All tests passed
+# Chỉ commit nếu bài kiểm tra vượt qua
+✓ Tất cả các bài kiểm tra đã vượt qua
 /git:cm
 ```
 
-## Common Scenarios
+## Các kịch bản phổ biến
 
-### Emergency Hotfix
+### Hotfix khẩn cấp
 
 ```bash
-# 1. Fix critical bug
-/fix:fast [production bug]
+# 1. Sửa lỗi nghiêm trọng
+/fix:fast [lỗi trên production]
 
-# 2. Test fix
+# 2. Kiểm tra bản sửa lỗi
 /test
 
-# 3. Quick commit
+# 3. Commit nhanh
 /git:cm
 
-# 4. Deploy immediately
+# 4. Triển khai ngay lập tức
 /deploy [production]
 ```
 
-### Feature Branch Workflow
+### Quy trình nhánh tính năng (Feature Branch)
 
 ```bash
-# 1. Create feature branch
+# 1. Tạo nhánh tính năng
 git checkout -b feature/new-dashboard
 
-# 2. Implement incrementally
-/cook [add dashboard layout]
+# 2. Triển khai từng bước
+/cook [thêm bố cục dashboard]
 /git:cm
 
-/cook [add dashboard widgets]
+/cook [thêm các widget dashboard]
 /git:cm
 
-/cook [add dashboard filters]
+/cook [thêm các bộ lọc dashboard]
 /git:cm
 
-# 3. Push branch
+# 3. Push nhánh
 git push origin feature/new-dashboard
 
-# 4. Create PR
+# 4. Tạo PR
 /git:pr
 ```
 
-### Refactoring Session
+### Giai đoạn tái cấu trúc (Refactoring)
 
 ```bash
-# 1. Refactor incrementally
-# Refactor auth service
+# 1. Tái cấu trúc từng phần
+# Tái cấu trúc dịch vụ auth
 /git:cm  # "refactor(auth): extract validation logic"
 
-# Refactor payment service
+# Tái cấu trúc dịch vụ thanh toán
 /git:cm  # "refactor(payment): simplify error handling"
 
-# Update tests
+# Cập nhật các bài kiểm tra
 /git:cm  # "test: update tests for refactored services"
 ```
 
-## Troubleshooting
+## Xử lý sự cố
 
-### Nothing to Commit
+### Không có gì để commit
 
-**Problem:** No changes to commit
+**Vấn đề:** Không có thay đổi nào để commit
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Check status
+# Kiểm tra trạng thái
 git status
 
-# If changes exist but not detected:
+# Nếu thay đổi tồn tại nhưng không được phát hiện:
 git add .
 /git:cm
 ```
 
-### Commit Message Unclear
+### Thông điệp commit không rõ ràng
 
-**Problem:** Generated message doesn't capture intent
+**Vấn đề:** Thông điệp được tạo không nắm bắt được ý định
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Provide more context in code comments
-# ClaudeKit reads comments to understand intent
+# Cung cấp thêm ngữ cảnh trong các chú thích mã nguồn
+# ClaudeKit đọc các chú thích để hiểu ý định
 
-# Or manually edit commit message:
+# Hoặc chỉnh sửa thông điệp commit thủ công:
 git commit --amend
 ```
 
-### Pre-commit Hooks Failing
+### Pre-commit Hooks thất bại
 
-**Problem:** Hooks preventing commit
+**Vấn đề:** Các hook ngăn cản việc commit
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Fix issues identified by hooks
-# ESLint errors
+# Sửa các vấn đề được xác định bởi các hook
+# Lỗi ESLint
 npm run lint:fix
 
-# Prettier formatting
+# Định dạng Prettier
 npm run format
 
-# Then retry
+# Sau đó thử lại
 /git:cm
 ```
 
-### Sensitive Data Detected
+### Phát hiện dữ liệu nhạy cảm
 
-**Problem:** Accidentally trying to commit secrets
+**Vấn đề:** Vô tình cố gắng commit các bí mật
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Remove sensitive data
-# Update .env file to .env.example
-# Use environment variables
+# Loại bỏ dữ liệu nhạy cảm
+# Cập nhật tệp .env thành .env.example
+# Sử dụng các biến môi trường
 
-# Add to .gitignore
+# Thêm vào .gitignore
 echo ".env" >> .gitignore
 
-# Then commit
+# Sau đó commit
 /git:cm
 ```
 
-## Advanced Usage
+## Cách dùng nâng cao
 
-### Amending Commits
+### Sửa đổi Commit (Amending)
 
-If you need to amend (use sparingly):
+Nếu bạn cần sửa đổi (sử dụng một cách hạn chế):
 
 ```bash
-# Make additional changes
-# ... edit files ...
+# Thực hiện các thay đổi bổ sung
+# ... sửa đổi các tệp ...
 
-# Amend to previous commit
+# Sửa đổi vào commit trước đó
 git add .
 git commit --amend --no-edit
 ```
 
-**Note:** Only amend commits that haven't been pushed!
+**Lưu ý:** Chỉ sửa đổi các commit chưa được push!
 
-### Partial Staging
+### Stage một phần
 
-If you want to commit only specific files:
+Nếu bạn chỉ muốn commit các tệp cụ thể:
 
 ```bash
-# Stage specific files manually
+# Stage các tệp cụ thể thủ công
 git add src/auth/login.ts src/auth/register.ts
 
-# Then commit
+# Sau đó commit
 /git:cm
 ```
 
-## Commit History Example
+## Ví dụ lịch sử commit
 
-After using `/git:cm` regularly:
+Sau khi sử dụng `/git:cm` thường xuyên:
 
 ```
 git log --oneline
@@ -528,14 +529,14 @@ m3n4o5p refactor: extract file upload to service
 p6q7r8s feat: add profile privacy settings
 ```
 
-Clean, professional, and easy to understand!
+Sạch sẽ, chuyên nghiệp và dễ hiểu!
 
-## Next Steps
+## Bước tiếp theo
 
-- [/git:cp](/docs/engineer/commands/git/commit-push) - Commit and push
-- [/git:pr](/docs/engineer/commands/git/pull-request) - Create pull request
-- [Code Review](/docs/engineer/commands/core/review) - Review before committing
+- [/git:cp](/vi/docs/engineer/commands/git/commit-push) - Commit và push
+- [/git:pr](/vi/docs/engineer/commands/git/pull-request) - Tạo pull request
+- [/review](/vi/docs/engineer/commands/core/review) - Xem lại mã nguồn trước khi commit
 
 ---
 
-**Key Takeaway**: `/git:cm` creates professional, conventional commits automatically by analyzing your changes and matching your repository's commit style.
+**Điểm mấu chốt**: `/git:cm` tạo các commit chuyên nghiệp, tuân thủ tiêu chuẩn conventional một cách tự động bằng cách phân tích các thay đổi của bạn và khớp với phong cách commit của kho lưu trữ.

@@ -1,383 +1,384 @@
 ---
 title: docker
-description: Documentation for docker
+description: Tài liệu hướng dẫn sử dụng kỹ năng docker
 section: engineer
 kit: engineer
 category: skills/backend
 order: 11
 published: true
+lang: vi
 ---
 
-# docker Skill
+# Kỹ năng docker
 
-Containerization platform for building, running, and deploying applications in isolated containers. Works with any language or framework.
+Nền tảng container hóa để xây dựng, chạy và triển khai các ứng dụng trong các container biệt lập. Hoạt động với mọi ngôn ngữ hoặc framework.
 
-## When to Use
+## Khi nào nên sử dụng
 
-Use docker when you need:
-- Containerize applications
-- Create Dockerfiles
-- Set up Docker Compose
-- Deploy to production
-- Consistent dev environments
-- CI/CD pipelines
-- Microservices architecture
+Sử dụng docker khi bạn cần:
+- Container hóa ứng dụng
+- Tạo các Dockerfile
+- Thiết lập Docker Compose
+- Triển khai lên môi trường sản xuất
+- Tạo môi trường phát triển đồng nhất
+- Xây dựng luồng CI/CD
+- Kiến trúc Microservices
 
-## Quick Start
+## Bắt đầu nhanh
 
-### Invoke the Skill
-
-```
-"Use docker to containerize my Node.js app with:
-- Production Dockerfile
-- Docker Compose with PostgreSQL
-- Health checks"
-```
-
-### What You Get
-
-The skill will help you:
-1. Create optimized Dockerfile
-2. Set up Docker Compose
-3. Configure networking
-4. Add health checks
-5. Implement security best practices
-6. Optimize for production
-7. Set up CI/CD integration
-
-## Common Use Cases
-
-### Create Production Dockerfile
+### Cách gọi kỹ năng
 
 ```
-"Use docker to create production Dockerfile for Next.js 14 app with:
+"Sử dụng docker để container hóa ứng dụng Node.js của tôi với:
+- Dockerfile cho môi trường sản xuất
+- Docker Compose với PostgreSQL
+- Kiểm tra sức khỏe (Health checks)"
+```
+
+### Kết quả nhận được
+
+Kỹ năng này sẽ giúp bạn:
+1. Tạo Dockerfile tối ưu
+2. Thiết lập Docker Compose
+3. Cấu hình mạng (networking)
+4. Thêm các bước kiểm tra sức khỏe
+5. Triển khai các phương pháp bảo mật tốt nhất
+6. Tối ưu hóa cho môi trường sản xuất
+7. Thiết lập tích hợp CI/CD
+
+## Các trường hợp sử dụng phổ biến
+
+### Tạo Dockerfile cho môi trường sản xuất
+
+```
+"Sử dụng docker để tạo Dockerfile sản xuất cho ứng dụng Next.js 14 với:
 - Multi-stage build
 - Node 20 Alpine
-- Non-root user
-- Security hardening"
+- Người dùng không phải root (Non-root user)
+- Tăng cường bảo mật"
 ```
 
-### Docker Compose Setup
+### Thiết lập Docker Compose
 
 ```
-"Use docker to set up Docker Compose with:
-- Web application
-- PostgreSQL database
-- Redis cache
-- Nginx reverse proxy"
+"Sử dụng docker để thiết lập Docker Compose với:
+- Ứng dụng web
+- Cơ sở dữ liệu PostgreSQL
+- Bộ nhớ đệm Redis
+- Proxy ngược Nginx"
 ```
 
-### Development Environment
+### Môi trường phát triển
 
 ```
-"Use docker to create development environment with:
-- Hot reload
-- Volume mounts
-- Database seed data
-- Debug configuration"
+"Sử dụng docker để tạo môi trường phát triển với:
+- Tự động tải lại (Hot reload)
+- Gắn kết ổ đĩa (Volume mounts)
+- Dữ liệu mẫu cho cơ sở dữ liệu
+- Cấu hình gỡ lỗi (Debug)"
 ```
 
-### Production Deployment
+### Triển khai sản xuất
 
 ```
-"Use docker to prepare for production:
-- Optimize image size
-- Add health checks
-- Configure resource limits
-- Set up logging
-- Implement secrets management"
+"Sử dụng docker để chuẩn bị cho môi trường sản xuất:
+- Tối ưu hóa kích thước hình ảnh (image)
+- Thêm kiểm tra sức khỏe
+- Cấu hình giới hạn tài nguyên
+- Thiết lập nhật ký (logging)
+- Triển khai quản lý bí mật (secrets management)"
 ```
 
-## Key Concepts
+## Các khái niệm chính
 
 ### Containers
 
-Lightweight, isolated processes that bundle app with dependencies:
-- Filesystem isolation
-- Process isolation
-- Network isolation
-- Ephemeral by default
+Các tiến trình nhẹ, biệt lập, đóng gói ứng dụng cùng với các phụ thuộc:
+- Cách ly hệ thống tệp
+- Cách ly tiến trình
+- Cách ly mạng
+- Mặc định là tạm thời (ephemeral)
 
-### Images
+### Images (Hình ảnh)
 
-Blueprint for containers:
-- Layered filesystem
-- Immutable layers
-- Reusable across containers
-- Stored in registries
+Bản thiết kế cho các container:
+- Hệ thống tệp phân lớp (Layered filesystem)
+- Các lớp bất biến (Immutable layers)
+- Có thể tái sử dụng giữa các container
+- Được lưu trữ trong các kho chứa (registries)
 
-### Volumes
+### Volumes (Ổ đĩa)
 
-Persistent storage:
-- Survives container deletion
-- Share data between containers
-- Managed by Docker
+Lưu trữ dữ liệu bền vững:
+- Tồn tại ngay cả khi container bị xóa
+- Chia sẻ dữ liệu giữa các container
+- Được quản lý bởi Docker
 
-### Networks
+### Networks (Mạng)
 
-Container communication:
-- Isolated networks
-- Service discovery
-- Port mapping
+Giao tiếp giữa các container:
+- Các mạng biệt lập
+- Tự động phát hiện dịch vụ (Service discovery)
+- Ánh xạ cổng (Port mapping)
 
-## Example Implementations
+## Ví dụ triển khai
 
-### Node.js Application
+### Ứng dụng Node.js
 
 ```
-"Use docker to containerize Node.js API with:
+"Sử dụng docker để container hóa API Node.js với:
 - Multi-stage build
-- Production dependencies only
-- PM2 process manager
-- Health endpoint"
+- Chỉ bao gồm các phụ thuộc sản xuất
+- Trình quản lý tiến trình PM2
+- Endpoint kiểm tra sức khỏe"
 ```
 
-### Python Application
+### Ứng dụng Python
 
 ```
-"Use docker to containerize FastAPI app with:
+"Sử dụng docker để container hóa ứng dụng FastAPI với:
 - Python 3.11 slim
-- Virtual environment
-- Gunicorn server
-- Non-root user"
+- Môi trường ảo (Virtual environment)
+- Server Gunicorn
+- Người dùng không phải root"
 ```
 
-### Full Stack Application
+### Ứng dụng Full Stack
 
 ```
-"Use docker to set up full stack with:
-- React frontend (Nginx)
-- Node.js API
+"Sử dụng docker để thiết lập full stack với:
+- Frontend React (Nginx)
+- API Node.js
 - PostgreSQL
 - Redis
-- Shared network"
+- Mạng dùng chung"
 ```
 
 ### Microservices
 
 ```
-"Use docker to create microservices setup:
-- Multiple services
+"Sử dụng docker để tạo thiết lập microservices:
+- Nhiều dịch vụ
 - Service mesh
-- Load balancing
-- Centralized logging"
+- Cân bằng tải (Load balancing)
+- Nhật ký tập trung"
 ```
 
-## Best Practices
+## Phương pháp hay nhất
 
 ### Multi-Stage Builds
 
-Separate build from runtime:
-- Smaller final image
-- No build tools in production
-- Better security
-- Faster deployments
+Tách biệt quá trình xây dựng và chạy:
+- Kích thước ảnh cuối cùng nhỏ hơn
+- Không có công cụ xây dựng trong môi trường sản xuất
+- Bảo mật tốt hơn
+- Triển khai nhanh hơn
 
-### Layer Caching
+### Layer Caching (Bộ nhớ đệm các lớp)
 
-Optimize for cache:
-- Copy package files first
-- Install dependencies
-- Copy source code last
-- Faster rebuilds
+Tối ưu hóa bộ nhớ đệm:
+- Sao chép các tệp package trước
+- Cài đặt các phụ thuộc
+- Sao chép mã nguồn cuối cùng
+- Xây dựng lại nhanh hơn
 
-### Security
+### Bảo mật
 
-The skill ensures:
-- Non-root user
-- Specific image versions
-- No secrets in images
-- Vulnerability scanning
-- Minimal base images
-- Read-only filesystem
+Kỹ năng này đảm bảo:
+- Sử dụng người dùng không phải root
+- Các phiên bản hình ảnh cụ thể
+- Không có bí mật trong hình ảnh
+- Quét lỗ hổng bảo mật
+- Hình ảnh cơ sở tối giản
+- Hệ thống tệp chỉ đọc
 
-### Image Optimization
+### Tối ưu hóa hình ảnh
 
-Reduce image size:
-- Alpine base images
+Giảm kích thước hình ảnh:
+- Hình ảnh cơ sở Alpine
 - Multi-stage builds
-- Remove unnecessary files
-- Combine RUN commands
+- Xóa các tệp không cần thiết
+- Kết hợp các lệnh RUN
 
-## Common Workflows
+## Các luồng công việc thông thường
 
-### Build and Run
+### Xây dựng và Chạy
 
 ```
-"Use docker to:
-1. Build image with tag
-2. Run container
-3. View logs
-4. Inspect container"
+"Sử dụng docker để:
+1. Xây dựng hình ảnh với thẻ (tag)
+2. Chạy container
+3. Xem nhật ký
+4. Kiểm tra container"
 ```
 
 ### Docker Compose
 
 ```
-"Use docker to manage services:
-- Start all services
-- View logs
-- Scale services
-- Stop and clean up"
+"Sử dụng docker để quản lý các dịch vụ:
+- Khởi động tất cả dịch vụ
+- Xem nhật ký
+- Mở rộng (scale) dịch vụ
+- Dừng và dọn dẹp"
 ```
 
-### Production Deployment
+### Triển khai sản xuất
 
 ```
-"Use docker for production:
-- Build optimized image
-- Push to registry
-- Deploy with health checks
-- Configure auto-restart
-- Set resource limits"
+"Sử dụng docker cho sản xuất:
+- Xây dựng hình ảnh tối ưu
+- Đẩy lên kho chứa (registry)
+- Triển khai với kiểm tra sức khỏe
+- Cấu hình tự động khởi động lại
+- Thiết lập giới hạn tài nguyên"
 ```
 
-## Advanced Features
+## Tính năng nâng cao
 
-### Health Checks
-
-```
-"Use docker to add health checks that:
-- Monitor application status
-- Trigger automatic restarts
-- Integrate with orchestrators"
-```
-
-### Resource Limits
+### Kiểm tra sức khỏe (Health Checks)
 
 ```
-"Use docker to configure:
-- CPU limits
-- Memory limits
-- Process limits
-- Disk I/O limits"
+"Sử dụng docker để thêm kiểm tra sức khỏe nhằm:
+- Theo dõi trạng thái ứng dụng
+- Kích hoạt tự động khởi động lại
+- Tích hợp với các bộ điều phối (orchestrators)"
 ```
 
-### Networking
+### Giới hạn tài nguyên
 
 ```
-"Use docker to set up:
-- Custom bridge network
-- Service discovery
-- Port publishing
-- Network isolation"
+"Sử dụng docker để cấu hình:
+- Giới hạn CPU
+- Giới hạn bộ nhớ
+- Giới hạn tiến trình
+- Giới hạn I/O đĩa"
 ```
 
-### Volumes & Storage
+### Mạng (Networking)
 
 ```
-"Use docker to manage storage:
-- Named volumes
+"Sử dụng docker để thiết lập:
+- Mạng cầu (bridge) tùy chỉnh
+- Tự động phát hiện dịch vụ
+- Công khai cổng (port publishing)
+- Cách ly mạng"
+```
+
+### Volumes & Lưu trữ
+
+```
+"Sử dụng docker để quản lý lưu trữ:
+- Các volume có tên
 - Bind mounts
-- Volume backups
-- Data persistence"
+- Sao lưu volume
+- Lưu trữ dữ liệu bền vững"
 ```
 
-## Language-Specific Examples
+## Ví dụ theo ngôn ngữ cụ thể
 
 ### Node.js
 
 ```
-"Use docker for Node.js with:
+"Sử dụng docker cho Node.js với:
 - Multi-stage build
-- npm ci for dependencies
-- Production mode
-- Health check endpoint"
+- npm ci cho các phụ thuộc
+- Chế độ sản xuất
+- Endpoint kiểm tra sức khỏe"
 ```
 
 ### Python
 
 ```
-"Use docker for Python with:
-- Virtual environment
-- Requirements caching
-- Gunicorn server
-- Non-root user"
+"Sử dụng docker cho Python với:
+- Môi trường ảo
+- Lưu bộ nhớ đệm cho requirements
+- Server Gunicorn
+- Người dùng không phải root"
 ```
 
 ### Go
 
 ```
-"Use docker for Go with:
-- Scratch base image
-- Static binary
-- Minimal attack surface
-- 5MB final image"
+"Sử dụng docker cho Go với:
+- Hình ảnh cơ sở scratch
+- Binary tĩnh
+- Bề mặt tấn công tối thiểu
+- Hình ảnh cuối cùng chỉ 5MB"
 ```
 
 ### Java
 
 ```
-"Use docker for Spring Boot with:
+"Sử dụng docker cho Spring Boot với:
 - JRE Alpine
-- JAR execution
-- JVM optimization
-- Proper shutdown handling"
+- Thực thi file JAR
+- Tối ưu hóa JVM
+- Xử lý tắt máy đúng cách"
 ```
 
-## CI/CD Integration
+## Tích hợp CI/CD
 
 ### GitHub Actions
 
 ```
-"Use docker in GitHub Actions to:
-- Build on every commit
-- Run tests in container
-- Push to registry
-- Deploy to production"
+"Sử dụng docker trong GitHub Actions để:
+- Xây dựng trên mỗi lần commit
+- Chạy tests trong container
+- Đẩy lên kho chứa
+- Triển khai lên môi trường sản xuất"
 ```
 
 ### GitLab CI
 
 ```
-"Use docker in GitLab CI for:
-- Docker-in-Docker builds
-- Multi-stage pipelines
-- Registry integration
-- Automated deployment"
+"Sử dụng docker trong GitLab CI cho:
+- Xây dựng Docker-in-Docker
+- Các đường ống (pipelines) đa giai đoạn
+- Tích hợp kho chứa
+- Triển khai tự động"
 ```
 
-## Troubleshooting
+## Xử lý sự cố
 
-### Build Issues
+### Vấn đề khi xây dựng
 
-Common problems:
-- Cache not working → Check layer order
-- Build slow → Optimize Dockerfile
-- Image too large → Use multi-stage builds
+Các vấn đề phổ biến:
+- Bộ nhớ đệm không hoạt động → Kiểm tra thứ tự các lớp (layer)
+- Xây dựng chậm → Tối ưu hóa Dockerfile
+- Hình ảnh quá lớn → Sử dụng multi-stage builds
 
-### Runtime Issues
+### Vấn đề khi chạy
 
-Common problems:
-- Container exits → Check logs
-- Can't connect → Verify port mapping
-- Permission errors → Check user/volumes
+Các vấn đề phổ biến:
+- Container tự thoát → Kiểm tra nhật ký
+- Không thể kết nối → Xác minh ánh xạ cổng
+- Lỗi quyền truy cập → Kiểm tra người dùng/volumes
 
-### Performance Issues
+### Vấn đề hiệu suất
 
-Common problems:
-- Slow startup → Reduce image size
-- High memory → Set limits
-- Disk full → Clean up images/containers
+Các vấn đề phổ biến:
+- Khởi động chậm → Giảm kích thước hình ảnh
+- Tốn nhiều bộ nhớ → Thiết lập giới hạn
+- Đầy đĩa → Dọn dẹp hình ảnh/container
 
-## Quick Reference
+## Tham khảo nhanh
 
-### Common Commands
+### Các lệnh thông dụng
 
-| **Task** | **Command** |
+| **Tác vụ** | **Lệnh** |
 |----------|-------------|
-| Build image | `docker build -t app:1.0 .` |
-| Run container | `docker run -d -p 8080:3000 app:1.0` |
-| View logs | `docker logs -f container` |
-| Shell into container | `docker exec -it container sh` |
-| Stop container | `docker stop container` |
-| Compose up | `docker compose up -d` |
-| Compose down | `docker compose down` |
-| Clean up | `docker system prune -a` |
+| Xây dựng hình ảnh | `docker build -t app:1.0 .` |
+| Chạy container | `docker run -d -p 8080:3000 app:1.0` |
+| Xem nhật ký | `docker logs -f container` |
+| Truy cập shell | `docker exec -it container sh` |
+| Dừng container | `docker stop container` |
+| Chạy Compose | `docker compose up -d` |
+| Dừng Compose | `docker compose down` |
+| Dọn dẹp hệ thống | `docker system prune -a` |
 
-### Best Base Images
+### Hình ảnh cơ sở tốt nhất
 
-| **Language** | **Base Image** |
+| **Ngôn ngữ** | **Hình ảnh cơ sở** |
 |--------------|----------------|
 | Node.js | `node:20-alpine` |
 | Python | `python:3.11-slim` |
@@ -385,38 +386,38 @@ Common problems:
 | Go | `scratch` |
 | .NET | `mcr.microsoft.com/dotnet/aspnet:8.0-alpine` |
 
-## Quick Examples
+## Các ví dụ nhanh
 
-**Simple Containerization:**
+**Container hóa đơn giản:**
 ```
-"Use docker to containerize my app"
-```
-
-**Production Ready:**
-```
-"Use docker for production with:
-- Optimized Dockerfile
-- Security hardening
-- Health checks
-- Resource limits
-- Logging configuration"
+"Sử dụng docker để container hóa ứng dụng của tôi"
 ```
 
-**Full Development Environment:**
+**Sẵn sàng cho sản xuất:**
 ```
-"Use docker to create dev environment with:
-- Hot reload
-- All services
-- Seed data
-- Debug tools"
+"Sử dụng docker cho sản xuất với:
+- Dockerfile tối ưu
+- Tăng cường bảo mật
+- Kiểm tra sức khỏe
+- Giới hạn tài nguyên
+- Cấu hình nhật ký"
 ```
 
-## Next Steps
+**Môi trường phát triển đầy đủ:**
+```
+"Sử dụng docker để tạo môi trường phát triển với:
+- Tự động tải lại
+- Tất cả các dịch vụ
+- Dữ liệu mẫu
+- Các công cụ gỡ lỗi"
+```
 
-- [Deployment Guide](/docs/use-cases/)
-- [PostgreSQL Integration](/docs/engineer/skills/postgresql-psql)
-- [CI/CD Examples](/docs/use-cases/)
+## Bước tiếp theo
+
+- [Hướng dẫn triển khai](/docs/use-cases/)
+- [Tích hợp PostgreSQL](/docs/engineer/skills/postgresql-psql)
+- [Ví dụ CI/CD](/docs/use-cases/)
 
 ---
 
-**Bottom Line:** docker skill creates production-ready containerized applications. Just invoke and describe your containerization needs.
+**Tóm lại:** kỹ năng docker tạo ra các ứng dụng container hóa sẵn sàng cho sản xuất. Chỉ cần gọi và mô tả nhu cầu container hóa của bạn.

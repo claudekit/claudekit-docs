@@ -1,241 +1,237 @@
 ---
-title: Refactoring Code
-description: "Documentation for Refactoring Code
-description:
-section: workflows
-category: workflows
-order: 5
-published: true"
+title: Tái Cấu Trúc Mã Nguồn
+description: "Tái cấu trúc mã nguồn an toàn với ClaudeKit - từ xác định nợ kỹ thuật đến triển khai cải tiến với kiểm thử và xác thực toàn diện."
+lang: vi
 section: workflows
 category: workflows
 order: 5
 published: true
 ---
 
-# Refactoring Code
+# Tái Cấu Trúc Mã Nguồn
 
-Learn how to safely refactor code with ClaudeKit - from identifying technical debt to implementing improvements with comprehensive testing and validation.
+Tìm hiểu cách tái cấu trúc mã nguồn (Refactoring) một cách an toàn với ClaudeKit - từ việc xác định nợ kỹ thuật (technical debt) đến triển khai các cải tiến với việc kiểm thử và xác thực toàn diện.
 
-## Overview
+## Tổng Quan
 
-**Goal**: Improve code quality and maintainability without breaking functionality
-**Time**: 15-45 minutes (vs 3-8 hours manually)
-**Agents Used**: code-reviewer, tester, docs-manager
-**Commands**: /plan, /code, /test, /docs:update
+**Mục tiêu**: Cải thiện chất lượng và khả năng bảo trì của mã nguồn mà không làm thay đổi chức năng
+**Thời gian**: 15-45 phút (so với 3-8 giờ làm thủ công)
+**Agents sử dụng**: code-reviewer, tester, docs-manager
+**Lệnh**: `/plan`, `/code`, `/test`, `/docs:update`
 
-## Prerequisites
+## Điều Kiện Tiên Quyết
 
-- Existing codebase with areas needing improvement
-- Test suite in place (or willing to add tests)
-- Clear understanding of current functionality
-- Version control for safe rollback
+- Codebase hiện có các khu vực cần cải thiện
+- Đã có bộ kiểm thử (hoặc sẵn sàng thêm mới)
+- Hiểu rõ chức năng hiện tại
+- Sử dụng hệ thống quản lý phiên bản (version control) để có thể hoàn tác an toàn
 
-## Refactoring Scenarios
+## Các Kịch Bản Tái Cấu Trúc
 
-### When to Refactor
+### Khi Nào Cần Tái Cấu Trúc
 
-| Scenario | Priority | Risk Level |
+| Kịch bản | Độ ưu tiên | Mức độ rủi ro |
 |----------|----------|------------|
-| Duplicate code (DRY violations) | High | Low |
-| Large functions (100+ lines) | Medium | Medium |
-| Complex conditionals (nested if/else) | Medium | Medium |
-| Poor naming conventions | Low | Low |
-| Tight coupling | High | High |
-| Missing error handling | High | Medium |
-| Performance bottlenecks | Medium | Medium |
-| Security vulnerabilities | Critical | Low |
+| Code trùng lặp (Vi phạm DRY) | Cao | Thấp |
+| Các hàm quá lớn (100+ dòng) | Trung bình | Trung bình |
+| Các điều kiện phức tạp (if/else lồng nhau) | Trung bình | Trung bình |
+| Quy ước đặt tên kém | Thấp | Thấp |
+| Ghép nối chặt chẽ (Tight coupling) | Cao | Cao |
+| Thiếu xử lý lỗi | Cao | Trung bình |
+| Nút thắt cổ chai về hiệu suất | Trung bình | Trung bình |
+| Lỗ hổng bảo mật | Nghiêm trọng | Thấp |
 
-### Refactoring Types
+### Các Loại Tái Cấu Trúc
 
-1. **Code Organization** - Restructure files and modules
-2. **Code Quality** - Improve readability and maintainability
-3. **Performance** - Optimize slow code
-4. **Security** - Fix vulnerabilities
-5. **Architecture** - Improve design patterns
-6. **Dependencies** - Update or remove libraries
+1. **Tổ chức mã nguồn** - Cấu trúc lại các tệp và module
+2. **Chất lượng mã nguồn** - Cải thiện khả năng đọc và bảo trì
+3. **Hiệu suất** - Tối ưu hóa code chậm
+4. **Bảo mật** - Vá các lỗ hổng
+5. **Kiến trúc** - Cải thiện các mẫu thiết kế (design patterns)
+6. **Dependencies** - Cập nhật hoặc gỡ bỏ các thư viện
 
-## Step-by-Step Workflow
+## Quy Trình Từng Bước
 
-### Step 1: Identify Refactoring Needs
+### Bước 1: Xác Định Nhu Cầu Tái Cấu Trúc
 
-Use code review to identify issues:
+Sử dụng code review để xác định các vấn đề:
 
 ```bash
-# Automated code review
+# Code review tự động
 /review
 ```
 
-**Review output**:
+**Kết quả review**:
 ```
-Code Review Report
+Báo Cáo Code Review
 
-⚠ Issues Found:
+⚠ Tìm thấy các vấn đề:
 
-1. Duplicate Code (15 instances)
-   - src/users/create.js and src/users/update.js
-   - 67% code duplication in validation logic
-   - Recommendation: Extract to shared validator
+1. Code Trùng Lặp (15 trường hợp)
+   - src/users/create.js và src/users/update.js
+   - 67% code trùng lặp trong logic kiểm tra (validation)
+   - Khuyến nghị: Trích xuất thành shared validator
 
-2. Large Functions (8 instances)
-   - src/orders/process.js:processOrder() - 234 lines
-   - Recommendation: Break into smaller functions
+2. Các Hàm Quá Lớn (8 trường hợp)
+   - src/orders/process.js:processOrder() - 234 dòng
+   - Khuyến nghị: Chia nhỏ thành các hàm tập trung hơn
 
-3. Complex Conditionals (12 instances)
-   - src/auth/authorize.js - Nested 5 levels deep
-   - Recommendation: Simplify with early returns
+3. Các Điều Kiện Phức Tạp (12 trường hợp)
+   - src/auth/authorize.js - Lồng nhau 5 cấp độ
+   - Khuyến nghị: Đơn giản hóa với early returns
 
-4. Magic Numbers (23 instances)
-   - Hardcoded values without constants
-   - Recommendation: Extract to configuration
+4. Magic Numbers (23 trường hợp)
+   - Các giá trị hardcoded không có hằng số
+   - Khuyến nghị: Trích xuất thành cấu hình (configuration)
 
-5. Missing Error Handling (18 instances)
-   - Unhandled promise rejections
-   - Recommendation: Add try/catch blocks
+5. Thiếu Xử Lý Lỗi (18 trường hợp)
+   - Các promise rejections chưa được xử lý
+   - Khuyến nghị: Thêm các khối try/catch
 
-Technical Debt Score: 6.8/10 (High)
-Maintainability Index: 42/100 (Needs Improvement)
+Điểm Nợ Kỹ Thuật: 6.8/10 (Cao)
+Chỉ Số Khả Năng Bảo Trì: 42/100 (Cần cải thiện)
 ```
 
-### Step 2: Prioritize Refactoring Tasks
+### Bước 2: Ưu Tiên Các Nhiệm Vụ Tái Cấu Trúc
 
-Create a refactoring plan:
+Tạo một kế hoạch tái cấu trúc:
 
 ```bash
 /plan [refactor user validation logic to eliminate duplication]
 ```
 
-**Generated plan**:
+**Kế hoạch được tạo**:
 ```markdown
-# Refactoring Plan: User Validation
+# Kế Hoạch Tái Cấu Trúc: User Validation
 
-## Current State
-- Validation duplicated in create.js and update.js
-- 156 lines of duplicate code
-- Inconsistent error messages
-- Hard to maintain
+## Trạng Thái Hiện Tại
+- Logic kiểm tra bị trùng lặp trong create.js và update.js
+- 156 dòng code trùng lặp
+- Các thông báo lỗi không nhất quán
+- Khó bảo trì
 
-## Proposed Solution
+## Giải Pháp Đề Xuất
 
-### 1. Extract Shared Validator
-- Create src/validators/user.validator.js
-- Extract common validation rules
-- Implement reusable validation functions
+### 1. Trích Xuất Shared Validator
+- Tạo src/validators/user.validator.js
+- Trích xuất các quy tắc kiểm tra chung
+- Triển khai các hàm kiểm tra có thể tái sử dụng
 
-### 2. Consolidate Error Handling
-- Standardize error messages
-- Create error code constants
-- Improve error response format
+### 2. Hợp Nhất Xử Lý Lỗi
+- Tiêu chuẩn hóa các thông báo lỗi
+- Tạo các hằng số mã lỗi (error code constants)
+- Cải thiện định dạng phản hồi lỗi
 
-### 3. Update Controllers
+### 3. Cập Nhật Các Controllers
 - Import shared validator
-- Remove duplicate code
-- Add validation tests
+- Gỡ bỏ code trùng lặp
+- Thêm các tests cho việc kiểm tra (validation)
 
-## Testing Strategy
-- Unit tests for validator
-- Integration tests for endpoints
-- Ensure no behavior changes
+## Chiến Lược Kiểm Thử
+- Unit tests cho validator
+- Integration tests cho các endpoints
+- Đảm bảo không thay đổi hành vi của ứng dụng
 
-## Risk Assessment
-- Risk Level: Low
-- Breaking Changes: None
-- Rollback Plan: Git revert
+## Đánh Giá Rủi Ro
+- Mức độ rủi ro: Thấp
+- Các thay đổi gây phá vỡ (Breaking Changes): Không có
+- Kế hoạch hoàn tác: Git revert
 
-## Success Criteria
-- 0% code duplication
-- All tests pass
-- Same functionality maintained
+## Tiêu Chí Thành Công
+- 0% code trùng lặp
+- Tất cả các tests đều vượt qua
+- Duy trì cùng một chức năng như cũ
 ```
 
-### Step 3: Add Tests (If Missing)
+### Bước 3: Thêm Tests (Nếu Còn Thiếu)
 
-Before refactoring, ensure good test coverage:
+Trước khi tái cấu trúc, hãy đảm bảo độ bao phủ kiểm thử tốt:
 
 ```bash
-# Check current coverage
+# Kiểm tra độ bao phủ hiện tại
 npm run test:coverage
 
-# Add tests if coverage low
+# Thêm tests nếu độ bao phủ thấp
 /cook [add comprehensive tests for user validation before refactoring]
 ```
 
-**Why test first?**
-- Ensures refactoring doesn't break functionality
-- Validates behavior is preserved
-- Provides safety net for changes
-- Documents expected behavior
+**Tại sao phải test trước?**
+- Đảm bảo việc tái cấu trúc không làm hỏng chức năng hiện có
+- Xác nhận rằng các hành vi của ứng dụng được bảo toàn
+- Cung cấp một lưới an toàn cho các thay đổi
+- Viết tài liệu cho các hành vi mong đợi
 
-### Step 4: Implement Refactoring
+### Bước 4: Triển Khai Tái Cấu Trúc
 
-Execute the refactoring:
+Thực hiện việc tái cấu trúc:
 
 ```bash
 /cook [refactor user validation logic to eliminate duplication]
 ```
 
-**Refactoring process**:
+**Quá trình tái cấu trúc**:
 ```
-[1/6] Analyzing current code...
-  ✓ Identified 156 lines of duplicate code
-  ✓ Mapped dependencies
-  ✓ Checked test coverage: 78%
+[1/6] Đang phân tích mã nguồn hiện tại...
+  ✓ Đã xác định 156 dòng code trùng lặp
+  ✓ Đã lập bản đồ các phụ thuộc (dependencies)
+  ✓ Đã kiểm tra độ bao phủ tests: 78%
 
-[2/6] Creating shared validator...
-  ✓ Created src/validators/user.validator.js
-  ✓ Extracted validation functions:
+[2/6] Đang tạo shared validator...
+  ✓ Đã tạo src/validators/user.validator.js
+  ✓ Đã trích xuất các hàm kiểm tra:
     - validateEmail()
     - validatePassword()
     - validateName()
     - validateAge()
 
-[3/6] Updating controllers...
-  ✓ Updated src/users/create.js
-  ✓ Updated src/users/update.js
-  ✓ Removed duplicate code (156 lines)
-  ✓ Added imports for shared validator
+[3/6] Đang cập nhật controllers...
+  ✓ Đã cập nhật src/users/create.js
+  ✓ Đã cập nhật src/users/update.js
+  ✓ Đã gỡ bỏ code trùng lặp (156 dòng)
+  ✓ Đã thêm imports cho shared validator
 
-[4/6] Running tests...
-  ✓ All existing tests pass (142/142)
-  ✓ New validator tests added (24 tests)
-  ✓ Coverage increased: 78% → 85%
+[4/6] Đang chạy tests...
+  ✓ Tất cả các tests hiện có đều vượt qua (142/142)
+  ✓ Đã thêm các tests mới cho validator (24 tests)
+  ✓ Độ bao phủ tăng: 78% → 85%
 
 [5/6] Code review...
-  ✓ No duplication detected
-  ✓ Consistent error handling
-  ✓ Improved maintainability
+  ✓ Không phát hiện code trùng lặp
+  ✓ Xử lý lỗi nhất quán
+  ✓ Cải thiện khả năng bảo trì
 
-[6/6] Documentation updated...
-  ✓ Updated architecture docs
-  ✓ Added validator documentation
+[6/6] Đã cập nhật tài liệu...
+  ✓ Cập nhật tài liệu kiến trúc
+  ✓ Thêm tài liệu cho validator
 
-✅ Refactoring complete
+✅ Tái cấu trúc hoàn tất
 
-Code Metrics:
-- Lines removed: 156
-- Lines added: 89
-- Net reduction: 67 lines
-- Duplication: 67% → 0%
-- Maintainability: +18 points
+Các chỉ số Code:
+- Số dòng code đã gỡ bỏ: 156
+- Số dòng code đã thêm mới: 89
+- Giảm thiểu ròng: 67 dòng
+- Trùng lặp: 67% → 0%
+- Khả năng bảo trì: +18 điểm
 
-Files modified:
-- src/validators/user.validator.js (new)
-- src/users/create.js (refactored)
-- src/users/update.js (refactored)
-- tests/validators/user.test.js (new)
+Các tệp đã thay đổi:
+- src/validators/user.validator.js (mới)
+- src/users/create.js (tái cấu trúc)
+- src/users/update.js (tái cấu trúc)
+- tests/validators/user.test.js (mới)
 ```
 
-### Step 5: Verify Functionality
+### Bước 5: Xác Minh Chức Năng
 
-Thoroughly test refactored code:
+Kiểm thử kỹ lưỡng mã nguồn đã được tái cấu trúc:
 
 ```bash
-# Run full test suite
+# Chạy bộ kiểm thử toàn diện
 /test
 
-# Manual testing
+# Kiểm thử thủ công
 npm run dev
 
-# Test all affected endpoints
+# Kiểm thử tất cả các endpoints bị ảnh hưởng
 curl -X POST http://localhost:3000/api/users \
   -H "Content-Type: application/json" \
   -d '{"email": "test@example.com", "password": "pass123"}'
@@ -245,48 +241,48 @@ curl -X PUT http://localhost:3000/api/users/123 \
   -d '{"name": "John Doe"}'
 ```
 
-### Step 6: Review and Document
+### Bước 6: Review và Viết Tài Liệu
 
 ```bash
-# Update documentation
+# Cập nhật tài liệu
 /docs:update [document the validator refactoring]
 
-# Review changes
+# Xem lại các thay đổi
 git diff
 
-# Check metrics improvement
+# Kiểm tra sự cải thiện của các chỉ số
 /review
 ```
 
-### Step 7: Commit Refactoring
+### Bước 7: Commit Việc Tái Cấu Trúc
 
 ```bash
 /git:cm
 ```
 
-**Generated commit**:
+**Commit được tạo**:
 ```
-refactor: extract shared user validation logic
+refactor: trích xuất shared user validation logic
 
-- Create reusable user.validator.js module
-- Remove 156 lines of duplicate validation code
-- Standardize error messages across create/update
-- Add comprehensive validator tests (24 tests)
-- Increase test coverage from 78% to 85%
+- Tạo module user.validator.js có thể tái sử dụng
+- Gỡ bỏ 156 dòng code kiểm tra trùng lặp
+- Tiêu chuẩn hóa các thông báo lỗi giữa create/update
+- Thêm các bài kiểm tra toàn diện cho validator (24 tests)
+- Tăng độ bao phủ kiểm thử từ 78% lên 85%
 
-Code metrics:
-- Duplication: 67% → 0%
-- Maintainability: +18 points
-- Lines of code: -67 (net reduction)
+Các chỉ số code:
+- Trùng lặp: 67% → 0%
+- Khả năng bảo trì: +18 điểm
+- Số dòng code: -67 (giảm thiểu ròng)
 
-No functional changes - all tests pass
+Không có thay đổi về chức năng - tất cả các tests đều vượt qua
 ```
 
-## Complete Examples
+## Các Ví Dụ Hoàn Chỉnh
 
-### Example 1: Simplify Complex Function
+### Ví Dụ 1: Đơn Giản Hóa Hàm Phức Tạp
 
-**Before** (234 lines):
+**Trước đó** (234 dòng):
 ```javascript
 // src/orders/process.js
 async function processOrder(orderId) {
@@ -301,22 +297,22 @@ async function processOrder(orderId) {
     throw new Error('No items');
   }
 
-  // ... 220+ more lines of mixed concerns
-  // - Inventory checks
-  // - Payment processing
-  // - Email notifications
-  // - Shipping calculations
-  // - Tax calculations
-  // - Database updates
+  // ... 220+ dòng trộn lẫn các mối quan tâm khác nhau
+  // - Kiểm tra kho hàng
+  // - Xử lý thanh toán
+  // - Thông báo email
+  // - Tính toán vận chuyển
+  // - Tính toán thuế
+  // - Cập nhật database
 }
 ```
 
-**Refactoring command**:
+**Lệnh tái cấu trúc**:
 ```bash
 /cook [refactor processOrder function to follow single responsibility principle]
 ```
 
-**After** (clean architecture):
+**Sau đó** (kiến trúc sạch sẽ):
 ```javascript
 // src/orders/process.js
 async function processOrder(orderId) {
@@ -331,37 +327,37 @@ async function processOrder(orderId) {
   return order;
 }
 
-// Each function extracted to separate file
-// src/orders/validate.js - Order validation
-// src/inventory/check.js - Inventory checks
-// src/payments/process.js - Payment logic
-// src/emails/confirmation.js - Email sending
-// src/shipping/create.js - Shipment creation
+// Mỗi hàm được trích xuất ra một tệp riêng biệt
+// src/orders/validate.js - Kiểm tra đơn hàng
+// src/inventory/check.js - Kiểm tra kho hàng
+// src/payments/process.js - Logic thanh toán
+// src/emails/confirmation.js - Gửi email
+// src/shipping/create.js - Tạo đơn vận chuyển
 ```
 
-**Results**:
-- Main function: 234 lines → 9 lines
-- 5 new focused modules created
-- Each function < 50 lines
-- Test coverage: 65% → 92%
-- Maintainability: +34 points
+**Kết quả**:
+- Hàm chính: 234 dòng → 9 dòng
+- 5 modules tập trung mới được tạo ra
+- Mỗi hàm < 50 dòng
+- Độ bao phủ kiểm thử: 65% → 92%
+- Khả năng bảo trì: +34 điểm
 
-### Example 2: Remove Tight Coupling
+### Ví Dụ 2: Gỡ Bỏ Việc Ghép Nối Chặt Chẽ (Tight Coupling)
 
-**Before** (tightly coupled):
+**Trước đó** (ghép nối chặt chẽ):
 ```javascript
 // src/users/service.js
 class UserService {
   async createUser(data) {
-    // Direct database access
+    // Truy cập database trực tiếp
     const db = require('../database');
     const user = await db.users.create(data);
 
-    // Direct email service
+    // Dịch vụ email trực tiếp
     const emailer = require('../email');
     await emailer.send(user.email, 'Welcome!');
 
-    // Direct logger
+    // Logger trực tiếp
     const logger = require('../logger');
     logger.info('User created', user.id);
 
@@ -370,12 +366,12 @@ class UserService {
 }
 ```
 
-**Refactoring command**:
+**Lệnh tái cấu trúc**:
 ```bash
 /cook [refactor UserService to use dependency injection]
 ```
 
-**After** (loosely coupled):
+**Sau đó** (ghép nối lỏng lẻo):
 ```javascript
 // src/users/service.js
 class UserService {
@@ -393,14 +389,14 @@ class UserService {
   }
 }
 
-// Easily mockable for testing
-// Can swap implementations
-// Clear dependencies
+// Dễ dàng mock để kiểm thử
+// Có thể thay đổi linh hoạt các triển khai (implementations)
+// Các phụ thuộc rõ ràng
 ```
 
-### Example 3: Improve Error Handling
+### Ví Dụ 3: Cải Thiện Xử Lý Lỗi
 
-**Before** (poor error handling):
+**Trước đó** (xử lý lỗi kém):
 ```javascript
 async function fetchUserData(userId) {
   const response = await fetch(`/api/users/${userId}`);
@@ -409,12 +405,12 @@ async function fetchUserData(userId) {
 }
 ```
 
-**Refactoring command**:
+**Lệnh tái cấu trúc**:
 ```bash
 /cook [add comprehensive error handling to fetchUserData]
 ```
 
-**After** (robust error handling):
+**Sau đó** (xử lý lỗi mạnh mẽ):
 ```javascript
 async function fetchUserData(userId) {
   try {
@@ -448,62 +444,62 @@ async function fetchUserData(userId) {
 }
 ```
 
-## Common Refactoring Patterns
+## Các Mẫu Tái Cấu Trúc Phổ Biến
 
-### 1. Extract Method
+### 1. Trích Xuất Phương Thức (Extract Method)
 
 ```bash
 /cook [extract password validation into separate function]
 ```
 
-### 2. Extract Class
+### 2. Trích Xuất Lớp (Extract Class)
 
 ```bash
 /cook [extract payment processing into PaymentService class]
 ```
 
-### 3. Rename
+### 3. Đổi Tên (Rename)
 
 ```bash
 /cook [rename all instances of 'data' variable to descriptive names]
 ```
 
-### 4. Introduce Parameter Object
+### 4. Giới Thiệu Parameter Object
 
 ```bash
 /cook [replace multiple parameters with configuration object]
 ```
 
-### 5. Replace Conditional with Polymorphism
+### 5. Thay Thế Điều Kiện Bằng Tính Đa Hình (Polymorphism)
 
 ```bash
 /cook [replace user type conditionals with strategy pattern]
 ```
 
-### 6. Move Method
+### 6. Di Chuyển Phương Thức (Move Method)
 
 ```bash
 /cook [move authentication logic from controller to service layer]
 ```
 
-## Refactoring Best Practices
+## Các Thực Hành Tốt Nhất Khi Tái Cấu Trúc
 
-### 1. Test Before and After
+### 1. Kiểm Thử Trước và Sau
 
 ```bash
-# Before refactoring
+# Trước khi tái cấu trúc
 /test
-# Take note of test results
+# Ghi lại kết quả kiểm thử
 
-# After refactoring
+# Sau khi tái cấu trúc
 /test
-# Verify same results
+# Xác minh kết quả tương tự
 ```
 
-### 2. Small, Incremental Changes
+### 2. Các Thay Đổi Nhỏ, Tịnh Tiến
 
 ```bash
-✅ Good approach:
+✅ Cách tiếp cận tốt:
 /cook [extract validation to separate function]
 /test
 /git:cm
@@ -512,144 +508,144 @@ async function fetchUserData(userId) {
 /test
 /git:cm
 
-❌ Bad approach:
+❌ Cách tiếp cận tồi:
 /cook [refactor entire authentication system]
-# Too many changes at once
-# Hard to debug if issues arise
+# Quá nhiều thay đổi cùng một lúc
+# Khó gỡ lỗi nếu có vấn đề phát sinh
 ```
 
-### 3. Maintain Functionality
+### 3. Duy Trì Chức Năng
 
 ```bash
-# Refactoring should NOT change behavior
-# Only change structure and implementation
-# All tests should still pass
+# Tái cấu trúc KHÔNG được làm thay đổi hành vi
+# Chỉ thay đổi cấu trúc và cách triển khai
+# Tất cả các tests vẫn phải vượt qua
 ```
 
-### 4. Update Tests Alongside Code
+### 4. Cập Nhật Tests Cùng Với Code
 
 ```bash
 /cook [refactor user service and update tests accordingly]
 ```
 
-### 5. Document Architectural Changes
+### 5. Viết Tài Liệu Cho Các Thay Đổi Kiến Trúc
 
 ```bash
 /docs:update [document the new validation architecture]
 ```
 
-## Common Variations
+## Các Biến Thể Phổ Biến
 
-### Variation 1: Performance Refactoring
+### Biến Thể 1: Tái Cấu Trúc Hiệu Suất
 
 ```bash
 /cook [optimize database queries in user service]
 ```
 
-### Variation 2: Security Refactoring
+### Biến Thể 2: Tái Cấu Trúc Bảo Mật
 
 ```bash
 /cook [refactor to use parameterized queries instead of string concatenation]
 ```
 
-### Variation 3: Modernize Code
+### Biến Thể 3: Hiện Đại Hóa Code
 
 ```bash
 /cook [convert callbacks to async/await throughout the codebase]
 ```
 
-### Variation 4: Simplify Architecture
+### Biến Thể 4: Đơn Giản Hóa Kiến Trúc
 
 ```bash
 /cook [simplify three-layer architecture to two layers]
 ```
 
-## Troubleshooting
+## Xử Lý Sự Cố
 
-### Issue: Tests Fail After Refactoring
+### Vấn Đề: Tests Thất Bại Sau Khi Tái Cấu Trúc
 
-**Problem**: Refactoring broke existing functionality
+**Vấn đề**: Việc tái cấu trúc đã làm hỏng chức năng hiện có
 
-**Solution**:
+**Giải pháp**:
 ```bash
-# Revert changes
+# Hoàn tác các thay đổi
 git reset --hard HEAD
 
-# Refactor in smaller steps
+# Tái cấu trúc theo các bước nhỏ hơn
 /cook [extract just the email validation function]
 /test
-# Ensure tests pass before continuing
+# Đảm bảo các tests vượt qua trước khi tiếp tục
 ```
 
-### Issue: Unclear What to Refactor
+### Vấn Đề: Không Rõ Cần Tái Cấu Trúc Những Gì
 
-**Problem**: Don't know where to start
+**Vấn đề**: Không biết bắt đầu từ đâu
 
-**Solution**:
+**Giải pháp**:
 ```bash
-# Get code review suggestions
+# Nhận các gợi ý code review
 /review
 
-# Or ask for analysis
+# Hoặc yêu cầu phân tích
 /ask [analyze the codebase and suggest refactoring priorities]
 ```
 
-### Issue: Breaking API Compatibility
+### Vấn Đề: Làm Phá Vỡ Tính Tương Thích Của API
 
-**Problem**: Refactoring changes public API
+**Vấn đề**: Việc tái cấu trúc làm thay đổi Public API
 
-**Solution**:
+**Giải pháp**:
 ```bash
-# Maintain backward compatibility
+# Duy trì khả năng tương thích ngược
 /cook [refactor internal implementation without changing public API]
 
-# Or version the API
+# Hoặc đánh phiên bản (version) cho API
 /cook [create v2 API with refactored structure]
 ```
 
-## Measuring Success
+## Đo Lường Sự Thành Công
 
-### Before Refactoring
-
-```bash
-# Collect metrics
-Code Duplication: 45%
-Average Function Length: 87 lines
-Cyclomatic Complexity: 23
-Test Coverage: 65%
-Maintainability Index: 42/100
-```
-
-### After Refactoring
+### Trước Khi Tái Cấu Trúc
 
 ```bash
-# Measure improvement
-Code Duplication: 5%
-Average Function Length: 28 lines
-Cyclomatic Complexity: 8
-Test Coverage: 89%
-Maintainability Index: 78/100
-
-Improvement: +36 points maintainability
+# Thu thập các chỉ số
+Trùng lặp code: 45%
+Độ dài hàm trung bình: 87 dòng
+Độ phức tạp Cyclomatic: 23
+Độ bao phủ kiểm thử: 65%
+Chỉ số khả năng bảo trì: 42/100
 ```
 
-## Next Steps
+### Sau Khi Tái Cấu Trúc
 
-### Related Use Cases
-- [Adding a New Feature](/docs/use-cases/adding-feature) - Build features
-- [Fixing Bugs](/docs/use-cases/fixing-bugs) - Debug issues
-- [Optimizing Performance](/docs/use-cases/optimizing-performance) - Speed improvements
+```bash
+# Đo lường sự cải thiện
+Trùng lặp code: 5%
+Độ dài hàm trung bình: 28 dòng
+Độ phức tạp Cyclomatic: 8
+Độ bao phủ kiểm thử: 89%
+Chỉ số khả năng bảo trì: 78/100
 
-### Related Commands
-- [/cook](/docs/engineer/commands/core/cook) - Implement refactoring
-- [/test](/docs/engineer/commands/core/test) - Verify changes
-- [/docs:update](/docs/engineer/commands/docs/update) - Update docs
+Cải thiện: +36 điểm khả năng bảo trì
+```
 
-### Related Agents
-- [Code Reviewer](/docs/engineer/agents/code-reviewer) - Code quality analysis
-- [Tester](/docs/engineer/agents/tester) - Testing coverage
-- [Docs Manager](/docs/engineer/agents/docs-manager) - Documentation
+## Bước Tiếp Theo
+
+### Các Trường Hợp Sử Dụng Liên Quan
+- [Thêm Tính Năng Mới](/docs/use-cases/adding-feature) - Xây dựng tính năng
+- [Sửa Lỗi](/docs/use-cases/fixing-bugs) - Gỡ lỗi vấn đề
+- [Tối Ưu Hóa Hiệu Suất](/docs/use-cases/optimizing-performance) - Cải thiện tốc độ
+
+### Các Lệnh Liên Quan
+- [/cook](/docs/engineer/commands/core/cook) - Triển khai tái cấu trúc
+- [/test](/docs/engineer/commands/core/test) - Xác minh các thay đổi
+- [/docs:update](/docs/engineer/commands/docs/update) - Cập nhật tài liệu
+
+### Các Agents Liên Quan
+- [Code Reviewer](/docs/engineer/agents/code-reviewer) - Phân tích chất lượng code
+- [Tester](/docs/engineer/agents/tester) - Độ bao phủ kiểm thử
+- [Docs Manager](/docs/engineer/agents/docs-manager) - Tài liệu
 
 ---
 
-**Key Takeaway**: ClaudeKit enables safe, incremental refactoring with automated testing and validation - improving code quality without breaking functionality, turning days of risky refactoring into hours of confident improvement.
+**Bài học chính**: ClaudeKit cho phép tái cấu trúc mã nguồn một cách an toàn, tịnh tiến với việc kiểm thử và xác thực tự động - cải thiện chất lượng mã nguồn mà không làm hỏng chức năng, biến những ngày tái cấu trúc đầy rủi ro thành những giờ cải tiến đầy tự tin.

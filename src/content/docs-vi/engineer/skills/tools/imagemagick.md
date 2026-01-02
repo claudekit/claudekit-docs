@@ -1,218 +1,219 @@
 ---
-title: imagemagick
-description: Documentation for imagemagick
+title: Kỹ năng imagemagick
+description: Tài liệu hướng dẫn sử dụng kỹ năng imagemagick
 section: engineer
 kit: engineer
 category: skills/tools
 order: 22
 published: true
+lang: vi
 ---
 
-# imagemagick Skill
+# Kỹ năng imagemagick
 
-Advanced image processing - format conversion, resizing, effects, transformations, batch operations.
+Xử lý hình ảnh nâng cao - chuyển đổi định dạng, thay đổi kích thước, hiệu ứng, biến đổi và các thao tác hàng loạt.
 
-## When to Use
+## Khi nào nên sử dụng
 
-Use imagemagick when you need:
-- Convert image formats
-- Resize/crop images
-- Apply effects/filters
-- Create thumbnails
-- Batch process images
-- Add watermarks/text
-- Optimize for web
+Sử dụng imagemagick khi bạn cần:
+- Chuyển đổi định dạng hình ảnh
+- Thay đổi kích thước/Cắt hình ảnh
+- Áp dụng các hiệu ứng/bộ lọc
+- Tạo hình thu nhỏ (thumbnails)
+- Xử lý hình ảnh hàng loạt
+- Thêm hình mờ (watermarks)/văn bản
+- Tối ưu hóa cho trang web
 
-## Quick Start
+## Bắt đầu nhanh
 
-### Invoke the Skill
-
-```
-"Use imagemagick to:
-- Resize all product images to 800x800
-- Convert to WebP
-- Optimize file size
-- Keep quality high"
-```
-
-### What You Get
-
-The skill will help you:
-1. Convert formats
-2. Resize/transform
-3. Apply effects
-4. Batch process
-5. Optimize output
-
-## Common Use Cases
-
-### Format Conversion
+### Cách gọi kỹ năng
 
 ```
-"Use imagemagick to convert all PNG images to JPEG with 90% quality"
+"Sử dụng imagemagick để:
+- Thay đổi kích thước tất cả ảnh sản phẩm thành 800x800
+- Chuyển đổi sang định dạng WebP
+- Tối ưu hóa kích thước tệp
+- Giữ chất lượng cao"
 ```
 
-### Create Thumbnails
+### Kết quả nhận được
+
+Kỹ năng này sẽ giúp bạn:
+1. Chuyển đổi định dạng
+2. Thay đổi kích thước/biến đổi
+3. Áp dụng hiệu ứng
+4. Xử lý hàng loạt
+5. Tối ưu hóa đầu ra
+
+## Các trường hợp sử dụng phổ biến
+
+### Chuyển đổi định dạng
 
 ```
-"Use imagemagick to create 200x200 thumbnails for all images in folder"
+"Sử dụng imagemagick để chuyển đổi tất cả ảnh PNG sang JPEG với chất lượng 90%"
 ```
 
-### Watermark Images
+### Tạo hình thu nhỏ (Thumbnails)
 
 ```
-"Use imagemagick to add logo watermark to bottom-right of all images"
+"Sử dụng imagemagick để tạo hình thu nhỏ 200x200 cho tất cả hình ảnh trong thư mục"
 ```
 
-### Batch Optimization
+### Chèn hình mờ (Watermark)
 
 ```
-"Use imagemagick to optimize all images for web:
-- Max width 1920px
-- WebP format
-- Good quality
-- Small file size"
+"Sử dụng imagemagick để thêm logo hình mờ vào góc dưới bên phải của tất cả hình ảnh"
 ```
 
-## Basic Operations
+### Tối ưu hóa hàng loạt
 
-### Format Conversion
+```
+"Sử dụng imagemagick để tối ưu hóa tất cả hình ảnh cho web:
+- Chiều rộng tối đa 1920px
+- Định dạng WebP
+- Chất lượng tốt
+- Kích thước tệp nhỏ"
+```
+
+## Các thao tác cơ bản
+
+### Chuyển đổi định dạng
 
 ```bash
-# PNG to JPEG
+# PNG sang JPEG
 magick input.png output.jpg
 
-# With quality setting
+# Với thiết lập chất lượng
 magick input.png -quality 85 output.jpg
 
-# To WebP
+# Sang WebP
 magick input.jpg output.webp
 ```
 
-### Resize
+### Thay đổi kích thước (Resize)
 
 ```bash
-# Fit within 800x600 (maintains aspect)
+# Vừa vặn trong 800x600 (giữ nguyên tỷ lệ)
 magick input.jpg -resize 800x600 output.jpg
 
-# Exact size (may distort)
+# Kích thước chính xác (có thể bị méo)
 magick input.jpg -resize 800x600! output.jpg
 
-# Width only
+# Chỉ thay đổi chiều rộng
 magick input.jpg -resize 800x output.jpg
 
-# Height only
+# Chỉ thay đổi chiều cao
 magick input.jpg -resize x600 output.jpg
 
-# By percentage
+# Theo tỷ lệ phần trăm
 magick input.jpg -resize 50% output.jpg
 ```
 
-### Crop
+### Cắt hình ảnh (Crop)
 
 ```bash
-# Crop to 500x500 from top-left
+# Cắt 500x500 từ góc trên bên trái
 magick input.jpg -crop 500x500+0+0 output.jpg
 
-# Crop from center
+# Cắt từ chính giữa
 magick input.jpg -gravity center -crop 500x500+0+0 output.jpg
 ```
 
-### Rotate
+### Xoay hình ảnh
 
 ```bash
-# Rotate 90 degrees
+# Xoay 90 độ
 magick input.jpg -rotate 90 output.jpg
 
-# Flip horizontal
+# Lật ngang
 magick input.jpg -flop output.jpg
 
-# Flip vertical
+# Lật dọc
 magick input.jpg -flip output.jpg
 ```
 
-## Effects & Filters
+## Hiệu ứng & Bộ lọc
 
-### Blur/Sharpen
+### Làm mờ/Làm sắc nét (Blur/Sharpen)
 
 ```bash
-# Blur
+# Làm mờ
 magick input.jpg -blur 0x8 output.jpg
 
-# Sharpen
+# Làm sắc nét
 magick input.jpg -sharpen 0x1 output.jpg
 ```
 
-### Adjust Colors
+### Điều chỉnh màu sắc
 
 ```bash
-# Brightness (+/- 50)
+# Độ sáng (+/- 50)
 magick input.jpg -modulate 120 output.jpg
 
-# Contrast
+# Độ tương phản (Contrast)
 magick input.jpg -contrast output.jpg
 
-# Saturation
+# Độ bão hòa (Saturation)
 magick input.jpg -modulate 100,150 output.jpg
 
-# Grayscale
+# Thang màu xám (Grayscale)
 magick input.jpg -colorspace Gray output.jpg
 
-# Sepia tone
+# Hiệu ứng màu Sepia
 magick input.jpg -sepia-tone 80% output.jpg
 ```
 
-### Borders & Frames
+### Viền & Khung
 
 ```bash
-# Add border
+# Thêm viền
 magick input.jpg -border 10 -bordercolor black output.jpg
 
-# Add frame
+# Thêm khung
 magick input.jpg -mattecolor white -frame 10x10 output.jpg
 ```
 
-### Watermark
+### Hình mờ (Watermark)
 
 ```bash
-# Add logo
+# Thêm logo
 magick input.jpg logo.png -gravity southeast -geometry +10+10 -composite output.jpg
 
-# Add text
+# Thêm văn bản
 magick input.jpg -gravity southeast -pointsize 20 -fill white -annotate +10+10 'Copyright 2025' output.jpg
 ```
 
-## Batch Processing
+## Xử lý hàng loạt
 
-### Convert All Files
+### Chuyển đổi tất cả các tệp
 
 ```bash
-# Convert all PNG to JPEG
+# Chuyển đổi tất cả PNG sang JPEG
 for file in *.png; do
   magick "$file" "${file%.png}.jpg"
 done
 ```
 
-### Batch mogrify
+### Sử dụng mogrify để xử lý hàng loạt
 
 ```bash
-# Resize all JPEGs in place
+# Thay đổi kích thước tất cả ảnh JPEG tại chỗ
 mogrify -resize 800x600 *.jpg
 
-# Convert all to WebP
+# Chuyển đổi tất cả sang WebP
 mogrify -format webp *.jpg
 ```
 
-### Advanced Batch
+### Xử lý hàng loạt nâng cao
 
 ```bash
-# Create thumbnails for all images
+# Tạo hình thu nhỏ cho tất cả hình ảnh
 for file in *.jpg; do
   magick "$file" -resize 200x200^ -gravity center -extent 200x200 "thumb_${file}"
 done
 ```
 
-## Web Optimization
+## Tối ưu hóa Web
 
 ### Progressive JPEG
 
@@ -220,154 +221,154 @@ done
 magick input.jpg -interlace Plane -quality 85 output.jpg
 ```
 
-### Strip Metadata
+### Loại bỏ siêu dữ liệu (Strip Metadata)
 
 ```bash
 magick input.jpg -strip output.jpg
 ```
 
-### Optimize WebP
+### Tối ưu hóa WebP
 
 ```bash
 magick input.jpg -quality 80 -define webp:method=6 output.webp
 ```
 
-### Create Responsive Sizes
+### Tạo các kích thước đáp ứng (Responsive)
 
 ```bash
-# Create multiple sizes
+# Tạo nhiều kích thước khác nhau
 magick input.jpg -resize 1920x output-large.jpg
 magick input.jpg -resize 1280x output-medium.jpg
 magick input.jpg -resize 640x output-small.jpg
 ```
 
-## Advanced Features
+## Các tính năng nâng cao
 
-### Create Montage
+### Tạo ảnh ghép (Montage)
 
 ```bash
-# Create contact sheet
+# Tạo contact sheet (tổng hợp các ảnh thu nhỏ)
 montage *.jpg -thumbnail 200x200 -geometry +5+5 montage.jpg
 ```
 
-### Composite Images
+### Hợp nhất hình ảnh (Composite)
 
 ```bash
-# Overlay two images
+# Đè hai hình ảnh lên nhau
 composite overlay.png background.jpg output.jpg
 ```
 
-### Create Animated GIF
+### Tạo ảnh GIF động
 
 ```bash
 magick -delay 100 -loop 0 frame*.jpg animated.gif
 ```
 
-### Extract Frames from GIF
+### Trích xuất các khung hình từ GIF
 
 ```bash
 magick animated.gif frame_%03d.jpg
 ```
 
-## Geometry Specs
+## Thông số hình học (Geometry Specs)
 
-- `100x100` - Fit within (maintains aspect)
-- `100x100!` - Exact size (may distort)
-- `100x100^` - Fill (may crop)
-- `100x` - Width 100, auto height
-- `x100` - Height 100, auto width
-- `50%` - Scale to 50%
-- `100x100+10+20` - 100x100 at offset (10,20)
+- `100x100` - Vừa vặn bên trong (giữ nguyên tỷ lệ)
+- `100x100!` - Kích thước chính xác (có thể bị méo)
+- `100x100^` - Lấp đầy (có thể bị cắt bớt)
+- `100x` - Chiều rộng 100, chiều cao tự động
+- `x100` - Chiều cao 100, chiều rộng tự động
+- `50%` - Thay đổi tỷ lệ thành 50%
+- `100x100+10+20` - Kích thước 100x100 tại tọa độ (10,20)
 
-## Quick Examples
+## Ví dụ nhanh
 
-**Simple Resize:**
+**Thay đổi kích thước đơn giản:**
 ```
-"Use imagemagick to resize image to 800px width"
-```
-
-**Batch Thumbnails:**
-```
-"Use imagemagick to create square 300x300 thumbnails for all product images"
+"Sử dụng imagemagick để thay đổi kích thước ảnh thành chiều rộng 800px"
 ```
 
-**Format Conversion:**
+**Tạo hình thu nhỏ hàng loạt:**
 ```
-"Use imagemagick to convert all images to WebP format with good compression"
-```
-
-**Add Watermark:**
-```
-"Use imagemagick to add copyright text to bottom-right of all images"
+"Sử dụng imagemagick để tạo hình thu nhỏ vuông 300x300 cho tất cả ảnh sản phẩm"
 ```
 
-## Best Practices
+**Chuyển đổi định dạng:**
+```
+"Sử dụng imagemagick để chuyển đổi tất cả hình ảnh sang định dạng WebP với độ nén tốt"
+```
 
-1. **Always backup originals**
-2. **Test on single file first**
-3. **Use appropriate quality** (85-90 for web)
-4. **Strip metadata** for web
-5. **Maintain aspect ratio**
-6. **Use WebP** for modern browsers
-7. **Create multiple sizes** for responsive
-8. **Optimize file size**
+**Thêm hình mờ:**
+```
+"Sử dụng imagemagick để thêm văn bản bản quyền vào góc dưới bên phải của tất cả hình ảnh"
+```
 
-## Common Tasks
+## Phương pháp hay nhất
 
-### Product Images
+1. **Luôn sao lưu bản gốc**
+2. **Thử nghiệm trên một file trước**
+3. **Sử dụng chất lượng phù hợp** (85-90 cho web)
+4. **Loại bỏ siêu dữ liệu** cho phiên bản web
+5. **Duy trì tỷ lệ khung hình**
+6. **Sử dụng WebP** cho các trình duyệt hiện đại
+7. **Tạo nhiều kích thước** cho thiết kế đáp ứng
+8. **Tối ưu hóa kích thước tệp**
+
+## Các tác vụ thông thường
+
+### Ảnh Sản phẩm
 
 ```bash
-# Square crop from center
+# Cắt hình vuông từ chính giữa
 magick input.jpg -resize 1000x1000^ -gravity center -extent 1000x1000 product.jpg
 ```
 
-### Social Media
+### Mạng xã hội
 
 ```bash
 # Instagram (1080x1080)
 magick input.jpg -resize 1080x1080^ -gravity center -extent 1080x1080 instagram.jpg
 
-# Facebook cover (820x312)
+# Ảnh bìa Facebook (820x312)
 magick input.jpg -resize 820x312^ -gravity center -extent 820x312 facebook.jpg
 ```
 
-### Email Friendly
+### Thân thiện với Email
 
 ```bash
-# Small file size
+# Kích thước tệp nhỏ
 magick input.jpg -resize 600x -quality 70 -strip email.jpg
 ```
 
-## Troubleshooting
+## Xử lý sự cố
 
-### Command not found
+### Command not found (Không tìm thấy lệnh)
 
 ```bash
-# Check installation
+# Kiểm tra phiên bản cài đặt
 magick -version
 
-# Install
+# Cài đặt
 brew install imagemagick  # macOS
 sudo apt-get install imagemagick  # Linux
 ```
 
-### Security policy
+### Chính sách bảo mật (Security policy)
 
-Edit `/etc/ImageMagick-7/policy.xml` or use `convert` instead of `magick`.
+Chỉnh sửa tệp `/etc/ImageMagick-7/policy.xml` hoặc sử dụng lệnh `convert` thay vì `magick`.
 
-### Quality issues
+### Các vấn đề về chất lượng
 
-- Increase quality value (-quality 90)
-- Use PNG for graphics/screenshots
-- Use JPEG for photos
-- Use WebP for best compression
+- Tăng giá trị chất lượng (-quality 90)
+- Sử dụng PNG cho đồ họa/ảnh chụp màn hình
+- Sử dụng JPEG cho ảnh chụp
+- Sử dụng WebP để nén tốt nhất
 
-## Next Steps
+## Bước tiếp theo
 
-- [Media Processing](/docs/use-cases/)
+- [Xử lý đa phương tiện](/docs/use-cases/)
 - [FFmpeg](/docs/engineer/skills/ffmpeg)
-- [Batch Automation](/docs/use-cases/)
+- [Tự động hóa hàng loạt](/docs/use-cases/)
 
 ---
 
-**Bottom Line:** imagemagick handles all image processing. Resize, convert, optimize - powerful command-line image manipulation.
+**Tóm lại:** imagemagick xử lý mọi tác vụ về hình ảnh. Thay đổi kích thước, chuyển đổi, tối ưu hóa - công cụ dòng lệnh mạnh mẽ để thao tác với hình ảnh.

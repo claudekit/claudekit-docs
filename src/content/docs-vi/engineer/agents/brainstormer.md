@@ -1,426 +1,427 @@
 ---
-title: Brainstormer Agent
-description: Solution architect and technical advisor for exploring approaches, challenging assumptions, and debating decisions
+title: Agent Brainstormer
+description: Kiến trúc sư giải pháp và cố vấn kỹ thuật để khám phá các phương pháp, thách thức các giả định và thảo luận về các quyết định
 section: engineer
 kit: engineer
 category: agents
 order: 6
 published: true
+lang: vi
 ---
 
-# Brainstormer Agent
+# Agent Brainstormer
 
-The brainstormer agent is your technical advisor and solution architect who explores multiple approaches, challenges assumptions, questions requirements, and provides brutally honest assessments before any code is written.
+Agent brainstormer là cố vấn kỹ thuật và kiến trúc sư giải pháp của bạn, người khám phá nhiều phương pháp, thách thức các giả định, đặt câu hỏi về các yêu cầu và cung cấp các đánh giá trung thực một cách thẳng thắn trước khi bất kỳ dòng mã nào được viết.
 
-## What Brainstormer Does
+## Brainstormer làm gì
 
-- Explores multiple technical approaches with detailed pros/cons analysis
-- Challenges assumptions and questions unclear requirements
-- Provides honest assessments about implementation feasibility
-- Evaluates trade-offs between competing solutions
-- Considers UX/DX implications of architectural decisions
-- Identifies technical debt and maintenance concerns
-- Applies YAGNI, KISS, and DRY principles to solution design
+- Khám phá nhiều phương pháp kỹ thuật với phân tích ưu/nhược điểm chi tiết
+- Thách thức các giả định và đặt câu hỏi về các yêu cầu không rõ ràng
+- Cung cấp các đánh giá trung thực về khả năng thực thi của việc triển khai
+- Đánh giá sự đánh đổi giữa các giải pháp cạnh tranh
+- Xem xét các tác động UX/DX của các quyết định kiến trúc
+- Xác định nợ kỹ thuật và các vấn đề bảo trì
+- Áp dụng các nguyên tắc YAGNI, KISS và DRY vào thiết kế giải pháp
 
-## When to Use
+## Khi nào nên sử dụng
 
-Use brainstormer when:
-- Evaluating multiple architectural approaches before committing
-- Debating technical decisions with competing trade-offs
-- Challenging existing assumptions about requirements
-- Solving complex problems requiring creative solutions
-- Assessing feasibility of ambitious feature requests
-- Planning major refactoring efforts
-- Designing system architecture for new features
-- Need a "second opinion" on technical direction
+Sử dụng brainstormer khi:
+- Đánh giá nhiều phương pháp kiến trúc trước khi cam kết thực hiện
+- Thảo luận về các quyết định kỹ thuật với các sự đánh đổi cạnh tranh
+- Thách thức các giả định hiện có về các yêu cầu
+- Giải quyết các vấn đề phức tạp đòi hỏi các giải pháp sáng tạo
+- Đánh giá tính khả thi của các yêu cầu tính năng đầy tham vọng
+- Lập kế hoạch cho các nỗ lực tái cấu trúc (refactoring) lớn
+- Thiết kế kiến trúc hệ thống cho các tính năng mới
+- Cần một "ý kiến thứ hai" về hướng đi kỹ thuật
 
-## Quick Example
+## Ví dụ nhanh
 
 ```bash
-# Debate approaches for a feature
-/brainstorm [should we use REST API or GraphQL for our mobile app?]
+# Thảo luận các phương pháp cho một tính năng
+/brainstorm [nên sử dụng REST API hay GraphQL cho ứng dụng di động của chúng ta?]
 ```
 
-**What happens**:
-1. Brainstormer analyzes both approaches thoroughly
-2. Brainstormer evaluates pros/cons for your specific context
-3. Brainstormer challenges assumptions about requirements
-4. Result: Comprehensive analysis with recommendation
+**Điều gì xảy ra**:
+1. Brainstormer phân tích cả hai phương pháp một cách thấu đáo
+2. Brainstormer đánh giá ưu/nhược điểm cho bối cảnh cụ thể của bạn
+3. Brainstormer thách thức các giả định về các yêu cầu
+4. Kết quả: Phân tích toàn diện kèm theo đề xuất
 
-## How It Works
+## Cách thức hoạt động
 
-### Step 1: Requirement Analysis
+### Bước 1: Phân tích yêu cầu
 
-Brainstormer starts by questioning and clarifying:
+Brainstormer bắt đầu bằng cách đặt câu hỏi và làm rõ:
 
 ```
-User Request: "Add caching to improve performance"
+Yêu cầu người dùng: "Thêm bộ nhớ đệm để cải thiện hiệu suất"
     ↓
-Brainstormer Questions:
-- What performance problem are we solving?
-- Where is the bottleneck? (Database, API, frontend?)
-- What are current response times?
-- What's the acceptable response time?
-- How often does data change?
-- How many users are we serving?
+Câu hỏi của Brainstormer:
+- Chúng ta đang giải quyết vấn đề hiệu suất nào?
+- Nút thắt cổ chai ở đâu? (Cơ sở dữ liệu, API, frontend?)
+- Thời gian phản hồi hiện tại là bao nhiêu?
+- Thời gian phản hồi chấp nhận được là bao nhiêu?
+- Dữ liệu thay đổi thường xuyên như thế nào?
+- Chúng ta đang phục vụ bao nhiêu người dùng?
 ```
 
-This ensures solutions address real problems, not imagined ones.
+Điều này đảm bảo các giải pháp giải quyết các vấn đề thực tế, không phải những vấn đề tưởng tượng.
 
-### Step 2: Approach Exploration
+### Bước 2: Khám phá phương pháp
 
-Brainstormer explores multiple valid approaches:
+Brainstormer khám phá nhiều phương pháp hợp lệ:
 
 ```
-Problem: "Slow API responses"
+Vấn đề: "Phản hồi API chậm"
     ↓
-Approach A: In-Memory Cache (Redis)
-Approach B: Database Query Optimization
-Approach C: CDN for Static Content
-Approach D: Response Caching (HTTP)
-Approach E: Do Nothing (Measure First)
+Phương pháp A: Bộ nhớ đệm trong bộ nhớ (Redis)
+Phương pháp B: Tối ưu hóa truy vấn cơ sở dữ liệu
+Phương pháp C: CDN cho nội dung tĩnh
+Phương pháp D: Bộ nhớ đệm phản hồi (HTTP)
+Phương pháp E: Không làm gì cả (Đo lường trước)
 ```
 
-### Step 3: Trade-Off Analysis
+### Bước 3: Phân tích sự đánh đổi
 
-For each approach, brainstormer evaluates:
+Đối với mỗi phương pháp, brainstormer đánh giá:
 
-- **Implementation Complexity**: Time and effort required
-- **Maintenance Burden**: Long-term upkeep costs
-- **Performance Impact**: Actual speed improvements
-- **Cost Implications**: Infrastructure and operational costs
-- **Technical Debt**: Future flexibility and refactoring
-- **UX/DX Impact**: User and developer experience changes
-- **Risk Assessment**: What could go wrong
+- **Độ phức tạp triển khai**: Thời gian và nỗ lực cần thiết
+- **Gánh nặng bảo trì**: Chi phí duy trì lâu dài
+- **Tác động hiệu suất**: Cải thiện tốc độ thực tế
+- **Hệ lụy chi phí**: Chi phí cơ sở hạ tầng và vận hành
+- **Nợ kỹ thuật**: Tính linh hoạt và tái cấu trúc trong tương lai
+- **Tác động UX/DX**: Thay đổi trải nghiệm người dùng và nhà phát triển
+- **Đánh giá rủi ro**: Những gì có thể sai sót
 
-### Step 4: Brutal Honesty
+### Bước 4: Sự trung thực thẳng thắn
 
-Brainstormer provides unfiltered assessment:
+Brainstormer cung cấp đánh giá không bộ lọc:
 
-✅ "This is overengineering. Start with database indexes first."
-⚠️ "This will work but creates tight coupling. Consider this risk."
-❌ "This approach will cause more problems than it solves."
-💡 "Have you considered this simpler alternative?"
+✅ "Đây là quá kỹ thuật (overengineering). Hãy bắt đầu với các chỉ mục cơ sở dữ liệu trước."
+⚠️ "Điều này sẽ hoạt động nhưng tạo ra sự phụ thuộc chặt chẽ (tight coupling). Hãy xem xét rủi ro này."
+❌ "Phương pháp này sẽ gây ra nhiều vấn đề hơn là giải quyết chúng."
+💡 "Bạn đã xem xét giải pháp thay thế đơn giản hơn này chưa?"
 
-## Tools & Capabilities
+## Công cụ & Khả năng
 
-Brainstormer has access to:
+Brainstormer có quyền truy cập vào:
 
-- **Planner Agent**: Consults for implementation details
-- **Docs-Manager Agent**: Reviews current architecture documentation
-- **WebSearch**: Researches architectural patterns and case studies
-- **docs-seeker Skill**: Finds relevant technology documentation
-- **gemini-vision Skill**: Analyzes architecture diagrams
-- **psql**: Queries database for current state analysis
-- **sequential-thinking Skill**: Breaks down complex problems systematically
-- **repomix**: Understands full codebase context
-- **scout Agents**: Locates relevant files across codebase
+- **Agent Planner**: Tham khảo chi tiết triển khai
+- **Agent Docs-Manager**: Xem xét tài liệu kiến trúc hiện tại
+- **WebSearch**: Nghiên cứu các mô hình kiến trúc và nghiên cứu điển hình
+- **Kỹ năng docs-seeker**: Tìm kiếm tài liệu công nghệ liên quan
+- **Kỹ năng gemini-vision**: Phân tích sơ đồ kiến trúc
+- **psql**: Truy vấn cơ sở dữ liệu để phân tích trạng thái hiện tại
+- **Kỹ năng sequential-thinking**: Chia nhỏ các vấn đề phức tạp một cách hệ thống
+- **repomix**: Hiểu toàn bộ bối cảnh mã nguồn
+- **Agent Scout**: Định vị các tệp liên quan trong mã nguồn
 
-## Output Format
+## Định dạng đầu ra
 
-Brainstormer creates comprehensive markdown summary reports with clear structure.
+Brainstormer tạo các báo cáo tóm tắt bằng markdown toàn diện với cấu trúc rõ ràng.
 
-**Example Output**:
+**Ví dụ đầu ra**:
 
 ```markdown
-# Brainstorming Session: API Architecture Decision
+# Phiên thảo luận: Quyết định kiến trúc API
 
-**Question**: Should we use REST API or GraphQL for our mobile app?
+**Câu hỏi**: Nên sử dụng REST API hay GraphQL cho ứng dụng di động của chúng ta?
 
-**Context**: Building iOS/Android mobile app that displays user profiles, posts, comments, and notifications. Backend is Node.js + PostgreSQL. Team has REST experience, no GraphQL experience.
-
----
-
-## Challenged Assumptions
-
-Before diving into solutions, let's question the premise:
-
-❓ **Assumption**: "We need to choose one"
-**Reality**: You can use both. Start with REST, add GraphQL for specific use cases later.
-
-❓ **Assumption**: "GraphQL is always better for mobile"
-**Reality**: GraphQL adds complexity. REST can be excellent for mobile with proper API design.
-
-❓ **Assumption**: "Performance is the primary concern"
-**Reality**: Developer productivity and maintenance might matter more at this stage.
+**Bối cảnh**: Xây dựng ứng dụng di động iOS/Android hiển thị hồ sơ người dùng, bài đăng, bình luận và thông báo. Backend là Node.js + PostgreSQL. Nhóm có kinh nghiệm REST, chưa có kinh nghiệm GraphQL.
 
 ---
 
-## Approach A: REST API (Recommended)
+## Các giả định bị thách thức
 
-### Description
-Traditional RESTful API with versioned endpoints, JSON responses, and standard HTTP methods.
+Trước khi đi sâu vào các giải pháp, hãy đặt câu hỏi về tiền đề:
 
-### Pros
-✅ **Team Knowledge**: Your team already knows REST well
-✅ **Tooling**: Mature ecosystem (Swagger, Postman, etc.)
-✅ **Simplicity**: Straightforward request/response model
-✅ **Caching**: Built-in HTTP caching, CDN-friendly
-✅ **Monitoring**: Standard APM tools work out-of-box
-✅ **Quick Start**: Can ship MVP in 1-2 weeks
+❓ **Giả định**: "Chúng ta cần chọn một cái"
+**Thực tế**: Bạn có thể sử dụng cả hai. Bắt đầu với REST, thêm GraphQL cho các trường hợp sử dụng cụ thể sau.
 
-### Cons
-❌ **Over-fetching**: Mobile app gets more data than needed
-❌ **Multiple Requests**: Need separate calls for related data
-❌ **Versioning**: API versioning can become complex
-❌ **Flexibility**: Changing requirements means API changes
+❓ **Giả định**: "GraphQL luôn tốt hơn cho di động"
+**Thực tế**: GraphQL thêm độ phức tạp. REST có thể tuyệt vời cho di động với thiết kế API phù hợp.
 
-### Implementation Complexity
-**Low** - 2-3 days for experienced team
-
-### Maintenance Burden
-**Low-Medium** - Versioning can become burden as API grows
-
-### Best For
-- Teams with limited GraphQL experience
-- MVPs requiring fast delivery
-- Public APIs consumed by many clients
-- Systems requiring extensive caching
+❓ **Giả định**: "Hiệu suất là mối quan tâm chính"
+**Thực tế**: Năng suất của nhà phát triển và việc bảo trì có thể quan trọng hơn ở giai đoạn này.
 
 ---
 
-## Approach B: GraphQL API
+## Phương pháp A: REST API (Được khuyến nghị)
 
-### Description
-Single endpoint with GraphQL query language allowing clients to request exactly the data they need.
+### Mô tả
+API RESTful truyền thống với các điểm cuối được đánh số phiên bản, phản hồi JSON và các phương thức HTTP tiêu chuẩn.
 
-### Pros
-✅ **Precise Data**: Mobile app requests only what it needs
-✅ **Single Request**: Fetch related data in one query
-✅ **Introspection**: Auto-generated API documentation
-✅ **Type Safety**: Strong typing prevents errors
-✅ **Developer Experience**: Playground for API exploration
+### Ưu điểm
+✅ **Kiến thức nhóm**: Nhóm của bạn đã biết rõ về REST
+✅ **Công cụ**: Hệ sinh thái trưởng thành (Swagger, Postman, v.v.)
+✅ **Sự đơn giản**: Mô hình yêu cầu/phản hồi trực tiếp
+✅ **Bộ nhớ đệm**: Bộ nhớ đệm HTTP tích hợp, thân thiện với CDN
+✅ **Giám sát**: Các công cụ APM tiêu chuẩn hoạt động ngay lập tức
+✅ **Bắt đầu nhanh**: Có thể xuất xưởng MVP trong 1-2 tuần
 
-### Cons
-❌ **Learning Curve**: Team needs to learn GraphQL
-❌ **Complexity**: Requires resolvers, schema design, N+1 query handling
-❌ **Caching**: HTTP caching doesn't work, need custom solution
-❌ **Monitoring**: Harder to monitor and debug
-❌ **Performance**: Easy to write expensive queries
-❌ **Implementation Time**: 3-4 weeks for team to learn and implement
+### Nhược điểm
+❌ **Lấy dư dữ liệu (Over-fetching)**: Ứng dụng di động nhận được nhiều dữ liệu hơn mức cần thiết
+❌ **Nhiều yêu cầu**: Cần các cuộc gọi riêng biệt cho dữ liệu liên quan
+❌ **Phiên bản**: Việc đánh số phiên bản API có thể trở nên phức tạp
+❌ **Tính linh hoạt**: Thay đổi yêu cầu có nghĩa là thay đổi API
 
-### Implementation Complexity
-**High** - 3-4 weeks for inexperienced team
+### Độ phức tạp triển khai
+**Thấp** - 2-3 ngày cho nhóm giàu kinh nghiệm
 
-### Maintenance Burden
-**Medium** - Need to manage schema, resolvers, and query optimization
+### Gánh nặng bảo trì
+**Thấp-Trung bình** - Việc đánh số phiên bản có thể trở thành gánh nặng khi API phát triển
 
-### Best For
-- Teams with GraphQL experience
-- Complex data relationships and deep nesting
-- Frequent UI changes requiring API flexibility
-- Internal APIs with controlled clients
+### Tốt nhất cho
+- Nhóm có kinh nghiệm GraphQL hạn chế
+- Các MVP yêu cầu phân phối nhanh
+- API công khai được sử dụng bởi nhiều khách hàng
+- Các hệ thống yêu cầu bộ nhớ đệm rộng rãi
 
 ---
 
-## Approach C: Hybrid (Pragmatic)
+## Phương pháp B: GraphQL API
 
-### Description
-Start with REST API for simple endpoints, add GraphQL for complex data fetching later.
+### Mô tả
+Điểm cuối duy nhất với ngôn ngữ truy vấn GraphQL cho phép khách hàng yêu cầu chính xác dữ liệu họ cần.
 
-### Implementation
+### Ưu điểm
+✅ **Dữ liệu chính xác**: Ứng dụng di động chỉ yêu cầu những gì nó cần
+✅ **Yêu cầu duy nhất**: Lấy dữ liệu liên quan trong một truy vấn
+✅ **Tự kiểm tra (Introspection)**: Tài liệu API được tạo tự động
+✅ **An toàn kiểu**: Kiểu dữ liệu mạnh giúp ngăn ngừa lỗi
+✅ **Trải nghiệm nhà phát triển**: Sân chơi (Playground) để khám phá API
+
+### Nhược điểm
+❌ **Đường cong học tập**: Nhóm cần học GraphQL
+❌ **Độ phức tạp**: Yêu cầu bộ giải (resolvers), thiết kế lược đồ, xử lý truy vấn N+1
+❌ **Bộ nhớ đệm**: Bộ nhớ đệm HTTP không hoạt động, cần giải pháp tùy chỉnh
+❌ **Giám sát**: Khó giám sát và gỡ lỗi hơn
+❌ **Hiệu suất**: Dễ dàng viết các truy vấn tốn kém
+❌ **Thời gian triển khai**: 3-4 tuần để nhóm học và triển khai
+
+### Độ phức tạp triển khai
+**Cao** - 3-4 tuần cho nhóm chưa có kinh nghiệm
+
+### Gánh nặng bảo trì
+**Trung bình** - Cần quản lý lược đồ, bộ giải và tối ưu hóa truy vấn
+
+### Tốt nhất cho
+- Nhóm có kinh nghiệm GraphQL
+- Các mối quan hệ dữ liệu phức tạp và phân cấp sâu
+- Thay đổi giao diện người dùng thường xuyên yêu cầu tính linh hoạt của API
+- API nội bộ với các khách hàng được kiểm soát
+
+---
+
+## Phương pháp C: Hỗn hợp (Thực dụng)
+
+### Mô tả
+Bắt đầu với REST API cho các điểm cuối đơn giản, thêm GraphQL cho việc lấy dữ liệu phức tạp sau.
+
+### Triển khai
 ```
-Phase 1 (Weeks 1-2): REST API
+Giai đoạn 1 (Tuần 1-2): REST API
 - POST /auth/login
 - GET /users/:id
 - GET /posts
 - GET /posts/:id
 
-Phase 2 (Weeks 3-4): Add GraphQL for complex queries
-- User feed with posts, comments, likes (single query)
-- Search across multiple entities
-- Real-time subscriptions
+Giai đoạn 2 (Tuần 3-4): Thêm GraphQL cho các truy vấn phức tạp
+- Nguồn cấp dữ liệu người dùng với bài đăng, bình luận, lượt thích (truy vấn duy nhất)
+- Tìm kiếm trên nhiều thực thể
+- Đăng ký thời gian thực (Subscriptions)
 ```
 
-### Pros
-✅ **Progressive Adoption**: Learn GraphQL gradually
-✅ **Risk Mitigation**: Fallback to REST if GraphQL issues
-✅ **Flexibility**: Use right tool for each use case
-✅ **Team Growth**: Upskill team over time
+### Ưu điểm
+✅ **Áp dụng dần dần**: Học GraphQL từng bước
+✅ **Giảm thiểu rủi ro**: Chuyển hướng sang REST nếu có vấn đề với GraphQL
+✅ **Tính linh hoạt**: Sử dụng đúng công cụ cho từng trường hợp sử dụng
+✅ **Phát triển nhóm**: Nâng cao kỹ năng cho nhóm theo thời gian
 
-### Cons
-❌ **Complexity**: Maintaining two API styles
-❌ **Inconsistency**: Clients need to know which to use
-❌ **Documentation**: Need to document both approaches
-
----
-
-## Brutal Honesty Assessment
-
-### The Truth About Your Situation
-
-🎯 **What Matters Most**: Shipping the mobile app in 6 weeks
-
-⚠️ **Real Risk**: Team learning GraphQL while building MVP will cause delays
-
-💡 **Overlooked Option**: Good REST API design solves 90% of your concerns
-
-🔍 **Hidden Assumption**: You think GraphQL is necessary because big tech companies use it. They also have 100+ engineers and different constraints.
-
-### The Over-Engineering Trap
-
-GraphQL is powerful but might be overkill if:
-- You have <5 different types of API clients
-- Data relationships aren't deeply nested
-- Team has limited GraphQL experience
-- MVP timeline is tight
-
-### What Would I Do?
-
-If this were my project:
-
-1. **Week 1-2**: Build REST API with good design
-   - Use pagination (`limit`, `offset`)
-   - Support field filtering (`?fields=id,name,email`)
-   - Enable embedding (`?embed=posts,comments`)
-   - Implement proper caching headers
-
-2. **Week 3-4**: Build mobile app against REST API
-   - Measure actual API performance
-   - Identify real pain points
-   - Document what's slow or awkward
-
-3. **Week 5-6**: Optimize based on data
-   - If over-fetching is real problem, add GraphQL
-   - If not, improve REST with lessons learned
+### Nhược điểm
+❌ **Độ phức tạp**: Duy trì hai phong cách API
+❌ **Sự không nhất quán**: Khách hàng cần biết cái nào để sử dụng
+❌ **Tài liệu**: Cần ghi lại cả hai phương pháp
 
 ---
 
-## Recommendation
+## Đánh giá trung thực thẳng thắn
 
-### For Your Context
+### Sự thật về tình huống của bạn
 
-**Go with REST API** for these reasons:
+🎯 **Điều quan trọng nhất**: Xuất xưởng ứng dụng di động trong 6 tuần
 
-1. ⏰ **Time Pressure**: 6-week deadline favors known technology
-2. 👥 **Team Experience**: Leverage existing REST expertise
-3. 📱 **Mobile Use Case**: Not complex enough to justify GraphQL learning curve
-4. 🎯 **MVP Goals**: Get to market fast, optimize later
+⚠️ **Rủi ro thực tế**: Nhóm học GraphQL trong khi xây dựng MVP sẽ gây ra sự chậm trễ
 
-### Success Criteria
+💡 **Tùy chọn bị bỏ qua**: Thiết kế REST API tốt giải quyết 90% mối quan tâm của bạn
 
-REST API will succeed if:
-- Response times <200ms for 95th percentile
-- Mobile app makes <5 API calls per screen
-- Over-fetching is <30% of response payload
-- Development velocity stays high
+🔍 **Giả định tiềm ẩn**: Bạn nghĩ GraphQL là cần thiết vì các công ty công nghệ lớn sử dụng nó. Họ cũng có hơn 100 kỹ sư và các ràng buộc khác nhau.
 
-If these criteria aren't met after MVP launch, then reconsider GraphQL.
+### Cái bẫy của việc quá kỹ thuật (Over-Engineering)
 
-### Migration Path
+GraphQL mạnh mẽ nhưng có thể là quá mức nếu:
+- Bạn có < 5 loại khách hàng API khác nhau
+- Các mối quan hệ dữ liệu không được phân cấp sâu
+- Nhóm có kinh nghiệm GraphQL hạn chế
+- Thời hạn MVP eo hẹp
 
-If you need GraphQL later:
+### Tôi sẽ làm gì?
+
+Nếu đây là dự án của tôi:
+
+1. **Tuần 1-2**: Xây dựng REST API với thiết kế tốt
+   - Sử dụng phân trang (`limit`, `offset`)
+   - Hỗ trợ lọc trường (`?fields=id,name,email`)
+   - Cho phép nhúng (`?embed=posts,comments`)
+   - Triển khai các tiêu đề bộ nhớ đệm phù hợp
+
+2. **Tuần 3-4**: Xây dựng ứng dụng di động dựa trên REST API
+   - Đo lường hiệu suất API thực tế
+   - Xác định các điểm đau (pain points) thực tế
+   - Ghi lại những gì chậm hoặc bất tiện
+
+3. **Tuần 5-6**: Tối ưu hóa dựa trên dữ liệu
+   - Nếu việc lấy dư dữ liệu là vấn đề thực tế, hãy thêm GraphQL
+   - Nếu không, hãy cải thiện REST với những bài học kinh nghiệm
+
+---
+
+## Đề xuất
+
+### Cho bối cảnh của bạn
+
+**Hãy chọn REST API** vì những lý do sau:
+
+1. ⏰ **Áp lực thời gian**: Thời hạn 6 tuần ủng hộ công nghệ đã biết
+2. 👥 **Kinh nghiệm nhóm**: Tận dụng chuyên môn REST hiện có
+3. 📱 **Trường hợp sử dụng di động**: Không đủ phức tạp để biện minh cho đường cong học tập GraphQL
+4. 🎯 **Mục tiêu MVP**: Đưa ra thị trường nhanh chóng, tối ưu hóa sau
+
+### Tiêu chí thành công
+
+REST API sẽ thành công nếu:
+- Thời gian phản hồi < 200ms cho phân vị thứ 95
+- Ứng dụng di động thực hiện < 5 cuộc gọi API mỗi màn hình
+- Việc lấy dư dữ liệu chiếm < 30% tải trọng phản hồi
+- Tốc độ phát triển vẫn duy trì ở mức cao
+
+Nếu các tiêu chí này không được đáp ứng sau khi khởi chạy MVP, thì hãy xem xét lại GraphQL.
+
+### Lộ trình di chuyển
+
+Nếu bạn cần GraphQL sau này:
 
 ```typescript
-// You can add GraphQL alongside REST
-app.use('/api/v1', restRoutes);      // Keep existing REST
-app.use('/graphql', graphqlRouter);   // Add GraphQL
+// Bạn có thể thêm GraphQL bên cạnh REST
+app.use('/api/v1', restRoutes);      // Giữ REST hiện tại
+app.use('/graphql', graphqlRouter);   // Thêm GraphQL
 ```
 
-No need to rewrite everything. Progressive enhancement.
+Không cần phải viết lại mọi thứ. Cải tiến dần dần.
 
 ---
 
-## Core Principles Applied
+## Các nguyên tắc cốt lõi được áp dụng
 
-### YAGNI (You Aren't Gonna Need It)
-Don't add GraphQL complexity until you have concrete evidence you need it.
+### YAGNI (Bạn sẽ không cần nó đâu)
+Đừng thêm độ phức tạp của GraphQL cho đến khi bạn có bằng chứng cụ thể rằng bạn cần nó.
 
-### KISS (Keep It Simple, Stupid)
-REST is simpler for your team right now. Simple ships faster.
+### KISS (Giữ cho nó đơn giản)
+REST đơn giản hơn cho nhóm của bạn lúc này. Đơn giản thì xuất xưởng nhanh hơn.
 
-### DRY (Don't Repeat Yourself)
-Both approaches can be DRY. This isn't the deciding factor.
-
----
-
-## Open Questions for You
-
-Before finalizing decision:
-
-1. What's your actual performance requirement? (e.g., "95th percentile <200ms")
-2. How much over-fetching is acceptable? (e.g., "30% waste is fine")
-3. Is the team willing to delay MVP to learn GraphQL properly?
-4. Do you have budget for GraphQL tooling and monitoring?
-5. What's your plan if GraphQL performance issues arise?
+### DRY (Đừng lặp lại chính mình)
+Cả hai phương pháp đều có thể là DRY. Đây không phải là yếu tố quyết định.
 
 ---
 
-## Next Steps
+## Câu hỏi mở cho bạn
 
-**Recommended Path**:
+Trước khi hoàn tất quyết định:
 
-1. **Accept the REST decision** ✅
-2. **Run**: `/plan [build REST API for mobile app]`
-3. **Design endpoints** with good practices (pagination, filtering, embedding)
-4. **Measure** API usage patterns post-launch
-5. **Revisit** GraphQL decision with real data in 3 months
-
-**Alternative Path** (if you insist on GraphQL):
-
-1. **Allocate 1 week** for team GraphQL training
-2. **Build simple prototype** with Apollo Server
-3. **Assess complexity** before committing to full implementation
-4. **Extend timeline** by 2-3 weeks to account for learning curve
+1. Yêu cầu hiệu suất thực tế của bạn là gì? (ví dụ: "phân vị thứ 95 < 200ms")
+2. Mức độ lấy dư dữ liệu nào là chấp nhận được? (ví dụ: "lãng phí 30% là ổn")
+3. Nhóm có sẵn sàng trì hoãn MVP để học GraphQL một cách bài bản không?
+4. Bạn có ngân sách cho các công cụ và giám sát GraphQL không?
+5. Kế hoạch của bạn là gì nếu các vấn đề về hiệu suất GraphQL phát sinh?
 
 ---
 
-**My Confidence**: High (similar projects, experienced with both approaches)
-**Key Risk**: Underestimating GraphQL learning curve
-**Success Factor**: Choose based on constraints (time, team, complexity), not hype
+## Các bước tiếp theo
+
+**Đường dẫn được khuyến nghị**:
+
+1. **Chấp nhận quyết định REST** ✅
+2. **Chạy**: `/plan [xây dựng REST API cho ứng dụng di động]`
+3. **Thiết kế các điểm cuối** với các thực hành tốt (phân trang, lọc, nhúng)
+4. **Đo lường** các mẫu sử dụng API sau khi ra mắt
+5. **Xem xét lại** quyết định GraphQL với dữ liệu thực tế sau 3 tháng
+
+**Đường dẫn thay thế** (nếu bạn khăng khăng muốn GraphQL):
+
+1. **Phân bổ 1 tuần** để đào tạo GraphQL cho nhóm
+2. **Xây dựng nguyên mẫu đơn giản** với Apollo Server
+3. **Đánh giá độ phức tạp** trước khi cam kết triển khai đầy đủ
+4. **Kéo dài thời gian** thêm 2-3 tuần để tính đến đường cong học tập
+
+---
+
+**Độ tin cậy của tôi**: Cao (các dự án tương tự, có kinh nghiệm với cả hai phương pháp)
+**Rủi ro chính**: Đánh giá thấp đường cong học tập GraphQL
+**Yếu tố thành công**: Chọn dựa trên các ràng buộc (thời gian, nhóm, độ phức tạp), không phải sự thổi phồng (hype)
 ```
 
-## Best Practices
+## Thực hành tốt nhất
 
-✅ **Do**:
-- Present specific constraints (timeline, budget, team skills)
-- Be open to challenging your assumptions
-- Consider maintenance costs, not just implementation
-- Think about team capabilities and learning curves
-- Ask "do we really need this complexity?"
+✅ **Nên**:
+- Trình bày các ràng buộc cụ thể (mốc thời gian, ngân sách, kỹ năng của nhóm)
+- Sẵn sàng thách thức các giả định của bạn
+- Xem xét chi phí bảo trì, không chỉ việc triển khai
+- Suy nghĩ về khả năng của nhóm và đường cong học tập
+- Hỏi "chúng ta có thực sự cần độ phức tạp này không?"
 
-❌ **Don't**:
-- Start with "I already decided, just validate it"
-- Ignore the brutally honest assessment
-- Skip the "open questions" section
-- Choose solutions based on hype or trends
-- Dismiss simpler alternatives prematurely
+❌ **Không nên**:
+- Bắt đầu bằng "Tôi đã quyết định rồi, chỉ cần xác nhận nó thôi"
+- Bỏ qua đánh giá trung thực thẳng thắn
+- Bỏ qua phần "câu hỏi mở"
+- Chọn các giải pháp dựa trên sự thổi phồng hoặc xu hướng
+- Từ bỏ các giải pháp thay thế đơn giản hơn một cách sớm hơn
 
-## Common Issues
+## Các vấn đề thường gặp
 
-### Issue: Defensive About Existing Ideas
+### Vấn đề: Phòng thủ về các ý tưởng hiện có
 
-**Problem**: Getting defensive when brainstormer challenges your approach
+**Vấn đề**: Trở nên phòng thủ khi brainstormer thách thức phương pháp của bạn
 
-**Solution**:
-Remember brainstormer's role is to save you from costly mistakes. Challenging ideas early is cheaper than fixing wrong decisions later.
+**Giải pháp**:
+Hãy nhớ vai trò của brainstormer là cứu bạn khỏi những sai lầm tốn kém. Thách thức các ý tưởng sớm sẽ rẻ hơn so với việc sửa chữa các quyết định sai lầm sau này.
 
-### Issue: Analysis Paralysis
+### Vấn đề: Tê liệt phân tích
 
-**Problem**: Too many options, can't decide
+**Vấn đề**: Quá nhiều lựa chọn, không thể quyết định
 
-**Solution**:
-- Focus on "recommendation" section
-- Use "success criteria" to guide decision
-- Start with simplest approach
-- Plan migration path if you need to change later
+**Giải pháp**:
+- Tập trung vào phần "đề xuất"
+- Sử dụng "tiêu chí thành công" để hướng dẫn quyết định
+- Bắt đầu với phương pháp đơn giản nhất
+- Lập kế hoạch lộ trình di chuyển nếu bạn cần thay đổi sau này
 
-### Issue: Ignoring YAGNI Principle
+### Vấn đề: Bỏ qua nguyên tắc YAGNI
 
-**Problem**: Want to build complex solution "just in case"
+**Vấn đề**: Muốn xây dựng giải pháp phức tạp "để phòng hờ"
 
-**Solution**:
-Brainstormer will call this out. Trust the YAGNI assessment. Build what you need now, not what you might need someday.
+**Giải pháp**:
+Brainstormer sẽ gọi tên điều này. Hãy tin tưởng vào đánh giá YAGNI. Hãy xây dựng những gì bạn cần bây giờ, không phải những gì bạn có thể cần vào một ngày nào đó.
 
-## Related
+## Liên quan
 
-- [Planner Agent](/docs/engineer/agents/planner) - Creates detailed implementation plans after approach is decided
-- [Researcher Agent](/docs/engineer/agents/researcher) - Provides data for brainstorming decisions
-- [Docs-Manager Agent](/docs/engineer/agents/docs-manager) - Maintains architectural decision records
-- [/brainstorm Command](/docs/engineer/commands/core/brainstorm) - Triggers brainstorming session
+- [Agent Planner](/vi/docs/engineer/agents/planner) - Tạo các kế hoạch triển khai chi tiết sau khi phương pháp được quyết định
+- [Agent Researcher](/vi/docs/engineer/agents/researcher) - Cung cấp dữ liệu cho các quyết định thảo luận
+- [Agent Docs-Manager](/vi/docs/engineer/agents/docs-manager) - Duy trì các hồ sơ quyết định kiến trúc
+- [Lệnh /brainstorm](/vi/docs/engineer/commands/core/brainstorm) - Kích hoạt phiên thảo luận
 
 ---
 
-**Next**: Once approach is decided, use [planner agent](/docs/engineer/agents/planner) to create implementation plan
+**Tiếp theo**: Khi phương pháp đã được quyết định, hãy sử dụng [agent planner](/vi/docs/engineer/agents/planner) để tạo kế hoạch triển khai
 
-**Remember**: Brainstormer doesn't implement anything. It only advises, challenges, and recommends. Implementation comes after you've made informed decisions.
+**Hãy nhớ**: Brainstormer không triển khai bất cứ thứ gì. Nó chỉ tư vấn, thách thức và đề xuất. Việc triển khai diễn ra sau khi bạn đã đưa ra các quyết định sáng suốt.

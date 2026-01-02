@@ -6,6 +6,7 @@ kit: engineer
 category: commands/skill
 order: 82
 published: true
+lang: vi
 ---
 
 # /skill:add

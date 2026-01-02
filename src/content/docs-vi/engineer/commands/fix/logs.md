@@ -1,348 +1,349 @@
 ---
 title: /fix:logs
-description: Documentation for logs
+description: Tài liệu hướng dẫn lệnh fix:logs
 section: engineer
 kit: engineer
 category: docs/commands/fix
 order: 23
 published: true
+lang: vi
 ---
 
 # /fix:logs
 
-Analyze log files to identify errors, warnings, and issues, then automatically implement fixes based on comprehensive root cause analysis. Perfect for troubleshooting production issues, debugging failed deployments, or investigating system errors.
+Phân tích các tệp nhật ký (log) để xác định lỗi, cảnh báo và các vấn đề, sau đó tự động triển khai bản sửa lỗi dựa trên phân tích nguyên nhân gốc rễ toàn diện. Hoàn hảo để khắc phục sự cố trên production, gỡ lỗi các triển khai bị thất bại hoặc điều tra các lỗi hệ thống.
 
-## Syntax
-
-```bash
-/fix:logs [issue description]
-```
-
-## How It Works
-
-The `/fix:logs` command uses the `debugger` agent to systematically analyze logs:
-
-### 1. Log Collection
-
-- Reads entire `./logs.txt` file
-- Identifies all errors and warnings
-- Captures stack traces and error messages
-- Collects contextual information
-
-### 2. Root Cause Analysis
-
-- Correlates events across log entries
-- Identifies patterns and anomalies
-- Traces execution paths
-- Determines underlying causes
-
-### 3. Solution Development
-
-- Creates comprehensive diagnostic report
-- Designs targeted fixes for identified problems
-- Implements fixes systematically
-- Validates fixes with appropriate commands
-
-### 4. Verification
-
-- Re-analyzes logs after fixes
-- Ensures issues are resolved
-- Confirms no new issues introduced
-- Provides final status report
-
-## When to Use
-
-### ✅ Perfect For
-
-**Production Errors**
-```bash
-/fix:logs [users reporting 500 errors in checkout]
-```
-
-**Failed Deployments**
-```bash
-/fix:logs [CI/CD pipeline failing on deployment step]
-```
-
-**Database Issues**
-```bash
-/fix:logs [connection timeout errors in logs]
-```
-
-**API Failures**
-```bash
-/fix:logs [intermittent API timeouts]
-```
-
-**Performance Issues**
-```bash
-/fix:logs [slow response times logged]
-```
-
-### ❌ Don't Use For
-
-**No Log File**
-```bash
-❌ /fix:logs [issue but no logs collected]
-✅ First collect logs to ./logs.txt
-```
-
-**Simple Code Typos**
-```bash
-❌ /fix:logs [typo in variable name]
-✅ /fix:fast [typo in variable name]
-```
-
-**Known Simple Fix**
-```bash
-❌ /fix:logs [need to update config value]
-✅ /fix:fast [update config value]
-```
-
-## Examples
-
-### API Error Investigation
+## Cú pháp
 
 ```bash
-/fix:logs [API returning 500 errors for /users endpoint]
+/fix:logs [mô tả vấn đề]
 ```
 
-**What happens:**
+## Cách hoạt động
+
+Lệnh `/fix:logs` sử dụng agent **debugger** để phân tích nhật ký một cách hệ thống:
+
+### 1. Thu thập nhật ký
+
+- Đọc toàn bộ tệp `./logs.txt`
+- Xác định tất cả các lỗi và cảnh báo
+- Thu thập dấu vết ngăn xếp (stack traces) và thông báo lỗi
+- Thu thập thông tin ngữ cảnh
+
+### 2. Phân tích nguyên nhân gốc rễ
+
+- Đối chiếu các sự kiện giữa các mục nhật ký
+- Xác định các mẫu (patterns) và điểm bất thường
+- Truy vết các đường dẫn thực thi
+- Xác định các nguyên nhân cơ bản
+
+### 3. Phát triển giải pháp
+
+- Tạo báo cáo chẩn đoán toàn diện
+- Thiết kế các bản sửa lỗi mục tiêu cho các vấn đề đã xác định
+- Triển khai các bản sửa lỗi một cách hệ thống
+- Xác minh các bản sửa lỗi bằng các lệnh phù hợp
+
+### 4. Xác minh
+
+- Phân tích lại nhật ký sau khi sửa lỗi
+- Đảm bảo các vấn đề đã được giải quyết
+- Xác nhận không có vấn đề mới nào phát sinh
+- Cung cấp báo cáo trạng thái cuối cùng
+
+## Khi nào nên sử dụng
+
+### ✅ Hoàn hảo cho
+
+**Lỗi trên Production**
+```bash
+/fix:logs [người dùng báo cáo lỗi 500 khi thanh toán]
 ```
-1. Analyzing logs
-   - Reading: ./logs.txt (2,345 lines)
-   - Found: 47 error entries
-   - Time range: 2025-10-29 14:23 - 16:45
 
-2. Root cause identified
-   - Issue: Unhandled null reference in user.profile
-   - Location: src/api/users.controller.ts:89
-   - Cause: Missing null check after database query
-   - Impact: 47 failed requests over 2h 22m
-
-3. Implementing fix
-   - Added: Null validation before profile access
-   - Updated: Error handling with proper status codes
-   - Added: Logging for better diagnostics
-
-4. Verifying fix
-   - Tests: All passing
-   - No errors in new logs
-
-✓ Issue resolved (2m 34s)
+**Triển khai thất bại**
+```bash
+/fix:logs [quy trình CI/CD thất bại ở bước triển khai]
 ```
 
-### Database Connection Issues
+**Vấn đề cơ sở dữ liệu**
+```bash
+/fix:logs [lỗi hết thời gian chờ kết nối trong nhật ký]
+```
+
+**Lỗi API**
+```bash
+/fix:logs [lỗi timeout API không liên tục]
+```
+
+**Vấn đề hiệu suất**
+```bash
+/fix:logs [thời gian phản hồi chậm được ghi nhận]
+```
+
+### ❌ Không sử dụng cho
+
+**Không có tệp nhật ký**
+```bash
+❌ /fix:logs [có vấn đề nhưng không thu thập nhật ký]
+✅ Trước tiên hãy thu thập nhật ký vào tệp ./logs.txt
+```
+
+**Lỗi đánh máy đơn giản**
+```bash
+❌ /fix:logs [lỗi đánh máy trong tên biến]
+✅ /fix:fast [lỗi đánh máy trong tên biến]
+```
+
+**Đã biết cách sửa đơn giản**
+```bash
+❌ /fix:logs [cần cập nhật giá trị cấu hình]
+✅ /fix:fast [cập nhật giá trị cấu hình]
+```
+
+## Ví dụ
+
+### Điều tra lỗi API
 
 ```bash
-/fix:logs [database connection timeouts]
+/fix:logs [API trả về lỗi 500 cho endpoint /users]
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-1. Log analysis
-   - Found: 23 timeout errors
-   - Pattern: Occurs during high load (>100 concurrent users)
-   - Database: Connection pool exhausted
+1. Đang phân tích nhật ký
+   - Đang đọc: ./logs.txt (2,345 dòng)
+   - Tìm thấy: 47 mục lỗi
+   - Khoảng thời gian: 2025-10-29 14:23 - 16:45
 
-2. Root cause
-   - Pool size: 10 (too small)
-   - Connections not released properly
-   - Missing connection cleanup in error handlers
+2. Đã xác định nguyên nhân gốc rễ
+   - Vấn đề: Tham chiếu null không được xử lý trong user.profile
+   - Vị trí: src/api/users.controller.ts:89
+   - Nguyên nhân: Thiếu kiểm tra null sau khi truy vấn cơ sở dữ liệu
+   - Tác động: 47 yêu cầu thất bại trong 2 giờ 22 phút
 
-3. Fixes applied
-   - Increased pool size: 10 → 50
-   - Added connection release in finally blocks
-   - Implemented connection timeout: 30s
-   - Added pool monitoring
+3. Triển khai bản sửa lỗi
+   - Đã thêm: Xác thực null trước khi truy cập profile
+   - Đã cập nhật: Xử lý lỗi với các mã trạng thái phù hợp
+   - Đã thêm: Ghi nhật ký để chẩn đoán tốt hơn
 
-4. Validation
-   - Load test: 200 concurrent users ✓
-   - No timeouts observed
-   - Pool utilization: healthy (avg 35%)
+4. Xác minh bản sửa lỗi
+   - Kiểm tra: Tất cả đã vượt qua
+   - Không có lỗi trong nhật ký mới
 
-✓ Database issues resolved (3m 12s)
+✓ Vấn đề đã được giải quyết (2 phút 34 giây)
 ```
 
-### Memory Leak Detection
+### Vấn đề kết nối cơ sở dữ liệu
 
 ```bash
-/fix:logs [application crashing with out of memory errors]
+/fix:logs [lỗi timeout kết nối cơ sở dữ liệu]
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-1. Log examination
-   - Memory usage pattern: Steadily increasing
-   - Crash point: ~2GB (heap limit reached)
-   - Frequency: Every 4-6 hours under load
+1. Phân tích nhật ký
+   - Tìm thấy: 23 lỗi timeout
+   - Mẫu: Xảy ra khi tải cao (>100 người dùng đồng thời)
+   - Cơ sở dữ liệu: Connection pool bị cạn kiệt
 
-2. Analysis
-   - Event listeners not removed
-   - Large objects retained in cache indefinitely
-   - WebSocket connections accumulating
+2. Nguyên nhân gốc rễ
+   - Kích thước pool: 10 (quá nhỏ)
+   - Kết nối không được giải phóng đúng cách
+   - Thiếu việc dọn dẹp kết nối trong các trình xử lý lỗi
 
-3. Implementation
-   - Added proper cleanup for event listeners
-   - Implemented LRU cache with TTL (1 hour)
-   - Added WebSocket connection pooling
-   - Implemented periodic garbage collection hints
+3. Các bản sửa lỗi đã áp dụng
+   - Tăng kích thước pool: 10 → 50
+   - Thêm việc giải phóng kết nối trong các khối finally
+   - Triển khai timeout kết nối: 30 giây
+   - Thêm giám sát pool
 
-4. Testing
-   - 24-hour stress test completed
-   - Memory stable at ~400MB
-   - No crashes observed
+4. Xác minh
+   - Kiểm tra tải: 200 người dùng đồng thời ✓
+   - Không quan sát thấy lỗi timeout
+   - Sử dụng pool: ổn định (trung bình 35%)
 
-✓ Memory leak fixed (5m 43s)
+✓ Vấn đề cơ sở dữ liệu đã được giải quyết (3 phút 12 giây)
 ```
 
-### CI/CD Pipeline Failure
+### Phát hiện rò rỉ bộ nhớ
 
 ```bash
-/fix:logs [GitHub Actions workflow failing]
+/fix:logs [ứng dụng bị treo với lỗi hết bộ nhớ]
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-1. Collecting pipeline logs
+1. Kiểm tra nhật ký
+   - Mẫu sử dụng bộ nhớ: Tăng liên tục
+   - Điểm treo: ~2GB (đạt giới hạn heap)
+   - Tần suất: Mỗi 4-6 giờ khi có tải
+
+2. Phân tích
+   - Các trình lắng nghe sự kiện (event listeners) không được gỡ bỏ
+   - Các đối tượng lớn được giữ lại trong cache vô thời hạn
+   - Các kết nối WebSocket bị tích tụ
+
+3. Triển khai
+   - Thêm việc dọn dẹp phù hợp cho các trình lắng nghe sự kiện
+   - Triển khai LRU cache với TTL (1 giờ)
+   - Thêm connection pooling cho WebSocket
+   - Triển khai các gợi ý thu gom rác (garbage collection) định kỳ
+
+4. Thử nghiệm
+   - Hoàn thành bài kiểm tra áp lực trong 24 giờ
+   - Bộ nhớ ổn định ở mức ~400MB
+   - Không quan sát thấy tình trạng treo máy
+
+✓ Đã sửa rò rỉ bộ nhớ (5 phút 43 giây)
+```
+
+### Thất bại trong quy trình CI/CD
+
+```bash
+/fix:logs [workflow GitHub Actions bị thất bại]
+```
+
+**Điều gì xảy ra:**
+```
+1. Thu thập nhật ký quy trình
    - Run ID: 1234567890
-   - Failed step: "Build and Test"
-   - Exit code: 1
+   - Bước thất bại: "Build and Test"
+   - Mã thoát: 1
 
-2. Error identification
-   - Test failures: 3 tests in auth.test.ts
-   - Reason: Environment variable missing
-   - Variable: JWT_SECRET not set in CI
+2. Xác định lỗi
+   - Thất bại kiểm tra: 3 bài kiểm tra trong auth.test.ts
+   - Lý do: Thiếu biến môi trường
+   - Biến: JWT_SECRET chưa được thiết lập trong CI
 
-3. Solution
-   - Added JWT_SECRET to GitHub Secrets
-   - Updated workflow: Use secrets.JWT_SECRET
-   - Added validation step to check required env vars
+3. Giải pháp
+   - Đã thêm JWT_SECRET vào GitHub Secrets
+   - Cập nhật workflow: Sử dụng secrets.JWT_SECRET
+   - Thêm bước xác thực để kiểm tra các biến môi trường bắt buộc
 
-4. Verification
-   - Re-ran workflow: ✓ passed
-   - All tests: 127/127 ✓
+4. Xác minh
+   - Chạy lại workflow: ✓ passed
+   - Tất cả kiểm tra: 127/127 ✓
 
-✓ CI/CD pipeline fixed (1m 56s)
+✓ Quy trình CI/CD đã được sửa (1 phút 56 giây)
 ```
 
-## Agent Invoked
+## Agent được gọi
 
-The command delegates to the **debugger agent** with these capabilities:
+Lệnh này ủy quyền cho **debugger agent** với các khả năng sau:
 
-- **Log Analysis**: Systematic parsing and pattern recognition
-- **Root Cause Identification**: Evidence-based diagnosis
-- **Database Diagnostics**: Query analysis and structure examination
-- **Performance Analysis**: Bottleneck identification
-- **CI/CD Integration**: GitHub Actions log retrieval and analysis
+- **Phân tích nhật ký**: Phân tích cú pháp một cách hệ thống và nhận diện mẫu
+- **Xác định nguyên nhân gốc rễ**: Chẩn đoán dựa trên bằng chứng
+- **Chẩn đoán cơ sở dữ liệu**: Phân tích truy vấn và kiểm tra cấu trúc
+- **Phân tích hiệu suất**: Xác định điểm nghẽn
+- **Tích hợp CI/CD**: Truy xuất và phân tích nhật ký GitHub Actions
 
-## Log File Format
+## Định dạng tệp nhật ký
 
-### Expected Location
+### Vị trí dự kiến
 
 ```bash
 ./logs.txt
 ```
 
-### Supported Log Formats
+### Các định dạng nhật ký được hỗ trợ
 
-**Standard Application Logs**
+**Nhật ký ứng dụng tiêu chuẩn**
 ```
 2025-10-29T14:23:45.123Z [ERROR] Database connection failed
 2025-10-29T14:23:45.456Z [WARN] Retrying connection (attempt 2/3)
 ```
 
-**JSON Logs**
+**Nhật ký định dạng JSON**
 ```json
 {"timestamp":"2025-10-29T14:23:45.123Z","level":"error","message":"Request failed"}
 ```
 
-**Stack Traces**
+**Dấu vết ngăn xếp (Stack Traces)**
 ```
 Error: Cannot read property 'id' of null
     at UserController.getProfile (src/controllers/user.ts:89:15)
     at processRequest (src/middleware/handler.ts:34:8)
 ```
 
-## Best Practices
+## Thực hành tốt nhất
 
-### Collect Complete Logs
+### Thu thập nhật ký đầy đủ
 
-✅ **Good - Full context:**
+✅ **Tốt - Đầy đủ ngữ cảnh:**
 ```bash
-# Collect comprehensive logs
+# Thu thập nhật ký toàn diện
 docker logs my-app > logs.txt
-# Or from server
+# Hoặc từ máy chủ
 ssh server "cat /var/log/app/*.log" > logs.txt
 ```
 
-❌ **Bad - Incomplete:**
+❌ **Xấu - Không đầy đủ:**
 ```bash
-# Only partial output
+# Chỉ có đầu ra một phần
 echo "some error" > logs.txt
 ```
 
-### Include Timestamps
+### Bao gồm dấu thời gian
 
-✅ **With timestamps:**
+✅ **Có dấu thời gian:**
 ```
 2025-10-29 14:23:45 [ERROR] Database timeout
 2025-10-29 14:23:46 [INFO] Retrying connection
 ```
 
-❌ **Without timestamps:**
+❌ **Không có dấu thời gian:**
 ```
 ERROR Database timeout
 INFO Retrying connection
 ```
 
-### Provide Context
+### Cung cấp ngữ cảnh
 
-✅ **Specific issue:**
+✅ **Vấn đề cụ thể:**
 ```bash
-/fix:logs [payment processing failing with timeout errors since 14:00]
+/fix:logs [xử lý thanh toán thất bại với lỗi timeout kể từ 14:00]
 ```
 
-❌ **Vague issue:**
+❌ **Vấn đề mơ hồ:**
 ```bash
-/fix:logs [something is broken]
+/fix:logs [có gì đó bị hỏng]
 ```
 
-## Collecting Logs
+## Thu thập nhật ký
 
-### Docker Containers
+### Container Docker
 
 ```bash
-# Single container
+# Một container duy nhất
 docker logs container-name > logs.txt
 
-# Follow logs in real-time
+# Theo dõi nhật ký trong thời gian thực
 docker logs -f container-name > logs.txt
 
-# Last 1000 lines
+# 1000 dòng cuối cùng
 docker logs --tail 1000 container-name > logs.txt
 
-# Then analyze
-/fix:logs [describe the issue]
+# Sau đó phân tích
+/fix:logs [mô tả vấn đề]
 ```
 
-### Server Applications
+### Ứng dụng trên máy chủ
 
 ```bash
-# System logs
+# Nhật ký hệ thống
 journalctl -u myapp > logs.txt
 
-# Application logs
+# Nhật ký ứng dụng
 cat /var/log/myapp/*.log > logs.txt
 
-# PM2 logs
+# Nhật ký PM2
 pm2 logs --lines 1000 > logs.txt
 
-# Then analyze
-/fix:logs [describe the issue]
+# Sau đó phân tích
+/fix:logs [mô tả vấn đề]
 ```
 
-### CI/CD Pipelines
+### Quy trình CI/CD
 
 ```bash
 # GitHub Actions
@@ -351,192 +352,192 @@ gh run view 1234567890 --log > logs.txt
 # GitLab CI
 gitlab-ci-trace job_id > logs.txt
 
-# Then analyze
-/fix:logs [pipeline failure in build step]
+# Sau đó phân tích
+/fix:logs [thất bại quy trình ở bước build]
 ```
 
 ### Kubernetes
 
 ```bash
-# Pod logs
+# Nhật ký Pod
 kubectl logs pod-name > logs.txt
 
-# Multiple pods
+# Nhiều pod
 kubectl logs -l app=myapp --all-containers=true > logs.txt
 
-# Previous crashed container
+# Container đã bị treo trước đó
 kubectl logs pod-name --previous > logs.txt
 
-# Then analyze
-/fix:logs [pods crashing with OOM errors]
+# Sau đó phân tích
+/fix:logs [các pod bị treo với lỗi OOM]
 ```
 
-## Workflow
+## Quy trình làm việc
 
-### Standard Troubleshooting Flow
+### Luồng khắc phục sự cố tiêu chuẩn
 
 ```bash
-# 1. Collect logs
+# 1. Thu thập nhật ký
 docker logs my-app > logs.txt
 
-# 2. Analyze and fix
-/fix:logs [users reporting checkout failures]
+# 2. Phân tích và sửa lỗi
+/fix:logs [người dùng báo cáo lỗi thanh toán]
 
-# 3. Review changes
+# 3. Xem lại thay đổi
 git diff
 
-# 4. Test fix
+# 4. Kiểm tra bản sửa lỗi
 /test
 
-# 5. Commit if satisfied
+# 5. Commit nếu hài lòng
 /git:cm
 
-# 6. Deploy
+# 6. Triển khai
 git push
 ```
 
-### Production Incident Response
+### Phản ứng sự cố Production
 
 ```bash
-# 1. Immediate log collection
+# 1. Thu thập nhật ký ngay lập tức
 ssh production "docker logs app > /tmp/incident.log"
 scp production:/tmp/incident.log ./logs.txt
 
-# 2. Analyze urgently
-/fix:logs [production down - 500 errors on all endpoints]
+# 2. Phân tích khẩn cấp
+/fix:logs [production down - lỗi 500 trên tất cả endpoint]
 
-# 3. Create hotfix branch
+# 3. Tạo nhánh hotfix
 git checkout -b hotfix/production-500-errors
 
-# 4. Apply fix and test
+# 4. Áp dụng sửa lỗi và kiểm tra
 /test
 
-# 5. Deploy immediately
+# 5. Triển khai ngay lập tức
 /git:cm
 git push origin hotfix/production-500-errors
 /git:pr main hotfix/production-500-errors
 ```
 
-## Troubleshooting
+## Xử lý sự cố
 
-### Log File Not Found
+### Không tìm thấy tệp nhật ký
 
-**Problem:** `./logs.txt` doesn't exist
+**Vấn đề:** `./logs.txt` không tồn tại
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Create logs file first
+# Tạo tệp nhật ký trước
 docker logs my-app > logs.txt
 
-# Or from server
+# Hoặc từ máy chủ
 ssh server "cat /var/log/app/error.log" > logs.txt
 
-# Then run command
-/fix:logs [issue description]
+# Sau đó chạy lệnh
+/fix:logs [mô tả vấn đề]
 ```
 
-### Logs Too Large
+### Nhật ký quá lớn
 
-**Problem:** Log file exceeds reasonable size
+**Vấn đề:** Tệp nhật ký vượt quá kích thước hợp lý
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Filter relevant time period
+# Lọc khoảng thời gian liên quan
 grep "2025-10-29 14:" app.log > logs.txt
 
-# Or last 5000 lines
+# Hoặc 5000 dòng cuối cùng
 tail -5000 app.log > logs.txt
 
-# Then analyze
-/fix:logs [issue occurring at 14:00]
+# Sau đó phân tích
+/fix:logs [vấn đề xảy ra lúc 14:00]
 ```
 
-### No Clear Root Cause
+### Không có nguyên nhân gốc rễ rõ ràng
 
-**Problem:** Logs analyzed but cause unclear
+**Vấn đề:** Nhật ký đã được phân tích nhưng nguyên nhân vẫn chưa rõ ràng
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Collect more comprehensive logs
-# Include debug level
+# Thu thập nhật ký toàn diện hơn
+# Bao gồm mức độ debug
 docker logs my-app --since 1h > logs.txt
 
-# Enable verbose logging first
-# Then reproduce issue
-# Then analyze again
-/fix:logs [issue with more verbose logs]
+# Bật ghi nhật ký chi tiết trước
+# Sau đó tái hiện vấn đề
+# Sau đó phân tích lại
+/fix:logs [vấn đề với nhật ký chi tiết hơn]
 ```
 
-### Fix Didn't Work
+### Bản sửa lỗi không hoạt động
 
-**Problem:** Issue persists after fix
+**Vấn đề:** Vấn đề vẫn tiếp diễn sau khi sửa lỗi
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Reproduce issue and collect new logs
+# Tái hiện vấn đề và thu thập nhật ký mới
 ./reproduce-issue.sh
 docker logs my-app > logs.txt
 
-# Analyze again with more context
-/fix:logs [issue still occurring - previous fix was X]
+# Phân tích lại với nhiều ngữ cảnh hơn
+/fix:logs [vấn đề vẫn xảy ra - bản sửa lỗi trước đó là X]
 ```
 
-## Related Commands
+## Các lệnh liên quan
 
-### Log Analysis + Testing
+### Phân tích nhật ký + Thử nghiệm
 
 ```bash
-# 1. Analyze and fix
-/fix:logs [API errors in production]
+# 1. Phân tích và sửa lỗi
+/fix:logs [lỗi API trên production]
 
-# 2. Run comprehensive tests
+# 2. Chạy các bài kiểm tra toàn diện
 /test
 
-# 3. If tests reveal more issues
-/fix:hard [additional issues found in tests]
+# 3. Nếu các bài kiểm tra tiết lộ thêm vấn đề
+/fix:hard [các vấn đề bổ sung được tìm thấy trong kiểm tra]
 ```
 
-### Logs + CI/CD Fix
+### Nhật ký + Sửa lỗi CI/CD
 
 ```bash
-# 1. Get CI logs
+# 1. Lấy nhật ký CI
 /fix:ci [github-actions-url]
 
-# Or with local logs
-# 2. Collect and analyze
+# Hoặc với nhật ký cục bộ
+# 2. Thu thập và phân tích
 gh run view 123 --log > logs.txt
-/fix:logs [CI pipeline failing on test step]
+/fix:logs [quy trình CI thất bại ở bước kiểm tra]
 ```
 
-### Debug Complex Issues
+### Gỡ lỗi các vấn đề phức tạp
 
 ```bash
-# 1. Start with logs
-/fix:logs [complex issue with multiple symptoms]
+# 1. Bắt đầu với nhật ký
+/fix:logs [vấn đề phức tạp với nhiều triệu chứng]
 
-# 2. If more investigation needed
-/debug [findings from log analysis]
+# 2. Nếu cần điều tra thêm
+/debug [những phát hiện từ phân tích nhật ký]
 ```
 
-## Metrics
+## Số liệu
 
-Typical `/fix:logs` performance:
+Hiệu suất điển hình của `/fix:logs`:
 
-- **Time**: 2-5 minutes
-- **Log lines analyzed**: 100-10,000+
-- **Fix accuracy**: ~92% (based on single attempt)
-- **Common fixes**: Configuration, error handling, resource limits
-- **Secondary issues found**: ~35% of cases
+- **Thời gian**: 2-5 phút
+- **Số dòng nhật ký được phân tích**: 100-10,000+
+- **Độ chính xác sửa lỗi**: ~92% (dựa trên một lần thử)
+- **Các lỗi thường gặp**: Cấu hình, xử lý lỗi, giới hạn tài nguyên
+- **Các vấn đề phụ được tìm thấy**: ~35% trường hợp
 
-## Next Steps
+## Bước tiếp theo
 
-After using `/fix:logs`:
+Sau khi sử dụng `/fix:logs`:
 
-- [/test](/docs/engineer/commands/core/test) - Verify fix with tests
-- [/fix:hard](/docs/engineer/commands/fix/hard) - For complex issues requiring deeper analysis
-- [/debug](/docs/engineer/commands/core/debug) - If issue needs more investigation
-- [/git:cm](/docs/engineer/commands/git/commit) - Commit the fix
+- [/test](/docs/engineer/commands/core/test) - Xác minh bản sửa lỗi bằng các bài kiểm tra
+- [/fix:hard](/docs/engineer/commands/fix/hard) - Cho các vấn đề phức tạp cần phân tích sâu hơn
+- [/debug](/docs/engineer/commands/core/debug) - Nếu vấn đề cần điều tra thêm
+- [/git:cm](/docs/engineer/commands/git/commit) - Commit bản sửa lỗi
 
 ---
 
-**Key Takeaway**: `/fix:logs` provides automated log analysis and issue resolution by leveraging the debugger agent's systematic approach to root cause identification and fix implementation.
+**Điểm mấu chốt**: `/fix:logs` cung cấp khả năng phân tích nhật ký và giải quyết vấn đề tự động bằng cách tận dụng phương pháp hệ thống của debugger agent để xác định nguyên nhân gốc rễ và triển khai bản sửa lỗi.

@@ -1,11 +1,7 @@
 ---
 title: Bắt Đầu Nhanh
-description: "Documentation for Bắt Đầu Nhanh
-description:
-section: getting-started
-category: getting-started
-order: 4
-published: true"
+description: "Tài liệu hướng dẫn Bắt Đầu Nhanh cho ClaudeKit - triển khai tính năng chỉ trong 15 phút."
+lang: vi
 section: getting-started
 category: getting-started
 order: 4
@@ -14,7 +10,25 @@ published: true
 
 # Bắt Đầu Nhanh
 
-Ship tính năng production trong 15 phút. Không cần boilerplate, không cần thiết lập phức tạp.
+Triển khai tính năng production trong 15 phút. Không cần boilerplate, không cần thiết lập phức tạp.
+
+## Video Demo
+
+Xem ClaudeKit hoạt động - từ lúc cài đặt đến khi xây dựng giao diện người dùng từ một ảnh chụp màn hình:
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 0.75rem; border: 1px solid var(--color-border); margin-bottom: 1rem;">
+  <iframe
+    src="https://www.youtube.com/embed/F_E0GIi_kVY"
+    title="ClaudeKit Quick Start Demo"
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen>
+  </iframe>
+</div>
+
+*Xem thêm hướng dẫn: [@goonnguyen](https://www.youtube.com/@goonnguyen) | X: [@goon_nguyen](https://x.com/goon_nguyen)*
 
 ## Yêu Cầu
 
@@ -22,7 +36,7 @@ Ship tính năng production trong 15 phút. Không cần boilerplate, không c�
 - Claude Code đang chạy
 - Dự án đã khởi tạo với ClaudeKit
 
-**Chưa có những điều này?** Xem [Hướng Dẫn Cài Đặt](/docs/getting-started/installation)
+**Chưa có những điều này?** Xem [Hướng Dẫn Cài Đặt](/vi/docs/getting-started/installation)
 
 ## Tính Năng Đầu Tiên
 
@@ -31,18 +45,18 @@ Thêm xác thực người dùng vào ứng dụng Next.js trong 15 phút.
 ### Bước 1: Bootstrap Dự Án
 
 ```bash
-ck new my-app --kit engineer
+ck init my-app --kit engineer
 cd my-app
 ```
 
 **Tip:** Sử dụng `--prefix` để namespace các lệnh thành `/ck:plan`, `/ck:code`, v.v.:
 ```bash
-ck new my-app --kit engineer --prefix
+ck init my-app --kit engineer --prefix
 ```
 
 **Đã tạo**:
 - `.claude/` - 14 AI agents, 30+ lệnh, 45 skills
-- `docs/` - Docs dự án tự động tạo
+- `docs/` - Tài liệu dự án tự động tạo
 - `plans/` - Lưu trữ kế hoạch triển khai
 
 ### Bước 2: Lập Kế Hoạch Xác Thực
@@ -52,29 +66,29 @@ ck new my-app --kit engineer --prefix
 ```
 
 **Điều gì xảy ra** (30 giây):
-1. `planner` agent spawn 3 `researcher` agents chạy song song
-2. Nghiên cứu best practices Next.js 15 + Better Auth
+1. Agent `planner` kích hoạt 3 agent `researcher` chạy song song
+2. Nghiên cứu best practices cho Next.js 15 + Better Auth
 3. Phân tích cấu trúc codebase của bạn
 4. Tạo kế hoạch triển khai chi tiết
 
 **Đầu ra**:
 ```
-✓ planner: Nghiên cứu hoàn tất (3 nguồn được phân tích)
-✓ planner: Kế hoạch đã tạo
+✓ planner: Research complete (3 sources analyzed)
+✓ planner: Plan created
 
 📄 plans/251030-auth-implementation.md
 
-Tóm tắt:
-• Better Auth với credentials + OAuth (Google, GitHub)
-• Quản lý session với JWT
-• Trang login/signup/reset
-• Middleware protected routes
-• Files cần tạo: 8
-• Files cần sửa: 4
+Summary:
+• Better Auth with credentials + OAuth (Google, GitHub)
+• Session management with JWT
+• Login/signup/reset pages
+• Protected routes middleware
+• Files to create: 8
+• Files to modify: 4
 • Tests: 12 test cases
-• Ước tính: 2 giờ thủ công, 5 phút với ClaudeKit
+• Estimated: 2 hours manually, 5 minutes with ClaudeKit
 
-Tiếp theo: /code plans/251030-auth-implementation.md
+Next: /code plans/251030-auth-implementation.md
 ```
 
 ### Bước 3: Xem Lại Kế Hoạch
@@ -83,25 +97,25 @@ Tiếp theo: /code plans/251030-auth-implementation.md
 cat plans/251030-auth-implementation.md
 ```
 
-Quét qua kế hoạch. Kiến trúc vững chắc? Tiếp tục.
+Kiểm tra kế hoạch. Kiến trúc vững chắc? Tiếp tục.
 
 ### Bước 4: Triển Khai
 
 ```bash
-/code @plans/251030-auth-implementation.md
+/code plans/251030-auth-implementation.md
 ```
 
 **Điều gì xảy ra** (5 phút):
 
 **Làm rõ** (15 giây):
 ```
-cook: OAuth providers nào?
-Bạn: Google và GitHub
+code: Which OAuth providers?
+You: Google and GitHub
 ```
 
 **Triển khai** (4 phút):
 1. Cài đặt `better-auth` + dependencies
-2. Tạo auth config với providers
+2. Tạo cấu hình auth với các providers
 3. Tạo trang login/signup/reset với shadcn/ui
 4. Thêm API routes
 5. Triển khai middleware cho protected routes
@@ -110,29 +124,29 @@ Bạn: Google và GitHub
 
 **Đầu ra thời gian thực**:
 ```
-✓ Đang cài đặt dependencies... (15s)
-✓ Tạo auth.ts config
-✓ Tạo UI components
+✓ Installing dependencies... (15s)
+✓ Creating auth.ts config
+✓ Generating UI components
   • app/login/page.tsx (Google OAuth button)
   • app/signup/page.tsx (Email + OAuth)
   • app/reset-password/page.tsx
-✓ Tạo API routes
+✓ Creating API routes
   • app/api/auth/[...all]/route.ts
-✓ Thêm middleware.ts (protect /dashboard/*)
-✓ Viết tests (12 cases)
-✓ Cập nhật docs/system-architecture.md
+✓ Adding middleware.ts (protect /dashboard/*)
+✓ Writing tests (12 cases)
+✓ Updating docs/system-architecture.md
 
-tester: Chạy test suite...
+tester: Running test suite...
 ✓ Unit tests: 45 passed
 ✓ Auth tests: 12 passed
 ✓ Coverage: 89%
 
-code-reviewer: Kiểm tra chất lượng...
-✓ Không có vấn đề bảo mật
-✓ Type-safe (0 lỗi)
-✓ Hiệu suất: Nhanh (< 100ms auth check)
+code-reviewer: Quality check...
+✓ No security issues
+✓ Type-safe (0 errors)
+✓ Performance: Fast (< 100ms auth check)
 
-✓ Triển khai hoàn tất (4m 32s)
+✓ Implementation complete (4m 32s)
 ```
 
 ### Bước 5: Xem Hoạt Động
@@ -142,15 +156,15 @@ npm run dev
 ```
 
 Truy cập:
-- `http://localhost:3000/login` - Đăng nhập với email hoặc OAuth
+- `http://localhost:3000/login` - Đăng nhập bằng email hoặc OAuth
 - `http://localhost:3000/signup` - Tạo tài khoản
-- `http://localhost:3000/dashboard` - Protected route (redirect nếu chưa đăng nhập)
+- `http://localhost:3000/dashboard` - Protected route (tự động chuyển hướng nếu chưa đăng nhập)
 
 **Thử nghiệm**:
-1. Đăng ký với email
-2. Đăng nhập chuyển hướng đến dashboard
+1. Đăng ký bằng email
+2. Đăng nhập và được chuyển hướng đến dashboard
 3. Đăng xuất, thử OAuth với Google
-4. Kiểm tra session persistence
+4. Kiểm tra tính duy trì của session
 
 ### Bước 6: Commit
 
@@ -160,10 +174,10 @@ Truy cập:
 
 **Đầu ra**:
 ```
-git-manager: Phân tích thay đổi...
+git-manager: Analyzing changes...
 ✓ Staged: 12 files
-✓ Quét bí mật: Sạch
-✓ Commit message đã tạo
+✓ Secret scan: Clean
+✓ Commit message generated
 
 feat(auth): add Better Auth with email and OAuth
 
@@ -177,7 +191,7 @@ feat(auth): add Better Auth with email and OAuth
 ✓ Committed: abc1234
 ✓ Pushed to origin/main
 
-Hoàn tất!
+Done!
 ```
 
 ## Chuyện Gì Vừa Xảy Ra?
@@ -186,44 +200,43 @@ Hoàn tất!
 1. Nghiên cứu thư viện auth (1h)
 2. Đọc tài liệu (1h)
 3. Thiết lập cấu hình (1h)
-4. Xây dựng UI components (3h)
-5. Triển khai OAuth flows (2h)
+4. Xây dựng các UI components (3h)
+5. Triển khai luồng OAuth (2h)
 6. Viết tests (1h)
-7. Debug issues (1h)
-8. Tài liệu (30 phút)
+7. Debug lỗi (1h)
+8. Viết tài liệu (30 phút)
 
 **Cách tiếp cận ClaudeKit** (6 phút):
 1. Lập kế hoạch: AI nghiên cứu, phân tích, thiết kế (30s)
-2. Triển khai: AI code, test, tài liệu (4m)
-3. Review: AI xác thực bảo mật, hiệu suất (30s)
+2. Triển khai: AI viết code, test, làm tài liệu (4m)
+3. Xem lại: AI xác thực bảo mật, hiệu suất (30s)
 4. Commit: AI tạo commit chuyên nghiệp (30s)
 
-**Thời gian tiết kiệm**: 8-12 giờ → **~800% nhanh hơn**
+**Tiết kiệm thời gian**: 8-12 giờ → **Nhanh hơn ~800%**
 
 ## Tại Sao Hoạt Động
 
 ### 14 Agents Chuyên Biệt
 - **planner**: Tạo kế hoạch triển khai
-- **researcher**: Tìm best practices (3 chạy song song)
+- **researcher**: Tìm kiếm best practices (3 agent chạy song song)
 - **tester**: Xác thực mọi thứ hoạt động
 - **code-reviewer**: Kiểm tra bảo mật + hiệu suất
-- **git-manager**: Commits chuyên nghiệp
-- **docs-manager**: Giữ docs cập nhật
-- ...và 8 agents khác
+- **git-manager**: Tạo commit chuyên nghiệp
+- **docs-manager**: Giữ tài liệu luôn cập nhật
+- ...và 8 agent khác
 
 ### 45 Skills Tích Hợp
 - **better-auth**: Chuyên môn triển khai auth
-- **shadcn-ui**: UI components đã cấu hình sẵn
-- **nextjs**: Best practices Next.js 15
-- **gemini-image-gen**: Tạo logos, assets
+- **shadcn-ui**: UI components đã được cấu hình sẵn
+- **nextjs**: Best practices cho Next.js 15
+- **gemini-image-gen**: Tạo logo, tài nguyên hình ảnh
 - ...và 41 skills khác
 
 ### Hệ Thống Sống
-
-- Cập nhật với cải tiến của Claude
-- Không bị khóa tech stack
-- Học các pattern của bạn
-- Ngày càng thông minh theo thời gian
+- Cập nhật liên tục cùng với những cải tiến của Claude
+- Không bị ràng buộc vào một tech stack cố định
+- Học hỏi theo các pattern code của bạn
+- Ngày càng thông minh hơn theo thời gian
 
 ## Tiếp Theo: Công Việc Thực Tế
 
@@ -236,73 +249,73 @@ Thử các tính năng phức tạp hơn:
 # Xây dựng REST API với validation
 /cook create REST API for blog posts with Zod validation
 
-# Triển khai chat real-time
+# Triển khai chat thời gian thực
 /cook add real-time chat using WebSockets
 
-# Database migrations
+# Di chuyển database (Database migrations)
 /cook migrate from SQLite to PostgreSQL with zero downtime
 ```
 
-Mỗi cái mất 5-20 phút thay vì nhiều ngày.
+Mỗi tác vụ chỉ mất 5-20 phút thay vì nhiều ngày.
 
 ## Học Workflows
 
 ### Chu Trình Tính Năng Đầy Đủ
 ```bash
-/plan [feature]           # Nghiên cứu + lập kế hoạch
+/plan [feature]           # Nghiên cứu + Lập kế hoạch
 /code [plan]              # Triển khai
 /test                     # Xác thực
-/fix:fast [issue]         # Sửa nhanh
+/fix:fast [issue]         # Sửa lỗi nhanh
 /git:cm                   # Commit
 ```
 
-### Debug + Sửa
+### Debug + Sửa Lỗi
 ```bash
 /debug [issue]            # Phân tích nguyên nhân gốc rễ
-/fix:hard [complex-issue] # Sửa đa agent
-/fix:ci [actions-url]     # Sửa CI/CD lỗi
+/fix:hard [complex-issue] # Sửa lỗi đa agent
+/fix:ci [actions-url]     # Sửa lỗi CI/CD thất bại
 ```
 
 ### Thiết Kế + Nội Dung
 ```bash
 /design:good [feature]    # Thiết kế UI/UX
-/content:good [page]      # Nội dung marketing
-/brainstorm [idea]        # Khám phá giải pháp
+/content:good [page]      # Viết nội dung marketing
+/brainstorm [idea]        # Khám phá các giải pháp
 ```
 
 ## Câu Hỏi Thường Gặp
 
-**Q: Có hoạt động với tech stack của tôi không?**
+**Q: Nó có hoạt động với tech stack của tôi không?**
 A: Có. Next.js, Django, Laravel, Go, Rust, Flutter - bất kỳ stack nào. ClaudeKit thích ứng với các pattern của bạn.
 
 **Q: Nếu AI mắc lỗi thì sao?**
-A: `code-reviewer` phát hiện vấn đề trước khi commit. Thêm vào đó, bạn review PRs như bình thường. AI tăng cường, không thay thế phán đoán.
+A: Agent `code-reviewer` sẽ phát hiện vấn đề trước khi commit. Ngoài ra, bạn vẫn xem lại PR như bình thường. AI bổ trợ chứ không thay thế phán đoán của con người.
 
 **Q: Tôi có cần API keys không?**
-A: Với các tính năng cơ bản, không. Với skills nâng cao (Gemini, Search), có. Xem [Thiết Lập API Key](/docs/troubleshooting/api-key-setup).
+A: Với các tính năng cơ bản thì không. Với các skill nâng cao (Gemini, Tìm kiếm) thì có. Xem [Thiết Lập API Key](/vi/docs/troubleshooting/api-key-setup).
 
 **Q: Tôi có thể tùy chỉnh agents không?**
-A: Có. Sửa `.claude/agents/*.md` để điều chỉnh hành vi. Xem [Custom Agents](/docs/hooks/custom-agents).
+A: Có. Chỉnh sửa `.claude/agents/*.md` để điều chỉnh hành vi. Xem [Custom Agents](/vi/docs/hooks/custom-agents).
 
 ## Khám Phá Thêm
 
 **Khái Niệm Cốt Lõi**:
-- [Kiến Trúc](/docs/core-concepts/architecture) - Cách ClaudeKit hoạt động
-- [Tổng Quan Agents](/docs/engineer/agents/) - Gặp gỡ đội ngũ AI
-- [Hướng Dẫn Commands](/docs/engineer/commands/) - Tất cả 30+ lệnh
+- [Kiến Trúc](/vi/docs/core-concepts/architecture) - Cách ClaudeKit hoạt động
+- [Tổng Quan Agents](/vi/docs/engineer/agents/) - Gặp gỡ đội ngũ AI của bạn
+- [Hướng Dẫn Commands](/vi/docs/engineer/commands/) - Toàn bộ hơn 30 lệnh
 
 **Sử Dụng Thực Tế**:
-- [Bắt Đầu Dự Án Mới](/docs/use-cases/starting-new-project)
-- [Thêm Tính Năng](/docs/use-cases/adding-feature)
-- [Sửa Bugs](/docs/use-cases/fixing-bugs)
+- [Bắt Đầu Dự Án Mới](/vi/docs/use-cases/starting-new-project)
+- [Thêm Tính Năng](/vi/docs/use-cases/adding-feature)
+- [Sửa Lỗi](/vi/docs/use-cases/fixing-bugs)
 
 **Khắc Phục Sự Cố**:
-- [Vấn Đề Cài Đặt](/docs/troubleshooting/installation-issues)
-- [Lỗi Lệnh](/docs/troubleshooting/command-errors)
-- [Vấn Đề Hiệu Suất](/docs/troubleshooting/performance-issues)
+- [Vấn Đề Cài Đặt](/vi/docs/troubleshooting/installation-issues)
+- [Lỗi Lệnh](/vi/docs/troubleshooting/command-errors)
+- [Vấn Đề Hiệu Suất](/vi/docs/troubleshooting/performance-issues)
 
 ---
 
-**Bạn vừa ship production auth trong 6 phút.** Boilerplates không thể làm được. AI chat assistants không thể làm được. Chỉ ClaudeKit.
+**Bạn vừa triển khai thành công auth cho production chỉ trong 6 phút.** Boilerplates không thể làm được. Các AI chat assistant cũng không thể. Chỉ ClaudeKit làm được.
 
-**Sẵn sàng ship?** Đội ngũ AI dev của bạn đang chờ.
+**Sẵn sàng triển khai?** Đội ngũ AI dev của bạn đang chờ đợi.

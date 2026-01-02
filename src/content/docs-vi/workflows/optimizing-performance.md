@@ -1,172 +1,168 @@
 ---
-title: Optimizing Performance
-description: "Documentation for Optimizing Performance
-description:
-section: workflows
-category: workflows
-order: 9
-published: true"
+title: Tối Ưu Hóa Hiệu Suất
+description: "Xác định và khắc phục các nút thắt cổ chai về hiệu suất với ClaudeKit - từ profiling đến caching, tối ưu hóa database và cải thiện mã nguồn."
+lang: vi
 section: workflows
 category: workflows
 order: 9
 published: true
 ---
 
-# Optimizing Performance
+# Tối Ưu Hóa Hiệu Suất
 
-Learn how to identify and fix performance bottlenecks with ClaudeKit - from profiling and analysis to implementation of caching, database optimization, and code improvements.
+Tìm hiểu cách xác định và khắc phục các nút thắt cổ chai về hiệu suất với ClaudeKit - từ profiling và phân tích đến triển khai caching, tối ưu hóa database và cải thiện mã nguồn.
 
-## Overview
+## Tổng Quan
 
-**Goal**: Identify and resolve performance bottlenecks systematically
-**Time**: 30-60 minutes (vs 4-12 hours manually)
-**Agents Used**: debugger, code-reviewer, tester
-**Commands**: /debug, /cook, /test, /fix:hard
+**Mục tiêu**: Xác định và giải quyết các nút thắt cổ chai về hiệu suất một cách hệ thống
+**Thời gian**: 30-60 phút (so với 4-12 giờ làm thủ công)
+**Agents sử dụng**: debugger, code-reviewer, tester
+**Lệnh**: `/debug`, `/cook`, `/test`, `/fix:hard`
 
-## Prerequisites
+## Điều Kiện Tiên Quyết
 
-- Application with performance issues
-- Monitoring/profiling tools installed
-- Performance baseline metrics
-- Test data representative of production
+- Ứng dụng đang gặp vấn đề về hiệu suất
+- Các công cụ giám sát/profiling đã được cài đặt
+- Các chỉ số hiệu suất cơ bản (baseline metrics)
+- Dữ liệu thử nghiệm đại diện cho môi trường production
 
-## Performance Targets
+## Mục Tiêu Hiệu Suất
 
-| Metric | Good | Acceptable | Poor |
+| Chỉ số | Tốt | Chấp nhận được | Kém |
 |--------|------|------------|------|
-| API Response Time | <200ms | 200-500ms | >500ms |
-| Page Load Time | <2s | 2-4s | >4s |
-| Database Query | <50ms | 50-200ms | >200ms |
-| Memory Usage | <512MB | 512MB-2GB | >2GB |
-| CPU Usage | <30% | 30-70% | >70% |
+| Thời gian phản hồi API | <200ms | 200-500ms | >500ms |
+| Thời gian tải trang | <2s | 2-4s | >4s |
+| Truy vấn Database | <50ms | 50-200ms | >200ms |
+| Sử dụng Bộ nhớ | <512MB | 512MB-2GB | >2GB |
+| Sử dụng CPU | <30% | 30-70% | >70% |
 
-## Step-by-Step Workflow
+## Quy Trình Từng Bước
 
-### Step 1: Identify Performance Issues
+### Bước 1: Xác Định Các Vấn Đề Hiệu Suất
 
-Start by profiling your application:
+Bắt đầu bằng cách profiling ứng dụng của bạn:
 
 ```bash
-# Run performance analysis
+# Chạy phân tích hiệu suất
 /debug [analyze application performance and identify bottlenecks]
 ```
 
-**Analysis output**:
+**Kết quả phân tích**:
 ```
-Performance Analysis Report
+Báo Cáo Phân Tích Hiệu Suất
 
-🔴 Critical Issues (3)
+🔴 Các Vấn Đề Nghiêm Trọng (3)
 
-1. Database Query Performance
-   Location: src/users/service.js:23
-   Issue: N+1 query problem
-   Impact: 2,847ms per request
-   Queries: 156 individual queries
-   Recommendation: Use eager loading
+1. Hiệu suất truy vấn Database
+   Vị trí: src/users/service.js:23
+   Vấn đề: Lỗi N+1 query
+   Tác động: 2,847ms mỗi request
+   Số truy vấn: 156 truy vấn riêng lẻ
+   Khuyến nghị: Sử dụng eager loading
 
-2. Unoptimized Images
-   Location: public/uploads/
-   Issue: Large image sizes
-   Impact: 3.2s additional load time
-   Total: 12.4MB transferred
-   Recommendation: Image optimization + CDN
+2. Hình ảnh chưa được tối ưu hóa
+   Vị trí: public/uploads/
+   Vấn đề: Kích thước hình ảnh lớn
+   Tác động: Thêm 3.2s thời gian tải
+   Tổng cộng: 12.4MB dữ liệu truyền tải
+   Khuyến nghị: Tối ưu hóa hình ảnh + CDN
 
-3. Missing Cache Layer
-   Location: src/products/service.js
-   Issue: Repeated expensive operations
-   Impact: 95% cache miss rate
-   Recommendation: Implement Redis caching
+3. Thiếu lớp Caching
+   Vị trí: src/products/service.js
+   Vấn đề: Lặp lại các thao tác tốn kém
+   Tác động: Tỷ lệ cache miss 95%
+   Khuyến nghị: Triển khai Redis caching
 
-🟡 Warning Issues (5)
+🟡 Các Vấn Đề Cảnh Báo (5)
 
-4. Inefficient Algorithm
-   Location: src/search/index.js:45
-   Issue: O(n²) complexity
-   Impact: 523ms for 1000 items
-   Recommendation: Use hash map (O(n))
+4. Thuật toán không hiệu quả
+   Vị trí: src/search/index.js:45
+   Vấn đề: Độ phức tạp O(n²)
+   Tác động: 523ms cho 1000 items
+   Khuyến nghị: Sử dụng hash map (O(n))
 
-5. Blocking Operations
-   Location: src/emails/send.js:12
-   Issue: Synchronous email sending
-   Impact: 890ms blocking
-   Recommendation: Use queue (Bull/Redis)
+5. Các thao tác gây nghẽn (Blocking)
+   Vị trí: src/emails/send.js:12
+   Vấn đề: Gửi email đồng bộ (Synchronous)
+   Tác động: Gây nghẽn 890ms
+   Khuyến nghị: Sử dụng hàng chờ (Bull/Redis)
 
-6. Large Bundle Size
-   Location: frontend/dist/
-   Issue: 4.2MB JavaScript bundle
-   Impact: 6s parse time on mobile
-   Recommendation: Code splitting
+6. Kích thước Bundle lớn
+   Vị trí: frontend/dist/
+   Vấn đề: JavaScript bundle 4.2MB
+   Tác động: 6s thời gian parse trên thiết bị di động
+   Khuyến nghị: Chia nhỏ code (Code splitting)
 
-7. No Compression
-   Issue: Missing gzip/brotli
-   Impact: 2.8x larger transfers
-   Recommendation: Enable compression
+7. Không có nén dữ liệu
+   Vấn đề: Thiếu gzip/brotli
+   Tác động: Truyền tải dữ liệu lớn hơn 2.8 lần
+   Khuyến nghị: Bật nén dữ liệu
 
-8. Memory Leaks
-   Location: src/websocket/handler.js
-   Issue: Event listeners not removed
-   Impact: 125MB/hour growth
-   Recommendation: Cleanup on disconnect
+8. Rò rỉ bộ nhớ (Memory Leaks)
+   Vị trí: src/websocket/handler.js
+   Vấn đề: Các event listeners không được gỡ bỏ
+   Tác động: Tăng trưởng 125MB/giờ
+   Khuyến nghị: Dọn dẹp khi ngắt kết nối
 
-Performance Score: 34/100 (Poor)
-Load Time: 8.2s (Target: <2s)
-Time to Interactive: 12.4s (Target: <3.5s)
+Điểm hiệu suất: 34/100 (Kém)
+Thời gian tải: 8.2s (Mục tiêu: <2s)
+Thời gian tương tác (TTI): 12.4s (Mục tiêu: <3.5s)
 ```
 
-### Step 2: Fix Database Performance
+### Bước 2: Khắc Phục Hiệu Suất Database
 
-#### N+1 Query Problem
+#### Lỗi N+1 Query
 
 ```bash
 /cook [fix N+1 query problem in user service with eager loading]
 ```
 
-**Implementation**:
+**Triển khai**:
 ```
-[1/4] Analyzing queries...
-  ✓ Identified 156 individual queries
-  ✓ Should be 1 query with joins
+[1/4] Đang phân tích các truy vấn...
+  ✓ Đã xác định 156 truy vấn riêng lẻ
+  ✓ Nên sử dụng 1 truy vấn với joins
 
-Before:
+Trước đó:
 const users = await User.findAll();
 for (const user of users) {
-  user.posts = await Post.findAll({ userId: user.id }); // N queries
+  user.posts = await Post.findAll({ userId: user.id }); // N truy vấn
 }
 
-After:
+Sau đó:
 const users = await User.findAll({
-  include: [{ model: Post }] // 1 query with JOIN
+  include: [{ model: Post }] // 1 truy vấn với JOIN
 });
 
-[2/4] Implementing fix...
-  ✓ Added eager loading
-  ✓ Optimized includes
-  ✓ Added select to limit fields
+[2/4] Đang triển khai bản sửa lỗi...
+  ✓ Đã thêm eager loading
+  ✓ Tối ưu hóa các includes
+  ✓ Thêm select để giới hạn các trường
 
-[3/4] Testing...
-  ✓ Query count: 156 → 1
-  ✓ Response time: 2,847ms → 87ms
-  ✓ 97% improvement
+[3/4] Đang kiểm thử...
+  ✓ Số lượng truy vấn: 156 → 1
+  ✓ Thời gian phản hồi: 2,847ms → 87ms
+  ✓ Cải thiện 97%
 
-[4/4] Documentation...
-  ✓ Added performance notes
+[4/4] Tài liệu...
+  ✓ Đã thêm ghi chú về hiệu suất
 
-✅ N+1 problem fixed
+✅ Đã sửa lỗi N+1
 ```
 
-#### Add Database Indexes
+#### Thêm Index Database
 
 ```bash
 /cook [add database indexes for frequently queried fields]
 ```
 
-**Implementation**:
+**Triển khai**:
 ```
-[1/3] Analyzing query patterns...
-  ✓ Identified slow queries
-  ✓ Found missing indexes
+[1/3] Đang phân tích các mẫu truy vấn...
+  ✓ Đã xác định các truy vấn chậm
+  ✓ Tìm thấy các indexes còn thiếu
 
-Indexes to add:
+Các indexes cần thêm:
 - users.email (unique)
 - posts.userId (foreign key)
 - posts.status (filter)
@@ -174,27 +170,27 @@ Indexes to add:
 - products.categoryId (foreign key)
 - products.price (range queries)
 
-[2/3] Creating indexes...
-  ✓ Generated migration
-  ✓ Composite indexes for complex queries
-  ✓ Partial indexes for filtered queries
+[2/3] Đang tạo indexes...
+  ✓ Đã tạo migration
+  ✓ Các indexes tổng hợp (Composite indexes) cho các truy vấn phức tạp
+  ✓ Các indexes từng phần (Partial indexes) cho các truy vấn được lọc
 
-[3/3] Testing...
-  ✓ Query performance improved:
-    - User lookup: 234ms → 3ms
-    - Post filtering: 567ms → 12ms
-    - Product search: 892ms → 34ms
+[3/3] Đang kiểm thử...
+  ✓ Hiệu suất truy vấn được cải thiện:
+    - Tìm kiếm User: 234ms → 3ms
+    - Lọc Post: 567ms → 12ms
+    - Tìm kiếm sản phẩm: 892ms → 34ms
 
-✅ Indexes added
+✅ Đã thêm các indexes
 ```
 
-#### Query Optimization
+#### Tối Ưu Hóa Truy Vấn
 
 ```bash
 /cook [optimize database queries to reduce execution time]
 ```
 
-### Step 3: Implement Caching
+### Bước 3: Triển Khai Caching
 
 #### Redis Cache
 
@@ -202,40 +198,40 @@ Indexes to add:
 /cook [implement Redis caching for frequently accessed data]
 ```
 
-**Implementation**:
+**Triển khai**:
 ```
-[1/5] Setting up Redis...
-  ✓ Installed Redis client
-  ✓ Configuration added
-  ✓ Connection pool setup
+[1/5] Thiết lập Redis...
+  ✓ Đã cài đặt Redis client
+  ✓ Đã thêm cấu hình
+  ✓ Thiết lập Connection pool
 
-[2/5] Cache strategy...
-  ✓ Cache-aside pattern
-  ✓ Write-through for updates
-  ✓ TTL configuration
+[2/5] Chiến lược Cache...
+  ✓ Mẫu Cache-aside
+  ✓ Write-through cho các cập nhật
+  ✓ Cấu hình TTL
 
-[3/5] Implementing cache...
-  ✓ User data (TTL: 1 hour)
-  ✓ Product catalog (TTL: 15 min)
-  ✓ Search results (TTL: 5 min)
-  ✓ API responses (TTL: 1 min)
+[3/5] Triển khai cache...
+  ✓ Dữ liệu người dùng (TTL: 1 giờ)
+  ✓ Danh mục sản phẩm (TTL: 15 phút)
+  ✓ Kết quả tìm kiếm (TTL: 5 phút)
+  ✓ Phản hồi API (TTL: 1 phút)
 
-[4/5] Cache invalidation...
-  ✓ On update operations
-  ✓ On delete operations
-  ✓ Manual invalidation API
+[4/5] Xóa Cache (Invalidation)...
+  ✓ Khi có thao tác cập nhật
+  ✓ Khi có thao tác xóa
+  ✓ API xóa cache thủ công
 
-[5/5] Testing...
-  ✓ Cache hit rate: 0% → 87%
-  ✓ Response time: 456ms → 23ms
-  ✓ Database load: -76%
+[5/5] Đang kiểm thử...
+  ✓ Tỷ lệ cache hit: 0% → 87%
+  ✓ Thời gian phản hồi: 456ms → 23ms
+  ✓ Tải Database: -76%
 
-✅ Redis caching implemented
+✅ Đã triển khai Redis caching
 
-Performance improvement:
-- Average response: 95% faster
-- Database queries: 76% reduction
-- Server load: 64% reduction
+Cải thiện hiệu suất:
+- Phản hồi trung bình: nhanh hơn 95%
+- Truy vấn Database: giảm 76%
+- Tải server: giảm 64%
 ```
 
 #### In-Memory Cache
@@ -244,97 +240,97 @@ Performance improvement:
 /cook [add in-memory LRU cache for hot data]
 ```
 
-#### CDN Integration
+#### Tích Hợp CDN
 
 ```bash
 /cook [integrate CloudFlare CDN for static assets]
 ```
 
-### Step 4: Optimize Frontend
+### Bước 4: Tối Ưu Hóa Frontend
 
-#### Code Splitting
+#### Chia Nhỏ Code (Code Splitting)
 
 ```bash
 /cook [implement code splitting and lazy loading]
 ```
 
-**Implementation**:
+**Triển khai**:
 ```
-[1/4] Analyzing bundle...
-  ✓ Current size: 4.2MB
-  ✓ Identified heavy modules
-  ✓ Found unused dependencies
+[1/4] Đang phân tích bundle...
+  ✓ Kích thước hiện tại: 4.2MB
+  ✓ Đã xác định các module nặng
+  ✓ Tìm thấy các dependencies không sử dụng
 
-Heavy modules:
-- moment.js: 287KB (use date-fns instead)
-- lodash: 531KB (use individual imports)
-- chart.js: 456KB (lazy load)
+Các module nặng:
+- moment.js: 287KB (nên dùng date-fns thay thế)
+- lodash: 531KB (sử dụng imports riêng lẻ)
+- chart.js: 456KB (sử dụng lazy load)
 
-[2/4] Code splitting...
-  ✓ Route-based splitting
-  ✓ Component lazy loading
-  ✓ Vendor chunk optimization
+[2/4] Chia nhỏ code...
+  ✓ Chia nhỏ theo Route (Route-based splitting)
+  ✓ Lazy loading component
+  ✓ Tối ưu hóa Vendor chunk
 
 [3/4] Tree shaking...
-  ✓ Removed unused code
-  ✓ Optimized imports
-  ✓ Replaced heavy libraries
+  ✓ Đã gỡ bỏ code không sử dụng
+  ✓ Tối ưu hóa imports
+  ✓ Thay thế các thư viện nặng
 
-[4/4] Results...
-  ✓ Bundle size: 4.2MB → 687KB (84% reduction)
-  ✓ Initial load: 6s → 1.2s
-  ✓ Time to interactive: 12.4s → 2.8s
+[4/4] Kết quả...
+  ✓ Kích thước bundle: 4.2MB → 687KB (giảm 84%)
+  ✓ Lần tải đầu tiên: 6s → 1.2s
+  ✓ Thời gian tương tác: 12.4s → 2.8s
 
-✅ Frontend optimized
+✅ Đã tối ưu hóa Frontend
 ```
 
-#### Image Optimization
+#### Tối Ưu Hóa Hình Ảnh
 
 ```bash
 /cook [optimize images with compression and lazy loading]
 ```
 
-**Implementation**:
+**Triển khai**:
 ```
-[1/4] Image analysis...
-  ✓ Total images: 342
-  ✓ Total size: 12.4MB
-  ✓ Average size: 36KB
+[1/4] Phân tích hình ảnh...
+  ✓ Tổng số hình ảnh: 342
+  ✓ Tổng kích thước: 12.4MB
+  ✓ Kích thước trung bình: 36KB
 
-[2/4] Optimization...
-  ✓ Convert to WebP format
-  ✓ Compress with quality 85
-  ✓ Generate responsive sizes
-  ✓ Add lazy loading
+[2/4] Tối ưu hóa...
+  ✓ Chuyển sang định dạng WebP
+  ✓ Nén với chất lượng 85
+  ✓ Tạo các kích thước đáp ứng (responsive sizes)
+  ✓ Thêm lazy loading
 
-[3/4] Implementation...
-  ✓ Picture element with fallbacks
-  ✓ Intersection Observer for lazy load
-  ✓ Placeholder images
+[3/4] Triển khai...
+  ✓ Sử dụng thẻ picture với các phương án dự phòng (fallbacks)
+  ✓ Sử dụng Intersection Observer cho lazy load
+  ✓ Hình ảnh giữ chỗ (Placeholder images)
 
-[4/4] Results...
-  ✓ Image size: 12.4MB → 2.1MB (83% reduction)
-  ✓ Load time: 3.2s → 0.6s
-  ✓ Bandwidth: -10.3MB per page
+[4/4] Kết quả...
+  ✓ Kích thước hình ảnh: 12.4MB → 2.1MB (giảm 83%)
+  ✓ Thời gian tải: 3.2s → 0.6s
+  ✓ Băng thông: giảm 10.3MB mỗi trang
 
-✅ Images optimized
+✅ Hình ảnh đã được tối ưu hóa
 ```
 
-#### Bundle Compression
+#### Nén Bundle
 
 ```bash
 /cook [enable gzip and brotli compression]
 ```
 
-### Step 5: Optimize Algorithms
+### Bước 5: Tối Ưu Hóa Thuật Toán
 
-#### Replace Inefficient Algorithm
+#### Thay Thế Thuật Toán Không Hiệu Quả
 
 ```bash
 /cook [replace O(n²) algorithm with O(n) hash map solution]
 ```
 
-**Before** (O(n²) - 523ms):
+**Trước đó** (O(n²) - 523ms):
 ```javascript
 function findDuplicates(items) {
   const duplicates = [];
@@ -349,7 +345,7 @@ function findDuplicates(items) {
 }
 ```
 
-**After** (O(n) - 4ms):
+**Sau đó** (O(n) - 4ms):
 ```javascript
 function findDuplicates(items) {
   const seen = new Set();
@@ -367,209 +363,209 @@ function findDuplicates(items) {
 }
 ```
 
-**Result**: 99.2% faster (523ms → 4ms)
+**Kết quả**: nhanh hơn 99.2% (523ms → 4ms)
 
-### Step 6: Async Operations
+### Bước 6: Các Thao Tác Bất Đồng Bộ (Async)
 
-#### Background Jobs
+#### Công Việc Chạy Ngầm (Background Jobs)
 
 ```bash
 /cook [move email sending to background queue with Bull]
 ```
 
-**Implementation**:
+**Triển khai**:
 ```
-[1/4] Setting up Bull queue...
-  ✓ Redis queue configured
-  ✓ Worker processes setup
-  ✓ Job processing logic
+[1/4] Thiết lập hàng chờ Bull...
+  ✓ Đã cấu hình hàng chờ Redis
+  ✓ Thiết lập các quy trình Worker
+  ✓ Logic xử lý công việc
 
-[2/4] Moving operations to queue...
-  ✓ Email sending (was 890ms blocking)
-  ✓ Report generation (was 2.3s blocking)
-  ✓ Image processing (was 1.2s blocking)
+[2/4] Chuyển các thao tác sang hàng chờ...
+  ✓ Gửi email (trước đó gây nghẽn 890ms)
+  ✓ Tạo báo cáo (trước đó gây nghẽn 2.3s)
+  ✓ Xử lý hình ảnh (trước đó gây nghẽn 1.2s)
 
-[3/4] Implementing retry logic...
-  ✓ Automatic retry on failure
+[3/4] Triển khai logic thử lại...
+  ✓ Tự động thử lại khi lỗi
   ✓ Exponential backoff
-  ✓ Dead letter queue
+  ✓ Hàng chờ Dead letter
 
-[4/4] Results...
-  ✓ API response: 890ms → 45ms
-  ✓ Non-blocking operations
-  ✓ Better error handling
+[4/4] Kết quả...
+  ✓ Phản hồi API: 890ms → 45ms
+  ✓ Các thao tác không gây nghẽn
+  ✓ Xử lý lỗi tốt hơn
 
-✅ Background jobs implemented
+✅ Đã triển khai công việc chạy ngầm
 ```
 
-#### Parallel Processing
+#### Xử Lý Song Song
 
 ```bash
 /cook [process multiple operations in parallel instead of sequential]
 ```
 
-### Step 7: Database Connection Pool
+### Bước 7: Pool Kết Nối Database
 
 ```bash
 /cook [optimize database connection pooling]
 ```
 
-**Configuration**:
+**Cấu hình**:
 ```javascript
-// Before: Default settings
+// Trước đó: Các thiết lập mặc định
 pool: {
   max: 5,
   min: 0,
   idle: 10000
 }
 
-// After: Optimized
+// Sau đó: Đã tối ưu hóa
 pool: {
-  max: 20,          // More connections
-  min: 5,           // Keep minimum ready
-  idle: 30000,      // Longer idle time
-  acquire: 60000,   // Longer acquire timeout
-  evict: 1000       // Cleanup interval
+  max: 20,          // Thêm nhiều kết nối hơn
+  min: 5,           // Luôn giữ tối thiểu sẵn sàng
+  idle: 30000,      // Thời gian rảnh lâu hơn
+  acquire: 60000,   // Thời gian timeout lấy kết nối lâu hơn
+  evict: 1000       // Khoảng thời gian dọn dẹp
 }
 
-Result: 45% faster during peak load
+Kết quả: nhanh hơn 45% trong thời gian tải cao điểm
 ```
 
-### Step 8: API Rate Limiting & Throttling
+### Bước 8: Giới Hạn Tốc Độ (Rate Limiting) & Điều Tiết (Throttling)
 
 ```bash
 /cook [implement intelligent rate limiting and request throttling]
 ```
 
-### Step 9: Memory Optimization
+### Bước 9: Tối Ưu Hóa Bộ Nhớ
 
-#### Fix Memory Leaks
+#### Sửa Lỗi Rò Rỉ Bộ Nhớ (Memory Leaks)
 
 ```bash
 /fix:hard [fix memory leak in WebSocket handler]
 ```
 
-**Implementation**:
+**Triển khai**:
 ```
-[1/4] Identifying leak...
-  ✓ Memory growing 125MB/hour
-  ✓ Event listeners not cleaned up
-  ✓ Socket references retained
+[1/4] Xác định rò rỉ...
+  ✓ Bộ nhớ tăng 125MB/giờ
+  ✓ Các event listeners không được dọn dẹp
+  ✓ Các tham chiếu Socket được giữ lại
 
-[2/4] Implementing fixes...
-  ✓ Remove event listeners on disconnect
-  ✓ Clear socket references
-  ✓ Implement cleanup function
+[2/4] Triển khai bản sửa lỗi...
+  ✓ Gỡ bỏ event listeners khi ngắt kết nối
+  ✓ Xóa các tham chiếu socket
+  ✓ Triển khai hàm dọn dẹp (cleanup function)
 
-[3/4] Memory management...
-  ✓ WeakMap for temporary data
-  ✓ Clear timers on disconnect
-  ✓ Garbage collection hints
+[3/4] Quản lý bộ nhớ...
+  ✓ Sử dụng WeakMap cho dữ liệu tạm thời
+  ✓ Xóa các timers khi ngắt kết nối
+  ✓ Các gợi ý Garbage collection
 
-[4/4] Testing...
-  ✓ 24-hour test: stable memory
-  ✓ 1000 connections: no growth
-  ✓ Stress test: passed
+[4/4] Đang kiểm thử...
+  ✓ Kiểm thử 24 giờ: bộ nhớ ổn định
+  ✓ 1000 kết nối: không thấy tăng trưởng
+  ✓ Stress test: đã vượt qua
 
-✅ Memory leak fixed
+✅ Lỗi rò rỉ bộ nhớ đã được xử lý
 ```
 
-#### Reduce Memory Usage
+#### Giảm Sử Dụng Bộ Nhớ
 
 ```bash
 /cook [optimize memory usage by using streams for large data]
 ```
 
-### Step 10: Monitoring & Profiling
+### Bước 10: Giám Sát & Profiling
 
 ```bash
 /cook [implement performance monitoring with metrics and alerts]
 ```
 
-**Monitoring setup**:
+**Thiết lập giám sát**:
 ```
-✓ Response time tracking
-✓ Database query monitoring
-✓ Memory usage alerts
-✓ CPU usage tracking
-✓ Error rate monitoring
-✓ Cache hit rate metrics
-✓ Custom business metrics
-✓ Real-user monitoring (RUM)
+✓ Theo dõi thời gian phản hồi
+✓ Giám sát truy vấn Database
+✓ Cảnh báo sử dụng bộ nhớ
+✓ Theo dõi sử dụng CPU
+✓ Giám sát tỷ lệ lỗi
+✓ Các chỉ số cache hit rate
+✓ Các chỉ số kinh doanh tùy chỉnh
+✓ Giám sát người dùng thực (RUM)
 
-Alerts configured:
-- Response time >500ms
-- Error rate >1%
-- Memory usage >80%
-- CPU usage >75%
+Các cảnh báo đã được cấu hình:
+- Thời gian phản hồi >500ms
+- Tỷ lệ lỗi >1%
+- Sử dụng bộ nhớ >80%
+- Sử dụng CPU >75%
 - Cache hit rate <70%
 ```
 
-### Step 11: Load Testing
+### Bước 11: Kiểm Thử Tải (Load Testing)
 
 ```bash
 /test
 ```
 
-**Performance test results**:
+**Kết quả kiểm thử hiệu suất**:
 ```
-Load Test Report (1000 concurrent users)
+Báo Cáo Kiểm Thử Tải (1000 người dùng đồng thời)
 
-Before optimization:
-- Avg response time: 2,847ms
-- 95th percentile: 5,234ms
-- Requests/sec: 23
-- Error rate: 12.4%
-- Failed requests: 124/1000
+Trước khi tối ưu hóa:
+- Thời gian phản hồi trung bình: 2,847ms
+- Phân vị thứ 95 (95th percentile): 5,234ms
+- Số request/giây: 23
+- Tỷ lệ lỗi: 12.4%
+- Số request thất bại: 124/1000
 
-After optimization:
-- Avg response time: 87ms (97% faster)
-- 95th percentile: 156ms (97% faster)
-- Requests/sec: 892 (38x more)
-- Error rate: 0.1%
-- Failed requests: 1/1000
+Sau khi tối ưu hóa:
+- Thời gian phản hồi trung bình: 87ms (nhanh hơn 97%)
+- Phân vị thứ 95 (95th percentile): 156ms (nhanh hơn 97%)
+- Số request/giây: 892 (nhiều hơn 38 lần)
+- Tỷ lệ lỗi: 0.1%
+- Số request thất bại: 1/1000
 
 Database:
-- Query time: 234ms → 8ms (97% faster)
-- Queries per request: 156 → 1
-- Connection pool usage: 95% → 34%
+- Thời gian truy vấn: 234ms → 8ms (nhanh hơn 97%)
+- Số truy vấn mỗi request: 156 → 1
+- Sử dụng connection pool: 95% → 34%
 
-Memory:
-- Usage: 2.1GB → 487MB (77% reduction)
-- Leak rate: 125MB/hour → 0MB/hour
-- GC pauses: 89/hour → 12/hour
+Bộ nhớ:
+- Sử dụng: 2.1GB → 487MB (giảm 77%)
+- Tỷ lệ rò rỉ: 125MB/giờ → 0MB/giờ
+- Số lần tạm dừng GC: 89/giờ → 12/giờ
 
 Frontend:
-- Bundle size: 4.2MB → 687KB (84% smaller)
-- Load time: 8.2s → 1.2s (85% faster)
-- Time to interactive: 12.4s → 2.8s (77% faster)
+- Kích thước Bundle: 4.2MB → 687KB (nhỏ hơn 84%)
+- Thời gian tải: 8.2s → 1.2s (nhanh hơn 85%)
+- Thời gian tương tác: 12.4s → 2.8s (nhanh hơn 77%)
 
-Overall Performance Score: 34/100 → 94/100
+Điểm Hiệu Suất Tổng Thể: 34/100 → 94/100
 
-✅ All performance targets met
+✅ Tất cả các mục tiêu hiệu suất đã đạt được
 ```
 
-## Complete Example: Slow E-Commerce API
+## Ví Dụ Hoàn Chỉnh: Slow E-Commerce API
 
-### Initial Issues
+### Các Vấn Đề Ban Đầu
 
 ```
-Performance problems:
-- Product listing: 4.2s response time
-- Search: 6.8s with 1000 products
-- Cart update: 1.8s
-- Checkout: 3.4s
-- Homepage: 9.2s load time
-- High database load: 89% CPU
+Các vấn đề hiệu suất:
+- Danh sách sản phẩm: thời gian phản hồi 4.2s
+- Tìm kiếm: 6.8s với 1000 sản phẩm
+- Cập nhật giỏ hàng: 1.8s
+- Thanh toán: 3.4s
+- Trang chủ: thời gian tải 9.2s
+- Tải database cao: 89% CPU
 ```
 
-### Optimization Steps
+### Các Bước Tối Ưu Hóa
 
 ```bash
-# 1. Profile application
+# 1. Profile ứng dụng
 /debug [analyze e-commerce API performance]
 
-# 2. Database optimization
+# 2. Tối ưu hóa Database
 /cook [fix N+1 queries and add indexes]
 /cook [optimize product search queries]
 
@@ -577,230 +573,230 @@ Performance problems:
 /cook [implement Redis caching for products and categories]
 /cook [add query result caching]
 
-# 4. Frontend optimization
+# 4. Tối ưu hóa Frontend
 /cook [implement code splitting and lazy loading]
 /cook [optimize product images with WebP and lazy loading]
 
-# 5. API optimization
+# 5. Tối ưu hóa API
 /cook [move image processing to background queue]
 /cook [implement response compression]
 
-# 6. Algorithm optimization
+# 6. Tối ưu hóa thuật toán
 /cook [optimize search algorithm with inverted index]
 
-# 7. Test improvements
+# 7. Kiểm thử các cải thiện
 /test
 
-# 8. Monitor in production
+# 8. Giám sát trên production
 /cook [set up performance monitoring with alerts]
 ```
 
-### Results
+### Kết Quả
 
 ```
-After optimization (1 hour work):
+Sau khi tối ưu hóa (1 giờ làm việc):
 
-Product listing: 4.2s → 124ms (97% faster)
-Search: 6.8s → 89ms (99% faster)
-Cart update: 1.8s → 34ms (98% faster)
-Checkout: 3.4s → 187ms (95% faster)
-Homepage: 9.2s → 1.4s (85% faster)
-Database CPU: 89% → 23%
+Danh sách sản phẩm: 4.2s → 124ms (nhanh hơn 97%)
+Tìm kiếm: 6.8s → 89ms (nhanh hơn 99%)
+Cập nhật giỏ hàng: 1.8s → 34ms (nhanh hơn 98%)
+Thanh toán: 3.4s → 187ms (nhanh hơn 95%)
+Trang chủ: 9.2s → 1.4s (nhanh hơn 85%)
+CPU Database: 89% → 23%
 
-Customer impact:
-- 94% faster page loads
-- 10x more concurrent users
-- 87% lower server costs
-- 45% increase in conversions
+Tác động đến khách hàng:
+- Tải trang nhanh hơn 94%
+- Phục vụ nhiều hơn 10 lần số người dùng đồng thời
+- Chi phí server thấp hơn 87%
+- Tăng 45% tỷ lệ chuyển đổi
 ```
 
-### Time Comparison
+### So Sánh Thời Gian
 
-**Manual optimization**: 8-16 hours
-- Profiling: 1-2 hours
-- Database optimization: 2-3 hours
-- Caching: 2-3 hours
-- Frontend: 2-4 hours
-- Testing: 1-2 hours
-- Debugging: 1-2 hours
+**Tối ưu hóa thủ công**: 8-16 giờ
+- Profiling: 1-2 giờ
+- Tối ưu hóa Database: 2-3 giờ
+- Caching: 2-3 giờ
+- Frontend: 2-4 giờ
+- Kiểm thử: 1-2 giờ
+- Debugging: 1-2 giờ
 
-**With ClaudeKit**: 58 minutes
-- Profiling: 8 minutes
-- Database: 15 minutes
-- Caching: 12 minutes
-- Frontend: 18 minutes
-- Testing: 5 minutes
+**Với ClaudeKit**: 58 phút
+- Profiling: 8 phút
+- Database: 15 phút
+- Caching: 12 phút
+- Frontend: 18 phút
+- Kiểm thử: 5 phút
 
-**Time saved**: 7-15 hours (88% faster)
+**Thời gian tiết kiệm**: 7-15 giờ (nhanh hơn 88%)
 
-## Performance Optimization Patterns
+## Các Mẫu Hình (Patterns) Tối Ưu Hiệu Suất
 
-### Pattern 1: Progressive Enhancement
+### Mẫu 1: Tăng Cường Luỹ Tiến (Progressive Enhancement)
 
 ```bash
 /cook [implement progressive enhancement for slow connections]
 ```
 
-### Pattern 2: Predictive Prefetching
+### Mẫu 2: Tải Trước Dự Đoán (Predictive Prefetching)
 
 ```bash
 /cook [add predictive prefetching for likely user actions]
 ```
 
-### Pattern 3: Service Worker Caching
+### Mẫu 3: Service Worker Caching
 
 ```bash
 /cook [implement service worker for offline-first experience]
 ```
 
-### Pattern 4: Database Read Replicas
+### Mẫu 4: Read Replicas Database
 
 ```bash
 /cook [set up database read replicas for scaling reads]
 ```
 
-## Best Practices
+## Các Thực Hành Tốt Nhất (Best Practices)
 
-### 1. Measure First
+### 1. Đo Lường Trước
 
-Always profile before optimizing:
+Luôn profile trước khi tối ưu hóa:
 ```bash
-✅ Profile → Identify → Fix → Measure
-❌ Guess → Optimize → Hope
+✅ Profile → Xác định → Khắc phục → Đo lường
+❌ Đoán → Tối ưu hóa → Hy vọng
 ```
 
-### 2. Focus on Biggest Impact
+### 2. Tập Trung Vào Tác Động Lớn Nhất
 
-Optimize high-impact issues first:
+Tối ưu hóa các vấn đề có tác động cao nhất trước:
 ```
-Priority order:
-1. Critical path operations
-2. High-frequency operations
-3. User-facing operations
-4. Background operations
+Thứ tự ưu tiên:
+1. Các thao tác trên luồng quan trọng (critical path)
+2. Các thao tác có tần suất cao
+3. Các thao tác hướng về phía người dùng
+4. Các thao tác chạy ngầm
 ```
 
-### 3. Cache Aggressively
+### 3. Caching Quyết Liệt
 
-But invalidate correctly:
+Nhưng phải xóa cache đúng cách:
 ```javascript
-// Cache layers
-1. Browser cache (static assets)
-2. CDN cache (global content)
+// Các lớp Cache
+1. Browser cache (assets tĩnh)
+2. CDN cache (nội dung toàn cầu)
 3. Application cache (Redis)
 4. Database query cache
-5. Result memoization
+5. Kết quả memoization
 ```
 
-### 4. Use Appropriate Data Structures
+### 4. Sử Dụng Cấu Trúc Dữ Liệu Phù Hợp
 
 ```javascript
-✅ Hash map for lookups: O(1)
-✅ Set for uniqueness: O(1)
-✅ Binary search: O(log n)
+✅ Hash map cho việc tìm kiếm: O(1)
+✅ Set cho việc đảm bảo duy nhất: O(1)
+✅ Tìm kiếm nhị phân (Binary search): O(log n)
 
-❌ Array loops: O(n)
-❌ Nested loops: O(n²)
+❌ Vòng lặp Array: O(n)
+❌ Vòng lặp lồng nhau: O(n²)
 ```
 
-### 5. Monitor Continuously
+### 5. Giám Sát Liên Tục
 
 ```bash
 /cook [implement continuous performance monitoring]
 ```
 
-## Troubleshooting
+## Xử Lý Sự Cố
 
-### Issue: Still Slow After Optimization
+### Vấn Đề: Vẫn Chậm Sau Khi Tối Ưu Hóa
 
-**Solution**:
+**Giải pháp**:
 ```bash
-# Re-profile
+# Profile lại
 /debug [deep performance analysis with detailed metrics]
 
-# Check for new bottlenecks
-# Optimize further
+# Kiểm tra các nút thắt cổ chai mới
+# Tiếp tục tối ưu hóa
 ```
 
-### Issue: Cache Not Hitting
+### Vấn Đề: Cache Không Hoạt Động
 
-**Solution**:
+**Giải pháp**:
 ```bash
 /fix:fast [Redis cache hit rate below 50%]
 ```
 
-### Issue: Memory Still Growing
+### Vấn Đề: Bộ Nhớ Vẫn Tăng
 
-**Solution**:
+**Giải pháp**:
 ```bash
 /fix:hard [memory still growing despite fixes]
 ```
 
-### Issue: Database Timeout
+### Vấn Đề: Database Timeout
 
-**Solution**:
+**Giải pháp**:
 ```bash
 /cook [increase connection pool and optimize slow queries]
 ```
 
-## Performance Checklist
+## Danh Mục Kiểm Tra Hiệu Suất
 
 ```bash
 Backend:
-✓ Database queries optimized
-✓ Indexes on frequently queried fields
-✓ N+1 queries eliminated
-✓ Caching implemented (Redis)
-✓ Connection pooling optimized
-✓ Background jobs for slow operations
-✓ API response compression
-✓ Rate limiting configured
+✓ Các truy vấn Database đã được tối ưu hóa
+✓ Đã có Index trên các trường được truy vấn thường xuyên
+✓ Đã loại bỏ lỗi N+1 query
+✓ Đã triển khai Caching (Redis)
+✓ Đã tối ưu hóa Connection pooling
+✓ Đã sử dụng công việc chạy ngầm cho các thao tác chậm
+✓ Đã bật nén phản hồi API
+✓ Đã cấu hình giới hạn tốc độ (Rate limiting)
 
 Frontend:
-✓ Code splitting implemented
-✓ Lazy loading for routes
-✓ Images optimized (WebP, lazy load)
-✓ Bundle size minimized
-✓ Tree shaking enabled
-✓ CDN for static assets
-✓ Service worker caching
-✓ Critical CSS inlined
+✓ Đã triển khai chia nhỏ mã nguồn (Code splitting)
+✓ Đã sử dụng Lazy loading cho các routes
+✓ Đã tối ưu hóa hình ảnh (WebP, lazy load)
+✓ Đã tối thiểu hóa kích thước bundle
+✓ Đã bật Tree shaking
+✓ Đã sử dụng CDN cho các assets tĩnh
+✓ Đã sử dụng Service worker caching
+✓ Đã inline các CSS quan trọng (Critical CSS)
 
 Infrastructure:
-✓ Load balancing configured
-✓ Auto-scaling enabled
-✓ CDN integration
-✓ Database read replicas
-✓ Monitoring and alerts
-✓ Performance budgets set
-✓ Regular load testing
+✓ Đã cấu hình cân bằng tải (Load balancing)
+✓ Đã bật tự động mở rộng (Auto-scaling)
+✓ Đã tích hợp CDN
+✓ Đã sử dụng database read replicas
+✓ Đã có giám sát và cảnh báo
+✓ Đã thiết lập ngân sách hiệu suất (Performance budgets)
+✓ Đã thực hiện kiểm thử tải định kỳ
 
-Metrics:
-✓ Response time <200ms
-✓ Page load <2s
-✓ Time to interactive <3.5s
+Chỉ số:
+✓ Thời gian phản hồi <200ms
+✓ Tải trang <2s
+✓ Thời gian tương tác <3.5s
 ✓ Cache hit rate >80%
-✓ Error rate <0.1%
+✓ Tỷ lệ lỗi <0.1%
 ```
 
-## Next Steps
+## Bước Tiếp Theo
 
-### Related Use Cases
-- [Fixing Bugs](/docs/use-cases/fixing-bugs) - Debug issues
-- [Refactoring Code](/docs/use-cases/refactoring-code) - Code quality
-- [Building a REST API](/docs/use-cases/building-api) - API development
+### Các Trường Hợp Sử Dụng Liên Quan
+- [Sửa Lỗi](/docs/use-cases/fixing-bugs) - Gỡ lỗi các vấn đề
+- [Tái Cấu Trúc Mã Nguồn](/docs/use-cases/refactoring-code) - Chất lượng mã nguồn
+- [Xây Dựng REST API](/docs/use-cases/building-api) - Phát triển API
 
-### Related Commands
-- [/debug](/docs/engineer/commands/core/debug) - Performance profiling
-- [/cook](/docs/engineer/commands/core/cook) - Implement optimizations
-- [/fix:hard](/docs/engineer/commands/fix/hard) - Complex fixes
-- [/test](/docs/engineer/commands/core/test) - Performance testing
+### Các Lệnh Liên Quan
+- [/debug](/docs/engineer/commands/core/debug) - Phân tích hiệu suất
+- [/cook](/docs/engineer/commands/core/cook) - Triển khai tối ưu hóa
+- [/fix:hard](/docs/engineer/commands/fix/hard) - Các bản sửa lỗi phức tạp
+- [/test](/docs/engineer/commands/core/test) - Kiểm thử hiệu suất
 
-### Further Reading
+### Đọc Thêm
 - [Web.dev Performance](https://web.dev/performance/)
 - [Database Indexing](https://use-the-index-luke.com/)
 - [Redis Caching Patterns](https://redis.io/docs/manual/patterns/)
 
 ---
 
-**Key Takeaway**: ClaudeKit enables systematic performance optimization with profiling, analysis, and implementation of best practices - turning slow applications into fast ones in under an hour with measurable improvements.
+**Bài học chính**: ClaudeKit cho phép tối ưu hóa hiệu suất một cách hệ thống với việc phân tích, đo lường và triển khai các thực hành tốt nhất - biến các ứng dụng chậm chạp thành các ứng dụng tốc độ cao trong vòng chưa đầy một giờ với các cải thiện có thể đo lường được.

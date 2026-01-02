@@ -1,663 +1,650 @@
 ---
 title: /content:fast
-description: Documentation for fast
+description: Tài liệu hướng dẫn cho lệnh fast
 section: engineer
 kit: engineer
 category: docs/commands/content
 order: 52
 published: true
+lang: vi
 ---
 
 # /content:fast
 
-Generate creative and effective copy quickly. This command produces multiple variations optimized for different platforms and use cases, perfect when you need quality content fast.
+Tạo các bản viết (copy) sáng tạo và hiệu quả một cách nhanh chóng. Lệnh này tạo ra nhiều biến thể được tối ưu hóa cho các nền tảng và trường hợp sử dụng khác nhau, hoàn hảo khi bạn cần nội dung chất lượng trong thời gian ngắn.
 
-## Syntax
-
-```bash
-/content:fast [content request]
-```
-
-## How It Works
-
-The `/content:fast` command follows a rapid content generation workflow:
-
-### 1. Request Analysis
-
-- Understands content type needed
-- Identifies target audience
-- Determines tone and style
-- Recognizes platform requirements
-
-### 2. Quick Research (optional)
-
-- Reviews similar successful content (if reference provided)
-- Checks platform best practices
-- No deep competitive analysis (use `/content:good` for that)
-
-### 3. Rapid Generation
-
-Invokes **copywriter** agent to create:
-- Multiple variations (3-5)
-- Platform-optimized formatting
-- Different angles/approaches
-- Appropriate length for platform
-
-### 4. Quick Delivery
-
-Delivers content within seconds:
-- Ready-to-use copy
-- Multiple options to choose from
-- Basic formatting applied
-- Character counts included
-
-## Examples
-
-### Social Media Posts
+## Cú pháp
 
 ```bash
-/content:fast [write LinkedIn post announcing new AI feature launch]
+/content:fast [yêu cầu nội dung]
 ```
 
-**What happens:**
+## Cách thức hoạt động
+
+Lệnh `/content:fast` tuân theo quy trình tạo nội dung thần tốc:
+
+### 1. Phân tích Yêu cầu
+
+- Hiểu loại nội dung cần thiết
+- Xác định đối tượng mục tiêu
+- Xác định tông điệu và phong cách
+- Nhận diện các yêu cầu của nền tảng
+
+### 2. Nghiên cứu Nhanh (tùy chọn)
+
+- Xem xét các nội dung tương tự thành công (nếu có tài liệu tham khảo)
+- Kiểm tra các thực hành tốt nhất trên nền tảng
+- Không nghiên cứu sâu về đối thủ cạnh tranh (sử dụng `/content:good` cho việc đó)
+
+### 3. Tạo Nội dung Thần tốc
+
+Triệu tập agent **copywriter** để tạo ra:
+- Nhiều biến thể (3-5)
+- Định dạng được tối ưu hóa cho nền tảng
+- Các góc nhìn/cách tiếp cận khác nhau
+- Độ dài phù hợp cho nền tảng
+
+### 4. Bàn giao Nhanh
+
+Bàn giao nội dung trong vòng vài giây:
+- Bản viết sẵn sàng để sử dụng
+- Nhiều lựa chọn để chọn lựa
+- Áp dụng định dạng cơ bản
+- Bao gồm số lượng ký tự
+
+## Ví dụ
+
+### Các bài đăng trên Mạng xã hội
+
+```bash
+/content:fast [viết bài đăng LinkedIn thông báo ra mắt tính năng AI mới]
+```
+
+**Điều gì xảy ra:**
 ```
 Agent: copywriter
-Platform: LinkedIn
-Type: Product announcement
+Nền tảng: LinkedIn
+Loại: Thông báo sản phẩm
 
-Generating 3 variations...
+Đang tạo 3 biến thể...
 
-VARIATION 1 (Professional + Stats):
+BIẾN THỂ 1 (Chuyên nghiệp + Số liệu):
 ---
-🚀 Big news: We just launched AI Code Review
+🚀 Tin lớn: Chúng tôi vừa ra mắt AI Code Review
 
-After 6 months of development, ClaudeKit now
-reviews your PRs automatically.
+Sau 6 tháng phát triển, ClaudeKit giờ đây
+tự động đánh giá các PR của bạn.
 
-Results from beta:
-• 87% faster code reviews
-• 92% of bugs caught before production
-• 50,000+ PRs reviewed
+Kết quả từ bản beta:
+• Đánh giá mã nguồn nhanh hơn 87%
+• 92% lỗi được phát hiện trước khi sản xuất
+• Hơn 50.000+ PR đã được đánh giá
 
-Try it free: link.claudekit.cc/code-review
+Dùng thử miễn phí: link.claudekit.cc/code-review
 
 #AI #Development #CodeReview
 ---
-(253 characters, under LinkedIn optimal 300)
+(253 ký tự, dưới mức tối ưu 300 của LinkedIn)
 
-VARIATION 2 (Story-driven):
+BIẾN THỂ 2 (Dẫn dắt bằng câu chuyện):
 ---
-Remember spending hours in code review meetings?
+Bạn có nhớ những giờ họp đánh giá mã nguồn mệt mỏi?
 
-We built something better.
+Chúng tôi đã xây dựng một thứ tốt hơn.
 
-ClaudeKit's new AI Code Review analyzes your PRs
-in seconds, catching bugs, security issues, and
-style problems automatically.
+Tính năng AI Code Review mới của ClaudeKit phân tích các PR
+của bạn trong vài giây, tự động phát hiện lỗi, các vấn đề
+bảo mật và phong cách lập trình.
 
-Beta users shipped 2x faster.
+Người dùng beta đã phát hành nhanh hơn gấp 2 lần.
 
-Try it free → link.claudekit.cc/code-review
+Dùng thử miễn phí → link.claudekit.cc/code-review
 ---
-(272 characters)
+(272 ký tự)
 
-VARIATION 3 (Question hook):
+BIẾN THỂ 3 (Mở đầu bằng câu hỏi):
 ---
-What if code reviews took 30 seconds instead
-of 30 minutes?
+Sẽ thế nào nếu việc đánh giá mã nguồn chỉ mất 30 giây
+thay vì 30 phút?
 
-ClaudeKit's AI Code Review just made it possible:
-✓ Automatic bug detection
-✓ Security analysis
-✓ Best practices enforcement
-✓ Instant feedback
+AI Code Review của ClaudeKit vừa biến điều đó thành hiện thực:
+✓ Tự động phát hiện lỗi
+✓ Phân tích bảo mật
+✓ Thực thi các thực hành tốt nhất
+✓ Phản hồi tức thì
 
-Free trial → link.claudekit.cc/code-review
+Dùng thử miễn phí → link.claudekit.cc/code-review
 
-Tired of slow reviews? This changes everything.
+Bạn mệt mỏi vì tốc độ đánh giá chậm? Điều này thay đổi tất cả.
 ---
-(291 characters)
+(291 ký tự)
 
-✓ Content generated (8 seconds)
+✓ Nội dung đã được tạo (8 giây)
 ```
 
-### Email Subject Lines
+### Tiêu đề Email
 
 ```bash
-/content:fast [create email subject lines for product launch announcement]
+/content:fast [tạo các tiêu đề email cho thông báo ra mắt sản phẩm]
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
 Agent: copywriter
-Type: Email subject lines
-Goal: High open rate
+Loại: Tiêu đề email
+Mục tiêu: Tỷ lệ mở cao
 
-Generating 10 variations...
+Đang tạo 10 biến thể...
 
-URGENCY:
-1. "Your AI assistant launches in 24 hours 🚀"
-2. "Limited beta access closing tonight"
-3. "Last chance: Get 50% off at launch"
+SỰ CẤP BÁCH:
+1. "Trợ lý AI của bạn sẽ ra mắt sau 24 giờ nữa 🚀"
+2. "Quyền truy cập beta có hạn sẽ đóng cửa tối nay"
+3. "Cơ hội cuối cùng: Nhận ưu đãi 50% khi ra mắt"
 
-CURIOSITY:
-4. "The tool we've been hiding for 6 months..."
-5. "This is why we went dark for 2 months"
-6. "Something big just landed in your dashboard"
+SỰ TÒ MÒ:
+4. "Công cụ chúng tôi đã giấu kín trong 6 tháng qua..."
+5. "Đây là lý do tại sao chúng tôi đã 'mất tích' trong 2 tháng"
+6. "Một thứ gì đó rất lớn vừa xuất hiện trong bảng điều khiển của bạn"
 
-BENEFIT-FOCUSED:
-7. "Ship features 10x faster starting today"
-8. "Your new secret weapon for development"
-9. "Cut your coding time by 70% (no joke)"
+TẬP TRUNG VÀO LỢI ÍCH:
+7. "Phát hành tính năng nhanh hơn 10 lần bắt đầu từ hôm nay"
+8. "Vũ khí bí mật mới của bạn trong phát triển phần mềm"
+9. "Cắt giảm 70% thời gian lập trình của bạn (không đùa đâu)"
 
-PERSONAL:
-10. "I built this for you (and 50,000 others)"
+CÁ NHÂN HÓA:
+10. "Tôi đã xây dựng thứ này cho bạn (và 50.000 người khác)"
 
-Best performers historically:
-- Urgency + specificity (#1, #2)
-- Curiosity with specificity (#4)
-- Concrete benefits (#9)
+Hiệu quả tốt nhất theo lịch sử:
+- Cấp bách + Cụ thể (#1, #2)
+- Tò mò kèm theo sự cụ thể (#4)
+- Lợi ích cụ thể (#9)
 
-✓ Subject lines generated (6 seconds)
+✓ Các tiêu đề đã được tạo (6 giây)
 ```
 
-### Landing Page Headlines
+### Tiêu đề Trang Đích (Landing Page)
 
 ```bash
-/content:fast [write headlines for AI development tool landing page]
+/content:fast [viết các tiêu đề cho trang đích của công cụ phát triển AI]
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
 Agent: copywriter
-Target: Developer audience
-Goal: Signups
+Đối tượng: Lập trình viên
+Mục tiêu: Lượt đăng ký
 
-Generating 5 headline variations...
+Đang tạo 5 biến thể tiêu đề...
 
-BENEFIT-FOCUSED:
-1. "Ship Features 10x Faster With AI Agents"
-   Subheadline: "Write, test, and review code
-   automatically. Trusted by 50,000+ developers."
+TẬP TRUNG VÀO LỢI ÍCH:
+1. "Phát hành tính năng nhanh hơn 10 lần với AI Agent"
+   Phụ đề: "Viết, kiểm thử và đánh giá mã nguồn tự động.
+   Được tin dùng bởi hơn 50.000+ lập trình viên."
 
-NUMBER-DRIVEN:
-2. "Cut Your Development Time by 70%"
-   Subheadline: "AI agents that actually work.
-   No prompt engineering required."
+DỰA TRÊN CON SỐ:
+2. "Cắt giảm 70% thời gian phát triển của bạn"
+   Phụ đề: "Các AI agent thực sự hiệu quả.
+   Không cần kỹ thuật viết câu lệnh (prompt engineering)."
 
-SOCIAL PROOF:
-3. "Join 50,000+ Developers Building Faster"
-   Subheadline: "The AI toolkit teams at Google,
-   Meta, and Amazon use daily."
+BẰNG CHỨNG XÃ HỘI:
+3. "Gia nhập hơn 50.000+ lập trình viên đang xây dựng nhanh hơn"
+   Phụ đề: "Bộ công cụ AI mà các đội ngũ tại Google,
+   Meta và Amazon sử dụng hàng ngày."
 
-OUTCOME-FOCUSED:
-4. "Build Better Software in Half the Time"
-   Subheadline: "AI-powered development that
-   feels like magic. Set up in 5 minutes."
+TẬP TRUNG VÀO KẾT QUẢ:
+4. "Xây dựng phần mềm tốt hơn trong một nửa thời gian"
+   Phụ đề: "Phát triển được hỗ trợ bởi AI mang lại cảm giác
+   như phép màu. Thiết lập trong 5 phút."
 
-PAIN-POINT:
-5. "Stop Wasting 20 Hours a Week on Repetitive Tasks"
-   Subheadline: "AI agents handle the boring stuff.
-   You focus on building great products."
+ĐIỂM ĐAU (PAIN-POINT):
+5. "Ngừng lãng phí 20 giờ mỗi tuần cho các tác vụ lặp lại"
+   Phụ đề: "Các AI agent xử lý những việc nhàm chán.
+   Bạn tập trung vào việc xây dựng những sản phẩm tuyệt vời."
 
-Recommended: #1 or #3
-(Best combine clear benefit + social proof)
+Khuyên dùng: #1 hoặc #3
+(Kết hợp tốt nhất giữa lợi ích rõ ràng + bằng chứng xã hội)
 
-✓ Headlines generated (7 seconds)
+✓ Các tiêu đề đã được tạo (7 giây)
 ```
 
-### Ad Copy
+### Bản viết Quảng cáo (Ad Copy)
 
 ```bash
-/content:fast [create Google Ads copy for AI coding tool, target: "AI development tools"]
+/content:fast [tạo bản viết Google Ads cho công cụ lập trình AI, mục tiêu: "AI development tools"]
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
 Agent: copywriter
-Platform: Google Ads
-Keyword: "AI development tools"
-Constraints: 30 char headlines, 90 char descriptions
+Nền tảng: Google Ads
+Từ khóa: "AI development tools"
+Ràng buộc: Tiêu đề 30 ký tự, mô tả 90 ký tự
 
-Generating 3 ad variations...
+Đang tạo 3 biến thể quảng cáo...
 
-AD VARIATION 1:
-Headline 1: "Ship Code 10x Faster" (22 chars)
-Headline 2: "AI That Actually Works" (22 chars)
-Headline 3: "Try Free for 14 Days" (20 chars)
-Description 1: "AI agents write, test & review
-code automatically. Join 50,000+ developers
-building faster." (90 chars)
-Description 2: "No prompt engineering. No setup
-hassle. Just AI that works. Start free trial
-now." (85 chars)
+BIẾN THỂ QUẢNG CÁO 1:
+Tiêu đề 1: "Ship Code 10x Faster" (22 ký tự)
+Tiêu đề 2: "AI That Actually Works" (22 ký tự)
+Tiêu đề 3: "Try Free for 14 Days" (20 ký tự)
+Mô tả 1: "AI agents write, test & review code automatically. Join 50,000+ developers building faster." (90 ký tự)
+Mô tả 2: "No prompt engineering. No setup hassle. Just AI that works. Start free trial now." (85 ký tự)
 
-AD VARIATION 2:
-Headline 1: "AI Development Toolkit" (23 chars)
-Headline 2: "50,000+ Devs Trust Us" (22 chars)
-Headline 3: "Free Trial - No Card" (20 chars)
-Description 1: "Build features faster with AI
-that writes, tests, and reviews your code.
-Setup in minutes." (89 chars)
-Description 2: "Used by teams at Google, Meta,
-Amazon. Get started free. Cancel anytime.
-Zero risk." (87 chars)
+BIẾN THỂ QUẢNG CÁO 2:
+Tiêu đề 1: "AI Development Toolkit" (23 ký tự)
+Tiêu đề 2: "50,000+ Devs Trust Us" (22 ký tự)
+Tiêu đề 3: "Free Trial - No Card" (20 ký tự)
+Mô tả 1: "Build features faster with AI that writes, tests, and reviews your code. Setup in minutes." (89 ký tự)
+Mô tả 2: "Used by teams at Google, Meta, Amazon. Get started free. Cancel anytime. Zero risk." (87 ký tự)
 
-AD VARIATION 3:
-Headline 1: "Cut Coding Time by 70%" (23 chars)
-Headline 2: "Try ClaudeKit Free" (19 chars)
-Headline 3: "Trusted by 50K Devs" (20 chars)
-Description 1: "AI agents handle boring tasks.
-You build great products. Free 14-day trial,
-no credit card." (90 chars)
-Description 2: "Automatic code generation,
-testing & review. Start free trial. Join teams
-shipping faster." (89 chars)
+BIẾN THỂ QUẢNG CÁO 3:
+Tiêu đề 1: "Cut Coding Time by 70%" (23 ký tự)
+Tiêu đề 2: "Try ClaudeKit Free" (19 ký tự)
+Tiêu đề 3: "Trusted by 50K Devs" (20 ký tự)
+Mô tả 1: "AI agents handle boring tasks. You build great products. Free 14-day trial, no credit card." (90 ký tự)
+Mô tả 2: "Automatic code generation, testing & review. Start free trial. Join teams shipping faster." (89 ký tự)
 
-✓ Ad copy generated (9 seconds)
+✓ Bản viết quảng cáo đã được tạo (9 giây)
 ```
 
-### Product Description
+### Mô tả Sản phẩm
 
 ```bash
-/content:fast [write short product description for GitHub README]
+/content:fast [viết mô tả sản phẩm ngắn cho GitHub README]
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
 Agent: copywriter
-Platform: GitHub README
-Audience: Developers
-Length: Short (100-150 words)
+Nền tảng: GitHub README
+Đối tượng: Lập trình viên
+Độ dài: Ngắn (100-150 từ)
 
-Generated description:
+Mô tả đã được tạo:
 
 ---
 # ClaudeKit
 
-AI-powered development toolkit that helps you ship faster.
+Bộ công cụ phát triển được hỗ trợ bởi AI giúp bạn phát hành nhanh hơn.
 
-## What It Does
+## Nó làm được gì
 
-ClaudeKit provides AI agents that write, test, and review code
-automatically. No prompt engineering required—just describe what
-you want to build.
+ClaudeKit cung cấp các AI agent tự động viết, kiểm thử và đánh giá mã nguồn.
+Không cần kỹ thuật viết câu lệnh—chỉ cần mô tả những gì bạn muốn xây dựng.
 
-**Key Features:**
-- 🤖 AI code generation with full context awareness
-- ✅ Automatic test generation (unit, integration, E2E)
-- 👀 Intelligent code review (security, performance, style)
-- 🔧 Works with your existing tools and workflows
+**Các tính năng chính:**
+- 🤖 Tạo mã nguồn bằng AI với khả năng hiểu ngữ cảnh đầy đủ
+- ✅ Tự động tạo bài kiểm thử (unit, integration, E2E)
+- 👀 Đánh giá mã nguồn thông minh (bảo mật, hiệu suất, phong cách)
+- 🔧 Hoạt động với các công cụ và quy trình hiện có của bạn
 
-**Who It's For:**
-Developers and teams who want to:
-- Ship features 10x faster
-- Spend less time on repetitive tasks
-- Maintain code quality automatically
+**Dành cho ai:**
+Các lập trình viên và đội ngũ muốn:
+- Phát hành tính năng nhanh hơn 10 lần
+- Dành ít thời gian hơn cho các tác vụ lặp lại
+- Duy trì chất lượng mã nguồn một cách tự động
 
-Trusted by 50,000+ developers at companies like Google, Meta,
-and Amazon.
+Được tin dùng bởi hơn 50.000+ lập trình viên tại các công ty như Google, Meta, và Amazon.
 
-[Try Free →](https://claudekit.cc)
+[Dùng thử miễn phí →](https://claudekit.cc)
 ---
 
-(147 words)
+(147 từ)
 
-✓ Description generated (5 seconds)
+✓ Mô tả đã được tạo (5 giây)
 ```
 
-## When to Use
+## Khi nào nên sử dụng
 
-### ✅ Use /content:fast for:
+### ✅ Sử dụng /content:fast cho:
 
-**Social Media Posts**
+**Các bài đăng Mạng xã hội**
 ```bash
-/content:fast [write Twitter thread about new feature]
+/content:fast [viết một chuỗi bài đăng Twitter về tính năng mới]
 ```
 
-**Email Content**
+**Nội dung Email**
 ```bash
-/content:fast [write welcome email for new users]
+/content:fast [viết email chào mừng cho người dùng mới]
 ```
 
-**Ad Copy**
+**Bản viết Quảng cáo**
 ```bash
-/content:fast [create Facebook ad copy for developers]
+/content:fast [tạo bản viết quảng cáo Facebook cho lập trình viên]
 ```
 
-**Headlines & CTAs**
+**Tiêu đề & CTA**
 ```bash
-/content:fast [write CTA variations for pricing page]
+/content:fast [viết các biến thể CTA cho trang bảng giá]
 ```
 
-**Quick Announcements**
+**Thông báo nhanh**
 ```bash
-/content:fast [write changelog entry for v2.0 release]
+/content:fast [viết một mục nhật ký thay đổi cho bản phát hành v2.0]
 ```
 
-**Short Descriptions**
+**Mô tả ngắn**
 ```bash
-/content:fast [write app store description]
+/content:fast [viết mô tả cho cửa hàng ứng dụng]
 ```
 
-### ❌ Don't use for:
+### ❌ Không sử dụng cho:
 
-**Long-Form Content**
-- Use `/content:good` for blog posts, whitepapers
+**Nội dung dài**
+- Sử dụng `/content:good` cho các bài viết blog, sách trắng (whitepapers)
 
-**Strategic Content**
-- Use `/content:good` for content requiring research
+**Nội dung mang tính chiến lược**
+- Sử dụng `/content:good` cho các nội dung yêu cầu nghiên cứu kỹ
 
-**Conversion-Critical Pages**
-- Use `/content:cro` for landing pages needing optimization
+**Các trang quan trọng về chuyển đổi**
+- Sử dụng `/content:cro` cho các trang đích cần tối ưu hóa sâu
 
-## Platform-Specific Formats
+## Định dạng theo từng nền tảng
 
 ### Twitter/X
 
 ```
-Character limits:
-- Standard: 280 characters
-- Optimal: 71-100 characters (higher engagement)
-- Thread: 250 chars per tweet (leave room for "1/")
+Giới hạn ký tự:
+- Tiêu chuẩn: 280 ký tự
+- Tối ưu: 71-100 ký tự (tương tác cao hơn)
+- Chuỗi bài viết (Thread): 250 ký tự mỗi tweet (để dành chỗ cho "1/")
 
-Best practices:
-✓ Hook in first 100 characters
-✓ Use line breaks for readability
-✓ Include CTA in last tweet
-✓ Add relevant hashtags (1-2 max)
+Thực hành tốt nhất:
+✓ Phần lôi cuốn trong 100 ký tự đầu tiên
+✓ Sử dụng ngắt dòng để dễ đọc
+✓ Bao gồm CTA trong tweet cuối cùng
+✓ Thêm hashtag liên quan (tối đa 1-2 cái)
 ```
 
 ### LinkedIn
 
 ```
-Character limits:
-- Max: 3,000 characters
-- Optimal: 150-300 characters (highest engagement)
-- With "see more": Can go longer
+Giới hạn ký tự:
+- Tối đa: 3.000 ký tự
+- Tối ưu: 150-300 ký tự (tương tác cao nhất)
+- Với nút "xem thêm": Có thể viết dài hơn
 
-Best practices:
-✓ Professional but conversational
-✓ Add line breaks (avoid walls of text)
-✓ Use relevant hashtags (3-5)
-✓ Tag people/companies when appropriate
-✓ Include call to action
+Thực hành tốt nhất:
+✓ Chuyên nghiệp nhưng phong cách trò chuyện
+✓ Thêm ngắt dòng (tránh các khối văn bản lớn)
+✓ Sử dụng hashtag liên quan (3-5 cái)
+✓ Gắn thẻ (tag) người/công ty khi phù hợp
+✓ Bao gồm lời kêu gọi hành động
 ```
 
-### Email Subject Lines
+### Tiêu đề Email
 
 ```
-Best practices:
-- Length: 40-50 characters (mobile)
-- Avoid spam triggers: "Free", "Act now", "!!!"
-- Personalization: Use names when possible
-- A/B test: Test 2-3 variations
+Thực hành tốt nhất:
+- Độ dài: 40-50 ký tự (cho thiết bị di động)
+- Tránh các từ kích hoạt bộ lọc thư rác: "Free", "Act now", "!!!"
+- Cá nhân hóa: Sử dụng tên khi có thể
+- Thử nghiệm A/B: Thử nghiệm 2-3 biến thể
 
-High performers:
-✓ Numbers: "10 ways to..."
-✓ Questions: "Ready to ship faster?"
-✓ Urgency: "Last chance for..."
-✓ Curiosity: "The secret to..."
+Loại tiêu đề hiệu quả cao:
+✓ Con số: "10 cách để..."
+✓ Câu hỏi: "Bạn đã sẵn sàng phát hành nhanh hơn chưa?"
+✓ Cấp bách: "Cơ hội cuối cùng cho..."
+✓ Tò mò: "Bí mật đằng sau..."
 ```
 
 ### Google Ads
 
 ```
-Character limits:
-- Headlines: 30 characters (3 required)
-- Descriptions: 90 characters (2 required)
+Giới hạn ký tự:
+- Tiêu đề: 30 ký tự (yêu cầu 3 cái)
+- Mô tả: 90 ký tự (yêu cầu 2 cái)
 
-Best practices:
-✓ Include keyword in headline 1
-✓ Clear benefit in headline 2
-✓ CTA in headline 3
-✓ Description 1: Expand on benefit
-✓ Description 2: Social proof or offer
+Thực hành tốt nhất:
+✓ Bao gồm từ khóa trong tiêu đề 1
+✓ Lợi ích rõ ràng trong tiêu đề 2
+✓ CTA trong tiêu đề 3
+✓ Mô tả 1: Mở rộng về lợi ích
+✓ Mô tả 2: Bằng chứng xã hội hoặc ưu đãi
 ```
 
-### Facebook/Instagram Ads
+### Quảng cáo Facebook/Instagram
 
 ```
-Best practices:
-- Length: 125 characters or less (mobile)
-- First 3 words crucial (attention grabber)
-- Clear CTA
-- Speak to pain point
-- Avoid link text (link added separately)
+Thực hành tốt nhất:
+- Độ dài: 125 ký tự hoặc ít hơn (cho di động)
+- 3 từ đầu tiên cực kỳ quan trọng (để thu hút sự chú ý)
+- CTA rõ ràng
+- Nói trực tiếp vào điểm đau
+- Tránh văn bản chứa liên kết (liên kết sẽ được thêm riêng)
 ```
 
-## Content Types Supported
+## Các loại nội dung được hỗ trợ
 
-### Short-Form (Fast generation)
+### Dạng ngắn (Tạo cực nhanh)
 
-- Social media posts (all platforms)
-- Email subject lines
-- Headlines and CTAs
-- Ad copy (all platforms)
-- Product descriptions (short)
-- Push notifications
-- SMS messages
-- Taglines and slogans
+- Bài đăng mạng xã hội (tất cả các nền tảng)
+- Tiêu đề email
+- Tiêu đề và CTA
+- Bản viết quảng cáo (tất cả các nền tảng)
+- Mô tả sản phẩm (ngắn)
+- Thông báo đẩy (push notifications)
+- Tin nhắn SMS
+- Tagline và slogan
 
-### Medium-Form (Still fast)
+### Dạng vừa (Vẫn nhanh)
 
-- Email body copy
-- Product pages
-- About Us sections
-- Landing page copy
-- Changelog entries
-- README descriptions
-- Press releases (short)
+- Nội dung thân email
+- Trang sản phẩm
+- Phần Giới thiệu về chúng tôi
+- Bản viết trang đích
+- Các mục nhật ký thay đổi (changelog)
+- Mô tả README
+- Thông cáo báo chí (ngắn)
 
-## Output Files
+## Tệp đầu ra
 
-After `/content:fast` completes:
+Sau khi `/content:fast` hoàn tất:
 
-### Generated Content
-
-```
-content/fast/[type]-[timestamp].md
-```
-
-Contains all variations ready to use
-
-### Platform Specs
+### Nội dung đã tạo
 
 ```
-content/fast/[type]-specs.txt
+content/fast/[loại]-[dấu-thời-gian].md
 ```
 
-Character counts and platform constraints
+Chứa tất cả các biến thể sẵn sàng để sử dụng.
 
-## Best Practices
+### Thông số nền tảng
 
-### Provide Context
+```
+content/fast/[loại]-specs.txt
+```
 
-✅ **Good:**
+Số lượng ký tự và các ràng buộc của nền tảng.
+
+## Thực hành tốt nhất
+
+### Cung cấp ngữ cảnh
+
+✅ **Tốt:**
 ```bash
-/content:fast [write LinkedIn post announcing AI code review feature
-launch, target audience: senior developers and engineering managers,
-tone: professional but excited]
+/content:fast [viết bài đăng LinkedIn thông báo ra mắt tính năng AI code review,
+đối tượng mục tiêu: lập trình viên cấp cao và quản lý kỹ thuật,
+tông điệu: chuyên nghiệp nhưng hào hứng]
 ```
 
-❌ **Vague:**
+❌ **Mơ hồ:**
 ```bash
-/content:fast [write LinkedIn post]
+/content:fast [viết bài đăng LinkedIn]
 ```
 
-### Specify Platform
-
-```bash
-# Platform affects format, length, tone
-/content:fast [write Twitter announcement] # vs
-/content:fast [write LinkedIn announcement] # Different format!
-```
-
-### Request Multiple Variations
+### Chỉ định nền tảng
 
 ```bash
-/content:fast [write 5 email subject line variations for product launch]
+# Nền tảng ảnh hưởng đến định dạng, độ dài, tông điệu
+/content:fast [viết thông báo Twitter] # so với
+/content:fast [viết thông báo LinkedIn] # Định dạng khác nhau!
 ```
 
-### Include Constraints
+### Yêu cầu nhiều biến thể
 
 ```bash
-/content:fast [write Facebook ad copy under 125 characters]
+/content:fast [viết 5 biến thể tiêu đề email cho việc ra mắt sản phẩm]
 ```
 
-## Quality vs Speed Trade-off
+### Bao gồm các ràng buộc
 
-### /content:fast (This command)
+```bash
+/content:fast [viết bản quảng cáo Facebook dưới 125 ký tự]
+```
+
+## Đánh đổi giữa Chất lượng và Tốc độ
+
+### /content:fast (Lệnh này)
 
 ```
-Speed: ⚡⚡⚡⚡⚡ 5-15 seconds
-Quality: ⭐⭐⭐⭐☆ Very good
-Research: Minimal
-Variations: 3-5 options
-Use case: Quick content needs
+Tốc độ:   ⚡⚡⚡⚡⚡ 5-15 giây
+Chất lượng: ⭐⭐⭐⭐☆ Rất tốt
+Nghiên cứu: Tối thiểu
+Biến thể:  3-5 lựa chọn
+Trường hợp: Cần nội dung nhanh
 ```
 
 ### /content:good
 
 ```
-Speed: ⚡⚡⚡☆☆ 2-5 minutes
-Quality: ⭐⭐⭐⭐⭐ Excellent
-Research: Comprehensive
-Variations: Multiple with rationale
-Use case: Strategic content
+Tốc độ:   ⚡⚡⚡☆☆ 2-5 phút
+Chất lượng: ⭐⭐⭐⭐⭐ Tuyệt vời
+Nghiên cứu: Toàn diện
+Biến thể:  Nhiều biến thể kèm lý giải
+Trường hợp: Nội dung mang tính chiến lược
 ```
 
-## Common Patterns
+## Các mẫu phổ biến
 
-### Product Announcement
-
-```
-Structure:
-1. Hook (what's new)
-2. Key benefit
-3. Supporting details (2-3 bullets)
-4. Social proof (if available)
-5. Clear CTA
-```
-
-### Feature Highlight
+### Thông báo Sản phẩm
 
 ```
-Structure:
-1. Pain point identified
-2. How feature solves it
-3. Specific benefit/outcome
-4. Quick example
-5. Try it CTA
+Cấu trúc:
+1. Phần lôi cuốn (có gì mới)
+2. Lợi ích chính
+3. Chi tiết hỗ trợ (2-3 gạch đầu dòng)
+4. Bằng chứng xã hội (nếu có)
+5. CTA rõ ràng
 ```
 
-### Company Milestone
+### Làm nổi bật tính năng
 
 ```
-Structure:
-1. The milestone (users, funding, etc.)
-2. What it means
-3. Thank supporters
-4. What's next
-5. Join us CTA
+Cấu trúc:
+1. Xác định điểm đau
+2. Cách tính năng giải quyết nó
+3. Lợi ích/kết quả cụ thể
+4. Ví dụ nhanh
+5. CTA dùng thử
 ```
 
-## Troubleshooting
+### Cột mốc Công ty
 
-### Content Not Right Tone
+```
+Cấu trúc:
+1. Cột mốc (người dùng, gọi vốn, v.v.)
+2. Ý nghĩa của nó
+3. Cảm ơn những người ủng hộ
+4. Điều gì tiếp theo
+5. CTA gia nhập cùng chúng tôi
+```
 
-**Problem:** Generated content doesn't match brand voice
+## Xử lý sự cố
 
-**Solution:**
+### Nội dung không đúng tông điệu
+
+**Vấn đề:** Nội dung được tạo không khớp với tiếng nói thương hiệu.
+
+**Giải pháp:**
 ```bash
-/content:fast [same request, but use professional and technical tone
-like our brand voice in ./docs/brand-voice.md]
+/content:fast [cùng một yêu cầu, nhưng sử dụng tông điệu chuyên nghiệp và kỹ thuật
+như tiếng nói thương hiệu của chúng tôi trong ./docs/brand-voice.md]
 ```
 
-### Too Long for Platform
+### Quá dài cho nền tảng
 
-**Problem:** Generated content exceeds character limit
+**Vấn đề:** Nội dung được tạo vượt quá giới hạn ký tự.
 
-**Solution:**
+**Giải pháp:**
 ```bash
-/content:fast [same request, but keep under 280 characters for Twitter]
+/content:fast [cùng một yêu cầu, nhưng giữ dưới 280 ký tự cho Twitter]
 ```
 
-### Need More Variations
+### Cần thêm biến thể
 
-**Problem:** Want more options to choose from
+**Vấn đề:** Muốn có thêm nhiều lựa chọn để cân nhắc.
 
-**Solution:**
+**Giải pháp:**
 ```bash
-/content:fast [generate 10 variations instead of 5]
+/content:fast [tạo 10 biến thể thay vì 5]
 ```
 
-### Content Too Generic
+### Nội dung quá chung chung
 
-**Problem:** Needs more specificity
+**Vấn đề:** Cần thêm sự cụ thể.
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Add specific details to request
-/content:fast [same request but include that we have 50,000 users
-and reduced coding time by 70% in beta testing]
+# Thêm các chi tiết cụ thể vào yêu cầu
+/content:fast [cùng yêu cầu nhưng bao gồm việc chúng tôi có 50.000 người dùng
+và đã giảm 70% thời gian lập trình trong thử nghiệm beta]
 ```
 
-## After Generation
+## Sau khi tạo nội dung
 
-Standard workflow:
-
-```bash
-# 1. Generate content
-/content:fast [content request]
-
-# 2. Review variations
-cat content/fast/[type]-[timestamp].md
-
-# 3. Pick favorite (or combine elements)
-
-# 4. Customize if needed
-
-# 5. Use in platform
-
-# 6. Track performance
-# (Engagement, clicks, conversions)
-```
-
-## Iteration
-
-If first attempt isn't perfect:
+Quy trình tiêu chuẩn:
 
 ```bash
-# Original
-/content:fast [write LinkedIn post about feature]
+# 1. Tạo nội dung
+/content:fast [yêu cầu nội dung]
 
-# Review output
-# "Too formal, need more excitement"
+# 2. Xem xét các biến thể
+cat content/fast/[loại]-[dấu-thời-gian].md
 
-# Iterate
-/content:fast [write LinkedIn post about feature, but more excited
-and use emojis, target developers not managers]
+# 3. Chọn cái yêu thích (hoặc kết hợp các yếu tố)
+
+# 4. Tùy chỉnh nếu cần
+
+# 5. Sử dụng trên nền tảng
+
+# 6. Theo dõi hiệu quả
+# (Tương tác, lượt nhấp, chuyển đổi)
 ```
 
-## Time Savings
+## Lặp lại
 
-Typical time to write manually vs `/content:fast`:
+Nếu lần thử đầu tiên chưa hoàn hảo:
+
+```bash
+# Gốc
+/content:fast [viết bài đăng LinkedIn về tính năng]
+
+# Xem xét kết quả
+# "Quá trang trọng, cần hào hứng hơn"
+
+# Lặp lại
+/content:fast [viết bài đăng LinkedIn về tính năng, nhưng hào hứng hơn
+và sử dụng emoji, đối tượng là lập trình viên chứ không phải quản lý]
+```
+
+## Tiết kiệm thời gian
+
+Thời gian viết thủ công thông thường so với `/content:fast`:
 
 ```
-Social media post:    10 min → 8 sec   (75x faster)
-Email subject lines:  20 min → 6 sec   (200x faster)
-Ad copy variations:   30 min → 9 sec   (200x faster)
-Product description:  15 min → 5 sec   (180x faster)
-Headlines:           25 min → 7 sec   (214x faster)
+Bài đăng mạng xã hội: 10 phút → 8 giây   (nhanh hơn 75 lần)
+Tiêu đề email:       20 phút → 6 giây   (nhanh hơn 200 lần)
+Biến thể quảng cáo:  30 phút → 9 giây   (nhanh hơn 200 lần)
+Mô tả sản phẩm:      15 phút → 5 giây   (nhanh hơn 180 lần)
+Tiêu đề:             25 phút → 7 giây   (nhanh hơn 214 lần)
 ```
 
-## Next Steps
+## Các bước tiếp theo
 
-- [/content:good](/docs/engineer/commands/content/good) - For strategic content with research
-- [/content:enhance](/docs/engineer/commands/content/enhance) - Improve generated content
-- [/content:cro](/docs/engineer/commands/content/cro) - Optimize for conversion
+- [/content:good](/docs/engineer/commands/content/good) - Cho nội dung chiến lược kèm nghiên cứu
+- [/content:enhance](/docs/engineer/commands/content/enhance) - Cải thiện nội dung đã tạo
+- [/content:cro](/docs/engineer/commands/content/cro) - Tối ưu hóa cho chuyển đổi
 
 ---
 
-**Key Takeaway**: `/content:fast` generates quality copy in seconds with multiple variations optimized for different platforms, perfect when you need effective content quickly without compromising quality.
+**Thông điệp chính**: `/content:fast` tạo ra các bản viết chất lượng trong vài giây với nhiều biến thể được tối ưu hóa cho các nền tảng khác nhau, hoàn hảo khi bạn cần nội dung hiệu quả một cách nhanh chóng mà không làm giảm chất lượng.

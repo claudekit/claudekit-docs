@@ -1,21 +1,22 @@
 ---
 title: "Installation"
 description: "Hướng dẫn cài đặt ClaudeKit CLI với xác thực GitHub"
+lang: vi
 section: cli
 order: 2
 ---
 
-# Installation
+# Cài đặt
 
-> Cài đặt ClaudeKit CLI toàn cầu và thiết lập xác thực GitHub để bắt đầu tạo dự án.
+> Cài đặt ClaudeKit CLI trên toàn cầu và thiết lập xác thực GitHub để bắt đầu tạo dự án.
 
-## Prerequisites
+## Yêu cầu tiên quyết
 
-Trước khi cài đặt ClaudeKit CLI, hãy đảm bảo bạn có:
+Trước khi cài đặt ClaudeKit CLI, hãy đảm bảo bạn đã có:
 
 ### 1. Node.js
 
-ClaudeKit CLI yêu cầu Node.js 18.0.0 hoặc cao hơn.
+ClaudeKit CLI yêu cầu Node.js phiên bản 18.0.0 hoặc cao hơn.
 
 **Kiểm tra phiên bản của bạn:**
 
@@ -25,13 +26,13 @@ node --version
 
 **Cài đặt Node.js:**
 
-- **Windows**: [Download từ nodejs.org](https://nodejs.org/)
+- **Windows**: [Tải về từ nodejs.org](https://nodejs.org/)
 - **macOS**: `brew install node`
-- **Linux**: `sudo apt install nodejs npm` (Ubuntu/Debian) hoặc kiểm tra trình quản lý gói của distro của bạn
+- **Linux**: `sudo apt install nodejs npm` (Ubuntu/Debian) hoặc kiểm tra trình quản lý gói của bản phân phối bạn đang dùng
 
 ### 2. Git
 
-Cần thiết cho các hoạt động kho lưu trữ.
+Cần thiết cho các thao tác với kho lưu trữ.
 
 **Kiểm tra phiên bản của bạn:**
 
@@ -41,25 +42,25 @@ git --version
 
 **Cài đặt Git:**
 
-- **Windows**: [Download từ git-scm.com](https://git-scm.com/)
+- **Windows**: [Tải về từ git-scm.com](https://git-scm.com/)
 - **macOS**: `brew install git` (hoặc sử dụng Xcode Command Line Tools)
 - **Linux**: `sudo apt install git` (Ubuntu/Debian)
 
-### 3. Purchase ClaudeKit
+### 3. Mua ClaudeKit
 
-Bạn phải mua một ClaudeKit Starter Kit từ [ClaudeKit.cc](https://claudekit.cc) để truy cập kho lưu trữ GitHub riêng tư chứa các mẫu kit.
+Bạn phải mua ClaudeKit Starter Kit từ [ClaudeKit.cc](https://claudekit.cc) để truy cập vào kho lưu trữ GitHub riêng tư chứa các mẫu (kits).
 
 Sau khi mua, bạn sẽ nhận được:
 
-- Truy cập vào kho lưu trữ GitHub riêng tư
-- Khóa cấp phép (nếu có)
+- Quyền truy cập vào kho lưu trữ GitHub riêng tư
+- Khóa bản quyền (nếu có)
 - Hướng dẫn thiết lập
 
-## Install ClaudeKit CLI
+## Cài đặt ClaudeKit CLI
 
-Cài đặt CLI toàn cầu bằng trình quản lý gói ưa thích của bạn:
+Cài đặt CLI trên toàn cầu bằng trình quản lý gói yêu thích của bạn:
 
-### npm (Recommended)
+### npm (Khuyên dùng)
 
 ```bash
 npm install -g claudekit-cli
@@ -83,32 +84,32 @@ pnpm add -g claudekit-cli
 yarn global add claudekit-cli
 ```
 
-## Verify Installation
+## Xác minh cài đặt
 
-Sau khi cài đặt, hãy xác minh CLI đang hoạt động:
+Sau khi cài đặt, hãy kiểm tra xem CLI đã hoạt động chưa:
 
 ```bash
 ck --version
 ```
 
-Đầu ra dự kiến:
+Kết quả mong đợi:
 
 ```
 CLI Version: 3.10.1
 ```
 
-Nếu bạn thấy lỗi "command not found", hãy đảm bảo thư mục bin toàn cầu của trình quản lý gói của bạn nằm trong PATH:
+Nếu bạn gặp lỗi "command not found", hãy đảm bảo thư mục bin toàn cầu của trình quản lý gói đã được thêm vào PATH:
 
-- **npm**: `npm config get prefix` (nên nằm trong PATH)
+- **npm**: `npm config get prefix` (thường đã có trong PATH)
 - **bun**: `~/.bun/bin` (thêm vào PATH nếu cần)
 - **pnpm**: `pnpm config get global-bin-dir` (thêm vào PATH nếu cần)
 - **yarn**: `yarn global bin` (thêm vào PATH nếu cần)
 
-## Authentication Setup {#authentication}
+## Thiết lập xác thực {#authentication}
 
-ClaudeKit CLI yêu cầu xác thực GitHub để tải xuống các bản phát hành từ kho lưu trữ riêng tư.
+ClaudeKit CLI yêu cầu xác thực GitHub để tải về các bản phát hành từ kho lưu trữ riêng tư.
 
-### Install GitHub CLI
+### Cài đặt GitHub CLI
 
 **Bước 1: Cài đặt GitHub CLI**
 
@@ -116,7 +117,7 @@ ClaudeKit CLI yêu cầu xác thực GitHub để tải xuống các bản phát
 - **macOS**: `brew install gh`
 - **Linux**: `sudo apt install gh` (Ubuntu/Debian)
 
-Đối với các bản phân phối Linux khác, hãy xem [GitHub CLI installation guide](https://github.com/cli/cli#installation).
+Đối với các bản phân phối Linux khác, vui lòng xem [hướng dẫn cài đặt GitHub CLI](https://github.com/cli/cli#installation).
 
 **Bước 2: Xác minh cài đặt**
 
@@ -124,7 +125,7 @@ ClaudeKit CLI yêu cầu xác thực GitHub để tải xuống các bản phát
 gh --version
 ```
 
-### Authenticate with GitHub CLI
+### Xác thực với GitHub CLI
 
 **Chạy lệnh xác thực:**
 
@@ -132,20 +133,20 @@ gh --version
 gh auth login
 ```
 
-**Làm theo các lời nhắc:**
+**Làm theo các bước hướng dẫn:**
 
 1. Chọn **GitHub.com**
-2. Chọn **HTTPS** (hoặc SSH nếu bạn thích)
+2. Chọn **HTTPS** (hoặc SSH nếu bạn muốn)
 3. Xác thực Git? → **Yes**
-4. Chọn **Login with a web browser** (recommended)
-5. Sao chép mã một lần được hiển thị
+4. Chọn **Login with a web browser** (khuyên dùng)
+5. Sao chép mã dùng một lần được hiển thị
 6. Nhấn Enter để mở trình duyệt
-7. Dán mã trong trình duyệt
-8. Ủy quyền GitHub CLI
+7. Dán mã vào trình duyệt
+8. Ủy quyền cho GitHub CLI
 
-**Quan trọng**: Sử dụng tùy chọn "Login with a web browser". KHÔNG sử dụng "Paste an authentication token" vì xác thực PAT không còn được hỗ trợ để truy cập các kho lưu trữ riêng tư.
+**Quan trọng**: Hãy sử dụng tùy chọn "Login with a web browser". KHÔNG sử dụng "Paste an authentication token" vì xác thực qua PAT không còn được hỗ trợ để truy cập các kho lưu trữ riêng tư.
 
-### Verify Authentication
+### Xác minh xác thực
 
 Kiểm tra trạng thái xác thực của bạn:
 
@@ -153,7 +154,7 @@ Kiểm tra trạng thái xác thực của bạn:
 gh auth status
 ```
 
-Đầu ra dự kiến:
+Kết quả mong đợi:
 
 ```
 github.com
@@ -162,143 +163,143 @@ github.com
   ✓ Token: *******************
 ```
 
-### Accept Repository Invitation
+### Chấp nhận lời mời kho lưu trữ
 
-Sau khi mua ClaudeKit, bạn sẽ nhận được lời mời qua email để truy cập kho lưu trữ GitHub riêng tư.
+Sau khi mua ClaudeKit, bạn sẽ nhận được một email mời truy cập vào kho lưu trữ GitHub riêng tư.
 
-1. **Kiểm tra email của bạn** để nhận lời mời GitHub
+1. **Kiểm tra email** để nhận lời mời từ GitHub
 2. **Chấp nhận lời mời** bằng cách nhấp vào liên kết
-3. **Đợi 2-5 phút** để quyền được truyền bá
+3. **Đợi 2-5 phút** để quyền hạn được cập nhật hệ thống
 
-Nếu không chấp nhận lời mời, bạn sẽ gặp lỗi "Access denied" khi chạy `ck new` hoặc `ck init`.
+Nếu không chấp nhận lời mời, bạn sẽ gặp lỗi "Access denied" khi chạy lệnh `ck new` hoặc `ck init`.
 
-## Troubleshooting
+## Xử lý sự cố
 
-### "Access denied" Error
+### Lỗi "Access denied"
 
-**Symptoms:**
+**Triệu chứng:**
 
 ```
 Access denied to repository
 ```
 
-**Solutions:**
+**Cách khắc phục:**
 
 1. Chạy `ck doctor` để chẩn đoán vấn đề
-2. Đảm bảo bạn đã chấp nhận lời mời kho lưu trữ GitHub
+2. Đảm bảo bạn đã chấp nhận lời mời tham gia kho lưu trữ GitHub
 3. Chạy lại `gh auth login` và chọn "Login with a web browser"
-4. Đợi 2-5 phút sau khi chấp nhận lời mời để quyền được truyền bá
+4. Đợi 2-5 phút sau khi chấp nhận lời mời để quyền hạn được cập nhật
 
-### "GitHub CLI not authenticated" Error
+### Lỗi "GitHub CLI not authenticated"
 
-**Symptoms:**
+**Triệu chứng:**
 
 ```
 GitHub CLI not authenticated
 ```
 
-**Solutions:**
+**Cách khắc phục:**
 
 ```bash
-# Re-authenticate with web browser method
+# Xác thực lại bằng phương pháp trình duyệt web
 gh auth login
 ```
 
-Chọn "Login with a web browser" (NOT "Paste token").
+Chọn "Login with a web browser" (KHÔNG chọn "Paste token").
 
-### Permission Denied During Installation
+### Lỗi từ chối quyền (Permission Denied) khi cài đặt
 
-**Symptoms:**
+**Triệu chứng:**
 
 ```
 EACCES: permission denied
 ```
 
-**Solutions:**
+**Cách khắc phục:**
 
-**Option 1: Sử dụng sudo (Linux/macOS)**
+**Lựa chọn 1: Sử dụng sudo (Linux/macOS)**
 
 ```bash
 sudo npm install -g claudekit-cli
 ```
 
-**Option 2: Khắc phục quyền npm (Recommended)**
+**Lựa chọn 2: Sửa lỗi quyền hạn của npm (Khuyên dùng)**
 
-Làm theo [npm's guide to fix permissions](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally).
+Làm theo [hướng dẫn của npm để sửa lỗi quyền hạn](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally).
 
-### Command Not Found
+### Lỗi lệnh không tìm thấy (Command Not Found)
 
-**Symptoms:**
+**Triệu chứng:**
 
 ```bash
 ck: command not found
 ```
 
-**Solutions:**
+**Cách khắc phục:**
 
-Thêm thư mục bin toàn cầu của trình quản lý gói của bạn vào PATH:
+Thêm thư mục bin toàn cầu của trình quản lý gói vào biến môi trường PATH:
 
 **npm:**
 
 ```bash
-# Find npm prefix
+# Tìm tiền tố (prefix) của npm
 npm config get prefix
 
-# Add to PATH (add to ~/.bashrc or ~/.zshrc)
+# Thêm vào PATH (thêm vào ~/.bashrc hoặc ~/.zshrc)
 export PATH="$(npm config get prefix)/bin:$PATH"
 ```
 
 **Bun:**
 
 ```bash
-# Add to ~/.bashrc or ~/.zshrc
+# Thêm vào ~/.bashrc hoặc ~/.zshrc
 export PATH="$HOME/.bun/bin:$PATH"
 ```
 
 **pnpm:**
 
 ```bash
-# Add to ~/.bashrc or ~/.zshrc
+# Thêm vào ~/.bashrc hoặc ~/.zshrc
 export PATH="$(pnpm config get global-bin-dir):$PATH"
 ```
 
-Sau khi chỉnh sửa cấu hình shell, hãy khởi động lại terminal hoặc chạy:
+Sau khi sửa file cấu hình shell, hãy khởi động lại terminal hoặc chạy lệnh:
 
 ```bash
-source ~/.bashrc  # or ~/.zshrc
+source ~/.bashrc  # hoặc ~/.zshrc
 ```
 
-## Platform-Specific Notes
+## Ghi chú theo nền tảng
 
 ### Windows
 
-- Sử dụng PowerShell hoặc Windows Terminal (không phải Command Prompt)
-- Các dấu phân cách đường dẫn sử dụng dấu gạch chéo ngược (`\`) nhưng CLI xử lý tự động
-- Một số lệnh có thể yêu cầu quyền quản trị viên
+- Sử dụng PowerShell hoặc Windows Terminal (không dùng Command Prompt)
+- Đường dẫn tệp sử dụng dấu gạch chéo ngược (`\`) nhưng CLI sẽ tự động xử lý
+- Một số lệnh có thể yêu cầu quyền Quản trị viên (Administrator)
 
 ### macOS
 
-- GitHub CLI có thể được cài đặt thông qua Homebrew
-- Các gói npm toàn cầu cài đặt vào `/usr/local/bin` theo mặc định
-- Cần Xcode Command Line Tools cho Git (cài đặt qua `xcode-select --install`)
+- GitHub CLI có thể cài đặt qua Homebrew
+- Các gói npm toàn cầu mặc định được cài đặt vào `/usr/local/bin`
+- Cần có Xcode Command Line Tools cho Git (cài đặt qua `xcode-select --install`)
 
 ### Linux
 
-- Tên gói khác nhau theo distro (sử dụng trình quản lý gói của distro của bạn)
-- Các gói npm toàn cầu có thể yêu cầu sudo hoặc khắc phục quyền npm
+- Tên các gói có thể khác nhau tùy bản phân phối (sử dụng trình quản lý gói tương ứng)
+- Cài đặt npm toàn cầu có thể cần dùng `sudo` hoặc sửa lại quyền hạn npm
 - WSL (Windows Subsystem for Linux) được hỗ trợ đầy đủ
 
-## Next Steps
+## Bước tiếp theo
 
-Bây giờ ClaudeKit CLI được cài đặt và xác thực:
+Bây giờ ClaudeKit CLI đã được cài đặt và xác thực:
 
-1. **Tạo một dự án mới**: [`ck new`](/docs/cli/new)
-2. **Chạy kiểm tra sức khỏe**: [`ck doctor`](/docs/cli/doctor)
-3. **Duyệt các phiên bản có sẵn**: [`ck versions`](/docs/cli/versions)
-4. **Cấu hình mặc định**: [Configuration](/docs/cli/configuration)
+1. **Tạo dự án mới**: [`ck new`](/vi/docs/cli/new)
+2. **Kiểm tra trạng thái hệ thống**: [`ck doctor`](/vi/docs/cli/doctor)
+3. **Xem các phiên bản có sẵn**: [`ck versions`](/vi/docs/cli/versions)
+4. **Cấu hình mặc định**: [Cấu hình](/vi/docs/cli/configuration)
 
-## Related Commands
+## Các lệnh liên quan
 
-- [`ck doctor`](/docs/cli/doctor) - Chẩn đoán các vấn đề cài đặt
-- [`ck update`](/docs/cli/update) - Cập nhật CLI lên phiên bản mới nhất
-- [`ck uninstall`](/docs/cli/uninstall) - Xóa cài đặt ClaudeKit
+- [`ck doctor`](/vi/docs/cli/doctor) - Chẩn đoán các vấn đề cài đặt
+- [`ck update`](/vi/docs/cli/update) - Cập nhật CLI lên phiên bản mới nhất
+- [`ck uninstall`](/vi/docs/cli/uninstall) - Gỡ bỏ cài đặt ClaudeKit

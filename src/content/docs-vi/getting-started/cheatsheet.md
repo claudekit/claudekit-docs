@@ -1,8 +1,9 @@
 ---
 title: "ClaudeKit Cheatsheet"
-description: "Tham khảo nhanh các lệnh ClaudeKit - lệnh thiết yếu cho quy trình phát triển AI-powered."
+description: "Tham khảo nhanh các lệnh ClaudeKit - các lệnh thiết yếu cho quy trình phát triển được hỗ trợ bởi AI."
+lang: vi
 section: getting-started
-category: getting-started
+category: "getting-started"
 order: 5
 published: true
 lastUpdated: 2025-11-07
@@ -10,12 +11,12 @@ lastUpdated: 2025-11-07
 
 # ClaudeKit Cheatsheet
 
-Hướng dẫn tham khảo nhanh cho ClaudeKit CLI commands và workflows.
+Hướng dẫn tham khảo nhanh cho các lệnh ClaudeKit CLI và quy trình làm việc (workflows).
 
 ## Cài Đặt
 
 ```bash
-# Cài ClaudeKit globally
+# Cài đặt ClaudeKit toàn hệ thống (globally)
 npm i -g claudekit-cli@latest
 
 # Kiểm tra phiên bản
@@ -25,80 +26,86 @@ ck --version
 ## Khởi Động ClaudeKit
 
 ```bash
-# Di chuyển đến dự án
-cd /đường/dẫn/đến/dự/án
+# Di chuyển đến dự án của bạn
+cd /path/to/project
 
-# Khởi động Claude Code với ClaudeKit
+# Khởi động Claude Code cùng với ClaudeKit
 claude
 ```
 
 ## Thiết Lập Ban Đầu
 
 ```bash
-# Cho dự án có sẵn (brownfield)
+# Cho các dự án đã có sẵn (brownfield)
 /docs:init
 
-# Cho dự án mới (greenfield)
-ck new --kit engineer --dir /đường/dẫn/đến/dự/án
+# Cho các dự án mới (greenfield)
+ck init --kit engineer --dir /path/to/project
+
+# Đồng bộ các file cấu hình với thượng nguồn (upstream) - trộn thủ công (interactive merge)
+ck init --sync
+
+# Sử dụng git clone thay vì API (không cần token)
+ck init --use-git
 ```
 
-## Lệnh Cơ Bản
+## Các Lệnh Cốt Lõi
 
 ### Phát Triển
 
 ```bash
-# Khởi tạo tài liệu và specs
+# Khởi tạo tài liệu và các đặc tả (specs)
 /docs:init
 
 # Triển khai tính năng mới
 /cook <mô-tả>
 
-# Triển khai tính năng tự động
+# Triển khai tính năng tự động (autonomous)
 /cook:auto <mô-tả>
 
-# Chế độ tự động nhanh (ít plan hơn)
+# Chế độ tự động nhanh (ít lập kế hoạch hơn)
 /cook:auto:fast <mô-tả>
 
 # Chỉ tạo kế hoạch triển khai
 /plan <mô-tả>
 
-# Thực thi kế hoạch có sẵn
+# Thực thi một kế hoạch đã có sẵn
 /code <plan.md>
 
-# Bootstrap dự án mới
+# Khởi tạo dự án mới (bootstrap)
 /bootstrap <mô-tả-ý-tưởng>
 
-# Bootstrap tự động
+# Khởi tạo tự động (autonomous bootstrap)
 /bootstrap:auto <mô-tả-ý-tưởng>
 ```
 
-### Sửa Lỗi
+### Sửa Lỗi (Bug Fixing)
 
 ```bash
 # Sửa lỗi nhanh
 /fix:fast <mô-tả>
 
-# Sửa lỗi phức tạp (phân tích sâu)
+# Sửa lỗi phức tạp (phân tích sâu hơn)
 /fix:hard <mô-tả>
 
-# Tự động lấy logs và sửa
+# Tự động lấy logs và sửa lỗi
 /fix:logs
 
-# Chạy test suite và sửa cho đến khi pass
+# Chạy bộ test và sửa lỗi cho đến khi đạt yêu cầu
 /fix:test
 
-# Sửa lỗi CI/CD pipeline
+# Sửa các vấn đề trong luồng CI/CD (pipeline)
 /fix:ci <github-action-url>
 ```
 
-### Testing
+### Kiểm Thử (Testing)
 
 ```bash
-# Chạy test suite và báo cáo (không sửa)
+# Chạy bộ test và báo cáo kết quả (không sửa lỗi)
 /test
 ```
 
-### Tài Liệu
+### Tài Liệu (Documentation)
 
 ```bash
 # Khởi tạo tài liệu
@@ -111,13 +118,13 @@ ck new --kit engineer --dir /đường/dẫn/đến/dự/án
 /docs:summarize
 ```
 
-### Git Operations
+### Thao Tác Git (Git Operations)
 
 ```bash
-# Tạo commit với message có ý nghĩa
+# Tạo commit với thông điệp có ý nghĩa
 /git:cm
 
-# Commit và push changes
+# Commit và push các thay đổi
 /git:cp
 
 # Tạo pull request
@@ -127,20 +134,20 @@ ck new --kit engineer --dir /đường/dẫn/đến/dự/án
 ### Lập Kế Hoạch & Nghiên Cứu
 
 ```bash
-# Brainstorm cách tiếp cận kỹ thuật
+# Brainstorm các hướng tiếp cận kỹ thuật
 /brainstorm <mô-tả>
 
 # Tạo kế hoạch triển khai chi tiết
 /plan <mô-tả>
 
-# Lên kế hoạch CI/CD setup
-/plan ci
+# Lập kế hoạch thiết lập CI/CD hoặc sửa lỗi luồng CI/CD
+/plan:ci
 
 # Kế hoạch triển khai hai bước
-/plan two
+/plan:two
 ```
 
-### Tích Hợp
+### Tích Hợp (Integration)
 
 ```bash
 # Tích hợp Polar API
@@ -156,60 +163,60 @@ ck new --kit engineer --dir /đường/dẫn/đến/dự/án
 # Tạo skill mới
 /skill:create
 
-# Sửa lỗi skill
+# Sửa các lỗi liên quan đến skill
 /skill:fix-logs
 ```
 
-## So Sánh Lệnh
+## So Sánh Các Lệnh
 
-### Quy Trình Triển Khai Tính Năng
+### Luồng Triển Khai Tính Năng
 
 ```bash
-# Cách 1: Với review plan (khuyến nghị)
+# Cách 1: Có xem lại kế hoạch (được khuyến nghị)
 /cook <mô-tả-tính-năng>
-# → CC hỏi thêm câu hỏi
-# → Xem kế hoạch
-# → Đồng ý
-# → Bắt đầu triển khai
+# → CC sẽ đặt thêm câu hỏi
+# → Bạn xem lại kế hoạch
+# → Bạn phê duyệt
+# → Quá trình triển khai bắt đầu
 
-# Cách 2: Tự động (dùng cẩn thận)
+# Cách 2: Tự động hoàn toàn (cẩn thận khi dùng)
 /cook:auto <mô-tả-tính-năng>
-# → Tự động hoàn toàn không review plan
+# → Triển khai tự động mà không cần xem lại kế hoạch
 
-# Cách 3: Tự động nhanh (ít tokens nhất)
+# Cách 3: Tự động nhanh (tiết kiệm token nhất)
 /cook:auto:fast <mô-tả-tính-năng>
-# → Chế độ nhanh với kế hoạch tối thiểu
+# → Chế độ nhanh với việc lập kế hoạch tối thiểu
 ```
 
-### Quy Trình Sửa Lỗi
+### Luồng Sửa Lỗi
 
 ```bash
-# Lỗi đơn giản
+# Các lỗi đơn giản
 /fix:fast <mô-tả-lỗi>
 
-# Lỗi phức tạp
+# Các lỗi phức tạp
 /fix:hard <mô-tả-lỗi>
 
-# Từ logs
+# Sửa từ logs
 /fix:logs
 
-# Từ tests thất bại
+# Sửa từ các test bị thất bại
 /fix:test
 
-# Từ CI/CD
+# Sửa từ CI/CD
 /fix:ci <action-url>
 ```
 
-## Quy Trình Làm Việc Thường Gặp
+## Các Quy Trình Làm Việc Thường Gặp (Common Workflows)
 
-### Thiết Lập Dự Án Brownfield
+### Thiết Lập Dự Án Brownfield (Dự án đã có sẵn)
 
 ```bash
-# 1. Cài ClaudeKit
+# 1. Cài đặt ClaudeKit
 npm i -g claudekit-cli@latest
 
-# 2. Đi đến dự án
-cd /đường/dẫn/đến/dự/án/hiện/tại
+# 2. Di chuyển đến dự án
+cd /path/to/existing/project
 
 # 3. Khởi động Claude Code
 claude
@@ -221,22 +228,22 @@ claude
 /cook <tính-năng>
 ```
 
-### Thiết Lập Dự Án Greenfield
+### Thiết Lập Dự Án Greenfield (Dự án mới hoàn toàn)
 
 ```bash
-# 1. Cài ClaudeKit
+# 1. Cài đặt ClaudeKit
 npm i -g claudekit-cli@latest
 
-# 2. Tạo dự án
-ck new --kit engineer --dir /đường/dẫn/đến/dự/án
+# 2. Khởi tạo dự án
+ck init --kit engineer --dir /path/to/project
 
 # 3. Di chuyển đến dự án
-cd /đường/dẫn/đến/dự/án
+cd /path/to/project
 
 # 4. Khởi động Claude Code
 claude
 
-# 5. Bootstrap ý tưởng
+# 5. Khởi tạo ý tưởng (bootstrap)
 /bootstrap <mô-tả-ý-tưởng>
 
 # 6. Tiếp tục phát triển
@@ -246,89 +253,90 @@ claude
 ### Phát Triển Tính Năng
 
 ```bash
-# 1. Lên kế hoạch tính năng
-/plan Thêm user profile với upload avatar
+# 1. Lập kế hoạch tính năng
+/plan Thêm hồ sơ người dùng với tính năng tải ảnh đại diện
 
-# 2. Xem kế hoạch (file markdown được tạo)
+# 2. Xem lại kế hoạch (một file markdown sẽ được tạo ra)
 
 # 3. Triển khai
 /code profile-feature-plan.md
 
-# 4. Test
+# 4. Kiểm thử
 /test
 
-# 5. Sửa nếu cần
+# 5. Sửa lỗi nếu cần
 /fix:test
 
 # 6. Commit
-/git:cp
+/git:cm
 ```
 
 ### Quy Trình Sửa Lỗi
 
 ```bash
 # 1. Mô tả lỗi
-/fix:hard Thanh toán bị lỗi trên Safari sau khi validate form
+/fix:hard Lỗi thanh toán trên Safari sau khi xác thực biểu mẫu
 
-# 2. CC phân tích và sửa
+# 2. CC phân tích và sửa lỗi
+/fix:hard
 
-# 3. Test bản sửa
+# 3. Kiểm thử bản sửa lỗi
 /test
 
 # 4. Commit
-/git:cp
+/git:cm
 ```
 
-### Quy Trình Sửa CI/CD
+### Quy Trình Sửa Lỗi CI/CD
 
 ```bash
-# 1. Lấy URL action bị lỗi
+# 1. Lấy URL của action bị thất bại
 # https://github.com/user/repo/actions/runs/12345
 
 # 2. Sửa CI
 /fix:ci https://github.com/user/repo/actions/runs/12345
 
-# 3. CC lấy logs, phân tích, sửa
+# 3. CC lấy logs, phân tích và sửa lỗi
 
-# 4. Push bản sửa
+# 4. Push bản sửa lỗi
 /git:cp
 ```
 
-## Ví Dụ Nhanh
+## Các Ví Dụ Nhanh
 
-### Thêm Authentication
-
-```bash
-/cook Thêm JWT authentication với login, register và password reset
-```
-
-### Sửa Vấn Đề Performance
+### Thêm Xác Thực (Authentication)
 
 ```bash
-/fix:hard Dashboard load chậm với 1000+ items
+/cook Thêm xác thực JWT với đăng nhập, đăng ký và đặt lại mật khẩu
 ```
 
-### Lên Kế Hoạch Database Migration
+### Sửa Vấn Đề Hiệu Suất
 
 ```bash
-/plan Migrate từ MongoDB sang PostgreSQL với zero downtime
+/fix:hard Dashboard tải chậm khi có hơn 1000 mục
 ```
 
-### Tích Hợp Payment
+### Lập Kế Hoạch Di Cư Cơ Sở Dữ Liệu (Database Migration)
+
+```bash
+/plan Di cư từ MongoDB sang PostgreSQL mà không có thời gian dừng (zero downtime)
+```
+
+### Tích Hợp Thanh Toán
 
 ```bash
 /integrate stripe
 # hoặc
-/cook Thêm Stripe payment integration với subscription billing
+/cook Thêm tích hợp thanh toán Stripe với tính năng thanh toán theo gói (subscription billing)
 ```
 
-### Bootstrap API Mới
+### Khởi Tạo API Mới
 
 ```bash
-/bootstrap REST API cho task management với teams, projects, tasks và time tracking
+/bootstrap REST API cho quản lý công việc với các nhóm, dự án, nhiệm vụ và theo dõi thời gian
 ```
 
-## Phân Loại Lệnh
+## Các Danh Mục Lệnh
 
 ### 🚀 Phát Triển Cốt Lõi
 - `/cook` - Triển khai tính năng
@@ -336,53 +344,53 @@ claude
 - `/code` - Thực thi kế hoạch
 - `/bootstrap` - Dự án mới
 
-### 🐛 Debug & Sửa Lỗi
-- `/fix:fast` - Sửa nhanh
-- `/fix:hard` - Sửa phức tạp
-- `/fix:logs` - Sửa từ logs
-- `/fix:test` - Sửa từ tests
-- `/fix:ci` - Sửa CI/CD
+### 🐛 Kiểm Lỗi & Sửa Lỗi
+- `/fix:fast` - Sửa lỗi nhanh
+- `/fix:hard` - Sửa lỗi phức tạp
+- `/fix:logs` - Sửa lỗi dựa trên log
+- `/fix:test` - Sửa lỗi dựa trên test
+- `/fix:ci` - Sửa lỗi CI/CD
 
-### 🧪 Testing
-- `/test` - Chạy tests
+### 🧪 Kiểm Thử
+- `/test` - Chạy các bộ test
 
 ### 📚 Tài Liệu
 - `/docs:init` - Khởi tạo
 - `/docs:update` - Cập nhật
 - `/docs:summarize` - Tóm tắt
 
-### 🔧 Git Operations
-- `/git:cm` - Commit changes
+### 🔧 Thao Tác Git
+- `/git:cm` - Commit thay đổi
 - `/git:cp` - Commit và push
 - `/git:pr` - Tạo PR
 
 ### 💡 Lập Kế Hoạch
-- `/plan` - Kế hoạch chi tiết
+- `/plan` - Lập kế hoạch chi tiết
 - `/brainstorm` - Khám phá ý tưởng
 
 ### 🔌 Tích Hợp
-- `/integrate <service>` - Thêm integrations
+- `/integrate <service>` - Thêm các tích hợp
 
 ### ⚙️ Skills
-- `/skill:create` - Skills mới
-- `/skill:fix-logs` - Sửa skills
+- `/skill:create` - Tạo skill mới
+- `/skill:fix-logs` - Sửa lỗi skill
 
-## Tips & Best Practices
+## Lời Khuyên & Thực Hành Tốt Nhất
 
-### 1. Luôn Xem Kế Hoạch
-**QUAN TRỌNG:** Xem kỹ kế hoạch triển khai trước khi đồng ý. Kế hoạch tồn tại vì lý do.
+### 1. Luôn Xem Lại Kế Hoạch
+**QUAN TRỌNG:** Xem xét kỹ lưỡng các kế hoạch triển khai trước khi phê duyệt. Kế hoạch tồn tại là có lý do.
 
-### 2. Cung Cấp Context
-Mô tả chi tiết hơn = kết quả tốt hơn
+### 2. Cung Cấp Đầy Đủ Ngữ Cảnh
+Mô tả chi tiết hơn = Kết quả tốt hơn
 ```bash
 # ❌ Không tốt
-/cook Thêm search
+/cook Thêm tính năng tìm kiếm
 
 # ✅ Tốt
-/cook Thêm full-text search cho blog posts với filters theo category, tag và date range
+/cook Thêm tính năng tìm kiếm toàn văn cho các bài viết blog với bộ lọc theo danh mục, nhãn và khoảng ngày
 ```
 
-### 3. Dùng Đúng Lệnh
+### 3. Sử Dụng Đúng Lệnh
 
 ```bash
 # Lỗi nhanh
@@ -395,27 +403,26 @@ Mô tả chi tiết hơn = kết quả tốt hơn
 /cook <tính-năng>
 
 # Tính năng lớn
-/plan <tính-năng> → xem → /code plan.md
+/plan <tính-năng> → xem lại → /code plan.md
 ```
 
-### 4. Test Thường Xuyên
+### 4. Kiểm Thử Thường Xuyên
 
 ```bash
 # Sau mỗi tính năng
 /test
 
-# Hoặc tự động sửa tests
+# Hoặc tự động sửa lỗi test
 /fix:test
 ```
 
-### 5. Cập Nhật Tài Liệu
-
+### 5. Ghi Lại Các Thay Đổi
 ```bash
-# Giữ docs cập nhật
+# Giữ tài liệu luôn được cập nhật
 /docs:update
 ```
 
-## Xử Lý Sự Cố
+## Khắc Phục Sự Cố
 
 ### Lệnh Không Hoạt Động
 
@@ -424,129 +431,81 @@ Mô tả chi tiết hơn = kết quả tốt hơn
 ck --version
 
 # Khởi động lại Claude Code
-# Thoát và chạy: claude
+# Thoát ra và chạy: claude
 ```
 
-### Cần Bắt Đầu Lại
+### Cần Bắt Đầu Lại Từ Đầu
 
 ```bash
-# Khởi tạo lại docs
+# Khởi tạo lại tài liệu
 /docs:init
 ```
 
-### Cần Thêm Giúp Đỡ
+### Cần Thêm Sự Trợ Giúp
 
 ```bash
-# Brainstorm cách tiếp cận
+# Brainstorm hướng tiếp cận
 /brainstorm Cách triển khai <tính-năng-phức-tạp>
 
 # Lấy kế hoạch chi tiết
 /plan <điều-bạn-muốn-làm>
 ```
 
-## Tham Khảo Nhanh Theo Ngôn Ngữ
-
-### Tiếng Việt
+## Tham Khảo Nhanh Các Lệnh
 
 ```bash
-# Khởi tạo dự án có sẵn
+# Khởi tạo dự án đã có sẵn
 /docs:init
 
-# Tính năng mới (cần review plan)
+# Tính năng mới (cần xem lại kế hoạch)
 /cook <mô-tả-tính-năng>
 
-# Tính năng mới (tự động, ko review)
+# Tính năng mới (tự động, không xem lại)
 /cook:auto <mô-tả>
 
-# Tính năng mới (nhanh hơn, ít plan hơn)
+# Tính năng mới (nhanh hơn, ít kế hoạch hơn)
 /cook:auto:fast <mô-tả>
 
-# Chỉ lên plan, không code
+# Chỉ lập kế hoạch, không triển khai
 /plan <mô-tả>
 
-# Code theo plan có sẵn
+# Code từ một kế hoạch có sẵn
 /code <plan.md>
 
 # Sửa lỗi nhanh
 /fix:fast <mô-tả-lỗi>
 
-# Sửa lỗi khó (suy nghĩ lâu hơn)
+# Sửa lỗi khó (phân tích sâu hơn)
 /fix:hard <mô-tả-lỗi>
 
-# Tự lấy logs và sửa
+# Tự động lấy logs và sửa lỗi
 /fix:logs
 
-# Chạy test và sửa tới chết
+# Chạy các test và sửa cho đến khi đạt
 /fix:test
 
-# Lấy logs GitHub Actions và sửa
+# Lấy logs từ GitHub Actions và sửa lỗi
 /fix:ci <github-action-url>
 
-# Tạo dự án mới (cần review plan)
-/bootstrap <ý-tưởng>
+# Khởi tạo dự án mới (cần xem lại kế hoạch)
+/bootstrap <mô-tả-ý-tưởng>
 
-# Tạo dự án mới (tự động tới chết)
+# Khởi tạo dự án mới (tự động hoàn toàn)
 /bootstrap:auto <ý-tưởng>
 
-# Chạy test và báo cáo (không sửa)
-/test
-```
-
-### English
-
-```bash
-# Initialize existing project
-/docs:init
-
-# New feature (needs plan review)
-/cook <feature-description>
-
-# New feature (autonomous, no review)
-/cook:auto <description>
-
-# New feature (faster, less planning)
-/cook:auto:fast <description>
-
-# Only plan, no implementation
-/plan <description>
-
-# Code from existing plan
-/code <plan.md>
-
-# Quick bug fix
-/fix:fast <bug-description>
-
-# Hard bug fix (deeper analysis)
-/fix:hard <bug-description>
-
-# Auto-fetch logs and fix
-/fix:logs
-
-# Run tests and fix till passing
-/fix:test
-
-# Fetch GitHub Actions logs and fix
-/fix:ci <github-action-url>
-
-# Create new project (needs plan review)
-/bootstrap <idea-description>
-
-# Create new project (autonomous till death)
-/bootstrap:auto <idea>
-
-# Run test suite and report (no fixes)
+# Chạy bộ test và báo cáo (không sửa lỗi)
 /test
 ```
 
 ## Tài Nguyên
 
-- [Tài Liệu Đầy Đủ](https://docs.claudekit.cc)
-- [Tất Cả Lệnh](/vi/docs/engineer/commands/)
+- [Tài liệu đầy đủ](https://docs.claudekit.cc)
+- [Tất cả các lệnh](/vi/docs/engineer/commands/)
 - [AI Agents](/vi/docs/engineer/agents/)
-- [Workflows](/vi/docs/core-concepts/workflows)
-- [Troubleshooting](/vi/docs/troubleshooting/)
-- [GitHub Discussions](https://github.com/mrgoonie/claudekit-cli/discussions)
+- [Quy trình làm việc (Workflows)](/vi/docs/core-concepts/workflows)
+- [Khắc phục sự cố](/vi/docs/troubleshooting/)
+- [Thảo luận trên GitHub](https://github.com/mrgoonie/claudekit-cli/discussions)
 
 ---
 
-**In trang này** hoặc giữ mở khi làm việc với ClaudeKit để tham khảo lệnh nhanh!
+**In trang này** hoặc giữ nó luôn mở khi làm việc với ClaudeKit để tham khảo lệnh nhanh chóng!

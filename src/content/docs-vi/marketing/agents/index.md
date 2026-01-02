@@ -1,97 +1,91 @@
 ---
 title: "Marketing Agents"
-description: "Gặp gỡ đội ngũ marketing AI của bạn - 27 agent chuyên biệt cho chiến dịch, nội dung và tăng trưởng"
+description: "Gặp gỡ đội ngũ marketing AI của bạn - 27 đại lý chuyên biệt cho các chiến dịch, nội dung và tăng trưởng."
 section: marketing
 category: agents
 order: 1
+lang: vi
 ---
 
-# Marketing Agents
+# Marketing Agents (Đại lý Marketing)
 
-> Đội ngũ marketing AI hoàn chỉnh của bạn, sẵn sàng thực thi chiến dịch, tạo nội dung và thúc đẩy tăng trưởng.
+> Đội ngũ marketing AI hoàn chỉnh của bạn, sẵn sàng thực thi các chiến dịch, tạo nội dung và thúc đẩy tăng trưởng.
 
 ## Marketing Agents là gì?
 
-Marketing agents là những cộng tác viên AI chuyên biệt xử lý các chức năng marketing cụ thể. Mỗi agent mang đến chuyên môn sâu trong lĩnh vực của họ - từ điều phối chiến dịch đến viết copy đến tối ưu hóa SEO.
+Marketing agents là những cộng tác viên AI chuyên biệt, đảm nhiệm các chức năng marketing cụ thể. Mỗi đại lý mang đến chuyên môn sâu trong lĩnh vực của mình - từ điều phối chiến dịch, viết nội dung quảng cáo đến tối ưu hóa SEO.
 
-Hãy nghĩ về họ như bộ phận marketing của bạn, sẵn sàng 24/7, không tốn chi phí điều phối.
+Hãy coi họ như một bộ phận marketing chuyên nghiệp của bạn, làm việc 24/7 và không tốn chi phí điều phối.
 
-## Ma Trận Agent theo Giai Đoạn Phễu
+## Ma trận Đại lý theo Giai đoạn Phễu
 
-### TOFU (Top of Funnel) - Thu Hút
+### TOFU (Đầu phễu) - Thu hút
+Các đại lý giúp đưa khách hàng tiềm năng đến với doanh nghiệp của bạn.
 
-Các Agent thu hút khách hàng tiềm năng đến với bạn.
+| Đại lý | Tập trung | Khi nào sử dụng |
+|-------|-------|----------|
+| [Attraction Specialist](/vi/docs/marketing/agents/attraction-specialist) | Tạo khách hàng tiềm năng, tìm khoảng trống nội dung | Khi bạn cần thêm lưu lượng truy cập chất lượng |
+| [SEO Specialist](/vi/docs/marketing/agents/seo-specialist) | SEO kỹ thuật, thứ hạng từ khóa | Khi bạn muốn thống trị kết quả tìm kiếm |
+| [Lead Qualifier](/vi/docs/marketing/agents/lead-qualifier) | Chấm điểm, phát hiện ý định mua hàng | Khi bạn có quá nhiều khách hàng tiềm năng cần ưu tiên |
+| [Researcher](/vi/docs/marketing/agents/researcher) | Thông tin thị trường, xu hướng | Khi bạn cần hiểu sâu về đối thủ cạnh tranh |
 
-| Agent | Tập Trung | Dùng Khi |
-|-------|----------|----------|
-| [Attraction Specialist](/vi/docs/marketing/agents/attraction-specialist) | Tạo khách hàng tiềm năng, khoảng trống nội dung | Bạn cần nhiều traffic chất lượng hơn |
-| [SEO Specialist](/vi/docs/marketing/agents/seo-specialist) | SEO kỹ thuật, xếp hạng | Bạn muốn thống trị kết quả tìm kiếm |
-| [Lead Qualifier](/vi/docs/marketing/agents/lead-qualifier) | Chấm điểm, phát hiện ý định | Bạn có quá nhiều khách hàng tiềm năng để ưu tiên |
-| [Researcher](/vi/docs/marketing/agents/researcher) | Thông tin thị trường, xu hướng | Bạn cần thông tin cạnh tranh |
+### MOFU (Giữa phễu) - Nuôi dưỡng
+Các đại lý giúp xây dựng mối quan hệ và lòng tin với khách hàng.
 
-### MOFU (Middle of Funnel) - Nuôi Dưỡng
+| Đại lý | Tập trung | Khi nào sử dụng |
+|-------|-------|----------|
+| [Email Wizard](/vi/docs/marketing/agents/email-wizard) | Chuỗi email, tự động hóa | Khi bạn cần nuôi dưỡng khách hàng ở quy mô lớn |
+| [Sale Enabler](/vi/docs/marketing/agents/sale-enabler) | Tài liệu hỗ trợ, bài thuyết trình bán hàng | Khi đội ngũ bán hàng cần các tài liệu thuyết phục hơn |
+| [Funnel Architect](/vi/docs/marketing/agents/funnel-architect) | Tối ưu hóa chuyển đổi | Khi phễu bán hàng của bạn có những điểm "rò rỉ" cần khắc phục |
+| [Content Creator](/vi/docs/marketing/agents/content-creator) | Blog, video, quảng cáo | Khi bạn cần nội dung trên đa kênh |
+| [Continuity Specialist](/vi/docs/marketing/agents/continuity-specialist) | Duy trì, tương tác khách hàng | Khi bạn muốn khách hàng gắn bó lâu dài |
 
-Các Agent xây dựng mối quan hệ và lòng tin.
+### BOFU (Cuối phễu) - Chuyển đổi
+Các đại lý giúp chốt hợp đồng và tối đa hóa doanh thu.
 
-| Agent | Tập Trung | Dùng Khi |
-|-------|----------|----------|
-| [Email Wizard](/vi/docs/marketing/agents/email-wizard) | Chuỗi email, tự động hóa | Bạn cần nuôi dưỡng khách hàng tiềm năng quy mô lớn |
-| [Sale Enabler](/vi/docs/marketing/agents/sale-enabler) | Tài liệu, bài thuyết trình | Đội bán hàng cần tài liệu tốt hơn |
-| [Funnel Architect](/vi/docs/marketing/agents/funnel-architect) | Tối ưu hóa chuyển đổi | Phễu của bạn có điểm rò rỉ cần sửa |
-| [Content Creator](/vi/docs/marketing/agents/content-creator) | Blog, video, quảng cáo | Bạn cần nội dung trên nhiều kênh |
-| [Continuity Specialist](/vi/docs/marketing/agents/continuity-specialist) | Giữ chân, tương tác | Bạn muốn khách hàng gắn bó lâu dài |
+| Đại lý | Tập trung | Khi nào sử dụng |
+|-------|-------|----------|
+| [Upsell Maximizer](/vi/docs/marketing/agents/upsell-maximizer) | Mở rộng doanh thu, tăng giá trị đơn hàng | Khi bạn muốn tăng giá trị trọn đời của khách hàng |
 
-### BOFU (Bottom of Funnel) - Chuyển Đổi
+### Vận hành Marketing cốt lõi
+Các đại lý vận hành cỗ máy marketing của bạn.
 
-Các Agent chốt giao dịch và tối đa hóa doanh thu.
+| Đại lý | Tập trung | Khi nào sử dụng |
+|-------|-------|----------|
+| [Campaign Manager](/vi/docs/marketing/agents/campaign-manager) | Điều phối đa kênh | Khi bạn đang chạy các chiến dịch phức tạp |
+| [Copywriter](/vi/docs/marketing/agents/copywriter) | Nội dung chuyển đổi cao | Khi bạn cần những lời quảng cáo sắc bén để bán hàng |
+| [Brainstormer](/vi/docs/marketing/agents/brainstormer) | Chiến lược, lên ý tưởng | Khi bạn đang khám phá những cách tiếp cận mới |
+| [Content Reviewer](/vi/docs/marketing/agents/content-reviewer) | Kiểm soát chất lượng, giọng điệu thương hiệu | Khi bạn cần xem lại nội dung trước khi xuất bản |
+| [Campaign Debugger](/vi/docs/marketing/agents/campaign-debugger) | Giải quyết vấn đề hiệu suất | Khi chiến dịch không hiệu quả và bạn cần biết lý do |
 
-| Agent | Tập Trung | Dùng Khi |
-|-------|----------|----------|
-| [Upsell Maximizer](/vi/docs/marketing/agents/upsell-maximizer) | Mở rộng doanh thu, AOV | Bạn muốn tăng giá trị khách hàng |
+### Cộng đồng & Mạng xã hội
+Các đại lý xây dựng cộng đồng khán giả trung thành.
 
-### Hoạt Động Marketing Cốt Lõi
+| Đại lý | Tập trung | Khi nào sử dụng |
+|-------|-------|----------|
+| [Social Media Manager](/vi/docs/marketing/agents/social-media-manager) | Nội dung đa nền tảng | Khi bạn quản lý mạng xã hội ở quy mô lớn |
+| [Community Manager](/vi/docs/marketing/agents/community-manager) | Tương tác, điều phối cộng đồng | Khi bạn có một cộng đồng năng động cần chăm sóc |
 
-Các Agent cung cấp động lực cho engine marketing của bạn.
+### Hỗ trợ & Cơ sở hạ tầng
+Các đại lý giữ cho hệ thống luôn vận hành trơn tru.
 
-| Agent | Tập Trung | Dùng Khi |
-|-------|----------|----------|
-| [Campaign Manager](/vi/docs/marketing/agents/campaign-manager) | Điều phối đa kênh | Bạn đang chạy chiến dịch phức tạp |
-| [Copywriter](/vi/docs/marketing/agents/copywriter) | Copy chuyển đổi cao | Bạn cần những từ ngữ bán hàng |
-| [Brainstormer](/vi/docs/marketing/agents/brainstormer) | Chiến lược, ý tưởng | Bạn đang khám phá cách tiếp cận mới |
-| [Content Reviewer](/vi/docs/marketing/agents/content-reviewer) | Kiểm soát chất lượng, giọng điệu thương hiệu | Bạn cần review copy trước khi xuất bản |
-| [Campaign Debugger](/vi/docs/marketing/agents/campaign-debugger) | Vấn đề hiệu suất | Có gì đó không hoạt động và bạn cần biết tại sao |
+| Đại lý | Tập trung | Khi nào sử dụng |
+|-------|-------|----------|
+| [Planner](/vi/docs/marketing/agents/planner) | Kế hoạch triển khai | Khi bạn cần một kế hoạch thực thi có cấu trúc |
+| [Project Manager](/vi/docs/marketing/agents/project-manager) | Điều phối, bàn giao dự án | Khi bạn đang quản lý nhiều dự án cùng lúc |
+| [Docs Manager](/vi/docs/marketing/agents/docs-manager) | Tài liệu, quản lý kiến thức | Khi bạn cần giữ cho tài liệu luôn được cập nhật |
+| [Git Manager](/vi/docs/marketing/agents/git-manager) | Quản lý phiên bản, commit | Khi bạn muốn lịch sử Git sạch sẽ và chuyên nghiệp |
+| [Journal Writer](/vi/docs/marketing/agents/journal-writer) | Nhật ký phiên làm việc, tiến độ | Khi bạn cần theo dõi những gì đã được thực hiện |
+| [Scout](/vi/docs/marketing/agents/scout) | Khám phá mã nguồn | Khi bạn cần tìm kiếm các tệp tin trong dự án |
+| [Scout External](/vi/docs/marketing/agents/scout-external) | Nghiên cứu bên ngoài | Khi bạn cần phân tích đối thủ cạnh tranh |
+| [MCP Manager](/vi/docs/marketing/agents/mcp-manager) | Thiết lập tích hợp | Khi bạn đang kết nối với các công cụ bên ngoài |
+| [Analytics Analyst](/vi/docs/marketing/agents/analytics-analyst) | Phân tích dữ liệu, báo cáo | Khi bạn cần hiểu sâu về hiệu suất kinh doanh |
+| [Tester](/vi/docs/marketing/agents/tester) | Đảm bảo chất lượng | Khi bạn muốn xác thực các chức năng của hệ thống |
 
-### Cộng Đồng & Mạng Xã Hội
+## Cách sử dụng Đại lý
 
-Các Agent xây dựng đối tượng tương tác.
-
-| Agent | Tập Trung | Dùng Khi |
-|-------|----------|----------|
-| [Social Media Manager](/vi/docs/marketing/agents/social-media-manager) | Nội dung đa nền tảng | Bạn quản lý mạng xã hội quy mô lớn |
-| [Community Manager](/vi/docs/marketing/agents/community-manager) | Tương tác, điều hành | Bạn có cộng đồng tích cực cần nuôi dưỡng |
-
-### Hỗ Trợ & Cơ Sở Hạ Tầng
-
-Các Agent giữ cho cỗ máy hoạt động trơn tru.
-
-| Agent | Tập Trung | Dùng Khi |
-|-------|----------|----------|
-| [Planner](/vi/docs/marketing/agents/planner) | Kế hoạch thực thi | Bạn cần kế hoạch thực thi có cấu trúc |
-| [Project Manager](/vi/docs/marketing/agents/project-manager) | Điều phối, giao hàng | Bạn đang xoay xở nhiều sáng kiến |
-| [Docs Manager](/vi/docs/marketing/agents/docs-manager) | Tài liệu, kiến thức | Bạn cần giữ tài liệu cập nhật |
-| [Git Manager](/vi/docs/marketing/agents/git-manager) | Kiểm soát phiên bản, commit | Bạn muốn lịch sử git sạch sẽ |
-| [Journal Writer](/vi/docs/marketing/agents/journal-writer) | Nhật ký phiên, tiến độ | Bạn cần theo dõi những gì đã làm |
-| [Scout](/vi/docs/marketing/agents/scout) | Khám phá codebase | Bạn cần tìm file trong dự án |
-| [Scout External](/vi/docs/marketing/agents/scout-external) | Nghiên cứu bên ngoài | Bạn cần phân tích đối thủ |
-| [MCP Manager](/vi/docs/marketing/agents/mcp-manager) | Thiết lập tích hợp | Bạn đang kết nối công cụ bên ngoài |
-| [Analytics Analyst](/vi/docs/marketing/agents/analytics-analyst) | Thông tin dữ liệu, báo cáo | Bạn cần hiểu hiệu suất |
-| [Tester](/vi/docs/marketing/agents/tester) | Đảm bảo chất lượng | Bạn muốn xác thực chức năng |
-
-## Cách Sử Dụng Agents
-
-### Gọi Trực Tiếp
-
-Gọi agent một cách rõ ràng khi bạn cần chuyên môn của họ:
+### Gọi trực tiếp
+Gọi đích danh các đại lý khi bạn cần chuyên môn của họ:
 
 ```bash
 # Điều phối chiến dịch
@@ -104,150 +98,148 @@ Gọi agent một cách rõ ràng khi bạn cần chuyên môn của họ:
 /seo optimize "product page"
 ```
 
-### Ủy Quyền Tự Động
-
-ClaudeKit định tuyến nhiệm vụ đến agent phù hợp tự động:
+### Ủy quyền tự động
+ClaudeKit sẽ tự động điều phối nhiệm vụ đến các đại lý phù hợp:
 
 ```
-Bạn: "Tôi cần cải thiện tỷ lệ mở email của chúng tôi"
-→ email-wizard agent xử lý phân tích và đề xuất
+Bạn: "I need to improve our email open rates"
+→ Đại lý email-wizard sẽ xử lý việc phân tích và đưa ra đề xuất.
 
-Bạn: "Kiểm tra website của chúng tôi về vấn đề SEO"
-→ seo-specialist agent thực hiện kiểm tra toàn diện
+Bạn: "Audit our website for SEO issues"
+→ Đại lý seo-specialist sẽ thực hiện một đợt kiểm tra toàn diện.
 
-Bạn: "Tạo chiến dịch ra mắt trên tất cả các kênh"
-→ campaign-manager agent điều phối kế hoạch
+Bạn: "Create a launch campaign across all channels"
+→ Đại lý campaign-manager sẽ điều phối toàn bộ kế hoạch.
 ```
 
-### Quy Trình Đa Agent
-
-Các nhiệm vụ phức tạp tự động liên quan đến nhiều agent:
+### Quy trình đa đại lý
+Các nhiệm vụ phức tạp sẽ tự động có sự tham gia của nhiều đại lý:
 
 ```bash
 /campaign create "Product Launch"
 ```
 
 **Hậu trường:**
-1. `campaign-manager` tạo chiến lược tổng thể
-2. `copywriter` viết thông điệp
-3. `content-creator` tạo nội dung
-4. `email-wizard` xây dựng chuỗi nuôi dưỡng
-5. `social-media-manager` lên kế hoạch lịch mạng xã hội
-6. `analytics-analyst` xác định chỉ số thành công
+1. `campaign-manager` xây dựng chiến lược tổng thể.
+2. `copywriter` soạn thảo các thông điệp quảng cáo.
+3. `content-creator` sản xuất các tài sản nội dung.
+4. `email-wizard` xây dựng các chuỗi email nuôi dưỡng.
+5. `social-media-manager` lên lịch trình mạng xã hội.
+6. `analytics-analyst` định nghĩa các chỉ số đo lường thành công.
 
-## Ví Dụ Bắt Đầu Nhanh
+## Ví dụ Bắt đầu nhanh
 
-### Ra Mắt Chiến Dịch
-
-```
-Bạn: "Lên kế hoạch chiến dịch ra mắt sản phẩm cho tính năng AI mới của chúng tôi"
-
-campaign-manager: Tôi sẽ tạo kế hoạch ra mắt đa kênh...
-
-✓ Chiến Lược Chiến Dịch (4 kênh, 6 tuần)
-✓ Lịch Nội Dung (42 phần)
-✓ Phân Bổ Ngân Sách ($10K trên các kênh)
-✓ Chỉ Số Thành Công (Nhận thức, Khách hàng tiềm năng, Chuyển đổi)
-```
-
-### Tạo Copy Chuyển Đổi Cao
+### Ra mắt một chiến dịch
 
 ```
-Bạn: "Viết copy hero cho landing page của chúng tôi"
+Bạn: "Plan a product launch campaign for our new AI feature"
 
-copywriter: Tôi sẽ tạo tiêu đề tập trung chuyển đổi...
+campaign-manager: Tôi sẽ tạo một kế hoạch ra mắt đa kênh...
 
-Phiên Bản Chính:
-"Dừng Viết Code. Bắt Đầu Ship Tính Năng."
-
-Các Lựa Chọn:
-1. "Đội Ngũ AI Dev Của Bạn Ship Trong 6 Phút, Không Phải 6 Giờ"
-2. "Bỏ Qua Boilerplate. Claude Xây Dựng Cho Bạn."
-
-Lý Do: Tập trung vào tốc độ, kết quả, giảm đau.
+✓ Chiến lược chiến dịch (4 kênh, 6 tuần)
+✓ Lịch nội dung (42 hạng mục)
+✓ Phân bổ ngân sách ($10K trên các kênh)
+✓ Chỉ số thành công (Nhận diện, Khách hàng tiềm năng, Chuyển đổi)
 ```
 
-### Tối Ưu Hóa Phễu
+### Tạo nội dung quảng cáo chuyển đổi cao
 
 ```
-Bạn: "Phễu đăng ký của chúng tôi chỉ chuyển đổi ở mức 1.2%"
+Bạn: "Write hero copy for our landing page"
 
-funnel-architect: Tôi sẽ phân tích điểm nghẽn và đề xuất sửa chữa...
+copywriter: Tôi sẽ soạn thảo các tiêu đề tập trung vào chuyển đổi...
 
-✓ Kiểm Tra Phễu Hoàn Tất
-✓ 3 Điểm Rò Rỉ Chính Được Xác Định
-✓ Tác Động Dự Kiến: +47% chuyển đổi với các sửa chữa
-✓ Ưu Tiên: Sửa form checkout trước (giảm 30%)
+Phiên bản chính:
+"Dừng viết mã. Bắt đầu xuất xưởng tính năng."
+
+Các phương án thay thế:
+1. "Đội ngũ phát triển AI của bạn giúp xuất xưởng trong 6 phút, không phải 6 giờ"
+2. "Bỏ qua mã mẫu. Hãy để Claude xây dựng cho bạn."
+
+Lý do: Tập trung vào tốc độ, kết quả và giải quyết nỗi đau của khách hàng.
 ```
 
-## Chọn Agent Phù Hợp
+### Tối ưu hóa phễu bán hàng
 
-### Theo Mục Tiêu
+```
+Bạn: "Our signup funnel converts at only 1.2%"
 
-**Muốn nhiều traffic hơn?** → [Attraction Specialist](/vi/docs/marketing/agents/attraction-specialist), [SEO Specialist](/vi/docs/marketing/agents/seo-specialist)
+funnel-architect: Tôi sẽ phân tích các nút thắt và đề xuất các giải pháp khắc phục...
+
+✓ Hoàn tất kiểm tra phễu bán hàng
+✓ Xác định 3 điểm rò rỉ lớn
+✓ Tác động dự kiến: +47% chuyển đổi sau khi khắc phục
+✓ Ưu tiên: Sửa lỗi biểu mẫu thanh toán trước (tỷ lệ rơi rụng 30%)
+```
+
+## Chọn Đại lý phù hợp
+
+### Theo Mục tiêu
+
+**Muốn tăng lưu lượng truy cập?** → [Attraction Specialist](/vi/docs/marketing/agents/attraction-specialist), [SEO Specialist](/vi/docs/marketing/agents/seo-specialist)
 
 **Cần nội dung tốt hơn?** → [Copywriter](/vi/docs/marketing/agents/copywriter), [Content Creator](/vi/docs/marketing/agents/content-creator)
 
-**Chạy chiến dịch?** → [Campaign Manager](/vi/docs/marketing/agents/campaign-manager), [Email Wizard](/vi/docs/marketing/agents/email-wizard)
+**Đang chạy các chiến dịch?** → [Campaign Manager](/vi/docs/marketing/agents/campaign-manager), [Email Wizard](/vi/docs/marketing/agents/email-wizard)
 
-**Sửa vấn đề?** → [Campaign Debugger](/vi/docs/marketing/agents/campaign-debugger), [Funnel Architect](/vi/docs/marketing/agents/funnel-architect)
+**Cần sửa lỗi hệ thống?** → [Campaign Debugger](/vi/docs/marketing/agents/campaign-debugger), [Funnel Architect](/vi/docs/marketing/agents/funnel-architect)
 
-**Tăng doanh thu?** → [Upsell Maximizer](/vi/docs/marketing/agents/upsell-maximizer), [Sale Enabler](/vi/docs/marketing/agents/sale-enabler)
+**Muốn tăng trưởng doanh thu?** → [Upsell Maximizer](/vi/docs/marketing/agents/upsell-maximizer), [Sale Enabler](/vi/docs/marketing/agents/sale-enabler)
 
-### Theo Chức Năng Marketing
+### Theo Chức năng Marketing
 
-- **Chiến Lược** → Brainstormer, Planner, Funnel Architect
-- **Tạo Nội Dung** → Copywriter, Content Creator, Email Wizard
-- **Phân Phối** → Social Media Manager, Campaign Manager
-- **Tối Ưu Hóa** → SEO Specialist, Campaign Debugger, Analytics Analyst
-- **Tăng Trưởng** → Attraction Specialist, Upsell Maximizer, Sale Enabler
+- **Chiến lược** → Brainstormer, Planner, Funnel Architect
+- **Sản xuất** → Copywriter, Content Creator, Email Wizard
+- **Phân phối** → Social Media Manager, Campaign Manager
+- **Tối ưu hóa** → SEO Specialist, Campaign Debugger, Analytics Analyst
+- **Tăng trưởng** → Attraction Specialist, Upsell Maximizer, Sale Enabler
 
-## Khả Năng Agent
+## Khả năng của Đại lý
 
-Mọi agent đều có thể:
+Mọi đại lý đều có thể:
 
-- Đọc hướng dẫn thương hiệu của bạn (`docs/brand-guidelines.md`)
-- Truy cập bối cảnh và mục tiêu dự án
-- Kích hoạt kỹ năng chuyên biệt khi cần
-- Phối hợp với các agent khác tự động
-- Tạo báo cáo và tài nguyên có cấu trúc
-- Tuân theo quy trình tùy chỉnh của bạn
+- Đọc hướng dẫn thương hiệu của bạn (`docs/brand-guidelines.md`).
+- Truy cập ngữ cảnh và mục tiêu dự án.
+- Kích hoạt các kỹ năng chuyên biệt khi cần thiết.
+- Tự động phối hợp với các đại lý khác.
+- Tạo ra các báo cáo và tài sản nội dung có cấu trúc.
+- Tuân thủ các quy trình làm việc tùy chỉnh của bạn.
 
-## Thực Hành Tốt Nhất
+## Thực hành tốt nhất
 
-**1. Bắt Đầu với Strategy Agents**
+**1. Bắt đầu với các đại lý Chiến lược**
 
-Trước khi thực thi, tham khảo ý kiến Planner hoặc Brainstormer để khám phá cách tiếp cận.
+Trước khi thực thi, hãy tham khảo Planner hoặc Brainstormer để khám phá các phương án tiếp cận.
 
-**2. Review Đầu Ra Của Agent**
+**2. Xem xét đầu ra của Đại lý**
 
-Agents tạo bản nháp. Bạn cung cấp phê duyệt cuối cùng và tinh chỉnh.
+Các đại lý tạo ra bản thảo. Bạn là người phê duyệt cuối cùng và thực hiện các tinh chỉnh.
 
-**3. Cung Cấp Bối Cảnh**
+**3. Cung cấp đầy đủ Ngữ cảnh**
 
-Chia sẻ mục tiêu kinh doanh, chi tiết đối tượng và ràng buộc để có kết quả tốt hơn.
+Chia sẻ các mục tiêu kinh doanh, chi tiết về đối tượng khán giả và các ràng buộc để có kết quả tốt hơn.
 
-**4. Kết Hợp Agents**
+**4. Kết hợp nhiều Đại lý**
 
-Các dự án phức tạp có lợi từ nhiều agent làm việc cùng nhau.
+Các dự án phức tạp sẽ đạt hiệu quả cao nhất khi có nhiều đại lý cùng phối hợp làm việc.
 
-**5. Lặp Lại**
+**5. Cải tiến liên tục**
 
-Agents cải thiện với phản hồi. Nói cho họ biết điều gì hiệu quả và điều gì không.
+Các đại lý sẽ làm việc tốt hơn khi nhận được phản hồi. Hãy cho họ biết điều gì hiệu quả và điều gì chưa.
 
-## Tài Nguyên Liên Quan
+## Tài nguyên liên quan
 
-- [Marketing Commands](/vi/docs/marketing/commands) - Lệnh slash truy cập nhanh cho nhiệm vụ marketing
-- [Marketing Workflows](/vi/docs/marketing/workflows) - Hướng dẫn từng bước cho các tình huống phổ biến
-- [Marketing Skills](/vi/docs/marketing/skills) - Khả năng chuyên biệt mà agents có thể kích hoạt
-- [Marketing Dashboard](/vi/docs/marketing/dashboard) - Theo dõi chiến dịch và phân tích
+- [Marketing Commands](/vi/docs/marketing/commands) - Các lệnh slash truy cập nhanh cho nhiệm vụ marketing.
+- [Marketing Workflows](/vi/docs/marketing/workflows) - Hướng dẫn từng bước cho các kịch bản phổ biến.
+- [Marketing Skills](/vi/docs/marketing/skills) - Các khả năng chuyên biệt mà đại lý có thể kích hoạt.
+- [Marketing Dashboard](/vi/docs/marketing/dashboard) - Theo dõi các chiến dịch và số liệu phân tích.
 
-## Bước Tiếp Theo
+## Bước tiếp theo
 
-Sẵn sàng làm việc với đội ngũ marketing AI của bạn? Chọn một agent và bắt đầu:
+Sẵn sàng làm việc với đội ngũ marketing AI của bạn? Hãy chọn một đại lý và bắt đầu ngay:
 
-1. [Campaign Manager](/vi/docs/marketing/agents/campaign-manager) - Điều phối chiến dịch tiếp theo của bạn
-2. [Copywriter](/vi/docs/marketing/agents/copywriter) - Viết copy chuyển đổi
-3. [SEO Specialist](/vi/docs/marketing/agents/seo-specialist) - Tăng xếp hạng tìm kiếm
+1. [Campaign Manager](/vi/docs/marketing/agents/campaign-manager) - Điều phối chiến dịch tiếp theo của bạn.
+2. [Copywriter](/vi/docs/marketing/agents/copywriter) - Viết nội dung quảng cáo chuyển đổi cao.
+3. [SEO Specialist](/vi/docs/marketing/agents/seo-specialist) - Tăng thứ hạng tìm kiếm của bạn.
 
-Đội ngũ marketing của bạn đã sẵn sàng. Hãy ship.
+Đội ngũ marketing của bạn đã sẵn sàng. Hãy bắt đầu thôi!

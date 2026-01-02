@@ -1,127 +1,123 @@
 ---
-title: Integrating Payment Processing
-description: "Documentation for Integrating Payment Processing
-description:
-section: workflows
-category: workflows
-order: 8
-published: true"
+title: Tích Hợp Xử Lý Thanh Toán
+description: "Tìm hiểu cách tích hợp xử lý thanh toán với ClaudeKit - từ thanh toán một lần đến gói đăng ký, webhooks và tối ưu hóa doanh thu."
+lang: vi
 section: workflows
 category: workflows
 order: 8
 published: true
 ---
 
-# Integrating Payment Processing
+# Tích Hợp Xử Lý Thanh Toán
 
-Learn how to integrate payment processing with ClaudeKit - from one-time payments to subscriptions, webhooks, and revenue optimization.
+Tìm hiểu cách tích hợp xử lý thanh toán với ClaudeKit - từ thanh toán một lần đến gói đăng ký (subscriptions), webhooks và tối ưu hóa doanh thu.
 
-## Overview
+## Tổng Quan
 
-**Goal**: Implement secure payment processing with provider integration
-**Time**: 25-50 minutes (vs 5-10 hours manually)
-**Agents Used**: planner, researcher, tester, code-reviewer
-**Commands**: /integrate:polar, /integrate:sepay, /cook, /test
+**Mục tiêu**: Triển khai xử lý thanh toán an toàn với việc tích hợp nhà cung cấp
+**Thời gian**: 25-50 phút (so với 5-10 giờ làm thủ công)
+**Agents sử dụng**: planner, researcher, tester, code-reviewer
+**Lệnh**: `/integrate:polar`, `/integrate:sepay`, `/cook`, `/test`
 
-## Prerequisites
+## Điều Kiện Tiên Quyết
 
-- Existing application with user accounts
-- Payment provider account (Stripe, Polar, etc.)
-- SSL certificate (required for payments)
-- Business/tax information configured
+- Ứng dụng hiện có với tài khoản người dùng
+- Tài khoản nhà cung cấp thanh toán (Stripe, Polar, v.v.)
+- Chứng chỉ SSL (bắt buộc cho thanh toán)
+- Thông tin doanh nghiệp/thuế đã được cấu hình
 
-## Payment Providers
+## Nhà Cung Cấp Thanh Toán
 
-| Provider | Best For | Features | Setup Time |
-|----------|----------|----------|------------|
-| Stripe | Global, feature-rich | Cards, wallets, subscriptions | 20-30 min |
-| Polar | Creator economy | Subscriptions, products | 15-25 min |
-| PayPal | Global recognition | Cards, PayPal balance | 20-30 min |
-| SePay | Vietnam market | Bank transfer, e-wallets | 15-20 min |
-| Square | In-person + online | POS integration | 25-35 min |
+| Nhà Cung Cấp | Tốt Nhất Cho | Tính Năng | Thời Gian Thiết Lập |
+|--------------|--------------|-----------|--------------------|
+| Stripe | Toàn cầu, giàu tính năng | Thẻ, ví điện tử, đăng ký | 20-30 phút |
+| Polar | Kinh tế sáng tạo (Creator) | Đăng ký, sản phẩm số | 15-25 phút |
+| PayPal | Nhận diện toàn cầu | Thẻ, số dư PayPal | 20-30 phút |
+| SePay | Thị trường Việt Nam | Chuyển khoản ngân hàng, ví điện tử | 15-20 phút |
+| Square | Trực tiếp + Online | Tích hợp POS | 25-35 phút |
 
-## Step-by-Step Workflow
+## Quy Trình Từng Bước
 
-### Step 1: Choose Payment Provider
+### Bước 1: Chọn Nhà Cung Cấp Thanh Toán
 
-Select provider based on your needs:
+Chọn nhà cung cấp dựa trên nhu cầu của bạn:
 
 ```bash
-# For SaaS subscriptions
-/plan [integrate Stripe for subscription billing]
+# Cho đăng ký SaaS
+/plan [tích hợp Stripe cho thanh toán đăng ký]
 
-# For creator platforms
+# Cho nền tảng sáng tạo (creators)
 /integrate:polar
 
-# For Vietnamese market
+# Cho thị trường Việt Nam
 /integrate:sepay
 
-# For general e-commerce
-/plan [integrate Stripe with PayPal fallback]
+# Cho thương mại điện tử nói chung
+/plan [tích hợp Stripe với PayPal làm dự phòng]
 ```
 
-### Step 2: Integrate Stripe (Most Common)
+### Bước 2: Tích Hợp Stripe (Phổ Biến Nhất)
 
 ```bash
-/cook [integrate Stripe payment processing with one-time and subscription payments]
+/cook [tích hợp xử lý thanh toán Stripe với thanh toán một lần và gói đăng ký]
 ```
 
-**Implementation**:
+**Triển khai**:
 ```
-[1/8] Setting up Stripe...
-  ✓ Installed Stripe SDK
-  ✓ Created Stripe configuration
-  ✓ Added API keys to environment
+[1/8] Thiết lập Stripe...
+  ✓ Đã cài đặt Stripe SDK
+  ✓ Đã tạo cấu hình Stripe
+  ✓ Đã thêm API keys vào môi trường
 
-[2/8] Database changes...
-  ✓ Created Payment model
-  ✓ Created Subscription model
-  ✓ Added stripeCustomerId to User
-  ✓ Migrations generated
+[2/8] Thay đổi Database...
+  ✓ Đã tạo model Payment
+  ✓ Đã tạo model Subscription
+  ✓ Đã thêm stripeCustomerId vào User
+  ✓ Đã tạo migrations
 
-[3/8] Payment endpoints...
+[3/8] Endpoints thanh toán...
   ✓ POST /api/payments/create-intent
   ✓ POST /api/payments/confirm
   ✓ GET /api/payments/:id
   ✓ GET /api/payments/history
 
-[4/8] Subscription endpoints...
+[4/8] Endpoints gói đăng ký...
   ✓ POST /api/subscriptions/create
   ✓ POST /api/subscriptions/cancel
   ✓ POST /api/subscriptions/update
   ✓ GET /api/subscriptions/current
 
-[5/8] Webhook handling...
+[5/8] Xử lý Webhook...
   ✓ POST /api/webhooks/stripe
-  ✓ Signature verification
-  ✓ Event processing
-  ✓ Idempotency handling
+  ✓ Xác thực chữ ký
+  ✓ Xử lý sự kiện
+  ✓ Xử lý tính lũy đẳng (Idempotency)
 
 [6/8] Frontend components...
-  ✓ Payment form component
-  ✓ Stripe Elements integration
-  ✓ Subscription management UI
-  ✓ Payment history display
+  ✓ Component form thanh toán
+  ✓ Tích hợp Stripe Elements
+  ✓ UI quản lý gói đăng ký
+  ✓ Hiển thị lịch sử thanh toán
 
-[7/8] Testing...
-  ✓ Payment flow tests (24 tests)
-  ✓ Webhook tests (16 tests)
-  ✓ Subscription tests (18 tests)
+[7/8] Kiểm thử (Testing)...
+  ✓ Tests luồng thanh toán (24 tests)
+  ✓ Tests webhook (16 tests)
+  ✓ Tests gói đăng ký (18 tests)
 
-[8/8] Documentation...
-  ✓ Payment integration guide
-  ✓ Webhook setup instructions
-  ✓ Testing guide
+[8/8] Tài liệu...
+  ✓ Hướng dẫn tích hợp thanh toán
+  ✓ Hướng dẫn thiết lập Webhook
+  ✓ Hướng dẫn kiểm thử
 
-✅ Stripe integration complete
+✅ Tích hợp Stripe hoàn tất
 
-Configuration needed (.env):
+Cấu hình cần thiết (.env):
 STRIPE_SECRET_KEY=sk_test_...
 STRIPE_PUBLISHABLE_KEY=pk_test_...
 STRIPE_WEBHOOK_SECRET=whsec_...
 ```
 
-**Generated files**:
+**Các tệp được tạo**:
 ```
 src/
 ├── services/
@@ -148,133 +144,133 @@ frontend/
 │   └── PaymentHistory.tsx
 ```
 
-### Step 3: Implement One-Time Payments
+### Bước 3: Triển Khai Thanh Toán Một Lần
 
 ```bash
-# Already done in Step 2, but can add specific features
-/cook [add invoice generation for one-time payments]
+# Đã thực hiện ở Bước 2, nhưng có thể thêm các tính năng cụ thể
+/cook [thêm tính năng tạo hóa đơn cho thanh toán một lần]
 ```
 
-**Payment flow**:
+**Luồng thanh toán**:
 ```javascript
 // Frontend
 const handlePayment = async (amount, currency) => {
-  // 1. Create payment intent
+  // 1. Tạo payment intent
   const { clientSecret } = await fetch('/api/payments/create-intent', {
     method: 'POST',
     body: JSON.stringify({ amount, currency })
   }).then(r => r.json());
 
-  // 2. Confirm with Stripe Elements
+  // 2. Xác nhận với Stripe Elements
   const { error, paymentIntent } = await stripe.confirmCardPayment(
     clientSecret,
     { payment_method: { card: cardElement } }
   );
 
-  // 3. Handle result
+  // 3. Xử lý kết quả
   if (error) {
     showError(error.message);
   } else if (paymentIntent.status === 'succeeded') {
-    showSuccess('Payment successful!');
+    showSuccess('Thanh toán thành công!');
   }
 };
 ```
 
-### Step 4: Implement Subscriptions
+### Bước 4: Triển Khai Gói Đăng Ký (Subscriptions)
 
 ```bash
-/cook [implement subscription tiers with monthly and annual billing]
+/cook [triển khai các cấp độ đăng ký với thanh toán hàng tháng và hàng năm]
 ```
 
-**Implementation**:
+**Triển khai**:
 ```
-[1/5] Subscription plans...
-  ✓ Created plan configuration
-  ✓ Synced with Stripe products
-  ✓ Price IDs configured
+[1/5] Các gói đăng ký...
+  ✓ Đã tạo cấu hình gói
+  ✓ Đồng bộ với sản phẩm trên Stripe
+  ✓ Cấu hình Price IDs
 
-Plans created:
-- Starter: $9/month or $90/year
-- Pro: $29/month or $290/year
-- Enterprise: $99/month or $990/year
+Các gói đã tạo:
+- Starter: $9/tháng hoặc $90/năm
+- Pro: $29/tháng hoặc $290/năm
+- Enterprise: $99/tháng hoặc $990/năm
 
-[2/5] Subscription flow...
-  ✓ Plan selection UI
-  ✓ Subscription creation
-  ✓ Trial period support (14 days)
-  ✓ Proration handling
+[2/5] Luồng đăng ký...
+  ✓ UI chọn gói
+  ✓ Tạo đăng ký
+  ✓ Hỗ trợ dùng thử (14 ngày)
+  ✓ Xử lý tính phí theo tỷ lệ (Proration)
 
-[3/5] Billing management...
-  ✓ Update payment method
-  ✓ Change plan (upgrade/downgrade)
-  ✓ Cancel subscription
-  ✓ Reactivate subscription
+[3/5] Quản lý thanh toán...
+  ✓ Cập nhật phương thức thanh toán
+  ✓ Thay đổi gói (nâng cấp/hạ cấp)
+  ✓ Hủy đăng ký
+  ✓ Kích hoạt lại đăng ký
 
-[4/5] Usage tracking...
-  ✓ Feature access control
-  ✓ Usage limits enforcement
-  ✓ Overage handling
+[4/5] Theo dõi sử dụng...
+  ✓ Kiểm soát quyền truy cập tính năng
+  ✓ Thực thi giới hạn sử dụng
+  ✓ Xử lý khi vượt giới hạn
 
-[5/5] Testing...
-  ✓ Subscription tests (22 tests)
+[5/5] Kiểm thử...
+  ✓ Tests gói đăng ký (22 tests)
 
-✅ Subscriptions implemented
+✅ Triển khai gói đăng ký hoàn tất
 ```
 
-### Step 5: Set Up Webhooks
+### Bước 5: Thiết Lập Webhooks
 
-Webhooks are critical for payment processing:
+Webhooks cực kỳ quan trọng để xử lý trạng thái thanh toán:
 
 ```bash
-/cook [implement comprehensive Stripe webhook handling]
+/cook [triển khai xử lý Stripe webhook toàn diện]
 ```
 
-**Webhook events handled**:
+**Các sự kiện Webhook được xử lý**:
 ```
 ✓ payment_intent.succeeded
-  - Mark payment as successful
-  - Grant access to product/service
-  - Send confirmation email
+  - Đánh dấu thanh toán thành công
+  - Cấp quyền truy cập sản phẩm/dịch vụ
+  - Gửi email xác nhận
 
 ✓ payment_intent.payment_failed
-  - Notify user of failure
-  - Log for investigation
-  - Retry if temporary failure
+  - Thông báo cho người dùng về lỗi
+  - Ghi log để điều tra
+  - Thử lại nếu là lỗi tạm thời
 
 ✓ customer.subscription.created
-  - Activate subscription
-  - Grant feature access
-  - Send welcome email
+  - Kích hoạt gói đăng ký
+  - Cấp quyền truy cập tính năng
+  - Gửi email chào mừng
 
 ✓ customer.subscription.updated
-  - Update subscription status
-  - Adjust feature access
-  - Handle plan changes
+  - Cập nhật trạng thái đăng ký
+  - Điều chỉnh quyền truy cập tính năng
+  - Xử lý thay đổi gói
 
 ✓ customer.subscription.deleted
-  - Deactivate subscription
-  - Remove feature access
-  - Send cancellation email
+  - Hủy kích hoạt gói đăng ký
+  - Gỡ bỏ quyền truy cập tính năng
+  - Gửi email thông báo hủy
 
 ✓ invoice.payment_succeeded
-  - Mark invoice as paid
-  - Extend subscription period
-  - Send receipt
+  - Đánh dấu hóa đơn đã thanh toán
+  - Gia hạn thời gian đăng ký
+  - Gửi biên lai
 
 ✓ invoice.payment_failed
-  - Notify user
-  - Attempt retry
-  - Suspend after final failure
+  - Thông báo cho người dùng
+  - Thực hiện thử lại
+  - Tạm dừng dịch vụ sau khi thử lại thất bại cuối cùng
 
 ✓ checkout.session.completed
-  - Process successful checkout
-  - Create customer record
-  - Send confirmation
+  - Xử lý checkout thành công
+  - Tạo hồ sơ khách hàng
+  - Gửi xác nhận
 ```
 
-**Webhook security**:
+**Bảo mật Webhook**:
 ```javascript
-// Verify webhook signature
+// Xác thực chữ ký webhook
 const verifyWebhook = (req) => {
   const signature = req.headers['stripe-signature'];
   const event = stripe.webhooks.constructEvent(
@@ -286,325 +282,325 @@ const verifyWebhook = (req) => {
 };
 ```
 
-### Step 6: Add Payment Methods
+### Bước 6: Thêm Các Phương Thức Thanh Toán
 
 ```bash
-/cook [add support for multiple payment methods - cards, Apple Pay, Google Pay]
+/cook [thêm hỗ trợ nhiều phương thức thanh toán - thẻ, Apple Pay, Google Pay]
 ```
 
-**Implementation**:
+**Triển khai**:
 ```
-[1/4] Payment methods...
-  ✓ Credit/debit cards (Visa, MC, Amex)
-  ✓ Apple Pay integration
-  ✓ Google Pay integration
-  ✓ Link (Stripe's payment method)
+[1/4] Các phương thức thanh toán...
+  ✓ Thẻ tín dụng/ghi nợ (Visa, MC, Amex)
+  ✓ Tích hợp Apple Pay
+  ✓ Tích hợp Google Pay
+  ✓ Link (phương thức thanh toán của Stripe)
 
-[2/4] Payment method management...
-  ✓ Save cards for future use
-  ✓ Multiple cards per customer
-  ✓ Default payment method
-  ✓ Remove payment methods
+[2/4] Quản lý phương thức thanh toán...
+  ✓ Lưu thẻ cho lần sau
+  ✓ Nhiều thẻ cho mỗi khách hàng
+  ✓ Phương thức thanh toán mặc định
+  ✓ Gỡ bỏ phương thức thanh toán
 
-[3/4] Checkout optimization...
-  ✓ Auto-detect payment method
-  ✓ One-click checkout
-  ✓ Remember me option
+[3/4] Tối ưu hóa Checkout...
+  ✓ Tự động phát hiện phương thức thanh toán
+  ✓ Checkout một lần nhấp
+  ✓ Tùy chọn ghi nhớ thông tin
 
-[4/4] Testing...
-  ✓ Payment method tests (14 tests)
+[4/4] Kiểm thử...
+  ✓ Tests phương thức thanh toán (14 tests)
 
-✅ Multiple payment methods added
+✅ Đã thêm nhiều phương thức thanh toán
 ```
 
-### Step 7: Implement Polar (for Creators)
+### Bước 7: Triển Khai Polar (Cho Nhà Sáng Tạo)
 
 ```bash
 /integrate:polar
 ```
 
-**Implementation**:
+**Triển khai**:
 ```
-[1/6] Polar setup...
-  ✓ Installed Polar SDK
-  ✓ Created Polar configuration
-  ✓ Connected to Polar API
+[1/6] Thiết lập Polar...
+  ✓ Đã cài đặt Polar SDK
+  ✓ Đã tạo cấu hình Polar
+  ✓ Đã kết nối với Polar API
 
-[2/6] Product management...
-  ✓ Digital products
-  ✓ Subscriptions
-  ✓ One-time purchases
-  ✓ Tiered pricing
+[2/6] Quản lý sản phẩm...
+  ✓ Sản phẩm kỹ thuật số
+  ✓ Gói đăng ký
+  ✓ Mua một lần
+  ✓ Định giá theo cấp độ
 
-[3/6] Checkout flow...
-  ✓ Polar Checkout integration
-  ✓ Embedded checkout option
-  ✓ Custom success pages
+[3/6] Luồng Checkout...
+  ✓ Tích hợp Polar Checkout
+  ✓ Tùy chọn checkout nhúng
+  ✓ Trang thành công tùy chỉnh
 
-[4/6] Webhook handling...
-  ✓ order.created event
-  ✓ subscription.created event
-  ✓ subscription.updated event
-  ✓ refund.created event
+[4/6] Xử lý Webhook...
+  ✓ Sự kiện order.created
+  ✓ Sự kiện subscription.created
+  ✓ Sự kiện subscription.updated
+  ✓ Sự kiện refund.created
 
-[5/6] Customer portal...
-  ✓ Subscription management
-  ✓ Invoice history
-  ✓ Update payment method
+[5/6] Cổng thông tin khách hàng...
+  ✓ Quản lý gói đăng ký
+  ✓ Lịch sử hóa đơn
+  ✓ Cập nhật phương thức thanh toán
 
-[6/6] Testing...
-  ✓ Polar integration tests (18 tests)
+[6/6] Kiểm thử...
+  ✓ Tests tích hợp Polar (18 tests)
 
-✅ Polar integration complete
+✅ Tích hợp Polar hoàn tất
 
-Configuration (.env):
+Cấu hình (.env):
 POLAR_ACCESS_TOKEN=polar_...
 POLAR_WEBHOOK_SECRET=whsec_...
 ```
 
-### Step 8: Add Vietnamese Payment (SePay)
+### Bước 8: Thêm Thanh Toán Việt Nam (SePay)
 
 ```bash
 /integrate:sepay
 ```
 
-**Implementation**:
+**Triển khai**:
 ```
-[1/5] SePay integration...
-  ✓ Bank transfer payments
-  ✓ E-wallet support (Momo, ZaloPay)
-  ✓ QR code generation
-  ✓ Transaction verification
+[1/5] Tích hợp SePay...
+  ✓ Thanh toán chuyển khoản ngân hàng
+  ✓ Hỗ trợ ví điện tử (Momo, ZaloPay)
+  ✓ Tạo mã QR
+  ✓ Xác minh giao dịch
 
-[2/5] Payment flow...
-  ✓ Create payment request
-  ✓ Display QR code
-  ✓ Poll for payment status
-  ✓ Auto-confirm on payment
+[2/5] Luồng thanh toán...
+  ✓ Tạo yêu cầu thanh toán
+  ✓ Hiển thị mã QR
+  ✓ Kiểm tra trạng thái thanh toán
+  ✓ Tự động xác nhận khi nhận được tiền
 
-[3/5] Webhook handling...
-  ✓ Payment confirmed webhook
-  ✓ Transaction updates
-  ✓ Refund notifications
+[3/5] Xử lý Webhook...
+  ✓ Webhook xác nhận thanh toán
+  ✓ Cập nhật giao dịch
+  ✓ Thông báo hoàn tiền
 
-[4/5] Vietnamese localization...
-  ✓ VND currency support
-  ✓ Vietnamese language UI
-  ✓ Local payment methods
+[4/5] Bản địa hóa Việt Nam...
+  ✓ Hỗ trợ tiền tệ VND
+  ✓ UI tiếng Việt
+  ✓ Các phương thức thanh toán nội địa
 
-[5/5] Testing...
-  ✓ SePay tests (12 tests)
+[5/5] Kiểm thử...
+  ✓ Tests SePay (12 tests)
 
-✅ SePay integration complete
+✅ Tích hợp SePay hoàn tất
 ```
 
-### Step 9: Add Revenue Optimization
+### Bước 9: Thêm Tối Ưu Hóa Doanh Thu
 
-#### Coupon/Discount System
+#### Hệ Thống Coupon/Giảm Giá
 
 ```bash
-/cook [implement coupon and discount code system]
+/cook [triển khai hệ thống mã coupon và giảm giá]
 ```
 
-#### Abandoned Cart Recovery
+#### Khôi Phục Giỏ Hàng Bị Bỏ Quên
 
 ```bash
-/cook [add abandoned checkout email automation]
+/cook [thêm tự động hóa email cho checkout bị bỏ quên]
 ```
 
 #### Upsell/Cross-sell
 
 ```bash
-/cook [implement checkout upsells and product recommendations]
+/cook [triển khai upsell tại trang thanh toán và gợi ý sản phẩm]
 ```
 
-#### Tax Calculation
+#### Tính Thuế
 
 ```bash
-/cook [add automatic tax calculation with TaxJar integration]
+/cook [thêm tính thuế tự động với tích hợp TaxJar]
 ```
 
-### Step 10: Analytics and Reporting
+### Bước 10: Phân Tích và Báo Cáo
 
 ```bash
-/cook [implement payment analytics dashboard]
+/cook [triển khai dashboard phân tích thanh toán]
 ```
 
-**Analytics features**:
+**Các tính năng phân tích**:
 ```
-✓ Revenue metrics (MRR, ARR)
-✓ Subscription metrics (churn, LTV)
-✓ Payment success rates
-✓ Failed payment analysis
-✓ Revenue forecasting
-✓ Customer lifetime value
-✓ Cohort analysis
-✓ Geographic revenue breakdown
+✓ Chỉ số doanh thu (MRR, ARR)
+✓ Chỉ số đăng ký (Churn rate, LTV)
+✓ Tỷ lệ thanh toán thành công
+✓ Phân tích các thanh toán thất bại
+✓ Dự báo doanh thu
+✓ Giá trị vòng đời khách hàng
+✓ Phân tích theo nhóm (Cohort analysis)
+✓ Phân tích doanh thu theo địa lý
 ```
 
-### Step 11: Testing Payments
+### Bước 11: Kiểm Thử Thanh Toán
 
 ```bash
 /test
 ```
 
-**Test coverage**:
+**Độ bao phủ kiểm thử**:
 ```
 ✓ Unit Tests (46 tests)
-  ✓ Payment intent creation (8 tests)
-  ✓ Subscription logic (12 tests)
-  ✓ Webhook processing (16 tests)
-  ✓ Coupon validation (10 tests)
+  ✓ Tạo payment intent (8 tests)
+  ✓ Logic gói đăng ký (12 tests)
+  ✓ Xử lý Webhook (16 tests)
+  ✓ Kiểm tra coupon (10 tests)
 
 ✓ Integration Tests (38 tests)
-  ✓ End-to-end payment flows (14 tests)
-  ✓ Subscription lifecycle (12 tests)
-  ✓ Refund processing (6 tests)
-  ✓ Multiple payment methods (6 tests)
+  ✓ Luồng thanh toán end-to-end (14 tests)
+  ✓ Vòng đời gói đăng ký (12 tests)
+  ✓ Xử lý hoàn tiền (6 tests)
+  ✓ Nhiều phương thức thanh toán (6 tests)
 
 ✓ Security Tests (12 tests)
-  ✓ Webhook signature verification (4 tests)
-  ✓ Payment authorization (4 tests)
-  ✓ Idempotency (4 tests)
+  ✓ Xác thực chữ ký Webhook (4 tests)
+  ✓ Ủy quyền thanh toán (4 tests)
+  ✓ Tính lũy đẳng (4 tests)
 
 Tests: 96 passed, 96 total
 Coverage: 92.4%
 
-✅ All payment tests passed
+✅ Tất cả các tests thanh toán đã vượt qua
 ```
 
-**Manual testing with test cards**:
+**Kiểm thử thủ công với thẻ test**:
 ```bash
-# Stripe test cards
-4242 4242 4242 4242  # Success
-4000 0000 0000 9995  # Decline
+# Thẻ test của Stripe
+4242 4242 4242 4242  # Thành công
+4000 0000 0000 9995  # Từ chối
 4000 0000 0000 3220  # 3D Secure
 
-# Test in Stripe Dashboard
-# Monitor webhook delivery
-# Verify payment flow
+# Kiểm tra trong Stripe Dashboard
+# Giám sát việc gửi Webhook
+# Xác minh luồng thanh toán
 ```
 
-### Step 12: Deploy to Production
+### Bước 12: Triển Khai Lên Production
 
 ```bash
-# Switch to production keys
-# Update .env
+# Chuyển sang live keys
+# Cập nhật .env
 STRIPE_SECRET_KEY=sk_live_...
 STRIPE_PUBLISHABLE_KEY=pk_live_...
 
-# Deploy
-/cook [deploy payment integration to production with security review]
+# Triển khai
+/cook [triển khai tích hợp thanh toán lên production với việc xem xét bảo mật]
 ```
 
-## Complete Example: SaaS Subscription Platform
+## Ví Dụ Hoàn Chỉnh: Nền Tảng Đăng Ký SaaS
 
-### Requirements
+### Yêu Cầu
 
 ```
-Implement payment system for SaaS platform:
-- Three subscription tiers
-- Monthly and annual billing
-- 14-day free trial
-- Usage-based add-ons
-- Team billing
-- Invoice generation
-- Automatic tax calculation
-- Multiple payment methods
-- Dunning management (failed payments)
+Triển khai hệ thống thanh toán cho nền tảng SaaS:
+- Ba cấp độ đăng ký
+- Thanh toán hàng tháng và hàng năm
+- Dùng thử miễn phí 14 ngày
+- Các tiện ích bổ sung dựa trên mức độ sử dụng
+- Thanh toán theo nhóm (Team billing)
+- Tạo hóa đơn (Invoice)
+- Tính thuế tự động
+- Nhiều phương thức thanh toán
+- Quản lý Dunning (thanh toán thất bại)
 ```
 
-### Implementation
+### Triển Khai
 
 ```bash
-# Plan implementation
-/plan [design payment system for SaaS with all requirements]
+# Lập kế hoạch triển khai
+/plan [thiết kế hệ thống thanh toán cho SaaS với tất cả các yêu cầu]
 
-# Integrate Stripe
-/cook [integrate Stripe with subscription and usage billing]
+# Tích hợp Stripe
+/cook [tích hợp Stripe với thanh toán đăng ký và sử dụng]
 
-# Subscription tiers
-/cook [create three subscription tiers with feature gates]
+# Cấp độ đăng ký
+/cook [tạo ba cấp độ đăng ký với tính năng bị chặn tương ứng]
 
-# Free trial
-/cook [implement 14-day free trial without requiring payment method]
+# Dùng thử miễn phí
+/cook [triển khai dùng thử 14 ngày không yêu cầu phương thức thanh toán]
 
-# Usage billing
-/cook [add usage-based billing for API calls]
+# Tính phí sử dụng
+/cook [thêm tính phí dựa trên số lượng lệnh gọi API]
 
-# Team billing
-/cook [implement team billing with seat management]
+# Thanh toán theo nhóm
+/cook [triển khai thanh toán theo nhóm với quản lý số lượng chỗ (seat)]
 
-# Invoicing
-/cook [add automatic invoice generation and email delivery]
+# Hóa đơn
+/cook [thêm tự động tạo hóa đơn và gửi qua email]
 
-# Tax calculation
-/cook [integrate TaxJar for automatic tax calculation]
+# Tính thuế
+/cook [tích hợp TaxJar để tính thuế tự động]
 
-# Payment methods
-/cook [add card, Apple Pay, Google Pay, and ACH support]
+# Các phương thức thanh toán
+/cook [thêm hỗ trợ thẻ, Apple Pay, Google Pay và ACH]
 
 # Dunning
-/cook [implement smart retry logic for failed payments]
+/cook [triển khai logic thử lại thông minh cho thanh toán thất bại]
 
-# Test everything
+# Kiểm thử mọi thứ
 /test
 
-# Deploy
-/cook [deploy to production with monitoring]
+# Triển khai
+/cook [triển khai lên production có giám sát]
 ```
 
-### Time Comparison
+### So Sánh Thời Gian
 
-**Manual implementation**: 8-14 hours
-- Stripe integration: 2-3 hours
-- Subscription logic: 2-3 hours
-- Webhooks: 2-3 hours
-- UI components: 1-2 hours
-- Testing: 1-2 hours
-- Debugging: 1-2 hours
+**Triển khai thủ công**: 8-14 giờ
+- Tích hợp Stripe: 2-3 giờ
+- Logic đăng ký: 2-3 giờ
+- Webhooks: 2-3 giờ
+- UI components: 1-2 giờ
+- Kiểm thử: 1-2 giờ
+- Debugging: 1-2 giờ
 
-**With ClaudeKit**: 48 minutes
-- Planning: 6 minutes
-- Stripe setup: 15 minutes
-- Subscriptions: 12 minutes
-- Webhooks: 8 minutes
-- Testing: 7 minutes
+**Với ClaudeKit**: 48 phút
+- Lập kế hoạch: 6 phút
+- Thiết lập Stripe: 15 phút
+- Gói đăng ký: 12 phút
+- Webhooks: 8 phút
+- Kiểm thử: 7 phút
 
-**Time saved**: 7-13 hours (88% faster)
+**Thời gian tiết kiệm**: 7-13 giờ (nhanh hơn 88%)
 
-## Payment Patterns
+## Các Mẫu Hình (Patterns) Thanh Toán
 
-### Pattern 1: Freemium Model
+### Mẫu 1: Mô Hình Freemium
 
 ```bash
-/cook [implement freemium model with upgrade prompts]
+/cook [triển khai mô hình freemium với các lời nhắc nâng cấp]
 ```
 
-### Pattern 2: Pay-What-You-Want
+### Mẫu 2: Trả Tiền Theo Ý Muốn (Pay-What-You-Want)
 
 ```bash
-/cook [add pay-what-you-want pricing with suggested amounts]
+/cook [thêm định giá trả tiền theo ý muốn với các mức đề xuất]
 ```
 
-### Pattern 3: Tiered Pricing
+### Mẫu 3: Định Giá Theo Bậc
 
 ```bash
-/cook [implement dynamic tiered pricing based on usage]
+/cook [triển khai định giá theo bậc động dựa trên mức độ sử dụng]
 ```
 
-### Pattern 4: Marketplace Payments
+### Mẫu 4: Thanh Toán Marketplace
 
 ```bash
-/cook [implement marketplace payments with split payouts using Stripe Connect]
+/cook [triển khai thanh toán marketplace với chia sẻ lợi nhuận sử dụng Stripe Connect]
 ```
 
-## Best Practices
+## Các Thực Hành Tốt Nhất (Best Practices)
 
-### 1. Idempotency
+### 1. Tính Lũy Đẳng (Idempotency)
 
 ```javascript
-// Ensure operations are idempotent
+// Đảm bảo các thao tác là lũy đẳng
 const createPayment = async (idempotencyKey, data) => {
   return stripe.paymentIntents.create(data, {
     idempotencyKey
@@ -612,12 +608,12 @@ const createPayment = async (idempotencyKey, data) => {
 };
 ```
 
-### 2. Webhook Retry Logic
+### 2. Logic Thử Lại Webhook
 
 ```javascript
-// Handle webhook retries gracefully
+// Xử lý thử lại Webhook một cách mượt mà
 const processWebhook = async (event) => {
-  // Check if already processed
+  // Kiểm tra xem đã xử lý chưa
   const existing = await Webhook.findOne({
     eventId: event.id
   });
@@ -626,112 +622,112 @@ const processWebhook = async (event) => {
     return { status: 'already_processed' };
   }
 
-  // Process and save
+  // Xử lý và lưu lại
   await processEvent(event);
   await Webhook.create({ eventId: event.id });
 };
 ```
 
-### 3. Failed Payment Handling
+### 3. Xử Lý Thanh Toán Thất Bại
 
 ```bash
-/cook [implement dunning management with smart retry and email notifications]
+/cook [triển khai quản lý dunning với thử lại thông minh và thông báo email]
 ```
 
-### 4. PCI Compliance
+### 4. Tuân Thủ PCI
 
 ```
-✓ Never store card details
-✓ Use Stripe Elements (PCI-compliant)
-✓ Tokenize payment info
-✓ HTTPS everywhere
-✓ Regular security audits
+✓ Không bao giờ lưu trữ chi tiết thẻ
+✓ Sử dụng Stripe Elements (tuân thủ PCI)
+✓ Mã hóa (Tokenize) thông tin thanh toán
+✓ HTTPS ở mọi nơi
+✓ Kiểm tra bảo mật định kỳ
 ```
 
-### 5. Transaction Monitoring
+### 5. Giám Sát Giao Dịch
 
 ```bash
-/cook [add fraud detection and transaction monitoring]
+/cook [thêm phát hiện gian lận và giám sát giao dịch]
 ```
 
-## Troubleshooting
+## Xử Lý Sự Cố
 
-### Issue: Webhook Not Receiving Events
+### Vấn Đề: Webhook Không Nhận Được Sự Kiện
 
-**Solution**:
+**Giải pháp**:
 ```bash
-# Test webhook locally with Stripe CLI
+# Kiểm thử webhook tại local với Stripe CLI
 stripe listen --forward-to localhost:3000/api/webhooks/stripe
 
-# Or fix with ClaudeKit
-/fix:fast [Stripe webhooks not being received]
+# Hoặc sửa với ClaudeKit
+/fix:fast [Stripe webhooks không nhận được sự kiện]
 ```
 
-### Issue: Payment Failing
+### Vấn Đề: Thanh Toán Thất Bại
 
-**Solution**:
+**Giải pháp**:
 ```bash
-/fix:logs [analyze payment failure logs and fix issues]
+/fix:logs [phân tích log thanh toán thất bại và sửa lỗi]
 ```
 
-### Issue: Double Charging
+### Vấn Đề: Bị Tính Phí Hai Lần
 
-**Solution**:
+**Giải pháp**:
 ```bash
-/fix:fast [prevent double charging with idempotency keys]
+/fix:fast [ngăn chặn việc tính phí hai lần bằng idempotency keys]
 ```
 
-### Issue: Tax Calculation Wrong
+### Vấn Đề: Tính Thuế Sai
 
-**Solution**:
+**Giải pháp**:
 ```bash
-/fix:fast [tax calculation incorrect for Canadian customers]
+/fix:fast [tính thuế không chính xác cho khách hàng tại Canada]
 ```
 
-## Security Checklist
+## Danh Mục Kiểm Tra Bảo Mật
 
-Before production:
+Trước khi lên production:
 
 ```bash
-✓ Using production API keys
-✓ Webhook signatures verified
-✓ HTTPS enforced
-✓ No card data stored
-✓ Stripe Elements used (PCI compliant)
-✓ Idempotency keys implemented
-✓ Rate limiting on payment endpoints
-✓ Transaction logging enabled
-✓ Fraud detection configured
-✓ 3D Secure enabled for EU
-✓ Refund policy documented
-✓ Terms of service updated
-✓ Privacy policy includes payment info
-✓ GDPR compliance for EU customers
-✓ Error messages don't leak info
-✓ Audit logging enabled
-✓ Failed payment retry logic
-✓ Customer dispute handling process
+✓ Đang sử dụng production API keys
+✓ Chữ ký Webhook đã được xác thực
+✓ Bắt buộc HTTPS
+✓ Không có dữ liệu thẻ nào được lưu trữ
+✓ Đã dùng Stripe Elements (tuân thủ PCI)
+✓ Đã triển khai Idempotency keys
+✓ Giới hạn tốc độ (Rate limiting) trên các endpoints thanh toán
+✓ Đã bật ghi log giao dịch
+✓ Đã cấu hình phát hiện gian lận
+✓ Đã bật 3D Secure cho khu vực EU
+✓ Chính sách hoàn tiền đã được viết tài liệu
+✓ Điều khoản dịch vụ đã được cập nhật
+✓ Chính sách bảo mật bao gồm thông tin thanh toán
+✓ Tuân thủ GDPR cho khách hàng EU
+✓ Thông báo lỗi không làm lộ thông tin nhạy cảm
+✓ Đã bật ghi log kiểm tra (Audit logging)
+✓ Logic thử lại thanh toán thất bại hoạt động tốt
+✓ Đã có quy trình xử lý tranh chấp của khách hàng
 ```
 
-## Next Steps
+## Bước Tiếp Theo
 
-### Related Use Cases
-- [Implementing Authentication](/docs/use-cases/implementing-auth) - User accounts
-- [Building a REST API](/docs/use-cases/building-api) - API development
-- [Adding a New Feature](/docs/use-cases/adding-feature) - Feature development
+### Các Trường Hợp Sử Dụng Liên Quan
+- [Triển khai Xác thực](/docs/use-cases/implementing-auth) - Tài khoản người dùng
+- [Xây dựng REST API](/docs/use-cases/building-api) - Phát triển API
+- [Thêm Tính Năng Mới](/docs/use-cases/adding-feature) - Phát triển tính năng
 
-### Related Commands
-- [/integrate:polar](/docs/engineer/commands/integrate/polar) - Polar integration
-- [/integrate:sepay](/docs/engineer/commands/integrate/sepay) - SePay integration
-- [/cook](/docs/engineer/commands/core/cook) - Custom features
-- [/test](/docs/engineer/commands/core/test) - Test suite
+### Các Lệnh Liên Quan
+- [/integrate:polar](/docs/engineer/commands/integrate/polar) - Tích hợp Polar
+- [/integrate:sepay](/docs/engineer/commands/integrate/sepay) - Tích hợp SePay
+- [/cook](/docs/engineer/commands/core/cook) - Các tính năng tùy chỉnh
+- [/test](/docs/engineer/commands/core/test) - Bộ kiểm thử
 
-### Further Reading
-- [Stripe Documentation](https://stripe.com/docs)
-- [Polar Documentation](https://docs.polar.sh)
-- [PCI DSS Compliance](https://www.pcisecuritystandards.org/)
-- [SCA Regulations](https://stripe.com/guides/strong-customer-authentication)
+### Đọc Thêm
+- [Tài liệu Stripe](https://stripe.com/docs)
+- [Tài liệu Polar](https://docs.polar.sh)
+- [Tuân thủ PCI DSS](https://www.pcisecuritystandards.org/)
+- [Quy định SCA](https://stripe.com/guides/strong-customer-authentication)
 
 ---
 
-**Key Takeaway**: ClaudeKit enables rapid payment integration with built-in security, webhook handling, and best practices - from simple one-time payments to complex subscription systems in under an hour.
+**Bài học chính**: ClaudeKit cho phép tích hợp thanh toán nhanh chóng với các tính năng bảo mật tích hợp, xử lý webhook và các thực hành tốt nhất - từ thanh toán một lần đơn giản đến các hệ thống đăng ký phức tạp chỉ trong vòng chưa đầy một giờ.

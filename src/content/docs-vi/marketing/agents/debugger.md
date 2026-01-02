@@ -1,230 +1,231 @@
 ---
-title: "Debugger"
+title: "Trình Gỡ Lỗi (Debugger)"
 description: "Điều tra các vấn đề kỹ thuật trong hệ thống tiếp thị, phân tích các vấn đề về hiệu suất và tối ưu hóa cơ sở hạ tầng"
 section: marketing
 category: agents
 order: 8
+lang: vi
 ---
 
-# Debugger
+# Debugger (Trình Gỡ Lỗi)
 
-> Thần thám phán kỹ thuật của bạn cho các vấn đề về cơ sở hạ tầng tiếp thị, lỗi hệ thống và các vấn đề về tích hợp.
+> Thám tử kỹ thuật của bạn cho các vấn đề về cơ sở hạ tầng tiếp thị, lỗi hệ thống và các vấn đề về tích hợp.
 
-## Công Việc Của Agent Này
+## Đại lý này làm gì
 
-**Vấn đề**: Nền tảng email của bạn dừng gửi. Phân tích trang đích của bạn không theo dõi. Tích hợp CRM bị hỏng qua đêm. Bạn đang mất khách hàng tiềm năng và không biết tại sao.
+**Vấn đề**: Nền tảng email của bạn ngừng gửi. Analytics trên trang đích không theo dõi được. Tích hợp CRM bị hỏng sau một đêm. Bạn đang mất khách hàng tiềm năng và không biết tại sao.
 
-Tiếp thị chạy trên cơ sở hạ tầng kỹ thuật phức tạp - API, cơ sở dữ liệu, công cụ của bên thứ ba, hệ thống theo dõi. Khi có gì đó hỏng, đội ngũ của bạn không có kiến thức kỹ thuật để chẩn đoán nó. Bạn mở các vé hỗ trợ và đợi. Trong khi đó, khách hàng tiềm năng bị mất.
+Tiếp thị chạy trên cơ sở hạ tầng kỹ thuật phức tạp - API, cơ sở dữ liệu, công cụ của bên thứ ba, hệ thống theo dõi. Khi có gì đó hỏng, đội ngũ của bạn không có đủ chiều sâu kỹ thuật để chẩn đoán. Bạn mở các phiếu hỗ trợ và chờ đợi. Trong khi đó, các khách hàng tiềm năng bị mất đi.
 
-**Giải pháp**: Debugger là kỹ sư cấp cao của bạn người điều tra các vấn đề về hệ thống tiếp thị, phân tích nhật ký, kiểm tra các cấu trúc cơ sở dữ liệu, chẩn đoán các lỗi tích hợp và cung cấp các giải pháp kỹ thuật. Hãy nghĩ về nó như có hỗ trợ kỹ thuật trực tiếp cho toàn bộ ngăn xếp tiếp thị của bạn.
+**Giải pháp**: Debugger là kỹ sư cấp cao của bạn, người điều tra các vấn đề về hệ thống tiếp thị, phân tích nhật ký, kiểm tra cấu trúc cơ sở dữ liệu, chẩn đoán lỗi tích hợp và cung cấp các giải pháp kỹ thuật. Hãy coi đó như việc có hỗ trợ kỹ thuật túc trực cho toàn bộ hệ thống tiếp thị (marketing stack) của bạn.
 
-Không còn chờ đợi trợ giúp từ kỹ thuật. Không còn mất khách hàng tiềm năng do các vấn đề kỹ thuật.
+Không còn chờ đợi sự trợ giúp từ kỹ thuật. Không còn mất khách hàng tiềm năng do các vấn đề kỹ thuật.
 
-## Bắt Đầu Nhanh
+## Bắt đầu nhanh
 
 Ví dụ 30 giây - chẩn đoán lỗi gửi email:
 
 ```
-Bạn: "Chiến dịch email được lên lịch lúc 10 sáng không gửi"
+Bạn: "Chiến dịch email được lên lịch lúc 10 sáng đã không được gửi"
 
-debugger: Điều tra lỗi hệ thống email...
+debugger: Đang điều tra lỗi hệ thống email...
 
-ĐÁNH GIÁ INITIAL:
-→ Vấn đề: Chiến dịch 5.000 người nhận không gửi được
-→ Tác động: CAO (công bố khởi động nhạy cảm về thời gian)
-→ Trạng thái: Chiến dịch được đánh dấu "Failed" trong dashboard
+ĐÁNH GIÁ BAN ĐẦU:
+→ Vấn đề: Chiến dịch gửi cho 5,000 người nhận không thành công
+→ Tác động: CAO (thông báo ra mắt quan trọng về thời gian)
+→ Trạng thái: Chiến dịch được đánh dấu "Thất bại" (Failed) trong dashboard
 
-COLLECTION DỮ LIỆU:
-→ Kiểm tra nhật ký nền tảng email...
-→ Đánh giá phản hồi API...
+THU THẬP DỮ LIỆU:
+→ Kiểm tra nhật ký (logs) nền tảng email...
+→ Xem xét các phản hồi API...
 → Kiểm tra các bản ghi cơ sở dữ liệu...
 → Kiểm tra kết nối dịch vụ email...
 
-ROOT CAUSE IDENTIFIED:
+XÁC ĐỊNH NGUYÊN NHÂN GỐC RỄ:
 
-Vấn đề: Xác thực API dịch vụ email không thành công
-Mã lỗi: 401 Không được phép
-Thông báo lỗi: "API key hết hạn"
+Vấn đề: Xác thực API dịch vụ email thất bại
+Mã lỗi: 401 Unauthorized
+Thông báo lỗi: "API key expired" (API key đã hết hạn)
 
 Dòng thời gian:
-→ 09:45 sáng: Chiến dịch được lên lịch
-→ 10:00 sáng: Gửi được kích hoạt
-→ 10:00 sáng: Xác thực API không thành công
-→ 10:01 sáng: Thử lại không thành công (3 lần cố gắng)
-→ 10:02 sáng: Chiến dịch được đánh dấu failed
+→ 09:45 AM: Lên lịch chiến dịch
+→ 10:00 AM: Kích hoạt gửi
+→ 10:00 AM: Xác thực API thất bại
+→ 10:01 AM: Thử lại thất bại (3 lần cố gắng)
+→ 10:02 AM: Chiến dịch được đánh dấu thất bại
 
 Phân tích kỹ thuật:
-→ API key: Hết hạn vào 15 tháng 3 (hôm qua)
-→ Thông báo: Cảnh báo hết hạn được gửi đến email nhóm cũ
-→ Giám sát: Không có cảnh báo được cấu hình cho các lỗi auth
+→ API key: Hết hạn vào ngày 15 tháng 3 (hôm qua)
+→ Thông báo: Cảnh báo hết hạn đã được gửi đến email nhóm cũ
+→ Giám sát: Chưa cấu hình cảnh báo cho các lỗi xác thực
 
-Bằng chứng (Nhật ký API):
-\`\`\`
+Bằng chứng (nhật ký API):
+```
 POST /v3/mail/send
 Authorization: Bearer sk_live_abc...expired
 Response: 401 Unauthorized
 Body: {"error": "API key expired. Generate new key at dashboard.sendgrid.com"}
-\`\`\`
+```
 
-FIX NGAY LẬP TỨC (< 5 phút):
+KHẮC PHỤC NGAY LẬP TỨC (< 5 phút):
 
 1. Tạo API key mới:
-   → Đăng nhập vào bảng điều khiển SendGrid
-   → Settings → API Keys → Tạo API Key
+   → Đăng nhập vào dashboard SendGrid
+   → Settings → API Keys → Create API Key
    → Sao chép key mới: sk_live_xyz...
 
 2. Cập nhật biến môi trường:
-   → Sản xuất: EMAIL_API_KEY=sk_live_xyz...
+   → Production: EMAIL_API_KEY=sk_live_xyz...
    → Khởi động lại dịch vụ email (nếu cần)
 
 3. Gửi lại chiến dịch:
    → Xác minh API key hoạt động (gửi thử)
    → Kích hoạt gửi lại chiến dịch
-   → Theo dõi 100 lần gửi đầu tiên để đảm bảo thành công
+   → Theo dõi 100 lượt gửi đầu tiên để đảm bảo thành công
 
-FIX DÀI HẠN:
+KHẮC PHỤC DÀI HẠN:
 
 1. Cập nhật địa chỉ email nhóm cho các thông báo API
 2. Thiết lập cảnh báo giám sát cho:
    → Lỗi xác thực API
-   → Hết hạn API key (cảnh báo 30 ngày)
-   → Tỷ lệ lỗi gửi email >5%
+   → Hết hạn API key (cảnh báo trước 30 ngày)
+   → Tỷ lệ gửi email thất bại >5%
 
-3. Tài liệu hóa quy trình xoay vòng API key
-4. Thêm hết hạn API key vào lịch (xem xét hàng quý)
+3. Tài liệu hóa quy trình thay đổi (rotation) API key
+4. Thêm thời hạn API key vào lịch (đánh giá hàng quý)
 
-BIỆN PHÁP PHÒNG CHỐNG:
+BIỆN PHÁP PHÒNG NGỪA:
 
-\`\`\`javascript
-// Thêm kiểm tra tình trạng sức khỏe API vào giám sát
+```javascript
+// Thêm kiểm tra sức khỏe API vào hệ thống giám sát
 
 async function checkEmailServiceHealth() {
   try {
     const response = await emailAPI.verify();
     if (!response.isValid) {
-      alert('Email API authentication issue');
+      alert('Vấn đề xác thực API Email');
     }
 
     // Kiểm tra hết hạn key
     const daysUntilExpiry = response.keyExpiresIn;
     if (daysUntilExpiry < 30) {
-      warn(\`Email API key expires in \${daysUntilExpiry} days\`);
+      warn(`API key Email sẽ hết hạn sau ${daysUntilExpiry} ngày`);
     }
   } catch (error) {
-    alert('Email service unreachable', error);
+    alert('Không thể kết nối dịch vụ Email', error);
   }
 }
 
-// Chạy kiểm tra tình trạng sức khỏe mỗi giờ
+// Chạy kiểm tra sức khỏe mỗi giờ
 setInterval(checkEmailServiceHealth, 60 * 60 * 1000);
-\`\`\`
+```
 
 ĐÁNH GIÁ TÁC ĐỘNG:
 
-Hiện tại: 5.000 người đăng ký miss email khởi động (trễ 1 giờ)
-Khôi phục dự kiến: Chiến dịch được gửi vào lúc 10:30 sáng
-Tác động về doanh thu: Tối thiểu nếu gửi trong 2 giờ
+Hiện tại: 5,000 người đăng ký đã bỏ lỡ email ra mắt (trễ 1 giờ)
+Phục hồi dự kiến: Chiến dịch được gửi trước 10:30 AM
+Tác động doanh thu: Tối thiểu nếu được gửi trong vòng 2 giờ
 
-HÀNH ĐỘNG YÊỚI:
+HÀNH ĐỘNG CẦN THIẾT:
 1. Tạo API key mới ngay lập tức
-2. Kiểm tra với lần gửi duy nhất
+2. Kiểm tra với một lượt gửi đơn lẻ
 3. Gửi lại chiến dịch cho toàn bộ danh sách
 
-Bạn muốn tôi hướng dẫn bạn qua quá trình tạo API key không?
+Bạn có muốn tôi hướng dẫn bạn cách tạo API key không?
 ```
 
-## Khả Năng
+## Khả năng
 
-### 1. System Diagnostics
+### 1. Chẩn đoán hệ thống
 
 Điều tra các vấn đề về cơ sở hạ tầng và tích hợp.
 
-**Ví dụ - CRM Integration Failure:**
+**Ví dụ - Lỗi tích hợp CRM:**
 ```
-Bạn: "Khách hàng tiềm năng từ trang đích dừng đồng bộ với HubSpot"
+Bạn: "Khách hàng tiềm năng từ trang đích đã ngừng đồng bộ hóa với HubSpot"
 
-debugger: Điều tra lỗi đồng bộ CRM...
+debugger: Đang điều tra lỗi đồng bộ CRM...
 
 QUY TRÌNH CHẨN ĐOÁN:
 
-1. Kiểm tra lượt gửi khách hàng tiềm năng gần đây:
+1. Kiểm tra các lượt đăng ký gần đây:
    → Lần đồng bộ thành công cuối cùng: 2 ngày trước
-   → Đồng bộ không thành công: 47 khách hàng tiềm năng trong 48 giờ qua
-   → Mẫu lỗi: Tất cả đều không thành công với cùng mã lỗi
+   → Các lượt đồng bộ thất bại: 47 khách hàng tiềm năng trong 48 giờ qua
+   → Mô hình lỗi: Tất cả đều thất bại với cùng một mã lỗi
 
 2. Phân tích nhật ký lỗi:
-   \`\`\`
-   [ERROR] HubSpot API: 429 Quá nhiều yêu cầu
-   Giới hạn tỷ lệ: 100 yêu cầu mỗi 10 giây
-   Retry-After: 8 giây
-   \`\`\`
+   ```
+   [ERROR] HubSpot API: 429 Too Many Requests
+   Rate limit: 100 requests per 10 seconds
+   Retry-After: 8 seconds
+   ```
 
-3. Đánh giá sử dụng API:
-   → Tỷ lệ hiện tại: 150 yêu cầu mỗi 10 giây
-   → Giới hạn HubSpot: 100 yêu cầu mỗi 10 giây
-   → Nguyên nhân: Lưu lượng trang đích tăng 60% (Black Friday)
+3. Xem xét việc sử dụng API:
+   → Tốc độ hiện tại: 150 yêu cầu mỗi 10 giây
+   → Giới hạn của HubSpot: 100 yêu cầu mỗi 10 giây
+   → Nguyên nhân: Lưu lượng truy cập trang đích tăng 60% (dịp Black Friday)
 
-ROOT CAUSE:
-→ Tăng đột biến lưu lượng vượt quá giới hạn tỷ lệ API
-→ Không triển khai logic thử lại
-→ Khách hàng tiềm năng không thành công không được xếp hàng chờ thử lại
+NGUYÊN NHÂN GỐC RỄ:
+→ Lưu lượng tăng đột biến vượt quá giới hạn tốc độ (rate limit) của API
+→ Chưa triển khai logic thử lại (retry logic)
+→ Các khách hàng tiềm năng thất bại không được đưa vào hàng đợi để thử lại
 
-SOLUTION:
+GIẢI PHÁP:
 
-Sửa chữa ngay lập tức (thử lại khách hàng tiềm năng không thành công):
-\`\`\`javascript
-// Hàng chờ thử lại cho các đồng bộ không thành công
-const failedLeads = await getFailedLeads(48); // hours
+Khắc phục ngay lập tức (thử lại cho các khách hàng thất bại):
+```javascript
+// Hàng đợi thử lại cho các lượt đồng bộ thất bại
+const failedLeads = await getFailedLeads(48); // giờ
 
 for (const lead of failedLeads) {
   await retryWithBackoff(async () => {
     await hubspot.createContact(lead);
   }, { maxRetries: 3, baseDelay: 2000 });
 }
-\`\`\`
+```
 
-Sửa chữa dài hạn (triển khai giới hạn tỷ lệ):
-\`\`\`javascript
-// Triển khai giới hạn tỷ lệ
+Khắc phục dài hạn (triển khai giới hạn tốc độ):
+```javascript
+// Triển khai bộ giới hạn tốc độ (Rate Limiter)
 const rateLimiter = new RateLimiter({
-  tokensPerInterval: 90, // Dưới giới hạn để đảm bảo
+  tokensPerInterval: 90, // Dưới giới hạn để đảm bảo an toàn
   interval: 10000, // 10 giây
   fireImmediately: true
 });
 
 async function syncToHubSpot(lead) {
-  await rateLimiter.removeTokens(1); // Chờ slot giới hạn tỷ lệ
+  await rateLimiter.removeTokens(1); // Chờ đến lượt theo giới hạn tốc độ
   try {
     await hubspot.createContact(lead);
   } catch (error) {
     if (error.statusCode === 429) {
-      // Xếp hàng chờ thử lại thay vì thất bại
+      // Đưa vào hàng đợi thử lại thay vì báo lỗi ngay
       await queueForRetry(lead);
     }
     throw error;
   }
 }
-\`\`\`
+```
 
 KẾT QUẢ DỰ KIẾN:
-→ 47 khách hàng tiềm năng không thành công được đồng bộ trong 30 phút
-→ Khách hàng tiềm năng trong tương lai đồng bộ với tuân thủ giới hạn tỷ lệ
+→ 47 khách hàng tiềm năng thất bại được đồng bộ trong vòng 30 phút
+→ Các khách hàng tương lai được đồng bộ tuân thủ giới hạn tốc độ
 → Không còn lỗi 429
 ```
 
-### 2. Database Analysis
+### 2. Phân tích cơ sở dữ liệu
 
-Truy vấn cơ sở dữ liệu để có thông tin chi tiết và khắc phục sự cố.
+Truy vấn cơ sở dữ liệu để tìm hiểu thông tin và khắc phục sự cố.
 
 **Ví dụ:**
 ```
-Bạn: "Tại sao tỷ lệ mở email trong dashboard khác với SendGrid?"
+Bạn: "Tại sao tỷ lệ mở email trong dashboard lại khác với SendGrid?"
 
-debugger: Điều tra sự khác biệt dữ liệu...
+debugger: Đang điều tra sự sai lệch dữ liệu...
 
-QUERY DATABASE:
+TRUY VẤN CƠ SỞ DỮ LIỆU:
 
-\`\`\`sql
+```sql
 -- Kiểm tra dữ liệu theo dõi email
 SELECT
   campaign_id,
@@ -233,25 +234,25 @@ SELECT
   opened * 100.0 / total_sent AS open_rate_db
 FROM email_campaigns
 WHERE sent_at > NOW() - INTERVAL '7 days';
-\`\`\`
+```
 
-Kết quả (Cơ sở dữ liệu của chúng tôi):
-→ Chiến dịch: Khởi động Sản phẩm
-→ Tổng được gửi: 10.000
-→ Mở: 2.800
+Kết quả (Cơ sở dữ liệu của chúng ta):
+→ Chiến dịch: Ra mắt sản phẩm
+→ Tổng lượt gửi: 10,000
+→ Đã mở: 2,800
 → Tỷ lệ mở: 28%
 
-Bảng điều khiển SendGrid:
-→ Tổng được gửi: 10.000
-→ Mở: 1.200
+Dashboard SendGrid:
+→ Tổng lượt gửi: 10,000
+→ Đã mở: 1,200
 → Tỷ lệ mở: 12%
 
-SỰ KHÁC BIỆT ĐƯỢC TÌM THẤY: 16% chênh lệch
+PHÁT HIỆN SAI LỆCH: chênh lệch 16%
 
-PHÂN TÍCH ROOT CAUSE:
+PHÂN TÍCH NGUYÊN NHÂN GỐC RỄ:
 
 Truy vấn nhật ký pixel theo dõi:
-\`\`\`sql
+```sql
 -- Kiểm tra các lần kích hoạt pixel theo dõi
 SELECT
   campaign_id,
@@ -260,44 +261,44 @@ SELECT
 FROM email_tracking_pixels
 WHERE campaign_id = 'product-launch'
 GROUP BY campaign_id;
-\`\`\`
+```
 
 Kết quả:
-→ Mở duy nhất: 2.800 ✓ (khớp với cơ sở dữ liệu)
-→ Tổng mở: 8.400 (mỗi người dùng mở nhiều lần)
+→ Lượt mở duy nhất: 2,800 ✓ (khớp với cơ sở dữ liệu)
+→ Tổng lượt mở: 8,400 (nhiều lượt mở trên mỗi người dùng)
 
 Truy vấn API SendGrid:
-\`\`\`javascript
+```javascript
 const stats = await sendgrid.campaigns.get('product-launch').stats();
 console.log(stats.unique_opens); // 1,200
-\`\`\`
+```
 
 VẤN ĐỀ ĐƯỢC XÁC ĐỊNH:
 
-Hai hệ thống theo dõi đang chạy:
-1. Theo dõi gốc SendGrid (1.200 mở)
-2. Pixel theo dõi tùy chỉnh (2.800 mở)
+Hai hệ thống theo dõi đang chạy song song:
+1. Theo dõi gốc của SendGrid (1,200 lượt mở)
+2. Pixel theo dõi tùy chỉnh (2,800 lượt mở)
 
-Pixel tùy chỉnh đang đếm kép:
-→ Tìm nạp trước máy khách email (Apple Mail Privacy Protection)
-→ Mở Bot/máy quét (bộ quét bảo mật)
-→ Dịch vụ proxy hình ảnh (Gmail, Outlook)
+Pixel tùy chỉnh đang đếm thừa:
+→ Việc nạp trước (pre-fetch) của ứng dụng email (như Apple Mail Privacy Protection)
+→ Lượt mở từ bot/máy quét (máy quét bảo mật)
+→ Các dịch vụ proxy hình ảnh (Gmail, Outlook)
 
-SendGrid lọc những cái này, pixel tùy chỉnh thì không.
+SendGrid lọc bỏ những lượt này, nhưng pixel tùy chỉnh thì không.
 
-SOLUTION:
+GIẢI PHÁP:
 
-Tin tưởng dữ liệu SendGrid (chính xác):
+Tin dùng dữ liệu từ SendGrid (chính xác hơn):
 → Tỷ lệ mở: 12% (chính xác)
-→ Bảng điều khiển của bạn: 28% (bị thổi phồng)
+→ Dashboard của bạn: 28% (bị thổi phồng)
 
-Sửa bảng điều khiển để sử dụng SendGrid làm nguồn chân lý:
-\`\`\`javascript
-// Đồng bộ từ SendGrid thay vì theo dõi tùy chỉnh
+Sửa dashboard để sử dụng SendGrid làm nguồn dữ liệu chuẩn:
+```javascript
+// Đồng bộ từ SendGrid thay vì dùng pixel theo dõi tùy chỉnh
 async function updateCampaignStats(campaignId) {
   const stats = await sendgrid.campaigns.get(campaignId).stats();
 
-  await db.execute(\`
+  await db.execute(`
     UPDATE email_campaigns
     SET
       opened = ?,
@@ -305,206 +306,206 @@ async function updateCampaignStats(campaignId) {
       bounced = ?,
       updated_at = NOW()
     WHERE campaign_id = ?
-  \`, [stats.unique_opens, stats.unique_clicks, stats.bounces, campaignId]);
+  `, [stats.unique_opens, stats.unique_clicks, stats.bounces, campaignId]);
 }
-\`\`\`
-
-KHUYẾN NGHỊ: Loại bỏ pixel theo dõi tùy chỉnh, sử dụng sự kiện webhook SendGrid thay thế.
 ```
 
-### 3. Performance Debugging
+KHUYẾN NGHỊ: Loại bỏ pixel theo dõi tùy chỉnh, thay vào đó hãy sử dụng sự kiện webhook của SendGrid.
+```
+
+### 3. Gỡ lỗi hiệu suất
 
 Xác định các nút thắt cổ chai và cơ hội tối ưu hóa.
 
-**Ví dụ - Slow Landing Page Load:**
+**Ví dụ - Trang đích tải chậm:**
 ```
 Bạn: "Trang đích mất 12 giây để tải"
 
-debugger: Phân tích nút thắt cổ chai hiệu suất...
+debugger: Đang phân tích nút thắt cổ chai hiệu suất...
 
-PROFILING HIỆU SUẤT:
+PHÂN TÍCH HIỆU SUẤT (PROFILING):
 
 Sử dụng Chrome DevTools + Lighthouse:
 
-1. Phân tích thác nước mạng:
+1. Phân tích luồng mạng (network waterfall):
    → HTML: 200ms ✓
-   → CSS: 1.2s (blocking) ✗
-   → JavaScript: 8.4s (blocking) ✗
+   → CSS: 1.2s (chặn hiển thị) ✗
+   → JavaScript: 8.4s (chặn hiển thị) ✗
    → Hình ảnh: 3.8s ✗
-   → Script của bên thứ ba: 4.2s ✗
+   → Script bên thứ ba: 4.2s ✗
 
-2. Tài nguyên blocking được xác định:
-   \`\`\`
+2. Xác định các tài nguyên gây nghẽn:
+   ```
    <script src="analytics.js"> (1.2s)
    <script src="chatbot.js"> (3.8s)
    <script src="heatmap.js"> (1.6s)
    <link rel="stylesheet" href="styles.css"> (1.2s)
-   \`\`\`
+   ```
 
 3. Hiệu suất truy vấn cơ sở dữ liệu:
-   → Tải trang kích hoạt 8 truy vấn cơ sở dữ liệu
-   → Truy vấn 1: 200ms (testimonials) ✗
-   → Truy vấn 2: 150ms (features) ✗
-   → Truy vấn 3-8: <10ms mỗi cái ✓
+   → Việc tải trang kích hoạt 8 truy vấn DB
+   → Truy vấn 1: 200ms (lấy lời chứng thực) ✗
+   → Truy vấn 2: 150ms (lấy tính năng) ✗
+   → Truy vấn 3-8: mỗi truy vấn <10ms ✓
 
-ROOT CAUSE:
+NGUYÊN NHÂN GỐC RỄ:
 
-Vấn đề blocking nhiều:
-1. Script đồng bộ trong <head> (6.6s tổng cộng)
-2. Hình ảnh không được tối ưu hóa (3.8s)
-3. Truy vấn cơ sở dữ liệu N+1 (testimonials đang tải)
-4. Không có bộ nhớ cache được bật
+Nhiều vấn đề gây nghẽn:
+1. Các script đồng bộ đặt trong thẻ <head> (tổng cộng 6.6s)
+2. Hình ảnh chưa được tối ưu hóa (3.8s)
+3. Các truy vấn DB kiểu N+1 (tải lời chứng thực)
+4. Chưa bật bộ nhớ đệm (caching)
 
 TỐI ƯU HÓA:
 
-1. Hoãn script không quan trọng:
-\`\`\`html
+1. Trì hoãn các script không quan trọng:
+```html
 <!-- Trước -->
 <script src="chatbot.js"></script>
 
 <!-- Sau -->
 <script defer src="chatbot.js"></script>
-\`\`\`
+```
 
-2. Triển khai bộ nhớ cache:
-\`\`\`javascript
-// Bộ nhớ cache testimonials (thay đổi hiếm khi)
+2. Triển khai bộ nhớ đệm:
+```javascript
+// Lưu lời chứng thực vào cache (vì chúng hiếm khi thay đổi)
 const testimonials = await cache.get('testimonials', async () => {
   return await db.query('SELECT * FROM testimonials LIMIT 5');
-}, { ttl: 3600 }); // Bộ nhớ cache 1 giờ
-\`\`\`
+}, { ttl: 3600 }); // Cache trong 1 giờ
+```
 
 3. Tối ưu hóa hình ảnh:
-\`\`\`html
-<!-- Sử dụng WebP, lazy loading, responsive sizes -->
+```html
+<!-- Sử dụng WebP, lazy loading, kích thước tương thích -->
 <picture>
   <source srcset="hero-800w.webp 800w, hero-1200w.webp 1200w" type="image/webp">
   <img src="hero-800w.jpg" loading="lazy" alt="Hero">
 </picture>
-\`\`\`
+```
 
-4. Preconnect to third-party domains:
-\`\`\`html
+4. Kết nối trước (preconnect) tới các tên miền bên thứ ba:
+```html
 <link rel="preconnect" href="https://analytics.example.com">
 <link rel="preconnect" href="https://chatbot.example.com">
-\`\`\`
+```
 
 CẢI THIỆN DỰ KIẾN:
 
-Trước: 12 giây thời gian tải
-Sau khi tối ưu hóa: 2,1 giây (-82%)
+Trước: 12 giây tải trang
+Sau khi tối ưu: 2.1 giây (-82%)
 
 Điểm Lighthouse:
 → Trước: 28/100
 → Sau: 92/100
 
 Tác động chuyển đổi:
-→ Mỗi khoảng 1 giây delay = ~7% mất chuyển đổi
-→ Hiện tại: 12 giây → ~60% mất chuyển đổi
-→ Sau: 2 giây → ~7% mất chuyển đổi
-→ Nâng cao chuyển đổi dự kiến: +53%
+→ Mỗi 1 giây trễ = ~7% tổn thất chuyển đổi
+→ Hiện tại: 12s → ~60% tổn thất
+→ Sau khi tối ưu: 2s → ~7% tổn thất
+→ Mức tăng trưởng chuyển đổi kỳ vọng: +53%
 ```
 
-### 4. Integration Testing
+### 4. Kiểm tra tích hợp
 
-Xác minh các kết nối công cụ của bên thứ ba hoạt động chính xác.
+Xác minh các kết nối công cụ bên thứ ba hoạt động chính xác.
 
 **Ví dụ:**
 ```
-Bạn: "Kiểm tra xem tất cả các tích hợp tiếp thị của chúng tôi có hoạt động không"
+Bạn: "Hãy kiểm tra xem tất cả các tích hợp tiếp thị của chúng ta có đang hoạt động không"
 
-debugger: Chạy kiểm tra tình trạng sức khỏe tích hợp...
+debugger: Đang chạy kiểm tra sức khỏe các tích hợp...
 
 KẾT QUẢ KIỂM TRA TÍCH HỢP:
 
 1. SendGrid (Email):
    ✓ Xác thực API thành công
-   ✓ Email thử được gửi
-   ✓ Endpoint webhook phản hồi
-   ⚠ Miền người gửi không được xác minh (ảnh hưởng khả năng gửi)
+   ✓ Email thử đã được gửi
+   ✓ Webhook endpoint đang phản hồi
+   ⚠ Tên miền người gửi chưa được xác minh (ảnh hưởng đến khả năng vào inbox)
 
 2. HubSpot (CRM):
    ✓ Kết nối API thành công
-   ✓ Đồng bộ liên hệ hoạt động
-   ✗ Thuộc tính tùy chỉnh bị thiếu (last_campaign_clicked)
+   ✓ Đồng bộ liên hệ đang hoạt động
+   ✗ Thiếu các thuộc tính tùy chỉnh (last_campaign_clicked)
 
 3. Google Analytics 4:
-   ✓ Mã theo dõi được cài đặt
-   ✗ Sự kiện không kích hoạt (theo dõi chuyển đổi bị hỏng)
+   ✓ Mã theo dõi đã được cài đặt
+   ✗ Các sự kiện không kích hoạt (theo dõi chuyển đổi bị hỏng)
    Lỗi: ID đo lường GA4 không khớp
 
 4. Facebook Pixel:
-   ✓ Pixel được cài đặt
-   ✓ Sự kiện PageView kích hoạt
-   ⚠ Sự kiện Mua bị thiếu thông số
+   ✓ Pixel đã cài đặt
+   ✓ Sự kiện PageView đang kích hoạt
+   ⚠ Sự kiện Mua hàng (Purchase) thiếu các tham số
 
-5. Stripe (Payments):
+5. Stripe (Thanh toán):
    ✓ API keys hợp lệ
-   ✓ Webhook nhận sự kiện
-   ✓ Tất cả các kiểm tra đều vượt qua
+   ✓ Webhook đang nhận sự kiện
+   ✓ Tất cả các bài kiểm tra đều đạt
 
 6. Intercom (Chat):
-   ✗ Widget không tải (Chính sách CSP chặn)
+   ✗ Widget không tải (do chính sách CSP chặn)
 
 KHUYẾN NGHỊ:
 
 Ưu tiên cao:
-1. Sửa ID đo lường GA4 (phân tích không theo dõi)
-2. Mở khóa widget Intercom (hỗ trợ khách hàng không khả dụng)
-3. Thêm thuộc tính tùy chỉnh HubSpot (báo cáo không đầy đủ)
+1. Sửa ID đo lường GA4 (analytics đang không theo dõi được)
+2. Mở chặn widget Intercom (không thể hỗ trợ khách hàng)
+3. Thêm các thuộc tính tùy chỉnh vào HubSpot (báo cáo bị thiếu thông tin)
 
 Ưu tiên trung bình:
-4. Xác minh miền người gửi SendGrid
-5. Thêm tham số Mua Facebook Pixel
+4. Xác minh tên miền người gửi trên SendGrid
+5. Thêm các tham số cho sự kiện Mua hàng trên Facebook Pixel
 
-Bạn có muốn tôi giúp bạn sửa các vấn đề này từng cái một không?
+Bạn có muốn tôi giúp khắc phục từng vấn đề này không?
 ```
 
-### 5. Log Analysis
+### 5. Phân tích nhật ký (Log Analysis)
 
-Thu thập và phân tích nhật ký từ các hệ thống khác nhau.
+Thu thập và phân tích nhật ký từ nhiều hệ thống khác nhau.
 
 **Ví dụ:**
 ```
-Bạn: "Tìm lý do tại sao chuyển đổi thanh toán giảm hôm qua"
+Bạn: "Tìm hiểu xem tại sao tỷ lệ chuyển đổi thanh toán lại giảm vào ngày hôm qua"
 
-debugger: Phân tích nhật ký hệ thống...
+debugger: Đang phân tích nhật ký hệ thống...
 
-COLLECT NHẬT KÝ:
+THU THẬP NHẬT KÝ:
 
 1. Nhật ký ứng dụng (48 giờ qua):
-\`\`\`
+```
 grep "checkout" /var/log/app.log | grep "error"
-\`\`\`
+```
 
-Tìm thấy 847 lỗi trong 24 giờ qua (bình thường: 12/ngày)
+Tìm thấy 847 lỗi trong 24 giờ qua (bình thường: 12 lỗi/ngày)
 
-2. Lỗi mẫu:
-\`\`\`
+2. Các lỗi tiêu biểu:
+```
 [ERROR] Stripe API: card_declined (code: generic_decline) - 412 lần xuất hiện
 [ERROR] Timeout connecting to payment-gateway.com - 287 lần xuất hiện
 [ERROR] Database connection pool exhausted - 148 lần xuất hiện
-\`\`\`
+```
 
-3. Tương quan dòng thời gian:
-→ 15:00: Tỷ lệ lỗi bình thường (1-2 mỗi giờ)
-→ 16:00: Tăng lỗi bắt đầu (+800%)
-→ 16:05: Nhóm kết nối cơ sở dữ liệu cạn kiệt
-→ 16:30: Timeout Stripe tăng
+3. Đối chiếu dòng thời gian:
+→ 15:00: Tỷ lệ lỗi bình thường (1-2 lỗi mỗi giờ)
+→ 16:00: Lỗi bắt đầu tăng vọt (+800%)
+→ 16:05: Nhóm kết nối DB (connection pool) cạn kiệt
+→ 16:30: Các lỗi timeout của Stripe tăng lên
 → 17:00: Tỷ lệ chuyển đổi giảm 60%
 
-ROOT CAUSE:
+NGUYÊN NHÂN GỐC RỄ:
 
-Rò rỉ kết nối cơ sở dữ liệu:
+Rò rỉ kết nối cơ sở dữ liệu (Database connection leak):
 → Quy trình thanh toán mở kết nối DB
-→ Nếu thanh toán không thành công, kết nối không được phát hành
-→ Nhóm cạn kiệt sau 150 giao dịch không thành công
-→ Thanh toán mới không thể lấy kết nối DB
-→ Cuộc gọi API Stripe hết thời gian chờ kết nối DB
+→ Nếu thanh toán thất bại, kết nối không được giải phóng
+→ Nhóm kết nối cạn kiệt sau 150 giao dịch thất bại
+→ Các lượt thanh toán mới không thể lấy được kết nối DB
+→ Các cuộc gọi API Stripe bị timeout khi chờ kết nối DB
 
-VẤN ĐỀ MÃ:
-\`\`\`javascript
-// Lỗi: Kết nối không được phát hành khi lỗi
+VẤN ĐỀ TRONG CODE:
+```javascript
+// Lỗi: Kết nối không được giải phóng khi xảy ra lỗi
 async function processCheckout(order) {
   const conn = await db.getConnection();
   try {
@@ -516,10 +517,10 @@ async function processCheckout(order) {
   }
   conn.release();
 }
-\`\`\`
+```
 
-SỬA CHỮA:
-\`\`\`javascript
+SỬA LỖI:
+```javascript
 async function processCheckout(order) {
   const conn = await db.getConnection();
   try {
@@ -528,122 +529,122 @@ async function processCheckout(order) {
   } catch (error) {
     throw error;
   } finally {
-    conn.release(); // Luôn phát hành, thậm chí khi lỗi
+    conn.release(); // Luôn giải phóng kết nối, ngay cả khi có lỗi
   }
 }
-\`\`\`
+```
 
 KẾ HOẠCH PHỤC HỒI:
-1. Triển khai sửa chữa ngay lập tức
-2. Khởi động lại máy chủ ứng dụng (xóa các kết nối bị kẹt)
-3. Theo dõi sử dụng nhóm kết nối
-4. Thêm cảnh báo cho cạn kiệt nhóm
+1. Triển khai bản sửa lỗi ngay lập tức
+2. Khởi động lại máy chủ ứng dụng (để xóa các kết nối bị kẹt)
+3. Giám sát việc sử dụng nhóm kết nối
+4. Thêm cảnh báo khi nhóm kết nối sắp cạn kiệt
 
 TÁC ĐỘNG:
-→ Mất chuyển đổi: ~200 (ước tính)
-→ Mất doanh thu: $24.000 (đơn hàng bình quân $120)
-→ Thời gian sửa: 30 phút
+→ Chuyển đổi bị mất: ~200 lượt (ước tính)
+→ Doanh thu bị mất: $24,000 (đơn hàng trung bình $120)
+→ Thời gian xử lý: 30 phút
 ```
 
-## Khi Nào Sử Dụng Debugger
+## Khi nào nên sử dụng Debugger
 
-**Perfect for:**
-- Lỗi tích hợp email/CRM
-- Vấn đề kỹ thuật trang đích
-- Vấn đề theo dõi phân tích
+**Hoàn hảo cho:**
+- Lỗi tích hợp Email/CRM
+- Các vấn đề kỹ thuật trên trang đích
+- Các vấn đề theo dõi (tracking) của Analytics
 - Tối ưu hóa truy vấn cơ sở dữ liệu
-- Suy giảm hiệu suất hệ thống
-- Gỡ lỗi API của bên thứ ba
+- Tình trạng suy giảm hiệu suất hệ thống
+- Gỡ lỗi API bên thứ ba
 
-**Not needed for:**
-- Vấn đề hiệu suất chiến dịch (sử dụng Campaign Debugger)
-- Vấn đề chất lượng nội dung (sử dụng Content Reviewer)
-- Câu hỏi chiến lược (sử dụng Brainstormer)
+**Không cần thiết cho:**
+- Các vấn đề hiệu suất chiến dịch (hãy dùng Campaign Debugger)
+- Vấn đề chất lượng nội dung (hãy dùng Content Reviewer)
+- Các câu hỏi mang tính chiến lược (hãy dùng Brainstormer)
 
-## Ví Dụ Quy Trình Làm Việc
+## Ví dụ quy trình làm việc
 
-### Workflow 1: Email System Down
+### Quy trình 1: Hệ thống Email gặp sự cố
 
 ```
-1. Bạn: "Emails aren't sending"
+1. Bạn: "Email không được gửi đi"
 
-2. debugger: Emergency diagnostics
+2. debugger: Thực hiện chẩn đoán khẩn cấp
    - Kiểm tra trạng thái dịch vụ email
    - Kiểm tra xác thực API
    - Xem xét nhật ký lỗi
-   - Xác định API key hết hạn
+   - Xác định API key đã hết hạn
 
-3. Output:
-   ROOT CAUSE: API key hết hạn
-   FIX: Tạo key mới (5 phút)
-   IMPACT: 5.000 email không gửi
+3. Kết quả:
+   NGUYÊN NHÂN: API key hết hạn
+   KHẮC PHỤC: Tạo key mới (5 phút)
+   TÁC ĐỘNG: 5,000 email chưa được gửi
 
 4. Bạn tạo API key mới
 
-5. debugger: Xác thực sửa, gửi lại chiến dịch
+5. debugger: Xác minh bản sửa lỗi, gửi lại chiến dịch
 ```
 
-### Workflow 2: Landing Page Slow
+### Quy trình 2: Trang đích tải chậm
 
 ```
-1. Bạn: "Landing page mất 12 giây để tải"
+1. Bạn: "Trang đích mất 12 giây để tải"
 
 2. debugger: Phân tích hiệu suất
-   - Hồ sơ tải trang
-   - Xác định script blocking
-   - Tìm hình ảnh không được tối ưu hóa
-   - Phát hiện truy vấn N+1 cơ sở dữ liệu
+   - Phân tích quá trình tải trang
+   - Xác định các script gây nghẽn
+   - Tìm các hình ảnh chưa tối ưu
+   - Phát hiện các truy vấn DB kiểu N+1
 
-3. Output:
-   BOTTLENECKS:
-   → Scripts: 6.6s (hoãn chúng)
-   → Hình ảnh: 3.8s (tối ưu hóa/lazy load)
-   → DB: 350ms (bộ nhớ cache testimonials)
+3. Kết quả:
+   NÚT THẮT CỔ CHAI:
+   → Scripts: 6.6s (cần trì hoãn chúng)
+   → Hình ảnh: 3.8s (tối ưu/lazy load)
+   → DB: 350ms (cần cache lời chứng thực)
 
-   Dự kiến: 12 giây → 2 giây (-82%)
+   Kỳ vọng: 12s → 2s (-82%)
 
-4. Bạn triển khai tối ưu hóa
+4. Bạn triển khai các tối ưu hóa
 
-5. Chuyển đổi cải thiện +53%
+5. Tỷ lệ chuyển đổi cải thiện +53%
 ```
 
-## Best Practices
+## Thực hành tốt nhất
 
-### 1. Check Logs First
+### 1. Kiểm tra Nhật ký (Logs) trước tiên
 
-**Bad:** Đoán xem có gì sai
-**Good:** Đọc nhật ký, tìm bằng chứng
+**Sai:** Đoán xem điều gì đang trục trặc
+**Đúng:** Đọc logs, tìm bằng chứng
 
-Nhật ký cho bạn biết chính xác những gì đã thất bại và khi nào.
+Logs cho bạn biết chính xác điều gì đã thất bại và vào lúc nào.
 
-### 2. Reproduce the Issue
+### 2. Tái lập vấn đề
 
-**Bad:** "Nó bị hỏng cho một số người dùng"
-**Good:** "Các bước để tái tạo: 1. Truy cập /checkout 2. Nhập thẻ không hợp lệ..."
+**Sai:** "Nó bị hỏng với một số người dùng"
+**Đúng:** "Các bước tái lập: 1. Truy cập /checkout 2. Nhập thẻ không hợp lệ..."
 
-Các vấn đề có thể tái tạo là có thể gỡ lỗi.
+Các vấn đề có thể tái lập được là các vấn đề có thể gỡ lỗi được.
 
-### 3. Monitor After Fixes
+### 3. Giám sát sau khi sửa
 
-**Bad:** Triển khai sửa, chuyển tiếp
-**Good:** Triển khai sửa, xem các chỉ số trong 1 giờ
+**Sai:** Triển khai bản sửa lỗi rồi bỏ qua
+**Đúng:** Triển khai bản sửa lỗi, theo dõi các chỉ số trong vòng 1 giờ
 
-Xác minh sửa của bạn thực sự hoạt động.
+Hãy xác minh rằng bản sửa lỗi của bạn thực sự mang lại kết quả.
 
-## Related Agents
+## Các đại lý liên quan
 
-- [Campaign Debugger](/docs/marketing/agents/campaign-debugger) - Vấn đề hiệu suất cụ thể cho tiếp thị
-- [Code Reviewer](/docs/marketing/agents/code-reviewer) - Kiểm tra chất lượng mã trước triển khai
-- [Campaign Manager](/docs/marketing/agents/campaign-manager) - Thực thi chiến dịch sau khi hệ thống được xác minh
+- [Campaign Debugger](/vi/docs/marketing/agents/campaign-debugger) - Các vấn đề hiệu suất cụ thể về tiếp thị
+- [Code Reviewer](/vi/docs/marketing/agents/code-reviewer) - Kiểm tra chất lượng code trước khi triển khai
+- [Campaign Manager](/vi/docs/marketing/agents/campaign-manager) - Thực thi chiến dịch sau khi hệ thống đã được xác minh
 
-## Related Commands
+## Các lệnh liên quan
 
-- `/debug` - Điều tra vấn đề hệ thống
+- `/debug` - Điều tra các vấn đề hệ thống
 - `/logs` - Phân tích nhật ký ứng dụng
-- `/test` - Chạy kiểm tra tình trạng sức khỏe tích hợp
+- `/test` - Chạy kiểm tra sức khỏe tích hợp
 
 ---
 
-**Cơ sở hạ tầng tiếp thị hỏng. Khi nó hỏng, bạn cần người có thể sửa nó nhanh.**
+**Cơ sở hạ tầng tiếp thị đôi khi sẽ gặp trục trặc. Khi điều đó xảy ra, bạn cần một ai đó có thể sửa nó thật nhanh.**
 
-Sẵn sàng chẩn đoán và giải quyết các vấn đề kỹ thuật? Bắt đầu gỡ lỗi.
+Sẵn sàng chẩn đoán và giải quyết các vấn đề kỹ thuật? Hãy bắt đầu gỡ lỗi.

@@ -6,6 +6,7 @@ kit: engineer
 category: commands/plan
 order: 1
 published: true
+lang: vi
 ---
 
 # /plan

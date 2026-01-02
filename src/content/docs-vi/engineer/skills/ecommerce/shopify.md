@@ -1,107 +1,108 @@
 ---
 title: shopify
-description: Documentation for shopify
+description: Tài liệu hướng dẫn sử dụng kỹ năng shopify
 section: engineer
 kit: engineer
 category: skills/ecommerce
 order: 23
 published: true
+lang: vi
 ---
 
-# shopify Skill
+# Kỹ năng shopify
 
-Build Shopify apps, extensions, themes, and integrations using GraphQL/REST APIs and Shopify CLI.
+Xây dựng các ứng dụng Shopify, các tiện ích mở rộng (extensions), giao diện (themes) và tích hợp hệ thống bằng GraphQL/REST APIs và Shopify CLI.
 
-## When to Use
+## Khi nào nên sử dụng
 
-Use shopify when building:
-- Shopify apps (public or custom)
-- Checkout/admin extensions
-- Themes with Liquid
-- API integrations
+Sử dụng shopify khi xây dựng:
+- Các ứng dụng Shopify (công khai hoặc tùy chỉnh)
+- Tiện ích mở rộng Checkout/Admin
+- Giao diện (themes) bằng Liquid
+- Tích hợp API
 - Shopify Functions
 - Headless storefronts
 
-## Quick Start
+## Bắt đầu nhanh
 
-### Invoke the Skill
-
-```
-"Use shopify to create app that:
-- Adds custom checkout fields
-- Validates customer data
-- Saves to metafields
-- Shows in admin"
-```
-
-### What You Get
-
-The skill will help you:
-1. Set up Shopify CLI
-2. Create app structure
-3. Implement GraphQL queries
-4. Build UI extensions
-5. Handle webhooks
-
-## Common Use Cases
-
-### Custom Checkout
+### Cách gọi kỹ năng
 
 ```
-"Use shopify to add checkout extension:
-- Gift message field
-- Delivery instructions
-- Save to order metafields"
+"Sử dụng shopify để tạo ứng dụng thực hiện:
+- Thêm các trường tùy chỉnh vào checkout
+- Xác thực dữ liệu khách hàng
+- Lưu vào metafields
+- Hiển thị trong trang quản trị (admin)"
 ```
 
-### Admin Extension
+### Kết quả nhận được
+
+Kỹ năng này sẽ giúp bạn:
+1. Thiết lập Shopify CLI
+2. Tạo cấu trúc ứng dụng
+3. Triển khai các truy vấn GraphQL
+4. Xây dựng các tiện ích mở rộng giao diện (UI extensions)
+5. Xử lý webhooks
+
+## Các trường hợp sử dụng phổ biến
+
+### Tùy chỉnh Checkout
 
 ```
-"Use shopify to create admin extension showing:
-- Order analytics
-- Custom reports
-- Bulk actions"
+"Sử dụng shopify để thêm tiện ích mở rộng checkout:
+- Trường tin nhắn quà tặng
+- Hướng dẫn giao hàng
+- Lưu vào metafields của đơn hàng"
 ```
 
-### Product Sync
+### Tiện ích mở rộng Admin
 
 ```
-"Use shopify to sync products with external inventory system using webhooks"
+"Sử dụng shopify để tạo tiện ích mở rộng admin hiển thị:
+- Phân tích đơn hàng
+- Các báo cáo tùy chỉnh
+- Các thao tác hàng loạt (bulk actions)"
 ```
 
-### Discount App
+### Đồng bộ sản phẩm
 
 ```
-"Use shopify to build discount app with custom logic based on customer tags"
+"Sử dụng shopify để đồng bộ sản phẩm với hệ thống kiểm kho bên ngoài bằng webhooks"
 ```
 
-## Setup
+### Ứng dụng Giảm giá
 
-### Install Shopify CLI
+```
+"Sử dụng shopify để xây dựng ứng dụng giảm giá với logic tùy chỉnh dựa trên thẻ (tags) của khách hàng"
+```
+
+## Thiết lập
+
+### Cài đặt Shopify CLI
 
 ```bash
 npm install -g @shopify/cli@latest
 
-# Verify
+# Xác minh
 shopify version
 ```
 
-### Create App
+### Tạo Ứng dụng
 
 ```bash
-# Initialize new app
+# Khởi tạo ứng dụng mới
 shopify app init
 
-# Start dev server
+# Chạy server phát triển
 shopify app dev
 
-# Deploy
+# Triển khai
 shopify app deploy
 ```
 
 ## GraphQL Admin API
 
-### Authentication
+### Xác thực
 
 ```javascript
 const headers = {
@@ -112,7 +113,7 @@ const headers = {
 const endpoint = `https://${shop}.myshopify.com/admin/api/2025-01/graphql.json`;
 ```
 
-### Query Products
+### Truy vấn sản phẩm
 
 ```graphql
 query {
@@ -136,14 +137,14 @@ query {
 }
 ```
 
-### Create Product
+### Tạo sản phẩm
 
 ```graphql
 mutation {
   productCreate(input: {
-    title: "New Product"
-    vendor: "My Store"
-    productType: "Apparel"
+    title: "Sản phẩm mới"
+    vendor: "Cửa hàng của tôi"
+    productType: "Quần áo"
     variants: [{
       price: "29.99"
       inventoryQuantity: 100
@@ -161,7 +162,7 @@ mutation {
 }
 ```
 
-### Update Inventory
+### Cập nhật kho hàng
 
 ```graphql
 mutation {
@@ -176,7 +177,7 @@ mutation {
 }
 ```
 
-## Extensions
+## Tiện ích mở rộng (Extensions)
 
 ### Checkout UI Extension
 
@@ -185,7 +186,7 @@ shopify app generate extension --type checkout_ui_extension
 ```
 
 ```javascript
-// Extension code
+// Mã nguồn tiện ích mở rộng
 import {
   reactExtension,
   TextField,
@@ -199,7 +200,7 @@ export default reactExtension('purchase.checkout.block.render', () => (
 function Extension() {
   return (
     <BlockStack>
-      <TextField label="Gift Message" />
+      <TextField label="Lời nhắn quà tặng" />
     </BlockStack>
   );
 }
@@ -213,7 +214,7 @@ shopify app generate extension --type admin_ui_extension
 
 ## Webhooks
 
-### Subscribe to Webhooks
+### Đăng ký Webhooks
 
 ```graphql
 mutation {
@@ -231,18 +232,18 @@ mutation {
 }
 ```
 
-### Handle Webhook
+### Xử lý Webhook
 
 ```javascript
 app.post('/webhooks/orders', async (req, res) => {
   const hmac = req.headers['x-shopify-hmac-sha256'];
 
-  // Verify webhook
+  // Xác minh webhook
   const verified = verifyWebhook(req.body, hmac);
 
   if (verified) {
     const order = req.body;
-    // Process order
+    // Xử lý đơn hàng
   }
 
   res.status(200).send();
@@ -251,7 +252,7 @@ app.post('/webhooks/orders', async (req, res) => {
 
 ## Metafields
 
-### Create Metafield
+### Tạo Metafield
 
 ```graphql
 mutation {
@@ -259,7 +260,7 @@ mutation {
     ownerId: "gid://shopify/Product/123"
     namespace: "custom"
     key: "gift_message"
-    value: "Happy Birthday!"
+    value: "Chúc mừng sinh nhật!"
     type: "single_line_text_field"
   }]) {
     metafields {
@@ -270,7 +271,7 @@ mutation {
 }
 ```
 
-### Query Metafields
+### Truy vấn Metafields
 
 ```graphql
 query {
@@ -282,45 +283,45 @@ query {
 }
 ```
 
-## Themes (Liquid)
+## Giao diện (Themes - Liquid)
 
-### Basic Liquid
+### Liquid cơ bản
 
 ```liquid
-<!-- Product title -->
+<!-- Tiêu đề sản phẩm -->
 {{ product.title }}
 
-<!-- Loop through variants -->
+<!-- Lặp qua các biến thể -->
 {% for variant in product.variants %}
   <option value="{{ variant.id }}">
     {{ variant.title }} - {{ variant.price | money }}
   </option>
 {% endfor %}
 
-<!-- Conditional -->
+<!-- Điều kiện -->
 {% if product.available %}
-  <button>Add to Cart</button>
+  <button>Thêm vào giỏ hàng</button>
 {% else %}
-  <span>Sold Out</span>
+  <span>Hết hàng</span>
 {% endif %}
 ```
 
-### Theme Development
+### Phát triển Giao diện
 
 ```bash
-# Pull theme
+# Tải giao diện về máy
 shopify theme pull
 
-# Start dev server
+# Chạy server phát triển
 shopify theme dev
 
-# Push changes
+# Đẩy các thay đổi lên
 shopify theme push
 ```
 
 ## Shopify Functions
 
-### Discount Function
+### Hàm Giảm giá
 
 ```javascript
 export function run(input) {
@@ -328,7 +329,7 @@ export function run(input) {
 
   return {
     discounts: [{
-      message: "10% off for VIP customers",
+      message: "Giảm 10% cho khách hàng VIP",
       targets: input.cart.lines,
       value: {
         percentage: {
@@ -342,82 +343,82 @@ export function run(input) {
 
 ## Polaris UI
 
-### Install
+### Cài đặt
 
 ```bash
 npm install @shopify/polaris
 ```
 
-### Use Components
+### Sử dụng các thành phần
 
 ```javascript
 import {Page, Card, Button} from '@shopify/polaris';
 
 function Dashboard() {
   return (
-    <Page title="Dashboard">
+    <Page title="Bảng điều khiển">
       <Card sectioned>
-        <Button primary>Create Product</Button>
+        <Button primary>Tạo sản phẩm</Button>
       </Card>
     </Page>
   );
 }
 ```
 
-## Best Practices
+## Phương pháp hay nhất
 
-### API Usage
+### Sử dụng API
 
-1. **Use GraphQL over REST**
-2. **Batch requests** when possible
-3. **Handle rate limits** (2-4 req/sec)
-4. **Use bulk operations** for large datasets
-5. **Implement retry logic**
+1. **Ưu tiên GraphQL hơn REST**
+2. **Nhóm các yêu cầu (Batch requests)** khi có thể
+3. **Xử lý giới hạn tốc độ (rate limits)** (2-4 yêu cầu/giây)
+4. **Sử dụng các thao tác hàng loạt (bulk operations)** cho tập dữ liệu lớn
+5. **Triển khai logic thử lại (retry logic)**
 
-### Security
+### Bảo mật
 
-1. **Verify webhooks** with HMAC
-2. **Validate OAuth** tokens
-3. **Use HTTPS** always
-4. **Sanitize inputs**
-5. **Follow GDPR** requirements
+1. **Xác minh webhooks** bằng HMAC
+2. **Xác thực mã thông báo (tokens)** OAuth
+3. **Luôn sử dụng HTTPS**
+4. **Kiểm soát dữ liệu đầu vào (Sanitize)**
+5. **Tuân thủ các yêu cầu GDPR**
 
-### Performance
+### Hiệu suất
 
-1. **Cache GraphQL responses**
-2. **Use pagination** for large lists
-3. **Minimize API calls**
-4. **Optimize images**
-5. **Lazy load** content
+1. **Lưu bộ nhớ đệm (Cache)** các phản hồi GraphQL
+2. **Sử dụng phân trang** cho danh sách lớn
+3. **Tối thiểu hóa các cuộc gọi API**
+4. **Tối ưu hóa hình ảnh**
+5. **Tải chậm (Lazy load)** nội dung
 
-## Quick Examples
+## Các ví dụ nhanh
 
-**Sync Products:**
+**Đồng bộ sản phẩm:**
 ```
-"Use shopify to sync products from CSV file to store via GraphQL"
-```
-
-**Custom Checkout:**
-```
-"Use shopify to add date picker to checkout for delivery date selection"
+"Sử dụng shopify để đồng bộ sản phẩm từ tệp CSV vào cửa hàng qua GraphQL"
 ```
 
-**Admin Dashboard:**
+**Tùy chỉnh Checkout:**
 ```
-"Use shopify to create admin extension showing top products this month"
-```
-
-**Inventory App:**
-```
-"Use shopify to build app that:
-- Tracks inventory across locations
-- Sends low stock alerts
-- Auto-reorder functionality"
+"Sử dụng shopify để thêm bộ chọn ngày vào checkout để chọn ngày giao hàng"
 ```
 
-## Common Tasks
+**Bảng điều khiển Admin:**
+```
+"Sử dụng shopify để tạo tiện ích mở rộng admin hiển thị các sản phẩm bán chạy nhất tháng này"
+```
 
-### Get Orders
+**Ứng dụng kho hàng:**
+```
+"Sử dụng shopify để xây dựng ứng dụng thực hiện:
+- Theo dõi kho hàng qua nhiều địa điểm
+- Gửi cảnh báo khi sắp hết hàng
+- Tính năng tự động đặt hàng lại"
+```
+
+## Các tác vụ thông thường
+
+### Lấy danh sách đơn hàng
 
 ```graphql
 query {
@@ -436,7 +437,7 @@ query {
 }
 ```
 
-### Update Product Price
+### Cập nhật giá sản phẩm
 
 ```graphql
 mutation {
@@ -451,7 +452,7 @@ mutation {
 }
 ```
 
-### Bulk Operations
+### Thao tác hàng loạt (Bulk Operations)
 
 ```graphql
 mutation {
@@ -475,19 +476,19 @@ mutation {
 }
 ```
 
-## Resources
+## Tài nguyên
 
-- [Shopify Dev Docs](https://shopify.dev)
+- [Tài liệu cho nhà phát triển Shopify](https://shopify.dev)
 - [GraphQL Admin API](https://shopify.dev/api/admin-graphql)
 - [Polaris](https://polaris.shopify.com)
-- [CLI Reference](https://shopify.dev/docs/api/shopify-cli)
+- [Tham khảo CLI](https://shopify.dev/docs/api/shopify-cli)
 
-## Next Steps
+## Bước tiếp theo
 
-- [E-commerce Examples](/docs/use-cases/)
-- [API Integration](/docs/use-cases/)
-- [Database Skills](/docs/engineer/skills/postgresql-psql)
+- [Ví dụ thương mại điện tử](/docs/use-cases/)
+- [Tích hợp API](/docs/use-cases/)
+- [Kỹ năng cơ sở dữ liệu](/docs/engineer/skills/postgresql-psql)
 
 ---
 
-**Bottom Line:** shopify skill covers app development, GraphQL APIs, extensions, and themes. Build complete Shopify integrations.
+**Tóm lại:** kỹ năng shopify hỗ trợ phát triển ứng dụng, GraphQL APIs, tiện ích mở rộng và giao diện. Xây dựng các giải pháp tích hợp Shopify hoàn chỉnh.

@@ -1,120 +1,121 @@
 ---
 title: /integrate:polar
-description: Documentation for polar
+description: Tài liệu hướng dẫn lệnh polar
 section: engineer
 kit: engineer
 category: commands/integrate
 order: 70
 published: true
+lang: vi
 ---
 
 # /integrate:polar
 
-Implement complete payment integration with Polar.sh. This command handles subscriptions, one-time payments, webhook processing, customer portal, and all necessary backend logic for SaaS monetization.
+Triển khai tích hợp thanh toán hoàn chỉnh với Polar.sh. Lệnh này xử lý các gói đăng ký (subscriptions), thanh toán một lần, xử lý webhook, cổng thông tin khách hàng (customer portal) và tất cả logic backend cần thiết để kiếm tiền từ SaaS.
 
-## Syntax
-
-```bash
-/integrate:polar [integration requirements]
-```
-
-## How It Works
-
-The `/integrate:polar` command follows a comprehensive integration workflow:
-
-### 1. Requirements Analysis
-
-- Identifies payment model (subscription, one-time, hybrid)
-- Determines features needed (trials, coupons, metering, etc.)
-- Analyzes existing codebase architecture
-- Plans database schema for payment data
-
-### 2. Polar.sh Research
-
-Invokes **researcher** agent to:
-- Review latest Polar.sh API documentation
-- Check integration best practices
-- Identify security requirements
-- Study webhook handling patterns
-
-### 3. Implementation Planning
-
-Creates detailed plan for:
-- API routes and endpoints
-- Database models
-- Webhook handlers
-- Frontend components
-- Error handling
-- Testing strategy
-
-### 4. Code Implementation
-
-Invokes **code** agent to implement:
-- Polar.sh SDK integration
-- Payment flow endpoints
-- Webhook processing
-- Database operations
-- Customer portal integration
-- Error handling and logging
-
-### 5. Testing & Security
-
-- Generates comprehensive tests
-- Implements webhook signature verification
-- Adds error handling for all failure modes
-- Tests subscription lifecycle events
-- Validates PCI compliance requirements
-
-## Examples
-
-### Basic Subscription Integration
+## Cú pháp
 
 ```bash
-/integrate:polar [add Polar.sh subscription billing with 3 tiers: Free, Pro ($29/mo), Enterprise ($99/mo)]
+/integrate:polar [yêu cầu tích hợp]
 ```
 
-**What happens:**
+## Cách hoạt động
+
+Lệnh `/integrate:polar` tuân theo một quy trình làm việc tích hợp toàn diện:
+
+### 1. Phân tích yêu cầu
+
+- Xác định mô hình thanh toán (đăng ký, một lần, hoặc kết hợp)
+- Xác định các tính năng cần thiết (dùng thử, mã giảm giá, tính phí theo lưu lượng, v.v.)
+- Phân tích kiến trúc mã nguồn hiện tại
+- Lập kế hoạch sơ đồ cơ sở dữ liệu cho dữ liệu thanh toán
+
+### 2. Nghiên cứu Polar.sh
+
+Gọi agent **researcher** để:
+- Xem xét tài liệu API Polar.sh mới nhất
+- Kiểm tra các thực hành tốt nhất về tích hợp
+- Xác định các yêu cầu bảo mật
+- Nghiên cứu các mẫu xử lý webhook
+
+### 3. Lập kế hoạch triển khai
+
+Tạo kế hoạch chi tiết cho:
+- Các route và endpoint API
+- Các model cơ sở dữ liệu
+- Các trình xử lý webhook
+- Các thành phần frontend
+- Xử lý lỗi
+- Chiến lược kiểm tra
+
+### 4. Triển khai mã nguồn
+
+Gọi agent **code** để triển khai:
+- Tích hợp SDK Polar.sh
+- Các endpoint cho luồng thanh toán
+- Xử lý webhook
+- Các thao tác cơ sở dữ liệu
+- Tích hợp cổng thông tin khách hàng
+- Xử lý lỗi và ghi nhật ký (logging)
+
+### 5. Kiểm tra & Bảo mật
+
+- Tạo các bài kiểm tra toàn diện
+- Triển khai xác minh chữ ký webhook
+- Thêm xử lý lỗi cho tất cả các trường hợp thất bại
+- Kiểm tra các sự kiện vòng đời của gói đăng ký
+- Xác thực các yêu cầu tuân thủ PCI
+
+## Ví dụ
+
+### Tích hợp đăng ký cơ bản
+
+```bash
+/integrate:polar [thêm thanh toán đăng ký Polar.sh với 3 cấp độ: Free, Pro ($29/tháng), Enterprise ($99/tháng)]
 ```
-Phase 1: Analysis (30 seconds)
+
+**Điều gì xảy ra:**
+```
+Giai đoạn 1: Phân tích (30 giây)
 ---
 Agent: planner
 
-Requirements identified:
-✓ 3 subscription tiers
-✓ Monthly billing
-✓ Trial period (standard 14 days)
-✓ Upgrade/downgrade flows
-✓ Customer portal access
-✓ Webhook processing
+Các yêu cầu được xác định:
+✓ 3 cấp độ đăng ký
+✓ Thanh toán hàng tháng
+✓ Thời gian dùng thử (mặc định 14 ngày)
+✓ Luồng nâng cấp/hạ cấp
+✓ Truy cập cổng thông tin khách hàng
+✓ Xử lý webhook
 
-Architecture decisions:
-- Backend: Node.js/Express detected
-- Database: PostgreSQL detected
-- Frontend: React detected
+Quyết định kiến trúc:
+- Backend: Phát hiện Node.js/Express
+- Cơ sở dữ liệu: Phát hiện PostgreSQL
+- Frontend: Phát hiện React
 
-Phase 2: Research (45 seconds)
+Giai đoạn 2: Nghiên cứu (45 giây)
 ---
 Agent: researcher
 
-Polar.sh API features analyzed:
+Các tính năng API Polar.sh được phân tích:
 ✓ Subscription API (v1)
-✓ Webhook events (subscription.created, etc.)
-✓ Customer portal (hosted)
-✓ Checkout sessions
-✓ Usage-based billing support
-✓ Tax handling (automatic)
+✓ Các sự kiện Webhook (subscription.created, v.v.)
+✓ Cổng thông tin khách hàng (được host sẵn)
+✓ Các phiên thanh toán (Checkout sessions)
+✓ Hỗ trợ tính phí theo lưu lượng (usage-based)
+✓ Xử lý thuế (tự động)
 
-Best practices identified:
-✓ Webhook signature verification required
-✓ Idempotent webhook processing
-✓ Subscription status synchronization
-✓ Grace period handling
+Các thực hành tốt nhất được xác định:
+✓ Yêu cầu xác minh chữ ký webhook
+✓ Xử lý webhook có tính lũy đẳng (idempotent)
+✓ Đồng bộ hóa trạng thái đăng ký
+✓ Xử lý thời gian ân hạn (grace period)
 
-Phase 3: Implementation Plan
+Giai đoạn 3: Kế hoạch triển khai
 ---
 Agent: planner
 
-Files to create:
+Các tệp cần tạo:
 1. Backend:
    - src/routes/billing.routes.ts
    - src/controllers/billing.controller.ts
@@ -125,7 +126,7 @@ Files to create:
    - src/models/subscription.model.ts
    - src/models/customer.model.ts
 
-2. Database:
+2. Cơ sở dữ liệu:
    - migrations/add-billing-tables.sql
 
 3. Frontend:
@@ -135,25 +136,25 @@ Files to create:
    - src/components/CustomerPortal.tsx
    - src/hooks/useSubscription.ts
 
-4. Configuration:
-   - .env.example (add Polar.sh keys)
+4. Cấu hình:
+   - .env.example (thêm các khóa Polar.sh)
    - config/polar.config.ts
 
-5. Tests:
+5. Kiểm tra:
    - tests/integration/billing.test.ts
    - tests/webhooks/polar.webhook.test.ts
    - tests/services/subscription.service.test.ts
 
-Phase 4: Code Implementation (2-3 minutes)
+Giai đoạn 4: Triển khai mã nguồn (2-3 phút)
 ---
 Agent: code
 
-✓ Polar.sh SDK installed (@polar-sh/sdk)
-✓ Database migrations created
-✓ Models implemented (Subscription, Customer)
-✓ Polar service with error handling
-✓ Subscription service with lifecycle management
-✓ API routes created:
+✓ Đã cài đặt SDK Polar.sh (@polar-sh/sdk)
+✓ Đã tạo các bản migration cơ sở dữ liệu
+✓ Đã triển khai các model (Subscription, Customer)
+✓ Dịch vụ Polar với xử lý lỗi
+✓ Dịch vụ đăng ký với quản lý vòng đời
+✓ Các route API đã được tạo:
   - POST /api/billing/checkout
   - GET /api/billing/portal
   - GET /api/billing/subscription
@@ -161,10 +162,10 @@ Agent: code
   - PUT /api/billing/subscription/downgrade
   - DELETE /api/billing/subscription/cancel
 
-✓ Webhook endpoint implemented:
+✓ Endpoint Webhook đã triển khai:
   - POST /api/webhooks/polar
-  - Signature verification
-  - Event handlers for:
+  - Xác minh chữ ký
+  - Các trình xử lý sự kiện cho:
     • subscription.created
     • subscription.updated
     • subscription.canceled
@@ -172,29 +173,29 @@ Agent: code
     • payment.succeeded
     • payment.failed
 
-✓ Frontend components created
-✓ Subscription middleware for route protection
-✓ Error handling with retry logic
-✓ Logging for all payment events
+✓ Các thành phần Frontend đã được tạo
+✓ Middleware đăng ký để bảo vệ các route
+✓ Xử lý lỗi với logic thử lại
+✓ Ghi nhật ký cho tất cả các sự kiện thanh toán
 
-Phase 5: Database Schema
+Giai đoạn 5: Sơ đồ cơ sở dữ liệu
 ---
-Created tables:
+Các bảng đã tạo:
 
 customers:
-- id (uuid, primary key)
-- user_id (uuid, foreign key)
-- polar_customer_id (text, unique)
+- id (uuid, khóa chính)
+- user_id (uuid, khóa ngoại)
+- polar_customer_id (text, duy nhất)
 - email (text)
 - created_at (timestamp)
 - updated_at (timestamp)
 
 subscriptions:
-- id (uuid, primary key)
-- customer_id (uuid, foreign key)
-- polar_subscription_id (text, unique)
+- id (uuid, khóa chính)
+- customer_id (uuid, khóa ngoại)
+- polar_subscription_id (text, duy nhất)
 - tier (text) -- 'free', 'pro', 'enterprise'
-- status (text) -- 'active', 'canceled', 'past_due', etc.
+- status (text) -- 'active', 'canceled', 'past_due', v.v.
 - current_period_start (timestamp)
 - current_period_end (timestamp)
 - cancel_at_period_end (boolean)
@@ -202,18 +203,18 @@ subscriptions:
 - updated_at (timestamp)
 
 payment_history:
-- id (uuid, primary key)
-- subscription_id (uuid, foreign key)
+- id (uuid, khóa chính)
+- subscription_id (uuid, khóa ngoại)
 - polar_payment_id (text)
-- amount (integer) -- in cents
+- amount (integer) -- tính theo cent
 - currency (text)
 - status (text)
 - paid_at (timestamp)
 - created_at (timestamp)
 
-Phase 6: Configuration
+Giai đoạn 6: Cấu hình
 ---
-Environment variables added to .env.example:
+Các biến môi trường được thêm vào .env.example:
 
 POLAR_SECRET_KEY=polar_sk_...
 POLAR_WEBHOOK_SECRET=whsec_...
@@ -221,31 +222,31 @@ POLAR_PRODUCT_ID_PRO=prod_...
 POLAR_PRODUCT_ID_ENTERPRISE=prod_...
 FRONTEND_URL=http://localhost:3000
 
-Phase 7: Frontend Integration
+Giai đoạn 7: Tích hợp Frontend
 ---
-Pricing page example created:
+Ví dụ trang giá cả đã được tạo:
 
 <PricingTable>
   <PricingTier
     name="Free"
     price="$0"
     features={[
-      "Up to 5 AI agents",
-      "Basic support",
-      "Community access"
+      "Lên đến 5 AI agents",
+      "Hỗ trợ cơ bản",
+      "Truy cập cộng đồng"
     ]}
-    cta="Get Started"
+    cta="Bắt đầu ngay"
   />
 
   <PricingTier
     name="Pro"
     price="$29"
-    period="per month"
+    period="mỗi tháng"
     features={[
-      "Unlimited AI agents",
-      "Priority support",
-      "Advanced features",
-      "API access"
+      "AI agents không giới hạn",
+      "Hỗ trợ ưu tiên",
+      "Các tính năng nâng cao",
+      "Truy cập API"
     ]}
     cta={<CheckoutButton tier="pro" />}
     highlighted
@@ -254,177 +255,177 @@ Pricing page example created:
   <PricingTier
     name="Enterprise"
     price="$99"
-    period="per month"
+    period="mỗi tháng"
     features={[
-      "Everything in Pro",
-      "Dedicated support",
-      "Custom integrations",
-      "SLA guarantee"
+      "Mọi thứ trong gói Pro",
+      "Hỗ trợ tận tình",
+      "Tích hợp tùy chỉnh",
+      "Đảm bảo SLA"
     ]}
     cta={<CheckoutButton tier="enterprise" />}
   />
 </PricingTable>
 
-Customer portal integration:
-<CustomerPortal /> component provides:
-- View subscription details
-- Update payment method
-- Download invoices
-- Cancel subscription
-- Upgrade/downgrade
+Tích hợp cổng thông tin khách hàng:
+Component <CustomerPortal /> cung cấp:
+- Xem chi tiết đăng ký
+- Cập nhật phương thức thanh toán
+- Tải hóa đơn
+- Hủy đăng ký
+- Nâng cấp/hạ cấp
 
-Phase 8: Testing (1 minute)
+Giai đoạn 8: Kiểm tra (1 phút)
 ---
 Agent: tester
 
-Generated tests:
-✓ Checkout flow tests (15 tests)
-✓ Webhook processing tests (22 tests)
-✓ Subscription lifecycle tests (18 tests)
-✓ Upgrade/downgrade tests (12 tests)
-✓ Cancellation tests (8 tests)
-✓ Error handling tests (14 tests)
+Các bài kiểm tra đã tạo:
+✓ Kiểm tra luồng thanh toán (15 bài)
+✓ Kiểm tra xử lý webhook (22 bài)
+✓ Kiểm tra vòng đời đăng ký (18 bài)
+✓ Kiểm tra nâng cấp/hạ cấp (12 bài)
+✓ Kiểm tra việc hủy bỏ (8 bài)
+✓ Kiểm tra xử lý lỗi (14 bài)
 
-All 89 tests passed
-Coverage: 94%
+Tất cả 89 bài kiểm tra đã vượt qua
+Độ bao phủ: 94%
 
-Phase 9: Documentation
+Giai đoạn 9: Tài liệu
 ---
-Created documentation:
+Tài liệu đã tạo:
 
 docs/billing/polar-integration.md:
-- Setup instructions
-- Environment variables
-- API endpoints
-- Webhook events
-- Testing with Polar.sh CLI
-- Production deployment checklist
-- Common issues and solutions
+- Hướng dẫn thiết lập
+- Các biến môi trường
+- Các endpoint API
+- Các sự kiện Webhook
+- Kiểm tra với Polar.sh CLI
+- Danh sách kiểm tra triển khai production
+- Các vấn đề thường gặp và giải pháp
 
-✓ Integration complete (4 minutes 30 seconds)
+✓ Tích hợp hoàn tất (4 phút 30 giây)
 
-Summary:
+Tóm tắt:
 ---
-✓ 15 files created
-✓ 8 API endpoints implemented
-✓ 6 webhook events handled
-✓ 3 database tables
-✓ 4 React components
-✓ 89 tests (94% coverage)
-✓ Complete documentation
+✓ 15 tệp đã tạo
+✓ 8 endpoint API đã triển khai
+✓ 6 sự kiện webhook được xử lý
+✓ 3 bảng cơ sở dữ liệu
+✓ 4 component React
+✓ 89 bài kiểm tra (độ bao phủ 94%)
+✓ Tài liệu hoàn chỉnh
 
-Next steps:
-1. Add Polar.sh API keys to .env
-2. Run migrations: npm run migrate
-3. Test with Polar.sh test mode
-4. Create products in Polar.sh dashboard
-5. Update .env with product IDs
-6. Deploy to staging
+Các bước tiếp theo:
+1. Thêm các khóa API Polar.sh vào .env
+2. Chạy migration: npm run migrate
+3. Kiểm tra với chế độ test của Polar.sh
+4. Tạo các sản phẩm trong dashboard Polar.sh
+5. Cập nhật .env với các ID sản phẩm
+6. Triển khai lên staging
 ```
 
-### Advanced Integration with Usage-Based Billing
+### Tích hợp nâng cao với tính phí theo lưu lượng (Usage-Based)
 
 ```bash
-/integrate:polar [implement Polar.sh with usage-based billing for API calls, $49 base + $0.01 per API call over 10k]
+/integrate:polar [triển khai Polar.sh với tính phí theo lưu lượng cho các cuộc gọi API, phí cơ bản $49 + $0.01 cho mỗi cuộc gọi API trên 10k]
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-Phase 1: Analysis
+Giai đoạn 1: Phân tích
 ---
-Requirements:
-✓ Base subscription ($49/month)
-✓ Usage-based add-on ($0.01 per API call)
-✓ Included quota (10,000 calls/month)
-✓ Usage tracking and reporting
-✓ Overage warnings
+Yêu cầu:
+✓ Gói đăng ký cơ bản ($49/tháng)
+✓ Tiện ích bổ sung dựa trên lưu lượng ($0.01 mỗi cuộc gọi API)
+✓ Hạn mức bao gồm (10,000 cuộc gọi/tháng)
+✓ Theo dõi và báo cáo lưu lượng sử dụng
+✓ Cảnh báo khi vượt hạn mức
 
-Additional complexity:
-- API call metering required
-- Usage aggregation
-- Invoice preview before billing
-- Usage reset on billing cycle
+Độ phức tạp bổ sung:
+- Yêu cầu đo lường cuộc gọi API
+- Tổng hợp lưu lượng sử dụng
+- Xem trước hóa đơn trước khi tính phí
+- Đặt lại lưu lượng theo chu kỳ thanh toán
 
-Phase 2: Implementation
+Giai đoạn 2: Triển khai
 ---
-Added components:
+Các thành phần được thêm vào:
 
-1. Usage Tracking:
+1. Theo dõi lưu lượng sử dụng:
    - src/middleware/usage-tracking.middleware.ts
    - src/services/usage.service.ts
-   - Database table: api_usage
+   - Bảng cơ sở dữ liệu: api_usage
 
-2. Usage Reporting:
+2. Báo cáo lưu lượng sử dụng:
    - src/routes/usage.routes.ts
    - GET /api/usage/current
    - GET /api/usage/history
    - GET /api/usage/invoice-preview
 
-3. Polar Metered Billing:
-   - Integration with Polar metered usage API
-   - Hourly usage sync to Polar
-   - Usage reset on billing cycle
+3. Tính phí theo lưu lượng Polar:
+   - Tích hợp với API metered usage của Polar
+   - Đồng bộ lưu lượng theo giờ lên Polar
+   - Đặt lại lưu lượng theo chu kỳ thanh toán
 
-4. Usage Alerts:
-   - Email notifications at 80%, 100%, 150%
-   - Dashboard warnings
-   - Webhook events for threshold crossing
+4. Cảnh báo sử dụng:
+   - Thông báo email ở mức 80%, 100%, 150%
+   - Biểu ngữ cảnh báo trên dashboard
+   - Sự kiện webhook khi vượt ngưỡng
 
-Phase 3: Usage Tracking Implementation
+Giai đoạn 3: Triển khai theo dõi lưu lượng
 ---
-Middleware added to all API routes:
+Middleware được thêm vào tất cả các route API:
 
 import { trackUsage } from './middleware/usage-tracking';
 
 router.use('/api/v1', trackUsage);
 
-Usage service:
-- Tracks each API call
-- Aggregates by subscription
-- Syncs to Polar every hour
-- Calculates overage charges
+Dịch vụ lưu lượng:
+- Theo dõi từng cuộc gọi API
+- Tổng hợp theo đăng ký
+- Đồng bộ lên Polar mỗi giờ
+- Tính toán phí vượt hạn mức
 
-Database schema:
+Sơ đồ cơ sở dữ liệu:
 api_usage:
 - id, subscription_id, endpoint
 - request_count, timestamp
 - billing_period_start, billing_period_end
 
-Phase 4: Frontend Updates
+Giai đoạn 4: Cập nhật Frontend
 ---
-Added components:
-- <UsageChart /> - Visual usage graph
-- <UsageAlerts /> - Warning banners
-- <InvoicePreview /> - Estimated next bill
-- <UsageTable /> - Detailed breakdown
+Các thành phần được thêm vào:
+- <UsageChart /> - Biểu đồ lưu lượng trực quan
+- <UsageAlerts /> - Biểu ngữ cảnh báo
+- <InvoicePreview /> - Ước tính hóa đơn tiếp theo
+- <UsageTable /> - Chi tiết phân tích
 
-✓ Usage-based billing complete (6 minutes)
+✓ Tính phí theo lưu lượng hoàn tất (6 phút)
 ```
 
-## Polar.sh Features Implemented
+## Các tính năng Polar.sh được triển khai
 
-### 1. Checkout Sessions
+### 1. Các phiên thanh toán (Checkout Sessions)
 
 ```typescript
-// Create checkout session
+// Tạo phiên thanh toán
 const checkout = await polar.checkouts.create({
   productId: POLAR_PRODUCT_ID,
   successUrl: `${FRONTEND_URL}/success`,
   customerEmail: user.email,
 });
 
-// Frontend redirects to:
+// Frontend chuyển hướng đến:
 window.location.href = checkout.url;
 ```
 
-### 2. Webhook Processing
+### 2. Xử lý Webhook
 
 ```typescript
-// Webhook handler with signature verification
+// Trình xử lý webhook với xác minh chữ ký
 app.post('/api/webhooks/polar', async (req, res) => {
   const signature = req.headers['polar-signature'];
 
-  // Verify signature
+  // Xác minh chữ ký
   const isValid = polar.webhooks.verify(
     req.body,
     signature,
@@ -432,10 +433,10 @@ app.post('/api/webhooks/polar', async (req, res) => {
   );
 
   if (!isValid) {
-    return res.status(400).json({ error: 'Invalid signature' });
+    return res.status(400).json({ error: 'Chữ ký không hợp lệ' });
   }
 
-  // Handle event
+  // Xử lý sự kiện
   const event = req.body;
 
   switch (event.type) {
@@ -445,61 +446,61 @@ app.post('/api/webhooks/polar', async (req, res) => {
     case 'subscription.updated':
       await handleSubscriptionUpdated(event.data);
       break;
-    // ... other events
+    // ... các sự kiện khác
   }
 
   res.json({ received: true });
 });
 ```
 
-### 3. Customer Portal
+### 3. Cổng thông tin khách hàng
 
 ```typescript
-// Generate customer portal URL
+// Tạo URL cổng thông tin khách hàng
 const portalUrl = await polar.customerPortal.createSession({
   customerId: customer.polarCustomerId,
   returnUrl: `${FRONTEND_URL}/settings`,
 });
 
-// Frontend redirects to:
+// Frontend chuyển hướng đến:
 window.location.href = portalUrl;
 ```
 
-### 4. Subscription Management
+### 4. Quản lý đăng ký
 
 ```typescript
-// Upgrade subscription
+// Nâng cấp đăng ký
 await polar.subscriptions.update(subscriptionId, {
   productId: NEW_PRODUCT_ID,
   prorationBehavior: 'create_prorations',
 });
 
-// Cancel subscription
+// Hủy đăng ký
 await polar.subscriptions.cancel(subscriptionId, {
   cancelAtPeriodEnd: true,
 });
 ```
 
-## Webhook Events Handled
+## Các sự kiện Webhook được xử lý
 
 ```
-✓ subscription.created      - New subscription started
-✓ subscription.updated      - Tier changed, status updated
-✓ subscription.canceled     - Subscription canceled
-✓ subscription.active       - Subscription became active
-✓ subscription.past_due     - Payment failed
-✓ payment.succeeded         - Payment successful
-✓ payment.failed           - Payment failed
-✓ customer.created         - New customer created
-✓ customer.updated         - Customer details changed
-✓ invoice.created          - New invoice generated
-✓ invoice.paid             - Invoice paid
-✓ invoice.payment_failed   - Invoice payment failed
+✓ subscription.created      - Gói đăng ký mới bắt đầu
+✓ subscription.updated      - Cấp độ thay đổi, trạng thái được cập nhật
+✓ subscription.canceled     - Gói đăng ký bị hủy
+✓ subscription.active       - Gói đăng ký trở nên hoạt động
+✓ subscription.past_due     - Thanh toán thất bại
+✓ payment.succeeded         - Thanh toán thành công
+✓ payment.failed           - Thanh toán thất bại
+✓ customer.created         - Khách hàng mới được tạo
+✓ customer.updated         - Thông tin khách hàng thay đổi
+✓ invoice.created          - Hóa đơn mới được tạo
+✓ invoice.paid             - Hóa đơn đã thanh toán
+✓ invoice.payment_failed   - Thanh toán hóa đơn thất bại
 ```
 
-## Database Schema
+## Sơ đồ cơ sở dữ liệu
 
-### Minimal Schema
+### Sơ đồ tối giản
 
 ```sql
 CREATE TABLE customers (
@@ -528,12 +529,12 @@ CREATE INDEX idx_subscriptions_customer ON subscriptions(customer_id);
 CREATE INDEX idx_subscriptions_status ON subscriptions(status);
 ```
 
-## Security Best Practices
+## Thực hành tốt nhất về bảo mật
 
-### 1. Webhook Signature Verification
+### 1. Xác minh chữ ký Webhook
 
 ```typescript
-// ALWAYS verify webhook signatures
+// LUÔN xác minh chữ ký webhook
 const isValid = polar.webhooks.verify(
   req.body,
   signature,
@@ -541,169 +542,169 @@ const isValid = polar.webhooks.verify(
 );
 
 if (!isValid) {
-  throw new Error('Invalid webhook signature');
+  throw new Error('Chữ ký webhook không hợp lệ');
 }
 ```
 
-### 2. Idempotent Webhook Processing
+### 2. Xử lý Webhook lũy đẳng
 
 ```typescript
-// Prevent duplicate processing
+// Ngăn chặn xử lý trùng lặp
 const existingEvent = await db.webhookEvents.findOne({
   eventId: event.id
 });
 
 if (existingEvent) {
-  return; // Already processed
+  return; // Đã xử lý rồi
 }
 
-// Process event...
+// Xử lý sự kiện...
 
-// Save event ID
+// Lưu ID sự kiện
 await db.webhookEvents.create({
   eventId: event.id,
   processedAt: new Date()
 });
 ```
 
-### 3. API Key Security
+### 3. Bảo mật khóa API
 
 ```typescript
-// NEVER expose secret key in frontend
-// Backend only:
+// KHÔNG BAO GIỜ để lộ khóa bí mật ở frontend
+// Chỉ dùng ở Backend:
 const polar = new Polar(process.env.POLAR_SECRET_KEY);
 
-// Frontend uses API routes:
+// Frontend sử dụng các route API:
 await fetch('/api/billing/checkout', {
   method: 'POST',
   headers: { Authorization: `Bearer ${userToken}` }
 });
 ```
 
-## Testing
+## Kiểm tra
 
-### Test Mode
+### Chế độ Test
 
 ```bash
-# Use Polar.sh test mode keys
+# Sử dụng các khóa chế độ test của Polar.sh
 POLAR_SECRET_KEY=polar_sk_test_...
 POLAR_WEBHOOK_SECRET=whsec_test_...
 ```
 
-### Webhook Testing
+### Kiểm tra Webhook
 
 ```bash
-# Install Polar CLI
+# Cài đặt Polar CLI
 npm install -g @polar-sh/cli
 
-# Forward webhooks to local
+# Chuyển tiếp webhook về local
 polar webhooks forward --url http://localhost:3000/api/webhooks/polar
 ```
 
-### Trigger Test Events
+### Kích hoạt các sự kiện kiểm tra
 
 ```bash
-# Test subscription created
+# Kiểm tra việc tạo đăng ký
 polar trigger subscription.created --subscription-id sub_test_123
 
-# Test payment failed
+# Kiểm tra thanh toán thất bại
 polar trigger payment.failed --subscription-id sub_test_123
 ```
 
-## Common Use Cases
+## Các trường hợp sử dụng phổ biến
 
-### 1. SaaS with Tiers
+### 1. SaaS với các cấp độ (Tiers)
 
 ```bash
-/integrate:polar [3 tiers: Starter ($19), Pro ($49), Enterprise ($199), 14-day trial]
+/integrate:polar [3 cấp độ: Starter ($19), Pro ($49), Enterprise ($199), dùng thử 14 ngày]
 ```
 
-### 2. Usage-Based Billing
+### 2. Tính phí theo lưu lượng
 
 ```bash
-/integrate:polar [base $29/mo + $0.10 per GB storage over 100GB]
+/integrate:polar [cơ bản $29/tháng + $0.10 cho mỗi GB lưu trữ trên 100GB]
 ```
 
-### 3. One-Time Payments
+### 3. Thanh toán một lần
 
 ```bash
-/integrate:polar [sell course for $299 one-time payment]
+/integrate:polar [bán khóa học với thanh toán một lần $299]
 ```
 
-### 4. Freemium Model
+### 4. Mô hình Freemium
 
 ```bash
-/integrate:polar [free tier with upgrade to Pro ($29/mo) with feature gating]
+/integrate:polar [cấp độ miễn phí với khả năng nâng cấp lên Pro ($29/tháng) kèm theo chặn tính năng]
 ```
 
-## Troubleshooting
+## Xử lý sự cố
 
-### Webhook Not Received
+### Không nhận được Webhook
 
-**Problem:** Webhooks not hitting endpoint
+**Vấn đề:** Webhook không gửi tới endpoint
 
-**Check:**
+**Kiểm tra:**
 ```bash
-# 1. Verify webhook URL in Polar dashboard
-# 2. Check endpoint is accessible
+# 1. Xác minh URL webhook trong dashboard Polar
+# 2. Kiểm tra endpoint có thể truy cập được không
 curl -X POST http://your-domain.com/api/webhooks/polar
 
-# 3. Check webhook logs in Polar dashboard
-# 4. Verify webhook secret matches .env
+# 3. Kiểm tra nhật ký webhook trong dashboard Polar
+# 4. Xác minh bí mật webhook khớp với .env
 ```
 
-### Payment Failed
+### Thanh toán thất bại
 
-**Problem:** Customer payment fails
+**Vấn đề:** Thanh toán của khách hàng thất bại
 
-**Handled automatically:**
-- `payment.failed` webhook triggers
-- Subscription status → `past_due`
-- Customer notified via email
-- Retry logic in Polar handles retries
-- Grace period before cancellation
+**Được xử lý tự động:**
+- Webhook `payment.failed` được kích hoạt
+- Trạng thái đăng ký → `past_due`
+- Khách hàng được thông báo qua email
+- Logic thử lại trong Polar xử lý việc thanh toán lại
+- Thời gian ân hạn trước khi hủy bỏ
 
-### Subscription Not Syncing
+### Đăng ký không đồng bộ
 
-**Problem:** Database out of sync with Polar
+**Vấn đề:** Cơ sở dữ liệu không khớp với Polar
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Run sync script (generated during integration)
+# Chạy script đồng bộ (được tạo trong quá trình tích hợp)
 npm run sync:subscriptions
 
-# Or manually query Polar API
+# Hoặc truy vấn API Polar thủ công
 const subscription = await polar.subscriptions.get(subscriptionId);
 await syncToDB(subscription);
 ```
 
-## Production Deployment Checklist
+## Danh sách kiểm tra triển khai Production
 
-Before going live:
+Trước khi chạy thực tế:
 
 ```
-□ Switch to production API keys
-□ Configure webhook endpoint (must be HTTPS)
-□ Test webhook signature verification
-□ Set up webhook monitoring (logging)
-□ Configure tax settings in Polar dashboard
-□ Create production products/prices
-□ Update .env with production product IDs
-□ Test subscription flow end-to-end
-□ Test cancellation flow
-□ Test upgrade/downgrade
-□ Set up invoice email templates
-□ Configure customer portal branding
-□ Add terms of service link
-□ Add privacy policy link
-□ Set up payment failure notifications
-□ Configure dunning settings
-□ Test with real card (then refund)
+□ Chuyển sang các khóa API production
+□ Cấu hình endpoint webhook (phải là HTTPS)
+□ Kiểm tra việc xác minh chữ ký webhook
+□ Thiết lập giám sát webhook (ghi nhật ký)
+□ Cấu hình cài đặt thuế trong dashboard Polar
+□ Tạo các sản phẩm/giá cả trên production
+□ Cập nhật .env với các ID sản phẩm production
+□ Kiểm tra luồng đăng ký từ đầu đến cuối
+□ Kiểm tra luồng hủy bỏ
+□ Kiểm tra nâng cấp/hạ cấp
+□ Thiết lập các mẫu email hóa đơn
+□ Cấu hình thương hiệu cổng thông tin khách hàng
+□ Thêm liên kết điều khoản dịch vụ
+□ Thêm liên kết chính sách bảo mật
+□ Thiết lập thông báo thất bại thanh toán
+□ Cấu hình cài đặt dunning
+□ Kiểm tra với thẻ thật (sau đó hoàn tiền)
 ```
 
-## Generated Files
+## Các tệp được tạo
 
-After `/integrate:polar` completes:
+Sau khi `/integrate:polar` hoàn thành:
 
 ### Backend
 
@@ -728,13 +729,13 @@ src/components/CustomerPortal.tsx
 src/hooks/useSubscription.ts
 ```
 
-### Database
+### Cơ sở dữ liệu
 
 ```
 migrations/YYYYMMDD-add-billing-tables.sql
 ```
 
-### Tests
+### Kiểm tra
 
 ```
 tests/integration/billing.test.ts
@@ -742,7 +743,7 @@ tests/webhooks/polar.webhook.test.ts
 tests/services/subscription.service.test.ts
 ```
 
-### Documentation
+### Tài liệu
 
 ```
 docs/billing/polar-integration.md
@@ -750,48 +751,48 @@ docs/billing/webhook-events.md
 docs/billing/testing-guide.md
 ```
 
-## Next Steps
+## Bước tiếp theo
 
-After integration:
+Sau khi tích hợp:
 
 ```bash
-# 1. Integration complete
-/integrate:polar [requirements]
+# 1. Tích hợp hoàn tất
+/integrate:polar [các yêu cầu]
 
-# 2. Add API keys
+# 2. Thêm khóa API
 cp .env.example .env
-# Add POLAR_SECRET_KEY and other keys
+# Thêm POLAR_SECRET_KEY và các khóa khác
 
-# 3. Run migrations
+# 3. Chạy migration
 npm run migrate
 
-# 4. Test in test mode
+# 4. Kiểm tra trong chế độ test
 npm run dev
-# Visit /pricing and test checkout
+# Truy cập /pricing và kiểm tra thanh toán
 
-# 5. Run tests
+# 5. Chạy các bài kiểm tra
 /test
 
-# 6. Deploy to staging
+# 6. Triển khai lên staging
 /deploy [staging]
 
-# 7. Test end-to-end in staging
+# 7. Kiểm tra từ đầu đến cuối trên staging
 
-# 8. Switch to production keys
+# 8. Chuyển sang các khóa production
 
-# 9. Deploy to production
+# 9. Triển khai lên production
 /deploy [production]
 
-# 10. Monitor webhooks
-# Check logs and Polar dashboard
+# 10. Giám sát webhook
+# Kiểm tra nhật ký và dashboard Polar
 ```
 
-## Related Commands
+## Các lệnh liên quan
 
-- [/integrate:sepay](/docs/engineer/commands/integrate/sepay) - Vietnamese payment gateway
-- [/cook](/docs/engineer/commands/core/cook) - Implement custom features
-- [/test](/docs/engineer/commands/core/test) - Run test suite
+- [/integrate:sepay](/vi/docs/engineer/commands/integrate/sepay) - Cổng thanh toán Việt Nam
+- [/cook](/vi/docs/engineer/commands/core/cook) - Triển khai các tính năng tùy chỉnh
+- [/test](/vi/docs/engineer/commands/core/test) - Chạy bộ kiểm tra
 
 ---
 
-**Key Takeaway**: `/integrate:polar` provides complete Polar.sh payment integration including subscriptions, webhooks, customer portal, and all necessary backend/frontend code with tests and documentation—production-ready in minutes.
+**Điểm mấu chốt**: `/integrate:polar` cung cấp giải pháp tích hợp thanh toán Polar.sh hoàn chỉnh bao gồm đăng ký, webhook, cổng thông tin khách hàng và tất cả mã nguồn backend/frontend cần thiết kèm theo kiểm tra và tài liệu—sẵn sàng cho production trong vài phút.

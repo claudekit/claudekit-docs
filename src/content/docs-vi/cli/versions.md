@@ -1,41 +1,42 @@
 ---
 title: "ck versions"
 description: "Liệt kê các phiên bản phát hành ClaudeKit có sẵn với lọc và thông tin chi tiết"
+lang: vi
 section: cli
 order: 6
 ---
 
 # ck versions
 
-> Liệt kê tất cả các phiên bản phát hành ClaudeKit có sẵn từ GitHub với lọc theo bộ, giới hạn và trạng thái prerelease.
+> Liệt kê tất cả các phiên bản phát hành ClaudeKit có sẵn từ GitHub, hỗ trợ lọc theo bộ kit, giới hạn số lượng và trạng thái prerelease.
 
-## Bắt đầu nhanh chóng
+## Bắt đầu nhanh
 
 ```bash
-# Show all available versions for all kits
+# Hiển thị tất cả các phiên bản có sẵn cho tất cả các bộ kit
 ck versions
 
-# Filter by specific kit
+# Lọc theo bộ kit cụ thể
 ck versions --kit engineer
 
-# Show more versions
+# Hiển thị nhiều phiên bản hơn
 ck versions --limit 50
 
-# Include prereleases and drafts
+# Bao gồm cả các bản prerelease và bản nháp (draft)
 ck versions --all
 ```
 
-## Điều gì xảy ra
+## Quy trình thực hiện
 
-Lệnh `ck versions`:
+Lệnh `ck versions` sẽ:
 
-1. Tìm nạp thông tin bản phát hành từ GitHub
-2. Lọc theo bộ, trạng thái prerelease và giới hạn
-3. Hiển thị các phiên bản trong bảng được định dạng với:
-   - Thẻ phiên bản
-   - Tên phát hành
-   - Ngày xuất bản (thời gian tương đối)
-   - Số lượng tài sản
+1. Lấy thông tin về các bản phát hành từ GitHub
+2. Lọc danh sách theo bộ kit, trạng thái prerelease và giới hạn số lượng
+3. Hiển thị các phiên bản dưới dạng bảng với các thông tin:
+   - Thẻ phiên bản (Version tag)
+   - Tên bản phát hành
+   - Thời gian xuất bản (tính tương đối)
+   - Số lượng tài sản (assets)
    - Huy hiệu prerelease/draft
 
 ## Cú pháp
@@ -46,18 +47,18 @@ ck versions [OPTIONS]
 
 ### Tùy chọn
 
-| Flag | Mô tả | Mặc định |
+| Cờ (Flag) | Mô tả | Mặc định |
 |------|-------------|---------|
-| `--kit <name>` | Lọc theo bộ cụ thể (`engineer` hoặc `marketing`) | All kits |
-| `--limit <number>` | Số phiên bản tối đa để hiển thị | 30 |
-| `--all` | Bao gồm prerelease và draft | `false` (stable only) |
+| `--kit <name>` | Lọc theo bộ kit cụ thể (`engineer` hoặc `marketing`) | Tất cả các bộ kit |
+| `--limit <number>` | Số lượng phiên bản tối đa hiển thị | 30 |
+| `--all` | Bao gồm cả prerelease và bản nháp | `false` (chỉ bản ổn định) |
 | `--verbose` | Bật ghi nhật ký chi tiết | `false` |
 
 ## Ví dụ
 
 ### Liệt kê tất cả các phiên bản
 
-Hiển thị 30 phiên bản ổn định mới nhất cho tất cả các bộ:
+Hiển thị 30 phiên bản ổn định mới nhất của tất cả các bộ kit:
 
 ```bash
 ck versions
@@ -81,29 +82,29 @@ Showing 30 releases
 ✨ Done
 ```
 
-### Lọc theo bộ
+### Lọc theo bộ kit
 
-Hiển thị phiên bản cho một bộ cụ thể:
+Hiển thị các phiên bản của một bộ kit cụ thể:
 
 ```bash
 ck versions --kit engineer
 ```
 
-Chỉ hiển thị bản phát hành cho ClaudeKit Engineer.
+Lệnh này chỉ hiển thị các bản phát hành dành cho ClaudeKit Engineer.
 
-### Hiển thị các phiên bản khác
+### Hiển thị nhiều phiên bản hơn
 
-Tăng giới hạn mặc định:
+Tăng giới hạn số lượng hiển thị mặc định:
 
 ```bash
 ck versions --limit 50
 ```
 
-Hiển thị tối đa 50 phiên bản thay vì 30 mặc định.
+Hiển thị tối đa 50 phiên bản thay vì 30 bản mặc định.
 
-### Bao gồm Prerelease
+### Bao gồm bản Prerelease
 
-Hiển thị các phiên bản beta và draft:
+Hiển thị cả các phiên bản beta và bản nháp:
 
 ```bash
 ck versions --all
@@ -121,11 +122,11 @@ ClaudeKit Engineer - Available Versions:
   ...
 ```
 
-Prerelease được đánh dấu bằng huy hiệu `[prerelease]`, draft với huy hiệu `[draft]`.
+Các bản prerelease được đánh dấu bằng huy hiệu `[prerelease]`, bản nháp được đánh dấu bằng huy hiệu `[draft]`.
 
-### Kết hợp bộ lọc
+### Kết hợp các bộ lọc
 
-Hiển thị 100 bản phát hành kỹ sư bao gồm prerelease:
+Hiển thị 100 bản phát hành của Engineer bao gồm cả các bản prerelease:
 
 ```bash
 ck versions --kit engineer --limit 100 --all
@@ -133,35 +134,35 @@ ck versions --kit engineer --limit 100 --all
 
 ## Định dạng đầu ra
 
-Mỗi mục phiên bản hiển thị:
+Mỗi mục phiên bản sẽ hiển thị:
 
 ```
 v1.17.0              Release name                              2 days ago           (1 asset)
 ^^^^^^^              ^^^^^^^^^^^^                              ^^^^^^^^^^           ^^^^^^^^^^
-Version tag          Release title                             Relative time        Asset count
+Thẻ phiên bản        Tiêu đề bản phát hành                     Thời gian tương đối  Số lượng tài sản
 ```
 
 ### Huy hiệu
 
-- `[prerelease]` - Phiên bản beta hoặc prerelease (vàng)
-- `[draft]` - Bản phát hành nháp, chưa được xuất bản (xám)
+- `[prerelease]` - Phiên bản beta hoặc prerelease (màu vàng)
+- `[draft]` - Bản phát hành nháp, chưa được công bố (màu xám)
 
 ### Thời gian tương đối
 
-Thời gian dễ đọc kể từ khi phát hành:
+Thời gian dễ đọc tính từ thời điểm phát hành:
 
 - `Today` - Phát hành hôm nay
 - `Yesterday` - Phát hành hôm qua
-- `N days ago` - Trong tuần qua
-- `N weeks ago` - Trong tháng qua
-- `N months ago` - Trong năm qua
+- `N days ago` - Trong vòng một tuần qua
+- `N weeks ago` - Trong vòng một tháng qua
+- `N months ago` - Trong vòng một năm qua
 - `N years ago` - Hơn một năm trước
 
-## Mô hình phổ biến
+## Các mẫu phổ biến
 
 ### Kiểm tra phiên bản mới nhất
 
-Xem có gì mới:
+Xem những cập nhật mới nhất:
 
 ```bash
 ck versions --limit 1
@@ -169,83 +170,83 @@ ck versions --limit 1
 
 Chỉ hiển thị bản phát hành ổn định gần đây nhất.
 
-### Tìm phiên bản Beta
+### Tìm kiếm phiên bản Beta
 
-Tìm kiếm các tính năng sắp tới:
+Tìm kiếm các tính năng sắp ra mắt:
 
 ```bash
 ck versions --all --limit 10
 ```
 
-Hiển thị 10 phiên bản mới nhất bao gồm beta.
+Hiển thị 10 phiên bản mới nhất bao gồm cả các bản beta.
 
-### So sánh bộ
+### So sánh các bộ kit
 
-Xem phiên bản trên cả hai bộ:
+Xem phiên bản của cả hai bộ kit:
 
 ```bash
 ck versions --limit 5
 ```
 
-Hiển thị 5 phiên bản mới nhất cho mỗi bộ có sẵn.
+Hiển thị 5 phiên bản mới nhất cho mỗi bộ kit có sẵn.
 
-### Lịch sử phiên bản đầy đủ
+### Xem toàn bộ lịch sử phiên bản
 
-Lấy dòng thời gian bản phát hành hoàn chỉnh:
+Lấy toàn bộ dòng thời gian của các bản phát hành:
 
 ```bash
 ck versions --all --limit 999
 ```
 
-Hiển thị tất cả các bản phát hành đã xuất bản (lên đến giới hạn API).
+Hiển thị tất cả các bản phát hành đã được công bố (tối đa theo giới hạn của API).
 
-## Use cases
+## Các trường hợp sử dụng
 
 ### Trước khi cài đặt
 
 Kiểm tra các phiên bản có sẵn trước khi tạo dự án:
 
 ```bash
-# Duyệt phiên bản
+# Xem các phiên bản
 ck versions --kit engineer
 
-# Cài đặt phiên bản cụ thể
+# Cài đặt một phiên bản cụ thể
 ck new --kit engineer --release v1.16.0
 ```
 
-### Ghim phiên bản
+### Cố định phiên bản (Version Pinning)
 
-Tìm phiên bản ổn định cho sản xuất:
+Tìm phiên bản ổn định để sử dụng cho sản xuất:
 
 ```bash
 ck versions --kit engineer --limit 10
 ```
 
-Tránh prerelease bằng cách không sử dụng cờ `--all`.
+Tránh các bản prerelease bằng cách không sử dụng cờ `--all`.
 
-### Kiểm tra Beta
+### Thử nghiệm Beta
 
-Tìm beta mới nhất để kiểm tra:
+Tìm phiên bản beta mới nhất để thử nghiệm:
 
 ```bash
 ck versions --all --limit 5
 ```
 
-Tìm huy hiệu `[prerelease]`, sau đó:
+Tìm huy hiệu `[prerelease]`, sau đó chạy:
 
 ```bash
 ck new --kit engineer --release v1.18.0-beta.1
 ```
 
-### Nghiên cứu ghi chú phát hành
+### Tìm kiếm theo ghi chú phát hành (Release Notes)
 
-Xác định phiên bản với các tính năng cụ thể:
+Xác định phiên bản có chứa các tính năng cụ thể:
 
 ```bash
 ck versions --limit 50
 ```
 
-Kiểm tra tên/tiêu đề bản phát hành cho các đề cập đến tính năng.
+Kiểm tra tên/tiêu đề của các bản phát hành để tìm các tính năng được nhắc đến.
 
 ## Xử lý sự cố
 
@@ -253,9 +254,9 @@ Kiểm tra tên/tiêu đề bản phát hành cho các đề cập đến tính 
 
 **Nguyên nhân:**
 
-1. Quyền truy cập kho lưu trữ bị từ chối
-2. Bộ không có bản phát hành
-3. Vấn đề kết nối mạng
+1. Quyền truy cập vào kho lưu trữ bị từ chối
+2. Bộ kit không có bản phát hành nào
+3. Vấn đề về kết nối mạng
 
 **Giải pháp:**
 
@@ -274,21 +275,21 @@ ck versions --verbose
 
 **Nguyên nhân:**
 
-1. Giới hạn tỷ lệ API GitHub vượt quá
-2. Thời gian chờ mạng
+1. Vượt quá giới hạn tần suất (rate limit) của API GitHub
+2. Hết thời gian chờ mạng (network timeout)
 3. Xác thực không hợp lệ
 
 **Giải pháp:**
 
 ```bash
-# Đợi và thử lại (giới hạn tỷ lệ đặt lại mỗi giờ)
+# Đợi và thử lại (giới hạn tần suất thường được thiết lập lại mỗi giờ)
 sleep 60
 ck versions
 
 # Kiểm tra trạng thái xác thực
 gh auth status
 
-# Sử dụng chế độ chi tiết để biết chi tiết
+# Sử dụng chế độ verbose để xem chi tiết lỗi
 ck versions --verbose
 ```
 
@@ -296,73 +297,73 @@ ck versions --verbose
 
 **Nguyên nhân:**
 
-1. Tất cả các bản phát hành được lọc (sử dụng `--kit` với bộ sai)
-2. Không có bản phát hành ổn định (cần cờ `--all`)
+1. Tất cả các bản phát hành đã bị lọc (ví dụ: sử dụng `--kit` sai tên bộ kit)
+2. Không có bản phát hành ổn định nào (cần dùng cờ `--all`)
 
 **Giải pháp:**
 
 ```bash
-# Bao gồm prerelease
+# Bao gồm cả các bản prerelease
 ck versions --all
 
-# Thử bộ khác
+# Thử với bộ kit khác
 ck versions --kit marketing
 
-# Kiểm tra tất cả các bộ
+# Kiểm tra tất cả các bộ kit
 ck versions
 ```
 
 ## Quy ước đặt tên phiên bản
 
-Các phiên bản ClaudeKit tuân theo [Semantic Versioning](https://semver.org/):
+Các phiên bản của ClaudeKit tuân theo chuẩn [Semantic Versioning](https://semver.org/):
 
 ```
 v1.17.0
 ^ ^  ^ ^
-│ │  │ └─ Patch (bug fixes)
-│ │  └─── Minor (new features, backward compatible)
-│ └────── Major (breaking changes)
-└──────── Prefix 'v'
+│ │  │ └─ Patch (sửa lỗi)
+│ │  └─── Minor (tính năng mới, tương thích ngược)
+│ └────── Major (thay đổi lớn, phá vỡ tương thích)
+└──────── Tiền tố 'v'
 ```
 
-### Thẻ Prerelease
+### Các nhãn Prerelease
 
-- `v1.18.0-alpha.1` - Alpha (kiểm tra sớm)
-- `v1.18.0-beta.1` - Beta (hoàn thành tính năng, kiểm tra)
-- `v1.18.0-rc.1` - Release Candidate (kiểm tra cuối cùng)
+- `v1.18.0-alpha.1` - Alpha (thử nghiệm sớm)
+- `v1.18.0-beta.1` - Beta (tính năng đã xong, đang kiểm thử)
+- `v1.18.0-rc.1` - Release Candidate (kiểm thử cuối cùng)
 
-## Bộ nhớ đệm
+## Bộ nhớ đệm (Caching)
 
-Dữ liệu bản phát hành được lưu vào bộ nhớ cache cục bộ để cải thiện hiệu suất.
+Dữ liệu của các bản phát hành được lưu tạm tại máy cục bộ để cải thiện hiệu suất.
 
 ### Vị trí bộ nhớ đệm
 
 `~/.claudekit/cache/releases/`
 
-### TTL bộ nhớ đệm
+### Thời gian sống (TTL) của bộ nhớ đệm
 
 Mặc định: 1 giờ (3600 giây)
 
 ### Cấu hình bộ nhớ đệm
 
-Đặt TTL tùy chỉnh thông qua biến môi trường:
+Thiết lập thời gian sống (TTL) tùy chỉnh thông qua biến môi trường:
 
 ```bash
-# Bộ nhớ đệm trong 2 giờ
+# Lưu bộ nhớ đệm trong 2 giờ
 CK_CACHE_TTL=7200 ck versions
 
-# Vô hiệu hóa bộ nhớ đệm (luôn tìm nạp mới)
+# Vô hiệu hóa bộ nhớ đệm (luôn lấy dữ liệu mới)
 CK_CACHE_TTL=0 ck versions
 
-# Cấu hình vĩnh viễn (thêm vào ~/.bashrc hoặc ~/.zshrc)
-export CK_CACHE_TTL=1800  # 30 minutes
+# Cấu hình vĩnh viễn (thêm vào file ~/.bashrc hoặc ~/.zshrc)
+export CK_CACHE_TTL=1800  # 30 phút
 ```
 
-## Ghi chú cụ thể theo nền tảng
+## Ghi chú theo nền tảng
 
 ### Windows
 
-- Mã hóa đầu ra: UTF-8 (màu sắc và huy hiệu hiển thị chính xác)
+- Mã hóa đầu ra: UTF-8 (đảm bảo màu sắc và huy hiệu hiển thị đúng)
 - Vị trí bộ nhớ đệm: `%USERPROFILE%\.claudekit\cache\`
 
 ### macOS
@@ -372,13 +373,13 @@ export CK_CACHE_TTL=1800  # 30 minutes
 
 ### Linux
 
-- Được hỗ trợ đầy đủ trên tất cả các bản phân phối chính
+- Được hỗ trợ đầy đủ trên tất cả các bản phân phối phổ biến
 - Vị trí bộ nhớ đệm: `~/.claudekit/cache/`
-- WSL được hỗ trợ
+- Hỗ trợ WSL
 
 ## Bước tiếp theo
 
-Sau khi duyệt các phiên bản:
+Sau khi xem danh sách các phiên bản:
 
 1. **Cài đặt phiên bản cụ thể:**
 
@@ -386,13 +387,13 @@ Sau khi duyệt các phiên bản:
 ck new --release v1.16.0
 ```
 
-2. **Cập nhật phiên bản cụ thể:**
+2. **Cập nhật lên phiên bản cụ thể:**
 
 ```bash
 ck init --release v1.17.0
 ```
 
-3. **Thử phiên bản beta:**
+3. **Dùng thử phiên bản beta:**
 
 ```bash
 ck new --release v1.18.0-beta.1
@@ -404,9 +405,9 @@ ck new --release v1.18.0-beta.1
 ck update --check
 ```
 
-## Lệnh liên quan
+## Các lệnh liên quan
 
 - [`ck new`](/vi/docs/cli/new) - Tạo dự án với phiên bản cụ thể
-- [`ck init`](/vi/docs/cli/init) - Cập nhật phiên bản cụ thể
+- [`ck init`](/vi/docs/cli/init) - Cập nhật dự án với phiên bản cụ thể
 - [`ck update`](/vi/docs/cli/update) - Cập nhật CLI
-- [`ck doctor`](/vi/docs/cli/doctor) - Chẩn đoán các vấn đề phiên bản
+- [`ck doctor`](/vi/docs/cli/doctor) - Chẩn đoán các lỗi liên quan đến phiên bản

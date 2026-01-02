@@ -6,6 +6,7 @@ kit: engineer
 category: docs/configuration
 order: 3
 published: true
+lang: vi
 ---
 
 # Workflows

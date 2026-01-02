@@ -1,711 +1,108 @@
 ---
-title: Git Manager Agent
-description: Token-optimized Git operations specialist for staging, committing, and pushing with conventional commits and security scanning
+title: Agent Git Manager
+description: Chuyên gia thao tác Git tối ưu hóa token để staging, commit và push với thông điệp chuẩn và quét bảo mật.
 section: engineer
 kit: engineer
 category: agents
 order: 13
 published: true
+lang: vi
 ---
 
-# Git Manager Agent
+# Agent Git Manager
 
-The git-manager agent is a specialized DevOps agent optimized for Git operations with token efficiency. It handles staging, committing, and pushing code with professional conventional commits while preventing security leaks.
+Agent git-manager là một agent DevOps chuyên biệt được tối ưu hóa cho các thao tác Git với hiệu quả sử dụng token cao. Nó xử lý việc lưu tạm (staging), chuyển giao (committing) và đẩy mã nguồn (pushing) với các thông điệp commit chuyên nghiệp theo chuẩn conventional commits, đồng thời ngăn chặn rò rỉ bảo mật.
 
-## Purpose
+## Mục đích
 
-Stage, commit, and push code changes with conventional commit messages, security scanning, and optimized token usage (81% cost reduction vs baseline).
+Lưu tạm, chuyển giao và đẩy thay đổi mã nguồn với các thông điệp commit chuẩn, quét bảo mật và tối ưu hóa việc sử dụng token (giảm 81% chi phí so với cơ bản).
 
-## Model & Performance
+## Mô hình & Hiệu suất
 
-**Model**: Haiku (optimized for token efficiency)
+**Mô hình**: Haiku (được tối ưu hóa cho hiệu quả token)
 
-**Performance Metrics:**
-- **Tool Calls**: 2-3 per commit
-- **Token Usage**: 5-8K tokens
-- **Execution Time**: 10-15 seconds
-- **Cost**: ~$0.015 per commit
+**Chỉ số hiệu suất:**
+- **Số lần gọi công cụ**: 2-3 mỗi lần commit
+- **Sử dụng Token**: 5-8K token
+- **Thời gian thực thi**: 10-15 giây
+- **Chi phí**: ~$0.015 mỗi lần commit
 
-**Why Haiku?**
-- 81% token reduction compared to baseline
-- Fast execution for routine operations
-- Cost-effective for frequent commits
-- Sufficient for Git operations
+## Khi nào được kích hoạt
 
-## When Activated
+Agent git-manager kích hoạt khi:
+- Người dùng nói "commit" hoặc "push"
+- Sử dụng lệnh `/git:cm` (commit)
+- Sử dụng lệnh `/git:cp` (commit và push)
+- Sử dụng lệnh `/git:pr` (tạo pull request)
+- Sau khi triển khai các tính năng hoặc bản sửa lỗi
 
-The git-manager agent activates when:
-
-- User says "commit" or "push"
-- Using `/git:cm` command (commit)
-- Using `/git:cp` command (commit and push)
-- Using `/git:pr` command (pull request)
-- After implementing features or fixes
-- When explicitly requested
-
-## Capabilities
+## Khả năng
 
 ### Conventional Commits
+Tạo các thông điệp commit ngữ nghĩa theo định dạng: `type(scope): description`.
+Các loại (`type`) phổ biến: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`, `perf`, `build`, `ci`.
 
-Creates semantic commit messages following conventional commit format:
+### Quét bảo mật
+Tự động quét các thay đổi (diff) để tìm dữ liệu nhạy cảm:
+- Khóa API và token
+- Mật khẩu và bí mật (secrets)
+- Khóa riêng tư (private keys)
+- Thông tin xác thực đám mây (AWS, v.v.)
+- Chuỗi kết nối cơ sở dữ liệu
+**Hành động**: Chặn commit và cảnh báo người dùng nếu phát hiện bí mật.
 
-**Format**: `type(scope): description`
+### Thông điệp tự động tạo
+- **Thay đổi đơn giản**: Do Haiku xử lý (chỉnh sửa một tệp, refactor nhỏ, cập nhật tài liệu).
+- **Thay đổi phức tạp**: Chuyển giao cho Gemini (nhiều tệp, thay đổi kiến trúc, tính năng mới).
 
-**Types**:
-- `feat` - New feature
-- `fix` - Bug fix
-- `docs` - Documentation changes
-- `style` - Formatting, missing semicolons
-- `refactor` - Code restructuring
-- `test` - Adding/updating tests
-- `chore` - Maintenance tasks
-- `perf` - Performance improvements
-- `build` - Build system changes
-- `ci` - CI/CD configuration
+### Lưu tạm thông minh (Smart Staging)
+- Tự động phát hiện các thay đổi liên quan.
+- Loại trừ các tệp tạm thời và tuân thủ `.gitignore`.
 
-**Rules**:
-- Description max 72 characters
-- Use imperative mood ("add" not "added")
-- No period at the end
-- Clear and concise
+## Ví dụ sử dụng
 
-### Security Scanning
-
-Automatically scans diffs for sensitive data:
-
-**Detects**:
-- API keys and tokens
-- Passwords and secrets
-- Private keys
-- AWS credentials
-- Database connection strings
-- OAuth tokens
-- JWT secrets
-
-**Action**: Blocks commit and warns user if secrets detected.
-
-### Auto-Generated Messages
-
-**Simple Changes** (handled by Haiku):
-- Single file modifications
-- Small refactors
-- Documentation updates
-- Dependency updates
-
-**Complex Changes** (delegates to Gemini):
-- Multiple file changes
-- Architectural changes
-- Feature implementations
-- Major refactors
-
-### Smart Staging
-
-**Automatic Detection**:
-- Stages all relevant changes
-- Excludes temporary files
-- Respects `.gitignore`
-- Groups related changes
-
-## Example Usage
-
-### Basic Commit
-
-**Input:**
+### Commit cơ bản
 ```bash
 /git:cm
 ```
+**Quy trình**: Quét bảo mật (không thấy bí mật) -> Phân tích thay đổi -> Tạo thông điệp -> Commit thành công.
 
-**Process:**
-```
-1. Security Scan (2s)
-   Scanning: git diff
-   ✓ No secrets detected
-
-2. Change Analysis (3s)
-   Modified:
-   - src/auth/login.ts (15 lines)
-   - tests/auth/login.test.ts (8 lines)
-
-   Type: Bug fix (added validation)
-   Scope: auth
-
-3. Generate Message (2s)
-   Message: fix(auth): add email validation in login
-
-4. Commit (2s)
-   Staging: src/auth/login.ts, tests/auth/login.test.ts
-   ✓ Committed: fix(auth): add email validation in login
-
-5. Status (1s)
-   ✓ Success
-   Commit: a3f5c8d
-```
-
-**Total Time**: 10 seconds
-**Total Cost**: $0.015
-
-### Commit and Push
-
-**Input:**
+### Commit và Push
 ```bash
 /git:cp
 ```
+**Quy trình**: Thực hiện quy trình commit -> Đẩy lên nhánh remote (ví dụ: `origin/main`).
 
-**Process:**
-```
-1. Security Scan (2s)
-   Scanning: git diff
-   ✓ No secrets detected
+### Trường hợp bị chặn do bảo mật
+Nếu phát hiện bí mật trong mã nguồn, agent sẽ chặn commit và yêu cầu người dùng xóa các bí mật được mã hóa cứng trước khi tiếp tục.
 
-2. Change Analysis (3s)
-   Modified:
-   - src/components/Dashboard.tsx (45 lines)
-   - src/components/Chart.tsx (NEW)
-   - src/styles/dashboard.css (12 lines)
+## Tối ưu hóa Token
 
-   Type: Feature (new chart component)
-   Scope: dashboard
+Agent sử dụng các chiến lược để giảm chi phí:
+1. **Tải bối cảnh tối thiểu**: Chỉ đọc `git diff`, không đọc toàn bộ lịch sử tệp.
+2. **Phân tích tập trung**: Tập trung vào đường dẫn tệp, loại thay đổi và số dòng thay đổi.
+3. **Chiến lược ủy quyền**: Chỉ sử dụng các mô hình lớn hơn (Gemini) khi thay đổi thực sự phức tạp.
 
-3. Generate Message (3s)
-   Complex changes detected
-   Delegating to Gemini for better context...
+## Thực hành tốt nhất
 
-   Message: feat(dashboard): add interactive chart component
+- **Phạm vi commit rõ ràng**: Chỉ `git add` các tệp liên quan đến một tính năng hoặc lỗi.
+- **Nhóm logic**: Tách biệt các thay đổi tính năng khỏi các bản sửa lỗi.
+- **Kiểm tra trước khi đẩy**: Sử dụng `/git:cm` để xem thông điệp trước khi dùng `/git:cp`.
 
-   Body:
-   - Add Chart component with real-time updates
-   - Integrate with Dashboard layout
-   - Add responsive styles
+## Xử lý sự cố
 
-4. Commit (2s)
-   Staging: 3 files
-   ✓ Committed: feat(dashboard): add interactive chart component
+- **Commit bị chặn**: Kiểm tra các cảnh báo bảo mật, xóa bí mật và thử lại.
+- **Thông điệp quá dài**: Rút gọn mô tả hoặc di chuyển chi tiết vào phần thân (body) của commit.
+- **Sai loại commit**: Thêm các tệp cụ thể hơn hoặc tách thành nhiều commit nhỏ.
 
-5. Push (5s)
-   Pushing to: origin/main
-   ✓ Pushed successfully
-```
+## Các bước tiếp theo
 
-**Total Time**: 15 seconds
-
-### Security Block Example
-
-**Input:**
-```bash
-/git:cm
-```
-
-**Process:**
-```
-1. Security Scan (2s)
-   Scanning: git diff
-
-   ⚠ SECURITY WARNING: Secrets detected!
-
-   File: src/config/api.ts
-   Line 3: const API_KEY = "sk-1234567890abcdef"
-
-   File: .env.production
-   Line 5: DATABASE_URL=postgres://user:pass@...
-
-   ❌ COMMIT BLOCKED
-
-   Action Required:
-   1. Remove hardcoded secrets
-   2. Use environment variables
-   3. Update .env.example instead
-   4. Add secrets to .gitignore
-```
-
-**Total Time**: 2 seconds (blocked)
-
-## Commit Message Examples
-
-### Features
-
-```bash
-feat(api): add user authentication endpoint
-feat(ui): implement dark mode toggle
-feat(db): add user preferences table
-```
-
-### Bug Fixes
-
-```bash
-fix(auth): prevent duplicate email registration
-fix(ui): correct button alignment on mobile
-fix(api): handle null values in response
-```
-
-### Documentation
-
-```bash
-docs(readme): add installation instructions
-docs(api): document authentication flow
-docs(contributing): add commit guidelines
-```
-
-### Refactoring
-
-```bash
-refactor(auth): simplify token validation logic
-refactor(db): extract query builders to helpers
-refactor(ui): convert class components to hooks
-```
-
-### Performance
-
-```bash
-perf(api): add Redis caching for user queries
-perf(ui): lazy load images in gallery
-perf(db): add indexes on frequently queried fields
-```
-
-### Tests
-
-```bash
-test(auth): add integration tests for login
-test(api): increase coverage to 90%
-test(ui): add snapshot tests for components
-```
-
-## Output Format
-
-### Success
-
-```
-✓ Changes committed successfully
-
-Commit: a3f5c8d
-Type: feat(dashboard)
-Message: add interactive chart component
-
-Files changed: 3
-Insertions: 125
-Deletions: 8
-
-Next steps:
-- Push changes: /git:cp
-- Create PR: /git:pr
-```
-
-### With Push
-
-```
-✓ Changes committed and pushed
-
-Commit: a3f5c8d
-Branch: feature/dashboard-charts
-Remote: origin
-
-Next steps:
-- Create PR: /git:pr main feature/dashboard-charts
-```
-
-### Security Warning
-
-```
-⚠ Security scan detected issues
-
-Blocked files:
-- src/config/api.ts (API key)
-- .env.production (credentials)
-
-Recommendation:
-1. Move secrets to environment variables
-2. Update .env.example with placeholder values
-3. Ensure .env is in .gitignore
-4. Use secret management tools
-
-After fixing, run /git:cm again
-```
-
-## Workflow Integration
-
-### After Feature Implementation
-
-```bash
-# 1. Review changes
-git status
-git diff
-
-# 2. Commit with git-manager
-/git:cm
-
-# 3. Review commit
-git log -1
-
-# 4. Push if satisfied
-/git:cp
-
-# 5. Create PR if needed
-/git:pr main feature-branch
-```
-
-### After Bug Fix
-
-```bash
-# Fix the bug...
-
-# Commit and push immediately
-/git:cp
-```
-
-### Before Pull Request
-
-```bash
-# Ensure all changes committed
-/git:cm
-
-# Push to feature branch
-git push origin feature/new-feature
-
-# Create PR
-/git:pr main feature/new-feature
-```
-
-## Advanced Features
-
-### Custom Commit Messages
-
-If you want to override auto-generated messages:
-
-```bash
-# git-manager will still validate format
-git add .
-git commit -m "feat(auth): custom message here"
-```
-
-The agent validates but doesn't interfere with manual commits.
-
-### Multi-Part Commits
-
-For large changes, commit in logical chunks:
-
-```bash
-# Stage specific files
-git add src/auth/*
-/git:cm  # Commits auth changes
-
-# Stage UI files
-git add src/components/*
-/git:cm  # Commits UI changes
-```
-
-### Amend Commits
-
-```bash
-# Make additional changes
-git add .
-git commit --amend --no-edit
-
-# Or with new message
-git commit --amend -m "feat(auth): updated message"
-```
-
-## Token Optimization
-
-### Haiku Optimization Strategies
-
-**1. Minimal Context Loading**
-```
-Instead of reading entire files:
-✓ Read git diff only
-✓ Analyze changed lines
-✗ Don't read full file history
-```
-
-**2. Focused Analysis**
-```
-Analyze:
-✓ File paths
-✓ Change types (add/modify/delete)
-✓ Line count changes
-✗ Don't analyze file contents deeply
-```
-
-**3. Simple Pattern Matching**
-```
-Commit type detection:
-✓ Pattern matching on file paths
-✓ Change magnitude analysis
-✗ Don't use complex NLP
-```
-
-**4. Delegation Strategy**
-```
-Delegate to Gemini when:
-- Changes span >5 files
-- Mixed change types (feat + fix)
-- Architectural changes
-- Complex refactoring
-```
-
-### Performance Comparison
-
-| Approach | Tokens | Time | Cost |
-|----------|--------|------|------|
-| Baseline (Sonnet) | 25K-30K | 45s | $0.075 |
-| Optimized (Haiku) | 5K-8K | 10-15s | $0.015 |
-| **Savings** | **81%** | **67%** | **80%** |
-
-## Best Practices
-
-### Do's ✅
-
-**Clear Commit Scope**
-```bash
-✓ git add src/auth/login.ts src/auth/register.ts
-✓ /git:cm  # Commits only auth changes
-```
-
-**Logical Grouping**
-```bash
-✓ Commit related changes together
-✓ Separate features from fixes
-✓ Keep commits focused
-```
-
-**Review Before Push**
-```bash
-✓ /git:cm  # Review commit message
-✓ git log -1  # Verify commit
-✓ /git:cp  # Push if satisfied
-```
-
-### Don'ts ❌
-
-**Mixed Concerns**
-```bash
-✗ git add .  # Auth + UI + DB changes
-✗ /git:cm  # Creates unclear commit
-```
-
-**Skipping Security Scan**
-```bash
-✗ git commit --no-verify  # Bypasses security
-```
-
-**Vague Messages**
-```bash
-✗ "update files"
-✗ "fix bug"
-✗ "WIP"
-```
-
-## Troubleshooting
-
-### Problem: Commit Blocked by Security Scan
-
-**Symptoms**: Warning about detected secrets
-
-**Solutions:**
-1. Remove hardcoded secrets from code
-2. Use environment variables instead
-3. Add `.env` files to `.gitignore`
-4. Use secret management tools (Vault, AWS Secrets Manager)
-
-**Example Fix:**
-```typescript
-// Before (blocked)
-const API_KEY = "sk-1234567890abcdef";
-
-// After (allowed)
-const API_KEY = process.env.API_KEY;
-```
-
-### Problem: Message Too Long
-
-**Symptoms**: Commit message exceeds 72 characters
-
-**Solutions:**
-1. Simplify description
-2. Move details to commit body
-3. Use shorter scope names
-
-**Example:**
-```bash
-# Too long (80 chars)
-fix(authentication): add comprehensive email validation for registration form
-
-# Better (68 chars)
-fix(auth): add email validation for registration
-
-# With body
-fix(auth): add email validation
-
-- Validate email format
-- Check domain DNS
-- Prevent disposable emails
-```
-
-### Problem: Wrong Commit Type
-
-**Symptoms**: Agent chose incorrect type
-
-**Solutions:**
-1. Stage more specific files
-2. Split into multiple commits
-3. Manually specify type
-
-**Example:**
-```bash
-# Agent might be confused by mixed changes
-git add .  # feat + fix + docs
-
-# Better: separate commits
-git add src/features/new-feature.ts
-/git:cm  # Auto: feat(features)
-
-git add src/bugs/fix.ts
-/git:cm  # Auto: fix(bugs)
-```
-
-### Problem: Push Failed
-
-**Symptoms**: Remote rejected push
-
-**Solutions:**
-1. Pull latest changes first
-2. Resolve merge conflicts
-3. Force push if appropriate (with caution)
-
-**Commands:**
-```bash
-# Pull and rebase
-git pull --rebase origin main
-
-# Resolve conflicts if any
-git add .
-git rebase --continue
-
-# Push again
-/git:cp
-```
-
-## Security Features
-
-### Secret Detection Patterns
-
-The agent scans for:
-
-**API Keys**
-```
-✗ API_KEY = "sk-..."
-✗ apiKey: "pk_live_..."
-✗ token = "ghp_..."
-```
-
-**Passwords**
-```
-✗ PASSWORD = "admin123"
-✗ db_password: "secret"
-✗ credentials.password = "..."
-```
-
-**Private Keys**
-```
-✗ -----BEGIN PRIVATE KEY-----
-✗ -----BEGIN RSA PRIVATE KEY-----
-```
-
-**Connection Strings**
-```
-✗ postgres://user:pass@host/db
-✗ mongodb://user:pass@host/db
-✗ mysql://user:pass@host/db
-```
-
-**OAuth Tokens**
-```
-✗ access_token: "ya29..."
-✗ refresh_token: "..."
-```
-
-### Whitelisting
-
-Some patterns are allowed if properly managed:
-
-**Environment Variable References**
-```
-✓ API_KEY = process.env.API_KEY
-✓ password: process.env.DB_PASSWORD
-```
-
-**Example/Template Files**
-```
-✓ .env.example
-✓ config.template.js
-```
-
-**Test Fixtures**
-```
-✓ tests/fixtures/mock-credentials.ts
-```
-
-## Integration with Other Agents
-
-### After Implementation
-
-```
-planner → code → tester → git-manager
-                           ↓
-                    Commits changes
-```
-
-### After Code Review
-
-```
-code-reviewer → fixes applied → git-manager
-                                 ↓
-                          Commits reviewed code
-```
-
-### After Documentation
-
-```
-docs-manager → updates docs → git-manager
-                               ↓
-                        Commits documentation
-```
-
-## Important Notes
-
-### AI Attribution
-
-**Never includes AI attribution in commits**
-
-The git-manager agent:
-- ✅ Creates professional commit messages
-- ✅ Follows team conventions
-- ❌ Never adds "Generated by AI"
-- ❌ Never includes attribution
-
-### Commit Standards
-
-Follows industry-standard conventional commits:
-- Used by Angular, React, Vue, and many others
-- Compatible with changelog generators
-- Enables semantic versioning automation
-- Clear commit history
-
-### Token Efficiency
-
-Optimized for frequent commits:
-- Minimal token usage per commit
-- Fast execution times
-- Cost-effective for daily use
-- Scales to hundreds of commits
-
-## Next Steps
-
-Learn more about related topics:
-
-- [Commit & Push Command](/docs/engineer/commands/git/commit-push) - How to commit and push
-- [Pull Request Command](/docs/engineer/commands/git/pr) - Creating pull requests
-- [Code Review](/docs/engineer/agents/code-reviewer) - Pre-commit code review
-- [Project Manager](/docs/engineer/agents/project-manager) - Overall project coordination
+Tìm hiểu thêm về các chủ đề liên quan:
+- [Lệnh Commit & Push](/vi/docs/engineer/commands/git/commit-push)
+- [Lệnh Pull Request](/vi/docs/engineer/commands/git/pr)
+- [Xem xét mã nguồn](/vi/docs/engineer/agents/code-reviewer)
+- [Project Manager](/vi/docs/engineer/agents/project-manager)
 
 ---
 
-**Key Takeaway**: The git-manager agent provides token-optimized, secure Git operations with professional conventional commits, security scanning, and 81% cost reduction compared to baseline approaches.
+**Thông điệp chính**: Agent git-manager cung cấp các thao tác Git bảo mật, tối ưu hóa token với thông điệp chuẩn chuyên nghiệp, giúp giảm 81% chi phí so với các phương pháp thông thường.

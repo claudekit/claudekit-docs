@@ -1,229 +1,229 @@
 ---
 title: /content:good
-description: Documentation for good
+description: Tài liệu hướng dẫn cho lệnh good
 section: engineer
 kit: engineer
 category: docs/commands/content
 order: 53
 published: true
+lang: vi
 ---
 
 # /content:good
 
-Create high-quality, strategic copy with comprehensive research, competitor analysis, and multiple alternatives with detailed rationale. This is your go-to command for important content that requires thoughtful strategy and optimization.
+Tạo bản viết (copy) chiến lược, chất lượng cao với nghiên cứu toàn diện, phân tích đối thủ cạnh tranh và nhiều phương án thay thế kèm theo lý giải chi tiết. Đây là lệnh ưu tiên cho các nội dung quan trọng yêu cầu chiến lược và tối ưu hóa chu đáo.
 
-## Syntax
-
-```bash
-/content:good [content request]
-```
-
-## How It Works
-
-The `/content:good` command follows a comprehensive content creation workflow:
-
-### 1. Deep Research Phase
-
-Invokes **copywriter** agent with **researcher** support:
-- Analyzes target audience deeply
-- Studies competitor content
-- Reviews successful examples
-- Identifies content gaps
-- Researches psychological triggers
-- Examines platform best practices
-
-### 2. Strategic Planning
-
-- Defines clear content objectives
-- Identifies key messages
-- Plans content structure
-- Selects appropriate tone
-- Maps user journey alignment
-
-### 3. Multi-Variant Creation
-
-Creates multiple high-quality variations:
-- 3-5 complete versions
-- Different angles/approaches
-- Various hooks and structures
-- Platform-optimized formatting
-
-### 4. Detailed Rationale
-
-For each variation provides:
-- Strategic reasoning
-- Target audience fit
-- Psychological triggers used
-- Expected effectiveness
-- When to use each version
-
-### 5. A/B Testing Recommendations
-
-Suggests testing strategy:
-- Which variations to test
-- What metrics to track
-- Test duration recommendations
-- Expected performance ranges
-
-## Examples
-
-### Strategic Blog Post
+## Cú pháp
 
 ```bash
-/content:good [write blog post about AI code review benefits for engineering teams]
+/content:good [yêu cầu nội dung]
 ```
 
-**What happens:**
+## Cách thức hoạt động
+
+Lệnh `/content:good` tuân theo quy trình tạo nội dung toàn diện:
+
+### 1. Giai đoạn Nghiên cứu Sâu
+
+Triệu tập agent **copywriter** với sự hỗ trợ từ **researcher**:
+- Phân tích sâu đối tượng mục tiêu
+- Nghiên cứu nội dung của đối thủ cạnh tranh
+- Xem xét các ví dụ thành công
+- Xác định các khoảng trống nội dung
+- Nghiên cứu các kích thích tâm lý
+- Kiểm tra các thực hành tốt nhất trên nền tảng
+
+### 2. Lập kế hoạch Chiến lược
+
+- Xác định mục tiêu nội dung rõ ràng
+- Xác định các thông điệp chính
+- Lập kế hoạch cấu trúc nội dung
+- Lựa chọn tông điệu phù hợp
+- Sắp xếp nội dung khớp với hành trình người dùng
+
+### 3. Tạo nhiều Biến thể
+
+Tạo ra nhiều biến thể chất lượng cao:
+- 3-5 phiên bản hoàn chỉnh
+- Các góc nhìn/cách tiếp cận khác nhau
+- Các phần lôi cuốn và cấu trúc đa dạng
+- Định dạng được tối ưu hóa cho nền tảng
+
+### 4. Lý giải Chi tiết
+
+Đối với mỗi biến thể, cung cấp:
+- Lý do chiến lược
+- Sự phù hợp với đối tượng mục tiêu
+- Các kích thích tâm lý được sử dụng
+- Hiệu quả kỳ vọng
+- Khi nào nên sử dụng từng phiên bản
+
+### 5. Đề xuất Thử nghiệm A/B
+
+Gợi ý chiến lược thử nghiệm:
+- Những biến thể nào cần thử nghiệm
+- Các chỉ số cần theo dõi
+- Đề xuất thời gian thử nghiệm
+- Phạm vi hiệu quả kỳ vọng
+
+## Ví dụ
+
+### Bài viết Blog Chiến lược
+
+```bash
+/content:good [viết bài blog về lợi ích của việc đánh giá mã nguồn bằng AI cho các đội ngũ kỹ thuật]
+```
+
+**Điều gì xảy ra:**
 ```
 Agent: copywriter + researcher
-Type: Strategic blog post
-Goal: Drive organic traffic + signups
+Loại: Bài viết blog chiến lược
+Mục tiêu: Tăng lưu lượng truy cập tự nhiên + lượt đăng ký
 
-Phase 1: Research (45 seconds)
+Giai đoạn 1: Nghiên cứu (45 giây)
 ---
-Analyzing:
-- Top 10 ranking articles for "AI code review"
-- Competitor content (GitHub Copilot, Tabnine, etc.)
-- Engineering blogs (Google, Meta, Netflix)
-- Reddit discussions (r/programming, r/devops)
+Đang phân tích:
+- 10 bài viết hàng đầu cho từ khóa "AI code review"
+- Nội dung đối thủ (GitHub Copilot, Tabnine, v.v.)
+- Blog kỹ thuật (Google, Meta, Netflix)
+- Thảo luận trên Reddit (r/programming, r/devops)
 
-Key findings:
-✓ Most content focuses on features, not outcomes
-✓ Gap: Real metrics from production use
-✓ Developers skeptical of AI quality claims
-✓ Need: Specific integration examples
-✓ Pain: Time wasted in manual reviews
+Kết quả chính:
+✓ Hầu hết nội dung tập trung vào tính năng, không phải kết quả
+✓ Khoảng trống: Số liệu thực tế từ việc sử dụng trong sản xuất
+✓ Lập trình viên hoài nghi về tuyên bố chất lượng của AI
+✓ Cần: Các ví dụ tích hợp thực tế
+✓ Điểm đau: Thời gian lãng phí trong đánh giá thủ công
 
-Opportunity:
-- Lead with real data (70% time savings)
-- Include actual team testimonials
-- Show integration in 10 minutes
-- Address skepticism directly
+Cơ hội:
+- Dẫn dắt bằng dữ liệu thực tế (tiết kiệm 70% thời gian)
+- Bao gồm lời chứng thực từ các đội ngũ thực tế
+- Hiển thị quy trình tích hợp trong 10 phút
+- Trực tiếp giải quyết sự hoài nghi
 
-Phase 2: Outline Created
+Giai đoạn 2: Tạo Đề cương
 ---
-1. Hook: Engineering manager pain point
-2. The real cost of manual code review (with data)
-3. How AI code review actually works
-4. Real results: 3 team case studies
-5. Common objections answered
-6. Implementation guide
-7. ROI calculator
-8. Next steps + CTA
+1. Phần lôi cuốn: Điểm đau của quản lý kỹ thuật
+2. Chi phí thực sự của việc đánh giá mã nguồn thủ công (kèm dữ liệu)
+3. Cách thức hoạt động thực sự của đánh giá mã nguồn bằng AI
+4. Kết quả thực tế: 3 nghiên cứu điển hình từ các đội ngũ
+5. Trả lời các phản đối phổ biến
+6. Hướng dẫn triển khai
+7. Công cụ tính toán ROI
+8. Các bước tiếp theo + CTA
 
-Word count target: 2,000 words
-Reading time: 8 minutes
-SEO keywords: "AI code review", "automated code review",
-"code review tools"
+Mục tiêu số từ: 2.000 từ
+Thời gian đọc: 8 phút
+Từ khóa SEO: "AI code review", "automated code review", "code review tools"
 
-Phase 3: Multiple Variations Generated
+Giai đoạn 3: Tạo nhiều Biến thể
 ---
 
-VARIATION 1: Data-Driven Approach
-Title: "How 3 Engineering Teams Cut Code Review Time by 70%"
+BIẾN THỂ 1: Tiếp cận dựa trên Dữ liệu
+Tiêu đề: "Cách 3 đội ngũ kỹ thuật cắt giảm 70% thời gian đánh giá mã nguồn"
 
-Opening:
-"Last Tuesday, Sarah's team spent 6 hours in code review.
-They found 3 bugs. Today, AI found 47 bugs in 12 minutes.
+Mở đầu:
+"Thứ Ba tuần trước, đội của Sarah đã mất 6 giờ để đánh giá mã nguồn.
+Họ tìm thấy 3 lỗi. Hôm nay, AI đã tìm thấy 47 lỗi trong 12 phút.
 
-Here's what changed..."
+Đây là những gì đã thay đổi..."
 
-Rationale:
-+ Starts with specific, relatable scenario
-+ Shows concrete before/after
-+ Promises specific learnings
-+ Best for: Engineering managers, data-driven buyers
+Lý giải:
++ Bắt đầu bằng tình huống cụ thể, dễ đồng cảm
++ Cho thấy sự so sánh trước/sau rõ rệt
++ Hứa hẹn những bài học cụ thể
++ Tốt nhất cho: Quản lý kỹ thuật, người mua dựa trên dữ liệu
 
-Expected performance: High CTR from search, good conversions
-
-
-VARIATION 2: Story-Driven Approach
-Title: "We Let AI Review Our Code for 6 Months. Here's What Happened"
-
-Opening:
-"Six months ago, I was skeptical. 'AI can't understand
-our codebase,' I told my CTO. I was wrong.
-
-Today, our team ships 2x faster, and code quality is
-measurably better. Here's the full story..."
-
-Rationale:
-+ Addresses skepticism head-on
-+ First-person builds credibility
-+ Narrative arc keeps readers engaged
-+ Best for: Social shares, developer audience
-
-Expected performance: High engagement, strong retention
+Hiệu quả kỳ vọng: CTR cao từ tìm kiếm, chuyển đổi tốt
 
 
-VARIATION 3: Problem-Solution Approach
-Title: "Your Code Review Process Is Broken. Here's How to Fix It"
+BIẾN THỂ 2: Tiếp cận dựa trên Câu chuyện
+Tiêu đề: "Chúng tôi đã để AI đánh giá mã nguồn trong 6 tháng. Đây là kết quả"
 
-Opening:
-"Code reviews are the bottleneck nobody talks about.
+Mở đầu:
+"Sáu tháng trước, tôi đã rất hoài nghi. 'AI không thể hiểu
+cấu trúc mã nguồn của chúng tôi,' tôi đã nói với CTO như vậy. Tôi đã nhầm.
 
-PRs sit for days. Reviewers get fatigued. Critical bugs
-slip through. Sound familiar?
+Hôm nay, đội của chúng tôi phát hành nhanh hơn gấp 2 lần, và chất lượng mã nguồn
+được cải thiện rõ rệt. Đây là toàn bộ câu chuyện..."
 
-There's a better way..."
+Lý giải:
++ Giải quyết sự hoài nghi một cách trực diện
++ Ngôi thứ nhất giúp xây dựng lòng tin
++ Cấu trúc tự sự giúp người đọc bị lôi cuốn
++ Tốt nhất cho: Chia sẻ mạng xã hội, đối tượng lập trình viên
 
-Rationale:
-+ Identifies universal pain point
-+ Creates urgency
-+ Promises clear solution
-+ Best for: Paid ads, landing page
-
-Expected performance: High conversion rate
+Hiệu quả kỳ vọng: Tương tác cao, tỷ lệ giữ chân người đọc tốt
 
 
-Phase 4: Full Content Delivered
+BIẾN THỂ 3: Tiếp cận Vấn đề-Giải pháp
+Tiêu đề: "Quy trình đánh giá mã nguồn của bạn đang gặp vấn đề. Đây là cách khắc phục"
+
+Mở đầu:
+"Đánh giá mã nguồn là nút thắt cổ chai mà không ai nói đến.
+
+Các PR bị treo trong nhiều ngày. Người đánh giá mệt mỏi. Các lỗi nghiêm trọng
+bị lọt lưới. Nghe có vẻ quen thuộc chứ?
+
+Có một cách tốt hơn..."
+
+Lý giải:
++ Xác định điểm đau phổ biến
++ Tạo ra sự cấp bách
++ Hứa hẹn giải pháp rõ ràng
++ Tốt nhất cho: Quảng cáo trả phí, trang đích
+
+Hiệu quả kỳ vọng: Tỷ lệ chuyển đổi cao
+
+
+Giai đoạn 4: Bàn giao Nội dung Đầy đủ
 ---
-Selected: Variation 1 (Data-Driven)
-Full 2,000-word article created with:
+Đã chọn: Biến thể 1 (Dựa trên Dữ liệu)
+Bài viết 2.000 từ hoàn chỉnh được tạo với:
 
-✓ Compelling headline (includes number + benefit)
-✓ Strong hook (specific scenario)
-✓ 3 real case studies with metrics
-✓ 8 subheadings (H2) with SEO keywords
-✓ Data visualizations suggested (3 charts)
-✓ 5 code examples
-✓ Common objections section
-✓ Implementation guide
-✓ Clear CTA with free trial offer
-✓ Meta description (158 chars)
-✓ Internal links (5) + external (2)
-✓ Image suggestions (7 with alt text)
+✓ Tiêu đề hấp dẫn (bao gồm con số + lợi ích)
+✓ Phần lôi cuốn mạnh mẽ (tình huống cụ thể)
+✓ 3 nghiên cứu điển hình thực tế kèm số liệu
+✓ 8 tiêu đề phụ (H2) với từ khóa SEO
+✓ Đề xuất trực quan hóa dữ liệu (3 biểu đồ)
+✓ 5 ví dụ mã nguồn
+✓ Phần giải quyết các phản đối phổ biến
+✓ Hướng dẫn triển khai
+✓ CTA rõ ràng với ưu đãi dùng thử miễn phí
+✓ Mô tả meta (158 ký tự)
+✓ Liên kết nội bộ (5) + liên kết ngoài (2)
+✓ Đề xuất hình ảnh (7 ảnh kèm alt text)
 
-SEO optimization:
-- Primary keyword in title, H1, first paragraph
-- Secondary keywords in H2s
-- Keyword density: 1.4% (optimal)
-- Readability: Flesch score 62 (easy)
+Tối ưu hóa SEO:
+- Từ khóa chính trong tiêu đề, H1, đoạn văn đầu tiên
+- Từ khóa phụ trong các thẻ H2
+- Mật độ từ khóa: 1.4% (tối ưu)
+- Khả năng đọc: Điểm Flesch 62 (dễ)
 
-Phase 5: A/B Testing Strategy
+Giai đoạn 5: Chiến lược Thử nghiệm A/B
 ---
-Test 1: Headlines
-A: "How 3 Engineering Teams Cut Code Review Time by 70%"
-B: "Cut Code Review Time by 70%: Real Results from 3 Teams"
-C: "The Code Review Method That Saved 20 Hours/Week"
-Metric: CTR from search/social
-Duration: 2 weeks
+Thử nghiệm 1: Tiêu đề
+A: "Cách 3 đội ngũ kỹ thuật cắt giảm 70% thời gian đánh giá mã nguồn"
+B: "Cắt giảm 70% thời gian đánh giá mã nguồn: Kết quả thực tế từ 3 đội ngũ"
+C: "Phương pháp đánh giá mã nguồn giúp tiết kiệm 20 giờ/tuần"
+Chỉ số: CTR từ tìm kiếm/mạng xã hội
+Thời gian: 2 tuần
 
-Test 2: CTAs
-A: "Start Free Trial"
-B: "See How It Works"
-C: "Get 70% Faster Reviews"
-Metric: Signup rate
-Duration: 1 week
+Thử nghiệm 2: CTA
+A: "Bắt đầu dùng thử miễn phí"
+B: "Xem cách nó hoạt động"
+C: "Nhận đánh giá nhanh hơn 70%"
+Chỉ số: Tỷ lệ đăng ký
+Thời gian: 1 tuần
 
-Expected overall performance:
-- Organic traffic: Top 5 ranking within 3 months
-- Avg. time on page: 4-5 minutes
-- Signup conversion: 8-12%
+Hiệu quả tổng thể kỳ vọng:
+- Lưu lượng tự nhiên: Lọt top 5 tìm kiếm trong vòng 3 tháng
+- Thời gian trung bình trên trang: 4-5 phút
+- Chuyển đổi đăng ký: 8-12%
 
-✓ Content complete (2 minutes 30 seconds)
+✓ Nội dung hoàn tất (2 phút 30 giây)
 
-Files created:
+Các tệp đã tạo:
 - content/blog/ai-code-review-benefits-v1-data.md
 - content/blog/ai-code-review-benefits-v2-story.md
 - content/blog/ai-code-review-benefits-v3-problem.md
@@ -231,624 +231,625 @@ Files created:
 - content/blog/ai-code-review-ab-tests.md
 ```
 
-### Landing Page Copy
+### Bản viết Trang Đích
 
 ```bash
-/content:good [write landing page copy for ClaudeKit Pro targeting enterprise teams]
+/content:good [viết bản viết trang đích cho ClaudeKit Pro nhắm mục tiêu là các đội ngũ doanh nghiệp]
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
 Agent: copywriter + researcher
-Type: Landing page (conversion-critical)
-Audience: Enterprise engineering teams
+Loại: Trang đích (quan trọng về chuyển đổi)
+Đối tượng: Các đội ngũ kỹ thuật doanh nghiệp (Enterprise)
 
-Phase 1: Research (60 seconds)
+Giai đoạn 1: Nghiên cứu (60 giây)
 ---
-Competitor analysis:
+Phân tích đối thủ:
 - GitHub Copilot Enterprise
 - Tabnine Enterprise
 - AWS CodeWhisperer
 - Replit Teams
 
-Key findings:
-✓ All emphasize security (enterprise concern)
-✓ ROI focus (cost per developer matters)
-✓ Integration ease (IT approval process)
-✓ Scale (1000+ developer support)
+Kết quả chính:
+✓ Tất cả đều nhấn mạnh vào bảo mật (mối quan tâm hàng đầu của doanh nghiệp)
+✓ Tập trung vào ROI (chi phí trên mỗi lập trình viên là quan trọng)
+✓ Dễ dàng tích hợp (quy trình phê duyệt CNTT)
+✓ Quy mô (hỗ trợ hơn 1.000 lập trình viên)
 
-Enterprise buyer concerns:
-1. Security & compliance
-2. ROI justification
-3. Implementation time
-4. Support & SLA
-5. Migration path
+Mối quan tâm của người mua doanh nghiệp:
+1. Bảo mật & tuân thủ
+2. Chứng minh ROI
+3. Thời gian triển khai
+4. Hỗ trợ & SLA
+5. Lộ trình chuyển đổi
 
-Phase 2: Landing Page Strategy
+Giai đoạn 2: Chiến lược Trang Đích
 ---
-Structure:
-1. Above fold: Clear value prop + social proof
-2. Social proof: Logo bar (recognizable companies)
-3. Benefits: Focus on business outcomes
-4. Features: Presented as business benefits
-5. Security: Dedicated section
-6. Case study: Enterprise success story
-7. ROI calculator: Interactive
-8. Pricing: Transparent with comparison
-9. FAQ: Address objections
-10. CTA: Multiple throughout
+Cấu trúc:
+1. Trên màn hình đầu tiên: Đề xuất giá trị rõ ràng + bằng chứng xã hội
+2. Bằng chứng xã hội: Thanh logo (các công ty dễ nhận diện)
+3. Lợi ích: Tập trung vào kết quả kinh doanh
+4. Tính năng: Được trình bày dưới dạng lợi ích kinh doanh
+5. Bảo mật: Phần dành riêng
+6. Nghiên cứu điển hình: Câu chuyện thành công của doanh nghiệp
+7. Công cụ tính ROI: Có tính tương tác
+8. Bảng giá: Minh bạch với sự so sánh
+9. FAQ: Giải quyết các phản đối
+10. CTA: Xuất hiện nhiều lần xuyên suốt
 
-Phase 3: Variations Created
----
-
-APPROACH 1: ROI-Focused
-
-Hero Section:
----
-Headline: "Cut Development Costs by 40% With AI"
-Subheadline: "Enterprise-grade AI development platform
-trusted by teams at Google, Meta, and Amazon."
-
-CTA: "Calculate Your ROI" (primary)
-CTA: "Book Demo" (secondary)
-
-Social proof: "Trusted by 500+ enterprise teams"
+Giai đoạn 3: Các Biến thể được Tạo ra
 ---
 
-Rationale:
-+ Leads with CFO concern (cost reduction)
-+ Specific number (40%)
-+ Enterprise social proof prominent
-+ ROI calculator as primary CTA (engagement)
-+ Best for: Economic buyer (VPs, C-suite)
+CÁCH TIẾP CẬN 1: Tập trung vào ROI
 
-
-APPROACH 2: Security-First
-
-Hero Section:
+Phần Hero:
 ---
-Headline: "Enterprise-Grade AI Development Platform"
-Subheadline: "SOC 2 Type II certified. GDPR compliant.
-Your code never trains our models."
+Tiêu đề: "Cắt giảm 40% chi phí phát triển với AI"
+Phụ đề: "Nền tảng phát triển bằng AI cấp doanh nghiệp
+được tin dùng bởi các đội ngũ tại Google, Meta và Amazon."
 
-CTA: "Security Whitepaper" (primary)
-CTA: "Book Demo" (secondary)
+CTA: "Tính toán ROI của bạn" (chính)
+CTA: "Đặt lịch Demo" (phụ)
 
-Trust badges: SOC 2, GDPR, ISO 27001
+Bằng chứng xã hội: "Được tin dùng bởi hơn 500+ đội ngũ doanh nghiệp"
 ---
 
-Rationale:
-+ Addresses #1 enterprise objection first
-+ Compliance badges immediate
-+ Security doc as primary CTA (pre-qualifies)
-+ Best for: Security-conscious industries
-+ Best for: IT decision makers
+Lý giải:
++ Dẫn dắt bằng mối quan tâm của CFO (giảm chi phí)
++ Con số cụ thể (40%)
++ Bằng chứng xã hội doanh nghiệp nổi bật
++ Công cụ tính ROI là CTA chính (tăng tương tác)
++ Tốt nhất cho: Người mua kinh tế (VPs, C-suite)
 
 
-APPROACH 3: Productivity-Focused
+CÁCH TIẾP CẬN 2: Bảo mật là trên hết
 
-Hero Section:
+Phần Hero:
 ---
-Headline: "Ship Enterprise Features 10x Faster"
-Subheadline: "AI agents that write, test, and review
-code at enterprise scale. 500+ teams building faster."
+Tiêu đề: "Nền tảng Phát triển bằng AI Cấp Doanh nghiệp"
+Phụ đề: "Chứng nhận SOC 2 Type II. Tuân thủ GDPR.
+Mã nguồn của bạn không bao giờ được dùng để huấn luyện mô hình của chúng tôi."
 
-CTA: "See It In Action" (primary)
-CTA: "Start Free Trial" (secondary)
+CTA: "Tải Sách trắng Bảo mật" (chính)
+CTA: "Đặt lịch Demo" (phụ)
 
-Social proof: "4.9/5 from enterprise customers"
+Huy hiệu tin cậy: SOC 2, GDPR, ISO 27001
 ---
 
-Rationale:
-+ Focuses on engineering team benefit
-+ Concrete outcome (10x faster)
-+ Demo as primary CTA (shows capability)
-+ Best for: Engineering leaders
-+ Best for: Technical evaluators
+Lý giải:
++ Giải quyết phản đối số 1 của doanh nghiệp ngay lập tức
++ Các huy hiệu tuân thủ hiển thị ngay
++ Tài liệu bảo mật là CTA chính (giúp sàng lọc khách hàng)
++ Tốt nhất cho: Các ngành coi trọng bảo mật
++ Tốt nhất cho: Những người ra quyết định về CNTT
 
-Phase 4: Full Page Copy Delivered
+
+CÁCH TIẾP CẬN 3: Tập trung vào Năng suất
+
+Phần Hero:
 ---
-Selected: Approach 1 (ROI-Focused)
+Tiêu đề: "Phát hành các tính năng doanh nghiệp nhanh hơn gấp 10 lần"
+Phụ đề: "Các AI agent viết, kiểm thử và đánh giá mã nguồn
+ở quy mô doanh nghiệp. Hơn 500+ đội ngũ đang xây dựng nhanh hơn."
 
-Complete sections written:
-✓ Hero (headline, subhead, CTAs)
-✓ Logo bar (suggested companies)
-✓ Benefits section (5 key benefits)
-✓ Features (8 features as business outcomes)
-✓ Security & compliance section
-✓ Case study (fictional but realistic)
-✓ ROI calculator (formula provided)
-✓ Pricing table (3 tiers)
-✓ FAQ (10 questions)
-✓ Final CTA section
+CTA: "Xem thực tế hoạt động" (chính)
+CTA: "Bắt đầu dùng thử miễn phí" (phụ)
 
-Word count: 2,500 words
-Conversion elements: 7 CTAs, 12 trust signals
-
-Phase 5: A/B Testing Plan
+Bằng chứng xã hội: "4.9/5 từ các khách hàng doanh nghiệp"
 ---
-Test 1: Hero Headlines
-A: "Cut Development Costs by 40% With AI"
-B: "Enterprise Teams Ship 10x Faster With AI"
-C: "The AI Platform 500+ Enterprise Teams Trust"
-Metric: Scroll depth, time on page
-Duration: 2 weeks, 5,000+ visitors
 
-Test 2: Primary CTA
-A: "Calculate Your ROI"
-B: "Book Demo"
-C: "Start Free Trial"
-Metric: Conversion rate
-Duration: 2 weeks
+Lý giải:
++ Tập trung vào lợi ích của đội ngũ kỹ thuật
++ Kết quả cụ thể (nhanh hơn 10 lần)
++ Demo là CTA chính (cho thấy khả năng thực tế)
++ Tốt nhất cho: Các lãnh đạo kỹ thuật
++ Tốt nhất cho: Những người đánh giá về mặt kỹ thuật
 
-Expected performance:
-- Conversion rate: 5-8% (enterprise typical)
-- Demo booking rate: 3-5%
-- Avg time on page: 3+ minutes
+Giai đoạn 4: Bàn giao Bản viết Trang Đầy đủ
+---
+Đã chọn: Cách tiếp cận 1 (Tập trung vào ROI)
 
-✓ Landing page complete (3 minutes)
+Các phần hoàn chỉnh đã viết:
+✓ Hero (tiêu đề, phụ đề, các CTA)
+✓ Thanh logo (các công ty gợi ý)
+✓ Phần lợi ích (5 lợi ích chính)
+✓ Tính năng (8 tính năng dưới dạng kết quả kinh doanh)
+✓ Phần bảo mật & tuân thủ
+✓ Nghiên cứu điển hình (giả định nhưng thực tế)
+✓ Công cụ tính ROI (công thức được cung cấp)
+✓ Bảng giá (3 cấp độ)
+✓ FAQ (10 câu hỏi)
+✓ Phần CTA cuối cùng
+
+Số từ: 2.500 từ
+Các yếu tố chuyển đổi: 7 CTA, 12 tín hiệu tin cậy
+
+Giai đoạn 5: Kế hoạch Thử nghiệm A/B
+---
+Thử nghiệm 1: Tiêu đề Hero
+A: "Cắt giảm 40% chi phí phát triển với AI"
+B: "Các đội ngũ doanh nghiệp phát hành nhanh hơn 10 lần với AI"
+C: "Nền tảng AI mà hơn 500+ đội ngũ doanh nghiệp tin dùng"
+Chỉ số: Độ sâu cuộn trang, thời gian trên trang
+Thời gian: 2 tuần, 5.000+ khách truy cập
+
+Thử nghiệm 2: CTA chính
+A: "Tính toán ROI của bạn"
+B: "Đặt lịch Demo"
+C: "Bắt đầu dùng thử miễn phí"
+Chỉ số: Tỷ lệ chuyển đổi
+Thời gian: 2 tuần
+
+Hiệu quả kỳ vọng:
+- Tỷ lệ chuyển đổi: 5-8% (điển hình cho doanh nghiệp)
+- Tỷ lệ đặt lịch demo: 3-5%
+- Thời gian trung bình trên trang: 3+ phút
+
+✓ Trang đích hoàn tất (3 phút)
 ```
 
-### Product Launch Email
+### Email Ra mắt Sản phẩm
 
 ```bash
-/content:good [write product launch email sequence for new AI testing feature]
+/content:good [viết chuỗi email ra mắt sản phẩm cho tính năng kiểm thử bằng AI mới]
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
 Agent: copywriter
-Type: Email sequence (3-email series)
-Goal: Feature activation
+Loại: Chuỗi email (loạt 3 email)
+Mục tiêu: Kích hoạt tính năng
 
-Phase 1: Research
+Giai đoạn 1: Nghiên cứu
 ---
-Analyzing:
-- Best performing product launch emails
-- Testing tools positioning (Jest, Cypress, etc.)
-- User feedback about testing pain points
+Phân tích:
+- Các email ra mắt sản phẩm hiệu quả nhất
+- Định vị các công cụ kiểm thử (Jest, Cypress, v.v.)
+- Phản hồi của người dùng về các điểm đau trong kiểm thử
 
-Key insights:
-✓ Developers hate writing tests (tedious)
-✓ But value test coverage (quality/confidence)
-✓ Time is main objection
-✓ Trust is critical (accuracy concerns)
+Kết quả chính:
+✓ Lập trình viên ghét viết bài kiểm thử (nhàm chán)
+✓ Nhưng coi trọng độ bao phủ (chất lượng/sự tự tin)
+✓ Thời gian là rào cản chính
+✓ Sự tin tưởng là yếu tố sống còn (lo ngại về độ chính xác)
 
-Phase 2: Sequence Strategy
+Giai đoạn 2: Chiến lược Chuỗi Email
 ---
-Email 1 (Day 0): Announcement + quick win
-Email 2 (Day 3): Deep dive + social proof
-Email 3 (Day 7): Urgency + special offer
-
-Phase 3: Email Series Created
----
-
-EMAIL 1: The Announcement
----
-Subject line variations:
-A: "We just made testing 10x faster 🚀"
-B: "Your new testing superpower is here"
-C: "Testing used to suck. Not anymore."
-
-Selected: A
-
-Body:
-
-Hi [First Name],
-
-Quick question: How much time did you spend writing
-tests last week?
-
-If it's more than 2 hours, we have good news.
-
-ClaudeKit now writes your tests automatically.
-
-Unit tests. Integration tests. E2E tests. All generated
-from your code in seconds.
-
-Sarah's team tried it yesterday. Generated 247 tests
-in 18 minutes. 94% coverage.
-
-Want to try? It takes 30 seconds to set up:
-[Quick Start Guide]
-
-Happy testing (well, happy not testing 😄)
-[Your name]
-
-P.S. First 1,000 users get Pro features free for 30 days.
-
----
-(153 words, 2 min read, 1 primary CTA)
-
-Rationale:
-+ Opens with relatable question
-+ Quantifies pain (time spent)
-+ Introduces solution clearly
-+ Real example with metrics
-+ Easy CTA (30-second setup)
-+ PS creates urgency
-
-
-EMAIL 2: The Deep Dive
----
-(Sent 3 days later to non-openers and openers who didn't click)
-
-Subject: "How ClaudeKit generated 247 tests in 18 minutes"
-
-Body:
-
-Hey [First Name],
-
-Remember Sarah's team from our last email?
-
-Here's the full story of their first week with
-AI-powered testing...
-
-[Day 1]: Generated 247 tests in 18 minutes
-[Day 3]: Found 8 bugs before production
-[Day 7]: Achieved 94% test coverage
-
-"We used to dread writing tests. Now it's automatic."
-- Sarah Chen, Engineering Lead @ TechCorp
-
-How it works:
-1. Install ClaudeKit CLI (1 command)
-2. Run: claudekit test generate
-3. Review generated tests
-4. Commit and push
-
-That's it. No configuration. No prompt engineering.
-
-Watch it in action: [3-min demo video]
-
-Or try it yourself: [Start free trial]
-
-[Your name]
-
-P.S. Our Pro features trial ends in 4 days. Don't miss it.
-
----
-(168 words, includes video CTA alternative)
-
-Rationale:
-+ Continues Sarah's story (narrative thread)
-+ Provides specific timeline
-+ Includes testimonial with attribution
-+ Shows simplicity (3 steps)
-+ Two CTAs (watch or try)
-+ PS reinforces urgency
-
-
-EMAIL 3: The Urgency Push
----
-(Sent 4 days after Email 2, to non-converters)
-
-Subject: "Your Pro trial expires in 24 hours ⏰"
-
-Body:
-
-[First Name],
-
-Quick heads up: Your free Pro trial expires tomorrow.
-
-After that, AI testing returns to the waitlist.
-
-What you'll lose access to:
-❌ Automatic test generation
-❌ E2E test creation
-❌ 95%+ coverage guarantee
-❌ Priority support
-
-What you keep:
-✓ Manual test writing
-✓ Weekend debugging sessions
-✓ Low test coverage stress
-
-Just kidding (mostly) about the last two 😅
-
-But seriously—500+ teams already activated their tests.
-
-The setup takes 30 seconds.
-The time saved: 20+ hours/month.
-
-Ready? [Activate AI Testing Now]
-
-Not for you? No problem. [Give us feedback]
-
-[Your name]
-
-P.S. Reactivating later means joining the waitlist.
-Do it now while you can.
-
----
-(129 words, clear urgency, humor to soften)
-
-Rationale:
-+ Clear urgency (24-hour deadline)
-+ Uses loss aversion (what they'll lose)
-+ Humor makes urgency less pushy
-+ Social proof (500+ teams)
-+ ROI reminder (20+ hours/month)
-+ Easy out (feedback link)
-+ PS reinforces consequences
-
-Phase 4: A/B Testing Recommendations
----
-Email 1 Subject Lines:
-Test A: "We just made testing 10x faster 🚀"
-Test B: "Your new testing superpower is here"
-Expected: A wins (specific + emoji)
-
-Email 2 CTA:
-Test A: "Watch demo" vs "Try it yourself"
-Expected: "Try it" wins (lower friction)
-
-Email 3 Send Time:
-Test A: 9am vs 2pm
-Expected: 9am wins (checked morning)
-
-Sequence performance targets:
-- Email 1 open rate: 35-45%
-- Email 2 open rate: 25-35%
-- Email 3 open rate: 20-30%
-- Overall activation rate: 12-18%
-
-✓ Email sequence complete (2 minutes 45 seconds)
-```
-
-## When to Use
-
-### ✅ Use /content:good for:
-
-**Strategic Blog Posts**
-```bash
-/content:good [write thought leadership post on AI in software development]
-```
-
-**Landing Pages**
-```bash
-/content:good [write landing page for enterprise product]
-```
-
-**Important Emails**
-```bash
-/content:good [write product launch email sequence]
-```
-
-**White Papers**
-```bash
-/content:good [write whitepaper on AI code review ROI]
-```
-
-**Sales Pages**
-```bash
-/content:good [write sales page for annual subscription]
-```
-
-**Campaign Copy**
-```bash
-/content:good [write multi-channel campaign for new feature]
-```
-
-### ❌ Don't use for:
-
-**Quick Social Posts**
-- Use `/content:fast` instead (seconds vs minutes)
-
-**Simple Announcements**
-- Use `/content:fast` for speed
-
-**Internal Docs**
-- Use `/docs:update` instead
-
-## Research Process
-
-### Competitor Analysis
-
-```
-What it examines:
-- Top 5-10 competitors
-- Their messaging and positioning
-- Content that performs well
-- Gaps in their content
-- Opportunities to differentiate
-```
-
-### Audience Research
-
-```
-What it analyzes:
-- Target audience pain points
-- Language they use
-- Objections they have
-- Triggers that motivate them
-- Platforms they use
-```
-
-### Content Performance Data
-
-```
-What it reviews:
-- Top-performing similar content
-- Engagement patterns
-- Conversion benchmarks
-- SEO keyword opportunities
-- Social share patterns
-```
-
-## Quality Indicators
-
-### /content:good Quality
-
-```
-Research depth:      ⭐⭐⭐⭐⭐
-Strategic thinking:  ⭐⭐⭐⭐⭐
-Multiple variations: 3-5 with rationale
-A/B test strategy:   ✓ Included
-Time:               2-5 minutes
-Use for:            Strategic content
-```
-
-### /content:fast Quality
-
-```
-Research depth:      ⭐⭐☆☆☆
-Strategic thinking:  ⭐⭐⭐☆☆
-Multiple variations: 3-5 quick versions
-A/B test strategy:   Basic suggestions
-Time:               5-15 seconds
-Use for:            Quick content needs
-```
-
-## Output Files
-
-After `/content:good` completes:
-
-### Content Variations
-
-```
-content/good/[type]-v1-[approach].md
-content/good/[type]-v2-[approach].md
-content/good/[type]-v3-[approach].md
-```
-
-Each variation with full copy
-
-### Research Report
-
-```
-content/good/[type]-research-[date].md
-```
-
-Contains:
-- Competitor analysis
-- Audience insights
-- Content strategy
-- Rationale for approaches
-
-### A/B Testing Plan
-
-```
-content/good/[type]-ab-tests-[date].md
-```
-
-Detailed testing recommendations
-
-### Strategic Brief
-
-```
-content/good/[type]-brief-[date].md
-```
-
-Overall strategy and guidelines
-
-## Best Practices
-
-### Provide Clear Goals
-
-✅ **Good:**
-```bash
-/content:good [write landing page copy for enterprise product targeting
-VPs of Engineering, goal is demo bookings, emphasize security and ROI]
-```
-
-❌ **Vague:**
-```bash
-/content:good [write landing page]
-```
-
-### Share Context
-
-```bash
-/content:good [write blog post about AI testing, our unique angle is
-we achieved 95% coverage in production with 1000+ companies, competitor
-X focuses on unit tests only, competitor Y is expensive]
-```
-
-### Specify Audience
-
-```bash
-/content:good [write for technical audience: senior developers who
-evaluate tools, skeptical of AI, value code quality over speed]
-```
-
-### Include Constraints
-
-```bash
-/content:good [write email sequence, brand voice is professional but
-friendly (see ./brand-voice.md), avoid hype, be specific with data]
-```
-
-## Time Investment vs Quality
-
-```
-                   Time      Quality    Best For
-/content:fast      10s       ⭐⭐⭐⭐☆    Quick needs, social media
-/content:good      2-5min    ⭐⭐⭐⭐⭐    Strategic, conversion-critical
-Manual writing     2-8hrs    ⭐⭐⭐⭐☆    Unique thought leadership
-```
-
-## After Generation
-
-Standard workflow:
-
-```bash
-# 1. Generate content
-/content:good [detailed request]
-
-# 2. Review research report
-cat content/good/[type]-research-*.md
-
-# 3. Review all variations
-cat content/good/[type]-v*.md
-
-# 4. Read rationale for each
-# (Included in each variation file)
-
-# 5. Select best approach (or combine elements)
-
-# 6. Customize if needed
-
-# 7. Implement A/B tests
-cat content/good/[type]-ab-tests-*.md
-
-# 8. Track performance
-```
-
-## Metrics to Track
-
-After publishing content:
-
-### Engagement Metrics
-
-- Time on page
-- Scroll depth
-- Bounce rate
-- Social shares
-- Comments/discussions
-
-### Conversion Metrics
-
-- Primary goal completions
-- CTA click rates
-- Form submissions
-- Trial signups
-- Demo bookings
-
-### SEO Metrics
-
-- Search rankings
-- Organic traffic
-- Click-through rate from search
-- Featured snippets
-- Backlinks acquired
-
-## Next Steps
-
-- [/content:fast](/docs/engineer/commands/content/fast) - For quick content needs
-- [/content:cro](/docs/engineer/commands/content/cro) - Optimize for conversion
-- [/content:enhance](/docs/engineer/commands/content/enhance) - Improve existing content
-
+Email 1 (Ngày 0): Thông báo + thành quả nhanh
+Email 2 (Ngày 3): Đi sâu vào chi tiết + bằng chứng xã hội
+Email 3 (Ngày 7): Sự cấp bách + ưu đãi đặc biệt
+
+Giai đoạn 3: Tạo Loạt Email
 ---
 
-**Key Takeaway**: `/content:good` creates strategic, high-quality content backed by research and competitor analysis, providing multiple variations with detailed rationale and A/B testing recommendations—perfect for conversion-critical and brand-defining content.
+EMAIL 1: Thông báo
+---
+Các biến thể tiêu đề:
+A: "Chúng tôi vừa làm cho việc kiểm thử nhanh hơn gấp 10 lần 🚀"
+B: "Siêu năng lực kiểm thử mới của bạn đã xuất hiện"
+C: "Kiểm thử từng rất tệ. Giờ thì không còn nữa."
+
+Đã chọn: A
+
+Nội dung:
+
+Chào [Tên],
+
+Câu hỏi nhanh: Bạn đã mất bao nhiêu thời gian để viết các bài kiểm thử
+vào tuần trước?
+
+Nếu nhiều hơn 2 giờ, chúng tôi có tin tốt cho bạn.
+
+ClaudeKit giờ đây tự động viết các bài kiểm thử cho bạn.
+
+Unit tests. Integration tests. E2E tests. Tất cả được tạo từ mã nguồn của bạn
+trong vài giây.
+
+Đội của Sarah đã thử nó vào hôm qua. Tạo ra 247 bài kiểm thử trong 18 phút.
+Độ bao phủ 94%.
+
+Muốn thử chứ? Chỉ mất 30 giây để thiết lập:
+[Hướng dẫn Bắt đầu Nhanh]
+
+Chúc bạn kiểm thử vui vẻ (à, chúc bạn vui vẻ vì không phải kiểm thử 😄)
+[Tên của bạn]
+
+P.S. 1.000 người dùng đầu tiên sẽ được sử dụng các tính năng Pro miễn phí trong 30 ngày.
+
+---
+(153 từ, 2 phút đọc, 1 CTA chính)
+
+Lý giải:
++ Mở đầu bằng câu hỏi dễ đồng cảm
++ Định lượng nỗi đau (thời gian lãng phí)
++ Giới thiệu giải pháp rõ ràng
++ Ví dụ thực tế kèm số liệu
++ CTA dễ dàng (thiết lập 30 giây)
++ Phần PS tạo sự cấp bách
+
+
+EMAIL 2: Đi sâu vào Chi tiết
+---
+(Gửi sau đó 3 ngày cho những người chưa mở hoặc đã mở nhưng chưa nhấp)
+
+Tiêu đề: "Cách ClaudeKit tạo ra 247 bài kiểm thử trong 18 phút"
+
+Nội dung:
+
+Chào [Tên],
+
+Bạn còn nhớ đội của Sarah từ email trước chứ?
+
+Đây là toàn bộ câu chuyện về tuần đầu tiên của họ với
+kiểm thử được hỗ trợ bởi AI...
+
+[Ngày 1]: Tạo ra 247 bài kiểm thử trong 18 phút
+[Ngày 3]: Tìm thấy 8 lỗi trước khi đưa vào sản xuất
+[Ngày 7]: Đạt độ bao phủ bài kiểm thử 94%
+
+"Chúng tôi từng rất sợ việc viết bài kiểm thử. Giờ đây nó diễn ra tự động."
+- Sarah Chen, Trưởng nhóm Kỹ thuật @ TechCorp
+
+Cách nó hoạt động:
+1. Cài đặt ClaudeKit CLI (1 câu lệnh)
+2. Chạy: claudekit test generate
+3. Xem xét các bài kiểm thử đã được tạo
+4. Commit và push
+
+Chỉ vậy thôi. Không cần cấu hình. Không cần viết câu lệnh.
+
+Xem thực tế hoạt động: [Video demo 3 phút]
+
+Hoặc tự mình trải nghiệm: [Bắt đầu dùng thử miễn phí]
+
+[Tên của bạn]
+
+P.S. Chương trình dùng thử tính năng Pro sẽ kết thúc sau 4 ngày. Đừng bỏ lỡ.
+
+---
+(168 từ, bao gồm lựa chọn xem video)
+
+Lý giải:
++ Tiếp tục câu chuyện của Sarah (mạch tự sự)
++ Cung cấp mốc thời gian cụ thể
++ Bao gồm lời chứng thực có trích dẫn
++ Cho thấy sự đơn giản (3 bước)
++ Hai lựa chọn CTA (xem hoặc thử)
++ Phần PS củng cố sự cấp bách
+
+
+EMAIL 3: Thúc đẩy Cấp bách
+---
+(Gửi sau Email 2 khoảng 4 ngày, cho những người chưa chuyển đổi)
+
+Tiêu đề: "Chương trình dùng thử Pro của bạn hết hạn sau 24 giờ ⏰"
+
+Nội dung:
+
+[Tên] ơi,
+
+Thông báo nhanh: Chương trình dùng thử Pro miễn phí của bạn sẽ kết thúc vào ngày mai.
+
+Sau đó, tính năng kiểm thử bằng AI sẽ quay trở lại danh sách chờ.
+
+Những gì bạn sẽ mất quyền truy cập:
+❌ Tự động tạo bài kiểm thử
+❌ Tạo bài kiểm thử E2E
+❌ Cam kết độ bao phủ 95%+
+❌ Hỗ trợ ưu tiên
+
+Những gì bạn giữ lại:
+✓ Viết bài kiểm thử thủ công
+✓ Những buổi cuối tuần sửa lỗi (debug)
+✓ Áp lực vì độ bao phủ bài kiểm thử thấp
+
+Đùa chút thôi (nhưng cũng có phần thật 😅)
+
+Nhưng nghiêm túc đấy—hơn 500 đội ngũ đã kích hoạt các bài kiểm thử của họ.
+
+Việc thiết lập chỉ mất 30 giây.
+Thời gian tiết kiệm được: hơn 20 giờ/tháng.
+
+Sẵn sàng chứ? [Kích hoạt Kiểm thử AI Ngay]
+
+Không phù hợp với bạn? Không sao cả. [Gửi phản hồi cho chúng tôi]
+
+[Tên của bạn]
+
+P.S. Việc kích hoạt lại sau này đồng nghĩa với việc phải xếp hàng chờ.
+Hãy làm ngay khi bạn còn có thể.
+
+---
+(129 từ, sự cấp bách rõ ràng, hài hước để giảm bớt sự ép buộc)
+
+Lý giải:
++ Sự cấp bách rõ ràng (hạn chót 24 giờ)
++ Sử dụng tâm lý sợ mất mát (những gì họ sẽ mất)
++ Sự hài hước giúp sự cấp bách bớt nặng nề
++ Bằng chứng xã hội (500+ đội ngũ)
++ Nhắc lại ROI (20+ giờ/tháng)
++ Có lối thoát dễ dàng (liên kết phản hồi)
++ Phần PS củng cố hậu quả
+
+
+Giai đoạn 4: Đề xuất Thử nghiệm A/B
+---
+Tiêu đề Email 1:
+Thử nghiệm A: "Chúng tôi vừa làm cho việc kiểm thử nhanh hơn gấp 10 lần 🚀"
+Thử nghiệm B: "Siêu năng lực kiểm thử mới của bạn đã xuất hiện"
+Kỳ vọng: A thắng (cụ thể + có emoji)
+
+CTA Email 2:
+Thử nghiệm A: "Xem demo" so với "Tự mình trải nghiệm"
+Kỳ vọng: "Tự mình trải nghiệm" thắng (lực cản thấp hơn)
+
+Thời gian gửi Email 3:
+Thử nghiệm A: 9 giờ sáng so với 2 giờ chiều
+Kỳ vọng: 9 giờ sáng thắng (thường được kiểm tra vào buổi sáng)
+
+Mục tiêu hiệu quả chuỗi email:
+- Tỷ lệ mở Email 1: 35-45%
+- Tỷ lệ mở Email 2: 25-35%
+- Tỷ lệ mở Email 3: 20-30%
+- Tỷ lệ kích hoạt tổng thể: 12-18%
+
+✓ Chuỗi email hoàn tất (2 phút 45 giây)
+```
+
+## Khi nào nên sử dụng
+
+### ✅ Sử dụng /content:good cho:
+
+**Bài viết Blog Chiến lược**
+```bash
+/content:good [viết bài viết dẫn dắt tư duy về AI trong phát triển phần mềm]
+```
+
+**Trang Đích**
+```bash
+/content:good [viết bản viết trang đích cho sản phẩm doanh nghiệp]
+```
+
+**Email Quan trọng**
+```bash
+/content:good [viết chuỗi email ra mắt sản phẩm]
+```
+
+**Sách trắng (White Papers)**
+```bash
+/content:good [viết sách trắng về ROI của việc đánh giá mã nguồn bằng AI]
+```
+
+**Trang Bán hàng**
+```bash
+/content:good [viết trang bán hàng cho gói đăng ký hàng năm]
+```
+
+**Bản viết Chiến dịch**
+```bash
+/content:good [viết nội dung chiến dịch đa kênh cho tính năng mới]
+```
+
+### ❌ Không sử dụng cho:
+
+**Các bài đăng Mạng xã hội Nhanh**
+- Sử dụng `/content:fast` thay thế (giây so với phút)
+
+**Thông báo Đơn giản**
+- Sử dụng `/content:fast` để có tốc độ cao
+
+**Tài liệu Nội bộ**
+- Sử dụng `/docs:update` thay thế
+
+## Quy trình Nghiên cứu
+
+### Phân tích Đối thủ
+
+```
+Những gì nó kiểm tra:
+- 5-10 đối thủ hàng đầu
+- Thông điệp và định vị của họ
+- Nội dung nào đang hoạt động tốt
+- Các khoảng trống trong nội dung của họ
+- Cơ hội để tạo sự khác biệt
+```
+
+### Nghiên cứu Đối tượng
+
+```
+Những gì nó phân tích:
+- Các điểm đau của đối tượng mục tiêu
+- Ngôn ngữ họ sử dụng
+- Các phản đối họ có thể đưa ra
+- Các kích thích thúc đẩy họ
+- Các nền tảng họ thường sử dụng
+```
+
+### Dữ liệu Hiệu quả Nội dung
+
+```
+Những gì nó xem xét:
+- Các nội dung tương tự hoạt động tốt nhất
+- Các mẫu tương tác
+- Các tiêu chuẩn chuyển đổi
+- Cơ hội từ khóa SEO
+- Các mẫu chia sẻ mạng xã hội
+```
+
+## Chỉ số Chất lượng
+
+### Chất lượng /content:good
+
+```
+Độ sâu nghiên cứu:    ⭐⭐⭐⭐⭐
+Tư duy chiến lược:    ⭐⭐⭐⭐⭐
+Nhiều biến thể:       3-5 bản kèm lý giải
+Chiến lược thử nghiệm: ✓ Bao gồm
+Thời gian:            2-5 phút
+Sử dụng cho:          Nội dung chiến lược
+```
+
+### Chất lượng /content:fast
+
+```
+Độ sâu nghiên cứu:    ⭐⭐☆☆☆
+Tư duy chiến lược:    ⭐⭐⭐☆☆
+Nhiều biến thể:       3-5 bản nhanh
+Chiến lược thử nghiệm: Gợi ý cơ bản
+Thời gian:            5-15 giây
+Sử dụng cho:          Nhu cầu nội dung nhanh
+```
+
+## Tệp đầu ra
+
+Sau khi `/content:good` hoàn tất:
+
+### Các biến thể Nội dung
+
+```
+content/good/[loại]-v1-[cách-tiếp-cận].md
+content/good/[loại]-v2-[cách-tiếp-cận].md
+content/good/[loại]-v3-[cách-tiếp-cận].md
+```
+
+Mỗi biến thể đi kèm bản viết đầy đủ.
+
+### Báo cáo Nghiên cứu
+
+```
+content/good/[loại]-research-[ngày].md
+```
+
+Chứa:
+- Phân tích đối thủ
+- Thông tin chuyên sâu về đối tượng
+- Chiến lược nội dung
+- Lý giải cho các cách tiếp cận
+
+### Kế hoạch Thử nghiệm A/B
+
+```
+content/good/[loại]-ab-tests-[ngày].md
+```
+
+Các đề xuất thử nghiệm chi tiết.
+
+### Bản tóm tắt Chiến lược
+
+```
+content/good/[loại]-brief-[ngày].md
+```
+
+Chiến lược và hướng dẫn tổng thể.
+
+## Thực hành tốt nhất
+
+### Cung cấp Mục tiêu Rõ ràng
+
+✅ **Tốt:**
+```bash
+/content:good [viết bản viết trang đích cho sản phẩm doanh nghiệp nhắm mục tiêu là
+các VP Engineering, mục tiêu là lượt đăng ký demo, nhấn mạnh vào bảo mật và ROI]
+```
+
+❌ **Mơ hồ:**
+```bash
+/content:good [viết trang đích]
+```
+
+### Chia sẻ Ngữ cảnh
+
+```bash
+/content:good [viết bài blog về kiểm thử AI, góc nhìn độc đáo của chúng tôi là
+đã đạt độ bao phủ 95% trong sản xuất với hơn 1.000 công ty, đối thủ X chỉ tập trung
+vào unit test, đối thủ Y thì quá đắt]
+```
+
+### Chỉ định Đối tượng
+
+```bash
+/content:good [viết cho đối tượng kỹ thuật: các lập trình viên cấp cao, những người
+đánh giá công cụ, hoài nghi về AI, coi trọng chất lượng mã nguồn hơn tốc độ]
+```
+
+### Bao gồm các Ràng buộc
+
+```bash
+/content:good [viết chuỗi email, tiếng nói thương hiệu là chuyên nghiệp nhưng
+thân thiện (xem ./brand-voice.md), tránh nói quá, cụ thể bằng dữ liệu]
+```
+
+## Đầu tư Thời gian vs Chất lượng
+
+```
+                   Thời gian   Chất lượng   Tốt nhất cho
+/content:fast      10 giây     ⭐⭐⭐⭐☆     Nhu cầu nhanh, mạng xã hội
+/content:good      2-5 phút    ⭐⭐⭐⭐⭐     Chiến lược, quan trọng về chuyển đổi
+Viết thủ công      2-8 giờ     ⭐⭐⭐⭐☆     Dẫn dắt tư duy độc đáo
+```
+
+## Sau khi tạo nội dung
+
+Quy trình tiêu chuẩn:
+
+```bash
+# 1. Tạo nội dung
+/content:good [yêu cầu chi tiết]
+
+# 2. Xem báo cáo nghiên cứu
+cat content/good/[loại]-research-*.md
+
+# 3. Xem tất cả các biến thể
+cat content/good/[loại]-v*.md
+
+# 4. Đọc lý giải cho từng bản
+# (Được bao gồm trong mỗi tệp biến thể)
+
+# 5. Chọn cách tiếp cận tốt nhất (hoặc kết hợp các yếu tố)
+
+# 6. Tùy chỉnh nếu cần
+
+# 7. Thực hiện thử nghiệm A/B
+cat content/good/[loại]-ab-tests-*.md
+
+# 8. Theo dõi hiệu quả
+```
+
+## Các chỉ số cần theo dõi
+
+Sau khi xuất bản nội dung:
+
+### Chỉ số Tương tác
+
+- Thời gian trên trang
+- Độ sâu cuộn trang
+- Tỷ lệ thoát
+- Lượt chia sẻ mạng xã hội
+- Bình luận/thảo luận
+
+### Chỉ số Chuyển đổi
+
+- Hoàn thành mục tiêu chính
+- Tỷ lệ nhấp vào CTA
+- Lượt gửi biểu mẫu
+- Đăng ký dùng thử
+- Đặt lịch demo
+
+### Chỉ số SEO
+
+- Thứ hạng tìm kiếm
+- Lưu lượng truy cập tự nhiên
+- Tỷ lệ nhấp từ tìm kiếm
+- Các đoạn trích nổi bật
+- Các liên kết ngược (backlinks) thu được
+
+## Các bước tiếp theo
+
+- [/content:fast](/docs/engineer/commands/content/fast) - Cho nhu cầu nội dung nhanh
+- [/content:cro](/docs/engineer/commands/content/cro) - Tối ưu hóa cho chuyển đổi
+- [/content:enhance](/docs/engineer/commands/content/enhance) - Cải thiện nội dung hiện có
+
+---
+
+**Thông điệp chính**: `/content:good` tạo ra nội dung chiến lược, chất lượng cao được hỗ trợ bởi nghiên cứu và phân tích đối thủ cạnh tranh, cung cấp nhiều biến thể kèm theo lý giải chi tiết và đề xuất thử nghiệm A/B—hoàn hảo cho các nội dung quan trọng về chuyển đổi và định hình thương hiệu.

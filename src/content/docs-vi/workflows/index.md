@@ -1,203 +1,199 @@
 ---
-title: Trường Hợp Sử Dụng
-description: "Documentation for Trường Hợp Sử Dụng
-description:
-section: workflows
-category: workflows
-order: 0
-published: true"
+title: "Trường Hợp Sử Dụng"
+description: "Tìm hiểu cách sử dụng ClaudeKit cho các tình huống phát triển thực tế thông qua các ví dụ và quy trình làm việc cụ thể."
+lang: vi
 section: workflows
 category: workflows
 order: 0
 published: true
 ---
 
-# Use Cases
+# Trường Hợp Sử Dụng
 
-Learn how to use ClaudeKit for real-world development scenarios. This section contains practical examples and workflows for common tasks.
+Tìm hiểu cách sử dụng ClaudeKit cho các tình huống phát triển thực tế. Phần này chứa các ví dụ thực hành và quy trình làm việc cho các nhiệm vụ phổ biến.
 
-## Coming Soon
+## Sắp Ra Mắt
 
-We're working on comprehensive guides for:
+Chúng tôi đang xây dựng các hướng dẫn toàn diện cho:
 
-### Starting a New Project
+### Bắt Đầu Dự Án Mới
 
-Step-by-step guide for initializing a new project from scratch:
+Hướng dẫn từng bước để khởi tạo một dự án mới từ đầu:
 
-- Choosing the right tech stack
-- Setting up project structure
-- Implementing core features
-- Establishing development workflows
-- Setting up CI/CD
-- Deploying to production
+- Chọn đúng tech stack
+- Thiết lập cấu trúc dự án
+- Triển khai các tính năng cốt lõi
+- Thiết lập quy trình phát triển
+- Thiết lập CI/CD
+- Triển khai lên production
 
-**Expected:** Q1 2025
-
----
-
-### Maintaining an Old Project
-
-How to integrate ClaudeKit into existing codebases:
-
-- Initial documentation setup with `/docs:init`
-- Understanding existing architecture
-- Refactoring legacy code safely
-- Adding tests to untested code
-- Modernizing dependencies
-- Improving code quality incrementally
-
-**Expected:** Q1 2025
+**Dự kiến:** Quý 1 2025
 
 ---
 
-### Screenshot to Code
+### Bảo Trì Dự Án Cũ
 
-Complete workflow for converting designs to implementation:
+Cách tích hợp ClaudeKit vào các codebase hiện có:
 
-- Using `/design:screenshot` command
-- Analyzing design elements
-- Extracting components
-- Implementing responsive layouts
-- Matching styles accurately
-- Generating assets with AI
-- Testing across devices
+- Thiết lập tài liệu ban đầu với `/docs:init`
+- Hiểu kiến trúc hiện tại
+- Tái cấu trúc legacy code một cách an toàn
+- Thêm tests cho code chưa được kiểm thử
+- Hiện đại hóa các dependencies
+- Cải thiện chất lượng code từng bước
 
-**Expected:** Q1 2025
-
----
-
-### Video to Code
-
-Convert screen recordings into working code:
-
-- Using `/design:video` command
-- Understanding interactions from video
-- Implementing animations
-- Creating transitions
-- Building dynamic components
-- Maintaining design consistency
-
-**Expected:** Q1 2025
+**Dự kiến:** Quý 1 2025
 
 ---
 
-### Building a REST API
+### Từ Screenshot Thành Code
 
-End-to-end API development:
+Quy trình hoàn chỉnh để chuyển đổi thiết kế thành mã nguồn:
 
-- Planning API architecture
-- Implementing endpoints
-- Adding authentication
-- Input validation
-- Error handling
-- API documentation
-- Testing strategies
-- Deployment
+- Sử dụng lệnh `/design:screenshot`
+- Phân tích các yếu tố thiết kế
+- Trích xuất các components
+- Triển khai layout responsive
+- Khớp style chính xác
+- Tạo assets với AI
+- Kiểm thử trên các thiết bị
 
-**Expected:** Q1 2025
-
----
-
-### Creating a Full-Stack Application
-
-Complete full-stack workflow:
-
-- Backend API development
-- Frontend implementation
-- Database design
-- State management
-- Authentication flow
-- Real-time features
-- Testing full stack
-- Deployment pipeline
-
-**Expected:** Q1 2025
+**Dự kiến:** Quý 1 2025
 
 ---
 
-### Integrating Third-Party Services
+### Từ Video Thành Code
 
-How to add external integrations:
+Chuyển đổi quay màn hình thành mã nguồn hoạt động:
 
-- Payment gateways (Stripe, Polar, SePay)
-- Authentication providers (OAuth2)
-- Cloud services (AWS S3, GCP)
-- Email services
+- Sử dụng lệnh `/design:video`
+- Hiểu các tương tác từ video
+- Triển khai animations
+- Tạo các hiệu ứng chuyển cảnh
+- Xây dựng các component động
+- Duy trì sự nhất quán trong thiết kế
+
+**Dự kiến:** Quý 1 2025
+
+---
+
+### Xây Dựng REST API
+
+Phát triển API từ đầu đến cuối:
+
+- Lập kế hoạch kiến trúc API
+- Triển khai các endpoints
+- Thêm xác thực
+- Kiểm tra dữ liệu đầu vào (Validation)
+- Xử lý lỗi
+- Tài liệu API
+- Chiến lược testing
+- Triển khai (Deployment)
+
+**Dự kiến:** Quý 1 2025
+
+---
+
+### Tạo Ứng Dụng Full-Stack
+
+Quy trình làm việc full-stack hoàn chỉnh:
+
+- Phát triển Backend API
+- Triển khai Frontend
+- Thiết kế Database
+- Quản lý State
+- Luồng xác thực
+- Các tính năng real-time
+- Kiểm thử full stack
+- Pipeline triển khai
+
+**Dự kiến:** Quý 1 2025
+
+---
+
+### Tích Hợp Dịch Vụ Bên Thứ Ba
+
+Cách thêm các tích hợp bên ngoài:
+
+- Cổng thanh toán (Stripe, Polar, SePay)
+- Nhà cung cấp xác thực (OAuth2)
+- Dịch vụ Cloud (AWS S3, GCP)
+- Dịch vụ Email
 - Analytics
-- Error tracking
+- Theo dõi lỗi (Error tracking)
 
-**Expected:** Q1 2025
-
----
-
-### Debugging Production Issues
-
-Systematic approach to fixing production bugs:
-
-- Analyzing production logs with `/fix:logs`
-- Reproducing issues locally
-- Root cause analysis
-- Implementing fixes
-- Testing thoroughly
-- Safe deployment
-- Post-mortem documentation
-
-**Expected:** Q1 2025
+**Dự kiến:** Quý 1 2025
 
 ---
 
-### Team Collaboration
+### Sửa Lỗi Production
 
-Working with ClaudeKit in a team environment:
+Cách tiếp cận hệ thống để sửa lỗi trên production:
 
-- Sharing workflows
-- Custom commands for team
-- Documentation standards
-- Code review processes
-- Onboarding new members
-- Maintaining consistency
+- Phân tích production logs với `/fix:logs`
+- Tái hiện lỗi tại local
+- Phân tích nguyên nhân gốc rễ (Root cause analysis)
+- Triển khai bản sửa lỗi
+- Kiểm thử kỹ lưỡng
+- Triển khai an toàn
+- Tài liệu hậu kỳ (Post-mortem)
 
-**Expected:** Q1 2025
-
----
-
-### CI/CD Integration
-
-Setting up continuous integration and deployment:
-
-- GitHub Actions integration
-- Fixing CI failures with `/fix:ci`
-- Automated testing
-- Deployment pipelines
-- Environment management
-- Release automation
-
-**Expected:** Q1 2025
+**Dự kiến:** Quý 1 2025
 
 ---
 
-## Early Access
+### Cộng Tác Nhóm
 
-Want to contribute use case examples? We're looking for:
+Sử dụng ClaudeKit trong môi trường nhóm:
 
-- Real-world project stories
-- Before/after comparisons
-- Time savings metrics
-- Challenges and solutions
-- Best practices learned
+- Chia sẻ quy trình làm việc (Workflows)
+- Các lệnh tùy chỉnh cho nhóm
+- Tiêu chuẩn tài liệu
+- Quy trình code review
+- Onboarding thành viên mới
+- Duy trì sự nhất quán
 
-**Contact us:**
-- [Discord Community](https://claudekit.cc/discord)
-- [GitHub Discussions](https://github.com/claudekit/discussions)
-
-## Request Use Cases
-
-Need a specific use case documented?
-
-1. Join our [Discord](https://claudekit.cc/discord)
-2. Share your scenario
-3. We'll prioritize based on community interest
+**Dự kiến:** Quý 1 2025
 
 ---
 
-**Stay tuned!** These comprehensive guides are coming soon. Follow us for updates.
+### Tích Hợp CI/CD
+
+Thiết lập tích hợp và triển khai liên tục:
+
+- Tích hợp GitHub Actions
+- Sửa lỗi CI thất bại với `/fix:ci`
+- Kiểm thử tự động
+- Pipelines triển khai
+- Quản lý môi trường
+- Tự động hóa release
+
+**Dự kiến:** Quý 1 2025
+
+---
+
+## Truy Cập Sớm
+
+Bạn muốn đóng góp các ví dụ về trường hợp sử dụng? Chúng tôi đang tìm kiếm:
+
+- Câu chuyện về các dự án thực tế
+- So sánh trước/sau
+- Các chỉ số tiết kiệm thời gian
+- Các thách thức và giải pháp
+- Các bài học kinh nghiệm tốt nhất
+
+**Liên hệ với chúng tôi:**
+- [Cộng đồng Discord](https://claudekit.cc/discord)
+- [Thảo luận trên GitHub](https://github.com/claudekit/discussions)
+
+## Yêu Cầu Trường Hợp Sử Dụng
+
+Bạn cần một trường hợp sử dụng cụ thể được viết tài liệu?
+
+1. Tham gia [Discord](https://claudekit.cc/discord) của chúng tôi
+2. Chia sẻ kịch bản của bạn
+3. Chúng tôi sẽ ưu tiên dựa trên sự quan tâm của cộng đồng
+
+---
+
+**Hãy chú ý theo dõi!** Các hướng dẫn toàn diện này sẽ sớm ra mắt. Theo dõi chúng tôi để nhận các bản cập nhật.

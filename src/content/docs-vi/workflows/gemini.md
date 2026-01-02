@@ -1,11 +1,7 @@
 ---
 title: Gemini, wait what?
-description: "Documentation for Gemini, wait what?
-description:
-section: workflows
-category: workflows
-order: 3
-published: true"
+description: "Tìm hiểu tại sao ClaudeKit lại cần Gemini API để xử lý hình ảnh và video."
+lang: vi
 section: workflows
 category: workflows
 order: 3

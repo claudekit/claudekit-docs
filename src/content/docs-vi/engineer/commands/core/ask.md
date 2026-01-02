@@ -1,373 +1,374 @@
 ---
 title: /ask
-description: Documentation for ask
+description: Tài liệu hướng dẫn cho lệnh ask
 section: engineer
 kit: engineer
 category: commands/core
 order: 3
 published: true
+lang: vi
 ---
 
 # /ask
 
-Strategic architectural consultation command. Provides expert guidance on technical decisions, system design, and architectural challenges without implementation.
+Lệnh tư vấn kiến trúc chiến lược. Cung cấp hướng dẫn chuyên gia về các quyết định kỹ thuật, thiết kế hệ thống và các thách thức kiến trúc mà không thực hiện triển khai code.
 
-## Syntax
-
-```bash
-/ask [technical-question]
-```
-
-## When to Use
-
-- **Architecture Decisions**: Choosing between design patterns or system architectures
-- **Technology Selection**: Evaluating frameworks, databases, or infrastructure choices
-- **Design Challenges**: Solving complex technical problems with multiple trade-offs
-- **Scalability Planning**: Assessing performance and growth considerations
-- **Risk Assessment**: Identifying potential issues before implementation
-
-## Quick Example
+## Cú pháp
 
 ```bash
-/ask [should we use microservices or monolithic architecture for a SaaS platform with 10k users?]
+/ask [câu-hỏi-kỹ-thuật]
 ```
 
-**Output**:
-```
-Architecture Analysis:
-- Current scale: 10k users suggests moderate complexity
-- Team size and expertise matter for microservices
-- Deployment and monitoring overhead considerations
+## Khi nào nên sử dụng
 
-Design Recommendations:
-1. Start with Modular Monolith
-   - Faster development velocity
-   - Lower operational complexity
-   - Clear module boundaries for future extraction
+- **Quyết định Kiến trúc**: Lựa chọn giữa các mẫu thiết kế (design patterns) hoặc kiến trúc hệ thống
+- **Lựa chọn Công nghệ**: Đánh giá các framework, cơ sở dữ liệu hoặc lựa chọn hạ tầng
+- **Thách thức Thiết kế**: Giải quyết các vấn đề kỹ thuật phức tạp với nhiều sự đánh đổi
+- **Lập kế hoạch Khả năng mở rộng**: Đánh giá các cân nhắc về hiệu suất và tăng trưởng
+- **Đánh giá Rủi ro**: Xác định các vấn đề tiềm ẩn trước khi triển khai
 
-Technology Guidance:
-- Use domain-driven design principles
-- Implement API-first architecture
-- Plan for horizontal scaling
-
-Implementation Strategy:
-Phase 1: Modular monolith with clear boundaries
-Phase 2: Extract high-traffic modules if needed
-Phase 3: Evaluate microservices at 50k+ users
-
-Next Actions:
-- Define module boundaries in code
-- Implement monitoring early
-- Plan database schema for future separation
-```
-
-**Result**: Strategic guidance received, no code changed, ready to implement with confidence.
-
-## Arguments
-
-- `[technical-question]`: Your architecture question, design challenge, or technical decision requiring expert consultation
-
-## What Happens
-
-When you run this command:
-
-1. **Problem Analysis**: System analyzes your question and gathers architectural context from project docs
-2. **Expert Consultation**: Four specialized advisors provide perspectives:
-   - **Systems Designer**: Evaluates system boundaries, interfaces, component interactions
-   - **Technology Strategist**: Recommends stacks, frameworks, architectural patterns
-   - **Scalability Consultant**: Assesses performance, reliability, growth considerations
-   - **Risk Analyst**: Identifies issues, trade-offs, mitigation strategies
-3. **Architecture Synthesis**: Combines insights into comprehensive architectural guidance
-4. **Strategic Validation**: Ensures recommendations align with business goals and constraints
-
-**Agents Invoked**: Systems Designer, Technology Strategist, Scalability Consultant, Risk Analyst
-
-**Context Used**: Automatically references `./docs` project documentation including:
-- `project-overview-pdr.md` - Product requirements and goals
-- `code-standards.md` - Development standards
-- `system-architecture.md` - Current architecture
-- `deployment-guide.md` - Infrastructure constraints
-
-## Complete Example
-
-### Scenario: Database Choice for Analytics Feature
+## Ví dụ nhanh
 
 ```bash
-/ask [we need to add analytics tracking for user behavior. Should we use PostgreSQL with TimescaleDB, ClickHouse, or a separate analytics service like Mixpanel?]
+/ask [nên sử dụng kiến trúc microservices hay monolithic cho một nền tảng SaaS với 10.000 người dùng?]
 ```
 
-**Response Breakdown**:
-
-**1. Architecture Analysis**
+**Kết quả đầu ra**:
 ```
-Current Context:
-- Existing PostgreSQL database for transactional data
-- ~10k daily active users with growth to 100k projected
-- Team familiar with SQL, limited DevOps resources
-- Real-time dashboard requirements
+Phân tích Kiến trúc:
+- Quy mô hiện tại: 10k người dùng cho thấy độ phức tạp ở mức trung bình
+- Kích thước đội ngũ và chuyên môn là yếu tố quan trọng đối với microservices
+- Các cân nhắc về chi phí vận hành cho triển khai và giám sát
 
-Key Considerations:
-- Data volume: ~1M events/day currently, 10M projected
-- Query patterns: Time-series aggregations, user funnels
-- Budget: Prefer self-hosted to control costs
-- Compliance: GDPR requires data residency control
-```
+Đề xuất Thiết kế:
+1. Bắt đầu với Modular Monolith
+   - Tốc độ phát triển nhanh hơn
+   - Độ phức tạp vận hành thấp hơn
+   - Ranh giới module rõ ràng để dễ dàng tách rời trong tương lai
 
-**2. Design Recommendations**
-```
-Option A: PostgreSQL + TimescaleDB (Recommended)
-Pros:
-- Leverage existing PostgreSQL expertise
-- Single database reduces operational complexity
-- Native SQL support for analytics queries
-- GDPR compliance through self-hosting
+Hướng dẫn Công nghệ:
+- Sử dụng các nguyên tắc thiết kế hướng tên miền (domain-driven design)
+- Triển khai kiến trúc ưu tiên API (API-first)
+- Lập kế hoạch cho khả năng mở rộng hàng ngang
 
-Cons:
-- May require tuning for high-volume writes
-- Complex queries impact transactional performance
+Chiến lược Triển khai:
+Giai đoạn 1: Modular monolith với ranh giới rõ ràng
+Giai đoạn 2: Tách các module có lưu lượng truy cập cao nếu cần
+Giai đoạn 3: Đánh giá microservices khi đạt 50k+ người dùng
 
-Option B: ClickHouse
-Pros:
-- Superior performance for analytical queries
-- Handles 10M+ events/day easily
-
-Cons:
-- New technology to learn and maintain
-- Separate infrastructure increases complexity
-- SQL dialect differences
-
-Option C: Mixpanel
-Pros:
-- Zero operational overhead
-- Rich analytics UI out of box
-
-Cons:
-- Monthly cost: $999+ at 100k users
-- Limited GDPR control
-- Vendor lock-in
+Các hành động tiếp theo:
+- Xác định ranh giới module trong mã nguồn
+- Triển khai giám sát sớm
+- Lập kế hoạch sơ đồ cơ sở dữ liệu để tách rời trong tương lai
 ```
 
-**3. Technology Guidance**
-```
-Recommended Approach: TimescaleDB Extension
-1. Add TimescaleDB to existing PostgreSQL
-2. Create separate schema for analytics
-3. Use connection pooling (PgBouncer)
-4. Implement write buffering via Redis
+**Kết quả**: Đã nhận được hướng dẫn chiến lược, không có mã nguồn nào bị thay đổi, sẵn sàng triển khai với sự tự tin.
 
-Architecture Pattern:
+## Tham số
+
+- `[câu-hỏi-kỹ-thuật]`: Câu hỏi về kiến trúc, thách thức thiết kế hoặc quyết định kỹ thuật của bạn cần sự tư vấn từ chuyên gia.
+
+## Điều gì xảy ra
+
+Khi bạn chạy lệnh này:
+
+1. **Phân tích Vấn đề**: Hệ thống phân tích câu hỏi của bạn và thu thập ngữ cảnh kiến trúc từ các tài liệu dự án.
+2. **Tư vấn Chuyên gia**: Bốn cố vấn chuyên biệt cung cấp các góc nhìn:
+   - **Systems Designer (Thiết kế Hệ thống)**: Đánh giá ranh giới hệ thống, giao diện, tương tác giữa các thành phần.
+   - **Technology Strategist (Chiến lược gia Công nghệ)**: Đề xuất các công nghệ (stack), framework, mẫu kiến trúc.
+   - **Scalability Consultant (Cố vấn Khả năng mở rộng)**: Đánh giá hiệu suất, độ tin cậy, các cân nhắc về tăng trưởng.
+   - **Risk Analyst (Phân tích Rủi ro)**: Xác định các vấn đề, sự đánh đổi, chiến lược giảm thiểu rủi ro.
+3. **Tổng hợp Kiến trúc**: Kết hợp các thông tin chuyên sâu thành hướng dẫn kiến trúc toàn diện.
+4. **Xác nhận Chiến lược**: Đảm bảo các đề xuất phù hợp với mục tiêu kinh doanh và các ràng buộc.
+
+**Các Agent được triệu tập**: Systems Designer, Technology Strategist, Scalability Consultant, Risk Analyst
+
+**Ngữ cảnh được sử dụng**: Tự động tham chiếu tài liệu dự án trong thư mục `./docs` bao gồm:
+- `project-overview-pdr.md` - Các yêu cầu và mục tiêu sản phẩm
+- `code-standards.md` - Các tiêu chuẩn phát triển
+- `system-architecture.md` - Kiến trúc hiện tại
+- `deployment-guide.md` - Các ràng buộc về hạ tầng
+
+## Ví dụ Đầy đủ
+
+### Kịch bản: Lựa chọn Cơ sở dữ liệu cho tính năng Phân tích
+
+```bash
+/ask [chúng tôi cần thêm tính năng theo dõi phân tích hành vi người dùng. Nên sử dụng PostgreSQL với TimescaleDB, ClickHouse, hay một dịch vụ phân tích riêng biệt như Mixpanel?]
+```
+
+**Phân tích Phản hồi**:
+
+**1. Phân tích Kiến trúc**
+```
+Ngữ cảnh Hiện tại:
+- Cơ sở dữ liệu PostgreSQL hiện có cho dữ liệu giao dịch
+- Khoảng 10k người dùng hoạt động hàng ngày với dự kiến tăng lên 100k
+- Đội ngũ quen thuộc với SQL, nguồn lực DevOps hạn chế
+- Yêu cầu bảng điều khiển (dashboard) thời gian thực
+
+Các cân nhắc chính:
+- Khối lượng dữ liệu: Hiện tại ~1 triệu sự kiện/ngày, dự kiến 10 triệu
+- Mẫu truy vấn: Tổng hợp theo chuỗi thời gian, phễu người dùng
+- Ngân sách: Ưu tiên tự lưu trữ (self-hosted) để kiểm soát chi phí
+- Tuân thủ: GDPR yêu cầu kiểm soát vị trí lưu trữ dữ liệu
+```
+
+**2. Đề xuất Thiết kế**
+```
+Lựa chọn A: PostgreSQL + TimescaleDB (Khuyên dùng)
+Ưu điểm:
+- Tận dụng chuyên môn PostgreSQL hiện có
+- Cơ sở dữ liệu duy nhất giúp giảm độ phức tạp vận hành
+- Hỗ trợ SQL gốc cho các truy vấn phân tích
+- Tuân thủ GDPR thông qua việc tự lưu trữ
+
+Nhược điểm:
+- Có thể cần tinh chỉnh cho khối lượng ghi lớn
+- Các truy vấn phức tạp ảnh hưởng đến hiệu suất giao dịch
+
+Lựa chọn B: ClickHouse
+Ưu điểm:
+- Hiệu suất vượt trội cho các truy vấn phân tích
+- Xử lý hơn 10 triệu sự kiện/ngày một cách dễ dàng
+
+Nhược điểm:
+- Công nghệ mới cần học hỏi và bảo trì
+- Hạ tầng riêng biệt làm tăng độ phức tạp
+- Sự khác biệt về cú pháp SQL
+
+Lựa chọn C: Mixpanel
+Ưu điểm:
+- Không tốn chi phí vận hành
+- Giao diện phân tích phong phú có sẵn
+
+Nhược điểm:
+- Chi phí hàng tháng: $999+ khi đạt 100k người dùng
+- Kiểm soát GDPR hạn chế
+- Phụ thuộc vào nhà cung cấp (vendor lock-in)
+```
+
+**3. Hướng dẫn Công nghệ**
+```
+Cách tiếp cận đề xuất: Tiện ích mở rộng TimescaleDB
+1. Thêm TimescaleDB vào PostgreSQL hiện có
+2. Tạo sơ đồ (schema) riêng cho phân tích
+3. Sử dụng quản lý kết nối (connection pooling - PgBouncer)
+4. Triển khai đệm ghi (write buffering) qua Redis
+
+Mẫu Kiến trúc:
 [App] → [Redis Buffer] → [PostgreSQL/TimescaleDB]
                               ↓
                         [Analytics Dashboard]
 ```
 
-**4. Implementation Strategy**
+**4. Chiến lược Triển khai**
 ```
-Phase 1 (Week 1-2): Proof of Concept
-- Install TimescaleDB extension
-- Create hypertables for event tracking
-- Test write performance with sample data
-- Benchmark query performance
+Giai đoạn 1 (Tuần 1-2): Thử nghiệm khái niệm (PoC)
+- Cài đặt tiện ích mở rộng TimescaleDB
+- Tạo hypertables để theo dõi sự kiện
+- Kiểm tra hiệu suất ghi với dữ liệu mẫu
+- Đo lường hiệu suất truy vấn
 
-Phase 2 (Week 3-4): Production Integration
-- Implement Redis write buffer
-- Create analytics API layer
-- Add monitoring (query performance, disk usage)
-- Set up automated retention policies
+Giai đoạn 2 (Tuần 3-4): Tích hợp Sản xuất
+- Triển khai đệm ghi Redis
+- Tạo lớp API phân tích
+- Thêm giám sát (hiệu suất truy vấn, sử dụng đĩa)
+- Thiết lập các chính sách lưu giữ dữ liệu tự động
 
-Phase 3 (Month 2): Dashboard Development
-- Build real-time dashboards
-- Implement user funnel queries
-- Add export capabilities
+Giai đoạn 3 (Tháng 2): Phát triển Bảng điều khiển
+- Xây dựng bảng điều khiển thời gian thực
+- Triển khai các truy vấn phễu người dùng
+- Thêm khả năng xuất dữ liệu
 
-Migration Path if Needed:
-- ClickHouse migration feasible if volume exceeds 50M events/day
-- Data export for compliance always available
-```
-
-**5. Next Actions**
-```
-1. Run benchmark: Load 1M sample events, test query performance
-2. Review team capacity: Confirm PostgreSQL tuning expertise
-3. Cost analysis: Compare TimescaleDB self-hosting vs Mixpanel at scale
-4. Proof of concept: Build simple event tracking in dev environment
-5. Decision checkpoint: Validate performance meets requirements before full build
+Lộ trình Di chuyển nếu cần:
+- Di chuyển sang ClickHouse khả thi nếu khối lượng vượt quá 50 triệu sự kiện/ngày
+- Luôn có sẵn khả năng xuất dữ liệu để tuân thủ quy định
 ```
 
-**Additional Considerations**:
+**5. Các hành động tiếp theo**
 ```
-- If you need /scout to find existing database configs, I can call it
-- Consider data retention policies (GDPR 2-year limit)
-- Plan for gradual rollout to validate write performance
+1. Chạy đo lường: Tải 1 triệu sự kiện mẫu, kiểm tra hiệu suất truy vấn
+2. Đánh giá năng lực đội ngũ: Xác nhận chuyên môn tinh chỉnh PostgreSQL
+3. Phân tích chi phí: So sánh tự lưu trữ TimescaleDB và Mixpanel ở quy mô lớn
+4. Thử nghiệm khái niệm: Xây dựng hệ thống theo dõi sự kiện đơn giản trong môi trường dev
+5. Điểm kiểm tra quyết định: Xác nhận hiệu suất đáp ứng yêu cầu trước khi xây dựng đầy đủ
 ```
 
-## Common Use Cases
+**Các cân nhắc bổ sung**:
+```
+- Nếu bạn cần /scout để tìm các cấu hình DB hiện có, tôi có thể gọi lệnh đó
+- Cân nhắc các chính sách lưu giữ dữ liệu (giới hạn 2 năm của GDPR)
+- Lập kế hoạch triển khai dần dần để xác nhận hiệu suất ghi
+```
 
-### Technology Stack Selection
+## Các trường hợp sử dụng phổ biến
+
+### Lựa chọn Công nghệ (Tech Stack)
 
 ```bash
-/ask [choosing between Next.js, Remix, and Astro for documentation site with AI chat]
+/ask [lựa chọn giữa Next.js, Remix và Astro cho trang web tài liệu có tính năng chat AI]
 ```
 
-Gets guidance on framework selection based on SSR, static generation, and interactive component needs.
+Nhận hướng dẫn về việc lựa chọn framework dựa trên nhu cầu về SSR, tạo trang tĩnh và các thành phần tương tác.
 
-### Scaling Strategy
+### Chiến lược Mở rộng
 
 ```bash
-/ask [our API response time increased to 2s under load. Should we add caching, scale horizontally, or optimize queries?]
+/ask [thời gian phản hồi API của chúng tôi tăng lên 2 giây khi tải nặng. Nên thêm bộ nhớ đệm, mở rộng hàng ngang hay tối ưu hóa truy vấn?]
 ```
 
-Receives analysis of bottlenecks and prioritized optimization strategy.
+Nhận phân tích về các nút thắt cổ chai và chiến lược tối ưu hóa được ưu tiên.
 
-### Integration Architecture
+### Kiến trúc Tích hợp
 
 ```bash
-/ask [how should we integrate payment processing: direct Stripe integration or payment gateway abstraction layer?]
+/ask [chúng tôi nên tích hợp xử lý thanh toán như thế nào: tích hợp trực tiếp Stripe hay lớp trừu tượng cổng thanh toán (payment gateway abstraction layer)?]
 ```
 
-Gets trade-off analysis between simplicity and vendor flexibility.
+Nhận phân tích sự đánh đổi giữa tính đơn giản và tính linh hoạt với nhà cung cấp.
 
-### Security Design
+### Thiết kế Bảo mật
 
 ```bash
-/ask [what's the best approach for API authentication: JWT, session-based, or API keys?]
+/ask [cách tiếp cận tốt nhất cho xác thực API: JWT, dựa trên session, hay API keys?]
 ```
 
-Receives security assessment and recommendations based on use case.
+Nhận đánh giá bảo mật và các đề xuất dựa trên trường hợp sử dụng.
 
-## Best Practices
+## Thực hành tốt nhất
 
-### Ask Strategic Questions
+### Đặt câu hỏi mang tính Chiến lược
 
-✅ **Good:**
+✅ **Tốt:**
 ```bash
-/ask [should we use WebSockets or Server-Sent Events for real-time notifications?]
-/ask [how to structure microservices boundaries for e-commerce domain?]
-/ask [what database architecture for multi-tenant SaaS with data isolation?]
+/ask [nên sử dụng WebSockets hay Server-Sent Events cho thông báo thời gian thực?]
+/ask [cách cấu trúc ranh giới microservices cho lĩnh vực thương mại điện tử?]
+/ask [kiến trúc cơ sở dữ liệu nào cho SaaS đa khách hàng (multi-tenant) có cách ly dữ liệu?]
 ```
 
-❌ **Too Implementation-Focused:**
+❌ **Quá tập trung vào Triển khai:**
 ```bash
-/ask [how to write a function that connects to Redis?]
-/ask [what's the syntax for PostgreSQL indexes?]
-/ask [debug this error message]
+/ask [làm thế nào để viết một hàm kết nối với Redis?]
+/ask [cú pháp cho các chỉ mục (indexes) PostgreSQL là gì?]
+/ask [debug thông báo lỗi này giúp tôi]
 ```
 
-### Provide Context
+### Cung cấp Ngữ cảnh
 
-Include relevant constraints:
+Bao gồm các ràng buộc liên quan:
 ```bash
 /ask [
-  Need caching solution for:
-  - 100k daily users
-  - Budget: $200/month
-  - Team knows Redis basics
-  - Must support complex invalidation
-  Should we use Redis, Memcached, or in-memory cache?
+  Cần giải pháp bộ nhớ đệm cho:
+  - 100k người dùng hàng ngày
+  - Ngân sách: $200/tháng
+  - Đội ngũ biết cơ bản về Redis
+  - Phải hỗ trợ việc xóa bộ nhớ đệm (invalidation) phức tạp
+  Nên sử dụng Redis, Memcached, hay bộ nhớ đệm trong bộ nhớ (in-memory cache)?
 ]
 ```
 
-### Review Project Docs First
+### Kiểm tra Tài liệu Dự án trước
 
-The `/ask` command automatically reads `./docs` but you can help by:
-1. Keeping `system-architecture.md` updated
-2. Documenting constraints in `project-overview-pdr.md`
-3. Updating `code-standards.md` with preferences
+Lệnh `/ask` tự động đọc thư mục `./docs` nhưng bạn có thể hỗ trợ bằng cách:
+1. Luôn cập nhật file `system-architecture.md`
+2. Tài liệu hóa các ràng buộc trong `project-overview-pdr.md`
+3. Cập nhật `code-standards.md` với các sở thích của bạn
 
-## What /ask DOES NOT Do
+## Điều /ask KHÔNG làm
 
-- ❌ Write implementation code
-- ❌ Fix bugs (use `/debug` or `/fix:*` instead)
-- ❌ Deploy infrastructure
-- ❌ Make final decisions (you decide, it advises)
+- ❌ Viết mã nguồn triển khai
+- ❌ Sửa lỗi (sử dụng `/debug` hoặc các lệnh `/fix:*` thay thế)
+- ❌ Triển khai hạ tầng
+- ❌ Đưa ra quyết định cuối cùng (bạn quyết định, hệ thống tư vấn)
 
-## Integration with Workflow
+## Tích hợp vào Quy trình làm việc
 
-### Before Planning
+### Trước khi Lập kế hoạch
 
 ```bash
-# 1. Get architectural guidance
-/ask [best approach for background job processing?]
+# 1. Nhận hướng dẫn kiến trúc
+/ask [cách tiếp cận tốt nhất cho xử lý công việc chạy ngầm (background job)?]
 
-# 2. Review recommendations
-# [Advisor output received]
+# 2. Xem xét các đề xuất
+# [Nhận kết quả từ cố vấn]
 
-# 3. Create implementation plan
-/plan [implement background jobs using Bull + Redis]
+# 3. Tạo kế hoạch triển khai
+/plan [triển khai background jobs sử dụng Bull + Redis]
 
-# 4. Implement
-/cook [add background job processing]
+# 4. Triển khai
+/cook [thêm xử lý background job]
 ```
 
-### During Code Review
+### Trong quá trình Đánh giá mã nguồn (Code Review)
 
 ```bash
-# 1. Review PR
+# 1. Xem xét PR
 git diff main
 
-# 2. Question design choice
-/ask [is this service layer abstraction over-engineered for CRUD operations?]
+# 2. Đặt câu hỏi về lựa chọn thiết kế
+/ask [liệu sự trừu tượng hóa lớp dịch vụ (service layer) này có quá phức tạp cho các hoạt động CRUD không?]
 
-# 3. Adjust based on guidance
-# [Make changes if recommended]
+# 3. Điều chỉnh dựa trên hướng dẫn
+# [Thực hiện các thay đổi nếu được đề xuất]
 ```
 
-### Can Call /scout Automatically
+### Có thể gọi /scout tự động
 
-If `/ask` needs more context about your codebase:
+Nếu `/ask` cần thêm ngữ cảnh về mã nguồn của bạn:
 
 ```
-Architecture Analysis:
-Need to understand current database setup...
+Phân tích Kiến trúc:
+Cần hiểu thiết lập cơ sở dữ liệu hiện tại...
 
-Invoking /scout to find database configurations...
-[Scout results integrated into analysis]
+Đang gọi /scout để tìm cấu hình cơ sở dữ liệu...
+[Kết quả từ Scout được tích hợp vào phân tích]
 ```
 
-You can also call it explicitly:
+Bạn cũng có thể gọi lệnh này một cách tường minh:
 ```bash
-# First scout the codebase
-/scout [find all API authentication implementations] 3
+# Đầu tiên thăm dò mã nguồn
+/scout [tìm tất cả các triển khai xác thực API] 3
 
-# Then ask architectural question
-/ask [should we consolidate these auth patterns or keep them separate?]
+# Sau đó đặt câu hỏi kiến trúc
+/ask [nên hợp nhất các mẫu xác thực này hay giữ chúng riêng biệt?]
 ```
 
-## Common Issues
+## Các vấn đề thường gặp
 
-### Too Vague Questions
+### Câu hỏi quá mơ hồ
 
-**Problem**: "How should I build this feature?"
+**Vấn đề**: "Tôi nên xây dựng tính năng này như thế nào?"
 
-**Solution**: Be specific about the challenge
+**Giải pháp**: Hãy cụ thể về thách thức của bạn
 ```bash
-/ask [what's the best way to handle file uploads over 100MB with progress tracking and resume capability?]
+/ask [cách tốt nhất để xử lý tải lên tệp trên 100MB với tính năng theo dõi tiến trình và khả năng tiếp tục khi bị gián đoạn là gì?]
 ```
 
-### Missing Context
+### Thiếu ngữ cảnh
 
-**Problem**: Advice doesn't fit your constraints
+**Vấn đề**: Lời khuyên không phù hợp với các ràng buộc của bạn
 
-**Solution**: Include constraints in question
+**Giải pháp**: Bao gồm các ràng buộc trong câu hỏi
 ```bash
-/ask [authentication approach for mobile app with requirement: offline-first, sync when online]
+/ask [cách tiếp cận xác thực cho ứng dụng di động với yêu cầu: ưu tiên ngoại tuyến, đồng bộ hóa khi có mạng]
 ```
 
-### Implementation Questions
+### Câu hỏi về Triển khai
 
-**Problem**: Asking about syntax or debugging
+**Vấn đề**: Hỏi về cú pháp hoặc sửa lỗi
 
-**Solution**: Use appropriate commands
-- Code syntax: Just ask directly
-- Bugs: `/debug [issue]`
-- Implementation: `/plan` then `/code`
+**Giải pháp**: Sử dụng các lệnh phù hợp
+- Cú pháp code: Chỉ cần hỏi trực tiếp
+- Sửa lỗi (Bugs): `/debug [vấn đề]`
+- Triển khai: `/plan` sau đó `/code`
 
-## Related Commands
+## Các lệnh liên quan
 
-- [/scout](/docs/engineer/commands/core/scout) - Search codebase before asking architectural questions
-- [/plan](/docs/engineer/commands/core/plan) - Create implementation plan after receiving guidance
-- [/debug](/docs/engineer/commands/core/debug) - Investigate technical issues (not architecture)
+- [/scout](/docs/engineer/commands/core/scout) - Tìm kiếm mã nguồn trước khi đặt câu hỏi kiến trúc
+- [/plan](/docs/engineer/commands/core/plan) - Tạo kế hoạch triển khai sau khi nhận được hướng dẫn
+- [/debug](/docs/engineer/commands/core/debug) - Điều tra các vấn đề kỹ thuật (không phải kiến trúc)
 
 ---
 
-**Key Takeaway**: `/ask` provides strategic architectural consultation from expert advisors, helping you make informed technical decisions before implementation begins.
+**Thông điệp chính**: `/ask` cung cấp tư vấn kiến trúc chiến lược từ các cố vấn chuyên gia, giúp bạn đưa ra các quyết định kỹ thuật sáng suốt trước khi bắt đầu triển khai.

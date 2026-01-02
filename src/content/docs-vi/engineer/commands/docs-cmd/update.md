@@ -1,269 +1,270 @@
 ---
 title: /docs:update
-description: Documentation for update
+description: Tài liệu hướng dẫn lệnh update
 section: engineer
 kit: engineer
 category: commands/docs-cmd
 order: 61
 published: true
+lang: vi
 ---
 
 # /docs:update
 
-Comprehensively analyze your codebase and update all documentation files to ensure they accurately reflect the current state of your project. Uses the `docs-manager` agent to maintain synchronized, high-quality documentation.
+Phân tích toàn diện codebase của bạn và cập nhật tất cả các tệp tài liệu để đảm bảo chúng phản ánh chính xác trạng thái hiện tại của dự án. Lệnh này sử dụng agent `docs-manager` để duy trì tài liệu đồng bộ và chất lượng cao.
 
-## Syntax
+## Cú Pháp
 
 ```bash
-/docs:update [additional requests]
+/docs:update [yêu cầu bổ sung]
 ```
 
-### Parameters
+### Tham Số
 
-- `[additional requests]` (optional): Specific documentation updates or focus areas
+- `[yêu cầu bổ sung]` (tùy chọn): Các cập nhật tài liệu cụ thể hoặc các khu vực cần tập trung.
 
-## How It Works
+## Cách Hoạt Động
 
-The `/docs:update` command uses the `docs-manager` agent with this workflow:
+Lệnh `/docs:update` sử dụng agent `docs-manager` với quy trình làm việc sau:
 
-### 1. Codebase Analysis
+### 1. Phân Tích Codebase
 
-- Generates comprehensive codebase compaction using `repomix`
-- Creates/updates `./docs/codebase-summary.md`
-- Scans project structure and architecture
-- Identifies key components and patterns
-- Analyzes dependencies and integrations
+- Tạo bản nén codebase toàn diện bằng `repomix`
+- Tạo/cập nhật tệp `./docs/codebase-summary.md`
+- Quét cấu trúc và kiến trúc dự án
+- Xác định các thành phần và mẫu (patterns) chính
+- Phân tích các phụ thuộc và tích hợp
 
-### 2. Documentation Review
+### 2. Xem Lại Tài Liệu
 
-- Reads all existing documentation in `./docs/` directory
-- Identifies outdated information
-- Finds gaps and inconsistencies
-- Cross-references with actual code implementation
-- Checks examples and code snippets for accuracy
+- Đọc tất cả tài liệu hiện có trong thư mục `./docs/`
+- Xác định các thông tin lỗi thời
+- Tìm kiếm các lỗ hổng và sự thiếu nhất quán
+- Đối chiếu với việc triển khai mã thực tế
+- Kiểm tra tính chính xác của các ví dụ và đoạn mã
 
-### 3. Systematic Updates
+### 3. Cập Nhật Hệ Thống
 
-- Updates each documentation file:
-  - `README.md` - Project overview and quick start
-  - `docs/project-overview-pdr.md` - Product Development Requirements
-  - `docs/codebase-summary.md` - Comprehensive codebase summary
-  - `docs/code-standards.md` - Codebase structure and standards
-  - `docs/system-architecture.md` - System architecture documentation
-  - `docs/project-roadmap.md` - Project roadmap and future plans
-  - `docs/deployment-guide.md` (optional) - Deployment instructions
-  - `docs/design-guidelines.md` (optional) - Design system guidelines
+- Cập nhật từng tệp tài liệu:
+  - `README.md` - Tổng quan dự án và bắt đầu nhanh
+  - `docs/project-overview-pdr.md` - Yêu cầu phát triển sản phẩm (PDR)
+  - `docs/codebase-summary.md` - Tóm tắt codebase toàn diện
+  - `docs/code-standards.md` - Cấu trúc và tiêu chuẩn codebase
+  - `docs/system-architecture.md` - Tài liệu kiến trúc hệ thống
+  - `docs/project-roadmap.md` - Lộ trình dự án và kế hoạch tương lai
+  - `docs/deployment-guide.md` (tùy chọn) - Hướng dẫn triển khai
+  - `docs/design-guidelines.md` (tùy chọn) - Hướng dẫn hệ thống thiết kế
 
-### 4. Quality Assurance
+### 4. Đảm Bảo Chất Lượng
 
-- Ensures consistent formatting and terminology
-- Validates all links and references
-- Verifies code examples are functional
-- Maintains documentation hierarchy
-- Updates version information and timestamps
+- Đảm bảo định dạng và thuật ngữ nhất quán
+- Xác minh tất cả các liên kết và tham chiếu
+- Kiểm tra tính hoạt động của các ví dụ mã
+- Duy trì phân cấp tài liệu
+- Cập nhật thông tin phiên bản và dấu thời gian
 
-## When to Use
+## Khi Nào Nên Sử Dụng
 
-### ✅ Perfect For
+### ✅ Hoàn Hảo Cho
 
-**After Major Features**
+**Sau Khi Hoàn Thành Các Tính Năng Lớn**
 ```bash
-# Implemented new authentication system
+# Đã triển khai hệ thống xác thực mới
 /docs:update
 ```
 
-**Refactoring Projects**
+**Các Dự Án Tái Cấu Trúc (Refactoring)**
 ```bash
-# Refactored entire API layer
-/docs:update [focus on API architecture changes]
+# Đã tái cấu trúc toàn bộ lớp API
+/docs:update [tập trung vào các thay đổi kiến trúc API]
 ```
 
-**New Team Members**
+**Thành Viên Mới Trong Nhóm**
 ```bash
-# Preparing documentation for onboarding
-/docs:update [ensure all setup instructions are current]
+# Chuẩn bị tài liệu để hướng dẫn thành viên mới
+/docs:update [đảm bảo tất cả hướng dẫn thiết lập đều mới nhất]
 ```
 
-**Pre-Release**
+**Trước Khi Phát Hành**
 ```bash
-# Before version release
-/docs:update [prepare for v2.0 release]
+# Trước khi phát hành phiên bản mới
+/docs:update [chuẩn bị cho việc phát hành phiên bản v2.0]
 ```
 
-**Quarterly Maintenance**
+**Bảo Trì Định Kỳ Hàng Quý**
 ```bash
-# Regular documentation review
-/docs:update [quarterly documentation audit]
+# Xem lại tài liệu định kỳ
+/docs:update [kiểm tra tài liệu hàng quý]
 ```
 
-### ❌ Don't Use For
+### ❌ Không Sử Dụng Cho
 
-**Simple Typos**
+**Lỗi Đánh Máy Đơn Giản**
 ```bash
-❌ /docs:update [fix typo in README]
-✅ Just edit the README directly
+❌ /docs:update [sửa lỗi đánh máy trong README]
+✅ Chỉ cần chỉnh sửa trực tiếp tệp README
 ```
 
-**No Code Changes**
+**Không Có Thay Đổi Mã Nguồn**
 ```bash
-❌ /docs:update [just checking]
-✅ Only run after meaningful code changes
+❌ /docs:update [chỉ kiểm tra thử]
+✅ Chỉ chạy sau khi có những thay đổi mã nguồn đáng kể
 ```
 
-**Quick Status Check**
+**Kiểm Tra Trạng Thái Nhanh**
 ```bash
-❌ /docs:update [what changed?]
-✅ /watzup [review recent changes]
+❌ /docs:update [có gì thay đổi?]
+✅ /watzup [xem lại các thay đổi gần đây]
 ```
 
-## Examples
+## Ví Dụ
 
-### After Feature Implementation
+### Sau Khi Triển Khai Tính Năng
 
 ```bash
 /docs:update
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-1. Analyzing codebase
+1. Đang phân tích codebase
    $ repomix
-   ✓ Generated: ./repomix-output.xml (245KB, 45K tokens)
-   ✓ Created: ./docs/codebase-summary.md
+   ✓ Đã tạo: ./repomix-output.xml (245KB, 45K tokens)
+   ✓ Đã tạo: ./docs/codebase-summary.md
 
-2. Reviewing existing documentation
-   - README.md: Outdated (mentions old API structure)
-   - project-overview-pdr.md: Missing new features
-   - code-standards.md: Current
-   - system-architecture.md: Needs update (new microservices)
-   - codebase-summary.md: Regenerated
+2. Đang xem lại tài liệu hiện có
+   - README.md: Lỗi thời (đề cập đến cấu trúc API cũ)
+   - project-overview-pdr.md: Thiếu các tính năng mới
+   - code-standards.md: Đã mới nhất
+   - system-architecture.md: Cần cập nhật (microservices mới)
+   - codebase-summary.md: Đã được tạo lại
 
-3. Updating documentation
+3. Đang cập nhật tài liệu
    ✓ README.md
-     - Updated API endpoint examples
-     - Added new environment variables
-     - Refreshed feature list
+     - Cập nhật các ví dụ endpoint API
+     - Thêm các biến môi trường mới
+     - Làm mới danh sách tính năng
 
    ✓ project-overview-pdr.md
-     - Added OAuth2 authentication section
-     - Updated technical requirements
-     - Added new acceptance criteria
+     - Thêm phần xác thực OAuth2
+     - Cập nhật các yêu cầu kỹ thuật
+     - Thêm các tiêu chí chấp nhận mới
 
    ✓ system-architecture.md
-     - Added payment service architecture
-     - Updated database schema diagram
-     - Documented new message queue integration
+     - Thêm kiến trúc dịch vụ thanh toán
+     - Cập nhật sơ đồ schema cơ sở dữ liệu
+     - Ghi lại tích hợp hàng đợi tin nhắn mới
 
    ✓ codebase-summary.md
-     - Complete project structure overview
-     - File organization and naming conventions
-     - Key architectural patterns
+     - Tổng quan cấu trúc dự án hoàn chỉnh
+     - Tổ chức tệp và quy ước đặt tên
+     - Các mẫu kiến trúc chính
 
-4. Summary
-   Files updated: 4
-   Sections added: 12
-   Examples refreshed: 8
-   Broken links fixed: 3
+4. Tóm tắt
+   Số tệp đã cập nhật: 4
+   Số phần đã thêm: 12
+   Số ví dụ đã làm mới: 8
+   Số liên kết hỏng đã sửa: 3
 
-✓ Documentation synchronized (3m 45s)
+✓ Đã đồng bộ hóa tài liệu (3m 45s)
 ```
 
-### Focused Update
+### Cập Nhật Có Trọng Tâm
 
 ```bash
-/docs:update [update API documentation with new endpoints]
+/docs:update [cập nhật tài liệu API với các endpoint mới]
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-1. Analyzing API changes
-   - New endpoints: 5 (user management)
-   - Modified endpoints: 3 (authentication)
-   - Deprecated endpoints: 1 (legacy login)
+1. Đang phân tích các thay đổi API
+   - Endpoint mới: 5 (quản lý người dùng)
+   - Endpoint đã chỉnh sửa: 3 (xác thực)
+   - Endpoint đã lỗi thời: 1 (đăng nhập cũ)
 
-2. Updating API documentation
+2. Đang cập nhật tài liệu API
    ✓ project-overview-pdr.md
-     - Added API endpoints section
-     - Documented request/response formats
-     - Added authentication requirements
+     - Thêm phần các endpoint API
+     - Ghi lại định dạng request/response
+     - Thêm các yêu cầu xác thực
 
    ✓ code-standards.md
-     - Updated API design patterns
-     - Added endpoint naming conventions
-     - Documented error response structure
+     - Cập nhật các mẫu thiết kế API
+     - Thêm quy ước đặt tên endpoint
+     - Ghi lại cấu trúc phản hồi lỗi
 
    ✓ README.md
-     - Added API quick start examples
-     - Updated authentication flow
+     - Thêm các ví dụ bắt đầu nhanh với API
+     - Cập nhật quy trình xác thực
 
-3. Validation
-   - All endpoints documented
-   - Request examples tested
-   - Response schemas validated
+3. Xác minh
+   - Tất cả endpoint đã được ghi lại
+   - Các ví dụ request đã được kiểm tra
+   - Các schema response đã được xác minh
 
-✓ API documentation updated (2m 12s)
+✓ Đã cập nhật tài liệu API (2m 12s)
 ```
 
-### Pre-Release Documentation
+### Tài Liệu Trước Khi Phát Hành
 
 ```bash
-/docs:update [prepare documentation for v2.0 release]
+/docs:update [chuẩn bị tài liệu cho phiên bản phát hành v2.0]
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-1. Comprehensive review
-   - Reviewing 8 documentation files
-   - Checking 156 code examples
-   - Validating 43 links
+1. Xem lại toàn diện
+   - Xem lại 8 tệp tài liệu
+   - Kiểm tra 156 ví dụ mã
+   - Xác minh 43 liên kết
 
-2. Major updates
+2. Các cập nhật chính
    ✓ README.md
-     - Updated version to 2.0
-     - Added breaking changes section
-     - Refreshed installation instructions
+     - Cập nhật phiên bản lên 2.0
+     - Thêm phần các thay đổi gây phá vỡ (breaking changes)
+     - Làm mới hướng dẫn cài đặt
 
    ✓ project-overview-pdr.md
-     - Added v2.0 features overview
-     - Updated technical requirements
-     - Added migration guide from v1.x
+     - Thêm tổng quan tính năng v2.0
+     - Cập nhật yêu cầu kỹ thuật
+     - Thêm hướng dẫn nâng cấp từ v1.x
 
    ✓ project-roadmap.md
-     - Marked v2.0 items as completed
-     - Added v2.1 and v3.0 planning
-     - Updated timeline
+     - Đánh dấu các mục v2.0 là đã hoàn thành
+     - Thêm kế hoạch cho v2.1 và v3.0
+     - Cập nhật mốc thời gian
 
    ✓ deployment-guide.md
-     - Updated for new deployment architecture
-     - Added Docker Compose examples
-     - Documented environment variables
+     - Cập nhật cho kiến trúc triển khai mới
+     - Thêm các ví dụ Docker Compose
+     - Ghi lại các biến môi trường
 
-3. Quality checks
-   ✓ All links validated
-   ✓ Code examples tested
-   ✓ Consistent formatting applied
-   ✓ Version numbers updated throughout
+3. Kiểm tra chất lượng
+   ✓ Tất cả liên kết đã được xác minh
+   ✓ Các ví dụ mã đã được kiểm tra
+   ✓ Áp dụng định dạng nhất quán
+   ✓ Cập nhật số phiên bản đồng nhất
 
-✓ Release documentation ready (4m 23s)
+✓ Tài liệu phát hành đã sẵn sàng (4m 23s)
 ```
 
-### Architecture Documentation
+### Tài Liệu Kiến Trúc
 
 ```bash
-/docs:update [focus on system architecture]
+/docs:update [tập trung vào kiến trúc hệ thống]
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-1. Architecture analysis
-   - Microservices: 7 services identified
-   - Databases: 2 (PostgreSQL, Redis)
-   - Message queues: RabbitMQ
-   - External APIs: 4 integrations
+1. Phân tích kiến trúc
+   - Microservices: 7 dịch vụ đã xác định
+   - Cơ sở dữ liệu: 2 (PostgreSQL, Redis)
+   - Hàng đợi tin nhắn: RabbitMQ
+   - API bên ngoài: 4 tích hợp
 
-2. Updating system-architecture.md
-   ✓ Added system overview diagram
-   ✓ Documented each microservice
+2. Đang cập nhật system-architecture.md
+   ✓ Thêm sơ đồ tổng quan hệ thống
+   ✓ Ghi lại từng microservice
      - API Gateway
      - Auth Service
      - User Service
@@ -272,309 +273,309 @@ The `/docs:update` command uses the `docs-manager` agent with this workflow:
      - Analytics Service
      - Background Job Service
 
-   ✓ Database architecture
-     - Schema relationships
-     - Migration strategy
-     - Backup procedures
+   ✓ Kiến trúc cơ sở dữ liệu
+     - Quan hệ schema
+     - Chiến lược migration
+     - Quy trình sao lưu
 
-   ✓ Communication patterns
+   ✓ Các mẫu giao tiếp
      - REST APIs
-     - Message queue flows
-     - WebSocket connections
+     - Luồng hàng đợi tin nhắn
+     - Kết nối WebSocket
 
-   ✓ Deployment architecture
-     - Container orchestration
-     - Load balancing
-     - Scaling strategies
+   ✓ Kiến trúc triển khai
+     - Điều phối container
+     - Cân bằng tải
+     - Chiến lược mở rộng
 
-✓ Architecture documentation complete (3m 56s)
+✓ Hoàn tất tài liệu kiến trúc (3m 56s)
 ```
 
-## Documentation Files Updated
+## Các Tệp Tài Liệu Được Cập Nhật
 
-### Core Documentation
+### Tài Liệu Cốt Lõi
 
 **README.md**
-- Project overview
-- Quick start guide
-- Installation instructions
-- Basic usage examples
-- Contributing guidelines
+- Tổng quan dự án
+- Hướng dẫn bắt đầu nhanh
+- Hướng dẫn cài đặt
+- Ví dụ sử dụng cơ bản
+- Hướng dẫn đóng góp
 
 **docs/project-overview-pdr.md**
-- Product vision and goals
-- Functional requirements
-- Non-functional requirements
-- Technical constraints
-- Acceptance criteria
-- Success metrics
+- Tầm nhìn và mục tiêu sản phẩm
+- Yêu cầu chức năng
+- Yêu cầu phi chức năng
+- Ràng buộc kỹ thuật
+- Tiêu chí chấp nhận
+- Chỉ số thành công
 
 **docs/codebase-summary.md**
-- Project structure overview
-- File organization
-- Key components
-- Architectural patterns
-- Token count and statistics
+- Tổng quan cấu trúc dự án
+- Tổ chức tệp tin
+- Các thành phần chính
+- Các mẫu kiến trúc
+- Số lượng token và thống kê
 
 **docs/code-standards.md**
-- Coding conventions
-- File naming patterns
-- Directory structure
-- Error handling patterns
-- Testing strategies
-- Security practices
+- Quy ước lập trình
+- Mẫu đặt tên tệp
+- Cấu trúc thư mục
+- Mẫu xử lý lỗi
+- Chiến lược kiểm tra (testing)
+- Thực hành bảo mật
 
 **docs/system-architecture.md**
-- High-level architecture
-- Component diagrams
-- Data flow
-- Technology stack
-- Integration points
-- Deployment architecture
+- Kiến trúc cấp cao
+- Sơ đồ thành phần
+- Luồng dữ liệu
+- Bộ công nghệ (Technology stack)
+- Các điểm tích hợp
+- Kiến trúc triển khai
 
-### Optional Documentation
+### Tài Liệu Tùy Chọn
 
 **docs/project-roadmap.md**
-- Feature timeline
-- Release planning
-- Future improvements
-- Technical debt tracking
+- Mốc thời gian tính năng
+- Kế hoạch phát hành
+- Những cải tiến trong tương lai
+- Theo dõi nợ kỹ thuật (technical debt)
 
 **docs/deployment-guide.md**
-- Deployment procedures
-- Environment setup
-- Configuration management
-- Monitoring and logging
+- Quy trình triển khai
+- Thiết lập môi trường
+- Quản lý cấu hình
+- Giám sát và nhật ký (logging)
 
 **docs/design-guidelines.md**
-- UI/UX patterns
-- Component library
-- Design system
-- Accessibility guidelines
+- Các mẫu UI/UX
+- Thư viện thành phần
+- Hệ thống thiết kế
+- Hướng dẫn về khả năng tiếp cận (accessibility)
 
-## Agent Invoked
+## Agent Được Gọi
 
-The command uses the **docs-manager agent** with these capabilities:
+Lệnh này sử dụng agent **docs-manager** với các khả năng sau:
 
-- **Documentation Analysis**: Systematic review of all documentation
-- **Codebase Synchronization**: Cross-referencing docs with code
-- **Standards Enforcement**: Consistent formatting and terminology
-- **Gap Identification**: Finding missing or outdated documentation
-- **Quality Assurance**: Validating examples, links, and references
+- **Phân tích tài liệu**: Xem lại toàn bộ tài liệu một cách hệ thống
+- **Đồng bộ hóa Codebase**: Đối chiếu tài liệu với mã nguồn
+- **Thực thi tiêu chuẩn**: Định dạng và thuật ngữ nhất quán
+- **Xác định lỗ hổng**: Tìm kiếm tài liệu bị thiếu hoặc lỗi thời
+- **Đảm bảo chất lượng**: Xác minh các ví dụ, liên kết và tham chiếu
 
-## Best Practices
+## Thực Hành Tốt Nhất
 
-### Run After Major Changes
+### Chạy Sau Những Thay Đổi Lớn
 
-✅ **Good - After meaningful work:**
+✅ **Tốt - Sau khi hoàn thành công việc có ý nghĩa:**
 ```bash
-# After implementing features
-/cook [add payment integration]
+# Sau khi triển khai tính năng
+/cook [thêm tích hợp thanh toán]
 /fix:types
 /test
 /docs:update
 
-# Commit everything together
+# Commit tất cả cùng nhau
 /git:cm
 ```
 
-❌ **Bad - Too frequent:**
+❌ **Xấu - Quá thường xuyên:**
 ```bash
-# After every tiny change
-/fix:fast [typo]
-/docs:update  # Wasteful
+# Sau mỗi thay đổi nhỏ
+/fix:fast [lỗi đánh máy]
+/docs:update  # Lãng phí
 ```
 
-### Provide Context
+### Cung Cấp Ngữ Cảnh
 
-✅ **Specific focus:**
+✅ **Tập trung cụ thể:**
 ```bash
-/docs:update [focus on API changes and authentication flow]
+/docs:update [tập trung vào các thay đổi API và luồng xác thực]
 ```
 
-❌ **No context:**
+❌ **Không có ngữ cảnh:**
 ```bash
-/docs:update  # Works but less targeted
+/docs:update  # Vẫn hoạt động nhưng kém mục tiêu hơn
 ```
 
-### Review Before Committing
+### Xem Lại Trước Khi Commit
 
-✅ **Review changes:**
+✅ **Xem lại thay đổi:**
 ```bash
 /docs:update
 git diff docs/
-# Review changes
+# Xem lại các thay đổi
 /git:cm
 ```
 
-## Workflow
+## Quy Trình Làm Việc
 
-### Standard Feature Development
+### Phát Triển Tính Năng Tiêu Chuẩn
 
 ```bash
-# 1. Plan feature
-/plan [add OAuth2 authentication]
+# 1. Lập kế hoạch tính năng
+/plan [thêm xác thực OAuth2]
 
-# 2. Implement feature
-/cook [implement OAuth2 with Google and GitHub providers]
+# 2. Triển khai tính năng
+/cook [triển khai OAuth2 với các nhà cung cấp Google và GitHub]
 
-# 3. Fix any issues
+# 3. Sửa bất kỳ vấn đề nào
 /fix:types
 /test
 
-# 4. Update documentation
-/docs:update [document OAuth2 implementation]
+# 4. Cập nhật tài liệu
+/docs:update [tài liệu hóa việc triển khai OAuth2]
 
-# 5. Review and commit
+# 5. Xem lại và commit
 git diff
 /git:cm
 ```
 
-### Quarterly Documentation Maintenance
+### Bảo Trì Tài Liệu Hàng Quý
 
 ```bash
-# 1. Update documentation
-/docs:update [quarterly documentation review]
+# 1. Cập nhật tài liệu
+/docs:update [xem lại tài liệu hàng quý]
 
-# 2. Review all changes
+# 2. Xem lại tất cả các thay đổi
 git diff docs/
 
-# 3. Commit documentation updates
+# 3. Commit các cập nhật tài liệu
 /git:cm
 ```
 
-### Pre-Release Checklist
+### Checklist Trước Khi Phát Hành
 
 ```bash
-# 1. Update documentation
-/docs:update [prepare for v2.0 release]
+# 1. Cập nhật tài liệu
+/docs:update [chuẩn bị cho phiên bản phát hành v2.0]
 
-# 2. Review roadmap
-# Edit docs/project-roadmap.md
+# 2. Xem lại lộ trình
+# Chỉnh sửa docs/project-roadmap.md
 
-# 3. Update changelog
-# Edit CHANGELOG.md
+# 3. Cập nhật changelog
+# Chỉnh sửa CHANGELOG.md
 
-# 4. Commit release documentation
+# 4. Commit tài liệu phát hành
 /git:cm
 
-# 5. Create release PR
+# 5. Tạo PR phát hành
 /git:pr main develop
 ```
 
-## Troubleshooting
+## Xử Lý Sự Cố
 
-### Incomplete Updates
+### Cập Nhật Không Đầy Đủ
 
-**Problem:** Some documentation files not updated
+**Vấn đề:** Một số tệp tài liệu không được cập nhật
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Specify which files need attention
-/docs:update [update system-architecture.md and deployment-guide.md]
+# Chỉ định tệp nào cần được chú ý
+/docs:update [cập nhật system-architecture.md và deployment-guide.md]
 ```
 
-### Outdated Examples
+### Các Ví Dụ Lỗi Thời
 
-**Problem:** Code examples in docs don't match current code
+**Vấn đề:** Các ví dụ mã trong tài liệu không khớp với mã hiện tại
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Command automatically detects and updates
+# Lệnh tự động phát hiện và cập nhật
 /docs:update
 
-# Or specify focus
-/docs:update [refresh all code examples]
+# Hoặc chỉ định trọng tâm
+/docs:update [làm mới tất cả các ví dụ mã]
 ```
 
-### Missing Documentation
+### Thiếu Tài Liệu
 
-**Problem:** New features not documented
+**Vấn đề:** Các tính năng mới không được ghi lại trong tài liệu
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Command will create missing sections
-/docs:update [document new payment service]
+# Lệnh sẽ tạo các phần còn thiếu
+/docs:update [tài liệu hóa dịch vụ thanh toán mới]
 ```
 
-### Formatting Issues
+### Vấn Đề Định Dạng
 
-**Problem:** Inconsistent formatting across docs
+**Vấn đề:** Định dạng không nhất quán giữa các tài liệu
 
-**Solution:**
+**Giải pháp:**
 ```bash
-# Command standardizes formatting
+# Lệnh sẽ chuẩn hóa định dạng
 /docs:update
 ```
 
-## Related Commands
+## Các Lệnh Liên Quan
 
-### Documentation Overview
+### Tổng Quan Tài Liệu
 
 ```bash
-# Quick summary of recent changes
+# Tóm tắt nhanh các thay đổi gần đây
 /watzup
 
-# Full documentation update
+# Cập nhật tài liệu đầy đủ
 /docs:update
 ```
 
-### Codebase Summary Only
+### Chỉ Tóm Tắt Codebase
 
 ```bash
-# Just update codebase summary
+# Chỉ cập nhật bản tóm tắt codebase
 /docs:summarize
 
-# Full documentation update
+# Cập nhật tài liệu đầy đủ
 /docs:update
 ```
 
-### Initialize Documentation
+### Khởi Tạo Tài Liệu
 
 ```bash
-# First-time documentation setup
+# Thiết lập tài liệu lần đầu
 /docs:init
 
-# Regular updates thereafter
+# Cập nhật thường xuyên sau đó
 /docs:update
 ```
 
-## Output Structure
+## Cấu Trúc Đầu Ra
 
-After running `/docs:update`, your documentation structure:
+Sau khi chạy `/docs:update`, cấu trúc tài liệu của bạn sẽ như sau:
 
 ```
 ./
-├── README.md (updated)
+├── README.md (đã cập nhật)
 ├── docs/
-│   ├── project-overview-pdr.md (updated)
-│   ├── codebase-summary.md (regenerated)
-│   ├── code-standards.md (updated)
-│   ├── system-architecture.md (updated)
-│   ├── project-roadmap.md (updated)
-│   ├── deployment-guide.md (optional, updated)
-│   └── design-guidelines.md (optional, updated)
-└── repomix-output.xml (generated)
+│   ├── project-overview-pdr.md (đã cập nhật)
+│   ├── codebase-summary.md (đã được tạo lại)
+│   ├── code-standards.md (đã cập nhật)
+│   ├── system-architecture.md (đã cập nhật)
+│   ├── project-roadmap.md (đã cập nhật)
+│   ├── deployment-guide.md (tùy chọn, đã cập nhật)
+│   └── design-guidelines.md (tùy chọn, đã cập nhật)
+└── repomix-output.xml (đã được tạo)
 ```
 
-## Metrics
+## Số Liệu Thống Kê
 
-Typical `/docs:update` performance:
+Hiệu suất điển hình của `/docs:update`:
 
-- **Time**: 3-5 minutes (depending on codebase size)
-- **Files analyzed**: Entire codebase
-- **Files updated**: 4-8 documentation files
-- **Code examples validated**: All examples in documentation
-- **Links checked**: All internal and external links
+- **Thời gian**: 3-5 phút (tùy thuộc vào kích thước codebase)
+- **Tệp được phân tích**: Toàn bộ codebase
+- **Tệp được cập nhật**: 4-8 tệp tài liệu
+- **Ví dụ mã được xác minh**: Tất cả các ví dụ trong tài liệu
+- **Liên kết được kiểm tra**: Tất cả các liên kết nội bộ và bên ngoài
 
-## Next Steps
+## Bước Tiếp Theo
 
-After using `/docs:update`:
+Sau khi sử dụng `/docs:update`:
 
-- [/docs:summarize](/docs/engineer/commands/docs/summarize) - Update just codebase summary
-- [/watzup](/docs/engineer/commands/core/watzup) - Review recent changes
-- [/git:cm](/docs/engineer/commands/git/commit) - Commit documentation updates
+- [/docs:summarize](/docs/engineer/commands/docs/summarize) - Chỉ cập nhật bản tóm tắt codebase
+- [/watzup](/docs/engineer/commands/core/watzup) - Xem lại các thay đổi gần đây
+- [/git:cm](/docs/engineer/commands/git/commit) - Commit các cập nhật tài liệu
 
 ---
 
-**Key Takeaway**: `/docs:update` ensures your documentation stays synchronized with your codebase through comprehensive analysis and systematic updates across all documentation files.
+**Điểm mấu chốt**: `/docs:update` đảm bảo tài liệu của bạn luôn đồng bộ với codebase thông qua phân tích toàn diện và cập nhật hệ thống trên tất cả các tệp tài liệu.

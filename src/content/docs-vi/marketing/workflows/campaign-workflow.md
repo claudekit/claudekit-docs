@@ -1,12 +1,13 @@
 ---
-title: "Campaign Workflow"
+title: "Quy trình Chiến dịch"
 description: "Quản lý chu kỳ campaign hoàn chỉnh từ tạo brief đến phân tích post-mortem với AI agents"
+lang: vi
 section: marketing
 category: workflows
 order: 2
 ---
 
-# Campaign Workflow
+# Quy trình Chiến dịch
 
 > **Bạn sẽ:** Ra mắt và quản lý một campaign marketing hoàn chỉnh từ brief ban đầu đến phân tích post-mortem, với AI agents xử lý phát triển sáng tạo, thiết lập phễu, tối ưu hóa và báo cáo.
 
@@ -18,7 +19,7 @@ Bạn sẽ làm việc với các agents chuyên biệt ở mỗi giai đoạn -
 
 Workflow này hoàn hảo cho việc ra mắt sản phẩm, các campaign khuyến mãi, chương trình tạo lead và các sáng kiến nhận thức thương hiệu. Thường chạy 4-8 tuần tùy thuộc vào độ phức tạp của campaign.
 
-## Metadata
+## Thông tin bổ sung
 
 - **Ước Tính Thời Gian:** 4-8 tuần (thay đổi theo loại campaign)
 - **Độ Khó:** Trung bình
@@ -28,7 +29,7 @@ Workflow này hoàn hảo cho việc ra mắt sản phẩm, các campaign khuy�
   - Ngân sách đã phân bổ
   - Đối tượng mục tiêu đã xác định
 
-## Workflow
+## Quy trình công việc
 
 ```mermaid
 flowchart LR
@@ -64,7 +65,7 @@ Include: audience, channels, KPIs, success criteria"
 - Đối tượng mục tiêu được xác định rõ
 - Phân bổ ngân sách thực tế
 - KPIs có thể đạt được
-- Timeline chi tiết với các milestone
+- Timeline chi tiết với các cột mốc
 
 **Thời Gian:** 2-4 giờ
 
@@ -162,7 +163,7 @@ Recommend: targeting, budget, creative changes"
 **Điểm Kiểm Tra:** Xem xét hàng ngày:
 - Hiệu suất so với KPIs
 - Người chiến thắng A/B test
-- Tốc độ ngân sách
+- Tốc độ chi tiêu ngân sách
 - Xu hướng tỷ lệ chuyển đổi
 - Các đề xuất đã triển khai
 

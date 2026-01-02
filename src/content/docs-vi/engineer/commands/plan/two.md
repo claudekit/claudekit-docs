@@ -1,165 +1,166 @@
 ---
 title: /plan:two
-description: Documentation for two
+description: Tài liệu hướng dẫn lệnh plan:two
 section: engineer
 kit: engineer
 category: commands/plan
 order: 11
 published: true
+lang: vi
 ---
 
 # /plan:two
 
-Research a task and create two distinct implementation approaches with detailed pros/cons analysis and a clear recommendation. Perfect when you want to evaluate multiple strategies before committing to one.
+Nghiên cứu một tác vụ và tạo ra hai cách tiếp cận triển khai riêng biệt với phân tích ưu/nhược điểm chi tiết và một khuyến nghị rõ ràng. Hoàn hảo khi bạn muốn đánh giá nhiều chiến lược trước khi cam kết thực hiện một cách cụ thể.
 
-## Syntax
-
-```bash
-/plan:two [task description]
-```
-
-## How It Works
-
-The `/plan:two` command follows a comparative planning workflow:
-
-### 1. Requirements Analysis
-
-- Parses task description
-- Identifies key objectives
-- Determines success criteria
-- Recognizes constraints
-
-### 2. Research Phase
-
-Invokes **researcher** agent to:
-- Study best practices
-- Review similar implementations
-- Analyze different architectural patterns
-- Research relevant technologies
-
-### 3. Approach Brainstorming
-
-Invokes **planner** agent to:
-- Generate multiple possible approaches
-- Select two most promising strategies
-- Ensure approaches are genuinely different
-- Consider trade-offs for each
-
-### 4. Detailed Planning
-
-For each approach creates:
-- Architecture/design overview
-- Implementation steps
-- Technology stack choices
-- File structure
-- Estimated complexity
-- Timeline estimation
-
-### 5. Comparative Analysis
-
-Provides comprehensive comparison:
-- Pros and cons for each
-- Performance implications
-- Maintainability considerations
-- Scalability potential
-- Development time
-- Learning curve
-- Cost implications
-
-### 6. Recommendation
-
-Based on analysis provides:
-- Recommended approach with clear reasoning
-- When to choose alternative approach
-- Hybrid possibilities
-
-## Examples
-
-### Authentication System
+## Cú pháp
 
 ```bash
-/plan:two [implement user authentication system]
+/plan:two [mô tả tác vụ]
 ```
 
-**What happens:**
+## Cách hoạt động
+
+Lệnh `/plan:two` tuân theo một quy trình làm việc lập kế hoạch so sánh:
+
+### 1. Phân tích yêu cầu
+
+- Phân tích mô tả tác vụ
+- Xác định các mục tiêu chính
+- Xác định các tiêu chí thành công
+- Nhận diện các ràng buộc
+
+### 2. Giai đoạn nghiên cứu
+
+Sử dụng agent **researcher** để:
+- Nghiên cứu các thực hành tốt nhất (best practices)
+- Xem xét các triển khai tương tự
+- Phân tích các mẫu kiến trúc khác nhau
+- Nghiên cứu các công nghệ liên quan
+
+### 3. Động não các cách tiếp cận
+
+Sử dụng agent **planner** để:
+- Tạo ra nhiều cách tiếp cận khả thi
+- Chọn ra hai chiến lược hứa hẹn nhất
+- Đảm bảo các cách tiếp cận thực sự khác biệt
+- Xem xét các đánh đổi cho mỗi cách
+
+### 4. Lập kế hoạch chi tiết
+
+Đối với mỗi cách tiếp cận, tạo ra:
+- Tổng quan về kiến trúc/thiết kế
+- Các bước triển khai
+- Các lựa chọn ngăn xếp công nghệ (tech stack)
+- Cấu trúc tệp
+- Độ phức tạp dự kiến
+- Ước tính tiến độ thời gian
+
+### 5. Phân tích so sánh
+
+Cung cấp sự so sánh toàn diện:
+- Ưu và nhược điểm cho mỗi cách
+- Ảnh hưởng đến hiệu suất
+- Các cân nhắc về khả năng bảo trì
+- Tiềm năng mở rộng
+- Thời gian phát triển
+- Đường cong học tập (learning curve)
+- Ảnh hưởng về chi phí
+
+### 6. Khuyến nghị
+
+Dựa trên phân tích, cung cấp:
+- Cách tiếp cận được khuyến nghị với lý do rõ ràng
+- Khi nào nên chọn cách tiếp cận thay thế
+- Các khả năng kết hợp (hybrid)
+
+## Ví dụ
+
+### Hệ thống xác thực (Authentication System)
+
+```bash
+/plan:two [triển khai hệ thống xác thực người dùng]
 ```
-Phase 1: Requirements Analysis (20 seconds)
+
+**Điều gì xảy ra:**
+```
+Giai đoạn 1: Phân tích yêu cầu (20 giây)
 ---
 Agent: planner
 
-Task: Implement user authentication
-Key requirements:
-✓ User registration and login
-✓ Password security
-✓ Session management
-✓ Token-based auth likely needed
-✓ Social auth consideration
-✓ Security best practices
+Tác vụ: Triển khai xác thực người dùng
+Các yêu cầu chính:
+✓ Đăng ký và đăng nhập người dùng
+✓ Bảo mật mật khẩu
+✓ Quản lý phiên (session)
+✓ Có khả năng cần xác thực dựa trên token
+✓ Xem xét xác thực qua mạng xã hội
+✓ Các thực hành bảo mật tốt nhất
 
-Constraints identified:
-- Must be secure (top priority)
-- Needs to scale
-- Should support multiple clients (web, mobile)
+Các ràng buộc đã xác định:
+- Phải bảo mật (ưu tiên hàng đầu)
+- Cần có khả năng mở rộng
+- Nên hỗ trợ nhiều client (web, mobile)
 
-Phase 2: Research (45 seconds)
+Giai đoạn 2: Nghiên cứu (45 giây)
 ---
 Agent: researcher
 
-Authentication patterns analyzed:
-✓ Session-based authentication
-✓ Token-based (JWT)
+Các mẫu xác thực đã được phân tích:
+✓ Xác thực dựa trên session (Session-based)
+✓ Xác thực dựa trên token (JWT)
 ✓ OAuth2 / OpenID Connect
-✓ Passwordless authentication
-✓ Multi-factor authentication
+✓ Xác thực không dùng mật khẩu (Passwordless)
+✓ Xác thực đa yếu tố (Multi-factor)
 
-Industry standards reviewed:
-✓ OWASP authentication guidelines
-✓ OAuth 2.0 specification
-✓ JWT best practices
-✓ Password hashing (bcrypt, argon2)
+Các tiêu chuẩn ngành đã được xem xét:
+✓ Hướng dẫn xác thực của OWASP
+✓ Đặc tả OAuth 2.0
+✓ Các thực hành JWT tốt nhất
+✓ Băm mật khẩu (bcrypt, argon2)
 
-Phase 3: Approach Generation (30 seconds)
+Giai đoạn 3: Tạo các cách tiếp cận (30 giây)
 ---
 Agent: planner
 
-Generated 4 possible approaches:
-1. Traditional session-based with cookies
-2. JWT tokens with refresh token rotation
-3. OAuth2 with third-party providers only
-4. Hybrid: JWT + OAuth2
+Đã tạo ra 4 cách tiếp cận khả thi:
+1. Session truyền thống với cookie
+2. Token JWT với xoay vòng refresh token
+3. OAuth2 chỉ với các nhà cung cấp bên thứ ba
+4. Kết hợp: JWT + OAuth2
 
-Selected for detailed planning:
-→ Approach 1: JWT Token-Based
-→ Approach 2: Session-Based with Redis
+Đã chọn để lập kế hoạch chi tiết:
+→ Cách tiếp cận 1: Dựa trên Token JWT
+→ Cách tiếp cận 2: Dựa trên Session với Redis
 
-(Most applicable to typical use cases)
+(Áp dụng tốt nhất cho các trường hợp sử dụng điển hình)
 
-Phase 4: Detailed Plans Created (60 seconds)
+Giai đoạn 4: Các kế hoạch chi tiết đã được tạo (60 giây)
 ---
 
-APPROACH 1: JWT Token-Based Authentication
+CÁCH TIẾP CẬN 1: Xác thực dựa trên Token JWT
 ==========================================
 
-## Architecture Overview
+## Tổng quan kiến trúc
 
-Client → API → JWT Verification → Route Handler
+Client → API → Xác minh JWT → Trình xử lý Route
          ↓
-    Database (users, refresh_tokens)
+    Cơ sở dữ liệu (users, refresh_tokens)
 
-Access token: Short-lived (15 minutes)
-Refresh token: Long-lived (7 days)
-Storage: Refresh tokens in database
-Stateless: No session storage needed
+Access token: Thời gian sống ngắn (15 phút)
+Refresh token: Thời gian sống dài (7 ngày)
+Lưu trữ: Refresh token trong cơ sở dữ liệu
+Stateless: Không cần lưu trữ session trên server
 
-## Technology Stack
+## Ngăn xếp công nghệ
 
-- JWT library: jsonwebtoken
-- Password hashing: bcrypt or argon2
-- Token storage: PostgreSQL (refresh tokens only)
-- Middleware: Custom JWT verification
-- Security: httpOnly cookies for tokens
+- Thư viện JWT: jsonwebtoken
+- Băm mật khẩu: bcrypt hoặc argon2
+- Lưu trữ token: PostgreSQL (chỉ refresh token)
+- Middleware: Xác minh JWT tùy chỉnh
+- Bảo mật: httpOnly cookie cho token
 
-## File Structure
+## Cấu trúc tệp
 
 src/
 ├── auth/
@@ -174,111 +175,111 @@ src/
 └── routes/
     └── auth.routes.ts
 
-Database tables:
+Các bảng cơ sở dữ liệu:
 - users (id, email, password_hash, created_at)
 - refresh_tokens (id, user_id, token, expires_at)
 
-## Implementation Steps
+## Các bước triển khai
 
-1. Set up JWT configuration
-   - Generate secret keys (access + refresh)
-   - Configure expiry times
-   - Set up token signing/verification
+1. Thiết lập cấu hình JWT
+   - Tạo các khóa bí mật (access + refresh)
+   - Cấu hình thời gian hết hạn
+   - Thiết lập ký/xác minh token
 
-2. Create User model
-   - Email validation
-   - Password hashing on save
-   - Password comparison method
+2. Tạo model User
+   - Xác thực email
+   - Băm mật khẩu khi lưu
+   - Phương thức so sánh mật khẩu
 
-3. Implement Registration
+3. Triển khai Đăng ký
    - POST /auth/register
-   - Validate input
-   - Hash password
-   - Create user
-   - Return tokens
+   - Xác thực đầu vào
+   - Băm mật khẩu
+   - Tạo người dùng
+   - Trả về token
 
-4. Implement Login
+4. Triển khai Đăng nhập
    - POST /auth/login
-   - Validate credentials
-   - Generate access token
-   - Generate refresh token
-   - Store refresh token in DB
-   - Return tokens in httpOnly cookies
+   - Xác thực thông tin đăng nhập
+   - Tạo access token
+   - Tạo refresh token
+   - Lưu refresh token vào DB
+   - Trả về token trong httpOnly cookie
 
-5. Implement Token Refresh
+5. Triển khai Làm mới Token (Refresh)
    - POST /auth/refresh
-   - Verify refresh token
-   - Check if valid in DB
-   - Generate new access token
-   - Rotate refresh token
-   - Return new tokens
+   - Xác minh refresh token
+   - Kiểm tra tính hợp lệ trong DB
+   - Tạo access token mới
+   - Xoay vòng refresh token
+   - Trả về token mới
 
-6. Create Auth Middleware
-   - Extract access token from cookie
-   - Verify signature
-   - Decode payload
-   - Attach user to request
-   - Handle token expiry
+6. Tạo Middleware xác thực
+   - Trích xuất access token từ cookie
+   - Xác minh chữ ký
+   - Giải mã payload
+   - Đính kèm người dùng vào request
+   - Xử lý token hết hạn
 
-7. Implement Logout
+7. Triển khai Đăng xuất
    - POST /auth/logout
-   - Invalidate refresh token in DB
-   - Clear cookies
+   - Vô hiệu hóa refresh token trong DB
+   - Xóa cookie
 
-## Pros
+## Ưu điểm
 
-✅ Stateless - No server session storage needed
-✅ Scalable - Works across multiple servers
-✅ Mobile-friendly - Tokens easy to store
-✅ CORS-friendly - No session cookie issues
-✅ Microservices-ready - Token can be verified independently
-✅ Fast - No DB lookup for every request (just verify token)
-✅ Modern - Industry standard for APIs
+✅ Không trạng thái (Stateless) - Không cần lưu trữ session trên server
+✅ Có khả năng mở rộng - Hoạt động trên nhiều server
+✅ Thân thiện với di động - Token dễ lưu trữ
+✅ Thân thiện với CORS - Không gặp vấn đề session cookie
+✅ Sẵn sàng cho Microservices - Token có thể được xác minh độc lập
+✅ Nhanh - Không cần truy vấn DB cho mỗi request (chỉ cần xác minh token)
+✅ Hiện đại - Tiêu chuẩn ngành cho các API
 
-## Cons
+## Nhược điểm
 
-❌ Token size - JWT tokens are larger than session IDs
-❌ Can't invalidate - Access tokens valid until expiry
-❌ Security concerns - If stolen, valid until expiry
-❌ Refresh token management - Need DB for refresh tokens
-❌ More complex - Token rotation, expiry handling
-❌ Client responsibility - Client must handle token refresh
+❌ Kích thước token - Token JWT lớn hơn ID session
+❌ Không thể thu hồi ngay - Access token có hiệu lực cho đến khi hết hạn
+❌ Lo ngại bảo mật - Nếu bị đánh cắp, nó có hiệu lực cho đến khi hết hạn
+❌ Quản lý refresh token - Cần DB cho refresh token
+❌ Phức tạp hơn - Xoay vòng token, xử lý hết hạn
+❌ Trách nhiệm của Client - Client phải xử lý việc làm mới token
 
-## Estimated Complexity
-Medium - Standard pattern but requires careful implementation
+## Độ phức tạp dự kiến
+Trung bình - Mẫu chuẩn nhưng yêu cầu triển khai cẩn thận
 
-## Timeline
-- Implementation: 2 days
-- Testing: 1 day
-- Security audit: 0.5 days
-- Total: 3.5 days
+## Tiến độ thời gian
+- Triển khai: 2 ngày
+- Kiểm tra: 1 ngày
+- Kiểm toán bảo mật: 0.5 ngày
+- Tổng cộng: 3.5 ngày
 
 ---
 
-APPROACH 2: Session-Based with Redis
+CÁCH TIẾP CẬN 2: Dựa trên Session với Redis
 ====================================
 
-## Architecture Overview
+## Tổng quan kiến trúc
 
-Client → API → Session Check → Route Handler
+Client → API → Kiểm tra Session → Trình xử lý Route
          ↓           ↓
-    Redis         Database
+    Redis         Cơ sở dữ liệu
   (sessions)      (users)
 
 Session cookie: httpOnly, secure
-Session storage: Redis (fast lookup)
-Session data: User ID, role, metadata
-Expiry: 7 days (sliding window)
+Lưu trữ session: Redis (truy vấn nhanh)
+Dữ liệu session: User ID, role, metadata
+Hết hạn: 7 ngày (sliding window)
 
-## Technology Stack
+## Ngăn xếp công nghệ
 
-- Session management: express-session
-- Session store: connect-redis
+- Quản lý session: express-session
+- Lưu trữ session: connect-redis
 - Redis client: ioredis
-- Password hashing: bcrypt
+- Băm mật khẩu: bcrypt
 - Cookie parser: cookie-parser
 
-## File Structure
+## Cấu trúc tệp
 
 src/
 ├── auth/
@@ -294,231 +295,231 @@ src/
 └── routes/
     └── auth.routes.ts
 
-External:
-- Redis server (session storage)
+Bên ngoài:
+- Server Redis (lưu trữ session)
 
-Database tables:
+Các bảng cơ sở dữ liệu:
 - users (id, email, password_hash, created_at)
 
-## Implementation Steps
+## Các bước triển khai
 
-1. Set up Redis
-   - Install Redis server
-   - Configure connection
-   - Set up session store
+1. Thiết lập Redis
+   - Cài đặt server Redis
+   - Cấu hình kết nối
+   - Thiết lập lưu trữ session
 
-2. Configure Express Session
-   - Session secret
-   - Cookie options (httpOnly, secure, sameSite)
-   - Redis store integration
-   - Session duration
+2. Cấu hình Express Session
+   - Bí mật session (secret)
+   - Các tùy chọn cookie (httpOnly, secure, sameSite)
+   - Tích hợp lưu trữ Redis
+   - Thời gian tồn tại session
 
-3. Create User model
-   - Email validation
-   - Password hashing
-   - Password comparison
+3. Tạo model User
+   - Xác thực email
+   - Băm mật khẩu
+   - So sánh mật khẩu
 
-4. Implement Registration
+4. Triển khai Đăng ký
    - POST /auth/register
-   - Validate input
-   - Hash password
-   - Create user
-   - Create session
-   - Return success
+   - Xác thực đầu vào
+   - Băm mật khẩu
+   - Tạo người dùng
+   - Tạo session
+   - Trả về thành công
 
-5. Implement Login
+5. Triển khai Đăng nhập
    - POST /auth/login
-   - Validate credentials
-   - Create session in Redis
-   - Set session cookie
-   - Return success
+   - Xác thực thông tin đăng nhập
+   - Tạo session trong Redis
+   - Thiết lập session cookie
+   - Trả về thành công
 
-6. Create Auth Middleware
-   - Check session exists
-   - Verify session not expired
-   - Load user data from session
-   - Attach user to request
-   - Update session expiry (sliding window)
+6. Tạo Middleware xác thực
+   - Kiểm tra session tồn tại
+   - Xác minh session chưa hết hạn
+   - Tải dữ liệu người dùng từ session
+   - Đính kèm người dùng vào request
+   - Cập nhật thời gian hết hạn session (sliding window)
 
-7. Implement Logout
+7. Triển khai Đăng xuất
    - POST /auth/logout
-   - Destroy session in Redis
-   - Clear session cookie
-   - Return success
+   - Hủy session trong Redis
+   - Xóa session cookie
+   - Trả về thành công
 
-## Pros
+## Ưu điểm
 
-✅ Simple - Well-understood pattern
-✅ Immediate invalidation - Logout kills session instantly
-✅ Server control - Full control over sessions
-✅ Smaller cookies - Just session ID
-✅ Less client complexity - Client just sends cookie
-✅ Mature ecosystem - Many battle-tested libraries
-✅ Sliding expiry - Session extends with activity
+✅ Đơn giản - Mẫu thiết kế quen thuộc
+✅ Thu hồi ngay lập tức - Đăng xuất hủy session tức thì
+✅ Kiểm soát từ phía Server - Toàn quyền kiểm soát các session
+✅ Cookie nhỏ hơn - Chỉ chứa ID session
+✅ Ít phức tạp hơn cho Client - Client chỉ cần gửi cookie
+✅ Hệ sinh thái trưởng thành - Nhiều thư viện đã được kiểm chứng
+✅ Hết hạn trượt (Sliding expiry) - Session gia hạn theo hoạt động
 
-## Cons
+## Nhược điểm
 
-❌ Stateful - Requires session storage (Redis)
-❌ Redis dependency - Another service to manage
-❌ Scaling complexity - Need shared Redis for multiple servers
-❌ Memory cost - Session data stored in Redis
-❌ CORS complexity - Cookie-based, requires proper CORS setup
-❌ Mobile apps - Cookies less natural on mobile
-❌ Microservices - Each service needs Redis access
+❌ Có trạng thái (Stateful) - Yêu cầu lưu trữ session (Redis)
+❌ Phụ thuộc vào Redis - Thêm một dịch vụ cần quản lý
+❌ Phức tạp khi mở rộng - Cần Redis dùng chung cho nhiều server
+❌ Chi phí bộ nhớ - Dữ liệu session được lưu trong Redis
+❌ Phức tạp với CORS - Dựa trên cookie, yêu cầu thiết lập CORS đúng cách
+❌ Ứng dụng di động - Cookie kém tự nhiên hơn trên di động
+❌ Microservices - Mỗi dịch vụ cần truy cập vào Redis
 
-## Estimated Complexity
-Low-Medium - Simpler implementation, but requires Redis
+## Độ phức tạp dự kiến
+Thấp-Trung bình - Triển khai đơn giản hơn, nhưng yêu cầu Redis
 
-## Timeline
-- Implementation: 1.5 days
-- Redis setup: 0.5 days
-- Testing: 1 day
-- Total: 3 days
+## Tiến độ thời gian
+- Triển khai: 1.5 ngày
+- Thiết lập Redis: 0.5 ngày
+- Kiểm tra: 1 ngày
+- Tổng cộng: 3 ngày
 
 ---
 
-Phase 5: Comparative Analysis
+Giai đoạn 5: Phân tích so sánh
 ---
 
-COMPARISON MATRIX
+MA TRẬN SO SÁNH
 =================
 
-| Aspect              | JWT (Approach 1)    | Sessions (Approach 2) |
-|---------------------|---------------------|-----------------------|
-| Scalability         | ⭐⭐⭐⭐⭐ Excellent  | ⭐⭐⭐⭐☆ Good        |
-| Security            | ⭐⭐⭐⭐☆ Good       | ⭐⭐⭐⭐⭐ Excellent   |
-| Simplicity          | ⭐⭐⭐☆☆ Moderate   | ⭐⭐⭐⭐☆ Simple       |
-| Mobile Support      | ⭐⭐⭐⭐⭐ Excellent  | ⭐⭐⭐☆☆ Moderate     |
-| Logout Control      | ⭐⭐⭐☆☆ Limited    | ⭐⭐⭐⭐⭐ Immediate    |
-| Performance         | ⭐⭐⭐⭐⭐ Fast      | ⭐⭐⭐⭐☆ Good        |
-| Microservices Fit   | ⭐⭐⭐⭐⭐ Perfect   | ⭐⭐⭐☆☆ Challenging  |
-| Infrastructure      | ⭐⭐⭐⭐⭐ Minimal   | ⭐⭐⭐☆☆ Needs Redis  |
-| CORS Complexity     | ⭐⭐⭐⭐☆ Simple     | ⭐⭐⭐☆☆ Complex      |
-| Token Revocation    | ⭐⭐⭐☆☆ Complex    | ⭐⭐⭐⭐⭐ Simple      |
+| Khía cạnh            | JWT (Cách 1)         | Session (Cách 2)      |
+|----------------------|----------------------|-----------------------|
+| Khả năng mở rộng     | ⭐⭐⭐⭐⭐ Tuyệt vời   | ⭐⭐⭐⭐☆ Tốt          |
+| Bảo mật              | ⭐⭐⭐⭐☆ Tốt          | ⭐⭐⭐⭐⭐ Tuyệt vời   |
+| Sự đơn giản          | ⭐⭐⭐☆☆ Trung bình   | ⭐⭐⭐⭐☆ Đơn giản     |
+| Hỗ trợ Di động       | ⭐⭐⭐⭐⭐ Tuyệt vời   | ⭐⭐⭐☆☆ Trung bình   |
+| Kiểm soát Đăng xuất  | ⭐⭐⭐☆☆ Hạn chế      | ⭐⭐⭐⭐⭐ Tức thì      |
+| Hiệu suất            | ⭐⭐⭐⭐⭐ Nhanh       | ⭐⭐⭐⭐☆ Tốt          |
+| Hợp với Microservices| ⭐⭐⭐⭐⭐ Hoàn hảo    | ⭐⭐⭐☆☆ Thách thức   |
+| Hạ tầng              | ⭐⭐⭐⭐⭐ Tối thiểu   | ⭐⭐⭐☆☆ Cần Redis    |
+| Phức tạp CORS        | ⭐⭐⭐⭐☆ Đơn giản     | ⭐⭐⭐☆☆ Phức tạp     |
+| Thu hồi Token        | ⭐⭐⭐☆☆ Phức tạp     | ⭐⭐⭐⭐⭐ Đơn giản     |
 
-## Performance Considerations
-
-JWT:
-- Auth check: ~0.5ms (token verification only)
-- No DB/Redis lookup per request
-- Scales horizontally easily
-
-Sessions:
-- Auth check: ~2-5ms (Redis lookup)
-- Network call to Redis per request
-- Redis becomes bottleneck at scale
-
-## Security Considerations
+## Cân nhắc về Hiệu suất
 
 JWT:
-- Risk: If access token stolen, valid until expiry
-- Mitigation: Short expiry (15 min), refresh rotation
-- Best for: Public APIs, mobile apps
+- Kiểm tra xác thực: ~0.5ms (chỉ xác minh token)
+- Không cần truy vấn DB/Redis cho mỗi request
+- Dễ dàng mở rộng theo chiều ngang
 
-Sessions:
-- Risk: Session fixation attacks
-- Mitigation: Regenerate session ID on login
-- Best for: Web apps, admin panels
+Session:
+- Kiểm tra xác thực: ~2-5ms (truy vấn Redis)
+- Gọi mạng tới Redis cho mỗi request
+- Redis trở thành nút thắt cổ chai khi mở rộng quy mô lớn
 
-## Scalability
+## Cân nhắc về Bảo mật
 
 JWT:
-- Horizontal scaling: ✅ Perfect
-- Load balancing: ✅ No sticky sessions needed
-- Microservices: ✅ Each service can verify
+- Rủi ro: Nếu access token bị đánh cắp, nó có hiệu lực cho đến khi hết hạn
+- Giảm thiểu: Hết hạn ngắn (15 phút), xoay vòng refresh token
+- Tốt nhất cho: Các API công khai, ứng dụng di động
 
-Sessions:
-- Horizontal scaling: ⚠️ Needs shared Redis
-- Load balancing: ⚠️ Redis must be accessible
-- Microservices: ⚠️ Centralized session store
+Session:
+- Rủi ro: Các cuộc tấn công session fixation
+- Giảm thiểu: Tạo lại ID session khi đăng nhập
+- Tốt nhất cho: Các ứng dụng web, bảng điều khiển quản trị
 
-Phase 6: Recommendation
+## Khả năng mở rộng
+
+JWT:
+- Mở rộng theo chiều ngang: ✅ Hoàn hảo
+- Cân bằng tải: ✅ Không cần sticky session
+- Microservices: ✅ Mỗi dịch vụ có thể tự xác minh
+
+Session:
+- Mở rộng theo chiều ngang: ⚠️ Cần Redis dùng chung
+- Cân bằng tải: ⚠️ Redis phải có thể truy cập được
+- Microservices: ⚠️ Lưu trữ session tập trung
+
+Giai đoạn 6: Khuyến nghị
 ---
 
-RECOMMENDED: Approach 1 (JWT Token-Based)
+KHUYẾN NGHỊ: Cách tiếp cận 1 (Dựa trên Token JWT)
 =========================================
 
-## Why JWT?
+## Tại sao chọn JWT?
 
-For most modern applications, JWT is recommended because:
+Đối với hầu hết các ứng dụng hiện đại, JWT được khuyến nghị vì:
 
-1. **Scalability**: No shared session storage needed
-2. **Mobile-first**: Works naturally with mobile apps
-3. **Microservices**: Easy to verify tokens independently
-4. **API-friendly**: Standard pattern for REST APIs
-5. **Modern stack**: Aligns with industry trends
+1. **Khả năng mở rộng**: Không cần lưu trữ session dùng chung
+2. **Ưu tiên di động**: Hoạt động tự nhiên với các ứng dụng di động
+3. **Microservices**: Dễ dàng xác minh token độc lập
+4. **Thân thiện với API**: Mẫu chuẩn cho các API REST
+5. **Ngăn xếp hiện đại**: Phù hợp với xu hướng ngành
 
-## When to Choose Sessions Instead
+## Khi nào nên chọn Session thay thế
 
-Use Approach 2 (Sessions) if:
+Sử dụng Cách tiếp cận 2 (Session) nếu:
 
-1. **Web-only application**: No mobile app needed
-2. **High security requirements**: Need immediate logout
-3. **Small scale**: Single server or small cluster
-4. **Simple infrastructure**: Don't want token complexity
-5. **Admin dashboard**: Internal tools with tight control
+1. **Ứng dụng chỉ dành cho web**: Không cần ứng dụng di động
+2. **Yêu cầu bảo mật cao**: Cần đăng xuất ngay lập tức
+3. **Quy mô nhỏ**: Server đơn lẻ hoặc cụm nhỏ
+4. **Hạ tầng đơn giản**: Không muốn sự phức tạp của token
+5. **Bảng điều khiển quản trị**: Các công cụ nội bộ với sự kiểm soát chặt chẽ
 
-## Hybrid Approach
+## Cách tiếp cận kết hợp (Hybrid)
 
-For maximum flexibility:
+Để linh hoạt tối đa:
 
-1. Use JWT for mobile app and public API
-2. Use sessions for admin web dashboard
-3. Separate auth flows for different clients
+1. Sử dụng JWT cho ứng dụng di động và API công khai
+2. Sử dụng session cho bảng điều khiển quản trị web
+3. Tách biệt các luồng xác thực cho các client khác nhau
 
-## Implementation Priority
+## Ưu tiên triển khai
 
-Phase 1: Basic JWT authentication (Week 1)
-Phase 2: Refresh token rotation (Week 1)
-Phase 3: Security hardening (Week 2)
-Phase 4: Multi-factor auth (Future)
-Phase 5: Social OAuth (Future)
+Giai đoạn 1: Xác thực JWT cơ bản (Tuần 1)
+Giai đoạn 2: Xoay vòng refresh token (Tuần 1)
+Giai đoạn 3: Thắt chặt bảo mật (Tuần 2)
+Giai đoạn 4: Xác thực đa yếu tố (Tương lai)
+Giai đoạn 5: OAuth mạng xã hội (Tương lai)
 
-✓ Planning complete (2 minutes 35 seconds)
+✓ Lập kế hoạch hoàn tất (2 phút 35 giây)
 
-Plans saved:
+Các kế hoạch đã lưu:
 - plans/auth-approach-1-jwt.md
 - plans/auth-approach-2-sessions.md
 - plans/auth-comparison.md
 ```
 
-### State Management
+### Quản lý trạng thái (State Management)
 
 ```bash
-/plan:two [implement global state management for React app]
+/plan:two [triển khai quản lý trạng thái toàn cục cho ứng dụng React]
 ```
 
-**What happens:**
+**Điều gì xảy ra:**
 ```
-Phase 1-2: Analysis & Research (60 seconds)
+Giai đoạn 1-2: Phân tích & Nghiên cứu (60 giây)
 ---
-Task: Global state management for React app
+Tác vụ: Quản lý trạng thái toàn cục cho ứng dụng React
 
-Research findings:
-✓ Redux - Most popular, mature
-✓ Zustand - Modern, simple
-✓ Context API - Built-in
-✓ Jotai - Atomic state
-✓ MobX - Observable-based
+Kết quả nghiên cứu:
+✓ Redux - Phổ biến nhất, trưởng thành
+✓ Zustand - Hiện đại, đơn giản
+✓ Context API - Có sẵn trong React
+✓ Jotai - Trạng thái nguyên tử
+✓ MobX - Dựa trên observable
 
-Phase 3-4: Two Approaches Selected
+Giai đoạn 3-4: Hai cách tiếp cận được chọn
 ---
 
-APPROACH 1: Zustand (Modern & Simple)
+CÁCH TIẾP CẬN 1: Zustand (Hiện đại & Đơn giản)
 ======================================
 
-## Overview
-Lightweight state management with hooks-based API.
-No boilerplate, minimal concepts, easy to learn.
+## Tổng quan
+Quản lý trạng thái nhẹ nhàng với API dựa trên hook.
+Không có mã rườm rà (boilerplate), khái niệm tối thiểu, dễ học.
 
-## Why Zustand?
-- Bundle size: 1.2KB (vs Redux 12KB)
-- No providers/context needed
-- TypeScript-friendly
-- DevTools support
-- Middleware support
+## Tại sao chọn Zustand?
+- Kích thước bundle: 1.2KB (so với Redux 12KB)
+- Không cần provider/context
+- Thân thiện với TypeScript
+- Hỗ trợ DevTools
+- Hỗ trợ Middleware
 
-## Implementation
+## Triển khai
 
 ```typescript
 // stores/user.store.ts
@@ -536,14 +537,14 @@ export const useUserStore = create<UserState>((set) => ({
   logout: () => set({ user: null }),
 }));
 
-// Usage in component
+// Sử dụng trong component
 function Profile() {
   const { user, logout } = useUserStore();
   return <div>{user?.name}</div>;
 }
 ```
 
-## File Structure
+## Cấu trúc tệp
 ```
 src/
 ├── stores/
@@ -551,42 +552,42 @@ src/
 │   ├── cart.store.ts
 │   └── ui.store.ts
 └── hooks/
-    └── useStore.ts  (optional helpers)
+    └── useStore.ts  (các helper tùy chọn)
 ```
 
-## Pros
-✅ Minimal boilerplate
-✅ Small bundle size
-✅ Easy to learn (<1 hour)
-✅ Great TypeScript support
-✅ No provider hell
-✅ Can split stores by domain
+## Ưu điểm
+✅ Mã rườm rà tối thiểu
+✅ Kích thước bundle nhỏ
+✅ Dễ học (<1 giờ)
+✅ Hỗ trợ TypeScript tuyệt vời
+✅ Không bị "provider hell"
+✅ Có thể chia nhỏ store theo domain
 
-## Cons
-❌ Less ecosystem than Redux
-❌ No time-travel debugging
-❌ Smaller community
-❌ Less opinionated (can be pro or con)
+## Nhược điểm
+❌ Hệ sinh thái ít hơn Redux
+❌ Không có debugging kiểu time-travel
+❌ Cộng đồng nhỏ hơn
+❌ Ít tính quy ước hơn (có thể là ưu hoặc nhược điểm)
 
-Timeline: 0.5 days setup + learning
+Tiến độ: 0.5 ngày thiết lập + học tập
 
 ---
 
-APPROACH 2: Redux Toolkit (Industry Standard)
+CÁCH TIẾP CẬN 2: Redux Toolkit (Tiêu chuẩn Ngành)
 =============================================
 
-## Overview
-Redux with modern API, less boilerplate.
-Battle-tested, huge ecosystem, opinionated.
+## Tổng quan
+Redux với API hiện đại, ít mã rườm rà hơn.
+Đã được kiểm chứng qua thực tế, hệ sinh thái khổng lồ, tính quy ước cao.
 
-## Why Redux Toolkit?
-- Industry standard (most jobs use it)
-- Massive ecosystem
-- Redux DevTools (time-travel debugging)
-- Middleware (thunks, sagas, etc.)
-- Immer for immutable updates
+## Tại sao chọn Redux Toolkit?
+- Tiêu chuẩn ngành (hầu hết các công việc đều sử dụng)
+- Hệ sinh thái khổng lồ
+- Redux DevTools (debugging time-travel)
+- Middleware (thunks, sagas, v.v.)
+- Immer cho các cập nhật không biến đổi (immutable)
 
-## Implementation
+## Triển khai
 
 ```typescript
 // store/userSlice.ts
@@ -622,7 +623,7 @@ export const store = configureStore({
   },
 });
 
-// Usage
+// Cách dùng
 import { useSelector, useDispatch } from 'react-redux';
 
 function Profile() {
@@ -635,7 +636,7 @@ function Profile() {
 }
 ```
 
-## File Structure
+## Cấu trúc tệp
 ```
 src/
 ├── store/
@@ -643,211 +644,211 @@ src/
 │   ├── userSlice.ts
 │   ├── cartSlice.ts
 │   └── uiSlice.ts
-└── App.tsx (wrap with Provider)
+└── App.tsx (bao bọc với Provider)
 ```
 
-## Pros
-✅ Industry standard
-✅ Huge ecosystem
-✅ Amazing DevTools
-✅ Time-travel debugging
-✅ Opinionated (clear patterns)
-✅ Great for large teams
+## Ưu điểm
+✅ Tiêu chuẩn ngành
+✅ Hệ sinh thái khổng lồ
+✅ DevTools tuyệt vời
+✅ Debugging kiểu time-travel
+✅ Tính quy ước cao (mẫu thiết kế rõ ràng)
+✅ Tuyệt vời cho các đội ngũ lớn
 
-## Cons
-❌ Larger bundle (~12KB)
-❌ More boilerplate
-❌ Steeper learning curve
-❌ Provider required
-❌ Overkill for small apps
+## Nhược điểm
+❌ Bundle lớn hơn (~12KB)
+❌ Nhiều mã rườm rà hơn
+❌ Đường cong học tập dốc hơn
+❌ Yêu cầu Provider
+❌ Quá mức cần thiết cho ứng dụng nhỏ
 
-Timeline: 1-2 days setup + learning
+Tiến độ: 1-2 ngày thiết lập + học tập
 
 ---
 
-COMPARISON
+SO SÁNH
 ==========
 
-| Aspect           | Zustand           | Redux Toolkit     |
-|------------------|-------------------|-------------------|
-| Learning Curve   | 1 hour            | 1-2 days          |
-| Bundle Size      | 1.2KB             | 12KB              |
-| Boilerplate      | Minimal           | Moderate          |
-| DevTools         | Basic             | Advanced          |
-| Ecosystem        | Small             | Huge              |
-| Job Market       | Growing           | Standard          |
-| Team Size        | Small/Medium      | Any size          |
-| App Complexity   | Simple/Medium     | Any complexity    |
+| Khía cạnh          | Zustand           | Redux Toolkit     |
+|-------------------|-------------------|-------------------|
+| Học tập           | 1 giờ             | 1-2 ngày          |
+| Kích thước bundle | 1.2KB             | 12KB              |
+| Mã rườm rà        | Tối thiểu         | Trung bình        |
+| DevTools          | Cơ bản            | Nâng cao          |
+| Hệ sinh thái      | Nhỏ               | Khổng lồ          |
+| Thị trường việc làm| Đang phát triển   | Tiêu chuẩn        |
+| Quy mô đội ngũ    | Nhỏ/Trung bình    | Mọi quy mô        |
+| Độ phức tạp app   | Đơn giản/Trung bình| Mọi độ phức tạp   |
 
-RECOMMENDATION: Zustand
+KHUYẾN NGHỊ: Zustand
 =======================
 
-For most new React apps, choose Zustand because:
+Đối với hầu hết các ứng dụng React mới, hãy chọn Zustand vì:
 
-1. Faster to implement (save days of dev time)
-2. Easier to maintain (less code)
-3. Better performance (smaller bundle)
-4. Sufficient for 80% of apps
+1. Triển khai nhanh hơn (tiết kiệm nhiều ngày phát triển)
+2. Dễ bảo trì hơn (ít mã hơn)
+3. Hiệu suất tốt hơn (bundle nhỏ hơn)
+4. Đủ dùng cho 80% các ứng dụng
 
-Choose Redux Toolkit if:
+Chọn Redux Toolkit nếu:
 
-1. Team already knows Redux
-2. Need Redux ecosystem (sagas, etc.)
-3. Very large app (100+ components)
-4. Need advanced debugging
-5. Want industry standard for resume
+1. Đội ngũ đã biết Redux
+2. Cần hệ sinh thái Redux (sagas, v.v.)
+3. Ứng dụng rất lớn (100+ component)
+4. Cần debugging nâng cao
+5. Muốn theo tiêu chuẩn ngành để làm đẹp CV
 
-✓ Plans complete
+✓ Các kế hoạch đã hoàn tất
 ```
 
-## When to Use
+## Khi nào nên sử dụng
 
-### ✅ Use /plan:two for:
+### ✅ Sử dụng /plan:two cho:
 
-**Architecture Decisions**
+**Các quyết định kiến trúc**
 ```bash
-/plan:two [choose database: SQL vs NoSQL]
+/plan:two [chọn cơ sở dữ liệu: SQL vs NoSQL]
 ```
 
-**Technology Selection**
+**Lựa chọn công nghệ**
 ```bash
-/plan:two [implement caching: Redis vs Memcached]
+/plan:two [triển khai caching: Redis vs Memcached]
 ```
 
-**Design Patterns**
+**Mẫu thiết kế (Design Patterns)**
 ```bash
-/plan:two [API design: REST vs GraphQL]
+/plan:two [thiết kế API: REST vs GraphQL]
 ```
 
-**Implementation Strategies**
+**Chiến lược triển khai**
 ```bash
-/plan:two [file uploads: direct S3 vs presigned URLs]
+/plan:two [tải tệp: trực tiếp S3 vs presigned URL]
 ```
 
-### ❌ Don't use when:
+### ❌ Không sử dụng khi:
 
-**Only One Obvious Way**
-- If one approach clearly superior, just plan that
+**Chỉ có một cách rõ ràng**
+- Nếu một cách tiếp cận rõ ràng là vượt trội, chỉ cần lập kế hoạch cho nó.
 
-**Already Decided**
-- Use `/plan` if you know which approach to use
+**Đã quyết định xong**
+- Sử dụng `/plan` nếu bạn đã biết mình muốn sử dụng cách tiếp cận nào.
 
-**Need More Than Two Options**
-- /plan:two specifically compares two approaches
+**Cần nhiều hơn hai lựa chọn**
+- /plan:two cụ thể so sánh hai cách tiếp cận.
 
-## Comparison Aspects
+## Các khía cạnh so sánh
 
-Every comparison includes:
+Mỗi sự so sánh bao gồm:
 
-### 1. Technical Comparison
+### 1. So sánh Kỹ thuật
 
-- Performance implications
-- Scalability considerations
-- Security aspects
-- Maintainability
+- Ảnh hưởng đến hiệu suất
+- Cân nhắc khả năng mở rộng
+- Các khía cạnh bảo mật
+- Khả năng bảo trì
 
-### 2. Development Comparison
+### 2. So sánh Phát triển
 
-- Implementation complexity
-- Development time
-- Testing difficulty
-- Learning curve
+- Độ phức tạp khi triển khai
+- Thời gian phát triển
+- Độ khó khi kiểm tra
+- Đường cong học tập
 
-### 3. Operational Comparison
+### 3. So sánh Vận hành
 
-- Infrastructure requirements
-- Operating costs
-- Monitoring needs
-- Deployment complexity
+- Yêu cầu hạ tầng
+- Chi phí vận hành
+- Nhu cầu giám sát
+- Độ phức tạp khi triển khai (deployment)
 
-### 4. Team Comparison
+### 4. So sánh Đội ngũ
 
-- Skill requirements
-- Onboarding time
-- Documentation needs
-- Support availability
+- Yêu cầu về kỹ năng
+- Thời gian làm quen (onboarding)
+- Nhu cầu tài liệu
+- Sự sẵn có của hỗ trợ
 
-## Output Files
+## Các tệp đầu ra
 
-After `/plan:two` completes:
+Sau khi `/plan:two` hoàn tất:
 
-### Approach 1 Plan
+### Kế hoạch Cách tiếp cận 1
 
 ```
 plans/[task]-approach-1-[name].md
 ```
 
-Complete implementation plan for first approach
+Kế hoạch triển khai đầy đủ cho cách tiếp cận đầu tiên
 
-### Approach 2 Plan
+### Kế hoạch Cách tiếp cận 2
 
 ```
 plans/[task]-approach-2-[name].md
 ```
 
-Complete implementation plan for second approach
+Kế hoạch triển khai đầy đủ cho cách tiếp cận thứ hai
 
-### Comparison Document
+### Tài liệu So sánh
 
 ```
 plans/[task]-comparison.md
 ```
 
-Side-by-side comparison with recommendation
+So sánh song song với khuyến nghị
 
-## Best Practices
+## Thực hành tốt nhất
 
-### Provide Clear Context
+### Cung cấp ngữ cảnh rõ ràng
 
-✅ **Good:**
+✅ **Tốt:**
 ```bash
-/plan:two [implement real-time features for chat app with 10k concurrent users]
+/plan:two [triển khai các tính năng thời gian thực cho ứng dụng chat với 10k người dùng đồng thời]
 ```
 
-❌ **Vague:**
+❌ **Mơ hồ:**
 ```bash
-/plan:two [add real-time]
+/plan:two [thêm thời gian thực]
 ```
 
-### Specify Constraints
+### Chỉ định các ràng buộc
 
 ```bash
-/plan:two [implement search: full-text search vs vector search, max budget $100/month, need sub-100ms response]
+/plan:two [triển khai tìm kiếm: tìm kiếm toàn văn vs tìm kiếm vector, ngân sách tối đa $100/tháng, cần phản hồi dưới 100ms]
 ```
 
-## After Getting Plans
+## Sau khi nhận được các kế hoạch
 
-Standard workflow:
+Quy trình làm việc tiêu chuẩn:
 
 ```bash
-# 1. Get two approaches
-/plan:two [task]
+# 1. Lấy hai cách tiếp cận
+/plan:two [tác vụ]
 
-# 2. Review both plans
-cat plans/[task]-approach-1-*.md
-cat plans/[task]-approach-2-*.md
+# 2. Xem lại cả hai kế hoạch
+cat plans/[tác vụ]-approach-1-*.md
+cat plans/[tác vụ]-approach-2-*.md
 
-# 3. Review comparison
-cat plans/[task]-comparison.md
+# 3. Xem lại so sánh
+cat plans/[tác vụ]-comparison.md
 
-# 4. Make decision
-# Consider: team skills, timeline, budget, requirements
+# 4. Đưa ra quyết định
+# Cân nhắc: kỹ năng đội ngũ, tiến độ, ngân sách, yêu cầu
 
-# 5. Implement chosen approach (use /code since plan exists)
-/code @plans/[task]-approach-1-*.md
-# OR
-/code @plans/[task]-approach-2-*.md
+# 5. Triển khai cách tiếp cận đã chọn (sử dụng /code vì kế hoạch đã tồn tại)
+/code @plans/[tác vụ]-approach-1-*.md
+# HOẶC
+/code @plans/[tác vụ]-approach-2-*.md
 
-# 6. Optionally: Hybrid
-/code @plans/[task]-approach-1-*.md  # then manually integrate from approach 2
+# 6. Tùy chọn: Kết hợp (Hybrid)
+/code @plans/[tác vụ]-approach-1-*.md  # sau đó tích hợp thủ công từ cách 2
 ```
 
-## Next Steps
+## Các lệnh liên quan
 
-- [/plan](/docs/engineer/commands/core/plan) - Single approach planning
-- [/code](/docs/engineer/commands/core/code) - Implement chosen plan
-- [/plan:cro](/docs/engineer/commands/plan/cro) - CRO-specific planning
+- [/plan](/vi/docs/engineer/commands/core/plan) - Lập kế hoạch cho một cách tiếp cận duy nhất
+- [/code](/vi/docs/engineer/commands/core/code) - Triển khai kế hoạch đã chọn
+- [/plan:cro](/vi/docs/engineer/commands/plan/cro) - Lập kế hoạch cụ thể cho CRO
 
 ---
 
-**Key Takeaway**: `/plan:two` creates two distinct implementation approaches with detailed pros/cons analysis and clear recommendation, helping you make informed architectural and technical decisions before committing to implementation.
+**Điểm mấu chốt**: `/plan:two` tạo ra hai cách tiếp cận triển khai riêng biệt với phân tích ưu/nhược điểm chi tiết và khuyến nghị rõ ràng, giúp bạn đưa ra các quyết định kỹ thuật và kiến trúc sáng suốt trước khi bắt tay vào triển khai.

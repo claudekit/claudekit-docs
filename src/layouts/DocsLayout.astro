@@ -3,7 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Sidebar from '../components/Sidebar.astro';
 import Search from '../components/Search.astro';
-// import AIPanel from '../components/AIPanel.astro'; // Temporarily disabled - backend not ready
+import FloatingChat from '../components/FloatingChat.astro';
 import TableOfContents from '../components/TableOfContents';
 import CopyForLLMs from '../components/CopyForLLMs.tsx';
 import type { Locale } from '../i18n/locales';
@@ -70,7 +70,7 @@ const frontmatter = content?.data || {
           <TableOfContents headings={headings} client:load />
         )}
 
-        {/* AIPanel temporarily disabled - backend not ready */}
+        <FloatingChat />
       </div>
     </div>
   </div>

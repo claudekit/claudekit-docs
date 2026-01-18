@@ -1,0 +1,255 @@
+---
+import { AIChat } from './AIChat';
+---
+
+<!-- Floating Chat Button -->
+<button class="chat-fab" id="chat-fab" aria-label="Open AI Assistant" type="button">
+  <svg class="fab-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+  </svg>
+  <svg class="fab-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M18 6 6 18"></path>
+    <path d="m6 6 12 12"></path>
+  </svg>
+</button>
+
+<!-- Chat Modal -->
+<div class="chat-modal" id="chat-modal" role="dialog" aria-modal="true" aria-labelledby="chat-title">
+  <div class="chat-modal-header">
+    <div class="chat-title" id="chat-title">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+      </svg>
+      <span>AI Assistant</span>
+    </div>
+    <button class="chat-close" id="chat-close" aria-label="Close" type="button">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 6 6 18"></path>
+        <path d="m6 6 12 12"></path>
+      </svg>
+    </button>
+  </div>
+  <div class="chat-modal-body">
+    <AIChat client:load />
+  </div>
+</div>
+
+<!-- Backdrop -->
+<div class="chat-backdrop" id="chat-backdrop"></div>
+
+<script>
+  function initFloatingChat() {
+    const fab = document.getElementById('chat-fab');
+    const modal = document.getElementById('chat-modal');
+    const backdrop = document.getElementById('chat-backdrop');
+    const closeBtn = document.getElementById('chat-close');
+
+    if (!fab || !modal || !backdrop) return;
+
+    function openChat() {
+      modal.classList.add('open');
+      backdrop.classList.add('open');
+      fab.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      // Focus input
+      setTimeout(() => {
+        const input = modal.querySelector('.ai-input') as HTMLInputElement;
+        input?.focus();
+      }, 100);
+    }
+
+    function closeChat() {
+      modal.classList.remove('open');
+      backdrop.classList.remove('open');
+      fab.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    fab.addEventListener('click', () => {
+      if (modal.classList.contains('open')) {
+        closeChat();
+      } else {
+        openChat();
+      }
+    });
+
+    closeBtn?.addEventListener('click', closeChat);
+    backdrop.addEventListener('click', closeChat);
+
+    // Keyboard: Cmd+? to open, Escape to close
+    document.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === '/') {
+        e.preventDefault();
+        openChat();
+      }
+      if (e.key === 'Escape' && modal.classList.contains('open')) {
+        closeChat();
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFloatingChat);
+  } else {
+    initFloatingChat();
+  }
+  document.addEventListener('astro:after-swap', initFloatingChat);
+</script>
+
+<style>
+  /* FAB Button */
+  .chat-fab {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-accent-cyan), var(--color-accent-blue));
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(97, 175, 239, 0.4);
+    z-index: 1000;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .chat-fab:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 28px rgba(97, 175, 239, 0.5);
+  }
+
+  .chat-fab .fab-icon,
+  .chat-fab .fab-close {
+    color: white;
+    transition: all 0.3s ease;
+    position: absolute;
+  }
+
+  .chat-fab .fab-close {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.5);
+  }
+
+  .chat-fab.open .fab-icon {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.5);
+  }
+
+  .chat-fab.open .fab-close {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+
+  /* Modal */
+  .chat-modal {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    width: 400px;
+    max-width: calc(100vw - 48px);
+    height: 520px;
+    max-height: calc(100vh - 140px);
+    background: var(--color-bg-secondary);
+    border-radius: 16px;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    z-index: 1001;
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .chat-modal.open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+
+  .chat-modal-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+
+  .chat-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+
+  .chat-title svg {
+    color: var(--color-accent-cyan);
+  }
+
+  .chat-close {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+
+  .chat-close:hover {
+    background: var(--color-bg-tertiary);
+    color: var(--color-text-primary);
+  }
+
+  .chat-modal-body {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Backdrop */
+  .chat-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+
+  .chat-backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Mobile */
+  @media (max-width: 480px) {
+    .chat-modal {
+      bottom: 0;
+      right: 0;
+      left: 0;
+      width: 100%;
+      max-width: 100%;
+      height: 80vh;
+      max-height: 80vh;
+      border-radius: 16px 16px 0 0;
+    }
+
+    .chat-fab {
+      bottom: 16px;
+      right: 16px;
+    }
+  }
+</style>

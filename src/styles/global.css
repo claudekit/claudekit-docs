@@ -197,7 +197,11 @@
     --layout-header-height: 56px;
     --layout-sidebar-width: 280px;
     --layout-content-max-width: 900px;
-    --layout-ai-panel-width: 380px;
+    --layout-header-height: 56px;
+    --layout-sidebar-width: 280px;
+    --layout-content-max-width: 900px;
+    --layout-ai-panel-width: 380px; /* Default/Fallback */
+    --assistant-width: 380px;       /* Dynamic, updated by JS */
 
     /* Breakpoints */
     --breakpoint-sm: 640px;
@@ -1182,7 +1186,7 @@ pre.astro-code:not([data-language]) span {
   position: fixed;
   top: 0;
   right: 0;
-  width: 380px;
+  width: var(--assistant-width, 380px);
   height: 100vh;
   background-color: var(--color-bg-secondary);
   border-left: 1px solid var(--color-border);
@@ -1291,8 +1295,8 @@ pre.astro-code:not([data-language]) span {
   padding: var(--space-3) var(--space-4);
   border-radius: 12px;
   font-family: var(--font-sans);
-  font-size: 14px;
-  line-height: 1.65;
+  font-size: 13px; /* Smaller font as requested */
+  line-height: 1.5;
   letter-spacing: -0.01em;
   transition: transform 150ms ease-out;
 }
@@ -1327,8 +1331,8 @@ pre.astro-code:not([data-language]) span {
 /* Markdown rendering for assistant responses */
 .assistant-markdown {
   font-family: var(--font-sans);
-  font-size: 14px;
-  line-height: 1.65;
+  font-size: 13px; /* Smaller font as requested */
+  line-height: 1.5;
   letter-spacing: -0.01em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1530,7 +1534,7 @@ pre.astro-code:not([data-language]) span {
   display: flex;
   align-items: center;
   gap: var(--space-2);
-  padding: var(--space-2) var(--space-3);
+  padding: var(--space-1-5) var(--space-3); /* Slightly tighter padding */
   background-color: var(--color-bg-primary);
   border: 1px solid var(--color-border);
   border-radius: 6px;
@@ -1554,7 +1558,7 @@ pre.astro-code:not([data-language]) span {
   border: none;
   outline: none;
   font-family: var(--font-sans);
-  font-size: var(--text-sm);
+  font-size: 13px; /* Smaller font as requested */
   color: var(--color-text-primary);
 }
 
@@ -1771,9 +1775,8 @@ body.assistant-open .table-of-contents {
 
 /* Adjust content wrapper to make space for the sidebar on large screens */
 @media (min-width: 1280px) {
-  body.assistant-open .content-wrapper,
   body.assistant-open .main-wrapper {
-    margin-right: 380px; /* Match sidebar width */
+    margin-right: var(--assistant-width, 380px); /* Dynamic width */
   }
   
   /* Ensure the sidebar takes the space we just created */
@@ -1790,6 +1793,34 @@ body.assistant-open .table-of-contents {
      Given the request for "dedicated space", pushing is consistent, 
      but might squash content. Let's push for now as requested. */
   body.assistant-open .main-wrapper {
-    margin-right: 380px;
+    margin-right: var(--assistant-width, 380px);
   }
+}
+
+/* Resize Handle */
+.assistant-resize-handle {
+  position: absolute;
+  left: -4px;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  cursor: col-resize;
+  z-index: 1000;
+  transition: background-color 0.2s;
+}
+
+.assistant-resize-handle:hover,
+.assistant-resize-handle.resizing {
+  background-color: var(--color-accent-blue);
+  opacity: 0.5;
+}
+
+body.resizing * {
+  user-select: none;
+  cursor: col-resize !important;
+}
+
+body.resizing .content-wrapper,
+body.resizing .main-wrapper {
+  transition: none !important; /* Disable transition during resize for smooth tracking */
 }

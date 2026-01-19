@@ -35,6 +35,9 @@ export function AssistantSidebar({
   const inputRef = useRef<HTMLInputElement>(null);
   const sidebarRef = useRef<HTMLElement>(null);
   const dragStartY = useRef<number | null>(null);
+  const resizeStartX = useRef<number | null>(null);
+  const startWidth = useRef<number>(380);
+  const [isResizing, setIsResizing] = useState(false);
 
   // Detect mobile
   useEffect(() => {
@@ -142,6 +145,48 @@ export function AssistantSidebar({
     }
   };
 
+  // Resize Handlers
+  const handleResizeStart = useCallback((e: React.MouseEvent | React.TouchEvent) => {
+    e.preventDefault();
+    setIsResizing(true);
+    document.body.classList.add('resizing');
+
+    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+    resizeStartX.current = clientX;
+
+    // Get current width from variable or computed style as fallback
+    const currentWidthVar = getComputedStyle(document.body).getPropertyValue('--assistant-width');
+    const computedWidth = parseInt(currentWidthVar) || 380;
+    startWidth.current = computedWidth;
+
+    // Add global listeners
+    window.addEventListener('mousemove', handleResizeMove);
+    window.addEventListener('mouseup', handleResizeEnd);
+    window.addEventListener('touchmove', handleResizeMove);
+    window.addEventListener('touchend', handleResizeEnd);
+  }, []);
+
+  const handleResizeMove = useCallback((e: MouseEvent | TouchEvent) => {
+    if (resizeStartX.current === null) return;
+
+    const clientX = 'touches' in e ? (e as TouchEvent).touches[0].clientX : (e as MouseEvent).clientX;
+    const deltaX = resizeStartX.current - clientX; // Left drag increases width
+    const newWidth = Math.max(280, Math.min(800, startWidth.current + deltaX)); // Min 280px, Max 800px
+
+    document.documentElement.style.setProperty('--assistant-width', `${newWidth}px`);
+  }, []);
+
+  const handleResizeEnd = useCallback(() => {
+    setIsResizing(false);
+    document.body.classList.remove('resizing');
+    resizeStartX.current = null;
+
+    window.removeEventListener('mousemove', handleResizeMove);
+    window.removeEventListener('mouseup', handleResizeEnd);
+    window.removeEventListener('touchmove', handleResizeMove);
+    window.removeEventListener('touchend', handleResizeEnd);
+  }, [handleResizeMove]);
+
   // Reset closing state when stage changes
   useEffect(() => {
     if (stage !== 'expanded') {
@@ -185,6 +230,18 @@ export function AssistantSidebar({
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
+        {/* Resize Handle (Desktop) */}
+        {!isMobile && (
+          <div
+            className={`assistant-resize-handle ${isResizing ? 'resizing' : ''}`}
+            onMouseDown={handleResizeStart}
+            onTouchStart={handleResizeStart}
+            role="separator"
+            aria-orientation="vertical"
+            aria-label="Resize Sidebar"
+          />
+        )}
+
         {/* Drag handle (mobile only) */}
         {isMobile && (
           <div

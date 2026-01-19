@@ -140,6 +140,9 @@
     --text-sm: 0.875rem;     /* 14px - Navigation, code, AI chat */
     --text-base: 1rem;       /* 16px - Body text, main content */
     --text-lg: 1.125rem;     /* 18px - H3, callouts */
+
+    /* Universal Layout Transitions for Smooth Sidebar Toggling */
+    --transition-layout: margin-right 300ms cubic-bezier(0.4, 0, 0.2, 1);
     --text-xl: 1.25rem;      /* 20px - H2 subsections */
     --text-2xl: 1.5rem;      /* 24px - H2 main headings */
     --text-3xl: 1.875rem;    /* 30px - H1 subpages */
@@ -1163,6 +1166,14 @@ pre.astro-code:not([data-language]) span {
   pointer-events: auto;
 }
 
+/* Hide backdrop on desktop when expanded */
+.assistant-backdrop.hidden-desktop {
+  @media (min-width: 768px) {
+    display: none;
+    pointer-events: none;
+  }
+}
+
 .assistant-backdrop.closing {
   pointer-events: none;
 }
@@ -1749,3 +1760,36 @@ pre.astro-code:not([data-language]) span {
   }
 }
 
+/* ============================================
+   LAYOUT ADJUSTMENTS FOR DEDICATED ASSISTANT SPACE
+   ============================================ */
+
+/* When the assistant is open (body has .assistant-open class) */
+body.assistant-open .table-of-contents {
+  display: none !important;
+}
+
+/* Adjust content wrapper to make space for the sidebar on large screens */
+@media (min-width: 1280px) {
+  body.assistant-open .content-wrapper,
+  body.assistant-open .main-wrapper {
+    margin-right: 380px; /* Match sidebar width */
+  }
+  
+  /* Ensure the sidebar takes the space we just created */
+  body.assistant-open .assistant-sidebar {
+    right: 0;
+    box-shadow: -4px 0 16px rgba(0,0,0,0.05);
+    border-left: 1px solid var(--color-border);
+  }
+}
+
+/* For smaller desktops where there isn't enough width for sidebar + content + nav */
+@media (min-width: 768px) and (max-width: 1279px) {
+  /* On these screens, we might still want to overlay OR push content. 
+     Given the request for "dedicated space", pushing is consistent, 
+     but might squash content. Let's push for now as requested. */
+  body.assistant-open .main-wrapper {
+    margin-right: 380px;
+  }
+}

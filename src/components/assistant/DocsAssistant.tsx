@@ -25,9 +25,9 @@ export function DocsAssistant() {
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [toggle, close, state.stage]);
 
-  // Lock body scroll when sidebar open
+  // Lock body scroll when sidebar open (Mobile only)
   useEffect(() => {
-    if (state.stage === 'expanded') {
+    if (state.stage === 'expanded' && window.innerWidth < 768) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';

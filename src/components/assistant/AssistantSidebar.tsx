@@ -149,15 +149,27 @@ export function AssistantSidebar({
     }
   }, [stage]);
 
+  // Toggle body class for layout adjustments
+  useEffect(() => {
+    if (stage === 'expanded') {
+      document.body.classList.add('assistant-open');
+    } else {
+      document.body.classList.remove('assistant-open');
+    }
+    return () => {
+      document.body.classList.remove('assistant-open');
+    };
+  }, [stage]);
+
   if (stage !== 'expanded' && !isClosing) return null;
 
   const showSuggestions = messages.length === 0;
 
   return (
     <>
-      {/* Backdrop */}
+      {/* Backdrop - Mobile Only or Overlay Mode */}
       <div
-        className={`assistant-backdrop ${isClosing ? 'closing' : ''}`}
+        className={`assistant-backdrop ${isClosing ? 'closing' : ''} ${!isMobile ? 'hidden-desktop' : ''}`}
         onClick={handleClose}
         aria-hidden="true"
       />

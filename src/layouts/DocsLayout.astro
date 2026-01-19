@@ -3,7 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Sidebar from '../components/Sidebar.astro';
 import Search from '../components/Search.astro';
-import FloatingChat from '../components/FloatingChat.astro';
+import { DocsAssistant } from '../components/assistant';
 import TableOfContents from '../components/TableOfContents';
 import CopyForLLMs from '../components/CopyForLLMs.tsx';
 import type { Locale } from '../i18n/locales';
@@ -69,9 +69,10 @@ const frontmatter = content?.data || {
         {headings.length > 0 && (
           <TableOfContents headings={headings} client:load />
         )}
-
-        <FloatingChat />
       </div>
+
+      {/* AI Assistant - Two-stage UX (client:only to avoid SSR hook errors) */}
+      <DocsAssistant client:only="react" />
     </div>
   </div>
 

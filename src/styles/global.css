@@ -1234,6 +1234,19 @@ pre.astro-code:not([data-language]) span {
   color: var(--color-accent-cyan);
 }
 
+.assistant-experimental-badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: #f57c00;
+  color: #fff;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
 .assistant-sidebar-actions {
   display: flex;
   align-items: center;

@@ -25,6 +25,7 @@ import { AIChat } from './AIChat';
         <path d="M17 19h4"></path>
       </svg>
       <span class="ai-title-text">AI Assistant</span>
+      <span class="experimental-badge">Experimental</span>
     </div>
     <button
       class="ai-collapse-toggle"
@@ -161,6 +162,23 @@ import { AIChat } from './AIChat';
     color: var(--color-ai-primary);
     animation: sparkle 2s ease-in-out infinite;
     flex-shrink: 0;
+  }
+
+  .experimental-badge {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: #f57c00;
+    color: #fff;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+
+  .ai-panel.collapsed .experimental-badge {
+    display: none;
   }
 
   @keyframes sparkle {

@@ -21,6 +21,7 @@ import { AIChat } from './AIChat';
         <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
       </svg>
       <span>AI Assistant</span>
+      <span class="experimental-badge">Experimental</span>
     </div>
     <button class="chat-close" id="chat-close" aria-label="Close" type="button">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -190,6 +191,18 @@ import { AIChat } from './AIChat';
 
   .chat-title svg {
     color: var(--color-accent-cyan);
+  }
+
+  .experimental-badge {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: #f57c00;
+    color: #fff;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
 
   .chat-close {

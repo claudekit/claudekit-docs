@@ -12,19 +12,26 @@ published: true
 
 ClaudeKit provides a comprehensive set of slash commands to accelerate your development workflow. Each command is designed for specific tasks and automatically orchestrates the appropriate agents.
 
+:::tip[Commands → Skills Migration]
+**As of engineer@1.3.0+**, many commands have been migrated to **auto-activating skills** for more natural interaction.
+
+**What changed:**
+- Commands like `/code`, `/scout`, `/debug`, `/design`, `/code-review`, `/content` are now **skills**
+- Skills activate automatically based on conversation context
+- No explicit command needed - just describe your task naturally
+- Better token efficiency and cleaner workflow
+
+**See:** [Migration Guide](/docs/getting-started/migration-from-commands-to-skills) for complete details and workflow comparisons.
+:::
+
 ## Command Categories
 
 ### Core Development
 
-- **[/bootstrap](/docs/engineer/commands/core/bootstrap)** - Initialize new projects with spec-driven development
 - **[/ask](/docs/engineer/commands/core/ask)** - Ask questions about the codebase
+- **[/bootstrap](/docs/engineer/commands/core/bootstrap)** - Initialize new projects with spec-driven development
 - **[/ck-help](/docs/engineer/commands/core/ck-help)** - Get help about ClaudeKit commands
 - **[/coding-level](/docs/engineer/commands/core/coding-level)** - Set coding complexity level
-- **[/cook](/docs/engineer/commands/core/cook)** - Implement features with intelligent workflow routing
-- **[/cook:auto](/docs/engineer/commands/core/cook-auto)** - Automatic feature implementation
-- **[/cook:auto:fast](/docs/engineer/commands/core/cook-auto-fast)** - Quick automatic implementation
-- **[/cook:auto:parallel](/docs/engineer/commands/core/cook-auto-parallel)** - Parallel automatic implementation
-- **[/debug](/docs/engineer/commands/core/debug)** - Investigate and diagnose issues
 - **[/journal](/docs/engineer/commands/core/journal)** - Write development journal entries
 - **[/kanban](/docs/engineer/commands/core/kanban)** - Manage project tasks in Kanban board
 - **[/preview](/docs/engineer/commands/core/preview)** - Preview current work
@@ -33,6 +40,8 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 - **[/watzup](/docs/engineer/commands/core/watzup)** - Get project status and recent changes
 - **[/worktree](/docs/engineer/commands/core/worktree)** - Manage git worktrees
 - **[/wt](/docs/engineer/commands/core/wt)** - Shorthand for /worktree
+
+**Note:** `/cook`, `/cook:auto*`, and `/debug` are now auto-activating skills. See migration notice above.
 
 ### Planning
 
@@ -75,16 +84,17 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 /plan [feature description]      # Plan the feature
 /plan:hard [complex feature]     # Detailed planning with research
 /plan:parallel [feature]         # Parallel planning
+# Note: /cook is now a skill (auto-activates)
 
 # Documentation
 /docs:init                       # First-time setup
 /docs:update                     # After making changes
 /docs:summarize                  # Generate documentation summary
 
-# Debugging & Testing
-/debug [issue]                   # Investigate and diagnose
+# Testing
 /test                            # Run test suite
 /test:ui                         # Run UI tests
+# Note: /debug is now a skill (auto-activates)
 
 # Git Workflow
 /check-and-commit                # Check quality and commit
@@ -113,9 +123,9 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 /docs:init
 
 # Required argument
-/cook [add user authentication]
-/debug [login button not working]
+/plan [add user authentication]
 /ask [how does routing work?]
+/bootstrap [create REST API]
 
 # Optional arguments
 /git:pr                          # PR to default branch
@@ -123,7 +133,7 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 /git:pr [main] [feature-branch]  # PR from feature to main
 
 # Multiple arguments
-/scout [authentication files] [3]  # Find auth files, use 3 agents
+/plan:parallel [feature] [3]     # Parallel planning with 3 researchers
 ```
 
 ## Command Workflows
@@ -153,8 +163,8 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 
 2. # Review plan in plans/ directory
 
-3. # Implement based on plan
-   # Work with fullstack-developer agent
+3. # Implement based on plan (cook skill auto-activates)
+   "Implement the feature as planned"
 
 4. /test
    # Validates implementation
@@ -166,8 +176,8 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 ### Investigating Issues
 
 ```bash
-# Debug issues
-/debug [describe issue]
+# Debug issues (debug skill auto-activates)
+"Debug the login issue - users can't authenticate"
 # - Analyzes logs and code
 # - Identifies root cause
 # - Suggests solutions
@@ -229,14 +239,14 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 ✅ **Clear**
 ```bash
 /plan [add OAuth2 authentication with Google and GitHub providers]
-/debug [API returns 500 error when creating user with empty email]
+"Debug API issue - returns 500 error when creating user with empty email"
 /ask [how is user authentication currently implemented?]
 ```
 
 ❌ **Vague**
 ```bash
 /plan [add auth]
-/debug [something's broken]
+"Something's broken, please fix"
 /ask [how does this work?]
 ```
 
@@ -267,14 +277,14 @@ git diff
 # 3. Review plan
 /preview plans/latest-plan.md
 
-# 4. Implement based on plan
-# Work with agents to implement
+# 4. Implement based on plan (cook skill auto-activates)
+"Implement JWT authentication migration as planned"
 
 # 5. Test
 /test
 
-# 6. Debug if needed
-/debug [specific issue]
+# 6. Debug if needed (debug skill auto-activates)
+"Debug the JWT token validation issue"
 
 # 7. Quality check and commit
 /check-and-commit
@@ -283,15 +293,6 @@ git diff
 ## Command Flags and Options
 
 Some commands support flags:
-
-### /bootstrap
-
-```bash
-/bootstrap [project description]              # Interactive Q&A
-/bootstrap:auto [detailed description]        # Fully automatic
-/bootstrap:auto:fast [description]            # Quick automatic
-/bootstrap:auto:parallel [description]        # Parallel execution
-```
 
 ### /plan
 

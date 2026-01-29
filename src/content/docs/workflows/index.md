@@ -16,7 +16,9 @@ Task-oriented guides for common development scenarios using ClaudeKit's slash co
 [**Feature Development Guide**](/docs/workflows/feature-development) - Complete feature lifecycle from planning to deployment
 ```bash
 /plan "add user authentication with OAuth"
-/code @plans/user-auth.md
+/clear  # Free context before implementation
+# Now describe the task - cook skill auto-activates from plan context
+"Implement user authentication with OAuth as planned"
 /fix:test
 /git:pr "feature/user-auth"
 ```
@@ -44,13 +46,17 @@ Task-oriented guides for common development scenarios using ClaudeKit's slash co
 ck init my-project --kit engineer
 cd my-project
 /plan "set up project structure"
-/code @plans/project-setup.md
+/clear  # Free context before implementation
+# Describe the task - cook skill auto-activates
+"Set up project structure as planned"
 ```
 
 ### Add New Feature
 ```bash
 /plan "add [feature description]"
-/code @plans/your-feature.md
+/clear  # Free context before implementation
+# Describe implementation - cook skill auto-activates
+"Implement [feature description] as planned"
 /design:good "UI mockups if needed"
 /fix:test
 /git:cm
@@ -74,12 +80,12 @@ cd my-project
 
 ### Frontend Development
 - [UI/UX Design](/docs/commands#design-commands) - `/design:good`, `/design:fast`
-- Component Development - `/plan → /code → /fix:test`
+- Component Development - `/plan → /clear → describe task (cook skill auto-activates) → /fix:test`
 - Styling - `/design:good` for aesthetic components
 
 ### Backend Development
-- API Development - `/plan → /code → /fix:hard`
-- Database Changes - `/plan "add user table" → /code`
+- API Development - `/plan → /clear → describe task (cook skill auto-activates) → /fix:hard`
+- Database Changes - `/plan "add user table" → /clear → describe implementation`
 - Performance Optimization - `/debug "slow queries" → /fix`
 
 ### Full Stack

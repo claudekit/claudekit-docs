@@ -11,26 +11,26 @@ published: true
 
 # /cook
 
-:::tip[Mẹo Tiết Kiệm Token: /cook = /plan + /code]
-**Nếu bạn đã có plan**, bỏ qua `/cook` và dùng `/code` trực tiếp:
+:::tip[Mẹo Tiết Kiệm Token]
+**Nếu bạn đã có plan**, sử dụng skill `cook` với ngữ cảnh plan:
 
 ```bash
-# ✅ Hiệu quả: Dùng plan có sẵn (tiết kiệm token!)
-/code @plans/your-feature-plan.md
+# ✅ Hiệu quả: Dùng plan có sẵn
+/clear
+Mô tả task → skill cook tự động kích hoạt từ ngữ cảnh plan
 
-# ❌ Lãng phí: /cook sẽ tạo plan mới, tốn thêm token
+# ❌ Lãng phí: /cook tạo plan mới, tốn thêm token
 /cook [cùng feature bạn đã plan]
 ```
 
-**Mối quan hệ:**
-- `/cook` = `/plan` + `/code` (chu trình đầy đủ: lập kế hoạch → triển khai)
-- `/code` = Chỉ triển khai (dùng plan có sẵn)
+**Quy trình làm việc:**
+```bash
+/plan "feature X"
+/clear  # Giải phóng ngữ cảnh
+Mô tả task tự nhiên → skill cook auto-kích hoạt
+```
 
-**Khi nào dùng lệnh nào:**
-| Lệnh | Khi Nào Dùng |
-|------|--------------|
-| `/cook` | Feature mới, chưa có plan |
-| `/code @plan.md` | Plan đã có sẵn trong thư mục `plans/` |
+**Quan trọng**: Chạy `/clear` sau `/plan` để giải phóng ngữ cảnh trước khi triển khai. Điều này đảm bảo skill `cook` có ngân sách token tối ưu.
 :::
 
 Main command for feature development. Orchestrates planning, implementation, testing, code review, and documentation updates automatically.

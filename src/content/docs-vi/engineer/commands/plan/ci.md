@@ -271,7 +271,7 @@ npm run type-check
 ✓ Kế hoạch hoàn tất (tổng cộng 45 giây)
 
 Bước tiếp theo: Xem lại kế hoạch và triển khai các bản sửa lỗi
-Sử dụng: /cook [triển khai kế hoạch từ plans/fix-ci-build-12345.md]
+Sử dụng: /clear, sau đó mô tả task tự nhiên → skill cook sẽ kích hoạt từ ngữ cảnh plan
 ```
 
 ### Phân tích lỗi kiểm tra (Test)
@@ -620,8 +620,9 @@ env:
 cat plans/fix-ci-*.md
 # Tự mình làm theo các bước
 
-# Lựa chọn 2: Sử dụng /cook để triển khai
-/cook [triển khai kế hoạch sửa lỗi CI]
+# Lựa chọn 2: Dùng skill cook tự nhiên
+/clear
+Mô tả task → skill cook tự động triển khai từ ngữ cảnh plan
 
 # Lựa chọn 3: Sử dụng /fix:ci để tự động triển khai
 /fix:ci https://github.com/user/repo/actions/runs/12345
@@ -825,8 +826,9 @@ cat plans/fix-ci-12345.md
 # Lựa chọn A: Triển khai thủ công
 # Làm theo các bước trong kế hoạch
 
-# Lựa chọn B: Sử dụng /code (khuyến nghị - sử dụng kế hoạch hiện có)
-/code @plans/fix-ci-12345.md
+# Lựa chọn B: Dùng skill cook (khuyến nghị - kích hoạt từ ngữ cảnh plan)
+/clear
+Triển khai sửa lỗi CI → skill cook tự động triển khai
 
 # Lựa chọn C: Sử dụng /fix:ci (tự động triển khai)
 /fix:ci https://github.com/user/repo/actions/runs/12345

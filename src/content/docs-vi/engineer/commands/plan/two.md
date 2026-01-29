@@ -834,13 +834,14 @@ cat plans/[tác vụ]-comparison.md
 # 4. Đưa ra quyết định
 # Cân nhắc: kỹ năng đội ngũ, tiến độ, ngân sách, yêu cầu
 
-# 5. Triển khai cách tiếp cận đã chọn (sử dụng /code vì kế hoạch đã tồn tại)
-/code @plans/[tác vụ]-approach-1-*.md
+# 5. Triển khai cách tiếp cận đã chọn (skill cook kích hoạt từ ngữ cảnh plan)
+/clear
+Mô tả task tự nhiên → skill cook triển khai từ cách tiếp cận 1
 # HOẶC
-/code @plans/[tác vụ]-approach-2-*.md
+Mô tả task tự nhiên → skill cook triển khai từ cách tiếp cận 2
 
 # 6. Tùy chọn: Kết hợp (Hybrid)
-/code @plans/[tác vụ]-approach-1-*.md  # sau đó tích hợp thủ công từ cách 2
+Triển khai từ cách 1 trước → sau đó tích hợp thủ công từ cách 2
 ```
 
 ## Các lệnh liên quan

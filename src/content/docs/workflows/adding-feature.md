@@ -21,7 +21,8 @@ Learn the complete workflow for adding new features to your project with ClaudeK
 **Goal**: Add a complete feature with planning, implementation, tests, and docs
 **Time**: 15-30 minutes (vs 2-4 hours manually)
 **Agents Used**: planner, scout, tester, code-reviewer, docs-manager
-**Commands**: /plan, /code, /test, /docs:update, /git:cm
+**Skills**: cook (auto-activates from plan context)
+**Commands**: /plan, /test, /docs:update, /git:cm
 
 ## Prerequisites
 
@@ -163,10 +164,13 @@ This helps understand existing patterns before implementing.
 
 ### Step 5: Implement the Feature
 
-Use the cook command to implement based on the plan:
+After planning, clear context and describe the implementation task. The cook skill auto-activates from the plan context:
 
 ```bash
-/cook [implement password reset with email verification]
+/clear  # Free up context after planning
+# Now naturally describe what to implement
+"Implement password reset with email verification as planned"
+# The cook skill automatically activates and executes the plan
 ```
 
 **Implementation process**:
@@ -487,7 +491,9 @@ Real-world scenario: Adding search functionality to an e-commerce site.
 ```bash
 # Plan complex database changes first
 /plan [implement multi-tenant architecture with tenant isolation]
-/code @plans/multi-tenant.md
+/clear
+# Describe implementation - cook skill auto-activates
+"Implement multi-tenant architecture with tenant isolation as planned"
 ```
 
 ### Variation 3: UI + Backend Feature
@@ -503,7 +509,9 @@ Real-world scenario: Adding search functionality to an e-commerce site.
 ```bash
 # Research included automatically
 /plan [integrate Twilio SMS notifications]
-/code @plans/twilio-sms.md
+/clear
+# Describe implementation
+"Integrate Twilio SMS notifications as planned"
 ```
 
 ## Troubleshooting
@@ -516,10 +524,12 @@ Real-world scenario: Adding search functionality to an e-commerce site.
 ```bash
 # Break into smaller features
 /plan [add user management - phase 1: user CRUD]
-/code @plans/user-crud.md
+/clear
+"Implement user CRUD as planned"
 
 /plan [add user management - phase 2: roles and permissions]
-/code @plans/roles-permissions.md
+/clear
+"Implement roles and permissions as planned"
 ```
 
 ### Issue: Tests Failing
@@ -573,8 +583,9 @@ For features requiring multiple components:
 # Always plan first
 /plan [feature description]
 # Review plan
-# Then implement
-/cook [feature description]
+/clear  # Free context
+# Then implement - cook skill auto-activates
+"Implement [feature description] as planned"
 ```
 
 ### 2. Small, Focused Features
@@ -645,7 +656,7 @@ git checkout -b feature/password-reset
 
 ### Related Commands
 - [/plan](/docs/engineer/commands/core/plan) - Create implementation plans
-- [/cook](/docs/engineer/commands/core/cook) - Implement features
+- [cook skill](/docs/getting-started/migration-from-commands-to-skills) - Auto-activates from plan context
 - [/test](/docs/engineer/commands/core/test) - Run test suites
 - [/docs:update](/docs/engineer/commands/docs/update) - Update documentation
 - [/git:cm](/docs/engineer/commands/git/commit) - Commit changes

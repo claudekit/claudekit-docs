@@ -402,32 +402,34 @@ POLAR_WEBHOOK_SECRET=whsec_...
 
 #### Coupon/Discount System
 
+Describe the task naturally - cook skill auto-activates:
 ```bash
-/cook [implement coupon and discount code system]
+"Implement coupon and discount code system"
 ```
 
 #### Abandoned Cart Recovery
 
 ```bash
-/cook [add abandoned checkout email automation]
+"Add abandoned checkout email automation"
 ```
 
 #### Upsell/Cross-sell
 
 ```bash
-/cook [implement checkout upsells and product recommendations]
+"Implement checkout upsells and product recommendations"
 ```
 
 #### Tax Calculation
 
 ```bash
-/cook [add automatic tax calculation with TaxJar integration]
+"Add automatic tax calculation with TaxJar integration"
 ```
 
 ### Step 10: Analytics and Reporting
 
+Describe the implementation - cook skill auto-activates:
 ```bash
-/cook [implement payment analytics dashboard]
+"Implement payment analytics dashboard"
 ```
 
 **Analytics features**:
@@ -493,8 +495,8 @@ Coverage: 92.4%
 STRIPE_SECRET_KEY=sk_live_...
 STRIPE_PUBLISHABLE_KEY=pk_live_...
 
-# Deploy
-/cook [deploy payment integration to production with security review]
+# Deploy - describe task, cook skill auto-activates
+"Deploy payment integration to production with security review"
 ```
 
 ## Complete Example: SaaS Subscription Platform
@@ -519,39 +521,40 @@ Implement payment system for SaaS platform:
 ```bash
 # Plan implementation
 /plan [design payment system for SaaS with all requirements]
+/clear  # Free context before implementation
 
-# Integrate Stripe (use /code since plan exists)
-/code @plans/payment-system.md
+# Integrate Stripe - describe task, cook skill auto-activates
+"Design and implement payment system for SaaS with all requirements as planned"
 
 # Subscription tiers
-/cook [create three subscription tiers with feature gates]
+"Create three subscription tiers with feature gates"
 
 # Free trial
-/cook [implement 14-day free trial without requiring payment method]
+"Implement 14-day free trial without requiring payment method"
 
 # Usage billing
-/cook [add usage-based billing for API calls]
+"Add usage-based billing for API calls"
 
 # Team billing
-/cook [implement team billing with seat management]
+"Implement team billing with seat management"
 
 # Invoicing
-/cook [add automatic invoice generation and email delivery]
+"Add automatic invoice generation and email delivery"
 
 # Tax calculation
-/cook [integrate TaxJar for automatic tax calculation]
+"Integrate TaxJar for automatic tax calculation"
 
 # Payment methods
-/cook [add card, Apple Pay, Google Pay, and ACH support]
+"Add card, Apple Pay, Google Pay, and ACH support"
 
 # Dunning
-/cook [implement smart retry logic for failed payments]
+"Implement smart retry logic for failed payments"
 
 # Test everything
 /test
 
 # Deploy
-/cook [deploy to production with monitoring]
+"Deploy to production with monitoring"
 ```
 
 ### Time Comparison
@@ -577,26 +580,27 @@ Implement payment system for SaaS platform:
 
 ### Pattern 1: Freemium Model
 
+Describe task - cook skill auto-activates:
 ```bash
-/cook [implement freemium model with upgrade prompts]
+"Implement freemium model with upgrade prompts"
 ```
 
 ### Pattern 2: Pay-What-You-Want
 
 ```bash
-/cook [add pay-what-you-want pricing with suggested amounts]
+"Add pay-what-you-want pricing with suggested amounts"
 ```
 
 ### Pattern 3: Tiered Pricing
 
 ```bash
-/cook [implement dynamic tiered pricing based on usage]
+"Implement dynamic tiered pricing based on usage"
 ```
 
 ### Pattern 4: Marketplace Payments
 
 ```bash
-/cook [implement marketplace payments with split payouts using Stripe Connect]
+"Implement marketplace payments with split payouts using Stripe Connect"
 ```
 
 ## Best Practices
@@ -634,8 +638,9 @@ const processWebhook = async (event) => {
 
 ### 3. Failed Payment Handling
 
+Describe task - cook skill auto-activates:
 ```bash
-/cook [implement dunning management with smart retry and email notifications]
+"Implement dunning management with smart retry and email notifications"
 ```
 
 ### 4. PCI Compliance
@@ -650,8 +655,9 @@ const processWebhook = async (event) => {
 
 ### 5. Transaction Monitoring
 
+Describe task - cook skill auto-activates:
 ```bash
-/cook [add fraud detection and transaction monitoring]
+"Add fraud detection and transaction monitoring"
 ```
 
 ## Troubleshooting
@@ -723,7 +729,7 @@ Before production:
 ### Related Commands
 - [/integrate:polar](/docs/engineer/commands/integrate/polar) - Polar integration
 - [/integrate:sepay](/docs/engineer/commands/integrate/sepay) - SePay integration
-- [/cook](/docs/engineer/commands/core/cook) - Custom features
+- [cook skill](/docs/getting-started/migration-from-commands-to-skills) - Auto-activates for custom features
 - [/test](/docs/engineer/commands/core/test) - Test suite
 
 ### Further Reading

@@ -10,26 +10,30 @@ published: true
 
 # /cook
 
-:::tip[Token-Saving Tip: /cook = /plan + /code]
-**If you already have a plan**, skip `/cook` and use `/code` directly:
+:::tip[Migration Note: /code is Archived]
+The `/code` command has been replaced by the **cook skill** which auto-activates from plan context.
 
+**Old workflow (deprecated):**
 ```bash
-# ✅ Efficient: Use existing plan (saves tokens!)
-/code @plans/your-feature-plan.md
-
-# ❌ Wasteful: /cook will create a new plan, consuming extra tokens
-/cook [same feature you already planned]
+/plan "feature description"
+/code @plans/feature-plan.md
 ```
 
-**The relationship:**
-- `/cook` = `/plan` + `/code` (full cycle: planning → implementation)
-- `/code` = Implementation only (uses existing plan)
+**New workflow (recommended):**
+```bash
+/plan "feature description"
+/clear  # Free context after planning
+# Describe task naturally - cook skill auto-activates
+"Implement feature description as planned"
+```
 
-**When to use each:**
-| Command | When to Use |
-|---------|-------------|
-| `/cook` | New feature, no plan exists |
-| `/code @plan.md` | Plan already exists in `plans/` directory |
+**Why the change:**
+- More natural interaction (no explicit command needed)
+- Automatic skill activation from plan context
+- Better token efficiency
+- Cleaner conversation flow
+
+See [Migration Guide](/docs/getting-started/migration-from-commands-to-skills) for complete details.
 :::
 
 Main command for feature development. Orchestrates planning, implementation, testing, code review, and documentation updates automatically.
@@ -214,15 +218,15 @@ Provides completion report:
 
 ### ❌ Don't use /cook for:
 
-- **Bug Fixes**: Use `/fix:fast` or `/fix:hard` instead
-- **Type Errors**: Use `/fix:types` instead
-- **UI Issues**: Use `/fix:ui` instead
-- **CI Failures**: Use `/fix:ci` instead
+- **Bug Fixes**: The `fix` skill auto-activates for bug fixes, type errors, test failures
+- **Type Errors**: Use natural language - fix skill auto-activates
+- **UI Issues**: Use natural language - fix skill auto-activates
+- **CI Failures**: Use natural language or `/plan:ci` for analysis
 - **Just Planning**: Use `/plan` instead
 
 ## With Existing Plan
 
-If you've already created a plan with `/plan`:
+If you've already created a plan with `/plan`, use natural language to implement it:
 
 ```bash
 # 1. Create plan first
@@ -231,10 +235,13 @@ If you've already created a plan with `/plan`:
 # 2. Review the plan
 cat plans/two-factor-auth.md
 
-# 3. Implement using plan
-/cook [implement two-factor authentication]
+# 3. Clear context before implementation
+/clear
 
-# System uses existing plan automatically
+# 4. Describe implementation - cook skill auto-activates
+"Implement two-factor authentication as planned"
+
+# Cook skill automatically uses the existing plan
 ```
 
 ## Without Plan (Ad-hoc)
@@ -481,8 +488,8 @@ git diff
 # 3. Run tests
 /test
 
-# 4. Fix any issues
-/fix:test  # if tests fail
+# 4. Fix any issues (fix skill auto-activates)
+"Fix the failing test in auth module"
 
 # 5. Update docs if needed
 /docs:update
@@ -514,8 +521,8 @@ git push
 
 **Solution:**
 ```bash
-/fix:test
-# Debugger agent analyzes and fixes
+# Fix skill auto-activates with natural language
+"Fix the failing authentication tests"
 ```
 
 ### Missing Features
@@ -540,8 +547,8 @@ git push
 ## Next Steps
 
 - [/test](/docs/engineer/commands/core/test) - Run test suite
-- [/fix:test](/docs/engineer/commands/fix/test) - Fix test failures
-- [/git:cm](/docs/engineer/commands/git/commit) - Commit changes
+- [Fix skill](/docs/engineer/skills/fix) - Fix test failures (auto-activates)
+- [/check-and-commit](/docs/engineer/commands/other/check-and-commit) - Check quality and commit changes
 - [/docs:update](/docs/engineer/commands/docs/update) - Update documentation
 
 ---

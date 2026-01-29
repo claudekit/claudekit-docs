@@ -824,8 +824,9 @@ cat plans/fix-ci-12345.md
 # Option A: Implement manually
 # Follow steps in plan
 
-# Option B: Use /code (recommended - uses existing plan)
-/code @plans/fix-ci-12345.md
+# Option B: Describe implementation (cook skill auto-activates)
+/clear
+"Fix CI failure as planned in fix-ci-12345.md"
 
 # Option C: Use /fix:ci (auto-implements)
 /fix:ci https://github.com/user/repo/actions/runs/12345

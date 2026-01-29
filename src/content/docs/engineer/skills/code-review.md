@@ -20,7 +20,7 @@ Enforce verification gates and technical rigor across three critical practices: 
 
 **Always use for:**
 - Receiving code review feedback (especially unclear or questionable items)
-- Completing tasks in subagent-driven development (after EACH task)
+- After completing features or tasks
 - Before making ANY completion/success claims (tests pass, build succeeds, bug fixed)
 
 **Especially when:**
@@ -53,7 +53,7 @@ Enforce verification gates and technical rigor across three critical practices: 
 BASE_SHA=$(git rev-parse HEAD~1)
 HEAD_SHA=$(git rev-parse HEAD)
 
-# 2. Dispatch code-reviewer subagent with:
+# 2. Run code review with:
 # - WHAT_WAS_IMPLEMENTED
 # - PLAN_OR_REQUIREMENTS
 # - BASE_SHA, HEAD_SHA
@@ -99,8 +99,8 @@ SITUATION?
 │  └─ From external reviewer? → Verify technically before implementing
 │
 ├─ Completed work
-│  ├─ Major feature/task? → Request code-reviewer subagent review
-│  └─ Before merge? → Request code-reviewer subagent review
+│  ├─ Major feature/task? → Request code review
+│  └─ Before merge? → Request code review
 │
 └─ About to claim status
    ├─ Have fresh verification? → State claim WITH evidence
@@ -116,9 +116,9 @@ SITUATION?
 ```
 
 ### Task Completion Verification
-**Who**: Developer in subagent workflow
+**Who**: Developer completing a task
 ```
-"Just completed the authentication refactor. Before moving to next task, dispatch code-reviewer subagent with BASE_SHA and HEAD_SHA to verify the implementation."
+"Just completed the authentication refactor. Before moving to next task, run code review with BASE_SHA and HEAD_SHA to verify the implementation."
 ```
 
 ### Pre-Commit Evidence Check
@@ -156,4 +156,4 @@ SITUATION?
 
 ## Key Takeaway
 
-Code review requires technical rigor over social comfort. Use verification gates before ANY completion claims (run → read → verify → then claim). Request systematic reviews via code-reviewer subagent after each task. Push back technically on questionable feedback. Evidence, not assumptions.
+Code review requires technical rigor over social comfort. Use verification gates before ANY completion claims (run → read → verify → then claim). Request systematic reviews after each task. Push back technically on questionable feedback. Evidence, not assumptions.

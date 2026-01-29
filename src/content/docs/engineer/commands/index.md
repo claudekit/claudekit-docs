@@ -17,96 +17,83 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 ### Core Development
 
 - **[/bootstrap](/docs/engineer/commands/core/bootstrap)** - Initialize new projects with spec-driven development
-- **[/cook](/docs/engineer/commands/core/cook)** - Develop new features
-- **[/plan](/docs/engineer/commands/core/plan)** - Create implementation plans
-- **[/brainstorm](/docs/engineer/commands/core/brainstorm)** - Explore feature feasibility
 - **[/ask](/docs/engineer/commands/core/ask)** - Ask questions about the codebase
-- **[/watzup](/docs/engineer/commands/core/watzup)** - Get project status and recent changes
-- **[/scout](/docs/engineer/commands/core/scout)** - Find files across large codebases
-- **[/test](/docs/engineer/commands/core/test)** - Run test suite and get results
+- **[/ck-help](/docs/engineer/commands/core/ck-help)** - Get help about ClaudeKit commands
+- **[/coding-level](/docs/engineer/commands/core/coding-level)** - Set coding complexity level
+- **[/cook](/docs/engineer/commands/core/cook)** - Implement features with intelligent workflow routing
+- **[/cook:auto](/docs/engineer/commands/core/cook-auto)** - Automatic feature implementation
+- **[/cook:auto:fast](/docs/engineer/commands/core/cook-auto-fast)** - Quick automatic implementation
+- **[/cook:auto:parallel](/docs/engineer/commands/core/cook-auto-parallel)** - Parallel automatic implementation
 - **[/debug](/docs/engineer/commands/core/debug)** - Investigate and diagnose issues
+- **[/journal](/docs/engineer/commands/core/journal)** - Write development journal entries
+- **[/kanban](/docs/engineer/commands/core/kanban)** - Manage project tasks in Kanban board
+- **[/preview](/docs/engineer/commands/core/preview)** - Preview current work
+- **[/test](/docs/engineer/commands/core/test)** - Run test suite and get results
+- **[/use-mcp](/docs/engineer/commands/core/use-mcp)** - Use MCP server tools
+- **[/watzup](/docs/engineer/commands/core/watzup)** - Get project status and recent changes
+- **[/worktree](/docs/engineer/commands/core/worktree)** - Manage git worktrees
+- **[/wt](/docs/engineer/commands/core/wt)** - Shorthand for /worktree
 
-### Bug Fixing
+### Planning
 
-- **[/fix](/docs/engineer/commands/fix/)** - Intelligently fix any issue (auto-selects fast/hard approach)
-- **[/fix:fast](/docs/engineer/commands/fix/fast)** - Fix minor bugs quickly
-- **[/fix:hard](/docs/engineer/commands/fix/hard)** - Fix complex bugs with thorough analysis
-- **[/fix:ci](/docs/engineer/commands/fix/ci)** - Fix GitHub Actions CI failures
-- **[/fix:logs](/docs/engineer/commands/fix/logs)** - Analyze and fix issues from logs
-- **[/fix:test](/docs/engineer/commands/fix/test)** - Fix failing tests
-- **[/fix:ui](/docs/engineer/commands/fix/ui)** - Fix UI/UX issues
-- **[/fix:types](/docs/engineer/commands/fix/types)** - Fix TypeScript type errors
+- **[/plan](/docs/engineer/commands/plan/plan)** - Create implementation plans
+- **[/plan:fast](/docs/engineer/commands/plan/fast)** - Quick planning
+- **[/plan:hard](/docs/engineer/commands/plan/hard)** - Detailed planning with research
+- **[/plan:two](/docs/engineer/commands/plan/two)** - Create plan with 2 approaches
+- **[/plan:parallel](/docs/engineer/commands/plan/parallel)** - Parallel planning with multiple researchers
+- **[/plan:ci](/docs/engineer/commands/plan/ci)** - Analyze CI failures and create fix plan
+- **[/plan:cro](/docs/engineer/commands/plan/cro)** - Create conversion optimization plan
+- **[/plan:archive](/docs/engineer/commands/plan/archive)** - Archive completed plans
+- **[/plan:validate](/docs/engineer/commands/plan/validate)** - Validate plan structure
 
 ### Documentation
 
+- **[/docs](/docs/engineer/commands/docs/docs)** - Manage project documentation
 - **[/docs:init](/docs/engineer/commands/docs/init)** - Initialize project documentation
 - **[/docs:update](/docs/engineer/commands/docs/update)** - Update project documentation
 - **[/docs:summarize](/docs/engineer/commands/docs/summarize)** - Summarize project documentation
 
-### Git Operations
+### Review
 
-- **[/git:cm](/docs/engineer/commands/git/commit)** - Stage and commit changes
-- **[/git:cp](/docs/engineer/commands/git/commit-push)** - Stage, commit, and push
-- **[/git:pr](/docs/engineer/commands/git/pull-request)** - Create pull request
+- **[/review:codebase](/docs/engineer/commands/review/codebase)** - Review entire codebase
+- **[/review:codebase:parallel](/docs/engineer/commands/review/codebase-parallel)** - Parallel codebase review
 
-### Planning
+### Other
 
-- **[/plan:ci](/docs/engineer/commands/plan/ci)** - Analyze CI failures and create fix plan
-- **[/plan:two](/docs/engineer/commands/plan/two)** - Create plan with 2 approaches
-- **[/plan:cro](/docs/engineer/commands/plan/cro)** - Create conversion optimization plan
-
-### Design & UI
-
-- **[/design:3d](/docs/engineer/commands/design/3d)** - Create 3D designs with Three.js
-- **[/design:describe](/docs/engineer/commands/design/describe)** - Extract design from screenshots
-- **[/design:fast](/docs/engineer/commands/design/fast)** - Quick design creation
-- **[/design:good](/docs/engineer/commands/design/good)** - Complete, refined design
-- **[/design:screenshot](/docs/engineer/commands/design/screenshot)** - Screenshot to code
-- **[/design:video](/docs/engineer/commands/design/video)** - Video to code
-
-### Content & Marketing
-
-- **[/content:cro](/docs/engineer/commands/content/cro)** - Conversion-optimized content
-- **[/content:enhance](/docs/engineer/commands/content/enhance)** - Enhance existing content
-- **[/content:fast](/docs/engineer/commands/content/fast)** - Quick content creation
-- **[/content:good](/docs/engineer/commands/content/good)** - High-quality content with research
-
-### Integrations
-
-- **[/integrate:polar](/docs/engineer/commands/integrate/polar)** - Integrate Polar.sh payments
-- **[/integrate:sepay](/docs/engineer/commands/integrate/sepay)** - Integrate SePay.vn payments (Vietnam)
-
-### Journaling
-
-- **[/journal](/docs/engineer/commands/core/journal)** - Write development journal entries
+- **[/check-and-commit](/docs/engineer/commands/other/check-and-commit)** - Check code quality and commit
 
 ## Quick Command Reference
 
 ### Most Used Commands
 
 ```bash
+# Project Setup
+/bootstrap [description]         # Initialize new project
+/coding-level [level]            # Set coding complexity level
+
 # Feature Development
 /plan [feature description]      # Plan the feature
-/code @plans/feature.md          # Implement the plan
-
-# Bug Fixing
-/fix [any issue]                 # Smart fix (auto-selects approach)
-/fix:fast [simple bug]           # Quick fix
-/fix:hard [complex issue]        # Thorough investigation + fix
-/fix:ci [github-ci-url]          # Fix CI failures
+/plan:hard [complex feature]     # Detailed planning with research
+/plan:parallel [feature]         # Parallel planning
 
 # Documentation
 /docs:init                       # First-time setup
 /docs:update                     # After making changes
+/docs:summarize                  # Generate documentation summary
+
+# Debugging & Testing
+/debug [issue]                   # Investigate and diagnose
+/test                            # Run test suite
+/test:ui                         # Run UI tests
 
 # Git Workflow
-/git:cm                          # Commit changes
-/git:cp                          # Commit and push
-/git:pr [to-branch]              # Create pull request
+/check-and-commit                # Check quality and commit
+/worktree [feature-name]         # Create git worktree
 
 # Project Status
 /watzup                          # What's the current state?
 /ask [question]                  # Ask about codebase
+/kanban                          # View project dashboard
 ```
 
 ## Command Syntax
@@ -166,47 +153,34 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 
 2. # Review plan in plans/ directory
 
-3. /cook [implement the feature]
-   # Implements based on plan
-   # Generates tests
-   # Updates docs
+3. # Implement based on plan
+   # Work with fullstack-developer agent
 
 4. /test
    # Validates implementation
 
-5. /git:cm
-   # Commits with conventional message
+5. /check-and-commit
+   # Checks quality and commits
 ```
 
-### Fixing a Bug
+### Investigating Issues
 
 ```bash
-# Smart fix (recommended - auto-selects approach)
-/fix [describe any issue]
-# - Analyzes complexity
-# - Chooses optimal strategy
-# - Implements fix
+# Debug issues
+/debug [describe issue]
+# - Analyzes logs and code
+# - Identifies root cause
+# - Suggests solutions
 
-# OR manually choose approach:
+# Run tests
+/test
+# - Runs full test suite
+# - Shows coverage report
 
-# Simple bug (you know the fix)
-/fix:fast [typo in validation message]
-
-# Complex bug (needs investigation)
-/fix:hard [users can't login after password reset]
-# - Uses scout to find related files
-# - Analyzes code and logs
-# - Researches solutions
-# - Creates fix plan
-# - Implements fix
-# - Tests thoroughly
-
-# CI failure
-/fix:ci [https://github.com/user/repo/actions/runs/123]
-# - Reads CI logs
-# - Identifies failure cause
-# - Implements fix
-# - Verifies CI passes
+# UI testing
+/test:ui
+# - Runs UI/E2E tests
+# - Visual regression testing
 ```
 
 ### Updating Documentation
@@ -228,23 +202,26 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 
 ✅ **Correct Usage**
 ```bash
-# Small fixes
-/fix:fast [typo in button text]
+# Simple questions
+/ask [how does routing work?]
 
-# Complex issues
-/fix:hard [memory leak in websocket connection]
+# Planning with research
+/plan:hard [add OAuth2 authentication]
 
-# UI issues with screenshot
-/fix:ui [screenshot.png] - button misaligned on mobile
+# Quick planning
+/plan:fast [update button styling]
+
+# Parallel planning for complex features
+/plan:parallel [rebuild authentication system]
 ```
 
 ❌ **Incorrect Usage**
 ```bash
-# Don't use fast for complex issues
-/fix:fast [entire authentication system broken]
+# Don't use fast for complex features
+/plan:fast [rebuild entire authentication system]
 
-# Don't use hard for simple fixes
-/fix:hard [typo in comment]
+# Don't skip planning for major features
+# (implement without /plan first)
 ```
 
 ### Provide Clear Descriptions
@@ -252,22 +229,21 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 ✅ **Clear**
 ```bash
 /plan [add OAuth2 authentication with Google and GitHub providers]
-/code @plans/oauth.md  # Implement the plan
 /debug [API returns 500 error when creating user with empty email]
+/ask [how is user authentication currently implemented?]
 ```
 
 ❌ **Vague**
 ```bash
 /plan [add auth]
-/code [make it work]
 /debug [something's broken]
+/ask [how does this work?]
 ```
 
 ### Review Before Committing
 
 ```bash
-# 1. Implement
-/cook [add rate limiting]
+# 1. Implement feature
 
 # 2. Test
 /test
@@ -275,8 +251,8 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 # 3. Review changes
 git diff
 
-# 4. Commit only if satisfied
-/git:cm
+# 4. Quality check and commit
+/check-and-commit
 ```
 
 ### Use Sequential Commands for Complex Tasks
@@ -285,23 +261,23 @@ git diff
 # 1. Understand codebase
 /ask [how is authentication currently implemented?]
 
-# 2. Plan changes
-/plan [migrate from session-based to JWT authentication]
+# 2. Plan changes with research
+/plan:hard [migrate from session-based to JWT authentication]
 
 # 3. Review plan
-cat plans/latest-plan.md
+/preview plans/latest-plan.md
 
-# 4. Implement
-/cook [migrate to JWT authentication]
+# 4. Implement based on plan
+# Work with agents to implement
 
 # 5. Test
 /test
 
-# 6. Fix if needed
-/fix:test
+# 6. Debug if needed
+/debug [specific issue]
 
-# 7. Commit
-/git:cm
+# 7. Quality check and commit
+/check-and-commit
 ```
 
 ## Command Flags and Options
@@ -313,21 +289,20 @@ Some commands support flags:
 ```bash
 /bootstrap [project description]              # Interactive Q&A
 /bootstrap:auto [detailed description]        # Fully automatic
-```
-
-### /git:pr
-
-```bash
-/git:pr                      # PR to default branch (main)
-/git:pr [develop]            # PR to develop branch
-/git:pr [main] [feature]     # PR from feature to main
+/bootstrap:auto:fast [description]            # Quick automatic
+/bootstrap:auto:parallel [description]        # Parallel execution
 ```
 
 ### /plan
 
 ```bash
-/plan [feature]              # Single approach
+/plan [feature]              # Intelligent planning
+/plan:fast [feature]         # Quick planning without research
+/plan:hard [feature]         # Detailed planning with research
 /plan:two [feature]          # Two different approaches
+/plan:parallel [feature]     # Parallel planning with researchers
+/plan:ci [CI-URL]            # Analyze CI failures
+/plan:cro [content]          # Conversion optimization
 ```
 
 ## Understanding Command Output
@@ -359,13 +334,13 @@ Estimated time: 2-3 hours
 Files to create: 5
 Files to modify: 3
 
-Next: Review plan, then run /code
+Next: Review plan, then implement
 ```
 
-### Implementation Commands
+### Implementation Output
 
 ```
-Code Agent: Implementing from plan...
+fullstack-developer Agent: Implementing from plan...
 
 Dependencies Installed:
 ✓ passport (0.6.0)
@@ -443,14 +418,14 @@ Next: Review changes, then /git:cm
 Explore specific command categories:
 
 - [Core Commands](/docs/engineer/commands/core/) - Development essentials
-- [Fix Commands](/docs/engineer/commands/fix/) - Debugging and fixing
-- [Design Commands](/docs/engineer/commands/design/) - UI/UX creation
-- [Git Commands](/docs/engineer/commands/git/) - Version control
+- [Planning Commands](/docs/engineer/commands/plan/) - Implementation planning
+- [Documentation Commands](/docs/engineer/commands/docs/) - Documentation management
+- [Review Commands](/docs/engineer/commands/review/) - Code review and analysis
 
 Or learn about:
 
 - [Agents](/docs/engineer/agents/) - How commands invoke agents
-- [Workflows](/docs/docs/engineer/configuration/workflows) - Command execution flows
+- [Skills](/docs/engineer/skills/) - Specialized capabilities
 - [Quick Start](/docs/getting-started/quick-start) - Hands-on tutorial
 
 ---

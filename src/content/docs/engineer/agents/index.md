@@ -1,6 +1,6 @@
 ---
 title: Agents Overview
-description: ClaudeKit's 17 specialized agents for software development
+description: ClaudeKit's 14 specialized agents for software development
 section: engineer
 kit: engineer
 category: agents
@@ -10,7 +10,7 @@ published: true
 
 # Agents Overview
 
-17 specialized agents that handle every aspect of software development—automatically orchestrated through predefined workflows.
+14 specialized agents that handle every aspect of software development—automatically orchestrated through predefined workflows.
 
 ## Quick Reference
 
@@ -20,8 +20,6 @@ published: true
 |-------|---------|
 | [planner](/docs/engineer/agents/planner) | Research, analyze, create implementation plans before coding |
 | [fullstack-developer](/docs/engineer/agents/fullstack-developer) | Execute implementation phases with strict file ownership |
-| [scout](/docs/engineer/agents/scout) | Parallel file search across large codebases |
-| [scout-external](/docs/engineer/agents/scout-external) | External search using Gemini CLI and OpenCode |
 | [debugger](/docs/engineer/agents/debugger) | Root cause analysis, log investigation, issue diagnosis |
 | [tester](/docs/engineer/agents/tester) | Test execution, coverage analysis, quality validation |
 
@@ -30,7 +28,6 @@ published: true
 | Agent | Purpose |
 |-------|---------|
 | [code-reviewer](/docs/engineer/agents/code-reviewer) | Security audits, performance analysis, code quality |
-| [database-admin](/docs/engineer/agents/database-admin) | Query optimization, schema design, performance tuning |
 
 ### Documentation & Management
 
@@ -46,7 +43,6 @@ published: true
 | Agent | Purpose |
 |-------|---------|
 | [ui-ux-designer](/docs/engineer/agents/ui-ux-designer) | Award-winning UI with Three.js, responsive layouts |
-| [copywriter](/docs/engineer/agents/copywriter) | High-converting marketing copy, viral content |
 | [brainstormer](/docs/engineer/agents/brainstormer) | Explore approaches, challenge assumptions, debate decisions |
 | [researcher](/docs/engineer/agents/researcher) | Multi-source research, documentation analysis |
 
@@ -60,14 +56,14 @@ published: true
 
 **Automatic (recommended):** Commands orchestrate agents automatically
 ```bash
-/cook [feature]     # planner → code → tester → reviewer → git-manager
-/fix:hard [bug]     # scout → debugger → planner → code → tester
-/plan [task]        # planner + researcher
+/bootstrap [feature] # planner → fullstack-developer → tester → code-reviewer
+/plan [task]         # planner + researcher
+/debug [issue]       # debugger → analysis and diagnosis
 ```
 
 **Explicit:** Request specific agents in prompts
 ```
-"Use scout agent to find auth files, then planner to create migration strategy"
+"Use debugger agent to investigate login failures, then planner to create fix strategy"
 ```
 
 ## Under the Hood
@@ -76,14 +72,14 @@ published: true
 
 **Sequential** (default): Agents run in order, each building on previous output
 ```
-planner → code → tester → code-reviewer → git-manager
+planner → fullstack-developer → tester → code-reviewer → git-manager
 ```
 
 **Parallel**: Independent agents run simultaneously
 ```
-scout (dir1) ┐
-scout (dir2) ├─→ Aggregate → planner
-scout (dir3) ┘
+researcher (topic1) ┐
+researcher (topic2) ├─→ Aggregate → planner
+researcher (topic3) ┘
 ```
 
 **Hybrid**: Mix of sequential and parallel for complex tasks
@@ -100,7 +96,7 @@ Agents share context through:
 ```
 planner output → plans/auth-feature.md
     ↓
-code reads plan → implements → creates files + tests
+fullstack-developer reads plan → implements → creates files + tests
     ↓
 tester runs tests → validates coverage
     ↓
@@ -112,7 +108,7 @@ git-manager commits → conventional commit + push
 ### Troubleshooting
 
 **Agent not activating?**
-- Check command matches task complexity (`/fix:fast` vs `/fix:hard`)
+- Check command matches task type
 - Verify workflow files exist in `.claude/agents/`
 - Try explicit invocation: "Use [agent] to..."
 
@@ -127,4 +123,4 @@ git-manager commits → conventional commit + push
 
 ## Key Takeaway
 
-17 agents work together automatically—use commands to orchestrate them, or invoke explicitly for specific tasks. No manual coordination needed.
+14 agents work together automatically—use commands to orchestrate them, or invoke explicitly for specific tasks. No manual coordination needed.

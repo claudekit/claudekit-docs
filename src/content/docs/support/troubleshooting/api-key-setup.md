@@ -145,8 +145,7 @@ curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:g
 /plan implement feature
 # Wait 60 seconds...
 /clear
-# Describe implementation - cook skill auto-activates
-"Implement feature as planned"
+/cook "Implement feature as planned"
 
 # Or upgrade to paid tier
 # Visit: console.cloud.google.com/billing

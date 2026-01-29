@@ -69,8 +69,7 @@ claudekit init
 ```bash
 /plan "add user authentication with OAuth"  # Plan the feature
 /clear                                      # Free context
-# Describe implementation - cook skill auto-activates
-"Implement user authentication with OAuth as planned"
+/cook "Implement user authentication with OAuth as planned"
 /fix:test                                  # Test and fix issues
 /git:cm                                    # Commit changes
 ```

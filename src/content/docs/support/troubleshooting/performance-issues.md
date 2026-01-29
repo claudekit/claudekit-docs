@@ -79,8 +79,7 @@ curl -w "@-" -o /dev/null -s https://generativelanguage.googleapis.com <<< "time
 /plan feature A
 # Wait 60 seconds
 /clear
-# Describe implementation - cook skill auto-activates
-"Implement feature A as planned"
+/cook "Implement feature A as planned"
 
 # Or upgrade to paid tier
 # console.cloud.google.com/billing
@@ -290,8 +289,7 @@ node --version  # Should be 18+
 # ✅ Fast (incremental)
 /plan implement authentication
 /clear
-# Describe implementation - cook skill auto-activates
-"Implement authentication as planned"  # Implements login, signup, password reset phases
+/cook "Implement authentication as planned"  # Implements login, signup, password reset phases
 ```
 
 #### Check API Endpoint
@@ -520,12 +518,12 @@ EOF
 /plan implement auth
 # Wait for completion
 /clear
-"Implement auth as planned"
+/cook "Implement auth as planned"
 
 # ❌ Wrong (compete for resources)
 /plan implement auth
 # Don't start implementation before plan completes!
-"Implement auth as planned"  # Don't run simultaneously!
+/cook "Implement auth as planned"  # Don't run simultaneously!
 ```
 
 ---

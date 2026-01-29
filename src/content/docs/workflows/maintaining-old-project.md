@@ -208,9 +208,9 @@ npm outdated
 
 ### Implement Updates
 
-Describe task naturally - cook skill auto-activates:
+Implement the update plan:
 ```bash
-"Update dependencies following the plan"
+/cook "Update dependencies following the plan"
 ```
 
 **What happens:**
@@ -266,9 +266,9 @@ npm run dev
 
 ### Generate Test Suite
 
-Describe task - cook skill auto-activates:
+Generate tests:
 ```bash
-"Generate comprehensive test suite for critical paths"
+/cook "Generate comprehensive test suite for critical paths"
 ```
 
 **Priority areas:**
@@ -409,9 +409,9 @@ Security issue resolved!
 
 ### Modernize Code
 
-Describe task - cook skill auto-activates:
+Refactor the code:
 ```bash
-"Refactor mixed ES5/ES6 code to modern ES6+ with async/await"
+/cook "Refactor mixed ES5/ES6 code to modern ES6+ with async/await"
 ```
 
 **Improvements:**
@@ -453,10 +453,10 @@ const getUserOrders = async (userId) => {
 /clear  # Free context before implementation
 ```
 
-Review the plan, then describe implementation - cook skill auto-activates:
+Review the plan, then implement:
 
 ```bash
-"Implement TypeScript migration following the plan"
+/cook "Implement TypeScript migration following the plan"
 ```
 
 ### Improve Documentation
@@ -560,9 +560,9 @@ git push production main
 
 ### Add CI/CD
 
-Describe task - cook skill auto-activates:
+Create the workflow:
 ```bash
-"Create GitHub Actions workflow for CI/CD"
+/cook "Create GitHub Actions workflow for CI/CD"
 ```
 
 **Generated workflow:**
@@ -573,9 +573,9 @@ Describe task - cook skill auto-activates:
 
 ### Add Monitoring
 
-Describe task - cook skill auto-activates:
+Add monitoring:
 ```bash
-"Add monitoring and alerting"
+/cook "Add monitoring and alerting"
 ```
 
 **Added:**
@@ -648,8 +648,8 @@ cat docs/technical-debt.md
 /plan [next month's improvements]
 /clear
 
-# Update dependencies - describe task, cook skill auto-activates
-"Update dependencies as planned"
+# Update dependencies
+/cook "Update dependencies as planned"
 ```
 
 ### When Adding Features
@@ -659,8 +659,8 @@ cat docs/technical-debt.md
 /plan [new feature description]
 /clear  # Free context
 
-# 2. Implement - describe task, cook skill auto-activates
-"Implement [new feature description] as planned"
+# 2. Implement
+/cook "Implement [new feature description] as planned"
 
 # 3. Test
 /test
@@ -700,8 +700,7 @@ Prioritize:
 ```bash
 /plan [migrate from package X v1 to v2]
 /clear  # Review plan carefully, then free context
-# Describe migration - cook skill auto-activates
-"Migrate from package X v1 to v2 as planned"
+/cook "Migrate from package X v1 to v2 as planned"
 /test  # Comprehensive testing
 ```
 
@@ -709,16 +708,16 @@ Prioritize:
 
 ### Improve Further
 
-Describe tasks - cook skill auto-activates:
+Implement improvements:
 ```bash
 # Add feature flags
-"Implement feature flag system"
+/cook "Implement feature flag system"
 
 # Add A/B testing
-"Add A/B testing framework"
+/cook "Add A/B testing framework"
 
 # Improve observability
-"Add distributed tracing"
+/cook "Add distributed tracing"
 ```
 
 ### Train Team

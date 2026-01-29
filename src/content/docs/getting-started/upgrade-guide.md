@@ -78,9 +78,8 @@ Combine commands for complete workflows:
 ```bash
 /plan "redesign checkout flow"
 /clear  # Free context before implementation
-# Describe task - cook skill auto-activates from plan
-"Redesign checkout flow as planned"
-/design:good "checkout UI mockup"
+/cook "Redesign checkout flow as planned"
+/frontend-design "checkout UI mockup"
 /fix:test
 /git:pr "feature/new-checkout"
 ```

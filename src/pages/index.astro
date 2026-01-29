@@ -24,7 +24,7 @@ claude
 # Bootstrap a new project, or Plan and implement a feature
 /bootstrap [create a calendar booking app that sync with Apple & Google Calendar]
 /plan [add user authentication]
-# cook skill auto-activates from plan context
+/cook [implement user authentication]
 
 # Review, approve, deploy`;
 
@@ -46,8 +46,8 @@ const planningCode = `# Planner agent reads your codebase
 # - Test strategy
 # - Security considerations`;
 
-const implementationCode = `# Describe task naturally — cook skill auto-activates
-Implement WebSocket notifications based on the plan
+const implementationCode = `# Implement based on plan
+/cook [implement WebSocket notifications based on the plan]
 
 # Generates:
 # - Server-side WebSocket handler
@@ -64,8 +64,8 @@ const testingCode = `# Tester agent creates comprehensive tests
 # - Mock WebSocket server
 # - Coverage report`;
 
-const debuggingCode = `# debug skill activates when describing issues
-Users are reporting timeout errors on checkout, please investigate
+const debuggingCode = `# Debug and fix issues
+/debug [users are reporting timeout errors on checkout]
 
 # Agent workflow:
 # 1. Searches logs for timeout patterns
@@ -74,15 +74,15 @@ Users are reporting timeout errors on checkout, please investigate
 # 4. Suggests fixes with performance impact
 # 5. Generates tests to prevent regression`;
 
-const refactoringCode = `# scout skill maps codebase structure
-Analyze the authentication system
+const refactoringCode = `# Map codebase structure
+/scout [analyze the authentication system]
 
 # Planner creates refactoring roadmap
 /plan [migrate from sessions to JWT]
 
-# cook skill implements changes from plan
+# Implement changes from plan
 /clear
-Implement JWT authentication as planned
+/cook [implement JWT authentication as planned]
 
 # Tester ensures nothing breaks
 /test [authentication system]`;
@@ -92,7 +92,7 @@ const step2Code = `ck new my-first-app
 cd my-first-app`;
 const step3Code = `/plan [add user registration API]
 /clear
-Implement the registration endpoint as planned`;
+/cook [implement the registration endpoint as planned]`;
 const step4Code = `git diff
 npm test
 # commit via git-manager or manually`;
@@ -290,10 +290,10 @@ const headings = [
 <p>Multi-agent orchestration system with role-based specialists:</p>
 
 <ul>
-  <li><strong>Core Workflow</strong>: <code>/plan</code> → <code>/clear</code> → describe task (cook skill auto-activates)</li>
+  <li><strong>Core Workflow</strong>: <code>/plan</code> → <code>/clear</code> → <code>/cook</code></li>
   <li><strong>Planning</strong>: <code>/plan</code>, <code>/plan:fast</code>, <code>/plan:hard</code>, <code>/plan:parallel</code></li>
   <li><strong>Quality</strong>: <code>/test</code>, <code>/review:codebase</code>, <code>/docs:update</code></li>
-  <li><strong>Skills</strong>: <code>cook</code>, <code>fix</code>, <code>debug</code>, <code>scout</code>, <code>frontend-design</code>, <code>code-review</code></li>
+  <li><strong>Skills</strong>: <code>/cook</code>, <code>/fix</code>, <code>/debug</code>, <code>/scout</code>, <code>/frontend-design</code>, <code>/code-review</code></li>
   <li><strong>Integrations</strong>: <code>payment-integration</code>, <code>supabase</code>, <code>better-auth</code></li>
 </ul>
 

@@ -164,13 +164,11 @@ This helps understand existing patterns before implementing.
 
 ### Step 5: Implement the Feature
 
-After planning, clear context and describe the implementation task. The cook skill auto-activates from the plan context:
+After planning, clear context and implement:
 
 ```bash
 /clear  # Free up context after planning
-# Now naturally describe what to implement
-"Implement password reset with email verification as planned"
-# The cook skill automatically activates and executes the plan
+/cook "Implement password reset with email verification as planned"
 ```
 
 **Implementation process**:
@@ -492,8 +490,7 @@ Real-world scenario: Adding search functionality to an e-commerce site.
 # Plan complex database changes first
 /plan [implement multi-tenant architecture with tenant isolation]
 /clear
-# Describe implementation - cook skill auto-activates
-"Implement multi-tenant architecture with tenant isolation as planned"
+/cook "Implement multi-tenant architecture with tenant isolation as planned"
 ```
 
 ### Variation 3: UI + Backend Feature
@@ -510,8 +507,7 @@ Real-world scenario: Adding search functionality to an e-commerce site.
 # Research included automatically
 /plan [integrate Twilio SMS notifications]
 /clear
-# Describe implementation
-"Integrate Twilio SMS notifications as planned"
+/cook "Integrate Twilio SMS notifications as planned"
 ```
 
 ## Troubleshooting
@@ -525,11 +521,11 @@ Real-world scenario: Adding search functionality to an e-commerce site.
 # Break into smaller features
 /plan [add user management - phase 1: user CRUD]
 /clear
-"Implement user CRUD as planned"
+/cook "Implement user CRUD as planned"
 
 /plan [add user management - phase 2: roles and permissions]
 /clear
-"Implement roles and permissions as planned"
+/cook "Implement roles and permissions as planned"
 ```
 
 ### Issue: Tests Failing
@@ -584,8 +580,8 @@ For features requiring multiple components:
 /plan [feature description]
 # Review plan
 /clear  # Free context
-# Then implement - cook skill auto-activates
-"Implement [feature description] as planned"
+# Then implement
+/cook "Implement [feature description] as planned"
 ```
 
 ### 2. Small, Focused Features
@@ -656,7 +652,7 @@ git checkout -b feature/password-reset
 
 ### Related Commands
 - [/plan](/docs/engineer/commands/core/plan) - Create implementation plans
-- [cook skill](/docs/getting-started/migration-from-commands-to-skills) - Auto-activates from plan context
+- [/cook](/docs/engineer/commands/core/cook) - Implement features from plans
 - [/test](/docs/engineer/commands/core/test) - Run test suites
 - [/docs:update](/docs/engineer/commands/docs/update) - Update documentation
 - [/git:cm](/docs/engineer/commands/git/commit) - Commit changes

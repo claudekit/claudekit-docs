@@ -11,7 +11,7 @@ published: true
 # /cook
 
 :::tip[Migration Note: /code is Archived]
-The `/code` command has been replaced by the **cook skill** which auto-activates from plan context.
+The `/code` command has been replaced by the `/cook` skill.
 
 **Old workflow (deprecated):**
 ```bash
@@ -23,13 +23,11 @@ The `/code` command has been replaced by the **cook skill** which auto-activates
 ```bash
 /plan "feature description"
 /clear  # Free context after planning
-# Describe task naturally - cook skill auto-activates
-"Implement feature description as planned"
+/cook "Implement feature description as planned"
 ```
 
 **Why the change:**
-- More natural interaction (no explicit command needed)
-- Automatic skill activation from plan context
+- More natural interaction
 - Better token efficiency
 - Cleaner conversation flow
 
@@ -218,10 +216,10 @@ Provides completion report:
 
 ### ❌ Don't use /cook for:
 
-- **Bug Fixes**: The `fix` skill auto-activates for bug fixes, type errors, test failures
-- **Type Errors**: Use natural language - fix skill auto-activates
-- **UI Issues**: Use natural language - fix skill auto-activates
-- **CI Failures**: Use natural language or `/plan:ci` for analysis
+- **Bug Fixes**: Use `/fix` for bug fixes, type errors, test failures
+- **Type Errors**: Use `/fix` for fixing type errors
+- **UI Issues**: Use `/fix` for UI issues
+- **CI Failures**: Use `/fix` or `/plan:ci` for analysis
 - **Just Planning**: Use `/plan` instead
 
 ## With Existing Plan
@@ -238,10 +236,10 @@ cat plans/two-factor-auth.md
 # 3. Clear context before implementation
 /clear
 
-# 4. Describe implementation - cook skill auto-activates
-"Implement two-factor authentication as planned"
+# 4. Implement using the plan
+/cook "Implement two-factor authentication as planned"
 
-# Cook skill automatically uses the existing plan
+# Uses the existing plan automatically
 ```
 
 ## Without Plan (Ad-hoc)
@@ -295,13 +293,14 @@ Interrupting can cause:
 # 2. Review changes
 git diff
 
-# 3. Run tests manually if desired
+# 3. Check quality
 npm test
+npm run typecheck
 
-# 4. Check documentation
+# 4. Review documentation
 cat docs/api/rate-limiting.md
 
-# 5. Only then commit
+# 5. Commit
 /git:cm
 ```
 
@@ -488,8 +487,8 @@ git diff
 # 3. Run tests
 /test
 
-# 4. Fix any issues (fix skill auto-activates)
-"Fix the failing test in auth module"
+# 4. Fix any issues
+/fix "Fix the failing test in auth module"
 
 # 5. Update docs if needed
 /docs:update
@@ -521,8 +520,7 @@ git push
 
 **Solution:**
 ```bash
-# Fix skill auto-activates with natural language
-"Fix the failing authentication tests"
+/fix "Fix the failing authentication tests"
 ```
 
 ### Missing Features
@@ -547,7 +545,7 @@ git push
 ## Next Steps
 
 - [/test](/docs/engineer/commands/core/test) - Run test suite
-- [Fix skill](/docs/engineer/skills/fix) - Fix test failures (auto-activates)
+- [/fix](/docs/engineer/skills/fix) - Fix test failures
 - [/check-and-commit](/docs/engineer/commands/other/check-and-commit) - Check quality and commit changes
 - [/docs:update](/docs/engineer/commands/docs/update) - Update documentation
 

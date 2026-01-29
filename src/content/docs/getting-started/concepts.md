@@ -115,8 +115,8 @@ All agent behaviors, skills, and workflows configured in `.claude/CLAUDE.md`:
 - nextjs: Next.js App Router best practices
 
 ## Workflows
-- /plan → /code: Plan → Implement existing plan
-- /fix: Debug → Fix → Test → Commit
+- /plan → /clear → describe task: Plan → cook skill auto-implements
+- fix skill: Debug → Fix → Test → Commit
 ```
 
 ## Next Steps

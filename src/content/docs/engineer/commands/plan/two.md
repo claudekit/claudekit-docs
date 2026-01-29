@@ -833,14 +833,14 @@ cat plans/[task]-comparison.md
 # 4. Make decision
 # Consider: team skills, timeline, budget, requirements
 
-# 5. Implement chosen approach - cook skill auto-activates
+# 5. Implement chosen approach
 /clear
-"Implement approach 1 as planned"
+/cook "Implement approach 1 as planned"
 # OR
-"Implement approach 2 as planned"
+/cook "Implement approach 2 as planned"
 
 # 6. Optionally: Hybrid
-"Implement approach 1 as planned"  # then manually integrate from approach 2
+/cook "Implement approach 1 as planned"  # then manually integrate from approach 2
 ```
 
 ## Next Steps

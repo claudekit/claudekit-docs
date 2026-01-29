@@ -13,13 +13,13 @@ published: true
 ClaudeKit provides a comprehensive set of slash commands to accelerate your development workflow. Each command is designed for specific tasks and automatically orchestrates the appropriate agents.
 
 :::tip[Commands → Skills Migration]
-**As of engineer@1.3.0+**, many commands have been migrated to **auto-activating skills** for more natural interaction.
+**As of engineer@1.3.0+**, many commands have been migrated to **skills** invoked with `/` prefix.
 
 **What changed:**
-- Commands like `/code`, `/scout`, `/debug`, `/design`, `/code-review`, `/content` are now **skills**
-- Skills activate automatically based on conversation context
-- No explicit command needed - just describe your task naturally
-- Better token efficiency and cleaner workflow
+- Commands like `/code` → `/cook`, `/design` → `/frontend-design`, etc.
+- Skills are invoked with `/` prefix just like commands
+- Cleaner naming and better workflow organization
+- Better token efficiency
 
 **See:** [Migration Guide](/docs/getting-started/migration-from-commands-to-skills) for complete details and workflow comparisons.
 :::
@@ -41,7 +41,7 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 - **[/worktree](/docs/engineer/commands/core/worktree)** - Manage git worktrees
 - **[/wt](/docs/engineer/commands/core/wt)** - Shorthand for /worktree
 
-**Note:** `/cook`, `/cook:auto*`, and `/debug` are now auto-activating skills. See migration notice above.
+**Note:** `/cook` and `/debug` are now skills. See migration notice above.
 
 ### Planning
 
@@ -84,7 +84,7 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 /plan [feature description]      # Plan the feature
 /plan:hard [complex feature]     # Detailed planning with research
 /plan:parallel [feature]         # Parallel planning
-# Note: /cook is now a skill (auto-activates)
+/cook [implement feature]        # Implement from plan
 
 # Documentation
 /docs:init                       # First-time setup
@@ -94,7 +94,7 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 # Testing
 /test                            # Run test suite
 /test:ui                         # Run UI tests
-# Note: /debug is now a skill (auto-activates)
+/debug [issue description]       # Debug issues
 
 # Git Workflow
 /check-and-commit                # Check quality and commit
@@ -163,8 +163,8 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 
 2. # Review plan in plans/ directory
 
-3. # Implement based on plan (cook skill auto-activates)
-   "Implement the feature as planned"
+3. /cook "Implement the feature as planned"
+   # Implements based on plan
 
 4. /test
    # Validates implementation
@@ -176,8 +176,8 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 ### Investigating Issues
 
 ```bash
-# Debug issues (debug skill auto-activates)
-"Debug the login issue - users can't authenticate"
+# Debug issues
+/debug "Debug the login issue - users can't authenticate"
 # - Analyzes logs and code
 # - Identifies root cause
 # - Suggests solutions
@@ -277,14 +277,14 @@ git diff
 # 3. Review plan
 /preview plans/latest-plan.md
 
-# 4. Implement based on plan (cook skill auto-activates)
-"Implement JWT authentication migration as planned"
+# 4. Implement based on plan
+/cook "Implement JWT authentication migration as planned"
 
 # 5. Test
 /test
 
-# 6. Debug if needed (debug skill auto-activates)
-"Debug the JWT token validation issue"
+# 6. Debug if needed
+/debug "Debug the JWT token validation issue"
 
 # 7. Quality check and commit
 /check-and-commit

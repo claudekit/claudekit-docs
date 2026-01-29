@@ -17,8 +17,7 @@ Task-oriented guides for common development scenarios using ClaudeKit's slash co
 ```bash
 /plan "add user authentication with OAuth"
 /clear  # Free context before implementation
-# Now describe the task - cook skill auto-activates from plan context
-"Implement user authentication with OAuth as planned"
+/cook "Implement user authentication with OAuth as planned"
 /fix:test
 /git:pr "feature/user-auth"
 ```
@@ -26,10 +25,8 @@ Task-oriented guides for common development scenarios using ClaudeKit's slash co
 ### Bug Fixing
 [**Bug Fixing Workflow**](/docs/workflows/bug-fixing) - Systematic approach to debugging and fixing issues
 ```bash
-/debug "login button not working"
-/fix:hard
-/fix:test
-/git:cm
+/debug "Login button not working, please investigate and fix"
+/test
 ```
 
 ### Documentation
@@ -47,55 +44,51 @@ ck init my-project --kit engineer
 cd my-project
 /plan "set up project structure"
 /clear  # Free context before implementation
-# Describe the task - cook skill auto-activates
-"Set up project structure as planned"
+/cook "Set up project structure as planned"
 ```
 
 ### Add New Feature
 ```bash
 /plan "add [feature description]"
 /clear  # Free context before implementation
-# Describe implementation - cook skill auto-activates
-"Implement [feature description] as planned"
-/design:good "UI mockups if needed"
-/fix:test
-/git:cm
+/cook "Implement [feature description] as planned"
+/frontend-design "Create UI mockups if needed"
+/test
 ```
 
 ### Deploy to Production
 ```bash
 /plan "prepare for production deployment"
-/fix:ci "fix any failing tests"
-/git:pr "deploy-to-production"
+/fix "Fix CI issues"
+/test
 ```
 
 ### Code Review
 ```bash
-/code-review "review recent changes"
-/fix "implement suggested improvements"
-/git:cm
+/code-review "Review recent changes for quality and security"
+/fix "Implement suggested improvements"
 ```
 
 ## By Use Case
 
 ### Frontend Development
-- [UI/UX Design](/docs/commands#design-commands) - `/design:good`, `/design:fast`
-- Component Development - `/plan → /clear → describe task (cook skill auto-activates) → /fix:test`
-- Styling - `/design:good` for aesthetic components
+- UI/UX Design - `/frontend-design` for mockups and design
+- Component Development - `/plan → /clear → /cook → /test`
+- Styling - `/frontend-design` for aesthetic components
 
 ### Backend Development
-- API Development - `/plan → /clear → describe task (cook skill auto-activates) → /fix:hard`
-- Database Changes - `/plan "add user table" → /clear → describe implementation`
-- Performance Optimization - `/debug "slow queries" → /fix`
+- API Development - `/plan → /clear → /cook → /test`
+- Database Changes - `/plan "add user table" → /clear → /cook`
+- Performance Optimization - `/debug` issue then `/fix`
 
 ### Full Stack
 - Complete Features - See [Feature Development](/docs/workflows/feature-development)
-- Authentication - `/cook "add authentication with Better Auth"`
-- E-commerce - `/cook "add Stripe payment integration`
+- Authentication - `/plan "add authentication with Better Auth"` → `/cook`
+- E-commerce - `/plan "add Stripe payment integration"` → `/cook`
 
 ### DevOps & Infrastructure
-- Docker Setup - `/cook "add Docker configuration"`
-- CI/CD - `/fix:ci "fix failing GitHub Actions"`
+- Docker Setup - `/plan "add Docker configuration"` → `/cook`
+- CI/CD - `/fix` for CI issues
 - Deployment - `/plan "deploy to Cloudflare Workers"`
 
 ## Advanced Workflows

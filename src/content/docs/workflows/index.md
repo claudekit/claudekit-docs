@@ -26,10 +26,9 @@ Task-oriented guides for common development scenarios using ClaudeKit's slash co
 ### Bug Fixing
 [**Bug Fixing Workflow**](/docs/workflows/bug-fixing) - Systematic approach to debugging and fixing issues
 ```bash
-/debug "login button not working"
-/fix:hard
-/fix:test
-/git:cm
+# debug and fix skills auto-activate
+"Login button not working, please investigate and fix"
+/test
 ```
 
 ### Documentation
@@ -57,45 +56,44 @@ cd my-project
 /clear  # Free context before implementation
 # Describe implementation - cook skill auto-activates
 "Implement [feature description] as planned"
-/design:good "UI mockups if needed"
-/fix:test
-/git:cm
+# frontend-design skill for UI mockups if needed
+/test
 ```
 
 ### Deploy to Production
 ```bash
 /plan "prepare for production deployment"
-/fix:ci "fix any failing tests"
-/git:pr "deploy-to-production"
+# fix skill auto-activates for CI issues
+/test
 ```
 
 ### Code Review
 ```bash
-/code-review "review recent changes"
-/fix "implement suggested improvements"
-/git:cm
+# code-review skill activates on request
+"Review recent changes for quality and security"
+# fix skill implements suggested improvements
 ```
 
 ## By Use Case
 
 ### Frontend Development
-- [UI/UX Design](/docs/commands#design-commands) - `/design:good`, `/design:fast`
-- Component Development - `/plan → /clear → describe task (cook skill auto-activates) → /fix:test`
-- Styling - `/design:good` for aesthetic components
+- UI/UX Design - `frontend-design` skill auto-activates
+- Component Development - `/plan → /clear → describe task → /test`
+- Styling - `frontend-design` skill for aesthetic components
 
 ### Backend Development
-- API Development - `/plan → /clear → describe task (cook skill auto-activates) → /fix:hard`
+- API Development - `/plan → /clear → describe task → /test`
 - Database Changes - `/plan "add user table" → /clear → describe implementation`
-- Performance Optimization - `/debug "slow queries" → /fix`
+- Performance Optimization - describe issue (debug + fix skills auto-activate)
 
 ### Full Stack
 - Complete Features - See [Feature Development](/docs/workflows/feature-development)
-- Authentication - `/cook "add authentication with Better Auth"`
-- E-commerce - `/cook "add Stripe payment integration`
+- Authentication - `/plan "add authentication with Better Auth"` → cook skill
+- E-commerce - `/plan "add Stripe payment integration"` → cook skill
 
 ### DevOps & Infrastructure
-- Docker Setup - `/cook "add Docker configuration"`
-- CI/CD - `/fix:ci "fix failing GitHub Actions"`
+- Docker Setup - `/plan "add Docker configuration"` → cook skill
+- CI/CD - describe CI issue (fix skill auto-activates)
 - Deployment - `/plan "deploy to Cloudflare Workers"`
 
 ## Advanced Workflows

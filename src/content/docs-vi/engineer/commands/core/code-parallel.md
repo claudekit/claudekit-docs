@@ -385,7 +385,7 @@ Nếu không cung cấp đường dẫn, sử dụng kế hoạch đang hoạt �
 - [/code](/vi/docs/engineer/commands/core/code) - Thực thi kế hoạch tuần tự
 - [/plan:parallel](/vi/docs/engineer/commands/plan/parallel) - Tạo kế hoạch song song
 - [/cook:auto:parallel](/vi/docs/engineer/commands/core/cook-auto-parallel) - Lập kế hoạch + thực thi song song
-- [/fix:parallel](/vi/docs/engineer/commands/fix/parallel) - Sửa lỗi song song
+- [/fix --parallel](/vi/docs/engineer/commands/fix/parallel) - Sửa lỗi song song
 
 ---
 

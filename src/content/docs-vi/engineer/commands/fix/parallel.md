@@ -1,5 +1,5 @@
 ---
-title: /fix:parallel
+title: /fix --parallel
 description: Sửa nhiều lỗi độc lập đồng thời sử dụng agent fullstack-developer song song để giải quyết nhanh hơn
 section: engineer
 kit: engineer
@@ -9,14 +9,14 @@ published: true
 lang: vi
 ---
 
-# /fix:parallel
+# /fix --parallel
 
 Lệnh sửa lỗi song song. Giải quyết nhiều lỗi độc lập đồng thời bằng cách khởi chạy các agent fullstack-developer song song, mỗi agent xử lý một lỗi.
 
 ## Cú pháp
 
 ```bash
-/fix:parallel [các vấn đề]
+/fix --parallel [các vấn đề]
 ```
 
 ## Khi nào sử dụng
@@ -29,7 +29,7 @@ Lệnh sửa lỗi song song. Giải quyết nhiều lỗi độc lập đồng 
 ## Ví dụ nhanh
 
 ```bash
-/fix:parallel [
+/fix --parallel [
 1. Nút không thể nhấp trên di động
 2. Timeout API tại endpoint /users
 3. Lỗi đánh máy trong phần bản quyền ở footer
@@ -77,7 +77,7 @@ Tổng thời gian: 45 giây (so với khoảng 90 giây nếu chạy tuần t�
 ### Danh sách đánh số
 
 ```bash
-/fix:parallel [
+/fix --parallel [
 1. Nút không phản hồi trên Safari
 2. Trình chọn ngày hiển thị sai múi giờ
 3. Kết quả tìm kiếm không phân trang
@@ -87,7 +87,7 @@ Tổng thời gian: 45 giây (so với khoảng 90 giây nếu chạy tuần t�
 ### Danh sách gạch đầu dòng
 
 ```bash
-/fix:parallel [
+/fix --parallel [
 - Thiếu biểu tượng tải khi gửi form
 - Sai ký hiệu tiền tệ cho EUR
 - Liên kết bị hỏng trong thanh điều hướng
@@ -97,7 +97,7 @@ Tổng thời gian: 45 giây (so với khoảng 90 giây nếu chạy tuần t�
 ### Định dạng trên cùng một dòng
 
 ```bash
-/fix:parallel [sửa menu di động; sửa regex xác thực email; sửa căn lề footer]
+/fix --parallel [sửa menu di động; sửa regex xác thực email; sửa căn lề footer]
 ```
 
 ## Quy trình hoạt động
@@ -203,7 +203,7 @@ Tốc độ tăng: 2.7 lần
 ### Kịch bản: Dọn dẹp cuối giai đoạn (Sprint)
 
 ```bash
-/fix:parallel [
+/fix --parallel [
 1. Trạng thái vô hiệu hóa của nút đăng nhập không hiển thị
 2. Ảnh đại diện không tải cho người dùng mới
 3. Gợi ý tìm kiếm không đóng khi mất tiêu điểm (blur)
@@ -255,10 +255,10 @@ Tổng thời gian: 35 giây
 
 ## Phát hiện phụ thuộc
 
-Nếu các lỗi chia sẻ cùng một tệp, `/fix:parallel` sẽ chuyển hướng sang `/fix:hard`:
+Nếu các lỗi chia sẻ cùng một tệp, `/fix --parallel` sẽ chuyển hướng sang `/fix:hard`:
 
 ```bash
-/fix:parallel [
+/fix --parallel [
 1. Token xác thực không làm mới
 2. Chuyển hướng đăng nhập bị hỏng
 ]
@@ -324,7 +324,7 @@ Agent 3 đã hết thời gian chờ.
 
 ```bash
 # Không tốt: Các lỗi có liên quan đến nhau
-/fix:parallel [
+/fix --parallel [
 1. Token xác thực hết hạn
 2. Phiên làm việc không được duy trì
 ]
@@ -337,14 +337,14 @@ Agent 3 đã hết thời gian chờ.
 
 ```bash
 # Tốt: Cụ thể, có thể thực hiện được ngay
-/fix:parallel [
+/fix --parallel [
 1. Màu nút sai khi di chuột qua (nên là #2563eb)
 2. Thiếu aria-label cho ô nhập tìm kiếm
 3. Bản quyền ở footer vẫn ghi năm 2024
 ]
 
 # Không tốt: Mơ hồ
-/fix:parallel [
+/fix --parallel [
 1. Giao diện trông hơi sai
 2. Vấn đề về khả năng tiếp cận
 3. Cập nhật footer
@@ -355,15 +355,15 @@ Agent 3 đã hết thời gian chờ.
 
 ```bash
 # Tối ưu: 2-5 lỗi
-/fix:parallel [
+/fix --parallel [
 1. Vấn đề thứ nhất
 2. Vấn đề thứ hai
 3. Vấn đề thứ ba
 ]
 
 # Quá nhiều: Nên chia thành nhiều lần chạy
-/fix:parallel [1-5]
-/fix:parallel [6-10]
+/fix --parallel [1-5]
+/fix --parallel [6-10]
 ```
 
 ## Khi nào KHÔNG nên sử dụng
@@ -405,4 +405,4 @@ Các lỗi cần phân tích sâu:
 
 ---
 
-**Điểm mấu chốt**: `/fix:parallel` tăng tốc quá trình sửa lỗi bằng cách giải quyết nhiều lỗi độc lập cùng một lúc. Hãy cung cấp danh sách các lỗi không liên quan, và các agent song song sẽ xử lý chúng đồng thời để mang lại kết quả nhanh hơn.
+**Điểm mấu chốt**: `/fix --parallel` tăng tốc quá trình sửa lỗi bằng cách giải quyết nhiều lỗi độc lập cùng một lúc. Hãy cung cấp danh sách các lỗi không liên quan, và các agent song song sẽ xử lý chúng đồng thời để mang lại kết quả nhanh hơn.

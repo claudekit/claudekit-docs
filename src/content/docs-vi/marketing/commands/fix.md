@@ -39,7 +39,7 @@ Lệnh `/fix` định tuyến thông minh tới các biến thể chuyên dụng
 | CI/CD | github actions, pipeline, workflow | `/fix:ci` | devops-specialist |
 | Tests | test, spec, jest, vitest | `/fix:test` | tester |
 | Logs | logs, error logs, stack trace | `/fix:logs` | debugger |
-| Multiple | 2+ unrelated issues | `/fix:parallel` | multiple agents |
+| Multiple | 2+ unrelated issues | `/fix --parallel` | multiple agents |
 | Complex | architecture, refactor, system-wide | `/fix:hard` | architect |
 | Simple | single file, small bug | `/fix:fast` | generalist |
 
@@ -124,7 +124,7 @@ Re-run pipeline: Build now passes ✓
 /fix Type errors in auth module + UI bugs in dashboard + test failures
 ```
 
-**Định Tuyến Tới**: `/fix:parallel`
+**Định Tuyến Tới**: `/fix --parallel`
 
 **Kết Quả**:
 ```markdown
@@ -156,10 +156,10 @@ Deep architectural fixes:
 /fix:hard Refactor campaign architecture for scalability
 ```
 
-### /fix:parallel
+### /fix --parallel
 Multiple unrelated issues:
 ```bash
-/fix:parallel Fix types + UI bugs + test failures
+/fix --parallel Fix types + UI bugs + test failures
 ```
 
 ### /fix:types

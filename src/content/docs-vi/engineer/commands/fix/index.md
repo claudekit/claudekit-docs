@@ -398,6 +398,7 @@ Chiến lược đã chọn: /fix:fast | /fix:hard
 
 - [/fix:fast](/docs-vi/commands/fix/fast) - Sửa lỗi nhanh (tự động chọn)
 - [/fix:hard](/docs-vi/commands/fix/hard) - Sửa lỗi phức tạp (tự động chọn)
+- [/fix --parallel](/docs-vi/commands/fix/parallel) - Sửa nhiều lỗi song song
 - [/fix:ci](/docs-vi/commands/fix/ci) - Sửa lỗi CI
 - [/fix:logs](/docs-vi/commands/fix/logs) - Sửa lỗi từ logs
 - [/fix:ui](/docs-vi/commands/fix/ui) - Sửa lỗi UI

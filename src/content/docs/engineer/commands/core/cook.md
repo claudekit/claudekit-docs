@@ -301,7 +301,7 @@ npm run typecheck
 cat docs/api/rate-limiting.md
 
 # 5. Commit
-/git:cm
+/git cm
 ```
 
 ### Iterate on Feedback
@@ -494,13 +494,13 @@ git diff
 /docs:update
 
 # 6. Commit
-/git:cm
+/git cm
 
 # 7. Push
 git push
 
 # 8. Create PR
-/git:pr
+/git pr
 ```
 
 ## Troubleshooting

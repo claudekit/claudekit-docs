@@ -424,6 +424,6 @@ Save high-scoring content as templates. A blog post scoring 8.5+ becomes a templ
 - `/write:cro` - Create conversion-optimized landing pages
 - `/write/audit` - Score content quality (automatically triggers)
 - `/write/publish` - Auto-fix content issues (automatically triggers)
-- `/content:good` - Create high-quality content
+- Use `copywriting` skill for high-quality content creation
 - `/youtube:blog` - Convert YouTube videos to blog posts
 - `/youtube:social` - Convert YouTube videos to social posts

@@ -37,13 +37,13 @@ Slash commands that trigger agent workflows.
 **Categories**:
 - **Core**: `/cook`, `/plan`, `/bootstrap`, `/ask`, `/scout`
 - **Fix**: `/fix`, `/fix`, `/fix`, `/fix`
-- **Design**: `/design:good`, `/design:fast`, `/design:3d`
-- **Git**: `/git:cm`, `/git:cp`, `/git:pr`
+- **Design**: `ai-artist` skill, `ai-multimodal` skill, `frontend-design` skill
+- **Git**: `/git cm`, `/git cp`, `/git pr`
 - **Docs**: `/docs:init`, `/docs:update`, `/docs:summarize`
-- **Content**: `/content:good`, `/content:cro`
+- **Content**: Use `copywriting` skill (quality, fast, CRO workflows)
 - **Plan**: `/plan:ci`, `/plan:two`, `/plan:hard`
 - **Integrate**: `/integrate:polar`, `/integrate:sepay`
-- **Skill**: `/skill:create`, `/skill:optimize`
+- **Skill**: Use `skill-creator` skill
 
 **Example Workflow**:
 ```bash
@@ -56,7 +56,7 @@ Slash commands that trigger agent workflows.
 /fix
 # → Debugger analyzes any test failures, fixes issues
 
-/git:cm
+/git cm
 # → Git manager stages, commits, pushes changes
 ```
 
@@ -80,8 +80,8 @@ Reusable knowledge modules injected into agent context.
 
 **Creating Custom Skills**:
 ```bash
-/skill:create "FastAPI best practices"
-# → Creates new skill with structure, references, examples
+"Create a new skill for FastAPI best practices"
+# Use skill-creator skill → Creates new skill with structure, references, examples
 ```
 
 ## How They Work Together

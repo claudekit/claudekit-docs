@@ -390,7 +390,7 @@ git diff
 /test
 
 # 5. Commit nếu hài lòng
-/git:cm
+/git cm
 
 # 6. Triển khai
 git push
@@ -413,9 +413,9 @@ git checkout -b hotfix/production-500-errors
 /test
 
 # 5. Triển khai ngay lập tức
-/git:cm
+/git cm
 git push origin hotfix/production-500-errors
-/git:pr main hotfix/production-500-errors
+/git pr main hotfix/production-500-errors
 ```
 
 ## Xử lý sự cố
@@ -536,7 +536,7 @@ Sau khi sử dụng `/fix`:
 - [/test](/docs/engineer/commands/core/test) - Xác minh bản sửa lỗi bằng các bài kiểm tra
 - [/fix](/docs/engineer/commands/fix/hard) - Cho các vấn đề phức tạp cần phân tích sâu hơn
 - [/debug](/docs/engineer/commands/core/debug) - Nếu vấn đề cần điều tra thêm
-- [/git:cm](/docs/engineer/commands/git/commit) - Commit bản sửa lỗi
+- [/git cm](/docs/engineer/commands/git/commit) - Commit bản sửa lỗi
 
 ---
 

@@ -70,7 +70,7 @@ Next: /fix Test failures in email campaign + analytics
 ### Before Commits
 ```bash
 /test  # Ensure tests pass
-/git:cm  # Commit if all green
+/git cm  # Commit if all green
 ```
 
 ### Debugging

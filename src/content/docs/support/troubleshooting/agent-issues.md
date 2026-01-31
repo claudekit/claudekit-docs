@@ -494,8 +494,8 @@ cat > docs/brand-voice.md << 'EOF'
 EOF
 
 # Reference in copywriter prompt
-/content:good homepage hero section
-# Include: Use brand voice from docs/brand-voice.md
+"Create homepage hero section using brand voice from docs/brand-voice.md"
+# Use copywriting skill (quality mode)
 ```
 
 ---

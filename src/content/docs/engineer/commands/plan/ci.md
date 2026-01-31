@@ -836,7 +836,7 @@ npm test
 npm run build
 
 # 5. Commit and push
-/git:cm
+/git cm
 
 # 6. Verify CI passes
 # Check GitHub Actions

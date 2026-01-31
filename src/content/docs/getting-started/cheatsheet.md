@@ -121,13 +121,13 @@ ck init --use-git
 
 ```bash
 # Create commit with meaningful message
-/git:cm
+/git cm
 
 # Commit and push changes
-/git:cp
+/git cp
 
 # Create pull request
-/git:pr
+/git pr
 ```
 
 ### Planning & Research
@@ -159,11 +159,11 @@ ck init --use-git
 ### Skills Management
 
 ```bash
-# Create new skill
-/skill:create
+# Create new skill (use skill-creator skill)
+"Create a new skill for [topic]"
 
-# Fix skill errors
-/skill:fix-logs
+# Fix skill errors (use skill-creator skill)
+"Fix errors in skill logs"
 ```
 
 ## Command Comparison
@@ -267,7 +267,7 @@ claude
 /fix
 
 # 6. Commit
-/git:cm
+/git cm
 ```
 
 ### Bug Fix Workflow
@@ -282,7 +282,7 @@ claude
 /test
 
 # 4. Commit
-/git:cm
+/git cm
 ```
 
 ### CI/CD Fix Workflow
@@ -297,7 +297,7 @@ claude
 # 3. CC fetches logs, analyzes, fixes (auto-detects CI context)
 
 # 4. Push fix
-/git:cp
+/git cp
 ```
 
 ## Quick Examples
@@ -358,9 +358,9 @@ claude
 - `/docs:summarize` - Summarize
 
 ### 🔧 Git Operations
-- `/git:cm` - Commit changes
-- `/git:cp` - Commit and push
-- `/git:pr` - Create PR
+- `/git cm` - Commit changes
+- `/git cp` - Commit and push
+- `/git pr` - Create PR
 
 ### 💡 Planning
 - `/plan` - Detailed planning
@@ -370,8 +370,7 @@ claude
 - `/integrate <service>` - Add integrations
 
 ### ⚙️ Skills
-- `/skill:create` - New skills
-- `/skill:fix-logs` - Fix skills
+- Use `skill-creator` skill - Create/fix/optimize skills
 
 ## Tips & Best Practices
 

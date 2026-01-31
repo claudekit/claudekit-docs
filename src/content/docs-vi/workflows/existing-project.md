@@ -178,9 +178,9 @@ Chạy test suite và tạo báo cáo. Không tự động sửa.
 ### Git Operations
 
 ```bash
-/git:cm         # Tạo commit message có ý nghĩa
-/git:cp    # Commit và push changes
-/git:pr   # Tạo pull request
+/git cm         # Tạo commit message có ý nghĩa
+/git cp    # Commit và push changes
+/git pr   # Tạo pull request
 ```
 
 ### Tích Hợp
@@ -250,7 +250,7 @@ Chạy `/test` thường xuyên để phát hiện lỗi sớm.
 /test
 
 # 3. Commit và deploy
-/git:cp
+/git cp
 ```
 
 ### Refactor Legacy Module

@@ -554,7 +554,7 @@ git diff
 # (Kiểm tra thủ công)
 
 # 7. Commit
-/git:cm
+/git cm
 
 # 8. Triển khai lên production
 /deploy [production]
@@ -568,7 +568,7 @@ git diff
 - [/debug](/docs/engineer/commands/core/debug) - Điều tra vấn đề
 - [/fix --quick](/docs/engineer/commands/fix/fast) - Cho các sửa lỗi đơn giản
 - [/test](/docs/engineer/commands/core/test) - Chạy các bài kiểm tra
-- [/git:cm](/docs/engineer/commands/git/commit) - Commit bản sửa lỗi
+- [/git cm](/docs/engineer/commands/git/commit) - Commit bản sửa lỗi
 
 ---
 

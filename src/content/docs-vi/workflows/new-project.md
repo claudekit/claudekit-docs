@@ -356,7 +356,7 @@ git add .
 git commit -m "Khởi tạo dự án qua ClaudeKit bootstrap"
 
 # Sau mỗi tính năng
-/git:cp
+/git cp
 ```
 
 ## Xử Lý Sự Cố

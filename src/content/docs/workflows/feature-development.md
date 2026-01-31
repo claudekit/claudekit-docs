@@ -89,8 +89,8 @@ The feature development workflow combines planning, research, implementation, te
 
 ### 6. Commit & Deploy
 ```bash
-/git:cm
-/git:pr "feature/user-authentication"
+/git cm
+/git pr "feature/user-authentication"
 ```
 
 **What happens**:
@@ -145,8 +145,8 @@ Let's walk through adding authentication to a Next.js app:
 ```bash
 /code-review "authentication implementation"
 /fix
-/git:cm
-/git:pr "feature/user-authentication"
+/git cm
+/git pr "feature/user-authentication"
 ```
 
 ## Best Practices

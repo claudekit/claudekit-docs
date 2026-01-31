@@ -348,7 +348,7 @@ git diff
 /test
 
 # 4. Commit nếu hài lòng
-/git:cm
+/git cm
 ```
 
 ## Xử Lý Sự Cố
@@ -419,7 +419,7 @@ Sau khi sử dụng `/fix --quick`:
 
 - [/test](/docs/engineer/commands/core/test) - Chạy toàn bộ bộ kiểm tra
 - [/fix](/docs/engineer/commands/fix/hard) - Cho các vấn đề phức tạp
-- [/git:cm](/docs/engineer/commands/git/commit) - Commit bản sửa lỗi
+- [/git cm](/docs/engineer/commands/git/commit) - Commit bản sửa lỗi
 - [/debug](/docs/engineer/commands/core/debug) - Nếu vấn đề vẫn tiếp diễn
 
 ---

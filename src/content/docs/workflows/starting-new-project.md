@@ -486,7 +486,7 @@ git status
 git diff
 
 # Commit with ClaudeKit
-/git:cm
+/git cm
 ```
 
 **Generated commit:**
@@ -568,7 +568,7 @@ jobs:
 ### Push and Verify CI
 
 ```bash
-/git:cp
+/git cp
 
 # Watch CI run
 gh run watch
@@ -657,7 +657,7 @@ A production-ready REST API with:
 /plan [add task reminders and notifications]
 /cook [implement the feature]
 /test
-/git:cm
+/git cm
 ```
 
 ### Improve Testing

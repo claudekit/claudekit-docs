@@ -430,7 +430,7 @@ Tính Nhất Quán Thông Điệp:
 
 4. Bạn review và chọn chính + biến thể test
 
-5. Sử dụng với /design:good để tạo landing page đầy đủ
+5. Sử dụng với skill ai-artist (creative mode) để tạo landing page đầy đủ
 ```
 
 ### Quy Trình 2: Tối Ưu Chiến Dịch Email

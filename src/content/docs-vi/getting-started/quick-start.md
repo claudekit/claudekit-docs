@@ -169,7 +169,7 @@ Truy cập:
 ### Bước 6: Commit
 
 ```bash
-/git:cm
+/git cm
 ```
 
 **Đầu ra**:
@@ -266,7 +266,7 @@ Mỗi tác vụ chỉ mất 5-20 phút thay vì nhiều ngày.
 /cook [plan]              # Triển khai
 /test                     # Xác thực
 /fix --quick [issue]         # Sửa lỗi nhanh
-/git:cm                   # Commit
+/git cm                   # Commit
 ```
 
 ### Debug + Sửa Lỗi
@@ -278,7 +278,7 @@ Mỗi tác vụ chỉ mất 5-20 phút thay vì nhiều ngày.
 
 ### Thiết Kế + Nội Dung
 ```bash
-/design:good [feature]    # Thiết kế UI/UX
+# Sử dụng skill ai-artist (creative mode) cho thiết kế UI/UX
 /content:good [page]      # Viết nội dung marketing
 /brainstorm [idea]        # Khám phá các giải pháp
 ```

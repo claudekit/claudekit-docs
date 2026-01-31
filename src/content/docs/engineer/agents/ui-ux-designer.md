@@ -36,36 +36,36 @@ Research trending designs, create production-ready interfaces, and ship conversi
 
 ### 1. SaaS Landing Page
 **Who:** Product team launching new SaaS product
-**Prompt:** `/design:good [create conversion-optimized landing page for AI analytics platform with hero 3D visualization, pricing tiers, testimonials]`
+**Prompt:** Use `ai-artist` skill (creative mode) - "create conversion-optimized landing page for AI analytics platform with hero 3D visualization, pricing tiers, testimonials"
 **Output:** Complete landing page with hero section (animated 3D graph), value props, bento grid features, pricing comparison, FAQ accordion, sticky nav, above-fold CTA
 
 ### 2. 3D Product Showcase
 **Who:** E-commerce team selling physical products
-**Prompt:** `/design:3d [create interactive 3D product viewer for wireless headphones with 360° rotation, material textures, color variants]`
+**Prompt:** Use `ai-artist` or `threejs` skill - "create interactive 3D product viewer for wireless headphones with 360° rotation, material textures, color variants"
 **Output:** Three.js scene with orbit controls, PBR materials, HDR lighting, color picker UI, zoom/pan/rotate interactions
 
 ### 3. Clone from Screenshot
 **Who:** Startup replicating competitor design
-**Prompt:** `/design:screenshot [./competitor-landing.png]`
+**Prompt:** Use `ai-multimodal` or `frontend-design` skill - "recreate this design: ./competitor-landing.png"
 **Output:** Pixel-perfect recreation with semantic HTML, modern CSS, responsive breakpoints, accessibility improvements
 
 ### 4. Dashboard Interface
 **Who:** Internal tools team building analytics dashboard
-**Prompt:** `/design:good [create dark-themed analytics dashboard with charts, KPI cards, data tables, filters sidebar]`
+**Prompt:** Use `ai-artist` skill (creative mode) - "create dark-themed analytics dashboard with charts, KPI cards, data tables, filters sidebar"
 **Output:** Responsive dashboard layout with CSS Grid, chart containers, skeleton loaders, empty states, mobile nav drawer
 
 ### 5. Design System from Video
 **Who:** Agency recreating client's animated prototype
-**Prompt:** `/design:video [./design-prototype.mp4]`
+**Prompt:** Use `ai-multimodal` or `remotion` skill - "recreate design from video: ./design-prototype.mp4"
 **Output:** Component library matching video specs, micro-animations, transitions, color/typography tokens, style guide docs
 
 ## Pro Tips
 
-- **Fast prototyping:** Use `/design:fast` for 60-120s mockups, `/design:good` for production-ready (3-5min)
+- **Fast prototyping:** Use `ai-artist` skill in search mode for quick mockups, creative mode for production-ready designs
 - **3D performance:** Three.js scenes auto-optimize for 60fps with LOD, frustum culling, texture compression
 - **Vietnamese support:** All designs include Google Fonts with Vietnamese diacritics (Inter, Roboto, Noto Sans)
 - **CRO built-in:** Above-fold CTAs, social proof placement, trust signals, risk reversal automatically included
-- **Design analysis:** Use `/design:describe [path]` to extract colors, typography, spacing from any screenshot
+- **Design analysis:** Use `ai-multimodal` skill to extract colors, typography, spacing from any screenshot
 - **Bento grids:** Request "bento grid layout" for modern mixed-size card layouts (like Apple, Linear)
 - **Glassmorphism:** Specify "glassmorphism" for backdrop blur + transparency effects
 - **Core Web Vitals:** All designs target LCP <2.5s, FID <100ms, CLS <0.1 with lazy loading, font optimization

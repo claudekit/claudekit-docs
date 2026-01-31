@@ -429,7 +429,7 @@ Message Consistency:
 
 4. You review and select primary + test variations
 
-5. Use with /design:good to create full landing page
+5. Use with ai-artist skill (creative mode) to create full landing page
 ```
 
 ### Workflow 2: Optimize Email Campaign
@@ -457,7 +457,7 @@ Message Consistency:
 
 4. You approve test matrix
 
-5. copywriter coordinates with Email Wizard for sequence setup
+5. Copywriter coordinates with Email Wizard for sequence setup
 ```
 
 ## Best Practices
@@ -493,8 +493,8 @@ SEO-stuffed copy kills conversions. Write for readers first.
 
 ## Related Commands
 
-- `/content:good` - Generate high-quality marketing content
-- `/content:fast` - Quick copy for social, emails
+- Use `copywriting` skill (quality mode) - Generate high-quality marketing content
+- Use `copywriting` skill (fast mode) - Quick copy for social, emails
 - `/brainstorm` - Explore messaging angles and hooks
 - `/email create` - Build email sequences with copy
 - `/social create` - Write social media posts

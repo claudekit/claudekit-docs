@@ -376,7 +376,7 @@ Lệnh này sử dụng agent **docs-manager** với các khả năng sau:
 /docs:update
 
 # Commit tất cả cùng nhau
-/git:cm
+/git cm
 ```
 
 ❌ **Xấu - Quá thường xuyên:**
@@ -405,7 +405,7 @@ Lệnh này sử dụng agent **docs-manager** với các khả năng sau:
 /docs:update
 git diff docs/
 # Xem lại các thay đổi
-/git:cm
+/git cm
 ```
 
 ## Quy Trình Làm Việc
@@ -428,7 +428,7 @@ git diff docs/
 
 # 5. Xem lại và commit
 git diff
-/git:cm
+/git cm
 ```
 
 ### Bảo Trì Tài Liệu Hàng Quý
@@ -441,7 +441,7 @@ git diff
 git diff docs/
 
 # 3. Commit các cập nhật tài liệu
-/git:cm
+/git cm
 ```
 
 ### Checklist Trước Khi Phát Hành
@@ -457,10 +457,10 @@ git diff docs/
 # Chỉnh sửa CHANGELOG.md
 
 # 4. Commit tài liệu phát hành
-/git:cm
+/git cm
 
 # 5. Tạo PR phát hành
-/git:pr main develop
+/git pr main develop
 ```
 
 ## Xử Lý Sự Cố
@@ -574,7 +574,7 @@ Sau khi sử dụng `/docs:update`:
 
 - [/docs:summarize](/docs/engineer/commands/docs/summarize) - Chỉ cập nhật bản tóm tắt codebase
 - [/watzup](/docs/engineer/commands/core/watzup) - Xem lại các thay đổi gần đây
-- [/git:cm](/docs/engineer/commands/git/commit) - Commit các cập nhật tài liệu
+- [/git cm](/docs/engineer/commands/git/commit) - Commit các cập nhật tài liệu
 
 ---
 

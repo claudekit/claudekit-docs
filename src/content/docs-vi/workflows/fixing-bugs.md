@@ -335,7 +335,7 @@ Cập nhật logic xác thực để sử dụng so sánh bcrypt bất đồng b
 ### Bước 5: Commit bản sửa lỗi
 
 ```bash
-/git:cm
+/git cm
 ```
 
 **Commit được tạo**:
@@ -600,7 +600,7 @@ Sửa các lỗi tương tự:
 Theo dõi các bản sửa lỗi:
 ```bash
 # Commit với tiền tố fix:
-/git:cm
+/git cm
 
 # Tự động được thêm vào CHANGELOG.md
 # Liên kết đến số thứ tự issue

@@ -367,7 +367,7 @@ npm test
 /cook [thêm chức năng đặt lại mật khẩu]
 
 # 5. Commit cấu trúc ban đầu
-/git:cm
+/git cm
 ```
 
 ## Các bước tiếp theo

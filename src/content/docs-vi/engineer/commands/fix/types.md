@@ -485,7 +485,7 @@ analyzer:
 /test
 
 # 4. Commit
-/git:cm
+/git cm
 ```
 
 ### Quy trình tái cấu trúc
@@ -504,7 +504,7 @@ analyzer:
 /test
 
 # 5. Commit
-/git:cm
+/git cm
 ```
 
 ### Di chuyển sang chế độ Strict Mode
@@ -520,7 +520,7 @@ echo '{"compilerOptions": {"strict": true}}' > tsconfig.json
 /test
 
 # 4. Commit việc di chuyển sang chế độ strict
-/git:cm
+/git cm
 ```
 
 ## Xử lý sự cố
@@ -623,7 +623,7 @@ Sau khi sử dụng `/fix`:
 
 - [/test](/docs/engineer/commands/core/test) - Chạy các bài kiểm tra để xác minh các bản sửa lỗi
 - [/fix --quick](/docs/engineer/commands/fix/fast) - Cho các vấn đề đơn giản còn sót lại
-- [/git:cm](/docs/engineer/commands/git/commit) - Commit các bản sửa lỗi kiểu
+- [/git cm](/docs/engineer/commands/git/commit) - Commit các bản sửa lỗi kiểu
 - [/cook](/docs/engineer/commands/core/cook) - Tiếp tục phát triển tính năng
 
 ---

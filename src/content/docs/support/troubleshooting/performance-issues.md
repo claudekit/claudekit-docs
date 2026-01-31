@@ -488,7 +488,7 @@ EOF
 ```bash
 # ✅ Fast commands (seconds)
 /fix --quick small bug         # Uses fast model
-/git:cm                     # Simple git operations
+/git cm                     # Simple git operations
 
 # ❌ Slow commands (minutes)
 /fix complex issue     # Uses thorough model
@@ -540,7 +540,7 @@ EOF
 | /cook | 30-60s | 60-120s | 120-300s |
 | /test | 15-30s | 30-60s | 60-120s |
 | /fix --quick | 10-20s | 20-30s | 30-60s |
-| /git:cm | 5-10s | 10-20s | 20-30s |
+| /git cm | 5-10s | 10-20s | 20-30s |
 
 **If commands take 2x longer**: Check optimizations above
 

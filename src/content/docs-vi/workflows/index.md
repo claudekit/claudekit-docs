@@ -50,7 +50,7 @@ Cách tích hợp ClaudeKit vào các codebase hiện có:
 
 Quy trình hoàn chỉnh để chuyển đổi thiết kế thành mã nguồn:
 
-- Sử dụng lệnh `/design:screenshot`
+- Sử dụng skill ai-multimodal hoặc frontend-design
 - Phân tích các yếu tố thiết kế
 - Trích xuất các components
 - Triển khai layout responsive
@@ -66,7 +66,7 @@ Quy trình hoàn chỉnh để chuyển đổi thiết kế thành mã nguồn:
 
 Chuyển đổi quay màn hình thành mã nguồn hoạt động:
 
-- Sử dụng lệnh `/design:video`
+- Sử dụng skill ai-multimodal hoặc remotion
 - Hiểu các tương tác từ video
 - Triển khai animations
 - Tạo các hiệu ứng chuyển cảnh

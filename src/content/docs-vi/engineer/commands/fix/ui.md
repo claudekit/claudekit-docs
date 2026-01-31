@@ -516,7 +516,7 @@ npm run preview
 
 ## Bước tiếp theo
 
-- [/design:screenshot](/docs/engineer/commands/design/screenshot) - Chuyển thiết kế thành mã nguồn
+- Sử dụng skill ai-multimodal hoặc frontend-design - Chuyển thiết kế thành mã nguồn
 - [/fix --quick](/docs/engineer/commands/fix/fast) - Các bản sửa lỗi CSS nhanh
 - [/test](/docs/engineer/commands/core/test) - Các bài kiểm tra hồi quy thị giác
 

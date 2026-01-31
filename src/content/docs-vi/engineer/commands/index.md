@@ -46,9 +46,9 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 
 ### Thao Tác Git
 
-- **[/git:cm](/docs/engineer/commands/git/commit)** - Stage và commit các thay đổi
-- **[/git:cp](/docs/engineer/commands/git/commit-push)** - Stage, commit và push
-- **[/git:pr](/docs/engineer/commands/git/pull-request)** - Tạo pull request
+- **[/git cm](/docs/engineer/commands/git/commit)** - Stage và commit các thay đổi
+- **[/git cp](/docs/engineer/commands/git/commit-push)** - Stage, commit và push
+- **[/git pr](/docs/engineer/commands/git/pull-request)** - Tạo pull request
 
 ### Lập Kế Hoạch (Planning)
 
@@ -58,12 +58,12 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 
 ### Thiết Kế & UI
 
-- **[/design:3d](/docs/engineer/commands/design/3d)** - Tạo thiết kế 3D với Three.js
-- **[/design:describe](/docs/engineer/commands/design/describe)** - Trích xuất thiết kế từ ảnh chụp màn hình
-- **[/design:fast](/docs/engineer/commands/design/fast)** - Tạo thiết kế nhanh chóng
-- **[/design:good](/docs/engineer/commands/design/good)** - Tạo thiết kế hoàn thiện và tinh chỉnh
-- **[/design:screenshot](/docs/engineer/commands/design/screenshot)** - Chuyển ảnh chụp màn hình thành mã nguồn
-- **[/design:video](/docs/engineer/commands/design/video)** - Chuyển video thành mã nguồn
+- **ai-artist** hoặc **threejs** skill - Tạo thiết kế 3D với Three.js
+- **ai-multimodal** skill - Trích xuất thiết kế từ ảnh chụp màn hình
+- **ai-artist** skill (search mode) - Tạo thiết kế nhanh chóng
+- **ai-artist** skill (creative mode) - Tạo thiết kế hoàn thiện và tinh chỉnh
+- **ai-multimodal** hoặc **frontend-design** skill - Chuyển ảnh chụp màn hình thành mã nguồn
+- **ai-multimodal** hoặc **remotion** skill - Chuyển video thành mã nguồn
 
 ### Nội Dung & Marketing
 
@@ -100,9 +100,9 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 /docs:update                 # Sau khi thay đổi mã nguồn
 
 # Quy trình Git
-/git:cm                      # Commit thay đổi
-/git:cp                      # Commit và push
-/git:pr [nhánh-đích]         # Tạo pull request
+/git cm                      # Commit thay đổi
+/git cp                      # Commit và push
+/git pr [nhánh-đích]         # Tạo pull request
 
 # Trạng thái dự án
 /watzup                      # Trạng thái hiện tại như thế nào?
@@ -131,9 +131,9 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 /ask [quy trình điều hướng hoạt động như thế nào?]
 
 # Tham số tùy chọn
-/git:pr                          # PR vào nhánh mặc định
-/git:pr [develop]                # PR vào nhánh develop
-/git:pr [main] [feature-branch]  # PR từ nhánh feature vào main
+/git pr                          # PR vào nhánh mặc định
+/git pr [develop]                # PR vào nhánh develop
+/git pr [main] [feature-branch]  # PR từ nhánh feature vào main
 
 # Nhiều tham số
 /scout [các tệp xác thực] [3]    # Tìm tệp xác thực, dùng 3 agent
@@ -174,7 +174,7 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 4. /test
    # Kiểm tra lại việc triển khai
 
-5. /git:cm
+5. /git cm
    # Commit với thông điệp chuẩn (conventional commit)
 ```
 
@@ -268,7 +268,7 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 git diff
 
 # 4. Chỉ commit khi hài lòng
-/git:cm
+/git cm
 ```
 
 ### Sử Dụng Chuỗi Lệnh Cho Các Tác Vụ Phức Tạp
@@ -293,7 +293,7 @@ cat plans/latest-plan.md
 /fix
 
 # 7. Commit
-/git:cm
+/git cm
 ```
 
 ## Các Cờ Và Tùy Chọn
@@ -307,12 +307,12 @@ Một số lệnh hỗ trợ các cờ (flags):
 /bootstrap:auto [mô tả chi tiết]       # Hoàn toàn tự động
 ```
 
-### /git:pr
+### /git pr
 
 ```bash
-/git:pr                      # PR vào nhánh mặc định (main)
-/git:pr [develop]            # PR vào nhánh develop
-/git:pr [main] [feature]     # PR từ nhánh feature vào main
+/git pr                      # PR vào nhánh mặc định (main)
+/git pr [develop]            # PR vào nhánh develop
+/git pr [main] [feature]     # PR từ nhánh feature vào main
 ```
 
 ### /plan
@@ -393,7 +393,7 @@ Kết quả thử nghiệm:
 
 Tất cả các bài kiểm tra đã vượt qua!
 
-Tiếp theo: Xem lại các thay đổi, sau đó chạy /git:cm
+Tiếp theo: Xem lại các thay đổi, sau đó chạy /git cm
 ```
 
 ## Xử Lý Sự Cố

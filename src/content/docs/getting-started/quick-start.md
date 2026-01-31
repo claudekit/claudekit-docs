@@ -173,7 +173,7 @@ Visit:
 ### Step 6: Commit
 
 ```bash
-/git:cm
+/git cm
 ```
 
 **Output**:
@@ -270,7 +270,7 @@ Each takes 5-20 minutes instead of days.
 "Implement plan"              # Implement
 /test                     # Validate
 /fix --quick [issue]         # Quick fixes
-/git:cm                   # Commit
+/git cm                   # Commit
 ```
 
 ### Debug + Fix
@@ -282,8 +282,8 @@ Each takes 5-20 minutes instead of days.
 
 ### Design + Content
 ```bash
-/design:good [feature]    # UI/UX design
-/content:good [page]      # Marketing copy
+# Use ai-artist skill (creative mode) for UI/UX design
+"Create marketing copy for [page]"  # Use copywriting skill (quality mode)
 /brainstorm [idea]        # Explore solutions
 ```
 

@@ -122,13 +122,13 @@ ck init --use-git
 
 ```bash
 # Tạo commit với thông điệp có ý nghĩa
-/git:cm
+/git cm
 
 # Commit và push các thay đổi
-/git:cp
+/git cp
 
 # Tạo pull request
-/git:pr
+/git pr
 ```
 
 ### Lập Kế Hoạch & Nghiên Cứu
@@ -268,7 +268,7 @@ claude
 /fix
 
 # 6. Commit
-/git:cm
+/git cm
 ```
 
 ### Quy Trình Sửa Lỗi
@@ -284,7 +284,7 @@ claude
 /test
 
 # 4. Commit
-/git:cm
+/git cm
 ```
 
 ### Quy Trình Sửa Lỗi CI/CD
@@ -299,7 +299,7 @@ claude
 # 3. CC lấy logs, phân tích và sửa lỗi
 
 # 4. Push bản sửa lỗi
-/git:cp
+/git cp
 ```
 
 ## Các Ví Dụ Nhanh
@@ -360,9 +360,9 @@ claude
 - `/docs:summarize` - Tóm tắt
 
 ### 🔧 Thao Tác Git
-- `/git:cm` - Commit thay đổi
-- `/git:cp` - Commit và push
-- `/git:pr` - Tạo PR
+- `/git cm` - Commit thay đổi
+- `/git cp` - Commit và push
+- `/git pr` - Tạo PR
 
 ### 💡 Lập Kế Hoạch
 - `/plan` - Lập kế hoạch chi tiết

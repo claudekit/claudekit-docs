@@ -20,9 +20,9 @@ Nghiên cứu các xu hướng thiết kế, tạo bản phác thảo độ nét
 ## Khi nào được kích hoạt
 
 Agent UI/UX designer kích hoạt khi:
-- Sử dụng các lệnh `/design:fast`, `/design:good`, `/design:3d`
-- Sử dụng lệnh `/design:screenshot [path]` (thiết kế từ ảnh chụp màn hình)
-- Sử dụng lệnh `/design:describe [path]` (phân tích thiết kế)
+- Sử dụng skill ai-artist (search/creative mode) hoặc threejs
+- Sử dụng skill ai-multimodal hoặc frontend-design (thiết kế từ ảnh chụp màn hình)
+- Sử dụng skill ai-multimodal (phân tích thiết kế)
 - Khi cần xem xét thiết kế (design review)
 - Khi triển khai các bố cục đáp ứng hoặc hệ thống thiết kế.
 
@@ -53,7 +53,7 @@ Sử dụng HTML/CSS/JS thuần không phụ thuộc framework, Three.js/WebGL c
 ## Ví dụ sử dụng
 
 ### Thiết kế trang Landing Page
-**Đầu vào**: `/design:good [tạo trang landing page hiện đại cho nền tảng phân tích AI]`
+**Đầu vào**: Sử dụng skill ai-artist (creative mode) - "tạo trang landing page hiện đại cho nền tảng phân tích AI"
 **Quy trình**:
 1. **Nghiên cứu**: Tìm xu hướng thiết kế AI SaaS 2024.
 2. **Chiến lược**: Xác định mục tiêu chuyển đổi (đăng ký dùng thử).

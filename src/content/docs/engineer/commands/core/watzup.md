@@ -218,7 +218,7 @@ Quality: High
 /watzup
 
 # Use summary for PR description
-# Then: /git:pr [branch] [base]
+# Then: /git pr [branch] [base]
 ```
 
 ## Complete Example
@@ -739,17 +739,17 @@ cat work-summary.md
 # /journal: Deep dive with context
 ```
 
-### With /git:pr
+### With /git pr
 
 ```bash
 # Analyze changes
 /watzup
 
 # Create PR with summary
-/git:pr feature-branch main
+/git pr feature-branch main
 ```
 
-### With /git:cm
+### With /git cm
 
 ```bash
 # See uncommitted changes
@@ -759,7 +759,7 @@ git status
 /watzup
 
 # Commit
-/git:cm
+/git cm
 ```
 
 ## Customization
@@ -819,8 +819,8 @@ git log -- src/payments/
 ## Related Commands
 
 - [/journal](/docs/engineer/commands/core/journal) - Detailed work documentation
-- [/git:cm](/docs/engineer/commands/git/commit) - Commit changes
-- [/git:pr](/docs/engineer/commands/git/pull-request) - Create pull request
+- [/git cm](/docs/engineer/commands/git/commit) - Commit changes
+- [/git pr](/docs/engineer/commands/git/pull-request) - Create pull request
 - [/cook](/docs/engineer/commands/core/cook) - Implement features
 - [/plan](/docs/engineer/commands/core/plan) - Plan implementations
 

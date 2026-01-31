@@ -1,5 +1,5 @@
 ---
-title: /git:cp
+title: /git cp
 description: Tài liệu hướng dẫn lệnh commit-push
 section: engineer
 kit: engineer
@@ -9,21 +9,21 @@ published: true
 lang: vi
 ---
 
-# /git:cp
+# /git cp
 
 Thực hiện stage tất cả các thay đổi, tạo một bản commit theo tiêu chuẩn conventional với thông điệp chuyên nghiệp, và đẩy (push) lên kho lưu trữ từ xa chỉ trong một lệnh duy nhất. Hoàn hảo cho các chu kỳ lặp lại nhanh chóng.
 
 ## Cú pháp
 
 ```bash
-/git:cp
+/git cp
 ```
 
 ## Cách hoạt động
 
-Lệnh này kết hợp `/git:cm` (commit) với `git push`:
+Lệnh này kết hợp `/git cm` (commit) với `git push`:
 
-### 1. Stage & Commit (`/git:cm`)
+### 1. Stage & Commit (`/git cm`)
 
 - Phân tích tất cả các thay đổi (staged + unstaged)
 - Tạo thông điệp commit theo tiêu chuẩn conventional
@@ -44,50 +44,50 @@ Lệnh này kết hợp `/git:cm` (commit) với `git push`:
 ```bash
 # Chu kỳ lặp lại nhanh
 /cook [thêm tính năng]
-/git:cp  # Commit và push ngay lập tức
+/git cp  # Commit và push ngay lập tức
 ```
 
 **Phát triển cá nhân**
 ```bash
 # Làm việc một mình trên nhánh tính năng
-/git:cp  # Không cần xem lại cục bộ
+/git cp  # Không cần xem lại cục bộ
 ```
 
 **Các thay đổi nhỏ**
 ```bash
 # Sửa lỗi đánh máy, cập nhật nhỏ
 /fix --quick [lỗi đánh máy]
-/git:cp  # Đẩy lên ngay
+/git cp  # Đẩy lên ngay
 ```
 
 **Tích hợp liên tục (CI)**
 ```bash
 # Kích hoạt CI sau mỗi thay đổi
-/git:cp  # CI tự động chạy sau khi push
+/git cp  # CI tự động chạy sau khi push
 ```
 
 ### ❌ Khi nào nên tránh
 
 **Hợp tác nhóm**
 ```bash
-❌ /git:cp  # Đẩy mã nguồn chưa được xem lại
+❌ /git cp  # Đẩy mã nguồn chưa được xem lại
 
-✅ /git:cm  # Commit cục bộ
+✅ /git cm  # Commit cục bộ
 ✅ Tạo PR   # Nhóm xem xét trước khi merge
 ```
 
 **Các thay đổi chưa chắc chắn**
 ```bash
-❌ /git:cp  # Không chắc bản sửa lỗi có hoạt động không
+❌ /git cp  # Không chắc bản sửa lỗi có hoạt động không
 
-✅ /git:cm  # Commit cục bộ
+✅ /git cm  # Commit cục bộ
 ✅ Kiểm tra thêm
 ✅ Sau đó: git push
 ```
 
 **Các nhánh chung (Shared Branches)**
 ```bash
-❌ /git:cp  # Trên nhánh main/develop
+❌ /git cp  # Trên nhánh main/develop
 
 ✅ Sử dụng các nhánh tính năng (feature branches)
 ✅ Tạo PR để xem xét
@@ -106,7 +106,7 @@ Lệnh này kết hợp `/git:cm` (commit) với `git push`:
 ✓ Tài liệu đã được cập nhật
 
 # 2. Commit và push
-/git:cp
+/git cp
 
 Đang phân tích các thay đổi...
 ✓ Đã stage 8 tệp
@@ -125,7 +125,7 @@ Các thay đổi hiện đã có trên GitHub!
 ✓ Đã sửa lỗi đánh máy trong SubmitButton.tsx
 
 # 2. Commit và push
-/git:cp
+/git cp
 
 ✓ Commit: "fix: correct button text typo"
 ✓ Đã đẩy lên origin/bugfix/button-text
@@ -142,15 +142,15 @@ Các thay đổi hiện đã có trên GitHub!
 
 # Thay đổi 1
 /cook [cập nhật header]
-/git:cp  # → Triển khai lên staging
+/git cp  # → Triển khai lên staging
 
 # Thay đổi 2
 /fix [vấn đề căn lề]
-/git:cp  # → Triển khai lên staging
+/git cp  # → Triển khai lên staging
 
 # Thay đổi 3
 /docs:update
-/git:cp  # → Triển khai lên staging
+/git cp  # → Triển khai lên staging
 ```
 
 ## Điều gì xảy ra
@@ -274,7 +274,7 @@ Lựa chọn:
 ✓ Tất cả các bài kiểm tra đã vượt qua
 
 # Bây giờ an toàn để đẩy lên
-/git:cp
+/git cp
 ```
 
 ### Xem lại các thay đổi
@@ -287,7 +287,7 @@ git diff
 git show HEAD
 
 # Sau đó đẩy lên
-git push  # hoặc /git:cp cho thay đổi tiếp theo
+git push  # hoặc /git cp cho thay đổi tiếp theo
 ```
 
 ### Sử dụng các nhánh tính năng
@@ -298,10 +298,10 @@ git checkout -b feature/new-dashboard
 
 # Phát triển và đẩy lên
 /cook [xây dựng dashboard]
-/git:cp  # An toàn trên nhánh tính năng
+/git cp  # An toàn trên nhánh tính năng
 
 # Tạo PR khi đã sẵn sàng
-/git:pr
+/git pr
 ```
 
 ### Commit nhỏ và thường xuyên
@@ -309,20 +309,20 @@ git checkout -b feature/new-dashboard
 ✅ **Tốt:**
 ```bash
 /cook [thêm form đăng nhập]
-/git:cp
+/git cp
 
 /cook [thêm form đăng ký]
-/git:cp
+/git cp
 
 /cook [thêm đặt lại mật khẩu]
-/git:cp
+/git cp
 ```
 
 ❌ **Xấu:**
 ```bash
 # Làm việc trong 3 ngày
 # Thực hiện 50 thay đổi
-/git:cp  # Commit quá lớn, không rõ ràng
+/git cp  # Commit quá lớn, không rõ ràng
 ```
 
 ## Các mẫu quy trình làm việc
@@ -333,18 +333,18 @@ git checkout -b feature/new-dashboard
 # Ngày 1
 git checkout -b feature/payments
 /cook [triển khai tích hợp Stripe]
-/git:cp
+/git cp
 
 # Ngày 2
 /cook [thêm giao diện thanh toán]
-/git:cp
+/git cp
 
 # Ngày 3
 /test
-/git:cp
+/git cp
 
 # Tạo PR
-/git:pr
+/git pr
 ```
 
 ### Hotfix
@@ -353,10 +353,10 @@ git checkout -b feature/payments
 # Lỗi nghiêm trọng trên production
 git checkout -b hotfix/login-error
 /fix --quick [lỗi đăng nhập]
-/git:cp  # Đẩy lên ngay lập tức
+/git cp  # Đẩy lên ngay lập tức
 
 # Tạo PR vào main
-/git:pr main
+/git pr main
 
 # Merge và triển khai
 ```
@@ -366,7 +366,7 @@ git checkout -b hotfix/login-error
 ```bash
 # Cập nhật tài liệu
 /docs:update
-/git:cp  # Đẩy tài liệu lên ngay lập tức
+/git cp  # Đẩy tài liệu lên ngay lập tức
 
 # Các thay đổi sẽ xuất hiện trực tiếp trên trang tài liệu
 ```
@@ -397,8 +397,8 @@ git push
 # Thiết lập upstream
 git push -u origin branch-name
 
-# Hoặc để /git:cp thực hiện
-/git:cp
+# Hoặc để /git cp thực hiện
+/git cp
 > y  # Khi được hỏi thiết lập upstream
 ```
 
@@ -413,7 +413,7 @@ npm run lint:fix
 npm test
 
 # Sau đó thử lại
-/git:cp
+/git cp
 ```
 
 ### Tệp lớn
@@ -431,15 +431,15 @@ git rm --cached large-file.mp4
 echo "large-file.mp4" >> .gitignore
 
 # Sau đó đẩy lên
-/git:cp
+/git cp
 ```
 
 ## So sánh
 
 | Lệnh | Commit cục bộ | Đẩy lên (Push) | Trường hợp sử dụng |
 |---------|-------------|------|----------|
-| `/git:cm` | ✓ | ❌ | Xem lại trước khi đẩy lên |
-| `/git:cp` | ✓ | ✓ | Chu kỳ lặp lại nhanh |
+| `/git cm` | ✓ | ❌ | Xem lại trước khi đẩy lên |
+| `/git cp` | ✓ | ✓ | Chu kỳ lặp lại nhanh |
 | `git push` | ❌ | ✓ | Sau khi commit thủ công |
 
 ## Cách dùng nâng cao
@@ -451,7 +451,7 @@ echo "large-file.mp4" >> .gitignore
 git push staging
 git push production
 
-# /git:cp sử dụng mặc định (origin)
+# /git cp sử dụng mặc định (origin)
 ```
 
 ### Bảo vệ nhánh (Branch Protection)
@@ -463,12 +463,12 @@ Một số kho lưu trữ có tính năng bảo vệ nhánh:
 
 Hãy tạo nhánh tính năng thay thế:
 git checkout -b feature/your-changes
-/git:cp  # Bây giờ hoạt động
+/git cp  # Bây giờ hoạt động
 ```
 
 ### Tích hợp CI
 
-Sau khi `/git:cp`, CI sẽ tự động:
+Sau khi `/git cp`, CI sẽ tự động:
 1. Chạy các bài kiểm tra
 2. Build dự án
 3. Triển khai lên staging
@@ -478,7 +478,7 @@ Theo dõi: `gh run watch`
 
 ## Khi nào KHÔNG nên sử dụng
 
-❌ **Đừng sử dụng `/git:cp` khi:**
+❌ **Đừng sử dụng `/git cp` khi:**
 - Đang làm việc trên các nhánh chung (main, develop)
 - Các thay đổi cần nhóm xem xét
 - Chưa chắc chắn liệu các thay đổi có hoạt động hay không
@@ -488,17 +488,17 @@ Theo dõi: `gh run watch`
 
 ✅ **Sử dụng thay thế:**
 ```bash
-/git:cm  # Commit cục bộ
+/git cm  # Commit cục bộ
 # Kiểm tra, xem lại, nhận phản hồi
 git push  # Đẩy lên thủ công khi đã sẵn sàng
 ```
 
 ## Bước tiếp theo
 
-- [/git:pr](/vi/docs/engineer/commands/git/pull-request) - Tạo pull request
-- [/git:cm](/vi/docs/engineer/commands/git/commit) - Commit mà không push
+- [/git pr](/vi/docs/engineer/commands/git/pull-request) - Tạo pull request
+- [/git cm](/vi/docs/engineer/commands/git/commit) - Commit mà không push
 - [Git Workflow](/vi/docs/guides/git-workflow) - Quy trình làm việc nhóm
 
 ---
 
-**Điểm mấu chốt**: `/git:cp` hợp lý hóa quá trình phát triển nhanh bằng cách kết hợp commit và push, hoàn hảo cho các nhánh tính năng và phát triển cá nhân, nhưng hãy thận trọng khi sử dụng trên các nhánh chung.
+**Điểm mấu chốt**: `/git cp` hợp lý hóa quá trình phát triển nhanh bằng cách kết hợp commit và push, hoàn hảo cho các nhánh tính năng và phát triển cá nhân, nhưng hãy thận trọng khi sử dụng trên các nhánh chung.

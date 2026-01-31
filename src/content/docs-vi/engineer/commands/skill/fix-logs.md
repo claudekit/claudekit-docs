@@ -780,7 +780,7 @@ git diff .claude/skills/[tên].md
 /ask [câu hỏi đã từng bị lỗi]
 
 # 4. Nếu hài lòng, commit
-/git:cm
+/git cm
 
 # 5. Lưu trữ log
 mv logs.txt logs.txt.$(date +%Y%m%d).bak

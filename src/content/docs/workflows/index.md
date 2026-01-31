@@ -19,7 +19,7 @@ Task-oriented guides for common development scenarios using ClaudeKit's slash co
 /clear  # Free context before implementation
 /cook "Implement user authentication with OAuth as planned"
 /fix
-/git:pr "feature/user-auth"
+/git pr "feature/user-auth"
 ```
 
 ### Bug Fixing
@@ -104,9 +104,9 @@ cd my-project
 
 ### Content Creation
 ```bash
-/content:good "write marketing copy for new feature"
-/content:enhance "improve existing landing page"
-/design:good "create visual assets for social media"
+"Create marketing copy for new feature"  # Use copywriting skill (quality mode)
+"Improve existing landing page"  # Use copywriting skill (enhance workflow)
+# Use ai-artist skill (creative mode) for visual assets
 ```
 
 ### Integration Workflows

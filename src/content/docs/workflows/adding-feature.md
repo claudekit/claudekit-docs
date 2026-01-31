@@ -22,7 +22,7 @@ Learn the complete workflow for adding new features to your project with ClaudeK
 **Time**: 15-30 minutes (vs 2-4 hours manually)
 **Agents Used**: planner, scout, tester, code-reviewer, docs-manager
 **Skills**: cook (auto-activates from plan context)
-**Commands**: /plan, /test, /docs:update, /git:cm
+**Commands**: /plan, /test, /docs:update, /git cm
 
 ## Prerequisites
 
@@ -364,7 +364,7 @@ curl -X POST http://localhost:3000/api/auth/reset-password \
 Commit with conventional commit message:
 
 ```bash
-/git:cm
+/git cm
 ```
 
 **Generated commit**:
@@ -391,7 +391,7 @@ Security features:
 If working with a team:
 
 ```bash
-/git:pr main feature/password-reset
+/git pr main feature/password-reset
 ```
 
 **Generated PR**:
@@ -623,7 +623,7 @@ git diff
 
 # Understand what changed
 # Only then commit
-/git:cm
+/git cm
 ```
 
 ### 6. Use Feature Branches
@@ -637,10 +637,10 @@ git checkout -b feature/password-reset
 /cook [feature]
 
 # Commit
-/git:cm
+/git cm
 
 # Create PR
-/git:pr main feature/password-reset
+/git pr main feature/password-reset
 ```
 
 ## Next Steps
@@ -655,7 +655,7 @@ git checkout -b feature/password-reset
 - [/cook](/docs/engineer/commands/core/cook) - Implement features from plans
 - [/test](/docs/engineer/commands/core/test) - Run test suites
 - [/docs:update](/docs/engineer/commands/docs/update) - Update documentation
-- [/git:cm](/docs/engineer/commands/git/commit) - Commit changes
+- [/git cm](/docs/engineer/commands/git/commit) - Commit changes
 
 ### Further Reading
 - [Command Reference](/docs/commands) - All available commands

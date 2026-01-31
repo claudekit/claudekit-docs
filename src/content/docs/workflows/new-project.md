@@ -355,7 +355,7 @@ git add .
 git commit -m "Initial project setup via ClaudeKit bootstrap"
 
 # After each feature
-/git:cp
+/git cp
 ```
 
 ## Troubleshooting

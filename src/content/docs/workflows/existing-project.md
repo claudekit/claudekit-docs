@@ -177,9 +177,9 @@ Runs test suite and generates report. No automatic fixes.
 ### Git Operations
 
 ```bash
-/git:cm         # Create meaningful commit message
-/git:cp         # Commit and push changes
-/git:pr         # Create pull request
+/git cm         # Create meaningful commit message
+/git cp         # Commit and push changes
+/git pr         # Create pull request
 ```
 
 ### Integration
@@ -249,7 +249,7 @@ Run `/test` frequently to catch issues early.
 /test
 
 # 3. Commit and push
-/git:cp
+/git cp
 ```
 
 ### Refactoring Legacy Module

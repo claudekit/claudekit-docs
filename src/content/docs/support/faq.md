@@ -71,7 +71,7 @@ claudekit init
 /clear                                      # Free context
 /cook "Implement user authentication with OAuth as planned"
 /fix                                  # Test and fix issues
-/git:cm                                    # Commit changes
+/git cm                                    # Commit changes
 ```
 
 ### Q: How do I fix bugs with ClaudeKit?
@@ -80,7 +80,7 @@ claudekit init
 /debug "login button not working"          # Investigate issue
 /fix "session timeout problem"        # Implement fix
 /fix                                  # Verify fix works
-/git:cm                                    # Commit solution
+/git cm                                    # Commit solution
 ```
 
 ### Q: Can I create custom commands?

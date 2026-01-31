@@ -604,7 +604,7 @@ cat plans/content-enhance-*.md
 mv content/enhanced/[tên]-enhanced.md [vị trí-gốc]
 
 # 6. Commit các thay đổi
-/git:cm
+/git cm
 ```
 
 ## Các chỉ số cần theo dõi

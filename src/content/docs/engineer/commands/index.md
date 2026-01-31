@@ -128,9 +128,9 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 /bootstrap [create REST API]
 
 # Optional arguments
-/git:pr                          # PR to default branch
-/git:pr [develop]                # PR to develop
-/git:pr [main] [feature-branch]  # PR from feature to main
+/git pr                          # PR to default branch
+/git pr [develop]                # PR to develop
+/git pr [main] [feature-branch]  # PR from feature to main
 
 # Multiple arguments
 /plan:parallel [feature] [3]     # Parallel planning with 3 researchers
@@ -377,7 +377,7 @@ Coverage: 87.3%
 
 All tests passed!
 
-Next: Review changes, then /git:cm
+Next: Review changes, then /git cm
 ```
 
 ## Troubleshooting Commands

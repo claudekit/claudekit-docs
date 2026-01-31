@@ -658,7 +658,7 @@ cat docs/technical-debt.md
 /docs:update
 
 # 5. Commit
-/git:cm
+/git cm
 
 # 6. Deploy
 git push

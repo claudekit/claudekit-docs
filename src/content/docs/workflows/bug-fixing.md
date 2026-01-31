@@ -97,7 +97,7 @@ The bug fixing workflow combines investigation, root cause analysis, fixing, and
 ### 5. Validation & Deployment
 ```bash
 /fix "validate fix doesn't break production"
-/git:cm
+/git cm
 ```
 
 **What happens**:
@@ -162,7 +162,7 @@ const sessionConfig = {
 ### Step 5: Deploy
 ```bash
 /fix
-/git:cm
+/git cm
 ```
 
 ## Specialized Debugging Commands

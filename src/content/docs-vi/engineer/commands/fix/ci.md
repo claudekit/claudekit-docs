@@ -393,7 +393,7 @@ gh run watch
 git diff
 
 # 4. Commit
-/git:cm
+/git cm
 
 # 5. Push
 git push

@@ -838,7 +838,7 @@ npm test
 npm run build
 
 # 5. Commit và push
-/git:cm
+/git cm
 
 # 6. Xác minh CI vượt qua
 # Kiểm tra GitHub Actions

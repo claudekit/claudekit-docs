@@ -70,7 +70,7 @@ Các agent được ClaudeKit tự động điều phối dựa trên các workf
 ## Cách kích hoạt Agent
 
 1. **Tự động (Khuyên dùng)**: ClaudeKit tự động điều phối dựa trên lệnh (`/cook`, `/fix`, v.v.).
-2. **Thông qua Lệnh**: Các lệnh cụ thể kích hoạt agent cụ thể (`/test`, `/debug`, `/git:cm`).
+2. **Thông qua Lệnh**: Các lệnh cụ thể kích hoạt agent cụ thể (`/test`, `/debug`, `/git cm`).
 3. **Trực tiếp (Nâng cao)**: Yêu cầu đích danh agent trong câu lệnh của bạn.
 
 ---

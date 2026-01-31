@@ -366,7 +366,7 @@ npm test
 /cook [add password reset functionality]
 
 # 5. Commit initial structure
-/git:cm
+/git cm
 ```
 
 ## Next Steps

@@ -71,7 +71,7 @@ Next: /fix Test failures in email campaign + analytics
 ### Trước khi Commits
 ```bash
 /test  # Đảm bảo test pass
-/git:cm  # Commit nếu tất cả bình thường
+/git cm  # Commit nếu tất cả bình thường
 ```
 
 ### Debugging

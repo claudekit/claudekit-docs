@@ -376,7 +376,7 @@ cat plans/debug/issue-investigation-YYYYMMDD.md
 /test
 
 # 6. Commit
-/git:cm
+/git cm
 ```
 
 ## Integration with Other Commands

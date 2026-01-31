@@ -219,7 +219,7 @@ Chất lượng: Cao
 /watzup
 
 # Sử dụng tóm tắt cho mô tả PR
-# Sau đó: /git:pr [branch] [base]
+# Sau đó: /git pr [branch] [base]
 ```
 
 ## Ví dụ đầy đủ
@@ -740,17 +740,17 @@ cat work-summary.md
 # /journal: Đi sâu với ngữ cảnh
 ```
 
-### Với /git:pr
+### Với /git pr
 
 ```bash
 # Phân tích thay đổi
 /watzup
 
 # Tạo PR với tóm tắt
-/git:pr feature-branch main
+/git pr feature-branch main
 ```
 
-### Với /git:cm
+### Với /git cm
 
 ```bash
 # Xem thay đổi chưa commit
@@ -760,7 +760,7 @@ git status
 /watzup
 
 # Commit
-/git:cm
+/git cm
 ```
 
 ## Tùy chỉnh
@@ -820,8 +820,8 @@ git log -- src/payments/
 ## Lệnh liên quan
 
 - [/journal](/docs-vi/commands/core/journal) - Tài liệu công việc chi tiết
-- [/git:cm](/docs-vi/commands/git/commit) - Commit thay đổi
-- [/git:pr](/docs-vi/commands/git/pull-request) - Tạo pull request
+- [/git cm](/docs-vi/commands/git/commit) - Commit thay đổi
+- [/git pr](/docs-vi/commands/git/pull-request) - Tạo pull request
 - [/cook](/docs-vi/commands/core/cook) - Triển khai tính năng
 - [/plan](/docs-vi/commands/core/plan) - Lập kế hoạch triển khai
 

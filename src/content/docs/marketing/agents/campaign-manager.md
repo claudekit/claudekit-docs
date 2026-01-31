@@ -65,7 +65,7 @@ campaign-manager: I'll create a comprehensive multi-channel launch plan...
 Next Steps:
 1. Review creative brief (attached)
 2. Approve budget allocation
-3. Launch content production with /content:good
+3. Launch content production (use copywriting skill for quality content)
 4. Set up tracking with /analytics dashboard
 ```
 
@@ -410,7 +410,7 @@ Next Handoffs:
 4. You review and approve
 
 5. Execute:
-   - /content:good for blog posts and video scripts
+   - Use copywriting skill (quality mode) for blog posts and video scripts
    - /email create for welcome sequence
    - /social create for announcement posts
    - /analytics dashboard for tracking

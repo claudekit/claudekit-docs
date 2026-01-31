@@ -81,7 +81,7 @@ Combine commands for complete workflows:
 /cook "Redesign checkout flow as planned"
 /frontend-design "checkout UI mockup"
 /fix
-/git:pr "feature/new-checkout"
+/git pr "feature/new-checkout"
 ```
 
 ## Compatibility

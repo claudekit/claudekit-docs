@@ -296,7 +296,7 @@ npm test
 cat docs/api/rate-limiting.md
 
 # 5. Only then commit
-/git:cm
+/git cm
 ```
 
 ### Iterate on Feedback
@@ -489,13 +489,13 @@ git diff
 /docs:update
 
 # 6. Commit
-/git:cm
+/git cm
 
 # 7. Push
 git push
 
 # 8. Create PR
-/git:pr
+/git pr
 ```
 
 ## Troubleshooting
@@ -542,7 +542,7 @@ git push
 
 - [/test](/docs/engineer/commands/core/test) - Run test suite
 - [/fix](/docs/engineer/commands/fix/test) - Fix test failures
-- [/git:cm](/docs/engineer/commands/git/commit) - Commit changes
+- [/git cm](/docs/engineer/commands/git/commit) - Commit changes
 - [/docs:update](/docs/engineer/commands/docs/update) - Update documentation
 
 ---

@@ -339,7 +339,7 @@ Updated authentication logic to use proper async bcrypt comparison.
 ### Step 5: Commit the Fix
 
 ```bash
-/git:cm
+/git cm
 ```
 
 **Generated commit**:
@@ -604,7 +604,7 @@ Fix similar bugs:
 Track bug fixes:
 ```bash
 # Commit with fix: prefix
-/git:cm
+/git cm
 
 # Automatically added to CHANGELOG.md
 # Links to issue number

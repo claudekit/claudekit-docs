@@ -42,8 +42,8 @@ cd my-app
 - `/cook` - Implement features end-to-end
 - `/plan` - Research + create implementation plan
 - `/fix` - Multi-agent bug fixing
-- `/design:good` - UI/UX design
-- `/git:cm` - Commit with conventional format
+- `ai-artist` skill - UI/UX design and visual assets
+- `/git cm` - Commit with conventional format
 - [See all commands →](/docs/commands)
 
 **45 Built-in Skills**:

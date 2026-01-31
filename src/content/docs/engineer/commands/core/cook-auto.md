@@ -22,7 +22,7 @@ Implement a feature automatically with planning, coding, and optional commit.
 
 1. **Plan**: `/plan <detailed-instruction>` creates implementation plan
 2. **Code**: `cook` skill implements the plan via natural language
-3. **Commit**: Asks user if they want to commit, triggers `/git:cm`
+3. **Commit**: Asks user if they want to commit, triggers `/git cm`
 
 ## Example
 
@@ -34,7 +34,7 @@ Implement a feature automatically with planning, coding, and optional commit.
 # 2. Implements authentication
 # 3. Runs tests
 # 4. Code review
-# 5. Asks: "Want to commit?" → /git:cm
+# 5. Asks: "Want to commit?" → /git cm
 ```
 
 ## Comparison

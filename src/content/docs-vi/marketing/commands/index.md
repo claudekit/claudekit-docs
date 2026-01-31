@@ -161,7 +161,7 @@ Tối ưu hóa và đo lường:
 /seo audit https://yourblog.com/marketing-automation
 
 # Bước 5: Commit
-/git:cm
+/git cm
 ```
 
 **Thời gian**: 20 phút so với 4-6 giờ làm thủ công

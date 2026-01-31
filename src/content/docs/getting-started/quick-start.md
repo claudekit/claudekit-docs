@@ -92,7 +92,7 @@ Summary:
 • Tests: 12 test cases
 • Estimated: 2 hours manually, 5 minutes with ClaudeKit
 
-Next: /code plans/251030-auth-implementation.md
+Next: "Implement auth plan"
 ```
 
 ### Step 3: Review Plan
@@ -106,7 +106,7 @@ Scan the plan. Architecture solid? Continue.
 ### Step 4: Implement
 
 ```bash
-/code plans/251030-auth-implementation.md
+"Implement auth plan"
 ```
 
 **What happens** (5 minutes):
@@ -267,17 +267,17 @@ Each takes 5-20 minutes instead of days.
 ### Full Feature Cycle
 ```bash
 /plan [feature]           # Research + plan
-/code [plan]              # Implement
+"Implement plan"              # Implement
 /test                     # Validate
-/fix:fast [issue]         # Quick fixes
+/fix --quick [issue]         # Quick fixes
 /git:cm                   # Commit
 ```
 
 ### Debug + Fix
 ```bash
 /debug [issue]            # Root cause analysis
-/fix:hard [complex-issue] # Multi-agent fix
-/fix:ci [actions-url]     # Fix failing CI/CD
+/fix [complex-issue] # Multi-agent fix
+/fix [actions-url]     # Fix failing CI/CD
 ```
 
 ### Design + Content

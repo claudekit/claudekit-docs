@@ -277,7 +277,7 @@ The `/ask` command automatically reads `./docs` but you can help by:
 ## What /ask DOES NOT Do
 
 - ❌ Write implementation code
-- ❌ Fix bugs (use `/debug` or `/fix:*` instead)
+- ❌ Fix bugs (use `/debug` or `/fix` instead)
 - ❌ Deploy infrastructure
 - ❌ Make final decisions (you decide, it advises)
 

@@ -115,7 +115,7 @@ git status
 
 ### After Implementation
 ```bash
-/code plans/feature.md
+"Implement feature"
 # Implementation complete
 /git pr  # Create PR
 ```

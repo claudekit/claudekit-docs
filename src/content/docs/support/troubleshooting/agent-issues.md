@@ -339,10 +339,10 @@ ck init --kit engineer
 
 ```bash
 # ✅ Correct: Fast tasks with fast agents
-/fix:fast typo in button text  # Uses fast model
+/fix --quick typo in button text  # Uses fast model
 
 # ❌ Wrong: Simple task with complex agent
-/fix:hard typo in button text  # Overkill, uses slow model
+/fix typo in button text  # Overkill, uses slow model
 ```
 
 **Step 2: Check model configuration**

@@ -622,8 +622,8 @@ cat plans/fix-ci-*.md
 # Option 2: Use /cook to implement
 /code [implement CI fix plan]
 
-# Option 3: Use /fix:ci to auto-implement
-/fix:ci https://github.com/user/repo/actions/runs/12345
+# Option 3: Use /fix to auto-implement
+/fix https://github.com/user/repo/actions/runs/12345
 ```
 
 ## Plan Structure
@@ -828,8 +828,8 @@ cat plans/fix-ci-12345.md
 /clear
 /cook "Fix CI failure as planned in fix-ci-12345.md"
 
-# Option C: Use /fix:ci (auto-implements)
-/fix:ci https://github.com/user/repo/actions/runs/12345
+# Option C: Use /fix (auto-implements)
+/fix https://github.com/user/repo/actions/runs/12345
 
 # 4. Test locally first
 npm test
@@ -844,7 +844,7 @@ npm run build
 
 ## Next Steps
 
-- [/fix:ci](/docs/engineer/commands/fix/ci) - Auto-implement CI fix
+- [/fix](/docs/engineer/commands/fix/ci) - Auto-implement CI fix
 - [/code](/docs/engineer/commands/core/code) - Implement existing plan
 - [/debug](/docs/engineer/commands/core/debug) - Debug complex issues
 

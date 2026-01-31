@@ -63,7 +63,7 @@ Next: /fix Test failures in email campaign + analytics
 
 ### After Implementation
 ```bash
-/code plans/feature.md
+"Implement feature"
 /test  # Verify everything works
 ```
 

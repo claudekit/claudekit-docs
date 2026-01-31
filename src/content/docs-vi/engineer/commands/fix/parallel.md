@@ -255,7 +255,7 @@ Tổng thời gian: 35 giây
 
 ## Phát hiện phụ thuộc
 
-Nếu các lỗi chia sẻ cùng một tệp, `/fix --parallel` sẽ chuyển hướng sang `/fix:hard`:
+Nếu các lỗi chia sẻ cùng một tệp, `/fix --parallel` sẽ chuyển hướng sang `/fix`:
 
 ```bash
 /fix --parallel [
@@ -273,7 +273,7 @@ Vấn đề 2: Có khả năng ảnh hưởng đến src/auth/login.ts, src/auth
 ⚠️ Phát hiện chồng chéo: src/auth/session.ts
 
 Các vấn đề không độc lập.
-→ Đang chuyển hướng sang /fix:hard thay thế
+→ Đang chuyển hướng sang /fix thay thế
 
 Cả hai vấn đề có thể chia sẻ cùng ngữ cảnh trong auth/session.ts.
 Khuyến nghị sửa lỗi tuần tự để đảm bảo tính nhất quán.
@@ -329,8 +329,8 @@ Agent 3 đã hết thời gian chờ.
 2. Phiên làm việc không được duy trì
 ]
 
-# Tốt: Sử dụng /fix:hard cho các lỗi có liên quan
-/fix:hard [lỗi token xác thực hết hạn và phiên làm việc không được duy trì]
+# Tốt: Sử dụng /fix cho các lỗi có liên quan
+/fix [lỗi token xác thực hết hạn và phiên làm việc không được duy trì]
 ```
 
 ### Mô tả lỗi cụ thể
@@ -379,7 +379,7 @@ Các lỗi ảnh hưởng đến phần mã nguồn chung:
 - API route + Middleware (chia sẻ luồng yêu cầu)
 
 # Sử dụng thay thế:
-/fix:hard [mô tả các vấn đề liên quan cùng nhau]
+/fix [mô tả các vấn đề liên quan cùng nhau]
 ```
 
 ### Điều tra phức tạp
@@ -392,16 +392,16 @@ Các lỗi cần phân tích sâu:
 - "Hiệu suất bị giảm sút" (cần đo đạc hiệu năng)
 
 # Sử dụng thay thế:
-/fix:hard [vấn đề cần điều tra kỹ]
+/fix [vấn đề cần điều tra kỹ]
 ```
 
 ## Các lệnh liên quan
 
 - [/fix](/vi/docs/engineer/commands/fix) - Định tuyến thông minh (có thể định tuyến đến đây)
-- [/fix:fast](/vi/docs/engineer/commands/fix/fast) - Cho một lỗi đơn giản duy nhất
-- [/fix:hard](/vi/docs/engineer/commands/fix/hard) - Cho lỗi phức tạp hoặc các lỗi có liên quan
-- [/code:parallel](/vi/docs/engineer/commands/core/code-parallel) - Thực thi kế hoạch song song
-- [/cook:auto:parallel](/vi/docs/engineer/commands/core/cook-auto-parallel) - Triển khai tính năng song song
+- [/fix --quick](/vi/docs/engineer/commands/fix/fast) - Cho một lỗi đơn giản duy nhất
+- [/fix](/vi/docs/engineer/commands/fix/hard) - Cho lỗi phức tạp hoặc các lỗi có liên quan
+- [/cook --parallel](/vi/docs/engineer/commands/core/code-parallel) - Thực thi kế hoạch song song
+- [/cook --auto --parallel](/vi/docs/engineer/commands/core/cook-auto-parallel) - Triển khai tính năng song song
 
 ---
 

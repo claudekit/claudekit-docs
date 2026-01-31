@@ -726,7 +726,7 @@ More flexible implementation:
 
 **Solution:**
 ```bash
-/fix:ui [compare screenshot to implementation] - adjust spacing to match exactly
+/fix [compare screenshot to implementation] - adjust spacing to match exactly
 ```
 
 ### Missing Interactions
@@ -768,7 +768,7 @@ More flexible implementation:
 /design:screenshot [figma-export.png]
 
 # 3. Review and adjust
-/fix:ui [compare side by side] - adjust button padding and card shadows
+/fix [compare side by side] - adjust button padding and card shadows
 
 # 4. Iterate
 /design:screenshot [updated-design.png] - implement changes from v2
@@ -814,7 +814,7 @@ More flexible implementation:
 - [/design:describe](/docs/engineer/commands/design/describe) - Analyze screenshot first
 - [/design:video](/docs/engineer/commands/design/video) - For animated interfaces
 - [/design:good](/docs/engineer/commands/design/good) - Polish the implementation
-- [/fix:ui](/docs/engineer/commands/fix/ui) - Fine-tune the result
+- [/fix](/docs/engineer/commands/fix/ui) - Fine-tune the result
 
 ---
 

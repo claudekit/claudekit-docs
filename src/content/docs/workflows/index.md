@@ -18,7 +18,7 @@ Task-oriented guides for common development scenarios using ClaudeKit's slash co
 /plan "add user authentication with OAuth"
 /clear  # Free context before implementation
 /cook "Implement user authentication with OAuth as planned"
-/fix:test
+/fix
 /git:pr "feature/user-auth"
 ```
 
@@ -98,7 +98,7 @@ cd my-project
 /plan "complex feature with multiple components"
 # Spawns: planner → researcher → frontend dev → backend dev → tester
 
-/fix:hard "production bug"
+/fix "production bug"
 # Spawns: debugger → researcher → dev → tester → reviewer
 ```
 

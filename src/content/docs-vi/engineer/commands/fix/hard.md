@@ -1,5 +1,5 @@
 ---
-title: /fix:hard
+title: /fix
 description: Tài liệu hướng dẫn lệnh fix:hard
 section: engineer
 kit: engineer
@@ -9,19 +9,19 @@ published: true
 lang: vi
 ---
 
-# /fix:hard
+# /fix
 
 Sửa các lỗi phức tạp thông qua việc điều tra kỹ lưỡng và phân tích nguyên nhân gốc rễ. Lệnh này triển khai nhiều agent để quét codebase, nghiên cứu giải pháp, tạo kế hoạch sửa lỗi chi tiết và triển khai kèm theo thử nghiệm toàn diện.
 
 ## Cú Pháp
 
 ```bash
-/fix:hard [mô tả vấn đề]
+/fix [mô tả vấn đề]
 ```
 
 ## Cách Hoạt Động
 
-Lệnh `/fix:hard` tuân theo một quy trình gỡ lỗi (debugging) toàn diện:
+Lệnh `/fix` tuân theo một quy trình gỡ lỗi (debugging) toàn diện:
 
 ### 1. Phân Tích Codebase (Giai đoạn Scout)
 
@@ -67,36 +67,36 @@ Lệnh `/fix:hard` tuân theo một quy trình gỡ lỗi (debugging) toàn di�
 
 ## Khi Nào Nên Sử Dụng
 
-### ✅ Sử dụng /fix:hard cho:
+### ✅ Sử dụng /fix cho:
 
 **Các Lỗi Phức Tạp**
 ```bash
-/fix:hard [người dùng thỉnh thoảng bị đăng xuất sau 5-10 phút hoạt động]
+/fix [người dùng thỉnh thoảng bị đăng xuất sau 5-10 phút hoạt động]
 ```
 
 **Các Vấn Đề Toàn Hệ Thống**
 ```bash
-/fix:hard [rò rỉ bộ nhớ trong các kết nối WebSocket gây ra treo máy chủ]
+/fix [rò rỉ bộ nhớ trong các kết nối WebSocket gây ra treo máy chủ]
 ```
 
 **Các Vấn Đề Không Liên Tục**
 ```bash
-/fix:hard [xảy ra tình trạng database deadlock khi tải cao]
+/fix [xảy ra tình trạng database deadlock khi tải cao]
 ```
 
 **Nhiều Vấn Đề Liên Quan**
 ```bash
-/fix:hard [hệ thống xác thực gặp vấn đề với xử lý phiên, làm mới token và đăng xuất]
+/fix [hệ thống xác thực gặp vấn đề với xử lý phiên, làm mới token và đăng xuất]
 ```
 
 **Chưa Biết Nguyên Nhân Gốc Rễ**
 ```bash
-/fix:hard [API thỉnh thoảng trả về lỗi 500 nhưng nhật ký không hiển thị gì cả]
+/fix [API thỉnh thoảng trả về lỗi 500 nhưng nhật ký không hiển thị gì cả]
 ```
 
 **Các Vấn Đề Về Hiệu Suất**
 ```bash
-/fix:hard [thời gian tải trang tăng từ 200ms lên 3s sau những thay đổi gần đây]
+/fix [thời gian tải trang tăng từ 200ms lên 3s sau những thay đổi gần đây]
 ```
 
 ## Ví Dụ
@@ -104,7 +104,7 @@ Lệnh `/fix:hard` tuân theo một quy trình gỡ lỗi (debugging) toàn di�
 ### Lỗi Xác Thực Phức Tạp
 
 ```bash
-/fix:hard [người dùng bị đăng xuất ngẫu nhiên, có vẻ xảy ra nhiều hơn trên thiết bị di động, nhật ký lỗi hiển thị "invalid token" nhưng token trông có vẻ hợp lệ]
+/fix [người dùng bị đăng xuất ngẫu nhiên, có vẻ xảy ra nhiều hơn trên thiết bị di động, nhật ký lỗi hiển thị "invalid token" nhưng token trông có vẻ hợp lệ]
 ```
 
 **Điều gì xảy ra:**
@@ -178,7 +178,7 @@ Lệnh `/fix:hard` tuân theo một quy trình gỡ lỗi (debugging) toàn di�
 ### Điều Tra Rò Rỉ Bộ Nhớ
 
 ```bash
-/fix:hard [bộ nhớ máy chủ tăng liên tục, cuối cùng bị treo sau 6-8 giờ]
+/fix [bộ nhớ máy chủ tăng liên tục, cuối cùng bị treo sau 6-8 giờ]
 ```
 
 **Điều gì xảy ra:**
@@ -323,7 +323,7 @@ Kết quả kiểm tra:
 
 ✅ **Mô tả tốt:**
 ```bash
-/fix:hard [
+/fix [
   Người dùng báo cáo bị đăng xuất ngẫu nhiên trên thiết bị di động.
   Xảy ra thường xuyên hơn sau 10-15 phút sử dụng.
   Lỗi trong nhật ký: "Invalid token signature"
@@ -335,13 +335,13 @@ Kết quả kiểm tra:
 
 ❌ **Mơ hồ:**
 ```bash
-/fix:hard [lỗi đăng xuất]
+/fix [lỗi đăng xuất]
 ```
 
 ### Bao Gồm Các Thông Báo Lỗi
 
 ```bash
-/fix:hard [
+/fix [
   Xử lý thanh toán thất bại với lỗi:
   "PaymentError: Card declined (code: insufficient_funds)"
   Nhưng thẻ của người dùng có đủ số dư.
@@ -353,7 +353,7 @@ Kết quả kiểm tra:
 ### Đề Cập Đến Thời Điểm Bắt Đầu
 
 ```bash
-/fix:hard [
+/fix [
   Rò rỉ bộ nhớ bắt đầu sau khi triển khai v2.3.0.
   Bộ nhớ máy chủ tăng từ 200MB lên 2GB sau 6 giờ.
   Đã kiểm tra các PR gần đây: #245, #247, #251.
@@ -364,7 +364,7 @@ Kết quả kiểm tra:
 ### Chia Sẻ Các Bước Tái Hiện
 
 ```bash
-/fix:hard [
+/fix [
   Để tái hiện:
   1. Đăng nhập với quyền admin
   2. Điều hướng tới /admin/users
@@ -377,7 +377,7 @@ Kết quả kiểm tra:
 
 ## Các Tệp Đầu Ra
 
-Sau khi `/fix:hard` hoàn thành, bạn sẽ có:
+Sau khi `/fix` hoàn thành, bạn sẽ có:
 
 ### Kế Hoạch Sửa Lỗi
 
@@ -421,7 +421,7 @@ docs/
 
 ## So Sánh Thời Gian
 
-| Độ phức tạp của vấn đề | /fix:fast | /fix:hard |
+| Độ phức tạp của vấn đề | /fix --quick | /fix |
 |-----------------|-----------|-----------|
 | Lỗi đánh máy đơn giản | 10 giây | 2 phút (dư thừa) |
 | Lỗi logic | 30 giây | 3 phút |
@@ -429,7 +429,7 @@ docs/
 | Rò rỉ bộ nhớ | Sẽ không tìm thấy | 12 phút |
 | Lỗi toàn hệ thống | Sẽ không sửa được | 15 phút |
 
-## Khi /fix:hard Tìm Thấy Nhiều Vấn Đề
+## Khi /fix Tìm Thấy Nhiều Vấn Đề
 
 Thỉnh thoảng việc điều tra sẽ tiết lộ nhiều vấn đề liên quan:
 
@@ -456,7 +456,7 @@ Các tùy chọn:
 
 ## Kế Hoạch Hoàn Tác (Rollback)
 
-Mỗi lệnh `/fix:hard` đều bao gồm hướng dẫn hoàn tác:
+Mỗi lệnh `/fix` đều bao gồm hướng dẫn hoàn tác:
 
 ```
 Kế Hoạch Hoàn Tác (nếu cần):
@@ -493,7 +493,7 @@ Kế Hoạch Hoàn Tác (nếu cần):
 # Hủy và cung cấp vị trí cụ thể hơn
 Ctrl+C
 
-/fix:hard [cùng mô tả vấn đề, nhưng chỉ tìm trong src/auth/]
+/fix [cùng mô tả vấn đề, nhưng chỉ tìm trong src/auth/]
 ```
 
 ### Không Thể Tìm Thấy Nguyên Nhân Gốc Rễ
@@ -511,7 +511,7 @@ Ctrl+C
 /debug [thu thập thêm chi tiết về vấn đề]
 
 # Sau đó thử lại với nhiều ngữ cảnh hơn
-/fix:hard [vấn đề + thông tin chẩn đoán mới]
+/fix [vấn đề + thông tin chẩn đoán mới]
 ```
 
 ### Bản Sửa Lỗi Làm Hỏng Các Tính Năng Khác
@@ -536,7 +536,7 @@ Quy trình làm việc khuyến nghị:
 
 ```bash
 # 1. Sửa lỗi hoàn tất
-/fix:hard [vấn đề]
+/fix [vấn đề]
 
 # 2. Xem lại kế hoạch sửa lỗi
 cat plans/fix-[vấn-đề].md
@@ -566,10 +566,10 @@ git diff
 ## Bước Tiếp Theo
 
 - [/debug](/docs/engineer/commands/core/debug) - Điều tra vấn đề
-- [/fix:fast](/docs/engineer/commands/fix/fast) - Cho các sửa lỗi đơn giản
+- [/fix --quick](/docs/engineer/commands/fix/fast) - Cho các sửa lỗi đơn giản
 - [/test](/docs/engineer/commands/core/test) - Chạy các bài kiểm tra
 - [/git:cm](/docs/engineer/commands/git/commit) - Commit bản sửa lỗi
 
 ---
 
-**Điểm mấu chốt**: `/fix:hard` là lệnh ưu tiên của bạn cho các lỗi phức tạp yêu cầu điều tra kỹ. Nó triển khai nhiều agent để phân tích, nghiên cứu, lập kế hoạch và sửa lỗi một cách thấu đáo với thử nghiệm toàn diện.
+**Điểm mấu chốt**: `/fix` là lệnh ưu tiên của bạn cho các lỗi phức tạp yêu cầu điều tra kỹ. Nó triển khai nhiều agent để phân tích, nghiên cứu, lập kế hoạch và sửa lỗi một cách thấu đáo với thử nghiệm toàn diện.

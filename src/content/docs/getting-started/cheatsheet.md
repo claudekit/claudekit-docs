@@ -60,16 +60,16 @@ ck init --use-git
 /cook <description>
 
 # Autonomous feature implementation
-/cook:auto <description>
+/cook --auto <description>
 
 # Fast autonomous mode (less planning)
-/cook:auto:fast <description>
+/cook --auto --fast <description>
 
 # Create implementation plan only
 /plan <description>
 
-# Execute existing plan
-/code <plan.md>
+# Execute existing plan (natural language recommended)
+"Implement as planned"
 
 # Bootstrap new project
 /bootstrap <idea-description>
@@ -82,19 +82,19 @@ ck init --use-git
 
 ```bash
 # Quick bug fix
-/fix:fast <description>
+/fix --quick <description>
 
-# Complex bug fix (deeper analysis)
-/fix:hard <description>
+# Complex bug fix (auto-detects complexity)
+/fix <description>
 
-# Auto-fetch logs and fix
-/fix:logs
+# Auto-fetch logs and fix (auto-detected)
+/fix
 
-# Run test suite and fix until passing
-/fix:test
+# Run test suite and fix until passing (auto-detected)
+/fix
 
-# Fix CI/CD pipeline issues
-/fix:ci <github-action-url>
+# Fix CI/CD pipeline issues (auto-detected)
+/fix <github-action-url>
 ```
 
 ### Testing
@@ -191,19 +191,19 @@ ck init --use-git
 
 ```bash
 # Simple bugs
-/fix:fast <bug-description>
+/fix --quick <bug-description>
 
-# Complex bugs
-/fix:hard <bug-description>
+# Complex bugs (auto-detects)
+/fix <bug-description>
 
-# From logs
-/fix:logs
+# From logs (auto-detected)
+/fix
 
-# From failing tests
-/fix:test
+# From failing tests (auto-detected)
+/fix
 
-# From CI/CD
-/fix:ci <action-url>
+# From CI/CD (auto-detected)
+/fix <action-url>
 ```
 
 ## Common Workflows
@@ -258,13 +258,13 @@ claude
 # 2. Review plan (markdown file generated)
 
 # 3. Implement
-/code profile-feature-plan.md
+"Implement profile feature as planned"
 
 # 4. Test
 /test
 
 # 5. Fix if needed
-/fix:test
+/fix
 
 # 6. Commit
 /git:cm
@@ -274,9 +274,9 @@ claude
 
 ```bash
 # 1. Describe bug
-/fix:hard Payment fails on Safari after form validation
+/fix Payment fails on Safari after form validation
 
-# 2. CC analyzes and fixes
+# 2. CC analyzes and fixes (auto-detects complexity)
 
 # 3. Test the fix
 /test
@@ -292,9 +292,9 @@ claude
 # https://github.com/user/repo/actions/runs/12345
 
 # 2. Fix CI
-/fix:ci https://github.com/user/repo/actions/runs/12345
+/fix https://github.com/user/repo/actions/runs/12345
 
-# 3. CC fetches logs, analyzes, fixes
+# 3. CC fetches logs, analyzes, fixes (auto-detects CI context)
 
 # 4. Push fix
 /git:cp
@@ -311,7 +311,7 @@ claude
 ### Fix Performance Issue
 
 ```bash
-/fix:hard Dashboard loads slowly with 1000+ items
+/fix Dashboard loads slowly with 1000+ items
 ```
 
 ### Plan Database Migration
@@ -339,15 +339,15 @@ claude
 ### 🚀 Core Development
 - `/cook` - Feature implementation
 - `/plan` - Create plans
-- `/code` - Execute plans
+- `/cook` - Execute plans
 - `/bootstrap` - New projects
 
 ### 🐛 Debugging & Fixing
-- `/fix:fast` - Quick fixes
-- `/fix:hard` - Complex fixes
-- `/fix:logs` - Log-based fixes
-- `/fix:test` - Test-based fixes
-- `/fix:ci` - CI/CD fixes
+- `/fix --quick` - Quick fixes
+- `/fix` - Auto-detects complexity
+- `/fix` - Auto-detects logs
+- `/fix` - Auto-detects tests
+- `/fix` - Auto-detects CI
 
 ### 🧪 Testing
 - `/test` - Run tests
@@ -392,16 +392,16 @@ More detailed descriptions = better results
 
 ```bash
 # Quick bugs
-/fix:fast <simple-issue>
+/fix --quick <simple-issue>
 
-# Complex bugs
-/fix:hard <complex-issue>
+# Complex bugs (auto-detects)
+/fix <complex-issue>
 
 # Small features
 /cook <feature>
 
 # Large features
-/plan <feature> → review → /code plan.md
+/plan <feature> → review → "Implement as planned"
 ```
 
 ### 4. Test Frequently
@@ -411,7 +411,7 @@ More detailed descriptions = better results
 /test
 
 # Or auto-fix tests
-/fix:test
+/fix
 ```
 
 ### 5. Document Changes
@@ -469,22 +469,22 @@ ck --version
 /plan <description>
 
 # Code from existing plan
-/code <plan.md>
+"Implement plan"
 
 # Quick bug fix
-/fix:fast <bug-description>
+/fix --quick <bug-description>
 
-# Hard bug fix (deeper analysis)
-/fix:hard <bug-description>
+# Bug fix (auto-detects complexity)
+/fix <bug-description>
 
-# Auto-fetch logs and fix
-/fix:logs
+# Auto-fetch logs and fix (auto-detected)
+/fix
 
-# Run tests and fix till passing
-/fix:test
+# Run tests and fix till passing (auto-detected)
+/fix
 
-# Fetch GitHub Actions logs and fix
-/fix:ci <github-action-url>
+# Fetch GitHub Actions logs and fix (auto-detected)
+/fix <github-action-url>
 
 # Create new project (needs plan review)
 /bootstrap <idea-description>

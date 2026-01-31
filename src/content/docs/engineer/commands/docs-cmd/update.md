@@ -370,7 +370,7 @@ The command uses the **docs-manager agent** with these capabilities:
 ```bash
 # After implementing features
 /cook [add payment integration]
-/fix:types
+/fix
 /test
 /docs:update
 
@@ -381,7 +381,7 @@ The command uses the **docs-manager agent** with these capabilities:
 ❌ **Bad - Too frequent:**
 ```bash
 # After every tiny change
-/fix:fast [typo]
+/fix --quick [typo]
 /docs:update  # Wasteful
 ```
 
@@ -419,7 +419,7 @@ git diff docs/
 /cook [implement OAuth2 with Google and GitHub providers]
 
 # 3. Fix any issues
-/fix:types
+/fix
 /test
 
 # 4. Update documentation

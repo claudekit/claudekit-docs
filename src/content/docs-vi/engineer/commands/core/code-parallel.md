@@ -1,6 +1,6 @@
 ---
 lang: vi
-title: /code:parallel
+title: /cook --parallel
 description: Thực thi các phase song song hoặc tuần tự từ kế hoạch hiện có dựa trên phân tích dependency graph
 section: engineer
 kit: engineer
@@ -9,14 +9,14 @@ order: 81
 published: true
 ---
 
-# /code:parallel
+# /cook --parallel
 
 Thực thi kế hoạch với điều phối phase song song/tuần tự. Đọc dependency graph từ kế hoạch hiện có và thực thi các phase sử dụng agent fullstack-developer theo sóng tối ưu.
 
 ## Cú pháp
 
 ```bash
-/code:parallel [plan-path]
+/cook --parallel [plan-path]
 ```
 
 ## Khi nào sử dụng
@@ -29,7 +29,7 @@ Thực thi kế hoạch với điều phối phase song song/tuần tự. Đọc
 ## Ví dụ nhanh
 
 ```bash
-/code:parallel @plans/251129-auth-system/plan.md
+/cook --parallel @plans/251129-auth-system/plan.md
 ```
 
 **Kết quả**:
@@ -270,7 +270,7 @@ Executing phases in order:
 ### Kịch bản: Thực thi kế hoạch E-commerce
 
 ```bash
-/code:parallel @plans/251129-ecommerce/plan.md
+/cook --parallel @plans/251129-ecommerce/plan.md
 ```
 
 **Nội dung kế hoạch**:
@@ -369,14 +369,14 @@ cat plans/*/plan.md | grep -A 20 "Dependency Graph"
 /plan:parallel [your feature]
 
 # Thực thi với điều phối song song
-/code:parallel
+/cook --parallel
 ```
 
 ### Tự động phát hiện
 
 Nếu không cung cấp đường dẫn, sử dụng kế hoạch đang hoạt động:
 ```bash
-/code:parallel
+/cook --parallel
 # Uses plan from .claude/active-plan
 ```
 
@@ -384,9 +384,9 @@ Nếu không cung cấp đường dẫn, sử dụng kế hoạch đang hoạt �
 
 - [/code](/vi/docs/engineer/commands/core/code) - Thực thi kế hoạch tuần tự
 - [/plan:parallel](/vi/docs/engineer/commands/plan/parallel) - Tạo kế hoạch song song
-- [/cook:auto:parallel](/vi/docs/engineer/commands/core/cook-auto-parallel) - Lập kế hoạch + thực thi song song
+- [/cook --auto --parallel](/vi/docs/engineer/commands/core/cook-auto-parallel) - Lập kế hoạch + thực thi song song
 - [/fix --parallel](/vi/docs/engineer/commands/fix/parallel) - Sửa lỗi song song
 
 ---
 
-**Điểm chính**: `/code:parallel` thực thi kế hoạch triển khai với điều phối song song/tuần tự tối ưu, sử dụng dependency graph để tối đa hóa song song hóa trong khi tôn trọng dependency giữa các phase.
+**Điểm chính**: `/cook --parallel` thực thi kế hoạch triển khai với điều phối song song/tuần tự tối ưu, sử dụng dependency graph để tối đa hóa song song hóa trong khi tôn trọng dependency giữa các phase.

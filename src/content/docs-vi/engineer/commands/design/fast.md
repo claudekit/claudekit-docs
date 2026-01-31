@@ -575,7 +575,7 @@ Start fast, upgrade when ready:
 /design:good [polish dashboard with custom charts]
 
 # Phase 4: Optimize
-/fix:ui [optimize performance]
+/fix [optimize performance]
 ```
 
 ## Troubleshooting
@@ -624,7 +624,7 @@ Start fast, upgrade when ready:
 - [/design:good](/docs/engineer/commands/design/good) - Upgrade to polished design
 - [/design:screenshot](/docs/engineer/commands/design/screenshot) - Implement from mockup
 - [/cook](/docs/engineer/commands/core/cook) - Add backend functionality
-- [/fix:ui](/docs/engineer/commands/fix/ui) - Fix any UI issues
+- [/fix](/docs/engineer/commands/fix/ui) - Fix any UI issues
 
 ---
 

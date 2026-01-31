@@ -30,13 +30,13 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 ### Sửa Lỗi (Bug Fixing)
 
 - **[/fix](/docs-vi/commands/fix/)** - Sửa lỗi thông minh (tự động chọn phương pháp fast/hard)
-- **[/fix:fast](/docs-vi/commands/fix/fast)** - Sửa lỗi nhỏ nhanh chóng
-- **[/fix:hard](/docs-vi/commands/fix/hard)** - Sửa lỗi phức tạp với phân tích kỹ lưỡng
-- **[/fix:ci](/docs-vi/commands/fix/ci)** - Sửa lỗi GitHub Actions CI
-- **[/fix:logs](/docs-vi/commands/fix/logs)** - Phân tích và sửa lỗi từ logs
-- **[/fix:test](/docs-vi/commands/fix/test)** - Sửa lỗi tests thất bại
-- **[/fix:ui](/docs-vi/commands/fix/ui)** - Sửa lỗi UI/UX
-- **[/fix:types](/docs-vi/commands/fix/types)** - Sửa lỗi TypeScript type
+- **[/fix --quick](/docs-vi/commands/fix/fast)** - Sửa lỗi nhỏ nhanh chóng
+- **[/fix](/docs-vi/commands/fix/hard)** - Sửa lỗi phức tạp với phân tích kỹ lưỡng
+- **[/fix](/docs-vi/commands/fix/ci)** - Sửa lỗi GitHub Actions CI
+- **[/fix](/docs-vi/commands/fix/logs)** - Phân tích và sửa lỗi từ logs
+- **[/fix](/docs-vi/commands/fix/test)** - Sửa lỗi tests thất bại
+- **[/fix](/docs-vi/commands/fix/ui)** - Sửa lỗi UI/UX
+- **[/fix](/docs-vi/commands/fix/types)** - Sửa lỗi TypeScript type
 
 ### Tài Liệu (Documentation)
 
@@ -91,9 +91,9 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 /cook [mô tả tính năng]      # Triển khai tính năng
 
 # Sửa lỗi
-/fix:fast [lỗi đơn giản]     # Sửa nhanh
-/fix:hard [lỗi phức tạp]     # Điều tra kỹ lưỡng + sửa lỗi
-/fix:ci [url-github-ci]      # Sửa lỗi CI thất bại
+/fix --quick [lỗi đơn giản]     # Sửa nhanh
+/fix [lỗi phức tạp]     # Điều tra kỹ lưỡng + sửa lỗi
+/fix [url-github-ci]      # Sửa lỗi CI thất bại
 
 # Tài liệu
 /docs:init                   # Thiết lập lần đầu
@@ -182,10 +182,10 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 
 ```bash
 # Lỗi đơn giản (bạn đã biết cách sửa)
-/fix:fast [lỗi đánh máy trong thông báo xác thực]
+/fix --quick [lỗi đánh máy trong thông báo xác thực]
 
 # Lỗi phức tạp (cần điều tra)
-/fix:hard [người dùng không thể đăng nhập sau khi đặt lại mật khẩu]
+/fix [người dùng không thể đăng nhập sau khi đặt lại mật khẩu]
 # - Dùng scout để tìm các tệp liên quan
 # - Phân tích mã nguồn và nhật ký (logs)
 # - Nghiên cứu giải pháp
@@ -194,7 +194,7 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 # - Kiểm tra kỹ lưỡng
 
 # Lỗi CI
-/fix:ci [https://github.com/user/repo/actions/runs/123]
+/fix [https://github.com/user/repo/actions/runs/123]
 # - Đọc nhật ký CI
 # - Xác định nguyên nhân thất bại
 # - Triển khai sửa lỗi
@@ -221,22 +221,22 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 ✅ **Sử dụng đúng**
 ```bash
 # Sửa lỗi nhỏ
-/fix:fast [lỗi đánh máy trên văn bản nút]
+/fix --quick [lỗi đánh máy trên văn bản nút]
 
 # Vấn đề phức tạp
-/fix:hard [rò rỉ bộ nhớ trong kết nối websocket]
+/fix [rò rỉ bộ nhớ trong kết nối websocket]
 
 # Vấn đề UI kèm ảnh chụp màn hình
-/fix:ui [screenshot.png] - nút bị lệch trên thiết bị di động
+/fix [screenshot.png] - nút bị lệch trên thiết bị di động
 ```
 
 ❌ **Sử dụng sai**
 ```bash
 # Đừng dùng fast cho vấn đề phức tạp
-/fix:fast [toàn bộ hệ thống xác thực bị hỏng]
+/fix --quick [toàn bộ hệ thống xác thực bị hỏng]
 
 # Đừng dùng hard cho việc sửa lỗi đơn giản
-/fix:hard [lỗi đánh máy trong ghi chú]
+/fix [lỗi đánh máy trong ghi chú]
 ```
 
 ### Cung Cấp Mô Tả Rõ Ràng
@@ -290,7 +290,7 @@ cat plans/latest-plan.md
 /test
 
 # 6. Sửa nếu cần
-/fix:test
+/fix
 
 # 7. Commit
 /git:cm
@@ -351,7 +351,7 @@ Thời gian dự kiến: 2-3 giờ
 Số tệp cần tạo mới: 5
 Số tệp cần chỉnh sửa: 3
 
-Tiếp theo: Xem lại kế hoạch, sau đó chạy /code
+Tiếp theo: Xem lại kế hoạch, sau đó chạy /cook
 ```
 
 ### Các Lệnh Triển Khai

@@ -371,7 +371,7 @@ The command uses the **docs-manager agent** with these capabilities:
 ❌ **Too frequent:**
 ```bash
 # After every tiny change
-/fix:fast [typo]
+/fix --quick [typo]
 /docs:summarize  # Wasteful
 ```
 

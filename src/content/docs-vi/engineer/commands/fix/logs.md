@@ -1,5 +1,5 @@
 ---
-title: /fix:logs
+title: /fix
 description: Tài liệu hướng dẫn lệnh fix:logs
 section: engineer
 kit: engineer
@@ -9,19 +9,19 @@ published: true
 lang: vi
 ---
 
-# /fix:logs
+# /fix
 
 Phân tích các tệp nhật ký (log) để xác định lỗi, cảnh báo và các vấn đề, sau đó tự động triển khai bản sửa lỗi dựa trên phân tích nguyên nhân gốc rễ toàn diện. Hoàn hảo để khắc phục sự cố trên production, gỡ lỗi các triển khai bị thất bại hoặc điều tra các lỗi hệ thống.
 
 ## Cú pháp
 
 ```bash
-/fix:logs [mô tả vấn đề]
+/fix [mô tả vấn đề]
 ```
 
 ## Cách hoạt động
 
-Lệnh `/fix:logs` sử dụng agent **debugger** để phân tích nhật ký một cách hệ thống:
+Lệnh `/fix` sử dụng agent **debugger** để phân tích nhật ký một cách hệ thống:
 
 ### 1. Thu thập nhật ký
 
@@ -57,47 +57,47 @@ Lệnh `/fix:logs` sử dụng agent **debugger** để phân tích nhật ký m
 
 **Lỗi trên Production**
 ```bash
-/fix:logs [người dùng báo cáo lỗi 500 khi thanh toán]
+/fix [người dùng báo cáo lỗi 500 khi thanh toán]
 ```
 
 **Triển khai thất bại**
 ```bash
-/fix:logs [quy trình CI/CD thất bại ở bước triển khai]
+/fix [quy trình CI/CD thất bại ở bước triển khai]
 ```
 
 **Vấn đề cơ sở dữ liệu**
 ```bash
-/fix:logs [lỗi hết thời gian chờ kết nối trong nhật ký]
+/fix [lỗi hết thời gian chờ kết nối trong nhật ký]
 ```
 
 **Lỗi API**
 ```bash
-/fix:logs [lỗi timeout API không liên tục]
+/fix [lỗi timeout API không liên tục]
 ```
 
 **Vấn đề hiệu suất**
 ```bash
-/fix:logs [thời gian phản hồi chậm được ghi nhận]
+/fix [thời gian phản hồi chậm được ghi nhận]
 ```
 
 ### ❌ Không sử dụng cho
 
 **Không có tệp nhật ký**
 ```bash
-❌ /fix:logs [có vấn đề nhưng không thu thập nhật ký]
+❌ /fix [có vấn đề nhưng không thu thập nhật ký]
 ✅ Trước tiên hãy thu thập nhật ký vào tệp ./logs.txt
 ```
 
 **Lỗi đánh máy đơn giản**
 ```bash
-❌ /fix:logs [lỗi đánh máy trong tên biến]
-✅ /fix:fast [lỗi đánh máy trong tên biến]
+❌ /fix [lỗi đánh máy trong tên biến]
+✅ /fix --quick [lỗi đánh máy trong tên biến]
 ```
 
 **Đã biết cách sửa đơn giản**
 ```bash
-❌ /fix:logs [cần cập nhật giá trị cấu hình]
-✅ /fix:fast [cập nhật giá trị cấu hình]
+❌ /fix [cần cập nhật giá trị cấu hình]
+✅ /fix --quick [cập nhật giá trị cấu hình]
 ```
 
 ## Ví dụ
@@ -105,7 +105,7 @@ Lệnh `/fix:logs` sử dụng agent **debugger** để phân tích nhật ký m
 ### Điều tra lỗi API
 
 ```bash
-/fix:logs [API trả về lỗi 500 cho endpoint /users]
+/fix [API trả về lỗi 500 cho endpoint /users]
 ```
 
 **Điều gì xảy ra:**
@@ -136,7 +136,7 @@ Lệnh `/fix:logs` sử dụng agent **debugger** để phân tích nhật ký m
 ### Vấn đề kết nối cơ sở dữ liệu
 
 ```bash
-/fix:logs [lỗi timeout kết nối cơ sở dữ liệu]
+/fix [lỗi timeout kết nối cơ sở dữ liệu]
 ```
 
 **Điều gì xảy ra:**
@@ -168,7 +168,7 @@ Lệnh `/fix:logs` sử dụng agent **debugger** để phân tích nhật ký m
 ### Phát hiện rò rỉ bộ nhớ
 
 ```bash
-/fix:logs [ứng dụng bị treo với lỗi hết bộ nhớ]
+/fix [ứng dụng bị treo với lỗi hết bộ nhớ]
 ```
 
 **Điều gì xảy ra:**
@@ -200,7 +200,7 @@ Lệnh `/fix:logs` sử dụng agent **debugger** để phân tích nhật ký m
 ### Thất bại trong quy trình CI/CD
 
 ```bash
-/fix:logs [workflow GitHub Actions bị thất bại]
+/fix [workflow GitHub Actions bị thất bại]
 ```
 
 **Điều gì xảy ra:**
@@ -301,12 +301,12 @@ INFO Retrying connection
 
 ✅ **Vấn đề cụ thể:**
 ```bash
-/fix:logs [xử lý thanh toán thất bại với lỗi timeout kể từ 14:00]
+/fix [xử lý thanh toán thất bại với lỗi timeout kể từ 14:00]
 ```
 
 ❌ **Vấn đề mơ hồ:**
 ```bash
-/fix:logs [có gì đó bị hỏng]
+/fix [có gì đó bị hỏng]
 ```
 
 ## Thu thập nhật ký
@@ -324,7 +324,7 @@ docker logs -f container-name > logs.txt
 docker logs --tail 1000 container-name > logs.txt
 
 # Sau đó phân tích
-/fix:logs [mô tả vấn đề]
+/fix [mô tả vấn đề]
 ```
 
 ### Ứng dụng trên máy chủ
@@ -340,7 +340,7 @@ cat /var/log/myapp/*.log > logs.txt
 pm2 logs --lines 1000 > logs.txt
 
 # Sau đó phân tích
-/fix:logs [mô tả vấn đề]
+/fix [mô tả vấn đề]
 ```
 
 ### Quy trình CI/CD
@@ -353,7 +353,7 @@ gh run view 1234567890 --log > logs.txt
 gitlab-ci-trace job_id > logs.txt
 
 # Sau đó phân tích
-/fix:logs [thất bại quy trình ở bước build]
+/fix [thất bại quy trình ở bước build]
 ```
 
 ### Kubernetes
@@ -369,7 +369,7 @@ kubectl logs -l app=myapp --all-containers=true > logs.txt
 kubectl logs pod-name --previous > logs.txt
 
 # Sau đó phân tích
-/fix:logs [các pod bị treo với lỗi OOM]
+/fix [các pod bị treo với lỗi OOM]
 ```
 
 ## Quy trình làm việc
@@ -381,7 +381,7 @@ kubectl logs pod-name --previous > logs.txt
 docker logs my-app > logs.txt
 
 # 2. Phân tích và sửa lỗi
-/fix:logs [người dùng báo cáo lỗi thanh toán]
+/fix [người dùng báo cáo lỗi thanh toán]
 
 # 3. Xem lại thay đổi
 git diff
@@ -404,7 +404,7 @@ ssh production "docker logs app > /tmp/incident.log"
 scp production:/tmp/incident.log ./logs.txt
 
 # 2. Phân tích khẩn cấp
-/fix:logs [production down - lỗi 500 trên tất cả endpoint]
+/fix [production down - lỗi 500 trên tất cả endpoint]
 
 # 3. Tạo nhánh hotfix
 git checkout -b hotfix/production-500-errors
@@ -433,7 +433,7 @@ docker logs my-app > logs.txt
 ssh server "cat /var/log/app/error.log" > logs.txt
 
 # Sau đó chạy lệnh
-/fix:logs [mô tả vấn đề]
+/fix [mô tả vấn đề]
 ```
 
 ### Nhật ký quá lớn
@@ -449,7 +449,7 @@ grep "2025-10-29 14:" app.log > logs.txt
 tail -5000 app.log > logs.txt
 
 # Sau đó phân tích
-/fix:logs [vấn đề xảy ra lúc 14:00]
+/fix [vấn đề xảy ra lúc 14:00]
 ```
 
 ### Không có nguyên nhân gốc rễ rõ ràng
@@ -465,7 +465,7 @@ docker logs my-app --since 1h > logs.txt
 # Bật ghi nhật ký chi tiết trước
 # Sau đó tái hiện vấn đề
 # Sau đó phân tích lại
-/fix:logs [vấn đề với nhật ký chi tiết hơn]
+/fix [vấn đề với nhật ký chi tiết hơn]
 ```
 
 ### Bản sửa lỗi không hoạt động
@@ -479,7 +479,7 @@ docker logs my-app --since 1h > logs.txt
 docker logs my-app > logs.txt
 
 # Phân tích lại với nhiều ngữ cảnh hơn
-/fix:logs [vấn đề vẫn xảy ra - bản sửa lỗi trước đó là X]
+/fix [vấn đề vẫn xảy ra - bản sửa lỗi trước đó là X]
 ```
 
 ## Các lệnh liên quan
@@ -488,32 +488,32 @@ docker logs my-app > logs.txt
 
 ```bash
 # 1. Phân tích và sửa lỗi
-/fix:logs [lỗi API trên production]
+/fix [lỗi API trên production]
 
 # 2. Chạy các bài kiểm tra toàn diện
 /test
 
 # 3. Nếu các bài kiểm tra tiết lộ thêm vấn đề
-/fix:hard [các vấn đề bổ sung được tìm thấy trong kiểm tra]
+/fix [các vấn đề bổ sung được tìm thấy trong kiểm tra]
 ```
 
 ### Nhật ký + Sửa lỗi CI/CD
 
 ```bash
 # 1. Lấy nhật ký CI
-/fix:ci [github-actions-url]
+/fix [github-actions-url]
 
 # Hoặc với nhật ký cục bộ
 # 2. Thu thập và phân tích
 gh run view 123 --log > logs.txt
-/fix:logs [quy trình CI thất bại ở bước kiểm tra]
+/fix [quy trình CI thất bại ở bước kiểm tra]
 ```
 
 ### Gỡ lỗi các vấn đề phức tạp
 
 ```bash
 # 1. Bắt đầu với nhật ký
-/fix:logs [vấn đề phức tạp với nhiều triệu chứng]
+/fix [vấn đề phức tạp với nhiều triệu chứng]
 
 # 2. Nếu cần điều tra thêm
 /debug [những phát hiện từ phân tích nhật ký]
@@ -521,7 +521,7 @@ gh run view 123 --log > logs.txt
 
 ## Số liệu
 
-Hiệu suất điển hình của `/fix:logs`:
+Hiệu suất điển hình của `/fix`:
 
 - **Thời gian**: 2-5 phút
 - **Số dòng nhật ký được phân tích**: 100-10,000+
@@ -531,13 +531,13 @@ Hiệu suất điển hình của `/fix:logs`:
 
 ## Bước tiếp theo
 
-Sau khi sử dụng `/fix:logs`:
+Sau khi sử dụng `/fix`:
 
 - [/test](/docs/engineer/commands/core/test) - Xác minh bản sửa lỗi bằng các bài kiểm tra
-- [/fix:hard](/docs/engineer/commands/fix/hard) - Cho các vấn đề phức tạp cần phân tích sâu hơn
+- [/fix](/docs/engineer/commands/fix/hard) - Cho các vấn đề phức tạp cần phân tích sâu hơn
 - [/debug](/docs/engineer/commands/core/debug) - Nếu vấn đề cần điều tra thêm
 - [/git:cm](/docs/engineer/commands/git/commit) - Commit bản sửa lỗi
 
 ---
 
-**Điểm mấu chốt**: `/fix:logs` cung cấp khả năng phân tích nhật ký và giải quyết vấn đề tự động bằng cách tận dụng phương pháp hệ thống của debugger agent để xác định nguyên nhân gốc rễ và triển khai bản sửa lỗi.
+**Điểm mấu chốt**: `/fix` cung cấp khả năng phân tích nhật ký và giải quyết vấn đề tự động bằng cách tận dụng phương pháp hệ thống của debugger agent để xác định nguyên nhân gốc rễ và triển khai bản sửa lỗi.

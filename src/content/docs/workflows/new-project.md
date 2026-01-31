@@ -153,8 +153,8 @@ Use all ClaudeKit commands for further development:
 
 #### Fix Issues
 ```bash
-/fix:fast Button click handler not responding on mobile
-/fix:hard Complex state management bug in checkout flow
+/fix --quick Button click handler not responding on mobile
+/fix Complex state management bug in checkout flow
 ```
 
 #### Plan Enhancements
@@ -234,7 +234,7 @@ Use all ClaudeKit commands for further development:
 /cook Add analytics dashboard
 
 # 3. Optimize and refine
-/fix:hard Performance issues with large datasets
+/fix Performance issues with large datasets
 /plan Add premium features with subscription
 ```
 
@@ -250,9 +250,9 @@ Use all ClaudeKit commands for further development:
 /plan Add notification service
 
 # 3. Implement services separately
-/code auth-service-plan.md
-/code media-service-plan.md
-/code notification-service-plan.md
+"Implement auth service"
+"Implement media service"
+"Implement notification service"
 ```
 
 ### Documentation-Driven Development
@@ -265,9 +265,9 @@ Use all ClaudeKit commands for further development:
 # Edit the generated plan markdown
 
 # 3. Implement in phases
-/code plan.md --phase 1
+"Implement plan phase" 1
 /test
-/code plan.md --phase 2
+"Implement plan phase" 2
 /test
 ```
 
@@ -295,7 +295,7 @@ After bootstrap, configure environments:
 /plan Deploy to Vercel with CI/CD
 
 # Implement deployment
-/code deployment-plan.md
+"Implement deployment"
 
 # Or use specific integration
 /integrate vercel
@@ -371,10 +371,10 @@ git commit -m "Initial project setup via ClaudeKit bootstrap"
 
 ```bash
 # Fix specific issues
-/fix:hard [describe the issue]
+/fix [describe the issue]
 
 # Or run full test suite and auto-fix
-/fix:test
+/fix
 ```
 
 ### Need to Change Approach
@@ -384,7 +384,7 @@ git commit -m "Initial project setup via ClaudeKit bootstrap"
 /plan Refactor to use different architecture
 
 # Implement changes
-/code new-approach-plan.md
+"Implement new approach"
 ```
 
 ## Examples from Real Projects

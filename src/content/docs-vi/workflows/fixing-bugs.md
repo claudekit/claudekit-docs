@@ -17,7 +17,7 @@ Tìm hiểu cách điều tra, sửa chữa và xác minh các lỗi một cách
 **Mục tiêu**: Gỡ lỗi và sửa các vấn đề một cách hệ thống với phân tích nguyên nhân gốc rễ.
 **Thời gian**: 5-20 phút (so với 1-4 giờ làm thủ công)
 **Các Agent sử dụng**: debugger, tester, code-reviewer
-**Các lệnh**: /fix:fast, /fix:hard, /fix:logs, /fix:ui, /fix:ci, /test
+**Các lệnh**: /fix --quick, /fix, /fix, /fix, /fix, /test
 
 ## Điều kiện tiên quyết
 
@@ -32,12 +32,12 @@ ClaudeKit cung cấp các lệnh gỡ lỗi khác nhau cho từng tình huống:
 
 | Lệnh | Trường hợp sử dụng | Độ phức tạp | Thời gian |
 |---------|----------|------------|------|
-| `/fix:fast` | Lỗi đơn giản, sửa nhanh | Thấp | 2-5 phút |
-| `/fix:hard` | Lỗi phức tạp, thay đổi nhiều tệp | Cao | 10-20 phút |
-| `/fix:logs` | Vấn đề production từ log | Trung bình | 5-15 phút |
-| `/fix:ui` | Lỗi giao diện/bố cục | Thấp-Trung bình | 3-10 phút |
-| `/fix:ci` | Thất bại trong pipeline CI/CD | Trung bình | 5-15 phút |
-| `/fix:types` | Lỗi kiểu dữ liệu TypeScript | Thấp | 2-5 phút |
+| `/fix --quick` | Lỗi đơn giản, sửa nhanh | Thấp | 2-5 phút |
+| `/fix` | Lỗi phức tạp, thay đổi nhiều tệp | Cao | 10-20 phút |
+| `/fix` | Vấn đề production từ log | Trung bình | 5-15 phút |
+| `/fix` | Lỗi giao diện/bố cục | Thấp-Trung bình | 3-10 phút |
+| `/fix` | Thất bại trong pipeline CI/CD | Trung bình | 5-15 phút |
+| `/fix` | Lỗi kiểu dữ liệu TypeScript | Thấp | 2-5 phút |
 
 ## Quy trình từng bước
 
@@ -66,12 +66,12 @@ Ghi lại vấn đề:
 
 ### Bước 2: Chọn phương pháp gỡ lỗi
 
-#### Lựa chọn A: Sửa nhanh (/fix:fast)
+#### Lựa chọn A: Sửa nhanh (/fix --quick)
 
 Dành cho các lỗi đơn giản, biệt lập:
 
 ```bash
-/fix:fast [người dùng nhận lỗi 401 khi đăng nhập với thông tin hợp lệ]
+/fix --quick [người dùng nhận lỗi 401 khi đăng nhập với thông tin hợp lệ]
 ```
 
 **Điều gì xảy ra**:
@@ -104,12 +104,12 @@ Tóm tắt thay đổi:
 - Thêm async/await cho việc xác thực mật khẩu
 ```
 
-#### Lựa chọn B: Sửa lỗi phức tạp (/fix:hard)
+#### Lựa chọn B: Sửa lỗi phức tạp (/fix)
 
 Dành cho các lỗi cần điều tra sâu và thay đổi nhiều tệp:
 
 ```bash
-/fix:hard [rò rỉ bộ nhớ trong kết nối WebSocket gây treo server]
+/fix [rò rỉ bộ nhớ trong kết nối WebSocket gây treo server]
 ```
 
 **Điều gì xảy ra**:
@@ -159,7 +159,7 @@ Các bài kiểm thử đã thêm:
 - tests/websocket/memory.test.js
 ```
 
-#### Lựa chọn C: Phân tích log Production (/fix:logs)
+#### Lựa chọn C: Phân tích log Production (/fix)
 
 Dành cho các lỗi được phát hiện trên môi trường production:
 
@@ -167,7 +167,7 @@ Dành cho các lỗi được phát hiện trên môi trường production:
 # Sao chép log production
 # logs/production.log
 
-/fix:logs [phân tích log lỗi production và sửa vấn đề]
+/fix [phân tích log lỗi production và sửa vấn đề]
 ```
 
 **Điều gì xảy ra**:
@@ -210,13 +210,13 @@ Các bước tiếp theo:
 3. Triển khai lên production
 ```
 
-#### Lựa chọn D: Sửa lỗi UI (/fix:ui)
+#### Lựa chọn D: Sửa lỗi UI (/fix)
 
 Dành cho các vấn đề về hiển thị hoặc bố cục:
 
 ```bash
 # Cung cấp ảnh chụp màn hình hoặc mô tả
-/fix:ui [nút bấm bị lệch trên thiết bị di động]
+/fix [nút bấm bị lệch trên thiết bị di động]
 ```
 
 **Điều gì xảy ra**:
@@ -246,13 +246,13 @@ Các tệp đã sửa đổi:
 - src/components/Button.css
 ```
 
-#### Lựa chọn E: Sửa lỗi CI/CD (/fix:ci)
+#### Lựa chọn E: Sửa lỗi CI/CD (/fix)
 
 Dành cho các thất bại trong build hoặc triển khai:
 
 ```bash
 # Cung cấp URL GitHub Actions
-/fix:ci [https://github.com/user/repo/actions/runs/12345]
+/fix [https://github.com/user/repo/actions/runs/12345]
 ```
 
 **Điều gì xảy ra**:
@@ -372,7 +372,7 @@ Trình duyệt: Tất cả trình duyệt
 ### Điều tra
 
 ```bash
-/fix:hard [giỏ hàng bị nhân đôi sản phẩm khi tải lại trang]
+/fix [giỏ hàng bị nhân đôi sản phẩm khi tải lại trang]
 ```
 
 ### Kết quả phân tích
@@ -447,7 +447,7 @@ Các bản sửa đã áp dụng:
 
 **Với ClaudeKit**: 18 phút
 - Tái hiện: 5 phút
-- /fix:hard: 12 phút
+- /fix: 12 phút
 - Xác minh: 1 phút
 
 **Thời gian tiết kiệm được**: 3+ giờ (nhanh hơn 90%)
@@ -457,7 +457,7 @@ Các bản sửa đã áp dụng:
 ### Biến thể 1: Sửa lỗi kiểu dữ liệu (Type Error)
 
 ```bash
-/fix:types
+/fix
 
 # Tự động sửa các lỗi TypeScript
 # Cập nhật các định nghĩa kiểu
@@ -467,7 +467,7 @@ Các bản sửa đã áp dụng:
 ### Biến thể 2: Lỗi hiệu suất
 
 ```bash
-/fix:hard [endpoint API mất hơn 8 giây để phản hồi]
+/fix [endpoint API mất hơn 8 giây để phản hồi]
 
 # Phân tích hiệu suất
 # Xác định các nút thắt cổ chai
@@ -478,7 +478,7 @@ Các bản sửa đã áp dụng:
 ### Biến thể 3: Lỗi bảo mật
 
 ```bash
-/fix:fast [lỗ hổng SQL injection trong endpoint tìm kiếm]
+/fix --quick [lỗ hổng SQL injection trong endpoint tìm kiếm]
 
 # Xác định lỗ hổng
 # Triển khai các truy vấn có tham số (parameterized queries)
@@ -489,7 +489,7 @@ Các bản sửa đã áp dụng:
 ### Biến thể 4: Lỗi tích hợp
 
 ```bash
-/fix:logs [Stripe webhook thất bại với lỗi 400]
+/fix [Stripe webhook thất bại với lỗi 400]
 
 # Phân tích log webhook
 # Xác định sự sai lệch chữ ký (signature mismatch)
@@ -506,7 +506,7 @@ Các bản sửa đã áp dụng:
 **Giải pháp**:
 ```bash
 # Sử dụng log production
-/fix:logs [phân tích log production để xác định vấn đề]
+/fix [phân tích log production để xác định vấn đề]
 
 # Hoặc thử môi trường giống production
 docker-compose -f docker-compose.prod.yml up
@@ -522,13 +522,13 @@ docker-compose -f docker-compose.prod.yml up
 /test
 
 # Nếu kiểm thử thất bại
-/fix:test
+/fix
 
 # Xem lại tất cả thay đổi
 git diff
 
 # Cân nhắc cách tiếp cận khác
-/fix:hard [sửa lỗi đăng nhập mà không làm thay đổi middleware]
+/fix [sửa lỗi đăng nhập mà không làm thay đổi middleware]
 ```
 
 ### Vấn đề: Nguyên nhân gốc rễ không rõ ràng
@@ -538,7 +538,7 @@ git diff
 **Giải pháp**:
 ```bash
 # Sử dụng hard fix để điều tra
-/fix:hard [mô tả chi tiết các triệu chứng]
+/fix [mô tả chi tiết các triệu chứng]
 
 # Cung cấp phân tích kỹ lưỡng
 # Tạo kế hoạch điều tra
@@ -556,7 +556,7 @@ git diff
 
 # Tái hiện nhiều lần
 # Thu thập log
-/fix:logs [phân tích các log đã thu thập]
+/fix [phân tích các log đã thu thập]
 ```
 
 ## Thực hành tốt nhất
@@ -592,7 +592,7 @@ Sửa các lỗi tương tự:
 /scout "mẫu tương tự với lỗi này" 3
 
 # Sửa tất cả các trường hợp
-/fix:fast [sửa tất cả các trường hợp so sánh mật khẩu bị lỗi]
+/fix --quick [sửa tất cả các trường hợp so sánh mật khẩu bị lỗi]
 ```
 
 ### 4. Ghi lại trong Changelog
@@ -620,7 +620,7 @@ Xác minh bản sửa trên production:
 
 Hiểu rõ tại sao lỗi lại xảy ra:
 ```bash
-# Sử dụng /fix:hard để phân tích
+# Sử dụng /fix để phân tích
 # Ghi lại nguyên nhân gốc rễ
 # Đề xuất các biện pháp ngăn ngừa
 # Cập nhật các hướng dẫn phát triển
@@ -662,11 +662,11 @@ Sau khi sửa lỗi, hãy cải thiện quy trình:
 - [Refactor Mã Nguồn](/vi/docs/workflows/refactoring-code) - Chất lượng mã nguồn
 
 ### Các lệnh liên quan
-- [/fix:fast](/vi/docs/engineer/commands/fix/fast) - Sửa lỗi nhanh
-- [/fix:hard](/vi/docs/engineer/commands/fix/hard) - Gỡ lỗi phức tạp
-- [/fix:logs](/vi/docs/engineer/commands/fix/logs) - Phân tích log
-- [/fix:ui](/vi/docs/engineer/commands/fix/ui) - Sửa lỗi giao diện
-- [/fix:ci](/vi/docs/engineer/commands/fix/ci) - Sửa lỗi CI/CD
+- [/fix --quick](/vi/docs/engineer/commands/fix/fast) - Sửa lỗi nhanh
+- [/fix](/vi/docs/engineer/commands/fix/hard) - Gỡ lỗi phức tạp
+- [/fix](/vi/docs/engineer/commands/fix/logs) - Phân tích log
+- [/fix](/vi/docs/engineer/commands/fix/ui) - Sửa lỗi giao diện
+- [/fix](/vi/docs/engineer/commands/fix/ci) - Sửa lỗi CI/CD
 - [/test](/vi/docs/engineer/commands/core/test) - Bộ kiểm thử
 
 ### Đọc thêm

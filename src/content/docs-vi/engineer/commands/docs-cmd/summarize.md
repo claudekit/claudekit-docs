@@ -372,7 +372,7 @@ Lệnh này sử dụng **docs-manager agent** với các khả năng sau:
 ❌ **Quá thường xuyên:**
 ```bash
 # Sau mỗi thay đổi nhỏ
-/fix:fast [lỗi đánh máy]
+/fix --quick [lỗi đánh máy]
 /docs:summarize  # Lãng phí
 ```
 

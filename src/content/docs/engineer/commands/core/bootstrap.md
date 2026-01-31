@@ -346,7 +346,7 @@ ls src/
 
 **Problem:** Generated tests don't pass
 
-**Solution:** Use `/fix:test` to diagnose and fix
+**Solution:** Use `/fix` to diagnose and fix
 
 ## After Bootstrapping
 

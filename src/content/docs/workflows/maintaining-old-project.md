@@ -175,7 +175,7 @@ Critical Issues Found:
 ⚠ Race condition in order updates
 ⚠ Email failures block order completion
 
-Recommendation: Use /fix:hard to address these issues
+Recommendation: Use /fix to address these issues
 ```
 
 More questions:
@@ -318,7 +318,7 @@ Tests generated in tests/ directory
 ### Security Vulnerabilities
 
 ```bash
-/fix:hard [Stripe webhook not verified - security risk]
+/fix [Stripe webhook not verified - security risk]
 ```
 
 **Fix applied:**
@@ -344,7 +344,7 @@ Security issue resolved!
 ### Performance Issues
 
 ```bash
-/fix:hard [N+1 queries in product listing causing slow response times]
+/fix [N+1 queries in product listing causing slow response times]
 ```
 
 **Fix applied:**
@@ -377,7 +377,7 @@ Security issue resolved!
 ### Error Handling
 
 ```bash
-/fix:hard [payment flow has no error handling, orders get stuck]
+/fix [payment flow has no error handling, orders get stuck]
 ```
 
 **Fix applied:**
@@ -504,7 +504,7 @@ Recommendation: Fix these issues before deployment
 ### Fix Deployment Issues
 
 ```bash
-/fix:hard [fix production deployment issues]
+/fix [fix production deployment issues]
 ```
 
 **Fixes applied:**
@@ -553,7 +553,7 @@ curl https://staging.example.com/health
 git push production main
 
 # Monitor
-/fix:logs  # Watch production logs
+/fix  # Watch production logs
 ```
 
 ## Step 8: Set Up Maintenance
@@ -688,9 +688,9 @@ git push
 ### "Too many issues to fix"
 
 Prioritize:
-1. Security issues (/fix:hard)
-2. Production blockers (/fix:hard)
-3. Performance problems (/fix:hard)
+1. Security issues (/fix)
+2. Production blockers (/fix)
+3. Performance problems (/fix)
 4. Test coverage (/cook [add tests])
 5. Code quality (/cook [refactor])
 6. Documentation (/docs:update)

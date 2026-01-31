@@ -670,28 +670,28 @@ Add monitoring:
 stripe listen --forward-to localhost:3000/api/webhooks/stripe
 
 # Or fix with ClaudeKit
-/fix:fast [Stripe webhooks not being received]
+/fix --quick [Stripe webhooks not being received]
 ```
 
 ### Issue: Payment Failing
 
 **Solution**:
 ```bash
-/fix:logs [analyze payment failure logs and fix issues]
+/fix [analyze payment failure logs and fix issues]
 ```
 
 ### Issue: Double Charging
 
 **Solution**:
 ```bash
-/fix:fast [prevent double charging with idempotency keys]
+/fix --quick [prevent double charging with idempotency keys]
 ```
 
 ### Issue: Tax Calculation Wrong
 
 **Solution**:
 ```bash
-/fix:fast [tax calculation incorrect for Canadian customers]
+/fix --quick [tax calculation incorrect for Canadian customers]
 ```
 
 ## Security Checklist

@@ -373,7 +373,7 @@ git status
 
 ```bash
 # 1. Sửa lỗi nghiêm trọng
-/fix:fast [lỗi trên production]
+/fix --quick [lỗi trên production]
 
 # 2. Kiểm tra bản sửa lỗi
 /test

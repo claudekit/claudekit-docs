@@ -349,7 +349,7 @@ Coverage:    87.3%
 
 ```bash
 # Use ClaudeKit to fix
-/fix:test
+/fix
 ```
 
 ## Step 5: Start Development Server
@@ -709,7 +709,7 @@ PORT=3001
 npx prisma migrate reset
 
 # Or fix manually
-/fix:hard [describe migration error]
+/fix [describe migration error]
 ```
 
 ## Key Takeaways

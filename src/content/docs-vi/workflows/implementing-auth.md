@@ -577,19 +577,19 @@ Giới hạn cho các endpoint auth:
 ### Vấn đề: OAuth Callback thất bại
 **Giải pháp**:
 ```bash
-/fix:fast [OAuth callback trả về lỗi 400]
+/fix --quick [OAuth callback trả về lỗi 400]
 ```
 
 ### Vấn đề: Không gửi được email đặt lại mật khẩu
 **Giải pháp**:
 ```bash
-/fix:fast [email đặt lại mật khẩu không gửi được]
+/fix --quick [email đặt lại mật khẩu không gửi được]
 ```
 
 ### Vấn đề: Mã QR 2FA không hiển thị
 **Giải pháp**:
 ```bash
-/fix:ui [mã QR 2FA không hiển thị trên giao diện di động]
+/fix [mã QR 2FA không hiển thị trên giao diện di động]
 ```
 
 ## Danh sách kiểm tra bảo mật (Security Checklist)
@@ -628,7 +628,7 @@ Trước khi triển khai lên production:
 ### Các lệnh liên quan
 - [/cook](/vi/docs/engineer/commands/core/cook) - Triển khai tính năng
 - [/test](/vi/docs/engineer/commands/core/test) - Bộ kiểm thử
-- [/fix:fast](/vi/docs/engineer/commands/fix/fast) - Sửa lỗi nhanh
+- [/fix --quick](/vi/docs/engineer/commands/fix/fast) - Sửa lỗi nhanh
 
 ### Hướng dẫn tích hợp
 - [/integrate:polar](/vi/docs/engineer/commands/integrate/polar) - Thanh toán Polar

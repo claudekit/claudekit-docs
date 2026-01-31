@@ -487,11 +487,11 @@ EOF
 
 ```bash
 # ✅ Fast commands (seconds)
-/fix:fast small bug         # Uses fast model
+/fix --quick small bug         # Uses fast model
 /git:cm                     # Simple git operations
 
 # ❌ Slow commands (minutes)
-/fix:hard complex issue     # Uses thorough model
+/fix complex issue     # Uses thorough model
 /bootstrap full project     # Creates entire structure
 ```
 
@@ -505,10 +505,10 @@ EOF
 /cook implement GET /api/users endpoint with pagination
 
 # ❌ Slow (entire codebase)
-/fix:ui button styling
+/fix button styling
 
 # ✅ Fast (scoped)
-/fix:ui button styling in src/components/Button.tsx
+/fix button styling in src/components/Button.tsx
 ```
 
 #### Run Commands Sequentially
@@ -539,7 +539,7 @@ EOF
 | /plan | 10-20s | 20-40s | 40-90s |
 | /cook | 30-60s | 60-120s | 120-300s |
 | /test | 15-30s | 30-60s | 60-120s |
-| /fix:fast | 10-20s | 20-30s | 30-60s |
+| /fix --quick | 10-20s | 20-30s | 30-60s |
 | /git:cm | 5-10s | 10-20s | 20-30s |
 
 **If commands take 2x longer**: Check optimizations above

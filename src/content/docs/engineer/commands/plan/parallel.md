@@ -55,7 +55,7 @@ Phase 3: src/settings/*, src/hooks/useSettings.ts
 Phase 4: src/dashboard/*, src/pages/dashboard.tsx
 
 Plan saved: plans/251129-dashboard/plan.md
-Execute with: /code:parallel
+Execute with: /code --parallel
 ```
 
 ## Arguments
@@ -259,7 +259,7 @@ Shipping Calculator ───┘
 
 ```bash
 # Execute all phases with parallel support
-/code:parallel @plans/251129-checkout/plan.md
+/code --parallel @plans/251129-checkout/plan.md
 ```
 
 ## Success Criteria

@@ -70,7 +70,7 @@ claudekit init
 /plan "add user authentication with OAuth"  # Plan the feature
 /clear                                      # Free context
 /cook "Implement user authentication with OAuth as planned"
-/fix:test                                  # Test and fix issues
+/fix                                  # Test and fix issues
 /git:cm                                    # Commit changes
 ```
 
@@ -78,8 +78,8 @@ claudekit init
 **A:** Use the debugging workflow:
 ```bash
 /debug "login button not working"          # Investigate issue
-/fix:hard "session timeout problem"        # Implement fix
-/fix:test                                  # Verify fix works
+/fix "session timeout problem"        # Implement fix
+/fix                                  # Verify fix works
 /git:cm                                    # Commit solution
 ```
 
@@ -173,8 +173,8 @@ claudekit doctor  # Check system health
 ### Q: Generated code has errors
 **A:** Quick fixes:
 ```bash
-/fix:test          # Run tests and fix issues
-/fix:hard          # Use multi-agent debugging
+/fix          # Run tests and fix issues
+/fix          # Use multi-agent debugging
 /debug "analyze generated code"  # Investigate specific issues
 ```
 
@@ -252,7 +252,7 @@ echo "node_modules/\ndist/\nbuild/\ncoverage/" > .claudeignore
 
 # Regular maintenance
 /docs:update "keep documentation current"
-/fix:ci "maintain CI/CD health"
+/fix "maintain CI/CD health"
 ```
 
 ### Q: Can ClaudeKit work with microservices?

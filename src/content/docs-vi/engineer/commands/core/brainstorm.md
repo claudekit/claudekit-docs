@@ -388,7 +388,7 @@ cat plans/reports/brainstorm-251129-auth-strategy.md
 /plan [triển khai xác thực JWT với sự cách ly giữa các khách hàng]
 
 # 4. Thực thi
-/code
+/cook
 ```
 
 ### Trong quá trình Đánh giá Kiến trúc

@@ -60,7 +60,7 @@ The bug fixing workflow combines investigation, root cause analysis, fixing, and
 
 ### 3. Fix Implementation
 ```bash
-/fix:hard "session timeout causing login issues"
+/fix "session timeout causing login issues"
 ```
 
 **What happens**:
@@ -78,7 +78,7 @@ The bug fixing workflow combines investigation, root cause analysis, fixing, and
 
 ### 4. Comprehensive Testing
 ```bash
-/fix:test
+/fix
 ```
 
 **What happens**:
@@ -96,7 +96,7 @@ The bug fixing workflow combines investigation, root cause analysis, fixing, and
 
 ### 5. Validation & Deployment
 ```bash
-/fix:ci "validate fix doesn't break production"
+/fix "validate fix doesn't break production"
 /git:cm
 ```
 
@@ -134,7 +134,7 @@ Let's debug a production authentication issue:
 
 ### Step 3: Fix
 ```bash
-/fix:hard "session timeout and cookie configuration"
+/fix "session timeout and cookie configuration"
 ```
 
 **Fixes Applied**:
@@ -150,7 +150,7 @@ const sessionConfig = {
 
 ### Step 4: Test
 ```bash
-/fix:test
+/fix
 ```
 
 **Tests Created**:
@@ -161,7 +161,7 @@ const sessionConfig = {
 
 ### Step 5: Deploy
 ```bash
-/fix:ci
+/fix
 /git:cm
 ```
 
@@ -169,7 +169,7 @@ const sessionConfig = {
 
 ### CI/CD Issues
 ```bash
-/fix:ci "failing GitHub Actions for test suite"
+/fix "failing GitHub Actions for test suite"
 ```
 - Fixes pipeline configuration
 - Resolves dependency conflicts
@@ -177,9 +177,9 @@ const sessionConfig = {
 
 ### Type Errors
 ```bash
-/fix:types "TypeScript errors in user service"
+/fix "TypeScript errors in user service"
 ```
-- Fixes type definitions
+- Fixes type definitions (auto-detects type context)
 - Resolves interface mismatches
 - Updates type annotations
 
@@ -192,7 +192,7 @@ const sessionConfig = {
 ### Security Issues
 ```bash
 /debug "potential XSS vulnerability in comment system"
-/fix:hard "sanitize user input and implement CSP"
+/fix "sanitize user input and implement CSP"
 ```
 
 ## Debugging Best Practices
@@ -233,7 +233,7 @@ const sessionConfig = {
 /debug "security vulnerability assessment"
 # Performs security audit
 
-/fix:hard "complete system optimization"
+/fix "complete system optimization"
 # Implements multiple performance improvements
 ```
 

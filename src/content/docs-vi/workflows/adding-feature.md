@@ -244,7 +244,7 @@ Coverage:    89.3%
 
 **Nếu kiểm thử thất bại**:
 ```bash
-/fix:test
+/fix
 ```
 
 ### Bước 7: Review Mã nguồn
@@ -524,7 +524,7 @@ Tình huống thực tế: Thêm chức năng tìm kiếm cho trang thương m�
 
 **Giải pháp**:
 ```bash
-/fix:test
+/fix
 
 # Debugger sẽ phân tích lỗi và sửa chữa
 # Tự động chạy lại các bài kiểm thử
@@ -591,7 +591,7 @@ Chia nhỏ các tính năng lớn:
 ```bash
 /cook [tính năng]
 /test           # Luôn chạy kiểm thử
-/fix:test       # Sửa lỗi ngay lập tức
+/fix       # Sửa lỗi ngay lập tức
 ```
 
 ### 4. Viết tài liệu song song

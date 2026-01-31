@@ -97,7 +97,7 @@ Next: /fix SQL injection in campaign query
 ### Sau Implementation
 
 ```bash
-/code plans/feature.md
+/cook plans/feature.md
 /review  # Quality check
 ```
 

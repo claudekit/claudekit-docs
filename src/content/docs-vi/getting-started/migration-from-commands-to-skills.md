@@ -45,7 +45,7 @@ Nhiều lệnh slash đã được chuyển đổi thành **skills** tự độn
 ### Quy Trình Cũ (trước 1.3.0)
 ```
 /plan "feature X"
-/code @plans/feature.md
+/cook @plans/feature.md
 ```
 
 ### Quy Trình Mới (1.3.0+)
@@ -107,7 +107,7 @@ Bộ điều chỉnh lệnh áp dụng cho các lệnh đang hoạt động:
 ### Trước (1.2.x)
 ```
 /plan "Add authentication"
-/code @plans/260129-auth.md
+/cook @plans/260129-auth.md
 /test
 /code-review
 ```

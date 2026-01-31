@@ -21,7 +21,7 @@ Thực thi kiểm thử đơn vị (unit tests), kiểm thử tích hợp (integ
 
 Agent tester kích hoạt khi:
 - Sử dụng lệnh `/test`
-- Sử dụng lệnh `/fix:test [issues]`
+- Sử dụng lệnh `/fix [issues]`
 - Sau khi triển khai các tính năng mới
 - Khi kiểm tra độ bao phủ mã nguồn
 - Trước khi tạo pull request

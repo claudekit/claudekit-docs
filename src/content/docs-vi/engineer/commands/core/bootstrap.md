@@ -347,7 +347,7 @@ ls src/
 
 **Vấn đề:** Các bài kiểm thử được tạo ra không vượt qua
 
-**Giải pháp:** Sử dụng `/fix:test` để chẩn đoán và sửa lỗi
+**Giải pháp:** Sử dụng `/fix` để chẩn đoán và sửa lỗi
 
 ## Sau khi Bootstrap
 

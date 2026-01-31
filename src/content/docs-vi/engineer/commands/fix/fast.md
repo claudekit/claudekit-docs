@@ -1,5 +1,5 @@
 ---
-title: /fix:fast
+title: /fix --quick
 description: Tài liệu hướng dẫn lệnh fix:fast
 section: engineer
 kit: engineer
@@ -9,19 +9,19 @@ published: true
 lang: vi
 ---
 
-# /fix:fast
+# /fix --quick
 
 Sửa các lỗi nhỏ và vấn đề một cách nhanh chóng. Lệnh này bỏ qua việc phân tích và lập kế hoạch codebase sâu rộng, đi thẳng vào việc triển khai và thử nghiệm. Hoàn hảo cho các bản sửa lỗi đơn giản khi bạn biết chính xác những gì cần phải thực hiện.
 
 ## Cú Pháp
 
 ```bash
-/fix:fast [mô tả lỗi]
+/fix --quick [mô tả lỗi]
 ```
 
 ## Cách Hoạt Động
 
-Lệnh `/fix:fast` tuân theo một quy trình làm việc tinh giản:
+Lệnh `/fix --quick` tuân theo một quy trình làm việc tinh giản:
 
 ### 1. Phân Tích Nhanh
 
@@ -53,53 +53,53 @@ Lệnh `/fix:fast` tuân theo một quy trình làm việc tinh giản:
 
 **Lỗi Đánh Máy Đơn Giản**
 ```bash
-/fix:fast [lỗi đánh máy trong thông báo lỗi: "sucessful" nên là "successful"]
+/fix --quick [lỗi đánh máy trong thông báo lỗi: "sucessful" nên là "successful"]
 ```
 
 **Các Vấn Đề UI Nhỏ**
 ```bash
-/fix:fast [văn bản nút hiển thị "Submitt" thay vì "Submit"]
+/fix --quick [văn bản nút hiển thị "Submitt" thay vì "Submit"]
 ```
 
 **Sửa Logic Đơn Giản**
 ```bash
-/fix:fast [xác thực cho phép để trống trường email trong khi nó là bắt buộc]
+/fix --quick [xác thực cho phép để trống trường email trong khi nó là bắt buộc]
 ```
 
 **Cập Nhật Cấu Hình**
 ```bash
-/fix:fast [cập nhật giới hạn tốc độ API từ 100 lên 200 yêu cầu mỗi phút]
+/fix --quick [cập nhật giới hạn tốc độ API từ 100 lên 200 yêu cầu mỗi phút]
 ```
 
 **Các Lỗi Hiển Nhiên**
 ```bash
-/fix:fast [quên thêm từ khóa await trước truy vấn cơ sở dữ liệu trong trình xử lý đăng nhập]
+/fix --quick [quên thêm từ khóa await trước truy vấn cơ sở dữ liệu trong trình xử lý đăng nhập]
 ```
 
 ### ❌ Không Sử Dụng Cho
 
 **Các Vấn Đề Phức Tạp**
 ```bash
-❌ /fix:fast [người dùng thỉnh thoảng bị đăng xuất ngẫu nhiên]
-✅ /fix:hard [người dùng thỉnh thoảng bị đăng xuất ngẫu nhiên]
+❌ /fix --quick [người dùng thỉnh thoảng bị đăng xuất ngẫu nhiên]
+✅ /fix [người dùng thỉnh thoảng bị đăng xuất ngẫu nhiên]
 ```
 
 **Các Vấn Đề Toàn Hệ Thống**
 ```bash
-❌ /fix:fast [rò rỉ bộ nhớ gây ra treo ứng dụng]
-✅ /fix:hard [rò rỉ bộ nhớ gây ra treo ứng dụng]
+❌ /fix --quick [rò rỉ bộ nhớ gây ra treo ứng dụng]
+✅ /fix [rò rỉ bộ nhớ gây ra treo ứng dụng]
 ```
 
 **Chưa Biết Nguyên Nhân Gốc Rễ**
 ```bash
-❌ /fix:fast [có gì đó bị hỏng với phần thanh toán]
-✅ /fix:hard [xử lý thanh toán thất bại với lỗi không rõ ràng]
+❌ /fix --quick [có gì đó bị hỏng với phần thanh toán]
+✅ /fix [xử lý thanh toán thất bại với lỗi không rõ ràng]
 ```
 
 **Nhiều Vấn Đề Liên Quan**
 ```bash
-❌ /fix:fast [hệ thống xác thực có nhiều vấn đề]
-✅ /fix:hard [hệ thống xác thực có nhiều vấn đề]
+❌ /fix --quick [hệ thống xác thực có nhiều vấn đề]
+✅ /fix [hệ thống xác thực có nhiều vấn đề]
 ```
 
 ## Ví Dụ
@@ -107,7 +107,7 @@ Lệnh `/fix:fast` tuân theo một quy trình làm việc tinh giản:
 ### Sửa Lỗi Đánh Máy
 
 ```bash
-/fix:fast [sửa lỗi đánh máy trong thông báo chào mừng: "Welcom" nên là "Welcome"]
+/fix --quick [sửa lỗi đánh máy trong thông báo chào mừng: "Welcom" nên là "Welcome"]
 ```
 
 **Điều gì xảy ra:**
@@ -129,7 +129,7 @@ Lệnh `/fix:fast` tuân theo một quy trình làm việc tinh giản:
 ### Sửa Lỗi Xác Thực
 
 ```bash
-/fix:fast [xác thực email chấp nhận các email không hợp lệ như "test@"]
+/fix --quick [xác thực email chấp nhận các email không hợp lệ như "test@"]
 ```
 
 **Điều gì xảy ra:**
@@ -152,7 +152,7 @@ Lệnh `/fix:fast` tuân theo một quy trình làm việc tinh giản:
 ### Thiếu Await
 
 ```bash
-/fix:fast [quên await trong hàm getUserData gây ra Promise<User> thay vì User]
+/fix --quick [quên await trong hàm getUserData gây ra Promise<User> thay vì User]
 ```
 
 **Điều gì xảy ra:**
@@ -177,7 +177,7 @@ Lệnh `/fix:fast` tuân theo một quy trình làm việc tinh giản:
 ### Cập Nhật Cấu Hình
 
 ```bash
-/fix:fast [tăng thời gian chờ phiên làm việc từ 15 phút lên 30 phút]
+/fix --quick [tăng thời gian chờ phiên làm việc từ 15 phút lên 30 phút]
 ```
 
 **Điều gì xảy ra:**
@@ -198,27 +198,27 @@ Lệnh `/fix:fast` tuân theo một quy trình làm việc tinh giản:
 
 ## So Sánh Tốc Độ
 
-### /fix:fast so với /fix:hard
+### /fix --quick so với /fix
 
 **Lỗi đánh máy đơn giản:**
 ```
-/fix:fast:  10-20 giây
-/fix:hard:  2-3 phút (không cần thiết các bước dư thừa)
+/fix --quick:  10-20 giây
+/fix:  2-3 phút (không cần thiết các bước dư thừa)
 ```
 
 **Lỗi phức tạp:**
 ```
-/fix:fast:  Có thể tạo ra bản sửa lỗi không đầy đủ
-/fix:hard:  5-10 phút (điều tra đúng quy trình)
+/fix --quick:  Có thể tạo ra bản sửa lỗi không đầy đủ
+/fix:  5-10 phút (điều tra đúng quy trình)
 ```
 
 **Quy tắc chung:**
-- Biết chính xác cách sửa? → `/fix:fast`
-- Cần điều tra? → `/fix:hard`
+- Biết chính xác cách sửa? → `/fix --quick`
+- Cần điều tra? → `/fix`
 
 ## Những Gì Bị Bỏ Qua
 
-Để tiết kiệm thời gian, `/fix:fast` bỏ qua:
+Để tiết kiệm thời gian, `/fix --quick` bỏ qua:
 
 1. **Quét Codebase Sâu Rộng**
    - Không triển khai các scout agent
@@ -243,78 +243,78 @@ Lệnh `/fix:fast` tuân theo một quy trình làm việc tinh giản:
 
 ✅ **Có vị trí:**
 ```bash
-/fix:fast [trong tệp src/auth/login.ts dòng 45, đổi timeout từ 5000 thành 10000]
+/fix --quick [trong tệp src/auth/login.ts dòng 45, đổi timeout từ 5000 thành 10000]
 ```
 
 ❌ **Không có vị trí:**
 ```bash
-/fix:fast [đổi một cái timeout ở đâu đó]
+/fix --quick [đổi một cái timeout ở đâu đó]
 ```
 
 ### Cụ Thể Về Bản Sửa Lỗi
 
 ✅ **Cụ thể:**
 ```bash
-/fix:fast [văn bản nút "Loggin" trong LoginButton.tsx nên là "Login"]
+/fix --quick [văn bản nút "Loggin" trong LoginButton.tsx nên là "Login"]
 ```
 
 ❌ **Mơ hồ:**
 ```bash
-/fix:fast [sửa văn bản nút]
+/fix --quick [sửa văn bản nút]
 ```
 
 ### Xác Minh Phạm Vi Đơn Giản
 
-Trước khi sử dụng `/fix:fast`, hãy tự hỏi:
+Trước khi sử dụng `/fix --quick`, hãy tự hỏi:
 - Tôi có biết chính xác những gì cần thay đổi không?
 - Nó nằm trong một hoặc hai tệp?
 - Bản sửa lỗi có tốn ít hơn 5 dòng mã không?
 - Tôi có tự tin rằng điều này sẽ không làm hỏng bất cứ thứ gì không?
 
-Nếu có cho tất cả → Sử dụng `/fix:fast`
-Nếu không cho bất kỳ câu nào → Sử dụng `/fix:hard`
+Nếu có cho tất cả → Sử dụng `/fix --quick`
+Nếu không cho bất kỳ câu nào → Sử dụng `/fix`
 
 ## Các Trường Hợp Sử Dụng Phổ Biến
 
 ### Lỗi Đánh Máy Trong Mã Nguồn
 
 ```bash
-/fix:fast [tên biến "usreName" nên là "userName" trong profile.service.ts]
+/fix --quick [tên biến "usreName" nên là "userName" trong profile.service.ts]
 ```
 
 ### Các Câu Lệnh Import
 
 ```bash
-/fix:fast [thiếu import cho kiểu User trong auth.controller.ts]
+/fix --quick [thiếu import cho kiểu User trong auth.controller.ts]
 ```
 
 ### Các Tính Toán Đơn Giản
 
 ```bash
-/fix:fast [tính toán chiết khấu đang hiển thị 15% thay vì 20%, cập nhật trong checkout.ts]
+/fix --quick [tính toán chiết khấu đang hiển thị 15% thay vì 20%, cập nhật trong checkout.ts]
 ```
 
 ### Cập Nhật Văn Bản
 
 ```bash
-/fix:fast [cập nhật năm bản quyền từ 2023 thành 2024 trong footer]
+/fix --quick [cập nhật năm bản quyền từ 2023 thành 2024 trong footer]
 ```
 
 ### Các Câu Điều Kiện Đơn Giản
 
 ```bash
-/fix:fast [đảo ngược điều kiện: if (isDisabled) nên là if (!isDisabled) trong SubmitButton]
+/fix --quick [đảo ngược điều kiện: if (isDisabled) nên là if (!isDisabled) trong SubmitButton]
 ```
 
 ### Các Giá Trị Mặc Định
 
 ```bash
-/fix:fast [thay đổi kích thước trang mặc định từ 10 thành 20 trong cấu hình phân trang]
+/fix --quick [thay đổi kích thước trang mặc định từ 10 thành 20 trong cấu hình phân trang]
 ```
 
 ## Xử Lý Lỗi
 
-Nếu `/fix:fast` không thể hoàn thành bản sửa lỗi:
+Nếu `/fix --quick` không thể hoàn thành bản sửa lỗi:
 
 ```
 ⚠ Cảnh báo: Bản sửa lỗi có thể phức tạp hơn dự kiến
@@ -324,22 +324,22 @@ Các cân nhắc:
 - Vị trí không rõ ràng
 - Có thể yêu cầu phân tích sâu hơn
 
-Khuyến nghị: Sử dụng /fix:hard thay thế
+Khuyến nghị: Sử dụng /fix thay thế
 
-Vẫn tiếp tục với /fix:fast? (y/n)
+Vẫn tiếp tục với /fix --quick? (y/n)
 ```
 
 Bạn có thể:
 1. **Tiếp tục (Continue)** - Thử sửa dù sao đi nữa
-2. **Hủy (Cancel)** - Chuyển sang `/fix:hard`
+2. **Hủy (Cancel)** - Chuyển sang `/fix`
 
 ## Sau Khi Sửa Lỗi
 
-Quy trình làm việc tiêu chuẩn sau `/fix:fast`:
+Quy trình làm việc tiêu chuẩn sau `/fix --quick`:
 
 ```bash
 # 1. Bản sửa lỗi đã được áp dụng
-/fix:fast [lỗi đánh máy văn bản nút]
+/fix --quick [lỗi đánh máy văn bản nút]
 
 # 2. Xem lại các thay đổi
 git diff
@@ -360,7 +360,7 @@ git diff
 **Giải pháp:**
 ```bash
 # Vấn đề có thể phức tạp hơn
-/fix:hard [mô tả lại vấn đề với nhiều chi tiết hơn]
+/fix [mô tả lại vấn đề với nhiều chi tiết hơn]
 ```
 
 ### Sai Vị Trí
@@ -370,7 +370,7 @@ git diff
 **Giải pháp:**
 ```bash
 # Cung cấp đường dẫn tệp chính xác
-/fix:fast [trong src/correct/file.ts dòng 42, sửa vấn đề thực tế]
+/fix --quick [trong src/correct/file.ts dòng 42, sửa vấn đề thực tế]
 ```
 
 ### Các Bài Kiểm Tra Thất Bại
@@ -384,7 +384,7 @@ git diff
 
 # Hoặc hoàn tác và sử dụng phương pháp kỹ lưỡng
 git restore .
-/fix:hard [mô tả vấn đề ban đầu]
+/fix [mô tả vấn đề ban đầu]
 ```
 
 ### Bản Sửa Lỗi Không Đầy Đủ
@@ -399,14 +399,14 @@ git restore .
 
 ## Số Liệu
 
-Hiệu suất điển hình của `/fix:fast`:
+Hiệu suất điển hình của `/fix --quick`:
 
 - **Thời gian**: 5-30 giây
 - **Số tệp thay đổi**: 1-2
 - **Độ bao phủ kiểm tra**: Chỉ các bài kiểm tra hiện có
 - **Tỷ lệ thành công**: ~95% cho các vấn đề đơn giản
 
-So sánh với `/fix:hard`:
+So sánh với `/fix`:
 
 - **Thời gian**: 2-10 phút
 - **Số tệp thay đổi**: 1-10+
@@ -415,13 +415,13 @@ So sánh với `/fix:hard`:
 
 ## Bước Tiếp Theo
 
-Sau khi sử dụng `/fix:fast`:
+Sau khi sử dụng `/fix --quick`:
 
 - [/test](/docs/engineer/commands/core/test) - Chạy toàn bộ bộ kiểm tra
-- [/fix:hard](/docs/engineer/commands/fix/hard) - Cho các vấn đề phức tạp
+- [/fix](/docs/engineer/commands/fix/hard) - Cho các vấn đề phức tạp
 - [/git:cm](/docs/engineer/commands/git/commit) - Commit bản sửa lỗi
 - [/debug](/docs/engineer/commands/core/debug) - Nếu vấn đề vẫn tiếp diễn
 
 ---
 
-**Điểm mấu chốt**: `/fix:fast` hoàn hảo cho các bản sửa lỗi đơn giản, đã được hiểu rõ khi mà tốc độ là ưu tiên hàng đầu. Đối với bất kỳ điều gì phức tạp hoặc chưa rõ ràng, hãy sử dụng `/fix:hard` thay thế.
+**Điểm mấu chốt**: `/fix --quick` hoàn hảo cho các bản sửa lỗi đơn giản, đã được hiểu rõ khi mà tốc độ là ưu tiên hàng đầu. Đối với bất kỳ điều gì phức tạp hoặc chưa rõ ràng, hãy sử dụng `/fix` thay thế.

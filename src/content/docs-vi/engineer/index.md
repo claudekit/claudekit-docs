@@ -54,7 +54,7 @@ Tạo code chất lượng cao với nhận thức ngữ cảnh:
 
 ```bash
 /cook "add REST API endpoints for users"
-/code "implement caching layer"
+/cook "implement caching layer"
 ```
 
 ### Testing & Quality
@@ -63,7 +63,7 @@ Tạo code chất lượng cao với nhận thức ngữ cảnh:
 
 ```bash
 /test "run full test suite"
-/fix:types "resolve TypeScript errors"
+/fix "resolve TypeScript errors"
 /review "code review recent changes"
 ```
 

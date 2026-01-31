@@ -21,7 +21,7 @@ Learn how to identify and fix performance bottlenecks with ClaudeKit - from prof
 **Goal**: Identify and resolve performance bottlenecks systematically
 **Time**: 30-60 minutes (vs 4-12 hours manually)
 **Agents Used**: debugger, code-reviewer, tester
-**Commands**: /debug, /cook, /test, /fix:hard
+**Commands**: /debug, /cook, /test, /fix
 
 ## Prerequisites
 
@@ -446,7 +446,7 @@ Result: 45% faster during peak load
 #### Fix Memory Leaks
 
 ```bash
-/fix:hard [fix memory leak in WebSocket handler]
+/fix [fix memory leak in WebSocket handler]
 ```
 
 **Implementation**:
@@ -726,14 +726,14 @@ But invalidate correctly:
 
 **Solution**:
 ```bash
-/fix:fast [Redis cache hit rate below 50%]
+/fix --quick [Redis cache hit rate below 50%]
 ```
 
 ### Issue: Memory Still Growing
 
 **Solution**:
 ```bash
-/fix:hard [memory still growing despite fixes]
+/fix [memory still growing despite fixes]
 ```
 
 ### Issue: Database Timeout
@@ -793,7 +793,7 @@ Metrics:
 ### Related Commands
 - [/debug](/docs/engineer/commands/core/debug) - Performance profiling
 - [/cook](/docs/engineer/commands/core/cook) - Implement optimizations
-- [/fix:hard](/docs/engineer/commands/fix/hard) - Complex fixes
+- [/fix](/docs/engineer/commands/fix/hard) - Complex fixes
 - [/test](/docs/engineer/commands/core/test) - Performance testing
 
 ### Further Reading

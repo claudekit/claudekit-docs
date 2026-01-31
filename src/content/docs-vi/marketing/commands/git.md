@@ -117,7 +117,7 @@ git status
 ### Sau Implementation
 
 ```bash
-/code plans/feature.md
+/cook plans/feature.md
 # Implementation complete
 /git pr  # Create PR
 ```

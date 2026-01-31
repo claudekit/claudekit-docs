@@ -73,52 +73,52 @@ This command will:
 5. Summary report provided when finished
 
 **Autonomous variants** (use at your own risk):
-- `/cook:auto` - Full autonomous mode with plan review
-- `/cook:auto:fast` - Faster mode with less token consumption
+- `/cook --auto` - Full autonomous mode with plan review
+- `/cook --auto --fast` - Faster mode with less token consumption
 
 ### Fix Bugs
 
 #### Quick Bug Fix
 ```bash
-/fix:fast <description-of-bug>
+/fix --quick <description-of-bug>
 ```
 
 For simple, straightforward bugs.
 
 #### Complex Bug Fix
 ```bash
-/fix:hard <description-of-bug>
+/fix <description-of-bug>
 ```
 
 For difficult bugs requiring deeper analysis and more thinking time.
 
 **Example:**
 ```bash
-/fix:hard User authentication breaks after OAuth login when email is not verified
+/fix User authentication breaks after OAuth login when email is not verified
 ```
 
 #### Auto-Fix from Logs
 ```bash
-/fix:logs
+/fix
 ```
 
 Automatically fetches logs and fixes issues.
 
 #### Fix Test Suite
 ```bash
-/fix:test
+/fix
 ```
 
 Runs test suite and keeps fixing until all tests pass.
 
 #### Fix CI/CD Issues
 ```bash
-/fix:ci <github-action-url>
+/fix <github-action-url>
 ```
 
 **Example:**
 ```bash
-/fix:ci https://github.com/username/repo/actions/runs/12345
+/fix https://github.com/username/repo/actions/runs/12345
 ```
 
 Fetches GitHub Actions logs and fixes build/deployment errors.
@@ -151,7 +151,7 @@ Research and create detailed implementation plan without implementing.
 
 #### Execute Existing Plan
 ```bash
-/code <your-plan.md>
+"Implement your plan"
 ```
 
 Start implementing from a markdown plan file.
@@ -211,8 +211,8 @@ Always run `/docs:init` first to let CC understand your codebase.
 - Build team confidence
 
 ### 4. Use Appropriate Commands
-- Simple bugs → `/fix:fast`
-- Complex bugs → `/fix:hard`
+- Simple bugs → `/fix --quick`
+- Complex bugs → `/fix`
 - Small features → `/cook`
 - Large features → `/plan` then `/code`
 
@@ -233,7 +233,7 @@ Run `/test` frequently to catch issues early.
 # 3. Review and approve plan
 
 # 4. Implement
-/code plan.md
+"Implement plan"
 
 # 5. Test
 /test
@@ -243,7 +243,7 @@ Run `/test` frequently to catch issues early.
 
 ```bash
 # 1. Quick fix for urgent issue
-/fix:fast Payment processing fails on Safari browser
+/fix --quick Payment processing fails on Safari browser
 
 # 2. Test the fix
 /test
@@ -264,10 +264,10 @@ Run `/test` frequently to catch issues early.
 # 3. Review plan carefully
 
 # 4. Implement incrementally
-/code auth-refactor-plan.md
+"Implement auth refactor"
 
 # 5. Run full test suite
-/fix:test
+/fix
 ```
 
 ## Team Collaboration

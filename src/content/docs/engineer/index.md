@@ -53,7 +53,7 @@ Generate high-quality code with context awareness:
 
 ```bash
 /cook "add REST API endpoints for users"
-/code "implement caching layer"
+"Implement caching layer"
 ```
 
 ### Testing & Quality
@@ -62,7 +62,7 @@ Ensure code quality with automated testing:
 
 ```bash
 /test "run full test suite"
-/fix:types "resolve TypeScript errors"
+/fix "resolve TypeScript errors"
 /review "code review recent changes"
 ```
 

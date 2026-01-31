@@ -510,7 +510,7 @@ git pull
 git checkout -b hotfix/payment-bug
 
 # 2. Sửa lỗi
-/fix:fast [lỗi xử lý thanh toán]
+/fix --quick [lỗi xử lý thanh toán]
 
 # 3. Kiểm tra lỗi
 /test
@@ -649,7 +649,7 @@ gh pr close 42
 
 ```bash
 # 1. Sửa lỗi
-/fix:fast [mô tả lỗi]
+/fix --quick [mô tả lỗi]
 
 # 2. Kiểm tra
 /test

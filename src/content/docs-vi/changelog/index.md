@@ -55,7 +55,7 @@ ck init --use-git
 - **Điều hướng theo Ngữ cảnh** - Sidebar động dựa trên section hiện tại
 
 **Khả năng Cốt lõi**:
-- Workflow phát triển tính năng hoàn chỉnh (`/plan → /code → /test → /commit`)
+- Workflow phát triển tính năng hoàn chỉnh (`/plan → /cook → /test → /commit`)
 - Sửa lỗi hệ thống với phân tích nguyên nhân gốc
 - Tự động tạo và duy trì tài liệu
 - Thiết kế UI/UX với các tài nguyên do AI tạo

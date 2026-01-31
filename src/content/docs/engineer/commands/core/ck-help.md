@@ -50,11 +50,11 @@ All-in-one ClaudeKit guide for discovering commands and workflows.
 ```bash
 /ck-help fix
 # Response: Here's the fixing workflow:
-# - /fix:fast - Quick fix for simple issues
-# - /fix:hard - Deep analysis for complex bugs
-# - /fix:test - Fix test failures
-# - /fix:types - Fix TypeScript errors
-# - /fix:ci - Fix CI/CD failures
+# - /fix --quick - Quick fix for simple issues
+# - /fix - Deep analysis for complex bugs
+# - /fix - Fix test failures
+# - /fix - Fix TypeScript errors
+# - /fix - Fix CI/CD failures
 ```
 
 ---

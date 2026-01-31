@@ -250,7 +250,7 @@ Coverage:    89.3%
 
 **If tests fail**:
 ```bash
-/fix:test
+/fix
 ```
 
 ### Step 7: Code Review
@@ -445,7 +445,7 @@ Real-world scenario: Adding search functionality to an e-commerce site.
 ### Implementation
 
 ```bash
-/code [implement product search as planned]
+"Implement product search as planned"
 ```
 
 **Results after 8 minutes**:
@@ -534,7 +534,7 @@ Real-world scenario: Adding search functionality to an e-commerce site.
 
 **Solution**:
 ```bash
-/fix:test
+/fix
 
 # Debugger analyzes failures and fixes
 # Re-runs tests automatically
@@ -602,7 +602,7 @@ Don't skip testing:
 ```bash
 /cook [feature]
 /test           # Always run tests
-/fix:test       # Fix failures immediately
+/fix       # Fix failures immediately
 ```
 
 ### 4. Document as You Go

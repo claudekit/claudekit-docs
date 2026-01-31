@@ -56,7 +56,7 @@ Lệnh này kết hợp `/git:cm` (commit) với `git push`:
 **Các thay đổi nhỏ**
 ```bash
 # Sửa lỗi đánh máy, cập nhật nhỏ
-/fix:fast [lỗi đánh máy]
+/fix --quick [lỗi đánh máy]
 /git:cp  # Đẩy lên ngay
 ```
 
@@ -120,7 +120,7 @@ Các thay đổi hiện đã có trên GitHub!
 
 ```bash
 # 1. Sửa lỗi
-/fix:fast [lỗi đánh máy văn bản nút]
+/fix --quick [lỗi đánh máy văn bản nút]
 
 ✓ Đã sửa lỗi đánh máy trong SubmitButton.tsx
 
@@ -145,7 +145,7 @@ Các thay đổi hiện đã có trên GitHub!
 /git:cp  # → Triển khai lên staging
 
 # Thay đổi 2
-/fix:ui [vấn đề căn lề]
+/fix [vấn đề căn lề]
 /git:cp  # → Triển khai lên staging
 
 # Thay đổi 3
@@ -352,7 +352,7 @@ git checkout -b feature/payments
 ```bash
 # Lỗi nghiêm trọng trên production
 git checkout -b hotfix/login-error
-/fix:fast [lỗi đăng nhập]
+/fix --quick [lỗi đăng nhập]
 /git:cp  # Đẩy lên ngay lập tức
 
 # Tạo PR vào main

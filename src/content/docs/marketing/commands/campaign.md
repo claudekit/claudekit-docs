@@ -237,7 +237,7 @@ Priority 2 (Next Week):
 Report saved: assets/diagnostics/campaign-audits/250129-saas-platform-launch-q1-2025.md
 
 Next:
-• /fix:fast Add testimonials to landing page
+• /fix --quick Add testimonials to landing page
 • /content case-study "Enterprise customer success"
 • /campaign status "SaaS Platform Launch Q1 2025" (recheck in 7 days)
 ```
@@ -262,7 +262,7 @@ Next:
 
 # Step 5: Optimize
 /campaign analyze "Product Launch"
-/fix:fast Issues identified in campaign
+/fix --quick Issues identified in campaign
 ```
 
 ### Multi-Campaign Management

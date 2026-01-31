@@ -100,7 +100,7 @@ Tiếp theo: /analyze conversions
 
 # Đi sâu vào các vấn đề
 /analyze engagement  # nếu mức độ tương tác thấp
-/fix:fast Issues identified in analytics
+/fix --quick Issues identified in analytics
 
 # Chiến dịch cụ thể
 /campaign analyze "Q1 Launch"

@@ -80,7 +80,7 @@ Combine commands for complete workflows:
 /clear  # Free context before implementation
 /cook "Redesign checkout flow as planned"
 /frontend-design "checkout UI mockup"
-/fix:test
+/fix
 /git:pr "feature/new-checkout"
 ```
 

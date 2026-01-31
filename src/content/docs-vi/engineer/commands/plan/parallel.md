@@ -56,7 +56,7 @@ Phase 3: src/settings/*, src/hooks/useSettings.ts
 Phase 4: src/dashboard/*, src/pages/dashboard.tsx
 
 Plan saved: plans/251129-dashboard/plan.md
-Execute with: /code:parallel
+Execute with: /cook --parallel
 ```
 
 ## Tham số
@@ -260,7 +260,7 @@ Shipping Calculator ───┘
 
 ```bash
 # Execute all phases with parallel support
-/code:parallel @plans/251129-checkout/plan.md
+/cook --parallel @plans/251129-checkout/plan.md
 ```
 
 ## Success Criteria
@@ -312,10 +312,10 @@ Sau khi tạo kế hoạch parallel, thực thi với:
 
 ```bash
 # Thực thi với hỗ trợ agent song song
-/code:parallel @plans/251129-{task}/plan.md
+/cook --parallel @plans/251129-{task}/plan.md
 ```
 
-Lệnh `/code:parallel`:
+Lệnh `/cook --parallel`:
 1. Đọc đồ thị phụ thuộc
 2. Khởi chạy agent song song cho Wave 1
 3. Chờ wave hoàn thành
@@ -368,9 +368,9 @@ Cân bằng lợi ích song song vs. chi phí điều phối:
 
 - [/plan](/vi/docs/engineer/commands/plan) - Bộ định tuyến lập kế hoạch thông minh
 - [/plan:hard](/vi/docs/engineer/commands/plan/hard) - Lập kế hoạch chi tiết tuần tự
-- [/code:parallel](/vi/docs/engineer/commands/core/code-parallel) - Thực thi kế hoạch song song
+- [/cook --parallel](/vi/docs/engineer/commands/core/code-parallel) - Thực thi kế hoạch song song
 - [/bootstrap:auto:parallel](/vi/docs/engineer/commands/core/bootstrap-auto-parallel) - Bootstrap với thực thi song song
-- [/cook:auto:parallel](/vi/docs/engineer/commands/core/cook-auto-parallel) - Cook với agent song song
+- [/cook --auto --parallel](/vi/docs/engineer/commands/core/cook-auto-parallel) - Cook với agent song song
 
 ---
 

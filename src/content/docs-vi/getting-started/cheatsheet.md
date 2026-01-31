@@ -61,16 +61,16 @@ ck init --use-git
 /cook <mô-tả>
 
 # Triển khai tính năng tự động (autonomous)
-/cook:auto <mô-tả>
+/cook --auto <mô-tả>
 
 # Chế độ tự động nhanh (ít lập kế hoạch hơn)
-/cook:auto:fast <mô-tả>
+/cook --auto --fast <mô-tả>
 
 # Chỉ tạo kế hoạch triển khai
 /plan <mô-tả>
 
 # Thực thi một kế hoạch đã có sẵn
-/code <plan.md>
+/cook <plan.md>
 
 # Khởi tạo dự án mới (bootstrap)
 /bootstrap <mô-tả-ý-tưởng>
@@ -83,19 +83,19 @@ ck init --use-git
 
 ```bash
 # Sửa lỗi nhanh
-/fix:fast <mô-tả>
+/fix --quick <mô-tả>
 
 # Sửa lỗi phức tạp (phân tích sâu hơn)
-/fix:hard <mô-tả>
+/fix <mô-tả>
 
 # Tự động lấy logs và sửa lỗi
-/fix:logs
+/fix
 
 # Chạy bộ test và sửa lỗi cho đến khi đạt yêu cầu
-/fix:test
+/fix
 
 # Sửa các vấn đề trong luồng CI/CD (pipeline)
-/fix:ci <github-action-url>
+/fix <github-action-url>
 ```
 
 ### Kiểm Thử (Testing)
@@ -180,11 +180,11 @@ ck init --use-git
 # → Quá trình triển khai bắt đầu
 
 # Cách 2: Tự động hoàn toàn (cẩn thận khi dùng)
-/cook:auto <mô-tả-tính-năng>
+/cook --auto <mô-tả-tính-năng>
 # → Triển khai tự động mà không cần xem lại kế hoạch
 
 # Cách 3: Tự động nhanh (tiết kiệm token nhất)
-/cook:auto:fast <mô-tả-tính-năng>
+/cook --auto --fast <mô-tả-tính-năng>
 # → Chế độ nhanh với việc lập kế hoạch tối thiểu
 ```
 
@@ -192,19 +192,19 @@ ck init --use-git
 
 ```bash
 # Các lỗi đơn giản
-/fix:fast <mô-tả-lỗi>
+/fix --quick <mô-tả-lỗi>
 
 # Các lỗi phức tạp
-/fix:hard <mô-tả-lỗi>
+/fix <mô-tả-lỗi>
 
 # Sửa từ logs
-/fix:logs
+/fix
 
 # Sửa từ các test bị thất bại
-/fix:test
+/fix
 
 # Sửa từ CI/CD
-/fix:ci <action-url>
+/fix <action-url>
 ```
 
 ## Các Quy Trình Làm Việc Thường Gặp (Common Workflows)
@@ -259,13 +259,13 @@ claude
 # 2. Xem lại kế hoạch (một file markdown sẽ được tạo ra)
 
 # 3. Triển khai
-/code profile-feature-plan.md
+/cook profile-feature-plan.md
 
 # 4. Kiểm thử
 /test
 
 # 5. Sửa lỗi nếu cần
-/fix:test
+/fix
 
 # 6. Commit
 /git:cm
@@ -275,10 +275,10 @@ claude
 
 ```bash
 # 1. Mô tả lỗi
-/fix:hard Lỗi thanh toán trên Safari sau khi xác thực biểu mẫu
+/fix Lỗi thanh toán trên Safari sau khi xác thực biểu mẫu
 
 # 2. CC phân tích và sửa lỗi
-/fix:hard
+/fix
 
 # 3. Kiểm thử bản sửa lỗi
 /test
@@ -294,7 +294,7 @@ claude
 # https://github.com/user/repo/actions/runs/12345
 
 # 2. Sửa CI
-/fix:ci https://github.com/user/repo/actions/runs/12345
+/fix https://github.com/user/repo/actions/runs/12345
 
 # 3. CC lấy logs, phân tích và sửa lỗi
 
@@ -313,7 +313,7 @@ claude
 ### Sửa Vấn Đề Hiệu Suất
 
 ```bash
-/fix:hard Dashboard tải chậm khi có hơn 1000 mục
+/fix Dashboard tải chậm khi có hơn 1000 mục
 ```
 
 ### Lập Kế Hoạch Di Cư Cơ Sở Dữ Liệu (Database Migration)
@@ -345,11 +345,11 @@ claude
 - `/bootstrap` - Dự án mới
 
 ### 🐛 Kiểm Lỗi & Sửa Lỗi
-- `/fix:fast` - Sửa lỗi nhanh
-- `/fix:hard` - Sửa lỗi phức tạp
-- `/fix:logs` - Sửa lỗi dựa trên log
-- `/fix:test` - Sửa lỗi dựa trên test
-- `/fix:ci` - Sửa lỗi CI/CD
+- `/fix --quick` - Sửa lỗi nhanh
+- `/fix` - Sửa lỗi phức tạp
+- `/fix` - Sửa lỗi dựa trên log
+- `/fix` - Sửa lỗi dựa trên test
+- `/fix` - Sửa lỗi CI/CD
 
 ### 🧪 Kiểm Thử
 - `/test` - Chạy các bộ test
@@ -394,16 +394,16 @@ Mô tả chi tiết hơn = Kết quả tốt hơn
 
 ```bash
 # Lỗi nhanh
-/fix:fast <vấn-đề-đơn-giản>
+/fix --quick <vấn-đề-đơn-giản>
 
 # Lỗi phức tạp
-/fix:hard <vấn-đề-phức-tạp>
+/fix <vấn-đề-phức-tạp>
 
 # Tính năng nhỏ
 /cook <tính-năng>
 
 # Tính năng lớn
-/plan <tính-năng> → xem lại → /code plan.md
+/plan <tính-năng> → xem lại → /cook plan.md
 ```
 
 ### 4. Kiểm Thử Thường Xuyên
@@ -413,7 +413,7 @@ Mô tả chi tiết hơn = Kết quả tốt hơn
 /test
 
 # Hoặc tự động sửa lỗi test
-/fix:test
+/fix
 ```
 
 ### 5. Ghi Lại Các Thay Đổi
@@ -461,31 +461,31 @@ ck --version
 /cook <mô-tả-tính-năng>
 
 # Tính năng mới (tự động, không xem lại)
-/cook:auto <mô-tả>
+/cook --auto <mô-tả>
 
 # Tính năng mới (nhanh hơn, ít kế hoạch hơn)
-/cook:auto:fast <mô-tả>
+/cook --auto --fast <mô-tả>
 
 # Chỉ lập kế hoạch, không triển khai
 /plan <mô-tả>
 
 # Code từ một kế hoạch có sẵn
-/code <plan.md>
+/cook <plan.md>
 
 # Sửa lỗi nhanh
-/fix:fast <mô-tả-lỗi>
+/fix --quick <mô-tả-lỗi>
 
 # Sửa lỗi khó (phân tích sâu hơn)
-/fix:hard <mô-tả-lỗi>
+/fix <mô-tả-lỗi>
 
 # Tự động lấy logs và sửa lỗi
-/fix:logs
+/fix
 
 # Chạy các test và sửa cho đến khi đạt
-/fix:test
+/fix
 
 # Lấy logs từ GitHub Actions và sửa lỗi
-/fix:ci <github-action-url>
+/fix <github-action-url>
 
 # Khởi tạo dự án mới (cần xem lại kế hoạch)
 /bootstrap <mô-tả-ý-tưởng>

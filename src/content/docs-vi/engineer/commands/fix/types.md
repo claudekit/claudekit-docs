@@ -1,5 +1,5 @@
 ---
-title: /fix:types
+title: /fix
 description: Tài liệu hướng dẫn lệnh fix:types
 section: engineer
 kit: engineer
@@ -9,21 +9,21 @@ published: true
 lang: vi
 ---
 
-# /fix:types
+# /fix
 
 Tự động xác định và sửa tất cả các lỗi kiểu (type errors) trong mã nguồn TypeScript hoặc Dart của bạn. Lệnh này chạy các trình kiểm tra kiểu lặp đi lặp lại cho đến khi tất cả các lỗi được giải quyết, đảm bảo an toàn kiểu dữ liệu mà không cần lạm dụng kiểu `any`.
 
 ## Cú pháp
 
 ```bash
-/fix:types
+/fix
 ```
 
 Không cần tham số - lệnh sẽ tự động phát hiện loại dự án và chạy trình kiểm tra kiểu phù hợp.
 
 ## Cách hoạt động
 
-Lệnh `/fix:types` tuân theo một quy trình làm việc lặp lại:
+Lệnh `/fix` tuân theo một quy trình làm việc lặp lại:
 
 ### 1. Thực thi kiểm tra kiểu
 
@@ -62,51 +62,51 @@ Lệnh `/fix:types` tuân theo một quy trình làm việc lặp lại:
 **Sau khi tái cấu trúc (Refactoring)**
 ```bash
 # Vừa tái cấu trúc user service
-/fix:types
+/fix
 ```
 
 **Thêm tính năng mới**
 ```bash
 # Vừa thêm các endpoint API mới
-/fix:types
+/fix
 ```
 
 **Nâng cấp phụ thuộc**
 ```bash
 # Cập nhật TypeScript từ 4.9 lên 5.0
 npm install typescript@latest
-/fix:types
+/fix
 ```
 
 **Chuyển đổi JavaScript sang TypeScript**
 ```bash
 # Đổi tên các tệp .js thành .ts
-/fix:types
+/fix
 ```
 
 **Chuyển sang chế độ nghiêm ngặt (Strict Mode)**
 ```bash
 # Bật chế độ strict trong tsconfig.json
-/fix:types
+/fix
 ```
 
 ### ❌ Không sử dụng cho
 
 **Lỗi khi chạy (Runtime Errors)**
 ```bash
-❌ /fix:types  # Cho lỗi runtime
-✅ /fix:logs [mô tả lỗi runtime]
+❌ /fix  # Cho lỗi runtime
+✅ /fix [mô tả lỗi runtime]
 ```
 
 **Lỗi logic**
 ```bash
-❌ /fix:types  # Cho các phép tính sai
-✅ /fix:fast [sửa logic tính toán]
+❌ /fix  # Cho các phép tính sai
+✅ /fix --quick [sửa logic tính toán]
 ```
 
 **Chưa cấu hình trình kiểm tra kiểu**
 ```bash
-❌ /fix:types  # Chưa có script typecheck
+❌ /fix  # Chưa có script typecheck
 ✅ Trước tiên hãy thêm trình kiểm tra kiểu vào dự án
 ```
 
@@ -115,7 +115,7 @@ npm install typescript@latest
 ### Các lỗi kiểu đơn giản
 
 ```bash
-/fix:types
+/fix
 ```
 
 **Điều gì xảy ra:**
@@ -158,7 +158,7 @@ cat > tsconfig.json <<EOF
 }
 EOF
 
-/fix:types
+/fix
 ```
 
 **Điều gì xảy ra:**
@@ -197,7 +197,7 @@ EOF
 # Cập nhật React và TypeScript
 npm update react @types/react typescript
 
-/fix:types
+/fix
 ```
 
 **Điều gì xảy ra:**
@@ -224,7 +224,7 @@ npm update react @types/react typescript
 ### Sửa lỗi kiểu Flutter/Dart
 
 ```bash
-/fix:types
+/fix
 ```
 
 **Điều gì xảy ra:**
@@ -401,7 +401,7 @@ function fetchUser(): Promise<any> { // Làm mất an toàn kiểu dữ liệu!
 ✅ **Lệnh tự động xử lý các lần lặp:**
 ```bash
 # Chỉ chạy một lần
-/fix:types
+/fix
 
 # Lệnh sẽ lặp lại cho đến khi tất cả các lỗi được sửa
 ```
@@ -409,9 +409,9 @@ function fetchUser(): Promise<any> { // Làm mất an toàn kiểu dữ liệu!
 ❌ **Đừng chạy thủ công nhiều lần:**
 ```bash
 # Không hiệu quả
-/fix:types
-/fix:types
-/fix:types
+/fix
+/fix
+/fix
 ```
 
 ### Sau những thay đổi lớn
@@ -422,7 +422,7 @@ function fetchUser(): Promise<any> { // Làm mất an toàn kiểu dữ liệu!
 /cook [tái cấu trúc user service để dùng API mới]
 
 # 2. Sửa các lỗi kiểu phát sinh
-/fix:types
+/fix
 
 # 3. Kiểm tra
 /test
@@ -479,7 +479,7 @@ analyzer:
 /cook [thêm tính năng profile người dùng]
 
 # 2. Sửa các lỗi kiểu
-/fix:types
+/fix
 
 # 3. Chạy các bài kiểm tra
 /test
@@ -495,10 +495,10 @@ analyzer:
 /cook [tái cấu trúc xác thực để dùng OAuth]
 
 # 2. Sửa các lỗi kiểu
-/fix:types
+/fix
 
 # 3. Sửa bất kỳ vấn đề nào còn sót lại
-/fix:hard [nếu vẫn còn các vấn đề phức tạp]
+/fix [nếu vẫn còn các vấn đề phức tạp]
 
 # 4. Kiểm tra kỹ lưỡng
 /test
@@ -514,7 +514,7 @@ analyzer:
 echo '{"compilerOptions": {"strict": true}}' > tsconfig.json
 
 # 2. Sửa tất cả các lỗi phát sinh
-/fix:types
+/fix
 
 # 3. Xác minh bằng các bài kiểm tra
 /test
@@ -533,7 +533,7 @@ echo '{"compilerOptions": {"strict": true}}' > tsconfig.json
 ```bash
 # Sửa theo từng giai đoạn
 # 1. Sửa các lỗi strict mode trước
-/fix:types
+/fix
 
 # 2. Sau đó bật dần các kiểm tra bổ sung
 # Cập nhật từng tùy chọn trong tsconfig.json một
@@ -548,7 +548,7 @@ echo '{"compilerOptions": {"strict": true}}' > tsconfig.json
 # Lệnh sẽ xác định các phụ thuộc vòng
 # Thủ công cấu trúc lại các lệnh import để phá vỡ vòng lặp
 # Sau đó chạy lại
-/fix:types
+/fix
 ```
 
 ### Độ phức tạp của kiểu Generic
@@ -558,11 +558,11 @@ echo '{"compilerOptions": {"strict": true}}' > tsconfig.json
 **Giải pháp:**
 ```bash
 # Để lệnh xử lý lượt đầu tiên
-/fix:types
+/fix
 
 # Nếu vấn đề vẫn còn, hãy đơn giản hóa các generic thủ công
 # Sau đó chạy lại để xác minh
-/fix:types
+/fix
 ```
 
 ### Thiếu các kiểu bên ngoài (External Types)
@@ -575,7 +575,7 @@ echo '{"compilerOptions": {"strict": true}}' > tsconfig.json
 npm install --save-dev @types/ten-goi
 
 # Sau đó sửa các lỗi còn lại
-/fix:types
+/fix
 ```
 
 ## Các danh mục lỗi
@@ -609,7 +609,7 @@ Các loại lỗi phổ biến được sửa:
 
 ## Số liệu
 
-Hiệu suất điển hình của `/fix:types`:
+Hiệu suất điển hình của `/fix`:
 
 - **Thời gian**: 1-5 phút (tùy thuộc vào số lượng lỗi)
 - **Số lỗi mỗi lần lặp**: 15-30
@@ -619,13 +619,13 @@ Hiệu suất điển hình của `/fix:types`:
 
 ## Bước tiếp theo
 
-Sau khi sử dụng `/fix:types`:
+Sau khi sử dụng `/fix`:
 
 - [/test](/docs/engineer/commands/core/test) - Chạy các bài kiểm tra để xác minh các bản sửa lỗi
-- [/fix:fast](/docs/engineer/commands/fix/fast) - Cho các vấn đề đơn giản còn sót lại
+- [/fix --quick](/docs/engineer/commands/fix/fast) - Cho các vấn đề đơn giản còn sót lại
 - [/git:cm](/docs/engineer/commands/git/commit) - Commit các bản sửa lỗi kiểu
 - [/cook](/docs/engineer/commands/core/cook) - Tiếp tục phát triển tính năng
 
 ---
 
-**Điểm mấu chốt**: `/fix:types` cung cấp giải pháp sửa lỗi kiểu tự động mà không làm giảm an toàn kiểu dữ liệu bằng cách tránh kiểu `any` và triển khai các chú thích kiểu, kiểm tra null và tính đầy đủ của interface một cách chính xác.
+**Điểm mấu chốt**: `/fix` cung cấp giải pháp sửa lỗi kiểu tự động mà không làm giảm an toàn kiểu dữ liệu bằng cách tránh kiểu `any` và triển khai các chú thích kiểu, kiểm tra null và tính đầy đủ của interface một cách chính xác.

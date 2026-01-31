@@ -17,7 +17,7 @@ Tìm hiểu cách xác định và khắc phục các nút thắt cổ chai về
 **Mục tiêu**: Xác định và giải quyết các nút thắt cổ chai về hiệu suất một cách hệ thống
 **Thời gian**: 30-60 phút (so với 4-12 giờ làm thủ công)
 **Agents sử dụng**: debugger, code-reviewer, tester
-**Lệnh**: `/debug`, `/cook`, `/test`, `/fix:hard`
+**Lệnh**: `/debug`, `/cook`, `/test`, `/fix`
 
 ## Điều Kiện Tiên Quyết
 
@@ -442,7 +442,7 @@ Kết quả: nhanh hơn 45% trong thời gian tải cao điểm
 #### Sửa Lỗi Rò Rỉ Bộ Nhớ (Memory Leaks)
 
 ```bash
-/fix:hard [fix memory leak in WebSocket handler]
+/fix [fix memory leak in WebSocket handler]
 ```
 
 **Triển khai**:
@@ -722,14 +722,14 @@ Nhưng phải xóa cache đúng cách:
 
 **Giải pháp**:
 ```bash
-/fix:fast [Redis cache hit rate below 50%]
+/fix --quick [Redis cache hit rate below 50%]
 ```
 
 ### Vấn Đề: Bộ Nhớ Vẫn Tăng
 
 **Giải pháp**:
 ```bash
-/fix:hard [memory still growing despite fixes]
+/fix [memory still growing despite fixes]
 ```
 
 ### Vấn Đề: Database Timeout
@@ -789,7 +789,7 @@ Chỉ số:
 ### Các Lệnh Liên Quan
 - [/debug](/docs/engineer/commands/core/debug) - Phân tích hiệu suất
 - [/cook](/docs/engineer/commands/core/cook) - Triển khai tối ưu hóa
-- [/fix:hard](/docs/engineer/commands/fix/hard) - Các bản sửa lỗi phức tạp
+- [/fix](/docs/engineer/commands/fix/hard) - Các bản sửa lỗi phức tạp
 - [/test](/docs/engineer/commands/core/test) - Kiểm thử hiệu suất
 
 ### Đọc Thêm

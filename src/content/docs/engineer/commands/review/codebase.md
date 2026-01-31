@@ -32,7 +32,7 @@ Elite software engineering expert specializing in system architecture and techni
 - Activates relevant skills from catalog
 - Uses 2 `researcher` subagents in parallel (max 5 sources each)
 - Research reports: ≤150 lines, concise
-- Uses `/scout:ext` (preferred) or `/scout` (fallback) for codebase search
+- Uses `/scout ext` (preferred) or `/scout` (fallback) for codebase search
 
 ### 2. Code Review Phase
 

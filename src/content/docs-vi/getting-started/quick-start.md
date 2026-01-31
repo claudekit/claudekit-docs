@@ -88,7 +88,7 @@ Summary:
 • Tests: 12 test cases
 • Estimated: 2 hours manually, 5 minutes with ClaudeKit
 
-Next: /code plans/251030-auth-implementation.md
+Next: /cook plans/251030-auth-implementation.md
 ```
 
 ### Bước 3: Xem Lại Kế Hoạch
@@ -102,7 +102,7 @@ Kiểm tra kế hoạch. Kiến trúc vững chắc? Tiếp tục.
 ### Bước 4: Triển Khai
 
 ```bash
-/code plans/251030-auth-implementation.md
+/cook plans/251030-auth-implementation.md
 ```
 
 **Điều gì xảy ra** (5 phút):
@@ -263,17 +263,17 @@ Mỗi tác vụ chỉ mất 5-20 phút thay vì nhiều ngày.
 ### Chu Trình Tính Năng Đầy Đủ
 ```bash
 /plan [feature]           # Nghiên cứu + Lập kế hoạch
-/code [plan]              # Triển khai
+/cook [plan]              # Triển khai
 /test                     # Xác thực
-/fix:fast [issue]         # Sửa lỗi nhanh
+/fix --quick [issue]         # Sửa lỗi nhanh
 /git:cm                   # Commit
 ```
 
 ### Debug + Sửa Lỗi
 ```bash
 /debug [issue]            # Phân tích nguyên nhân gốc rễ
-/fix:hard [complex-issue] # Sửa lỗi đa agent
-/fix:ci [actions-url]     # Sửa lỗi CI/CD thất bại
+/fix [complex-issue] # Sửa lỗi đa agent
+/fix [actions-url]     # Sửa lỗi CI/CD thất bại
 ```
 
 ### Thiết Kế + Nội Dung

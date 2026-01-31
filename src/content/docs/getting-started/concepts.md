@@ -36,7 +36,7 @@ Slash commands that trigger agent workflows.
 
 **Categories**:
 - **Core**: `/cook`, `/plan`, `/bootstrap`, `/ask`, `/scout`
-- **Fix**: `/fix`, `/fix:ci`, `/fix:hard`, `/fix:types`
+- **Fix**: `/fix`, `/fix`, `/fix`, `/fix`
 - **Design**: `/design:good`, `/design:fast`, `/design:3d`
 - **Git**: `/git:cm`, `/git:cp`, `/git:pr`
 - **Docs**: `/docs:init`, `/docs:update`, `/docs:summarize`

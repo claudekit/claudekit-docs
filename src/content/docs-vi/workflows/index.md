@@ -130,7 +130,7 @@ Cách thêm các tích hợp bên ngoài:
 
 Cách tiếp cận hệ thống để sửa lỗi trên production:
 
-- Phân tích production logs với `/fix:logs`
+- Phân tích production logs với `/fix`
 - Tái hiện lỗi tại local
 - Phân tích nguyên nhân gốc rễ (Root cause analysis)
 - Triển khai bản sửa lỗi
@@ -162,7 +162,7 @@ Sử dụng ClaudeKit trong môi trường nhóm:
 Thiết lập tích hợp và triển khai liên tục:
 
 - Tích hợp GitHub Actions
-- Sửa lỗi CI thất bại với `/fix:ci`
+- Sửa lỗi CI thất bại với `/fix`
 - Kiểm thử tự động
 - Pipelines triển khai
 - Quản lý môi trường

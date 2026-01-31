@@ -238,7 +238,7 @@ MỤC HÀNH ĐỘNG
 Báo cáo đã lưu: assets/diagnostics/campaign-audits/250129-saas-platform-launch-q1-2025.md
 
 Tiếp:
-• /fix:fast Add testimonials to landing page
+• /fix --quick Add testimonials to landing page
 • /content case-study "Enterprise customer success"
 • /campaign status "SaaS Platform Launch Q1 2025" (recheck in 7 days)
 ```
@@ -263,7 +263,7 @@ Tiếp:
 
 # Bước 5: Tối ưu hóa
 /campaign analyze "Product Launch"
-/fix:fast Issues identified in campaign
+/fix --quick Issues identified in campaign
 ```
 
 ### Quản lý nhiều chiến dịch

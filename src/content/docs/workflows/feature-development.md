@@ -170,7 +170,7 @@ Let's walk through adding authentication to a Next.js app:
 
 ### Common Issues
 - **Plan Too Broad**: Break into smaller features
-- **Missing Skills**: Create custom skills with `/skill:create`
+- **Missing Skills**: Use skill-creator skill to create custom skills
 - **Test Failures**: Use `/debug` to investigate root causes
 - **CI Failures**: Use `/fix` for pipeline issues
 

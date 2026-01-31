@@ -55,7 +55,7 @@ Phase 3: src/settings/*, src/hooks/useSettings.ts
 Phase 4: src/dashboard/*, src/pages/dashboard.tsx
 
 Plan saved: plans/251129-dashboard/plan.md
-Execute with: /code --parallel
+Execute with: /cook --parallel
 ```
 
 ## Arguments
@@ -259,7 +259,7 @@ Shipping Calculator ───┘
 
 ```bash
 # Execute all phases with parallel support
-/code --parallel @plans/251129-checkout/plan.md
+/cook --parallel @plans/251129-checkout/plan.md
 ```
 
 ## Success Criteria
@@ -311,10 +311,10 @@ After creating a parallel plan, execute with:
 
 ```bash
 # Execute with parallel agent support
-/code:parallel @plans/251129-{task}/plan.md
+/cook --parallel @plans/251129-{task}/plan.md
 ```
 
-The `/code:parallel` command:
+The `/cook --parallel` command:
 1. Reads dependency graph
 2. Launches parallel agents for Wave 1
 3. Waits for wave completion
@@ -367,9 +367,9 @@ Balance parallel gains vs. coordination overhead:
 
 - [/plan](/docs/engineer/commands/plan) - Intelligent planning router
 - [/plan:hard](/docs/engineer/commands/plan/hard) - Sequential detailed planning
-- [/code:parallel](/docs/engineer/commands/code/parallel) - Execute parallel plans
+- [/cook --parallel](/docs/engineer/commands/core/cook-auto-parallel) - Execute parallel plans
 - [/bootstrap:auto:parallel](/docs/engineer/commands/bootstrap/auto-parallel) - Bootstrap with parallel execution
-- [/cook:auto:parallel](/docs/engineer/commands/cook/auto-parallel) - Cook with parallel agents
+- [/cook --auto --parallel](/docs/engineer/commands/core/cook-auto-parallel) - Cook with parallel agents
 
 ---
 

@@ -348,7 +348,7 @@ Helpful details:
 
 ## What /debug Does NOT Do
 
-- ❌ Automatically implement fixes (that's for `/fix:*` commands)
+- ❌ Automatically implement fixes (that's for `/fix` commands)
 - ❌ Modify code files
 - ❌ Deploy fixes to production
 - ❌ Run tests or validations

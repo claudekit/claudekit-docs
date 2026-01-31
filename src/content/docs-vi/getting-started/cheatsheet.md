@@ -161,10 +161,10 @@ ck init --use-git
 
 ```bash
 # Tạo skill mới
-/skill:create
+skill-creator skill
 
 # Sửa các lỗi liên quan đến skill
-/skill:fix-logs
+skill-creator skill
 ```
 
 ## So Sánh Các Lệnh
@@ -372,8 +372,8 @@ claude
 - `/integrate <service>` - Thêm các tích hợp
 
 ### ⚙️ Skills
-- `/skill:create` - Tạo skill mới
-- `/skill:fix-logs` - Sửa lỗi skill
+- `skill-creator skill` - Tạo skill mới
+- `skill-creator skill` - Sửa lỗi skill
 
 ## Lời Khuyên & Thực Hành Tốt Nhất
 

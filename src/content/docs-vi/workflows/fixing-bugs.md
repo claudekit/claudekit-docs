@@ -17,7 +17,7 @@ Tìm hiểu cách điều tra, sửa chữa và xác minh các lỗi một cách
 **Mục tiêu**: Gỡ lỗi và sửa các vấn đề một cách hệ thống với phân tích nguyên nhân gốc rễ.
 **Thời gian**: 5-20 phút (so với 1-4 giờ làm thủ công)
 **Các Agent sử dụng**: debugger, tester, code-reviewer
-**Các lệnh**: /fix --quick, /fix, /fix, /fix, /fix, /test
+**Các lệnh**: /fix --quick, /fix, /test
 
 ## Điều kiện tiên quyết
 
@@ -447,7 +447,7 @@ Các bản sửa đã áp dụng:
 
 **Với ClaudeKit**: 18 phút
 - Tái hiện: 5 phút
-- /fix: 12 phút
+- /fix command: 12 phút
 - Xác minh: 1 phút
 
 **Thời gian tiết kiệm được**: 3+ giờ (nhanh hơn 90%)

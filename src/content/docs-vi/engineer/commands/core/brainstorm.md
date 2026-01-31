@@ -332,7 +332,7 @@ Nhận phân tích rủi ro và đề xuất cách tiếp cận theo từng giai
 ## Điều /brainstorm KHÔNG làm
 
 - ❌ Triển khai mã nguồn (sử dụng `/cook` hoặc `/code`)
-- ❌ Sửa lỗi (sử dụng `/debug` hoặc các lệnh `/fix:*`)
+- ❌ Sửa lỗi (sử dụng `/debug` hoặc `/fix`)
 - ❌ Đưa ra quyết định cuối cùng (bạn quyết định, hệ thống tư vấn)
 - ❌ Bỏ qua việc tài liệu hóa (luôn tạo báo cáo)
 

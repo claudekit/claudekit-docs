@@ -18,7 +18,7 @@ order: 17
 
 **Implicit**: Activates automatically when agents need image analysis, audio transcription, video processing, or visual content generation.
 
-**Explicit**: `/skill:add ai-multimodal`
+**Explicit**: Activate by name when needed: "Activate ai-multimodal skill"
 
 ## Capabilities
 

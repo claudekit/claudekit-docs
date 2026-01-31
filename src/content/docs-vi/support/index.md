@@ -156,7 +156,7 @@ Cấu trúc dự án:
 - package.json bao gồm better-auth
 - .claude/CLAUDE.md đã cấu hình
 
-Tôi đã thử chạy /skill:refresh và khởi động lại ClaudeKit.
+Tôi đã thử refresh skills và khởi động lại ClaudeKit.
 ```
 
 ### Nơi Để Hỏi

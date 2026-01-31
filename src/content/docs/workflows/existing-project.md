@@ -192,8 +192,8 @@ Runs test suite and generates report. No automatic fixes.
 ### Skills Management
 
 ```bash
-/skill:create    # Create new skill
-/skill:fix-logs  # Fix skill errors
+Use skill-creator skill # Create new skill
+Use skill-creator skill # Fix skill errors
 ```
 
 ## Best Practices

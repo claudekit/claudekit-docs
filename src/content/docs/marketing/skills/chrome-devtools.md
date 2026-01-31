@@ -18,7 +18,7 @@ order: 20
 
 **Implicit**: Activates when agents need browser automation, screenshots, or performance analysis.
 
-**Explicit**: `/skill:add chrome-devtools`
+**Explicit**: Activate by name when needed: "Activate chrome-devtools skill"
 
 ## Capabilities
 

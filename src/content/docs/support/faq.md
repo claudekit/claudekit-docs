@@ -86,7 +86,7 @@ claudekit init
 ### Q: Can I create custom commands?
 **A:** Yes! ClaudeKit supports custom commands:
 ```bash
-/skill:create "My company's React patterns"
+"Create a new skill for my company's React patterns"
 # Creates reusable skill for your team's conventions
 ```
 
@@ -118,9 +118,9 @@ claudekit init
 ### Q: Can I create custom skills?
 **A:** Yes! Create skills for your specific needs:
 ```bash
-/skill:create "Our GraphQL conventions"
-/skill:create "Company's testing patterns"
-/skill:create "Internal API documentation"
+"Create a new skill for our GraphQL conventions"
+"Create a new skill for company's testing patterns"
+"Create a new skill for internal API documentation"
 ```
 
 ## Performance and Quality
@@ -152,7 +152,7 @@ claudekit init
 ### Q: ClaudeKit isn't detecting my technology stack
 **A:** Try these solutions:
 ```bash
-/skill:refresh    # Refresh skill detection
+"Refresh skill detection" # Natural language activation
 /debug "project analysis"  # Analyze project structure
 claudekit doctor  # Check system health
 ```

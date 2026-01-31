@@ -18,7 +18,7 @@ order: 10
 
 **Implicit**: Activates automatically for Ads Specialist and Campaign Manager agents.
 
-**Explicit**: `/skill:add ads-management`
+**Explicit**: Activate by name when needed: "Activate ads-management skill"
 
 ## Capabilities
 

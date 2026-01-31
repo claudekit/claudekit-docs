@@ -278,7 +278,7 @@ Lệnh `/ask` tự động đọc thư mục `./docs` nhưng bạn có thể h�
 ## Điều /ask KHÔNG làm
 
 - ❌ Viết mã nguồn triển khai
-- ❌ Sửa lỗi (sử dụng `/debug` hoặc các lệnh `/fix:*` thay thế)
+- ❌ Sửa lỗi (sử dụng `/debug` hoặc `/fix` thay thế)
 - ❌ Triển khai hạ tầng
 - ❌ Đưa ra quyết định cuối cùng (bạn quyết định, hệ thống tư vấn)
 

@@ -193,8 +193,8 @@ Chạy test suite và tạo báo cáo. Không tự động sửa.
 ### Quản Lý Skills
 
 ```bash
-/skill:create    # Tạo skill mới
-/skill:fix-logs  # Sửa lỗi skill
+skill-creator skill # Tạo skill mới
+skill-creator skill # Sửa lỗi skill
 ```
 
 ## Best Practices

@@ -62,9 +62,6 @@ ck init --use-git
 # Autonomous feature implementation
 /cook --auto <description>
 
-# Fast autonomous mode (less planning)
-/cook --auto --fast <description>
-
 # Create implementation plan only
 /plan <description>
 
@@ -179,12 +176,8 @@ ck init --use-git
 # → Implementation starts
 
 # Approach 2: Autonomous (use with caution)
-/cook:auto <feature-description>
+/cook --auto <feature-description>
 # → Full autonomous without plan review
-
-# Approach 3: Fast autonomous (least tokens)
-/cook:auto:fast <feature-description>
-# → Fast mode with minimal planning
 ```
 
 ### Bug Fixing Flow
@@ -459,10 +452,7 @@ ck --version
 /cook <feature-description>
 
 # New feature (autonomous, no review)
-/cook:auto <description>
-
-# New feature (faster, less planning)
-/cook:auto:fast <description>
+/cook --auto <description>
 
 # Only plan, no implementation
 /plan <description>

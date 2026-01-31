@@ -333,7 +333,7 @@ If unsure about parallelization:
 cat plans/*/plan.md
 
 # Then execute
-/code --parallel
+/cook --parallel
 ```
 
 ## Related Commands
@@ -341,7 +341,7 @@ cat plans/*/plan.md
 - [/cook](/docs/engineer/commands/core/cook) - Step-by-step implementation
 - [/cook --auto](/docs/engineer/commands/core/cook-auto) - Auto cook (sequential)
 - [/plan:parallel](/docs/engineer/commands/plan/parallel) - Create parallel plans
-- [/code:parallel](/docs/engineer/commands/core/code-parallel) - Execute existing parallel plans
+- [/cook --parallel](/docs/engineer/commands/core/cook-auto-parallel) - Execute existing parallel plans
 
 ---
 

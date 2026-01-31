@@ -494,8 +494,7 @@ Copy nhồi SEO giết chuyển đổi. Viết cho người đọc trước.
 
 ## Lệnh Liên Quan
 
-- `/content:good` - Tạo nội dung marketing chất lượng cao
-- `/content:fast` - Copy nhanh cho mạng xã hội, email
+- Sử dụng `copywriting` skill - Tạo nội dung marketing với các công thức chuyển đổi
 - `/brainstorm` - Khám phá góc độ thông điệp và hook
 - `/email create` - Xây dựng chuỗi email với copy
 - `/social create` - Viết bài đăng mạng xã hội

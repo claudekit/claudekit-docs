@@ -66,7 +66,7 @@ campaign-manager: Tôi sẽ tạo kế hoạch ra mắt đa kênh toàn diện..
 Bước Tiếp Theo:
 1. Review creative brief (đính kèm)
 2. Phê duyệt phân bổ ngân sách
-3. Khởi động sản xuất nội dung với /content:good
+3. Khởi động sản xuất nội dung với copywriting skill
 4. Thiết lập theo dõi với /analytics dashboard
 ```
 
@@ -411,7 +411,7 @@ Bàn Giao Tiếp Theo:
 4. Bạn review và phê duyệt
 
 5. Thực thi:
-   - /content:good cho bài blog và kịch bản video
+   - Sử dụng copywriting skill cho bài blog và kịch bản video
    - /email create cho chuỗi chào mừng
    - /social create cho bài thông báo
    - /analytics dashboard cho theo dõi

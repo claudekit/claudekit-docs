@@ -211,7 +211,7 @@ Done! Dark mode live at /settings
 
 ## Agents Used
 
-All agents from /plan and /code:
+All agents from /plan and /cook:
 - planner, researcher (3+), scout
 - fullstack-developer, ui-ux-designer
 - tester, debugger, code-reviewer
@@ -228,7 +228,6 @@ All relevant skills auto-activated:
 ## Related Commands
 
 - [/plan](/docs/marketing/commands/plan) - Planning only (review before coding)
-- [/code](/docs/marketing/commands/code) - Implement existing plan
 - [/fix](/docs/marketing/commands/fix) - Fix issues after implementation
 
 ---

@@ -18,7 +18,7 @@ order: 18
 
 **Implicit**: Activates when agents generate prompts for AI generation tasks.
 
-**Explicit**: `/skill:add ai-artist`
+**Explicit**: Use natural language to activate: "Activate ai-artist skill for prompt optimization"
 
 ## Capabilities
 

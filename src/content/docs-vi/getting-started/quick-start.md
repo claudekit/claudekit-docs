@@ -278,8 +278,8 @@ Mỗi tác vụ chỉ mất 5-20 phút thay vì nhiều ngày.
 
 ### Thiết Kế + Nội Dung
 ```bash
-# Sử dụng skill ai-artist (creative mode) cho thiết kế UI/UX
-/content:good [page]      # Viết nội dung marketing
+# Sử dụng copywriting skill cho nội dung marketing chất lượng cao
+"Write marketing copy for [page]"
 /brainstorm [idea]        # Khám phá các giải pháp
 ```
 

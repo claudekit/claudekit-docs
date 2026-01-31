@@ -212,7 +212,7 @@ Xong! Chế độ tối live at /settings
 
 ## Tác nhân được sử dụng
 
-Tất cả tác nhân từ /plan và /cook:
+Tất cả tác nhân từ /plan và /cook command:
 - planner, researcher (3+), scout
 - fullstack-developer, ui-ux-designer
 - tester, debugger, code-reviewer

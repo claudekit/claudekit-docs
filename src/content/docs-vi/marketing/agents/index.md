@@ -92,7 +92,7 @@ Gọi đích danh các đại lý khi bạn cần chuyên môn của họ:
 /campaign create "Q1 Product Launch"
 
 # Tạo nội dung
-/content:good "comparison landing page"
+"Write marketing copy for comparison landing page" # sử dụng copywriting skill
 
 # Tối ưu hóa SEO
 /seo optimize "product page"

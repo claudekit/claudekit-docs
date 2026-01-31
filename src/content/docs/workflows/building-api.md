@@ -732,14 +732,14 @@ echo $DATABASE_URL
 npx prisma db pull
 
 # Or fix with ClaudeKit
-/fix:fast [database connection failing]
+/fix --quick [database connection failing]
 ```
 
 ### Issue: Authentication Not Working
 
 **Solution**:
 ```bash
-/fix:fast [JWT authentication returning 401 for valid tokens]
+/fix --quick [JWT authentication returning 401 for valid tokens]
 ```
 
 ### Issue: Slow Query Performance

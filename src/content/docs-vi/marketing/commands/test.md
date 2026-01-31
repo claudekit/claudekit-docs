@@ -64,14 +64,14 @@ Next: /fix Test failures in email campaign + analytics
 
 ### Sau khi triển khai
 ```bash
-/code plans/feature.md
+/cook plans/feature.md
 /test  # Xác minh mọi thứ hoạt động
 ```
 
 ### Trước khi Commits
 ```bash
 /test  # Đảm bảo test pass
-/git:cm  # Commit nếu tất cả bình thường
+/git cm  # Commit nếu tất cả bình thường
 ```
 
 ### Debugging

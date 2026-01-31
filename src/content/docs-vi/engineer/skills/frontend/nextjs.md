@@ -367,8 +367,8 @@ Agent Developer sẽ:
 ### 3. Triển khai giao diện
 
 ```bash
-# Lệnh design tạo giao diện người dùng
-/design:good [bố cục dashboard hiện đại]
+# Sử dụng skill ai-artist (creative mode) để tạo giao diện người dùng
+# "tạo bố cục dashboard hiện đại"
 ```
 
 Agent UI/UX Designer sẽ:

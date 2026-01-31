@@ -115,7 +115,7 @@ git status
 
 ### After Implementation
 ```bash
-/code plans/feature.md
+"Implement feature"
 # Implementation complete
 /git pr  # Create PR
 ```
@@ -168,7 +168,7 @@ Auto-generates titles following convention:
 
 - [/code](/docs/marketing/commands/code) - Auto-commits after implementation
 - [/cook](/docs/marketing/commands/cook) - Includes git commit
-- [/git:cm](/docs/marketing/commands/git) - Commit only (no PR)
+- [/git cm](/docs/marketing/commands/git) - Commit only (no PR)
 
 ---
 

@@ -348,7 +348,7 @@ Helpful details:
 
 ## What /debug Does NOT Do
 
-- ❌ Automatically implement fixes (that's for `/fix:*` commands)
+- ❌ Automatically implement fixes (that's for `/fix` commands)
 - ❌ Modify code files
 - ❌ Deploy fixes to production
 - ❌ Run tests or validations
@@ -367,16 +367,16 @@ cat plans/debug/issue-investigation-YYYYMMDD.md
 # 3. Decide on fix approach
 
 # 4. Implement fix using appropriate command
-/fix:fast [implement the recommended fix]
+/fix --quick [implement the recommended fix]
 # or
-/fix:hard [complex fix requiring multiple changes]
+/fix [complex fix requiring multiple changes]
 # or manually implement
 
 # 5. Verify fix
 /test
 
 # 6. Commit
-/git:cm
+/git cm
 ```
 
 ## Integration with Other Commands
@@ -390,7 +390,7 @@ cat plans/debug/issue-investigation-YYYYMMDD.md
 # Output: Missing Redis connection, middleware not applied
 
 # 2. Fix based on diagnosis
-/fix:fast [add Redis connection and apply rate limit middleware to routes]
+/fix --quick [add Redis connection and apply rate limit middleware to routes]
 ```
 
 ### Scout → Debug
@@ -483,7 +483,7 @@ Agent traces execution paths to find race condition.
 # Instead:
 /debug [diagnosis: why is the bug happening?]
 # Then:
-/fix:fast [implement the fix]
+/fix --quick [implement the fix]
 ```
 
 ### Production Urgency
@@ -493,7 +493,7 @@ Agent traces execution paths to find race condition.
 **Solution**: Skip debug, go straight to fix with description
 ```bash
 # If urgent:
-/fix:fast [urgent: API returning 500, need immediate mitigation]
+/fix --quick [urgent: API returning 500, need immediate mitigation]
 
 # Can debug later:
 /debug [investigate root cause of API 500 errors]
@@ -501,9 +501,9 @@ Agent traces execution paths to find race condition.
 
 ## Related Commands
 
-- [/fix:fast](/docs/engineer/commands/fix/fast) - Implement quick fixes after diagnosis
-- [/fix:hard](/docs/engineer/commands/fix/hard) - Fix complex issues requiring planning
-- [/fix:logs](/docs/engineer/commands/fix/logs) - Analyze and fix issues from log files
+- [/fix --quick](/docs/engineer/commands/fix/fast) - Implement quick fixes after diagnosis
+- [/fix](/docs/engineer/commands/fix/hard) - Fix complex issues requiring planning
+- [/fix](/docs/engineer/commands/fix/logs) - Analyze and fix issues from log files
 - [/scout](/docs/engineer/commands/core/scout) - Find relevant files before debugging
 - [/ask](/docs/engineer/commands/core/ask) - Get architectural guidance on systemic issues
 

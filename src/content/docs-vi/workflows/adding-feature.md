@@ -17,7 +17,7 @@ Tìm hiểu quy trình hoàn chỉnh để thêm tính năng mới vào dự án
 **Mục tiêu**: Thêm một tính năng hoàn chỉnh bao gồm lập kế hoạch, triển khai, kiểm thử và tài liệu.
 **Thời gian**: 15-30 phút (so với 2-4 giờ làm thủ công)
 **Các Agent sử dụng**: planner, scout, tester, code-reviewer, docs-manager
-**Các lệnh**: /plan, /code, /test, /docs:update, /git:cm
+**Các lệnh**: /plan, /code, /test, /docs:update, /git cm
 
 ## Điều kiện tiên quyết
 
@@ -244,7 +244,7 @@ Coverage:    89.3%
 
 **Nếu kiểm thử thất bại**:
 ```bash
-/fix:test
+/fix
 ```
 
 ### Bước 7: Review Mã nguồn
@@ -358,7 +358,7 @@ curl -X POST http://localhost:3000/api/auth/reset-password \
 Commit với thông điệp theo chuẩn conventional commit:
 
 ```bash
-/git:cm
+/git cm
 ```
 
 **Commit được tạo**:
@@ -385,7 +385,7 @@ Các tính năng bảo mật:
 Nếu làm việc cùng nhóm:
 
 ```bash
-/git:pr main feature/password-reset
+/git pr main feature/password-reset
 ```
 
 **PR được tạo**:
@@ -524,7 +524,7 @@ Tình huống thực tế: Thêm chức năng tìm kiếm cho trang thương m�
 
 **Giải pháp**:
 ```bash
-/fix:test
+/fix
 
 # Debugger sẽ phân tích lỗi và sửa chữa
 # Tự động chạy lại các bài kiểm thử
@@ -591,7 +591,7 @@ Chia nhỏ các tính năng lớn:
 ```bash
 /cook [tính năng]
 /test           # Luôn chạy kiểm thử
-/fix:test       # Sửa lỗi ngay lập tức
+/fix       # Sửa lỗi ngay lập tức
 ```
 
 ### 4. Viết tài liệu song song
@@ -612,7 +612,7 @@ git diff
 
 # Hiểu những gì đã thay đổi
 # Chỉ sau đó mới commit
-/git:cm
+/git cm
 ```
 
 ### 6. Sử dụng Feature Branches
@@ -626,10 +626,10 @@ git checkout -b feature/password-reset
 /cook [tính năng]
 
 # Commit
-/git:cm
+/git cm
 
 # Tạo PR
-/git:pr main feature/password-reset
+/git pr main feature/password-reset
 ```
 
 ## Bước tiếp theo
@@ -644,7 +644,7 @@ git checkout -b feature/password-reset
 - [/cook](/vi/docs/engineer/commands/core/cook) - Triển khai tính năng
 - [/test](/vi/docs/engineer/commands/core/test) - Chạy bộ kiểm thử
 - [/docs:update](/vi/docs/engineer/commands/docs/update) - Cập nhật tài liệu
-- [/git:cm](/vi/docs/engineer/commands/git/commit) - Commit thay đổi
+- [/git cm](/vi/docs/engineer/commands/git/commit) - Commit thay đổi
 
 ### Đọc thêm
 - [Tham khảo lệnh](/vi/docs/engineer/commands) - Tất cả lệnh có sẵn

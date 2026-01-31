@@ -17,7 +17,7 @@ published: true
 
 **What happens**:
 1. Analyzes issue type (type errors detected)
-2. Routes to `/fix:types`
+2. Routes to type fixer (auto-detected)
 3. Specialized agent fixes issues
 4. Verifies with type checker
 
@@ -33,14 +33,14 @@ The `/fix` command intelligently routes to specialized variants:
 
 | Issue Type | Keywords | Routes To | Agent |
 |------------|----------|-----------|-------|
-| Type Errors | type, typescript, tsc | `/fix:types` | type-fixer |
-| UI/UX | ui, ux, design, layout, style | `/fix:ui` | ui-ux-designer |
-| CI/CD | github actions, pipeline, workflow | `/fix:ci` | devops-specialist |
-| Tests | test, spec, jest, vitest | `/fix:test` | tester |
-| Logs | logs, error logs, stack trace | `/fix:logs` | debugger |
-| Multiple | 2+ unrelated issues | `/fix:parallel` | multiple agents |
-| Complex | architecture, refactor, system-wide | `/fix:hard` | architect |
-| Simple | single file, small bug | `/fix:fast` | generalist |
+| Type Errors | type, typescript, tsc | `/fix` (auto-detect types) | type-fixer |
+| UI/UX | ui, ux, design, layout, style | `/fix` (auto-detect UI) | ui-ux-designer |
+| CI/CD | github actions, pipeline, workflow | `/fix` (auto-detect CI) | devops-specialist |
+| Tests | test, spec, jest, vitest | `/fix` (auto-detect test) | tester |
+| Logs | logs, error logs, stack trace | `/fix` (auto-detect logs) | debugger |
+| Multiple | 2+ unrelated issues | `/fix --parallel` | multiple agents |
+| Complex | architecture, refactor, system-wide | `/fix` (auto-detect complexity) | architect |
+| Simple | single file, small bug | `/fix --quick` | generalist |
 
 ## Examples
 
@@ -51,7 +51,7 @@ The `/fix` command intelligently routes to specialized variants:
 /fix TypeScript compilation errors
 ```
 
-**Routes to**: `/fix:types`
+**Routes to**: `/fix` (auto-detects type errors)
 
 **Output**:
 ```markdown
@@ -75,7 +75,7 @@ Total time: 47 seconds
 /fix Button not responsive on mobile devices
 ```
 
-**Routes to**: `/fix:ui`
+**Routes to**: `/fix` (auto-detects UI context)
 
 **Output**:
 ```markdown
@@ -99,7 +99,7 @@ Files modified: components/Button.tsx
 /fix GitHub Actions deployment pipeline failing
 ```
 
-**Routes to**: `/fix:ci`
+**Routes to**: `/fix` (auto-detects CI context)
 
 **Output**:
 ```markdown
@@ -123,7 +123,7 @@ Re-run pipeline: Build now passes ✓
 /fix Type errors in auth module + UI bugs in dashboard + test failures
 ```
 
-**Routes to**: `/fix:parallel`
+**Routes to**: `/fix --parallel`
 
 **Output**:
 ```markdown
@@ -133,9 +133,9 @@ Re-run pipeline: Build now passes ✓
    - Agent 3: Test failures (fix:test)
 
 Results (parallel execution, 2min 15sec):
-✓ Agent 1: 8 type errors fixed
-✓ Agent 2: 3 UI bugs resolved
-✓ Agent 3: 5 tests now passing
+✓ Agent 1: 8 type errors fixed (auto-detected)
+✓ Agent 2: 3 UI bugs resolved (auto-detected)
+✓ Agent 3: 5 tests now passing (auto-detected)
 
 Total time: 2m 15s (vs 6m 45s sequential)
 Time saved: 67%
@@ -143,58 +143,58 @@ Time saved: 67%
 
 ## Variants
 
-### /fix:fast
+### /fix --quick
 Quick fixes for simple issues:
 ```bash
-/fix:fast Missing semicolon in utils.ts
+/fix --quick Missing semicolon in utils.ts
 ```
 
-### /fix:hard
-Deep architectural fixes:
+### /fix (complex)
+Deep architectural fixes (auto-detects complexity):
 ```bash
-/fix:hard Refactor campaign architecture for scalability
+/fix Refactor campaign architecture for scalability
 ```
 
-### /fix:parallel
+### /fix --parallel
 Multiple unrelated issues:
 ```bash
-/fix:parallel Fix types + UI bugs + test failures
+/fix --parallel Fix types + UI bugs + test failures
 ```
 
-### /fix:types
-TypeScript type errors only:
+### /fix (type errors)
+TypeScript type errors (auto-detected):
 ```bash
-/fix:types
+/fix
 ```
 
-### /fix:ui
-UI/UX issues:
+### /fix (UI issues)
+UI/UX issues (auto-detected from context):
 ```bash
-/fix:ui [description]
+/fix [description]
 ```
 
-### /fix:ci
-CI/CD pipeline failures:
+### /fix (CI/CD)
+CI/CD pipeline failures (auto-detected from context):
 ```bash
-/fix:ci [github-actions-url]
+/fix [github-actions-url]
 ```
 
-### /fix:test
-Test failures:
+### /fix (test failures)
+Test failures (auto-detected from context):
 ```bash
-/fix:test [description]
+/fix [description]
 ```
 
-### /fix:logs
-Analyze error logs:
+### /fix (logs)
+Analyze error logs (auto-detected from context):
 ```bash
-/fix:logs [description]
+/fix [description]
 ```
 
 ## Workflow Integration
 
 ```bash
-# After /code if issues arise
+# After /cook if issues arise
 /code plans/feature.md
 # Tests fail or types error
 /fix TypeScript errors + failing tests
@@ -206,7 +206,7 @@ Analyze error logs:
 # Quick iteration
 /cook add feature
 # Minor issues
-/fix:fast Issues from last commit
+/fix --quick Issues from last commit
 ```
 
 ## Related Commands

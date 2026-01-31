@@ -372,7 +372,7 @@ Lệnh này sử dụng **docs-manager agent** với các khả năng sau:
 ❌ **Quá thường xuyên:**
 ```bash
 # Sau mỗi thay đổi nhỏ
-/fix:fast [lỗi đánh máy]
+/fix --quick [lỗi đánh máy]
 /docs:summarize  # Lãng phí
 ```
 
@@ -435,7 +435,7 @@ cat docs/codebase-summary.md
 /docs:update
 
 # 3. Commit tài liệu
-/git:cm
+/git cm
 
 # 4. Chia sẻ với nhóm tiếp nhận
 ```
@@ -450,7 +450,7 @@ cat docs/codebase-summary.md
 git diff docs/codebase-summary.md
 
 # Commit nếu có thay đổi đáng kể
-/git:cm
+/git cm
 ```
 
 ## Xử Lý Sự Cố
@@ -589,7 +589,7 @@ Sau khi sử dụng `/docs:summarize`:
 - [/docs:update](/docs/engineer/commands/docs/update) - Cập nhật tất cả tài liệu
 - [/docs:init](/docs/engineer/commands/docs/init) - Khởi tạo tài liệu đầy đủ
 - [/watzup](/docs/engineer/commands/core/watzup) - Xem lại các thay đổi gần đây
-- [/git:cm](/docs/engineer/commands/git/commit) - Commit tài liệu
+- [/git cm](/docs/engineer/commands/git/commit) - Commit tài liệu
 
 ---
 

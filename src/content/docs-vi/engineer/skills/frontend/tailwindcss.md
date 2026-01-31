@@ -373,7 +373,8 @@ Các agent của ClaudeKit sử dụng kỹ năng Tailwind CSS để:
 ### 1. Tạo mẫu UI nhanh chóng
 
 ```bash
-/design:fast [landing page với phần hero]
+# Sử dụng skill ai-artist (search mode) để tạo mẫu UI nhanh
+# "tạo landing page với phần hero"
 ```
 
 Agent UI/UX Designer sẽ:
@@ -385,7 +386,8 @@ Agent UI/UX Designer sẽ:
 ### 2. Triển khai hệ thống thiết kế (Design System)
 
 ```bash
-/design:good [thư viện component với các design token]
+# Sử dụng skill ai-artist (creative mode) để triển khai hệ thống thiết kế
+# "tạo thư viện component với các design token"
 ```
 
 Agent sẽ:

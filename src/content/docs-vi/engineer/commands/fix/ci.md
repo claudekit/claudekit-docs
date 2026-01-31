@@ -1,5 +1,5 @@
 ---
-title: /fix:ci
+title: /fix
 description: Tài liệu hướng dẫn lệnh fix:ci
 section: engineer
 kit: engineer
@@ -9,14 +9,14 @@ published: true
 lang: vi
 ---
 
-# /fix:ci
+# /fix
 
 Tự động sửa các lỗi GitHub Actions CI bằng cách phân tích nhật ký (logs) quy trình làm việc, xác định nguyên nhân gốc rễ và triển khai các giải pháp. Đây là công cụ thiết yếu để duy trì các đường ống CI/CD luôn "xanh".
 
 ## Cú Pháp
 
 ```bash
-/fix:ci [github-workflow-url]
+/fix [github-workflow-url]
 ```
 
 ## Điều Kiện Tiên Quyết
@@ -78,7 +78,7 @@ gh auth login
 ### Thất Bại Khi Kiểm Tra (Tests)
 
 ```bash
-/fix:ci https://github.com/user/repo/actions/runs/123456789
+/fix https://github.com/user/repo/actions/runs/123456789
 ```
 
 **Đầu ra CI:**
@@ -113,7 +113,7 @@ Bạn có muốn push và chạy lại CI không? (y/n)
 ### Thất Bại Khi Xây Dựng (Build)
 
 ```bash
-/fix:ci https://github.com/user/repo/actions/runs/987654321
+/fix https://github.com/user/repo/actions/runs/987654321
 ```
 
 **Đầu ra CI:**
@@ -147,7 +147,7 @@ Push các thay đổi? (y/n)
 ### Thất Bại Khi Lint
 
 ```bash
-/fix:ci https://github.com/user/repo/actions/runs/456789123
+/fix https://github.com/user/repo/actions/runs/456789123
 ```
 
 **Đầu ra CI:**
@@ -178,7 +178,7 @@ Sẵn sàng commit và push? (y/n)
 ### Vấn Đề Cấu Hình Quy Trình Làm Việc
 
 ```bash
-/fix:ci https://github.com/user/repo/actions/runs/321654987
+/fix https://github.com/user/repo/actions/runs/321654987
 ```
 
 **Đầu ra CI:**
@@ -216,7 +216,7 @@ Commit sửa lỗi? (y/n)
 ### Các Bài Kiểm Tra Không Ổn Định (Flaky)
 
 ```bash
-/fix:ci https://github.com/user/repo/actions/runs/147258369
+/fix https://github.com/user/repo/actions/runs/147258369
 ```
 
 **Đầu ra CI:**
@@ -330,12 +330,12 @@ Error: Bundle size exceeds limit
 
 ✅ **URL đầy đủ:**
 ```bash
-/fix:ci https://github.com/user/repo/actions/runs/123456789
+/fix https://github.com/user/repo/actions/runs/123456789
 ```
 
 ❌ **Không đầy đủ:**
 ```bash
-/fix:ci 123456789
+/fix 123456789
 ```
 
 ### Kiểm Tra Tại Cục Bộ Trước
@@ -359,7 +359,7 @@ npm run build
 ### Xem Lại Các Thay Đổi
 
 ```bash
-# Sau khi /fix:ci thực hiện các thay đổi
+# Sau khi /fix thực hiện các thay đổi
 git diff
 
 # Xác minh các thay đổi là hợp lý
@@ -387,13 +387,13 @@ gh run watch
 # (Nhận thông báo)
 
 # 2. Phân tích và sửa lỗi
-/fix:ci https://github.com/user/repo/actions/runs/123
+/fix https://github.com/user/repo/actions/runs/123
 
 # 3. Xem lại các thay đổi
 git diff
 
 # 4. Commit
-/git:cm
+/git cm
 
 # 5. Push
 git push
@@ -409,10 +409,10 @@ gh run watch
 
 ```bash
 # Sửa từng lỗi một
-/fix:ci https://github.com/user/repo/actions/runs/123
+/fix https://github.com/user/repo/actions/runs/123
 
 # Sau khi bản sửa lỗi được xác nhận
-/fix:ci https://github.com/user/repo/actions/runs/124
+/fix https://github.com/user/repo/actions/runs/124
 
 # Hoặc sửa hàng loạt nếu có liên quan
 "Sửa cả hai vấn đề trong các lượt chạy 123 và 124"
@@ -423,19 +423,19 @@ gh run watch
 ### Phân Tích Công Việc (Job) Cụ Thể
 
 ```bash
-/fix:ci https://github.com/user/repo/actions/runs/123 --job=test
+/fix https://github.com/user/repo/actions/runs/123 --job=test
 ```
 
 ### Tự Động Chạy Lại Sau Khi Sửa
 
 ```bash
-/fix:ci https://github.com/user/repo/actions/runs/123 --auto-rerun
+/fix https://github.com/user/repo/actions/runs/123 --auto-rerun
 ```
 
 ### Tạo Issue Nếu Không Thể Sửa
 
 ```bash
-/fix:ci https://github.com/user/repo/actions/runs/123 --create-issue
+/fix https://github.com/user/repo/actions/runs/123 --create-issue
 ```
 
 ## Xử Lý Sự Cố
@@ -463,7 +463,7 @@ gh auth refresh -s repo -s workflow
 /debug [thất bại CI trong công việc X]
 
 # Sử dụng lệnh sửa lỗi toàn diện
-/fix:hard [mô tả vấn đề CI]
+/fix [mô tả vấn đề CI]
 ```
 
 ### Lỗi Cú Pháp Tệp Quy Trình Làm Việc
@@ -488,7 +488,7 @@ gh workflow view
 npm update
 
 # CI thất bại
-/fix:ci [workflow-url]
+/fix [workflow-url]
 
 # Thường là: Cập nhật file lock, sửa các thay đổi gây phá vỡ
 ```
@@ -499,7 +499,7 @@ npm update
 # Đã push một đợt tái cấu trúc lớn
 # CI thất bại với nhiều lỗi kiểm tra
 
-/fix:ci [workflow-url]
+/fix [workflow-url]
 
 # Sửa các đường dẫn import, cập nhật các bài kiểm tra
 ```
@@ -508,7 +508,7 @@ npm update
 
 ```bash
 # Xây dựng thành công nhưng triển khai thất bại
-/fix:ci [workflow-url]
+/fix [workflow-url]
 
 # Thường là: Biến môi trường, quyền hạn hoặc thông tin xác thực
 ```
@@ -527,9 +527,9 @@ Tỷ lệ thành công: Tỷ lệ sửa lỗi tự động khoảng 85%
 ## Bước Tiếp Theo
 
 - [/plan:ci](/docs/engineer/commands/plan/ci) - Tạo kế hoạch sửa lỗi mà không triển khai
-- [/fix:hard](/docs/engineer/commands/fix/hard) - Cho các vấn đề CI phức tạp
+- [/fix](/docs/engineer/commands/fix/hard) - Cho các vấn đề CI phức tạp
 - [/test](/docs/engineer/commands/core/test) - Chạy các bài kiểm tra tại cục bộ
 
 ---
 
-**Điểm mấu chốt**: `/fix:ci` tự động hóa quy trình phân tích thất bại GitHub Actions tẻ nhạt và triển khai các bản sửa lỗi, giúp đưa đường ống CI của bạn trở lại trạng thái xanh một cách nhanh chóng.
+**Điểm mấu chốt**: `/fix` tự động hóa quy trình phân tích thất bại GitHub Actions tẻ nhạt và triển khai các bản sửa lỗi, giúp đưa đường ống CI của bạn trở lại trạng thái xanh một cách nhanh chóng.

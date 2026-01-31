@@ -63,14 +63,14 @@ Next: /fix Test failures in email campaign + analytics
 
 ### After Implementation
 ```bash
-/code plans/feature.md
+"Implement feature"
 /test  # Verify everything works
 ```
 
 ### Before Commits
 ```bash
 /test  # Ensure tests pass
-/git:cm  # Commit if all green
+/git cm  # Commit if all green
 ```
 
 ### Debugging

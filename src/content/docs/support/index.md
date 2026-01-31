@@ -155,7 +155,7 @@ Project structure:
 - package.json includes better-auth
 - .claude/CLAUDE.md configured
 
-I've tried running /skill:refresh and restarting ClaudeKit.
+I've tried refreshing skills and restarting ClaudeKit.
 ```
 
 ### Where to Ask

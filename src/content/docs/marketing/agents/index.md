@@ -97,8 +97,8 @@ Call agents explicitly when you need their expertise:
 # Campaign orchestration
 /campaign create "Q1 Product Launch"
 
-# Content creation
-/content:good "comparison landing page"
+# Content creation (use copywriting skill - quality mode)
+"Create comparison landing page"
 
 # SEO optimization
 /seo optimize "product page"

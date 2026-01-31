@@ -503,7 +503,8 @@ Các agent của ClaudeKit sử dụng kỹ năng shadcn/ui để:
 ### 1. Phát triển giao diện nhanh chóng
 
 ```bash
-/design:good [bảng điều khiển quản trị với các bảng dữ liệu]
+# Sử dụng skill ai-artist (creative mode) để phát triển giao diện
+# "tạo bảng điều khiển quản trị với các bảng dữ liệu"
 ```
 
 Agent UI/UX Designer sẽ:
@@ -527,7 +528,8 @@ Agent Developer sẽ:
 ### 3. Các tương tác phức tạp
 
 ```bash
-/design:fast [giao diện quản lý sản phẩm]
+# Sử dụng skill ai-artist (search mode) cho tương tác nhanh
+# "tạo giao diện quản lý sản phẩm"
 ```
 
 Agent sẽ:

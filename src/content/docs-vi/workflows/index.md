@@ -50,7 +50,7 @@ Cách tích hợp ClaudeKit vào các codebase hiện có:
 
 Quy trình hoàn chỉnh để chuyển đổi thiết kế thành mã nguồn:
 
-- Sử dụng lệnh `/design:screenshot`
+- Sử dụng skill ai-multimodal hoặc frontend-design
 - Phân tích các yếu tố thiết kế
 - Trích xuất các components
 - Triển khai layout responsive
@@ -66,7 +66,7 @@ Quy trình hoàn chỉnh để chuyển đổi thiết kế thành mã nguồn:
 
 Chuyển đổi quay màn hình thành mã nguồn hoạt động:
 
-- Sử dụng lệnh `/design:video`
+- Sử dụng skill ai-multimodal hoặc remotion
 - Hiểu các tương tác từ video
 - Triển khai animations
 - Tạo các hiệu ứng chuyển cảnh
@@ -130,7 +130,7 @@ Cách thêm các tích hợp bên ngoài:
 
 Cách tiếp cận hệ thống để sửa lỗi trên production:
 
-- Phân tích production logs với `/fix:logs`
+- Phân tích production logs với `/fix`
 - Tái hiện lỗi tại local
 - Phân tích nguyên nhân gốc rễ (Root cause analysis)
 - Triển khai bản sửa lỗi
@@ -162,7 +162,7 @@ Sử dụng ClaudeKit trong môi trường nhóm:
 Thiết lập tích hợp và triển khai liên tục:
 
 - Tích hợp GitHub Actions
-- Sửa lỗi CI thất bại với `/fix:ci`
+- Sửa lỗi CI thất bại với `/fix`
 - Kiểm thử tự động
 - Pipelines triển khai
 - Quản lý môi trường

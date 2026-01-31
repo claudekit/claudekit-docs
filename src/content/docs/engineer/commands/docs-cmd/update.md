@@ -370,18 +370,18 @@ The command uses the **docs-manager agent** with these capabilities:
 ```bash
 # After implementing features
 /cook [add payment integration]
-/fix:types
+/fix
 /test
 /docs:update
 
 # Commit everything together
-/git:cm
+/git cm
 ```
 
 ❌ **Bad - Too frequent:**
 ```bash
 # After every tiny change
-/fix:fast [typo]
+/fix --quick [typo]
 /docs:update  # Wasteful
 ```
 
@@ -404,7 +404,7 @@ The command uses the **docs-manager agent** with these capabilities:
 /docs:update
 git diff docs/
 # Review changes
-/git:cm
+/git cm
 ```
 
 ## Workflow
@@ -419,7 +419,7 @@ git diff docs/
 /cook [implement OAuth2 with Google and GitHub providers]
 
 # 3. Fix any issues
-/fix:types
+/fix
 /test
 
 # 4. Update documentation
@@ -427,7 +427,7 @@ git diff docs/
 
 # 5. Review and commit
 git diff
-/git:cm
+/git cm
 ```
 
 ### Quarterly Documentation Maintenance
@@ -440,7 +440,7 @@ git diff
 git diff docs/
 
 # 3. Commit documentation updates
-/git:cm
+/git cm
 ```
 
 ### Pre-Release Checklist
@@ -456,10 +456,10 @@ git diff docs/
 # Edit CHANGELOG.md
 
 # 4. Commit release documentation
-/git:cm
+/git cm
 
 # 5. Create release PR
-/git:pr main develop
+/git pr main develop
 ```
 
 ## Troubleshooting
@@ -573,7 +573,7 @@ After using `/docs:update`:
 
 - [/docs:summarize](/docs/engineer/commands/docs/summarize) - Update just codebase summary
 - [/watzup](/docs/engineer/commands/core/watzup) - Review recent changes
-- [/git:cm](/docs/engineer/commands/git/commit) - Commit documentation updates
+- [/git cm](/docs/engineer/commands/git/commit) - Commit documentation updates
 
 ---
 

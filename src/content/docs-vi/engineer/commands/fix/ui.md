@@ -1,5 +1,5 @@
 ---
-title: /fix:ui
+title: /fix
 description: Tài liệu hướng dẫn lệnh fix:ui
 section: engineer
 kit: engineer
@@ -9,14 +9,14 @@ published: true
 lang: vi
 ---
 
-# /fix:ui
+# /fix
 
 Sửa các vấn đề UI/UX bằng cách phân tích ảnh chụp màn hình, video hoặc mô tả. Lệnh này kết hợp phân tích thị giác với gỡ lỗi mã nguồn để giải quyết các vấn đề về giao diện một cách nhanh chóng.
 
 ## Cú pháp
 
 ```bash
-/fix:ui [ảnh-chụp-màn-hình/video] [mô tả]
+/fix [ảnh-chụp-màn-hình/video] [mô tả]
 ```
 
 ## Cách hoạt động
@@ -60,7 +60,7 @@ Sửa các vấn đề UI/UX bằng cách phân tích ảnh chụp màn hình, v
 ### Kèm theo ảnh chụp màn hình
 
 ```bash
-/fix:ui [screenshot.png] - Nút bị lệch trên di động, văn bản bị tràn
+/fix [screenshot.png] - Nút bị lệch trên di động, văn bản bị tràn
 ```
 
 **Phân tích thị giác:**
@@ -111,7 +111,7 @@ Hãy kiểm tra trên thiết bị di động để xác minh bản sửa lỗi.
 ### Chỉ kèm theo mô tả
 
 ```bash
-/fix:ui Hộp thoại Modal không đóng khi nhấp vào lớp nền (backdrop) trên Safari di động
+/fix Hộp thoại Modal không đóng khi nhấp vào lớp nền (backdrop) trên Safari di động
 ```
 
 **Điều gì xảy ra:**
@@ -143,7 +143,7 @@ Hãy kiểm tra trên Safari iOS để xác nhận.
 ### Kèm theo Video
 
 ```bash
-/fix:ui [screen-recording.mp4] - Hiệu ứng chuyển động bị giật, menu thả xuống bị nhấp nháy
+/fix [screen-recording.mp4] - Hiệu ứng chuyển động bị giật, menu thả xuống bị nhấp nháy
 ```
 
 **Phân tích Video:**
@@ -197,52 +197,52 @@ Hãy kiểm tra bằng tab Performance trong DevTools.
 
 ```bash
 # Sai lệch vị trí
-/fix:ui [screenshot] - Các phần tử không được căn thẳng hàng theo chiều dọc
+/fix [screenshot] - Các phần tử không được căn thẳng hàng theo chiều dọc
 
 # Tràn nội dung
-/fix:ui Nội dung tràn ra ngoài container trên màn hình nhỏ
+/fix Nội dung tràn ra ngoài container trên màn hình nhỏ
 
 # Khoảng cách
-/fix:ui Khoảng cách (padding) không nhất quán giữa các phần
+/fix Khoảng cách (padding) không nhất quán giữa các phần
 ```
 
 ### Vấn đề phản hồi (Responsive)
 
 ```bash
 # Bố cục di động
-/fix:ui [mobile-screenshot] - Bố cục bị hỏng trên iPhone SE
+/fix [mobile-screenshot] - Bố cục bị hỏng trên iPhone SE
 
 # Chế độ máy tính bảng
-/fix:ui Menu điều hướng chồng lên nội dung trên iPad
+/fix Menu điều hướng chồng lên nội dung trên iPad
 
 # Co giãn trên máy tính để bàn
-/fix:ui Văn bản quá nhỏ trên màn hình 4K
+/fix Văn bản quá nhỏ trên màn hình 4K
 ```
 
 ### Lỗi hiển thị (Visual Bugs)
 
 ```bash
 # Z-index
-/fix:ui Hộp thoại Modal hiển thị phía sau header
+/fix Hộp thoại Modal hiển thị phía sau header
 
 # Màu sắc
-/fix:ui Màu nút quá nhạt, khó đọc văn bản
+/fix Màu nút quá nhạt, khó đọc văn bản
 
 # Hiệu ứng chuyển động
-/fix:ui Vòng quay tải (loading spinner) bị giật trên các thiết bị chậm
+/fix Vòng quay tải (loading spinner) bị giật trên các thiết bị chậm
 ```
 
 ### Vấn đề tương tác
 
 ```bash
 # Nhấp/Chạm
-/fix:ui Nút không phản hồi khi nhấp trên di động
+/fix Nút không phản hồi khi nhấp trên di động
 
 # Trạng thái Hover
-/fix:ui Hiệu ứng hover vẫn hoạt động sau khi nhấp
+/fix Hiệu ứng hover vẫn hoạt động sau khi nhấp
 
 # Trạng thái Focus
-/fix:ui Không thấy chỉ báo tiêu điểm (focus) từ bàn phím
+/fix Không thấy chỉ báo tiêu điểm (focus) từ bàn phím
 ```
 
 ## Thực hành tốt nhất
@@ -251,35 +251,35 @@ Hãy kiểm tra bằng tab Performance trong DevTools.
 
 ✅ **Kèm theo ảnh chụp màn hình:**
 ```bash
-/fix:ui [screenshot.png] - Mô tả rõ ràng về vấn đề
+/fix [screenshot.png] - Mô tả rõ ràng về vấn đề
 ```
 
 ✅ **Kèm theo video:**
 ```bash
-/fix:ui [recording.mp4] - Hiển thị vấn đề tương tác
+/fix [recording.mp4] - Hiển thị vấn đề tương tác
 ```
 
 ❌ **Chỉ văn bản (khi là vấn đề thị giác):**
 ```bash
-/fix:ui Có cái gì đó trông hơi sai
+/fix Có cái gì đó trông hơi sai
 ```
 
 ### Chỉ định thiết bị/trình duyệt
 
 ```bash
-/fix:ui [screenshot] - Nút bị lệch trên Safari di động, iPhone 12 Pro
+/fix [screenshot] - Nút bị lệch trên Safari di động, iPhone 12 Pro
 ```
 
 ### Bao gồm hành vi mong đợi
 
 ```bash
-/fix:ui [screenshot] - Modal nên nằm giữa màn hình, hiện đang bị lệch sang trái khoảng 50px
+/fix [screenshot] - Modal nên nằm giữa màn hình, hiện đang bị lệch sang trái khoảng 50px
 ```
 
 ### Mô tả tương tác
 
 ```bash
-/fix:ui Khi di chuột qua menu thả xuống, các mục bị nhấp nháy. Đáng lẽ phải mở rộng mượt mà.
+/fix Khi di chuột qua menu thả xuống, các mục bị nhấp nháy. Đáng lẽ phải mở rộng mượt mà.
 ```
 
 ## Khuyến nghị kiểm tra
@@ -325,7 +325,7 @@ npm run test:responsive
 
 ```bash
 # So sánh với thiết kế Figma
-/fix:ui [screenshot] so sánh với [figma-url]
+/fix [screenshot] so sánh với [figma-url]
 ```
 
 ### Tích hợp Storybook
@@ -342,7 +342,7 @@ npm run storybook
 ### Vấn đề chế độ tối (Dark Mode)
 
 ```bash
-/fix:ui [dark-mode-screenshot] - Văn bản không hiển thị trong chế độ tối
+/fix [dark-mode-screenshot] - Văn bản không hiển thị trong chế độ tối
 ```
 
 **Các cách sửa:**
@@ -353,7 +353,7 @@ npm run storybook
 ### Bố cục RTL (Phải sang trái)
 
 ```bash
-/fix:ui [rtl-screenshot] - Bố cục văn bản tiếng Ả Rập bị hỏng
+/fix [rtl-screenshot] - Bố cục văn bản tiếng Ả Rập bị hỏng
 ```
 
 **Các cách sửa:**
@@ -364,7 +364,7 @@ npm run storybook
 ### Vấn đề về khả năng tiếp cận (Accessibility)
 
 ```bash
-/fix:ui [screenshot] - Chỉ báo tiêu điểm (focus) không hiển thị cho người dùng bàn phím
+/fix [screenshot] - Chỉ báo tiêu điểm (focus) không hiển thị cho người dùng bàn phím
 ```
 
 **Các cách sửa:**
@@ -482,7 +482,7 @@ npm run storybook
 **Giải pháp:**
 ```bash
 # Kiểm tra trình duyệt/thiết bị cụ thể
-/fix:ui [screenshot] - Chỉ xảy ra trên Safari iOS
+/fix [screenshot] - Chỉ xảy ra trên Safari iOS
 
 # Kiểm tra môi trường người dùng
 # - Phiên bản trình duyệt
@@ -511,15 +511,15 @@ npm run preview
 **Giải pháp:**
 ```bash
 # Sửa tất cả cùng một lúc
-/fix:ui [screenshots] - Liệt kê tất cả vấn đề: 1) căn lề, 2) độ tương phản màu, 3) khoảng cách
+/fix [screenshots] - Liệt kê tất cả vấn đề: 1) căn lề, 2) độ tương phản màu, 3) khoảng cách
 ```
 
 ## Bước tiếp theo
 
-- [/design:screenshot](/docs/engineer/commands/design/screenshot) - Chuyển thiết kế thành mã nguồn
-- [/fix:fast](/docs/engineer/commands/fix/fast) - Các bản sửa lỗi CSS nhanh
+- Sử dụng skill ai-multimodal hoặc frontend-design - Chuyển thiết kế thành mã nguồn
+- [/fix --quick](/docs/engineer/commands/fix/fast) - Các bản sửa lỗi CSS nhanh
 - [/test](/docs/engineer/commands/core/test) - Các bài kiểm tra hồi quy thị giác
 
 ---
 
-**Điểm mấu chốt**: `/fix:ui` kết hợp phân tích thị giác với gỡ lỗi mã nguồn để nhanh chóng giải quyết các vấn đề UI/UX trên nhiều thiết bị và trình duyệt, hỗ trợ cả ảnh chụp màn hình và video.
+**Điểm mấu chốt**: `/fix` kết hợp phân tích thị giác với gỡ lỗi mã nguồn để nhanh chóng giải quyết các vấn đề UI/UX trên nhiều thiết bị và trình duyệt, hỗ trợ cả ảnh chụp màn hình và video.

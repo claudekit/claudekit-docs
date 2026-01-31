@@ -18,7 +18,7 @@ order: 9
 
 **Implicit**: Activates when user signals brainstorming mode ("let's explore", "what are our options", "brainstorm with me").
 
-**Explicit**: `/skill:add brainstorming` or `/brainstorm`
+**Explicit**: Activate by name when needed: "Activate brainstorming skill" or use /brainstorm command
 
 ## Capabilities
 

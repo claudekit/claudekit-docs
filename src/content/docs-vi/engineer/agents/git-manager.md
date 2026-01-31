@@ -31,9 +31,9 @@ Lưu tạm, chuyển giao và đẩy thay đổi mã nguồn với các thông �
 
 Agent git-manager kích hoạt khi:
 - Người dùng nói "commit" hoặc "push"
-- Sử dụng lệnh `/git:cm` (commit)
-- Sử dụng lệnh `/git:cp` (commit và push)
-- Sử dụng lệnh `/git:pr` (tạo pull request)
+- Sử dụng lệnh `/git cm` (commit)
+- Sử dụng lệnh `/git cp` (commit và push)
+- Sử dụng lệnh `/git pr` (tạo pull request)
 - Sau khi triển khai các tính năng hoặc bản sửa lỗi
 
 ## Khả năng
@@ -63,13 +63,13 @@ Tự động quét các thay đổi (diff) để tìm dữ liệu nhạy cảm:
 
 ### Commit cơ bản
 ```bash
-/git:cm
+/git cm
 ```
 **Quy trình**: Quét bảo mật (không thấy bí mật) -> Phân tích thay đổi -> Tạo thông điệp -> Commit thành công.
 
 ### Commit và Push
 ```bash
-/git:cp
+/git cp
 ```
 **Quy trình**: Thực hiện quy trình commit -> Đẩy lên nhánh remote (ví dụ: `origin/main`).
 
@@ -87,7 +87,7 @@ Agent sử dụng các chiến lược để giảm chi phí:
 
 - **Phạm vi commit rõ ràng**: Chỉ `git add` các tệp liên quan đến một tính năng hoặc lỗi.
 - **Nhóm logic**: Tách biệt các thay đổi tính năng khỏi các bản sửa lỗi.
-- **Kiểm tra trước khi đẩy**: Sử dụng `/git:cm` để xem thông điệp trước khi dùng `/git:cp`.
+- **Kiểm tra trước khi đẩy**: Sử dụng `/git cm` để xem thông điệp trước khi dùng `/git cp`.
 
 ## Xử lý sự cố
 

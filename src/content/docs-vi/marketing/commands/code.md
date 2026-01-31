@@ -13,12 +13,12 @@ published: true
 ## Khởi động nhanh
 
 ```bash
-/code
+/cook
 ```
 
 **Tự động phát hiện kế hoạch mới nhất** hoặc chỉ định:
 ```bash
-/code plans/251229-email-campaign
+/cook plans/251229-email-campaign
 ```
 
 ## Quy trình 6 bước

@@ -89,7 +89,7 @@ Next: /fix SQL injection in campaign query
 ```bash
 /review  # Check code quality
 # Fix issues
-/git:cm  # Commit
+/git cm  # Commit
 ```
 
 ### After Implementation

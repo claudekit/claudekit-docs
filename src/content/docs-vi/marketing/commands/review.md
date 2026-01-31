@@ -91,13 +91,13 @@ Next: /fix SQL injection in campaign query
 ```bash
 /review  # Check code quality
 # Fix issues
-/git:cm  # Commit
+/git cm  # Commit
 ```
 
 ### Sau Implementation
 
 ```bash
-/code plans/feature.md
+/cook plans/feature.md
 /review  # Quality check
 ```
 

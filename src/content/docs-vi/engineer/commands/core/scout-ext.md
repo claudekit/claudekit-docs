@@ -1,6 +1,6 @@
 ---
 lang: vi
-title: /scout:ext
+title: /scout ext
 description: Khám phá codebase sử dụng công cụ agentic bên ngoài như Gemini CLI cho khả năng tìm kiếm nâng cao và context lớn
 section: engineer
 kit: engineer
@@ -9,14 +9,14 @@ order: 71
 published: true
 ---
 
-# /scout:ext
+# /scout ext
 
 Khám phá codebase với công cụ bên ngoài. Sử dụng Gemini CLI, Opencode, và agent Explore cho khả năng tìm kiếm nâng cao, đặc biệt cho codebase lớn vượt quá giới hạn context tiêu chuẩn.
 
 ## Cú pháp
 
 ```bash
-/scout:ext [user-prompt] [scale]
+/scout ext [user-prompt] [scale]
 ```
 
 ## Khi nào sử dụng
@@ -29,7 +29,7 @@ Khám phá codebase với công cụ bên ngoài. Sử dụng Gemini CLI, Openco
 ## Ví dụ nhanh
 
 ```bash
-/scout:ext [find all authentication implementations] 5
+/scout ext [find all authentication implementations] 5
 ```
 
 **Kết quả**:
@@ -158,7 +158,7 @@ plans/reports/scout-ext-YYMMDD.md
 
 ## Ưu điểm so với /scout
 
-| Tính năng | /scout | /scout:ext |
+| Tính năng | /scout | /scout ext |
 |-----------|--------|------------|
 | Kích thước context | Tiêu chuẩn | 2M tokens |
 | Công cụ bên ngoài | Không | Gemini, Opencode |
@@ -171,7 +171,7 @@ plans/reports/scout-ext-YYMMDD.md
 ### Kịch bản: Hiểu Authentication trong Monorepo lớn
 
 ```bash
-/scout:ext [how does authentication work across all services?] 7
+/scout ext [how does authentication work across all services?] 7
 ```
 
 **Thực thi**:
@@ -226,7 +226,7 @@ Report: plans/reports/scout-ext-251129.md
 ### Scale 1-2: Tìm kiếm nhanh
 
 ```bash
-/scout:ext [find database config] 1
+/scout ext [find database config] 1
 ```
 - Chỉ dùng agent Explore
 - Kết quả nhanh (~10-20s)
@@ -235,7 +235,7 @@ Report: plans/reports/scout-ext-251129.md
 ### Scale 3-5: Tìm kiếm tiêu chuẩn
 
 ```bash
-/scout:ext [understand the API architecture] 4
+/scout ext [understand the API architecture] 4
 ```
 - Gemini CLI + Explore
 - Cân bằng độ sâu và tốc độ
@@ -244,7 +244,7 @@ Report: plans/reports/scout-ext-251129.md
 ### Scale 6-10: Phân tích sâu
 
 ```bash
-/scout:ext [comprehensive security audit of auth flow] 8
+/scout ext [comprehensive security audit of auth flow] 8
 ```
 - Tất cả công cụ được kích hoạt
 - Độ kỹ lưỡng tối đa
@@ -288,23 +288,23 @@ Opencode: Sử dụng LLM API đã cấu hình
 
 ```bash
 # Dự án nhỏ (< 50 files)
-/scout:ext [query] 2
+/scout ext [query] 2
 
 # Dự án trung bình (50-500 files)
-/scout:ext [query] 4
+/scout ext [query] 4
 
 # Dự án lớn (500+ files)
-/scout:ext [query] 7
+/scout ext [query] 7
 ```
 
 ### Cụ thể
 
 ```bash
 # Tốt: Truy vấn cụ thể
-/scout:ext [find all places where user permissions are checked] 5
+/scout ext [find all places where user permissions are checked] 5
 
 # Kém hiệu quả: Mơ hồ
-/scout:ext [security stuff] 5
+/scout ext [security stuff] 5
 ```
 
 ## Các lệnh liên quan
@@ -315,4 +315,4 @@ Opencode: Sử dụng LLM API đã cấu hình
 
 ---
 
-**Điểm chính**: `/scout:ext` mở rộng khám phá codebase với công cụ AI bên ngoài, cho phép tìm kiếm ngữ nghĩa trên codebase lớn vượt quá giới hạn context tiêu chuẩn.
+**Điểm chính**: `/scout ext` mở rộng khám phá codebase với công cụ AI bên ngoài, cho phép tìm kiếm ngữ nghĩa trên codebase lớn vượt quá giới hạn context tiêu chuẩn.

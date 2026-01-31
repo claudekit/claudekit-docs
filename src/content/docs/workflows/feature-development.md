@@ -50,7 +50,7 @@ The feature development workflow combines planning, research, implementation, te
 
 ### 3. Testing Phase
 ```bash
-/fix:test
+/fix
 ```
 
 **What happens**:
@@ -78,7 +78,7 @@ The feature development workflow combines planning, research, implementation, te
 
 ### 5. Deployment Preparation
 ```bash
-/fix:ci "prepare for production deployment"
+/fix "prepare for production deployment"
 ```
 
 **What happens**:
@@ -89,8 +89,8 @@ The feature development workflow combines planning, research, implementation, te
 
 ### 6. Commit & Deploy
 ```bash
-/git:cm
-/git:pr "feature/user-authentication"
+/git cm
+/git pr "feature/user-authentication"
 ```
 
 **What happens**:
@@ -131,7 +131,7 @@ Let's walk through adding authentication to a Next.js app:
 
 ### Step 3: Test
 ```bash
-/fix:test
+/fix
 ```
 
 **Test Coverage**:
@@ -144,9 +144,9 @@ Let's walk through adding authentication to a Next.js app:
 ### Step 4: Review & Deploy
 ```bash
 /code-review "authentication implementation"
-/fix:ci
-/git:cm
-/git:pr "feature/user-authentication"
+/fix
+/git cm
+/git pr "feature/user-authentication"
 ```
 
 ## Best Practices
@@ -157,8 +157,8 @@ Let's walk through adding authentication to a Next.js app:
 3. **Dependencies**: Identify external services needed
 
 ### During Implementation
-1. **Iterate**: Use `/fix:hard` for complex issues
-2. **Validate**: Test early and often with `/fix:test`
+1. **Iterate**: Use `/fix` for complex issues
+2. **Validate**: Test early and often with `/fix`
 3. **Document**: Use `/docs:update` to keep docs current
 
 ### Before Deployment
@@ -170,9 +170,9 @@ Let's walk through adding authentication to a Next.js app:
 
 ### Common Issues
 - **Plan Too Broad**: Break into smaller features
-- **Missing Skills**: Create custom skills with `/skill:create`
+- **Missing Skills**: Use skill-creator skill to create custom skills
 - **Test Failures**: Use `/debug` to investigate root causes
-- **CI Failures**: Use `/fix:ci` for pipeline issues
+- **CI Failures**: Use `/fix` for pipeline issues
 
 ### Getting Help
 - [Troubleshooting Guide](/docs/support/troubleshooting)

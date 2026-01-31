@@ -7,7 +7,7 @@ category: skills
 order: 1
 ---
 
-Marketing Kit bao gồm hơn 20 kỹ năng chuyên môn cung cấp cho agents kiến thức chuyên sâu, quy trình tự động hóa và khả năng AI. Kỹ năng được kích hoạt ngầm dựa trên ngữ cảnh hoặc rõ ràng qua lệnh `/skill:add`.
+Marketing Kit bao gồm hơn 20 kỹ năng chuyên môn cung cấp cho agents kiến thức chuyên sâu, quy trình tự động hóa và khả năng AI. Kỹ năng được kích hoạt ngầm dựa trên ngữ cảnh hoặc rõ ràng qua ngôn ngữ tự nhiên.
 
 ## Phân loại kỹ năng
 
@@ -60,8 +60,8 @@ Kỹ năng tự động kích hoạt dựa trên ngữ cảnh agent và loại t
 Thêm kỹ năng vào phiên hiện tại khi cần.
 
 ```bash
-/skill:add seo-optimization  # Thêm một kỹ năng
-/skill:add analytics email-marketing  # Thêm nhiều kỹ năng
+"Activate seo-optimization skill" # Kích hoạt một kỹ năng
+"Activate analytics and email-marketing skills" # Kích hoạt nhiều kỹ năng
 ```
 
 ## Kết hợp kỹ năng phổ biến
@@ -140,7 +140,7 @@ Kỹ năng với API bên ngoài (SEO, Analytics) tôn trọng giới hạn tố
 ## Xử lý sự cố
 
 **Kỹ năng không kích hoạt?**
-Sử dụng `/skill:add {skill-name}` để tải rõ ràng.
+Sử dụng ngôn ngữ tự nhiên để kích hoạt: "Activate {skill-name} skill for this task"
 
 **Thiếu thông tin API?**
 Kiểm tra phần "Prerequisites" trong tài liệu kỹ năng về các khóa cần thiết.

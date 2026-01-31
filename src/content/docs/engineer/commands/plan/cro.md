@@ -39,7 +39,7 @@ Create a CRO (Conversion Rate Optimization) plan for given content.
    - Screenshots/videos → `ai-multimodal` skill
    - URLs → `web_fetch` for content analysis
 
-2. **Scout**: `/scout:ext` (preferred) or `/scout` (fallback) to find related codebase files
+2. **Scout**: `/scout ext` (preferred) or `/scout` (fallback) to find related codebase files
 
 3. **Plan Creation**: `planner` agent creates CRO plan with:
    - `plan.md` overview (<80 lines)

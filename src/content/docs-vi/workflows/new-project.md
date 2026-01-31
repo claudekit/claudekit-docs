@@ -154,8 +154,8 @@ Dùng tất cả lệnh ClaudeKit cho phát triển tiếp:
 
 #### Sửa Lỗi
 ```bash
-/fix:fast Button click handler không hoạt động trên mobile
-/fix:hard Lỗi state management phức tạp trong checkout flow
+/fix --quick Button click handler không hoạt động trên mobile
+/fix Lỗi state management phức tạp trong checkout flow
 ```
 
 #### Lên Kế Hoạch Cải Tiến
@@ -235,7 +235,7 @@ Dùng tất cả lệnh ClaudeKit cho phát triển tiếp:
 /cook Thêm analytics dashboard
 
 # 3. Tối ưu và tinh chỉnh
-/fix:hard Vấn đề hiệu suất với datasets lớn 1000+ items
+/fix Vấn đề hiệu suất với datasets lớn 1000+ items
 /plan Thêm tính năng premium với subscription
 ```
 
@@ -251,9 +251,9 @@ Dùng tất cả lệnh ClaudeKit cho phát triển tiếp:
 /plan Thêm service notification
 
 # 3. Triển khai services riêng biệt
-/code auth-service-plan.md
-/code media-service-plan.md
-/code notification-service-plan.md
+/cook auth-service-plan.md
+/cook media-service-plan.md
+/cook notification-service-plan.md
 ```
 
 ### Documentation-Driven Development
@@ -266,9 +266,9 @@ Dùng tất cả lệnh ClaudeKit cho phát triển tiếp:
 # Chỉnh sửa file markdown plan đã tạo
 
 # 3. Triển khai theo từng giai đoạn
-/code plan.md --phase 1
+/cook plan.md --phase 1
 /test
-/code plan.md --phase 2
+/cook plan.md --phase 2
 /test
 ```
 
@@ -296,7 +296,7 @@ Sau bootstrap, cấu hình environments:
 /plan Deploy lên Vercel với CI/CD
 
 # Triển khai deployment
-/code deployment-plan.md
+/cook deployment-plan.md
 
 # Hoặc dùng integration cụ thể
 /integrate vercel
@@ -356,7 +356,7 @@ git add .
 git commit -m "Khởi tạo dự án qua ClaudeKit bootstrap"
 
 # Sau mỗi tính năng
-/git:cp
+/git cp
 ```
 
 ## Xử Lý Sự Cố
@@ -372,10 +372,10 @@ git commit -m "Khởi tạo dự án qua ClaudeKit bootstrap"
 
 ```bash
 # Sửa các vấn đề cụ thể
-/fix:hard [mô tả vấn đề]
+/fix [mô tả vấn đề]
 
 # Hoặc chạy full test suite và tự động sửa
-/fix:test
+/fix
 ```
 
 ### Cần Đổi Cách Tiếp Cận
@@ -385,7 +385,7 @@ git commit -m "Khởi tạo dự án qua ClaudeKit bootstrap"
 /plan Refactor sang kiến trúc khác
 
 # Triển khai thay đổi
-/code new-approach-plan.md
+/cook new-approach-plan.md
 ```
 
 ## Bước Tiếp Theo

@@ -160,7 +160,7 @@ Optimize and measure:
 /seo audit https://yourblog.com/marketing-automation
 
 # Step 5: Commit
-/git:cm
+/git cm
 ```
 
 **Time**: 20 minutes vs. 4-6 hours manual

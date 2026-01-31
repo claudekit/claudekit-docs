@@ -54,7 +54,7 @@ ck init --use-git
 - **Context-aware Navigation** - Dynamic sidebar based on current section
 
 **Core Capabilities**:
-- Complete feature development workflow (`/plan → /code → /test → /commit`)
+- Complete feature development workflow (`/plan → /cook → /test → /commit`)
 - Systematic bug fixing with root cause analysis
 - Automated documentation generation and maintenance
 - UI/UX design with AI-generated assets

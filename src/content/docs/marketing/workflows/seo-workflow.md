@@ -318,5 +318,5 @@ One 3,000-word comprehensive guide beats five 500-word shallow posts. Google rew
 - `/seo:audit` - Comprehensive SEO analysis
 - `/seo keywords` - Keyword research
 - `/seo optimize` - On-page optimization
-- `/content:good` - Create SEO-optimized content
+- Use `copywriting` skill for SEO-optimized content creation
 - `/analyze traffic` - Monitor organic performance

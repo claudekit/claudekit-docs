@@ -30,13 +30,13 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 ### Sửa Lỗi (Bug Fixing)
 
 - **[/fix](/docs-vi/commands/fix/)** - Sửa lỗi thông minh (tự động chọn phương pháp fast/hard)
-- **[/fix:fast](/docs-vi/commands/fix/fast)** - Sửa lỗi nhỏ nhanh chóng
-- **[/fix:hard](/docs-vi/commands/fix/hard)** - Sửa lỗi phức tạp với phân tích kỹ lưỡng
-- **[/fix:ci](/docs-vi/commands/fix/ci)** - Sửa lỗi GitHub Actions CI
-- **[/fix:logs](/docs-vi/commands/fix/logs)** - Phân tích và sửa lỗi từ logs
-- **[/fix:test](/docs-vi/commands/fix/test)** - Sửa lỗi tests thất bại
-- **[/fix:ui](/docs-vi/commands/fix/ui)** - Sửa lỗi UI/UX
-- **[/fix:types](/docs-vi/commands/fix/types)** - Sửa lỗi TypeScript type
+- **[/fix --quick](/docs-vi/commands/fix/fast)** - Sửa lỗi nhỏ nhanh chóng
+- **[/fix](/docs-vi/commands/fix/hard)** - Sửa lỗi phức tạp với phân tích kỹ lưỡng
+- **[/fix](/docs-vi/commands/fix/ci)** - Sửa lỗi GitHub Actions CI
+- **[/fix](/docs-vi/commands/fix/logs)** - Phân tích và sửa lỗi từ logs
+- **[/fix](/docs-vi/commands/fix/test)** - Sửa lỗi tests thất bại
+- **[/fix](/docs-vi/commands/fix/ui)** - Sửa lỗi UI/UX
+- **[/fix](/docs-vi/commands/fix/types)** - Sửa lỗi TypeScript type
 
 ### Tài Liệu (Documentation)
 
@@ -46,9 +46,9 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 
 ### Thao Tác Git
 
-- **[/git:cm](/docs/engineer/commands/git/commit)** - Stage và commit các thay đổi
-- **[/git:cp](/docs/engineer/commands/git/commit-push)** - Stage, commit và push
-- **[/git:pr](/docs/engineer/commands/git/pull-request)** - Tạo pull request
+- **[/git cm](/docs/engineer/commands/git/commit)** - Stage và commit các thay đổi
+- **[/git cp](/docs/engineer/commands/git/commit-push)** - Stage, commit và push
+- **[/git pr](/docs/engineer/commands/git/pull-request)** - Tạo pull request
 
 ### Lập Kế Hoạch (Planning)
 
@@ -58,12 +58,12 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 
 ### Thiết Kế & UI
 
-- **[/design:3d](/docs/engineer/commands/design/3d)** - Tạo thiết kế 3D với Three.js
-- **[/design:describe](/docs/engineer/commands/design/describe)** - Trích xuất thiết kế từ ảnh chụp màn hình
-- **[/design:fast](/docs/engineer/commands/design/fast)** - Tạo thiết kế nhanh chóng
-- **[/design:good](/docs/engineer/commands/design/good)** - Tạo thiết kế hoàn thiện và tinh chỉnh
-- **[/design:screenshot](/docs/engineer/commands/design/screenshot)** - Chuyển ảnh chụp màn hình thành mã nguồn
-- **[/design:video](/docs/engineer/commands/design/video)** - Chuyển video thành mã nguồn
+- **ai-artist** hoặc **threejs** skill - Tạo thiết kế 3D với Three.js
+- **ai-multimodal** skill - Trích xuất thiết kế từ ảnh chụp màn hình
+- **ai-artist** skill (search mode) - Tạo thiết kế nhanh chóng
+- **ai-artist** skill (creative mode) - Tạo thiết kế hoàn thiện và tinh chỉnh
+- **ai-multimodal** hoặc **frontend-design** skill - Chuyển ảnh chụp màn hình thành mã nguồn
+- **ai-multimodal** hoặc **remotion** skill - Chuyển video thành mã nguồn
 
 ### Nội Dung & Marketing
 
@@ -91,18 +91,18 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 /cook [mô tả tính năng]      # Triển khai tính năng
 
 # Sửa lỗi
-/fix:fast [lỗi đơn giản]     # Sửa nhanh
-/fix:hard [lỗi phức tạp]     # Điều tra kỹ lưỡng + sửa lỗi
-/fix:ci [url-github-ci]      # Sửa lỗi CI thất bại
+/fix --quick [lỗi đơn giản]     # Sửa nhanh
+/fix [lỗi phức tạp]     # Điều tra kỹ lưỡng + sửa lỗi
+/fix [url-github-ci]      # Sửa lỗi CI thất bại
 
 # Tài liệu
 /docs:init                   # Thiết lập lần đầu
 /docs:update                 # Sau khi thay đổi mã nguồn
 
 # Quy trình Git
-/git:cm                      # Commit thay đổi
-/git:cp                      # Commit và push
-/git:pr [nhánh-đích]         # Tạo pull request
+/git cm                      # Commit thay đổi
+/git cp                      # Commit và push
+/git pr [nhánh-đích]         # Tạo pull request
 
 # Trạng thái dự án
 /watzup                      # Trạng thái hiện tại như thế nào?
@@ -131,9 +131,9 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 /ask [quy trình điều hướng hoạt động như thế nào?]
 
 # Tham số tùy chọn
-/git:pr                          # PR vào nhánh mặc định
-/git:pr [develop]                # PR vào nhánh develop
-/git:pr [main] [feature-branch]  # PR từ nhánh feature vào main
+/git pr                          # PR vào nhánh mặc định
+/git pr [develop]                # PR vào nhánh develop
+/git pr [main] [feature-branch]  # PR từ nhánh feature vào main
 
 # Nhiều tham số
 /scout [các tệp xác thực] [3]    # Tìm tệp xác thực, dùng 3 agent
@@ -174,7 +174,7 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 4. /test
    # Kiểm tra lại việc triển khai
 
-5. /git:cm
+5. /git cm
    # Commit với thông điệp chuẩn (conventional commit)
 ```
 
@@ -182,10 +182,10 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 
 ```bash
 # Lỗi đơn giản (bạn đã biết cách sửa)
-/fix:fast [lỗi đánh máy trong thông báo xác thực]
+/fix --quick [lỗi đánh máy trong thông báo xác thực]
 
 # Lỗi phức tạp (cần điều tra)
-/fix:hard [người dùng không thể đăng nhập sau khi đặt lại mật khẩu]
+/fix [người dùng không thể đăng nhập sau khi đặt lại mật khẩu]
 # - Dùng scout để tìm các tệp liên quan
 # - Phân tích mã nguồn và nhật ký (logs)
 # - Nghiên cứu giải pháp
@@ -194,7 +194,7 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 # - Kiểm tra kỹ lưỡng
 
 # Lỗi CI
-/fix:ci [https://github.com/user/repo/actions/runs/123]
+/fix [https://github.com/user/repo/actions/runs/123]
 # - Đọc nhật ký CI
 # - Xác định nguyên nhân thất bại
 # - Triển khai sửa lỗi
@@ -221,22 +221,22 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 ✅ **Sử dụng đúng**
 ```bash
 # Sửa lỗi nhỏ
-/fix:fast [lỗi đánh máy trên văn bản nút]
+/fix --quick [lỗi đánh máy trên văn bản nút]
 
 # Vấn đề phức tạp
-/fix:hard [rò rỉ bộ nhớ trong kết nối websocket]
+/fix [rò rỉ bộ nhớ trong kết nối websocket]
 
 # Vấn đề UI kèm ảnh chụp màn hình
-/fix:ui [screenshot.png] - nút bị lệch trên thiết bị di động
+/fix [screenshot.png] - nút bị lệch trên thiết bị di động
 ```
 
 ❌ **Sử dụng sai**
 ```bash
 # Đừng dùng fast cho vấn đề phức tạp
-/fix:fast [toàn bộ hệ thống xác thực bị hỏng]
+/fix --quick [toàn bộ hệ thống xác thực bị hỏng]
 
 # Đừng dùng hard cho việc sửa lỗi đơn giản
-/fix:hard [lỗi đánh máy trong ghi chú]
+/fix [lỗi đánh máy trong ghi chú]
 ```
 
 ### Cung Cấp Mô Tả Rõ Ràng
@@ -268,7 +268,7 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 git diff
 
 # 4. Chỉ commit khi hài lòng
-/git:cm
+/git cm
 ```
 
 ### Sử Dụng Chuỗi Lệnh Cho Các Tác Vụ Phức Tạp
@@ -290,10 +290,10 @@ cat plans/latest-plan.md
 /test
 
 # 6. Sửa nếu cần
-/fix:test
+/fix
 
 # 7. Commit
-/git:cm
+/git cm
 ```
 
 ## Các Cờ Và Tùy Chọn
@@ -307,12 +307,12 @@ Một số lệnh hỗ trợ các cờ (flags):
 /bootstrap:auto [mô tả chi tiết]       # Hoàn toàn tự động
 ```
 
-### /git:pr
+### /git pr
 
 ```bash
-/git:pr                      # PR vào nhánh mặc định (main)
-/git:pr [develop]            # PR vào nhánh develop
-/git:pr [main] [feature]     # PR từ nhánh feature vào main
+/git pr                      # PR vào nhánh mặc định (main)
+/git pr [develop]            # PR vào nhánh develop
+/git pr [main] [feature]     # PR từ nhánh feature vào main
 ```
 
 ### /plan
@@ -351,7 +351,7 @@ Thời gian dự kiến: 2-3 giờ
 Số tệp cần tạo mới: 5
 Số tệp cần chỉnh sửa: 3
 
-Tiếp theo: Xem lại kế hoạch, sau đó chạy /code
+Tiếp theo: Xem lại kế hoạch, sau đó chạy /cook
 ```
 
 ### Các Lệnh Triển Khai
@@ -393,7 +393,7 @@ Kết quả thử nghiệm:
 
 Tất cả các bài kiểm tra đã vượt qua!
 
-Tiếp theo: Xem lại các thay đổi, sau đó chạy /git:cm
+Tiếp theo: Xem lại các thay đổi, sau đó chạy /git cm
 ```
 
 ## Xử Lý Sự Cố

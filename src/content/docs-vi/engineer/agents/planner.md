@@ -22,7 +22,7 @@ Nghiên cứu, phân tích và tạo các kế hoạch triển khai toàn diện
 Agent planner kích hoạt khi:
 - Sử dụng lệnh `/plan [description]`
 - Sử dụng lệnh `/bootstrap` (giai đoạn nghiên cứu)
-- Sử dụng lệnh `/fix:hard` (các vấn đề phức tạp cần chiến lược)
+- Sử dụng lệnh `/fix` (các vấn đề phức tạp cần chiến lược)
 - Trước khi thực hiện tái cấu trúc lớn
 - Khi đánh giá các đánh đổi kỹ thuật (technical trade-offs)
 
@@ -68,7 +68,7 @@ Agent planner kích hoạt khi:
 1. **Tạo kế hoạch**: Chạy `/plan [mô tả]`.
 2. **Xem xét**: Đọc kế hoạch đã tạo trong `plans/`.
 3. **Phản hồi**: Đưa ra ý kiến chỉnh sửa (ví dụ: "Sử dụng PostgreSQL thay vì Redis").
-4. **Triển khai**: Chạy `/cook` hoặc `/code @plans/ten-ke-hoach.md`.
+4. **Triển khai**: Chạy `/cook` hoặc `/cook @plans/ten-ke-hoach.md`.
 
 ## Các chỉ số thành công
 

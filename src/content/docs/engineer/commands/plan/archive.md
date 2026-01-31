@@ -25,7 +25,7 @@ Archive completed plans with optional journal documentation.
 2. **Journal Entries** (Optional) - Document key events, decisions, impacts
 3. **Confirm Action** - Choose specific plans or all completed plans
 4. **Archive Method** - Move to `./plans/archive/` or delete permanently
-5. **Commit Changes** (Optional) - Stage and commit via `/git:cm` or `/git:cp`
+5. **Commit Changes** (Optional) - Stage and commit via `/git cm` or `/git cp`
 
 ## Journal Documentation
 

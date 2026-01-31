@@ -20,7 +20,7 @@ published: true
 2. Researches best practices (3 agents)
 3. Scouts codebase for relevant files
 4. Creates internal plan
-5. Implements with /code workflow
+5. Implements with /cook workflow
 6. Tests (100% pass required)
 7. Code review (0 critical issues)
 8. Updates documentation
@@ -30,9 +30,9 @@ published: true
 
 ## What It Does
 
-### /cook vs /plan → /code
+### /cook vs /plan → /cook
 
-| Aspect | /cook | /plan → /code |
+| Aspect | /cook | /plan → /cook |
 |--------|-------|---------------|
 | Planning | Internal (hidden) | Explicit plan file |
 | Best for | Small-medium features | Complex features |
@@ -66,9 +66,9 @@ published: true
 | Variant | Speed | Complexity | Best For |
 |---------|-------|------------|----------|
 | `/cook` | Standard | Any | General features |
-| `/cook:fast` | Quick | Simple | Bug fixes, small features |
-| `/cook:hard` | Thorough | Complex | Architecture changes |
-| `/cook:parallel` | Multi-track | Independent | Multiple features |
+| `/cook --fast` | Quick | Simple | Bug fixes, small features |
+| `/cook --hard` | Thorough | Complex | Architecture changes |
+| `/cook --parallel` | Multi-track | Independent | Multiple features |
 
 ## Example: Add Dark Mode
 
@@ -179,7 +179,7 @@ Done! Dark mode live at /settings
 ```bash
 # For complex features, use /plan first
 /plan implement payment integration  # Review plan
-/code  # Then implement
+"Implement plan"  # Then implement
 
 # For medium features, /cook is faster
 /cook implement payment integration  # Does both
@@ -193,16 +193,16 @@ Done! Dark mode live at /settings
 /cook add user preferences
 
 # Parallel (all at once)
-/cook:parallel add dark mode, export CSV, user preferences
+/cook --parallel add dark mode, export CSV, user preferences
 ```
 
 ## Workflow Steps (Internal)
 
 1. **Question Everything**: Clarify requirements
 2. **Research**: 3+ researcher agents in parallel (≤150 lines each)
-3. **Scout**: /scout:ext or /scout for relevant files
+3. **Scout**: /scout ext or /scout for relevant files
 4. **Plan**: Internal plan (progressive disclosure)
-5. **Implement**: /code workflow (6-step process)
+5. **Implement**: /cook workflow (6-step process)
 6. **Test**: tester agent (100% pass required)
 7. **Review**: code-reviewer agent (0 critical issues required)
 8. **Docs**: docs-manager + project-manager agents
@@ -211,7 +211,7 @@ Done! Dark mode live at /settings
 
 ## Agents Used
 
-All agents from /plan and /code:
+All agents from /plan and /cook:
 - planner, researcher (3+), scout
 - fullstack-developer, ui-ux-designer
 - tester, debugger, code-reviewer
@@ -228,7 +228,6 @@ All relevant skills auto-activated:
 ## Related Commands
 
 - [/plan](/docs/marketing/commands/plan) - Planning only (review before coding)
-- [/code](/docs/marketing/commands/code) - Implement existing plan
 - [/fix](/docs/marketing/commands/fix) - Fix issues after implementation
 
 ---

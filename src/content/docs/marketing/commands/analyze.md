@@ -99,7 +99,7 @@ Next: /analyze conversions
 
 # Deep dive into issues
 /analyze engagement  # if low engagement
-/fix:fast Issues identified in analytics
+/fix --quick Issues identified in analytics
 
 # Campaign-specific
 /campaign analyze "Q1 Launch"

@@ -285,7 +285,7 @@ git tag v1.2.3
 git push origin v1.2.3
 
 # Create release PR
-/git:pr main staging
+/git pr main staging
 
 # After approval:
 # 1. Merge to main
@@ -517,7 +517,7 @@ cat docs/code-standards.md
 ```bash
 # Commit documentation
 git add docs/
-/git:cm  # "docs: initialize project documentation"
+/git cm  # "docs: initialize project documentation"
 
 # Push to team
 git push

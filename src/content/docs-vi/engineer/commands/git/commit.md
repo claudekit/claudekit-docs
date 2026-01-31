@@ -1,5 +1,5 @@
 ---
-title: /git:cm
+title: /git cm
 description: Tài liệu hướng dẫn lệnh commit
 section: engineer
 kit: engineer
@@ -9,19 +9,19 @@ published: true
 lang: vi
 ---
 
-# /git:cm
+# /git cm
 
 Thực hiện stage tất cả các tệp và tạo một bản commit chuyên nghiệp tuân thủ các tiêu chuẩn conventional commit.
 
 ## Cú pháp
 
 ```bash
-/git:cm
+/git cm
 ```
 
 ## Cách hoạt động
 
-Lệnh `/git:cm` tuân theo một quy trình làm việc git có cấu trúc:
+Lệnh `/git cm` tuân theo một quy trình làm việc git có cấu trúc:
 
 ### 1. Giai đoạn phân tích
 
@@ -110,7 +110,7 @@ refactor: extract payment processing into service layer
 
 ```bash
 # Sau khi triển khai một tính năng
-/git:cm
+/git cm
 ```
 
 **Commit được tạo:**
@@ -127,7 +127,7 @@ feat: add rate limiting middleware
 
 ```bash
 # Sau khi sửa một lỗi
-/git:cm
+/git cm
 ```
 
 **Commit được tạo:**
@@ -144,7 +144,7 @@ fix: prevent memory leak in WebSocket connections
 
 ```bash
 # Sau khi thực hiện nhiều thay đổi liên quan
-/git:cm
+/git cm
 ```
 
 **Commit được tạo:**
@@ -253,7 +253,7 @@ git diff
 /test
 
 # 4. Commit
-/git:cm
+/git cm
 
 # 5. Push (nếu đã sẵn sàng)
 git push
@@ -266,7 +266,7 @@ git push
 # ... triển khai tính năng ...
 
 # 2. Commit cục bộ
-/git:cm
+/git cm
 
 # 3. Xem lại trong commit
 git show HEAD
@@ -275,7 +275,7 @@ git show HEAD
 git push origin feature/user-profile
 
 # 5. Tạo PR
-/git:pr
+/git pr
 ```
 
 ## Tùy chỉnh
@@ -330,19 +330,19 @@ Kết quả: test(payment): add Stripe webhook tests
 ✅ **Tốt - Commit nguyên tử (Atomic):**
 ```bash
 # Triển khai tính năng
-/git:cm  # "feat: add login form"
+/git cm  # "feat: add login form"
 
 # Thêm bài kiểm tra
-/git:cm  # "test: add login form validation tests"
+/git cm  # "test: add login form validation tests"
 
 # Cập nhật tài liệu
-/git:cm  # "docs: document login API"
+/git cm  # "docs: document login API"
 ```
 
 ❌ **Xấu - Commit khổng lồ:**
 ```bash
 # Triển khai 10 tính năng trong 3 ngày
-/git:cm  # Commit quá lớn, không rõ ràng
+/git cm  # Commit quá lớn, không rõ ràng
 ```
 
 ### Xem lại trước khi commit
@@ -353,7 +353,7 @@ git diff
 git status
 
 # Sau đó commit
-/git:cm
+/git cm
 ```
 
 ### Đừng commit mã nguồn lỗi
@@ -364,7 +364,7 @@ git status
 
 # Chỉ commit nếu bài kiểm tra vượt qua
 ✓ Tất cả các bài kiểm tra đã vượt qua
-/git:cm
+/git cm
 ```
 
 ## Các kịch bản phổ biến
@@ -373,13 +373,13 @@ git status
 
 ```bash
 # 1. Sửa lỗi nghiêm trọng
-/fix:fast [lỗi trên production]
+/fix --quick [lỗi trên production]
 
 # 2. Kiểm tra bản sửa lỗi
 /test
 
 # 3. Commit nhanh
-/git:cm
+/git cm
 
 # 4. Triển khai ngay lập tức
 /deploy [production]
@@ -393,19 +393,19 @@ git checkout -b feature/new-dashboard
 
 # 2. Triển khai từng bước
 /cook [thêm bố cục dashboard]
-/git:cm
+/git cm
 
 /cook [thêm các widget dashboard]
-/git:cm
+/git cm
 
 /cook [thêm các bộ lọc dashboard]
-/git:cm
+/git cm
 
 # 3. Push nhánh
 git push origin feature/new-dashboard
 
 # 4. Tạo PR
-/git:pr
+/git pr
 ```
 
 ### Giai đoạn tái cấu trúc (Refactoring)
@@ -413,13 +413,13 @@ git push origin feature/new-dashboard
 ```bash
 # 1. Tái cấu trúc từng phần
 # Tái cấu trúc dịch vụ auth
-/git:cm  # "refactor(auth): extract validation logic"
+/git cm  # "refactor(auth): extract validation logic"
 
 # Tái cấu trúc dịch vụ thanh toán
-/git:cm  # "refactor(payment): simplify error handling"
+/git cm  # "refactor(payment): simplify error handling"
 
 # Cập nhật các bài kiểm tra
-/git:cm  # "test: update tests for refactored services"
+/git cm  # "test: update tests for refactored services"
 ```
 
 ## Xử lý sự cố
@@ -435,7 +435,7 @@ git status
 
 # Nếu thay đổi tồn tại nhưng không được phát hiện:
 git add .
-/git:cm
+/git cm
 ```
 
 ### Thông điệp commit không rõ ràng
@@ -465,7 +465,7 @@ npm run lint:fix
 npm run format
 
 # Sau đó thử lại
-/git:cm
+/git cm
 ```
 
 ### Phát hiện dữ liệu nhạy cảm
@@ -482,7 +482,7 @@ npm run format
 echo ".env" >> .gitignore
 
 # Sau đó commit
-/git:cm
+/git cm
 ```
 
 ## Cách dùng nâng cao
@@ -511,12 +511,12 @@ Nếu bạn chỉ muốn commit các tệp cụ thể:
 git add src/auth/login.ts src/auth/register.ts
 
 # Sau đó commit
-/git:cm
+/git cm
 ```
 
 ## Ví dụ lịch sử commit
 
-Sau khi sử dụng `/git:cm` thường xuyên:
+Sau khi sử dụng `/git cm` thường xuyên:
 
 ```
 git log --oneline
@@ -533,10 +533,10 @@ Sạch sẽ, chuyên nghiệp và dễ hiểu!
 
 ## Bước tiếp theo
 
-- [/git:cp](/vi/docs/engineer/commands/git/commit-push) - Commit và push
-- [/git:pr](/vi/docs/engineer/commands/git/pull-request) - Tạo pull request
+- [/git cp](/vi/docs/engineer/commands/git/commit-push) - Commit và push
+- [/git pr](/vi/docs/engineer/commands/git/pull-request) - Tạo pull request
 - [/review](/vi/docs/engineer/commands/core/review) - Xem lại mã nguồn trước khi commit
 
 ---
 
-**Điểm mấu chốt**: `/git:cm` tạo các commit chuyên nghiệp, tuân thủ tiêu chuẩn conventional một cách tự động bằng cách phân tích các thay đổi của bạn và khớp với phong cách commit của kho lưu trữ.
+**Điểm mấu chốt**: `/git cm` tạo các commit chuyên nghiệp, tuân thủ tiêu chuẩn conventional một cách tự động bằng cách phân tích các thay đổi của bạn và khớp với phong cách commit của kho lưu trữ.

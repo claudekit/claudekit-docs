@@ -67,6 +67,8 @@ Activate seo-optimization skill to audit site performance and identify keyword o
 Activate analytics, email-marketing, and social-media skills to analyze campaign performance
 ```
 
+Skills automatically activate based on task context - no explicit command needed in most cases.
+
 ## Common Skill Combinations
 
 ### Content Production Pipeline
@@ -143,7 +145,7 @@ Skills with external APIs (SEO, Analytics) respect rate limits. Check reference 
 ## Troubleshooting
 
 **Skill not activating?**
-Use `/skill:add {skill-name}` to explicitly load it.
+Use natural language to explicitly activate: "Activate {skill-name} skill for this task"
 
 **Missing API credentials?**
 Check skill doc's "Prerequisites" section for required keys.

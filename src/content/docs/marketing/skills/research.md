@@ -21,7 +21,7 @@ order: 21
 **Explicit**: Activate via prompt:
 ```
 Activate research skill to [describe task]
-``` or `/scout` command
+``` or `/scout ext` command
 
 ## Capabilities
 
@@ -134,6 +134,6 @@ Note when sources disagree. Present multiple viewpoints with context.
 ## Related Commands
 
 - `/scout` - Research current project context
-- `/scout:ext` - Research external topics
+- `/scout ext` - Research external topics
 - `/ask` - Quick research questions
 - `/plan` - Convert research into action plan

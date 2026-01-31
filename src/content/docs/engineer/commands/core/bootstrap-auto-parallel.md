@@ -359,7 +359,7 @@ cat README.md
 - [/bootstrap](/docs/engineer/commands/core/bootstrap) - Bootstrap with approval gates
 - [/bootstrap:auto](/docs/engineer/commands/core/bootstrap-auto) - Auto bootstrap (sequential)
 - [/plan:parallel](/docs/engineer/commands/plan/parallel) - Create parallel plans
-- [/code:parallel](/docs/engineer/commands/core/code-parallel) - Execute parallel plans
+- [/cook --parallel](/docs/engineer/commands/core/cook-auto-parallel) - Execute parallel plans
 
 ---
 

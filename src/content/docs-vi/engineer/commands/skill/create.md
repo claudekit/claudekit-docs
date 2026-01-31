@@ -577,7 +577,7 @@ cat .claude/skills/[tên-skill].md
 # 5. Lặp lại cho đến khi hài lòng
 
 # 6. Commit skill
-/git:cm
+/git cm
 ```
 
 ## Các file đầu ra

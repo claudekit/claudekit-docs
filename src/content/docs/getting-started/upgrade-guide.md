@@ -67,9 +67,9 @@ Adopt task-specific commands:
 - `/docs:update` for documentation (automated sync)
 
 ### Week 3: Leverage Skills
-Add custom skills for your stack:
+Add custom skills for your stack using the skill-creator skill:
 ```bash
-/skill:create "Our GraphQL conventions"
+"Create a new skill for our GraphQL conventions"
 # → Agents learn your team's patterns
 ```
 
@@ -80,8 +80,8 @@ Combine commands for complete workflows:
 /clear  # Free context before implementation
 /cook "Redesign checkout flow as planned"
 /frontend-design "checkout UI mockup"
-/fix:test
-/git:pr "feature/new-checkout"
+/fix
+/git pr "feature/new-checkout"
 ```
 
 ## Compatibility

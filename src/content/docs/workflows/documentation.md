@@ -256,7 +256,7 @@ docs/
 # Run after feature completion
 /cook
 /docs:update "document new feature"
-/git:cm
+/git cm
 ```
 
 ### Release Documentation

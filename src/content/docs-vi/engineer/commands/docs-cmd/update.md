@@ -371,18 +371,18 @@ Lệnh này sử dụng agent **docs-manager** với các khả năng sau:
 ```bash
 # Sau khi triển khai tính năng
 /cook [thêm tích hợp thanh toán]
-/fix:types
+/fix
 /test
 /docs:update
 
 # Commit tất cả cùng nhau
-/git:cm
+/git cm
 ```
 
 ❌ **Xấu - Quá thường xuyên:**
 ```bash
 # Sau mỗi thay đổi nhỏ
-/fix:fast [lỗi đánh máy]
+/fix --quick [lỗi đánh máy]
 /docs:update  # Lãng phí
 ```
 
@@ -405,7 +405,7 @@ Lệnh này sử dụng agent **docs-manager** với các khả năng sau:
 /docs:update
 git diff docs/
 # Xem lại các thay đổi
-/git:cm
+/git cm
 ```
 
 ## Quy Trình Làm Việc
@@ -420,7 +420,7 @@ git diff docs/
 /cook [triển khai OAuth2 với các nhà cung cấp Google và GitHub]
 
 # 3. Sửa bất kỳ vấn đề nào
-/fix:types
+/fix
 /test
 
 # 4. Cập nhật tài liệu
@@ -428,7 +428,7 @@ git diff docs/
 
 # 5. Xem lại và commit
 git diff
-/git:cm
+/git cm
 ```
 
 ### Bảo Trì Tài Liệu Hàng Quý
@@ -441,7 +441,7 @@ git diff
 git diff docs/
 
 # 3. Commit các cập nhật tài liệu
-/git:cm
+/git cm
 ```
 
 ### Checklist Trước Khi Phát Hành
@@ -457,10 +457,10 @@ git diff docs/
 # Chỉnh sửa CHANGELOG.md
 
 # 4. Commit tài liệu phát hành
-/git:cm
+/git cm
 
 # 5. Tạo PR phát hành
-/git:pr main develop
+/git pr main develop
 ```
 
 ## Xử Lý Sự Cố
@@ -574,7 +574,7 @@ Sau khi sử dụng `/docs:update`:
 
 - [/docs:summarize](/docs/engineer/commands/docs/summarize) - Chỉ cập nhật bản tóm tắt codebase
 - [/watzup](/docs/engineer/commands/core/watzup) - Xem lại các thay đổi gần đây
-- [/git:cm](/docs/engineer/commands/git/commit) - Commit các cập nhật tài liệu
+- [/git cm](/docs/engineer/commands/git/commit) - Commit các cập nhật tài liệu
 
 ---
 

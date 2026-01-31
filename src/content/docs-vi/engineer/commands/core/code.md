@@ -1,6 +1,6 @@
 ---
 lang: vi
-title: /code
+title: /cook
 description: Thực thi kế hoạch triển khai với quy trình 6 bước kiểm soát chất lượng bao gồm kiểm thử tự động và đánh giá code
 section: engineer
 kit: engineer
@@ -9,14 +9,14 @@ order: 8
 published: true
 ---
 
-# /code
+# /cook
 
 Lệnh thực thi kế hoạch. Triển khai quy trình 6 bước có cấu trúc với các cổng kiểm soát chất lượng bắt buộc, kiểm thử tự động và đánh giá code.
 
 ## Cú pháp
 
 ```bash
-/code [plan]
+/cook [plan]
 ```
 
 ## Khi nào sử dụng
@@ -30,7 +30,7 @@ Lệnh thực thi kế hoạch. Triển khai quy trình 6 bước có cấu trú
 ## Ví dụ nhanh
 
 ```bash
-/code @plans/251128-auth-integration/plan.md
+/cook @plans/251128-auth-integration/plan.md
 ```
 
 **Kết quả**:
@@ -168,7 +168,7 @@ Nếu thiếu bất kỳ "✓ Step N:" nào, bước đó CHƯA HOÀN THÀNH.
 ### Kịch bản: Triển khai API Endpoint
 
 ```bash
-/code @plans/251128-user-api/phase-02-endpoints.md
+/cook @plans/251128-user-api/phase-02-endpoints.md
 ```
 
 **Thực thi từng bước**:
@@ -273,7 +273,7 @@ Files: 3 changed, 245 insertions
 **Giải pháp**: Tạo kế hoạch trước
 ```bash
 /plan [implement user authentication]
-/code
+/cook
 ```
 
 ### Test thất bại
@@ -322,10 +322,10 @@ Approved
 /plan [add payment processing]
 
 # 2. Thực thi kế hoạch
-/code
+/cook
 
 # 3. Tiếp tục với giai đoạn tiếp theo
-/code
+/cook
 ```
 
 ### Tiếp tục công việc chưa hoàn thành
@@ -335,14 +335,14 @@ Approved
 cat plans/current-plan/plan.md
 
 # Tiếp tục từ chỗ dừng
-/code @plans/current-plan/plan.md
+/cook @plans/current-plan/plan.md
 ```
 
 ### Chỉ định giai đoạn cụ thể
 
 ```bash
 # Thực thi giai đoạn cụ thể
-/code @plans/251128-api/phase-03-testing.md
+/cook @plans/251128-api/phase-03-testing.md
 ```
 
 ## Các lệnh liên quan

@@ -21,7 +21,7 @@ Learn how to systematically investigate, fix, and verify bug fixes using ClaudeK
 **Goal**: Debug and fix issues systematically with root cause analysis
 **Time**: 5-20 minutes (vs 1-4 hours manually)
 **Agents Used**: debugger, tester, code-reviewer
-**Commands**: /fix:fast, /fix:hard, /fix:logs, /fix:ui, /fix:ci, /test
+**Commands**: /fix --quick, /fix, /test
 
 ## Prerequisites
 
@@ -36,12 +36,12 @@ ClaudeKit provides different debugging commands for different scenarios:
 
 | Command | Use Case | Complexity | Time |
 |---------|----------|------------|------|
-| `/fix:fast` | Simple bugs, quick fixes | Low | 2-5 min |
-| `/fix:hard` | Complex bugs, multi-file changes | High | 10-20 min |
-| `/fix:logs` | Production issues from logs | Medium | 5-15 min |
-| `/fix:ui` | Visual/layout bugs | Low-Medium | 3-10 min |
-| `/fix:ci` | CI/CD pipeline failures | Medium | 5-15 min |
-| `/fix:types` | TypeScript type errors | Low | 2-5 min |
+| `/fix --quick` | Simple bugs, quick fixes | Low | 2-5 min |
+| `/fix` | Complex bugs, multi-file changes (auto-detects) | High | 10-20 min |
+| `/fix` | Production issues from logs (auto-detects) | Medium | 5-15 min |
+| `/fix` | Visual/layout bugs (auto-detects UI) | Low-Medium | 3-10 min |
+| `/fix` | CI/CD pipeline failures (auto-detects) | Medium | 5-15 min |
+| `/fix` | TypeScript type errors (auto-detects) | Low | 2-5 min |
 
 ## Step-by-Step Workflow
 
@@ -70,12 +70,12 @@ Document the issue:
 
 ### Step 2: Choose Debugging Approach
 
-#### Option A: Quick Fix (/fix:fast)
+#### Option A: Quick Fix (/fix --quick)
 
 For simple, isolated bugs:
 
 ```bash
-/fix:fast [users getting 401 error on login with valid credentials]
+/fix --quick [users getting 401 error on login with valid credentials]
 ```
 
 **What happens**:
@@ -108,12 +108,12 @@ Change summary:
 - Added async/await for password validation
 ```
 
-#### Option B: Complex Fix (/fix:hard)
+#### Option B: Complex Fix (/fix)
 
 For bugs requiring investigation and multiple changes:
 
 ```bash
-/fix:hard [memory leak in WebSocket connections causing server crashes]
+/fix [memory leak in WebSocket connections causing server crashes]
 ```
 
 **What happens**:
@@ -163,7 +163,7 @@ Tests added:
 - tests/websocket/memory.test.js
 ```
 
-#### Option C: Production Log Analysis (/fix:logs)
+#### Option C: Production Log Analysis (/fix)
 
 For bugs discovered in production:
 
@@ -171,7 +171,7 @@ For bugs discovered in production:
 # Copy production logs
 # logs/production.log
 
-/fix:logs [analyze production error logs and fix the issue]
+/fix [analyze production error logs and fix the issue]
 ```
 
 **What happens**:
@@ -214,13 +214,13 @@ Next steps:
 3. Deploy to production
 ```
 
-#### Option D: UI Bug Fix (/fix:ui)
+#### Option D: UI Bug Fix (/fix)
 
 For visual or layout issues:
 
 ```bash
 # Provide screenshot or description
-/fix:ui [button misaligned on mobile devices]
+/fix [button misaligned on mobile devices]
 ```
 
 **What happens**:
@@ -250,13 +250,13 @@ Files modified:
 - src/components/Button.css
 ```
 
-#### Option E: CI/CD Fix (/fix:ci)
+#### Option E: CI/CD Fix (/fix)
 
 For build or deployment failures:
 
 ```bash
 # Provide GitHub Actions URL
-/fix:ci [https://github.com/user/repo/actions/runs/12345]
+/fix [https://github.com/user/repo/actions/runs/12345]
 ```
 
 **What happens**:
@@ -339,7 +339,7 @@ Updated authentication logic to use proper async bcrypt comparison.
 ### Step 5: Commit the Fix
 
 ```bash
-/git:cm
+/git cm
 ```
 
 **Generated commit**:
@@ -376,7 +376,7 @@ Browser: All browsers
 ### Investigation
 
 ```bash
-/fix:hard [shopping cart duplicating items on page refresh]
+/fix [shopping cart duplicating items on page refresh]
 ```
 
 ### Analysis Results
@@ -451,7 +451,7 @@ Fixes applied:
 
 **With ClaudeKit**: 18 minutes
 - Reproduce: 5 minutes
-- /fix:hard: 12 minutes
+- /fix (auto-detect): 12 minutes
 - Verification: 1 minute
 
 **Time saved**: 3+ hours (90% faster)
@@ -461,7 +461,7 @@ Fixes applied:
 ### Variation 1: Type Error Fix
 
 ```bash
-/fix:types
+/fix
 
 # Automatically fixes TypeScript errors
 # Updates type definitions
@@ -471,7 +471,7 @@ Fixes applied:
 ### Variation 2: Performance Bug
 
 ```bash
-/fix:hard [API endpoint taking 8+ seconds to respond]
+/fix [API endpoint taking 8+ seconds to respond]
 
 # Analyzes performance
 # Identifies bottlenecks
@@ -482,7 +482,7 @@ Fixes applied:
 ### Variation 3: Security Bug
 
 ```bash
-/fix:fast [SQL injection vulnerability in search endpoint]
+/fix --quick [SQL injection vulnerability in search endpoint]
 
 # Identifies vulnerability
 # Implements parameterized queries
@@ -493,7 +493,7 @@ Fixes applied:
 ### Variation 4: Integration Bug
 
 ```bash
-/fix:logs [Stripe webhook failing with 400 errors]
+/fix [Stripe webhook failing with 400 errors]
 
 # Analyzes webhook logs
 # Identifies signature mismatch
@@ -510,7 +510,7 @@ Fixes applied:
 **Solution**:
 ```bash
 # Use production logs
-/fix:logs [analyze production logs to identify the issue]
+/fix [analyze production logs to identify the issue]
 
 # Or try production-like environment
 docker-compose -f docker-compose.prod.yml up
@@ -526,13 +526,13 @@ docker-compose -f docker-compose.prod.yml up
 /test
 
 # If tests fail
-/fix:test
+/fix
 
 # Review all changes
 git diff
 
 # Consider alternative approach
-/fix:hard [fix the login bug without changing the middleware]
+/fix [fix the login bug without changing the middleware]
 ```
 
 ### Issue: Root Cause Unclear
@@ -542,7 +542,7 @@ git diff
 **Solution**:
 ```bash
 # Use hard fix for investigation
-/fix:hard [detailed description of symptoms]
+/fix [detailed description of symptoms]
 
 # Provides thorough analysis
 # Creates investigation plan
@@ -560,7 +560,7 @@ git diff
 
 # Reproduce multiple times
 # Collect logs
-/fix:logs [analyze collected logs]
+/fix [analyze collected logs]
 ```
 
 ## Best Practices
@@ -596,7 +596,7 @@ Fix similar bugs:
 /scout "similar pattern to the bug" 3
 
 # Fix all instances
-/fix:fast [fix all instances of the password comparison bug]
+/fix --quick [fix all instances of the password comparison bug]
 ```
 
 ### 4. Document in Changelog
@@ -604,7 +604,7 @@ Fix similar bugs:
 Track bug fixes:
 ```bash
 # Commit with fix: prefix
-/git:cm
+/git cm
 
 # Automatically added to CHANGELOG.md
 # Links to issue number
@@ -624,7 +624,7 @@ Verify fix in production:
 
 Understand why bug occurred:
 ```bash
-# Use /fix:hard for analysis
+# Use /fix for analysis
 # Documents root cause
 # Suggests prevention measures
 # Updates development guidelines
@@ -666,11 +666,11 @@ After fixing bugs, improve processes:
 - [Refactoring Code](/docs/workflows/refactoring-code) - Code quality
 
 ### Related Commands
-- [/fix:fast](/docs/engineer/commands/fix/fast) - Quick bug fixes
-- [/fix:hard](/docs/engineer/commands/fix/hard) - Complex debugging
-- [/fix:logs](/docs/engineer/commands/fix/logs) - Log analysis
-- [/fix:ui](/docs/engineer/commands/fix/ui) - UI bug fixes
-- [/fix:ci](/docs/engineer/commands/fix/ci) - CI/CD fixes
+- [/fix --quick](/docs/engineer/commands/fix/fast) - Quick bug fixes
+- [/fix](/docs/engineer/commands/fix/hard) - Complex debugging
+- [/fix](/docs/engineer/commands/fix/logs) - Log analysis
+- [/fix](/docs/engineer/commands/fix/ui) - UI bug fixes
+- [/fix](/docs/engineer/commands/fix/ci) - CI/CD fixes
 - [/test](/docs/engineer/commands/core/test) - Test suite
 
 ### Further Reading

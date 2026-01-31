@@ -172,7 +172,7 @@ Các vấn đề nghiêm trọng tìm thấy:
 ⚠ Lỗi race condition khi cập nhật đơn hàng
 ⚠ Lỗi gửi email làm chặn quá trình hoàn tất đơn hàng
 
-Khuyến nghị: Sử dụng /fix:hard để giải quyết các vấn đề này
+Khuyến nghị: Sử dụng /fix để giải quyết các vấn đề này
 ```
 
 Thêm các câu hỏi khác:
@@ -313,7 +313,7 @@ Tests đã được tạo trong thư mục tests/
 ### Lỗ Hổng Bảo Mật
 
 ```bash
-/fix:hard [Stripe webhook chưa được xác thực - rủi ro bảo mật]
+/fix [Stripe webhook chưa được xác thực - rủi ro bảo mật]
 ```
 
 **Bản sửa lỗi đã áp dụng:**
@@ -339,7 +339,7 @@ Vấn đề bảo mật đã được giải quyết!
 ### Vấn Đề Hiệu Suất
 
 ```bash
-/fix:hard [Lỗi N+1 query trong danh sách sản phẩm làm chậm phản hồi]
+/fix [Lỗi N+1 query trong danh sách sản phẩm làm chậm phản hồi]
 ```
 
 **Bản sửa lỗi đã áp dụng:**
@@ -372,7 +372,7 @@ Vấn đề bảo mật đã được giải quyết!
 ### Xử Lý Lỗi
 
 ```bash
-/fix:hard [luồng thanh toán thiếu xử lý lỗi, đơn hàng bị kẹt]
+/fix [luồng thanh toán thiếu xử lý lỗi, đơn hàng bị kẹt]
 ```
 
 **Bản sửa lỗi đã áp dụng:**
@@ -497,7 +497,7 @@ Khuyến nghị: Sửa các vấn đề này trước khi triển khai
 ### Sửa Các Lỗi Triển Khai
 
 ```bash
-/fix:hard [sửa các vấn đề triển khai production]
+/fix [sửa các vấn đề triển khai production]
 ```
 
 **Các bản sửa lỗi đã áp dụng:**
@@ -546,7 +546,7 @@ curl https://staging.example.com/health
 git push production main
 
 # Giám sát
-/fix:logs  # Theo dõi production logs
+/fix  # Theo dõi production logs
 ```
 
 ## Bước 8: Thiết Lập Bảo Trì
@@ -658,7 +658,7 @@ cat docs/technical-debt.md
 /docs:update
 
 # 5. Commit
-/git:cm
+/git cm
 
 # 6. Deploy
 git push
@@ -677,9 +677,9 @@ git push
 ### "Có quá nhiều vấn đề cần sửa"
 
 Ưu tiên theo thứ tự:
-1. Các vấn đề bảo mật (/fix:hard)
-2. Các lỗi chặn triển khai production (/fix:hard)
-3. Các vấn đề hiệu suất (/fix:hard)
+1. Các vấn đề bảo mật (/fix)
+2. Các lỗi chặn triển khai production (/fix)
+3. Các vấn đề hiệu suất (/fix)
 4. Độ bao phủ tests (/cook [add tests])
 5. Chất lượng code (/cook [refactor])
 6. Tài liệu (/docs:update)

@@ -215,10 +215,10 @@ Provides completion report:
 
 ### ❌ Don't use /cook for:
 
-- **Bug Fixes**: Use `/fix:fast` or `/fix:hard` instead
-- **Type Errors**: Use `/fix:types` instead
-- **UI Issues**: Use `/fix:ui` instead
-- **CI Failures**: Use `/fix:ci` instead
+- **Bug Fixes**: Use `/fix --quick` or `/fix` instead
+- **Type Errors**: Use `/fix` instead
+- **UI Issues**: Use `/fix` instead
+- **CI Failures**: Use `/fix` instead
 - **Just Planning**: Use `/plan` instead
 
 ## With Existing Plan
@@ -296,7 +296,7 @@ npm test
 cat docs/api/rate-limiting.md
 
 # 5. Only then commit
-/git:cm
+/git cm
 ```
 
 ### Iterate on Feedback
@@ -483,19 +483,19 @@ git diff
 /test
 
 # 4. Fix any issues
-/fix:test  # if tests fail
+/fix  # if tests fail
 
 # 5. Update docs if needed
 /docs:update
 
 # 6. Commit
-/git:cm
+/git cm
 
 # 7. Push
 git push
 
 # 8. Create PR
-/git:pr
+/git pr
 ```
 
 ## Troubleshooting
@@ -515,7 +515,7 @@ git push
 
 **Solution:**
 ```bash
-/fix:test
+/fix
 # Debugger agent analyzes and fixes
 ```
 
@@ -541,8 +541,8 @@ git push
 ## Next Steps
 
 - [/test](/docs/engineer/commands/core/test) - Run test suite
-- [/fix:test](/docs/engineer/commands/fix/test) - Fix test failures
-- [/git:cm](/docs/engineer/commands/git/commit) - Commit changes
+- [/fix](/docs/engineer/commands/fix/test) - Fix test failures
+- [/git cm](/docs/engineer/commands/git/commit) - Commit changes
 - [/docs:update](/docs/engineer/commands/docs/update) - Update documentation
 
 ---

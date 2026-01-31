@@ -371,7 +371,7 @@ The command uses the **docs-manager agent** with these capabilities:
 ❌ **Too frequent:**
 ```bash
 # After every tiny change
-/fix:fast [typo]
+/fix --quick [typo]
 /docs:summarize  # Wasteful
 ```
 
@@ -434,7 +434,7 @@ cat docs/codebase-summary.md
 /docs:update
 
 # 3. Commit documentation
-/git:cm
+/git cm
 
 # 4. Share with receiving team
 ```
@@ -449,7 +449,7 @@ cat docs/codebase-summary.md
 git diff docs/codebase-summary.md
 
 # Commit if significant changes
-/git:cm
+/git cm
 ```
 
 ## Troubleshooting
@@ -588,7 +588,7 @@ After using `/docs:summarize`:
 - [/docs:update](/docs/engineer/commands/docs/update) - Update all documentation
 - [/docs:init](/docs/engineer/commands/docs/init) - Initialize full documentation
 - [/watzup](/docs/engineer/commands/core/watzup) - Review recent changes
-- [/git:cm](/docs/engineer/commands/git/commit) - Commit documentation
+- [/git cm](/docs/engineer/commands/git/commit) - Commit documentation
 
 ---
 

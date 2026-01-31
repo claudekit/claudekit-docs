@@ -624,8 +624,8 @@ cat plans/fix-ci-*.md
 /clear
 Mô tả task → skill cook tự động triển khai từ ngữ cảnh plan
 
-# Lựa chọn 3: Sử dụng /fix:ci để tự động triển khai
-/fix:ci https://github.com/user/repo/actions/runs/12345
+# Lựa chọn 3: Sử dụng /fix để tự động triển khai
+/fix https://github.com/user/repo/actions/runs/12345
 ```
 
 ## Cấu trúc kế hoạch
@@ -830,15 +830,15 @@ cat plans/fix-ci-12345.md
 /clear
 Triển khai sửa lỗi CI → skill cook tự động triển khai
 
-# Lựa chọn C: Sử dụng /fix:ci (tự động triển khai)
-/fix:ci https://github.com/user/repo/actions/runs/12345
+# Lựa chọn C: Sử dụng /fix (tự động triển khai)
+/fix https://github.com/user/repo/actions/runs/12345
 
 # 4. Kiểm tra cục bộ trước
 npm test
 npm run build
 
 # 5. Commit và push
-/git:cm
+/git cm
 
 # 6. Xác minh CI vượt qua
 # Kiểm tra GitHub Actions
@@ -846,7 +846,7 @@ npm run build
 
 ## Các lệnh liên quan
 
-- [/fix:ci](/vi/docs/engineer/commands/fix/ci) - Tự động triển khai sửa lỗi CI
+- [/fix](/vi/docs/engineer/commands/fix/ci) - Tự động triển khai sửa lỗi CI
 - [/code](/vi/docs/engineer/commands/core/code) - Triển khai kế hoạch hiện có
 - [/debug](/vi/docs/engineer/commands/core/debug) - Debug các vấn đề phức tạp
 

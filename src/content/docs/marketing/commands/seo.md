@@ -208,7 +208,7 @@ After implementing all fixes:
 
 Next Steps:
 /seo schema pricing  # Generate Product schema
-/fix:fast Add H1 and meta description to pricing page
+/fix --quick Add H1 and meta description to pricing page
 /content pricing-comparison  # Create comparison content
 ```
 

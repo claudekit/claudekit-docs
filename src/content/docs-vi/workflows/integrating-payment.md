@@ -660,28 +660,28 @@ const processWebhook = async (event) => {
 stripe listen --forward-to localhost:3000/api/webhooks/stripe
 
 # Hoặc sửa với ClaudeKit
-/fix:fast [Stripe webhooks không nhận được sự kiện]
+/fix --quick [Stripe webhooks không nhận được sự kiện]
 ```
 
 ### Vấn Đề: Thanh Toán Thất Bại
 
 **Giải pháp**:
 ```bash
-/fix:logs [phân tích log thanh toán thất bại và sửa lỗi]
+/fix [phân tích log thanh toán thất bại và sửa lỗi]
 ```
 
 ### Vấn Đề: Bị Tính Phí Hai Lần
 
 **Giải pháp**:
 ```bash
-/fix:fast [ngăn chặn việc tính phí hai lần bằng idempotency keys]
+/fix --quick [ngăn chặn việc tính phí hai lần bằng idempotency keys]
 ```
 
 ### Vấn Đề: Tính Thuế Sai
 
 **Giải pháp**:
 ```bash
-/fix:fast [tính thuế không chính xác cho khách hàng tại Canada]
+/fix --quick [tính thuế không chính xác cho khách hàng tại Canada]
 ```
 
 ## Danh Mục Kiểm Tra Bảo Mật

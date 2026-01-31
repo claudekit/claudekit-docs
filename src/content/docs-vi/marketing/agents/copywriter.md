@@ -430,7 +430,7 @@ Tính Nhất Quán Thông Điệp:
 
 4. Bạn review và chọn chính + biến thể test
 
-5. Sử dụng với /design:good để tạo landing page đầy đủ
+5. Sử dụng với skill ai-artist (creative mode) để tạo landing page đầy đủ
 ```
 
 ### Quy Trình 2: Tối Ưu Chiến Dịch Email
@@ -494,8 +494,7 @@ Copy nhồi SEO giết chuyển đổi. Viết cho người đọc trước.
 
 ## Lệnh Liên Quan
 
-- `/content:good` - Tạo nội dung marketing chất lượng cao
-- `/content:fast` - Copy nhanh cho mạng xã hội, email
+- Sử dụng `copywriting` skill - Tạo nội dung marketing với các công thức chuyển đổi
 - `/brainstorm` - Khám phá góc độ thông điệp và hook
 - `/email create` - Xây dựng chuỗi email với copy
 - `/social create` - Viết bài đăng mạng xã hội

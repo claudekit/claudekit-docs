@@ -1,5 +1,5 @@
 ---
-title: /cook:auto
+title: /cook --auto
 description: Automatic feature implementation - plan, code, and optional commit
 section: engineer
 kit: engineer
@@ -8,33 +8,33 @@ order: 26
 published: true
 ---
 
-# /cook:auto
+# /cook --auto
 
 Implement a feature automatically with planning, coding, and optional commit.
 
 ## Syntax
 
 ```bash
-/cook:auto [tasks]
+/cook --auto [tasks]
 ```
 
 ## Workflow
 
 1. **Plan**: `/plan <detailed-instruction>` creates implementation plan
-2. **Code**: `/code <plan>` implements the plan
-3. **Commit**: Asks user if they want to commit, triggers `/git:cm`
+2. **Code**: `cook` skill implements the plan via natural language
+3. **Commit**: Asks user if they want to commit, triggers `/git cm`
 
 ## Example
 
 ```bash
-/cook:auto [add user authentication with JWT]
+/cook --auto [add user authentication with JWT]
 
 # Workflow:
 # 1. Creates plan at plans/YYYYMMDD-HHmm-auth/
 # 2. Implements authentication
 # 3. Runs tests
 # 4. Code review
-# 5. Asks: "Want to commit?" → /git:cm
+# 5. Asks: "Want to commit?" → /git cm
 ```
 
 ## Comparison
@@ -42,8 +42,8 @@ Implement a feature automatically with planning, coding, and optional commit.
 | Command | Planning | Testing | Commit |
 |---------|----------|---------|--------|
 | `/cook` | Internal | Yes | No |
-| `/cook:auto` | `/plan` | Yes | Ask user |
-| `/cook:auto:fast` | `/plan:fast` | Yes | No |
+| `/cook --auto` | `/plan` | Yes | Ask user |
+| `/cook --auto --fast` | `/plan:fast` | Yes | No |
 
 ## When to Use
 
@@ -59,4 +59,4 @@ Implement a feature automatically with planning, coding, and optional commit.
 
 ---
 
-**Key Takeaway**: Use `/cook:auto` when you want explicit planning with saved plan files before implementation.
+**Key Takeaway**: Use `/cook --auto` when you want explicit planning with saved plan files before implementation.

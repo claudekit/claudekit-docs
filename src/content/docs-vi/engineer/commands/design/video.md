@@ -917,7 +917,7 @@ width: '200px'
 - [/design:screenshot](/docs/engineer/commands/design/screenshot) - For static views
 - [/design:3d](/docs/engineer/commands/design/3d) - For 3D animations
 - [/design:describe](/docs/engineer/commands/design/describe) - Analyze video first
-- [/fix:ui](/docs/engineer/commands/fix/ui) - Adjust animation feel
+- [/fix](/docs/engineer/commands/fix/ui) - Adjust animation feel
 
 ---
 

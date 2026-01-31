@@ -74,52 +74,52 @@ Lệnh này sẽ:
 5. Báo cáo tóm tắt khi hoàn thành
 
 **Chế độ tự động** (dùng cẩn thận):
-- `/cook:auto` - Chế độ tự động hoàn toàn
-- `/cook:auto:fast` - Nhanh hơn, ít token hơn
+- `/cook --auto` - Chế độ tự động hoàn toàn
+- `/cook --auto --fast` - Nhanh hơn, ít token hơn
 
 ### Sửa Lỗi
 
 #### Sửa Lỗi Nhanh
 ```bash
-/fix:fast <mô-tả-lỗi>
+/fix --quick <mô-tả-lỗi>
 ```
 
 Dành cho lỗi đơn giản, dễ sửa.
 
 #### Sửa Lỗi Phức Tạp
 ```bash
-/fix:hard <mô-tả-lỗi>
+/fix <mô-tả-lỗi>
 ```
 
 Dành cho lỗi khó, cần phân tích sâu và suy nghĩ lâu hơn.
 
 **Ví dụ:**
 ```bash
-/fix:hard Xác thực người dùng bị lỗi sau khi đăng nhập OAuth khi email chưa verify
+/fix Xác thực người dùng bị lỗi sau khi đăng nhập OAuth khi email chưa verify
 ```
 
 #### Tự Động Sửa Từ Logs
 ```bash
-/fix:logs
+/fix
 ```
 
 Tự động lấy logs và sửa lỗi.
 
 #### Sửa Test Suite
 ```bash
-/fix:test
+/fix
 ```
 
 Chạy test suite và tiếp tục sửa cho đến khi tất cả tests pass.
 
 #### Sửa Lỗi CI/CD
 ```bash
-/fix:ci <github-action-url>
+/fix <github-action-url>
 ```
 
 **Ví dụ:**
 ```bash
-/fix:ci https://github.com/username/repo/actions/runs/12345
+/fix https://github.com/username/repo/actions/runs/12345
 ```
 
 Lấy logs GitHub Actions và sửa lỗi build/deployment.
@@ -152,7 +152,7 @@ Nghiên cứu và tạo kế hoạch triển khai chi tiết mà không code.
 
 #### Thực Thi Kế Hoạch Có Sẵn
 ```bash
-/code <kế-hoạch.md>
+/cook <kế-hoạch.md>
 ```
 
 Bắt đầu code từ file markdown kế hoạch.
@@ -178,9 +178,9 @@ Chạy test suite và tạo báo cáo. Không tự động sửa.
 ### Git Operations
 
 ```bash
-/git:cm         # Tạo commit message có ý nghĩa
-/git:cp    # Commit và push changes
-/git:pr   # Tạo pull request
+/git cm         # Tạo commit message có ý nghĩa
+/git cp    # Commit và push changes
+/git pr   # Tạo pull request
 ```
 
 ### Tích Hợp
@@ -193,8 +193,8 @@ Chạy test suite và tạo báo cáo. Không tự động sửa.
 ### Quản Lý Skills
 
 ```bash
-/skill:create    # Tạo skill mới
-/skill:fix-logs  # Sửa lỗi skill
+skill-creator skill # Tạo skill mới
+skill-creator skill # Sửa lỗi skill
 ```
 
 ## Best Practices
@@ -212,8 +212,8 @@ Luôn chạy `/docs:init` trước để CC hiểu codebase của bạn.
 - Xây dựng niềm tin cho team
 
 ### 4. Dùng Đúng Lệnh
-- Lỗi đơn giản → `/fix:fast`
-- Lỗi phức tạp → `/fix:hard`
+- Lỗi đơn giản → `/fix --quick`
+- Lỗi phức tạp → `/fix`
 - Tính năng nhỏ → `/cook`
 - Tính năng lớn → `/plan` rồi `/code`
 
@@ -234,7 +234,7 @@ Chạy `/test` thường xuyên để phát hiện lỗi sớm.
 # 3. Xem và đồng ý kế hoạch
 
 # 4. Triển khai
-/code plan.md
+/cook plan.md
 
 # 5. Test
 /test
@@ -244,13 +244,13 @@ Chạy `/test` thường xuyên để phát hiện lỗi sớm.
 
 ```bash
 # 1. Sửa nhanh cho vấn đề khẩn cấp
-/fix:fast Thanh toán bị lỗi trên trình duyệt Safari
+/fix --quick Thanh toán bị lỗi trên trình duyệt Safari
 
 # 2. Test bản sửa
 /test
 
 # 3. Commit và deploy
-/git:cp
+/git cp
 ```
 
 ### Refactor Legacy Module
@@ -265,10 +265,10 @@ Chạy `/test` thường xuyên để phát hiện lỗi sớm.
 # 3. Xem kỹ kế hoạch
 
 # 4. Triển khai từng bước
-/code auth-refactor-plan.md
+/cook auth-refactor-plan.md
 
 # 5. Chạy full test suite
-/fix:test
+/fix
 ```
 
 ## Cộng Tác Nhóm

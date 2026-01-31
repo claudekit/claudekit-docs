@@ -150,7 +150,7 @@ Phase details:
 - plans/250129-email-drip-campaign/phase-03-automation-engine.md
 - plans/250129-email-drip-campaign/phase-04-analytics-dashboard.md
 
-Next: /code plans/250129-email-drip-campaign
+Next: "Implement email drip campaign"
 ```
 
 ## Workflow Integration

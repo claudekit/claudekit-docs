@@ -1,6 +1,6 @@
 ---
 lang: vi
-title: /cook:auto:parallel
+title: /cook --auto --parallel
 description: Triển khai tính năng với thực thi song song sử dụng plan:parallel và các agent fullstack-developer
 section: engineer
 kit: engineer
@@ -9,14 +9,14 @@ order: 51
 published: true
 ---
 
-# /cook:auto:parallel
+# /cook --auto --parallel
 
 Triển khai tính năng với thực thi song song. Tạo kế hoạch song song và khởi chạy nhiều agent fullstack-developer để triển khai các phase độc lập đồng thời.
 
 ## Cú pháp
 
 ```bash
-/cook:auto:parallel [tasks]
+/cook --auto --parallel [tasks]
 ```
 
 ## Khi nào sử dụng
@@ -29,7 +29,7 @@ Triển khai tính năng với thực thi song song. Tạo kế hoạch song son
 ## Ví dụ nhanh
 
 ```bash
-/cook:auto:parallel [implement user authentication and payment processing]
+/cook --auto --parallel [implement user authentication and payment processing]
 ```
 
 **Kết quả**:
@@ -234,7 +234,7 @@ If Agent 2 fails:
 ### Kịch bản: Tính năng đa module
 
 ```bash
-/cook:auto:parallel [implement user dashboard with profile, settings, notifications, and activity feed]
+/cook --auto --parallel [implement user dashboard with profile, settings, notifications, and activity feed]
 ```
 
 **Thực thi**:
@@ -311,7 +311,7 @@ Todo List:
 
 ```bash
 # Tốt: Ranh giới module rõ ràng
-/cook:auto:parallel [
+/cook --auto --parallel [
   implement:
   1. User authentication (email, OAuth)
   2. Payment processing (Stripe)
@@ -319,7 +319,7 @@ Todo List:
 ]
 
 # Khó khăn: Concern chồng chéo
-/cook:auto:parallel [fix auth bugs and update payment UI]
+/cook --auto --parallel [fix auth bugs and update payment UI]
 ```
 
 ### Kiểm tra kế hoạch trước
@@ -334,16 +334,16 @@ Nếu không chắc về song song hóa:
 cat plans/*/plan.md
 
 # Sau đó thực thi
-/code:parallel
+/cook --parallel
 ```
 
 ## Các lệnh liên quan
 
 - [/cook](/vi/docs/engineer/commands/core/cook) - Triển khai từng bước
-- [/cook:auto](/vi/docs/engineer/commands/core/cook-auto) - Auto cook (tuần tự)
+- [/cook --auto](/vi/docs/engineer/commands/core/cook-auto) - Auto cook (tuần tự)
 - [/plan:parallel](/vi/docs/engineer/commands/plan/parallel) - Tạo kế hoạch song song
-- [/code:parallel](/vi/docs/engineer/commands/core/code-parallel) - Thực thi kế hoạch song song hiện có
+- [/cook --parallel](/vi/docs/engineer/commands/core/code-parallel) - Thực thi kế hoạch song song hiện có
 
 ---
 
-**Điểm chính**: `/cook:auto:parallel` tăng tốc triển khai tính năng bằng cách chạy các phase độc lập song song, sử dụng quyền sở hữu file để ngăn xung đột giữa các agent đồng thời.
+**Điểm chính**: `/cook --auto --parallel` tăng tốc triển khai tính năng bằng cách chạy các phase độc lập song song, sử dụng quyền sở hữu file để ngăn xung đột giữa các agent đồng thời.

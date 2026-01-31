@@ -257,7 +257,7 @@ git diff
 ### Bước 7: Commit Việc Tái Cấu Trúc
 
 ```bash
-/git:cm
+/git cm
 ```
 
 **Commit được tạo**:
@@ -502,11 +502,11 @@ async function fetchUserData(userId) {
 ✅ Cách tiếp cận tốt:
 /cook [extract validation to separate function]
 /test
-/git:cm
+/git cm
 
 /cook [add error handling to validation]
 /test
-/git:cm
+/git cm
 
 ❌ Cách tiếp cận tồi:
 /cook [refactor entire authentication system]

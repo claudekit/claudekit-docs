@@ -261,7 +261,7 @@ git diff
 ### Step 7: Commit Refactoring
 
 ```bash
-/git:cm
+/git cm
 ```
 
 **Generated commit**:
@@ -506,11 +506,11 @@ async function fetchUserData(userId) {
 ✅ Good approach:
 /cook [extract validation to separate function]
 /test
-/git:cm
+/git cm
 
 /cook [add error handling to validation]
 /test
-/git:cm
+/git cm
 
 ❌ Bad approach:
 /cook [refactor entire authentication system]

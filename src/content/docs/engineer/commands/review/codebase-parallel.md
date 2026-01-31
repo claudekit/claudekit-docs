@@ -68,7 +68,7 @@ Collects verification reports:
 ### 5. Auto-Fix Pipeline
 
 If unhandled/partial cases found:
-- Prompts: "Fix with /fix:parallel?"
+- Prompts: "Fix with /fix --parallel?"
 - If approved → Triggers parallel fix execution
 
 ## Example
@@ -92,7 +92,7 @@ If unhandled/partial cases found:
 
 # 4. Reports: 8 handled, 3 unhandled, 1 partial
 
-# 5. User approves → /fix:parallel executes
+# 5. User approves → /fix --parallel executes
 
 # 6. Commits changes
 ```
@@ -108,4 +108,4 @@ If unhandled/partial cases found:
 ## Related Commands
 
 - [/review:codebase](/docs/engineer/commands/review/codebase) - Standard codebase review
-- [/fix:parallel](/docs/engineer/commands/fix/parallel) - Parallel issue fixing
+- [/fix --parallel](/docs/engineer/commands/fix/parallel) - Parallel issue fixing

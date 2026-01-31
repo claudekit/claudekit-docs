@@ -597,21 +597,21 @@ Auth endpoints rate limits:
 
 **Solution**:
 ```bash
-/fix:fast [OAuth callback returning 400 error]
+/fix --quick [OAuth callback returning 400 error]
 ```
 
 ### Issue: Password Reset Not Working
 
 **Solution**:
 ```bash
-/fix:fast [password reset emails not being sent]
+/fix --quick [password reset emails not being sent]
 ```
 
 ### Issue: 2FA QR Code Not Displaying
 
 **Solution**:
 ```bash
-/fix:ui [2FA QR code not rendering in mobile view]
+/fix [2FA QR code not rendering in mobile view]
 ```
 
 ## Security Checklist
@@ -651,7 +651,7 @@ Before production deployment:
 ### Related Commands
 - [/cook](/docs/engineer/commands/core/cook) - Implement features
 - [/test](/docs/engineer/commands/core/test) - Test suite
-- [/fix:fast](/docs/engineer/commands/fix/fast) - Quick fixes
+- [/fix --quick](/docs/engineer/commands/fix/fast) - Quick fixes
 
 ### Integration Guides
 - [/integrate:polar](/docs/engineer/commands/integrate/polar) - Polar payments

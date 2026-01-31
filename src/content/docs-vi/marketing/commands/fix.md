@@ -18,7 +18,7 @@ published: true
 
 **Điều gì sẽ xảy ra**:
 1. Phân tích loại vấn đề (type errors detected)
-2. Định tuyến tới `/fix:types`
+2. Định tuyến tới `/fix`
 3. Agent chuyên dụng sửa vấn đề
 4. Xác minh với type checker
 
@@ -34,14 +34,14 @@ Lệnh `/fix` định tuyến thông minh tới các biến thể chuyên dụng
 
 | Loại Vấn Đề | Từ Khóa | Định Tuyến Tới | Agent |
 |------------|----------|-----------|-------|
-| Type Errors | type, typescript, tsc | `/fix:types` | type-fixer |
-| UI/UX | ui, ux, design, layout, style | `/fix:ui` | ui-ux-designer |
-| CI/CD | github actions, pipeline, workflow | `/fix:ci` | devops-specialist |
-| Tests | test, spec, jest, vitest | `/fix:test` | tester |
-| Logs | logs, error logs, stack trace | `/fix:logs` | debugger |
-| Multiple | 2+ unrelated issues | `/fix:parallel` | multiple agents |
-| Complex | architecture, refactor, system-wide | `/fix:hard` | architect |
-| Simple | single file, small bug | `/fix:fast` | generalist |
+| Type Errors | type, typescript, tsc | `/fix` | type-fixer |
+| UI/UX | ui, ux, design, layout, style | `/fix` | ui-ux-designer |
+| CI/CD | github actions, pipeline, workflow | `/fix` | devops-specialist |
+| Tests | test, spec, jest, vitest | `/fix` | tester |
+| Logs | logs, error logs, stack trace | `/fix` | debugger |
+| Multiple | 2+ unrelated issues | `/fix --parallel` | multiple agents |
+| Complex | architecture, refactor, system-wide | `/fix` | architect |
+| Simple | single file, small bug | `/fix --quick` | generalist |
 
 ## Ví Dụ
 
@@ -52,7 +52,7 @@ Lệnh `/fix` định tuyến thông minh tới các biến thể chuyên dụng
 /fix TypeScript compilation errors
 ```
 
-**Định Tuyến Tới**: `/fix:types`
+**Định Tuyến Tới**: `/fix`
 
 **Kết Quả**:
 ```markdown
@@ -76,7 +76,7 @@ Total time: 47 seconds
 /fix Button not responsive on mobile devices
 ```
 
-**Định Tuyến Tới**: `/fix:ui`
+**Định Tuyến Tới**: `/fix`
 
 **Kết Quả**:
 ```markdown
@@ -100,7 +100,7 @@ Files modified: components/Button.tsx
 /fix GitHub Actions deployment pipeline failing
 ```
 
-**Định Tuyến Tới**: `/fix:ci`
+**Định Tuyến Tới**: `/fix`
 
 **Kết Quả**:
 ```markdown
@@ -124,7 +124,7 @@ Re-run pipeline: Build now passes ✓
 /fix Type errors in auth module + UI bugs in dashboard + test failures
 ```
 
-**Định Tuyến Tới**: `/fix:parallel`
+**Định Tuyến Tới**: `/fix --parallel`
 
 **Kết Quả**:
 ```markdown
@@ -144,59 +144,59 @@ Time saved: 67%
 
 ## Biến Thể
 
-### /fix:fast
+### /fix --quick
 Quick fixes for simple issues:
 ```bash
-/fix:fast Missing semicolon in utils.ts
+/fix --quick Missing semicolon in utils.ts
 ```
 
-### /fix:hard
+### /fix (complex)
 Deep architectural fixes:
 ```bash
-/fix:hard Refactor campaign architecture for scalability
+/fix Refactor campaign architecture for scalability
 ```
 
-### /fix:parallel
+### /fix --parallel
 Multiple unrelated issues:
 ```bash
-/fix:parallel Fix types + UI bugs + test failures
+/fix --parallel Fix types + UI bugs + test failures
 ```
 
-### /fix:types
+### /fix (auto-detects types)
 TypeScript type errors only:
 ```bash
-/fix:types
+/fix TypeScript compilation errors
 ```
 
-### /fix:ui
+### /fix (auto-detects UI)
 UI/UX issues:
 ```bash
-/fix:ui [description]
+/fix Button not responsive on mobile
 ```
 
-### /fix:ci
+### /fix (auto-detects CI)
 CI/CD pipeline failures:
 ```bash
-/fix:ci [github-actions-url]
+/fix GitHub Actions deployment pipeline failing
 ```
 
-### /fix:test
+### /fix (auto-detects tests)
 Test failures:
 ```bash
-/fix:test [description]
+/fix Test failures in authentication module
 ```
 
-### /fix:logs
+### /fix (auto-detects logs)
 Analyze error logs:
 ```bash
-/fix:logs [description]
+/fix API returning 500 errors according to logs
 ```
 
 ## Tích Hợp Quy Trình Làm Việc
 
 ```bash
-# After /code if issues arise
-/code plans/feature.md
+# After /cook if issues arise
+/cook plans/feature.md
 # Tests fail or types error
 /fix TypeScript errors + failing tests
 
@@ -207,12 +207,12 @@ Analyze error logs:
 # Quick iteration
 /cook add feature
 # Minor issues
-/fix:fast Issues from last commit
+/fix --quick Issues from last commit
 ```
 
 ## Lệnh Liên Quan
 
-- [/code](/docs/marketing/commands/code) - Implementation (includes testing)
+- [/cook](/docs/marketing/commands/cook) - Implementation (includes testing)
 - [/test](/docs/marketing/commands/test) - Run tests only
 - [/review](/docs/marketing/commands/review) - Code quality check
 - [/debug](/docs/marketing/commands/debug) - Deep root cause analysis

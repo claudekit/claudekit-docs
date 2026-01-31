@@ -15,7 +15,7 @@ Automated test execution with 80%+ coverage targets, failure diagnosis, and buil
 ## When to Use
 
 - `/test` - Run full test suite with coverage
-- `/fix:test [issue]` - Fix failing tests automatically
+- `/fix [issue]` - Fix failing tests automatically
 - Pre-commit/pre-push validation
 - CI/CD pipeline verification
 
@@ -67,7 +67,7 @@ Runs: Flutter analyze + Jest + pytest in sequence
 
 **Coverage-first approach**: Always check coverage gaps after test runs - uncovered code = untested risk
 **Fail fast**: Use `/test` before starting new work to catch environment issues early
-**Fix atomically**: Use `/fix:test [specific failure]` for targeted repairs instead of batch fixes
+**Fix atomically**: Use `/fix [specific failure]` for targeted repairs instead of batch fixes
 **Performance baseline**: Track test execution time - >60s indicates need for optimization
 **Docker isolation**: Run tests in containers for consistency across team environments
 

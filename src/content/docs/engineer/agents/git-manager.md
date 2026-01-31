@@ -32,7 +32,7 @@ published: true
 ## Common Use Cases
 
 ### Developers - Quick Commits
-**Prompt**: `/git:cm` or `/git:cp`
+**Prompt**: `/git cm` or `/git cp`
 - Commits auth bug fix with `fix(auth): add email validation in login`
 - 10-15 seconds, $0.015 per commit
 - Security scan blocks if secrets detected
@@ -44,18 +44,18 @@ published: true
 - No AI attribution in commit messages
 
 ### DevOps - Safe Deployments
-**Prompt**: `/git:cp` after feature work
+**Prompt**: `/git cp` after feature work
 - Scans for leaked AWS credentials, DB passwords, OAuth tokens
 - Blocks commit and shows file/line number of violations
 - Whitelists `process.env.*` and `.env.example`
 
 ### Code Reviewers - Pre-Commit Validation
-**Prompt**: Chain with code-reviewer agent → `/git:cm`
+**Prompt**: Chain with code-reviewer agent → `/git cm`
 - Reviews code → fixes applied → commits with proper message
 - Example: `refactor(db): extract query builders to helpers`
 
 ### Multi-File Features - Smart Delegation
-**Prompt**: `/git:cm` after dashboard feature
+**Prompt**: `/git cm` after dashboard feature
 - Detects complex changes (Dashboard.tsx, Chart.tsx, styles)
 - Delegates to Gemini: `feat(dashboard): add interactive chart component`
 - Includes multi-line body with implementation details
@@ -86,10 +86,10 @@ const API_KEY = process.env.API_KEY;
 **Logical Commit Grouping**:
 ```bash
 git add src/auth/*
-/git:cm  # Commits only auth changes
+/git cm  # Commits only auth changes
 
 git add src/components/*
-/git:cm  # Separate UI changes
+/git cm  # Separate UI changes
 ```
 
 **Performance Metrics**:
@@ -102,16 +102,16 @@ git add src/components/*
 **Workflow After Feature**:
 ```bash
 git status      # Review changes
-/git:cm         # Commit with auto-message
+/git cm         # Commit with auto-message
 git log -1      # Verify commit
-/git:cp         # Push if satisfied
+/git cp         # Push if satisfied
 ```
 
 **Fix Push Failures**:
 ```bash
 git pull --rebase origin main  # Pull latest
 # Resolve conflicts if any
-/git:cp  # Retry push
+/git cp  # Retry push
 ```
 
 ## Related Agents

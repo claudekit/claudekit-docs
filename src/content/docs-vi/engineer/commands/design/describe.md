@@ -374,7 +374,7 @@ Complexity: Medium (animations add complexity)
 
 - **Creating New Designs**: Use `/design:good` or `/design:fast` instead
 - **Direct Implementation**: Use `/design:screenshot` to implement
-- **Bug Fixes**: Use `/fix:ui` for fixing issues
+- **Bug Fixes**: Use `/fix` for fixing issues
 - **Code Review**: This is for visual analysis only
 
 ## Best Practices
@@ -555,7 +555,7 @@ Generates animation specification:
 /design:screenshot [design-mockup.png]
 
 # 4. Compare result
-/fix:ui [screenshot-comparison] - adjust any differences
+/fix [screenshot-comparison] - adjust any differences
 ```
 
 ### Learning Workflow

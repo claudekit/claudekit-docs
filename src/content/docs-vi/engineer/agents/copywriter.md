@@ -21,10 +21,7 @@ Viết nội dung trung thực một cách thẳng thắn, lấy người dùng 
 
 Agent copywriter được kích hoạt khi:
 
-- Sử dụng lệnh `/content:fast [request]`
-- Sử dụng lệnh `/content:good [request]`
-- Sử dụng lệnh `/content:enhance [issues]`
-- Sử dụng lệnh `/content:cro [issues]`
+- Sử dụng `copywriting` skill cho nội dung marketing chất lượng cao
 - Khi cần các tài liệu marketing
 - Khi yêu cầu các bài đăng trên mạng xã hội
 - Khi mô tả sản phẩm cần được cải thiện
@@ -72,7 +69,7 @@ Agent copywriter được kích hoạt khi:
 
 **Đầu vào:**
 ```bash
-/content:good [tạo nội dung phần hero cho SaaS phân tích AI nhắm mục tiêu là các CTO doanh nghiệp]
+Sử dụng copywriting skill [tạo nội dung phần hero cho SaaS phân tích AI nhắm mục tiêu là các CTO doanh nghiệp]
 ```
 
 **Quá trình:**
@@ -289,7 +286,7 @@ Theo dõi:
 
 **Đầu vào:**
 ```bash
-/content:fast [thông báo tính năng phân tích AI mới của chúng tôi giúp giảm 90% thời gian truy vấn]
+Sử dụng copywriting skill [thông báo tính năng phân tích AI mới của chúng tôi giúp giảm 90% thời gian truy vấn]
 ```
 
 **Chuỗi nội dung được tạo:**
@@ -406,7 +403,7 @@ Chúng tôi nên tối ưu hóa cái gì tiếp theo? 👇
 
 **Đầu vào:**
 ```bash
-/content:good [chia sẻ thông tin chi tiết từ việc phân tích 10 triệu truy vấn cơ sở dữ liệu của chúng tôi]
+Sử dụng copywriting skill [chia sẻ thông tin chi tiết từ việc phân tích 10 triệu truy vấn cơ sở dữ liệu của chúng tôi]
 ```
 
 **Bài đăng được tạo:**
@@ -481,7 +478,7 @@ Bạn muốn xem toàn bộ báo cáo nghiên cứu? Hãy để lại chữ "RES
 
 **Đầu vào:**
 ```bash
-/content:good [tạo email chào mừng cho người dùng dùng thử mới với mục tiêu là tạo bảng điều khiển đầu tiên]
+Sử dụng copywriting skill [tạo email chào mừng cho người dùng dùng thử mới với mục tiêu là tạo bảng điều khiển đầu tiên]
 ```
 
 **Email được tạo:**
@@ -626,25 +623,25 @@ Nội dung tốt bao gồm:
 
 ### Nội dung nhanh
 ```bash
-/content:fast [mô tả]
+Sử dụng copywriting skill [mô tả]
 ```
 Tạo nội dung tốt trong 30-60 giây. Một phiên bản duy nhất, nghiên cứu tối thiểu.
 
 ### Nội dung chất lượng cao
 ```bash
-/content:good [mô tả]
+Sử dụng copywriting skill [mô tả]
 ```
 Tạo nội dung toàn diện với nghiên cứu, nhiều phiên bản, kế hoạch thử nghiệm A/B, trong 2-4 phút.
 
 ### Nâng cao nội dung
 ```bash
-/content:enhance [mô tả các vấn đề của nội dung hiện tại]
+Sử dụng copywriting skill [mô tả các vấn đề của nội dung hiện tại]
 ```
 Phân tích nội dung hiện có và cung cấp các phiên bản cải tiến với các khuyến nghị cụ thể.
 
 ### Tối ưu hóa CRO
 ```bash
-/content:cro [mô tả các vấn đề chuyển đổi]
+Sử dụng copywriting skill [mô tả các vấn đề chuyển đổi]
 ```
 Tạo kế hoạch tối ưu hóa tỷ lệ chuyển đổi với các cải tiến nội dung, thay đổi bố cục, các tác nhân tâm lý.
 

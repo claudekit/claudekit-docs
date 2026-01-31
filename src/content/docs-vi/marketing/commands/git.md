@@ -117,7 +117,7 @@ git status
 ### Sau Implementation
 
 ```bash
-/code plans/feature.md
+/cook plans/feature.md
 # Implementation complete
 /git pr  # Create PR
 ```
@@ -173,7 +173,7 @@ Tự động tạo tiêu đề theo quy ước:
 
 - [/code](/docs/marketing/commands/code) - Auto-commits after implementation
 - [/cook](/docs/marketing/commands/cook) - Includes git commit
-- [/git:cm](/docs/marketing/commands/git) - Commit only (no PR)
+- [/git cm](/docs/marketing/commands/git) - Commit only (no PR)
 
 ---
 

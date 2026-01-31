@@ -1,5 +1,5 @@
 ---
-title: /git:pr
+title: /git pr
 description: Tài liệu hướng dẫn lệnh pull-request
 section: engineer
 kit: engineer
@@ -9,14 +9,14 @@ published: true
 lang: vi
 ---
 
-# /git:pr
+# /git pr
 
 Tạo một pull request (yêu cầu kéo) với bản tóm tắt toàn diện và kế hoạch kiểm tra được tạo bởi AI. Phân tích tất cả các commit kể từ khi nhánh bị phân tách, xem xét bộ thay đổi hoàn chỉnh và tạo mô tả PR chuyên nghiệp bằng GitHub CLI.
 
 ## Cú pháp
 
 ```bash
-/git:pr [target-branch] [source-branch]
+/git pr [target-branch] [source-branch]
 ```
 
 ### Tham số
@@ -26,7 +26,7 @@ Tạo một pull request (yêu cầu kéo) với bản tóm tắt toàn diện v
 
 ## Cách hoạt động
 
-Lệnh `/git:pr` sử dụng agent `git-manager` với quy trình làm việc sau:
+Lệnh `/git pr` sử dụng agent `git-manager` với quy trình làm việc sau:
 
 ### 1. Phân tích nhánh
 
@@ -65,44 +65,44 @@ Lệnh `/git:pr` sử dụng agent `git-manager` với quy trình làm việc sa
 **Hoàn thành tính năng**
 ```bash
 # Sau khi triển khai xong tính năng
-/git:pr
+/git pr
 ```
 
 **Bản sửa lỗi đã sẵn sàng**
 ```bash
 # Sau khi sửa và kiểm tra lỗi
-/git:pr main hotfix/critical-bug
+/git pr main hotfix/critical-bug
 ```
 
 **Chuẩn bị phát hành (Release)**
 ```bash
 # Merge nhánh develop vào main
-/git:pr main develop
+/git pr main develop
 ```
 
 **Yêu cầu xem xét mã nguồn (Code Review)**
 ```bash
 # Yêu cầu nhóm xem xét
-/git:pr
+/git pr
 ```
 
 ### ❌ Không sử dụng cho
 
 **Công việc đang dở dang (WIP)**
 ```bash
-❌ /git:pr  # Trước khi tính năng hoàn thành
+❌ /git pr  # Trước khi tính năng hoàn thành
 ✅ Hoàn thành tính năng trước, sau đó mới tạo PR
 ```
 
 **Chưa có commit nào**
 ```bash
-❌ /git:pr  # Chưa có gì được commit
-✅ /git:cm  # Hãy commit trước
+❌ /git pr  # Chưa có gì được commit
+✅ /git cm  # Hãy commit trước
 ```
 
 **Chưa cài đặt GitHub CLI**
 ```bash
-❌ /git:pr
+❌ /git pr
 ✅ Cài đặt gh: brew install gh
 ```
 
@@ -111,7 +111,7 @@ Lệnh `/git:pr` sử dụng agent `git-manager` với quy trình làm việc sa
 ### PR cho tính năng đơn giản
 
 ```bash
-/git:pr
+/git pr
 ```
 
 **Điều gì xảy ra:**
@@ -173,7 +173,7 @@ Lệnh `/git:pr` sử dụng agent `git-manager` với quy trình làm việc sa
 ### PR cho Hotfix
 
 ```bash
-/git:pr main hotfix/payment-timeout
+/git pr main hotfix/payment-timeout
 ```
 
 **Điều gì xảy ra:**
@@ -220,7 +220,7 @@ Lệnh `/git:pr` sử dụng agent `git-manager` với quy trình làm việc sa
 ### PR cho tính năng phức tạp
 
 ```bash
-/git:pr main feature/oauth-integration
+/git pr main feature/oauth-integration
 ```
 
 **Điều gì xảy ra:**
@@ -339,7 +339,7 @@ Lệnh `/git:pr` sử dụng agent `git-manager` với quy trình làm việc sa
 ### PR Phát hành (Release)
 
 ```bash
-/git:pr main develop
+/git pr main develop
 ```
 
 **Điều gì xảy ra:**
@@ -430,19 +430,19 @@ Làm theo hướng dẫn để xác thực với GitHub.
 ✅ **Tốt - Mọi thứ đã được commit:**
 ```bash
 # Commit tất cả công việc
-/git:cm
+/git cm
 
 # Push lên remote
 git push
 
 # Tạo PR
-/git:pr
+/git pr
 ```
 
 ❌ **Xấu - Còn các thay đổi chưa commit:**
 ```bash
 # Còn các thay đổi chưa commit
-/git:pr  # Có thể không bao gồm tất cả các thay đổi
+/git pr  # Có thể không bao gồm tất cả các thay đổi
 ```
 
 ### Cung cấp ngữ cảnh nhánh
@@ -450,10 +450,10 @@ git push
 ✅ **Các nhánh rõ ràng:**
 ```bash
 # Merge hotfix vào main
-/git:pr main hotfix/critical-bug
+/git pr main hotfix/critical-bug
 
 # Merge feature vào develop
-/git:pr develop feature/new-api
+/git pr develop feature/new-api
 ```
 
 ### Xem lại trước khi Merge
@@ -461,7 +461,7 @@ git push
 ✅ **Xem lại PR:**
 ```bash
 # Tạo PR
-/git:pr
+/git pr
 
 # Xem lại trên GitHub
 # Nhận phản hồi từ nhóm
@@ -479,23 +479,23 @@ git checkout -b feature/user-dashboard
 
 # 2. Triển khai tính năng (nhiều commit)
 /cook [thêm bố cục dashboard]
-/git:cm
+/git cm
 
 /cook [thêm các widget dashboard]
-/git:cm
+/git cm
 
 /cook [thêm các bộ lọc dashboard]
-/git:cm
+/git cm
 
 # 3. Chạy các bài kiểm tra
 /test
 
 # 4. Tạo PR
-/git:pr
+/git pr
 
 # 5. Giải quyết phản hồi từ việc xem xét
 # ... thực hiện thay đổi ...
-/git:cm
+/git cm
 git push
 
 # 6. Merge trên GitHub sau khi được phê duyệt
@@ -510,16 +510,16 @@ git pull
 git checkout -b hotfix/payment-bug
 
 # 2. Sửa lỗi
-/fix:fast [lỗi xử lý thanh toán]
+/fix --quick [lỗi xử lý thanh toán]
 
 # 3. Kiểm tra lỗi
 /test
 
 # 4. Commit
-/git:cm
+/git cm
 
 # 5. Tạo PR ngay lập tức
-/git:pr main hotfix/payment-bug
+/git pr main hotfix/payment-bug
 
 # 6. Yêu cầu xem xét khẩn cấp
 # 7. Merge và triển khai ASAP
@@ -534,10 +534,10 @@ git pull
 
 # 2. Cập nhật phiên bản và changelog
 # Chỉnh sửa package.json và CHANGELOG.md
-/git:cm
+/git cm
 
 # 3. Tạo PR phát hành
-/git:pr main develop
+/git pr main develop
 
 # 4. Xem xét kỹ lưỡng các thay đổi
 # 5. Chạy toàn bộ bộ kiểm tra trong môi trường staging
@@ -563,7 +563,7 @@ sudo apt install gh  # Linux
 gh auth login
 
 # Thử lại
-/git:pr
+/git pr
 ```
 
 ### Chưa được xác thực
@@ -578,7 +578,7 @@ gh auth login
 # Làm theo hướng dẫn để xác thực
 
 # Thử lại
-/git:pr
+/git pr
 ```
 
 ### Không có commit nào phía trước
@@ -602,11 +602,11 @@ git log main..HEAD
 **Giải pháp:**
 ```bash
 # Lệnh sẽ tự động push
-/git:pr
+/git pr
 
 # Hoặc push thủ công trước
 git push -u origin feature-branch
-/git:pr
+/git pr
 ```
 
 ### PR đã tồn tại
@@ -620,7 +620,7 @@ gh pr view
 
 # Hoặc đóng PR cũ và tạo cái mới
 gh pr close 42
-/git:pr
+/git pr
 ```
 
 ## Các lệnh liên quan
@@ -629,36 +629,36 @@ gh pr close 42
 
 ```bash
 # 1. Commit các thay đổi
-/git:cm
+/git cm
 
 # 2. Tạo PR
-/git:pr
+/git pr
 ```
 
 ### Commit, Push và tạo PR
 
 ```bash
 # 1. Commit và push
-/git:cp
+/git cp
 
 # 2. Tạo PR
-/git:pr
+/git pr
 ```
 
 ### Fix và tạo PR
 
 ```bash
 # 1. Sửa lỗi
-/fix:fast [mô tả lỗi]
+/fix --quick [mô tả lỗi]
 
 # 2. Kiểm tra
 /test
 
 # 3. Commit
-/git:cm
+/git cm
 
 # 4. Tạo PR
-/git:pr
+/git pr
 ```
 
 ## Cách dùng nâng cao
@@ -667,20 +667,20 @@ gh pr close 42
 
 ```bash
 # Merge vào develop thay vì main
-/git:pr develop
+/git pr develop
 
 # Merge vào staging
-/git:pr staging
+/git pr staging
 
 # Merge các nhánh cụ thể
-/git:pr production hotfix/urgent-fix
+/git pr production hotfix/urgent-fix
 ```
 
 ### PR nháp (Draft PRs)
 
 ```bash
 # Tạo PR trước (công việc đang tiến hành)
-/git:pr
+/git pr
 
 # Sau đó đánh dấu là draft trên GitHub
 gh pr ready --undo
@@ -688,7 +688,7 @@ gh pr ready --undo
 
 ## Số liệu
 
-Hiệu suất điển hình của `/git:pr`:
+Hiệu suất điển hình của `/git pr`:
 
 - **Thời gian**: 30 giây - 2 phút (tùy thuộc vào kích thước bộ thay đổi)
 - **Số commit được phân tích**: Tất cả các commit kể từ khi phân tách nhánh
@@ -698,7 +698,7 @@ Hiệu suất điển hình của `/git:pr`:
 
 ## Bước tiếp theo
 
-Sau khi sử dụng `/git:pr`:
+Sau khi sử dụng `/git pr`:
 
 - Xem lại PR trên GitHub
 - Giải quyết phản hồi từ người xem xét
@@ -708,4 +708,4 @@ Sau khi sử dụng `/git:pr`:
 
 ---
 
-**Điểm mấu chốt**: `/git:pr` tạo các pull request chuyên nghiệp bằng cách phân tích tất cả các commit kể từ khi phân tách nhánh và tạo các bản tóm tắt toàn diện với các kế hoạch kiểm tra có thể thực hiện được, giúp hợp lý hóa quy trình xem xét mã nguồn.
+**Điểm mấu chốt**: `/git pr` tạo các pull request chuyên nghiệp bằng cách phân tích tất cả các commit kể từ khi phân tách nhánh và tạo các bản tóm tắt toàn diện với các kế hoạch kiểm tra có thể thực hiện được, giúp hợp lý hóa quy trình xem xét mã nguồn.

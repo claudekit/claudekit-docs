@@ -648,7 +648,7 @@ docs/
 
 **Solution:**
 ```bash
-/fix:ui [optimize animations - reduce complexity while maintaining smooth feel]
+/fix [optimize animations - reduce complexity while maintaining smooth feel]
 ```
 
 ## Next Steps
@@ -656,7 +656,7 @@ docs/
 - [/design:fast](/docs/engineer/commands/design/fast) - Quick prototypes first
 - [/design:describe](/docs/engineer/commands/design/describe) - Analyze award winners
 - [/design:3d](/docs/engineer/commands/design/3d) - Add 3D elements
-- [/fix:ui](/docs/engineer/commands/fix/ui) - Polish final details
+- [/fix](/docs/engineer/commands/fix/ui) - Polish final details
 
 ---
 

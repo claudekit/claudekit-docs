@@ -151,7 +151,7 @@ Phase details:
 - plans/250129-email-drip-campaign/phase-03-automation-engine.md
 - plans/250129-email-drip-campaign/phase-04-analytics-dashboard.md
 
-Next: /code plans/250129-email-drip-campaign
+Next: /cook plans/250129-email-drip-campaign
 ```
 
 ## Tích Hợp Quy Trình Làm Việc
@@ -166,10 +166,10 @@ Next: /code plans/250129-email-drip-campaign
 cat plans/latest/plan.md
 
 # Step 3: Implement
-/code
+/cook
 
-# Tests run automatically in /code
-# Code review happens automatically in /code
+# Tests run automatically in /cook
+# Code review happens automatically in /cook
 ```
 
 ### Plan Variants

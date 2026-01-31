@@ -1,5 +1,5 @@
 ---
-title: /cook:auto:fast
+title: /cook --auto --fast
 description: Quick scout, plan & implement without research
 section: engineer
 kit: engineer
@@ -8,14 +8,14 @@ order: 27
 published: true
 ---
 
-# /cook:auto:fast
+# /cook --auto --fast
 
 Fast feature implementation with scouting and quick planning (no research).
 
 ## Syntax
 
 ```bash
-/cook:auto:fast [tasks-or-prompt]
+/cook --auto --fast [tasks-or-prompt]
 ```
 
 ## Workflow
@@ -36,8 +36,8 @@ Fast feature implementation with scouting and quick planning (no research).
 | Command | Research | Scout | Code Review |
 |---------|----------|-------|-------------|
 | `/cook` | If needed | If needed | Yes |
-| `/cook:auto` | Yes | If needed | Yes |
-| `/cook:auto:fast` | No | Yes | No |
+| `/cook --auto` | Yes | If needed | Yes |
+| `/cook --auto --fast` | No | Yes | No |
 
 ## When to Use
 
@@ -56,7 +56,7 @@ Fast feature implementation with scouting and quick planning (no research).
 ## Example
 
 ```bash
-/cook:auto:fast [add pagination to user list API]
+/cook --auto --fast [add pagination to user list API]
 
 # Workflow:
 # 1. Scout finds existing pagination patterns
@@ -66,4 +66,4 @@ Fast feature implementation with scouting and quick planning (no research).
 
 ---
 
-**Key Takeaway**: Use `/cook:auto:fast` for rapid development when you trust the codebase and need minimal overhead.
+**Key Takeaway**: Use `/cook --auto --fast` for rapid development when you trust the codebase and need minimal overhead.

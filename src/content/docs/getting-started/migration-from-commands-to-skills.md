@@ -51,10 +51,10 @@ Many slash commands have been converted to **skills** that activate automaticall
 ```
 /plan "feature X"
 /clear
-/cook "Implement feature X as planned"
+Implement feature X as planned
 ```
 
-**Important**: Run `/clear` after `/plan` to free context before implementation. This ensures the `/cook` skill has optimal token budget.
+**Important**: Run `/clear` after `/plan` to free context before implementation. The `cook` skill auto-activates from natural language.
 
 ---
 
@@ -115,9 +115,9 @@ Command modifiers apply to active commands:
 ```
 /plan "Add authentication"
 /clear
-/cook "Implement the authentication plan"
+Implement the authentication plan
 /test
-/code-review
+Review the code quality
 ```
 
-The workflow is simpler and more streamlined.
+The workflow is simpler and more streamlined. Skills auto-activate from natural language prompts.

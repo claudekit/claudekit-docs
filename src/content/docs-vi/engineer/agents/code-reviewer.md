@@ -908,7 +908,7 @@ export const loginUser = async (
 
 ### Các bước tiếp theo:
 1. **KHÔNG ĐƯỢC MERGE** - Các vấn đề nghiêm trọng phải được sửa trước
-2. Chạy: `/fix:fast [sửa các vấn đề bảo mật nghiêm trọng được tìm thấy trong review]`
+2. Chạy: `/fix --quick [sửa các vấn đề bảo mật nghiêm trọng được tìm thấy trong review]`
 3. Chạy: `/test [xác nhận các bản sửa lỗi bảo mật]`
 4. Chạy: `/review [review lại sau khi sửa lỗi]`
 5. Cập nhật tài liệu
@@ -1105,7 +1105,7 @@ Sau khi áp dụng các bản sửa lỗi:
 /review [mô-đun xác thực người dùng]
 
 # 4. Sửa các vấn đề
-/fix:fast [sửa các vấn đề bảo mật nghiêm trọng được tìm thấy trong review]
+/fix --quick [sửa các vấn đề bảo mật nghiêm trọng được tìm thấy trong review]
 
 # 5. Kiểm thử lại
 /test

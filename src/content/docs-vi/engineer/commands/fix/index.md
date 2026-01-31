@@ -11,7 +11,7 @@ lang: vi
 
 # /fix
 
-Lệnh sửa lỗi thông minh phân tích mô tả vấn đề của bạn và tự động chọn giữa phương pháp nhanh hoặc kỹ lưỡng. Không cần quyết định giữa `/fix:fast` và `/fix:hard` - để ClaudeKit xác định chiến lược tốt nhất.
+Lệnh sửa lỗi thông minh phân tích mô tả vấn đề của bạn và tự động chọn giữa phương pháp nhanh hoặc kỹ lưỡng. Không cần quyết định giữa `/fix --quick` và `/fix` - để ClaudeKit xác định chiến lược tốt nhất.
 
 ## Cú pháp
 
@@ -32,13 +32,13 @@ Lệnh `/fix` định tuyến thông minh yêu cầu của bạn:
 
 ### 2. Lựa chọn chiến lược
 
-**Chuyển đến `/fix:fast` khi:**
+**Chuyển đến `/fix --quick` khi:**
 - Vấn đề dễ hiểu và đơn giản
 - Vị trí đã biết hoặc dễ xác định
 - Sửa đổi tối thiểu (1-2 file)
 - Không cần điều tra
 
-**Chuyển đến `/fix:hard` khi:**
+**Chuyển đến `/fix` khi:**
 - Vấn đề phức tạp hoặc không rõ ràng
 - Nhiều thành phần bị ảnh hưởng
 - Nguyên nhân gốc rễ chưa biết
@@ -63,9 +63,9 @@ Lệnh `/fix` định tuyến thông minh yêu cầu của bạn:
 → Vị trí có thể trong component button
 → Dự kiến thay đổi một file
 
-Chiến lược: /fix:fast
+Chiến lược: /fix --quick
 
-Thực thi: /fix:fast [văn bản nút hiển thị "Loggin" thay vì "Login" trong component LoginButton]
+Thực thi: /fix --quick [văn bản nút hiển thị "Loggin" thay vì "Login" trong component LoginButton]
 
 Tìm thấy: src/components/LoginButton.tsx:15
 Đã sửa: "Loggin" → "Login"
@@ -101,7 +101,7 @@ Kiểm thử: ✓ Tất cả đã pass
 
 ## Ví dụ đầy đủ
 
-### Ví dụ 1: Vấn đề đơn giản (Chuyển đến /fix:fast)
+### Ví dụ 1: Vấn đề đơn giản (Chuyển đến /fix --quick)
 
 ```bash
 /fix [thiếu câu lệnh import cho UserType trong auth.ts]
@@ -114,7 +114,7 @@ Phạm vi: Một file
 Độ rõ ràng: Cao
 Vị trí đã biết: Có
 
-→ Chuyển đến /fix:fast
+→ Chuyển đến /fix --quick
 ```
 
 **Kết quả:**
@@ -125,7 +125,7 @@ Vị trí đã biết: Có
 - Kiểm thử: ✓ Đã pass
 ```
 
-### Ví dụ 2: Vấn đề phức tạp (Chuyển đến /fix:hard)
+### Ví dụ 2: Vấn đề phức tạp (Chuyển đến /fix)
 
 ```bash
 /fix [người dùng đôi khi bị đăng xuất ngẫu nhiên]
@@ -138,7 +138,7 @@ Phạm vi: Không rõ (session, cookies, hệ thống auth?)
 Độ rõ ràng: Thấp (cần điều tra)
 Vị trí đã biết: Không
 
-→ Chuyển đến /fix:hard
+→ Chuyển đến /fix
 ```
 
 **Kết quả:**
@@ -174,7 +174,7 @@ Phạm vi: Có thể 1-2 file (form + validation)
 Độ rõ ràng: Trung bình
 Vị trí đã biết: Một phần
 
-→ Chuyển đến /fix:fast
+→ Chuyển đến /fix --quick
 ```
 
 **Kết quả:**
@@ -210,8 +210,8 @@ Tìm thấy vấn đề:
 
 ```bash
 # Bạn quyết định và thực thi
-/fix:fast [vấn đề đơn giản]
-/fix:hard [vấn đề phức tạp]
+/fix --quick [vấn đề đơn giản]
+/fix [vấn đề phức tạp]
 ```
 
 ⚠️ Nhược điểm:
@@ -222,7 +222,7 @@ Tìm thấy vấn đề:
 
 ## Cách lựa chọn chiến lược hoạt động
 
-### /fix:fast được chọn khi
+### /fix --quick được chọn khi
 
 **Dấu hiệu:**
 - ✓ Vị trí cụ thể được đề cập
@@ -239,7 +239,7 @@ Tìm thấy vấn đề:
 /fix [cập nhật timeout API từ 5s lên 10s]
 ```
 
-### /fix:hard được chọn khi
+### /fix được chọn khi
 
 **Dấu hiệu:**
 - ✓ Mô tả mơ hồ hoặc không rõ ràng
@@ -368,7 +368,7 @@ Nếu đã có kế hoạch triển khai markdown:
 
 ```bash
 # Thay vì /fix, sử dụng:
-/code [path/to/plan.md]
+/cook [path/to/plan.md]
 
 # /fix dùng cho vấn đề không có kế hoạch sẵn
 ```
@@ -385,7 +385,7 @@ Bạn sẽ thấy:
 - Độ rõ ràng: Cao / Trung bình / Thấp
 - Cần điều tra: Có / Không
 
-Chiến lược đã chọn: /fix:fast | /fix:hard
+Chiến lược đã chọn: /fix --quick | /fix
 
 Đang thực thi với prompt đã nâng cao...
 
@@ -396,12 +396,13 @@ Chiến lược đã chọn: /fix:fast | /fix:hard
 
 ## Lệnh liên quan
 
-- [/fix:fast](/docs-vi/commands/fix/fast) - Sửa lỗi nhanh (tự động chọn)
-- [/fix:hard](/docs-vi/commands/fix/hard) - Sửa lỗi phức tạp (tự động chọn)
-- [/fix:ci](/docs-vi/commands/fix/ci) - Sửa lỗi CI
-- [/fix:logs](/docs-vi/commands/fix/logs) - Sửa lỗi từ logs
-- [/fix:ui](/docs-vi/commands/fix/ui) - Sửa lỗi UI
-- [/fix:types](/docs-vi/commands/fix/types) - Sửa lỗi type
+- [/fix --quick](/docs-vi/commands/fix/fast) - Sửa lỗi nhanh (tự động chọn)
+- [/fix](/docs-vi/commands/fix/hard) - Sửa lỗi phức tạp (tự động chọn)
+- [/fix --parallel](/docs-vi/commands/fix/parallel) - Sửa nhiều lỗi song song
+- [/fix](/docs-vi/commands/fix/ci) - Sửa lỗi CI
+- [/fix](/docs-vi/commands/fix/logs) - Sửa lỗi từ logs
+- [/fix](/docs-vi/commands/fix/ui) - Sửa lỗi UI
+- [/fix](/docs-vi/commands/fix/types) - Sửa lỗi type
 - [/debug](/docs-vi/commands/core/debug) - Điều tra vấn đề
 - [/code](/docs-vi/commands/core/code) - Triển khai kế hoạch hiện có
 
@@ -409,12 +410,12 @@ Chiến lược đã chọn: /fix:fast | /fix:hard
 
 ### Chiến lược sai được chọn
 
-**Vấn đề:** `/fix` chọn `/fix:fast` nhưng vấn đề phức tạp
+**Vấn đề:** `/fix` chọn `/fix --quick` nhưng vấn đề phức tạp
 
 **Giải pháp:**
 ```bash
 # Ghi đè bằng cách gọi trực tiếp
-/fix:hard [mô tả vấn đề của bạn]
+/fix [mô tả vấn đề của bạn]
 ```
 
 ### Cần kiểm soát nhiều hơn
@@ -424,8 +425,8 @@ Chiến lược đã chọn: /fix:fast | /fix:hard
 **Giải pháp:**
 ```bash
 # Gọi chiến lược trực tiếp
-/fix:fast [cho vấn đề đơn giản]
-/fix:hard [cho vấn đề phức tạp]
+/fix --quick [cho vấn đề đơn giản]
+/fix [cho vấn đề phức tạp]
 ```
 
 ### Kế hoạch đã tồn tại
@@ -434,8 +435,8 @@ Chiến lược đã chọn: /fix:fast | /fix:hard
 
 **Giải pháp:**
 ```bash
-# Sử dụng /code thay thế
-/code [path/to/plan.md]
+# Sử dụng /cook thay thế
+/cook [path/to/plan.md]
 ```
 
 ---

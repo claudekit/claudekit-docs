@@ -642,7 +642,7 @@ ls journals/
 git add journals/
 
 # Commit with code
-/git:cm
+/git cm
 ```
 
 Benefits:
@@ -689,7 +689,7 @@ Naming convention:
 /journal
 
 # Commit everything
-/git:cm
+/git cm
 ```
 
 ### With /watzup
@@ -706,7 +706,7 @@ Naming convention:
 # - /journal: Detailed documentation
 ```
 
-### Before /git:pr
+### Before /git pr
 
 ```bash
 # Complete feature work
@@ -719,7 +719,7 @@ Naming convention:
 git diff main
 
 # Create PR with journal as context
-/git:pr feature-branch main
+/git pr feature-branch main
 ```
 
 ## What Journal Captures
@@ -838,7 +838,7 @@ Journals include metrics over time:
 
 - [/watzup](/docs/engineer/commands/core/watzup) - Quick summary of recent changes
 - [/cook](/docs/engineer/commands/core/cook) - Implement features (document with journal after)
-- [/git:cm](/docs/engineer/commands/git/commit) - Commit changes (journal first for context)
+- [/git cm](/docs/engineer/commands/git/commit) - Commit changes (journal first for context)
 
 ---
 

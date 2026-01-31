@@ -1,5 +1,5 @@
 ---
-title: /cook:auto:parallel
+title: /cook --auto --parallel
 description: Implement features with parallel execution using plan:parallel and fullstack-developer agents
 section: engineer
 kit: engineer
@@ -8,14 +8,14 @@ order: 51
 published: true
 ---
 
-# /cook:auto:parallel
+# /cook --auto --parallel
 
 Feature implementation with parallel execution. Creates a parallel plan and launches multiple fullstack-developer agents to implement independent phases simultaneously.
 
 ## Syntax
 
 ```bash
-/cook:auto:parallel [tasks]
+/cook --auto --parallel [tasks]
 ```
 
 ## When to Use
@@ -28,7 +28,7 @@ Feature implementation with parallel execution. Creates a parallel plan and laun
 ## Quick Example
 
 ```bash
-/cook:auto:parallel [implement user authentication and payment processing]
+/cook --auto --parallel [implement user authentication and payment processing]
 ```
 
 **Output**:
@@ -233,7 +233,7 @@ If Agent 2 fails:
 ### Scenario: Multi-Module Feature
 
 ```bash
-/cook:auto:parallel [implement user dashboard with profile, settings, notifications, and activity feed]
+/cook --auto --parallel [implement user dashboard with profile, settings, notifications, and activity feed]
 ```
 
 **Execution**:
@@ -310,7 +310,7 @@ Todo List:
 
 ```bash
 # Good: Clear module boundaries
-/cook:auto:parallel [
+/cook --auto --parallel [
   implement:
   1. User authentication (email, OAuth)
   2. Payment processing (Stripe)
@@ -318,7 +318,7 @@ Todo List:
 ]
 
 # Challenging: Overlapping concerns
-/cook:auto:parallel [fix auth bugs and update payment UI]
+/cook --auto --parallel [fix auth bugs and update payment UI]
 ```
 
 ### Check Plan First
@@ -333,16 +333,16 @@ If unsure about parallelization:
 cat plans/*/plan.md
 
 # Then execute
-/code:parallel
+/cook --parallel
 ```
 
 ## Related Commands
 
 - [/cook](/docs/engineer/commands/core/cook) - Step-by-step implementation
-- [/cook:auto](/docs/engineer/commands/core/cook-auto) - Auto cook (sequential)
+- [/cook --auto](/docs/engineer/commands/core/cook-auto) - Auto cook (sequential)
 - [/plan:parallel](/docs/engineer/commands/plan/parallel) - Create parallel plans
-- [/code:parallel](/docs/engineer/commands/core/code-parallel) - Execute existing parallel plans
+- [/cook --parallel](/docs/engineer/commands/core/cook-auto-parallel) - Execute existing parallel plans
 
 ---
 
-**Key Takeaway**: `/cook:auto:parallel` accelerates feature implementation by running independent phases in parallel, using file ownership to prevent conflicts between concurrent agents.
+**Key Takeaway**: `/cook --auto --parallel` accelerates feature implementation by running independent phases in parallel, using file ownership to prevent conflicts between concurrent agents.

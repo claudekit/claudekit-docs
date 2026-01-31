@@ -22,7 +22,7 @@ Learn the complete workflow for adding new features to your project with ClaudeK
 **Time**: 15-30 minutes (vs 2-4 hours manually)
 **Agents Used**: planner, scout, tester, code-reviewer, docs-manager
 **Skills**: cook (auto-activates from plan context)
-**Commands**: /plan, /test, /docs:update, /git:cm
+**Commands**: /plan, /test, /docs:update, /git cm
 
 ## Prerequisites
 
@@ -250,7 +250,7 @@ Coverage:    89.3%
 
 **If tests fail**:
 ```bash
-/fix:test
+/fix
 ```
 
 ### Step 7: Code Review
@@ -364,7 +364,7 @@ curl -X POST http://localhost:3000/api/auth/reset-password \
 Commit with conventional commit message:
 
 ```bash
-/git:cm
+/git cm
 ```
 
 **Generated commit**:
@@ -391,7 +391,7 @@ Security features:
 If working with a team:
 
 ```bash
-/git:pr main feature/password-reset
+/git pr main feature/password-reset
 ```
 
 **Generated PR**:
@@ -445,7 +445,7 @@ Real-world scenario: Adding search functionality to an e-commerce site.
 ### Implementation
 
 ```bash
-/code [implement product search as planned]
+"Implement product search as planned"
 ```
 
 **Results after 8 minutes**:
@@ -534,7 +534,7 @@ Real-world scenario: Adding search functionality to an e-commerce site.
 
 **Solution**:
 ```bash
-/fix:test
+/fix
 
 # Debugger analyzes failures and fixes
 # Re-runs tests automatically
@@ -602,7 +602,7 @@ Don't skip testing:
 ```bash
 /cook [feature]
 /test           # Always run tests
-/fix:test       # Fix failures immediately
+/fix       # Fix failures immediately
 ```
 
 ### 4. Document as You Go
@@ -623,7 +623,7 @@ git diff
 
 # Understand what changed
 # Only then commit
-/git:cm
+/git cm
 ```
 
 ### 6. Use Feature Branches
@@ -637,10 +637,10 @@ git checkout -b feature/password-reset
 /cook [feature]
 
 # Commit
-/git:cm
+/git cm
 
 # Create PR
-/git:pr main feature/password-reset
+/git pr main feature/password-reset
 ```
 
 ## Next Steps
@@ -655,7 +655,7 @@ git checkout -b feature/password-reset
 - [/cook](/docs/engineer/commands/core/cook) - Implement features from plans
 - [/test](/docs/engineer/commands/core/test) - Run test suites
 - [/docs:update](/docs/engineer/commands/docs/update) - Update documentation
-- [/git:cm](/docs/engineer/commands/git/commit) - Commit changes
+- [/git cm](/docs/engineer/commands/git/commit) - Commit changes
 
 ### Further Reading
 - [Command Reference](/docs/commands) - All available commands

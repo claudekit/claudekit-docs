@@ -44,7 +44,7 @@ Coverage: 78%
 
 | Command | Use Case |
 |---------|----------|
-| `/fix:test` | Fix failing tests |
+| `/fix` | Fix failing tests |
 | `/cook` | Implement with auto-testing |
 | `/code` | Implement plan with testing |
 

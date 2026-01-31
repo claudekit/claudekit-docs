@@ -349,7 +349,7 @@ Coverage:    87.3%
 
 ```bash
 # Use ClaudeKit to fix
-/fix:test
+/fix
 ```
 
 ## Step 5: Start Development Server
@@ -486,7 +486,7 @@ git status
 git diff
 
 # Commit with ClaudeKit
-/git:cm
+/git cm
 ```
 
 **Generated commit:**
@@ -568,7 +568,7 @@ jobs:
 ### Push and Verify CI
 
 ```bash
-/git:cp
+/git cp
 
 # Watch CI run
 gh run watch
@@ -657,7 +657,7 @@ A production-ready REST API with:
 /plan [add task reminders and notifications]
 /cook [implement the feature]
 /test
-/git:cm
+/git cm
 ```
 
 ### Improve Testing
@@ -709,7 +709,7 @@ PORT=3001
 npx prisma migrate reset
 
 # Or fix manually
-/fix:hard [describe migration error]
+/fix [describe migration error]
 ```
 
 ## Key Takeaways

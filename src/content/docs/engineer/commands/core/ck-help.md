@@ -41,7 +41,7 @@ All-in-one ClaudeKit guide for discovering commands and workflows.
 
 ## Correct Workflows
 
-- `/plan` → `/code`: Plan first, then execute the plan
+- `/plan` → `/cook`: Plan first, then execute the plan
 - `/cook`: Standalone - plans internally, no separate `/plan` needed
 - **NEVER** `/plan` → `/cook` (cook has its own planning)
 

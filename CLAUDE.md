@@ -170,6 +170,28 @@ grep -r "/vi/docs/" src/content/docs/ --include="*.md"
 grep -rP '\]\(/docs/' src/content/docs-vi/ --include="*.md"
 ```
 
+## CRITICAL: Skills vs Commands Terminology
+
+**Skills ARE invoked with `/slash` syntax.** The migration from "commands" to "skills" was organizational, NOT syntactical.
+
+| Term | Syntax | Example | Notes |
+|------|--------|---------|-------|
+| **Skill** | `/skill-name` | `/git`, `/cook`, `/fix` | Migrated from commands, same slash syntax |
+| **Command** | `/command-name` | `/plan`, `/ask`, `/test` | Legacy term, still valid |
+
+**Migrated to Skills:** git, fix, cook, scout, design, content, skill-creator, copywriting
+**Still called Commands:** plan, ask, test, bootstrap, debug, journal, watzup, kanban, preview
+
+**DO NOT:**
+- Replace `/git` with natural language like "use the git skill"
+- Remove slash syntax from skill invocations
+- Treat skills as non-slash-invocable
+
+**DO:**
+- Keep `/git`, `/cook`, `/fix` syntax in docs
+- Update links from `/docs/commands/git/` → `/docs/skills/git`
+- Replace `/code` with `/cook` (deprecated)
+
 ## Git Workflow
 
 ```bash

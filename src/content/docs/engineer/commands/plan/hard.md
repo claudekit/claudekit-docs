@@ -62,7 +62,7 @@ plans/
 | `/plan:fast` | None | Fast |
 | `/plan:hard` | Deep | Slow |
 
-**Important**: Does NOT start implementation. Use `/code` after approval.
+**Important**: Does NOT start implementation. Use `/cook` after approval.
 
 ---
 

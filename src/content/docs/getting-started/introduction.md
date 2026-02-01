@@ -36,7 +36,7 @@ ClaudeKit extends Claude Code with specialized toolkits for engineering and mark
 
 **Engineer Kit** - Development & automation toolkit:
 - **Agents**: Specialized AI assistants (planner, researcher, tester, debugger, backend-developer)
-- **Commands**: Development workflows (`/cook`, `/fix`, `/plan`, `/test`, `/code`)
+- **Commands**: Development workflows (`/cook`, `/fix`, `/plan`, `/test`)
 - **Skills**: Technical knowledge modules (Next.js, PostgreSQL, Docker, DevOps)
 
 **Marketing Kit** - Marketing & content automation toolkit:

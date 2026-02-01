@@ -155,7 +155,7 @@ Next: "Implement email drip campaign"
 
 ## Workflow Integration
 
-### Plan → Code → Test → Review
+### Plan → Cook → Test → Review
 ```bash
 # Step 1: Plan
 /plan add user authentication
@@ -164,10 +164,10 @@ Next: "Implement email drip campaign"
 cat plans/latest/plan.md
 
 # Step 3: Implement
-/code
+/cook
 
-# Tests run automatically in /code
-# Code review happens automatically in /code
+# Tests run automatically in /cook
+# Code review happens automatically in /cook
 ```
 
 ### Plan Variants
@@ -208,8 +208,7 @@ plans/251229-{slug}/
 
 ## Related Commands
 
-- [/code](/docs/marketing/commands/code) - Execute plan
-- [/cook](/docs/marketing/commands/cook) - Plan + implement
+- [/cook](/docs/engineer/skills/cook) - Execute plan + implement
 - [/scout](/docs/marketing/commands/scout) - Codebase search
 
 ---

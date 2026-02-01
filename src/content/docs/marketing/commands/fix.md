@@ -195,7 +195,7 @@ Analyze error logs (auto-detected from context):
 
 ```bash
 # After /cook if issues arise
-/code plans/feature.md
+/cook plans/feature.md
 # Tests fail or types error
 /fix TypeScript errors + failing tests
 
@@ -211,7 +211,7 @@ Analyze error logs (auto-detected from context):
 
 ## Related Commands
 
-- [/code](/docs/marketing/commands/code) - Implementation (includes testing)
+- [/cook](/docs/engineer/skills/cook) - Implementation (includes testing)
 - [/test](/docs/marketing/commands/test) - Run tests only
 - [/review](/docs/marketing/commands/review) - Code quality check
 - [/debug](/docs/marketing/commands/debug) - Deep root cause analysis

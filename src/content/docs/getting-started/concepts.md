@@ -30,9 +30,11 @@ Specialized AI assistants with focused expertise.
 3. Agents collaborate via shared context (plans, code, test results)
 4. Output consolidated and presented to you
 
-## Commands
+## Skills & Commands
 
-Slash commands that trigger agent workflows.
+Slash commands and skills that trigger agent workflows.
+
+**Note:** Skills like `/git`, `/fix`, `/cook` were migrated from commands. Slash syntax unchanged.
 
 **Categories**:
 - **Core**: `/cook`, `/plan`, `/bootstrap`, `/ask`, `/scout`
@@ -50,7 +52,7 @@ Slash commands that trigger agent workflows.
 /plan "add payment processing with Stripe"
 # → Planner agent creates detailed plan
 
-/code
+/cook
 # → Reads plan, spawns developer + tester agents, implements feature
 
 /fix
@@ -123,5 +125,5 @@ All agent behaviors, skills, and workflows configured in `.claude/CLAUDE.md`:
 
 - **[Installation](/docs/getting-started/installation)** - Install ClaudeKit
 - **[Quick Start](/docs/getting-started/quick-start)** - Try your first command
-- **[Commands Reference](/docs/commands)** - Explore all commands
+- **[Commands Reference](/docs/engineer/commands)** - Explore all commands
 - **[Agents Reference](/docs/agents)** - Learn about each agent

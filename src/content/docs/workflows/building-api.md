@@ -16,7 +16,7 @@ Learn how to build production-ready REST APIs with ClaudeKit - from API design t
 **Goal**: Build a complete REST API with CRUD operations, auth, and docs
 **Time**: 30-60 minutes (vs 6-12 hours manually)
 **Agents Used**: planner, researcher, tester, code-reviewer, docs-manager
-**Commands**: /bootstrap, /plan, /code, /test, /docs:update
+**Commands**: /bootstrap, /plan, /cook, /test, /docs:update
 
 ## Prerequisites
 

@@ -94,7 +94,7 @@ Next: /fix SQL injection in campaign query
 
 ### After Implementation
 ```bash
-/code plans/feature.md
+/cook plans/feature.md
 /review  # Quality check
 ```
 
@@ -115,7 +115,7 @@ Next: /fix SQL injection in campaign query
 
 ## Related Commands
 
-- [/code](/docs/marketing/commands/code) - Includes review automatically
+- [/cook](/docs/engineer/skills/cook) - Includes review automatically
 - [/fix](/docs/marketing/commands/fix) - Fix issues found
 - [/test](/docs/marketing/commands/test) - Run tests
 

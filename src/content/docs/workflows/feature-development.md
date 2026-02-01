@@ -31,7 +31,7 @@ The feature development workflow combines planning, research, implementation, te
 
 ### 2. Implementation Phase
 ```bash
-/code
+/cook
 ```
 
 **What happens**:
@@ -118,7 +118,7 @@ Let's walk through adding authentication to a Next.js app:
 
 ### Step 2: Implement
 ```bash
-/code
+/cook
 ```
 
 **Implementation Details**:

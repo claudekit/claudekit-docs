@@ -332,7 +332,6 @@ claude
 ### 🚀 Core Development
 - `/cook` - Feature implementation
 - `/plan` - Create plans
-- `/cook` - Execute plans
 - `/bootstrap` - New projects
 
 ### 🐛 Debugging & Fixing
@@ -488,7 +487,7 @@ ck --version
 ## Resources
 
 - [Full Documentation](https://docs.claudekit.cc)
-- [All Commands](/docs/engineer/commands/)
+- [All Skills](/docs/engineer/skills/)
 - [AI Agents](/docs/engineer/agents/)
 - [Workflows](/docs/docs/engineer/configuration/workflows)
 - [Troubleshooting](/docs/support/troubleshooting/)

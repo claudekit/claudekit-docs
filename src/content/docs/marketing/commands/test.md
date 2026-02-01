@@ -81,7 +81,7 @@ Next: /fix Test failures in email campaign + analytics
 
 ## Related Commands
 
-- [/code](/docs/marketing/commands/code) - Includes testing automatically
+- [/cook](/docs/engineer/skills/cook) - Includes testing automatically
 - [/fix](/docs/marketing/commands/fix) - Fix test failures
 - [/review](/docs/marketing/commands/review) - Code quality check
 

@@ -33,9 +33,9 @@ published: true
 
 | Who | Prompt | Outcome |
 |-----|--------|---------|
-| **Team Lead** | `/code plans/251201-user-api/phase-02-endpoints.md` | Executes Phase 02 API endpoints with ownership boundaries |
+| **Team Lead** | `/cook plans/251201-user-api/phase-02-endpoints.md` | Executes Phase 02 API endpoints with ownership boundaries |
 | **Developer** | Execute backend + frontend phases simultaneously | Safe parallel execution, no file conflicts |
-| **PM** | `/plan:parallel Add CRUD API + React dashboard` → `/code` phases | Full implementation with automated reports |
+| **PM** | `/plan:parallel Add CRUD API + React dashboard` → `/cook` phases | Full implementation with automated reports |
 
 ## How It Works
 

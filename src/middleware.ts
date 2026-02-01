@@ -69,5 +69,50 @@ export const onRequest = defineMiddleware((context, next) => {
     return redirect(`/docs/workflows/${mappedSlug}`, 301);
   }
 
+  // Cook command variants → skills/cook
+  if (pathname.startsWith('/docs/engineer/commands/core/cook')) {
+    return redirect('/docs/engineer/skills/cook', 301);
+  }
+
+  // VI: git commands → git skill
+  if (pathname.startsWith('/vi/docs/engineer/commands/git/')) {
+    return redirect('/vi/docs/engineer/skills/tools/git', 301);
+  }
+
+  // VI: fix commands → fix skill
+  if (pathname.startsWith('/vi/docs/engineer/commands/fix/')) {
+    return redirect('/vi/docs/engineer/skills/tools/fix', 301);
+  }
+
+  // VI: cook/code commands → cook skill
+  if (pathname.match(/\/vi\/docs\/engineer\/commands\/core\/(cook|code)/)) {
+    return redirect('/vi/docs/engineer/skills/tools/cook', 301);
+  }
+
+  // VI: scout commands → scout skill
+  if (pathname.startsWith('/vi/docs/engineer/commands/core/scout')) {
+    return redirect('/vi/docs/engineer/skills/tools/scout', 301);
+  }
+
+  // VI: design commands → canvas-design skill
+  if (pathname.startsWith('/vi/docs/engineer/commands/design/')) {
+    return redirect('/vi/docs/engineer/skills/ai/canvas-design', 301);
+  }
+
+  // VI: content commands → copywriting skill
+  if (pathname.startsWith('/vi/docs/engineer/commands/content/')) {
+    return redirect('/vi/docs/engineer/skills/ai/copywriting', 301);
+  }
+
+  // VI: skill commands → skill-creator
+  if (pathname.startsWith('/vi/docs/engineer/commands/skill/')) {
+    return redirect('/vi/docs/engineer/skills/tools/skill-creator', 301);
+  }
+
+  // VI: integrate commands → integrate skill
+  if (pathname.startsWith('/vi/docs/engineer/commands/integrate/')) {
+    return redirect('/vi/docs/engineer/skills/tools/integrate', 301);
+  }
+
   return next();
 });

@@ -299,9 +299,9 @@ Sử dụng systematic-debugging:
 
 ## Bước tiếp theo
 
-- [Truy vết nguyên nhân gốc rễ](/docs/engineer/skills/)
-- [Ví dụ về gỡ lỗi](/docs/use-cases/)
-- [Kỹ năng kiểm thử](/docs/engineer/agents/tester)
+- [Truy vết nguyên nhân gốc rễ](/vi/docs/engineer/skills/)
+- [Ví dụ về gỡ lỗi](/vi/docs/use-cases/)
+- [Kỹ năng kiểm thử](/vi/docs/engineer/agents/tester)
 
 ---
 

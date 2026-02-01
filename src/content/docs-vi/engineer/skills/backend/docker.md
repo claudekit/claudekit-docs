@@ -414,9 +414,9 @@ Các vấn đề phổ biến:
 
 ## Bước tiếp theo
 
-- [Hướng dẫn triển khai](/docs/use-cases/)
-- [Tích hợp PostgreSQL](/docs/engineer/skills/postgresql-psql)
-- [Ví dụ CI/CD](/docs/use-cases/)
+- [Hướng dẫn triển khai](/vi/docs/use-cases/)
+- [Tích hợp PostgreSQL](/vi/docs/engineer/skills/postgresql-psql)
+- [Ví dụ CI/CD](/vi/docs/use-cases/)
 
 ---
 

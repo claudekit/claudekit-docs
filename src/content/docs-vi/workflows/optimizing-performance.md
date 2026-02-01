@@ -17,7 +17,7 @@ Tìm hiểu cách xác định và khắc phục các nút thắt cổ chai về
 **Mục tiêu**: Xác định và giải quyết các nút thắt cổ chai về hiệu suất một cách hệ thống
 **Thời gian**: 30-60 phút (so với 4-12 giờ làm thủ công)
 **Agents sử dụng**: debugger, code-reviewer, tester
-**Lệnh**: `/debug`, `/cook`, `/test`, `/fix`
+**Lệnh**: `/debug`, `/cook`, `/test`
 
 ## Điều Kiện Tiên Quyết
 
@@ -787,10 +787,9 @@ Chỉ số:
 - [Xây Dựng REST API](/docs/use-cases/building-api) - Phát triển API
 
 ### Các Lệnh Liên Quan
-- [/debug](/docs/engineer/commands/core/debug) - Phân tích hiệu suất
-- [/cook](/docs/engineer/commands/core/cook) - Triển khai tối ưu hóa
-- [/fix](/docs/engineer/commands/fix/hard) - Các bản sửa lỗi phức tạp
-- [/test](/docs/engineer/commands/core/test) - Kiểm thử hiệu suất
+- [/debug](/vi/docs/engineer/commands/core/debug) - Phân tích hiệu suất
+- [/cook](/vi/docs/engineer/skills/tools/cook) - Triển khai tối ưu hóa
+- [/test](/vi/docs/engineer/commands/core/test) - Kiểm thử hiệu suất
 
 ### Đọc Thêm
 - [Web.dev Performance](https://web.dev/performance/)

@@ -765,7 +765,7 @@ npx prisma db pull
 
 ### Related Commands
 - [/bootstrap](/docs/engineer/commands/core/bootstrap) - Initialize projects
-- [/cook](/docs/engineer/commands/core/cook) - Implement features
+- [/cook](/docs/engineer/skills/cook) - Implement features
 - [/test](/docs/engineer/commands/core/test) - Test suite
 
 ### Further Reading

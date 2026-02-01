@@ -106,7 +106,7 @@ Saved: plans/reports/scout-251229-2145-campaign-files.md
 
 - [/plan](/docs/marketing/commands/plan) - Uses /scout internally
 - [/cook](/docs/marketing/commands/cook) - Uses /scout internally
-- [/code](/docs/marketing/commands/code) - Implement after scouting
+- [/cook](/docs/marketing/commands/cook) - Implement after scouting
 
 ---
 

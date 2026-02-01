@@ -82,7 +82,7 @@ Next: /fix Test failures in email campaign + analytics
 
 ## Related Commands
 
-- [/code](/docs/marketing/commands/code) - Bao gồm kiểm tra tự động
+- [/cook](/docs/marketing/commands/cook) - Bao gồm kiểm tra tự động
 - [/fix](/docs/marketing/commands/fix) - Sửa lỗi test
 - [/review](/docs/marketing/commands/review) - Kiểm tra chất lượng mã
 

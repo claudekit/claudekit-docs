@@ -588,7 +588,7 @@ After using `/docs:summarize`:
 - [/docs:update](/docs/engineer/commands/docs/update) - Update all documentation
 - [/docs:init](/docs/engineer/commands/docs/init) - Initialize full documentation
 - [/watzup](/docs/engineer/commands/core/watzup) - Review recent changes
-- [/git cm](/docs/engineer/commands/git/commit) - Commit documentation
+- [/git cm](/docs/engineer/skills/git) - Commit documentation
 
 ---
 

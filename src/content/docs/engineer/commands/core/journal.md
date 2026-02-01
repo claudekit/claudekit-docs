@@ -837,8 +837,8 @@ Journals include metrics over time:
 ## Related Commands
 
 - [/watzup](/docs/engineer/commands/core/watzup) - Quick summary of recent changes
-- [/cook](/docs/engineer/commands/core/cook) - Implement features (document with journal after)
-- [/git cm](/docs/engineer/commands/git/commit) - Commit changes (journal first for context)
+- [/cook](/docs/engineer/skills/cook) - Implement features (document with journal after)
+- [/git cm](/docs/engineer/skills/git) - Commit changes (journal first for context)
 
 ---
 

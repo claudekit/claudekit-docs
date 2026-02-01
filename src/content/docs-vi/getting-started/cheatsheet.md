@@ -341,7 +341,6 @@ claude
 ### 🚀 Phát Triển Cốt Lõi
 - `/cook` - Triển khai tính năng
 - `/plan` - Tạo kế hoạch
-- `/code` - Thực thi kế hoạch
 - `/bootstrap` - Dự án mới
 
 ### 🐛 Kiểm Lỗi & Sửa Lỗi

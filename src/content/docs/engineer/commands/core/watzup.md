@@ -819,9 +819,9 @@ git log -- src/payments/
 ## Related Commands
 
 - [/journal](/docs/engineer/commands/core/journal) - Detailed work documentation
-- [/git cm](/docs/engineer/commands/git/commit) - Commit changes
-- [/git pr](/docs/engineer/commands/git/pull-request) - Create pull request
-- [/cook](/docs/engineer/commands/core/cook) - Implement features
+- [/git cm](/docs/engineer/skills/git) - Commit changes
+- [/git pr](/docs/engineer/skills/git) - Create pull request
+- [/cook](/docs/engineer/skills/cook) - Implement features
 - [/plan](/docs/engineer/commands/core/plan) - Plan implementations
 
 ---

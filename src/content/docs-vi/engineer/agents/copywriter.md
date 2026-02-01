@@ -702,7 +702,7 @@ Nội dung tốt đạt được:
 ## Liên quan
 
 - [Agent UI/UX Designer](/vi/docs/engineer/agents/ui-ux-designer) - Tạo các bố cục hình ảnh
-- [Triển khai](/vi/docs/engineer/commands/core/cook) - Xây dựng các trang
+- [Triển khai](/vi/docs/engineer/skills/tools/cook) - Xây dựng các trang
 - [Kiểm thử](/vi/docs/engineer/agents/tester) - Thử nghiệm A/B các biến thể nội dung
 
 ---

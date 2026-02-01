@@ -652,10 +652,10 @@ git checkout -b feature/password-reset
 
 ### Related Commands
 - [/plan](/docs/engineer/commands/core/plan) - Create implementation plans
-- [/cook](/docs/engineer/commands/core/cook) - Implement features from plans
+- [/cook](/docs/engineer/skills/cook) - Implement features from plans
 - [/test](/docs/engineer/commands/core/test) - Run test suites
 - [/docs:update](/docs/engineer/commands/docs/update) - Update documentation
-- [/git cm](/docs/engineer/commands/git/commit) - Commit changes
+- [/git cm](/docs/engineer/skills/git) - Commit changes
 
 ### Further Reading
 - [Command Reference](/docs/commands) - All available commands

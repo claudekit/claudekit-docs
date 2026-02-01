@@ -17,7 +17,7 @@ Tìm hiểu quy trình hoàn chỉnh để thêm tính năng mới vào dự án
 **Mục tiêu**: Thêm một tính năng hoàn chỉnh bao gồm lập kế hoạch, triển khai, kiểm thử và tài liệu.
 **Thời gian**: 15-30 phút (so với 2-4 giờ làm thủ công)
 **Các Agent sử dụng**: planner, scout, tester, code-reviewer, docs-manager
-**Các lệnh**: /plan, /code, /test, /docs:update, /git cm
+**Các lệnh**: /plan, /cook, /test, /docs:update, /git cm
 
 ## Điều kiện tiên quyết
 
@@ -641,10 +641,10 @@ git checkout -b feature/password-reset
 
 ### Các lệnh liên quan
 - [/plan](/vi/docs/engineer/commands/core/plan) - Tạo kế hoạch triển khai
-- [/cook](/vi/docs/engineer/commands/core/cook) - Triển khai tính năng
+- [/cook](/vi/docs/engineer/skills/tools/cook) - Triển khai tính năng
 - [/test](/vi/docs/engineer/commands/core/test) - Chạy bộ kiểm thử
 - [/docs:update](/vi/docs/engineer/commands/docs/update) - Cập nhật tài liệu
-- [/git cm](/vi/docs/engineer/commands/git/commit) - Commit thay đổi
+- [/git cm](/vi/docs/engineer/skills/tools/git) - Commit thay đổi
 
 ### Đọc thêm
 - [Tham khảo lệnh](/vi/docs/engineer/commands) - Tất cả lệnh có sẵn

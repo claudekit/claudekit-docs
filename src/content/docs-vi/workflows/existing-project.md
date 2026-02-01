@@ -215,7 +215,7 @@ Luôn chạy `/docs:init` trước để CC hiểu codebase của bạn.
 - Lỗi đơn giản → `/fix --quick`
 - Lỗi phức tạp → `/fix`
 - Tính năng nhỏ → `/cook`
-- Tính năng lớn → `/plan` rồi `/code`
+- Tính năng lớn → `/plan` rồi `/cook`
 
 ### 5. Test Thường Xuyên
 Chạy `/test` thường xuyên để phát hiện lỗi sớm.

@@ -361,7 +361,7 @@ Bạn cũng có thể gọi lệnh này một cách tường minh:
 **Giải pháp**: Sử dụng các lệnh phù hợp
 - Cú pháp code: Chỉ cần hỏi trực tiếp
 - Sửa lỗi (Bugs): `/debug [vấn đề]`
-- Triển khai: `/plan` sau đó `/code`
+- Triển khai: `/plan` sau đó `/cook`
 
 ## Các lệnh liên quan
 

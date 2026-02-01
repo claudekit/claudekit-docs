@@ -641,7 +641,7 @@ Improvement: +36 points maintainability
 - [Optimizing Performance](/docs/workflows/optimizing-performance) - Speed improvements
 
 ### Related Commands
-- [/cook](/docs/engineer/commands/core/cook) - Implement refactoring
+- [/cook](/docs/engineer/skills/cook) - Implement refactoring
 - [/test](/docs/engineer/commands/core/test) - Verify changes
 - [/docs:update](/docs/engineer/commands/docs/update) - Update docs
 

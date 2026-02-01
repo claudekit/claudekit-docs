@@ -17,7 +17,7 @@ Tìm hiểu cách triển khai các hệ thống xác thực bảo mật với C
 **Mục tiêu**: Triển khai hệ thống xác thực bảo mật, sẵn sàng cho môi trường production.
 **Thời gian**: 20-40 phút (so với 4-8 giờ làm thủ công)
 **Các Agent sử dụng**: planner, researcher, tester, code-reviewer
-**Các lệnh**: /plan, /code, /test, /docs:update
+**Các lệnh**: /plan, /cook, /test, /docs:update
 
 ## Điều kiện tiên quyết
 
@@ -626,12 +626,12 @@ Trước khi triển khai lên production:
 - [Thêm Tính Năng Mới](/vi/docs/workflows/adding-feature) - Xây dựng tính năng
 
 ### Các lệnh liên quan
-- [/cook](/vi/docs/engineer/commands/core/cook) - Triển khai tính năng
+- [/cook](/vi/docs/engineer/skills/tools/cook) - Triển khai tính năng
 - [/test](/vi/docs/engineer/commands/core/test) - Bộ kiểm thử
-- [/fix --quick](/vi/docs/engineer/commands/fix/fast) - Sửa lỗi nhanh
+- [/fix --quick](/vi/docs/engineer/skills/tools/fix) - Sửa lỗi nhanh
 
 ### Hướng dẫn tích hợp
-- [/integrate:polar](/vi/docs/engineer/commands/integrate/polar) - Thanh toán Polar
+- [/integrate:polar](/vi/docs/engineer/skills/tools/integrate) - Thanh toán Polar
 - [Better Auth Skill](/vi/docs/skills) - Framework Better Auth
 
 ### Đọc thêm

@@ -573,7 +573,7 @@ After using `/docs:update`:
 
 - [/docs:summarize](/docs/engineer/commands/docs/summarize) - Update just codebase summary
 - [/watzup](/docs/engineer/commands/core/watzup) - Review recent changes
-- [/git cm](/docs/engineer/commands/git/commit) - Commit documentation updates
+- [/git cm](/docs/engineer/skills/git) - Commit documentation updates
 
 ---
 

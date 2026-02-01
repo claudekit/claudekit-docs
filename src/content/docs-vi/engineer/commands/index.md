@@ -18,7 +18,7 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 ### Phát Triển Cốt Lõi (Core)
 
 - **[/bootstrap](/docs/engineer/commands/core/bootstrap)** - Khởi tạo dự án mới với phát triển hướng đặc tả (spec-driven development)
-- **[/cook](/docs/engineer/commands/core/cook)** - Phát triển tính năng mới
+- **[/cook](/vi/docs/engineer/skills/tools/cook)** - Phát triển tính năng mới
 - **[/plan](/docs/engineer/commands/core/plan)** - Tạo kế hoạch triển khai
 - **[/brainstorm](/docs/engineer/commands/core/brainstorm)** - Khám phá tính khả thi của tính năng
 - **[/ask](/docs/engineer/commands/core/ask)** - Đặt câu hỏi về codebase
@@ -29,14 +29,14 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 
 ### Sửa Lỗi (Bug Fixing)
 
-- **[/fix](/docs-vi/commands/fix/)** - Sửa lỗi thông minh (tự động chọn phương pháp fast/hard)
-- **[/fix --quick](/docs-vi/commands/fix/fast)** - Sửa lỗi nhỏ nhanh chóng
-- **[/fix](/docs-vi/commands/fix/hard)** - Sửa lỗi phức tạp với phân tích kỹ lưỡng
-- **[/fix](/docs-vi/commands/fix/ci)** - Sửa lỗi GitHub Actions CI
-- **[/fix](/docs-vi/commands/fix/logs)** - Phân tích và sửa lỗi từ logs
-- **[/fix](/docs-vi/commands/fix/test)** - Sửa lỗi tests thất bại
-- **[/fix](/docs-vi/commands/fix/ui)** - Sửa lỗi UI/UX
-- **[/fix](/docs-vi/commands/fix/types)** - Sửa lỗi TypeScript type
+- **[/fix](/vi/docs/engineer/skills/tools/fix)** - Sửa lỗi thông minh (tự động chọn phương pháp fast/hard)
+- **[/fix --quick](/vi/docs/engineer/skills/tools/fix)** - Sửa lỗi nhỏ nhanh chóng
+- **[/fix](/vi/docs/engineer/skills/tools/fix)** - Sửa lỗi phức tạp với phân tích kỹ lưỡng
+- **[/fix](/vi/docs/engineer/skills/tools/fix)** - Sửa lỗi GitHub Actions CI
+- **[/fix](/vi/docs/engineer/skills/tools/fix)** - Phân tích và sửa lỗi từ logs
+- **[/fix](/vi/docs/engineer/skills/tools/fix)** - Sửa lỗi tests thất bại
+- **[/fix](/vi/docs/engineer/skills/tools/fix)** - Sửa lỗi UI/UX
+- **[/fix](/vi/docs/engineer/skills/tools/fix)** - Sửa lỗi TypeScript type
 
 ### Tài Liệu (Documentation)
 
@@ -46,9 +46,9 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 
 ### Thao Tác Git
 
-- **[/git cm](/docs/engineer/commands/git/commit)** - Stage và commit các thay đổi
-- **[/git cp](/docs/engineer/commands/git/commit-push)** - Stage, commit và push
-- **[/git pr](/docs/engineer/commands/git/pull-request)** - Tạo pull request
+- **[/git cm](/vi/docs/engineer/skills/tools/git)** - Stage và commit các thay đổi
+- **[/git cp](/vi/docs/engineer/skills/tools/git)** - Stage, commit và push
+- **[/git pr](/vi/docs/engineer/skills/tools/git)** - Tạo pull request
 
 ### Lập Kế Hoạch (Planning)
 
@@ -67,15 +67,15 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 
 ### Nội Dung & Marketing
 
-- **[/content:cro](/docs/engineer/commands/content/cro)** - Nội dung tối ưu hóa chuyển đổi
-- **[/content:enhance](/docs/engineer/commands/content/enhance)** - Cải thiện nội dung hiện có
-- **[/content:fast](/docs/engineer/commands/content/fast)** - Tạo nội dung nhanh chóng
-- **[/content:good](/docs/engineer/commands/content/good)** - Nội dung chất lượng cao kèm nghiên cứu
+- **[/content:cro](/vi/docs/engineer/skills/ai/copywriting)** - Nội dung tối ưu hóa chuyển đổi
+- **[/content:enhance](/vi/docs/engineer/skills/ai/copywriting)** - Cải thiện nội dung hiện có
+- **[/content:fast](/vi/docs/engineer/skills/ai/copywriting)** - Tạo nội dung nhanh chóng
+- **[/content:good](/vi/docs/engineer/skills/ai/copywriting)** - Nội dung chất lượng cao kèm nghiên cứu
 
 ### Tích Hợp (Integrations)
 
-- **[/integrate:polar](/docs/engineer/commands/integrate/polar)** - Tích hợp thanh toán Polar.sh
-- **[/integrate:sepay](/docs/engineer/commands/integrate/sepay)** - Tích hợp thanh toán SePay.vn (Việt Nam)
+- **[/integrate:polar](/vi/docs/engineer/skills/tools/integrate)** - Tích hợp thanh toán Polar.sh
+- **[/integrate:sepay](/vi/docs/engineer/skills/tools/integrate)** - Tích hợp thanh toán SePay.vn (Việt Nam)
 
 ### Nhật Ký (Journaling)
 
@@ -435,9 +435,9 @@ Tiếp theo: Xem lại các thay đổi, sau đó chạy /git cm
 Khám phá các nhóm lệnh cụ thể:
 
 - [Lệnh Cốt Lõi](/docs/engineer/commands/core/) - Các lệnh thiết yếu cho phát triển
-- [Lệnh Sửa Lỗi](/docs/engineer/commands/fix/) - Gỡ lỗi và sửa chữa
-- [Lệnh Thiết Kế](/docs/engineer/commands/design/) - Tạo UI/UX
-- [Lệnh Git](/docs/engineer/commands/git/) - Quản lý phiên bản
+- [Lệnh Sửa Lỗi](/vi/docs/engineer/skills/tools/fix) - Gỡ lỗi và sửa chữa
+- [Lệnh Thiết Kế](/vi/docs/engineer/skills/ai/canvas-design) - Tạo UI/UX
+- [Lệnh Git](/vi/docs/engineer/skills/tools/git) - Quản lý phiên bản
 
 Hoặc tìm hiểu thêm về:
 

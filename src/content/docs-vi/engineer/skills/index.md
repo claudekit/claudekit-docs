@@ -32,7 +32,7 @@ Skills là các thư mục chứa hướng dẫn, tập lệnh (scripts) và tà
 
 Các kỹ năng dùng để tạo và quản lý các kỹ năng khác.
 
-#### [skill-creator](/docs/engineer/skills/skill-creator)
+#### [skill-creator](/vi/docs/engineer/skills/skill-creator)
 Tạo các kỹ năng tùy chỉnh mới để mở rộng khả năng của Claude với kiến thức chuyên môn, quy trình làm việc hoặc tích hợp công cụ.
 
 **Sử dụng khi:** Xây dựng các kỹ năng tùy chỉnh cho nhu cầu cụ thể của dự án.
@@ -42,7 +42,7 @@ Tạo các kỹ năng tùy chỉnh mới để mở rộng khả năng của Cla
 "Sử dụng skill-creator để tạo một kỹ năng tạo schema GraphQL"
 ```
 
-[→ Hướng dẫn đầy đủ về skill-creator](/docs/engineer/skills/skill-creator)
+[→ Hướng dẫn đầy đủ về skill-creator](/vi/docs/engineer/skills/skill-creator)
 
 ---
 
@@ -53,7 +53,7 @@ Mẫu cơ bản để bắt đầu tạo các kỹ năng mới.
 
 ### Xác Thực & Bảo Mật (Authentication & Security)
 
-#### [better-auth](/docs/engineer/skills/better-auth)
+#### [better-auth](/vi/docs/engineer/skills/better-auth)
 Framework xác thực đa nền tảng cho TypeScript với các tính năng email/mật khẩu, OAuth, 2FA, passkeys và đa người thuê (multi-tenancy).
 
 **Sử dụng khi:** Triển khai xác thực trong các ứng dụng TypeScript/JavaScript.
@@ -72,7 +72,7 @@ Framework xác thực đa nền tảng cho TypeScript với các tính năng ema
 "Sử dụng better-auth để triển khai GitHub OAuth với 2FA"
 ```
 
-[→ Hướng dẫn đầy đủ về better-auth](/docs/engineer/skills/better-auth)
+[→ Hướng dẫn đầy đủ về better-auth](/vi/docs/engineer/skills/better-auth)
 
 ---
 
@@ -99,7 +99,7 @@ Tạo các tác phẩm nghệ thuật hình ảnh đẹp mắt ở định dạn
 
 ### Xử Lý Tài Liệu (Document Processing)
 
-#### [document-skills](/docs/engineer/skills/document-skills)
+#### [document-skills](/vi/docs/engineer/skills/document-skills)
 Đọc, phân tích và tạo các định dạng tài liệu khác nhau.
 
 **Định dạng hỗ trợ:**
@@ -115,13 +115,13 @@ Tạo các tác phẩm nghệ thuật hình ảnh đẹp mắt ở định dạn
 "Sử dụng document-skills/pdf để trích xuất các trường biểu mẫu từ file contract.pdf"
 ```
 
-[→ Hướng dẫn đầy đủ về document-skills](/docs/engineer/skills/document-skills)
+[→ Hướng dẫn đầy đủ về document-skills](/vi/docs/engineer/skills/document-skills)
 
 ---
 
 ### Công Cụ Phát Triển (Development Tools)
 
-#### [mcp-builder](/docs/engineer/skills/mcp-builder)
+#### [mcp-builder](/vi/docs/engineer/skills/mcp-builder)
 Tạo các máy chủ MCP (Model Context Protocol) chất lượng cao để tích hợp với các dịch vụ bên ngoài.
 
 **Sử dụng khi:** Xây dựng máy chủ MCP bằng Python (FastMCP) hoặc Node/TypeScript.
@@ -138,7 +138,7 @@ Tạo các máy chủ MCP (Model Context Protocol) chất lượng cao để tí
 "Sử dụng mcp-builder để tạo máy chủ MCP cho Stripe API"
 ```
 
-[→ Hướng dẫn đầy đủ về mcp-builder](/docs/engineer/skills/mcp-builder)
+[→ Hướng dẫn đầy đủ về mcp-builder](/vi/docs/engineer/skills/mcp-builder)
 
 ---
 
@@ -151,7 +151,7 @@ Tạo các máy chủ MCP (Model Context Protocol) chất lượng cao để tí
 
 ### Gỡ Lỗi & Giải Quyết Vấn Đề (Debugging & Problem Solving)
 
-#### [systematic-debugging](/docs/engineer/skills/systematic-debugging)
+#### [systematic-debugging](/vi/docs/engineer/skills/systematic-debugging)
 Khung gỡ lỗi bốn giai đoạn đảm bảo tìm ra nguyên nhân gốc rễ trước khi thực hiện sửa lỗi.
 
 **Sử dụng khi:** Gặp bất kỳ lỗi nào, thất bại khi chạy test, hoặc hành vi không mong muốn.
@@ -167,7 +167,7 @@ Khung gỡ lỗi bốn giai đoạn đảm bảo tìm ra nguyên nhân gốc r�
 "Sử dụng systematic-debugging để điều tra tại sao test bị thất bại"
 ```
 
-[→ Hướng dẫn đầy đủ về systematic-debugging](/docs/engineer/skills/systematic-debugging)
+[→ Hướng dẫn đầy đủ về systematic-debugging](/vi/docs/engineer/skills/systematic-debugging)
 
 ---
 
@@ -206,7 +206,7 @@ Các chiến lược để vượt qua khi bị tắc nghẽn.
 
 ### Frontend Frameworks & UI
 
-#### [nextjs](/docs/engineer/skills/nextjs)
+#### [nextjs](/vi/docs/engineer/skills/nextjs)
 Hướng dẫn triển khai Next.js toàn diện.
 
 **Sử dụng khi:** Xây dựng ứng dụng Next.js.
@@ -219,11 +219,11 @@ Hướng dẫn triển khai Next.js toàn diện.
 - Lấy dữ liệu (Data fetching).
 - Tối ưu hóa (Optimization).
 
-[→ Hướng dẫn đầy đủ về Next.js](/docs/engineer/skills/nextjs)
+[→ Hướng dẫn đầy đủ về Next.js](/vi/docs/engineer/skills/nextjs)
 
 ---
 
-#### [shadcn-ui](/docs/engineer/skills/shadcn-ui)
+#### [shadcn-ui](/vi/docs/engineer/skills/shadcn-ui)
 Thư viện thành phần giao diện đẹp và dễ tiếp cận cho React.
 
 **Sử dụng khi:** Xây dựng giao diện với Tailwind CSS.
@@ -234,16 +234,16 @@ Thư viện thành phần giao diện đẹp và dễ tiếp cận cho React.
 - Hỗ trợ đầy đủ cho người khuyết tật (Accessible).
 - Hỗ trợ TypeScript.
 
-[→ Hướng dẫn đầy đủ về shadcn-ui](/docs/engineer/skills/shadcn-ui)
+[→ Hướng dẫn đầy đủ về shadcn-ui](/vi/docs/engineer/skills/shadcn-ui)
 
 ---
 
-#### [tailwindcss](/docs/engineer/skills/tailwindcss)
+#### [tailwindcss](/vi/docs/engineer/skills/tailwindcss)
 Framework CSS ưu tiên tiện ích (utility-first).
 
 **Sử dụng khi:** Thiết kế phong cách cho ứng dụng.
 
-[→ Hướng dẫn đầy đủ về Tailwind CSS](/docs/engineer/skills/tailwindcss)
+[→ Hướng dẫn đầy đủ về Tailwind CSS](/vi/docs/engineer/skills/tailwindcss)
 
 ---
 
@@ -254,7 +254,7 @@ Hệ thống biểu tượng nguồn mở.
 
 ### Backend & Cơ Sở Dữ Liệu
 
-#### [postgresql-psql](/docs/engineer/skills/postgresql-psql)
+#### [postgresql-psql](/vi/docs/engineer/skills/postgresql-psql)
 Quản trị và tối ưu hóa cơ sở dữ liệu PostgreSQL.
 
 **Sử dụng khi:** Làm việc với cơ sở dữ liệu PostgreSQL.
@@ -266,7 +266,7 @@ Quản trị và tối ưu hóa cơ sở dữ liệu PostgreSQL.
 - Sao lưu/Khôi phục.
 - Nhân bản (Replication).
 
-[→ Hướng dẫn đầy đủ về PostgreSQL](/docs/engineer/skills/postgresql-psql)
+[→ Hướng dẫn đầy đủ về PostgreSQL](/vi/docs/engineer/skills/postgresql-psql)
 
 ---
 
@@ -277,7 +277,7 @@ Các hoạt động và phương pháp hay nhất cho cơ sở dữ liệu Mongo
 
 ### DevOps & Cơ Sở Hạ Tầng
 
-#### [docker](/docs/engineer/skills/docker)
+#### [docker](/vi/docs/engineer/skills/docker)
 Nền tảng container hóa để xây dựng, chạy và triển khai ứng dụng.
 
 **Sử dụng khi:** Đóng gói ứng dụng, tạo Dockerfile, Docker Compose.
@@ -290,7 +290,7 @@ Nền tảng container hóa để xây dựng, chạy và triển khai ứng d�
 - Tích hợp CI/CD.
 - Triển khai sản phẩm (Production deployment).
 
-[→ Hướng dẫn đầy đủ về Docker](/docs/engineer/skills/docker)
+[→ Hướng dẫn đầy đủ về Docker](/vi/docs/engineer/skills/docker)
 
 ---
 

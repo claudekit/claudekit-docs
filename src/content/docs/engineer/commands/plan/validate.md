@@ -86,4 +86,4 @@ This prevents planning context pollution and improves plan adherence.
 ## Related Commands
 
 - [/plan:hard](/docs/engineer/commands/plan/hard) - Research-based planning
-- [/cook](/docs/engineer/commands/core/cook) - Implementation from validated plan
+- [/cook](/docs/engineer/skills/cook) - Implementation from validated plan

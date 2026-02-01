@@ -331,7 +331,7 @@ Nhận phân tích rủi ro và đề xuất cách tiếp cận theo từng giai
 
 ## Điều /brainstorm KHÔNG làm
 
-- ❌ Triển khai mã nguồn (sử dụng `/cook` hoặc `/code`)
+- ❌ Triển khai mã nguồn (sử dụng `/cook`)
 - ❌ Sửa lỗi (sử dụng `/debug` hoặc `/fix`)
 - ❌ Đưa ra quyết định cuối cùng (bạn quyết định, hệ thống tư vấn)
 - ❌ Bỏ qua việc tài liệu hóa (luôn tạo báo cáo)
@@ -407,7 +407,7 @@ git diff main
 
 - [/ask](/vi/docs/engineer/commands/core/ask) - Các câu hỏi kiến trúc nhanh không cần báo cáo đầy đủ
 - [/plan](/vi/docs/engineer/commands/plan) - Tạo kế hoạch triển khai sau khi brainstorm
-- [/code](/vi/docs/engineer/skills/tools/cook) - Thực thi kế hoạch với các bước kiểm soát chất lượng
+- [/cook](/vi/docs/engineer/skills/tools/cook) - Thực thi kế hoạch với các bước kiểm soát chất lượng
 - [/cook](/vi/docs/engineer/skills/tools/cook) - Triển khai tính năng theo từng bước
 
 ---

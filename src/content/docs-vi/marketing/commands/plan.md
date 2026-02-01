@@ -211,7 +211,7 @@ plans/251229-{slug}/
 
 ## Lệnh Liên Quan
 
-- [/code](/docs/marketing/commands/code) - Execute plan
+- [/cook](/docs/marketing/commands/cook) - Execute plan
 - [/cook](/docs/marketing/commands/cook) - Plan + implement
 - [/scout](/docs/marketing/commands/scout) - Codebase search
 

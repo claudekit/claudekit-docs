@@ -17,7 +17,7 @@ Tìm hiểu quy trình hoàn chỉnh để thêm tính năng mới vào dự án
 **Mục tiêu**: Thêm một tính năng hoàn chỉnh bao gồm lập kế hoạch, triển khai, kiểm thử và tài liệu.
 **Thời gian**: 15-30 phút (so với 2-4 giờ làm thủ công)
 **Các Agent sử dụng**: planner, scout, tester, code-reviewer, docs-manager
-**Các lệnh**: /plan, /code, /test, /docs:update, /git cm
+**Các lệnh**: /plan, /cook, /test, /docs:update, /git cm
 
 ## Điều kiện tiên quyết
 

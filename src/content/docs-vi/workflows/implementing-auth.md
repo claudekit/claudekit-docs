@@ -17,7 +17,7 @@ Tìm hiểu cách triển khai các hệ thống xác thực bảo mật với C
 **Mục tiêu**: Triển khai hệ thống xác thực bảo mật, sẵn sàng cho môi trường production.
 **Thời gian**: 20-40 phút (so với 4-8 giờ làm thủ công)
 **Các Agent sử dụng**: planner, researcher, tester, code-reviewer
-**Các lệnh**: /plan, /code, /test, /docs:update
+**Các lệnh**: /plan, /cook, /test, /docs:update
 
 ## Điều kiện tiên quyết
 

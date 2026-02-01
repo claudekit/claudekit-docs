@@ -171,7 +171,7 @@ Tự động tạo tiêu đề theo quy ước:
 
 ## Lệnh Liên Quan
 
-- [/code](/docs/marketing/commands/code) - Auto-commits after implementation
+- [/cook](/docs/marketing/commands/cook) - Auto-commits after implementation
 - [/cook](/docs/marketing/commands/cook) - Includes git commit
 - [/git cm](/docs/marketing/commands/git) - Commit only (no PR)
 

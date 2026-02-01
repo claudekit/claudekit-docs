@@ -119,7 +119,7 @@ Next: /fix SQL injection in campaign query
 
 ## Lệnh Liên Quan
 
-- [/code](/docs/marketing/commands/code) - Includes review automatically
+- [/cook](/docs/marketing/commands/cook) - Includes review automatically
 - [/fix](/docs/marketing/commands/fix) - Fix issues found
 - [/test](/docs/marketing/commands/test) - Run tests
 

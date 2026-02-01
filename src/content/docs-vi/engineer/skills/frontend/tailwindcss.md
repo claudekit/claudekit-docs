@@ -683,10 +683,10 @@ export default {
 
 ## Các kỹ năng liên quan
 
-- [Next.js](/docs/engineer/skills/nextjs) - Tích hợp framework React
-- [shadcn/ui](/docs/engineer/skills/shadcn-ui) - Các component được xây dựng sẵn
-- [React](/docs/engineer/skills/react) - Phát triển component
-- [TypeScript](/docs/engineer/skills/typescript) - Tạo kiểu an toàn cho giao diện
+- [Next.js](/vi/docs/engineer/skills/nextjs) - Tích hợp framework React
+- [shadcn/ui](/vi/docs/engineer/skills/shadcn-ui) - Các component được xây dựng sẵn
+- [React](/vi/docs/engineer/skills/react) - Phát triển component
+- [TypeScript](/vi/docs/engineer/skills/typescript) - Tạo kiểu an toàn cho giao diện
 
 ## Tài liệu tham khảo
 

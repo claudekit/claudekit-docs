@@ -277,9 +277,9 @@ npx @better-auth/cli migrate
 
 ## Bước tiếp theo
 
-- [Ví dụ xác thực](/docs/use-cases/)
-- [Kỹ năng cơ sở dữ liệu](/docs/engineer/skills/postgresql-psql)
-- [Tích hợp Next.js](/docs/engineer/skills/nextjs)
+- [Ví dụ xác thực](/vi/docs/use-cases/)
+- [Kỹ năng cơ sở dữ liệu](/vi/docs/engineer/skills/postgresql-psql)
+- [Tích hợp Next.js](/vi/docs/engineer/skills/nextjs)
 
 ---
 

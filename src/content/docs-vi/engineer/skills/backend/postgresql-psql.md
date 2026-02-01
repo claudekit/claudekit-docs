@@ -487,9 +487,9 @@ WHERE cardinality(pg_blocking_pids(pid)) > 0;
 
 ## Bước tiếp theo
 
-- [Các mẫu thiết kế cơ sở dữ liệu](/docs/use-cases/)
-- [Tích hợp Docker](/docs/engineer/skills/docker)
-- [Ví dụ Backend](/docs/use-cases/)
+- [Các mẫu thiết kế cơ sở dữ liệu](/vi/docs/use-cases/)
+- [Tích hợp Docker](/vi/docs/engineer/skills/docker)
+- [Ví dụ Backend](/vi/docs/use-cases/)
 
 ---
 

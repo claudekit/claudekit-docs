@@ -438,9 +438,9 @@ Giữ nguyên:
 
 ## Bước tiếp theo
 
-- [Ví dụ xử lý dữ liệu](/docs/use-cases/)
-- [Tích hợp AI](/docs/engineer/skills/)
-- [Luồng công việc tự động](/docs/use-cases/)
+- [Ví dụ xử lý dữ liệu](/vi/docs/use-cases/)
+- [Tích hợp AI](/vi/docs/engineer/skills/)
+- [Luồng công việc tự động](/vi/docs/use-cases/)
 
 ---
 

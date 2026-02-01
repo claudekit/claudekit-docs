@@ -814,10 +814,10 @@ npx shadcn@latest diff
 
 ## Các kỹ năng liên quan
 
-- [Tailwind CSS](/docs/engineer/skills/tailwindcss) - Nền tảng tạo kiểu
-- [Next.js](/docs/engineer/skills/nextjs) - Tích hợp framework React
-- [React Hook Form](/docs/engineer/skills/react-hook-form) - Quản lý biểu mẫu
-- [Zod](/docs/engineer/skills/zod) - Xác thực schema
+- [Tailwind CSS](/vi/docs/engineer/skills/tailwindcss) - Nền tảng tạo kiểu
+- [Next.js](/vi/docs/engineer/skills/nextjs) - Tích hợp framework React
+- [React Hook Form](/vi/docs/engineer/skills/react-hook-form) - Quản lý biểu mẫu
+- [Zod](/vi/docs/engineer/skills/zod) - Xác thực schema
 
 ## Tài liệu tham khảo
 

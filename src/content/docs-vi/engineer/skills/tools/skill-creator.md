@@ -445,9 +445,9 @@ Nằm trong thư mục `~/.claude/skills/`
 
 ## Bước tiếp theo
 
-- [Các kỹ năng hiện có](/docs/engineer/skills/)
-- [Ví dụ về kỹ năng](/docs/use-cases/)
-- [Các mẫu nâng cao](/docs/use-cases/)
+- [Các kỹ năng hiện có](/vi/docs/engineer/skills/)
+- [Ví dụ về kỹ năng](/vi/docs/use-cases/)
+- [Các mẫu nâng cao](/vi/docs/use-cases/)
 
 ---
 

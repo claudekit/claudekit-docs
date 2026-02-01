@@ -98,8 +98,7 @@ Agent sử dụng các chiến lược để giảm chi phí:
 ## Các bước tiếp theo
 
 Tìm hiểu thêm về các chủ đề liên quan:
-- [Lệnh Commit & Push](/vi/docs/engineer/commands/git/commit-push)
-- [Lệnh Pull Request](/vi/docs/engineer/commands/git/pr)
+- [Git Skill](/vi/docs/engineer/skills/tools/git) - Commit, push, và pull request
 - [Xem xét mã nguồn](/vi/docs/engineer/agents/code-reviewer)
 - [Project Manager](/vi/docs/engineer/agents/project-manager)
 

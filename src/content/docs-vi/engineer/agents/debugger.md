@@ -141,7 +141,7 @@ Việc gỡ lỗi hiệu quả đạt được:
 
 - [Agent Tester](/vi/docs/engineer/agents/tester) - Xác nhận các bản sửa lỗi bằng kiểm thử
 - [Agent Code Reviewer](/vi/docs/engineer/agents/code-reviewer) - Xem xét chất lượng bản sửa lỗi
-- [Các lệnh sửa lỗi](/vi/docs/engineer/commands/fix) - Áp dụng các bản sửa lỗi một cách hệ thống
+- [Fix Skill](/vi/docs/engineer/skills/tools/fix) - Áp dụng các bản sửa lỗi một cách hệ thống
 
 ---
 

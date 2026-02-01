@@ -97,7 +97,7 @@ Chỉ Số Khả Năng Bảo Trì: 42/100 (Cần cải thiện)
 Tạo một kế hoạch tái cấu trúc:
 
 ```bash
-/plan [refactor user validation logic to eliminate duplication]
+/cook [refactor user validation logic to eliminate duplication]
 ```
 
 **Kế hoạch được tạo**:
@@ -637,7 +637,7 @@ Cải thiện: +36 điểm khả năng bảo trì
 - [Tối Ưu Hóa Hiệu Suất](/docs/use-cases/optimizing-performance) - Cải thiện tốc độ
 
 ### Các Lệnh Liên Quan
-- [/cook](/docs/engineer/commands/core/cook) - Triển khai tái cấu trúc
+- [/cook](/vi/docs/engineer/skills/tools/cook) - Triển khai tái cấu trúc
 - [/test](/docs/engineer/commands/core/test) - Xác minh các thay đổi
 - [/docs:update](/docs/engineer/commands/docs/update) - Cập nhật tài liệu
 

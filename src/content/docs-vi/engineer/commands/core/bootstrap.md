@@ -341,7 +341,7 @@ ls src/
 
 **Vấn đề:** Một số tính năng không được triển khai
 
-**Giải pháp:** Thêm các tính năng sau khi bootstrap bằng lệnh `/cook`
+**Giải pháp:** Thêm các tính năng sau khi bootstrap bằng `/cook` skill
 
 ### Kiểm thử thất bại
 
@@ -372,10 +372,10 @@ npm test
 
 ## Các bước tiếp theo
 
-- [/cook](/docs/engineer/commands/core/cook) - Thêm tính năng mới
-- [/plan](/docs/engineer/commands/core/plan) - Lập kế hoạch bổ sung
-- [/test](/docs/engineer/commands/core/test) - Chạy bộ kiểm thử
-- [/docs:update](/docs/engineer/commands/docs/update) - Cập nhật tài liệu
+- [/cook](/vi/docs/engineer/skills/tools/cook) - Thêm tính năng mới
+- [/plan](/vi/docs/engineer/commands/core/plan) - Lập kế hoạch bổ sung
+- [/test](/vi/docs/engineer/commands/core/test) - Chạy bộ kiểm thử
+- [/docs:update](/vi/docs/engineer/commands/docs-cmd/update) - Cập nhật tài liệu
 
 ---
 

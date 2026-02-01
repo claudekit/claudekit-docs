@@ -500,9 +500,9 @@ Agent traces execution paths to find race condition.
 
 ## Related Commands
 
-- [/fix --quick](/docs/engineer/commands/fix/fast) - Implement quick fixes after diagnosis
-- [/fix](/docs/engineer/commands/fix/hard) - Fix complex issues requiring planning
-- [/fix](/docs/engineer/commands/fix/logs) - Analyze and fix issues from log files
+- [/fix --quick](/docs/engineer/skills/fix) - Implement quick fixes after diagnosis
+- [/fix](/docs/engineer/skills/fix) - Fix complex issues requiring planning
+- [/fix](/docs/engineer/skills/fix) - Analyze and fix issues from log files
 - [/scout](/docs/engineer/commands/core/scout) - Find relevant files before debugging
 - [/ask](/docs/engineer/commands/core/ask) - Get architectural guidance on systemic issues
 

@@ -727,9 +727,9 @@ Before production:
 - [Adding a New Feature](/docs/workflows/adding-feature) - Feature development
 
 ### Related Commands
-- [/integrate:polar](/docs/engineer/commands/integrate/polar) - Polar integration
-- [/integrate:sepay](/docs/engineer/commands/integrate/sepay) - SePay integration
-- [/cook](/docs/engineer/commands/core/cook) - Implement features from plans
+- [/integrate:polar](/docs/engineer/skills/integrate) - Polar integration
+- [/integrate:sepay](/docs/engineer/skills/integrate) - SePay integration
+- [/cook](/docs/engineer/skills/cook) - Implement features from plans
 - [/test](/docs/engineer/commands/core/test) - Test suite
 
 ### Further Reading

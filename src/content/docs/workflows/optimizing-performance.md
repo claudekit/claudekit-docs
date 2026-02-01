@@ -792,8 +792,8 @@ Metrics:
 
 ### Related Commands
 - [/debug](/docs/engineer/commands/core/debug) - Performance profiling
-- [/cook](/docs/engineer/commands/core/cook) - Implement optimizations
-- [/fix](/docs/engineer/commands/fix/hard) - Complex fixes
+- [/cook](/docs/engineer/skills/cook) - Implement optimizations
+- [/fix](/docs/engineer/skills/fix) - Complex fixes
 - [/test](/docs/engineer/commands/core/test) - Performance testing
 
 ### Further Reading

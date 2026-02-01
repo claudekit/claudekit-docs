@@ -662,11 +662,7 @@ Sau khi sửa lỗi, hãy cải thiện quy trình:
 - [Refactor Mã Nguồn](/vi/docs/workflows/refactoring-code) - Chất lượng mã nguồn
 
 ### Các lệnh liên quan
-- [/fix --quick](/vi/docs/engineer/commands/fix/fast) - Sửa lỗi nhanh
-- [/fix](/vi/docs/engineer/commands/fix/hard) - Gỡ lỗi phức tạp
-- [/fix](/vi/docs/engineer/commands/fix/logs) - Phân tích log
-- [/fix](/vi/docs/engineer/commands/fix/ui) - Sửa lỗi giao diện
-- [/fix](/vi/docs/engineer/commands/fix/ci) - Sửa lỗi CI/CD
+- [/fix](/vi/docs/engineer/skills/tools/fix) - Sửa lỗi (quick/hard/logs/ui/ci)
 - [/test](/vi/docs/engineer/commands/core/test) - Bộ kiểm thử
 
 ### Đọc thêm

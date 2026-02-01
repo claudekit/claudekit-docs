@@ -17,7 +17,7 @@ Tìm hiểu cách tích hợp xử lý thanh toán với ClaudeKit - từ thanh 
 **Mục tiêu**: Triển khai xử lý thanh toán an toàn với việc tích hợp nhà cung cấp
 **Thời gian**: 25-50 phút (so với 5-10 giờ làm thủ công)
 **Agents sử dụng**: planner, researcher, tester, code-reviewer
-**Lệnh**: `/integrate:polar`, `/integrate:sepay`, `/cook`, `/test`
+**Lệnh**: `/cook`, `/test`
 
 ## Điều Kiện Tiên Quyết
 
@@ -47,10 +47,10 @@ Chọn nhà cung cấp dựa trên nhu cầu của bạn:
 /plan [tích hợp Stripe cho thanh toán đăng ký]
 
 # Cho nền tảng sáng tạo (creators)
-/integrate:polar
+/cook [tích hợp Polar cho thanh toán đăng ký]
 
 # Cho thị trường Việt Nam
-/integrate:sepay
+/cook [tích hợp SePay cho thanh toán tại Việt Nam]
 
 # Cho thương mại điện tử nói chung
 /plan [tích hợp Stripe với PayPal làm dự phòng]
@@ -717,10 +717,8 @@ Trước khi lên production:
 - [Thêm Tính Năng Mới](/docs/use-cases/adding-feature) - Phát triển tính năng
 
 ### Các Lệnh Liên Quan
-- [/integrate:polar](/docs/engineer/commands/integrate/polar) - Tích hợp Polar
-- [/integrate:sepay](/docs/engineer/commands/integrate/sepay) - Tích hợp SePay
-- [/cook](/docs/engineer/commands/core/cook) - Các tính năng tùy chỉnh
-- [/test](/docs/engineer/commands/core/test) - Bộ kiểm thử
+- [/cook](/vi/docs/engineer/skills/tools/cook) - Các tính năng tùy chỉnh
+- [/test](/vi/docs/engineer/commands/core/test) - Bộ kiểm thử
 
 ### Đọc Thêm
 - [Tài liệu Stripe](https://stripe.com/docs)

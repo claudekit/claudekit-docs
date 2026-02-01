@@ -649,12 +649,12 @@ Before production deployment:
 - [Adding a New Feature](/docs/workflows/adding-feature) - Build features
 
 ### Related Commands
-- [/cook](/docs/engineer/commands/core/cook) - Implement features
+- [/cook](/docs/engineer/skills/cook) - Implement features
 - [/test](/docs/engineer/commands/core/test) - Test suite
-- [/fix --quick](/docs/engineer/commands/fix/fast) - Quick fixes
+- [/fix --quick](/docs/engineer/skills/fix) - Quick fixes
 
 ### Integration Guides
-- [/integrate:polar](/docs/engineer/commands/integrate/polar) - Polar payments
+- [/integrate:polar](/docs/engineer/skills/integrate) - Polar payments
 - [Better Auth Skill](/docs/skills) - Better Auth framework
 
 ### Further Reading

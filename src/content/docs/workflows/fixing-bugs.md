@@ -666,11 +666,11 @@ After fixing bugs, improve processes:
 - [Refactoring Code](/docs/workflows/refactoring-code) - Code quality
 
 ### Related Commands
-- [/fix --quick](/docs/engineer/commands/fix/fast) - Quick bug fixes
-- [/fix](/docs/engineer/commands/fix/hard) - Complex debugging
-- [/fix](/docs/engineer/commands/fix/logs) - Log analysis
-- [/fix](/docs/engineer/commands/fix/ui) - UI bug fixes
-- [/fix](/docs/engineer/commands/fix/ci) - CI/CD fixes
+- [/fix --quick](/docs/engineer/skills/fix) - Quick bug fixes
+- [/fix](/docs/engineer/skills/fix) - Complex debugging
+- [/fix](/docs/engineer/skills/fix) - Log analysis
+- [/fix](/docs/engineer/skills/fix) - UI bug fixes
+- [/fix](/docs/engineer/skills/fix) - CI/CD fixes
 - [/test](/docs/engineer/commands/core/test) - Test suite
 
 ### Further Reading

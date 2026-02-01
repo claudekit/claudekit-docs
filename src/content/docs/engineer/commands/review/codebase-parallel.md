@@ -108,4 +108,4 @@ If unhandled/partial cases found:
 ## Related Commands
 
 - [/review:codebase](/docs/engineer/commands/review/codebase) - Standard codebase review
-- [/fix --parallel](/docs/engineer/commands/fix/parallel) - Parallel issue fixing
+- [/fix --parallel](/docs/engineer/skills/fix) - Parallel issue fixing

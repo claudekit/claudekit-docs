@@ -407,8 +407,8 @@ git diff main
 
 - [/ask](/vi/docs/engineer/commands/core/ask) - Các câu hỏi kiến trúc nhanh không cần báo cáo đầy đủ
 - [/plan](/vi/docs/engineer/commands/plan) - Tạo kế hoạch triển khai sau khi brainstorm
-- [/code](/vi/docs/engineer/commands/core/code) - Thực thi kế hoạch với các bước kiểm soát chất lượng
-- [/cook](/vi/docs/engineer/commands/core/cook) - Triển khai tính năng theo từng bước
+- [/code](/vi/docs/engineer/skills/tools/cook) - Thực thi kế hoạch với các bước kiểm soát chất lượng
+- [/cook](/vi/docs/engineer/skills/tools/cook) - Triển khai tính năng theo từng bước
 
 ---
 

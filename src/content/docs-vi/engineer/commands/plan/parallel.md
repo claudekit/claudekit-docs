@@ -368,9 +368,9 @@ Cân bằng lợi ích song song vs. chi phí điều phối:
 
 - [/plan](/vi/docs/engineer/commands/plan) - Bộ định tuyến lập kế hoạch thông minh
 - [/plan:hard](/vi/docs/engineer/commands/plan/hard) - Lập kế hoạch chi tiết tuần tự
-- [/cook --parallel](/vi/docs/engineer/commands/core/code-parallel) - Thực thi kế hoạch song song
+- [/cook --parallel](/vi/docs/engineer/skills/tools/cook) - Thực thi kế hoạch song song
 - [/bootstrap:auto:parallel](/vi/docs/engineer/commands/core/bootstrap-auto-parallel) - Bootstrap với thực thi song song
-- [/cook --auto --parallel](/vi/docs/engineer/commands/core/cook-auto-parallel) - Cook với agent song song
+- [/cook --auto --parallel](/vi/docs/engineer/skills/tools/cook) - Cook với agent song song
 
 ---
 

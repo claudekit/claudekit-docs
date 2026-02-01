@@ -16,7 +16,7 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 **As of engineer@1.3.0+**, many commands have been migrated to **skills** invoked with `/` prefix.
 
 **What changed:**
-- Commands like `/code` → `/cook`, `/design` → `/frontend-design`, etc.
+- Commands like `/cook` (was `/code`), `/design` → `/frontend-design`, etc.
 - Skills are invoked with `/` prefix just like commands
 - Cleaner naming and better workflow organization
 - Better token efficiency

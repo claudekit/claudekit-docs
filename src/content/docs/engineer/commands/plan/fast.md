@@ -51,7 +51,7 @@ plans/
 | `/plan:fast` | No research | Faster |
 | `/plan:hard` | Deep research | Slowest |
 
-**Important**: Does NOT start implementation. Use `/code` after approval.
+**Important**: Does NOT start implementation. Use `/cook` after approval.
 
 ---
 

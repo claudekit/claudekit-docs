@@ -166,8 +166,7 @@ Auto-generates titles following convention:
 
 ## Related Commands
 
-- [/code](/docs/marketing/commands/code) - Auto-commits after implementation
-- [/cook](/docs/marketing/commands/cook) - Includes git commit
+- [/cook](/docs/engineer/skills/cook) - Auto-commits after implementation and includes git commit
 - [/git cm](/docs/marketing/commands/git) - Commit only (no PR)
 
 ---

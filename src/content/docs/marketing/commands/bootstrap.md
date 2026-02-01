@@ -230,7 +230,7 @@ vs Manual: 1-2 weeks
 ## Related Commands
 
 - [/plan](/docs/marketing/commands/plan) - Planning only
-- [/cook](/docs/marketing/commands/cook) - Implementation only
+- [/cook](/docs/engineer/skills/cook) - Implementation only
 - [/design](/docs/marketing/commands/design) - Design only
 
 ---

@@ -214,7 +214,7 @@ Always run `/docs:init` first to let CC understand your codebase.
 - Simple bugs → `/fix --quick`
 - Complex bugs → `/fix`
 - Small features → `/cook`
-- Large features → `/plan` then `/code`
+- Large features → `/plan` then `/cook`
 
 ### 5. Test Regularly
 Run `/test` frequently to catch issues early.
@@ -233,7 +233,7 @@ Run `/test` frequently to catch issues early.
 # 3. Review and approve plan
 
 # 4. Implement
-"Implement plan"
+/cook
 
 # 5. Test
 /test
@@ -264,7 +264,7 @@ Run `/test` frequently to catch issues early.
 # 3. Review plan carefully
 
 # 4. Implement incrementally
-"Implement auth refactor"
+/cook
 
 # 5. Run full test suite
 /fix
@@ -318,9 +318,9 @@ Provide detailed descriptions in commands. More context = better results.
 
 After successful integration:
 
-1. **Explore Commands**: Check [Commands Documentation](/docs/engineer/commands/)
+1. **Explore Commands**: Check [Skills Documentation](/docs/engineer/skills/)
 2. **Learn Agents**: Understand [Specialized Agents](/docs/engineer/agents/)
-3. **Advanced Workflows**: See [Workflows Guide](/docs/docs/engineer/configuration/workflows)
+3. **Advanced Workflows**: See [Workflows Guide](/docs/workflows/)
 4. **Team Training**: Share best practices with your team
 
 ---

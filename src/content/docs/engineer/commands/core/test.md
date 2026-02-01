@@ -46,7 +46,7 @@ Coverage: 78%
 |---------|----------|
 | `/fix` | Fix failing tests |
 | `/cook` | Implement with auto-testing |
-| `/code` | Implement plan with testing |
+| `/cook` | Implement plan with testing |
 
 ---
 

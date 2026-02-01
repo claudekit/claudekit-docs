@@ -360,13 +360,13 @@ You can also call it explicitly:
 **Solution**: Use appropriate commands
 - Code syntax: Just ask directly
 - Bugs: `/debug [issue]`
-- Implementation: `/plan` then `/code`
+- Implementation: `/plan` then `/cook`
 
 ## Related Commands
 
-- [/scout](/docs/engineer/commands/core/scout) - Search codebase before asking architectural questions
-- [/plan](/docs/engineer/commands/core/plan) - Create implementation plan after receiving guidance
-- [/debug](/docs/engineer/commands/core/debug) - Investigate technical issues (not architecture)
+- [/scout](/docs/engineer/skills/scout) - Search codebase before asking architectural questions
+- [/plan](/docs/engineer/commands/plan/plan) - Create implementation plan after receiving guidance
+- [/debug](/docs/engineer/skills/debug) - Investigate technical issues (not architecture)
 
 ---
 

@@ -459,7 +459,7 @@ gkg server start
 
 ## Integration with ClaudeKit
 
-### Using GKG in `/code` Commands
+### Using GKG in `/cook` Commands
 
 ```bash
 # When implementing from plan, use GKG for context
@@ -532,7 +532,7 @@ gkg_repo_map \
 1. **Install GKG**: Follow installation guide above
 2. **Index Your Project**: `gkg index /path/to/project`
 3. **Explore**: Use MCP tools to understand codebase
-4. **Integrate with ClaudeKit**: Use GKG context in `/code` and refactoring commands
+4. **Integrate with ClaudeKit**: Use GKG context in `/cook` and refactoring commands
 5. **Automate**: Build workflows with GKG data
 
 ---

@@ -238,8 +238,8 @@ git push origin kai/<feature>
 - [ ] Search not implemented (Pagefind planned)
 - [x] ~~Sidebar flat nav~~ — Fixed: SectionNav groups subcategories under parent automatically
 - [x] ~~`troubleshooting` category missing~~ — Restructured under `support` section
-- [ ] KaTeX Vietnamese locale warnings at build time (cosmetic, tracked in #87)
-- [ ] `baseline-browser-mapping.json` deprecation warning from browserslist
+- [x] ~~KaTeX Vietnamese locale warnings~~ — Fixed: disabled `singleDollarTextMath` in remark-math (#87)
+- [x] ~~`baseline-browser-mapping` deprecation warning~~ — Fixed: overridden to latest (#87)
 
 ## Deployment
 

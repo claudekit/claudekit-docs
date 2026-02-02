@@ -29,9 +29,9 @@ published: true
 
 | Lệnh | Mục Đích | Tốt Nhất Cho | Thời Gian Tiết Kiệm |
 |---------|---------|----------|------------|
-| [/write](/vi/docs/marketing/commands/write) | Bài blog, kiểm tra nội dung, xuất bản | Nội dung dài | 2-4 giờ |
-| [/video](/vi/docs/marketing/commands/video) | Script video, storyboard, sản xuất | Marketing video | 4-8 giờ |
-| [/slide](/vi/docs/marketing/commands/slide) | Bài thuyết trình, pitch deck | Bán hàng & đề xuất | 2-3 giờ |
+| [/write](/docs/marketing/commands/write) | Bài blog, kiểm tra nội dung, xuất bản | Nội dung dài | 2-4 giờ |
+| [/video](/docs/marketing/commands/video) | Script video, storyboard, sản xuất | Marketing video | 4-8 giờ |
+| [/slide](/docs/marketing/commands/slide) | Bài thuyết trình, pitch deck | Bán hàng & đề xuất | 2-3 giờ |
 | [/brainstorm](/vi/docs/marketing/commands/brainstorm) | Tạo ý tưởng hợp tác | Phiên chiến lược | 1-2 giờ |
 | [/design](/vi/docs/marketing/commands/design) | Tạo hình ảnh AI | Tài sản hình ảnh | 30-60 phút |
 
@@ -44,7 +44,7 @@ published: true
 | [/ask](/vi/docs/marketing/commands/ask) | Tư vấn kiến trúc | Quyết định kỹ thuật |
 | [/bootstrap](/vi/docs/marketing/commands/bootstrap) | Khởi tạo dự án | Dự án mới |
 | [/git](/vi/docs/marketing/commands/git) | Thao tác Git | Tạo PR, commit |
-| [/dashboard](/vi/docs/marketing/commands/dashboard) | Giao diện dashboard marketing | Quản lý trực quan |
+| [/dashboard](/docs/marketing/commands/dashboard) | Giao diện dashboard marketing | Quản lý trực quan |
 | [/use-mcp](/vi/docs/marketing/commands/use-mcp) | Thao tác MCP server | Tích hợp bên ngoài |
 | [/persona](/vi/docs/marketing/commands/persona) | Quản lý persona khách hàng | Nghiên cứu đối tượng |
 
@@ -403,9 +403,9 @@ Các lệnh sẽ đặt câu hỏi khi cần:
 ## Bước Tiếp Theo
 
 **Mới với ClaudeKit Marketing?**
-1. [Hướng Dẫn Bắt Đầu Nhanh](/vi/docs/marketing/quick-start)
+1. [Hướng Dẫn Bắt Đầu Nhanh](/vi/docs/marketing)
 2. [Cài Đặt](/vi/docs/getting-started/installation)
-3. [Khái Niệm Marketing](/vi/docs/marketing/core-concepts)
+3. [Khái Niệm Marketing](/vi/docs/marketing)
 
 **Sẵn Sàng Tạo?**
 - [Quản Lý Chiến Dịch](/vi/docs/marketing/commands/campaign)
@@ -413,16 +413,16 @@ Các lệnh sẽ đặt câu hỏi khi cần:
 - [Tối Ưu SEO](/vi/docs/marketing/commands/seo)
 
 **Chủ Đề Nâng Cao**:
-- [Marketing Agents Tùy Chỉnh](/vi/docs/marketing/agents/custom)
+- [Marketing Agents Tùy Chỉnh](/vi/docs/marketing/agents)
 - [Marketing Workflows](/vi/docs/marketing/workflows)
-- [Tính Năng Dashboard](/vi/docs/marketing/commands/dashboard)
+- [Tính Năng Dashboard](/docs/marketing/commands/dashboard)
 
 ## Tài Nguyên Liên Quan
 
 - [Marketing Agents](/vi/docs/marketing/agents) - Gặp gỡ đội ngũ marketing AI của bạn
 - [Marketing Skills](/vi/docs/marketing/skills) - Các module chuyên môn
 - [Marketing Workflows](/vi/docs/marketing/workflows) - Quy trình làm việc phổ biến
-- [Marketing Dashboard](/vi/docs/marketing/dashboard) - Giao diện quản lý trực quan
+- [Marketing Dashboard](/docs/marketing/commands/dashboard) - Giao diện quản lý trực quan
 
 ---
 

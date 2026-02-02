@@ -117,9 +117,9 @@ plans/20251208-1430-oauth-implementation/
 
 ## Skills Liên Quan
 
-- [Sequential Thinking](/vi/docs/engineer/skills/tools/sequential-thinking) - Multi-step analysis
-- [Problem Solving](/vi/docs/engineer/skills/tools/problem-solving) - Complexity resolution
-- [Research](/vi/docs/engineer/skills/tools/research) - External investigation
+- [Sequential Thinking](/docs/engineer/skills/sequential-thinking) - Multi-step analysis
+- [Problem Solving](/docs/engineer/skills/problem-solving) - Complexity resolution
+- [Research](/docs/engineer/skills/research) - External investigation
 
 ## Key Takeaway
 

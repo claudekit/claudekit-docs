@@ -56,4 +56,4 @@ Mẫu 4 bước chuẩn:
 
 ## Các Skills Liên Quan
 
-- [Web Testing](/vi/docs/engineer/skills/web-testing) - Kiểm thử toàn diện với Playwright, Vitest, k6
+- [Web Testing](/docs/engineer/skills/web-testing) - Kiểm thử toàn diện với Playwright, Vitest, k6

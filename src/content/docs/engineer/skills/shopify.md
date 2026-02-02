@@ -7,7 +7,6 @@ category: skills/ecommerce
 order: 23
 published: true
 ---
-
 # Shopify Skill
 
 Build production-ready Shopify apps, checkout extensions, admin integrations, and themes with GraphQL APIs and Shopify CLI.
@@ -167,9 +166,9 @@ app.post('/webhooks/orders', async (req, res) => {
 
 ## Related Skills
 
-- [Backend Development](/docs/engineer/skills/backend/backend-development) - API integration patterns
-- [Databases](/docs/engineer/skills/backend/databases) - PostgreSQL for app data
-- [Frontend Development](/docs/engineer/skills/frontend/frontend-development) - React extensions
+- [Backend Development](/docs/engineer/skills/backend-development) - API integration patterns
+- [Databases](/docs/engineer/skills/databases) - PostgreSQL for app data
+- [Frontend Development](/docs/engineer/skills/frontend-development) - React extensions
 
 ---
 

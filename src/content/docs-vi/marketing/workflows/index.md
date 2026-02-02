@@ -24,58 +24,58 @@ Workflows giúp bạn:
 
 ### Chiến dịch & Chiến lược
 
-**[Campaign Workflow](/vi/docs/marketing/workflows/campaign-workflow)** - Chu kỳ campaign hoàn chỉnh từ brief đến post-mortem
+**[Campaign Workflow](/docs/marketing/workflows/campaign-workflow)** - Chu kỳ campaign hoàn chỉnh từ brief đến post-mortem
 - Thời gian: 4-8 tuần
 - Độ khó: Trung bình
 - Phù hợp nhất cho: Ra mắt sản phẩm, khuyến mãi, campaign thương hiệu
 
-**[Marketing Workflow](/vi/docs/marketing/workflows/marketing-workflow)** - Quy trình marketing từ đầu đến cuối từ nghiên cứu đến đo lường
+**[Marketing Workflow](/docs/marketing/workflows/marketing-workflow)** - Quy trình marketing từ đầu đến cuối từ nghiên cứu đến đo lường
 - Thời gian: Liên tục
 - Độ khó: Nâng cao
 - Phù hợp nhất cho: Vận hành marketing toàn diện
 
 ### Sản xuất Nội dung
 
-**[Content Workflow](/vi/docs/marketing/workflows/content-workflow)** - Quy trình sản xuất nội dung 6 giai đoạn với các cổng chất lượng
+**[Content Workflow](/docs/marketing/workflows/content-workflow)** - Quy trình sản xuất nội dung 6 giai đoạn với các cổng chất lượng
 - Thời gian: 2-5 ngày mỗi bài
 - Độ khó: Cơ bản
 - Phù hợp nhất cho: Bài blog, landing page, tài liệu marketing
 
-**[Email Workflow](/vi/docs/marketing/workflows/email-workflow)** - Tạo và tự động hóa email campaign
+**[Email Workflow](/docs/marketing/workflows/email-workflow)** - Tạo và tự động hóa email campaign
 - Thời gian: 1-3 ngày
 - Độ khó: Cơ bản
 - Phù hợp nhất cho: Newsletter, drip campaign, email khuyến mãi
 
-**[Social Workflow](/vi/docs/marketing/workflows/social-workflow)** - Lên kế hoạch và xuất bản nội dung mạng xã hội
+**[Social Workflow](/docs/marketing/workflows/social-workflow)** - Lên kế hoạch và xuất bản nội dung mạng xã hội
 - Thời gian: 1-2 giờ mỗi đợt
 - Độ khó: Cơ bản
 - Phù hợp nhất cho: Nội dung xã hội đa nền tảng
 
 ### Tăng trưởng & Tối ưu hóa
 
-**[Sales Workflow](/vi/docs/marketing/workflows/sales-workflow)** - Quy trình chuyển đổi từ lead sang khách hàng
+**[Sales Workflow](/docs/marketing/workflows/sales-workflow)** - Quy trình chuyển đổi từ lead sang khách hàng
 - Thời gian: Liên tục
 - Độ khó: Trung bình
 - Phù hợp nhất cho: Tạo lead, chuỗi nuôi dưỡng, hỗ trợ bán hàng
 
-**[SEO Workflow](/vi/docs/marketing/workflows/seo-workflow)** - Tối ưu hóa SEO từ audit đến giám sát
+**[SEO Workflow](/docs/marketing/workflows/seo-workflow)** - Tối ưu hóa SEO từ audit đến giám sát
 - Thời gian: 2-4 tuần ban đầu, liên tục
 - Độ khó: Trung bình
 - Phù hợp nhất cho: Tăng trưởng traffic tự nhiên, tối ưu từ khóa
 
-**[Analytics Workflow](/vi/docs/marketing/workflows/analytics-workflow)** - Đo lường hiệu suất và báo cáo
+**[Analytics Workflow](/docs/marketing/workflows/analytics-workflow)** - Đo lường hiệu suất và báo cáo
 - Thời gian: Hàng tuần/Hàng tháng
 - Độ khó: Trung bình
 - Phù hợp nhất cho: Phân tích dữ liệu, theo dõi hiệu suất, insights
 
 ### Thương hiệu & Vận hành
 
-**[Brand Workflow](/vi/docs/marketing/workflows/brand-workflow)** - Tính nhất quán thương hiệu và thực thi hướng dẫn
+**[Brand Workflow](/docs/marketing/workflows/brand-workflow)** - Tính nhất quán thương hiệu và thực thi hướng dẫn
 - Thời gian: 1-2 tuần thiết lập, liên tục
 - Độ khó: Cơ bản
 - Phù hợp nhất cho: Quản lý thương hiệu, hướng dẫn phong cách, tính nhất quán
 
-**[Dashboard Workflow](/vi/docs/marketing/workflows/dashboard-workflow)** - Thiết lập và giám sát bảng điều khiển marketing
+**[Dashboard Workflow](/docs/marketing/workflows/dashboard-workflow)** - Thiết lập và giám sát bảng điều khiển marketing
 - Thời gian: 2-4 giờ thiết lập
 - Độ khó: Cơ bản
 - Phù hợp nhất cho: Giám sát thời gian thực, khả năng hiển thị cho team
@@ -219,11 +219,11 @@ Sử dụng Analytics Workflow để theo dõi kết quả từ tất cả các 
 
 - [Marketing Agents](/vi/docs/marketing/agents) - AI agents hỗ trợ workflows
 - [Marketing Commands](/vi/docs/marketing/commands) - Commands được sử dụng trong workflows
-- [Marketing Dashboard](/vi/docs/marketing/dashboard) - Giám sát thực thi workflow
+- [Marketing Dashboard](/docs/marketing/commands/dashboard) - Giám sát thực thi workflow
 - [Marketing Skills](/vi/docs/marketing/skills) - Khả năng chuyên môn
 
 ## Cần Trợ Giúp?
 
-- Xem [Troubleshooting](/vi/docs/troubleshooting) cho các vấn đề phổ biến
+- Xem [Troubleshooting](/vi/docs/support/troubleshooting) cho các vấn đề phổ biến
 - Kiểm tra tài liệu workflow riêng lẻ cho các vấn đề cụ thể
 - Tham gia cộng đồng để nhận mẹo và ví dụ về workflow

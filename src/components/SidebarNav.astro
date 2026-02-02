@@ -1,15 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
-import { getLangFromUrl, useTranslations, getLocalizedPath } from '../i18n/utils';
+import { getLangFromUrl } from '../i18n/utils';
 import GettingStartedNav from './nav/GettingStartedNav.astro';
 import DocsNav from './nav/DocsNav.astro';
-import EngineerNav from './nav/EngineerNav.astro';
-import MarketingNav from './nav/MarketingNav.astro';
-import CLINav from './nav/CLINav.astro';
-import WorkflowsNav from './nav/WorkflowsNav.astro';
-import ChangelogNav from './nav/ChangelogNav.astro';
-import SupportNav from './nav/SupportNav.astro';
-import ToolsNav from './nav/ToolsNav.astro';
+import SectionNav from './nav/SectionNav.astro';
 
 interface Props {
   currentPath: string;
@@ -47,13 +41,9 @@ const sectionDocs = allDocs.filter(doc => doc.data.section === section);
 <nav class="sidebar-nav" aria-label="Documentation navigation">
   {section === 'getting-started' && <GettingStartedNav docs={sectionDocs} currentPath={currentPath} />}
   {section === 'docs' && <DocsNav docs={sectionDocs} currentPath={currentPath} />}
-  {section === 'engineer' && <EngineerNav docs={sectionDocs} currentPath={currentPath} />}
-  {section === 'marketing' && <MarketingNav docs={sectionDocs} currentPath={currentPath} />}
-  {section === 'cli' && <CLINav docs={sectionDocs} currentPath={currentPath} />}
-  {section === 'workflows' && <WorkflowsNav docs={sectionDocs} currentPath={currentPath} />}
-  {section === 'tools' && <ToolsNav docs={sectionDocs} currentPath={currentPath} />}
-  {section === 'changelog' && <ChangelogNav docs={sectionDocs} currentPath={currentPath} />}
-  {section === 'support' && <SupportNav docs={sectionDocs} currentPath={currentPath} />}
+  {['engineer', 'marketing', 'cli', 'workflows', 'tools', 'changelog', 'support'].includes(section) && (
+    <SectionNav docs={sectionDocs} currentPath={currentPath} section={section} />
+  )}
 </nav>
 
 <script>

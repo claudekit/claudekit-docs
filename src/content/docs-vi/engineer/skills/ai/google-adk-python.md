@@ -327,9 +327,9 @@ if __name__ == "__main__":
 
 ## Skills Liên Quan
 
-- [AI Multimodal](/vi/docs/engineer/skills/ai-multimodal) - Process images, audio, video với Gemini
-- [Backend Development](/vi/docs/engineer/skills/backend-development) - Deploy agents như APIs
-- [DevOps](/vi/docs/engineer/skills/devops) - Container orchestration và deployment
+- [AI Multimodal](/docs/engineer/skills/ai-multimodal) - Process images, audio, video với Gemini
+- [Backend Development](/docs/engineer/skills/backend-development) - Deploy agents như APIs
+- [DevOps](/docs/engineer/skills/devops) - Container orchestration và deployment
 
 ## Tài Nguyên
 

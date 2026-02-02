@@ -7,7 +7,6 @@ category: skills
 order: 1
 published: true
 ---
-
 # AI Artist - Prompt Engineering
 
 > Craft effective prompts for AI text and image generation models with proven patterns and techniques.
@@ -198,7 +197,7 @@ Clean, modern workspace with MacBook Pro displaying productivity dashboard, warm
 
 - [AI Multimodal](/docs/engineer/skills/ai-multimodal) - Process and analyze images, audio, video, PDFs with Gemini
 - [Frontend Design](/docs/engineer/skills/frontend-design) - Implement designs from AI-generated mockups
-- [Creativity](/docs/engineer/skills/creativity) - Creative content generation workflows
+- [Creativity](/docs/engineer/skills) - Creative content generation workflows
 
 ## Related Commands
 

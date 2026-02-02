@@ -487,9 +487,9 @@ Skill này bao gồm các file tham khảo chi tiết trong Engineer Kit tại `
 
 Kết hợp Frontend Development với:
 
-- [Frontend Design](/vi/docs/engineer/skills/frontend-design) - Tạo UI design độc đáo trước khi implement
-- [AI Multimodal](/vi/docs/engineer/skills/ai-multimodal) - Generate assets, extract design từ screenshots
-- [Chrome DevTools](/vi/docs/engineer/skills/chrome-devtools) - Test ứng dụng, chụp screenshots, debug issues
+- [Frontend Design](/docs/engineer/skills/frontend-design) - Tạo UI design độc đáo trước khi implement
+- [AI Multimodal](/docs/engineer/skills/ai-multimodal) - Generate assets, extract design từ screenshots
+- [Chrome DevTools](/docs/engineer/skills/chrome-devtools) - Test ứng dụng, chụp screenshots, debug issues
 
 ## Nguyên Tắc Cốt Lõi
 

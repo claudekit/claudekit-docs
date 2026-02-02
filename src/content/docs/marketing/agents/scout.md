@@ -5,7 +5,6 @@ section: marketing
 category: agents
 order: 6
 ---
-
 # Scout Agent
 
 > **Your codebase explorer** - Finds exactly what you need in seconds, not hours
@@ -176,7 +175,7 @@ Optimized for speed:
 ## Related Commands
 
 - [`/scout`](/docs/marketing/commands/scout) - Search for files
-- [`/explore`](/docs/marketing/commands/explore) - Interactive code exploration
+- [`/explore`](/docs/marketing/commands) - Interactive code exploration
 
 ## Tips
 

@@ -782,14 +782,14 @@ Chỉ số:
 ## Bước Tiếp Theo
 
 ### Các Trường Hợp Sử Dụng Liên Quan
-- [Sửa Lỗi](/docs/use-cases/fixing-bugs) - Gỡ lỗi các vấn đề
-- [Tái Cấu Trúc Mã Nguồn](/docs/use-cases/refactoring-code) - Chất lượng mã nguồn
-- [Xây Dựng REST API](/docs/use-cases/building-api) - Phát triển API
+- [Sửa Lỗi](/docs/workflows/fixing-bugs) - Gỡ lỗi các vấn đề
+- [Tái Cấu Trúc Mã Nguồn](/docs/workflows/refactoring-code) - Chất lượng mã nguồn
+- [Xây Dựng REST API](/docs/workflows/building-api) - Phát triển API
 
 ### Các Lệnh Liên Quan
-- [/debug](/vi/docs/engineer/commands/core/debug) - Phân tích hiệu suất
-- [/cook](/vi/docs/engineer/skills/tools/cook) - Triển khai tối ưu hóa
-- [/test](/vi/docs/engineer/commands/core/test) - Kiểm thử hiệu suất
+- [/debug](/docs/engineer/commands/core/debug) - Phân tích hiệu suất
+- [/cook](/docs/engineer/skills/cook) - Triển khai tối ưu hóa
+- [/test](/docs/engineer/commands/core/test) - Kiểm thử hiệu suất
 
 ### Đọc Thêm
 - [Web.dev Performance](https://web.dev/performance/)

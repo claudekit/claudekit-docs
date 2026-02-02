@@ -7,7 +7,6 @@ category: skills/tools
 order: 11
 published: true
 ---
-
 # Planning
 
 Transform vague requirements into detailed, executable technical plans through systematic research, codebase analysis, and solution design.
@@ -116,9 +115,9 @@ plans/20251208-1430-oauth-implementation/
 
 ## Related Skills
 
-- [Sequential Thinking](/docs/engineer/skills/tools/sequential-thinking) - Multi-step analysis
-- [Problem Solving](/docs/engineer/skills/tools/problem-solving) - Complexity resolution
-- [Research](/docs/engineer/skills/tools/research) - External investigation
+- [Sequential Thinking](/docs/engineer/skills/sequential-thinking) - Multi-step analysis
+- [Problem Solving](/docs/engineer/skills/problem-solving) - Complexity resolution
+- [Research](/docs/engineer/skills/research) - External investigation
 
 ## Key Takeaway
 

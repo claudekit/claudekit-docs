@@ -6,9 +6,7 @@ kit: engineer
 category: skills/tools
 order: 8
 published: true
----
-
-# Code Review Skill
+---# Code Review Skill
 
 Enforce verification gates and technical rigor across three critical practices: receiving feedback, requesting reviews, and proving completion claims.
 
@@ -150,9 +148,9 @@ SITUATION?
 
 ## Related Skills
 
-- [Debugging](/docs/engineer/skills/tools/debugging) - Debug with evidence-based approach
-- [Sequential Thinking](/docs/engineer/skills/tools/sequential-thinking) - Systematic problem-solving
-- [Planning](/docs/engineer/skills/tools/planning) - Task breakdown and verification
+- [Debugging](/docs/engineer/skills/debug) - Debug with evidence-based approach
+- [Sequential Thinking](/docs/engineer/skills/sequential-thinking) - Systematic problem-solving
+- [Planning](/docs/engineer/skills/planning) - Task breakdown and verification
 
 ## Key Takeaway
 

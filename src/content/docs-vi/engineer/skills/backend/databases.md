@@ -150,8 +150,8 @@ CREATE INDEX idx_users_status_created ON users(status, created_at DESC);
 
 ## Các Skills Liên Quan
 
-- [Backend Development](/vi/docs/engineer/skills/backend/backend-development) - Full backend implementation
-- [DevOps](/vi/docs/engineer/skills/backend/devops) - Database deployment và management
+- [Backend Development](/docs/engineer/skills/backend-development) - Full backend implementation
+- [DevOps](/docs/engineer/skills/devops) - Database deployment và management
 
 ---
 

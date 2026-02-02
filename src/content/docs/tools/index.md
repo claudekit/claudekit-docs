@@ -6,7 +6,6 @@ category: tools
 order: 1
 published: true
 ---
-
 # Tools & Utilities
 
 Ecosystem tools that complement ClaudeKit and enhance your development workflow.
@@ -67,4 +66,4 @@ Have a tool that enhances ClaudeKit? We'd love to feature it!
 
 ---
 
-**Next:** Explore individual tools or return to [Documentation](/docs/agents)
+**Next:** Explore individual tools or return to [Documentation](/docs/engineer/agents)

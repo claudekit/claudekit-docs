@@ -7,7 +7,6 @@ category: commands/core
 order: 72
 published: true
 ---
-
 # /review:codebase
 
 Multi-agent codebase analysis command. Scans your entire codebase using researcher, scout, and code-reviewer agents to assess quality, identify technical debt, and create an improvement roadmap.
@@ -373,8 +372,8 @@ Run periodically for ongoing projects:
 
 ## Related Commands
 
-- [/scout](/docs/engineer/commands/core/scout) - Quick codebase exploration
-- [/scout ext](/docs/engineer/commands/core/scout-ext) - External tool exploration
+- [/scout](/docs/engineer/skills/scout) - Quick codebase exploration
+- [/scout ext](/docs/engineer/skills/scout) - External tool exploration
 - [/ask](/docs/engineer/commands/core/ask) - Architectural questions
 - [/plan](/docs/engineer/commands/plan) - Create improvement plans
 

@@ -112,5 +112,5 @@ Kỹ năng Git không chỉ thực thi lệnh—nó thực thi các phương ph�
 
 ## Kỹ năng liên quan
 
-- [Cook](/vi/docs/engineer/skills/tools/cook) - Để triển khai tính năng cần commits
-- [Fix](/vi/docs/engineer/skills/tools/fix) - Để sửa lỗi cần commits
+- [Cook](/docs/engineer/skills/cook) - Để triển khai tính năng cần commits
+- [Fix](/docs/engineer/skills/fix) - Để sửa lỗi cần commits

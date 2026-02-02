@@ -6,9 +6,7 @@ kit: engineer
 category: commands
 order: 0
 published: true
----
-
-# Commands Overview
+---# Commands Overview
 
 ClaudeKit provides a comprehensive set of slash commands to accelerate your development workflow. Each command is designed for specific tasks and automatically orchestrates the appropriate agents.
 
@@ -39,13 +37,13 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 - **[/use-mcp](/docs/engineer/commands/core/use-mcp)** - Use MCP server tools
 - **[/watzup](/docs/engineer/commands/core/watzup)** - Get project status and recent changes
 - **[/worktree](/docs/engineer/commands/core/worktree)** - Manage git worktrees
-- **[/wt](/docs/engineer/commands/core/wt)** - Shorthand for /worktree
+- **[/wt](/docs/engineer/commands/core/worktree)** - Shorthand for /worktree
 
 **Note:** `/cook` and `/debug` are now skills. See migration notice above.
 
 ### Planning
 
-- **[/plan](/docs/engineer/commands/plan/plan)** - Create implementation plans
+- **[/plan](/docs/engineer/commands/plan)** - Create implementation plans
 - **[/plan:fast](/docs/engineer/commands/plan/fast)** - Quick planning
 - **[/plan:hard](/docs/engineer/commands/plan/hard)** - Detailed planning with research
 - **[/plan:two](/docs/engineer/commands/plan/two)** - Create plan with 2 approaches
@@ -57,10 +55,10 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 
 ### Documentation
 
-- **[/docs](/docs/engineer/commands/docs/docs)** - Manage project documentation
-- **[/docs:init](/docs/engineer/commands/docs/init)** - Initialize project documentation
-- **[/docs:update](/docs/engineer/commands/docs/update)** - Update project documentation
-- **[/docs:summarize](/docs/engineer/commands/docs/summarize)** - Summarize project documentation
+- **[/docs](/docs/engineer/commands/docs-cmd/init)** - Manage project documentation
+- **[/docs:init](/docs/engineer/commands/docs-cmd/init)** - Initialize project documentation
+- **[/docs:update](/docs/engineer/commands/docs-cmd/update)** - Update project documentation
+- **[/docs:summarize](/docs/engineer/commands/docs-cmd/summarize)** - Summarize project documentation
 
 ### Review
 
@@ -69,7 +67,7 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 
 ### Other
 
-- **[/check-and-commit](/docs/engineer/commands/other/check-and-commit)** - Check code quality and commit
+- **[/check-and-commit](/docs/engineer/commands)** - Check code quality and commit
 
 ## Quick Command Reference
 
@@ -418,10 +416,10 @@ Next: Review changes, then /git cm
 
 Explore specific command categories:
 
-- [Core Commands](/docs/engineer/commands/core/) - Development essentials
+- [Core Commands](/docs/engineer/commands) - Development essentials
 - [Planning Commands](/docs/engineer/commands/plan/) - Implementation planning
-- [Documentation Commands](/docs/engineer/commands/docs/) - Documentation management
-- [Review Commands](/docs/engineer/commands/review/) - Code review and analysis
+- [Documentation Commands](/docs/engineer/commands/docs-cmd/init) - Documentation management
+- [Review Commands](/docs/engineer/commands/review/codebase) - Code review and analysis
 
 Or learn about:
 

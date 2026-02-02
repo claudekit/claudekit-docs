@@ -7,7 +7,6 @@ category: agents
 order: 11
 published: true
 ---
-
 # UI/UX Designer Agent
 
 Research trending designs, create production-ready interfaces, and ship conversion-optimized layouts with Three.js 3D, pure HTML/CSS/JS, and WCAG 2.1 AA compliance.
@@ -72,9 +71,9 @@ Research trending designs, create production-ready interfaces, and ship conversi
 
 ## Related Agents
 
-- [Copywriter](/docs/engineer/agents/copywriter) - Generate compelling headlines, CTAs, product descriptions
+- [Copywriter](/docs/engineer/skills/copywriting) - Generate compelling headlines, CTAs, product descriptions
 - [Fullstack Developer](/docs/engineer/agents/fullstack-developer) - Integrate designs with backend APIs, databases
-- [Scout](/docs/engineer/agents/scout) - Explore existing components and patterns
+- [Scout](/docs/engineer/skills/scout) - Explore existing components and patterns
 - [Code Reviewer](/docs/engineer/agents/code-reviewer) - Validate HTML semantics, CSS performance, accessibility
 
 ## Key Takeaway

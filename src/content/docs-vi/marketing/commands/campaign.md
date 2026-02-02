@@ -393,13 +393,13 @@ Tuần 5-6: {Phase 3}
 - [/analyze](/vi/docs/marketing/commands/analyze) - Phân tích sâu
 
 ### Quản lý
-- [/dashboard](/vi/docs/marketing/commands/dashboard) - Bảng chiến dịch trực quan
+- [/dashboard](/docs/marketing/commands/dashboard) - Bảng chiến dịch trực quan
 - [/use-mcp](/vi/docs/marketing/commands/use-mcp) - Kết nối công cụ phân tích
 
 ## Tác nhân liên quan
 
 - [campaign-manager](/vi/docs/marketing/agents/campaign-manager) - Điều phối chiến dịch
-- [funnel-architect](/vi/docs/marketing/agents/funnel-architect) - Thiết kế phễu
+- [funnel-architect](/docs/marketing/agents/funnel-architect) - Thiết kế phễu
 - [analytics-analyst](/vi/docs/marketing/agents/analytics-analyst) - Theo dõi hiệu suất
 - [content-creator](/vi/docs/marketing/agents/content-creator) - Tạo nội dung
 

@@ -621,10 +621,10 @@ export default function DashboardLayout({
 
 ## Các kỹ năng liên quan
 
-- [Tailwind CSS](/vi/docs/engineer/skills/tailwindcss) - Tạo kiểu cho ứng dụng Next.js
-- [shadcn/ui](/vi/docs/engineer/skills/shadcn-ui) - Các thành phần giao diện được xây dựng sẵn
-- [TypeScript](/vi/docs/engineer/skills/typescript) - Phát triển an toàn kiểu dữ liệu
-- [React](/vi/docs/engineer/skills/react) - Các mô hình React cốt lõi
+- [Tailwind CSS](/vi/docs/engineer/skills/frontend/tailwindcss) - Tạo kiểu cho ứng dụng Next.js
+- [shadcn/ui](/vi/docs/engineer/skills/frontend/shadcn-ui) - Các thành phần giao diện được xây dựng sẵn
+- [TypeScript](/docs/engineer/skills) - Phát triển an toàn kiểu dữ liệu
+- [React](/docs/engineer/skills) - Các mô hình React cốt lõi
 
 ## Tài liệu tham khảo
 

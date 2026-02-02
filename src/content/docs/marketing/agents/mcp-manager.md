@@ -5,7 +5,6 @@ section: marketing
 category: agents
 order: 8
 ---
-
 # MCP Manager Agent
 
 > **Your integration specialist** - Connects Marketing Kit to external services through MCP servers
@@ -207,8 +206,8 @@ Optimized execution:
 
 ## Related Commands
 
-- [`/mcp`](/docs/marketing/commands/mcp) - Execute MCP tools
-- [`/tools`](/docs/marketing/commands/tools) - List available MCP tools
+- [`/mcp`](/docs/marketing/commands) - Execute MCP tools
+- [`/tools`](/docs/marketing/commands) - List available MCP tools
 
 ## Tips
 

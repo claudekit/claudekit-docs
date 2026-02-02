@@ -226,9 +226,9 @@ File size limits: 20MB inline, 2GB qua File API
 
 Khi làm việc với multimedia content, kết hợp skill này với:
 
-- [Media Processing](/vi/docs/engineer/skills/media-processing) - Dùng FFmpeg và ImageMagick để chuẩn bị media files trước khi xử lý
-- [Frontend Design](/vi/docs/engineer/skills/frontend/frontend-design) - Trích xuất design guidelines từ screenshots, sau đó implement chúng
-- [MCP Builder](/vi/docs/engineer/skills/mcp-builder) - Xây dựng MCP servers expose Gemini capabilities như tools
+- [Media Processing](/docs/engineer/skills/media-processing) - Dùng FFmpeg và ImageMagick để chuẩn bị media files trước khi xử lý
+- [Frontend Design](/docs/engineer/skills/frontend-design) - Trích xuất design guidelines từ screenshots, sau đó implement chúng
+- [MCP Builder](/docs/engineer/skills/mcp-builder) - Xây dựng MCP servers expose Gemini capabilities như tools
 
 ## Additional Resources
 

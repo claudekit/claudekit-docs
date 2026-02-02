@@ -5,7 +5,6 @@ section: marketing
 category: skills
 order: 16
 ---
-
 > Browse and manage marketing assets through visual gallery with brand context sidebar and action buttons.
 
 ## What This Skill Does
@@ -159,7 +158,7 @@ Run `--scan` flag or use `/api/scan` endpoint to refresh gallery after adding ne
 
 - [Brand Guidelines](/docs/marketing/skills/brand-guidelines) - Asset validation and brand context
 - [AI Multimodal](/docs/marketing/skills/ai-multimodal) - Generate new assets
-- [Design](/docs/core/skills/design) - Create design assets
+- [Design](/docs/engineer/skills/frontend-design) - Create design assets
 
 ## Related Commands
 

@@ -292,27 +292,27 @@ A: Có. Next.js, Django, Laravel, Go, Rust, Flutter - bất kỳ stack nào. Cla
 A: Agent `code-reviewer` sẽ phát hiện vấn đề trước khi commit. Ngoài ra, bạn vẫn xem lại PR như bình thường. AI bổ trợ chứ không thay thế phán đoán của con người.
 
 **Q: Tôi có cần API keys không?**
-A: Với các tính năng cơ bản thì không. Với các skill nâng cao (Gemini, Tìm kiếm) thì có. Xem [Thiết Lập API Key](/vi/docs/troubleshooting/api-key-setup).
+A: Với các tính năng cơ bản thì không. Với các skill nâng cao (Gemini, Tìm kiếm) thì có. Xem [Thiết Lập API Key](/docs/support/troubleshooting/api-key-setup).
 
 **Q: Tôi có thể tùy chỉnh agents không?**
-A: Có. Chỉnh sửa `.claude/agents/*.md` để điều chỉnh hành vi. Xem [Custom Agents](/vi/docs/hooks/custom-agents).
+A: Có. Chỉnh sửa `.claude/agents/*.md` để điều chỉnh hành vi. Xem [Custom Agents](/docs/engineer/configuration/hooks).
 
 ## Khám Phá Thêm
 
 **Khái Niệm Cốt Lõi**:
-- [Kiến Trúc](/vi/docs/core-concepts/architecture) - Cách ClaudeKit hoạt động
+- [Kiến Trúc](/docs/engineer/configuration/claude-md) - Cách ClaudeKit hoạt động
 - [Tổng Quan Agents](/vi/docs/engineer/agents/) - Gặp gỡ đội ngũ AI của bạn
 - [Hướng Dẫn Commands](/vi/docs/engineer/commands/) - Toàn bộ hơn 30 lệnh
 
 **Sử Dụng Thực Tế**:
-- [Bắt Đầu Dự Án Mới](/vi/docs/use-cases/starting-new-project)
-- [Thêm Tính Năng](/vi/docs/use-cases/adding-feature)
-- [Sửa Lỗi](/vi/docs/use-cases/fixing-bugs)
+- [Bắt Đầu Dự Án Mới](/docs/workflows/starting-new-project)
+- [Thêm Tính Năng](/vi/docs/workflows/adding-feature)
+- [Sửa Lỗi](/vi/docs/workflows/fixing-bugs)
 
 **Khắc Phục Sự Cố**:
-- [Vấn Đề Cài Đặt](/vi/docs/troubleshooting/installation-issues)
-- [Lỗi Lệnh](/vi/docs/troubleshooting/command-errors)
-- [Vấn Đề Hiệu Suất](/vi/docs/troubleshooting/performance-issues)
+- [Vấn Đề Cài Đặt](/docs/support/troubleshooting/installation-issues)
+- [Lỗi Lệnh](/docs/support/troubleshooting/command-errors)
+- [Vấn Đề Hiệu Suất](/docs/support/troubleshooting/performance-issues)
 
 ---
 

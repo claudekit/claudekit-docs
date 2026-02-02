@@ -72,7 +72,7 @@ Trung tâm tập trung cho tất cả tài sản marketing với tổ chức th�
 ![Hướng dẫn Thương hiệu](/docs/screenshots/assets-branding-guideline.png)
 ![Xem trước Storyboard](/docs/screenshots/assets-storyboard-preview.png)
 
-Xem [Quản Lý Tài Sản](/vi/docs/marketing/features/asset-management) để biết chi tiết đầy đủ.
+Xem [Quản Lý Tài Sản](/docs/marketing/features/asset-management) để biết chi tiết đầy đủ.
 
 ### Tạo Nội Dung
 
@@ -89,7 +89,7 @@ Tạo nội dung marketing chất lượng cao với trích xuất giọng văn 
 /write:publish /assets/copy/blog-posts/pricing-guide.md
 ```
 
-Xem [Lệnh Write](/vi/docs/marketing/commands/write) để biết chi tiết.
+Xem [Lệnh Write](/docs/marketing/commands/write) để biết chi tiết.
 
 ### Sản Xuất Video
 
@@ -106,7 +106,7 @@ Quy trình video chuyên nghiệp với Gemini Veo 3.1 + Imagen 4:
 /video:storyboard /assets/videos/2024-12-30-api-demo/script.md
 ```
 
-Xem [Lệnh Video](/vi/docs/marketing/commands/video) để biết chi tiết.
+Xem [Lệnh Video](/docs/marketing/commands/video) để biết chi tiết.
 
 ### Bài Thuyết Trình
 
@@ -123,7 +123,7 @@ Tạo pitch deck, đề xuất chiến dịch và bài thuyết trình đẹp:
 /slide:create "Technical demo API features cho doanh nghiệp"
 ```
 
-Xem [Lệnh Slide](/vi/docs/marketing/commands/slide) để biết chi tiết.
+Xem [Lệnh Slide](/docs/marketing/commands/slide) để biết chi tiết.
 
 ### Quản Lý Chiến Dịch
 

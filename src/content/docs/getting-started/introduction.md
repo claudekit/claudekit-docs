@@ -5,7 +5,6 @@ section: getting-started
 order: 1
 published: true
 ---
-
 # Introduction to ClaudeKit
 
 **ClaudeKit** extends Claude Code with specialized agents, slash commands, and reusable skills.
@@ -96,7 +95,7 @@ Use the kit switcher in the header to explore:
 **Engineer Workflows**:
 - [New Project Setup](/docs/workflows/new-project) - Bootstrap project with best practices
 - [Feature Development](/docs/workflows/feature-development) - Implement end-to-end features
-- [Code Review](/docs/workflows/code-review) - Automated code quality checks
+- [Code Review](/docs/workflows) - Automated code quality checks
 
 **Marketing Workflows**:
 - [Content Creation](/docs/marketing/workflows/content-workflow) - Blog posts, copy, social media

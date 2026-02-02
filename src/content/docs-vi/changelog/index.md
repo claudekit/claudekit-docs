@@ -249,9 +249,9 @@ Giải quyết Bug:
 - [Hỗ trợ qua Email](mailto:support@claudekit.cc) - Yêu cầu hỗ trợ doanh nghiệp
 
 ### Đóng góp
-- [Hướng dẫn Đóng góp](/vi/docs/development/contributing) - Cách đóng góp cho ClaudeKit
-- [Phát triển Skill](/vi/docs/development/creating-skills) - Tạo các skill tùy chỉnh
-- [Phát triển Plugin](/vi/docs/development/plugins) - Mở rộng chức năng của ClaudeKit
+- [Hướng dẫn Đóng góp](/vi/docs/support) - Cách đóng góp cho ClaudeKit
+- [Phát triển Skill](/docs/engineer/skills/skill-creator) - Tạo các skill tùy chỉnh
+- [Phát triển Plugin](/vi/docs/engineer) - Mở rộng chức năng của ClaudeKit
 - [Dự án Dịch thuật](https://translate.claudekit.cc) - Giúp dịch ClaudeKit
 
 ---

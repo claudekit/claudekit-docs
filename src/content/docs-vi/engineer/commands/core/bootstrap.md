@@ -372,9 +372,9 @@ npm test
 
 ## Các bước tiếp theo
 
-- [/cook](/vi/docs/engineer/skills/tools/cook) - Thêm tính năng mới
-- [/plan](/vi/docs/engineer/commands/core/plan) - Lập kế hoạch bổ sung
-- [/test](/vi/docs/engineer/commands/core/test) - Chạy bộ kiểm thử
+- [/cook](/docs/engineer/skills/cook) - Thêm tính năng mới
+- [/plan](/docs/engineer/commands/plan) - Lập kế hoạch bổ sung
+- [/test](/docs/engineer/commands/core/test) - Chạy bộ kiểm thử
 - [/docs:update](/vi/docs/engineer/commands/docs-cmd/update) - Cập nhật tài liệu
 
 ---

@@ -7,7 +7,6 @@ category: skills/backend
 order: 4
 published: true
 ---
-
 # Databases
 
 Expert guidance for MongoDB (document-oriented) and PostgreSQL (relational) databases.
@@ -149,8 +148,8 @@ CREATE INDEX idx_users_status_created ON users(status, created_at DESC);
 
 ## Related Skills
 
-- [Backend Development](/docs/engineer/skills/backend/backend-development) - Full backend implementation
-- [DevOps](/docs/engineer/skills/backend/devops) - Database deployment and management
+- [Backend Development](/docs/engineer/skills/backend-development) - Full backend implementation
+- [DevOps](/docs/engineer/skills/devops) - Database deployment and management
 
 ---
 

@@ -6,9 +6,7 @@ kit: engineer
 category: commands/plan
 order: 11
 published: true
----
-
-# /plan:two
+---# /plan:two
 
 Research a task and create two distinct implementation approaches with detailed pros/cons analysis and a clear recommendation. Perfect when you want to evaluate multiple strategies before committing to one.
 
@@ -845,7 +843,7 @@ cat plans/[task]-comparison.md
 
 ## Next Steps
 
-- [/plan](/docs/engineer/commands/core/plan) - Single approach planning
+- [/plan](/docs/engineer/commands/plan) - Single approach planning
 - [/cook](/docs/engineer/skills/cook) - Implement chosen plan
 - [/plan:cro](/docs/engineer/commands/plan/cro) - CRO-specific planning
 

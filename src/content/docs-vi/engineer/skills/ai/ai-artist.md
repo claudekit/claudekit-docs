@@ -197,9 +197,9 @@ Clean, modern workspace with MacBook Pro displaying productivity dashboard, warm
 
 ## Các Skills Liên Quan
 
-- [AI Multimodal](/vi/docs/engineer/skills/ai/ai-multimodal) - Xử lý và phân tích images, audio, video, PDFs với Gemini
-- [Frontend Design](/vi/docs/engineer/skills/frontend/frontend-design) - Implement designs từ AI-generated mockups
-- [Creativity](/vi/docs/engineer/skills/creativity) - Creative content generation workflows
+- [AI Multimodal](/docs/engineer/skills/ai-multimodal) - Xử lý và phân tích images, audio, video, PDFs với Gemini
+- [Frontend Design](/docs/engineer/skills/frontend-design) - Implement designs từ AI-generated mockups
+- [Creativity](/docs/engineer/skills) - Creative content generation workflows
 
 ## Các Commands Liên Quan
 

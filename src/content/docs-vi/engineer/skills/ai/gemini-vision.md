@@ -279,8 +279,8 @@ Các gói trả phí có quy mô lớn hơn đáng kể.
 
 ## Bước tiếp theo
 
-- [Xử lý tài liệu](/vi/docs/engineer/skills/document-skills)
-- [Ví dụ tích hợp AI](/vi/docs/use-cases/)
+- [Xử lý tài liệu](/docs/engineer/skills/document-skills)
+- [Ví dụ tích hợp AI](/vi/docs/workflows)
 - [Tài liệu tham khảo API](https://ai.google.dev/gemini-api/docs/image-understanding)
 
 ---

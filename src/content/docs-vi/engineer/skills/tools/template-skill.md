@@ -311,8 +311,8 @@ Xem [examples.md](references/examples.md) cho mẫu code đầy đủ.
 
 ## Các Kỹ Năng Liên Quan
 
-- [Skill Creator](/vi/docs/engineer/skills/tools/skill-creator) - Workflow tạo skill tương tác
-- [Common Utilities](/vi/docs/engineer/skills/tools/common-utilities) - Utilities chia sẻ cho phát triển skill
+- [Skill Creator](/docs/engineer/skills/skill-creator) - Workflow tạo skill tương tác
+- [Common Utilities](/docs/engineer/skills) - Utilities chia sẻ cho phát triển skill
 
 ## Tài Nguyên
 

@@ -112,8 +112,8 @@ gcloud run deploy my-service \
 ## Các Skills Liên Quan
 
 - [Docker](/vi/docs/engineer/skills/backend/docker) - Container deep-dive
-- [Databases](/vi/docs/engineer/skills/backend/databases) - PostgreSQL, MongoDB setup
-- [Backend Development](/vi/docs/engineer/skills/backend/backend-development) - API patterns
+- [Databases](/docs/engineer/skills/databases) - PostgreSQL, MongoDB setup
+- [Backend Development](/docs/engineer/skills/backend-development) - API patterns
 
 ---
 

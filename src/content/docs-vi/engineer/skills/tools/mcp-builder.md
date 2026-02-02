@@ -428,9 +428,9 @@ Tạo ra:
 
 ## Bước tiếp theo
 
-- [Ví dụ về các công cụ tùy chỉnh](/vi/docs/use-cases/)
-- [Hướng dẫn tích hợp API](/vi/docs/use-cases/)
-- [Kỹ năng cơ sở dữ liệu](/vi/docs/engineer/skills/postgresql-psql)
+- [Ví dụ về các công cụ tùy chỉnh](/vi/docs/workflows)
+- [Hướng dẫn tích hợp API](/vi/docs/workflows)
+- [Kỹ năng cơ sở dữ liệu](/vi/docs/engineer/skills/backend/postgresql-psql)
 
 ---
 

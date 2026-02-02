@@ -102,5 +102,5 @@ Fix không chỉ vá triệu chứng—nó tìm nguyên nhân gốc rễ, xác m
 
 ## Kỹ năng liên quan
 
-- [Debug](/vi/docs/engineer/skills/tools/debug) - Framework gỡ lỗi có hệ thống
-- [Cook](/vi/docs/engineer/skills/tools/cook) - Để triển khai tính năng mới
+- [Debug](/docs/engineer/skills/debug) - Framework gỡ lỗi có hệ thống
+- [Cook](/docs/engineer/skills/cook) - Để triển khai tính năng mới

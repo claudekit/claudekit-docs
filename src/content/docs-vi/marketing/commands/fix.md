@@ -215,7 +215,7 @@ Analyze error logs:
 - [/cook](/docs/marketing/commands/cook) - Implementation (includes testing)
 - [/test](/docs/marketing/commands/test) - Run tests only
 - [/review](/docs/marketing/commands/review) - Code quality check
-- [/debug](/docs/marketing/commands/debug) - Deep root cause analysis
+- [/debug](/docs/marketing/commands) - Deep root cause analysis
 
 ---
 

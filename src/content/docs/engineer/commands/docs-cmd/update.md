@@ -7,7 +7,6 @@ category: commands/docs-cmd
 order: 61
 published: true
 ---
-
 # /docs:update
 
 Comprehensively analyze your codebase and update all documentation files to ensure they accurately reflect the current state of your project. Uses the `docs-manager` agent to maintain synchronized, high-quality documentation.
@@ -571,7 +570,7 @@ Typical `/docs:update` performance:
 
 After using `/docs:update`:
 
-- [/docs:summarize](/docs/engineer/commands/docs/summarize) - Update just codebase summary
+- [/docs:summarize](/docs/engineer/commands/docs-cmd/summarize) - Update just codebase summary
 - [/watzup](/docs/engineer/commands/core/watzup) - Review recent changes
 - [/git cm](/docs/engineer/skills/git) - Commit documentation updates
 

@@ -365,8 +365,8 @@ Bạn cũng có thể gọi lệnh này một cách tường minh:
 
 ## Các lệnh liên quan
 
-- [/scout](/docs/engineer/commands/core/scout) - Tìm kiếm mã nguồn trước khi đặt câu hỏi kiến trúc
-- [/plan](/docs/engineer/commands/core/plan) - Tạo kế hoạch triển khai sau khi nhận được hướng dẫn
+- [/scout](/docs/engineer/skills/scout) - Tìm kiếm mã nguồn trước khi đặt câu hỏi kiến trúc
+- [/plan](/docs/engineer/commands/plan) - Tạo kế hoạch triển khai sau khi nhận được hướng dẫn
 - [/debug](/docs/engineer/commands/core/debug) - Điều tra các vấn đề kỹ thuật (không phải kiến trúc)
 
 ---

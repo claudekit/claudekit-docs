@@ -76,5 +76,5 @@ Skill này không sử dụng quy tắc tĩnh—nó fetch guidelines mới nhấ
 
 ## Các Kỹ Năng Liên Quan
 
-- [React Best Practices](/vi/docs/engineer/skills/frontend/react-best-practices) - Cho React/Next.js performance patterns
-- [Web Testing](/vi/docs/engineer/skills/tools/web-testing) - Cho accessibility testing với axe-core
+- [React Best Practices](/docs/engineer/skills) - Cho React/Next.js performance patterns
+- [Web Testing](/docs/engineer/skills/web-testing) - Cho accessibility testing với axe-core

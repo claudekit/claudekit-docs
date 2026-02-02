@@ -11,7 +11,6 @@ category: workflows
 order: 4
 published: true
 ---
-
 # Fixing Bugs
 
 Learn how to systematically investigate, fix, and verify bug fixes using ClaudeKit's debugging workflow - from log analysis to production deployment.
@@ -676,7 +675,7 @@ After fixing bugs, improve processes:
 ### Further Reading
 - [Debugger Agent](/docs/engineer/agents/debugger) - Debugging capabilities
 - [Tester Agent](/docs/engineer/agents/tester) - Testing features
-- [Troubleshooting](/docs/troubleshooting) - Common issues
+- [Troubleshooting](/docs/support/troubleshooting) - Common issues
 
 ---
 

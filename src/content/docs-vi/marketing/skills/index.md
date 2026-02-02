@@ -16,38 +16,38 @@ Hoạt động marketing chuyên nghiệp và quy trình làm việc nội dung.
 
 | Kỹ năng | Mục đích | Tính năng chính |
 |---------|----------|-----------------|
-| [Content Marketing](/vi/docs/marketing/skills/content-marketing) | Chiến lược nội dung và lập kế hoạch biên tập | Lịch biên tập, trụ cột nội dung, mẫu blog, quy trình kiểm toán |
-| [SEO Optimization](/vi/docs/marketing/skills/seo-optimization) | SEO kỹ thuật và nghiên cứu từ khóa | Google Search Console API, ReviewWeb.site API, Core Web Vitals, SEO lập trình |
-| [Analytics](/vi/docs/marketing/skills/analytics) | Chỉ số marketing và báo cáo | GA4 API, theo dõi KPI, mô hình attribution, phân tích ROI |
-| [Email Marketing](/vi/docs/marketing/skills/email-marketing) | Chiến dịch email và tự động hóa | Mẫu chiến dịch, chuỗi drip, quy trình tự động, khả năng gửi đến |
-| [Social Media](/vi/docs/marketing/skills/social-media) | Nội dung và tương tác mạng xã hội | Nội dung theo nền tảng, threads, đăng chéo, lên lịch |
-| [Campaign Management](/vi/docs/marketing/skills/campaign-management) | Thực thi chiến dịch đa kênh | Campaign briefs, phân bổ ngân sách, danh sách kiểm tra ra mắt, tổng kết |
-| [Copywriting](/vi/docs/marketing/skills/copywriting) | Copy tập trung chuyển đổi | Công thức copy (AIDA, PAS, BAB), mẫu tiêu đề, tối ưu CTA |
+| [Content Marketing](/docs/marketing/skills/content-marketing) | Chiến lược nội dung và lập kế hoạch biên tập | Lịch biên tập, trụ cột nội dung, mẫu blog, quy trình kiểm toán |
+| [SEO Optimization](/docs/marketing/skills/seo-optimization) | SEO kỹ thuật và nghiên cứu từ khóa | Google Search Console API, ReviewWeb.site API, Core Web Vitals, SEO lập trình |
+| [Analytics](/docs/marketing/skills/analytics) | Chỉ số marketing và báo cáo | GA4 API, theo dõi KPI, mô hình attribution, phân tích ROI |
+| [Email Marketing](/docs/marketing/skills/email-marketing) | Chiến dịch email và tự động hóa | Mẫu chiến dịch, chuỗi drip, quy trình tự động, khả năng gửi đến |
+| [Social Media](/docs/marketing/skills/social-media) | Nội dung và tương tác mạng xã hội | Nội dung theo nền tảng, threads, đăng chéo, lên lịch |
+| [Campaign Management](/docs/marketing/skills/campaign-management) | Thực thi chiến dịch đa kênh | Campaign briefs, phân bổ ngân sách, danh sách kiểm tra ra mắt, tổng kết |
+| [Copywriting](/docs/marketing/skills/copywriting) | Copy tập trung chuyển đổi | Công thức copy (AIDA, PAS, BAB), mẫu tiêu đề, tối ưu CTA |
 
 ### Marketing Chuyên sâu (8 kỹ năng)
 Chiến thuật nâng cao và chiến lược tăng trưởng.
 
 | Kỹ năng | Mục đích | Tính năng chính |
 |---------|----------|-----------------|
-| [Brainstorming](/vi/docs/marketing/skills/brainstorming) | Ý tưởng cộng tác và xác thực | Đối thoại có cấu trúc, đánh giá phương pháp, lưu quyết định |
-| [Ads Management](/vi/docs/marketing/skills/ads-management) | Chiến dịch quảng cáo trả tiền | Tối ưu Google Ads, Meta Ads, LinkedIn Ads, TikTok Ads |
-| [Affiliate Marketing](/vi/docs/marketing/skills/affiliate-marketing) | Thiết kế chương trình affiliate SaaS | Cấu trúc hoa hồng, lựa chọn nền tảng, phòng chống gian lận |
-| [Gamification Marketing](/vi/docs/marketing/skills/gamification-marketing) | Chiến dịch tâm lý hành vi | Điểm, huy hiệu, bảng xếp hạng, chuỗi, thử thách |
-| [Referral Program Building](/vi/docs/marketing/skills/referral-program-building) | Cơ chế giới thiệu viral | Phần thưởng hai chiều, theo dõi attribution, tích hợp nền tảng |
-| [Brand Guidelines](/vi/docs/marketing/skills/brand-guidelines) | Tính nhất quán thương hiệu và quản lý tài sản | Giọng điệu thương hiệu, nhận diện thị giác, tổ chức tài sản, hệ thống màu |
-| [Creativity](/vi/docs/marketing/skills/creativity) | Định hướng sáng tạo và chiến lược thị giác | 55 phong cách sáng tạo, tâm lý màu sắc, hướng dẫn lồng tiếng |
-| [Content Hub](/vi/docs/marketing/skills/content-hub) | Thư viện tài sản hình ảnh và quản lý | Thư viện trên trình duyệt, ngữ cảnh thương hiệu, manifest sẵn sàng R2 |
+| [Brainstorming](/docs/marketing/skills/brainstorming) | Ý tưởng cộng tác và xác thực | Đối thoại có cấu trúc, đánh giá phương pháp, lưu quyết định |
+| [Ads Management](/docs/marketing/skills/ads-management) | Chiến dịch quảng cáo trả tiền | Tối ưu Google Ads, Meta Ads, LinkedIn Ads, TikTok Ads |
+| [Affiliate Marketing](/docs/marketing/skills/affiliate-marketing) | Thiết kế chương trình affiliate SaaS | Cấu trúc hoa hồng, lựa chọn nền tảng, phòng chống gian lận |
+| [Gamification Marketing](/docs/marketing/skills/gamification-marketing) | Chiến dịch tâm lý hành vi | Điểm, huy hiệu, bảng xếp hạng, chuỗi, thử thách |
+| [Referral Program Building](/docs/marketing/skills/referral-program-building) | Cơ chế giới thiệu viral | Phần thưởng hai chiều, theo dõi attribution, tích hợp nền tảng |
+| [Brand Guidelines](/docs/marketing/skills/brand-guidelines) | Tính nhất quán thương hiệu và quản lý tài sản | Giọng điệu thương hiệu, nhận diện thị giác, tổ chức tài sản, hệ thống màu |
+| [Creativity](/docs/marketing/skills/creativity) | Định hướng sáng tạo và chiến lược thị giác | 55 phong cách sáng tạo, tâm lý màu sắc, hướng dẫn lồng tiếng |
+| [Content Hub](/docs/marketing/skills/content-hub) | Thư viện tài sản hình ảnh và quản lý | Thư viện trên trình duyệt, ngữ cảnh thương hiệu, manifest sẵn sàng R2 |
 
 ### AI & Kỹ thuật (5 kỹ năng)
 AI đa phương thức và tự động hóa trình duyệt.
 
 | Kỹ năng | Mục đích | Tính năng chính |
 |---------|----------|-----------------|
-| [AI Multimodal](/vi/docs/marketing/skills/ai-multimodal) | Gemini API cho audio/video/hình ảnh/tài liệu | Phiên âm, phân tích hình ảnh, Imagen 4, tạo video Veo 3 |
-| [AI Artist](/vi/docs/marketing/skills/ai-artist) | Kỹ thuật prompt cho tạo AI | Prompt LLM, tạo hình ảnh, từ khóa phong cách, tinh chỉnh lặp |
-| [Media Processing](/vi/docs/marketing/skills/media-processing) | Quy trình FFmpeg/ImageMagick/RMBG | Mã hóa video, xử lý hình ảnh, xóa nền |
-| [Chrome DevTools](/vi/docs/marketing/skills/chrome-devtools) | Tự động hóa trình duyệt với Puppeteer | Screenshots, ARIA snapshots, phân tích hiệu suất, tự động hóa form |
-| [Research](/vi/docs/marketing/skills/research) | Nghiên cứu và phân tích kỹ thuật | Nghiên cứu đa nguồn, xác thực chéo, báo cáo toàn diện |
+| [AI Multimodal](/docs/marketing/skills/ai-multimodal) | Gemini API cho audio/video/hình ảnh/tài liệu | Phiên âm, phân tích hình ảnh, Imagen 4, tạo video Veo 3 |
+| [AI Artist](/docs/marketing/skills/ai-artist) | Kỹ thuật prompt cho tạo AI | Prompt LLM, tạo hình ảnh, từ khóa phong cách, tinh chỉnh lặp |
+| [Media Processing](/docs/marketing/skills/media-processing) | Quy trình FFmpeg/ImageMagick/RMBG | Mã hóa video, xử lý hình ảnh, xóa nền |
+| [Chrome DevTools](/docs/marketing/skills/chrome-devtools) | Tự động hóa trình duyệt với Puppeteer | Screenshots, ARIA snapshots, phân tích hiệu suất, tự động hóa form |
+| [Research](/docs/marketing/skills/research) | Nghiên cứu và phân tích kỹ thuật | Nghiên cứu đa nguồn, xác thực chéo, báo cáo toàn diện |
 
 ## Kích hoạt kỹ năng
 
@@ -135,7 +135,7 @@ Kỹ năng với API bên ngoài (SEO, Analytics) tôn trọng giới hạn tố
 - [Marketing Agents](/vi/docs/marketing/agents) - Agents sử dụng các kỹ năng này
 - [Marketing Commands](/vi/docs/marketing/commands) - Lệnh slash theo kỹ năng
 - [Marketing Workflows](/vi/docs/marketing/workflows) - Quy trình đầu cuối
-- [Marketing Dashboard](/vi/docs/marketing/dashboard) - Tích hợp giao diện web
+- [Marketing Dashboard](/docs/marketing/commands/dashboard) - Tích hợp giao diện web
 
 ## Xử lý sự cố
 

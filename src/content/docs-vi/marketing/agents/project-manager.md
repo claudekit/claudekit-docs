@@ -189,8 +189,8 @@ Manager tự động kích hoạt cập nhật tài liệu khi:
 
 ## Related Commands
 
-- [`/status`](/docs/marketing/commands/status) - Check project status
-- [`/report`](/docs/marketing/commands/report) - Generate detailed status report
+- [`/status`](/docs/marketing/commands) - Check project status
+- [`/report`](/docs/marketing/commands) - Generate detailed status report
 
 ## Quality Standards
 

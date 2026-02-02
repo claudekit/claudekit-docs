@@ -7,7 +7,6 @@ category: skills/frontend
 order: 7
 published: true
 ---
-
 # Three.js Skill
 
 Build immersive 3D web experiences with WebGL/WebGPU. Production-ready scenes, animations, and interactive graphics.
@@ -105,9 +104,9 @@ Build immersive 3D web experiences with WebGL/WebGPU. Production-ready scenes, a
 
 ## Related Skills
 
-- [Frontend Design](/docs/engineer/skills/frontend/frontend-design) - UI overlays for 3D configurators
-- [Frontend Development](/docs/engineer/skills/frontend/frontend-development) - React Three Fiber integration
-- [AI Multimodal](/docs/engineer/skills/ai/ai-multimodal) - Extract 3D requirements from mockups
+- [Frontend Design](/docs/engineer/skills/frontend-design) - UI overlays for 3D configurators
+- [Frontend Development](/docs/engineer/skills/frontend-development) - React Three Fiber integration
+- [AI Multimodal](/docs/engineer/skills/ai-multimodal) - Extract 3D requirements from mockups
 
 ## Key Takeaway
 

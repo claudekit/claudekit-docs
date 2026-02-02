@@ -60,11 +60,11 @@ Local Kit Version: 1.16.0 (ClaudeKit Engineer)
 | Command | Description |
 |---------|-------------|
 | [`ck new`](/vi/docs/cli/new) | Tạo một dự án ClaudeKit mới |
-| [`ck init`](/vi/docs/cli/init) | Khởi tạo hoặc cập nhật ClaudeKit trong dự án hiện có |
-| [`ck doctor`](/vi/docs/cli/doctor) | Chạy kiểm tra sức khỏe và chẩn đoán |
+| [`ck init`](/docs/cli/init) | Khởi tạo hoặc cập nhật ClaudeKit trong dự án hiện có |
+| [`ck doctor`](/docs/cli/doctor) | Chạy kiểm tra sức khỏe và chẩn đoán |
 | [`ck versions`](/vi/docs/cli/versions) | Liệt kê các phiên bản kit có sẵn |
-| [`ck update`](/vi/docs/cli/update) | Cập nhật CLI lên phiên bản mới nhất |
-| [`ck uninstall`](/vi/docs/cli/uninstall) | Xóa cài đặt ClaudeKit |
+| [`ck update`](/docs/cli/update) | Cập nhật CLI lên phiên bản mới nhất |
+| [`ck uninstall`](/docs/cli/uninstall) | Xóa cài đặt ClaudeKit |
 
 ## Quick Start
 
@@ -100,7 +100,7 @@ ck init --yes
 ck init --global
 ```
 
-[Full documentation](/vi/docs/cli/init)
+[Full documentation](/docs/cli/init)
 
 ### Health Check
 
@@ -115,7 +115,7 @@ ck doctor --fix
 ck doctor --report
 ```
 
-[Full documentation](/vi/docs/cli/doctor)
+[Full documentation](/docs/cli/doctor)
 
 ## Prerequisites
 
@@ -173,12 +173,12 @@ Cấu hình được lưu trữ trong `~/.claudekit/config.json`:
 }
 ```
 
-Để tham khảo cấu hình đầy đủ, hãy xem [Configuration](/vi/docs/cli/configuration).
+Để tham khảo cấu hình đầy đủ, hãy xem [Configuration](/docs/cli/configuration).
 
 ## Next Steps
 
 - [Installation](/vi/docs/cli/installation) - Hướng dẫn thiết lập chi tiết
 - [ck new](/vi/docs/cli/new) - Tạo dự án đầu tiên của bạn
-- [ck init](/vi/docs/cli/init) - Thêm vào dự án hiện có
-- [ck doctor](/vi/docs/cli/doctor) - Khắc phục sự cố
-- [Configuration](/vi/docs/cli/configuration) - Tùy chỉnh cài đặt của bạn
+- [ck init](/docs/cli/init) - Thêm vào dự án hiện có
+- [ck doctor](/docs/cli/doctor) - Khắc phục sự cố
+- [Configuration](/docs/cli/configuration) - Tùy chỉnh cài đặt của bạn

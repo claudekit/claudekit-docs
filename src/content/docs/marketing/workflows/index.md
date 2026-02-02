@@ -5,7 +5,6 @@ section: marketing
 category: workflows
 order: 1
 ---
-
 # Marketing Workflows
 
 Marketing workflows are complete, end-to-end processes that guide you through common marketing tasks using ClaudeKit agents and commands. Each workflow provides step-by-step instructions, real-world examples, and best practices.
@@ -218,11 +217,11 @@ Use Analytics Workflow to track results from all other workflows. Data drives im
 
 - [Marketing Agents](/docs/marketing/agents) - AI agents that power workflows
 - [Marketing Commands](/docs/marketing/commands) - Commands used in workflows
-- [Marketing Dashboard](/docs/marketing/dashboard) - Monitor workflow execution
+- [Marketing Dashboard](/docs/marketing/commands/dashboard) - Monitor workflow execution
 - [Marketing Skills](/docs/marketing/skills) - Specialized capabilities
 
 ## Need Help?
 
-- Review [Troubleshooting](/docs/troubleshooting) for common issues
+- Review [Troubleshooting](/docs/support/troubleshooting) for common issues
 - Check individual workflow documentation for specific problems
 - Join the community for workflow tips and examples

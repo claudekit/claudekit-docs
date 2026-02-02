@@ -408,6 +408,6 @@ ck update --check
 ## Các lệnh liên quan
 
 - [`ck new`](/vi/docs/cli/new) - Tạo dự án với phiên bản cụ thể
-- [`ck init`](/vi/docs/cli/init) - Cập nhật dự án với phiên bản cụ thể
-- [`ck update`](/vi/docs/cli/update) - Cập nhật CLI
-- [`ck doctor`](/vi/docs/cli/doctor) - Chẩn đoán các lỗi liên quan đến phiên bản
+- [`ck init`](/docs/cli/init) - Cập nhật dự án với phiên bản cụ thể
+- [`ck update`](/docs/cli/update) - Cập nhật CLI
+- [`ck doctor`](/docs/cli/doctor) - Chẩn đoán các lỗi liên quan đến phiên bản

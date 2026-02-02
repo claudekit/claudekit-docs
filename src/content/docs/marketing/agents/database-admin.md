@@ -5,7 +5,6 @@ section: marketing
 category: agents
 order: 11
 ---
-
 # Database Admin Agent
 
 > **Your database specialist** - Keeps your data fast, reliable, and secure
@@ -248,8 +247,8 @@ The admin ensures:
 
 ## Related Commands
 
-- [`/db`](/docs/marketing/commands/db) - Database management and optimization
-- [`/migrate`](/docs/marketing/commands/migrate) - Database migration support
+- [`/db`](/docs/marketing/commands) - Database management and optimization
+- [`/migrate`](/docs/marketing/commands) - Database migration support
 
 ## Tips
 

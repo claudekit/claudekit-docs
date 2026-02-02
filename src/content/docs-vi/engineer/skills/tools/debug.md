@@ -88,5 +88,5 @@ Stop và follow process nếu nghĩ:
 
 ## Các Skills Liên Quan
 
-- [Fix](/vi/docs/engineer/skills/fix) - Complete bug fixing workflow với intelligent routing
-- [Context Engineering](/vi/docs/engineer/skills/context-engineering) - Cho complex debugging yêu cầu context optimization
+- [Fix](/docs/engineer/skills/fix) - Complete bug fixing workflow với intelligent routing
+- [Context Engineering](/docs/engineer/skills/context-engineering) - Cho complex debugging yêu cầu context optimization

@@ -11,7 +11,6 @@ category: getting-started
 order: 4
 published: true
 ---
-
 # Quick Start
 
 Ship production feature in 15 minutes. No boilerplate, no setup hell.
@@ -299,12 +298,12 @@ A: `code-reviewer` catches issues before commit. Plus, you review PRs as normal.
 A: For basic features, no. For advanced skills (Gemini, Search), yes. See [API Key Setup](/docs/support/troubleshooting/api-key-setup).
 
 **Q: Can I customize agents?**
-A: Yes. Edit `.claude/agents/*.md` to tune behavior. See [Custom Agents](/docs/hooks/custom-agents).
+A: Yes. Edit `.claude/agents/*.md` to tune behavior. See [Custom Agents](/docs/engineer/configuration/hooks).
 
 ## Explore More
 
 **Core Concepts**:
-- [Architecture](/docs/docs/agents) - How ClaudeKit works
+- [Architecture](/docs/engineer/agents) - How ClaudeKit works
 - [Agents Overview](/docs/engineer/agents/) - Meet your AI team
 - [Skills & Commands Guide](/docs/engineer/skills/) - All 30+ skills & commands
 

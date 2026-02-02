@@ -5,7 +5,6 @@ section: marketing
 category: agents
 order: 10
 ---
-
 # Tester Agent
 
 > **Your quality guardian** - Ensures your code works before it breaks in production
@@ -265,8 +264,8 @@ The tester fits seamlessly:
 ## Related Commands
 
 - [`/test`](/docs/marketing/commands/test) - Run tests and generate report
-- [`/coverage`](/docs/marketing/commands/coverage) - Check test coverage
-- [`/build`](/docs/marketing/commands/build) - Verify build succeeds
+- [`/coverage`](/docs/marketing/commands) - Check test coverage
+- [`/build`](/docs/marketing/commands) - Verify build succeeds
 
 ## Tips
 

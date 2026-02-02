@@ -6,7 +6,6 @@ category: commands
 order: 19
 published: true
 ---
-
 > Technical consultation, not implementation
 
 ## Quick Start
@@ -199,7 +198,7 @@ All recommendations honor:
 
 - [/brainstorm](/docs/marketing/commands/brainstorm) - Interactive discussion
 - [/plan](/docs/marketing/commands/plan) - Implementation planning
-- [/research](/docs/marketing/commands/research) - Market/tech research
+- [/research](/docs/marketing/commands) - Market/tech research
 
 ---
 

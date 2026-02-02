@@ -195,7 +195,7 @@ export default defineConfig({
     format: 'directory', // Required for Pagefind proper URL indexing
   },
   markdown: {
-    remarkPlugins: [remarkGfm, remarkMath, remarkDirective, remarkAdmonitions],
+    remarkPlugins: [remarkGfm, [remarkMath, { singleDollarTextMath: false }], remarkDirective, remarkAdmonitions],
     rehypePlugins: [
       rehypeSlug,
       [
@@ -207,7 +207,7 @@ export default defineConfig({
           },
         },
       ],
-      rehypeKatex,
+      [rehypeKatex, { strict: false }],
     ],
     shikiConfig: {
       themes: {

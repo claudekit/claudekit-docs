@@ -7,7 +7,6 @@ category: commands/plan
 order: 12
 published: true
 ---
-
 # /plan:parallel
 
 Parallel execution planning command. Creates implementation plans with phases that can run simultaneously, using dependency graphs and file ownership boundaries to prevent conflicts.
@@ -368,7 +367,7 @@ Balance parallel gains vs. coordination overhead:
 - [/plan](/docs/engineer/commands/plan) - Intelligent planning router
 - [/plan:hard](/docs/engineer/commands/plan/hard) - Sequential detailed planning
 - [/cook --parallel](/docs/engineer/skills/cook) - Execute parallel plans
-- [/bootstrap:auto:parallel](/docs/engineer/commands/bootstrap/auto-parallel) - Bootstrap with parallel execution
+- [/bootstrap:auto:parallel](/docs/engineer/commands/core/bootstrap-auto-parallel) - Bootstrap with parallel execution
 - [/cook --auto --parallel](/docs/engineer/skills/cook) - Cook with parallel agents
 
 ---

@@ -5,7 +5,6 @@ section: changelog
 order: 0
 published: true
 ---
-
 # Changelog
 
 Recent changes, updates, and release notes for ClaudeKit.
@@ -248,9 +247,9 @@ Bug Resolution:
 - [Email Support](mailto:support@claudekit.cc) - Enterprise support inquiries
 
 ### Contributing
-- [Contributing Guide](/docs/development/contributing) - How to contribute to ClaudeKit
-- [Skill Development](/docs/development/creating-skills) - Create custom skills
-- [Plugin Development](/docs/development/plugins) - Extend ClaudeKit functionality
+- [Contributing Guide](/docs/support) - How to contribute to ClaudeKit
+- [Skill Development](/docs/engineer/skills/skill-creator) - Create custom skills
+- [Plugin Development](/docs/engineer) - Extend ClaudeKit functionality
 - [Translation Project](https://translate.claudekit.cc) - Help translate ClaudeKit
 
 ---

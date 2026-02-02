@@ -5,7 +5,6 @@ section: marketing
 category: skills
 order: 1
 ---
-
 Marketing Kit includes 20+ specialized skills that power agents with domain expertise, automation workflows, and AI capabilities. Skills activate implicitly based on context or explicitly via natural language prompts.
 
 ## Skill Categories
@@ -140,7 +139,7 @@ Skills with external APIs (SEO, Analytics) respect rate limits. Check reference 
 - [Marketing Agents](/docs/marketing/agents) - Agents that use these skills
 - [Marketing Commands](/docs/marketing/commands) - Slash commands by skill
 - [Marketing Workflows](/docs/marketing/workflows) - End-to-end processes
-- [Marketing Dashboard](/docs/marketing/dashboard) - Web UI integration
+- [Marketing Dashboard](/docs/marketing/commands/dashboard) - Web UI integration
 
 ## Troubleshooting
 

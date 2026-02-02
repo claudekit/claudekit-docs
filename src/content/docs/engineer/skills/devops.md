@@ -6,9 +6,7 @@ kit: engineer
 category: skills/backend
 order: 5
 published: true
----
-
-# DevOps Skill
+---# DevOps Skill
 
 Deploy and manage cloud infrastructure across Cloudflare edge, Docker containers, and Google Cloud Platform.
 
@@ -110,9 +108,9 @@ gcloud run deploy my-service \
 
 ## Related Skills
 
-- [Docker](/docs/engineer/skills/backend/docker) - Container deep-dive
-- [Databases](/docs/engineer/skills/backend/databases) - PostgreSQL, MongoDB setup
-- [Backend Development](/docs/engineer/skills/backend/backend-development) - API patterns
+- [Docker](/docs/engineer/skills/devops) - Container deep-dive
+- [Databases](/docs/engineer/skills/databases) - PostgreSQL, MongoDB setup
+- [Backend Development](/docs/engineer/skills/backend-development) - API patterns
 
 ---
 

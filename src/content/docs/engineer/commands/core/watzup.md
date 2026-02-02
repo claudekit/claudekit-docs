@@ -6,9 +6,7 @@ kit: engineer
 category: commands/core
 order: 7
 published: true
----
-
-# /watzup
+---# /watzup
 
 Quick review command that analyzes your current branch, recent commits, and code changes to provide a comprehensive summary of all work done. Perfect for stand-ups, code reviews, or understanding recent activity.
 
@@ -822,7 +820,7 @@ git log -- src/payments/
 - [/git cm](/docs/engineer/skills/git) - Commit changes
 - [/git pr](/docs/engineer/skills/git) - Create pull request
 - [/cook](/docs/engineer/skills/cook) - Implement features
-- [/plan](/docs/engineer/commands/core/plan) - Plan implementations
+- [/plan](/docs/engineer/commands/plan) - Plan implementations
 
 ---
 

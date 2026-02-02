@@ -5,7 +5,6 @@ section: getting-started
 order: 4
 published: true
 ---
-
 # Why ClaudeKit
 
 ## 5-Minute Quick Win
@@ -44,7 +43,7 @@ cd my-app
 - `/fix` - Multi-agent bug fixing
 - `ai-artist` skill - UI/UX design and visual assets
 - `/git cm` - Commit with conventional format
-- [See all commands →](/docs/commands)
+- [See all commands →](/docs/engineer/commands)
 
 **45 Built-in Skills**:
 - Frontend: Next.js, shadcn/ui, Tailwind CSS
@@ -53,7 +52,7 @@ cd my-app
 - Cloud: Cloudflare Workers, R2, Docker
 - AI: Gemini (audio, video, images, vision)
 - Database: PostgreSQL, MongoDB
-- [See all skills →](/docs/skills)
+- [See all skills →](/docs/engineer/skills)
 
 ## ClaudeKit vs Alternatives
 

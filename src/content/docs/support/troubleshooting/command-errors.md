@@ -6,7 +6,6 @@ category: support/troubleshooting
 order: 3
 published: true
 ---
-
 # Command Errors
 
 Commands not working? Get them running in minutes with these step-by-step fixes.
@@ -128,7 +127,7 @@ which ck
 echo $PATH
 ```
 
-See [Installation Issues](/docs/troubleshooting/installation-issues) for PATH configuration.
+See [Installation Issues](/docs/support/troubleshooting/installation-issues) for PATH configuration.
 
 ---
 
@@ -167,7 +166,7 @@ export GEMINI_API_KEY=your-key-here
 echo $GEMINI_API_KEY
 ```
 
-See [API Key Setup](/docs/troubleshooting/api-key-setup) for complete configuration.
+See [API Key Setup](/docs/support/troubleshooting/api-key-setup) for complete configuration.
 
 #### Invalid Command Arguments
 
@@ -209,7 +208,7 @@ cat .claude/agents/planner.md
 ck init --kit engineer
 ```
 
-See [Agent Issues](/docs/troubleshooting/agent-issues) for agent-specific problems.
+See [Agent Issues](/docs/support/troubleshooting/agent-issues) for agent-specific problems.
 
 ---
 
@@ -507,9 +506,9 @@ claude --dangerously-skip-permissions
 
 ## Related Issues
 
-- [Installation Issues](/docs/troubleshooting/installation-issues) - CLI not installed properly
-- [Agent Issues](/docs/troubleshooting/agent-issues) - Agents not responding
-- [API Key Setup](/docs/troubleshooting/api-key-setup) - Missing credentials
+- [Installation Issues](/docs/support/troubleshooting/installation-issues) - CLI not installed properly
+- [Agent Issues](/docs/support/troubleshooting/agent-issues) - Agents not responding
+- [API Key Setup](/docs/support/troubleshooting/api-key-setup) - Missing credentials
 
 ---
 

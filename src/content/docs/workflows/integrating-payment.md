@@ -11,7 +11,6 @@ category: workflows
 order: 8
 published: true
 ---
-
 # Integrating Payment Processing
 
 Learn how to integrate payment processing with ClaudeKit - from one-time payments to subscriptions, webhooks, and revenue optimization.
@@ -727,8 +726,8 @@ Before production:
 - [Adding a New Feature](/docs/workflows/adding-feature) - Feature development
 
 ### Related Commands
-- [/integrate:polar](/docs/engineer/skills/integrate) - Polar integration
-- [/integrate:sepay](/docs/engineer/skills/integrate) - SePay integration
+- [/integrate:polar](/docs/engineer/skills) - Polar integration
+- [/integrate:sepay](/docs/engineer/skills) - SePay integration
 - [/cook](/docs/engineer/skills/cook) - Implement features from plans
 - [/test](/docs/engineer/commands/core/test) - Test suite
 

@@ -7,7 +7,6 @@ category: agents
 order: 7
 published: true
 ---
-
 # Code Reviewer Agent
 
 Production-grade security and quality audits with categorized findings before merge.
@@ -89,7 +88,7 @@ Enforce 80%+ test coverage, zero `any` types, security scan pass before producti
 
 - [Planner](/docs/engineer/agents/planner) - Creates fix plans from review findings
 - [Tester](/docs/engineer/agents/tester) - Validates fixes with comprehensive tests
-- [Scout External](/docs/engineer/agents/scout-external) - Researches best practices for fixes
+- [Scout External](/docs/engineer/skills/scout) - Researches best practices for fixes
 
 ## Key Takeaway
 

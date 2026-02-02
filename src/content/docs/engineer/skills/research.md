@@ -7,7 +7,6 @@ category: skills/tools
 order: 15
 published: true
 ---
-
 # Research
 
 Validate technical decisions with multi-source research before implementation. Max 5 searches per task.
@@ -146,9 +145,9 @@ Sacrifice grammar for concision. Use code blocks, mermaid/ASCII diagrams.
 
 ## Related Skills
 
-- [Docs Seeker](/docs/engineer/skills/tools/docs-seeker) - Documentation lookup
-- [Sequential Thinking](/docs/engineer/skills/tools/sequential-thinking) - Structured analysis
-- [Planning](/docs/engineer/skills/tools/planning) - Solution design
+- [Docs Seeker](/docs/engineer/skills/docs-seeker) - Documentation lookup
+- [Sequential Thinking](/docs/engineer/skills/sequential-thinking) - Structured analysis
+- [Planning](/docs/engineer/skills/planning) - Solution design
 
 ## Key Takeaway
 

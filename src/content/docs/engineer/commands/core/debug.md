@@ -7,7 +7,6 @@ category: commands/core
 order: 5
 published: true
 ---
-
 # /debug
 
 Issue investigation and diagnosis command. Analyzes bugs, errors, and technical problems to identify root causes and explain them clearly—without automatically implementing fixes.
@@ -503,7 +502,7 @@ Agent traces execution paths to find race condition.
 - [/fix --quick](/docs/engineer/skills/fix) - Implement quick fixes after diagnosis
 - [/fix](/docs/engineer/skills/fix) - Fix complex issues requiring planning
 - [/fix](/docs/engineer/skills/fix) - Analyze and fix issues from log files
-- [/scout](/docs/engineer/commands/core/scout) - Find relevant files before debugging
+- [/scout](/docs/engineer/skills/scout) - Find relevant files before debugging
 - [/ask](/docs/engineer/commands/core/ask) - Get architectural guidance on systemic issues
 
 ---

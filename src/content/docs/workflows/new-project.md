@@ -7,7 +7,6 @@ order: 6
 published: true
 lastUpdated: 2025-11-07
 ---
-
 # Greenfield Projects
 
 Create new projects from scratch with ClaudeKit's AI-powered development workflow. Transform ideas into production-ready applications quickly with intelligent agents.
@@ -439,7 +438,7 @@ After bootstrapping your project:
 
 - [All Commands](/docs/engineer/commands/) - Complete command reference
 - [AI Agents](/docs/engineer/agents/) - Understanding specialized agents
-- [Workflows](/docs/docs/engineer/configuration/workflows) - Development workflows
+- [Workflows](/docs/engineer/configuration/workflows) - Development workflows
 - [Use Cases](/docs/workflows/) - Real-world examples
 
 ---

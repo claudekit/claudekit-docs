@@ -7,7 +7,6 @@ category: agents
 order: 9
 published: true
 ---
-
 # Docs Manager Agent
 
 **Keep your docs synced with your codebase.** Creates, updates, and maintains technical documentation automatically after code changes.
@@ -140,7 +139,7 @@ Authenticate user and return JWT token.
 ## Related Agents
 
 - [Planner Agent](/docs/engineer/agents/planner) - Creates implementation plans → docs-manager documents them
-- [Scout Agent](/docs/engineer/agents/scout) - Locates files → docs-manager uses for context
+- [Scout Agent](/docs/engineer/skills/scout) - Locates files → docs-manager uses for context
 - [Project Manager](/docs/engineer/agents/project-manager) - Coordinates tasks → docs-manager provides status
 
 ## Key Takeaway

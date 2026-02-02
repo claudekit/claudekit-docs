@@ -6,9 +6,7 @@ kit: engineer
 category: skills/tools
 order: 13
 published: true
----
-
-# Repomix Skill
+---# Repomix Skill
 
 Package entire repositories into single AI-friendly files optimized for LLM context.
 
@@ -128,9 +126,9 @@ repomix --token-count-tree 1000
 
 ## Related Skills
 
-- [Code Review](/docs/engineer/skills/tools/code-review) - AI-powered code analysis
-- [Research](/docs/engineer/skills/tools/research) - Investigate unfamiliar codebases
-- [Debugging](/docs/engineer/skills/tools/debugging) - Systematic bug isolation
+- [Code Review](/docs/engineer/skills/code-review) - AI-powered code analysis
+- [Research](/docs/engineer/skills/research) - Investigate unfamiliar codebases
+- [Debugging](/docs/engineer/skills/debug) - Systematic bug isolation
 
 ## Key Takeaway
 

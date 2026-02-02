@@ -5,7 +5,6 @@ section: workflows
 order: 3
 published: true
 ---
-
 # Documentation Workflow
 
 Keep documentation synchronized with code changes using ClaudeKit's automated documentation management.
@@ -302,13 +301,13 @@ docs/
 
 ## Getting Help
 
-- [Writing Style Guide](/docs/writing-style-guide)
-- [Templates and Examples](/docs/templates)
+- [Writing Style Guide](/docs/engineer)
+- [Templates and Examples](/docs/engineer)
 - [Community Forum](https://forum.claudekit.com)
-- [Documentation Best Practices](/docs/best-practices)
+- [Documentation Best Practices](/docs/engineer)
 
 ## Related Workflows
 
 - [Feature Development](/docs/workflows/feature-development) - Building features that need documentation
-- [Code Review](/docs/workflows/code-review) - Reviewing documentation alongside code
-- [Release Management](/docs/workflows/release-management) - Preparing release notes
+- [Code Review](/docs/workflows) - Reviewing documentation alongside code
+- [Release Management](/docs/workflows) - Preparing release notes

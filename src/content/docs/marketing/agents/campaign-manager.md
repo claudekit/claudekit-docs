@@ -5,7 +5,6 @@ section: marketing
 category: agents
 order: 2
 ---
-
 # Campaign Manager
 
 > The conductor of your marketing orchestra - aligning channels, teams, and timelines for cohesive campaigns that hit their targets.
@@ -561,7 +560,7 @@ Campaign Manager is most powerful with real data from:
 - SendGrid (email performance)
 - Google Ads (ad metrics, CPA)
 
-See [MCP Setup Guide](/docs/marketing/mcp-setup) for integration instructions.
+See [MCP Setup Guide](/docs/engineer/configuration/mcp-setup) for integration instructions.
 
 ## Related Agents
 

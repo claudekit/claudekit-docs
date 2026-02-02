@@ -7,7 +7,6 @@ category: skills/frontend
 order: 5
 published: true
 ---
-
 # Web Frameworks
 
 Build full-stack web apps with Next.js, Turborepo monorepos, and RemixIcon.
@@ -110,9 +109,9 @@ for our CI pipeline."
 
 ## Related Skills
 
-- [Frontend Development](/docs/engineer/skills/frontend/frontend-development) - React patterns and state management
-- [UI Styling](/docs/engineer/skills/frontend/ui-styling) - Tailwind and CSS strategies
-- [DevOps](/docs/engineer/skills/backend/devops) - Deployment and CI/CD
+- [Frontend Development](/docs/engineer/skills/frontend-development) - React patterns and state management
+- [UI Styling](/docs/engineer/skills/ui-styling) - Tailwind and CSS strategies
+- [DevOps](/docs/engineer/skills/devops) - Deployment and CI/CD
 
 ---
 

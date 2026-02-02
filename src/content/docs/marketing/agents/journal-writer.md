@@ -5,7 +5,6 @@ section: marketing
 category: agents
 order: 5
 ---
-
 # Journal Writer Agent
 
 > **Your honest chronicler** - Captures the real story of building software, failures included
@@ -250,8 +249,8 @@ docs/journals/
 
 ## Related Commands
 
-- [`/journal`](/docs/marketing/commands/journal) - Create journal entry
-- [`/lessons`](/docs/marketing/commands/lessons) - Review lessons learned
+- [`/journal`](/docs/marketing/commands) - Create journal entry
+- [`/lessons`](/docs/marketing/commands) - Review lessons learned
 
 ## Tips
 

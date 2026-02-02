@@ -5,7 +5,6 @@ section: marketing
 category: agents
 order: 9
 ---
-
 # Analytics Analyst Agent
 
 > **Your data interpreter** - Transforms marketing metrics into actionable insights
@@ -256,8 +255,8 @@ All reports follow this structure:
 
 ## Related Commands
 
-- [`/analytics`](/docs/marketing/commands/analytics) - Generate analytics report
-- [`/metrics`](/docs/marketing/commands/metrics) - Quick metric snapshot
+- [`/analytics`](/docs/marketing/commands) - Generate analytics report
+- [`/metrics`](/docs/marketing/commands) - Quick metric snapshot
 
 ## Tips
 

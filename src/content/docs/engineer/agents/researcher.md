@@ -7,7 +7,6 @@ category: agents
 order: 2
 published: true
 ---
-
 # Researcher Agent
 
 Multi-source technology intelligence that explores docs, videos, GitHub repos, and articles in parallel to deliver production-ready implementation insights.
@@ -129,7 +128,7 @@ Multi-source technology intelligence that explores docs, videos, GitHub repos, a
 
 - [Planner Agent](/docs/engineer/agents/planner) - Converts research findings into step-by-step implementation plans
 - [Brainstormer Agent](/docs/engineer/agents/brainstormer) - Debates technical trade-offs discovered in research
-- [Scout Agent](/docs/engineer/agents/scout) - Locates existing implementations in your codebase
+- [Scout Agent](/docs/engineer/skills/scout) - Locates existing implementations in your codebase
 
 ## Key Takeaway
 

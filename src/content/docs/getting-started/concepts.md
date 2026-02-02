@@ -5,7 +5,6 @@ section: getting-started
 order: 2
 published: true
 ---
-
 # Core Concepts
 
 ClaudeKit's power comes from three interconnected systems: **Agents**, **Commands**, and **Skills**.
@@ -126,4 +125,4 @@ All agent behaviors, skills, and workflows configured in `.claude/CLAUDE.md`:
 - **[Installation](/docs/getting-started/installation)** - Install ClaudeKit
 - **[Quick Start](/docs/getting-started/quick-start)** - Try your first command
 - **[Commands Reference](/docs/engineer/commands)** - Explore all commands
-- **[Agents Reference](/docs/agents)** - Learn about each agent
+- **[Agents Reference](/docs/engineer/agents)** - Learn about each agent

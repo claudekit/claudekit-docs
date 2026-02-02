@@ -7,7 +7,6 @@ order: 5
 published: true
 lastUpdated: 2025-11-07
 ---
-
 # ClaudeKit Cheatsheet
 
 Quick reference guide for ClaudeKit CLI commands and workflows.
@@ -489,7 +488,7 @@ ck --version
 - [Full Documentation](https://docs.claudekit.cc)
 - [All Skills](/docs/engineer/skills/)
 - [AI Agents](/docs/engineer/agents/)
-- [Workflows](/docs/docs/engineer/configuration/workflows)
+- [Workflows](/docs/engineer/configuration/workflows)
 - [Troubleshooting](/docs/support/troubleshooting/)
 - [GitHub Discussions](https://github.com/mrgoonie/claudekit-cli/discussions)
 

@@ -5,7 +5,6 @@ section: workflows
 order: 1
 published: true
 ---
-
 # Feature Development Workflow
 
 Complete feature lifecycle from planning to deployment using ClaudeKit's multi-agent workflows.
@@ -184,10 +183,10 @@ Let's walk through adding authentication to a Next.js app:
 After mastering feature development:
 - Learn [Bug Fixing Workflow](/docs/workflows/bug-fixing)
 - Explore [Documentation Workflow](/docs/workflows/documentation)
-- Study [Commands Reference](/docs/commands)
+- Study [Commands Reference](/docs/engineer/commands)
 
 ## Related Workflows
 
 - [Bug Fixing](/docs/workflows/bug-fixing) - For when things go wrong
-- [Code Review](/docs/workflows/code-review) - Maintaining code quality
+- [Code Review](/docs/workflows) - Maintaining code quality
 - [Documentation](/docs/workflows/documentation) - Keeping docs current

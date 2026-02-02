@@ -7,7 +7,6 @@ category: skills
 order: 1
 published: true
 ---
-
 # Payment Integration
 
 Implement payment processing with SePay (Vietnamese market) and Polar (global SaaS monetization).
@@ -120,8 +119,8 @@ Deliver private repository access on payment.
 
 ## Related Skills
 
-- [Backend Development](/docs/engineer/skills/backend/backend-development) - API implementation
-- [Web Frameworks](/docs/engineer/skills/frontend/web-frameworks) - Checkout UI integration
+- [Backend Development](/docs/engineer/skills/backend-development) - API implementation
+- [Web Frameworks](/docs/engineer/skills/web-frameworks) - Checkout UI integration
 
 ---
 

@@ -5,7 +5,6 @@ section: marketing
 category: agents
 order: 1
 ---
-
 # Marketing Agents
 
 > Your complete AI marketing team, ready to execute campaigns, create content, and drive growth.
@@ -240,7 +239,7 @@ Agents improve with feedback. Tell them what works and what doesn't.
 - [Marketing Commands](/docs/marketing/commands) - Quick-access slash commands for marketing tasks
 - [Marketing Workflows](/docs/marketing/workflows) - Step-by-step guides for common scenarios
 - [Marketing Skills](/docs/marketing/skills) - Specialized capabilities agents can activate
-- [Marketing Dashboard](/docs/marketing/dashboard) - Monitor campaigns and analytics
+- [Marketing Dashboard](/docs/marketing/commands/dashboard) - Monitor campaigns and analytics
 
 ## Next Steps
 

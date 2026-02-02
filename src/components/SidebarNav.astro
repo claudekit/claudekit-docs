@@ -1,15 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
-import { getLangFromUrl, useTranslations, getLocalizedPath } from '../i18n/utils';
+import { getLangFromUrl, getLocalizedPath } from '../i18n/utils';
 import GettingStartedNav from './nav/GettingStartedNav.astro';
 import DocsNav from './nav/DocsNav.astro';
-import EngineerNav from './nav/EngineerNav.astro';
-import MarketingNav from './nav/MarketingNav.astro';
-import CLINav from './nav/CLINav.astro';
-import WorkflowsNav from './nav/WorkflowsNav.astro';
-import ChangelogNav from './nav/ChangelogNav.astro';
-import SupportNav from './nav/SupportNav.astro';
-import ToolsNav from './nav/ToolsNav.astro';
+import SectionNav from './nav/SectionNav.astro';
 
 interface Props {
   currentPath: string;
@@ -23,6 +17,7 @@ function getSectionFromUrl(path: string): string {
   // Remove language prefix if present (e.g., /vi/docs -> /docs)
   const cleanPath = path.replace(/^\/[a-z]{2}\//, '/');
 
+  if (cleanPath === '/' || cleanPath === '') return 'home';
   if (cleanPath.startsWith('/docs/getting-started')) return 'getting-started';
   if (cleanPath.startsWith('/docs/engineer')) return 'engineer';
   if (cleanPath.startsWith('/docs/marketing')) return 'marketing';
@@ -45,15 +40,66 @@ const sectionDocs = allDocs.filter(doc => doc.data.section === section);
 ---
 
 <nav class="sidebar-nav" aria-label="Documentation navigation">
+  {section === 'home' && (
+    <div class="landing-nav">
+      <div class="landing-nav-section">
+        <span class="nav-section-title landing-section-label">Quick Links</span>
+        <ul class="nav-items">
+          <li><a href={getLocalizedPath('/docs/getting-started/introduction', currentLocale)} class="nav-item">
+            <svg class="file-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>
+            Getting Started
+          </a></li>
+          <li><a href={getLocalizedPath('/docs/getting-started/installation', currentLocale)} class="nav-item">
+            <svg class="file-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Installation
+          </a></li>
+          <li><a href={getLocalizedPath('/docs/getting-started/quick-start', currentLocale)} class="nav-item">
+            <svg class="file-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            Quick Start
+          </a></li>
+        </ul>
+      </div>
+      <div class="landing-nav-section">
+        <span class="nav-section-title landing-section-label">Products</span>
+        <ul class="nav-items">
+          <li><a href={getLocalizedPath('/docs/engineer/agents', currentLocale)} class="nav-item">
+            <svg class="file-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+            Engineer Kit
+          </a></li>
+          <li><a href={getLocalizedPath('/docs/marketing/', currentLocale)} class="nav-item">
+            <svg class="file-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+            Marketing Kit
+          </a></li>
+          <li><a href={getLocalizedPath('/docs/cli/', currentLocale)} class="nav-item">
+            <svg class="file-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+            CLI Tool
+          </a></li>
+        </ul>
+      </div>
+      <div class="landing-nav-section">
+        <span class="nav-section-title landing-section-label">Explore</span>
+        <ul class="nav-items">
+          <li><a href={getLocalizedPath('/docs/workflows/new-project', currentLocale)} class="nav-item">
+            <svg class="file-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+            Workflows
+          </a></li>
+          <li><a href={getLocalizedPath('/docs/changelog', currentLocale)} class="nav-item">
+            <svg class="file-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Changelog
+          </a></li>
+          <li><a href={getLocalizedPath('/docs/support/troubleshooting', currentLocale)} class="nav-item">
+            <svg class="file-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+            Support
+          </a></li>
+        </ul>
+      </div>
+    </div>
+  )}
   {section === 'getting-started' && <GettingStartedNav docs={sectionDocs} currentPath={currentPath} />}
   {section === 'docs' && <DocsNav docs={sectionDocs} currentPath={currentPath} />}
-  {section === 'engineer' && <EngineerNav docs={sectionDocs} currentPath={currentPath} />}
-  {section === 'marketing' && <MarketingNav docs={sectionDocs} currentPath={currentPath} />}
-  {section === 'cli' && <CLINav docs={sectionDocs} currentPath={currentPath} />}
-  {section === 'workflows' && <WorkflowsNav docs={sectionDocs} currentPath={currentPath} />}
-  {section === 'tools' && <ToolsNav docs={sectionDocs} currentPath={currentPath} />}
-  {section === 'changelog' && <ChangelogNav docs={sectionDocs} currentPath={currentPath} />}
-  {section === 'support' && <SupportNav docs={sectionDocs} currentPath={currentPath} />}
+  {['engineer', 'marketing', 'cli', 'workflows', 'tools', 'changelog', 'support'].includes(section) && (
+    <SectionNav docs={sectionDocs} currentPath={currentPath} section={section} />
+  )}
 </nav>
 
 <script>
@@ -237,5 +283,30 @@ const sectionDocs = allDocs.filter(doc => doc.data.section === section);
     margin-inline-start: auto;
     font-size: var(--text-xs);
     opacity: 0.5;
+  }
+
+  /* Landing page sidebar nav */
+  .landing-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .landing-nav-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .landing-section-label {
+    cursor: default;
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .landing-section-label:hover {
+    background: transparent;
+  }
+
+  .landing-nav .nav-item {
+    padding-left: var(--space-3);
   }
 </style>

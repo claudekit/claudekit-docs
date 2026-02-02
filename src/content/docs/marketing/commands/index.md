@@ -6,7 +6,6 @@ category: commands
 order: 1
 published: true
 ---
-
 # Marketing Commands
 
 19 specialized commands for marketing automation, content creation, and campaign management. Each command activates AI agents with deep marketing expertise.
@@ -402,9 +401,9 @@ Commands will ask questions when needed:
 ## Next Steps
 
 **New to ClaudeKit Marketing?**
-1. [Quick Start Guide](/docs/marketing/quick-start)
+1. [Quick Start Guide](/docs/marketing)
 2. [Installation](/docs/getting-started/installation)
-3. [Marketing Concepts](/docs/marketing/core-concepts)
+3. [Marketing Concepts](/docs/marketing)
 
 **Ready to Create?**
 - [Campaign Management](/docs/marketing/commands/campaign)
@@ -412,7 +411,7 @@ Commands will ask questions when needed:
 - [SEO Optimization](/docs/marketing/commands/seo)
 
 **Advanced Topics**:
-- [Custom Marketing Agents](/docs/marketing/agents/custom)
+- [Custom Marketing Agents](/docs/marketing/agents)
 - [Marketing Workflows](/docs/marketing/workflows)
 - [Dashboard Features](/docs/marketing/commands/dashboard)
 
@@ -421,7 +420,7 @@ Commands will ask questions when needed:
 - [Marketing Agents](/docs/marketing/agents) - Meet your AI marketing team
 - [Marketing Skills](/docs/marketing/skills) - Specialized modules
 - [Marketing Workflows](/docs/marketing/workflows) - Common workflows
-- [Marketing Dashboard](/docs/marketing/dashboard) - Visual management interface
+- [Marketing Dashboard](/docs/marketing/commands/dashboard) - Visual management interface
 
 ---
 

@@ -405,10 +405,10 @@ git diff main
 
 ## Các lệnh liên quan
 
-- [/ask](/vi/docs/engineer/commands/core/ask) - Các câu hỏi kiến trúc nhanh không cần báo cáo đầy đủ
+- [/ask](/docs/engineer/commands/core/ask) - Các câu hỏi kiến trúc nhanh không cần báo cáo đầy đủ
 - [/plan](/vi/docs/engineer/commands/plan) - Tạo kế hoạch triển khai sau khi brainstorm
-- [/cook](/vi/docs/engineer/skills/tools/cook) - Thực thi kế hoạch với các bước kiểm soát chất lượng
-- [/cook](/vi/docs/engineer/skills/tools/cook) - Triển khai tính năng theo từng bước
+- [/cook](/docs/engineer/skills/cook) - Thực thi kế hoạch với các bước kiểm soát chất lượng
+- [/cook](/docs/engineer/skills/cook) - Triển khai tính năng theo từng bước
 
 ---
 

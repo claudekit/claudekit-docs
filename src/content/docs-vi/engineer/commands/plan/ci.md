@@ -846,9 +846,9 @@ npm run build
 
 ## Các lệnh liên quan
 
-- [/fix](/vi/docs/engineer/skills/tools/fix) - Tự động triển khai sửa lỗi CI
-- [/cook](/vi/docs/engineer/skills/tools/cook) - Triển khai kế hoạch hiện có
-- [/debug](/vi/docs/engineer/commands/core/debug) - Debug các vấn đề phức tạp
+- [/fix](/docs/engineer/skills/fix) - Tự động triển khai sửa lỗi CI
+- [/cook](/docs/engineer/skills/cook) - Triển khai kế hoạch hiện có
+- [/debug](/docs/engineer/commands/core/debug) - Debug các vấn đề phức tạp
 
 ---
 

@@ -5,7 +5,6 @@ section: marketing
 category: agents
 order: 1
 ---
-
 # Planner Agent
 
 > **Your strategic architect** - Turns complex requirements into clear, actionable plans
@@ -162,7 +161,7 @@ Phase 2: [Core Features]
 ## Related Commands
 
 - [`/plan`](/docs/marketing/commands/plan) - Create new implementation plan
-- [`/research`](/docs/marketing/commands/research) - Deep technical research
+- [`/research`](/docs/marketing/commands) - Deep technical research
 
 ## Tips
 

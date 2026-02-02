@@ -348,10 +348,10 @@ Quảng cáo yêu thích của bạn có thể hoạt động tệ nhất. Để
 
 ## Workflows Liên Quan
 
-- [Content Workflow](/vi/docs/marketing/workflows/content-workflow) - Tạo tài liệu campaign với các cổng chất lượng
-- [Sales Workflow](/vi/docs/marketing/workflows/sales-workflow) - Chuyển đổi campaign leads thành khách hàng
-- [Analytics Workflow](/vi/docs/marketing/workflows/analytics-workflow) - Đo lường hiệu suất campaign
-- [Marketing Workflow](/vi/docs/marketing/workflows/marketing-workflow) - Điều phối marketing cấp cao hơn
+- [Content Workflow](/docs/marketing/workflows/content-workflow) - Tạo tài liệu campaign với các cổng chất lượng
+- [Sales Workflow](/docs/marketing/workflows/sales-workflow) - Chuyển đổi campaign leads thành khách hàng
+- [Analytics Workflow](/docs/marketing/workflows/analytics-workflow) - Đo lường hiệu suất campaign
+- [Marketing Workflow](/docs/marketing/workflows/marketing-workflow) - Điều phối marketing cấp cao hơn
 
 ---
 
@@ -360,7 +360,7 @@ Quảng cáo yêu thích của bạn có thể hoạt động tệ nhất. Để
 - [campaign-manager](/vi/docs/marketing/agents/campaign-manager) - Tạo brief và quản lý ra mắt
 - [content-creator](/vi/docs/marketing/agents/content-creator) - Phát triển tài liệu sáng tạo
 - [copywriter](/vi/docs/marketing/agents/copywriter) - Ad copy và thông điệp
-- [funnel-architect](/vi/docs/marketing/agents/funnel-architect) - Thiết kế đường dẫn chuyển đổi
+- [funnel-architect](/docs/marketing/agents/funnel-architect) - Thiết kế đường dẫn chuyển đổi
 - [campaign-debugger](/vi/docs/marketing/agents/campaign-debugger) - Tối ưu hóa hiệu suất
 - [analytics-analyst](/vi/docs/marketing/agents/analytics-analyst) - Báo cáo và phân tích
 

@@ -177,7 +177,7 @@ Gốc Dự Án
 ## Các lệnh liên quan
 
 - [`/scout`](/vi/docs/marketing/commands/scout) - Tìm kiếm các tệp tin.
-- [`/explore`](/vi/docs/marketing/commands/explore) - Khám phá mã nguồn theo cách tương tác.
+- [`/explore`](/docs/marketing/commands) - Khám phá mã nguồn theo cách tương tác.
 
 ## Mẹo
 

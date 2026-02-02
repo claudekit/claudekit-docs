@@ -195,7 +195,7 @@ Báo cáo tuân theo định dạng ngắn gọn với phát hiện chính, bằ
 
 - [Attraction Specialist](/vi/docs/marketing/agents/attraction-specialist) - Nghiên cứu từ khóa và đối thủ
 - [SEO Specialist](/vi/docs/marketing/agents/seo-specialist) - Phân tích SEO cạnh tranh
-- [Funnel Architect](/vi/docs/marketing/agents/funnel-architect) - Nghiên cứu chiến lược phễu
+- [Funnel Architect](/docs/marketing/agents/funnel-architect) - Nghiên cứu chiến lược phễu
 
 ## Lệnh Liên Quan
 

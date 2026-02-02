@@ -5,7 +5,6 @@ section: workflows
 order: 0
 published: true
 ---
-
 # Workflows
 
 Task-oriented guides for common development scenarios using ClaudeKit's slash commands and agents.
@@ -124,9 +123,9 @@ New to ClaudeKit? Start with:
 
 ## Reference
 
-- [Commands Reference](/docs/commands) - All available commands
-- [Agents Overview](/docs/agents) - Meet your AI team
-- [Skills Library](/docs/skills) - Built-in knowledge modules
+- [Commands Reference](/docs/engineer/commands) - All available commands
+- [Agents Overview](/docs/engineer/agents) - Meet your AI team
+- [Skills Library](/docs/engineer/skills) - Built-in knowledge modules
 
 ## Need Help?
 

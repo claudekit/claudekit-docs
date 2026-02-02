@@ -6,9 +6,7 @@ kit: engineer
 category: skills/tools
 order: 15
 published: true
----
-
-# skill-creator
+---# skill-creator
 
 Transform your workflow knowledge into reusable AI skills that Claude can activate automatically.
 
@@ -92,9 +90,9 @@ Transform your workflow knowledge into reusable AI skills that Claude can activa
 
 ## Related Skills
 
-- [/docs/engineer/skills/tools/claude-code-skill](/docs/engineer/skills/tools/claude-code-skill) - Create skills via CLI commands
-- [/docs/engineer/skills/tools/planning](/docs/engineer/skills/tools/planning) - Design complex workflows before building skills
-- [/docs/engineer/skills/tools/mcp-management](/docs/engineer/skills/tools/mcp-management) - Manage Model Context Protocol integrations
+- [/docs/engineer/skills/claude-code-skill](/docs/engineer/skills/skill-creator) - Create skills via CLI commands
+- [/docs/engineer/skills/planning](/docs/engineer/skills/planning) - Design complex workflows before building skills
+- [/docs/engineer/skills/mcp-management](/docs/engineer/skills/mcp-management) - Manage Model Context Protocol integrations
 
 ## Key Takeaway
 

@@ -7,7 +7,6 @@ category: skills
 order: 5
 published: true
 ---
-
 # Template Skill
 
 > Starting point for building custom skills that extend ClaudeKit Engineer's capabilities with specialized knowledge and workflows.
@@ -391,7 +390,7 @@ Scale images to target dimensions.
 ## Related Skills
 
 - [Skill Creator](/docs/engineer/skills/skill-creator) - Interactive skill creation workflow
-- [Common Utilities](/docs/engineer/skills/common-utilities) - Shared utilities for skill development
+- [Common Utilities](/docs/engineer/skills) - Shared utilities for skill development
 
 ## Resources
 

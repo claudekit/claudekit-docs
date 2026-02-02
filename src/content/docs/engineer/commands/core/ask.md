@@ -6,9 +6,7 @@ kit: engineer
 category: commands/core
 order: 3
 published: true
----
-
-# /ask
+---# /ask
 
 Strategic architectural consultation command. Provides expert guidance on technical decisions, system design, and architectural challenges without implementation.
 
@@ -365,7 +363,7 @@ You can also call it explicitly:
 ## Related Commands
 
 - [/scout](/docs/engineer/skills/scout) - Search codebase before asking architectural questions
-- [/plan](/docs/engineer/commands/plan/plan) - Create implementation plan after receiving guidance
+- [/plan](/docs/engineer/commands/plan) - Create implementation plan after receiving guidance
 - [/debug](/docs/engineer/skills/debug) - Investigate technical issues (not architecture)
 
 ---

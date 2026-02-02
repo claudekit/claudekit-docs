@@ -5,7 +5,6 @@ section: marketing
 category: skills
 order: 9
 ---
-
 > Transform ideas into validated designs through structured dialogue before any implementation.
 
 ## What This Skill Does
@@ -122,9 +121,9 @@ Avoid overwhelming user with 10 questions upfront. Ask sequentially based on ans
 
 ## Related Skills
 
-- [Planning](/docs/marketing/skills/planning) - Convert brainstorm output to implementation plan
+- [Planning](/docs/marketing/skills) - Convert brainstorm output to implementation plan
 - [Research](/docs/marketing/skills/research) - Deep technical research
-- [Problem Solving](/docs/marketing/skills/problem-solving) - Advanced decision-making frameworks
+- [Problem Solving](/docs/marketing/skills) - Advanced decision-making frameworks
 
 ## Related Commands
 

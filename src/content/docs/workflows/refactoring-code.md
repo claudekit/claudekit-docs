@@ -11,7 +11,6 @@ category: workflows
 order: 5
 published: true
 ---
-
 # Refactoring Code
 
 Learn how to safely refactor code with ClaudeKit - from identifying technical debt to implementing improvements with comprehensive testing and validation.
@@ -643,7 +642,7 @@ Improvement: +36 points maintainability
 ### Related Commands
 - [/cook](/docs/engineer/skills/cook) - Implement refactoring
 - [/test](/docs/engineer/commands/core/test) - Verify changes
-- [/docs:update](/docs/engineer/commands/docs/update) - Update docs
+- [/docs:update](/docs/engineer/commands/docs-cmd/update) - Update docs
 
 ### Related Agents
 - [Code Reviewer](/docs/engineer/agents/code-reviewer) - Code quality analysis

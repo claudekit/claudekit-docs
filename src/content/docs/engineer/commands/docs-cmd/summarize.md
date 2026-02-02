@@ -7,7 +7,6 @@ category: commands/docs-cmd
 order: 62
 published: true
 ---
-
 # /docs:summarize
 
 Generate a comprehensive summary of your codebase by analyzing project structure, files, and architecture. Creates or updates `./docs/codebase-summary.md` with detailed project overview, file statistics, and token counts.
@@ -585,8 +584,8 @@ Typical `/docs:summarize` performance:
 
 After using `/docs:summarize`:
 
-- [/docs:update](/docs/engineer/commands/docs/update) - Update all documentation
-- [/docs:init](/docs/engineer/commands/docs/init) - Initialize full documentation
+- [/docs:update](/docs/engineer/commands/docs-cmd/update) - Update all documentation
+- [/docs:init](/docs/engineer/commands/docs-cmd/init) - Initialize full documentation
 - [/watzup](/docs/engineer/commands/core/watzup) - Review recent changes
 - [/git cm](/docs/engineer/skills/git) - Commit documentation
 

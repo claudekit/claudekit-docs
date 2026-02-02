@@ -7,7 +7,6 @@ category: agents
 order: 17
 published: true
 ---
-
 # Fullstack Developer Agent
 
 **Execute parallel-safe implementation phases across backend, frontend, and infrastructure with strict file ownership enforcement.**
@@ -106,7 +105,7 @@ No overlap → Safe for parallel execution
 ## Related Agents
 
 - [Planner Agent](/docs/engineer/agents/planner) - Creates implementation plans
-- [Scout Agent](/docs/engineer/agents/scout-external) - Gathers external context before planning
+- [Scout Agent](/docs/engineer/skills/scout) - Gathers external context before planning
 
 ## Key Takeaway
 

@@ -257,8 +257,8 @@ Nhà thiết kế theo dõi:
 ## Related Commands
 
 - [`/design`](/docs/marketing/commands/design) - Create or review design
-- [`/mockup`](/docs/marketing/commands/mockup) - Generate mockup
-- [`/audit`](/docs/marketing/commands/audit) - Design system audit
+- [`/mockup`](/docs/marketing/commands) - Generate mockup
+- [`/audit`](/docs/marketing/commands) - Design system audit
 
 ## Tips
 

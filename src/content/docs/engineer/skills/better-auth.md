@@ -6,9 +6,7 @@ kit: engineer
 category: skills/auth
 order: 10
 published: true
----
-
-# Better Auth Skill
+---# Better Auth Skill
 
 Production-ready authentication for any TypeScript framework—Next.js, Nuxt, SvelteKit, Remix, Astro, Hono, Express.
 
@@ -110,9 +108,9 @@ npx @better-auth/cli migrate   # Apply migrations
 
 ## Related Skills
 
-- [Databases](/docs/engineer/skills/backend/databases) - PostgreSQL/MongoDB setup
-- [Next.js](/docs/engineer/skills/frontend/nextjs) - Framework integration
-- [Backend Development](/docs/engineer/skills/backend/backend-development) - API patterns
+- [Databases](/docs/engineer/skills/databases) - PostgreSQL/MongoDB setup
+- [Next.js](/docs/engineer/skills/web-frameworks) - Framework integration
+- [Backend Development](/docs/engineer/skills/backend-development) - API patterns
 
 ---
 

@@ -7,7 +7,6 @@ category: commands/core
 order: 23
 published: true
 ---
-
 # /worktree
 
 Create isolated git worktrees for parallel feature development without disrupting your main working directory.
@@ -92,4 +91,4 @@ Template files (`.env*.example`) auto-copied with `.example` suffix removed.
 
 ## Related Commands
 
-- [/wt](/docs/engineer/commands/core/wt) - Monorepo worktree variant
+- [/wt](/docs/engineer/commands/core/worktree) - Monorepo worktree variant

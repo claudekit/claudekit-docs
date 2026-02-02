@@ -129,6 +129,6 @@ Kỹ năng Web Testing cung cấp patterns đã test trong production apps—gi�
 
 ## Các Kỹ Năng Liên Quan
 
-- [Agent Browser](/vi/docs/engineer/skills/tools/agent-browser) - Cho AI-optimized browser automation
-- [React Best Practices](/vi/docs/engineer/skills/frontend/react-best-practices) - Cho performance optimization
-- [Web Design Guidelines](/vi/docs/engineer/skills/frontend/web-design-guidelines) - Cho accessibility standards
+- [Agent Browser](/docs/engineer/skills/agent-browser) - Cho AI-optimized browser automation
+- [React Best Practices](/docs/engineer/skills) - Cho performance optimization
+- [Web Design Guidelines](/docs/engineer/skills/web-design-guidelines) - Cho accessibility standards

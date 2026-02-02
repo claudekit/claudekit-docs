@@ -255,12 +255,12 @@ Nhà phát triển thành thạo:
 - [Planner](/vi/docs/marketing/agents/planner) - Tạo ra các giai đoạn triển khai.
 - [Tester](/vi/docs/marketing/agents/tester) - Xác thực chất lượng triển khai.
 - [Database Admin](/vi/docs/marketing/agents/database-admin) - Tối ưu hóa mã nguồn cơ sở dữ liệu.
-- [Git Manager](/vi/docs/marketing/agents/git-manager) - Thực hiện commit mã nguồn đã triển khai.
+- [Git Manager](/docs/marketing/agents/git-manager) - Thực hiện commit mã nguồn đã triển khai.
 
 ## Các lệnh liên quan
 
-- [`/dev`](/vi/docs/marketing/commands/dev) - Thực hiện tác vụ phát triển.
-- [`/implement`](/vi/docs/marketing/commands/implement) - Triển khai một tính năng.
+- [`/dev`](/docs/marketing/commands) - Thực hiện tác vụ phát triển.
+- [`/implement`](/docs/marketing/commands) - Triển khai một tính năng.
 
 ## Mẹo
 

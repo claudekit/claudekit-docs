@@ -5,7 +5,6 @@ section: support
 order: 0
 published: true
 ---
-
 # Support
 
 Get help with ClaudeKit through our community resources, documentation, and direct support channels.
@@ -20,7 +19,7 @@ Get help with ClaudeKit through our community resources, documentation, and dire
 ### Looking for how-to guides?
 - [Getting Started](/docs/getting-started) - Learn the basics
 - [Workflows](/docs/workflows) - Step-by-step guides
-- [Commands Reference](/docs/commands) - All available commands
+- [Commands Reference](/docs/engineer/commands) - All available commands
 
 ## Community Support
 
@@ -66,9 +65,9 @@ Get help with ClaudeKit through our community resources, documentation, and dire
 
 ### Documentation
 - [Getting Started](/docs/getting-started) - New user guides
-- [Commands Reference](/docs/commands) - Complete command documentation
-- [Agents Overview](/docs/agents) - Meet your AI team
-- [Skills Library](/docs/skills) - Built-in knowledge modules
+- [Commands Reference](/docs/engineer/commands) - Complete command documentation
+- [Agents Overview](/docs/engineer/agents) - Meet your AI team
+- [Skills Library](/docs/engineer/skills) - Built-in knowledge modules
 - [Troubleshooting](/docs/support/troubleshooting) - Common issues and solutions
 
 ### Tutorials and Examples
@@ -178,7 +177,7 @@ I've tried refreshing skills and restarting ClaudeKit.
 ## Contributing
 
 ### Help Improve Documentation
-- [Contributing Guide](/docs/development/contributing)
+- [Contributing Guide](/docs/support)
 - Report documentation issues on GitHub
 - Suggest improvements via Discord
 
@@ -222,9 +221,9 @@ I've tried refreshing skills and restarting ClaudeKit.
 - [Certification](https://claudekit.cc/certification) - Become a ClaudeKit expert
 
 ### Developer Resources
-- [API Documentation](/docs/api) - For extending ClaudeKit
-- [Plugin Development](/docs/development/plugins) - Create extensions
-- [Skill Development](/docs/development/creating-skills) - Build custom skills
+- [API Documentation](/docs/engineer) - For extending ClaudeKit
+- [Plugin Development](/docs/engineer) - Create extensions
+- [Skill Development](/docs/engineer/skills/skill-creator) - Build custom skills
 
 ## Feedback
 

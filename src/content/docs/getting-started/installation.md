@@ -6,7 +6,6 @@ category: getting-started
 order: 2
 published: true
 ---
-
 # Installation
 
 This guide will help you install ClaudeKit and set up your development environment. You can choose between manual installation or using the ClaudeKit CLI.
@@ -79,7 +78,7 @@ Get-ChildItem -Force your-project\.claude\
 ### Step 3: Configure Gemini API Key (Optional)
 
 **WHY?**
-ClaudeKit previously used [Human MCP](https://www.npmjs.com/package/@goonnguyen/human-mcp) for image and video analysis because Gemini has better vision capabilities. However, Anthropic launched [**Agent Skills**](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview) with better context engineering support, so all Human MCP tools have been converted to Agent Skills.
+ClaudeKit previously used [Human MCP](https://www.npmjs.com/package/@goonnguyen/human-mcp) for image and video analysis because Gemini has better vision capabilities. However, Anthropic launched [**Agent Skills**](https://docs.claude.com/en/docs/engineer/agents-and-tools/agent-skills/overview) with better context engineering support, so all Human MCP tools have been converted to Agent Skills.
 
 **Note:** Gemini API currently offers a generous free tier.
 
@@ -308,5 +307,5 @@ If CLI cannot authenticate:
 Now that ClaudeKit is installed, continue with:
 
 - [Quick Start Guide](/docs/getting-started/quick-start) - Build your first project
-- [CLAUDE.md Explained](/docs/core-concepts/claude-md) - Understand the configuration file
-- [Workflows](/docs/core-concepts/workflows) - Learn about development workflows
+- [CLAUDE.md Explained](/docs/engineer/configuration/claude-md) - Understand the configuration file
+- [Workflows](/docs/engineer/configuration/workflows) - Learn about development workflows

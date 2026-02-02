@@ -299,9 +299,9 @@ ffmpeg -i interview-audio.m4a -ss 00:25:15 -t 00:08:30 -c copy clip2.m4a
 
 Kết hợp Media Processing với:
 
-- [AI Multimodal](/vi/docs/engineer/skills/ai-multimodal) - Process media trước khi send tới Gemini API (compress, resize, split)
-- [Frontend Design](/vi/docs/engineer/skills/frontend-design) - Optimize generated images, remove backgrounds từ assets
-- [Chrome DevTools](/vi/docs/engineer/skills/chrome-devtools) - Capture screenshots, sau đó optimize với ImageMagick
+- [AI Multimodal](/docs/engineer/skills/ai-multimodal) - Process media trước khi send tới Gemini API (compress, resize, split)
+- [Frontend Design](/docs/engineer/skills/frontend-design) - Optimize generated images, remove backgrounds từ assets
+- [Chrome DevTools](/docs/engineer/skills/chrome-devtools) - Capture screenshots, sau đó optimize với ImageMagick
 
 ## Nguyên Tắc Chính
 

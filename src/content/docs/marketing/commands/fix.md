@@ -6,7 +6,6 @@ category: commands
 order: 14
 published: true
 ---
-
 > Intelligent routing to the right fix strategy
 
 ## Quick Start
@@ -214,7 +213,7 @@ Analyze error logs (auto-detected from context):
 - [/cook](/docs/engineer/skills/cook) - Implementation (includes testing)
 - [/test](/docs/marketing/commands/test) - Run tests only
 - [/review](/docs/marketing/commands/review) - Code quality check
-- [/debug](/docs/marketing/commands/debug) - Deep root cause analysis
+- [/debug](/docs/marketing/commands) - Deep root cause analysis
 
 ---
 

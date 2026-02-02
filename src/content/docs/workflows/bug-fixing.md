@@ -5,7 +5,6 @@ section: workflows
 order: 2
 published: true
 ---
-
 # Bug Fixing Workflow
 
 Systematic approach to debugging and fixing issues using ClaudeKit's specialized debugging agents.
@@ -246,5 +245,5 @@ const sessionConfig = {
 ## Related Workflows
 
 - [Feature Development](/docs/workflows/feature-development) - Building new features
-- [Code Review](/docs/workflows/code-review) - Maintaining quality
-- [Performance Optimization](/docs/workflows/performance-optimization) - Speed improvements
+- [Code Review](/docs/workflows) - Maintaining quality
+- [Performance Optimization](/docs/workflows/optimizing-performance) - Speed improvements

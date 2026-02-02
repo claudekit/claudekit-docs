@@ -7,7 +7,6 @@ category: commands/docs-cmd
 order: 60
 published: true
 ---
-
 # /docs:init
 
 Initialize comprehensive project documentation by analyzing the entire codebase. This is the essential first command when integrating ClaudeKit into an existing project.
@@ -570,8 +569,8 @@ git push
 
 After running `/docs:init`:
 
-- [/docs:update](/docs/engineer/commands/docs/update) - Update documentation
-- [/docs:summarize](/docs/engineer/commands/docs/summarize) - Create summary
+- [/docs:update](/docs/engineer/commands/docs-cmd/update) - Update documentation
+- [/docs:summarize](/docs/engineer/commands/docs-cmd/summarize) - Create summary
 - [/ask](/docs/engineer/commands/core/ask) - Ask about codebase
 - [/watzup](/docs/engineer/commands/core/watzup) - Get project status
 

@@ -7,7 +7,6 @@ category: configuration
 order: 2
 published: true
 ---
-
 # CLAUDE.md
 
 The `CLAUDE.md` file is the primary configuration file that provides guidance to Claude Code when working with your codebase. Understanding this file is crucial for effective use of ClaudeKit.
@@ -221,7 +220,7 @@ ls docs/
 
 Now that you understand CLAUDE.md:
 
-- [Workflows](/docs/docs/engineer/configuration/workflows) - Learn about workflow files
+- [Workflows](/docs/engineer/configuration/workflows) - Learn about workflow files
 - [Agents](/docs/engineer/agents/) - Understand the agent system
 - [Commands](/docs/engineer/commands/) - Explore available commands
 

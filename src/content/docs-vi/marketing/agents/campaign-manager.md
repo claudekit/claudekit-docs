@@ -562,7 +562,7 @@ Campaign Manager mạnh nhất với dữ liệu thực từ:
 - SendGrid (hiệu suất email)
 - Google Ads (số liệu quảng cáo, CPA)
 
-Xem [Hướng dẫn thiết lập MCP](/vi/docs/marketing/mcp-setup) cho hướng dẫn tích hợp.
+Xem [Hướng dẫn thiết lập MCP](/vi/docs/engineer/configuration/mcp-setup) cho hướng dẫn tích hợp.
 
 ## Agents Liên Quan
 

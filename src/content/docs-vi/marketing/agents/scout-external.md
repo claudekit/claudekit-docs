@@ -177,7 +177,7 @@ opencode run "Search db/ for schema files. Return file paths only." --model open
 
 ## Related Commands
 
-- [`/scout-ext`](/docs/marketing/commands/scout-ext) - AI-powered codebase search
+- [`/scout-ext`](/docs/marketing/commands) - AI-powered codebase search
 - [`/scout`](/docs/marketing/commands/scout) - Standard file search
 
 ## Tips

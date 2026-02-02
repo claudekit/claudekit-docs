@@ -6,7 +6,6 @@ category: support/troubleshooting
 order: 4
 published: true
 ---
-
 # Agent Issues
 
 Agents not responding or behaving unexpectedly? Debug and fix agent problems fast.
@@ -130,7 +129,7 @@ cat .env | grep API_KEY
 # OPENROUTER_API_KEY=...    # For alternative models
 ```
 
-See [API Key Setup](/docs/troubleshooting/api-key-setup) for configuration.
+See [API Key Setup](/docs/support/troubleshooting/api-key-setup) for configuration.
 
 ---
 
@@ -382,7 +381,7 @@ time curl -X POST https://generativelanguage.googleapis.com/v1beta/models/gemini
 # If slow, check internet connection
 ```
 
-See [Performance Issues](/docs/troubleshooting/performance-issues) for optimization.
+See [Performance Issues](/docs/support/troubleshooting/performance-issues) for optimization.
 
 ---
 
@@ -602,9 +601,9 @@ done
 
 ## Related Issues
 
-- [Command Errors](/docs/troubleshooting/command-errors) - Commands not triggering agents
-- [API Key Setup](/docs/troubleshooting/api-key-setup) - Agent API credentials
-- [Performance Issues](/docs/troubleshooting/performance-issues) - Slow agent execution
+- [Command Errors](/docs/support/troubleshooting/command-errors) - Commands not triggering agents
+- [API Key Setup](/docs/support/troubleshooting/api-key-setup) - Agent API credentials
+- [Performance Issues](/docs/support/troubleshooting/performance-issues) - Slow agent execution
 
 ---
 

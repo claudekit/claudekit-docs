@@ -7,7 +7,6 @@ category: agents
 order: 3
 published: true
 ---
-
 # Planner Agent
 
 Researches best practices, analyzes your codebase, and generates step-by-step implementation plans with code examples, timelines, and rollback procedures.
@@ -146,7 +145,7 @@ Plans saved to: `plans/[feature-name]-YYYYMMDD-HHMMSS.md`
 
 - [Fullstack Developer](/docs/engineer/agents/fullstack-developer) - Executes implementation plans
 - [Researcher Agent](/docs/engineer/agents/researcher) - Deep dives on specific topics
-- [Scout](/docs/engineer/agents/scout) - Explores codebase for context
+- [Scout](/docs/engineer/skills/scout) - Explores codebase for context
 
 ## Key Takeaway
 

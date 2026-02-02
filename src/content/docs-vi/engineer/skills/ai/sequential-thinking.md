@@ -112,9 +112,9 @@ Pros: Simple API, TypeScript. Cons: Less middleware ecosystem
 
 ## Các Kỹ Năng Liên Quan
 
-- [Problem Solving](/vi/docs/engineer/skills/tools/problem-solving) - Phân rã vấn đề tổng quát
-- [Debugging](/vi/docs/engineer/skills/tools/debugging) - Điều tra lỗi có hệ thống
-- [Code Review](/vi/docs/engineer/skills/tools/code-review) - Phân tích kỹ thuật
+- [Problem Solving](/docs/engineer/skills/problem-solving) - Phân rã vấn đề tổng quát
+- [Debugging](/docs/engineer/skills/debug) - Điều tra lỗi có hệ thống
+- [Code Review](/docs/engineer/skills/code-review) - Phân tích kỹ thuật
 
 ## Điểm Chính
 

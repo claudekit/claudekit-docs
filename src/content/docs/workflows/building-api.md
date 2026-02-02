@@ -6,7 +6,6 @@ category: workflows
 order: 6
 published: true
 ---
-
 # Building a REST API
 
 Learn how to build production-ready REST APIs with ClaudeKit - from API design through implementation, testing, documentation, and deployment.
@@ -759,9 +758,9 @@ npx prisma db pull
 ## Next Steps
 
 ### Related Use Cases
-- [Implementing Authentication](/docs/use-cases/implementing-auth) - Auth deep dive
-- [Integrating Payments](/docs/use-cases/integrating-payment) - Add payments
-- [Optimizing Performance](/docs/use-cases/optimizing-performance) - Speed up API
+- [Implementing Authentication](/docs/workflows/implementing-auth) - Auth deep dive
+- [Integrating Payments](/docs/workflows/integrating-payment) - Add payments
+- [Optimizing Performance](/docs/workflows/optimizing-performance) - Speed up API
 
 ### Related Commands
 - [/bootstrap](/docs/engineer/commands/core/bootstrap) - Initialize projects

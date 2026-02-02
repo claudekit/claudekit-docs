@@ -5,7 +5,6 @@ section: marketing
 category: agents
 order: 12
 ---
-
 # Fullstack Developer Agent
 
 > **Your implementation specialist** - Turns plans into production-ready code
@@ -258,8 +257,8 @@ The developer is proficient in:
 
 ## Related Commands
 
-- [`/dev`](/docs/marketing/commands/dev) - Execute development task
-- [`/implement`](/docs/marketing/commands/implement) - Implement feature
+- [`/dev`](/docs/marketing/commands) - Execute development task
+- [`/implement`](/docs/marketing/commands) - Implement feature
 
 ## Tips
 

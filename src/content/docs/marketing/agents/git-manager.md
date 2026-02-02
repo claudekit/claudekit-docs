@@ -5,7 +5,6 @@ section: marketing
 category: agents
 order: 4
 ---
-
 # Git Manager Agent
 
 > **Your version control specialist** - Clean commits, clear history, zero hassle
@@ -218,8 +217,8 @@ Token-optimized workflow:
 
 ## Related Commands
 
-- [`/commit`](/docs/marketing/commands/commit) - Create and push commits
-- [`/pr`](/docs/marketing/commands/pr) - Create pull request
+- [`/commit`](/docs/marketing/commands) - Create and push commits
+- [`/pr`](/docs/marketing/commands) - Create pull request
 
 ## Tips
 

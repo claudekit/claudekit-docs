@@ -96,5 +96,5 @@ Remotion best practices từ real-world video generation projects. Những patte
 
 ## Skills Liên Quan
 
-- [AI Multimodal](/vi/docs/engineer/skills/ai-multimodal) - Để transcribing audio generate captions
-- [React Best Practices](/vi/docs/engineer/skills/react-best-practices) - Để optimizing React performance
+- [AI Multimodal](/docs/engineer/skills/ai-multimodal) - Để transcribing audio generate captions
+- [React Best Practices](/docs/engineer/skills) - Để optimizing React performance

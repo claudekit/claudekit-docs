@@ -10,9 +10,7 @@ section: workflows
 category: workflows
 order: 3
 published: true
----
-
-# Adding a New Feature
+---# Adding a New Feature
 
 Learn the complete workflow for adding new features to your project with ClaudeKit - from initial planning through production deployment with full testing and documentation.
 
@@ -651,16 +649,16 @@ git checkout -b feature/password-reset
 - [Building an API](/docs/workflows/building-api) - Create REST APIs
 
 ### Related Commands
-- [/plan](/docs/engineer/commands/core/plan) - Create implementation plans
+- [/plan](/docs/engineer/commands/plan) - Create implementation plans
 - [/cook](/docs/engineer/skills/cook) - Implement features from plans
 - [/test](/docs/engineer/commands/core/test) - Run test suites
-- [/docs:update](/docs/engineer/commands/docs/update) - Update documentation
+- [/docs:update](/docs/engineer/commands/docs-cmd/update) - Update documentation
 - [/git cm](/docs/engineer/skills/git) - Commit changes
 
 ### Further Reading
-- [Command Reference](/docs/commands) - All available commands
-- [Agent Guide](/docs/agents) - Understanding agents
-- [Workflows](/docs/docs/engineer/configuration/workflows) - Development patterns
+- [Command Reference](/docs/engineer/commands) - All available commands
+- [Agent Guide](/docs/engineer/agents) - Understanding agents
+- [Workflows](/docs/engineer/configuration/workflows) - Development patterns
 
 ---
 

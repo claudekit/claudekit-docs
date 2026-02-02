@@ -404,9 +404,9 @@ Paste diagram code, verify rendering trước khi add vào docs.
 
 ## Skills Liên Quan
 
-- [Plans Kanban](/vi/docs/engineer/skills/plans-kanban) - Dashboard view của multiple plans
-- [AI Artist](/vi/docs/engineer/skills/ai-artist) - Generate content cho documentation
-- [Frontend Design](/vi/docs/engineer/skills/frontend-design) - Design documentation sites
+- [Plans Kanban](/docs/engineer/skills/plans-kanban) - Dashboard view của multiple plans
+- [AI Artist](/docs/engineer/skills/ai-artist) - Generate content cho documentation
+- [Frontend Design](/docs/engineer/skills/frontend-design) - Design documentation sites
 
 ## Commands Liên Quan
 

@@ -98,6 +98,6 @@ Scout không chỉ grep—nó phân chia công việc khám phá một cách th�
 
 ## Kỹ năng liên quan
 
-- [Cook](/vi/docs/engineer/skills/tools/cook) - Sử dụng Scout trước khi triển khai
-- [Fix](/vi/docs/engineer/skills/tools/fix) - Sử dụng Scout để hiểu ngữ cảnh bug
-- [GKG](/vi/docs/engineer/skills/tools/gkg) - Phân tích code ngữ nghĩa (cách tiếp cận thay thế)
+- [Cook](/docs/engineer/skills/cook) - Sử dụng Scout trước khi triển khai
+- [Fix](/docs/engineer/skills/fix) - Sử dụng Scout để hiểu ngữ cảnh bug
+- [GKG](/docs/engineer/skills/gkg) - Phân tích code ngữ nghĩa (cách tiếp cận thay thế)

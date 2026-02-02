@@ -6,9 +6,7 @@ kit: engineer
 category: skills/tools
 order: 10
 published: true
----
-
-# Sequential Thinking
+---# Sequential Thinking
 
 Break down complex problems into numbered, reflective thought sequences that can revise, branch, and verify hypotheses dynamically.
 
@@ -111,9 +109,9 @@ Pros: Simple API, TypeScript. Cons: Less middleware ecosystem
 
 ## Related Skills
 
-- [Problem Solving](/docs/engineer/skills/tools/problem-solving) - General problem decomposition
-- [Debugging](/docs/engineer/skills/tools/debugging) - Systematic bug investigation
-- [Code Review](/docs/engineer/skills/tools/code-review) - Technical analysis
+- [Problem Solving](/docs/engineer/skills/problem-solving) - General problem decomposition
+- [Debugging](/docs/engineer/skills/debug) - Systematic bug investigation
+- [Code Review](/docs/engineer/skills/code-review) - Technical analysis
 
 ## Key Takeaway
 

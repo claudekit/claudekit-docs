@@ -357,10 +357,10 @@ cat README.md
 
 ## Các lệnh liên quan
 
-- [/bootstrap](/vi/docs/engineer/commands/core/bootstrap) - Khởi tạo với các bước phê duyệt
-- [/bootstrap:auto](/vi/docs/engineer/commands/core/bootstrap-auto) - Khởi tạo tự động (tuần tự)
+- [/bootstrap](/docs/engineer/commands/core/bootstrap) - Khởi tạo với các bước phê duyệt
+- [/bootstrap:auto](/docs/engineer/commands/core/bootstrap-auto) - Khởi tạo tự động (tuần tự)
 - [/plan:parallel](/vi/docs/engineer/commands/plan/parallel) - Tạo kế hoạch thực thi song song
-- [/cook --parallel](/vi/docs/engineer/skills/tools/cook) - Thực thi kế hoạch song song
+- [/cook --parallel](/docs/engineer/skills/cook) - Thực thi kế hoạch song song
 
 ---
 

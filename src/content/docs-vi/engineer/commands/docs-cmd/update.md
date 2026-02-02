@@ -573,8 +573,8 @@ Hiệu suất điển hình của `/docs:update`:
 Sau khi sử dụng `/docs:update`:
 
 - [/docs:summarize](/vi/docs/engineer/commands/docs-cmd/summarize) - Chỉ cập nhật bản tóm tắt codebase
-- [/watzup](/vi/docs/engineer/commands/core/watzup) - Xem lại các thay đổi gần đây
-- [/git cm](/vi/docs/engineer/skills/tools/git) - Commit các cập nhật tài liệu
+- [/watzup](/docs/engineer/commands/core/watzup) - Xem lại các thay đổi gần đây
+- [/git cm](/docs/engineer/skills/git) - Commit các cập nhật tài liệu
 
 ---
 

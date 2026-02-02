@@ -5,7 +5,6 @@ section: getting-started
 order: 3
 published: true
 ---
-
 # Upgrading from Claude Code to ClaudeKit
 
 Already using Claude Code? ClaudeKit enhances your workflow without breaking existing habits.
@@ -110,4 +109,4 @@ A: Uninstall and delete .claude/CLAUDE.md. No breaking changes.
 
 1. [Install ClaudeKit](/docs/getting-started/installation)
 2. [Try Quick Start](/docs/getting-started/quick-start)
-3. [Explore Commands](/docs/commands)
+3. [Explore Commands](/docs/engineer/commands)

@@ -25,7 +25,7 @@ Bạn cần:
 - MCP servers được cấu hình trong `.claude/.mcp.json`
 - Node.js 18+ để chạy TypeScript scripts
 - Tùy chọn: Gemini CLI installed globally cho primary execution method
-- Hiểu biết cơ bản về cách MCP servers hoạt động (xem [MCP Builder](/vi/docs/engineer/skills/mcp-builder))
+- Hiểu biết cơ bản về cách MCP servers hoạt động (xem [MCP Builder](/docs/engineer/skills/mcp-builder))
 
 ## Cấu Hình
 
@@ -320,9 +320,9 @@ cat assets/tools.json | jq '.[] | {server: .server, tools: .tools[].name}'
 
 Kết hợp MCP Management với:
 
-- [MCP Builder](/vi/docs/engineer/skills/mcp-builder) - Build MCP servers trước khi manage chúng
-- [AI Multimodal](/vi/docs/engineer/skills/ai-multimodal) - Một số MCP servers có thể expose Gemini capabilities
-- [Chrome DevTools](/vi/docs/engineer/skills/chrome-devtools) - Puppeteer MCP servers cung cấp browser automation
+- [MCP Builder](/docs/engineer/skills/mcp-builder) - Build MCP servers trước khi manage chúng
+- [AI Multimodal](/docs/engineer/skills/ai-multimodal) - Một số MCP servers có thể expose Gemini capabilities
+- [Chrome DevTools](/docs/engineer/skills/chrome-devtools) - Puppeteer MCP servers cung cấp browser automation
 
 ## Nguyên Tắc Chính
 

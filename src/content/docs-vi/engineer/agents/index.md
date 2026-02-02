@@ -17,7 +17,7 @@ ClaudeKit bao gồm 14 agent chuyên biệt làm việc cùng nhau để xử l�
 
 ### Nhóm Phát triển
 1. **[planner](/vi/docs/engineer/agents/planner)** - Nghiên cứu, phân tích và tạo kế hoạch triển khai.
-2. **[scout](/vi/docs/engineer/agents/scout)** - Nhanh chóng định vị các tệp liên quan bằng tìm kiếm song song.
+2. **[scout](/docs/engineer/skills/scout)** - Nhanh chóng định vị các tệp liên quan bằng tìm kiếm song song.
 3. **[debugger](/vi/docs/engineer/agents/debugger)** - Điều tra vấn đề, phân tích nhật ký, chẩn đoán lỗi.
 4. **[tester](/vi/docs/engineer/agents/tester)** - Xác nhận chất lượng mã nguồn thông qua kiểm thử toàn diện.
 
@@ -30,7 +30,7 @@ ClaudeKit bao gồm 14 agent chuyên biệt làm việc cùng nhau để xử l�
 
 ### Nhóm Sáng tạo & Thiết kế
 8. **[ui-ux-designer](/vi/docs/engineer/agents/ui-ux-designer)** - Thiết kế giao diện và trải nghiệm người dùng.
-9. **[copywriter](/vi/docs/engineer/agents/copywriter)** - Tạo nội dung marketing chuyển đổi cao.
+9. **[copywriter](/docs/engineer/skills/copywriting)** - Tạo nội dung marketing chuyển đổi cao.
 10. **[brainstormer](/vi/docs/engineer/agents/brainstormer)** - Khám phá ý tưởng và tranh luận các quyết định kỹ thuật.
 
 ### Nhóm Nghiên cứu & Viết lách

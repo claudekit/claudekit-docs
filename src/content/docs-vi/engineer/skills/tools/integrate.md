@@ -171,9 +171,9 @@ Sau khi tích hợp:
 
 ## Kỹ năng liên quan
 
-- [Cook](/vi/docs/engineer/skills/tools/cook) - Để triển khai logic thanh toán tùy chỉnh
-- [Fix](/vi/docs/engineer/skills/tools/fix) - Để gỡ lỗi vấn đề thanh toán
-- [Test](/vi/docs/engineer/skills/tools/test) - Để kiểm tra luồng thanh toán
+- [Cook](/docs/engineer/skills/cook) - Để triển khai logic thanh toán tùy chỉnh
+- [Fix](/docs/engineer/skills/fix) - Để gỡ lỗi vấn đề thanh toán
+- [Test](/docs/engineer/skills) - Để kiểm tra luồng thanh toán
 
 ---
 

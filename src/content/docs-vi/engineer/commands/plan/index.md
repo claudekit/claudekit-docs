@@ -267,8 +267,8 @@ Analyzing complexity...
 
 | Lệnh | Mô tả | Khi nào sử dụng |
 |------|-------|-----------------|
-| [/plan:fast](/vi/docs/engineer/commands/plan/fast) | Lập kế hoạch nhanh không nghiên cứu | Tác vụ đơn giản, rõ ràng |
-| [/plan:hard](/vi/docs/engineer/commands/plan/hard) | Lập kế hoạch chi tiết có nghiên cứu | Tác vụ phức tạp |
+| [/plan:fast](/docs/engineer/commands/plan/fast) | Lập kế hoạch nhanh không nghiên cứu | Tác vụ đơn giản, rõ ràng |
+| [/plan:hard](/docs/engineer/commands/plan/hard) | Lập kế hoạch chi tiết có nghiên cứu | Tác vụ phức tạp |
 | [/plan:parallel](/vi/docs/engineer/commands/plan/parallel) | Kế hoạch với giai đoạn thực thi song song | Thực thi đa agent |
 | [/plan:two](/vi/docs/engineer/commands/plan/two) | So sánh hai cách triển khai | Quyết định kiến trúc |
 | [/plan:ci](/vi/docs/engineer/commands/plan/ci) | Kế hoạch dựa trên lỗi CI/CD | Sửa lỗi pipeline |

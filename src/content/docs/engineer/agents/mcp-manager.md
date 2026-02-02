@@ -7,7 +7,6 @@ category: agents
 order: 16
 published: true
 ---
-
 # MCP Manager Agent
 
 Execute MCP server tools (screenshots, browser automation, docs lookup) in isolated context - keeps your main Claude session clean while accessing 100+ MCP capabilities.
@@ -64,7 +63,7 @@ Execute MCP server tools (screenshots, browser automation, docs lookup) in isola
 
 ## Related Agents
 
-- [Scout External](/docs/engineer/agents/scout-external) - External research + MCP docs lookup synergy
+- [Scout External](/docs/engineer/skills/scout) - External research + MCP docs lookup synergy
 - [Fullstack Developer](/docs/engineer/agents/fullstack-developer) - Uses MCP Manager for visual regression testing
 
 ## Key Takeaway

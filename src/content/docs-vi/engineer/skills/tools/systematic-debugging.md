@@ -300,7 +300,7 @@ Sử dụng systematic-debugging:
 ## Bước tiếp theo
 
 - [Truy vết nguyên nhân gốc rễ](/vi/docs/engineer/skills/)
-- [Ví dụ về gỡ lỗi](/vi/docs/use-cases/)
+- [Ví dụ về gỡ lỗi](/vi/docs/workflows)
 - [Kỹ năng kiểm thử](/vi/docs/engineer/agents/tester)
 
 ---

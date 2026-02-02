@@ -5,7 +5,6 @@ section: marketing
 category: agents
 order: 3
 ---
-
 # Docs Manager Agent
 
 > **Your documentation guardian** - Keeps docs accurate, organized, and actually useful
@@ -221,8 +220,8 @@ The Docs Manager integrates seamlessly:
 
 ## Related Commands
 
-- [`/docs`](/docs/marketing/commands/docs) - Update or create documentation
-- [`/audit`](/docs/marketing/commands/audit) - Run documentation quality audit
+- [`/docs`](/docs/marketing/commands) - Update or create documentation
+- [`/audit`](/docs/marketing/commands) - Run documentation quality audit
 
 ## Tips
 

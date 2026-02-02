@@ -357,9 +357,9 @@ ffmpeg -i input.mkv -c:v libx264 -profile:v high \
 
 ## Bước tiếp theo
 
-- [Ví dụ về đa phương tiện](/vi/docs/use-cases/)
-- [Xử lý hình ảnh](/vi/docs/engineer/skills/imagemagick)
-- [Hướng dẫn truyền phát](/vi/docs/use-cases/)
+- [Ví dụ về đa phương tiện](/vi/docs/workflows)
+- [Xử lý hình ảnh](/vi/docs/engineer/skills/tools/imagemagick)
+- [Hướng dẫn truyền phát](/vi/docs/workflows)
 
 ---
 

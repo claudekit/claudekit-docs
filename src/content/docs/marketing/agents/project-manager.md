@@ -5,7 +5,6 @@ section: marketing
 category: agents
 order: 2
 ---
-
 # Project Manager Agent
 
 > **Your project orchestrator** - Keeps everything on track and nothing falls through the cracks
@@ -188,8 +187,8 @@ The manager automatically triggers doc updates when:
 
 ## Related Commands
 
-- [`/status`](/docs/marketing/commands/status) - Check project status
-- [`/report`](/docs/marketing/commands/report) - Generate detailed status report
+- [`/status`](/docs/marketing/commands) - Check project status
+- [`/report`](/docs/marketing/commands) - Generate detailed status report
 
 ## Quality Standards
 

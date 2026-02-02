@@ -632,14 +632,14 @@ Cải thiện: +36 điểm khả năng bảo trì
 ## Bước Tiếp Theo
 
 ### Các Trường Hợp Sử Dụng Liên Quan
-- [Thêm Tính Năng Mới](/docs/use-cases/adding-feature) - Xây dựng tính năng
-- [Sửa Lỗi](/docs/use-cases/fixing-bugs) - Gỡ lỗi vấn đề
-- [Tối Ưu Hóa Hiệu Suất](/docs/use-cases/optimizing-performance) - Cải thiện tốc độ
+- [Thêm Tính Năng Mới](/docs/workflows/adding-feature) - Xây dựng tính năng
+- [Sửa Lỗi](/docs/workflows/fixing-bugs) - Gỡ lỗi vấn đề
+- [Tối Ưu Hóa Hiệu Suất](/docs/workflows/optimizing-performance) - Cải thiện tốc độ
 
 ### Các Lệnh Liên Quan
-- [/cook](/vi/docs/engineer/skills/tools/cook) - Triển khai tái cấu trúc
+- [/cook](/docs/engineer/skills/cook) - Triển khai tái cấu trúc
 - [/test](/docs/engineer/commands/core/test) - Xác minh các thay đổi
-- [/docs:update](/docs/engineer/commands/docs/update) - Cập nhật tài liệu
+- [/docs:update](/docs/engineer/commands/docs-cmd/update) - Cập nhật tài liệu
 
 ### Các Agents Liên Quan
 - [Code Reviewer](/docs/engineer/agents/code-reviewer) - Phân tích chất lượng code

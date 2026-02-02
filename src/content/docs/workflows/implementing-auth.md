@@ -11,7 +11,6 @@ category: workflows
 order: 7
 published: true
 ---
-
 # Implementing Authentication
 
 Learn how to implement secure authentication systems with ClaudeKit - from basic JWT authentication to OAuth2, 2FA, and passwordless login.
@@ -654,8 +653,8 @@ Before production deployment:
 - [/fix --quick](/docs/engineer/skills/fix) - Quick fixes
 
 ### Integration Guides
-- [/integrate:polar](/docs/engineer/skills/integrate) - Polar payments
-- [Better Auth Skill](/docs/skills) - Better Auth framework
+- [/integrate:polar](/docs/engineer/skills) - Polar payments
+- [Better Auth Skill](/docs/engineer/skills) - Better Auth framework
 
 ### Further Reading
 - [JWT Best Practices](https://jwt.io/introduction)

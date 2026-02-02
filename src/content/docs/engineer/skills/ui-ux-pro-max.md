@@ -6,9 +6,7 @@ kit: engineer
 category: skills/frontend
 order: 15
 published: true
----
-
-# UI/UX Pro Max Skill
+---# UI/UX Pro Max Skill
 
 Get instant access to 50 UI styles, 21 color palettes, 50 font pairings, and 20 chart types—all tailored to your product type and tech stack.
 
@@ -118,6 +116,6 @@ Claude validates before delivering:
 
 ## Related Skills
 
-- [Frontend Design Pro](/docs/engineer/skills/frontend/frontend-design-pro) - Premium agency-quality interfaces
-- [Aesthetic](/docs/engineer/skills/frontend/aesthetic) - Four-stage design framework
-- [UI Styling](/docs/engineer/skills/frontend/ui-styling) - shadcn/ui + Tailwind patterns
+- [Frontend Design Pro](/docs/engineer/skills/frontend-design) - Premium agency-quality interfaces
+- [Aesthetic](/docs/engineer/skills/frontend-design) - Four-stage design framework
+- [UI Styling](/docs/engineer/skills/ui-styling) - shadcn/ui + Tailwind patterns

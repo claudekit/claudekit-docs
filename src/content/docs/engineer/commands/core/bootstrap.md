@@ -6,9 +6,7 @@ kit: engineer
 category: commands/core
 order: 1
 published: true
----
-
-# /bootstrap
+---# /bootstrap
 
 Initialize new projects with spec-driven and test-driven development. This command guides you through requirements gathering, research, planning, and implementation.
 
@@ -372,9 +370,9 @@ npm test
 ## Next Steps
 
 - [/cook](/docs/engineer/skills/cook) - Add new features
-- [/plan](/docs/engineer/commands/core/plan) - Plan additions
+- [/plan](/docs/engineer/commands/plan) - Plan additions
 - [/test](/docs/engineer/commands/core/test) - Run test suite
-- [/docs:update](/docs/engineer/commands/docs/update) - Update docs
+- [/docs:update](/docs/engineer/commands/docs-cmd/update) - Update docs
 
 ---
 

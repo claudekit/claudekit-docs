@@ -87,10 +87,13 @@ async function collectValidSlugs(
           if (relativePath) {
             validSlugs.add(`${urlPrefix}/${relativePath}`);
             validSlugs.add(`${urlPrefix}/${relativePath}/`);
+            // Also accept /index suffix links
+            validSlugs.add(`${urlPrefix}/${relativePath}/index`);
           } else {
             // Root index
             validSlugs.add(urlPrefix);
             validSlugs.add(`${urlPrefix}/`);
+            validSlugs.add(`${urlPrefix}/index`);
           }
         } else {
           const slug = relativePath ? `${relativePath}/${filename}` : filename;
@@ -147,7 +150,10 @@ async function validateFileLinks(
   const content = await readFile(filePath, 'utf-8');
 
   // Skip frontmatter section
-  const bodyContent = content.replace(/^---\n[\s\S]*?\n---\n/, '');
+  let bodyContent = content.replace(/^---\n[\s\S]*?\n---\n/, '');
+
+  // Strip fenced code blocks to avoid validating example links
+  bodyContent = bodyContent.replace(/```[\s\S]*?```/g, '');
 
   // Extract internal links - markdown syntax [text](/docs/...) or [text](/vi/docs/...)
   const markdownLinkRegex = /\[.*?\]\((\/(?:vi\/)?docs\/[^)\s]+)\)/g;
@@ -190,8 +196,8 @@ function isValidInternalLink(link: string, validSlugs: Set<string>): boolean {
     return true; // Assume static assets exist, let 404s be caught at runtime
   }
 
-  // Strip anchor/fragment (#section)
-  let cleanLink = link.split('#')[0];
+  // Strip anchor and query params
+  let cleanLink = link.replace(/#.*$/, '').replace(/\?.*$/, '');
 
   // Strip trailing slash
   cleanLink = cleanLink.replace(/\/$/, '');

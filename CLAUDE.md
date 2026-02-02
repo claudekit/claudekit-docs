@@ -26,6 +26,8 @@ bun run preview       # Preview build
 
 - **Content**: `src/content/docs/` (EN), `src/content/docs-vi/` (VI)
 - **Components**: `src/components/` (Astro + React islands)
+- **Nav config**: `src/lib/sidebar-nav-section-config.ts` (section registry)
+- **Link validator**: `src/integrations/build-time-internal-link-validator.ts`
 - **Layouts**: `src/layouts/` (BaseLayout, DocsLayout)
 - **i18n**: `src/i18n/` (locales, translations, utils)
 - **Config**: `src/content/config.ts` (Zod schema)
@@ -58,12 +60,20 @@ published: true
 3. Dev server auto-reloads
 4. Optionally add Vietnamese: `src/content/docs-vi/<category>/<slug>.md`
 
-## Valid Categories
+## Valid Sections & Categories
 
-From `src/content/config.ts`:
-- `getting-started`, `cli`, `core-concepts`, `agents`, `commands`, `skills`, `use-cases`, `troubleshooting`, `components`
+**Sections** (top-level sidebar groups, from `SidebarNav.astro`):
+- `getting-started`, `docs`, `engineer`, `marketing`, `cli`, `workflows`, `tools`, `changelog`, `support`
 
-**Note**: `troubleshooting` category exists in schema but missing from SidebarNav.astro (known issue).
+**Categories** (frontmatter `category` field, groups items within a section):
+- Use top-level names in nav config's `categoryOrder` (e.g., `commands`, `skills`, `agents`)
+- Subcategories like `commands/core`, `skills/backend` auto-group under the parent (`commands`, `skills`)
+- Do NOT add subcategories to `categoryOrder` — they are handled automatically
+
+**Nav architecture:**
+- `SectionNav.astro` — single data-driven component for 7 sections (engineer, marketing, cli, workflows, tools, support, changelog)
+- `src/lib/sidebar-nav-section-config.ts` — centralized config registry (categoryOrder, icons, badge, accentColor)
+- Do NOT create per-section nav components. Add new sections by adding config to the registry.
 
 ## File Routes
 
@@ -72,12 +82,14 @@ From `src/content/config.ts`:
 
 ## CRITICAL: Link Guidelines
 
+**Build-time link validator** (`src/integrations/build-time-internal-link-validator.ts`) runs on every `bun run build` and **fails the build** if any broken internal links are detected. This catches issues before they reach production.
+
 **ALWAYS use absolute paths for internal links. NEVER use relative paths.**
 
 ```markdown
 # ✅ CORRECT - Absolute paths
 [Quick Start](/docs/getting-started/quick-start)
-[Commands](/docs/commands)
+[Commands](/docs/engineer/commands)
 
 # ❌ WRONG - Relative paths (WILL BREAK)
 [Quick Start](./quick-start)
@@ -90,10 +102,19 @@ From `src/content/config.ts`:
 
 Since Astro serves URLs without trailing slashes by default, relative links break.
 
+**Link validator details:**
+- Validates markdown `[text](/docs/...)` and MDX `href="/docs/..."` syntax
+- Skips links inside fenced code blocks (triple backticks)
+- Strips anchors (`#section`) and query params (`?key=val`) before validation
+- Supports `/index` suffix links
+- Skips static assets (`.png`, `.jpg`, `.pdf`, etc.)
+- Covers both EN (`/docs/...`) and VI (`/vi/docs/...`) links
+
 **When moving docs:** Search for the old path and update all references:
 ```bash
 grep -r "/docs/old/path" src/content/docs/
 ```
+Then run `bun run build` — the validator will catch any links you missed.
 
 ## CRITICAL: Static Assets (Images, PDFs, etc.)
 
@@ -215,8 +236,10 @@ git push origin kai/<feature>
 
 - [ ] AI chat backend not connected (UI only)
 - [ ] Search not implemented (Pagefind planned)
-- [ ] Sidebar flat nav (commands nested but shown flat)
-- [ ] `troubleshooting` category missing from SidebarNav
+- [x] ~~Sidebar flat nav~~ — Fixed: SectionNav groups subcategories under parent automatically
+- [x] ~~`troubleshooting` category missing~~ — Restructured under `support` section
+- [ ] KaTeX Vietnamese locale warnings at build time (cosmetic, tracked in #87)
+- [ ] `baseline-browser-mapping.json` deprecation warning from browserslist
 
 ## Deployment
 

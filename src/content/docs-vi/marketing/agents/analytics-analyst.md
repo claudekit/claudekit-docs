@@ -257,8 +257,8 @@ Tất cả báo cáo tuân theo cấu trúc này:
 
 ## Các lệnh liên quan
 
-- [`/analytics`](/docs/marketing/commands/analytics) - Tạo báo cáo phân tích
-- [`/metrics`](/docs/marketing/commands/metrics) - Snapshot chỉ số nhanh
+- [`/analytics`](/docs/marketing/commands) - Tạo báo cáo phân tích
+- [`/metrics`](/docs/marketing/commands) - Snapshot chỉ số nhanh
 
 ## Tips
 

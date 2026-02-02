@@ -286,9 +286,9 @@ node navigate.js --url about:blank --close true
 
 Kết hợp Chrome DevTools với:
 
-- [Frontend Design](/vi/docs/engineer/skills/frontend/frontend-design) - Chụp screenshots của implementations để so sánh
-- [Frontend Development](/vi/docs/engineer/skills/frontend-development) - Test React applications của bạn
-- [Media Processing](/vi/docs/engineer/skills/media-processing) - Tối ưu hóa captured screenshots với ImageMagick
+- [Frontend Design](/docs/engineer/skills/frontend-design) - Chụp screenshots của implementations để so sánh
+- [Frontend Development](/docs/engineer/skills/frontend-development) - Test React applications của bạn
+- [Media Processing](/docs/engineer/skills/media-processing) - Tối ưu hóa captured screenshots với ImageMagick
 
 ## Nguyên Tắc Chính
 

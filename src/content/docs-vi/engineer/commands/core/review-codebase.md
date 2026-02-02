@@ -374,9 +374,9 @@ Chạy định kỳ cho dự án đang tiến hành:
 
 ## Các lệnh liên quan
 
-- [/scout](/vi/docs/engineer/skills/tools/scout) - Khám phá codebase nhanh
-- [/scout ext](/vi/docs/engineer/skills/tools/scout) - Khám phá với công cụ bên ngoài
-- [/ask](/vi/docs/engineer/commands/core/ask) - Câu hỏi kiến trúc
+- [/scout](/docs/engineer/skills/scout) - Khám phá codebase nhanh
+- [/scout ext](/docs/engineer/skills/scout) - Khám phá với công cụ bên ngoài
+- [/ask](/docs/engineer/commands/core/ask) - Câu hỏi kiến trúc
 - [/plan](/vi/docs/engineer/commands/plan) - Tạo kế hoạch cải thiện
 
 ---

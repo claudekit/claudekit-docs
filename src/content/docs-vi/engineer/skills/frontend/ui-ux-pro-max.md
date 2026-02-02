@@ -119,6 +119,6 @@ Claude validate trước khi deliver:
 
 ## Các Kỹ Năng Liên Quan
 
-- [Frontend Design Pro](/vi/docs/engineer/skills/frontend/frontend-design-pro) - Giao diện chất lượng agency cao cấp
-- [Aesthetic](/vi/docs/engineer/skills/frontend/aesthetic) - Framework thiết kế bốn giai đoạn
-- [UI Styling](/vi/docs/engineer/skills/frontend/ui-styling) - shadcn/ui + Tailwind patterns
+- [Frontend Design Pro](/docs/engineer/skills) - Giao diện chất lượng agency cao cấp
+- [Aesthetic](/docs/engineer/skills) - Framework thiết kế bốn giai đoạn
+- [UI Styling](/docs/engineer/skills/ui-styling) - shadcn/ui + Tailwind patterns

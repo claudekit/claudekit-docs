@@ -125,5 +125,5 @@ Tất cả agent behaviors, skills và workflows được cấu hình trong `.cl
 
 - **[Cài Đặt](/vi/docs/getting-started/installation)** - Cài đặt ClaudeKit
 - **[Bắt Đầu Nhanh](/vi/docs/getting-started/quick-start)** - Thử command đầu tiên
-- **[Tham Chiếu Commands](/vi/docs/commands)** - Khám phá tất cả commands
-- **[Tham Chiếu Agents](/vi/docs/agents)** - Tìm hiểu về từng agent
+- **[Tham Chiếu Commands](/vi/docs/engineer/commands)** - Khám phá tất cả commands
+- **[Tham Chiếu Agents](/vi/docs/engineer/agents)** - Tìm hiểu về từng agent

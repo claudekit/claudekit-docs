@@ -1164,7 +1164,7 @@ Một code review thành công:
 ## Các bước tiếp theo
 
 - [Planner](/vi/docs/engineer/agents/planner) - Lập kế hoạch sửa chữa các vấn đề
-- [Fix Skill](/vi/docs/engineer/skills/tools/fix) - Áp dụng các bản sửa lỗi
+- [Fix Skill](/docs/engineer/skills/fix) - Áp dụng các bản sửa lỗi
 - [Kiểm thử](/vi/docs/engineer/agents/tester) - Xác nhận các bản sửa lỗi
 
 ---

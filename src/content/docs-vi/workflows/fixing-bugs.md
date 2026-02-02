@@ -662,13 +662,13 @@ Sau khi sửa lỗi, hãy cải thiện quy trình:
 - [Refactor Mã Nguồn](/vi/docs/workflows/refactoring-code) - Chất lượng mã nguồn
 
 ### Các lệnh liên quan
-- [/fix](/vi/docs/engineer/skills/tools/fix) - Sửa lỗi (quick/hard/logs/ui/ci)
-- [/test](/vi/docs/engineer/commands/core/test) - Bộ kiểm thử
+- [/fix](/docs/engineer/skills/fix) - Sửa lỗi (quick/hard/logs/ui/ci)
+- [/test](/docs/engineer/commands/core/test) - Bộ kiểm thử
 
 ### Đọc thêm
 - [Debugger Agent](/vi/docs/engineer/agents/debugger) - Khả năng gỡ lỗi
 - [Tester Agent](/vi/docs/engineer/agents/tester) - Các tính năng kiểm thử
-- [Troubleshooting](/vi/docs/troubleshooting) - Các vấn đề thường gặp
+- [Troubleshooting](/vi/docs/support/troubleshooting) - Các vấn đề thường gặp
 
 ---
 

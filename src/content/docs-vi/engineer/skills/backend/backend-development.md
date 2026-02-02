@@ -163,9 +163,9 @@ CMD ["node", "dist/main.js"]
 
 ## Các Skills Liên Quan
 
-- [Databases](/vi/docs/engineer/skills/backend/databases) - PostgreSQL, MongoDB deep-dive
-- [DevOps](/vi/docs/engineer/skills/backend/devops) - Docker, Kubernetes, cloud deployment
-- [Better Auth](/vi/docs/engineer/skills/auth/better-auth) - Authentication implementation
+- [Databases](/docs/engineer/skills/databases) - PostgreSQL, MongoDB deep-dive
+- [DevOps](/docs/engineer/skills/devops) - Docker, Kubernetes, cloud deployment
+- [Better Auth](/docs/engineer/skills/better-auth) - Authentication implementation
 
 ---
 

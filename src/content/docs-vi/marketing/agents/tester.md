@@ -266,8 +266,8 @@ Tester phù hợp liền mạch:
 ## Related Commands
 
 - [`/test`](/docs/marketing/commands/test) - Run tests and generate report
-- [`/coverage`](/docs/marketing/commands/coverage) - Check test coverage
-- [`/build`](/docs/marketing/commands/build) - Verify build succeeds
+- [`/coverage`](/docs/marketing/commands) - Check test coverage
+- [`/build`](/docs/marketing/commands) - Verify build succeeds
 
 ## Tips
 

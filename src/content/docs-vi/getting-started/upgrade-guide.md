@@ -115,4 +115,4 @@ A: Gỡ cài đặt và xóa .claude/CLAUDE.md. Không có breaking changes.
 
 1. [Cài Đặt ClaudeKit](/vi/docs/getting-started/installation)
 2. [Thử Bắt Đầu Nhanh](/vi/docs/getting-started/quick-start)
-3. [Khám Phá Commands](/vi/docs/commands)
+3. [Khám Phá Commands](/vi/docs/engineer/commands)

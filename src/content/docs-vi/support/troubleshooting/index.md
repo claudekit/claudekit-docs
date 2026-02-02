@@ -15,11 +15,11 @@ Sửa nhanh các vấn đề phổ biến. Hầu hết các vấn đề giải q
 ## Quick Diagnosis
 
 **Loại vấn đề?**
-- [Cài đặt thất bại](#installation) → [Vấn Đề Cài Đặt](/vi/docs/troubleshooting/installation-issues)
-- [Lệnh không tìm thấy hoặc lỗi](#commands) → [Lỗi Lệnh](/vi/docs/troubleshooting/command-errors)
-- [Agent không hoạt động](#agents) → [Vấn Đề Agent](/vi/docs/troubleshooting/agent-issues)
-- [Lỗi API key](#api-keys) → [Thiết Lập API Key](/vi/docs/troubleshooting/api-key-setup)
-- [Chậm hoặc treo](#performance) → [Vấn Đề Hiệu Suất](/vi/docs/troubleshooting/performance-issues)
+- [Cài đặt thất bại](#installation) → [Vấn Đề Cài Đặt](/docs/support/troubleshooting/installation-issues)
+- [Lệnh không tìm thấy hoặc lỗi](#commands) → [Lỗi Lệnh](/docs/support/troubleshooting/command-errors)
+- [Agent không hoạt động](#agents) → [Vấn Đề Agent](/docs/support/troubleshooting/agent-issues)
+- [Lỗi API key](#api-keys) → [Thiết Lập API Key](/docs/support/troubleshooting/api-key-setup)
+- [Chậm hoặc treo](#performance) → [Vấn Đề Hiệu Suất](/docs/support/troubleshooting/performance-issues)
 
 ## Installation
 
@@ -37,7 +37,7 @@ npm install -g claudekit-cli
 ck --version
 ```
 
-[Xem thêm cách sửa cài đặt →](/vi/docs/troubleshooting/installation-issues)
+[Xem thêm cách sửa cài đặt →](/docs/support/troubleshooting/installation-issues)
 
 ## Commands
 
@@ -56,7 +56,7 @@ ls .claude/commands/**/*.md
 cat .claude/commands/core/cook.md
 ```
 
-[Xem thêm cách sửa lệnh →](/vi/docs/troubleshooting/command-errors)
+[Xem thêm cách sửa lệnh →](/docs/support/troubleshooting/command-errors)
 
 ## Agents
 
@@ -75,7 +75,7 @@ ls .claude/agents/*.md
 cat .claude/agents/planner.md
 ```
 
-[Xem thêm cách sửa agent →](/vi/docs/troubleshooting/agent-issues)
+[Xem thêm cách sửa agent →](/docs/support/troubleshooting/agent-issues)
 
 ## API Keys
 
@@ -91,7 +91,7 @@ echo 'SEARCH_API_KEY=your-key' >> .env
 export GEMINI_API_KEY=your-key
 ```
 
-[Hướng dẫn API key đầy đủ →](/vi/docs/troubleshooting/api-key-setup)
+[Hướng dẫn API key đầy đủ →](/docs/support/troubleshooting/api-key-setup)
 
 ## Performance
 
@@ -107,7 +107,7 @@ export GEMINI_API_KEY=your-key
 /cook add feature --verbose
 ```
 
-[Xem thêm cách sửa hiệu suất →](/vi/docs/troubleshooting/performance-issues)
+[Xem thêm cách sửa hiệu suất →](/docs/support/troubleshooting/performance-issues)
 
 ## Common Quick Fixes
 

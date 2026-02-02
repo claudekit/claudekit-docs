@@ -485,9 +485,9 @@ mutation {
 
 ## Bước tiếp theo
 
-- [Ví dụ thương mại điện tử](/vi/docs/use-cases/)
-- [Tích hợp API](/vi/docs/use-cases/)
-- [Kỹ năng cơ sở dữ liệu](/vi/docs/engineer/skills/postgresql-psql)
+- [Ví dụ thương mại điện tử](/vi/docs/workflows)
+- [Tích hợp API](/vi/docs/workflows)
+- [Kỹ năng cơ sở dữ liệu](/vi/docs/engineer/skills/backend/postgresql-psql)
 
 ---
 

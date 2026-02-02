@@ -309,5 +309,5 @@ Nếu CLI không thể xác thực:
 Giờ ClaudeKit đã được cài đặt, tiếp tục với:
 
 - [Hướng Dẫn Bắt Đầu Nhanh](/vi/docs/getting-started/quick-start) - Xây dựng project đầu tiên
-- [Giải Thích CLAUDE.md](/vi/docs/core-concepts/claude-md) - Hiểu file cấu hình
-- [Workflows](/vi/docs/core-concepts/workflows) - Tìm hiểu về development workflows
+- [Giải Thích CLAUDE.md](/vi/docs/engineer/configuration/claude-md) - Hiểu file cấu hình
+- [Workflows](/vi/docs/engineer/configuration/workflows) - Tìm hiểu về development workflows

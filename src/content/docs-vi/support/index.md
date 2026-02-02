@@ -14,14 +14,14 @@ Nhận trợ giúp với ClaudeKit thông qua tài nguyên cộng đồng, tài 
 ## Quick Help
 
 ### Gặp vấn đề cụ thể?
-- [FAQ](/vi/docs/support/faq) - Câu trả lời cho các câu hỏi phổ biến
+- [FAQ](/docs/support/faq) - Câu trả lời cho các câu hỏi phổ biến
 - [Khắc Phục Sự Cố](/vi/docs/support/troubleshooting) - Giải pháp cho các vấn đề phổ biến
 - [Discord Community](https://claudekit.cc/discord) - Trợ giúp thời gian thực từ cộng đồng
 
 ### Đang tìm hướng dẫn?
 - [Bắt Đầu](/vi/docs/getting-started) - Học các kiến thức cơ bản
 - [Workflows](/vi/docs/workflows) - Hướng dẫn từng bước
-- [Commands Reference](/vi/docs/commands) - Tất cả các lệnh có sẵn
+- [Commands Reference](/vi/docs/engineer/commands) - Tất cả các lệnh có sẵn
 
 ## Community Support
 
@@ -67,9 +67,9 @@ Nhận trợ giúp với ClaudeKit thông qua tài nguyên cộng đồng, tài 
 
 ### Documentation
 - [Bắt Đầu](/vi/docs/getting-started) - Hướng dẫn người dùng mới
-- [Commands Reference](/vi/docs/commands) - Tài liệu lệnh đầy đủ
-- [Agents Overview](/vi/docs/agents) - Gặp đội ngũ AI của bạn
-- [Skills Library](/vi/docs/skills) - Các module kiến thức tích hợp
+- [Commands Reference](/vi/docs/engineer/commands) - Tài liệu lệnh đầy đủ
+- [Agents Overview](/vi/docs/engineer/agents) - Gặp đội ngũ AI của bạn
+- [Skills Library](/vi/docs/engineer/skills) - Các module kiến thức tích hợp
 - [Khắc Phục Sự Cố](/vi/docs/support/troubleshooting) - Các vấn đề và giải pháp phổ biến
 
 ### Tutorials and Examples
@@ -122,7 +122,7 @@ Nhận trợ giúp với ClaudeKit thông qua tài nguyên cộng đồng, tài 
 
 ### Trước Khi Yêu Cầu Trợ Giúp
 
-1. **Tìm kiếm trước**: Kiểm tra [FAQ](/vi/docs/support/faq) và [Khắc Phục Sự Cố](/vi/docs/support/troubleshooting)
+1. **Tìm kiếm trước**: Kiểm tra [FAQ](/docs/support/faq) và [Khắc Phục Sự Cố](/vi/docs/support/troubleshooting)
 2. **Kiểm tra tài liệu**: Tìm trong các phần tài liệu liên quan
 3. **Tìm GitHub Issues**: Xem vấn đề của bạn đã được báo cáo chưa
 4. **Thử debug**: Sử dụng lệnh `/debug` để điều tra vấn đề
@@ -179,7 +179,7 @@ Tôi đã thử refresh skills và khởi động lại ClaudeKit.
 ## Contributing
 
 ### Giúp Cải Thiện Tài Liệu
-- [Contributing Guide](/vi/docs/development/contributing)
+- [Contributing Guide](/vi/docs/support)
 - Báo cáo vấn đề tài liệu trên GitHub
 - Đề xuất cải tiến qua Discord
 
@@ -223,9 +223,9 @@ Tôi đã thử refresh skills và khởi động lại ClaudeKit.
 - [Certification](https://claudekit.cc/certification) - Trở thành chuyên gia ClaudeKit
 
 ### Developer Resources
-- [API Documentation](/vi/docs/api) - Để mở rộng ClaudeKit
-- [Plugin Development](/vi/docs/development/plugins) - Tạo extensions
-- [Skill Development](/vi/docs/development/creating-skills) - Xây dựng custom skills
+- [API Documentation](/vi/docs/engineer) - Để mở rộng ClaudeKit
+- [Plugin Development](/vi/docs/engineer) - Tạo extensions
+- [Skill Development](/docs/engineer/skills/skill-creator) - Xây dựng custom skills
 
 ## Feedback
 

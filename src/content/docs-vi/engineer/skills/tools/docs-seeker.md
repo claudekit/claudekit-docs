@@ -102,9 +102,9 @@ process.env > .claude/skills/docs-seeker/.env > .claude/skills/.env > .claude/.e
 
 ## Các Skills Liên Quan
 
-- [Research](/vi/docs/engineer/skills/tools/research) - Documentation research workflows
-- [Planning](/vi/docs/engineer/skills/tools/planning) - Plan với documentation context
-- [MCP Management](/vi/docs/engineer/skills/tools/mcp-management) - Quản lý MCP servers cho extended capabilities
+- [Research](/docs/engineer/skills/research) - Documentation research workflows
+- [Planning](/docs/engineer/skills/planning) - Plan với documentation context
+- [MCP Management](/docs/engineer/skills/mcp-management) - Quản lý MCP servers cho extended capabilities
 
 ---
 

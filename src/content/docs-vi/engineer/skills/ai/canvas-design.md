@@ -335,9 +335,9 @@ Kỹ năng này sẽ giúp bạn:
 
 ## Bước tiếp theo
 
-- [Ví dụ thiết kế](/vi/docs/use-cases/)
-- [Hướng dẫn thương hiệu](/vi/docs/use-cases/)
-- [Mẫu UI/UX](/vi/docs/use-cases/)
+- [Ví dụ thiết kế](/vi/docs/workflows)
+- [Hướng dẫn thương hiệu](/vi/docs/workflows)
+- [Mẫu UI/UX](/vi/docs/workflows)
 
 ---
 

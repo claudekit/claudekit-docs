@@ -119,11 +119,11 @@ collapsible description tabs. Dark mode support."
 
 ## Các Kỹ Năng Liên Quan
 
-- [Frontend Design](/vi/docs/engineer/skills/frontend/frontend-design) - Tạo design system đầy đủ
-- [Frontend Design Pro](/vi/docs/engineer/skills/frontend/frontend-design-pro) - Thiết kế hình ảnh nâng cao
-- [Aesthetic](/vi/docs/engineer/skills/frontend/aesthetic) - Visual polish và refinement
+- [Frontend Design](/docs/engineer/skills/frontend-design) - Tạo design system đầy đủ
+- [Frontend Design Pro](/docs/engineer/skills) - Thiết kế hình ảnh nâng cao
+- [Aesthetic](/docs/engineer/skills) - Visual polish và refinement
 - [Canvas Design](/vi/docs/engineer/skills/ai/canvas-design) - Compositions hình ảnh chất lượng museum
-- [Frontend Development](/vi/docs/engineer/skills/frontend/frontend-development) - React/Next.js implementation
+- [Frontend Development](/docs/engineer/skills/frontend-development) - React/Next.js implementation
 
 ## Điểm Chính
 

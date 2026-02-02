@@ -32,7 +32,7 @@ Chuyển đổi giữa nhiều tài khoản Claude và các mô hình AI (GLM, K
 - Tối ưu chi phí cho các tác vụ đơn giản
 - Quy trình làm việc đa dự án
 
-[**Tìm hiểu thêm →**](/vi/docs/tools/ccs)
+[**Tìm hiểu thêm →**](/docs/tools/ccs)
 
 ## Công cụ cộng đồng
 
@@ -41,7 +41,7 @@ Chuyển đổi giữa nhiều tài khoản Claude và các mô hình AI (GLM, K
 ## Danh mục công cụ
 
 ### Quản lý tài khoản
-- [CCS](/vi/docs/tools/ccs) - Chuyển đổi đa tài khoản và ủy quyền
+- [CCS](/docs/tools/ccs) - Chuyển đổi đa tài khoản và ủy quyền
 
 ### Giám sát & phân tích
 *Sắp ra mắt*
@@ -68,4 +68,4 @@ Bạn có công cụ giúp nâng cao ClaudeKit? Chúng tôi rất muốn giới 
 
 ---
 
-**Tiếp theo:** Khám phá các công cụ riêng lẻ hoặc quay lại [Tài Liệu](/vi/docs/agents)
+**Tiếp theo:** Khám phá các công cụ riêng lẻ hoặc quay lại [Tài Liệu](/vi/docs/engineer/agents)

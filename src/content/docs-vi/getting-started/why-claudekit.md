@@ -45,7 +45,7 @@ cd my-app
 - `/fix` - Multi-agent bug fixing
 - `ai-artist` skill - UI/UX design và visual assets
 - `/git cm` - Commit với conventional format
-- [Xem tất cả commands →](/vi/docs/commands)
+- [Xem tất cả commands →](/vi/docs/engineer/commands)
 
 **45 Built-in Skills**:
 - Frontend: Next.js, shadcn/ui, Tailwind CSS
@@ -54,7 +54,7 @@ cd my-app
 - Cloud: Cloudflare Workers, R2, Docker
 - AI: Gemini (audio, video, images, vision)
 - Database: PostgreSQL, MongoDB
-- [Xem tất cả skills →](/vi/docs/skills)
+- [Xem tất cả skills →](/vi/docs/engineer/skills)
 
 ## ClaudeKit vs Các Lựa Chọn Thay Thế
 

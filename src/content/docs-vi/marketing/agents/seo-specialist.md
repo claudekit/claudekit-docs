@@ -187,7 +187,7 @@ Agent tổ chức đầu ra trong vị trí chuẩn hóa:
 
 - [Attraction Specialist](/vi/docs/marketing/agents/attraction-specialist) - Nội dung TOFU và chiến lược từ khóa
 - [Content Creator](/vi/docs/marketing/agents/content-creator) - Thực thi nội dung
-- [Funnel Architect](/vi/docs/marketing/agents/funnel-architect) - Tối ưu hóa chuyển đổi
+- [Funnel Architect](/docs/marketing/agents/funnel-architect) - Tối ưu hóa chuyển đổi
 
 ## Lệnh Liên Quan
 

@@ -712,13 +712,13 @@ Trước khi lên production:
 ## Bước Tiếp Theo
 
 ### Các Trường Hợp Sử Dụng Liên Quan
-- [Triển khai Xác thực](/docs/use-cases/implementing-auth) - Tài khoản người dùng
-- [Xây dựng REST API](/docs/use-cases/building-api) - Phát triển API
-- [Thêm Tính Năng Mới](/docs/use-cases/adding-feature) - Phát triển tính năng
+- [Triển khai Xác thực](/docs/workflows/implementing-auth) - Tài khoản người dùng
+- [Xây dựng REST API](/docs/workflows/building-api) - Phát triển API
+- [Thêm Tính Năng Mới](/docs/workflows/adding-feature) - Phát triển tính năng
 
 ### Các Lệnh Liên Quan
-- [/cook](/vi/docs/engineer/skills/tools/cook) - Các tính năng tùy chỉnh
-- [/test](/vi/docs/engineer/commands/core/test) - Bộ kiểm thử
+- [/cook](/docs/engineer/skills/cook) - Các tính năng tùy chỉnh
+- [/test](/docs/engineer/commands/core/test) - Bộ kiểm thử
 
 ### Đọc Thêm
 - [Tài liệu Stripe](https://stripe.com/docs)

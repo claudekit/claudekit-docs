@@ -96,10 +96,10 @@ Sử dụng kit switcher trong header để khám phá:
 
 **Engineer Workflows**:
 - [Thiết Lập Dự Án Mới](/vi/docs/workflows/new-project) - Bootstrap dự án với best practices
-- [Phát Triển Tính Năng](/vi/docs/workflows/feature-development) - Triển khai tính năng end-to-end
-- [Code Review](/vi/docs/workflows/code-review) - Kiểm tra chất lượng code tự động
+- [Phát Triển Tính Năng](/docs/workflows/feature-development) - Triển khai tính năng end-to-end
+- [Code Review](/vi/docs/workflows) - Kiểm tra chất lượng code tự động
 
 **Marketing Workflows**:
-- [Tạo Nội Dung](/vi/docs/marketing/workflows/content-workflow) - Blog posts, copy, social media
-- [Sản Xuất Video](/vi/docs/marketing/workflows/dashboard-workflow) - Script đến storyboard đến video
-- [Quản Lý Chiến Dịch](/vi/docs/marketing/workflows/campaign-workflow) - Chiến dịch đa kênh
+- [Tạo Nội Dung](/docs/marketing/workflows/content-workflow) - Blog posts, copy, social media
+- [Sản Xuất Video](/docs/marketing/workflows/dashboard-workflow) - Script đến storyboard đến video
+- [Quản Lý Chiến Dịch](/docs/marketing/workflows/campaign-workflow) - Chiến dịch đa kênh

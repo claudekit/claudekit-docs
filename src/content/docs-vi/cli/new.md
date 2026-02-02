@@ -347,7 +347,7 @@ ck init  # Cập nhật lên phiên bản mới nhất
 
 ## Các lệnh liên quan
 
-- [`ck init`](/vi/docs/cli/init) - Cập nhật dự án hiện có
+- [`ck init`](/docs/cli/init) - Cập nhật dự án hiện có
 - [`ck versions`](/vi/docs/cli/versions) - Xem các phiên bản có sẵn
-- [`ck doctor`](/vi/docs/cli/doctor) - Chẩn đoán và sửa lỗi
-- [Cấu hình](/vi/docs/cli/configuration) - Tùy chỉnh các giá trị mặc định
+- [`ck doctor`](/docs/cli/doctor) - Chẩn đoán và sửa lỗi
+- [Cấu hình](/docs/cli/configuration) - Tùy chỉnh các giá trị mặc định

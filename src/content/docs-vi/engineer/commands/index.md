@@ -18,37 +18,37 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 ### Phát Triển Cốt Lõi (Core)
 
 - **[/bootstrap](/docs/engineer/commands/core/bootstrap)** - Khởi tạo dự án mới với phát triển hướng đặc tả (spec-driven development)
-- **[/cook](/vi/docs/engineer/skills/tools/cook)** - Phát triển tính năng mới
-- **[/plan](/docs/engineer/commands/core/plan)** - Tạo kế hoạch triển khai
-- **[/brainstorm](/docs/engineer/commands/core/brainstorm)** - Khám phá tính khả thi của tính năng
+- **[/cook](/docs/engineer/skills/cook)** - Phát triển tính năng mới
+- **[/plan](/docs/engineer/commands/plan)** - Tạo kế hoạch triển khai
+- **[/brainstorm](/docs/engineer/skills/brainstorm)** - Khám phá tính khả thi của tính năng
 - **[/ask](/docs/engineer/commands/core/ask)** - Đặt câu hỏi về codebase
 - **[/watzup](/docs/engineer/commands/core/watzup)** - Xem trạng thái dự án và các thay đổi gần đây
-- **[/scout](/docs/engineer/commands/core/scout)** - Tìm kiếm tệp tin trong toàn bộ codebase lớn
+- **[/scout](/docs/engineer/skills/scout)** - Tìm kiếm tệp tin trong toàn bộ codebase lớn
 - **[/test](/docs/engineer/commands/core/test)** - Chạy bộ thử nghiệm và nhận kết quả
 - **[/debug](/docs/engineer/commands/core/debug)** - Điều tra và chẩn đoán lỗi
 
 ### Sửa Lỗi (Bug Fixing)
 
-- **[/fix](/vi/docs/engineer/skills/tools/fix)** - Sửa lỗi thông minh (tự động chọn phương pháp fast/hard)
-- **[/fix --quick](/vi/docs/engineer/skills/tools/fix)** - Sửa lỗi nhỏ nhanh chóng
-- **[/fix](/vi/docs/engineer/skills/tools/fix)** - Sửa lỗi phức tạp với phân tích kỹ lưỡng
-- **[/fix](/vi/docs/engineer/skills/tools/fix)** - Sửa lỗi GitHub Actions CI
-- **[/fix](/vi/docs/engineer/skills/tools/fix)** - Phân tích và sửa lỗi từ logs
-- **[/fix](/vi/docs/engineer/skills/tools/fix)** - Sửa lỗi tests thất bại
-- **[/fix](/vi/docs/engineer/skills/tools/fix)** - Sửa lỗi UI/UX
-- **[/fix](/vi/docs/engineer/skills/tools/fix)** - Sửa lỗi TypeScript type
+- **[/fix](/docs/engineer/skills/fix)** - Sửa lỗi thông minh (tự động chọn phương pháp fast/hard)
+- **[/fix --quick](/docs/engineer/skills/fix)** - Sửa lỗi nhỏ nhanh chóng
+- **[/fix](/docs/engineer/skills/fix)** - Sửa lỗi phức tạp với phân tích kỹ lưỡng
+- **[/fix](/docs/engineer/skills/fix)** - Sửa lỗi GitHub Actions CI
+- **[/fix](/docs/engineer/skills/fix)** - Phân tích và sửa lỗi từ logs
+- **[/fix](/docs/engineer/skills/fix)** - Sửa lỗi tests thất bại
+- **[/fix](/docs/engineer/skills/fix)** - Sửa lỗi UI/UX
+- **[/fix](/docs/engineer/skills/fix)** - Sửa lỗi TypeScript type
 
 ### Tài Liệu (Documentation)
 
-- **[/docs:init](/docs/engineer/commands/docs/init)** - Khởi tạo tài liệu dự án
-- **[/docs:update](/docs/engineer/commands/docs/update)** - Cập nhật tài liệu dự án
-- **[/docs:summarize](/docs/engineer/commands/docs/summarize)** - Tóm tắt tài liệu dự án
+- **[/docs:init](/docs/engineer/commands/docs-cmd/init)** - Khởi tạo tài liệu dự án
+- **[/docs:update](/docs/engineer/commands/docs-cmd/update)** - Cập nhật tài liệu dự án
+- **[/docs:summarize](/docs/engineer/commands/docs-cmd/summarize)** - Tóm tắt tài liệu dự án
 
 ### Thao Tác Git
 
-- **[/git cm](/vi/docs/engineer/skills/tools/git)** - Stage và commit các thay đổi
-- **[/git cp](/vi/docs/engineer/skills/tools/git)** - Stage, commit và push
-- **[/git pr](/vi/docs/engineer/skills/tools/git)** - Tạo pull request
+- **[/git cm](/docs/engineer/skills/git)** - Stage và commit các thay đổi
+- **[/git cp](/docs/engineer/skills/git)** - Stage, commit và push
+- **[/git pr](/docs/engineer/skills/git)** - Tạo pull request
 
 ### Lập Kế Hoạch (Planning)
 
@@ -67,10 +67,10 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 
 ### Nội Dung & Marketing
 
-- **[/content:cro](/vi/docs/engineer/skills/ai/copywriting)** - Nội dung tối ưu hóa chuyển đổi
-- **[/content:enhance](/vi/docs/engineer/skills/ai/copywriting)** - Cải thiện nội dung hiện có
-- **[/content:fast](/vi/docs/engineer/skills/ai/copywriting)** - Tạo nội dung nhanh chóng
-- **[/content:good](/vi/docs/engineer/skills/ai/copywriting)** - Nội dung chất lượng cao kèm nghiên cứu
+- **[/content:cro](/docs/engineer/skills/copywriting)** - Nội dung tối ưu hóa chuyển đổi
+- **[/content:enhance](/docs/engineer/skills/copywriting)** - Cải thiện nội dung hiện có
+- **[/content:fast](/docs/engineer/skills/copywriting)** - Tạo nội dung nhanh chóng
+- **[/content:good](/docs/engineer/skills/copywriting)** - Nội dung chất lượng cao kèm nghiên cứu
 
 ### Tích Hợp (Integrations)
 
@@ -434,15 +434,15 @@ Tiếp theo: Xem lại các thay đổi, sau đó chạy /git cm
 
 Khám phá các nhóm lệnh cụ thể:
 
-- [Lệnh Cốt Lõi](/docs/engineer/commands/core/) - Các lệnh thiết yếu cho phát triển
-- [Lệnh Sửa Lỗi](/vi/docs/engineer/skills/tools/fix) - Gỡ lỗi và sửa chữa
+- [Lệnh Cốt Lõi](/docs/engineer/commands/) - Các lệnh thiết yếu cho phát triển
+- [Lệnh Sửa Lỗi](/docs/engineer/skills/fix) - Gỡ lỗi và sửa chữa
 - [Lệnh Thiết Kế](/vi/docs/engineer/skills/ai/canvas-design) - Tạo UI/UX
-- [Lệnh Git](/vi/docs/engineer/skills/tools/git) - Quản lý phiên bản
+- [Lệnh Git](/docs/engineer/skills/git) - Quản lý phiên bản
 
 Hoặc tìm hiểu thêm về:
 
 - [Agent](/docs/engineer/agents/) - Cách các lệnh gọi agent
-- [Quy trình làm việc](/docs/core-concepts/workflows) - Các luồng thực thi lệnh
+- [Quy trình làm việc](/docs/engineer/configuration/workflows) - Các luồng thực thi lệnh
 - [Bắt đầu nhanh](/docs/getting-started/quick-start) - Hướng dẫn thực hành trực tiếp
 
 ---

@@ -147,9 +147,9 @@ Sacrifice grammar cho concision. Dùng code blocks, mermaid/ASCII diagrams.
 
 ## Skills Liên Quan
 
-- [Docs Seeker](/vi/docs/engineer/skills/tools/docs-seeker) - Documentation lookup
-- [Sequential Thinking](/vi/docs/engineer/skills/tools/sequential-thinking) - Structured analysis
-- [Planning](/vi/docs/engineer/skills/tools/planning) - Solution design
+- [Docs Seeker](/docs/engineer/skills/docs-seeker) - Documentation lookup
+- [Sequential Thinking](/docs/engineer/skills/sequential-thinking) - Structured analysis
+- [Planning](/docs/engineer/skills/planning) - Solution design
 
 ## Key Takeaway
 

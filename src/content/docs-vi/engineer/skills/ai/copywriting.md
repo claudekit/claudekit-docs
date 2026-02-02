@@ -81,4 +81,4 @@ Kích hoạt bằng cách đề cập đến copywriting, headline, landing page
 
 ## Kỹ năng liên quan
 
-- [AI Multimodal](/vi/docs/engineer/skills/ai/ai-multimodal) - Trích xuất phong cách từ hình ảnh, video, PDF
+- [AI Multimodal](/docs/engineer/skills/ai-multimodal) - Trích xuất phong cách từ hình ảnh, video, PDF

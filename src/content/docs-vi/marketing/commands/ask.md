@@ -200,7 +200,7 @@ Tất cả khuyến cáo suy trọng:
 
 - [/brainstorm](/vi/docs/marketing/commands/brainstorm) - Thảo luận tương tác
 - [/plan](/vi/docs/marketing/commands/plan) - Lập kế hoạch thực hiện
-- [/research](/vi/docs/marketing/commands/research) - Nghiên cứu thị trường/công nghệ
+- [/research](/docs/marketing/commands) - Nghiên cứu thị trường/công nghệ
 
 ---
 

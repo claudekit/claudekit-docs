@@ -365,9 +365,9 @@ Chỉnh sửa tệp `/etc/ImageMagick-7/policy.xml` hoặc sử dụng lệnh `c
 
 ## Bước tiếp theo
 
-- [Xử lý đa phương tiện](/vi/docs/use-cases/)
-- [FFmpeg](/vi/docs/engineer/skills/ffmpeg)
-- [Tự động hóa hàng loạt](/vi/docs/use-cases/)
+- [Xử lý đa phương tiện](/vi/docs/workflows)
+- [FFmpeg](/vi/docs/engineer/skills/tools/ffmpeg)
+- [Tự động hóa hàng loạt](/vi/docs/workflows)
 
 ---
 

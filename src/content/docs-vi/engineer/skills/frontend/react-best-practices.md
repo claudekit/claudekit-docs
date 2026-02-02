@@ -94,5 +94,5 @@ Browse individual rules tại: `rules/async-parallel.md`, `rules/bundle-barrel-i
 
 ## Skills Liên Quan
 
-- [Cook](/vi/docs/engineer/skills/cook) - Để implementing features với những patterns này
-- [Web Testing](/vi/docs/engineer/skills/web-testing) - Để performance testing và Core Web Vitals
+- [Cook](/docs/engineer/skills/cook) - Để implementing features với những patterns này
+- [Web Testing](/docs/engineer/skills/web-testing) - Để performance testing và Core Web Vitals

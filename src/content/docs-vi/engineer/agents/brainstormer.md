@@ -418,7 +418,7 @@ Brainstormer sẽ gọi tên điều này. Hãy tin tưởng vào đánh giá YA
 - [Agent Planner](/vi/docs/engineer/agents/planner) - Tạo các kế hoạch triển khai chi tiết sau khi phương pháp được quyết định
 - [Agent Researcher](/vi/docs/engineer/agents/researcher) - Cung cấp dữ liệu cho các quyết định thảo luận
 - [Agent Docs-Manager](/vi/docs/engineer/agents/docs-manager) - Duy trì các hồ sơ quyết định kiến trúc
-- [Lệnh /brainstorm](/vi/docs/engineer/commands/core/brainstorm) - Kích hoạt phiên thảo luận
+- [Lệnh /brainstorm](/docs/engineer/skills/brainstorm) - Kích hoạt phiên thảo luận
 
 ---
 

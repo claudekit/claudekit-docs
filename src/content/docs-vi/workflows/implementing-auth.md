@@ -621,18 +621,18 @@ Trước khi triển khai lên production:
 ## Bước tiếp theo
 
 ### Các trường hợp sử dụng liên quan
-- [Xây dựng REST API](/vi/docs/workflows/index) - Tạo các API
+- [Xây dựng REST API](/vi/docs/workflows) - Tạo các API
 - [Tích hợp Thanh toán](/vi/docs/workflows/integrating-payment) - Thêm thanh toán
 - [Thêm Tính Năng Mới](/vi/docs/workflows/adding-feature) - Xây dựng tính năng
 
 ### Các lệnh liên quan
-- [/cook](/vi/docs/engineer/skills/tools/cook) - Triển khai tính năng
-- [/test](/vi/docs/engineer/commands/core/test) - Bộ kiểm thử
-- [/fix --quick](/vi/docs/engineer/skills/tools/fix) - Sửa lỗi nhanh
+- [/cook](/docs/engineer/skills/cook) - Triển khai tính năng
+- [/test](/docs/engineer/commands/core/test) - Bộ kiểm thử
+- [/fix --quick](/docs/engineer/skills/fix) - Sửa lỗi nhanh
 
 ### Hướng dẫn tích hợp
 - [/integrate:polar](/vi/docs/engineer/skills/tools/integrate) - Thanh toán Polar
-- [Better Auth Skill](/vi/docs/skills) - Framework Better Auth
+- [Better Auth Skill](/vi/docs/engineer/skills) - Framework Better Auth
 
 ### Đọc thêm
 - [Các thực hành tốt nhất về JWT](https://jwt.io/introduction)

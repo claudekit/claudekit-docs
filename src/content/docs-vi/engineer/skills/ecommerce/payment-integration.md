@@ -121,8 +121,8 @@ Deliver private repository access khi payment.
 
 ## Skills Liên Quan
 
-- [Backend Development](/vi/docs/engineer/skills/backend/backend-development) - API implementation
-- [Web Frameworks](/vi/docs/engineer/skills/frontend/web-frameworks) - Checkout UI integration
+- [Backend Development](/docs/engineer/skills/backend-development) - API implementation
+- [Web Frameworks](/docs/engineer/skills/web-frameworks) - Checkout UI integration
 
 ---
 

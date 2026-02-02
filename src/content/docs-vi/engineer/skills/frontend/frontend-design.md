@@ -199,10 +199,10 @@ Cho React components, dùng Motion library. Cho advanced JavaScript animations, 
 
 Kết hợp Frontend Design với các skills khác cho complete workflows:
 
-- [AI Multimodal](/vi/docs/engineer/skills/ai/ai-multimodal) - Extract design từ screenshots, generate visual assets
-- [Frontend Development](/vi/docs/engineer/skills/frontend-development) - Implement với React/TypeScript best practices
-- [Media Processing](/vi/docs/engineer/skills/media-processing) - Optimize generated images, remove backgrounds
-- [Chrome DevTools](/vi/docs/engineer/skills/chrome-devtools) - Chụp screenshots của implementations để comparison
+- [AI Multimodal](/docs/engineer/skills/ai-multimodal) - Extract design từ screenshots, generate visual assets
+- [Frontend Development](/docs/engineer/skills/frontend-development) - Implement với React/TypeScript best practices
+- [Media Processing](/docs/engineer/skills/media-processing) - Optimize generated images, remove backgrounds
+- [Chrome DevTools](/docs/engineer/skills/chrome-devtools) - Chụp screenshots của implementations để comparison
 
 ## Nguyên Tắc Chính
 

@@ -218,12 +218,12 @@ Docs Manager tích hợp một cách liền mạch:
 
 - [Project Manager](/vi/docs/marketing/agents/project-manager) - Kích hoạt cập nhật tài liệu sau các cột mốc
 - [Planner](/vi/docs/marketing/agents/planner) - Tạo ra các kế hoạch và chúng trở thành tài liệu
-- [Git Manager](/vi/docs/marketing/agents/git-manager) - Thực hiện commit các thay đổi tài liệu
+- [Git Manager](/docs/marketing/agents/git-manager) - Thực hiện commit các thay đổi tài liệu
 
 ## Các lệnh liên quan
 
-- [`/docs`](/vi/docs/marketing/commands/docs) - Cập nhật hoặc tạo tài liệu mới
-- [`/audit`](/vi/docs/marketing/commands/audit) - Chạy kiểm tra chất lượng tài liệu
+- [`/docs`](/docs/marketing/commands) - Cập nhật hoặc tạo tài liệu mới
+- [`/audit`](/vi/docs/marketing/commands) - Chạy kiểm tra chất lượng tài liệu
 
 ## Mẹo
 

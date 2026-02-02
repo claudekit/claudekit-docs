@@ -106,9 +106,9 @@ Xây dựng trải nghiệm web 3D immersive với WebGL/WebGPU. Scenes, animati
 
 ## Các Kỹ Năng Liên Quan
 
-- [Frontend Design](/vi/docs/engineer/skills/frontend/frontend-design) - UI overlays cho 3D configurators
-- [Frontend Development](/vi/docs/engineer/skills/frontend/frontend-development) - React Three Fiber integration
-- [AI Multimodal](/vi/docs/engineer/skills/ai/ai-multimodal) - Trích xuất yêu cầu 3D từ mockups
+- [Frontend Design](/docs/engineer/skills/frontend-design) - UI overlays cho 3D configurators
+- [Frontend Development](/docs/engineer/skills/frontend-development) - React Three Fiber integration
+- [AI Multimodal](/docs/engineer/skills/ai-multimodal) - Trích xuất yêu cầu 3D từ mockups
 
 ## Điểm Chính
 

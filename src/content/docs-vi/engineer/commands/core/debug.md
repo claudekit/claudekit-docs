@@ -501,10 +501,10 @@ Agent traces execution paths to find race condition.
 
 ## Related Commands
 
-- [/fix --quick](/vi/docs/engineer/skills/tools/fix) - Implement quick fixes after diagnosis
-- [/fix](/vi/docs/engineer/skills/tools/fix) - Fix complex issues requiring planning
-- [/scout](/vi/docs/engineer/skills/tools/scout) - Find relevant files before debugging
-- [/ask](/vi/docs/engineer/commands/core/ask) - Get architectural guidance on systemic issues
+- [/fix --quick](/docs/engineer/skills/fix) - Implement quick fixes after diagnosis
+- [/fix](/docs/engineer/skills/fix) - Fix complex issues requiring planning
+- [/scout](/docs/engineer/skills/scout) - Find relevant files before debugging
+- [/ask](/docs/engineer/commands/core/ask) - Get architectural guidance on systemic issues
 
 ---
 

@@ -28,7 +28,7 @@ ClaudeKit tăng cường Claude Code với các agent, lệnh và kỹ năng cho
 ## Additional Resources
 
 - [Cheatsheet](/vi/docs/getting-started/cheatsheet) - Tham khảo nhanh cho các lệnh phổ biến
-- [FAQ](/vi/docs/support/faq) - Câu hỏi thường gặp
+- [FAQ](/docs/support/faq) - Câu hỏi thường gặp
 - [Khắc Phục Sự Cố](/vi/docs/support/troubleshooting) - Các vấn đề phổ biến và giải pháp
 
 ## Next Steps

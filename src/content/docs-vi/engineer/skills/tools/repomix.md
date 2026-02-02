@@ -129,9 +129,9 @@ repomix --token-count-tree 1000
 
 ## Skills Liên Quan
 
-- [Code Review](/vi/docs/engineer/skills/tools/code-review) - AI-powered code analysis
-- [Research](/vi/docs/engineer/skills/tools/research) - Investigate unfamiliar codebases
-- [Debugging](/vi/docs/engineer/skills/tools/debugging) - Systematic bug isolation
+- [Code Review](/docs/engineer/skills/code-review) - AI-powered code analysis
+- [Research](/docs/engineer/skills/research) - Investigate unfamiliar codebases
+- [Debugging](/docs/engineer/skills/debug) - Systematic bug isolation
 
 ## Key Takeaway
 

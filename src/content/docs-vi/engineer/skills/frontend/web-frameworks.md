@@ -111,9 +111,9 @@ cho CI pipeline của chúng tôi."
 
 ## Các Kỹ Năng Liên Quan
 
-- [Frontend Development](/vi/docs/engineer/skills/frontend/frontend-development) - React patterns và state management
-- [UI Styling](/vi/docs/engineer/skills/frontend/ui-styling) - Tailwind và CSS strategies
-- [DevOps](/vi/docs/engineer/skills/backend/devops) - Deployment và CI/CD
+- [Frontend Development](/docs/engineer/skills/frontend-development) - React patterns và state management
+- [UI Styling](/docs/engineer/skills/ui-styling) - Tailwind và CSS strategies
+- [DevOps](/docs/engineer/skills/devops) - Deployment và CI/CD
 
 ---
 

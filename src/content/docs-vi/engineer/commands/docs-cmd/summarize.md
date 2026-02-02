@@ -588,8 +588,8 @@ Sau khi sử dụng `/docs:summarize`:
 
 - [/docs:update](/vi/docs/engineer/commands/docs-cmd/update) - Cập nhật tất cả tài liệu
 - [/docs:init](/vi/docs/engineer/commands/docs-cmd/init) - Khởi tạo tài liệu đầy đủ
-- [/watzup](/vi/docs/engineer/commands/core/watzup) - Xem lại các thay đổi gần đây
-- [/git cm](/vi/docs/engineer/skills/tools/git) - Commit tài liệu
+- [/watzup](/docs/engineer/commands/core/watzup) - Xem lại các thay đổi gần đây
+- [/git cm](/docs/engineer/skills/git) - Commit tài liệu
 
 ---
 

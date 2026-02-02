@@ -151,9 +151,9 @@ SITUATION?
 
 ## Các Skills Liên Quan
 
-- [Debugging](/vi/docs/engineer/skills/tools/debugging) - Debug với evidence-based approach
-- [Sequential Thinking](/vi/docs/engineer/skills/tools/sequential-thinking) - Systematic problem-solving
-- [Planning](/vi/docs/engineer/skills/tools/planning) - Task breakdown và verification
+- [Debugging](/docs/engineer/skills/debug) - Debug với evidence-based approach
+- [Sequential Thinking](/docs/engineer/skills/sequential-thinking) - Systematic problem-solving
+- [Planning](/docs/engineer/skills/planning) - Task breakdown và verification
 
 ## Key Takeaway
 

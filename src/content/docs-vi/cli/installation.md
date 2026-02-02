@@ -294,12 +294,12 @@ source ~/.bashrc  # hoặc ~/.zshrc
 Bây giờ ClaudeKit CLI đã được cài đặt và xác thực:
 
 1. **Tạo dự án mới**: [`ck new`](/vi/docs/cli/new)
-2. **Kiểm tra trạng thái hệ thống**: [`ck doctor`](/vi/docs/cli/doctor)
+2. **Kiểm tra trạng thái hệ thống**: [`ck doctor`](/docs/cli/doctor)
 3. **Xem các phiên bản có sẵn**: [`ck versions`](/vi/docs/cli/versions)
-4. **Cấu hình mặc định**: [Cấu hình](/vi/docs/cli/configuration)
+4. **Cấu hình mặc định**: [Cấu hình](/docs/cli/configuration)
 
 ## Các lệnh liên quan
 
-- [`ck doctor`](/vi/docs/cli/doctor) - Chẩn đoán các vấn đề cài đặt
-- [`ck update`](/vi/docs/cli/update) - Cập nhật CLI lên phiên bản mới nhất
-- [`ck uninstall`](/vi/docs/cli/uninstall) - Gỡ bỏ cài đặt ClaudeKit
+- [`ck doctor`](/docs/cli/doctor) - Chẩn đoán các vấn đề cài đặt
+- [`ck update`](/docs/cli/update) - Cập nhật CLI lên phiên bản mới nhất
+- [`ck uninstall`](/docs/cli/uninstall) - Gỡ bỏ cài đặt ClaudeKit

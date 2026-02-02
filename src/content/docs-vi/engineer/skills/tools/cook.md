@@ -79,6 +79,6 @@ Cook không chỉ viết code—nó quản lý toàn bộ vòng đời phát tri
 
 ## Kỹ năng liên quan
 
-- [Brainstorm](/vi/docs/engineer/skills/tools/brainstorm) - Để quyết định kiến trúc trước khi triển khai
-- [Fix](/vi/docs/engineer/skills/tools/fix) - Để gỡ lỗi code hiện có
-- [Scout](/vi/docs/engineer/skills/tools/scout) - Để khám phá codebase
+- [Brainstorm](/docs/engineer/skills/brainstorm) - Để quyết định kiến trúc trước khi triển khai
+- [Fix](/docs/engineer/skills/fix) - Để gỡ lỗi code hiện có
+- [Scout](/docs/engineer/skills/scout) - Để khám phá codebase

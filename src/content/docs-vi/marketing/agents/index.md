@@ -36,7 +36,7 @@ Các đại lý giúp xây dựng mối quan hệ và lòng tin với khách hà
 |-------|-------|----------|
 | [Email Wizard](/vi/docs/marketing/agents/email-wizard) | Chuỗi email, tự động hóa | Khi bạn cần nuôi dưỡng khách hàng ở quy mô lớn |
 | [Sale Enabler](/vi/docs/marketing/agents/sale-enabler) | Tài liệu hỗ trợ, bài thuyết trình bán hàng | Khi đội ngũ bán hàng cần các tài liệu thuyết phục hơn |
-| [Funnel Architect](/vi/docs/marketing/agents/funnel-architect) | Tối ưu hóa chuyển đổi | Khi phễu bán hàng của bạn có những điểm "rò rỉ" cần khắc phục |
+| [Funnel Architect](/docs/marketing/agents/funnel-architect) | Tối ưu hóa chuyển đổi | Khi phễu bán hàng của bạn có những điểm "rò rỉ" cần khắc phục |
 | [Content Creator](/vi/docs/marketing/agents/content-creator) | Blog, video, quảng cáo | Khi bạn cần nội dung trên đa kênh |
 | [Continuity Specialist](/vi/docs/marketing/agents/continuity-specialist) | Duy trì, tương tác khách hàng | Khi bạn muốn khách hàng gắn bó lâu dài |
 
@@ -74,11 +74,11 @@ Các đại lý giữ cho hệ thống luôn vận hành trơn tru.
 | [Planner](/vi/docs/marketing/agents/planner) | Kế hoạch triển khai | Khi bạn cần một kế hoạch thực thi có cấu trúc |
 | [Project Manager](/vi/docs/marketing/agents/project-manager) | Điều phối, bàn giao dự án | Khi bạn đang quản lý nhiều dự án cùng lúc |
 | [Docs Manager](/vi/docs/marketing/agents/docs-manager) | Tài liệu, quản lý kiến thức | Khi bạn cần giữ cho tài liệu luôn được cập nhật |
-| [Git Manager](/vi/docs/marketing/agents/git-manager) | Quản lý phiên bản, commit | Khi bạn muốn lịch sử Git sạch sẽ và chuyên nghiệp |
-| [Journal Writer](/vi/docs/marketing/agents/journal-writer) | Nhật ký phiên làm việc, tiến độ | Khi bạn cần theo dõi những gì đã được thực hiện |
+| [Git Manager](/docs/marketing/agents/git-manager) | Quản lý phiên bản, commit | Khi bạn muốn lịch sử Git sạch sẽ và chuyên nghiệp |
+| [Journal Writer](/docs/marketing/agents/journal-writer) | Nhật ký phiên làm việc, tiến độ | Khi bạn cần theo dõi những gì đã được thực hiện |
 | [Scout](/vi/docs/marketing/agents/scout) | Khám phá mã nguồn | Khi bạn cần tìm kiếm các tệp tin trong dự án |
 | [Scout External](/vi/docs/marketing/agents/scout-external) | Nghiên cứu bên ngoài | Khi bạn cần phân tích đối thủ cạnh tranh |
-| [MCP Manager](/vi/docs/marketing/agents/mcp-manager) | Thiết lập tích hợp | Khi bạn đang kết nối với các công cụ bên ngoài |
+| [MCP Manager](/docs/marketing/agents/mcp-manager) | Thiết lập tích hợp | Khi bạn đang kết nối với các công cụ bên ngoài |
 | [Analytics Analyst](/vi/docs/marketing/agents/analytics-analyst) | Phân tích dữ liệu, báo cáo | Khi bạn cần hiểu sâu về hiệu suất kinh doanh |
 | [Tester](/vi/docs/marketing/agents/tester) | Đảm bảo chất lượng | Khi bạn muốn xác thực các chức năng của hệ thống |
 
@@ -182,7 +182,7 @@ funnel-architect: Tôi sẽ phân tích các nút thắt và đề xuất các g
 
 **Đang chạy các chiến dịch?** → [Campaign Manager](/vi/docs/marketing/agents/campaign-manager), [Email Wizard](/vi/docs/marketing/agents/email-wizard)
 
-**Cần sửa lỗi hệ thống?** → [Campaign Debugger](/vi/docs/marketing/agents/campaign-debugger), [Funnel Architect](/vi/docs/marketing/agents/funnel-architect)
+**Cần sửa lỗi hệ thống?** → [Campaign Debugger](/vi/docs/marketing/agents/campaign-debugger), [Funnel Architect](/docs/marketing/agents/funnel-architect)
 
 **Muốn tăng trưởng doanh thu?** → [Upsell Maximizer](/vi/docs/marketing/agents/upsell-maximizer), [Sale Enabler](/vi/docs/marketing/agents/sale-enabler)
 
@@ -232,7 +232,7 @@ Các đại lý sẽ làm việc tốt hơn khi nhận được phản hồi. H�
 - [Marketing Commands](/vi/docs/marketing/commands) - Các lệnh slash truy cập nhanh cho nhiệm vụ marketing.
 - [Marketing Workflows](/vi/docs/marketing/workflows) - Hướng dẫn từng bước cho các kịch bản phổ biến.
 - [Marketing Skills](/vi/docs/marketing/skills) - Các khả năng chuyên biệt mà đại lý có thể kích hoạt.
-- [Marketing Dashboard](/vi/docs/marketing/dashboard) - Theo dõi các chiến dịch và số liệu phân tích.
+- [Marketing Dashboard](/docs/marketing/commands/dashboard) - Theo dõi các chiến dịch và số liệu phân tích.
 
 ## Bước tiếp theo
 

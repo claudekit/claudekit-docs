@@ -15,7 +15,8 @@ import { remarkAdmonitions } from './src/plugins/remark-admonitions.mjs';
 import { writeFileSync } from 'fs';
 import { join } from 'path';
 
-// llms.txt generator integration
+// Custom integrations
+import buildTimeInternalLinkValidator from './src/integrations/build-time-internal-link-validator.ts';
 import { readdir, readFile } from 'fs/promises';
 
 function llmsTxtGenerator() {
@@ -187,6 +188,7 @@ export default defineConfig({
       applyBaseStyles: false, // We'll use our custom CSS
     }),
     llmsTxtGenerator(),
+    buildTimeInternalLinkValidator(),
     pagefind(), // Must be LAST - runs after build to index HTML
   ],
   build: {

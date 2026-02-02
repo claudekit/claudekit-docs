@@ -1,5 +1,7 @@
 ---
-import DocsLayout from '../layouts/DocsLayout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Search from '../components/Search.astro';
 import { Code } from 'astro:components';
 
 const title = 'ClaudeKit - Build Software Like You Have a Team';
@@ -97,27 +99,11 @@ const step4Code = `git diff
 npm test
 # commit via git-manager or manually`;
 
-// Define headings for Table of Contents
-const headings = [
-  { depth: 2, text: 'Why ClaudeKit?', slug: 'why-claudekit' },
-  { depth: 3, text: 'Specialized Agents, Real Results', slug: 'specialized-agents-real-results' },
-  { depth: 3, text: 'Eliminate Repetitive Work', slug: 'eliminate-repetitive-work' },
-  { depth: 3, text: 'Stay in Control', slug: 'stay-in-control' },
-  { depth: 2, text: 'How It Works', slug: 'how-it-works' },
-  { depth: 3, text: 'ClaudeKit Engineer: 14 Specialized Agents', slug: 'claudekit-engineer-14-specialized-agents' },
-  { depth: 3, text: 'ClaudeKit CLI: Smart Project Management', slug: 'claudekit-cli-smart-project-management' },
-  { depth: 2, text: 'Real Developer Workflows', slug: 'real-developer-workflows' },
-  { depth: 3, text: 'Building a New Feature', slug: 'building-a-new-feature' },
-  { depth: 3, text: 'Debugging Production Issues', slug: 'debugging-production-issues' },
-  { depth: 3, text: 'Refactoring Legacy Code', slug: 'refactoring-legacy-code' },
-  { depth: 2, text: 'Proven Results', slug: 'proven-results' },
-  { depth: 2, text: 'What Developers Say', slug: 'what-developers-say' },
-  { depth: 2, text: 'Get Started in 5 Minutes', slug: 'get-started-in-5-minutes' },
-  { depth: 2, text: 'Explore Documentation', slug: 'explore-documentation' },
-];
 ---
 
-<DocsLayout title={title} description={description} headings={headings}>
+<BaseLayout title={title} description={description}>
+<Header />
+<main class="landing-content">
 
 <div class="relative overflow-hidden pb-10 lg:pb-16">
   <div class="relative mx-auto max-w-content px-4 sm:px-6 lg:px-8 text-center">
@@ -465,6 +451,14 @@ const headings = [
 </div>
 
 <style is:inline>
+  /* Landing page layout */
+  .landing-content {
+    max-width: var(--layout-content-max-width, 860px);
+    margin: 0 auto;
+    padding: var(--space-8) var(--space-8) var(--space-16);
+    width: 100%;
+  }
+
   /* Content prose styling for proper markdown rendering */
   h2 {
     font-size: var(--text-2xl, 1.5rem);
@@ -663,4 +657,6 @@ const headings = [
   }
 </style>
 
-</DocsLayout>
+</main>
+<Search />
+</BaseLayout>

@@ -35,11 +35,16 @@ if (config.filterIndex) {
   filteredDocs = docs.filter(doc => !doc.slug.endsWith('index') && doc.slug !== section);
 }
 
-// Group docs by category for categorized/grouped layouts
+// Group docs by top-level category (first segment before '/')
+// e.g., 'commands/core' and 'commands/plan' both group under 'commands'
 const groupByCategory = (docs: any[]) => {
   const groups: Record<string, any[]> = {};
   docs.forEach(doc => {
-    const category = doc.data.category || 'overview';
+    const fullCategory = doc.data.category || 'overview';
+    // For categorized layout, group by first segment only
+    const category = config.layout === 'categorized'
+      ? fullCategory.split('/')[0]
+      : fullCategory;
     if (!groups[category]) groups[category] = [];
     groups[category].push(doc);
   });

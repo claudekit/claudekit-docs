@@ -13,6 +13,7 @@ function getSectionFromUrl(path: string): string {
   // Remove language prefix if present (e.g., /vi/docs -> /docs)
   const cleanPath = path.replace(/^\/[a-z]{2}\//, '/');
 
+  if (cleanPath === '/' || cleanPath === '') return 'home';
   if (cleanPath.startsWith('/docs/getting-started')) return 'getting-started';
   if (cleanPath.startsWith('/docs/workflows')) return 'workflows';
   if (cleanPath.startsWith('/docs/tools')) return 'tools';

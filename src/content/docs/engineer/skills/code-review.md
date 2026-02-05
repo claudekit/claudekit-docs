@@ -28,6 +28,22 @@ Enforce verification gates and technical rigor across three critical practices: 
 
 ## The Process
 
+### 0. Edge Case Scouting (v2.10.0+)
+
+Before dispatching the code-reviewer, scout for edge cases:
+
+```bash
+# Scout first to find:
+# - Files affected by changes (not just modified files)
+# - Data flow paths that could break
+# - Edge cases and boundary conditions
+# - Potential side effects
+
+/scout edge cases for <feature>
+```
+
+This pre-review step identifies potential issues the reviewer should focus on, making reviews more targeted and effective.
+
 ### 1. Receiving Feedback
 **Protocol:** READ → UNDERSTAND → VERIFY → EVALUATE → RESPOND → IMPLEMENT
 

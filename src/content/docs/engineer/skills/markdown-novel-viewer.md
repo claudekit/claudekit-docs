@@ -1,6 +1,6 @@
 ---
-title: Markdown Novel Viewer
-description: Background HTTP server rendering markdown files with calm, book-like reading experience and directory browser for documentation navigation
+title: Preview & Visual Generation
+description: View markdown files with book-like reading experience, or generate visual explanations with ASCII diagrams, Mermaid charts, and presentation slides
 section: engineer
 kit: engineer
 category: skills
@@ -8,9 +8,13 @@ order: 4
 published: true
 ---
 
-# Markdown Novel Viewer
+# Preview & Visual Generation
 
-> Universal viewer for markdown files and directories with book-like reading experience, Mermaid diagram support, and plan navigation.
+> Universal viewer for markdown files + visual generator for explanations, diagrams, and slides.
+
+The `/preview` skill has two modes:
+1. **View Mode** - Render markdown files with a warm, book-inspired theme
+2. **Generation Mode** - Generate visual explanations, diagrams, or presentation slides
 
 ## What This Skill Does
 
@@ -48,6 +52,113 @@ Manual activation:
 ```
 
 ## Quick Start
+
+### View Mode
+
+```bash
+# View a markdown file
+/preview plans/my-plan/plan.md
+
+# Browse a directory
+/preview plans/
+
+# Stop running server
+/preview --stop
+```
+
+### Generation Mode
+
+```bash
+# Generate visual explanation (ASCII + Mermaid + prose)
+/preview --explain OAuth flow
+
+# Generate presentation slides
+/preview --slides API architecture
+
+# Generate focused diagram
+/preview --diagram data flow
+
+# Generate ASCII-only diagram (terminal-friendly)
+/preview --ascii auth process
+```
+
+## Generation Mode (v2.10.0+)
+
+Generate visual explanations, diagrams, and slides on any topic. Output is saved to `{plan_dir}/visuals/` (or `plans/visuals/` if no active plan) and auto-opened in the preview server.
+
+### --explain (Visual Explanation)
+
+Generates comprehensive explanation with ASCII diagram, Mermaid chart, key concepts, and optional code examples.
+
+```bash
+/preview --explain OAuth 2.0 authorization code flow
+```
+
+**Output structure:**
+- Overview section
+- Quick View (ASCII diagram)
+- Detailed Flow (Mermaid)
+- Key Concepts
+- Code Example (if applicable)
+
+### --slides (Presentation Format)
+
+Generates slide-by-slide presentation, one concept per slide. Uses horizontal rules (`---`) as slide separators.
+
+```bash
+/preview --slides microservices architecture
+```
+
+**Output structure:**
+- Title slide
+- Problem/context slide
+- Solution slides with diagrams
+- Summary/takeaways
+
+### --diagram (Focused Diagram)
+
+Generates both ASCII and Mermaid versions of a single diagram.
+
+```bash
+/preview --diagram database schema
+```
+
+**Output structure:**
+- ASCII Version (copy-pasteable to terminal)
+- Mermaid Version (rendered in browser)
+
+### --ascii (Terminal-Friendly Only)
+
+Generates pure ASCII diagram without Mermaid. Ideal for terminal output or environments without browser access.
+
+```bash
+/preview --ascii CI/CD pipeline
+```
+
+**Output:** Single ASCII box diagram with legend.
+
+### Generation Examples
+
+```bash
+# Explain complex concepts
+/preview --explain WebSocket handshake protocol
+/preview --explain React reconciliation algorithm
+/preview --explain Git rebase vs merge
+
+# Create presentations
+/preview --slides system architecture overview
+/preview --slides new feature proposal
+
+# Quick diagrams
+/preview --diagram user authentication flow
+/preview --ascii file upload process
+```
+
+## View Mode (File/Directory Viewer)
+
+The original viewer functionality for markdown files and directories.
+
+### CLI Usage
 
 ```bash
 # View a markdown file

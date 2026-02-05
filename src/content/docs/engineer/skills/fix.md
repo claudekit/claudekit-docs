@@ -71,7 +71,28 @@ Classify before routing:
 ## Usage
 
 ```
-/fix [--auto|--review|--quick]
+/fix [--auto|--review|--quick|--parallel]
+```
+
+| Flag | Behavior |
+|------|----------|
+| `--auto` | Autonomous mode (default) - auto-approve if score >= 9.5 |
+| `--review` | Human-in-the-loop - pause for approval at each step |
+| `--quick` | Fast cycle for trivial bugs (type errors, lint) |
+| `--parallel` | Route to parallel `fullstack-developer` agents per issue |
+
+### --parallel Mode (v2.10.0+)
+
+When you have multiple independent issues, `--parallel` spawns separate agents to fix each one simultaneously. Useful for:
+- Batch fixing lint errors across files
+- Addressing unrelated test failures
+- Fixing multiple independent bugs in one session
+
+```bash
+# Fix multiple issues in parallel
+/fix --parallel
+
+# Example: 3 unrelated type errors → 3 parallel agents
 ```
 
 Activate automatically when mentioning bugs, errors, test failures, CI/CD issues, type errors, lint, log errors, UI issues, or code problems.

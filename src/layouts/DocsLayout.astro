@@ -20,6 +20,7 @@ export interface Props {
   locale?: Locale;
   slug?: string;
   headings?: Heading[];
+  content?: { body: string; data: Record<string, any> };
 }
 
 const { title, description, locale = 'en', slug = '', headings = [] } = Astro.props;

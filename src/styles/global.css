@@ -161,6 +161,7 @@
     --layout-header-height: 56px;
     --layout-sidebar-width: 280px;
     --layout-content-max-width: 900px;
+    --layout-content-max-width-wide: 1120px;
     --layout-ai-panel-width: 380px; /* Default/Fallback */
     --assistant-width: 380px;       /* Dynamic, updated by JS */
 
@@ -904,7 +905,7 @@ pre.astro-code:not([data-language]) span {
 
 /* Table of Contents */
 .table-of-contents {
-  width: 280px;
+  width: 240px;
   flex-shrink: 0;
   align-self: flex-start;
   position: sticky;
@@ -914,7 +915,7 @@ pre.astro-code:not([data-language]) span {
 }
 
 .toc-nav {
-  padding: var(--space-6) var(--space-4);
+  padding: var(--space-5) var(--space-3);
 }
 
 .toc-title {

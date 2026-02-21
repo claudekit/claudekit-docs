@@ -1,0 +1,100 @@
+---
+import { Code } from 'astro:components';
+
+interface Props {
+  heroCode: string;
+}
+
+const { heroCode } = Astro.props;
+---
+
+<section class="relative overflow-hidden pb-12 pt-2 lg:pb-20">
+  <div class="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+    <div class="absolute -top-44 left-1/2 h-[24rem] w-[24rem] -translate-x-1/2 rounded-full bg-[var(--color-accent-blue)]/15 blur-3xl"></div>
+    <div class="absolute -bottom-28 right-0 h-[18rem] w-[18rem] rounded-full bg-[var(--color-accent-cyan)]/10 blur-3xl"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.08),transparent_55%)]"></div>
+  </div>
+
+  <div class="relative mx-auto max-w-content px-4 sm:px-6 lg:px-8 text-center">
+    <div class="mx-auto max-w-5xl">
+      <div class="mb-6 inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-bg-secondary)] px-4 py-2 text-xs font-medium text-[var(--color-text-secondary)]">
+        <span class="h-2 w-2 rounded-full bg-[var(--color-accent-green)]"></span>
+        Multi-agent dev workflow for production teams
+      </div>
+
+      <h1 class="mb-6 text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
+        <span class="bg-gradient-to-r from-[var(--color-text-primary)] via-[var(--color-accent-blue)] to-[var(--color-accent-cyan)] bg-clip-text text-transparent">
+          Build Software Like You Have a Team
+        </span>
+      </h1>
+
+      <p class="mx-auto mb-8 max-w-4xl text-lg leading-relaxed text-[var(--color-text-secondary)] sm:text-xl">
+        ClaudeKit gives you 14 specialized developer agents working together.
+        Write less code, ship faster, and keep engineering quality high.
+      </p>
+
+      <div class="mb-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <a
+          href="/docs/getting-started/installation"
+          class="inline-flex min-h-[44px] items-center justify-center rounded-[var(--radius-md)] bg-[var(--color-accent-blue)] px-8 py-3.5 text-base font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[var(--color-accent-cyan)] hover:text-[var(--color-text-inverse)] hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent-blue)] focus-visible:ring-offset-2"
+        >
+          Get Started in 5 Minutes
+        </a>
+        <a
+          href="/docs/getting-started/introduction"
+          class="inline-flex min-h-[44px] items-center justify-center rounded-[var(--radius-md)] border border-[var(--color-border)] bg-[var(--color-bg-tertiary)] px-8 py-3.5 text-base font-semibold text-[var(--color-text-primary)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--color-border-hover)] hover:bg-[var(--color-bg-secondary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent-blue)] focus-visible:ring-offset-2"
+        >
+          View Documentation
+        </a>
+      </div>
+
+      <div class="mb-12 grid grid-cols-1 gap-3 sm:grid-cols-3">
+        <div class="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-secondary)] px-4 py-3">
+          <div class="text-xs uppercase tracking-[0.12em] text-[var(--color-text-muted)]">Agents</div>
+          <div class="mt-1 text-2xl font-semibold text-[var(--color-text-primary)]">14</div>
+        </div>
+        <div class="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-secondary)] px-4 py-3">
+          <div class="text-xs uppercase tracking-[0.12em] text-[var(--color-text-muted)]">Commands</div>
+          <div class="mt-1 text-2xl font-semibold text-[var(--color-text-primary)]">38+</div>
+        </div>
+        <div class="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-secondary)] px-4 py-3">
+          <div class="text-xs uppercase tracking-[0.12em] text-[var(--color-text-muted)]">Time Saved</div>
+          <div class="mt-1 text-2xl font-semibold text-[var(--color-text-primary)]">50-70%</div>
+        </div>
+      </div>
+
+      <div class="mb-16 mx-auto max-w-5xl">
+        <p class="mb-4 text-sm text-[var(--color-text-muted)]">Watch the complete walkthrough</p>
+        <div class="relative mx-auto aspect-video max-w-3xl overflow-hidden rounded-2xl border border-[var(--color-border)] shadow-2xl">
+          <iframe
+            src="https://www.youtube.com/embed/F_E0GIi_kVY"
+            title="ClaudeKit Complete Walkthrough - From Installation to Building UI"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            class="absolute inset-0 h-full w-full"
+          ></iframe>
+        </div>
+        <p class="mt-3 text-xs text-[var(--color-text-muted)]">
+          More tutorials on <a href="https://www.youtube.com/@goonnguyen" target="_blank" rel="noopener noreferrer" class="font-medium text-[var(--color-accent-blue)] hover:underline">@goonnguyen</a> | X: <a href="https://x.com/goon_nguyen" target="_blank" rel="noopener noreferrer" class="font-medium text-[var(--color-accent-blue)] hover:underline">@goon_nguyen</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="relative mx-auto max-w-5xl text-left">
+      <div class="pointer-events-none absolute -inset-1 rounded-2xl bg-gradient-to-r from-[var(--color-accent-cyan)]/20 via-[var(--color-accent-blue)]/25 to-[var(--color-accent-purple)]/25 blur-xl"></div>
+      <div class="relative overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-code)] shadow-2xl">
+        <div class="flex items-center gap-3 border-b border-[var(--color-border)] bg-[var(--color-bg-secondary)] px-4 py-3">
+          <div class="flex gap-1.5" aria-hidden="true">
+            <div class="h-3 w-3 rounded-full border border-red-500/50 bg-red-500/20"></div>
+            <div class="h-3 w-3 rounded-full border border-yellow-500/50 bg-yellow-500/20"></div>
+            <div class="h-3 w-3 rounded-full border border-green-500/50 bg-green-500/20"></div>
+          </div>
+          <div class="font-mono text-xs text-[var(--color-text-muted)]">terminal</div>
+        </div>
+        <Code code={heroCode} lang="bash" themes={{ light: 'light-plus', dark: 'one-dark-pro' }} />
+      </div>
+    </div>
+  </div>
+</section>

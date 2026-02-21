@@ -21,10 +21,21 @@ export interface Props {
   slug?: string;
   headings?: Heading[];
   content?: { body: string; data: Record<string, any> };
+  contentWidth?: 'default' | 'wide';
+  showTableOfContents?: boolean;
 }
 
-const { title, description, locale = 'en', slug = '', headings = [] } = Astro.props;
+const {
+  title,
+  description,
+  locale = 'en',
+  slug = '',
+  headings = [],
+  contentWidth = 'default',
+  showTableOfContents = true,
+} = Astro.props;
 const currentPath = Astro.url.pathname;
+const shouldShowTableOfContents = showTableOfContents && headings.length > 0;
 
 // Get the content data for CopyForLLMs
 const content = Astro.props.content;
@@ -44,7 +55,7 @@ const frontmatter = content?.data || {
       <Header />
 
       <div class="content-wrapper">
-        <main class="content-area" data-pagefind-body>
+        <main class:list={['content-area', { 'content-area--wide': contentWidth === 'wide' }]} data-pagefind-body>
           {content?.body && (
             <div class="content-header" data-pagefind-ignore>
               <CopyForLLMs
@@ -67,7 +78,7 @@ const frontmatter = content?.data || {
           </article>
         </main>
 
-        {headings.length > 0 && (
+        {shouldShowTableOfContents && (
           <TableOfContents headings={headings} client:load />
         )}
       </div>
@@ -156,6 +167,10 @@ const frontmatter = content?.data || {
     width: 100%;
   }
 
+  .content-area--wide {
+    max-width: var(--layout-content-max-width-wide);
+  }
+
   .content-header {
     display: flex;
     justify-content: flex-end;
@@ -171,7 +186,7 @@ const frontmatter = content?.data || {
   /* Responsive Design */
   @media (max-width: 1024px) {
     .content-area {
-      padding: var(--spacing-6);
+      padding: var(--space-6);
     }
   }
 
@@ -185,7 +200,7 @@ const frontmatter = content?.data || {
     }
 
     .content-area {
-      padding: var(--spacing-4);
+      padding: var(--space-4);
     }
   }
 </style>

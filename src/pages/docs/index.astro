@@ -1,7 +1,63 @@
 ---
-// Redirect /docs/ to /docs/getting-started/introduction
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import DocsHub from '../../components/home/DocsHub.astro';
+
 export const prerender = true;
+
+const cards = [
+  {
+    label: 'Start Here',
+    title: 'Getting Started',
+    description: 'Install ClaudeKit, learn the core flow, and ship your first task quickly.',
+    href: '/docs/getting-started/introduction',
+  },
+  {
+    label: 'Engineer',
+    title: 'Agents',
+    description: 'Understand each specialized engineer agent and when to route work to them.',
+    href: '/docs/engineer/agents',
+  },
+  {
+    label: 'Engineer',
+    title: 'Commands',
+    description: 'Plan, cook, test, review, and maintain using command-first workflows.',
+    href: '/docs/engineer/commands',
+  },
+  {
+    label: 'Engineer',
+    title: 'Skills',
+    description: 'Use production skills for frontend, backend, debugging, docs, and infra.',
+    href: '/docs/engineer/skills',
+  },
+  {
+    label: 'Marketing',
+    title: 'Marketing Kit',
+    description: 'Explore marketing agents, workflows, and playbooks for growth operations.',
+    href: '/docs/marketing',
+  },
+  {
+    label: 'CLI',
+    title: 'CLI Reference',
+    description: 'Commands for init, update, versions, troubleshooting, and setup.',
+    href: '/docs/cli',
+  },
+];
 ---
-<script>
-  window.location.href = '/docs/getting-started/introduction';
-</script>
+
+<DocsLayout
+  title="ClaudeKit Docs Hub"
+  description="Top-level documentation hub for ClaudeKit Engineer, Marketing, and CLI"
+  contentWidth="wide"
+  showTableOfContents={false}
+>
+  <DocsHub
+    eyebrow="Documentation"
+    headline="ClaudeKit Docs Hub"
+    summary="Pick your path: get started fast, explore engineer workflows, or jump into marketing and CLI references."
+    primaryCtaHref="/docs/getting-started/quick-start"
+    primaryCtaLabel="Start With Quick Start"
+    secondaryCtaHref="/"
+    secondaryCtaLabel="Back to Homepage"
+    cards={cards}
+  />
+</DocsLayout>

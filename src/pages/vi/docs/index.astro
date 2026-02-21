@@ -1,7 +1,64 @@
 ---
-// Redirect /vi/docs/ to /vi/docs/getting-started/introduction
+import DocsLayout from '../../../layouts/DocsLayout.astro';
+import DocsHub from '../../../components/home/DocsHub.astro';
+
 export const prerender = true;
+
+const cards = [
+  {
+    label: 'Bat Dau',
+    title: 'Getting Started',
+    description: 'Cai dat ClaudeKit, nam luong cong viec co ban va ship task dau tien nhanh.',
+    href: '/vi/docs/getting-started/introduction',
+  },
+  {
+    label: 'Engineer',
+    title: 'Agents',
+    description: 'Hieu vai tro tung engineer agent va cach phan bo cong viec hop ly.',
+    href: '/vi/docs/engineer/agents',
+  },
+  {
+    label: 'Engineer',
+    title: 'Commands',
+    description: 'Plan, cook, test, review, va maintain theo workflow command-first.',
+    href: '/vi/docs/engineer/commands',
+  },
+  {
+    label: 'Engineer',
+    title: 'Skills',
+    description: 'Bo ky nang thuc chien cho frontend, backend, debug, docs va infra.',
+    href: '/vi/docs/engineer/skills',
+  },
+  {
+    label: 'Marketing',
+    title: 'Marketing Kit',
+    description: 'Kham pha marketing agents, workflows va playbook cho growth.',
+    href: '/vi/docs/marketing',
+  },
+  {
+    label: 'CLI',
+    title: 'CLI Reference',
+    description: 'Lenh init, update, versions, troubleshooting va cau hinh.',
+    href: '/vi/docs/cli',
+  },
+];
 ---
-<script>
-  window.location.href = '/vi/docs/getting-started/introduction';
-</script>
+
+<DocsLayout
+  title="ClaudeKit Docs Hub (VI)"
+  description="Trang tong quan tai lieu ClaudeKit cho Engineer, Marketing va CLI"
+  locale="vi"
+  contentWidth="wide"
+  showTableOfContents={false}
+>
+  <DocsHub
+    eyebrow="Tai Lieu"
+    headline="ClaudeKit Docs Hub"
+    summary="Chon lo trinh phu hop: bat dau nhanh, di sau vao workflow engineer, hoac vao marketing va CLI reference."
+    primaryCtaHref="/vi/docs/getting-started/quick-start"
+    primaryCtaLabel="Bat Dau Nhanh"
+    secondaryCtaHref="/"
+    secondaryCtaLabel="Ve Trang Chu"
+    cards={cards}
+  />
+</DocsLayout>

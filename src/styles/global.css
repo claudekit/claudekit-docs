@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -12,6 +12,7 @@
     --color-bg-secondary: #F9FAFB;
     --color-bg-tertiary: #F3F4F6;
     --color-bg-code: #F3F4F6;           /* Gray-100 for better contrast */
+    --color-bg-inline-code: #EEF2F7;
 
     --color-text-primary: #1A1A1A;
     --color-text-secondary: #6B7280;
@@ -30,48 +31,10 @@
     --color-border: #E5E7EB;
     --color-border-hover: #D1D5DB;
 
-/* Message Bubble Colors - Light */
-  --color-msg-user-bg: #2563EB;     /* Blue 600 */
-  --color-msg-user-text: #FFFFFF;    /* White */
+    /* Message Bubble Colors - Light */
+    --color-msg-user-bg: #2563EB;
+    --color-msg-user-text: #FFFFFF;
 
-  /* Message Bubble Colors - Dark */
-  /* ... */
-
-/* Assistant Message Typography Overrides */
-/* Use !important to override any global typography resets or markdown styles */
-.assistant-message-content p,
-.assistant-markdown p,
-.assistant-markdown li,
-.assistant-markdown span {
-  color: inherit !important;
-  margin-bottom: 0.5rem;
-}
-
-.assistant-markdown p:last-child {
-  margin-bottom: 0;
-}
-
-/* User Message Specifics */
-.assistant-message--user .assistant-message-content {
-  background-color: var(--color-msg-user-bg) !important;
-  color: var(--color-msg-user-text) !important;
-}
-
-.assistant-message--user .assistant-message-content p {
-  color: var(--color-msg-user-text) !important;
-}
-
-/* Assistant Message Specifics */
-.assistant-message--assistant .assistant-message-content {
-  background-color: var(--color-bg-tertiary);
-  color: var(--color-text-primary);
-}
-
-/* Input Placeholder Visibility */
-.assistant-sidebar-input-field::placeholder {
-  color: var(--color-text-secondary) !important;
-  opacity: 0.8 !important;
-}
     --color-header-bg: rgba(255, 255, 255, 0.8);
   }
 
@@ -132,8 +95,9 @@
   /* Typography Variables (Polar v1.1) */
   :root {
     /* Font Families */
-    --font-sans: 'Inter Variable', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-    --font-mono: 'Geist Mono', 'SF Mono', 'Monaco', 'Inconsolata', 'Courier New', monospace;
+    --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-display: 'JetBrains Mono', 'IBM Plex Sans', monospace;
+    --font-mono: 'JetBrains Mono', 'SF Mono', 'Monaco', 'Inconsolata', 'Courier New', monospace;
 
     /* Type Scale */
     --text-xs: 0.75rem;      /* 12px - Sidebar section headers, small labels */
@@ -197,9 +161,7 @@
     --layout-header-height: 56px;
     --layout-sidebar-width: 280px;
     --layout-content-max-width: 900px;
-    --layout-header-height: 56px;
-    --layout-sidebar-width: 280px;
-    --layout-content-max-width: 900px;
+    --layout-content-max-width-wide: 1120px;
     --layout-ai-panel-width: 380px; /* Default/Fallback */
     --assistant-width: 380px;       /* Dynamic, updated by JS */
 
@@ -313,6 +275,7 @@
   h4,
   h5,
   h6 {
+    font-family: var(--font-display);
     font-weight: var(--font-bold);
     line-height: var(--leading-tight);
     margin-bottom: var(--space-4);
@@ -942,7 +905,7 @@ pre.astro-code:not([data-language]) span {
 
 /* Table of Contents */
 .table-of-contents {
-  width: 280px;
+  width: 240px;
   flex-shrink: 0;
   align-self: flex-start;
   position: sticky;
@@ -952,7 +915,7 @@ pre.astro-code:not([data-language]) span {
 }
 
 .toc-nav {
-  padding: var(--space-6) var(--space-4);
+  padding: var(--space-5) var(--space-3);
 }
 
 .toc-title {

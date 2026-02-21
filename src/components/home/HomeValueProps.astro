@@ -1,0 +1,93 @@
+---
+interface Pillar {
+  id: string;
+  title: string;
+  description: string;
+  accent: string;
+  iconBgClass: string;
+  iconClass: string;
+  iconPath: string;
+  points: string[];
+}
+
+const pillars: Pillar[] = [
+  {
+    id: 'specialized-agents-real-results',
+    title: 'Specialized Agents, Real Results',
+    description:
+      '14 expert agents planner, tester, debugger, designer each focusing on what it does best. Orchestrate workflows like a senior architect.',
+    accent: 'var(--color-accent-blue)',
+    iconBgClass: 'bg-blue-500/10',
+    iconClass: 'text-blue-500',
+    iconPath:
+      'M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z',
+    points: ['Planner creates roadmaps', 'Tester generates suites', 'Debugger resolves issues fast'],
+  },
+  {
+    id: 'eliminate-repetitive-work',
+    title: 'Eliminate Repetitive Work',
+    description:
+      'Reclaim 50-70% of time spent on repetitive tasks. AI writes initial implementations, and you focus on high-value decisions.',
+    accent: 'var(--color-accent-green)',
+    iconBgClass: 'bg-green-500/10',
+    iconClass: 'text-green-500',
+    iconPath: 'M13 10V3L4 14h7v7l9-11h-7z',
+    points: ['Auto-generated tests', 'Context-aware bug fixes', 'Confident refactoring'],
+  },
+  {
+    id: 'stay-in-control',
+    title: 'Stay in Control',
+    description:
+      'You are the reviewer, AI is the implementer. Keep checkpoints and rollback power with transparent decision logs.',
+    accent: 'var(--color-accent-purple)',
+    iconBgClass: 'bg-purple-500/10',
+    iconClass: 'text-purple-500',
+    iconPath:
+      'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
+    points: ['Approve every change', 'Rollback instantly', 'Inspect reasoning traces'],
+  },
+];
+---
+
+<section class="relative overflow-hidden py-14">
+  <div class="mx-auto max-w-content px-4 sm:px-6 lg:px-8">
+    <div class="mb-12 text-center">
+      <h2 id="why-claudekit" class="mb-4 text-3xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-4xl">Why ClaudeKit?</h2>
+      <p class="mx-auto max-w-2xl text-lg text-[var(--color-text-secondary)]">
+        Stop wrestling with repetitive tasks. Let specialized AI agents handle implementation while you focus on architecture and product decisions.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
+      {pillars.map((pillar) => (
+        <article class="group relative overflow-hidden rounded-[var(--radius-xl)] border border-[var(--color-border)] bg-[var(--color-bg-secondary)] p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+          <div class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" style={`background: linear-gradient(180deg, color-mix(in srgb, ${pillar.accent} 12%, transparent), transparent 55%)`}></div>
+
+          <div class="relative">
+            <div class="mb-4 flex items-center gap-4">
+              <div class:list={[pillar.iconBgClass, 'flex h-11 w-11 shrink-0 items-center justify-center rounded-lg']}>
+                <svg class:list={[pillar.iconClass, 'h-5 w-5']} fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={pillar.iconPath} />
+                </svg>
+              </div>
+              <h3 id={pillar.id} class="text-lg font-semibold text-[var(--color-text-primary)]">{pillar.title}</h3>
+            </div>
+
+            <p class="mb-4 text-sm leading-relaxed text-[var(--color-text-secondary)]">{pillar.description}</p>
+
+            <ul class="space-y-2">
+              {pillar.points.map((point) => (
+                <li class="flex items-start gap-2 text-sm text-[var(--color-text-secondary)]">
+                  <svg class="mt-0.5 h-4 w-4 shrink-0 text-[var(--color-accent-green)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

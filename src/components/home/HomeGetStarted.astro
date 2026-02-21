@@ -1,0 +1,215 @@
+---
+import { Code } from 'astro:components';
+
+interface Step {
+  title: string;
+  code: string;
+}
+
+interface DocCard {
+  title: string;
+  description: string;
+  href: string;
+}
+
+interface Props {
+  step1Code: string;
+  step2Code: string;
+  step3Code: string;
+  step4Code: string;
+}
+
+const { step1Code, step2Code, step3Code, step4Code } = Astro.props;
+
+const steps: Step[] = [
+  { title: 'Install ClaudeKit CLI', code: step1Code },
+  { title: 'Create Your First Project', code: step2Code },
+  { title: 'Plan and Implement a Feature', code: step3Code },
+  { title: 'Review and Commit', code: step4Code },
+];
+
+const docCards: DocCard[] = [
+  {
+    title: 'Getting Started',
+    description: 'Installation, quick start, and onboarding paths',
+    href: '/docs/getting-started/introduction',
+  },
+  {
+    title: 'CLI Reference',
+    description: 'Commands, initialization, versions, and updates',
+    href: '/docs/cli',
+  },
+  {
+    title: 'Engineer Agents',
+    description: 'Role definitions and orchestration patterns',
+    href: '/docs/engineer/agents',
+  },
+  {
+    title: 'Engineer Commands',
+    description: 'Plan, test, review, and maintenance command set',
+    href: '/docs/engineer/commands',
+  },
+  {
+    title: 'Workflow Guides',
+    description: 'Real development workflows from idea to delivery',
+    href: '/docs/workflows',
+  },
+  {
+    title: 'Skills Catalog',
+    description: 'Built-in skills for coding, debugging, and design',
+    href: '/docs/engineer/skills',
+  },
+];
+---
+
+<section class="mx-auto max-w-content px-4 py-8 sm:px-6 lg:px-8">
+  <h2 id="get-started-in-5-minutes">Get Started in 5 Minutes</h2>
+
+  <div class="home-steps" role="list">
+    {steps.map((step, index) => (
+      <article class="home-step" role="listitem">
+        <div class="home-step-number" aria-hidden="true">{index + 1}</div>
+        <div class="home-step-content">
+          <h3>{step.title}</h3>
+          <Code code={step.code} lang="bash" themes={{ light: 'light-plus', dark: 'one-dark-pro' }} />
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
+
+<section class="relative overflow-hidden border-y border-[var(--color-border)] bg-[var(--color-bg-tertiary)]/30 py-14">
+  <div class="mx-auto max-w-content px-4 text-center sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl">
+      <h2 class="mb-4 text-3xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-4xl">Ready to Build Like You Have a Team?</h2>
+      <p class="mx-auto mb-10 max-w-2xl text-lg text-[var(--color-text-secondary)]">
+        Start with ClaudeKit and move faster with maintainable, reviewable engineering workflows.
+      </p>
+
+      <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <a
+          href="/docs/getting-started/installation"
+          class="inline-flex min-h-[44px] items-center justify-center rounded-[var(--radius-md)] bg-[var(--color-accent-green)] px-8 py-3.5 text-base font-semibold text-[var(--color-text-inverse)] transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent-green)] focus-visible:ring-offset-2"
+        >
+          Start Building Now
+        </a>
+        <a
+          href="/docs/getting-started/introduction"
+          class="inline-flex min-h-[44px] items-center justify-center rounded-[var(--radius-md)] border border-[var(--color-accent-green)] bg-transparent px-8 py-3.5 text-base font-semibold text-[var(--color-accent-green)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[var(--color-accent-green)]/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent-green)] focus-visible:ring-offset-2"
+        >
+          View Documentation
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mx-auto max-w-content px-4 py-12 sm:px-6 lg:px-8">
+  <h2 id="explore-documentation">Explore Documentation</h2>
+
+  <div class="home-doc-grid">
+    {docCards.map((card) => (
+      <a
+        href={card.href}
+        class="home-doc-card"
+      >
+        <h3>{card.title}</h3>
+        <p>{card.description}</p>
+      </a>
+    ))}
+  </div>
+</section>
+
+<style>
+  .home-steps {
+    display: grid;
+    gap: var(--space-6);
+    margin: var(--space-6) 0 var(--space-2);
+  }
+
+  .home-step {
+    display: grid;
+    gap: var(--space-4);
+    grid-template-columns: 1fr;
+    align-items: start;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-bg-secondary);
+    padding: var(--space-4);
+  }
+
+  .home-step-number {
+    display: inline-flex;
+    width: 2.5rem;
+    height: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-full);
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    background: var(--color-accent-green);
+    color: var(--color-text-inverse);
+  }
+
+  .home-step-content h3 {
+    margin-top: 0;
+  }
+
+  .home-doc-grid {
+    margin-top: var(--space-6);
+    display: grid;
+    gap: var(--space-4);
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .home-doc-card {
+    display: block;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-bg-secondary);
+    padding: var(--space-5);
+    text-decoration: none;
+    transition: transform var(--duration-slow) var(--ease-out), border-color var(--duration-slow) var(--ease-out), box-shadow var(--duration-slow) var(--ease-out);
+  }
+
+  .home-doc-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--color-accent-blue);
+    box-shadow: var(--shadow-md);
+  }
+
+  .home-doc-card:focus-visible {
+    outline: none;
+    border-color: var(--color-accent-blue);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-accent-blue) 45%, transparent);
+  }
+
+  .home-doc-card h3 {
+    margin: 0 0 var(--space-2);
+    color: var(--color-text-primary);
+    font-size: var(--text-lg);
+  }
+
+  .home-doc-card p {
+    margin: 0;
+    color: var(--color-text-secondary);
+    font-size: var(--text-sm);
+  }
+
+  @media (min-width: 768px) {
+    .home-step {
+      grid-template-columns: auto 1fr;
+      padding: var(--space-5);
+    }
+
+    .home-doc-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .home-doc-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+</style>

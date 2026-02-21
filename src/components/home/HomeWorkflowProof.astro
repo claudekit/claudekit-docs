@@ -1,0 +1,184 @@
+---
+import { Code } from 'astro:components';
+
+interface Props {
+  cliCode: string;
+  planningCode: string;
+  implementationCode: string;
+  testingCode: string;
+  debuggingCode: string;
+  refactoringCode: string;
+}
+
+const { cliCode, planningCode, implementationCode, testingCode, debuggingCode, refactoringCode } = Astro.props;
+
+const stats = [
+  { value: '50-70%', label: 'Time reclaimed on repetitive tasks' },
+  { value: '14', label: 'Specialized agents working for you' },
+  { value: '38+', label: 'Commands for daily engineering workflows' },
+];
+
+const testimonials = [
+  {
+    quote:
+      'More time in reviewer mode than coding mode. AI writes most initial implementations while I focus on architecture and steering.',
+    author: 'Senior Staff Engineer using AI-powered development tools',
+  },
+  {
+    quote: 'It behaves more like a capable engineering teammate than a generic assistant.',
+    author: 'Developer working with Claude Code + ClaudeKit',
+  },
+  {
+    quote:
+      'Checkpoint + rollback is the killer feature. I can experiment aggressively without fear of breaking the codebase.',
+    author: 'Frontend Developer using ClaudeKit Engineer',
+  },
+];
+---
+
+<section class="mx-auto max-w-content px-4 py-8 sm:px-6 lg:px-8">
+  <h2 id="how-it-works">How It Works</h2>
+
+  <p>ClaudeKit operates through two core components that work together end to end:</p>
+
+  <h3 id="claudekit-engineer-14-specialized-agents">ClaudeKit Engineer: 14 Specialized Agents</h3>
+
+  <p>Multi-agent orchestration with role-based specialists:</p>
+
+  <ul>
+    <li><strong>Core workflow:</strong> <code>/plan</code> <code>/clear</code> <code>/cook</code></li>
+    <li><strong>Planning:</strong> <code>/plan</code>, <code>/plan:fast</code>, <code>/plan:hard</code>, <code>/plan:parallel</code></li>
+    <li><strong>Quality:</strong> <code>/test</code>, <code>/review:codebase</code>, <code>/docs:update</code></li>
+    <li><strong>Skills:</strong> <code>cook</code>, <code>fix</code>, <code>debug</code>, <code>scout</code>, <code>frontend-design</code>, <code>code-review</code></li>
+    <li><strong>Integrations:</strong> <code>payment-integration</code>, <code>supabase</code>, <code>better-auth</code></li>
+  </ul>
+
+  <p>Commands and skills trigger specialized agents that collaborate to ship production-ready changes.</p>
+
+  <h3 id="claudekit-cli-smart-project-management">ClaudeKit CLI: Smart Project Management</h3>
+
+  <p>Intelligent project scaffolding and version management:</p>
+
+  <Code code={cliCode} lang="bash" themes={{ light: 'light-plus', dark: 'one-dark-pro' }} />
+
+  <p>The CLI handles:</p>
+  <ul>
+    <li>Project initialization with best-practice defaults</li>
+    <li>Smart updates and file merges</li>
+    <li>Version and kit management</li>
+    <li>Authentication and environment checks</li>
+  </ul>
+
+  <h2 id="real-developer-workflows">Real Developer Workflows</h2>
+
+  <h3 id="building-a-new-feature">Building a New Feature</h3>
+
+  <p><strong>Planning:</strong></p>
+  <Code code={planningCode} lang="bash" themes={{ light: 'light-plus', dark: 'one-dark-pro' }} />
+
+  <p><strong>Implementation:</strong></p>
+  <Code code={implementationCode} lang="bash" themes={{ light: 'light-plus', dark: 'one-dark-pro' }} />
+
+  <p><strong>Testing:</strong></p>
+  <Code code={testingCode} lang="bash" themes={{ light: 'light-plus', dark: 'one-dark-pro' }} />
+
+  <h3 id="debugging-production-issues">Debugging Production Issues</h3>
+  <Code code={debuggingCode} lang="bash" themes={{ light: 'light-plus', dark: 'one-dark-pro' }} />
+
+  <h3 id="refactoring-legacy-code">Refactoring Legacy Code</h3>
+  <Code code={refactoringCode} lang="bash" themes={{ light: 'light-plus', dark: 'one-dark-pro' }} />
+
+  <h2 id="proven-results">Proven Results</h2>
+
+  <div class="home-stats">
+    {stats.map((stat) => (
+      <article class="home-stat-card">
+        <div class="home-stat-value">{stat.value}</div>
+        <div class="home-stat-label">{stat.label}</div>
+      </article>
+    ))}
+  </div>
+
+  <div class="home-callout">
+    <strong>Teammate extension, not replacement.</strong> ClaudeKit keeps you as architect and reviewer while AI handles implementation work.
+  </div>
+
+  <h2 id="what-developers-say">What Developers Say</h2>
+
+  <div class="home-testimonials">
+    {testimonials.map((testimonial) => (
+      <blockquote>
+        <p>"{testimonial.quote}"</p>
+        <footer>{testimonial.author}</footer>
+      </blockquote>
+    ))}
+  </div>
+</section>
+
+<style>
+  .home-stats {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: var(--space-4);
+    margin: var(--space-8) 0;
+  }
+
+  .home-stat-card {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-bg-secondary);
+    padding: var(--space-5);
+    text-align: center;
+  }
+
+  .home-stat-value {
+    font-size: clamp(2rem, 6vw, 2.75rem);
+    font-weight: var(--font-bold);
+    color: var(--color-accent-green);
+    line-height: 1;
+  }
+
+  .home-stat-label {
+    margin-top: var(--space-2);
+    color: var(--color-text-secondary);
+    font-size: var(--text-sm);
+  }
+
+  .home-callout {
+    margin: var(--space-8) 0;
+    border-left: 4px solid var(--color-accent-green);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-tertiary);
+    padding: var(--space-5);
+    color: var(--color-text-secondary);
+  }
+
+  .home-testimonials {
+    display: grid;
+    gap: var(--space-5);
+  }
+
+  .home-testimonials blockquote {
+    margin: 0;
+    border-left: 3px solid var(--color-accent-blue);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-secondary);
+    padding: var(--space-5);
+  }
+
+  .home-testimonials blockquote p {
+    margin-bottom: var(--space-2);
+    font-style: italic;
+  }
+
+  .home-testimonials blockquote footer {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+  }
+
+  @media (min-width: 768px) {
+    .home-stats {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+</style>

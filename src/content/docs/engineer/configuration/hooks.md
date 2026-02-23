@@ -401,23 +401,6 @@ Notification providers live in `.claude/hooks/notifications/`. Each provider is 
 
 Configure providers by setting the relevant env vars (see Discord/Telegram sections below) and adding them to `settings.json` hooks. The provider scripts are called by the main notification orchestrator.
 
-## Hook Library Modules
-
-Shared utilities in `.claude/hooks/lib/`:
-
-| Module | Purpose |
-|--------|---------|
-| `ck-config-utils.cjs` | Read/write ClaudeKit config (`.ck.json`, session state) |
-| `colors.cjs` | TTY-aware terminal color output |
-| `config-counter.cjs` | Track counters (edit count, hook invocations) |
-| `context-builder.cjs` | Build context injection strings for hooks |
-| `git-info-cache.cjs` | Cache git branch/status to avoid repeated git calls |
-| `hook-logger.cjs` | Structured logging for hook diagnostics |
-| `privacy-checker.cjs` | Pattern matching for sensitive file detection |
-| `project-detector.cjs` | Detect project type from package.json, config files |
-| `scout-checker.cjs` | `.ckignore` pattern matching for scout-block |
-| `transcript-parser.cjs` | Parse Claude session transcripts for analysis |
-
 ## Creating Custom Hooks
 
 ### Basic Hook Structure

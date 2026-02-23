@@ -17,7 +17,7 @@ Track all releases and changes for the ClaudeKit Engineer Kit.
 ### Highlights
 
 - **Agent Teams v2.1.0** — Complete rewrite as CK-native imperative execution engine. Templates auto-execute. Event-driven hooks (TaskCompleted, TeammateIdle) for monitoring. Agent memory persistence.
-- **Portable manifest** — Codex AGENTS.md to TOML path migration support
+- **Portable manifest** — Codex AGENTS.md to `.codex/agents/` path migration support
 - **`/plan:red-team`** — Adversarial plan review command with hostile reviewer lenses
 - **Command-to-Skill migrations** — `bootstrap`, `plan` modes consolidated into skills
 

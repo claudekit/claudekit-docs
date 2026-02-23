@@ -308,6 +308,6 @@ docs/
 
 ## Related Workflows
 
-- [Feature Development](/docs/workflows/feature-development) - Building features that need documentation
+- [Adding a New Feature](/docs/workflows/adding-feature) - Building features that need documentation
 - [Code Review](/docs/workflows) - Reviewing documentation alongside code
 - [Release Management](/docs/workflows) - Preparing release notes

@@ -1,259 +1,137 @@
 ---
 title: "Changelog"
-description: "Recent changes, updates, and release notes for ClaudeKit"
+description: "Release notes and version history for ClaudeKit Engineer Kit"
 section: changelog
 order: 0
 published: true
 ---
+
 # Changelog
 
-Recent changes, updates, and release notes for ClaudeKit.
+Track all releases and changes for the ClaudeKit Engineer Kit.
 
-## Latest Release
+---
 
-### CLI v3.16.0 - 2024-12-28
+## v2.12.0 (Upcoming)
 
-#### 🔄 Config Sync Feature
+### Highlights
 
-New `--sync` flag for interactive config file synchronization:
-- **3-Way Merge UI** - Side-by-side diff viewer
-- **Interactive Review** - Accept/reject/edit each change
-- **Smart Versioning** - Detects upstream config updates
-- **Backup Protection** - Preserves originals before changes
-- **Passive Notifications** - Shows update availability after `ck init`
+- **Agent Teams v2.1.0** — Complete rewrite as CK-native imperative execution engine. Templates auto-execute. Event-driven hooks (TaskCompleted, TeammateIdle) for monitoring. Agent memory persistence.
+- **Portable manifest** — Codex AGENTS.md to TOML path migration support
+- **`/plan:red-team`** — Adversarial plan review command with hostile reviewer lenses
+- **Command-to-Skill migrations** — `bootstrap`, `plan` modes consolidated into skills
+
+### New Skills
+
+| Skill | Description |
+|-------|-------------|
+| `team` | Agent Teams orchestration (v2.1.0) |
+| `plan` | Consolidated planning skill (replaces `/plan:fast`, `/plan:hard`, `/plan:parallel`, `/plan:two`) |
+| `bootstrap` | Project scaffolding skill (was command) |
+| `test` | Comprehensive testing skill |
+| `project-management` | Task tracking and session bridging |
+| `mintlify` | Mintlify docs site builder (v2.0.0) |
+
+### New Commands
+
+- `/plan:red-team` — Adversarial plan review with 4 hostile lenses
+
+### New Agents
+
+- **Code Simplifier** — Autonomous code refinement agent
+
+### Improvements
+
+- Enhanced `skill-creator` with Skillmark benchmark support
+- Native Task orchestration for `/fix`, `/code-review`, `/scout`, `/debug` skills
+- `/preview` contextual path resolution and responsive Mermaid scaling
+- Chrome DevTools OS-based headless detection and interactive OAuth login
+- Team coordination rules decoupled from default orchestration
+
+---
+
+## v2.11.0 — v2.11.3 (2026-02-20 — 2026-02-21)
+
+### v2.11.3 (Hotfixes)
+
+- Discord 25-field embed limit guard
+- Double-emoji fix in release notification headers
+- Empty-changelog guard for Discord notifications
+- Double error log timeout prevention
+
+### v2.11.2 (Hotfixes)
+
+- Scout-block: broad glob pattern detection (`**/*.ext`)
+- Scout-block: context-aware path extraction with heredoc detection
+- Scout-block: compound command and allowlist edge cases
+- Scout-block: absolute/relative path normalization
+- Hooks: absolute paths in `buildRulesSection` (prevents wrong `plans/` directory)
+- Windows: reduced terminal freeze from excessive process spawning
+- Session-init: reduced command failures
+
+### v2.11.1
+
+- Added `hotfix:` commit type for distinct release note visibility in CHANGELOG and GitHub releases
+
+### v2.11.0
+
+- **Always-on diagnostics logging** — Crash wrappers on all hooks for automatic error capture
+
+---
+
+## v2.10.0 (2026-02-05)
+
+### Features
+
+- **Focused Reader 2.0** — Redesigned markdown-novel-viewer
+- **Plan validation propagation** — Auto-propagate validation decisions to phase files
+- **Visual generation modes** — `/preview --explain`, `--slides`, `--diagram`, `--ascii`
+
+### Improvements
+
+- `cook-after-plan-reminder` hook for plan-to-implementation flow
+- `code-review` skill with edge case scouting and token efficiency
+- `skill-creator` skill with rules and subagent awareness
+- Language-aware file naming guidance hook
+- Monorepo-aware worktree paths (`internal worktrees/`)
+
+### Bug Fixes
+
+- `/docs:init` stall after Phase 1
+- Empty local hooks config inheritance
+- Preview ASCII diagram alignment and unicode handling
+
+---
+
+## Earlier Releases
+
+For release notes prior to v2.10.0, see the [GitHub Releases page](https://github.com/claudekit/claudekit-engineer/releases).
+
+---
+
+## Release Channels
+
+| Channel | Branch | npm Tag | Description |
+|---------|--------|---------|-------------|
+| **Stable** | `main` | `latest` | Production-ready, fully tested |
+| **Beta** | `dev` | `beta` | Pre-release features, may have rough edges |
 
 ```bash
-ck init --sync
-```
+# Stable (default)
+ck update
 
-#### 🔐 Multi-Method GitHub Authentication
-
-New authentication options for easier setup:
-- **Environment Variables First** - `GITHUB_TOKEN`/`GH_TOKEN` now checked before gh CLI
-- **Git Clone Mode** - New `--use-git` flag bypasses API, uses native git credentials
-- **Interactive Prompt** - Guides through setup when auth fails
-- **SSH Auto-Detection** - Automatically detects SSH keys
-
-```bash
-# No token needed - uses SSH/HTTPS credentials
-ck init --use-git
+# Beta
+ck update --beta
 ```
 
 ---
 
-### Version 1.0.0 - 2024-12-01
+## Versioning
 
-#### 🎉 Initial Release
+ClaudeKit Engineer follows [Semantic Versioning](https://semver.org/):
 
-**Major Features**:
-- **14 Specialized AI Agents** - Planner, Researcher, Tester, Debugger, Code Reviewer, and more
-- **30+ Slash Commands** - `/cook`, `/plan`, `/fix`, `/design`, `/git`, `/docs`, and more
-- **45 Built-in Skills** - Next.js, Better Auth, PostgreSQL, Docker, Shopify, Gemini Vision
-- **Multi-agent Workflows** - Agents collaborate on complex tasks
-- **Context-aware Navigation** - Dynamic sidebar based on current section
+- **Major** (X.0.0): Breaking changes requiring migration
+- **Minor** (0.X.0): New features, backward-compatible
+- **Patch** (0.0.X): Bug fixes and hotfixes
 
-**Core Capabilities**:
-- Complete feature development workflow (`/plan → /cook → /test → /commit`)
-- Systematic bug fixing with root cause analysis
-- Automated documentation generation and maintenance
-- UI/UX design with AI-generated assets
-- Performance optimization and debugging
-- Code review with security and performance analysis
-
-**Supported Technologies**:
-- Frontend: Next.js, React, Vue, Angular, Svelte
-- Backend: Node.js, Python, Go, Rust, PHP
-- Database: PostgreSQL, MongoDB, MySQL, Redis
-- Cloud: AWS, GCP, Azure, Cloudflare Workers
-- Authentication: Better Auth, OAuth2, JWT
-- Payment: Stripe, Shopify, Polar, SePay
-
-## Recent Changes
-
-### Documentation Overhaul - 2024-11-28
-
-**Improved Information Architecture**:
-- ✅ New context-aware navigation system
-- ✅ Separated onboarding from marketing content
-- ✅ Created dedicated "Why ClaudeKit" sales page
-- ✅ Added comprehensive workflow guides
-- ✅ Restructured content into 5 main sections
-
-**New Documentation Pages**:
-- Getting Started section with clear learning paths
-- Core Concepts explaining agents/commands/skills
-- Upgrade Guide for existing Claude Code users
-- Feature Development workflow guide
-- Bug Fixing systematic approach
-- Documentation maintenance workflow
-
-**Navigation Improvements**:
-- 5-section NavBar: Getting Started, Docs, Workflows, Changelog, Support
-- Context-aware sidebars that change based on current section
-- Hierarchical command navigation with 9 subcategories
-- Mobile-responsive navigation with hamburger menu
-
-### Beta Testing Period - 2024-10-15 to 2024-11-30
-
-**Key Learnings**:
-- Users complete features 10x faster with ClaudeKit
-- Multi-agent collaboration reduces bugs by 80%
-- Automated testing catches issues before production
-- Documentation synchronization eliminates outdated docs
-- Teams achieve consistent code quality across members
-
-**Beta Tester Feedback**:
-> "ClaudeKit transformed how our team builds features. What used to take days now takes hours." - Senior Developer, Tech Startup
-
-> "The quality of code generated by ClaudeKit agents is impressive. It follows our patterns and best practices automatically." - Engineering Manager, Enterprise
-
-## Version History
-
-### v0.9.0 - Beta Release - 2024-10-15
-- Initial beta release with core agents and commands
-- Basic skill system with 20 built-in skills
-- Simple command-line interface
-- GitHub integration for automated workflows
-
-### v0.8.0 - Alpha Testing - 2024-09-01
-- Internal alpha testing with pilot users
-- Agent communication protocols
-- Workflow orchestration system
-- Skill activation and context injection
-
-### v0.5.0 - Prototype - 2024-07-15
-- Proof of concept with basic planner and developer agents
-- Simple `/cook` command implementation
-- Manual skill loading
-- Local execution only
-
-## Breaking Changes
-
-### v1.0.0
-- No breaking changes from beta versions
-- Migration path: `claudekit migrate` command available
-- All beta configurations remain compatible
-
-### v0.9.0 → v1.0.0
-- Enhanced command naming (backward compatible)
-- Improved skill detection (automatic upgrade)
-- Better error handling and logging
-
-## Deprecations
-
-### Deprecated in v1.0.0
-- `--legacy` flag (will be removed in v2.0.0)
-- Manual skill loading (use automatic detection instead)
-- Classic mode (modern mode now default)
-
-### Migration Guide
-```bash
-# Update to v1.0.0
-npm update @claudekit/cli
-
-# Migrate configuration
-claudekit migrate
-
-# Verify setup
-claudekit doctor
-```
-
-## Security Updates
-
-### v1.0.0 Security Enhancements
-- Secure skill loading with sandboxing
-- Encrypted agent communication channels
-- Audit logging for all agent actions
-- Role-based access control for team workflows
-- Automatic vulnerability scanning for generated code
-
-### Past Security Issues
-- **Fixed in v0.9.2**: Temporary file leakage in skill loading
-- **Fixed in v0.8.5**: Unsafe eval in legacy command processing
-- **Fixed in v0.7.1**: Information disclosure in error messages
-
-## Performance Improvements
-
-### v1.0.0 Performance
-- 50% faster agent startup times
-- 75% reduced memory usage for skill loading
-- Parallel agent execution for complex workflows
-- Optimized context management for large codebases
-- Caching system for repeated operations
-
-### Benchmark Results
-```
-Feature Implementation (Complex CRUD):
-- Manual: 8 hours, 15 bugs
-- ClaudeKit v0.9: 45 minutes, 2 bugs
-- ClaudeKit v1.0: 20 minutes, 0 bugs
-
-Bug Resolution:
-- Manual debugging: 2 hours average
-- ClaudeKit v0.9: 20 minutes average
-- ClaudeKit v1.0: 5 minutes average
-```
-
-## Community Contributions
-
-### v1.0.0 Community Features
-- Discord integration for collaborative workflows
-- Community skill library with 200+ user-contributed skills
-- Open-source template repositories
-- Community-maintained language translations
-
-### Notable Contributors
-- @alex-dev - PostgreSQL optimization skill
-- @sarah-designer - UI/UX design patterns
-- @mike-ops - DevOps and deployment workflows
-- @laura-docs - Technical writing improvements
-
-## Upcoming Features
-
-### v1.1.0 (Planned - Q1 2025)
-- Visual workflow designer
-- Advanced debugging with time-travel
-- Team collaboration features
-- Enterprise SSO integration
-- Performance monitoring dashboard
-
-### v1.2.0 (Planned - Q2 2025)
-- Mobile app companion
-- Voice command support
-- Real-time collaborative editing
-- Advanced CI/CD integrations
-- Custom agent creation tools
-
-## Known Issues
-
-### v1.0.0 Known Limitations
-- Large codebases (>1M LOC) may experience slower initial scans
-- Some niche languages have limited skill support
-- Windows subsystem support still in beta
-- Enterprise proxy configuration requires manual setup
-
-### Workarounds
-- Use `.claudeignore` file to exclude large directories
-- Create custom skills for unsupported languages
-- Use WSL2 on Windows for better compatibility
-- Configure proxy settings manually in configuration
-
-## Support and Resources
-
-### Getting Help
-- [Discord Community](https://claudekit.cc/discord) - Real-time chat with community
-- [GitHub Issues](https://github.com/claudekit/claudekit/issues) - Bug reports and feature requests
-- [Documentation](/docs) - Complete reference documentation
-- [Email Support](mailto:support@claudekit.cc) - Enterprise support inquiries
-
-### Contributing
-- [Contributing Guide](/docs/support) - How to contribute to ClaudeKit
-- [Skill Development](/docs/engineer/skills/skill-creator) - Create custom skills
-- [Plugin Development](/docs/engineer) - Extend ClaudeKit functionality
-- [Translation Project](https://translate.claudekit.cc) - Help translate ClaudeKit
-
----
-
-**Stay Updated**: Join our [Discord](https://claudekit.cc/discord) for announcements and updates.
-
-**Release Cadence**: Regular releases on the 1st of each month. Security patches released as needed.
+Releases are automated via semantic-release on merge to `main`.

@@ -52,9 +52,9 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 
 ### Lập Kế Hoạch (Planning)
 
-- **[/plan:ci](/docs/engineer/commands/plan/ci)** - Phân tích lỗi CI và tạo kế hoạch sửa chữa
-- **[/plan:two](/docs/engineer/commands/plan/two)** - Tạo kế hoạch với 2 phương án tiếp cận
-- **[/plan:cro](/docs/engineer/commands/plan/cro)** - Tạo kế hoạch tối ưu hóa chuyển đổi
+- **[/plan --ci](/docs/engineer/skills/plan)** - Phân tích lỗi CI và tạo kế hoạch sửa chữa
+- **[/plan --two](/docs/engineer/skills/plan)** - Tạo kế hoạch với 2 phương án tiếp cận
+- **[/plan --hard](/docs/engineer/skills/plan)** - Lập kế hoạch chi tiết với nghiên cứu chuyên sâu
 
 ### Thiết Kế & UI
 

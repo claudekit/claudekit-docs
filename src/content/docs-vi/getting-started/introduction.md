@@ -96,7 +96,7 @@ Sử dụng kit switcher trong header để khám phá:
 
 **Engineer Workflows**:
 - [Thiết Lập Dự Án Mới](/vi/docs/workflows/new-project) - Bootstrap dự án với best practices
-- [Phát Triển Tính Năng](/docs/workflows/feature-development) - Triển khai tính năng end-to-end
+- [Phát Triển Tính Năng](/vi/docs/workflows/adding-feature) - Triển khai tính năng end-to-end
 - [Code Review](/vi/docs/workflows) - Kiểm tra chất lượng code tự động
 
 **Marketing Workflows**:

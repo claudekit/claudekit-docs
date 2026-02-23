@@ -308,7 +308,7 @@ A: Yes. Edit `.claude/agents/*.md` to tune behavior. See [Custom Agents](/docs/e
 - [Skills & Commands Guide](/docs/engineer/skills/) - All 30+ skills & commands
 
 **Real-World Uses**:
-- [Starting New Project](/docs/workflows/new-project)
+- [Starting New Project](/docs/workflows/starting-new-project)
 - [Adding Features](/docs/workflows/adding-feature)
 - [Fixing Bugs](/docs/workflows/fixing-bugs)
 

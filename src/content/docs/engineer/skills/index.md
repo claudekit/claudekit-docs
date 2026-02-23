@@ -1,6 +1,6 @@
 ---
 title: Skills Overview
-description: ClaudeKit's 48 specialized skills for development, design, and tooling
+description: ClaudeKit's 55 specialized skills for development, design, and tooling
 section: engineer
 kit: engineer
 category: skills
@@ -9,7 +9,7 @@ published: true
 ---
 # Skills Overview
 
-48 specialized skills that extend Claude's capabilities—loaded dynamically when you mention them.
+55 specialized skills that extend Claude's capabilities—loaded dynamically when you mention them.
 
 ## Quick Reference
 
@@ -172,4 +172,4 @@ skill-creator will:
 
 ## Key Takeaway
 
-50 skills provide instant expertise—just mention the skill and describe your task. No configuration needed.
+55 skills provide instant expertise—just mention the skill and describe your task. No configuration needed.

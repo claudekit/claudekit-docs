@@ -848,7 +848,7 @@ Triển khai từ cách 1 trước → sau đó tích hợp thủ công từ cá
 
 - [/plan](/docs/engineer/commands/plan) - Lập kế hoạch cho một cách tiếp cận duy nhất
 - [/cook](/docs/engineer/skills/cook) - Triển khai kế hoạch đã chọn
-- [/plan:cro](/docs/engineer/commands/plan/cro) - Lập kế hoạch cụ thể cho CRO
+- [Planning skill](/docs/engineer/skills/plan) - Lập kế hoạch tích hợp với đầy đủ chế độ
 
 ---
 

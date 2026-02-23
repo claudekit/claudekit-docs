@@ -1,14 +1,9 @@
 ---
 title: Fixing Bugs
-description: "Documentation for Fixing Bugs
-description:
+description: "Systematically investigate, fix, and verify bug fixes using ClaudeKit's debugging workflow - from log analysis to production deployment."
 section: workflows
 category: workflows
-order: 4
-published: true"
-section: workflows
-category: workflows
-order: 4
+order: 2
 published: true
 ---
 # Fixing Bugs
@@ -660,7 +655,7 @@ After fixing bugs, improve processes:
 ## Next Steps
 
 ### Related Use Cases
-- [Adding a New Feature](/docs/workflows/adding-feature) - Implement features
+- [Adding a New Feature](/docs/workflows/adding-feature) - Implement new features
 - [Optimizing Performance](/docs/workflows/optimizing-performance) - Speed improvements
 - [Refactoring Code](/docs/workflows/refactoring-code) - Code quality
 

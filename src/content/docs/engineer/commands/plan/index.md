@@ -1,6 +1,6 @@
 ---
 title: /plan
-description: Intelligently analyze task complexity and route to fast or hard planning workflow with prompt enhancement
+description: Intelligently analyze task complexity and create structured implementation plans with optional flags for speed, depth, and parallel execution
 section: engineer
 kit: engineer
 category: commands/plan
@@ -8,14 +8,21 @@ order: 1
 published: true
 ---
 
+> **v2.12.0:** Plan modes (`fast`, `hard`, `parallel`, `two`, `ci`, `cro`) are now flags on the [Planning skill](/docs/engineer/skills/plan) rather than separate commands. Use `/plan --fast`, `/plan --hard`, etc. See the [Planning skill](/docs/engineer/skills/plan) for the full consolidated workflow.
+
 # /plan
 
-Intelligent planning router. Analyzes task complexity, asks clarifying questions if needed, and routes to the appropriate planning workflow (`/plan:fast` or `/plan:hard`).
+Intelligent planning entry point. Analyzes task complexity, asks clarifying questions if needed, and creates a structured implementation plan. Use flags to control planning depth and execution mode.
 
 ## Syntax
 
 ```bash
-/plan [task]
+/plan [task]                  # Auto-route by complexity
+/plan --fast [task]           # Quick plan, no research
+/plan --hard [task]           # Research-driven detailed plan
+/plan --parallel [task]       # Plan with parallel-executable phases
+/plan --two [task]            # Compare two implementation approaches
+/plan --ci [task]             # Plan from CI/CD failures
 ```
 
 ## When to Use
@@ -51,11 +58,16 @@ Activating planning skill...
 [/plan:hard executes with enhanced prompt]
 ```
 
-**Result**: Complex task routed to `/plan:hard` with enhanced prompt.
+**Result**: Complex task creates detailed implementation plan.
 
 ## Arguments
 
 - `[task]`: Description of what you want to plan (required)
+- `--fast`: Skip research, create quick plan for simple tasks
+- `--hard`: Force research-driven planning for complex tasks
+- `--parallel`: Structure phases for parallel multi-agent execution
+- `--two`: Generate and compare two alternative approaches
+- `--ci`: Analyze CI/CD failures and create a fix plan
 
 ## What It Does
 
@@ -105,15 +117,15 @@ Before planning, I need to clarify a few things:
 
 ### 4. Routing Decision
 
-Based on analysis, routes to appropriate planner:
+Based on analysis (or explicit flag), selects planning depth:
 
-**Route to `/plan:fast`**:
+**Fast** (`--fast` or auto-routed for simple tasks):
 - Small, well-defined tasks
 - Clear implementation path
 - No research needed
 - Single component changes
 
-**Route to `/plan:hard`**:
+**Hard** (`--hard` or auto-routed for complex tasks):
 - Complex, multi-component tasks
 - Research required
 - Multiple valid approaches
@@ -130,24 +142,24 @@ Before delegation, enhances your prompt with:
 
 ### 6. Skill Activation
 
-Activates the `planning` skill for structured plan creation.
+Activates the [Planning skill](/docs/engineer/skills/plan) for structured plan creation. See the skill for full consolidated options including all planning modes.
 
 ## Workflow Steps
 
 ```
 Step 1: Check for active plan
         ↓
-Step 2: Analyze task complexity
+Step 2: Analyze task complexity (or use --fast/--hard flag)
         ↓
 Step 3: Ask clarifying questions (if needed)
         ↓
-Step 4: Decide: fast vs hard
+Step 4: Select planning depth
         ↓
 Step 5: Enhance prompt with context
         ↓
-Step 6: Execute /plan:fast or /plan:hard
+Step 6: Create plan via Planning skill
         ↓
-Step 7: Activate planning skill
+Step 7: Output structured plan directory
 ```
 
 ## Complete Example
@@ -197,34 +209,43 @@ Added context:
 - Database schema patterns
 - API conventions from code-standards.md
 
-Executing /plan:hard with enhanced prompt...
+Executing plan with enhanced prompt...
 Activating planning skill...
-
-[/plan:hard creates detailed implementation plan]
 
 Plan created: plans/251129-inventory-api/plan.md
 ```
 
 ## Routing Examples
 
-### Routes to /plan:fast
+### Fast planning (simple tasks)
 
 ```bash
-# Simple, clear tasks
-/plan [add pagination to products list]
+# Use --fast or let the router decide
+/plan --fast [add pagination to products list]
 /plan [fix date formatting in dashboard]
 /plan [add loading spinner to submit button]
-/plan [update error messages in validation]
 ```
 
-### Routes to /plan:hard
+### Hard planning (complex tasks)
 
 ```bash
-# Complex, research-heavy tasks
-/plan [implement real-time notifications system]
+# Use --hard or let the router decide
+/plan --hard [implement real-time notifications system]
 /plan [add multi-tenant support to the platform]
 /plan [migrate from REST to GraphQL]
-/plan [implement end-to-end encryption for messages]
+```
+
+### Other modes
+
+```bash
+# Parallel-executable phases for multi-agent teams
+/plan --parallel [add payment integration]
+
+# Compare two approaches before committing
+/plan --two [add caching layer]
+
+# Fix a broken CI pipeline
+/plan --ci [fix failing integration tests]
 ```
 
 ## Active Plan Management
@@ -266,11 +287,10 @@ Analyzing complexity...
 
 | Command | Description | When to Use |
 |---------|-------------|-------------|
-| [/plan:fast](/docs/engineer/commands/plan/fast) | Quick planning without research | Simple, clear tasks |
-| [/plan:hard](/docs/engineer/commands/plan/hard) | Research-driven detailed planning | Complex tasks |
-| [/plan:parallel](/docs/engineer/commands/plan/parallel) | Plan with parallel-executable phases | Multi-agent execution |
-| [/plan:two](/docs/engineer/commands/plan/two) | Compare two implementation approaches | Architecture decisions |
-| [/plan:ci](/docs/engineer/commands/plan/ci) | Plan based on CI/CD failures | Fixing pipeline issues |
+| [/plan:validate](/docs/engineer/commands/plan/validate) | Interview-based plan validation | Before implementation |
+| [/plan:red-team](/docs/engineer/commands/plan/red-team) | Adversarial plan review | Finding flaws and assumptions |
+| [/plan:archive](/docs/engineer/commands/plan/archive) | Archive completed plans | Post-implementation cleanup |
+| [Planning skill](/docs/engineer/skills/plan) | Full consolidated planning workflow | All planning modes via flags |
 
 ## Best Practices
 
@@ -286,14 +306,15 @@ Analyzing complexity...
 
 ### Trust the Router
 
-Let `/plan` decide the complexity:
+Let `/plan` decide the complexity, or use explicit flags when you know:
 
 ```bash
 # Let it route
 /plan [add caching layer]
 
-# Don't pre-decide
-/plan:hard [add caching layer]  # Might be overkill
+# Explicit when you know the complexity
+/plan --fast [add loading spinner]
+/plan --hard [redesign auth system]
 ```
 
 ### Use Active Plans
@@ -333,4 +354,4 @@ This keeps related work organized in one plan directory.
 
 ---
 
-**Key Takeaway**: `/plan` is your intelligent planning entry point. It analyzes complexity, asks the right questions, and routes to the appropriate planning workflow - so you get just enough planning for each task.
+**Key Takeaway**: `/plan` is your intelligent planning entry point. It analyzes complexity, asks the right questions, and creates the right plan — use flags (`--fast`, `--hard`, `--parallel`, `--two`, `--ci`) when you want explicit control. For the full consolidated workflow, see the [Planning skill](/docs/engineer/skills/plan).

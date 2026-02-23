@@ -1,16 +1,13 @@
 ---
 title: Adding a New Feature
-description: "Documentation for Adding a New Feature
-description:
-section: workflows
-category: workflows
-order: 3
-published: true"
+description: "Complete workflow for adding new features with ClaudeKit - from planning through production deployment with full testing and documentation."
 section: workflows
 category: workflows
 order: 3
 published: true
----# Adding a New Feature
+---
+
+# Adding a New Feature
 
 Learn the complete workflow for adding new features to your project with ClaudeKit - from initial planning through production deployment with full testing and documentation.
 
@@ -645,6 +642,7 @@ git checkout -b feature/password-reset
 
 ### Related Use Cases
 - [Fixing Bugs](/docs/workflows/fixing-bugs) - Debug and fix issues
+
 - [Refactoring Code](/docs/workflows/refactoring-code) - Improve code quality
 - [Building an API](/docs/workflows/building-api) - Create REST APIs
 

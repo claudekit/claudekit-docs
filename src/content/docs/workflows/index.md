@@ -12,7 +12,7 @@ Task-oriented guides for common development scenarios using ClaudeKit's slash co
 ## Popular Workflows
 
 ### Feature Development
-[**Feature Development Guide**](/docs/workflows/feature-development) - Complete feature lifecycle from planning to deployment
+[**Adding a New Feature**](/docs/workflows/adding-feature) - Complete feature lifecycle from planning to deployment
 ```bash
 /plan "add user authentication with OAuth"
 /clear  # Free context before implementation
@@ -22,7 +22,7 @@ Task-oriented guides for common development scenarios using ClaudeKit's slash co
 ```
 
 ### Bug Fixing
-[**Bug Fixing Workflow**](/docs/workflows/bug-fixing) - Systematic approach to debugging and fixing issues
+[**Fixing Bugs**](/docs/workflows/fixing-bugs) - Systematic approach to debugging and fixing issues
 ```bash
 /debug "Login button not working, please investigate and fix"
 /test
@@ -81,7 +81,7 @@ cd my-project
 - Performance Optimization - `/debug` issue then `/fix`
 
 ### Full Stack
-- Complete Features - See [Feature Development](/docs/workflows/feature-development)
+- Complete Features - See [Adding a New Feature](/docs/workflows/adding-feature)
 - Authentication - `/plan "add authentication with Better Auth"` → `/cook`
 - E-commerce - `/plan "add Stripe payment integration"` → `/cook`
 
@@ -119,7 +119,7 @@ cd my-project
 New to ClaudeKit? Start with:
 1. [Getting Started Guide](/docs/getting-started) - Learn the basics
 2. [Quick Start](/docs/getting-started/quick-start) - Build your first feature
-3. [Feature Development](/docs/workflows/feature-development) - Complete workflow example
+3. [Adding a New Feature](/docs/workflows/adding-feature) - Complete workflow example
 
 ## Reference
 

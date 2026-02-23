@@ -1,6 +1,6 @@
 ---
 title: Agents Overview
-description: ClaudeKit's 14 specialized agents for software development
+description: ClaudeKit's 15 specialized agents for software development
 section: engineer
 kit: engineer
 category: agents
@@ -10,7 +10,7 @@ published: true
 
 # Agents Overview
 
-14 specialized agents that handle every aspect of software development—automatically orchestrated through predefined workflows.
+15 specialized agents that handle every aspect of software development—automatically orchestrated through predefined workflows.
 
 ## Quick Reference
 
@@ -28,6 +28,7 @@ published: true
 | Agent | Purpose |
 |-------|---------|
 | [code-reviewer](/docs/engineer/agents/code-reviewer) | Security audits, performance analysis, code quality |
+| [code-simplifier](/docs/engineer/agents/code-simplifier) | Autonomous code refinement for clarity and maintainability |
 
 ### Documentation & Management
 
@@ -123,4 +124,4 @@ git-manager commits → conventional commit + push
 
 ## Key Takeaway
 
-14 agents work together automatically—use commands to orchestrate them, or invoke explicitly for specific tasks. No manual coordination needed.
+15 agents work together automatically—use commands to orchestrate them, or invoke explicitly for specific tasks. No manual coordination needed.

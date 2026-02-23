@@ -44,12 +44,11 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 ### Planning
 
 - **[/plan](/docs/engineer/commands/plan)** - Create implementation plans
-- **[/plan:fast](/docs/engineer/commands/plan/fast)** - Quick planning
-- **[/plan:hard](/docs/engineer/commands/plan/hard)** - Detailed planning with research
-- **[/plan:two](/docs/engineer/commands/plan/two)** - Create plan with 2 approaches
-- **[/plan:parallel](/docs/engineer/commands/plan/parallel)** - Parallel planning with multiple researchers
-- **[/plan:ci](/docs/engineer/commands/plan/ci)** - Analyze CI failures and create fix plan
-- **[/plan:cro](/docs/engineer/commands/plan/cro)** - Create conversion optimization plan
+- **[/plan --fast](/docs/engineer/skills/plan)** - Quick planning (skip research)
+- **[/plan --hard](/docs/engineer/skills/plan)** - Detailed planning with research
+- **[/plan --two](/docs/engineer/skills/plan)** - Compare two approaches
+- **[/plan --parallel](/docs/engineer/skills/plan)** - Parallel planning with multiple researchers
+- **[/plan:red-team](/docs/engineer/commands/plan/red-team)** - Adversarial plan review
 - **[/plan:archive](/docs/engineer/commands/plan/archive)** - Archive completed plans
 - **[/plan:validate](/docs/engineer/commands/plan/validate)** - Validate plan structure
 

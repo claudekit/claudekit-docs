@@ -85,5 +85,5 @@ This prevents planning context pollution and improves plan adherence.
 
 ## Related Commands
 
-- [/plan:hard](/docs/engineer/commands/plan/hard) - Research-based planning
+- [Planning skill](/docs/engineer/skills/plan) - Research-based planning with `--hard` flag
 - [/cook](/docs/engineer/skills/cook) - Implementation from validated plan

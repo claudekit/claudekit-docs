@@ -359,7 +359,7 @@ cat README.md
 
 - [/bootstrap](/docs/engineer/commands/core/bootstrap) - Khởi tạo với các bước phê duyệt
 - [/bootstrap:auto](/docs/engineer/commands/core/bootstrap-auto) - Khởi tạo tự động (tuần tự)
-- [/plan:parallel](/vi/docs/engineer/commands/plan/parallel) - Tạo kế hoạch thực thi song song
+- [/plan --parallel](/docs/engineer/skills/plan) - Tạo kế hoạch thực thi song song
 - [/cook --parallel](/docs/engineer/skills/cook) - Thực thi kế hoạch song song
 
 ---

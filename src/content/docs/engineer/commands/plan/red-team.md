@@ -39,7 +39,7 @@ Each reviewer adopts one hostile persona and looks only through that lens:
 | **Security Adversary** | Attack vectors, exposed secrets, injection points, auth bypasses, insecure defaults |
 | **Failure Mode Analyst** | Race conditions, cascading failures, unhandled edge cases, data loss scenarios |
 | **Assumption Destroyer** | Implicit dependencies, unverified constraints, optimistic estimates, missing context |
-| **Scope & Complexity Critic** | Underestimated effort, missing phases, integration gaps, unplanned migrations |
+| **Scope & Complexity Critic** | Over-engineering, premature abstraction, unnecessary complexity, scope creep, gold plating |
 
 ## Reviewer Scaling
 

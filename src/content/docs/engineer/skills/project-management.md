@@ -72,13 +72,13 @@ Phase files support structured metadata for tracking:
 
 ```yaml
 ---
-title: "Phase 02 — Database Layer"
-status: in_progress   # pending | in_progress | complete | blocked
-priority: high        # low | medium | high | critical
-effort: 3d            # estimated effort
-branch: kai/feat/db   # associated git branch
-tags: [database, migration, schema]
-created: 2026-02-23
+title: Feature name
+status: in-progress   # pending | in-progress | completed
+priority: P1
+effort: medium
+branch: feature-branch
+tags: [auth, api]
+created: 2026-02-05
 ---
 ```
 

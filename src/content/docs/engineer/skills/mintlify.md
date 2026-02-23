@@ -89,6 +89,8 @@ Pages are MDX—full React component support alongside markdown.
 | `mint a11y` | Accessibility audit |
 | `mint validate` | Validate config + frontmatter |
 | `mint openapi-check` | Validate OpenAPI spec |
+| `mint rename <old> <new>` | Rename file and update references |
+| `mint migrate-mdx` | Migrate mint.json to docs.json |
 
 ## API Documentation
 

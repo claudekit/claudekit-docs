@@ -47,9 +47,9 @@ Reviewer count scales automatically with plan complexity:
 
 | Phase Count | Reviewers Spawned |
 |-------------|-------------------|
-| 1-3 phases | 2 reviewers |
-| 4-6 phases | 3 reviewers |
-| 7+ phases | 4 reviewers |
+| 1-2 phases | 2 reviewers |
+| 3-5 phases | 3 reviewers |
+| 6+ phases | 4 reviewers |
 
 ## Finding Format
 

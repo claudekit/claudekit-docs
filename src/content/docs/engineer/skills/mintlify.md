@@ -39,7 +39,7 @@ Central config controls all site structure and metadata:
 }
 ```
 
-**7 built-in themes**: `mint`, `maple`, `willow`, `palm`, `linden`, `almond`, `quill`
+**7 built-in themes**: `mint`, `maple`, `palm`, `willow`, `linden`, `almond`, `aspen`
 
 ### Navigation Structure
 

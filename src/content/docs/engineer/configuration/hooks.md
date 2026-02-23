@@ -147,31 +147,11 @@ ClaudeKit Engineer ships with hooks organized by event type. All hook files live
 
 ---
 
-### 1. Development Rules Reminder
-
-**File:** `.claude/hooks/dev-rules-reminder.cjs`
-
-**Purpose:** Injects session context, development rules, modularization guidelines, and Plan Context into Claude's context before each user prompt.
+### dev-rules-reminder.cjs
 
 **Event:** `UserPromptSubmit`
 
-**Configuration:**
-```json
-{
-  "hooks": {
-    "UserPromptSubmit": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node .claude/hooks/dev-rules-reminder.cjs"
-          }
-        ]
-      }
-    ]
-  }
-}
-```
+**Purpose:** Injects session context, development rules, modularization guidelines, and Plan Context into Claude's context before each user prompt.
 
 **What it does:**
 - Reads `.claude/workflows/development-rules.md` and injects key rules
@@ -208,32 +188,11 @@ ClaudeKit Engineer ships with hooks organized by event type. All hook files live
 
 ---
 
-### 2. Scout Block
-
-**File:** `.claude/hooks/scout-block.cjs`
-
-**Purpose:** Blocks file system access to directories listed in `.ckignore`. Allows build commands (e.g., `npm run build`) to pass through even when blocking is active.
+### scout-block.cjs
 
 **Event:** `PreToolUse` (matcher: `Bash|Glob|Grep|Read|Edit|Write`)
 
-**Configuration:**
-```json
-{
-  "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "Bash|Glob|Grep|Read|Edit|Write",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node .claude/hooks/scout-block.cjs"
-          }
-        ]
-      }
-    ]
-  }
-}
-```
+**Purpose:** Blocks file system access to directories listed in `.ckignore`. Allows build commands (e.g., `npm run build`) to pass through.
 
 **What it does:**
 - Reads `.ckignore` to get blocked directory patterns
@@ -297,7 +256,7 @@ ClaudeKit Engineer ships with hooks organized by event type. All hook files live
 
 ---
 
-### 3. Discord Notifications (Manual)
+### Discord Notifications
 
 **File:** `.claude/hooks/send-discord.sh`
 
@@ -350,7 +309,7 @@ ClaudeKit Engineer ships with hooks organized by event type. All hook files live
 ╚═══════════════════════════════════════╝
 ```
 
-### 4. Telegram Notifications
+### Telegram Notifications
 
 **File:** `.claude/hooks/telegram_notify.sh`
 
@@ -448,10 +407,16 @@ Shared utilities in `.claude/hooks/lib/`:
 
 | Module | Purpose |
 |--------|---------|
-| `lib/session.cjs` | Read/write session state (edit counter, plan context, etc.) |
-| `lib/env-loader.cjs` | Load `.env` and `.claude/.env` files |
-| `lib/project-detect.cjs` | Detect project type from `package.json`, config files |
-| `lib/usage-api.cjs` | Fetch Claude Code usage stats from Anthropic API |
+| `ck-config-utils.cjs` | Read/write ClaudeKit config (`.ck.json`, session state) |
+| `colors.cjs` | TTY-aware terminal color output |
+| `config-counter.cjs` | Track counters (edit count, hook invocations) |
+| `context-builder.cjs` | Build context injection strings for hooks |
+| `git-info-cache.cjs` | Cache git branch/status to avoid repeated git calls |
+| `hook-logger.cjs` | Structured logging for hook diagnostics |
+| `privacy-checker.cjs` | Pattern matching for sensitive file detection |
+| `project-detector.cjs` | Detect project type from package.json, config files |
+| `scout-checker.cjs` | `.ckignore` pattern matching for scout-block |
+| `transcript-parser.cjs` | Parse Claude session transcripts for analysis |
 
 ## Creating Custom Hooks
 

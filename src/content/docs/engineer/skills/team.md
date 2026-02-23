@@ -23,7 +23,7 @@ Templates auto-execute on spawn (v2.1.0 change—was manual in v1.x).
 | `research` | 2-4 researchers | Competitive analysis, multi-source investigation | 150-300K (haiku) |
 | `cook` | 1 lead + N devs | Parallel feature implementation | 400-800K (sonnet+haiku) |
 | `review` | 2-3 reviewers | Code quality, security, performance audits | 100-200K (haiku) |
-| `debug` | 1-2 debuggers | Root cause analysis on complex bugs | 200-400K (sonnet) |
+| `debug` | 3 debuggers (default) | Root cause analysis via competing hypotheses | 200-400K (sonnet) |
 
 ## Usage
 
@@ -37,7 +37,7 @@ Templates auto-execute on spawn (v2.1.0 change—was manual in v1.x).
 - `--reviewers N` — number of reviewer teammates
 - `--debuggers N` — number of debugger teammates
 - `--plan-approval` — require lead approval before implementation starts
-- `--delegate` — auto-delegate tasks from active plan
+- `--delegate` — lead only coordinates, never touches code directly
 
 **Examples:**
 - `/team cook "implement auth + notifications + dashboard" --devs 3`

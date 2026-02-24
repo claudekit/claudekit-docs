@@ -153,7 +153,7 @@ SITUATION?
 
 - [Debugging](/docs/engineer/skills/debug) - Debug với evidence-based approach
 - [Sequential Thinking](/docs/engineer/skills/sequential-thinking) - Systematic problem-solving
-- [Planning](/docs/engineer/skills/planning) - Task breakdown và verification
+- [Planning](/docs/engineer/skills/plan) - Task breakdown và verification
 
 ## Key Takeaway
 

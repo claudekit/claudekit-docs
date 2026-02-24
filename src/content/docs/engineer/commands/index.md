@@ -10,16 +10,17 @@ published: true
 
 ClaudeKit provides a comprehensive set of slash commands to accelerate your development workflow. Each command is designed for specific tasks and automatically orchestrates the appropriate agents.
 
-:::tip[Commands → Skills Migration]
-**As of engineer@1.3.0+**, many commands have been migrated to **skills** invoked with `/` prefix.
+:::caution[Commands Fully Migrated to Skills]
+**As of engineer@2.12.0**, ALL commands have been migrated to **skills**. The `/` slash syntax remains identical — only the internal organization changed.
 
 **What changed:**
-- Commands like `/cook` (was `/code`), `/design` → `/frontend-design`, etc.
-- Skills are invoked with `/` prefix just like commands
-- Cleaner naming and better workflow organization
-- Better token efficiency
+- All 19 commands (ask, bootstrap, ck-help, cook, debug, docs, fix, git, journal, kanban, plan, preview, test, use-mcp, watzup, worktree, code-review, coding-level, project-management) are now skills
+- Skills use the same `/skill-name` invocation syntax
+- Better discoverability with `argument-hint` autocomplete and `AskUserQuestion` menus
+- Subcommand skills (e.g., `/plan red-team`, `/docs init`, `/git pr`) route through parent skill
 
-**See:** [Migration Guide](/docs/getting-started/migration-from-commands-to-skills) for complete details and workflow comparisons.
+**See:** [Skills Reference](/docs/engineer/skills/) for the current catalog.
+**See:** [Migration Guide](/docs/getting-started/migration-from-commands-to-skills) for details.
 :::
 
 ## Command Categories

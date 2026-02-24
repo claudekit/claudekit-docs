@@ -1,0 +1,31 @@
+---
+title: "Ask"
+description: "Answer technical and architectural questions about your codebase with focused research"
+section: engineer
+kit: engineer
+category: skills
+order: 40
+---
+
+Answer technical and architectural questions about your codebase. This skill provides focused, researched answers rather than superficial responses.
+
+## Usage
+
+```
+/ask [your question]
+```
+
+## Examples
+
+```bash
+/ask how is authentication currently implemented?
+/ask what's the database schema for orders?
+/ask explain the middleware chain in this project
+```
+
+## What It Does
+
+- Reads relevant code files to find answers
+- Provides context-aware responses based on your actual codebase
+- References specific files and line numbers
+- Explains architecture decisions and patterns found in your code

@@ -4,7 +4,7 @@ description: "AI agent orchestration board for task visualization and team coord
 section: engineer
 kit: engineer
 category: skills
-order: 45
+order: 55
 ---
 
 AI agent orchestration board for visualizing tasks and coordinating agent teams. View and manage work in progress across your project.

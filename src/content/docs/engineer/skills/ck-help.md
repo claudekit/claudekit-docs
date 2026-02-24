@@ -4,7 +4,7 @@ description: "ClaudeKit usage guide and skill discovery — find the right skill
 section: engineer
 kit: engineer
 category: skills
-order: 41
+order: 51
 ---
 
 ClaudeKit usage guide and skill discovery. Helps you find the right skill for any task and understand how to use ClaudeKit effectively.

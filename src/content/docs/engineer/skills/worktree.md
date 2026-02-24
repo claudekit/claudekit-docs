@@ -4,7 +4,7 @@ description: "Create isolated git worktrees for parallel development without bra
 section: engineer
 kit: engineer
 category: skills
-order: 49
+order: 59
 ---
 
 Create isolated git worktrees for parallel development. Work on multiple features simultaneously without switching branches.

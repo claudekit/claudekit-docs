@@ -1,6 +1,6 @@
 ---
 title: Skills Overview
-description: ClaudeKit's 67 specialized skills for development, design, and tooling
+description: ClaudeKit's 65 specialized skills for development, design, and tooling
 section: engineer
 kit: engineer
 category: skills
@@ -9,7 +9,7 @@ published: true
 ---
 # Skills Overview
 
-67 specialized skills that extend Claude's capabilities—invoked with `/skill-name` or loaded dynamically when you mention them.
+65 specialized skills that extend Claude's capabilities—invoked with `/skill-name` or loaded dynamically when you mention them.
 
 :::tip[Commands → Skills Complete]
 As of engineer@2.12.0, all 19 commands have been migrated to skills. The `/` slash syntax is unchanged. See [Migration Guide](/docs/getting-started/migration-from-commands-to-skills).
@@ -26,6 +26,7 @@ As of engineer@2.12.0, all 19 commands have been migrated to skills. The `/` sla
 | [ui-styling](/docs/engineer/skills/ui-styling) | Tailwind patterns, responsive layouts, dark mode |
 | [frontend-development](/docs/engineer/skills/frontend-development) | React patterns, Suspense, state management |
 | [web-frameworks](/docs/engineer/skills/web-frameworks) | Next.js + Turborepo + RemixIcon stack |
+| [tanstack](/docs/engineer/skills/tanstack) | TanStack Start/Form/AI for full-stack React applications |
 | [threejs](/docs/engineer/skills/threejs) | 3D web experiences with WebGL/WebGPU |
 | [react-best-practices](/docs/engineer/skills/react-best-practices) | React and Next.js performance optimization from Vercel |
 | [web-design-guidelines](/docs/engineer/skills/web-design-guidelines) | Web Interface Guidelines compliance |
@@ -65,6 +66,8 @@ As of engineer@2.12.0, all 19 commands have been migrated to skills. The `/` sla
 | [markdown-novel-viewer](/docs/engineer/skills/markdown-novel-viewer) | Book-like markdown reading experience |
 | [context-engineering](/docs/engineer/skills/context-engineering) | Monitor and optimize token consumption |
 | [gkg](/docs/engineer/skills/gkg) | GitLab Knowledge Graph semantic analysis |
+| [mintlify](/docs/engineer/skills/mintlify) | Build and deploy modern documentation sites with Mintlify |
+| [template-skill](/docs/engineer/skills/template-skill) | Baseline template for creating new skills |
 
 ### Process & Methodology
 
@@ -194,4 +197,4 @@ skill-creator will:
 
 ## Key Takeaway
 
-67 skills provide instant expertise—invoke with `/skill-name` or mention the skill and describe your task. No configuration needed.
+65 skills provide instant expertise—invoke with `/skill-name` or mention the skill and describe your task. No configuration needed.

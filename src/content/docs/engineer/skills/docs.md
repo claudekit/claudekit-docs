@@ -4,7 +4,7 @@ description: "Manage project documentation — initialize, update, and summarize
 section: engineer
 kit: engineer
 category: skills
-order: 43
+order: 53
 ---
 
 Manage project documentation with AI-powered analysis. Initialize docs for new projects, update after changes, or generate summaries.

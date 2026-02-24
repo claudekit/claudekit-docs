@@ -4,7 +4,7 @@ description: "Write development journal entries to document technical decisions,
 section: engineer
 kit: engineer
 category: skills
-order: 44
+order: 54
 ---
 
 Write development journal entries to document technical decisions, challenges, and progress. Useful for maintaining a record of your development journey.

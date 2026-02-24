@@ -4,7 +4,7 @@ description: "Review recent changes and wrap up your current work session with a
 section: engineer
 kit: engineer
 category: skills
-order: 48
+order: 58
 ---
 
 Review recent changes and wrap up your current work session. Generates a summary of what was accomplished and what's next.

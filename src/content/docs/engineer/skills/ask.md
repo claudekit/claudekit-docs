@@ -4,7 +4,7 @@ description: "Answer technical and architectural questions about your codebase w
 section: engineer
 kit: engineer
 category: skills
-order: 40
+order: 50
 ---
 
 Answer technical and architectural questions about your codebase. This skill provides focused, researched answers rather than superficial responses.

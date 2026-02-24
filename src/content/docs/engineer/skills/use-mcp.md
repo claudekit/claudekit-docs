@@ -4,7 +4,7 @@ description: "Utilize tools from Model Context Protocol (MCP) servers configured
 section: engineer
 kit: engineer
 category: skills
-order: 47
+order: 57
 ---
 
 Utilize tools from Model Context Protocol (MCP) servers configured in your project. Discovers and executes MCP capabilities.

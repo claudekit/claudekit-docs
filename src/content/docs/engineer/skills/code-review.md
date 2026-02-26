@@ -166,7 +166,7 @@ SITUATION?
 
 - [Debugging](/docs/engineer/skills/debug) - Debug with evidence-based approach
 - [Sequential Thinking](/docs/engineer/skills/sequential-thinking) - Systematic problem-solving
-- [Planning](/docs/engineer/skills/planning) - Task breakdown and verification
+- [Planning](/docs/engineer/skills/plan) - Task breakdown and verification
 
 ## Key Takeaway
 

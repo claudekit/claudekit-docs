@@ -1,6 +1,6 @@
 ---
 title: Skills Overview
-description: ClaudeKit's 55 specialized skills for development, design, and tooling
+description: ClaudeKit's 65 specialized skills for development, design, and tooling
 section: engineer
 kit: engineer
 category: skills
@@ -9,7 +9,11 @@ published: true
 ---
 # Skills Overview
 
-55 specialized skills that extend Claude's capabilities—loaded dynamically when you mention them.
+65 specialized skills that extend Claude's capabilities—invoked with `/skill-name` or loaded dynamically when you mention them.
+
+:::tip[Commands → Skills Complete]
+As of engineer@2.12.0, all 19 commands have been migrated to skills. The `/` slash syntax is unchanged. See [Migration Guide](/docs/getting-started/migration-from-commands-to-skills).
+:::
 
 ## Quick Reference
 
@@ -22,6 +26,7 @@ published: true
 | [ui-styling](/docs/engineer/skills/ui-styling) | Tailwind patterns, responsive layouts, dark mode |
 | [frontend-development](/docs/engineer/skills/frontend-development) | React patterns, Suspense, state management |
 | [web-frameworks](/docs/engineer/skills/web-frameworks) | Next.js + Turborepo + RemixIcon stack |
+| [tanstack](/docs/engineer/skills/tanstack) | TanStack Start/Form/AI for full-stack React applications |
 | [threejs](/docs/engineer/skills/threejs) | 3D web experiences with WebGL/WebGPU |
 | [react-best-practices](/docs/engineer/skills/react-best-practices) | React and Next.js performance optimization from Vercel |
 | [web-design-guidelines](/docs/engineer/skills/web-design-guidelines) | Web Interface Guidelines compliance |
@@ -61,12 +66,14 @@ published: true
 | [markdown-novel-viewer](/docs/engineer/skills/markdown-novel-viewer) | Book-like markdown reading experience |
 | [context-engineering](/docs/engineer/skills/context-engineering) | Monitor and optimize token consumption |
 | [gkg](/docs/engineer/skills/gkg) | GitLab Knowledge Graph semantic analysis |
+| [mintlify](/docs/engineer/skills/mintlify) | Build and deploy modern documentation sites with Mintlify |
+| [template-skill](/docs/engineer/skills/template-skill) | Baseline template for creating new skills |
 
 ### Process & Methodology
 
 | Skill | Purpose |
 |-------|---------|
-| [planning](/docs/engineer/skills/planning) | Transform requirements into executable plans |
+| [plan](/docs/engineer/skills/plan) | Transform requirements into executable plans |
 | [research](/docs/engineer/skills/research) | Multi-source validation before implementation |
 | [sequential-thinking](/docs/engineer/skills/sequential-thinking) | Numbered thought sequences for complex problems |
 | [problem-solving](/docs/engineer/skills/problem-solving) | Systematic approaches when stuck |
@@ -78,6 +85,20 @@ published: true
 | [fix](/docs/engineer/skills/fix) | Bug fixing with intelligent routing |
 | [git](/docs/engineer/skills/git) | Git operations with conventional commits |
 | [plans-kanban](/docs/engineer/skills/plans-kanban) | Visual plan progress tracking |
+| [project-management](/docs/engineer/skills/project-management) | Task tracking, plan status, session bridging |
+| [team](/docs/engineer/skills/team) | Agent Teams for parallel multi-session collaboration |
+| [ask](/docs/engineer/skills/ask) | Answer technical and architectural questions |
+| [bootstrap](/docs/engineer/skills/bootstrap) | Initialize new projects with spec-driven development |
+| [ck-help](/docs/engineer/skills/ck-help) | ClaudeKit usage guide and skill discovery |
+| [coding-level](/docs/engineer/skills/coding-level) | Set coding experience level for tailored output |
+| [docs](/docs/engineer/skills/docs) | Manage project documentation (init, update, summarize) |
+| [journal](/docs/engineer/skills/journal) | Write development journal entries |
+| [kanban](/docs/engineer/skills/kanban) | AI agent orchestration board |
+| [preview](/docs/engineer/skills/preview) | View files or generate visual explanations and diagrams |
+| [test](/docs/engineer/skills/test) | Run test suites, coverage analysis, build verification |
+| [use-mcp](/docs/engineer/skills/use-mcp) | Utilize MCP server tools |
+| [watzup](/docs/engineer/skills/watzup) | Review recent changes and wrap up sessions |
+| [worktree](/docs/engineer/skills/worktree) | Create isolated git worktrees |
 
 ### Integrations & Specialized
 
@@ -137,14 +158,18 @@ Every skill contains:
 
 **Progressive disclosure**: SKILL.md provides essentials, references/ has depth.
 
-### Skills vs Commands vs Agents
+### Skills vs Agents
 
-| Aspect | Skills | Commands | Agents |
-|--------|--------|----------|--------|
-| **Purpose** | Specialized knowledge | Workflow orchestration | Task execution |
-| **Invocation** | "Use [skill]..." | `/command` | Auto or explicit |
-| **Scope** | Single focused capability | Multi-step processes | Autonomous work |
-| **Example** | better-auth, devops | /plan, /test | planner, tester |
+| Aspect | Skills | Agents |
+|--------|--------|--------|
+| **Purpose** | Specialized knowledge + workflow orchestration | Task execution |
+| **Invocation** | `/skill-name` or "Use [skill]..." | Auto-spawned by skills |
+| **Scope** | Single capability or multi-step process | Autonomous work unit |
+| **Example** | /plan, /cook, /fix, better-auth, devops | planner, tester, code-reviewer |
+
+:::note
+Commands and skills now use the same `/` invocation syntax. The "commands" concept has been unified into skills as of engineer@2.12.0.
+:::
 
 ### Creating Custom Skills
 
@@ -172,4 +197,4 @@ skill-creator will:
 
 ## Key Takeaway
 
-55 skills provide instant expertise—just mention the skill and describe your task. No configuration needed.
+65 skills provide instant expertise—invoke with `/skill-name` or mention the skill and describe your task. No configuration needed.

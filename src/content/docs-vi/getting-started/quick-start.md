@@ -305,7 +305,7 @@ A: Có. Chỉnh sửa `.claude/agents/*.md` để điều chỉnh hành vi. Xem 
 - [Hướng Dẫn Commands](/vi/docs/engineer/commands/) - Toàn bộ hơn 30 lệnh
 
 **Sử Dụng Thực Tế**:
-- [Bắt Đầu Dự Án Mới](/docs/workflows/starting-new-project)
+- [Bắt Đầu Dự Án Mới](/docs/workflows/new-project)
 - [Thêm Tính Năng](/vi/docs/workflows/adding-feature)
 - [Sửa Lỗi](/vi/docs/workflows/fixing-bugs)
 

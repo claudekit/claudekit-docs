@@ -93,7 +93,7 @@ Use the kit switcher in the header to explore:
 ## Explore Workflows
 
 **Engineer Workflows**:
-- [New Project Setup](/docs/workflows/starting-new-project) - Bootstrap project with best practices
+- [New Project Setup](/docs/workflows/new-project) - Bootstrap project with best practices
 - [Feature Development](/docs/workflows/adding-feature) - Implement end-to-end features
 - [Code Review](/docs/workflows) - Automated code quality checks
 

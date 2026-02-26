@@ -211,7 +211,7 @@ Server output bao gồm cả local và network URLs:
 ## Skills Liên Quan
 
 - [Markdown Novel Viewer](/docs/engineer/skills/markdown-novel-viewer) - Đọc individual plan files với rich formatting
-- [Planning](/docs/engineer/skills/planning) - Tạo và structure plan directories
+- [Planning](/docs/engineer/skills/plan) - Tạo và structure plan directories
 - [Research](/docs/engineer/skills/research) - Gather requirements cho planning
 
 ## Commands Liên Quan

@@ -149,7 +149,7 @@ Sacrifice grammar cho concision. Dùng code blocks, mermaid/ASCII diagrams.
 
 - [Docs Seeker](/docs/engineer/skills/docs-seeker) - Documentation lookup
 - [Sequential Thinking](/docs/engineer/skills/sequential-thinking) - Structured analysis
-- [Planning](/docs/engineer/skills/planning) - Solution design
+- [Planning](/docs/engineer/skills/plan) - Solution design
 
 ## Key Takeaway
 

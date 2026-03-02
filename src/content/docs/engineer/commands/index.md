@@ -17,7 +17,7 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 - All 19 commands (ask, bootstrap, ck-help, cook, debug, docs, fix, git, journal, kanban, plan, preview, test, use-mcp, watzup, worktree, code-review, coding-level, project-management) are now skills
 - Skills use the same `/skill-name` invocation syntax
 - Better discoverability with `argument-hint` autocomplete and `AskUserQuestion` menus
-- Subcommand skills (e.g., `/plan red-team`, `/docs init`, `/git pr`) route through parent skill
+- Subcommand skills (e.g., `/ck:plan red-team`, `/ck:docs init`, `/ck:git pr`) route through parent skill
 
 **See:** [Skills Reference](/docs/engineer/skills/) for the current catalog.
 **See:** [Migration Guide](/docs/getting-started/migration-from-commands-to-skills) for details.
@@ -27,38 +27,38 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 
 ### Core Development
 
-- **[/ask](/docs/engineer/commands/core/ask)** - Ask questions about the codebase
-- **[/bootstrap](/docs/engineer/commands/core/bootstrap)** - Initialize new projects with spec-driven development
-- **[/ck-help](/docs/engineer/commands/core/ck-help)** - Get help about ClaudeKit commands
-- **[/coding-level](/docs/engineer/commands/core/coding-level)** - Set coding complexity level
-- **[/journal](/docs/engineer/commands/core/journal)** - Write development journal entries
-- **[/kanban](/docs/engineer/commands/core/kanban)** - Manage project tasks in Kanban board
-- **[/preview](/docs/engineer/commands/core/preview)** - Preview current work
-- **[/test](/docs/engineer/commands/core/test)** - Run test suite and get results
-- **[/use-mcp](/docs/engineer/commands/core/use-mcp)** - Use MCP server tools
-- **[/watzup](/docs/engineer/commands/core/watzup)** - Get project status and recent changes
-- **[/worktree](/docs/engineer/commands/core/worktree)** - Manage git worktrees
-- **[/wt](/docs/engineer/commands/core/worktree)** - Shorthand for /worktree
+- **[/ck:ask](/docs/engineer/commands/core/ask)** - Ask questions about the codebase
+- **[/ck:bootstrap](/docs/engineer/commands/core/bootstrap)** - Initialize new projects with spec-driven development
+- **[/ck:ck-help](/docs/engineer/commands/core/ck-help)** - Get help about ClaudeKit commands
+- **[/ck:coding-level](/docs/engineer/commands/core/coding-level)** - Set coding complexity level
+- **[/ck:journal](/docs/engineer/commands/core/journal)** - Write development journal entries
+- **[/ck:kanban](/docs/engineer/commands/core/kanban)** - Manage project tasks in Kanban board
+- **[/ck:preview](/docs/engineer/commands/core/preview)** - Preview current work
+- **[/ck:test](/docs/engineer/commands/core/test)** - Run test suite and get results
+- **[/ck:use-mcp](/docs/engineer/commands/core/use-mcp)** - Use MCP server tools
+- **[/ck:watzup](/docs/engineer/commands/core/watzup)** - Get project status and recent changes
+- **[/ck:worktree](/docs/engineer/commands/core/worktree)** - Manage git worktrees
+- **[/wt](/docs/engineer/commands/core/worktree)** - Shorthand for /ck:worktree
 
-**Note:** `/cook` and `/debug` are now skills. See migration notice above.
+**Note:** `/ck:cook` and `/ck:debug` are now skills. See migration notice above.
 
 ### Planning
 
-- **[/plan](/docs/engineer/commands/plan)** - Create implementation plans
-- **[/plan --fast](/docs/engineer/skills/plan)** - Quick planning (skip research)
-- **[/plan --hard](/docs/engineer/skills/plan)** - Detailed planning with research
-- **[/plan --two](/docs/engineer/skills/plan)** - Compare two approaches
-- **[/plan --parallel](/docs/engineer/skills/plan)** - Parallel planning with multiple researchers
-- **[/plan:red-team](/docs/engineer/commands/plan/red-team)** - Adversarial plan review
-- **[/plan:archive](/docs/engineer/commands/plan/archive)** - Archive completed plans
-- **[/plan:validate](/docs/engineer/commands/plan/validate)** - Validate plan structure
+- **[/ck:plan](/docs/engineer/commands/plan)** - Create implementation plans
+- **[/ck:plan --fast](/docs/engineer/skills/plan)** - Quick planning (skip research)
+- **[/ck:plan --hard](/docs/engineer/skills/plan)** - Detailed planning with research
+- **[/ck:plan --two](/docs/engineer/skills/plan)** - Compare two approaches
+- **[/ck:plan --parallel](/docs/engineer/skills/plan)** - Parallel planning with multiple researchers
+- **[/ck:plan:red-team](/docs/engineer/commands/plan/red-team)** - Adversarial plan review
+- **[/ck:plan:archive](/docs/engineer/commands/plan/archive)** - Archive completed plans
+- **[/ck:plan:validate](/docs/engineer/commands/plan/validate)** - Validate plan structure
 
 ### Documentation
 
-- **[/docs](/docs/engineer/commands/docs-cmd/init)** - Manage project documentation
-- **[/docs:init](/docs/engineer/commands/docs-cmd/init)** - Initialize project documentation
-- **[/docs:update](/docs/engineer/commands/docs-cmd/update)** - Update project documentation
-- **[/docs:summarize](/docs/engineer/commands/docs-cmd/summarize)** - Summarize project documentation
+- **[/ck:docs](/docs/engineer/commands/docs-cmd/init)** - Manage project documentation
+- **[/ck:docs:init](/docs/engineer/commands/docs-cmd/init)** - Initialize project documentation
+- **[/ck:docs:update](/docs/engineer/commands/docs-cmd/update)** - Update project documentation
+- **[/ck:docs:summarize](/docs/engineer/commands/docs-cmd/summarize)** - Summarize project documentation
 
 ### Review
 
@@ -75,33 +75,33 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 
 ```bash
 # Project Setup
-/bootstrap [description]         # Initialize new project
-/coding-level [level]            # Set coding complexity level
+/ck:bootstrap [description]         # Initialize new project
+/ck:coding-level [level]            # Set coding complexity level
 
 # Feature Development
-/plan [feature description]      # Plan the feature
-/plan:hard [complex feature]     # Detailed planning with research
-/plan:parallel [feature]         # Parallel planning
-/cook [implement feature]        # Implement from plan
+/ck:plan [feature description]      # Plan the feature
+/ck:plan:hard [complex feature]     # Detailed planning with research
+/ck:plan:parallel [feature]         # Parallel planning
+/ck:cook [implement feature]        # Implement from plan
 
 # Documentation
-/docs:init                       # First-time setup
-/docs:update                     # After making changes
-/docs:summarize                  # Generate documentation summary
+/ck:docs:init                       # First-time setup
+/ck:docs:update                     # After making changes
+/ck:docs:summarize                  # Generate documentation summary
 
 # Testing
-/test                            # Run test suite
-/test:ui                         # Run UI tests
-/debug [issue description]       # Debug issues
+/ck:test                            # Run test suite
+/ck:test:ui                         # Run UI tests
+/ck:debug [issue description]       # Debug issues
 
 # Git Workflow
 /check-and-commit                # Check quality and commit
-/worktree [feature-name]         # Create git worktree
+/ck:worktree [feature-name]         # Create git worktree
 
 # Project Status
-/watzup                          # What's the current state?
-/ask [question]                  # Ask about codebase
-/kanban                          # View project dashboard
+/ck:watzup                          # What's the current state?
+/ck:ask [question]                  # Ask about codebase
+/ck:kanban                          # View project dashboard
 ```
 
 ## Command Syntax
@@ -116,22 +116,22 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 
 ```bash
 # No arguments
-/test
-/watzup
-/docs:init
+/ck:test
+/ck:watzup
+/ck:docs:init
 
 # Required argument
-/plan [add user authentication]
-/ask [how does routing work?]
-/bootstrap [create REST API]
+/ck:plan [add user authentication]
+/ck:ask [how does routing work?]
+/ck:bootstrap [create REST API]
 
 # Optional arguments
-/git pr                          # PR to default branch
-/git pr [develop]                # PR to develop
-/git pr [main] [feature-branch]  # PR from feature to main
+/ck:git pr                          # PR to default branch
+/ck:git pr [develop]                # PR to develop
+/ck:git pr [main] [feature-branch]  # PR from feature to main
 
 # Multiple arguments
-/plan:parallel [feature] [3]     # Parallel planning with 3 researchers
+/ck:plan:parallel [feature] [3]     # Parallel planning with 3 researchers
 ```
 
 ## Command Workflows
@@ -139,7 +139,7 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 ### Starting a New Project
 
 ```bash
-1. /bootstrap [project description]
+1. /ck:bootstrap [project description]
    # OR
    ck init --kit engineer
 
@@ -156,15 +156,15 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 ### Developing a Feature
 
 ```bash
-1. /plan [feature description]
+1. /ck:plan [feature description]
    # Creates detailed implementation plan
 
 2. # Review plan in plans/ directory
 
-3. /cook "Implement the feature as planned"
+3. /ck:cook "Implement the feature as planned"
    # Implements based on plan
 
-4. /test
+4. /ck:test
    # Validates implementation
 
 5. /check-and-commit
@@ -175,18 +175,18 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 
 ```bash
 # Debug issues
-/debug "Debug the login issue - users can't authenticate"
+/ck:debug "Debug the login issue - users can't authenticate"
 # - Analyzes logs and code
 # - Identifies root cause
 # - Suggests solutions
 
 # Run tests
-/test
+/ck:test
 # - Runs full test suite
 # - Shows coverage report
 
 # UI testing
-/test:ui
+/ck:test:ui
 # - Runs UI/E2E tests
 # - Visual regression testing
 ```
@@ -195,13 +195,13 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 
 ```bash
 # After implementing features
-/docs:update
+/ck:docs:update
 
 # When onboarding new team members
-/docs:summarize
+/ck:docs:summarize
 
 # When starting with existing codebase
-/docs:init
+/ck:docs:init
 ```
 
 ## Command Best Practices
@@ -211,41 +211,41 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 ✅ **Correct Usage**
 ```bash
 # Simple questions
-/ask [how does routing work?]
+/ck:ask [how does routing work?]
 
 # Planning with research
-/plan:hard [add OAuth2 authentication]
+/ck:plan:hard [add OAuth2 authentication]
 
 # Quick planning
-/plan:fast [update button styling]
+/ck:plan:fast [update button styling]
 
 # Parallel planning for complex features
-/plan:parallel [rebuild authentication system]
+/ck:plan:parallel [rebuild authentication system]
 ```
 
 ❌ **Incorrect Usage**
 ```bash
 # Don't use fast for complex features
-/plan:fast [rebuild entire authentication system]
+/ck:plan:fast [rebuild entire authentication system]
 
 # Don't skip planning for major features
-# (implement without /plan first)
+# (implement without /ck:plan first)
 ```
 
 ### Provide Clear Descriptions
 
 ✅ **Clear**
 ```bash
-/plan [add OAuth2 authentication with Google and GitHub providers]
+/ck:plan [add OAuth2 authentication with Google and GitHub providers]
 "Debug API issue - returns 500 error when creating user with empty email"
-/ask [how is user authentication currently implemented?]
+/ck:ask [how is user authentication currently implemented?]
 ```
 
 ❌ **Vague**
 ```bash
-/plan [add auth]
+/ck:plan [add auth]
 "Something's broken, please fix"
-/ask [how does this work?]
+/ck:ask [how does this work?]
 ```
 
 ### Review Before Committing
@@ -254,7 +254,7 @@ ClaudeKit provides a comprehensive set of slash commands to accelerate your deve
 # 1. Implement feature
 
 # 2. Test
-/test
+/ck:test
 
 # 3. Review changes
 git diff
@@ -267,22 +267,22 @@ git diff
 
 ```bash
 # 1. Understand codebase
-/ask [how is authentication currently implemented?]
+/ck:ask [how is authentication currently implemented?]
 
 # 2. Plan changes with research
-/plan:hard [migrate from session-based to JWT authentication]
+/ck:plan:hard [migrate from session-based to JWT authentication]
 
 # 3. Review plan
-/preview plans/latest-plan.md
+/ck:preview plans/latest-plan.md
 
 # 4. Implement based on plan
-/cook "Implement JWT authentication migration as planned"
+/ck:cook "Implement JWT authentication migration as planned"
 
 # 5. Test
-/test
+/ck:test
 
 # 6. Debug if needed
-/debug "Debug the JWT token validation issue"
+/ck:debug "Debug the JWT token validation issue"
 
 # 7. Quality check and commit
 /check-and-commit
@@ -292,16 +292,16 @@ git diff
 
 Some commands support flags:
 
-### /plan
+### /ck:plan
 
 ```bash
-/plan [feature]              # Intelligent planning
-/plan:fast [feature]         # Quick planning without research
-/plan:hard [feature]         # Detailed planning with research
-/plan:two [feature]          # Two different approaches
-/plan:parallel [feature]     # Parallel planning with researchers
-/plan:ci [CI-URL]            # Analyze CI failures
-/plan:cro [content]          # Conversion optimization
+/ck:plan [feature]              # Intelligent planning
+/ck:plan:fast [feature]         # Quick planning without research
+/ck:plan:hard [feature]         # Detailed planning with research
+/ck:plan:two [feature]          # Two different approaches
+/ck:plan:parallel [feature]     # Parallel planning with researchers
+/ck:plan:ci [CI-URL]            # Analyze CI failures
+/ck:plan:cro [content]          # Conversion optimization
 ```
 
 ## Understanding Command Output
@@ -358,7 +358,7 @@ Documentation Updated:
 
 Implementation complete!
 
-Next: Run /test to validate
+Next: Run /ck:test to validate
 ```
 
 ### Test Commands
@@ -375,7 +375,7 @@ Coverage: 87.3%
 
 All tests passed!
 
-Next: Review changes, then /git cm
+Next: Review changes, then /ck:git cm
 ```
 
 ## Troubleshooting Commands
@@ -399,7 +399,7 @@ Next: Review changes, then /git cm
 2. Verify prerequisites (API keys, dependencies)
 3. Review agent logs
 4. Try command with simpler input
-5. Use `/debug` to investigate
+5. Use `/ck:debug` to investigate
 
 ### Unexpected Results
 

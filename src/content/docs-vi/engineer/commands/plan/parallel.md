@@ -1,6 +1,6 @@
 ---
 lang: vi
-title: /plan:parallel
+title: /ck:plan:parallel
 description: Tạo kế hoạch triển khai với các giai đoạn có thể thực thi song song sử dụng đồ thị phụ thuộc và ma trận sở hữu file
 section: engineer
 kit: engineer
@@ -9,14 +9,14 @@ order: 12
 published: true
 ---
 
-# /plan:parallel
+# /ck:plan:parallel
 
 Lệnh lập kế hoạch thực thi song song. Tạo kế hoạch triển khai với các giai đoạn có thể chạy đồng thời, sử dụng đồ thị phụ thuộc và ranh giới sở hữu file để ngăn xung đột.
 
 ## Cú pháp
 
 ```bash
-/plan:parallel [task]
+/ck:plan:parallel [task]
 ```
 
 ## Khi nào sử dụng
@@ -29,7 +29,7 @@ Lệnh lập kế hoạch thực thi song song. Tạo kế hoạch triển khai 
 ## Ví dụ nhanh
 
 ```bash
-/plan:parallel [implement user dashboard with auth, analytics, and settings modules]
+/ck:plan:parallel [implement user dashboard with auth, analytics, and settings modules]
 ```
 
 **Kết quả**:
@@ -56,7 +56,7 @@ Phase 3: src/settings/*, src/hooks/useSettings.ts
 Phase 4: src/dashboard/*, src/pages/dashboard.tsx
 
 Plan saved: plans/251129-dashboard/plan.md
-Execute with: /cook --parallel
+Execute with: /ck:cook --parallel
 ```
 
 ## Tham số
@@ -170,7 +170,7 @@ graph TD
 ### Kịch bản: Hệ thống Checkout E-commerce
 
 ```bash
-/plan:parallel [build checkout system with cart, payment, shipping, and order confirmation]
+/ck:plan:parallel [build checkout system with cart, payment, shipping, and order confirmation]
 ```
 
 **Kế hoạch được tạo**:
@@ -260,7 +260,7 @@ Shipping Calculator ───┘
 
 ```bash
 # Execute all phases with parallel support
-/cook --parallel @plans/251129-checkout/plan.md
+/ck:cook --parallel @plans/251129-checkout/plan.md
 ```
 
 ## Success Criteria
@@ -277,7 +277,7 @@ Shipping Calculator ───┘
 ### Module tính năng độc lập
 
 ```bash
-/plan:parallel [build admin panel with user management, content management, and analytics]
+/ck:plan:parallel [build admin panel with user management, content management, and analytics]
 ```
 
 Ba module độc lập, một giai đoạn tích hợp.
@@ -285,7 +285,7 @@ Ba module độc lập, một giai đoạn tích hợp.
 ### Thiết lập microservices
 
 ```bash
-/plan:parallel [create microservices for auth, products, orders, and notifications]
+/ck:plan:parallel [create microservices for auth, products, orders, and notifications]
 ```
 
 Mỗi service là một giai đoạn riêng với sở hữu file riêng.
@@ -293,7 +293,7 @@ Mỗi service là một giai đoạn riêng với sở hữu file riêng.
 ### Thư viện component
 
 ```bash
-/plan:parallel [build UI component library with buttons, forms, modals, and tables]
+/ck:plan:parallel [build UI component library with buttons, forms, modals, and tables]
 ```
 
 Mỗi danh mục component là một giai đoạn độc lập.
@@ -301,7 +301,7 @@ Mỗi danh mục component là một giai đoạn độc lập.
 ### Nhóm API Endpoint
 
 ```bash
-/plan:parallel [implement REST API with users, products, orders, and search endpoints]
+/ck:plan:parallel [implement REST API with users, products, orders, and search endpoints]
 ```
 
 Mỗi nhóm endpoint có thể được phát triển song song.
@@ -312,10 +312,10 @@ Sau khi tạo kế hoạch parallel, thực thi với:
 
 ```bash
 # Thực thi với hỗ trợ agent song song
-/cook --parallel @plans/251129-{task}/plan.md
+/ck:cook --parallel @plans/251129-{task}/ck:plan.md
 ```
 
-Lệnh `/cook --parallel`:
+Lệnh `/ck:cook --parallel`:
 1. Đọc đồ thị phụ thuộc
 2. Khởi chạy agent song song cho Wave 1
 3. Chờ wave hoàn thành
@@ -330,10 +330,10 @@ Lệnh `/cook --parallel`:
 
 ```bash
 # Tốt: Ranh giới rõ ràng
-/plan:parallel [build auth service, payment service, and notification service]
+/ck:plan:parallel [build auth service, payment service, and notification service]
 
 # Khó song song hóa hơn
-/plan:parallel [build user profile with settings and preferences]
+/ck:plan:parallel [build user profile with settings and preferences]
 ```
 
 ### Giảm thiểu file chia sẻ
@@ -358,20 +358,20 @@ Cân bằng lợi ích song song vs. chi phí điều phối:
 
 ```bash
 # Quá chi tiết (chi phí > lợi ích)
-/plan:parallel [implement login button, logout button, profile button]
+/ck:plan:parallel [implement login button, logout button, profile button]
 
 # Mức độ chi tiết tốt hơn
-/plan:parallel [implement auth UI, dashboard UI, settings UI]
+/ck:plan:parallel [implement auth UI, dashboard UI, settings UI]
 ```
 
 ## Các lệnh liên quan
 
-- [/plan](/vi/docs/engineer/commands/plan) - Bộ định tuyến lập kế hoạch thông minh
+- [/ck:plan](/vi/docs/engineer/commands/plan) - Bộ định tuyến lập kế hoạch thông minh
 - [Planning skill](/docs/engineer/skills/plan) - Lập kế hoạch chi tiết với cờ `--hard`
-- [/cook --parallel](/docs/engineer/skills/cook) - Thực thi kế hoạch song song
-- [/bootstrap:auto:parallel](/docs/engineer/commands/core/bootstrap-auto-parallel) - Bootstrap với thực thi song song
-- [/cook --auto --parallel](/docs/engineer/skills/cook) - Cook với agent song song
+- [/ck:cook --parallel](/docs/engineer/skills/cook) - Thực thi kế hoạch song song
+- [/ck:bootstrap:auto:parallel](/docs/engineer/commands/core/bootstrap-auto-parallel) - Bootstrap với thực thi song song
+- [/ck:cook --auto --parallel](/docs/engineer/skills/cook) - Cook với agent song song
 
 ---
 
-**Điểm chính**: `/plan:parallel` tạo kế hoạch được tối ưu cho thực thi đồng thời bằng cách định nghĩa đồ thị phụ thuộc và ranh giới sở hữu file, cho phép triển khai nhanh hơn thông qua thực thi agent song song.
+**Điểm chính**: `/ck:plan:parallel` tạo kế hoạch được tối ưu cho thực thi đồng thời bằng cách định nghĩa đồ thị phụ thuộc và ranh giới sở hữu file, cho phép triển khai nhanh hơn thông qua thực thi agent song song.

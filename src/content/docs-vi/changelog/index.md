@@ -49,13 +49,13 @@ ck init --use-git
 
 **Tính năng Chính**:
 - **14 AI Agent Chuyên biệt** - Planner, Researcher, Tester, Debugger, Code Reviewer, và nhiều hơn nữa
-- **30+ Lệnh Slash** - `/cook`, `/plan`, `/fix`, `/design`, `/git`, `/docs`, và nhiều hơn nữa
+- **30+ Lệnh Slash** - `/ck:cook`, `/ck:plan`, `/ck:fix`, `/design`, `/ck:git`, `/ck:docs`, và nhiều hơn nữa
 - **45 Skill Tích hợp** - Next.js, Better Auth, PostgreSQL, Docker, Shopify, Gemini Vision
 - **Workflow Đa Agent** - Các agent phối hợp cho các tác vụ phức tạp
 - **Điều hướng theo Ngữ cảnh** - Sidebar động dựa trên section hiện tại
 
 **Khả năng Cốt lõi**:
-- Workflow phát triển tính năng hoàn chỉnh (`/plan → /cook → /test → /commit`)
+- Workflow phát triển tính năng hoàn chỉnh (`/ck:plan → /ck:cook → /ck:test → /commit`)
 - Sửa lỗi hệ thống với phân tích nguyên nhân gốc
 - Tự động tạo và duy trì tài liệu
 - Thiết kế UI/UX với các tài nguyên do AI tạo
@@ -125,7 +125,7 @@ ck init --use-git
 
 ### v0.5.0 - Prototype - 15/07/2024
 - Proof of concept với các agent planner và developer cơ bản
-- Triển khai lệnh `/cook` đơn giản
+- Triển khai lệnh `/ck:cook` đơn giản
 - Tải skill thủ công
 - Chỉ thực thi local
 

@@ -399,7 +399,7 @@ Agent sẽ:
 ### 3. Tạo bố cục đáp ứng (Responsive Layout)
 
 ```bash
-/cook [dashboard đáp ứng với thanh bên]
+/ck:cook [dashboard đáp ứng với thanh bên]
 ```
 
 Agent Developer sẽ:

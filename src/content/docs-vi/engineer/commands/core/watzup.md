@@ -1,6 +1,6 @@
 ---
 lang: vi
-title: /watzup
+title: /ck:watzup
 description: Documentation for watzup
 section: engineer
 kit: engineer
@@ -9,19 +9,19 @@ order: 7
 published: true
 ---
 
-# /watzup
+# /ck:watzup
 
 Lệnh xem xét nhanh phân tích nhánh hiện tại, commits gần đây và thay đổi code để cung cấp tổng hợp toàn diện về công việc đã hoàn thành. Hoàn hảo cho stand-ups, code reviews, hoặc hiểu hoạt động gần đây.
 
 ## Cú pháp
 
 ```bash
-/watzup
+/ck:watzup
 ```
 
 ## Chức năng
 
-Lệnh `/watzup` cung cấp tổng quan toàn diện về:
+Lệnh `/ck:watzup` cung cấp tổng quan toàn diện về:
 
 1. **Trạng thái nhánh hiện tại**
    - Tên nhánh đang hoạt động
@@ -56,7 +56,7 @@ Lệnh `/watzup` cung cấp tổng quan toàn diện về:
 ## Ví dụ nhanh
 
 ```bash
-/watzup
+/ck:watzup
 ```
 
 **Kết quả:**
@@ -165,7 +165,7 @@ Chất lượng: Cao
 
 ```bash
 # Trước cuộc họp stand-up
-/watzup
+/ck:watzup
 
 # Sử dụng kết quả cho:
 # - Tôi đã làm gì hôm qua
@@ -177,7 +177,7 @@ Chất lượng: Cao
 
 ```bash
 # Trước khi yêu cầu review
-/watzup
+/ck:watzup
 
 # Chia sẻ tóm tắt với reviewers
 # Giúp họ hiểu phạm vi và ngữ cảnh
@@ -187,7 +187,7 @@ Chất lượng: Cao
 
 ```bash
 # Cuối ngày chuyển giao
-/watzup
+/ck:watzup
 
 # Cung cấp ngữ cảnh hoàn chỉnh cho developer tiếp theo
 ```
@@ -196,7 +196,7 @@ Chất lượng: Cao
 
 ```bash
 # Cuối sprint
-/watzup
+/ck:watzup
 
 # Hiển thị tất cả thành tựu
 # Chứng minh tiến độ
@@ -206,7 +206,7 @@ Chất lượng: Cao
 
 ```bash
 # Kiểm tra tiến độ trên tính năng lớn
-/watzup
+/ck:watzup
 
 # Xem những gì đã hoàn thành
 # Lập kế hoạch công việc còn lại
@@ -216,10 +216,10 @@ Chất lượng: Cao
 
 ```bash
 # Trước khi tạo pull request
-/watzup
+/ck:watzup
 
 # Sử dụng tóm tắt cho mô tả PR
-# Sau đó: /git pr [branch] [base]
+# Sau đó: /ck:git pr [branch] [base]
 ```
 
 ## Ví dụ đầy đủ
@@ -229,7 +229,7 @@ Chất lượng: Cao
 Bạn đã làm việc trên tính năng chat real-time trong vài ngày. Đến lúc kiểm tra tiến độ.
 
 ```bash
-/watzup
+/ck:watzup
 ```
 
 **Kết quả chi tiết:**
@@ -636,16 +636,16 @@ Commits phân tích: 12
 
 ```bash
 # Trước stand-up
-/watzup
+/ck:watzup
 
 # Trước yêu cầu code review
-/watzup
+/ck:watzup
 
 # Trước tạo PR
-/watzup
+/ck:watzup
 
 # Cuối ngày/sprint
-/watzup
+/ck:watzup
 ```
 
 ### So sánh với trạng thái trước
@@ -653,18 +653,18 @@ Commits phân tích: 12
 ```bash
 # Xem những gì thay đổi hôm nay
 git log --since="1 day ago"
-/watzup
+/ck:watzup
 
 # So sánh với main
 git diff main
-/watzup
+/ck:watzup
 ```
 
 ### Chia sẻ với team
 
 ```bash
 # Tạo tóm tắt
-/watzup > work-summary.md
+/ck:watzup > work-summary.md
 
 # Chia sẻ trong Slack/Teams
 cat work-summary.md
@@ -675,7 +675,7 @@ cat work-summary.md
 ### Stand-up hàng ngày
 
 ```bash
-/watzup
+/ck:watzup
 
 # Trả lời:
 # - Tôi đã làm gì?
@@ -687,7 +687,7 @@ cat work-summary.md
 
 ```bash
 # Xem phạm vi đầy đủ
-/watzup
+/ck:watzup
 
 # Sử dụng tóm tắt trong yêu cầu review
 # Giúp reviewers hiểu thay đổi
@@ -696,7 +696,7 @@ cat work-summary.md
 ### Sprint demo
 
 ```bash
-/watzup
+/ck:watzup
 
 # Hiển thị thành tựu
 # Chứng minh tiến độ
@@ -707,7 +707,7 @@ cat work-summary.md
 
 ```bash
 # Trước kỳ nghỉ/chuyển giao
-/watzup
+/ck:watzup
 
 # Cung cấp ngữ cảnh hoàn chỉnh
 # Ghi chép quyết định
@@ -718,7 +718,7 @@ cat work-summary.md
 
 ```bash
 # Phát triển tính năng giữa chừng
-/watzup
+/ck:watzup
 
 # Đánh giá tiến độ
 # Lập kế hoạch công việc còn lại
@@ -727,40 +727,40 @@ cat work-summary.md
 
 ## Tích hợp với các lệnh khác
 
-### Với /journal
+### Với /ck:journal
 
 ```bash
 # Tóm tắt nhanh
-/watzup
+/ck:watzup
 
 # Tài liệu chi tiết
-/journal
+/ck:journal
 
-# /watzup: Tổng quan
-# /journal: Đi sâu với ngữ cảnh
+# /ck:watzup: Tổng quan
+# /ck:journal: Đi sâu với ngữ cảnh
 ```
 
-### Với /git pr
+### Với /ck:git pr
 
 ```bash
 # Phân tích thay đổi
-/watzup
+/ck:watzup
 
 # Tạo PR với tóm tắt
-/git pr feature-branch main
+/ck:git pr feature-branch main
 ```
 
-### Với /git cm
+### Với /ck:git cm
 
 ```bash
 # Xem thay đổi chưa commit
 git status
 
 # Xem xét tất cả công việc
-/watzup
+/ck:watzup
 
 # Commit
-/git cm
+/ck:git cm
 ```
 
 ## Tùy chỉnh
@@ -770,11 +770,11 @@ git status
 ```bash
 # 24 giờ cuối
 git log --since="1 day ago"
-/watzup
+/ck:watzup
 
 # Tuần trước
 git log --since="1 week ago"
-/watzup
+/ck:watzup
 ```
 
 ### Bao gồm files cụ thể
@@ -782,12 +782,12 @@ git log --since="1 week ago"
 ```bash
 # Xem thay đổi khu vực cụ thể
 git log -- src/payments/
-/watzup
+/ck:watzup
 ```
 
 ## Giới hạn
 
-### /watzup KHÔNG làm gì
+### /ck:watzup KHÔNG làm gì
 
 ❌ Không bắt đầu triển khai
 ❌ Không sửa đổi code
@@ -801,30 +801,30 @@ git log -- src/payments/
 
 **Trước khi bắt đầu công việc:**
 ```bash
-❌ /watzup
-✅ /plan [feature]
+❌ /ck:watzup
+✅ /ck:plan [feature]
 ```
 
 **Khi triển khai:**
 ```bash
-❌ /watzup
-✅ /cook [feature]
+❌ /ck:watzup
+✅ /ck:cook [feature]
 ```
 
 **Khi sửa bugs:**
 ```bash
-❌ /watzup
-✅ /fix [issue]
+❌ /ck:watzup
+✅ /ck:fix [issue]
 ```
 
 ## Lệnh liên quan
 
-- [/journal](/docs-vi/commands/core/journal) - Tài liệu công việc chi tiết
-- [/git cm](/docs-vi/commands/git/commit) - Commit thay đổi
-- [/git pr](/docs-vi/commands/git/pull-request) - Tạo pull request
-- [/cook](/docs-vi/commands/core/cook) - Triển khai tính năng
-- [/plan](/docs-vi/commands/core/plan) - Lập kế hoạch triển khai
+- [/ck:journal](/docs-vi/commands/core/journal) - Tài liệu công việc chi tiết
+- [/ck:git cm](/docs-vi/commands/git/commit) - Commit thay đổi
+- [/ck:git pr](/docs-vi/commands/git/pull-request) - Tạo pull request
+- [/ck:cook](/docs-vi/commands/core/cook) - Triển khai tính năng
+- [/ck:plan](/docs-vi/commands/core/plan) - Lập kế hoạch triển khai
 
 ---
 
-**Điểm chính**: `/watzup` cung cấp khả năng nhìn thấy ngay lập tức vào công việc gần đây - hoàn hảo cho stand-ups, code reviews và hiểu những gì đã hoàn thành. Chỉ phân tích và không bao giờ sửa đổi code của bạn.
+**Điểm chính**: `/ck:watzup` cung cấp khả năng nhìn thấy ngay lập tức vào công việc gần đây - hoàn hảo cho stand-ups, code reviews và hiểu những gì đã hoàn thành. Chỉ phân tích và không bao giờ sửa đổi code của bạn.

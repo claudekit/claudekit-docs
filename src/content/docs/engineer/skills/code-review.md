@@ -39,7 +39,7 @@ Before dispatching the code-reviewer, scout for edge cases:
 # - Edge cases and boundary conditions
 # - Potential side effects
 
-/scout edge cases for <feature>
+/ck:scout edge cases for <feature>
 ```
 
 This pre-review step identifies potential issues the reviewer should focus on, making reviews more targeted and effective.

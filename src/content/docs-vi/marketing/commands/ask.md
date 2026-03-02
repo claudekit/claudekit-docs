@@ -193,14 +193,14 @@ Tất cả khuyến cáo suy trọng:
 ## KHÔNG phải cho
 
 - Thực hiện (sử dụng /ckm:plan hoặc /ckm:cook)
-- Gỡ lỗi (sử dụng /ckm:fix hoặc /debug)
+- Gỡ lỗi (sử dụng /ckm:fix hoặc /ck:debug)
 - Đánh giá mã (sử dụng /ckm:review)
 
 ## Lệnh liên quan
 
 - [/ckm:brainstorm](/vi/docs/marketing/commands/brainstorm) - Thảo luận tương tác
 - [/ckm:plan](/vi/docs/marketing/commands/plan) - Lập kế hoạch thực hiện
-- [/research](/docs/marketing/commands) - Nghiên cứu thị trường/công nghệ
+- [/ck:research](/docs/marketing/commands) - Nghiên cứu thị trường/công nghệ
 
 ---
 

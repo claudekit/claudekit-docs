@@ -25,7 +25,7 @@ Bạn đang làm việc với một monorepo khổng lồ với hàng trăm thư
 
 ```bash
 # For large codebase searches
-/scout-ext "Find all authentication files across frontend, backend, and mobile apps"
+/ck:scout-ext "Find all authentication files across frontend, backend, and mobile apps"
 ```
 
 Nhiều công cụ AI tìm kiếm song song, hiểu ngữ nghĩa mã để tìm các tệp có liên quan mà bạn sẽ bỏ lỡ với khớp mẫu.
@@ -87,7 +87,7 @@ Sử dụng Scout External khi:
 ### Monorepo Authentication Search
 
 ```bash
-/scout-ext "Find all authentication and session management across web, mobile, and API"
+/ck:scout-ext "Find all authentication and session management across web, mobile, and API"
 ```
 
 **AI agents search**:
@@ -102,7 +102,7 @@ Sử dụng Scout External khi:
 ### Payment Integration Analysis
 
 ```bash
-/scout-ext "Locate all payment processing files including Stripe, SePay, webhooks, and transaction logging"
+/ck:scout-ext "Locate all payment processing files including Stripe, SePay, webhooks, and transaction logging"
 ```
 
 **AI understands**:
@@ -177,7 +177,7 @@ opencode run "Search db/ for schema files. Return file paths only." --model open
 
 ## Related Commands
 
-- [`/scout-ext`](/docs/marketing/commands) - AI-powered codebase search
+- [`/ck:scout-ext`](/docs/marketing/commands) - AI-powered codebase search
 - [`/ckm:scout`](/docs/marketing/commands/scout) - Standard file search
 
 ## Tips
@@ -239,7 +239,7 @@ Gemini Flash 2.5 cực rẻ ($0.075/1M token input). Một tìm kiếm điển h
 **Custom Prompts**:
 Để các tìm kiếm rất cụ thể, tạo các nhắc chi tiết:
 ```bash
-/scout-ext "Find all files that implement retry logic for external API calls, including exponential backoff and error handling"
+/ck:scout-ext "Find all files that implement retry logic for external API calls, including exponential backoff and error handling"
 ```
 
 Scout External Agent là công cụ điện của bạn để khám phá cơ sở mã phức tạp. Khi tìm kiếm tiêu chuẩn không đủ, hãy mang AI.

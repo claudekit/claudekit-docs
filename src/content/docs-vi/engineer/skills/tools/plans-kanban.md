@@ -44,7 +44,7 @@ Skill này tự động kích hoạt khi:
 
 Kích hoạt thủ công:
 ```bash
-/kanban [plans-directory]
+/ck:kanban [plans-directory]
 ```
 
 ## Bắt Đầu Nhanh
@@ -132,8 +132,8 @@ assets/
 
 | Route | Mô Tả |
 |-------|-------|
-| `/` hoặc `/kanban` | Dashboard view cho default directory |
-| `/kanban?dir=<path>` | Dashboard cho specific directory |
+| `/` hoặc `/ck:kanban` | Dashboard view cho default directory |
+| `/ck:kanban?dir=<path>` | Dashboard cho specific directory |
 | `/api/plans` | JSON API cho plans data |
 | `/api/plans?dir=<path>` | JSON API cho specific directory |
 | `/assets/*` | Static assets (CSS, JS) |
@@ -216,5 +216,5 @@ Server output bao gồm cả local và network URLs:
 
 ## Commands Liên Quan
 
-- `/kanban` - Quick access tới dashboard server
-- `/preview` - Xem individual plan files (dùng Markdown Novel Viewer)
+- `/ck:kanban` - Quick access tới dashboard server
+- `/ck:preview` - Xem individual plan files (dùng Markdown Novel Viewer)

@@ -1,5 +1,5 @@
 ---
-title: /preview
+title: /ck:preview
 description: Universal markdown and directory viewer with clean reading interface
 section: engineer
 kit: engineer
@@ -8,15 +8,15 @@ order: 22
 published: true
 ---
 
-# /preview
+# /ck:preview
 
 Universal viewer for markdown files and directories using a clean, novel-reader inspired UI.
 
 ## Syntax
 
 ```bash
-/preview [path]          # File or directory path
-/preview --stop         # Stop running server
+/ck:preview [path]          # File or directory path
+/ck:preview --stop         # Stop running server
 ```
 
 ## Usage
@@ -30,11 +30,11 @@ Server runs as background task visible in `/tasks`.
 ## Examples
 
 ```bash
-/preview plans/my-plan/plan.md      # View markdown file
-/preview plans/                     # Browse plans directory
-/preview docs/                      # Browse docs directory
-/preview any/path/file.md          # View any markdown
-/preview any/path/                 # Browse any directory
+/ck:preview plans/my-plan/plan.md      # View markdown file
+/ck:preview plans/                     # Browse plans directory
+/ck:preview docs/                      # Browse docs directory
+/ck:preview any/path/file.md          # View any markdown
+/ck:preview any/path/                 # Browse any directory
 ```
 
 ## Modes

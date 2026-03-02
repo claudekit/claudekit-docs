@@ -1,19 +1,19 @@
 ---
-title: /ask
+title: /ck:ask
 description: Get expert architectural guidance and strategic technical consultation for design decisions and system challenges
 section: engineer
 kit: engineer
 category: commands/core
 order: 3
 published: true
----# /ask
+---# /ck:ask
 
 Strategic architectural consultation command. Provides expert guidance on technical decisions, system design, and architectural challenges without implementation.
 
 ## Syntax
 
 ```bash
-/ask [technical-question]
+/ck:ask [technical-question]
 ```
 
 ## When to Use
@@ -27,7 +27,7 @@ Strategic architectural consultation command. Provides expert guidance on techni
 ## Quick Example
 
 ```bash
-/ask [should we use microservices or monolithic architecture for a SaaS platform with 10k users?]
+/ck:ask [should we use microservices or monolithic architecture for a SaaS platform with 10k users?]
 ```
 
 **Output**:
@@ -91,7 +91,7 @@ When you run this command:
 ### Scenario: Database Choice for Analytics Feature
 
 ```bash
-/ask [we need to add analytics tracking for user behavior. Should we use PostgreSQL with TimescaleDB, ClickHouse, or a separate analytics service like Mixpanel?]
+/ck:ask [we need to add analytics tracking for user behavior. Should we use PostgreSQL with TimescaleDB, ClickHouse, or a separate analytics service like Mixpanel?]
 ```
 
 **Response Breakdown**:
@@ -194,7 +194,7 @@ Migration Path if Needed:
 
 **Additional Considerations**:
 ```
-- If you need /scout to find existing database configs, I can call it
+- If you need /ck:scout to find existing database configs, I can call it
 - Consider data retention policies (GDPR 2-year limit)
 - Plan for gradual rollout to validate write performance
 ```
@@ -204,7 +204,7 @@ Migration Path if Needed:
 ### Technology Stack Selection
 
 ```bash
-/ask [choosing between Next.js, Remix, and Astro for documentation site with AI chat]
+/ck:ask [choosing between Next.js, Remix, and Astro for documentation site with AI chat]
 ```
 
 Gets guidance on framework selection based on SSR, static generation, and interactive component needs.
@@ -212,7 +212,7 @@ Gets guidance on framework selection based on SSR, static generation, and intera
 ### Scaling Strategy
 
 ```bash
-/ask [our API response time increased to 2s under load. Should we add caching, scale horizontally, or optimize queries?]
+/ck:ask [our API response time increased to 2s under load. Should we add caching, scale horizontally, or optimize queries?]
 ```
 
 Receives analysis of bottlenecks and prioritized optimization strategy.
@@ -220,7 +220,7 @@ Receives analysis of bottlenecks and prioritized optimization strategy.
 ### Integration Architecture
 
 ```bash
-/ask [how should we integrate payment processing: direct Stripe integration or payment gateway abstraction layer?]
+/ck:ask [how should we integrate payment processing: direct Stripe integration or payment gateway abstraction layer?]
 ```
 
 Gets trade-off analysis between simplicity and vendor flexibility.
@@ -228,7 +228,7 @@ Gets trade-off analysis between simplicity and vendor flexibility.
 ### Security Design
 
 ```bash
-/ask [what's the best approach for API authentication: JWT, session-based, or API keys?]
+/ck:ask [what's the best approach for API authentication: JWT, session-based, or API keys?]
 ```
 
 Receives security assessment and recommendations based on use case.
@@ -239,23 +239,23 @@ Receives security assessment and recommendations based on use case.
 
 ✅ **Good:**
 ```bash
-/ask [should we use WebSockets or Server-Sent Events for real-time notifications?]
-/ask [how to structure microservices boundaries for e-commerce domain?]
-/ask [what database architecture for multi-tenant SaaS with data isolation?]
+/ck:ask [should we use WebSockets or Server-Sent Events for real-time notifications?]
+/ck:ask [how to structure microservices boundaries for e-commerce domain?]
+/ck:ask [what database architecture for multi-tenant SaaS with data isolation?]
 ```
 
 ❌ **Too Implementation-Focused:**
 ```bash
-/ask [how to write a function that connects to Redis?]
-/ask [what's the syntax for PostgreSQL indexes?]
-/ask [debug this error message]
+/ck:ask [how to write a function that connects to Redis?]
+/ck:ask [what's the syntax for PostgreSQL indexes?]
+/ck:ask [debug this error message]
 ```
 
 ### Provide Context
 
 Include relevant constraints:
 ```bash
-/ask [
+/ck:ask [
   Need caching solution for:
   - 100k daily users
   - Budget: $200/month
@@ -267,15 +267,15 @@ Include relevant constraints:
 
 ### Review Project Docs First
 
-The `/ask` command automatically reads `./docs` but you can help by:
+The `/ck:ask` command automatically reads `./docs` but you can help by:
 1. Keeping `system-architecture.md` updated
 2. Documenting constraints in `project-overview-pdr.md`
 3. Updating `code-standards.md` with preferences
 
-## What /ask DOES NOT Do
+## What /ck:ask DOES NOT Do
 
 - ❌ Write implementation code
-- ❌ Fix bugs (use `/debug` or `/fix` instead)
+- ❌ Fix bugs (use `/ck:debug` or `/ck:fix` instead)
 - ❌ Deploy infrastructure
 - ❌ Make final decisions (you decide, it advises)
 
@@ -285,16 +285,16 @@ The `/ask` command automatically reads `./docs` but you can help by:
 
 ```bash
 # 1. Get architectural guidance
-/ask [best approach for background job processing?]
+/ck:ask [best approach for background job processing?]
 
 # 2. Review recommendations
 # [Advisor output received]
 
 # 3. Create implementation plan
-/plan [implement background jobs using Bull + Redis]
+/ck:plan [implement background jobs using Bull + Redis]
 
 # 4. Implement
-/cook [add background job processing]
+/ck:cook [add background job processing]
 ```
 
 ### During Code Review
@@ -304,31 +304,31 @@ The `/ask` command automatically reads `./docs` but you can help by:
 git diff main
 
 # 2. Question design choice
-/ask [is this service layer abstraction over-engineered for CRUD operations?]
+/ck:ask [is this service layer abstraction over-engineered for CRUD operations?]
 
 # 3. Adjust based on guidance
 # [Make changes if recommended]
 ```
 
-### Can Call /scout Automatically
+### Can Call /ck:scout Automatically
 
-If `/ask` needs more context about your codebase:
+If `/ck:ask` needs more context about your codebase:
 
 ```
 Architecture Analysis:
 Need to understand current database setup...
 
-Invoking /scout to find database configurations...
+Invoking /ck:scout to find database configurations...
 [Scout results integrated into analysis]
 ```
 
 You can also call it explicitly:
 ```bash
 # First scout the codebase
-/scout [find all API authentication implementations] 3
+/ck:scout [find all API authentication implementations] 3
 
 # Then ask architectural question
-/ask [should we consolidate these auth patterns or keep them separate?]
+/ck:ask [should we consolidate these auth patterns or keep them separate?]
 ```
 
 ## Common Issues
@@ -339,7 +339,7 @@ You can also call it explicitly:
 
 **Solution**: Be specific about the challenge
 ```bash
-/ask [what's the best way to handle file uploads over 100MB with progress tracking and resume capability?]
+/ck:ask [what's the best way to handle file uploads over 100MB with progress tracking and resume capability?]
 ```
 
 ### Missing Context
@@ -348,7 +348,7 @@ You can also call it explicitly:
 
 **Solution**: Include constraints in question
 ```bash
-/ask [authentication approach for mobile app with requirement: offline-first, sync when online]
+/ck:ask [authentication approach for mobile app with requirement: offline-first, sync when online]
 ```
 
 ### Implementation Questions
@@ -357,15 +357,15 @@ You can also call it explicitly:
 
 **Solution**: Use appropriate commands
 - Code syntax: Just ask directly
-- Bugs: `/debug [issue]`
-- Implementation: `/plan` then `/cook`
+- Bugs: `/ck:debug [issue]`
+- Implementation: `/ck:plan` then `/ck:cook`
 
 ## Related Commands
 
-- [/scout](/docs/engineer/skills/scout) - Search codebase before asking architectural questions
-- [/plan](/docs/engineer/commands/plan) - Create implementation plan after receiving guidance
-- [/debug](/docs/engineer/skills/debug) - Investigate technical issues (not architecture)
+- [/ck:scout](/docs/engineer/skills/scout) - Search codebase before asking architectural questions
+- [/ck:plan](/docs/engineer/commands/plan) - Create implementation plan after receiving guidance
+- [/ck:debug](/docs/engineer/skills/debug) - Investigate technical issues (not architecture)
 
 ---
 
-**Key Takeaway**: `/ask` provides strategic architectural consultation from expert advisors, helping you make informed technical decisions before implementation begins.
+**Key Takeaway**: `/ck:ask` provides strategic architectural consultation from expert advisors, helping you make informed technical decisions before implementation begins.

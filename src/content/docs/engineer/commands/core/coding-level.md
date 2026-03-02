@@ -1,5 +1,5 @@
 ---
-title: /coding-level
+title: /ck:coding-level
 description: Set your coding experience level for tailored explanations and output format
 section: engineer
 kit: engineer
@@ -8,14 +8,14 @@ order: 20
 published: true
 ---
 
-# /coding-level
+# /ck:coding-level
 
 Configure how technical and detailed Claude's explanations should be based on your experience level.
 
 ## Syntax
 
 ```bash
-/coding-level [0-5]
+/ck:coding-level [0-5]
 ```
 
 ## Experience Levels

@@ -1,5 +1,5 @@
 ---
-title: /bootstrap
+title: /ck:bootstrap
 description: Tài liệu hướng dẫn cho lệnh bootstrap
 section: engineer
 kit: engineer
@@ -9,19 +9,19 @@ published: true
 lang: vi
 ---
 
-# /bootstrap
+# /ck:bootstrap
 
 Khởi tạo các dự án mới theo phương pháp phát triển dựa trên đặc tả và dựa trên kiểm thử. Lệnh này hướng dẫn bạn qua các giai đoạn thu thập yêu cầu, nghiên cứu, lập kế hoạch và triển khai.
 
 ## Cú pháp
 
 ```bash
-/bootstrap [mô-tả-dự-án]
+/ck:bootstrap [mô-tả-dự-án]
 ```
 
 ## Cách thức hoạt động
 
-Lệnh `/bootstrap` tuân theo một quy trình làm việc toàn diện:
+Lệnh `/ck:bootstrap` tuân theo một quy trình làm việc toàn diện:
 
 ### 1. Thu thập Yêu cầu (Tương tác)
 
@@ -80,7 +80,7 @@ Chạy các bài kiểm thử để đảm bảo:
 ### Cách sử dụng Cơ bản
 
 ```bash
-/bootstrap [xây dựng một REST API để quản lý công việc]
+/ck:bootstrap [xây dựng một REST API để quản lý công việc]
 ```
 
 **Điều gì xảy ra:**
@@ -95,7 +95,7 @@ Chạy các bài kiểm thử để đảm bảo:
 ### Với Tech Stack được chỉ định
 
 ```bash
-/bootstrap [tạo một nền tảng blog với Next.js và PostgreSQL]
+/ck:bootstrap [tạo một nền tảng blog với Next.js và PostgreSQL]
 ```
 
 **Điều gì xảy ra:**
@@ -110,7 +110,7 @@ Chạy các bài kiểm thử để đảm bảo:
 ### Công cụ dòng lệnh (CLI Tool)
 
 ```bash
-/bootstrap [xây dựng một công cụ CLI để quản lý các biến môi trường]
+/ck:bootstrap [xây dựng một công cụ CLI để quản lý các biến môi trường]
 ```
 
 **Điều gì xảy ra:**
@@ -126,13 +126,13 @@ Chạy các bài kiểm thử để đảm bảo:
 Để khởi tạo dự án hoàn toàn tự động mà không cần hỏi đáp:
 
 ```bash
-/bootstrap:auto [mô tả dự án chi tiết với tất cả các yêu cầu]
+/ck:bootstrap:auto [mô tả dự án chi tiết với tất cả các yêu cầu]
 ```
 
 **Ví dụ:**
 
 ```bash
-/bootstrap:auto [
+/ck:bootstrap:auto [
   Xây dựng một REST API cho ứng dụng todo với:
   - Node.js + Express.js
   - Cơ sở dữ liệu PostgreSQL với Prisma ORM
@@ -156,7 +156,7 @@ Chạy các bài kiểm thử để đảm bảo:
 
 ## Cấu trúc được tạo ra
 
-Sau khi chạy lệnh `/bootstrap`, bạn sẽ có:
+Sau khi chạy lệnh `/ck:bootstrap`, bạn sẽ có:
 
 ```
 my-project/
@@ -260,12 +260,12 @@ Tùy chỉnh việc khởi tạo thông qua hỏi đáp:
 
 ✅ **Tốt:**
 ```bash
-/bootstrap [xây dựng một REST API để quản lý kho hàng với xác thực người dùng và cập nhật tồn kho thời gian thực]
+/ck:bootstrap [xây dựng một REST API để quản lý kho hàng với xác thực người dùng và cập nhật tồn kho thời gian thực]
 ```
 
 ❌ **Mơ hồ:**
 ```bash
-/bootstrap [làm một ứng dụng]
+/ck:bootstrap [làm một ứng dụng]
 ```
 
 ### Trả lời các câu hỏi một cách Chu đáo
@@ -302,25 +302,25 @@ ls src/
 ### Microservice
 
 ```bash
-/bootstrap [tạo một microservice xử lý thanh toán tích hợp với Stripe]
+/ck:bootstrap [tạo một microservice xử lý thanh toán tích hợp với Stripe]
 ```
 
 ### Ứng dụng Full-Stack
 
 ```bash
-/bootstrap [xây dựng một nền tảng mạng xã hội với các bài đăng, bình luận và lượt thích]
+/ck:bootstrap [xây dựng một nền tảng mạng xã hội với các bài đăng, bình luận và lượt thích]
 ```
 
 ### API Gateway
 
 ```bash
-/bootstrap [triển khai một API gateway với xác thực và giới hạn tốc độ]
+/ck:bootstrap [triển khai một API gateway với xác thực và giới hạn tốc độ]
 ```
 
 ### Background Worker
 
 ```bash
-/bootstrap [tạo một bộ xử lý công việc chạy ngầm để gửi email]
+/ck:bootstrap [tạo một bộ xử lý công việc chạy ngầm để gửi email]
 ```
 
 ## Xử lý sự cố
@@ -329,7 +329,7 @@ ls src/
 
 **Vấn đề:** Quá trình hỏi đáp diễn ra quá lâu
 
-**Giải pháp:** Sử dụng `/bootstrap:auto` với mô tả chi tiết
+**Giải pháp:** Sử dụng `/ck:bootstrap:auto` với mô tả chi tiết
 
 ### Chọn sai Tech Stack
 
@@ -341,13 +341,13 @@ ls src/
 
 **Vấn đề:** Một số tính năng không được triển khai
 
-**Giải pháp:** Thêm các tính năng sau khi bootstrap bằng `/cook` skill
+**Giải pháp:** Thêm các tính năng sau khi bootstrap bằng `/ck:cook` skill
 
 ### Kiểm thử thất bại
 
 **Vấn đề:** Các bài kiểm thử được tạo ra không vượt qua
 
-**Giải pháp:** Sử dụng `/fix` để chẩn đoán và sửa lỗi
+**Giải pháp:** Sử dụng `/ck:fix` để chẩn đoán và sửa lỗi
 
 ## Sau khi Bootstrap
 
@@ -361,22 +361,22 @@ cat src/server.js
 npm test
 
 # 3. Cập nhật tài liệu
-/docs:update
+/ck:docs:update
 
 # 4. Thêm các tính năng bổ sung
-/cook [thêm chức năng đặt lại mật khẩu]
+/ck:cook [thêm chức năng đặt lại mật khẩu]
 
 # 5. Commit cấu trúc ban đầu
-/git cm
+/ck:git cm
 ```
 
 ## Các bước tiếp theo
 
-- [/cook](/docs/engineer/skills/cook) - Thêm tính năng mới
-- [/plan](/docs/engineer/commands/plan) - Lập kế hoạch bổ sung
-- [/test](/docs/engineer/commands/core/test) - Chạy bộ kiểm thử
-- [/docs:update](/vi/docs/engineer/commands/docs-cmd/update) - Cập nhật tài liệu
+- [/ck:cook](/docs/engineer/skills/cook) - Thêm tính năng mới
+- [/ck:plan](/docs/engineer/commands/plan) - Lập kế hoạch bổ sung
+- [/ck:test](/docs/engineer/commands/core/test) - Chạy bộ kiểm thử
+- [/ck:docs:update](/vi/docs/engineer/commands/docs-cmd/update) - Cập nhật tài liệu
 
 ---
 
-**Thông điệp chính**: `/bootstrap` xử lý toàn bộ quá trình khởi tạo dự án, từ việc thu thập yêu cầu đến mã nguồn đã được kiểm thử và tài liệu hóa, tuân theo các thực hành tốt nhất của ngành.
+**Thông điệp chính**: `/ck:bootstrap` xử lý toàn bộ quá trình khởi tạo dự án, từ việc thu thập yêu cầu đến mã nguồn đã được kiểm thử và tài liệu hóa, tuân theo các thực hành tốt nhất của ngành.

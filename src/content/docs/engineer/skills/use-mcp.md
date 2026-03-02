@@ -12,7 +12,7 @@ Utilize tools from Model Context Protocol (MCP) servers configured in your proje
 ## Usage
 
 ```
-/use-mcp [task description]
+/ck:use-mcp [task description]
 ```
 
 ## What It Does

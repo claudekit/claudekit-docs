@@ -43,7 +43,7 @@ This skill activates automatically when:
 
 Manual activation:
 ```bash
-/kanban [plans-directory]
+/ck:kanban [plans-directory]
 ```
 
 ## Quick Start
@@ -131,8 +131,8 @@ assets/
 
 | Route | Description |
 |-------|-------------|
-| `/` or `/kanban` | Dashboard view for default directory |
-| `/kanban?dir=<path>` | Dashboard for specific directory |
+| `/` or `/ck:kanban` | Dashboard view for default directory |
+| `/ck:kanban?dir=<path>` | Dashboard for specific directory |
 | `/api/plans` | JSON API for plans data |
 | `/api/plans?dir=<path>` | JSON API for specific directory |
 | `/assets/*` | Static assets (CSS, JS) |
@@ -237,7 +237,7 @@ curl http://localhost:3500/api/plans | jq '.plans[] | {title, status, progress}'
 
 ```bash
 # Start dashboard for sprint plans
-/kanban plans/sprints/
+/ck:kanban plans/sprints/
 
 # Access from phone to check progress during standup
 # Use networkUrl: http://192.168.1.100:3500/kanban?dir=plans/sprints
@@ -312,5 +312,5 @@ Dashboard shows all three features side-by-side with progress bars and timeline 
 
 ## Related Commands
 
-- `/kanban` - Quick access to dashboard server
-- `/preview` - View individual plan files (uses Markdown Novel Viewer)
+- `/ck:kanban` - Quick access to dashboard server
+- `/ck:preview` - View individual plan files (uses Markdown Novel Viewer)

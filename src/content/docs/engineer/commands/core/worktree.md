@@ -1,5 +1,5 @@
 ---
-title: /worktree
+title: /ck:worktree
 description: Create isolated git worktrees for parallel feature development
 section: engineer
 kit: engineer
@@ -7,15 +7,15 @@ category: commands/core
 order: 23
 published: true
 ---
-# /worktree
+# /ck:worktree
 
 Create isolated git worktrees for parallel feature development without disrupting your main working directory.
 
 ## Syntax
 
 ```bash
-/worktree [feature-description]                    # Standalone repo
-/worktree [project] [feature-description]          # Monorepo
+/ck:worktree [feature-description]                    # Standalone repo
+/ck:worktree [project] [feature-description]          # Monorepo
 ```
 
 ## How It Works
@@ -43,11 +43,11 @@ Auto-detected from description keywords:
 ## Examples
 
 ```bash
-/worktree add authentication system
+/ck:worktree add authentication system
 # → Creates: worktrees/project-add-auth
 # → Branch: kai/feat/add-auth
 
-/worktree fix login validation bug
+/ck:worktree fix login validation bug
 # → Creates: worktrees/project-login-validation-bug
 # → Branch: kai/fix/login-validation-bug
 ```
@@ -55,11 +55,11 @@ Auto-detected from description keywords:
 ### Monorepo
 
 ```bash
-/worktree api add webhook support
+/ck:worktree api add webhook support
 # → Creates: worktrees/api-add-webhook-support
 # → Branch: kai/feat/add-webhook-support
 
-/worktree frontend refactor dashboard layout
+/ck:worktree frontend refactor dashboard layout
 # → Creates: worktrees/frontend-refactor-dashboard
 # → Branch: kai/refactor/refactor-dashboard
 ```

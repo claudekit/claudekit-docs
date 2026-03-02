@@ -23,7 +23,7 @@ Update documentation after major changes:
 
 ```bash
 # After refactoring your API
-/docs "Update documentation for new webhook API"
+/ck:docs "Update documentation for new webhook API"
 ```
 
 The agent analyzes code changes, updates relevant docs, and ensures consistency across all documentation files.
@@ -86,7 +86,7 @@ Use the Docs Manager Agent when you need to:
 
 ```bash
 # After implementing email campaign system
-/docs "Document the new email campaign API and workflow"
+/ck:docs "Document the new email campaign API and workflow"
 ```
 
 **The manager will**:
@@ -102,7 +102,7 @@ Use the Docs Manager Agent when you need to:
 
 ```bash
 # For new team members joining project
-/docs "Generate comprehensive codebase summary"
+/ck:docs "Generate comprehensive codebase summary"
 ```
 
 **You'll get**:
@@ -220,7 +220,7 @@ The Docs Manager integrates seamlessly:
 
 ## Related Commands
 
-- [`/docs`](/docs/marketing/commands) - Update or create documentation
+- [`/ck:docs`](/docs/marketing/commands) - Update or create documentation
 - [`/audit`](/docs/marketing/commands) - Run documentation quality audit
 
 ## Tips

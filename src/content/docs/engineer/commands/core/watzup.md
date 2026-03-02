@@ -1,24 +1,24 @@
 ---
-title: /watzup
+title: /ck:watzup
 description: Documentation for watzup
 section: engineer
 kit: engineer
 category: commands/core
 order: 7
 published: true
----# /watzup
+---# /ck:watzup
 
 Quick review command that analyzes your current branch, recent commits, and code changes to provide a comprehensive summary of all work done. Perfect for stand-ups, code reviews, or understanding recent activity.
 
 ## Syntax
 
 ```bash
-/watzup
+/ck:watzup
 ```
 
 ## What It Does
 
-The `/watzup` command provides a comprehensive overview of:
+The `/ck:watzup` command provides a comprehensive overview of:
 
 1. **Current Branch Status**
    - Active branch name
@@ -53,7 +53,7 @@ The `/watzup` command provides a comprehensive overview of:
 ## Quick Example
 
 ```bash
-/watzup
+/ck:watzup
 ```
 
 **Output:**
@@ -162,7 +162,7 @@ Quality: High
 
 ```bash
 # Before stand-up meeting
-/watzup
+/ck:watzup
 
 # Use output for:
 # - What I did yesterday
@@ -174,7 +174,7 @@ Quality: High
 
 ```bash
 # Before requesting review
-/watzup
+/ck:watzup
 
 # Share summary with reviewers
 # Helps them understand scope and context
@@ -184,7 +184,7 @@ Quality: High
 
 ```bash
 # End of day handoff
-/watzup
+/ck:watzup
 
 # Provides complete context for next developer
 ```
@@ -193,7 +193,7 @@ Quality: High
 
 ```bash
 # End of sprint
-/watzup
+/ck:watzup
 
 # Shows all accomplishments
 # Demonstrates progress
@@ -203,7 +203,7 @@ Quality: High
 
 ```bash
 # Check progress on large feature
-/watzup
+/ck:watzup
 
 # See what's been done
 # Plan remaining work
@@ -213,10 +213,10 @@ Quality: High
 
 ```bash
 # Before creating pull request
-/watzup
+/ck:watzup
 
 # Use summary for PR description
-# Then: /git pr [branch] [base]
+# Then: /ck:git pr [branch] [base]
 ```
 
 ## Complete Example
@@ -226,7 +226,7 @@ Quality: High
 You've been working on a real-time chat feature for several days. Time to check progress.
 
 ```bash
-/watzup
+/ck:watzup
 ```
 
 **Detailed Output:**
@@ -633,16 +633,16 @@ Commits Analyzed: 12
 
 ```bash
 # Before stand-up
-/watzup
+/ck:watzup
 
 # Before code review request
-/watzup
+/ck:watzup
 
 # Before PR creation
-/watzup
+/ck:watzup
 
 # End of day/sprint
-/watzup
+/ck:watzup
 ```
 
 ### Compare with Previous State
@@ -650,18 +650,18 @@ Commits Analyzed: 12
 ```bash
 # See what changed today
 git log --since="1 day ago"
-/watzup
+/ck:watzup
 
 # Compare to main
 git diff main
-/watzup
+/ck:watzup
 ```
 
 ### Share with Team
 
 ```bash
 # Generate summary
-/watzup > work-summary.md
+/ck:watzup > work-summary.md
 
 # Share in Slack/Teams
 cat work-summary.md
@@ -672,7 +672,7 @@ cat work-summary.md
 ### Daily Stand-up
 
 ```bash
-/watzup
+/ck:watzup
 
 # Answer:
 # - What did I do?
@@ -684,7 +684,7 @@ cat work-summary.md
 
 ```bash
 # See full scope
-/watzup
+/ck:watzup
 
 # Use summary in review request
 # Helps reviewers understand changes
@@ -693,7 +693,7 @@ cat work-summary.md
 ### Sprint Demo
 
 ```bash
-/watzup
+/ck:watzup
 
 # Show accomplishments
 # Demonstrate progress
@@ -704,7 +704,7 @@ cat work-summary.md
 
 ```bash
 # Before vacation/handoff
-/watzup
+/ck:watzup
 
 # Provides complete context
 # Documents decisions
@@ -715,7 +715,7 @@ cat work-summary.md
 
 ```bash
 # Mid-feature development
-/watzup
+/ck:watzup
 
 # Assess progress
 # Plan remaining work
@@ -724,40 +724,40 @@ cat work-summary.md
 
 ## Integration with Other Commands
 
-### With /journal
+### With /ck:journal
 
 ```bash
 # Quick summary
-/watzup
+/ck:watzup
 
 # Detailed documentation
-/journal
+/ck:journal
 
-# /watzup: Overview
-# /journal: Deep dive with context
+# /ck:watzup: Overview
+# /ck:journal: Deep dive with context
 ```
 
-### With /git pr
+### With /ck:git pr
 
 ```bash
 # Analyze changes
-/watzup
+/ck:watzup
 
 # Create PR with summary
-/git pr feature-branch main
+/ck:git pr feature-branch main
 ```
 
-### With /git cm
+### With /ck:git cm
 
 ```bash
 # See uncommitted changes
 git status
 
 # Review all work
-/watzup
+/ck:watzup
 
 # Commit
-/git cm
+/ck:git cm
 ```
 
 ## Customization
@@ -767,11 +767,11 @@ git status
 ```bash
 # Last 24 hours
 git log --since="1 day ago"
-/watzup
+/ck:watzup
 
 # Last week
 git log --since="1 week ago"
-/watzup
+/ck:watzup
 ```
 
 ### Include Specific Files
@@ -779,12 +779,12 @@ git log --since="1 week ago"
 ```bash
 # See changes to specific area
 git log -- src/payments/
-/watzup
+/ck:watzup
 ```
 
 ## Limitations
 
-### What /watzup Does NOT Do
+### What /ck:watzup Does NOT Do
 
 ❌ Does not start implementation
 ❌ Does not modify code
@@ -798,30 +798,30 @@ git log -- src/payments/
 
 **Before Starting Work:**
 ```bash
-❌ /watzup
-✅ /plan [feature]
+❌ /ck:watzup
+✅ /ck:plan [feature]
 ```
 
 **When Implementing:**
 ```bash
-❌ /watzup
-✅ /cook [feature]
+❌ /ck:watzup
+✅ /ck:cook [feature]
 ```
 
 **When Fixing Bugs:**
 ```bash
-❌ /watzup
-✅ /fix [issue]
+❌ /ck:watzup
+✅ /ck:fix [issue]
 ```
 
 ## Related Commands
 
-- [/journal](/docs/engineer/commands/core/journal) - Detailed work documentation
-- [/git cm](/docs/engineer/skills/git) - Commit changes
-- [/git pr](/docs/engineer/skills/git) - Create pull request
-- [/cook](/docs/engineer/skills/cook) - Implement features
-- [/plan](/docs/engineer/commands/plan) - Plan implementations
+- [/ck:journal](/docs/engineer/commands/core/journal) - Detailed work documentation
+- [/ck:git cm](/docs/engineer/skills/git) - Commit changes
+- [/ck:git pr](/docs/engineer/skills/git) - Create pull request
+- [/ck:cook](/docs/engineer/skills/cook) - Implement features
+- [/ck:plan](/docs/engineer/commands/plan) - Plan implementations
 
 ---
 
-**Key Takeaway**: `/watzup` gives you instant visibility into recent work - perfect for stand-ups, code reviews, and understanding what's been done. It's analysis-only and never modifies your code.
+**Key Takeaway**: `/ck:watzup` gives you instant visibility into recent work - perfect for stand-ups, code reviews, and understanding what's been done. It's analysis-only and never modifies your code.

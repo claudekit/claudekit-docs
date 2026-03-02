@@ -12,15 +12,15 @@ Answer technical and architectural questions about your codebase. This skill pro
 ## Usage
 
 ```
-/ask [your question]
+/ck:ask [your question]
 ```
 
 ## Examples
 
 ```bash
-/ask how is authentication currently implemented?
-/ask what's the database schema for orders?
-/ask explain the middleware chain in this project
+/ck:ask how is authentication currently implemented?
+/ck:ask what's the database schema for orders?
+/ck:ask explain the middleware chain in this project
 ```
 
 ## What It Does

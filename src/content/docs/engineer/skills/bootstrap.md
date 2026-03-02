@@ -12,7 +12,7 @@ End-to-end project scaffolding orchestrator. Takes a requirement from zero to ru
 
 ## What This Skill Does
 
-Bootstrap handles the entire "greenfield" workflow: git init, tech stack research, architecture design, planning, implementation, tests, review, docs, and onboarding. It doesn't write code directly—it orchestrates `/plan` and `/cook` with the right flags for your chosen mode.
+Bootstrap handles the entire "greenfield" workflow: git init, tech stack research, architecture design, planning, implementation, tests, review, docs, and onboarding. It doesn't write code directly—it orchestrates `/ck:plan` and `/ck:cook` with the right flags for your chosen mode.
 
 ## Modes
 
@@ -26,14 +26,14 @@ Bootstrap handles the entire "greenfield" workflow: git init, tech stack researc
 ## Usage
 
 ```
-/bootstrap <requirements> [flags]
+/ck:bootstrap <requirements> [flags]
 ```
 
 **Examples:**
-- `/bootstrap "Build a SaaS dashboard with auth and billing"`
-- `/bootstrap "REST API for inventory management" --fast`
-- `/bootstrap "Real-time collaboration tool like Figma" --full`
-- `/bootstrap "E-commerce platform with Stripe + CMS" --parallel`
+- `/ck:bootstrap "Build a SaaS dashboard with auth and billing"`
+- `/ck:bootstrap "REST API for inventory management" --fast`
+- `/ck:bootstrap "Real-time collaboration tool like Figma" --full`
+- `/ck:bootstrap "E-commerce platform with Stripe + CMS" --parallel`
 
 ## Workflow Overview
 
@@ -56,8 +56,8 @@ Bootstrap is an orchestrator, not an implementer:
 2. **Research** — investigate tech stack options for your requirements
 3. **Tech Stack** — recommend and confirm stack (Node/Bun, framework, DB, auth, etc.)
 4. **Design** — architecture overview, data model, API shape
-5. **Plan** — delegates to `/plan` with mode-appropriate flags
-6. **Implement** — delegates to `/cook` with mode-appropriate flags
+5. **Plan** — delegates to `/ck:plan` with mode-appropriate flags
+6. **Implement** — delegates to `/ck:cook` with mode-appropriate flags
 7. **Test** — verifies test suite passes (100% required)
 8. **Review** — code-reviewer agent validates quality
 9. **Docs** — generates README, API docs, setup guide
@@ -65,10 +65,10 @@ Bootstrap is an orchestrator, not an implementer:
 
 ## Example Prompts
 
-- `/bootstrap "Multi-tenant SaaS with team workspaces" --auto`
-- `/bootstrap "CLI tool for managing dotfiles" --fast`
-- `/bootstrap "GraphQL API with subscriptions" --parallel`
-- `/bootstrap "Mobile app backend with push notifications" --full`
+- `/ck:bootstrap "Multi-tenant SaaS with team workspaces" --auto`
+- `/ck:bootstrap "CLI tool for managing dotfiles" --fast`
+- `/ck:bootstrap "GraphQL API with subscriptions" --parallel`
+- `/ck:bootstrap "Mobile app backend with push notifications" --full`
 
 ## Related Skills
 

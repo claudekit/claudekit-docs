@@ -123,7 +123,7 @@ Get help with ClaudeKit through our community resources, documentation, and dire
 1. **Search First**: Check [FAQ](/docs/support/faq) and [Troubleshooting](/docs/support/troubleshooting)
 2. **Check Documentation**: Look in relevant documentation sections
 3. **Search GitHub Issues**: See if your issue has been reported
-4. **Try Debugging**: Use `/debug` command to investigate issues
+4. **Try Debugging**: Use `/ck:debug` command to investigate issues
 
 ### When Asking for Help
 
@@ -138,13 +138,13 @@ Get help with ClaudeKit through our community resources, documentation, and dire
 
 **Good example**:
 ```
-Hi! I'm having trouble with the /cook command on my Next.js project.
+Hi! I'm having trouble with the /ck:cook command on my Next.js project.
 
 ClaudeKit version: 1.0.0
 OS: macOS 14.0
 Node.js: v18.17.0
 
-Command: /cook "add user authentication with Better Auth"
+Command: /ck:cook "add user authentication with Better Auth"
 
 Error: "Better Auth skill not found"
 Expected: Should detect Next.js project and activate Better Auth skill

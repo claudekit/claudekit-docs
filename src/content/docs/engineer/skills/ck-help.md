@@ -12,15 +12,15 @@ ClaudeKit usage guide and skill discovery. Helps you find the right skill for an
 ## Usage
 
 ```
-/ck-help [topic or question]
+/ck:ck-help [topic or question]
 ```
 
 ## Examples
 
 ```bash
-/ck-help                    # General help
-/ck-help how to plan        # Find planning skills
-/ck-help git workflow        # Git-related skills
+/ck:ck-help                    # General help
+/ck:ck-help how to plan        # Find planning skills
+/ck:ck-help git workflow        # Git-related skills
 ```
 
 ## What It Does

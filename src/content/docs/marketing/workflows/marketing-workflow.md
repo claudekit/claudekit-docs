@@ -308,7 +308,7 @@ Track vanity metrics (impressions, followers) but optimize for business metrics 
 
 ## Commands Used
 
-- `/research` - Conduct market/competitive research
+- `/ck:research` - Conduct market/competitive research
 - `/strategy create` - Generate marketing plans
 - `/ckm:content create` - Produce content assets
 - `/ckm:campaign launch` - Activate campaigns

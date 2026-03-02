@@ -1,5 +1,5 @@
 ---
-title: /plan:ci
+title: /ck:plan:ci
 description: Tài liệu hướng dẫn lệnh plan:ci
 section: engineer
 kit: engineer
@@ -9,19 +9,19 @@ published: true
 lang: vi
 ---
 
-# /plan:ci
+# /ck:plan:ci
 
 Phân tích nhật ký (logs) quy trình công việc của GitHub Actions và tạo kế hoạch triển khai chi tiết để sửa các sự cố CI/CD. Lệnh này xác định các vấn đề, nguyên nhân gốc rễ và cung cấp các bước có thể thực hiện được nhưng KHÔNG tự động thực hiện các bản sửa lỗi.
 
 ## Cú pháp
 
 ```bash
-/plan:ci [github-actions-url]
+/ck:plan:ci [github-actions-url]
 ```
 
 ## Cách hoạt động
 
-Lệnh `/plan:ci` tuân theo một quy trình làm việc phân tích:
+Lệnh `/ck:plan:ci` tuân theo một quy trình làm việc phân tích:
 
 ### 1. Lấy nhật ký (Logs)
 
@@ -69,7 +69,7 @@ Tạo kế hoạch toàn diện bao gồm:
 ### Phân tích lỗi Build
 
 ```bash
-/plan:ci https://github.com/user/repo/actions/runs/12345
+/ck:plan:ci https://github.com/user/repo/actions/runs/12345
 ```
 
 **Điều gì xảy ra:**
@@ -277,7 +277,7 @@ Sử dụng: /clear, sau đó mô tả task tự nhiên → skill cook sẽ kíc
 ### Phân tích lỗi kiểm tra (Test)
 
 ```bash
-/plan:ci https://github.com/user/repo/actions/runs/67890
+/ck:plan:ci https://github.com/user/repo/actions/runs/67890
 ```
 
 **Điều gì xảy ra:**
@@ -436,13 +436,13 @@ module.exports = {
 
 ✓ Kế hoạch hoàn tất
 
-Tiếp theo: /cook [triển khai các bản sửa lỗi CI từ kế hoạch]
+Tiếp theo: /ck:cook [triển khai các bản sửa lỗi CI từ kế hoạch]
 ```
 
 ### Lỗi triển khai (Deployment)
 
 ```bash
-/plan:ci https://github.com/user/repo/actions/runs/11111
+/ck:plan:ci https://github.com/user/repo/actions/runs/11111
 ```
 
 **Điều gì xảy ra:**
@@ -568,31 +568,31 @@ env:
 
 ## Khi nào nên sử dụng
 
-### ✅ Sử dụng /plan:ci cho:
+### ✅ Sử dụng /ck:plan:ci cho:
 
 **Lỗi Build**
 ```bash
-/plan:ci https://github.com/user/repo/actions/runs/12345
+/ck:plan:ci https://github.com/user/repo/actions/runs/12345
 ```
 
 **Lỗi kiểm tra (Test)**
 ```bash
-/plan:ci https://github.com/user/repo/actions/runs/67890
+/ck:plan:ci https://github.com/user/repo/actions/runs/67890
 ```
 
 **Sự cố triển khai (Deployment)**
 ```bash
-/plan:ci https://github.com/user/repo/actions/runs/11111
+/ck:plan:ci https://github.com/user/repo/actions/runs/11111
 ```
 
 **Lỗi Linting/Kiểu (Type)**
 ```bash
-/plan:ci https://github.com/user/repo/actions/runs/22222
+/ck:plan:ci https://github.com/user/repo/actions/runs/22222
 ```
 
 **Vấn đề môi trường**
 ```bash
-/plan:ci https://github.com/user/repo/actions/runs/33333
+/ck:plan:ci https://github.com/user/repo/actions/runs/33333
 ```
 
 ### ❌ Không sử dụng cho:
@@ -606,7 +606,7 @@ env:
 
 ## Cách tiếp cận chỉ lập kế hoạch (Plan-Only)
 
-`/plan:ci` tạo kế hoạch nhưng KHÔNG triển khai:
+`/ck:plan:ci` tạo kế hoạch nhưng KHÔNG triển khai:
 
 **Tại sao chỉ lập kế hoạch?**
 - Các vấn đề CI cần được xem xét cẩn thận
@@ -624,8 +624,8 @@ cat plans/fix-ci-*.md
 /clear
 Mô tả task → skill cook tự động triển khai từ ngữ cảnh plan
 
-# Lựa chọn 3: Sử dụng /fix để tự động triển khai
-/fix https://github.com/user/repo/actions/runs/12345
+# Lựa chọn 3: Sử dụng /ck:fix để tự động triển khai
+/ck:fix https://github.com/user/repo/actions/runs/12345
 ```
 
 ## Cấu trúc kế hoạch
@@ -720,7 +720,7 @@ Giảm thiểu:
 
 ## Các tệp đầu ra
 
-Sau khi `/plan:ci` hoàn tất:
+Sau khi `/ck:plan:ci` hoàn tất:
 
 ### Kế hoạch triển khai
 
@@ -775,19 +775,19 @@ Bản phân tích chi tiết lỗi
 
 ✅ **Tốt:**
 ```bash
-/plan:ci https://github.com/user/repo/actions/runs/12345
+/ck:plan:ci https://github.com/user/repo/actions/runs/12345
 ```
 
 ❌ **Xấu:**
 ```bash
-/plan:ci 12345  # Thiếu ngữ cảnh repo
+/ck:plan:ci 12345  # Thiếu ngữ cảnh repo
 ```
 
 ### Xem lại kế hoạch trước khi triển khai
 
 ```bash
 # 1. Lấy kế hoạch
-/plan:ci [url]
+/ck:plan:ci [url]
 
 # 2. ĐỌC kế hoạch
 cat plans/fix-ci-*.md
@@ -795,7 +795,7 @@ cat plans/fix-ci-*.md
 # 3. Hiểu nguyên nhân gốc rễ
 
 # 4. Sau đó triển khai
-/cook [triển khai từ kế hoạch]
+/ck:cook [triển khai từ kế hoạch]
 ```
 
 ### Kiểm tra cục bộ trước
@@ -816,7 +816,7 @@ Quy trình làm việc tiêu chuẩn:
 
 ```bash
 # 1. Nhận phân tích và kế hoạch
-/plan:ci https://github.com/user/repo/actions/runs/12345
+/ck:plan:ci https://github.com/user/repo/actions/runs/12345
 
 # 2. Xem lại kế hoạch
 cat plans/fix-ci-12345.md
@@ -830,15 +830,15 @@ cat plans/fix-ci-12345.md
 /clear
 Triển khai sửa lỗi CI → skill cook tự động triển khai
 
-# Lựa chọn C: Sử dụng /fix (tự động triển khai)
-/fix https://github.com/user/repo/actions/runs/12345
+# Lựa chọn C: Sử dụng /ck:fix (tự động triển khai)
+/ck:fix https://github.com/user/repo/actions/runs/12345
 
 # 4. Kiểm tra cục bộ trước
 npm test
 npm run build
 
 # 5. Commit và push
-/git cm
+/ck:git cm
 
 # 6. Xác minh CI vượt qua
 # Kiểm tra GitHub Actions
@@ -846,10 +846,10 @@ npm run build
 
 ## Các lệnh liên quan
 
-- [/fix](/docs/engineer/skills/fix) - Tự động triển khai sửa lỗi CI
-- [/cook](/docs/engineer/skills/cook) - Triển khai kế hoạch hiện có
-- [/debug](/docs/engineer/commands/core/debug) - Debug các vấn đề phức tạp
+- [/ck:fix](/docs/engineer/skills/fix) - Tự động triển khai sửa lỗi CI
+- [/ck:cook](/docs/engineer/skills/cook) - Triển khai kế hoạch hiện có
+- [/ck:debug](/docs/engineer/commands/core/debug) - Debug các vấn đề phức tạp
 
 ---
 
-**Điểm mấu chốt**: `/plan:ci` phân tích các thất bại của GitHub Actions, xác định nguyên nhân gốc rễ và tạo các kế hoạch triển khai chi tiết với hướng dẫn từng bước—giúp bạn toàn quyền kiểm soát cách khắc phục các sự cố CI/CD mà không cần triển khai tự động.
+**Điểm mấu chốt**: `/ck:plan:ci` phân tích các thất bại của GitHub Actions, xác định nguyên nhân gốc rễ và tạo các kế hoạch triển khai chi tiết với hướng dẫn từng bước—giúp bạn toàn quyền kiểm soát cách khắc phục các sự cố CI/CD mà không cần triển khai tự động.

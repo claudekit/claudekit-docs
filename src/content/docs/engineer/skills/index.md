@@ -165,7 +165,7 @@ Every skill contains:
 | **Purpose** | Specialized knowledge + workflow orchestration | Task execution |
 | **Invocation** | `/skill-name` or "Use [skill]..." | Auto-spawned by skills |
 | **Scope** | Single capability or multi-step process | Autonomous work unit |
-| **Example** | /plan, /cook, /fix, better-auth, devops | planner, tester, code-reviewer |
+| **Example** | /ck:plan, /ck:cook, /ck:fix, better-auth, devops | planner, tester, code-reviewer |
 
 :::note
 Commands and skills now use the same `/` invocation syntax. The "commands" concept has been unified into skills as of engineer@2.12.0.

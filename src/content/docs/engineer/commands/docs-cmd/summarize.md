@@ -1,5 +1,5 @@
 ---
-title: /docs:summarize
+title: /ck:docs:summarize
 description: Documentation for summarize
 section: engineer
 kit: engineer
@@ -7,21 +7,21 @@ category: commands/docs-cmd
 order: 62
 published: true
 ---
-# /docs:summarize
+# /ck:docs:summarize
 
 Generate a comprehensive summary of your codebase by analyzing project structure, files, and architecture. Creates or updates `./docs/codebase-summary.md` with detailed project overview, file statistics, and token counts.
 
 ## Syntax
 
 ```bash
-/docs:summarize
+/ck:docs:summarize
 ```
 
 No arguments needed - the command analyzes your entire codebase automatically.
 
 ## How It Works
 
-The `/docs:summarize` command uses the `docs-manager` agent:
+The `/ck:docs:summarize` command uses the `docs-manager` agent:
 
 ### 1. Codebase Compaction
 
@@ -62,45 +62,45 @@ The `/docs:summarize` command uses the `docs-manager` agent:
 **New Team Members**
 ```bash
 # Onboarding new developers
-/docs:summarize
+/ck:docs:summarize
 ```
 
 **Project Handoff**
 ```bash
 # Preparing project for transfer
-/docs:summarize
+/ck:docs:summarize
 ```
 
 **Architecture Review**
 ```bash
 # Before major refactoring
-/docs:summarize
+/ck:docs:summarize
 ```
 
 **AI Context Generation**
 ```bash
 # Generate context for AI tools
-/docs:summarize
+/ck:docs:summarize
 ```
 
 **Regular Maintenance**
 ```bash
 # Weekly/monthly codebase review
-/docs:summarize
+/ck:docs:summarize
 ```
 
 ### ❌ Don't Use For
 
 **Full Documentation Update**
 ```bash
-❌ /docs:summarize  # Only updates summary
-✅ /docs:update     # Updates all documentation
+❌ /ck:docs:summarize  # Only updates summary
+✅ /ck:docs:update     # Updates all documentation
 ```
 
 **Detailed API Docs**
 ```bash
-❌ /docs:summarize  # High-level overview only
-✅ /docs:update [focus on API documentation]
+❌ /ck:docs:summarize  # High-level overview only
+✅ /ck:docs:update [focus on API documentation]
 ```
 
 ## Examples
@@ -108,7 +108,7 @@ The `/docs:summarize` command uses the `docs-manager` agent:
 ### Basic Codebase Summary
 
 ```bash
-/docs:summarize
+/ck:docs:summarize
 ```
 
 **What happens:**
@@ -142,7 +142,7 @@ The `/docs:summarize` command uses the `docs-manager` agent:
 ### Large Monorepo
 
 ```bash
-/docs:summarize
+/ck:docs:summarize
 ```
 
 **What happens:**
@@ -186,7 +186,7 @@ The `/docs:summarize` command uses the `docs-manager` agent:
 ### Microservices Architecture
 
 ```bash
-/docs:summarize
+/ck:docs:summarize
 ```
 
 **What happens:**
@@ -228,7 +228,7 @@ The `/docs:summarize` command uses the `docs-manager` agent:
 ### TypeScript Monorepo
 
 ```bash
-/docs:summarize
+/ck:docs:summarize
 ```
 
 **What happens:**
@@ -364,14 +364,14 @@ The command uses the **docs-manager agent** with these capabilities:
 ✅ **Periodic summaries:**
 ```bash
 # Weekly or after major changes
-/docs:summarize
+/ck:docs:summarize
 ```
 
 ❌ **Too frequent:**
 ```bash
 # After every tiny change
-/fix --quick [typo]
-/docs:summarize  # Wasteful
+/ck:fix --quick [typo]
+/ck:docs:summarize  # Wasteful
 ```
 
 ### Before Major Work
@@ -379,9 +379,9 @@ The command uses the **docs-manager agent** with these capabilities:
 ✅ **Establish baseline:**
 ```bash
 # Before refactoring
-/docs:summarize
+/ck:docs:summarize
 # Perform refactoring
-/docs:summarize  # Compare changes
+/ck:docs:summarize  # Compare changes
 ```
 
 ### For Onboarding
@@ -389,8 +389,8 @@ The command uses the **docs-manager agent** with these capabilities:
 ✅ **Prepare for new developers:**
 ```bash
 # Update documentation
-/docs:summarize
-/docs:update
+/ck:docs:summarize
+/ck:docs:update
 
 # New team member gets complete picture
 ```
@@ -401,10 +401,10 @@ The command uses the **docs-manager agent** with these capabilities:
 
 ```bash
 # 1. Generate summary
-/docs:summarize
+/ck:docs:summarize
 
 # 2. Update full documentation
-/docs:update
+/ck:docs:update
 
 # 3. Share documentation
 # Point new developers to ./docs/codebase-summary.md
@@ -414,26 +414,26 @@ The command uses the **docs-manager agent** with these capabilities:
 
 ```bash
 # 1. Generate current state
-/docs:summarize
+/ck:docs:summarize
 
 # 2. Review summary
 cat docs/codebase-summary.md
 
 # 3. Plan refactoring based on insights
-/plan [refactor based on architecture review]
+/ck:plan [refactor based on architecture review]
 ```
 
 ### Project Handoff
 
 ```bash
 # 1. Generate comprehensive summary
-/docs:summarize
+/ck:docs:summarize
 
 # 2. Update all documentation
-/docs:update
+/ck:docs:update
 
 # 3. Commit documentation
-/git cm
+/ck:git cm
 
 # 4. Share with receiving team
 ```
@@ -442,13 +442,13 @@ cat docs/codebase-summary.md
 
 ```bash
 # Weekly/monthly task
-/docs:summarize
+/ck:docs:summarize
 
 # Review changes
 git diff docs/codebase-summary.md
 
 # Commit if significant changes
-/git cm
+/ck:git cm
 ```
 
 ## Troubleshooting
@@ -463,7 +463,7 @@ git diff docs/codebase-summary.md
 npm install -g repomix
 
 # Then run command
-/docs:summarize
+/ck:docs:summarize
 ```
 
 ### Large Codebase Timeout
@@ -477,7 +477,7 @@ echo "target/" >> .repomixignore
 echo "*.min.js" >> .repomixignore
 
 # Then retry
-/docs:summarize
+/ck:docs:summarize
 ```
 
 ### Missing Files in Summary
@@ -489,7 +489,7 @@ echo "*.min.js" >> .repomixignore
 # Check .gitignore and .repomixignore
 # Remove exclusions if needed
 # Then regenerate
-/docs:summarize
+/ck:docs:summarize
 ```
 
 ## Token Count Usage
@@ -533,35 +533,35 @@ Strategy:
 
 ```bash
 # Summary only
-/docs:summarize
+/ck:docs:summarize
 
 # All documentation
-/docs:update
+/ck:docs:update
 ```
 
 ### Initialize Documentation
 
 ```bash
 # First-time setup
-/docs:init
+/ck:docs:init
 
 # Regular updates
-/docs:summarize
+/ck:docs:summarize
 ```
 
 ### Review Changes
 
 ```bash
 # Generate summary
-/docs:summarize
+/ck:docs:summarize
 
 # Review recent work
-/watzup
+/ck:watzup
 ```
 
 ## Output Files
 
-After running `/docs:summarize`:
+After running `/ck:docs:summarize`:
 
 ```
 ./
@@ -572,7 +572,7 @@ After running `/docs:summarize`:
 
 ## Metrics
 
-Typical `/docs:summarize` performance:
+Typical `/ck:docs:summarize` performance:
 
 - **Time**: 1-3 minutes (depending on codebase size)
 - **Files analyzed**: All source files (excluding node_modules, build artifacts)
@@ -582,13 +582,13 @@ Typical `/docs:summarize` performance:
 
 ## Next Steps
 
-After using `/docs:summarize`:
+After using `/ck:docs:summarize`:
 
-- [/docs:update](/docs/engineer/commands/docs-cmd/update) - Update all documentation
-- [/docs:init](/docs/engineer/commands/docs-cmd/init) - Initialize full documentation
-- [/watzup](/docs/engineer/commands/core/watzup) - Review recent changes
-- [/git cm](/docs/engineer/skills/git) - Commit documentation
+- [/ck:docs:update](/docs/engineer/commands/docs-cmd/update) - Update all documentation
+- [/ck:docs:init](/docs/engineer/commands/docs-cmd/init) - Initialize full documentation
+- [/ck:watzup](/docs/engineer/commands/core/watzup) - Review recent changes
+- [/ck:git cm](/docs/engineer/skills/git) - Commit documentation
 
 ---
 
-**Key Takeaway**: `/docs:summarize` provides a quick, comprehensive overview of your codebase structure, helping developers understand project organization and serving as valuable context for AI-assisted development.
+**Key Takeaway**: `/ck:docs:summarize` provides a quick, comprehensive overview of your codebase structure, helping developers understand project organization and serving as valuable context for AI-assisted development.

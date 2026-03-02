@@ -215,7 +215,7 @@ Analyze error logs:
 - [/ckm:cook](/docs/marketing/commands/cook) - Implementation (includes testing)
 - [/ckm:test](/docs/marketing/commands/test) - Run tests only
 - [/ckm:review](/docs/marketing/commands/review) - Code quality check
-- [/debug](/docs/marketing/commands) - Deep root cause analysis
+- [/ck:debug](/docs/marketing/commands) - Deep root cause analysis
 
 ---
 

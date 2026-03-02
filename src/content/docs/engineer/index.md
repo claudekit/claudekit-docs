@@ -32,8 +32,8 @@ npm install -g claudekit-cli
 ck new --kit engineer
 
 # Start building
-/plan "implement user authentication"
-/cook "add login form with validation"
+/ck:plan "implement user authentication"
+/ck:cook "add login form with validation"
 ```
 
 ## Core Features
@@ -43,8 +43,8 @@ ck new --kit engineer
 Plan features and design systems with AI assistance:
 
 ```bash
-/plan "implement payment integration"
-/plan:parallel "refactor authentication system"
+/ck:plan "implement payment integration"
+/ck:plan:parallel "refactor authentication system"
 ```
 
 ### Code Generation
@@ -52,7 +52,7 @@ Plan features and design systems with AI assistance:
 Generate high-quality code with context awareness:
 
 ```bash
-/cook "add REST API endpoints for users"
+/ck:cook "add REST API endpoints for users"
 "Implement caching layer"
 ```
 
@@ -61,8 +61,8 @@ Generate high-quality code with context awareness:
 Ensure code quality with automated testing:
 
 ```bash
-/test "run full test suite"
-/fix "resolve TypeScript errors"
+/ck:test "run full test suite"
+/ck:fix "resolve TypeScript errors"
 /review "code review recent changes"
 ```
 

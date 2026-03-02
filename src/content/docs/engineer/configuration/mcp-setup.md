@@ -33,16 +33,16 @@ ClaudeKit delegates MCP (Model Context Protocol) servers to the dedicated **mcp-
 
 ## Using MCP Tools
 
-Trigger the subagent-managed tools via the `/use-mcp` command:
+Trigger the subagent-managed tools via the `/ck:use-mcp` command:
 
 ```bash
-/use-mcp <instruction>
+/ck:use-mcp <instruction>
 ```
 
 **Example**
 
 ```bash
-/use-mcp Use chrome-devtools mcp to capture a screenshot of google.com
+/ck:use-mcp Use chrome-devtools mcp to capture a screenshot of google.com
 ```
 
 ClaudeKit will summon the **mcp-manager** subagent, load the configured MCP clients, analyze available tools, execute the best fit, and return the results to your primary chat.
@@ -62,7 +62,7 @@ Anthropic's “Code Execution with MCP” pattern inspired a lightweight approac
 ### How It Works
 
 1. The **mcp-management** skill bundle stores script snippets that instantiate MCP clients from `.claude/.mcp.json`.
-2. The **mcp-manager** subagent is granted these skills and remains dormant until a `/use-mcp` command fires.
+2. The **mcp-manager** subagent is granted these skills and remains dormant until a `/ck:use-mcp` command fires.
 3. When invoked, the subagent:
    - Loads `.claude/.mcp.json`.
    - Connects to the declared MCP servers.
@@ -81,6 +81,6 @@ Even with subagent isolation, processing massive MCP catalogs still burns tokens
 
 - Keep refining `.claude/.mcp.json` as your toolset evolves.
 - Version-control the file privately if it includes API endpoints or sensitive details.
-- Pair `/use-mcp` with automation commands (e.g., `/cook`, `/fix`, `/plan`) to mix bespoke tools with ClaudeKit’s native agents.
+- Pair `/ck:use-mcp` with automation commands (e.g., `/ck:cook`, `/ck:fix`, `/ck:plan`) to mix bespoke tools with ClaudeKit’s native agents.
 
 With this workflow, you get the power of MCP without the usual context penalty.

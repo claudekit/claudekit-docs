@@ -1,5 +1,5 @@
 ---
-title: /bootstrap:auto:fast
+title: /ck:bootstrap:auto:fast
 description: Quick auto-bootstrap with parallel research and streamlined workflow
 section: engineer
 kit: engineer
@@ -8,19 +8,19 @@ order: 25
 published: true
 ---
 
-# /bootstrap:auto:fast
+# /ck:bootstrap:auto:fast
 
 Faster automatic project bootstrapping with parallel research phases.
 
 ## Syntax
 
 ```bash
-/bootstrap:auto:fast [user-requirements]
+/ck:bootstrap:auto:fast [user-requirements]
 ```
 
-## Key Differences from /bootstrap:auto
+## Key Differences from /ck:bootstrap:auto
 
-| Aspect | /bootstrap:auto | /bootstrap:auto:fast |
+| Aspect | /ck:bootstrap:auto | /ck:bootstrap:auto:fast |
 |--------|-----------------|----------------------|
 | Research | Sequential | 6 agents in parallel |
 | Sources | Unlimited | Max 5 per researcher |
@@ -73,7 +73,7 @@ Faster automatic project bootstrapping with parallel research phases.
 - Requirements are clear
 - Standard tech stack expected
 
-## When to Use /bootstrap:auto Instead
+## When to Use /ck:bootstrap:auto Instead
 
 - Complex requirements needing deep research
 - Unfamiliar domain
@@ -81,4 +81,4 @@ Faster automatic project bootstrapping with parallel research phases.
 
 ---
 
-**Key Takeaway**: Use `/bootstrap:auto:fast` for quicker project bootstrapping with parallel research and streamlined workflow.
+**Key Takeaway**: Use `/ck:bootstrap:auto:fast` for quicker project bootstrapping with parallel research and streamlined workflow.

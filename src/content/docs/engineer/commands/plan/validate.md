@@ -1,5 +1,5 @@
 ---
-title: /plan:validate
+title: /ck:plan:validate
 description: Validate implementation plan with critical questions interview
 section: engineer
 kit: engineer
@@ -8,15 +8,15 @@ order: 11
 published: true
 ---
 
-# /plan:validate
+# /ck:plan:validate
 
 Interview-based validation to surface assumptions, risks, and edge cases before implementation.
 
 ## Syntax
 
 ```bash
-/plan:validate                # Validate active plan
-/plan:validate [plan-path]    # Validate specific plan
+/ck:plan:validate                # Validate active plan
+/ck:plan:validate [plan-path]    # Validate specific plan
 ```
 
 ## What It Does
@@ -79,11 +79,11 @@ Set in `.claude/.ck.json`:
 
 ## Best Practice
 
-**After validation, run `/clear` then `/cook`** to start implementation with fresh context.
+**After validation, run `/clear` then `/ck:cook`** to start implementation with fresh context.
 
 This prevents planning context pollution and improves plan adherence.
 
 ## Related Commands
 
 - [Planning skill](/docs/engineer/skills/plan) - Research-based planning with `--hard` flag
-- [/cook](/docs/engineer/skills/cook) - Implementation from validated plan
+- [/ck:cook](/docs/engineer/skills/cook) - Implementation from validated plan

@@ -1,24 +1,24 @@
 ---
-title: /bootstrap
+title: /ck:bootstrap
 description: Documentation for bootstrap
 section: engineer
 kit: engineer
 category: commands/core
 order: 1
 published: true
----# /bootstrap
+---# /ck:bootstrap
 
 Initialize new projects with spec-driven and test-driven development. This command guides you through requirements gathering, research, planning, and implementation.
 
 ## Syntax
 
 ```bash
-/bootstrap [project description]
+/ck:bootstrap [project description]
 ```
 
 ## How It Works
 
-The `/bootstrap` command follows a comprehensive workflow:
+The `/ck:bootstrap` command follows a comprehensive workflow:
 
 ### 1. Requirements Gathering (Interactive)
 
@@ -77,7 +77,7 @@ Runs tests to ensure:
 ### Basic Usage
 
 ```bash
-/bootstrap [build a REST API for task management]
+/ck:bootstrap [build a REST API for task management]
 ```
 
 **What happens:**
@@ -92,7 +92,7 @@ Runs tests to ensure:
 ### With Tech Stack Specified
 
 ```bash
-/bootstrap [create a blog platform with Next.js and PostgreSQL]
+/ck:bootstrap [create a blog platform with Next.js and PostgreSQL]
 ```
 
 **What happens:**
@@ -107,7 +107,7 @@ Runs tests to ensure:
 ### CLI Tool
 
 ```bash
-/bootstrap [build a CLI tool for managing environment variables]
+/ck:bootstrap [build a CLI tool for managing environment variables]
 ```
 
 **What happens:**
@@ -123,13 +123,13 @@ Runs tests to ensure:
 For fully automatic bootstrapping without Q&A:
 
 ```bash
-/bootstrap:auto [detailed project description with all requirements]
+/ck:bootstrap:auto [detailed project description with all requirements]
 ```
 
 **Example:**
 
 ```bash
-/bootstrap:auto [
+/ck:bootstrap:auto [
   Build a REST API for a todo application with:
   - Node.js + Express.js
   - PostgreSQL database with Prisma ORM
@@ -153,7 +153,7 @@ For fully automatic bootstrapping without Q&A:
 
 ## Generated Structure
 
-After running `/bootstrap`, you'll have:
+After running `/ck:bootstrap`, you'll have:
 
 ```
 my-project/
@@ -257,12 +257,12 @@ Customize bootstrapping through Q&A:
 
 ✅ **Good:**
 ```bash
-/bootstrap [build a REST API for managing inventory with user authentication and real-time stock updates]
+/ck:bootstrap [build a REST API for managing inventory with user authentication and real-time stock updates]
 ```
 
 ❌ **Vague:**
 ```bash
-/bootstrap [make an app]
+/ck:bootstrap [make an app]
 ```
 
 ### Answer Questions Thoughtfully
@@ -299,25 +299,25 @@ ls src/
 ### Microservice
 
 ```bash
-/bootstrap [create a payment processing microservice with Stripe integration]
+/ck:bootstrap [create a payment processing microservice with Stripe integration]
 ```
 
 ### Full-Stack App
 
 ```bash
-/bootstrap [build a social media platform with posts, comments, and likes]
+/ck:bootstrap [build a social media platform with posts, comments, and likes]
 ```
 
 ### API Gateway
 
 ```bash
-/bootstrap [implement an API gateway with authentication and rate limiting]
+/ck:bootstrap [implement an API gateway with authentication and rate limiting]
 ```
 
 ### Background Worker
 
 ```bash
-/bootstrap [create a background job processor for email sending]
+/ck:bootstrap [create a background job processor for email sending]
 ```
 
 ## Troubleshooting
@@ -326,7 +326,7 @@ ls src/
 
 **Problem:** Q&A taking too long
 
-**Solution:** Use `/bootstrap:auto` with detailed description
+**Solution:** Use `/ck:bootstrap:auto` with detailed description
 
 ### Wrong Tech Stack Chosen
 
@@ -338,13 +338,13 @@ ls src/
 
 **Problem:** Some features not implemented
 
-**Solution:** Add features after bootstrapping using `/cook`
+**Solution:** Add features after bootstrapping using `/ck:cook`
 
 ### Tests Failing
 
 **Problem:** Generated tests don't pass
 
-**Solution:** Use `/fix` to diagnose and fix
+**Solution:** Use `/ck:fix` to diagnose and fix
 
 ## After Bootstrapping
 
@@ -358,22 +358,22 @@ cat src/server.js
 npm test
 
 # 3. Update documentation
-/docs:update
+/ck:docs:update
 
 # 4. Add additional features
-/cook [add password reset functionality]
+/ck:cook [add password reset functionality]
 
 # 5. Commit initial structure
-/git cm
+/ck:git cm
 ```
 
 ## Next Steps
 
-- [/cook](/docs/engineer/skills/cook) - Add new features
-- [/plan](/docs/engineer/commands/plan) - Plan additions
-- [/test](/docs/engineer/commands/core/test) - Run test suite
-- [/docs:update](/docs/engineer/commands/docs-cmd/update) - Update docs
+- [/ck:cook](/docs/engineer/skills/cook) - Add new features
+- [/ck:plan](/docs/engineer/commands/plan) - Plan additions
+- [/ck:test](/docs/engineer/commands/core/test) - Run test suite
+- [/ck:docs:update](/docs/engineer/commands/docs-cmd/update) - Update docs
 
 ---
 
-**Key Takeaway**: `/bootstrap` handles the entire project initialization process, from requirements gathering to tested, documented code, following industry best practices.
+**Key Takeaway**: `/ck:bootstrap` handles the entire project initialization process, from requirements gathering to tested, documented code, following industry best practices.

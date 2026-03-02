@@ -1,6 +1,6 @@
 ---
 lang: vi
-title: /docs:init
+title: /ck:docs:init
 description: Documentation for init
 section: engineer
 kit: engineer
@@ -9,19 +9,19 @@ order: 60
 published: true
 ---
 
-# /docs:init
+# /ck:docs:init
 
 Initialize comprehensive project documentation by analyzing the entire codebase. This is the essential first command when integrating ClaudeKit into an existing project.
 
 ## Syntax
 
 ```bash
-/docs:init
+/ck:docs:init
 ```
 
 ## How It Works
 
-The `/docs:init` command performs a thorough codebase analysis:
+The `/ck:docs:init` command performs a thorough codebase analysis:
 
 ### 1. Codebase Scanning
 
@@ -68,7 +68,7 @@ Creates comprehensive documentation files in `docs/`:
 ```bash
 # First day on new codebase
 cd existing-project
-/docs:init
+/ck:docs:init
 
 # Now you understand the entire project!
 ```
@@ -77,7 +77,7 @@ cd existing-project
 ```bash
 # Adding ClaudeKit to existing project
 ck init --kit engineer
-/docs:init
+/ck:docs:init
 
 # ClaudeKit now understands your codebase
 ```
@@ -86,7 +86,7 @@ ck init --kit engineer
 ```bash
 # Haven't looked at project in months
 cd old-project
-/docs:init
+/ck:docs:init
 
 # Get refreshed on everything
 ```
@@ -94,7 +94,7 @@ cd old-project
 **Before Major Refactoring**
 ```bash
 # Document current state first
-/docs:init
+/ck:docs:init
 
 # Now safely refactor
 ```
@@ -285,7 +285,7 @@ git tag v1.2.3
 git push origin v1.2.3
 
 # Create release PR
-/git pr main staging
+/ck:git pr main staging
 
 # After approval:
 # 1. Merge to main
@@ -305,7 +305,7 @@ git clone https://github.com/company/project.git
 cd project
 
 # Generate documentation
-/docs:init
+/ck:docs:init
 
 Reading codebase...
 [████████████████████████] 100%
@@ -321,7 +321,7 @@ Documentation generated:
 cat docs/codebase-summary.md
 
 # Ask questions
-/ask [how does authentication work?]
+/ck:ask [how does authentication work?]
 
 # Start contributing!
 ```
@@ -333,7 +333,7 @@ cat docs/codebase-summary.md
 cd legacy-project
 
 # Generate current state documentation
-/docs:init
+/ck:docs:init
 
 Analyzing codebase...
 - Framework: Express.js (old version)
@@ -410,13 +410,13 @@ With documentation, ClaudeKit:
 - Avoids creating duplicate code
 - Respects architectural decisions
 
-**Before `/docs:init`:**
+**Before `/ck:docs:init`:**
 ```
 User: "Add user authentication"
 Claude: Creates new auth system (duplicate!)
 ```
 
-**After `/docs:init`:**
+**After `/ck:docs:init`:**
 ```
 User: "Add user authentication"
 Claude: Extends existing auth system properly
@@ -448,11 +448,11 @@ Documentation should be updated when:
 
 ```bash
 # After major changes
-/docs:update
+/ck:docs:update
 
 # Or regenerate completely
 rm -rf docs/
-/docs:init
+/ck:docs:init
 ```
 
 ## Customization
@@ -473,10 +473,10 @@ vendor/
 
 ```bash
 # Document only backend
-/docs:init --focus=src/api,src/services
+/ck:docs:init --focus=src/api,src/services
 
 # Document only frontend
-/docs:init --focus=client/
+/ck:docs:init --focus=client/
 ```
 
 ## Best Practices
@@ -488,7 +488,7 @@ When joining a project or integrating ClaudeKit:
 ```bash
 # First thing to do
 cd project
-/docs:init
+/ck:docs:init
 ```
 
 ### Review Generated Docs
@@ -506,10 +506,10 @@ cat docs/code-standards.md
 
 ```bash
 # Update docs regularly
-/docs:update
+/ck:docs:update
 
 # Or after major changes
-/docs:init  # Regenerate
+/ck:docs:init  # Regenerate
 ```
 
 ### Share with Team
@@ -517,7 +517,7 @@ cat docs/code-standards.md
 ```bash
 # Commit documentation
 git add docs/
-/git cm  # "docs: initialize project documentation"
+/ck:git cm  # "docs: initialize project documentation"
 
 # Push to team
 git push
@@ -537,7 +537,7 @@ git push
 "The project also uses Redis for caching, located in src/cache/"
 
 # Regenerate
-/docs:init
+/ck:docs:init
 ```
 
 ### Incorrect Information
@@ -550,7 +550,7 @@ git push
 "The database is actually PostgreSQL, not MySQL"
 
 # Update
-/docs:update
+/ck:docs:update
 ```
 
 ### Very Large Codebase
@@ -560,22 +560,22 @@ git push
 **Solution:**
 ```bash
 # Focus on important directories
-/docs:init --focus=src/
+/ck:docs:init --focus=src/
 
 # Or split into chunks
-/docs:init --dir=src/api
-/docs:init --dir=src/services
+/ck:docs:init --dir=src/api
+/ck:docs:init --dir=src/services
 ```
 
 ## Next Steps
 
-After running `/docs:init`:
+After running `/ck:docs:init`:
 
-- [/docs:update](/docs/engineer/commands/docs-cmd/update) - Update documentation
-- [/docs:summarize](/docs/engineer/commands/docs-cmd/summarize) - Create summary
-- [/ask](/docs/engineer/commands/core/ask) - Ask about codebase
-- [/watzup](/docs/engineer/commands/core/watzup) - Get project status
+- [/ck:docs:update](/docs/engineer/commands/docs-cmd/update) - Update documentation
+- [/ck:docs:summarize](/docs/engineer/commands/docs-cmd/summarize) - Create summary
+- [/ck:ask](/docs/engineer/commands/core/ask) - Ask about codebase
+- [/ck:watzup](/docs/engineer/commands/core/watzup) - Get project status
 
 ---
 
-**Key Takeaway**: `/docs:init` is essential when starting with ClaudeKit on existing projects. It creates comprehensive documentation that helps ClaudeKit understand your codebase and prevents hallucinations.
+**Key Takeaway**: `/ck:docs:init` is essential when starting with ClaudeKit on existing projects. It creates comprehensive documentation that helps ClaudeKit understand your codebase and prevents hallucinations.

@@ -163,7 +163,7 @@ Giai đoạn 2: [Các tính năng cốt lõi]
 ## Các lệnh liên quan
 
 - [`/ckm:plan`](/vi/docs/marketing/commands/plan) - Tạo một kế hoạch triển khai mới.
-- [`/research`](/docs/marketing/commands) - Thực hiện nghiên cứu kỹ thuật chuyên sâu.
+- [`/ck:research`](/docs/marketing/commands) - Thực hiện nghiên cứu kỹ thuật chuyên sâu.
 
 ## Mẹo
 

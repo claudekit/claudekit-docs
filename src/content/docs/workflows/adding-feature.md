@@ -17,7 +17,7 @@ Learn the complete workflow for adding new features to your project with ClaudeK
 **Time**: 15-30 minutes (vs 2-4 hours manually)
 **Agents Used**: planner, scout, tester, code-reviewer, docs-manager
 **Skills**: cook (auto-activates from plan context)
-**Commands**: /plan, /test, /docs:update, /git cm
+**Commands**: /ck:plan, /ck:test, /ck:docs:update, /ck:git cm
 
 ## Prerequisites
 
@@ -55,7 +55,7 @@ claude
 Use the planner agent to create a detailed implementation plan:
 
 ```bash
-/plan [add password reset flow with email verification]
+/ck:plan [add password reset flow with email verification]
 ```
 
 **What happens**:
@@ -133,7 +133,7 @@ If plan needs adjustment, provide feedback:
 For complex features, scout the codebase first:
 
 ```bash
-/scout "Show me existing authentication code" 3
+/ck:scout "Show me existing authentication code" 3
 ```
 
 **Output**:
@@ -163,7 +163,7 @@ After planning, clear context and implement:
 
 ```bash
 /clear  # Free up context after planning
-/cook "Implement password reset with email verification as planned"
+/ck:cook "Implement password reset with email verification as planned"
 ```
 
 **Implementation process**:
@@ -213,7 +213,7 @@ Files modified:
 Automatically generate and run comprehensive tests:
 
 ```bash
-/test
+/ck:test
 ```
 
 **Test execution**:
@@ -245,7 +245,7 @@ Coverage:    89.3%
 
 **If tests fail**:
 ```bash
-/fix
+/ck:fix
 ```
 
 ### Step 7: Code Review
@@ -253,7 +253,7 @@ Coverage:    89.3%
 Review code quality automatically:
 
 ```bash
-# Code reviewer runs automatically after /cook
+# Code reviewer runs automatically after /ck:cook
 # Or invoke manually
 /review
 ```
@@ -291,7 +291,7 @@ Overall: APPROVED ✓
 Sync documentation with new feature:
 
 ```bash
-/docs:update
+/ck:docs:update
 ```
 
 **Documentation updates**:
@@ -359,7 +359,7 @@ curl -X POST http://localhost:3000/api/auth/reset-password \
 Commit with conventional commit message:
 
 ```bash
-/git cm
+/ck:git cm
 ```
 
 **Generated commit**:
@@ -386,7 +386,7 @@ Security features:
 If working with a team:
 
 ```bash
-/git pr main feature/password-reset
+/ck:git pr main feature/password-reset
 ```
 
 **Generated PR**:
@@ -423,7 +423,7 @@ Real-world scenario: Adding search functionality to an e-commerce site.
 ### Initial Command
 
 ```bash
-/plan [add product search with filters, sorting, and pagination]
+/ck:plan [add product search with filters, sorting, and pagination]
 ```
 
 ### Plan Review
@@ -476,33 +476,33 @@ Real-world scenario: Adding search functionality to an e-commerce site.
 
 ```bash
 # Skip planning for simple endpoints
-/cook [add GET /api/users/:id/profile endpoint]
+/ck:cook [add GET /api/users/:id/profile endpoint]
 ```
 
 ### Variation 2: Database-Heavy Feature
 
 ```bash
 # Plan complex database changes first
-/plan [implement multi-tenant architecture with tenant isolation]
+/ck:plan [implement multi-tenant architecture with tenant isolation]
 /clear
-/cook "Implement multi-tenant architecture with tenant isolation as planned"
+/ck:cook "Implement multi-tenant architecture with tenant isolation as planned"
 ```
 
 ### Variation 3: UI + Backend Feature
 
 ```bash
 # Split into separate features
-/cook [implement backend API for notifications]
-/cook [implement frontend notification panel]
+/ck:cook [implement backend API for notifications]
+/ck:cook [implement frontend notification panel]
 ```
 
 ### Variation 4: Third-Party Integration
 
 ```bash
 # Research included automatically
-/plan [integrate Twilio SMS notifications]
+/ck:plan [integrate Twilio SMS notifications]
 /clear
-/cook "Integrate Twilio SMS notifications as planned"
+/ck:cook "Integrate Twilio SMS notifications as planned"
 ```
 
 ## Troubleshooting
@@ -514,13 +514,13 @@ Real-world scenario: Adding search functionality to an e-commerce site.
 **Solution**:
 ```bash
 # Break into smaller features
-/plan [add user management - phase 1: user CRUD]
+/ck:plan [add user management - phase 1: user CRUD]
 /clear
-/cook "Implement user CRUD as planned"
+/ck:cook "Implement user CRUD as planned"
 
-/plan [add user management - phase 2: roles and permissions]
+/ck:plan [add user management - phase 2: roles and permissions]
 /clear
-/cook "Implement roles and permissions as planned"
+/ck:cook "Implement roles and permissions as planned"
 ```
 
 ### Issue: Tests Failing
@@ -529,7 +529,7 @@ Real-world scenario: Adding search functionality to an e-commerce site.
 
 **Solution**:
 ```bash
-/fix
+/ck:fix
 
 # Debugger analyzes failures and fixes
 # Re-runs tests automatically
@@ -542,7 +542,7 @@ Real-world scenario: Adding search functionality to an e-commerce site.
 **Solution**:
 ```bash
 # Add specific requirements
-/cook [add error handling for network failures in password reset]
+/ck:cook [add error handling for network failures in password reset]
 ```
 
 ### Issue: Performance Concerns
@@ -552,7 +552,7 @@ Real-world scenario: Adding search functionality to an e-commerce site.
 **Solution**:
 ```bash
 # Add optimization
-/cook [optimize search queries with database indexes and caching]
+/ck:cook [optimize search queries with database indexes and caching]
 ```
 
 ### Issue: Documentation Unclear
@@ -562,7 +562,7 @@ Real-world scenario: Adding search functionality to an e-commerce site.
 **Solution**:
 ```bash
 # Regenerate with focus
-/docs:update [focus on password reset flow with diagrams]
+/ck:docs:update [focus on password reset flow with diagrams]
 ```
 
 ## Best Practices
@@ -572,11 +572,11 @@ Real-world scenario: Adding search functionality to an e-commerce site.
 For features requiring multiple components:
 ```bash
 # Always plan first
-/plan [feature description]
+/ck:plan [feature description]
 # Review plan
 /clear  # Free context
 # Then implement
-/cook "Implement [feature description] as planned"
+/ck:cook "Implement [feature description] as planned"
 ```
 
 ### 2. Small, Focused Features
@@ -584,28 +584,28 @@ For features requiring multiple components:
 Break large features into smaller pieces:
 ```bash
 ✅ Good:
-/cook [add user profile picture upload]
-/cook [add image thumbnail generation]
+/ck:cook [add user profile picture upload]
+/ck:cook [add image thumbnail generation]
 
 ❌ Too large:
-/cook [add complete media management system]
+/ck:cook [add complete media management system]
 ```
 
 ### 3. Test Immediately
 
 Don't skip testing:
 ```bash
-/cook [feature]
-/test           # Always run tests
-/fix       # Fix failures immediately
+/ck:cook [feature]
+/ck:test           # Always run tests
+/ck:fix       # Fix failures immediately
 ```
 
 ### 4. Document as You Go
 
 Keep docs current:
 ```bash
-/cook [feature]
-/docs:update    # Update docs immediately
+/ck:cook [feature]
+/ck:docs:update    # Update docs immediately
 ```
 
 ### 5. Review Before Committing
@@ -618,7 +618,7 @@ git diff
 
 # Understand what changed
 # Only then commit
-/git cm
+/ck:git cm
 ```
 
 ### 6. Use Feature Branches
@@ -629,13 +629,13 @@ Work safely:
 git checkout -b feature/password-reset
 
 # Implement
-/cook [feature]
+/ck:cook [feature]
 
 # Commit
-/git cm
+/ck:git cm
 
 # Create PR
-/git pr main feature/password-reset
+/ck:git pr main feature/password-reset
 ```
 
 ## Next Steps
@@ -647,11 +647,11 @@ git checkout -b feature/password-reset
 - [Building an API](/docs/workflows/building-api) - Create REST APIs
 
 ### Related Commands
-- [/plan](/docs/engineer/commands/plan) - Create implementation plans
-- [/cook](/docs/engineer/skills/cook) - Implement features from plans
-- [/test](/docs/engineer/commands/core/test) - Run test suites
-- [/docs:update](/docs/engineer/commands/docs-cmd/update) - Update documentation
-- [/git cm](/docs/engineer/skills/git) - Commit changes
+- [/ck:plan](/docs/engineer/commands/plan) - Create implementation plans
+- [/ck:cook](/docs/engineer/skills/cook) - Implement features from plans
+- [/ck:test](/docs/engineer/commands/core/test) - Run test suites
+- [/ck:docs:update](/docs/engineer/commands/docs-cmd/update) - Update documentation
+- [/ck:git cm](/docs/engineer/skills/git) - Commit changes
 
 ### Further Reading
 - [Command Reference](/docs/engineer/commands) - All available commands

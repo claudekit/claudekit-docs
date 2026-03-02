@@ -638,7 +638,7 @@ Verify your fix actually worked.
 
 ## Related Commands
 
-- `/debug` - Investigate system issues
+- `/ck:debug` - Investigate system issues
 - `/logs` - Analyze application logs
 - `/ckm:test` - Run integration health checks
 

@@ -17,7 +17,7 @@ Tìm hiểu cách xác định và khắc phục các nút thắt cổ chai về
 **Mục tiêu**: Xác định và giải quyết các nút thắt cổ chai về hiệu suất một cách hệ thống
 **Thời gian**: 30-60 phút (so với 4-12 giờ làm thủ công)
 **Agents sử dụng**: debugger, code-reviewer, tester
-**Lệnh**: `/debug`, `/cook`, `/test`
+**Lệnh**: `/ck:debug`, `/ck:cook`, `/ck:test`
 
 ## Điều Kiện Tiên Quyết
 
@@ -44,7 +44,7 @@ Bắt đầu bằng cách profiling ứng dụng của bạn:
 
 ```bash
 # Chạy phân tích hiệu suất
-/debug [analyze application performance and identify bottlenecks]
+/ck:debug [analyze application performance and identify bottlenecks]
 ```
 
 **Kết quả phân tích**:
@@ -114,7 +114,7 @@ Thời gian tương tác (TTI): 12.4s (Mục tiêu: <3.5s)
 #### Lỗi N+1 Query
 
 ```bash
-/cook [fix N+1 query problem in user service with eager loading]
+/ck:cook [fix N+1 query problem in user service with eager loading]
 ```
 
 **Triển khai**:
@@ -153,7 +153,7 @@ const users = await User.findAll({
 #### Thêm Index Database
 
 ```bash
-/cook [add database indexes for frequently queried fields]
+/ck:cook [add database indexes for frequently queried fields]
 ```
 
 **Triển khai**:
@@ -187,7 +187,7 @@ Các indexes cần thêm:
 #### Tối Ưu Hóa Truy Vấn
 
 ```bash
-/cook [optimize database queries to reduce execution time]
+/ck:cook [optimize database queries to reduce execution time]
 ```
 
 ### Bước 3: Triển Khai Caching
@@ -195,7 +195,7 @@ Các indexes cần thêm:
 #### Redis Cache
 
 ```bash
-/cook [implement Redis caching for frequently accessed data]
+/ck:cook [implement Redis caching for frequently accessed data]
 ```
 
 **Triển khai**:
@@ -237,13 +237,13 @@ Cải thiện hiệu suất:
 #### In-Memory Cache
 
 ```bash
-/cook [add in-memory LRU cache for hot data]
+/ck:cook [add in-memory LRU cache for hot data]
 ```
 
 #### Tích Hợp CDN
 
 ```bash
-/cook [integrate CloudFlare CDN for static assets]
+/ck:cook [integrate CloudFlare CDN for static assets]
 ```
 
 ### Bước 4: Tối Ưu Hóa Frontend
@@ -251,7 +251,7 @@ Cải thiện hiệu suất:
 #### Chia Nhỏ Code (Code Splitting)
 
 ```bash
-/cook [implement code splitting and lazy loading]
+/ck:cook [implement code splitting and lazy loading]
 ```
 
 **Triển khai**:
@@ -287,7 +287,7 @@ Các module nặng:
 #### Tối Ưu Hóa Hình Ảnh
 
 ```bash
-/cook [optimize images with compression and lazy loading]
+/ck:cook [optimize images with compression and lazy loading]
 ```
 
 **Triển khai**:
@@ -319,7 +319,7 @@ Các module nặng:
 #### Nén Bundle
 
 ```bash
-/cook [enable gzip and brotli compression]
+/ck:cook [enable gzip and brotli compression]
 ```
 
 ### Bước 5: Tối Ưu Hóa Thuật Toán
@@ -327,7 +327,7 @@ Các module nặng:
 #### Thay Thế Thuật Toán Không Hiệu Quả
 
 ```bash
-/cook [replace O(n²) algorithm with O(n) hash map solution]
+/ck:cook [replace O(n²) algorithm with O(n) hash map solution]
 ```
 
 **Trước đó** (O(n²) - 523ms):
@@ -370,7 +370,7 @@ function findDuplicates(items) {
 #### Công Việc Chạy Ngầm (Background Jobs)
 
 ```bash
-/cook [move email sending to background queue with Bull]
+/ck:cook [move email sending to background queue with Bull]
 ```
 
 **Triển khai**:
@@ -401,13 +401,13 @@ function findDuplicates(items) {
 #### Xử Lý Song Song
 
 ```bash
-/cook [process multiple operations in parallel instead of sequential]
+/ck:cook [process multiple operations in parallel instead of sequential]
 ```
 
 ### Bước 7: Pool Kết Nối Database
 
 ```bash
-/cook [optimize database connection pooling]
+/ck:cook [optimize database connection pooling]
 ```
 
 **Cấu hình**:
@@ -434,7 +434,7 @@ Kết quả: nhanh hơn 45% trong thời gian tải cao điểm
 ### Bước 8: Giới Hạn Tốc Độ (Rate Limiting) & Điều Tiết (Throttling)
 
 ```bash
-/cook [implement intelligent rate limiting and request throttling]
+/ck:cook [implement intelligent rate limiting and request throttling]
 ```
 
 ### Bước 9: Tối Ưu Hóa Bộ Nhớ
@@ -442,7 +442,7 @@ Kết quả: nhanh hơn 45% trong thời gian tải cao điểm
 #### Sửa Lỗi Rò Rỉ Bộ Nhớ (Memory Leaks)
 
 ```bash
-/fix [fix memory leak in WebSocket handler]
+/ck:fix [fix memory leak in WebSocket handler]
 ```
 
 **Triển khai**:
@@ -473,13 +473,13 @@ Kết quả: nhanh hơn 45% trong thời gian tải cao điểm
 #### Giảm Sử Dụng Bộ Nhớ
 
 ```bash
-/cook [optimize memory usage by using streams for large data]
+/ck:cook [optimize memory usage by using streams for large data]
 ```
 
 ### Bước 10: Giám Sát & Profiling
 
 ```bash
-/cook [implement performance monitoring with metrics and alerts]
+/ck:cook [implement performance monitoring with metrics and alerts]
 ```
 
 **Thiết lập giám sát**:
@@ -504,7 +504,7 @@ Các cảnh báo đã được cấu hình:
 ### Bước 11: Kiểm Thử Tải (Load Testing)
 
 ```bash
-/test
+/ck:test
 ```
 
 **Kết quả kiểm thử hiệu suất**:
@@ -563,32 +563,32 @@ Các vấn đề hiệu suất:
 
 ```bash
 # 1. Profile ứng dụng
-/debug [analyze e-commerce API performance]
+/ck:debug [analyze e-commerce API performance]
 
 # 2. Tối ưu hóa Database
-/cook [fix N+1 queries and add indexes]
-/cook [optimize product search queries]
+/ck:cook [fix N+1 queries and add indexes]
+/ck:cook [optimize product search queries]
 
 # 3. Caching
-/cook [implement Redis caching for products and categories]
-/cook [add query result caching]
+/ck:cook [implement Redis caching for products and categories]
+/ck:cook [add query result caching]
 
 # 4. Tối ưu hóa Frontend
-/cook [implement code splitting and lazy loading]
-/cook [optimize product images with WebP and lazy loading]
+/ck:cook [implement code splitting and lazy loading]
+/ck:cook [optimize product images with WebP and lazy loading]
 
 # 5. Tối ưu hóa API
-/cook [move image processing to background queue]
-/cook [implement response compression]
+/ck:cook [move image processing to background queue]
+/ck:cook [implement response compression]
 
 # 6. Tối ưu hóa thuật toán
-/cook [optimize search algorithm with inverted index]
+/ck:cook [optimize search algorithm with inverted index]
 
 # 7. Kiểm thử các cải thiện
-/test
+/ck:test
 
 # 8. Giám sát trên production
-/cook [set up performance monitoring with alerts]
+/ck:cook [set up performance monitoring with alerts]
 ```
 
 ### Kết Quả
@@ -634,25 +634,25 @@ Tác động đến khách hàng:
 ### Mẫu 1: Tăng Cường Luỹ Tiến (Progressive Enhancement)
 
 ```bash
-/cook [implement progressive enhancement for slow connections]
+/ck:cook [implement progressive enhancement for slow connections]
 ```
 
 ### Mẫu 2: Tải Trước Dự Đoán (Predictive Prefetching)
 
 ```bash
-/cook [add predictive prefetching for likely user actions]
+/ck:cook [add predictive prefetching for likely user actions]
 ```
 
 ### Mẫu 3: Service Worker Caching
 
 ```bash
-/cook [implement service worker for offline-first experience]
+/ck:cook [implement service worker for offline-first experience]
 ```
 
 ### Mẫu 4: Read Replicas Database
 
 ```bash
-/cook [set up database read replicas for scaling reads]
+/ck:cook [set up database read replicas for scaling reads]
 ```
 
 ## Các Thực Hành Tốt Nhất (Best Practices)
@@ -702,7 +702,7 @@ Nhưng phải xóa cache đúng cách:
 ### 5. Giám Sát Liên Tục
 
 ```bash
-/cook [implement continuous performance monitoring]
+/ck:cook [implement continuous performance monitoring]
 ```
 
 ## Xử Lý Sự Cố
@@ -712,7 +712,7 @@ Nhưng phải xóa cache đúng cách:
 **Giải pháp**:
 ```bash
 # Profile lại
-/debug [deep performance analysis with detailed metrics]
+/ck:debug [deep performance analysis with detailed metrics]
 
 # Kiểm tra các nút thắt cổ chai mới
 # Tiếp tục tối ưu hóa
@@ -722,21 +722,21 @@ Nhưng phải xóa cache đúng cách:
 
 **Giải pháp**:
 ```bash
-/fix --quick [Redis cache hit rate below 50%]
+/ck:fix --quick [Redis cache hit rate below 50%]
 ```
 
 ### Vấn Đề: Bộ Nhớ Vẫn Tăng
 
 **Giải pháp**:
 ```bash
-/fix [memory still growing despite fixes]
+/ck:fix [memory still growing despite fixes]
 ```
 
 ### Vấn Đề: Database Timeout
 
 **Giải pháp**:
 ```bash
-/cook [increase connection pool and optimize slow queries]
+/ck:cook [increase connection pool and optimize slow queries]
 ```
 
 ## Danh Mục Kiểm Tra Hiệu Suất
@@ -787,9 +787,9 @@ Chỉ số:
 - [Xây Dựng REST API](/docs/workflows/building-api) - Phát triển API
 
 ### Các Lệnh Liên Quan
-- [/debug](/docs/engineer/commands/core/debug) - Phân tích hiệu suất
-- [/cook](/docs/engineer/skills/cook) - Triển khai tối ưu hóa
-- [/test](/docs/engineer/commands/core/test) - Kiểm thử hiệu suất
+- [/ck:debug](/docs/engineer/commands/core/debug) - Phân tích hiệu suất
+- [/ck:cook](/docs/engineer/skills/cook) - Triển khai tối ưu hóa
+- [/ck:test](/docs/engineer/commands/core/test) - Kiểm thử hiệu suất
 
 ### Đọc Thêm
 - [Web.dev Performance](https://web.dev/performance/)

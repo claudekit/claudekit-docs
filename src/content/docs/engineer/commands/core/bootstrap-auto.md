@@ -1,5 +1,5 @@
 ---
-title: /bootstrap:auto
+title: /ck:bootstrap:auto
 description: Full auto-bootstrap a new project with research, design, implementation
 section: engineer
 kit: engineer
@@ -8,14 +8,14 @@ order: 24
 published: true
 ---
 
-# /bootstrap:auto
+# /ck:bootstrap:auto
 
 Comprehensive automatic project bootstrapping with full research, design, and implementation.
 
 ## Syntax
 
 ```bash
-/bootstrap:auto [user-requirements]
+/ck:bootstrap:auto [user-requirements]
 ```
 
 ## Workflow Phases
@@ -78,11 +78,11 @@ Comprehensive automatic project bootstrapping with full research, design, and im
 
 | Command | Speed | Research | Design |
 |---------|-------|----------|--------|
-| `/bootstrap` | Medium | Yes | Yes |
-| `/bootstrap:auto` | Slow | Full | Full |
-| `/bootstrap:auto:fast` | Fast | Parallel | Yes |
-| `/bootstrap:auto:parallel` | Medium | Parallel | Yes |
+| `/ck:bootstrap` | Medium | Yes | Yes |
+| `/ck:bootstrap:auto` | Slow | Full | Full |
+| `/ck:bootstrap:auto:fast` | Fast | Parallel | Yes |
+| `/ck:bootstrap:auto:parallel` | Medium | Parallel | Yes |
 
 ---
 
-**Key Takeaway**: Use `/bootstrap:auto` for comprehensive project bootstrapping with full research, design system, testing, and documentation.
+**Key Takeaway**: Use `/ck:bootstrap:auto` for comprehensive project bootstrapping with full research, design system, testing, and documentation.

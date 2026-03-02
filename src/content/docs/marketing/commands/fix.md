@@ -213,7 +213,7 @@ Analyze error logs (auto-detected from context):
 - [/ckm:cook](/docs/engineer/skills/cook) - Implementation (includes testing)
 - [/ckm:test](/docs/marketing/commands/test) - Run tests only
 - [/ckm:review](/docs/marketing/commands/review) - Code quality check
-- [/debug](/docs/marketing/commands) - Deep root cause analysis
+- [/ck:debug](/docs/marketing/commands) - Deep root cause analysis
 
 ---
 

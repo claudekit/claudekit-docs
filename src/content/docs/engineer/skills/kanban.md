@@ -12,7 +12,7 @@ AI agent orchestration board for visualizing tasks and coordinating agent teams.
 ## Usage
 
 ```
-/kanban
+/ck:kanban
 ```
 
 ## What It Does

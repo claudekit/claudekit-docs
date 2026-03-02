@@ -47,7 +47,7 @@ This skill activates automatically when:
 
 Manual activation:
 ```bash
-/google-adk-python
+/ck:google-adk-python
 ```
 
 ## Core Concepts

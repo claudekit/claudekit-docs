@@ -1,5 +1,5 @@
 ---
-title: /journal
+title: /ck:journal
 description: Documentation for journal
 section: engineer
 kit: engineer
@@ -8,14 +8,14 @@ order: 6
 published: true
 ---
 
-# /journal
+# /ck:journal
 
 Development documentation command. Creates structured journal entries documenting work sessions, code changes, technical decisions, and project memories.
 
 ## Syntax
 
 ```bash
-/journal
+/ck:journal
 ```
 
 ## When to Use
@@ -29,7 +29,7 @@ Development documentation command. Creates structured journal entries documentin
 ## Quick Example
 
 ```bash
-/journal
+/ck:journal
 ```
 
 **Output**:
@@ -151,7 +151,7 @@ When you run this command:
 After completing a complex feature over several work sessions.
 
 ```bash
-/journal
+/ck:journal
 ```
 
 **Generated Journal Entry**:
@@ -571,7 +571,7 @@ Typical sections included:
 
 ```bash
 # Before standup meeting
-/journal
+/ck:journal
 
 # Review journal entry
 cat journals/session-latest.md
@@ -586,7 +586,7 @@ cat journals/session-latest.md
 
 ```bash
 # End of your work session
-/journal
+/ck:journal
 
 # Share with team
 # Journal provides complete context for next developer
@@ -609,7 +609,7 @@ ls journals/
 
 ```bash
 # For compliance or review
-/journal
+/ck:journal
 
 # Documents:
 # - What changed
@@ -636,13 +636,13 @@ ls journals/
 
 ```bash
 # Create journal
-/journal
+/ck:journal
 
 # Add to git
 git add journals/
 
 # Commit with code
-/git cm
+/ck:git cm
 ```
 
 Benefits:
@@ -679,47 +679,47 @@ Naming convention:
 
 ## Integration with Other Commands
 
-### After /cook
+### After /ck:cook
 
 ```bash
 # Implement feature
-/cook [add payment processing]
+/ck:cook [add payment processing]
 
 # Document the work
-/journal
+/ck:journal
 
 # Commit everything
-/git cm
+/ck:git cm
 ```
 
-### With /watzup
+### With /ck:watzup
 
 ```bash
 # See what changed
-/watzup
+/ck:watzup
 
 # Create detailed journal
-/journal
+/ck:journal
 
 # Both commands complement each other:
-# - /watzup: Quick summary
-# - /journal: Detailed documentation
+# - /ck:watzup: Quick summary
+# - /ck:journal: Detailed documentation
 ```
 
-### Before /git pr
+### Before /ck:git pr
 
 ```bash
 # Complete feature work
-/cook [feature]
+/ck:cook [feature]
 
 # Document
-/journal
+/ck:journal
 
 # Review changes
 git diff main
 
 # Create PR with journal as context
-/git pr feature-branch main
+/ck:git pr feature-branch main
 ```
 
 ## What Journal Captures
@@ -772,7 +772,7 @@ git add .
 git commit -m "Implement feature"
 
 # Then journal
-/journal
+/ck:journal
 ```
 
 ### Too Much Detail
@@ -784,11 +784,11 @@ git commit -m "Implement feature"
 **Solution**: Journal more frequently
 ```bash
 # After each major feature
-/cook [feature 1]
-/journal
+/ck:cook [feature 1]
+/ck:journal
 
-/cook [feature 2]
-/journal
+/ck:cook [feature 2]
+/ck:journal
 ```
 
 ### Missing Context
@@ -836,10 +836,10 @@ Journals include metrics over time:
 
 ## Related Commands
 
-- [/watzup](/docs/engineer/commands/core/watzup) - Quick summary of recent changes
-- [/cook](/docs/engineer/skills/cook) - Implement features (document with journal after)
-- [/git cm](/docs/engineer/skills/git) - Commit changes (journal first for context)
+- [/ck:watzup](/docs/engineer/commands/core/watzup) - Quick summary of recent changes
+- [/ck:cook](/docs/engineer/skills/cook) - Implement features (document with journal after)
+- [/ck:git cm](/docs/engineer/skills/git) - Commit changes (journal first for context)
 
 ---
 
-**Key Takeaway**: `/journal` creates comprehensive, structured documentation of your development sessions, preserving technical decisions, challenges, and context for future reference and team collaboration.
+**Key Takeaway**: `/ck:journal` creates comprehensive, structured documentation of your development sessions, preserving technical decisions, challenges, and context for future reference and team collaboration.

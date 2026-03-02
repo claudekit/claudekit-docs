@@ -1,5 +1,5 @@
 ---
-title: /kanban
+title: /ck:kanban
 description: Visual dashboard for plans with progress tracking and timeline visualization
 section: engineer
 kit: engineer
@@ -8,16 +8,16 @@ order: 21
 published: true
 ---
 
-# /kanban
+# /ck:kanban
 
 Plans dashboard with progress tracking, phase status breakdown, and timeline visualization.
 
 ## Syntax
 
 ```bash
-/kanban                  # View ./plans directory
-/kanban [directory]      # View specific directory
-/kanban --stop          # Stop running server
+/ck:kanban                  # View ./plans directory
+/ck:kanban [directory]      # View specific directory
+/ck:kanban --stop          # Stop running server
 ```
 
 ## Features
@@ -39,9 +39,9 @@ Server runs as background task visible in `/tasks` for easy management via `Kill
 ## Examples
 
 ```bash
-/kanban                      # Dashboard for ./plans
-/kanban plans/archive/       # View archived plans
-/kanban --stop              # Stop server
+/ck:kanban                      # Dashboard for ./plans
+/ck:kanban plans/archive/       # View archived plans
+/ck:kanban --stop              # Stop server
 ```
 
 ## Future Vision

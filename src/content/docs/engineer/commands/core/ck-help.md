@@ -1,5 +1,5 @@
 ---
-title: /ck-help
+title: /ck:ck-help
 description: ClaudeKit usage guide - search commands, categories, and workflows
 section: engineer
 kit: engineer
@@ -8,27 +8,27 @@ order: 21
 published: true
 ---
 
-# /ck-help
+# /ck:ck-help
 
 All-in-one ClaudeKit guide for discovering commands and workflows.
 
 ## Syntax
 
 ```bash
-/ck-help [category|command|task description]
+/ck:ck-help [category|command|task description]
 ```
 
 ## Examples
 
 ```bash
 # Overview of all commands
-/ck-help
+/ck:ck-help
 
 # Explore a category
-/ck-help fix
+/ck:ck-help fix
 
 # Task-based search
-/ck-help add login page
+/ck:ck-help add login page
 ```
 
 ## Response Patterns
@@ -41,22 +41,22 @@ All-in-one ClaudeKit guide for discovering commands and workflows.
 
 ## Correct Workflows
 
-- `/plan` → `/cook`: Plan first, then execute the plan
-- `/cook`: Standalone - plans internally, no separate `/plan` needed
-- **NEVER** `/plan` → `/cook` (cook has its own planning)
+- `/ck:plan` → `/ck:cook`: Plan first, then execute the plan
+- `/ck:cook`: Standalone - plans internally, no separate `/ck:plan` needed
+- **NEVER** `/ck:plan` → `/ck:cook` (cook has its own planning)
 
 ## Example Interaction
 
 ```bash
-/ck-help fix
+/ck:ck-help fix
 # Response: Here's the fixing workflow:
-# - /fix --quick - Quick fix for simple issues
-# - /fix - Deep analysis for complex bugs
-# - /fix - Fix test failures
-# - /fix - Fix TypeScript errors
-# - /fix - Fix CI/CD failures
+# - /ck:fix --quick - Quick fix for simple issues
+# - /ck:fix - Deep analysis for complex bugs
+# - /ck:fix - Fix test failures
+# - /ck:fix - Fix TypeScript errors
+# - /ck:fix - Fix CI/CD failures
 ```
 
 ---
 
-**Key Takeaway**: Use `/ck-help` to discover ClaudeKit commands, explore categories, or find commands for specific tasks.
+**Key Takeaway**: Use `/ck:ck-help` to discover ClaudeKit commands, explore categories, or find commands for specific tasks.

@@ -1,5 +1,5 @@
 ---
-title: /docs:summarize
+title: /ck:docs:summarize
 description: Tài liệu hướng dẫn lệnh summarize
 section: engineer
 kit: engineer
@@ -9,21 +9,21 @@ published: true
 lang: vi
 ---
 
-# /docs:summarize
+# /ck:docs:summarize
 
 Tạo một bản tóm tắt toàn diện về codebase của bạn bằng cách phân tích cấu trúc dự án, các tệp tin và kiến trúc. Lệnh này tạo hoặc cập nhật tệp `./docs/codebase-summary.md` với cái nhìn tổng quan chi tiết về dự án, số liệu thống kê tệp và số lượng token.
 
 ## Cú Pháp
 
 ```bash
-/docs:summarize
+/ck:docs:summarize
 ```
 
 Không cần tham số - lệnh sẽ tự động phân tích toàn bộ codebase của bạn.
 
 ## Cách Hoạt Động
 
-Lệnh `/docs:summarize` sử dụng agent `docs-manager`:
+Lệnh `/ck:docs:summarize` sử dụng agent `docs-manager`:
 
 ### 1. Nén Codebase (Codebase Compaction)
 
@@ -64,45 +64,45 @@ Lệnh `/docs:summarize` sử dụng agent `docs-manager`:
 **Thành Viên Mới Trong Nhóm**
 ```bash
 # Hướng dẫn lập trình viên mới
-/docs:summarize
+/ck:docs:summarize
 ```
 
 **Bàn Giao Dự Án**
 ```bash
 # Chuẩn bị dự án để chuyển giao
-/docs:summarize
+/ck:docs:summarize
 ```
 
 **Xem Lại Kiến Trúc**
 ```bash
 # Trước khi thực hiện tái cấu trúc (refactoring) lớn
-/docs:summarize
+/ck:docs:summarize
 ```
 
 **Tạo Ngữ Cảnh Cho AI**
 ```bash
 # Tạo ngữ cảnh cho các công cụ AI
-/docs:summarize
+/ck:docs:summarize
 ```
 
 **Bảo Trì Định Kỳ**
 ```bash
 # Xem lại codebase hàng tuần/hàng tháng
-/docs:summarize
+/ck:docs:summarize
 ```
 
 ### ❌ Không Sử Dụng Cho
 
 **Cập Nhật Toàn Bộ Tài Liệu**
 ```bash
-❌ /docs:summarize  # Chỉ cập nhật bản tóm tắt
-✅ /docs:update     # Cập nhật tất cả tài liệu
+❌ /ck:docs:summarize  # Chỉ cập nhật bản tóm tắt
+✅ /ck:docs:update     # Cập nhật tất cả tài liệu
 ```
 
 **Tài Liệu API Chi Tiết**
 ```bash
-❌ /docs:summarize  # Chỉ cung cấp cái nhìn tổng quan cấp cao
-✅ /docs:update [tập trung vào tài liệu API]
+❌ /ck:docs:summarize  # Chỉ cung cấp cái nhìn tổng quan cấp cao
+✅ /ck:docs:update [tập trung vào tài liệu API]
 ```
 
 ## Ví Dụ
@@ -110,7 +110,7 @@ Lệnh `/docs:summarize` sử dụng agent `docs-manager`:
 ### Tóm Tắt Codebase Cơ Bản
 
 ```bash
-/docs:summarize
+/ck:docs:summarize
 ```
 
 **Điều gì xảy ra:**
@@ -144,7 +144,7 @@ Lệnh `/docs:summarize` sử dụng agent `docs-manager`:
 ### Monorepo Lớn
 
 ```bash
-/docs:summarize
+/ck:docs:summarize
 ```
 
 **Điều gì xảy ra:**
@@ -188,7 +188,7 @@ Lệnh `/docs:summarize` sử dụng agent `docs-manager`:
 ### Kiến Trúc Microservices
 
 ```bash
-/docs:summarize
+/ck:docs:summarize
 ```
 
 **Điều gì xảy ra:**
@@ -230,7 +230,7 @@ Lệnh `/docs:summarize` sử dụng agent `docs-manager`:
 ### TypeScript Monorepo
 
 ```bash
-/docs:summarize
+/ck:docs:summarize
 ```
 
 **Điều gì xảy ra:**
@@ -366,14 +366,14 @@ Lệnh này sử dụng **docs-manager agent** với các khả năng sau:
 ✅ **Tóm tắt định kỳ:**
 ```bash
 # Hàng tuần hoặc sau những thay đổi lớn
-/docs:summarize
+/ck:docs:summarize
 ```
 
 ❌ **Quá thường xuyên:**
 ```bash
 # Sau mỗi thay đổi nhỏ
-/fix --quick [lỗi đánh máy]
-/docs:summarize  # Lãng phí
+/ck:fix --quick [lỗi đánh máy]
+/ck:docs:summarize  # Lãng phí
 ```
 
 ### Trước Những Công Việc Lớn
@@ -381,9 +381,9 @@ Lệnh này sử dụng **docs-manager agent** với các khả năng sau:
 ✅ **Thiết lập mốc cơ sở (baseline):**
 ```bash
 # Trước khi tái cấu trúc
-/docs:summarize
+/ck:docs:summarize
 # Thực hiện tái cấu trúc
-/docs:summarize  # So sánh các thay đổi
+/ck:docs:summarize  # So sánh các thay đổi
 ```
 
 ### Cho Việc Hướng Dẫn (Onboarding)
@@ -391,8 +391,8 @@ Lệnh này sử dụng **docs-manager agent** với các khả năng sau:
 ✅ **Chuẩn bị cho lập trình viên mới:**
 ```bash
 # Cập nhật tài liệu
-/docs:summarize
-/docs:update
+/ck:docs:summarize
+/ck:docs:update
 
 # Thành viên mới có cái nhìn toàn diện về dự án
 ```
@@ -403,10 +403,10 @@ Lệnh này sử dụng **docs-manager agent** với các khả năng sau:
 
 ```bash
 # 1. Tạo bản tóm tắt
-/docs:summarize
+/ck:docs:summarize
 
 # 2. Cập nhật tài liệu đầy đủ
-/docs:update
+/ck:docs:update
 
 # 3. Chia sẻ tài liệu
 # Chỉ cho lập trình viên mới tệp ./docs/codebase-summary.md
@@ -416,26 +416,26 @@ Lệnh này sử dụng **docs-manager agent** với các khả năng sau:
 
 ```bash
 # 1. Tạo trạng thái hiện tại
-/docs:summarize
+/ck:docs:summarize
 
 # 2. Xem lại bản tóm tắt
 cat docs/codebase-summary.md
 
 # 3. Lập kế hoạch tái cấu trúc dựa trên những hiểu biết thu được
-/plan [tái cấu trúc dựa trên xem lại kiến trúc]
+/ck:plan [tái cấu trúc dựa trên xem lại kiến trúc]
 ```
 
 ### Bàn Giao Dự Án
 
 ```bash
 # 1. Tạo bản tóm tắt toàn diện
-/docs:summarize
+/ck:docs:summarize
 
 # 2. Cập nhật tất cả tài liệu
-/docs:update
+/ck:docs:update
 
 # 3. Commit tài liệu
-/git cm
+/ck:git cm
 
 # 4. Chia sẻ với nhóm tiếp nhận
 ```
@@ -444,13 +444,13 @@ cat docs/codebase-summary.md
 
 ```bash
 # Tác vụ hàng tuần/hàng tháng
-/docs:summarize
+/ck:docs:summarize
 
 # Xem lại các thay đổi
 git diff docs/codebase-summary.md
 
 # Commit nếu có thay đổi đáng kể
-/git cm
+/ck:git cm
 ```
 
 ## Xử Lý Sự Cố
@@ -465,7 +465,7 @@ git diff docs/codebase-summary.md
 npm install -g repomix
 
 # Sau đó chạy lệnh
-/docs:summarize
+/ck:docs:summarize
 ```
 
 ### Codebase Lớn Bị Timeout
@@ -479,7 +479,7 @@ echo "target/" >> .repomixignore
 echo "*.min.js" >> .repomixignore
 
 # Thử lại
-/docs:summarize
+/ck:docs:summarize
 ```
 
 ### Thiếu Tệp Trong Bản Tóm Tắt
@@ -491,7 +491,7 @@ echo "*.min.js" >> .repomixignore
 # Kiểm tra .gitignore và .repomixignore
 # Loại bỏ các loại trừ nếu cần thiết
 # Sau đó tạo lại
-/docs:summarize
+/ck:docs:summarize
 ```
 
 ## Sử Dụng Số Lượng Token
@@ -535,35 +535,35 @@ Chiến lược:
 
 ```bash
 # Chỉ tóm tắt
-/docs:summarize
+/ck:docs:summarize
 
 # Tất cả tài liệu
-/docs:update
+/ck:docs:update
 ```
 
 ### Khởi Tạo Tài Liệu
 
 ```bash
 # Thiết lập lần đầu
-/docs:init
+/ck:docs:init
 
 # Cập nhật định kỳ
-/docs:summarize
+/ck:docs:summarize
 ```
 
 ### Xem Lại Thay Đổi
 
 ```bash
 # Tạo bản tóm tắt
-/docs:summarize
+/ck:docs:summarize
 
 # Xem lại công việc gần đây
-/watzup
+/ck:watzup
 ```
 
 ## Các Tệp Đầu Ra
 
-Sau khi chạy `/docs:summarize`:
+Sau khi chạy `/ck:docs:summarize`:
 
 ```
 ./
@@ -574,7 +574,7 @@ Sau khi chạy `/docs:summarize`:
 
 ## Số Liệu Thống Kê
 
-Hiệu suất điển hình của `/docs:summarize`:
+Hiệu suất điển hình của `/ck:docs:summarize`:
 
 - **Thời gian**: 1-3 phút (tùy thuộc vào kích thước codebase)
 - **Tệp được phân tích**: Tất cả các tệp nguồn (ngoại trừ node_modules, build artifacts)
@@ -584,13 +584,13 @@ Hiệu suất điển hình của `/docs:summarize`:
 
 ## Bước Tiếp Theo
 
-Sau khi sử dụng `/docs:summarize`:
+Sau khi sử dụng `/ck:docs:summarize`:
 
-- [/docs:update](/vi/docs/engineer/commands/docs-cmd/update) - Cập nhật tất cả tài liệu
-- [/docs:init](/vi/docs/engineer/commands/docs-cmd/init) - Khởi tạo tài liệu đầy đủ
-- [/watzup](/docs/engineer/commands/core/watzup) - Xem lại các thay đổi gần đây
-- [/git cm](/docs/engineer/skills/git) - Commit tài liệu
+- [/ck:docs:update](/vi/docs/engineer/commands/docs-cmd/update) - Cập nhật tất cả tài liệu
+- [/ck:docs:init](/vi/docs/engineer/commands/docs-cmd/init) - Khởi tạo tài liệu đầy đủ
+- [/ck:watzup](/docs/engineer/commands/core/watzup) - Xem lại các thay đổi gần đây
+- [/ck:git cm](/docs/engineer/skills/git) - Commit tài liệu
 
 ---
 
-**Điểm mấu chốt**: `/docs:summarize` cung cấp cái nhìn tổng quan nhanh chóng và toàn diện về cấu trúc codebase của bạn, giúp lập trình viên hiểu cách tổ chức dự án và đóng vai trò là ngữ cảnh quý giá cho việc phát triển với sự hỗ trợ của AI.
+**Điểm mấu chốt**: `/ck:docs:summarize` cung cấp cái nhìn tổng quan nhanh chóng và toàn diện về cấu trúc codebase của bạn, giúp lập trình viên hiểu cách tổ chức dự án và đóng vai trò là ngữ cảnh quý giá cho việc phát triển với sự hỗ trợ của AI.

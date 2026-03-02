@@ -12,7 +12,7 @@ Review recent changes and wrap up your current work session. Generates a summary
 ## Usage
 
 ```
-/watzup
+/ck:watzup
 ```
 
 ## What It Does

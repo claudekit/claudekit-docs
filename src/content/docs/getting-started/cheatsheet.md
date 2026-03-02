@@ -35,7 +35,7 @@ claude
 
 ```bash
 # For existing projects (brownfield)
-/docs:init
+/ck:docs:init
 
 # For new projects (greenfield)
 ck init --kit engineer --dir /path/to/project
@@ -53,93 +53,93 @@ ck init --use-git
 
 ```bash
 # Initialize documentation and specs
-/docs:init
+/ck:docs:init
 
 # Implement new feature
-/cook <description>
+/ck:cook <description>
 
 # Autonomous feature implementation
-/cook --auto <description>
+/ck:cook --auto <description>
 
 # Create implementation plan only
-/plan <description>
+/ck:plan <description>
 
 # Execute existing plan (natural language recommended)
 "Implement as planned"
 
 # Bootstrap new project
-/bootstrap <idea-description>
+/ck:bootstrap <idea-description>
 
 # Autonomous bootstrap
-/bootstrap:auto <idea-description>
+/ck:bootstrap:auto <idea-description>
 ```
 
 ### Bug Fixing
 
 ```bash
 # Quick bug fix
-/fix --quick <description>
+/ck:fix --quick <description>
 
 # Complex bug fix (auto-detects complexity)
-/fix <description>
+/ck:fix <description>
 
 # Auto-fetch logs and fix (auto-detected)
-/fix
+/ck:fix
 
 # Run test suite and fix until passing (auto-detected)
-/fix
+/ck:fix
 
 # Fix CI/CD pipeline issues (auto-detected)
-/fix <github-action-url>
+/ck:fix <github-action-url>
 ```
 
 ### Testing
 
 ```bash
 # Run test suite and report (no fixes)
-/test
+/ck:test
 ```
 
 ### Documentation
 
 ```bash
 # Initialize documentation
-/docs:init
+/ck:docs:init
 
 # Update documentation
-/docs:update
+/ck:docs:update
 
 # Summarize documentation
-/docs:summarize
+/ck:docs:summarize
 ```
 
 ### Git Operations
 
 ```bash
 # Create commit with meaningful message
-/git cm
+/ck:git cm
 
 # Commit and push changes
-/git cp
+/ck:git cp
 
 # Create pull request
-/git pr
+/ck:git pr
 ```
 
 ### Planning & Research
 
 ```bash
 # Brainstorm technical approaches
-/brainstorm <description>
+/ck:brainstorm <description>
 
 # Create detailed implementation plan
-/plan <description>
+/ck:plan <description>
 
 # Plan CI/CD setup or fix CI/CD pipeline
-/plan:ci
+/ck:plan:ci
 
 # Two-step implementation plan
-/plan:two
+/ck:plan:two
 ```
 
 ### Integration
@@ -168,14 +168,14 @@ ck init --use-git
 
 ```bash
 # Approach 1: With plan review (recommended)
-/cook <feature-description>
+/ck:cook <feature-description>
 # → CC asks questions
 # → Review plan
 # → Approve
 # → Implementation starts
 
 # Approach 2: Autonomous (use with caution)
-/cook --auto <feature-description>
+/ck:cook --auto <feature-description>
 # → Full autonomous without plan review
 ```
 
@@ -183,19 +183,19 @@ ck init --use-git
 
 ```bash
 # Simple bugs
-/fix --quick <bug-description>
+/ck:fix --quick <bug-description>
 
 # Complex bugs (auto-detects)
-/fix <bug-description>
+/ck:fix <bug-description>
 
 # From logs (auto-detected)
-/fix
+/ck:fix
 
 # From failing tests (auto-detected)
-/fix
+/ck:fix
 
 # From CI/CD (auto-detected)
-/fix <action-url>
+/ck:fix <action-url>
 ```
 
 ## Common Workflows
@@ -213,10 +213,10 @@ cd /path/to/existing/project
 claude
 
 # 4. Initialize
-/docs:init
+/ck:docs:init
 
 # 5. Start working
-/cook <feature>
+/ck:cook <feature>
 ```
 
 ### Greenfield Project Setup
@@ -235,17 +235,17 @@ cd /path/to/project
 claude
 
 # 5. Bootstrap idea
-/bootstrap <idea-description>
+/ck:bootstrap <idea-description>
 
 # 6. Continue development
-/cook <next-feature>
+/ck:cook <next-feature>
 ```
 
 ### Feature Development
 
 ```bash
 # 1. Plan feature
-/plan Add user profile with avatar upload
+/ck:plan Add user profile with avatar upload
 
 # 2. Review plan (markdown file generated)
 
@@ -253,28 +253,28 @@ claude
 "Implement profile feature as planned"
 
 # 4. Test
-/test
+/ck:test
 
 # 5. Fix if needed
-/fix
+/ck:fix
 
 # 6. Commit
-/git cm
+/ck:git cm
 ```
 
 ### Bug Fix Workflow
 
 ```bash
 # 1. Describe bug
-/fix Payment fails on Safari after form validation
+/ck:fix Payment fails on Safari after form validation
 
 # 2. CC analyzes and fixes (auto-detects complexity)
 
 # 3. Test the fix
-/test
+/ck:test
 
 # 4. Commit
-/git cm
+/ck:git cm
 ```
 
 ### CI/CD Fix Workflow
@@ -284,12 +284,12 @@ claude
 # https://github.com/user/repo/actions/runs/12345
 
 # 2. Fix CI
-/fix https://github.com/user/repo/actions/runs/12345
+/ck:fix https://github.com/user/repo/actions/runs/12345
 
 # 3. CC fetches logs, analyzes, fixes (auto-detects CI context)
 
 # 4. Push fix
-/git cp
+/ck:git cp
 ```
 
 ## Quick Examples
@@ -297,19 +297,19 @@ claude
 ### Add Authentication
 
 ```bash
-/cook Add JWT authentication with login, register, and password reset
+/ck:cook Add JWT authentication with login, register, and password reset
 ```
 
 ### Fix Performance Issue
 
 ```bash
-/fix Dashboard loads slowly with 1000+ items
+/ck:fix Dashboard loads slowly with 1000+ items
 ```
 
 ### Plan Database Migration
 
 ```bash
-/plan Migrate from MongoDB to PostgreSQL with zero downtime
+/ck:plan Migrate from MongoDB to PostgreSQL with zero downtime
 ```
 
 ### Integrate Payment
@@ -317,45 +317,45 @@ claude
 ```bash
 /integrate stripe
 # or
-/cook Add Stripe payment integration with subscription billing
+/ck:cook Add Stripe payment integration with subscription billing
 ```
 
 ### Bootstrap New API
 
 ```bash
-/bootstrap REST API for task management with teams, projects, tasks, and time tracking
+/ck:bootstrap REST API for task management with teams, projects, tasks, and time tracking
 ```
 
 ## Command Categories
 
 ### 🚀 Core Development
-- `/cook` - Feature implementation
-- `/plan` - Create plans
-- `/bootstrap` - New projects
+- `/ck:cook` - Feature implementation
+- `/ck:plan` - Create plans
+- `/ck:bootstrap` - New projects
 
 ### 🐛 Debugging & Fixing
-- `/fix --quick` - Quick fixes
-- `/fix` - Auto-detects complexity
-- `/fix` - Auto-detects logs
-- `/fix` - Auto-detects tests
-- `/fix` - Auto-detects CI
+- `/ck:fix --quick` - Quick fixes
+- `/ck:fix` - Auto-detects complexity
+- `/ck:fix` - Auto-detects logs
+- `/ck:fix` - Auto-detects tests
+- `/ck:fix` - Auto-detects CI
 
 ### 🧪 Testing
-- `/test` - Run tests
+- `/ck:test` - Run tests
 
 ### 📚 Documentation
-- `/docs:init` - Initialize
-- `/docs:update` - Update
-- `/docs:summarize` - Summarize
+- `/ck:docs:init` - Initialize
+- `/ck:docs:update` - Update
+- `/ck:docs:summarize` - Summarize
 
 ### 🔧 Git Operations
-- `/git cm` - Commit changes
-- `/git cp` - Commit and push
-- `/git pr` - Create PR
+- `/ck:git cm` - Commit changes
+- `/ck:git cp` - Commit and push
+- `/ck:git pr` - Create PR
 
 ### 💡 Planning
-- `/plan` - Detailed planning
-- `/brainstorm` - Explore ideas
+- `/ck:plan` - Detailed planning
+- `/ck:brainstorm` - Explore ideas
 
 ### 🔌 Integrations
 - `/integrate <service>` - Add integrations
@@ -372,43 +372,43 @@ claude
 More detailed descriptions = better results
 ```bash
 # ❌ Bad
-/cook Add search
+/ck:cook Add search
 
 # ✅ Good
-/cook Add full-text search for blog posts with filters by category, tag, and date range
+/ck:cook Add full-text search for blog posts with filters by category, tag, and date range
 ```
 
 ### 3. Use Right Command
 
 ```bash
 # Quick bugs
-/fix --quick <simple-issue>
+/ck:fix --quick <simple-issue>
 
 # Complex bugs (auto-detects)
-/fix <complex-issue>
+/ck:fix <complex-issue>
 
 # Small features
-/cook <feature>
+/ck:cook <feature>
 
 # Large features
-/plan <feature> → review → "Implement as planned"
+/ck:plan <feature> → review → "Implement as planned"
 ```
 
 ### 4. Test Frequently
 
 ```bash
 # After each feature
-/test
+/ck:test
 
 # Or auto-fix tests
-/fix
+/ck:fix
 ```
 
 ### 5. Document Changes
 
 ```bash
 # Keep docs updated
-/docs:update
+/ck:docs:update
 ```
 
 ## Troubleshooting
@@ -427,60 +427,60 @@ ck --version
 
 ```bash
 # Reinitialize docs
-/docs:init
+/ck:docs:init
 ```
 
 ### Need More Help
 
 ```bash
 # Brainstorm approach
-/brainstorm How to implement <complex-feature>
+/ck:brainstorm How to implement <complex-feature>
 
 # Get detailed plan
-/plan <what-you-want-to-do>
+/ck:plan <what-you-want-to-do>
 ```
 
 ## Quick Command Reference
 
 ```bash
 # Initialize existing project
-/docs:init
+/ck:docs:init
 
 # New feature (needs plan review)
-/cook <feature-description>
+/ck:cook <feature-description>
 
 # New feature (autonomous, no review)
-/cook --auto <description>
+/ck:cook --auto <description>
 
 # Only plan, no implementation
-/plan <description>
+/ck:plan <description>
 
 # Code from existing plan
 "Implement plan"
 
 # Quick bug fix
-/fix --quick <bug-description>
+/ck:fix --quick <bug-description>
 
 # Bug fix (auto-detects complexity)
-/fix <bug-description>
+/ck:fix <bug-description>
 
 # Auto-fetch logs and fix (auto-detected)
-/fix
+/ck:fix
 
 # Run tests and fix till passing (auto-detected)
-/fix
+/ck:fix
 
 # Fetch GitHub Actions logs and fix (auto-detected)
-/fix <github-action-url>
+/ck:fix <github-action-url>
 
 # Create new project (needs plan review)
-/bootstrap <idea-description>
+/ck:bootstrap <idea-description>
 
 # Create new project (autonomous till death)
-/bootstrap:auto <idea>
+/ck:bootstrap:auto <idea>
 
 # Run test suite and report (no fixes)
-/test
+/ck:test
 ```
 
 ## Resources

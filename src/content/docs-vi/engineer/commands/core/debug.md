@@ -1,6 +1,6 @@
 ---
 lang: vi
-title: /debug
+title: /ck:debug
 description: Documentation for debug
 section: engineer
 kit: engineer
@@ -9,14 +9,14 @@ order: 5
 published: true
 ---
 
-# /debug
+# /ck:debug
 
 Issue investigation and diagnosis command. Analyzes bugs, errors, and technical problems to identify root causes and explain them clearly—without automatically implementing fixes.
 
 ## Syntax
 
 ```bash
-/debug [issues]
+/ck:debug [issues]
 ```
 
 ## When to Use
@@ -30,7 +30,7 @@ Issue investigation and diagnosis command. Analyzes bugs, errors, and technical 
 ## Quick Example
 
 ```bash
-/debug [API returns 500 error when creating user with long username]
+/ck:debug [API returns 500 error when creating user with long username]
 ```
 
 **Output**:
@@ -86,7 +86,7 @@ When you run this command:
 
 **Agents Invoked**: `debugger` subagent
 
-**Important**: `/debug` does NOT implement fixes automatically. It only diagnoses and explains.
+**Important**: `/ck:debug` does NOT implement fixes automatically. It only diagnoses and explains.
 
 ## Complete Example
 
@@ -95,7 +95,7 @@ When you run this command:
 You notice memory usage growing indefinitely in production.
 
 ```bash
-/debug [Node.js process memory grows from 200MB to 2GB over 24 hours, eventually crashes]
+/ck:debug [Node.js process memory grows from 200MB to 2GB over 24 hours, eventually crashes]
 ```
 
 **Debugger Agent Investigation Process**:
@@ -237,7 +237,7 @@ Recommendations:
 ### Error Message Investigation
 
 ```bash
-/debug [TypeError: Cannot read property 'user' of undefined at src/auth/login.js:23]
+/ck:debug [TypeError: Cannot read property 'user' of undefined at src/auth/login.js:23]
 ```
 
 **Output**:
@@ -253,7 +253,7 @@ Fix: Move session middleware before auth routes
 ### Test Failure Analysis
 
 ```bash
-/debug [integration test "POST /api/orders" failing with 401 Unauthorized but should be 201]
+/ck:debug [integration test "POST /api/orders" failing with 401 Unauthorized but should be 201]
 ```
 
 **Output**:
@@ -269,7 +269,7 @@ Fix: Update test to include authentication header
 ### Performance Degradation
 
 ```bash
-/debug [API response time increased from 100ms to 3000ms after deploying caching layer]
+/ck:debug [API response time increased from 100ms to 3000ms after deploying caching layer]
 ```
 
 **Output**:
@@ -285,7 +285,7 @@ Fix: Use hash-based cache keys instead of stringifying objects
 ### Unexpected Behavior
 
 ```bash
-/debug [emails sending twice for password reset requests]
+/ck:debug [emails sending twice for password reset requests]
 ```
 
 **Output**:
@@ -304,7 +304,7 @@ Fix: Remove duplicate event listener registration
 
 ✅ **Good:**
 ```bash
-/debug [
+/ck:debug [
   Production error:
   - TypeError: Cannot read property 'email' of null
   - File: src/services/email-sender.js:45
@@ -316,9 +316,9 @@ Fix: Remove duplicate event listener registration
 
 ❌ **Vague:**
 ```bash
-/debug [something is broken]
-/debug [it doesn't work]
-/debug [fix the error]
+/ck:debug [something is broken]
+/ck:debug [it doesn't work]
+/ck:debug [fix the error]
 ```
 
 ### Include Context
@@ -335,7 +335,7 @@ Helpful details:
 ### Attach Evidence
 
 ```bash
-/debug [
+/ck:debug [
   Issue: Database connection pool exhausted
   Evidence:
   - Error: "remaining connection slots reserved for non-replication superuser connections"
@@ -346,9 +346,9 @@ Helpful details:
 ]
 ```
 
-## What /debug Does NOT Do
+## What /ck:debug Does NOT Do
 
-- ❌ Automatically implement fixes (that's for `/fix` commands)
+- ❌ Automatically implement fixes (that's for `/ck:fix` commands)
 - ❌ Modify code files
 - ❌ Deploy fixes to production
 - ❌ Run tests or validations
@@ -359,7 +359,7 @@ Standard workflow:
 
 ```bash
 # 1. Investigate issue
-/debug [issue description]
+/ck:debug [issue description]
 
 # 2. Review diagnostic report
 cat plans/debug/issue-investigation-YYYYMMDD.md
@@ -367,16 +367,16 @@ cat plans/debug/issue-investigation-YYYYMMDD.md
 # 3. Decide on fix approach
 
 # 4. Implement fix using appropriate command
-/fix --quick [implement the recommended fix]
+/ck:fix --quick [implement the recommended fix]
 # or
-/fix [complex fix requiring multiple changes]
+/ck:fix [complex fix requiring multiple changes]
 # or manually implement
 
 # 5. Verify fix
-/test
+/ck:test
 
 # 6. Commit
-/git cm
+/ck:git cm
 ```
 
 ## Integration with Other Commands
@@ -385,34 +385,34 @@ cat plans/debug/issue-investigation-YYYYMMDD.md
 
 ```bash
 # 1. Diagnose
-/debug [API rate limiting not working]
+/ck:debug [API rate limiting not working]
 
 # Output: Missing Redis connection, middleware not applied
 
 # 2. Fix based on diagnosis
-/fix --quick [add Redis connection and apply rate limit middleware to routes]
+/ck:fix --quick [add Redis connection and apply rate limit middleware to routes]
 ```
 
 ### Scout → Debug
 
 ```bash
 # 1. Find relevant files
-/scout [find all email sending code] 3
+/ck:scout [find all email sending code] 3
 
 # 2. Debug issue with context
-/debug [emails not sending, relevant files in scout report]
+/ck:debug [emails not sending, relevant files in scout report]
 ```
 
 ### Debug → Ask
 
 ```bash
 # 1. Debug finds architectural issue
-/debug [database deadlocks during concurrent user updates]
+/ck:debug [database deadlocks during concurrent user updates]
 
 # Output: Transaction isolation level causing conflicts
 
 # 2. Ask for architectural guidance
-/ask [best transaction isolation level for concurrent user updates in PostgreSQL?]
+/ck:ask [best transaction isolation level for concurrent user updates in PostgreSQL?]
 ```
 
 ## Advanced Debugging
@@ -420,7 +420,7 @@ cat plans/debug/issue-investigation-YYYYMMDD.md
 ### With Log Files
 
 ```bash
-/debug [
+/ck:debug [
   Issue: Intermittent 503 errors
   Log file: /var/log/app/error.log
   Relevant entries from 14:30-15:00
@@ -432,7 +432,7 @@ Debugger agent will analyze log patterns.
 ### Performance Profiling
 
 ```bash
-/debug [
+/ck:debug [
   Performance issue: /api/search endpoint slow
   Profiling data:
   - 90th percentile: 2.3s
@@ -448,7 +448,7 @@ Agent identifies database query as bottleneck.
 ### Concurrency Issues
 
 ```bash
-/debug [
+/ck:debug [
   Race condition suspected:
   - Sometimes user balance goes negative
   - Only happens with concurrent requests
@@ -466,7 +466,7 @@ Agent traces execution paths to find race condition.
 
 **Solution**: Provide error messages, logs, or steps to reproduce
 ```bash
-/debug [
+/ck:debug [
   Full error message: [paste here]
   Stack trace: [paste here]
   How to reproduce: [steps]
@@ -479,11 +479,11 @@ Agent traces execution paths to find race condition.
 
 **Solution**: Separate diagnosis from fix
 ```bash
-# Not: /debug [find and fix the bug]
+# Not: /ck:debug [find and fix the bug]
 # Instead:
-/debug [diagnosis: why is the bug happening?]
+/ck:debug [diagnosis: why is the bug happening?]
 # Then:
-/fix --quick [implement the fix]
+/ck:fix --quick [implement the fix]
 ```
 
 ### Production Urgency
@@ -493,19 +493,19 @@ Agent traces execution paths to find race condition.
 **Solution**: Skip debug, go straight to fix with description
 ```bash
 # If urgent:
-/fix --quick [urgent: API returning 500, need immediate mitigation]
+/ck:fix --quick [urgent: API returning 500, need immediate mitigation]
 
 # Can debug later:
-/debug [investigate root cause of API 500 errors]
+/ck:debug [investigate root cause of API 500 errors]
 ```
 
 ## Related Commands
 
-- [/fix --quick](/docs/engineer/skills/fix) - Implement quick fixes after diagnosis
-- [/fix](/docs/engineer/skills/fix) - Fix complex issues requiring planning
-- [/scout](/docs/engineer/skills/scout) - Find relevant files before debugging
-- [/ask](/docs/engineer/commands/core/ask) - Get architectural guidance on systemic issues
+- [/ck:fix --quick](/docs/engineer/skills/fix) - Implement quick fixes after diagnosis
+- [/ck:fix](/docs/engineer/skills/fix) - Fix complex issues requiring planning
+- [/ck:scout](/docs/engineer/skills/scout) - Find relevant files before debugging
+- [/ck:ask](/docs/engineer/commands/core/ask) - Get architectural guidance on systemic issues
 
 ---
 
-**Key Takeaway**: `/debug` provides thorough root cause analysis and clear explanations of technical issues, empowering you to make informed decisions about fixes without automatic code changes.
+**Key Takeaway**: `/ck:debug` provides thorough root cause analysis and clear explanations of technical issues, empowering you to make informed decisions about fixes without automatic code changes.

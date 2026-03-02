@@ -12,7 +12,7 @@ Set your coding experience level so ClaudeKit tailors its explanations, code com
 ## Usage
 
 ```
-/coding-level [0-5]
+/ck:coding-level [0-5]
 ```
 
 ## Levels

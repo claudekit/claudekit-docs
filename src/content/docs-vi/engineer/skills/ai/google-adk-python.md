@@ -48,7 +48,7 @@ Skill này tự động kích hoạt khi:
 
 Kích hoạt thủ công:
 ```bash
-/google-adk-python
+/ck:google-adk-python
 ```
 
 ## Khái Niệm Cốt Lõi

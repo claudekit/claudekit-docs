@@ -639,7 +639,7 @@ Hãy xác minh rằng bản sửa lỗi của bạn thực sự mang lại kết
 
 ## Các lệnh liên quan
 
-- `/debug` - Điều tra các vấn đề hệ thống
+- `/ck:debug` - Điều tra các vấn đề hệ thống
 - `/logs` - Phân tích nhật ký ứng dụng
 - `/ckm:test` - Chạy kiểm tra sức khỏe tích hợp
 

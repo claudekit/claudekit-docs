@@ -1,5 +1,5 @@
 ---
-title: /plan
+title: /ck:plan
 description: Intelligently analyze task complexity and create structured implementation plans with optional flags for speed, depth, and parallel execution
 section: engineer
 kit: engineer
@@ -8,21 +8,21 @@ order: 1
 published: true
 ---
 
-> **v2.12.0:** Plan modes (`fast`, `hard`, `parallel`, `two`, `ci`, `cro`) are now flags on the [Planning skill](/docs/engineer/skills/plan) rather than separate commands. Use `/plan --fast`, `/plan --hard`, etc. See the [Planning skill](/docs/engineer/skills/plan) for the full consolidated workflow.
+> **v2.12.0:** Plan modes (`fast`, `hard`, `parallel`, `two`, `ci`, `cro`) are now flags on the [Planning skill](/docs/engineer/skills/plan) rather than separate commands. Use `/ck:plan --fast`, `/ck:plan --hard`, etc. See the [Planning skill](/docs/engineer/skills/plan) for the full consolidated workflow.
 
-# /plan
+# /ck:plan
 
 Intelligent planning entry point. Analyzes task complexity, asks clarifying questions if needed, and creates a structured implementation plan. Use flags to control planning depth and execution mode.
 
 ## Syntax
 
 ```bash
-/plan [task]                  # Auto-route by complexity
-/plan --fast [task]           # Quick plan, no research
-/plan --hard [task]           # Research-driven detailed plan
-/plan --parallel [task]       # Plan with parallel-executable phases
-/plan --two [task]            # Compare two implementation approaches
-/plan --ci [task]             # Plan from CI/CD failures
+/ck:plan [task]                  # Auto-route by complexity
+/ck:plan --fast [task]           # Quick plan, no research
+/ck:plan --hard [task]           # Research-driven detailed plan
+/ck:plan --parallel [task]       # Plan with parallel-executable phases
+/ck:plan --two [task]            # Compare two implementation approaches
+/ck:plan --ci [task]             # Plan from CI/CD failures
 ```
 
 ## When to Use
@@ -35,7 +35,7 @@ Intelligent planning entry point. Analyzes task complexity, asks clarifying ques
 ## Quick Example
 
 ```bash
-/plan [add user authentication with OAuth support]
+/ck:plan [add user authentication with OAuth support]
 ```
 
 **Output**:
@@ -50,12 +50,12 @@ Complexity Assessment:
 - Security considerations: Token storage, CSRF protection
 
 Decision: This task requires research and detailed planning.
-→ Routing to /plan:hard
+→ Routing to /ck:plan:hard
 
 Enhancing prompt with additional context...
 Activating planning skill...
 
-[/plan:hard executes with enhanced prompt]
+[/ck:plan:hard executes with enhanced prompt]
 ```
 
 **Result**: Complex task creates detailed implementation plan.
@@ -167,7 +167,7 @@ Step 7: Output structured plan directory
 ### Scenario: Planning a New API Endpoint
 
 ```bash
-/plan [add product inventory management API]
+/ck:plan [add product inventory management API]
 ```
 
 **Execution Flow**:
@@ -201,7 +201,7 @@ Clarifying questions:
    > Single warehouse for now, but design for future multi-warehouse
 
 Decision: Complex task requiring research
-→ Routing to /plan:hard
+→ Routing to /ck:plan:hard
 
 Enhancing prompt...
 Added context:
@@ -221,31 +221,31 @@ Plan created: plans/251129-inventory-api/plan.md
 
 ```bash
 # Use --fast or let the router decide
-/plan --fast [add pagination to products list]
-/plan [fix date formatting in dashboard]
-/plan [add loading spinner to submit button]
+/ck:plan --fast [add pagination to products list]
+/ck:plan [fix date formatting in dashboard]
+/ck:plan [add loading spinner to submit button]
 ```
 
 ### Hard planning (complex tasks)
 
 ```bash
 # Use --hard or let the router decide
-/plan --hard [implement real-time notifications system]
-/plan [add multi-tenant support to the platform]
-/plan [migrate from REST to GraphQL]
+/ck:plan --hard [implement real-time notifications system]
+/ck:plan [add multi-tenant support to the platform]
+/ck:plan [migrate from REST to GraphQL]
 ```
 
 ### Other modes
 
 ```bash
 # Parallel-executable phases for multi-agent teams
-/plan --parallel [add payment integration]
+/ck:plan --parallel [add payment integration]
 
 # Compare two approaches before committing
-/plan --two [add caching layer]
+/ck:plan --two [add caching layer]
 
 # Fix a broken CI pipeline
-/plan --ci [fix failing integration tests]
+/ck:plan --ci [fix failing integration tests]
 ```
 
 ## Active Plan Management
@@ -253,7 +253,7 @@ Plan created: plans/251129-inventory-api/plan.md
 ### Continuing Existing Plan
 
 ```bash
-/plan [add tests for auth module]
+/ck:plan [add tests for auth module]
 ```
 
 ```
@@ -263,13 +263,13 @@ Phase 2 (testing) not yet started.
 Continue with existing plan? [Y/n] Y
 
 Adding test phase to existing plan...
-→ Routing to /plan:fast (clear scope within existing plan)
+→ Routing to /ck:plan:fast (clear scope within existing plan)
 ```
 
 ### Creating New Plan
 
 ```bash
-/plan [completely new feature unrelated to current work]
+/ck:plan [completely new feature unrelated to current work]
 ```
 
 ```
@@ -287,9 +287,9 @@ Analyzing complexity...
 
 | Command | Description | When to Use |
 |---------|-------------|-------------|
-| [/plan:validate](/docs/engineer/commands/plan/validate) | Interview-based plan validation | Before implementation |
-| [/plan:red-team](/docs/engineer/commands/plan/red-team) | Adversarial plan review | Finding flaws and assumptions |
-| [/plan:archive](/docs/engineer/commands/plan/archive) | Archive completed plans | Post-implementation cleanup |
+| [/ck:plan:validate](/docs/engineer/commands/plan/validate) | Interview-based plan validation | Before implementation |
+| [/ck:plan:red-team](/docs/engineer/commands/plan/red-team) | Adversarial plan review | Finding flaws and assumptions |
+| [/ck:plan:archive](/docs/engineer/commands/plan/archive) | Archive completed plans | Post-implementation cleanup |
 | [Planning skill](/docs/engineer/skills/plan) | Full consolidated planning workflow | All planning modes via flags |
 
 ## Best Practices
@@ -298,23 +298,23 @@ Analyzing complexity...
 
 ```bash
 # Good: Specific with constraints
-/plan [add search functionality using Elasticsearch, must support fuzzy matching and filters]
+/ck:plan [add search functionality using Elasticsearch, must support fuzzy matching and filters]
 
 # Less helpful: Vague
-/plan [add search]
+/ck:plan [add search]
 ```
 
 ### Trust the Router
 
-Let `/plan` decide the complexity, or use explicit flags when you know:
+Let `/ck:plan` decide the complexity, or use explicit flags when you know:
 
 ```bash
 # Let it route
-/plan [add caching layer]
+/ck:plan [add caching layer]
 
 # Explicit when you know the complexity
-/plan --fast [add loading spinner]
-/plan --hard [redesign auth system]
+/ck:plan --fast [add loading spinner]
+/ck:plan --hard [redesign auth system]
 ```
 
 ### Use Active Plans
@@ -331,17 +331,17 @@ This keeps related work organized in one plan directory.
 
 ### Frequent Hard Routing
 
-**Problem**: Most tasks routing to `/plan:hard`
+**Problem**: Most tasks routing to `/ck:plan:hard`
 
 **Solution**: Break large tasks into smaller pieces
 ```bash
 # Instead of
-/plan [build entire e-commerce platform]
+/ck:plan [build entire e-commerce platform]
 
 # Break down
-/plan [add product catalog]
-/plan [add shopping cart]
-/plan [add checkout flow]
+/ck:plan [add product catalog]
+/ck:plan [add shopping cart]
+/ck:plan [add checkout flow]
 ```
 
 ### Missed Context
@@ -354,4 +354,4 @@ This keeps related work organized in one plan directory.
 
 ---
 
-**Key Takeaway**: `/plan` is your intelligent planning entry point. It analyzes complexity, asks the right questions, and creates the right plan — use flags (`--fast`, `--hard`, `--parallel`, `--two`, `--ci`) when you want explicit control. For the full consolidated workflow, see the [Planning skill](/docs/engineer/skills/plan).
+**Key Takeaway**: `/ck:plan` is your intelligent planning entry point. It analyzes complexity, asks the right questions, and creates the right plan — use flags (`--fast`, `--hard`, `--parallel`, `--two`, `--ci`) when you want explicit control. For the full consolidated workflow, see the [Planning skill](/docs/engineer/skills/plan).

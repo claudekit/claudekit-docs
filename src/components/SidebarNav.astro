@@ -14,7 +14,7 @@ const currentLocale = getLangFromUrl(Astro.url);
 
 // Detect section from URL
 function getSectionFromUrl(path: string): string {
-  // Remove language prefix if present (e.g., /vi/docs -> /docs)
+  // Remove language prefix if present (e.g., /vi/docs -> /ck:docs)
   const cleanPath = path.replace(/^\/[a-z]{2}\//, '/');
 
   if (cleanPath === '/' || cleanPath === '') return 'home';

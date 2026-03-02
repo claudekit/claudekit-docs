@@ -1,5 +1,5 @@
 ---
-title: /bootstrap:auto:parallel
+title: /ck:bootstrap:auto:parallel
 description: Bootstrap complete projects with parallel execution using researcher, planner, and fullstack-developer agents
 section: engineer
 kit: engineer
@@ -8,14 +8,14 @@ order: 41
 published: true
 ---
 
-# /bootstrap:auto:parallel
+# /ck:bootstrap:auto:parallel
 
 Parallel project bootstrapping with multi-agent orchestration. Creates complete projects from requirements using researcher, planner, designer, and implementation agents working in parallel execution waves.
 
 ## Syntax
 
 ```bash
-/bootstrap:auto:parallel [user-requirements]
+/ck:bootstrap:auto:parallel [user-requirements]
 ```
 
 ## When to Use
@@ -29,7 +29,7 @@ Parallel project bootstrapping with multi-agent orchestration. Creates complete 
 ## Quick Example
 
 ```bash
-/bootstrap:auto:parallel [build a task management app with user auth, real-time updates, and mobile-responsive UI]
+/ck:bootstrap:auto:parallel [build a task management app with user auth, real-time updates, and mobile-responsive UI]
 ```
 
 **Output**:
@@ -112,7 +112,7 @@ Design tokens:
 
 **Step 5: Parallel Implementation Plan**
 ```
-Creating /plan:parallel plan...
+Creating /ck:plan:parallel plan...
 
 Phases identified:
 - Phase 1: Auth (no deps)
@@ -230,7 +230,7 @@ Wave 4 (Sequential):
 ### Scenario: E-commerce Platform
 
 ```bash
-/bootstrap:auto:parallel [build e-commerce platform with product catalog, shopping cart, checkout, and admin dashboard]
+/ck:bootstrap:auto:parallel [build e-commerce platform with product catalog, shopping cart, checkout, and admin dashboard]
 ```
 
 **Execution**:
@@ -303,28 +303,28 @@ Next steps:
 ### Full-Stack Application
 
 ```bash
-/bootstrap:auto:parallel [SaaS dashboard with user management, billing, and analytics]
+/ck:bootstrap:auto:parallel [SaaS dashboard with user management, billing, and analytics]
 ```
 
 ### Microservices Architecture
 
 ```bash
-/bootstrap:auto:parallel [microservices: auth-service, user-service, notification-service with shared API gateway]
+/ck:bootstrap:auto:parallel [microservices: auth-service, user-service, notification-service with shared API gateway]
 ```
 
 ### API-First Project
 
 ```bash
-/bootstrap:auto:parallel [REST API with OpenAPI spec, JWT auth, rate limiting, and PostgreSQL]
+/ck:bootstrap:auto:parallel [REST API with OpenAPI spec, JWT auth, rate limiting, and PostgreSQL]
 ```
 
 ## Comparison
 
 | Command | Approval | Parallelization | Speed |
 |---------|----------|-----------------|-------|
-| /bootstrap | Required | No | Slowest |
-| /bootstrap:auto | No | No | Medium |
-| /bootstrap:auto:parallel | No | Yes | Fastest |
+| /ck:bootstrap | Required | No | Slowest |
+| /ck:bootstrap:auto | No | No | Medium |
+| /ck:bootstrap:auto:parallel | No | Yes | Fastest |
 
 ## Best Practices
 
@@ -332,7 +332,7 @@ Next steps:
 
 ```bash
 # Good: Specific requirements
-/bootstrap:auto:parallel [
+/ck:bootstrap:auto:parallel [
   Task management app with:
   - User auth (email + Google OAuth)
   - Project organization
@@ -342,7 +342,7 @@ Next steps:
 ]
 
 # Less effective: Vague
-/bootstrap:auto:parallel [build a task app]
+/ck:bootstrap:auto:parallel [build a task app]
 ```
 
 ### Check Output Structure
@@ -356,11 +356,11 @@ cat README.md
 
 ## Related Commands
 
-- [/bootstrap](/docs/engineer/commands/core/bootstrap) - Bootstrap with approval gates
-- [/bootstrap:auto](/docs/engineer/commands/core/bootstrap-auto) - Auto bootstrap (sequential)
+- [/ck:bootstrap](/docs/engineer/commands/core/bootstrap) - Bootstrap with approval gates
+- [/ck:bootstrap:auto](/docs/engineer/commands/core/bootstrap-auto) - Auto bootstrap (sequential)
 - [Planning skill](/docs/engineer/skills/plan) - Create parallel plans with `--parallel` flag
-- [/cook --parallel](/docs/engineer/skills/cook) - Execute parallel plans
+- [/ck:cook --parallel](/docs/engineer/skills/cook) - Execute parallel plans
 
 ---
 
-**Key Takeaway**: `/bootstrap:auto:parallel` creates complete projects using parallel agent execution waves, significantly reducing project setup time through coordinated multi-agent orchestration.
+**Key Takeaway**: `/ck:bootstrap:auto:parallel` creates complete projects using parallel agent execution waves, significantly reducing project setup time through coordinated multi-agent orchestration.

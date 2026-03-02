@@ -12,15 +12,15 @@ Build full-stack React applications with TanStack Start, manage forms with TanSt
 ## Usage
 
 ```
-/tanstack [task description]
+/ck:tanstack [task description]
 ```
 
 ## Examples
 
 ```bash
-/tanstack scaffold a TanStack Start app with auth and PostgreSQL
-/tanstack build a type-safe checkout form with zod validation
-/tanstack add streaming AI chat with server-sent events
+/ck:tanstack scaffold a TanStack Start app with auth and PostgreSQL
+/ck:tanstack build a type-safe checkout form with zod validation
+/ck:tanstack add streaming AI chat with server-sent events
 ```
 
 ## What It Does

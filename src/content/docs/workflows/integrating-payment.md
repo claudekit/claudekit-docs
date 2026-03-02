@@ -20,7 +20,7 @@ Learn how to integrate payment processing with ClaudeKit - from one-time payment
 **Goal**: Implement secure payment processing with provider integration
 **Time**: 25-50 minutes (vs 5-10 hours manually)
 **Agents Used**: planner, researcher, tester, code-reviewer
-**Commands**: /integrate:polar, /integrate:sepay, /cook, /test
+**Commands**: /integrate:polar, /integrate:sepay, /ck:cook, /ck:test
 
 ## Prerequisites
 
@@ -47,7 +47,7 @@ Select provider based on your needs:
 
 ```bash
 # For SaaS subscriptions
-/plan [integrate Stripe for subscription billing]
+/ck:plan [integrate Stripe for subscription billing]
 
 # For creator platforms
 /integrate:polar
@@ -56,13 +56,13 @@ Select provider based on your needs:
 /integrate:sepay
 
 # For general e-commerce
-/plan [integrate Stripe with PayPal fallback]
+/ck:plan [integrate Stripe with PayPal fallback]
 ```
 
 ### Step 2: Integrate Stripe (Most Common)
 
 ```bash
-/cook [integrate Stripe payment processing with one-time and subscription payments]
+/ck:cook [integrate Stripe payment processing with one-time and subscription payments]
 ```
 
 **Implementation**:
@@ -151,7 +151,7 @@ frontend/
 
 ```bash
 # Already done in Step 2, but can add specific features
-/cook [add invoice generation for one-time payments]
+/ck:cook [add invoice generation for one-time payments]
 ```
 
 **Payment flow**:
@@ -182,7 +182,7 @@ const handlePayment = async (amount, currency) => {
 ### Step 4: Implement Subscriptions
 
 ```bash
-/cook [implement subscription tiers with monthly and annual billing]
+/ck:cook [implement subscription tiers with monthly and annual billing]
 ```
 
 **Implementation**:
@@ -225,7 +225,7 @@ Plans created:
 Webhooks are critical for payment processing:
 
 ```bash
-/cook [implement comprehensive Stripe webhook handling]
+/ck:cook [implement comprehensive Stripe webhook handling]
 ```
 
 **Webhook events handled**:
@@ -288,7 +288,7 @@ const verifyWebhook = (req) => {
 ### Step 6: Add Payment Methods
 
 ```bash
-/cook [add support for multiple payment methods - cards, Apple Pay, Google Pay]
+/ck:cook [add support for multiple payment methods - cards, Apple Pay, Google Pay]
 ```
 
 **Implementation**:
@@ -403,32 +403,32 @@ POLAR_WEBHOOK_SECRET=whsec_...
 
 Implement the coupon system:
 ```bash
-/cook "Implement coupon and discount code system"
+/ck:cook "Implement coupon and discount code system"
 ```
 
 #### Abandoned Cart Recovery
 
 ```bash
-/cook "Add abandoned checkout email automation"
+/ck:cook "Add abandoned checkout email automation"
 ```
 
 #### Upsell/Cross-sell
 
 ```bash
-/cook "Implement checkout upsells and product recommendations"
+/ck:cook "Implement checkout upsells and product recommendations"
 ```
 
 #### Tax Calculation
 
 ```bash
-/cook "Add automatic tax calculation with TaxJar integration"
+/ck:cook "Add automatic tax calculation with TaxJar integration"
 ```
 
 ### Step 10: Analytics and Reporting
 
 Implement analytics:
 ```bash
-/cook "Implement payment analytics dashboard"
+/ck:cook "Implement payment analytics dashboard"
 ```
 
 **Analytics features**:
@@ -446,7 +446,7 @@ Implement analytics:
 ### Step 11: Testing Payments
 
 ```bash
-/test
+/ck:test
 ```
 
 **Test coverage**:
@@ -495,7 +495,7 @@ STRIPE_SECRET_KEY=sk_live_...
 STRIPE_PUBLISHABLE_KEY=pk_live_...
 
 # Deploy
-/cook "Deploy payment integration to production with security review"
+/ck:cook "Deploy payment integration to production with security review"
 ```
 
 ## Complete Example: SaaS Subscription Platform
@@ -519,41 +519,41 @@ Implement payment system for SaaS platform:
 
 ```bash
 # Plan implementation
-/plan [design payment system for SaaS with all requirements]
+/ck:plan [design payment system for SaaS with all requirements]
 /clear  # Free context before implementation
 
 # Integrate Stripe
-/cook "Design and implement payment system for SaaS with all requirements as planned"
+/ck:cook "Design and implement payment system for SaaS with all requirements as planned"
 
 # Subscription tiers
-/cook "Create three subscription tiers with feature gates"
+/ck:cook "Create three subscription tiers with feature gates"
 
 # Free trial
-/cook "Implement 14-day free trial without requiring payment method"
+/ck:cook "Implement 14-day free trial without requiring payment method"
 
 # Usage billing
-/cook "Add usage-based billing for API calls"
+/ck:cook "Add usage-based billing for API calls"
 
 # Team billing
-/cook "Implement team billing with seat management"
+/ck:cook "Implement team billing with seat management"
 
 # Invoicing
-/cook "Add automatic invoice generation and email delivery"
+/ck:cook "Add automatic invoice generation and email delivery"
 
 # Tax calculation
-/cook "Integrate TaxJar for automatic tax calculation"
+/ck:cook "Integrate TaxJar for automatic tax calculation"
 
 # Payment methods
-/cook "Add card, Apple Pay, Google Pay, and ACH support"
+/ck:cook "Add card, Apple Pay, Google Pay, and ACH support"
 
 # Dunning
-/cook "Implement smart retry logic for failed payments"
+/ck:cook "Implement smart retry logic for failed payments"
 
 # Test everything
-/test
+/ck:test
 
 # Deploy
-/cook "Deploy to production with monitoring"
+/ck:cook "Deploy to production with monitoring"
 ```
 
 ### Time Comparison
@@ -581,25 +581,25 @@ Implement payment system for SaaS platform:
 
 Implement freemium:
 ```bash
-/cook "Implement freemium model with upgrade prompts"
+/ck:cook "Implement freemium model with upgrade prompts"
 ```
 
 ### Pattern 2: Pay-What-You-Want
 
 ```bash
-/cook "Add pay-what-you-want pricing with suggested amounts"
+/ck:cook "Add pay-what-you-want pricing with suggested amounts"
 ```
 
 ### Pattern 3: Tiered Pricing
 
 ```bash
-/cook "Implement dynamic tiered pricing based on usage"
+/ck:cook "Implement dynamic tiered pricing based on usage"
 ```
 
 ### Pattern 4: Marketplace Payments
 
 ```bash
-/cook "Implement marketplace payments with split payouts using Stripe Connect"
+/ck:cook "Implement marketplace payments with split payouts using Stripe Connect"
 ```
 
 ## Best Practices
@@ -639,7 +639,7 @@ const processWebhook = async (event) => {
 
 Implement dunning:
 ```bash
-/cook "Implement dunning management with smart retry and email notifications"
+/ck:cook "Implement dunning management with smart retry and email notifications"
 ```
 
 ### 4. PCI Compliance
@@ -656,7 +656,7 @@ Implement dunning:
 
 Add monitoring:
 ```bash
-/cook "Add fraud detection and transaction monitoring"
+/ck:cook "Add fraud detection and transaction monitoring"
 ```
 
 ## Troubleshooting
@@ -669,28 +669,28 @@ Add monitoring:
 stripe listen --forward-to localhost:3000/api/webhooks/stripe
 
 # Or fix with ClaudeKit
-/fix --quick [Stripe webhooks not being received]
+/ck:fix --quick [Stripe webhooks not being received]
 ```
 
 ### Issue: Payment Failing
 
 **Solution**:
 ```bash
-/fix [analyze payment failure logs and fix issues]
+/ck:fix [analyze payment failure logs and fix issues]
 ```
 
 ### Issue: Double Charging
 
 **Solution**:
 ```bash
-/fix --quick [prevent double charging with idempotency keys]
+/ck:fix --quick [prevent double charging with idempotency keys]
 ```
 
 ### Issue: Tax Calculation Wrong
 
 **Solution**:
 ```bash
-/fix --quick [tax calculation incorrect for Canadian customers]
+/ck:fix --quick [tax calculation incorrect for Canadian customers]
 ```
 
 ## Security Checklist
@@ -728,8 +728,8 @@ Before production:
 ### Related Commands
 - [/integrate:polar](/docs/engineer/skills) - Polar integration
 - [/integrate:sepay](/docs/engineer/skills) - SePay integration
-- [/cook](/docs/engineer/skills/cook) - Implement features from plans
-- [/test](/docs/engineer/commands/core/test) - Test suite
+- [/ck:cook](/docs/engineer/skills/cook) - Implement features from plans
+- [/ck:test](/docs/engineer/commands/core/test) - Test suite
 
 ### Further Reading
 - [Stripe Documentation](https://stripe.com/docs)

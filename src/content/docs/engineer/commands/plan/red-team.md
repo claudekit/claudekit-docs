@@ -1,5 +1,5 @@
 ---
-title: /plan:red-team
+title: /ck:plan:red-team
 description: Adversarial plan review — spawn hostile reviewers to find flaws, security holes, and false assumptions
 section: engineer
 kit: engineer
@@ -8,15 +8,15 @@ order: 25
 published: true
 ---
 
-# /plan:red-team
+# /ck:plan:red-team
 
 Spawn parallel adversarial reviewers to find flaws, security holes, and false assumptions in your plan before implementation begins.
 
 ## Syntax
 
 ```bash
-/plan:red-team                  # Red-team active plan
-/plan:red-team [plan-path]      # Red-team specific plan
+/ck:plan:red-team                  # Red-team active plan
+/ck:plan:red-team [plan-path]      # Red-team specific plan
 ```
 
 ## How It Works
@@ -86,7 +86,7 @@ Approved findings are then applied to the relevant phase files.
 ## Example
 
 ```bash
-/plan:red-team plans/260201-payment-integration/
+/ck:plan:red-team plans/260201-payment-integration/
 ```
 
 **Output:**
@@ -115,5 +115,5 @@ After user approval, accepted findings are written inline to phase files and a `
 
 ## Related Commands
 
-- [/plan:validate](/docs/engineer/commands/plan/validate) - Interview-based validation before red-teaming
+- [/ck:plan:validate](/docs/engineer/commands/plan/validate) - Interview-based validation before red-teaming
 - [Planning skill](/docs/engineer/skills/plan) - Full consolidated planning workflow

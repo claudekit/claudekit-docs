@@ -516,7 +516,7 @@ Agent UI/UX Designer sẽ:
 ### 2. Xây dựng biểu mẫu
 
 ```bash
-/cook [biểu mẫu đăng ký người dùng với xác thực]
+/ck:cook [biểu mẫu đăng ký người dùng với xác thực]
 ```
 
 Agent Developer sẽ:

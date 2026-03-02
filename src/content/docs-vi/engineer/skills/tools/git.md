@@ -65,14 +65,14 @@ git commit -m "type(scope): description"
 
 ## Cách sử dụng
 
-Kích hoạt bằng cách gõ `/git` theo sau là các tham số hoặc đề cập đến thao tác git.
+Kích hoạt bằng cách gõ `/ck:git` theo sau là các tham số hoặc đề cập đến thao tác git.
 
 ## Ví dụ
 
-- "/git cm" - Tạo commits
-- "/git cp" - Tạo commits và push
-- "/git pr main dev" - Tạo PR từ dev đến main
-- "/git merge dev feature-branch" - Merge feature vào dev
+- "/ck:git cm" - Tạo commits
+- "/ck:git cp" - Tạo commits và push
+- "/ck:git pr main dev" - Tạo PR từ dev đến main
+- "/ck:git merge dev feature-branch" - Merge feature vào dev
 
 ## Định dạng Conventional Commit
 

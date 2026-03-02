@@ -1,5 +1,5 @@
 ---
-title: /use-mcp
+title: /ck:use-mcp
 description: Execute MCP operations via Gemini CLI to preserve context budget
 section: engineer
 kit: engineer
@@ -8,14 +8,14 @@ order: 20
 published: true
 ---
 
-# /use-mcp
+# /ck:use-mcp
 
 Execute Model Context Protocol (MCP) operations via Gemini CLI to preserve context budget.
 
 ## Syntax
 
 ```bash
-/use-mcp [task]
+/ck:use-mcp [task]
 ```
 
 ## How It Works
@@ -53,4 +53,4 @@ echo "your task" | gemini -y -m gemini-2.5-flash
 
 ---
 
-**Key Takeaway**: Use `/use-mcp` to execute MCP operations through Gemini CLI with stdin piping, preserving Claude's context budget.
+**Key Takeaway**: Use `/ck:use-mcp` to execute MCP operations through Gemini CLI with stdin piping, preserving Claude's context budget.

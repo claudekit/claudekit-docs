@@ -32,24 +32,24 @@ Systematic root cause analysis for production incidents, API failures, and compl
 ## Common Use Cases
 
 ### Backend Engineer: API 500 Errors
-**Prompt**: `/debug [POST /api/orders returning 500, started after v2.3.4 deploy]`
+**Prompt**: `/ck:debug [POST /api/orders returning 500, started after v2.3.4 deploy]`
 Gets root cause (missing req.user, connection leak), fix plan, rollback steps, validation commands.
 
 ### DevOps: Database Connection Exhaustion
-**Prompt**: `/debug [PostgreSQL pool exhausted, 47/20 connections active]`
+**Prompt**: `/ck:debug [PostgreSQL pool exhausted, 47/20 connections active]`
 Identifies leaked transactions, long-running queries, table locks. Provides kill commands, query timeouts, code fixes.
 
 ### Full-Stack Dev: GitHub Actions Failing
-**Prompt**: `/debug [CI build failing on test step, error "Module not found"]`
+**Prompt**: `/ck:debug [CI build failing on test step, error "Module not found"]`
 Analyzes workflow logs, identifies missing dependency or broken import, suggests package.json fix.
 
 ### Site Reliability Engineer: Performance Degradation
-**Prompt**: `/debug [API latency increased from 200ms to 3s after deploy]`
+**Prompt**: `/ck:debug [API latency increased from 200ms to 3s after deploy]`
 Profiles endpoints, finds N+1 queries or missing indexes, provides EXPLAIN ANALYZE output and optimization plan.
 
 ## Pro Tips
 
-**Collect context first**: Before running `/debug`, gather error messages, timestamps, recent changes (deploys/commits), and environment details.
+**Collect context first**: Before running `/ck:debug`, gather error messages, timestamps, recent changes (deploys/commits), and environment details.
 
 **Check the usual suspects**: Recent deployments, config changes, dependency updates, database migrations often cause issues.
 

@@ -32,7 +32,7 @@ Transform critical failures into brutally honest learning documents that capture
 
 **DevOps Engineer** discovering payment race condition
 ```bash
-/journal
+/ck:journal
 
 Context: Found race condition in payment system 2hrs before release.
 Bug causes duplicate charges when users rapidly click "Buy Now".
@@ -43,7 +43,7 @@ Output: Full incident report with code snippets, failed attempts (DB constraints
 
 **Backend Dev** after 6-hour production outage
 ```bash
-/journal
+/ck:journal
 
 Context: Kubernetes CrashLoopBackOff on all pods for 6 hours.
 Rolled back - same error. No one knew why.
@@ -54,7 +54,7 @@ Output: Technical autopsy showing CI/CD silently failing (renamed npm script, ol
 
 **Tech Lead** documenting near-miss
 ```bash
-/journal
+/ck:journal
 
 Context: QA found SQL injection vulnerability in prod API.
 Would have exposed 50K user records if exploited.
@@ -65,7 +65,7 @@ Output: Vulnerability details, attack vectors, immediate patch, systemic causes 
 
 **Site Reliability Engineer** after Redis cluster split-brain
 ```bash
-/journal
+/ck:journal
 
 Context: Redis cluster split-brain during network partition.
 Half the nodes thought they were primary. Data corruption.
@@ -76,7 +76,7 @@ Output: Network partition timeline, data inconsistency examples, recovery steps,
 
 **Full Stack Dev** documenting performance crisis
 ```bash
-/journal
+/ck:journal
 
 Context: API response times jumped from 200ms to 15sec.
 Unindexed DB query on 10M row table hitting production.

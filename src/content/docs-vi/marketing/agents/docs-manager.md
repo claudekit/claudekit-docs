@@ -25,7 +25,7 @@ Cập nhật tài liệu sau những thay đổi lớn:
 
 ```bash
 # Sau khi tái cấu trúc API của bạn
-/docs "Update documentation for new webhook API"
+/ck:docs "Update documentation for new webhook API"
 ```
 
 Đại lý sẽ phân tích các thay đổi trong mã, cập nhật các tài liệu liên quan và đảm bảo tính nhất quán trên tất cả các tệp tài liệu.
@@ -88,7 +88,7 @@ Sử dụng Docs Manager Agent khi bạn cần:
 
 ```bash
 # Sau khi triển khai hệ thống chiến dịch email
-/docs "Document the new email campaign API and workflow"
+/ck:docs "Document the new email campaign API and workflow"
 ```
 
 **Đại lý quản lý sẽ**:
@@ -104,7 +104,7 @@ Sử dụng Docs Manager Agent khi bạn cần:
 
 ```bash
 # Dành cho thành viên mới gia nhập dự án
-/docs "Generate comprehensive codebase summary"
+/ck:docs "Generate comprehensive codebase summary"
 ```
 
 **Bạn sẽ nhận được**:
@@ -222,7 +222,7 @@ Docs Manager tích hợp một cách liền mạch:
 
 ## Các lệnh liên quan
 
-- [`/docs`](/docs/marketing/commands) - Cập nhật hoặc tạo tài liệu mới
+- [`/ck:docs`](/docs/marketing/commands) - Cập nhật hoặc tạo tài liệu mới
 - [`/audit`](/vi/docs/marketing/commands) - Chạy kiểm tra chất lượng tài liệu
 
 ## Mẹo

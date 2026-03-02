@@ -30,30 +30,30 @@ Multi-source technology intelligence that explores docs, videos, GitHub repos, a
 ## Common Use Cases
 
 **Who**: Product teams choosing payment gateway
-**Prompt**: `/plan research Stripe vs PayPal integration for SaaS billing`
+**Prompt**: `/ck:plan research Stripe vs PayPal integration for SaaS billing`
 **Output**: 15-page comparison report with security audit, pricing, code examples
 
 **Who**: DevOps engineer evaluating container orchestration
-**Prompt**: `/plan investigate Kubernetes vs Docker Swarm for microservices`
+**Prompt**: `/ck:plan investigate Kubernetes vs Docker Swarm for microservices`
 **Output**: Architecture analysis, scaling patterns, operational complexity breakdown
 
 **Who**: Frontend dev implementing real-time features
-**Prompt**: `/plan research WebSocket best practices for chat app`
+**Prompt**: `/ck:plan research WebSocket best practices for chat app`
 **Output**: Library comparison, connection handling patterns, production configs
 
 **Who**: Security-focused startup
-**Prompt**: `/plan research OAuth2 implementation vulnerabilities and mitigations`
+**Prompt**: `/ck:plan research OAuth2 implementation vulnerabilities and mitigations`
 **Output**: Security audit, common pitfalls, hardening checklist with sources
 
 **Who**: Tech lead architecting data pipeline
-**Prompt**: `/plan compare Apache Kafka vs RabbitMQ for event streaming`
+**Prompt**: `/ck:plan compare Apache Kafka vs RabbitMQ for event streaming`
 **Output**: Performance benchmarks, use case fit, operational considerations
 
 ## How It Works
 
 ```bash
 # Trigger research via planning command
-/plan [add Stripe payment integration]
+/ck:plan [add Stripe payment integration]
 ```
 
 **What happens**:

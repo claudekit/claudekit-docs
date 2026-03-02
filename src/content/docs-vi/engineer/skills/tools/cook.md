@@ -40,7 +40,7 @@ Hãy nghĩ về nó như người chỉ huy triển khai của bạn. Đưa cho 
 ## Cách sử dụng
 
 ```
-/cook <task OR plan path> [--flag]
+/ck:cook <task OR plan path> [--flag]
 ```
 
 Flag tùy chọn: `--interactive`, `--fast`, `--parallel`, `--no-test`, `--auto`
@@ -49,11 +49,11 @@ Nếu không có flag, sử dụng chế độ interactive mặc định.
 
 ## Ví dụ
 
-- "/cook add user authentication to the app"
-- "/cook implement real-time notifications --fast"
-- "/cook path/to/plan.md --auto"
-- "/cook add search, filters, and pagination --parallel"
-- "/cook prototype new UI design --no-test"
+- "/ck:cook add user authentication to the app"
+- "/ck:cook implement real-time notifications --fast"
+- "/ck:cook path/to/plan.md --auto"
+- "/ck:cook add search, filters, and pagination --parallel"
+- "/ck:cook prototype new UI design --no-test"
 
 ## Tổng quan quy trình
 

@@ -101,10 +101,10 @@ claude --dangerously-skip-permissions
 
 ### Step 5: Initialize Documentation
 
-Run the `/docs:init` command to scan and generate specs for your project:
+Run the `/ck:docs:init` command to scan and generate specs for your project:
 
 ```bash
-/docs:init
+/ck:docs:init
 ```
 
 This command creates markdown files in the `docs` directory:

@@ -81,7 +81,7 @@ ClaudeKit Engineer ships with hooks organized by event type. All hook files live
 | `session-init.cjs` | `SessionStart` | Load config, detect project, persist env vars |
 | `subagent-init.cjs` | `SubagentStart` | Inject minimal context (~200 tokens) to subagents |
 | `team-context-inject.cjs` | `SubagentStart` | Inject peer info + task summary for Agent Team members |
-| `cook-after-plan-reminder.cjs` | `SubagentStop` (Plan) | Remind to invoke `/cook --auto` after planning |
+| `cook-after-plan-reminder.cjs` | `SubagentStop` (Plan) | Remind to invoke `/ck:cook --auto` after planning |
 | `dev-rules-reminder.cjs` | `UserPromptSubmit` | Inject session context, rules, modularization, Plan Context |
 | `usage-context-awareness.cjs` | `UserPromptSubmit` + `PostToolUse` | Fetch usage limits, write to cache (throttled) |
 | `descriptive-name.cjs` | `PreToolUse` (Write) | Inject file naming guidance: kebab-case, language conventions |
@@ -138,7 +138,7 @@ ClaudeKit Engineer ships with hooks organized by event type. All hook files live
 
 **Event:** `SubagentStop` (matcher: Plan subagents)
 
-**Purpose:** After a planning subagent completes, reminds Claude to invoke `/cook --auto` to begin implementation from the generated plan.
+**Purpose:** After a planning subagent completes, reminds Claude to invoke `/ck:cook --auto` to begin implementation from the generated plan.
 
 **What it does:**
 - Detects if the stopping subagent was a planner

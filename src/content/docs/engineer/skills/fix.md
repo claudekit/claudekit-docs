@@ -71,7 +71,7 @@ Classify before routing:
 ## Usage
 
 ```
-/fix [--auto|--review|--quick|--parallel]
+/ck:fix [--auto|--review|--quick|--parallel]
 ```
 
 | Flag | Behavior |
@@ -90,7 +90,7 @@ When you have multiple independent issues, `--parallel` spawns separate agents t
 
 ```bash
 # Fix multiple issues in parallel
-/fix --parallel
+/ck:fix --parallel
 
 # Example: 3 unrelated type errors → 3 parallel agents
 ```

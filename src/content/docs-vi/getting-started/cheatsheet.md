@@ -37,7 +37,7 @@ claude
 
 ```bash
 # Cho các dự án đã có sẵn (brownfield)
-/docs:init
+/ck:docs:init
 
 # Cho các dự án mới (greenfield)
 ck init --kit engineer --dir /path/to/project
@@ -55,96 +55,96 @@ ck init --use-git
 
 ```bash
 # Khởi tạo tài liệu và các đặc tả (specs)
-/docs:init
+/ck:docs:init
 
 # Triển khai tính năng mới
-/cook <mô-tả>
+/ck:cook <mô-tả>
 
 # Triển khai tính năng tự động (autonomous)
-/cook --auto <mô-tả>
+/ck:cook --auto <mô-tả>
 
 # Chế độ tự động nhanh (ít lập kế hoạch hơn)
-/cook --auto --fast <mô-tả>
+/ck:cook --auto --fast <mô-tả>
 
 # Chỉ tạo kế hoạch triển khai
-/plan <mô-tả>
+/ck:plan <mô-tả>
 
 # Thực thi một kế hoạch đã có sẵn
-/cook <plan.md>
+/ck:cook <plan.md>
 
 # Khởi tạo dự án mới (bootstrap)
-/bootstrap <mô-tả-ý-tưởng>
+/ck:bootstrap <mô-tả-ý-tưởng>
 
 # Khởi tạo tự động (autonomous bootstrap)
-/bootstrap:auto <mô-tả-ý-tưởng>
+/ck:bootstrap:auto <mô-tả-ý-tưởng>
 ```
 
 ### Sửa Lỗi (Bug Fixing)
 
 ```bash
 # Sửa lỗi nhanh
-/fix --quick <mô-tả>
+/ck:fix --quick <mô-tả>
 
 # Sửa lỗi phức tạp (phân tích sâu hơn)
-/fix <mô-tả>
+/ck:fix <mô-tả>
 
 # Tự động lấy logs và sửa lỗi
-/fix
+/ck:fix
 
 # Chạy bộ test và sửa lỗi cho đến khi đạt yêu cầu
-/fix
+/ck:fix
 
 # Sửa các vấn đề trong luồng CI/CD (pipeline)
-/fix <github-action-url>
+/ck:fix <github-action-url>
 ```
 
 ### Kiểm Thử (Testing)
 
 ```bash
 # Chạy bộ test và báo cáo kết quả (không sửa lỗi)
-/test
+/ck:test
 ```
 
 ### Tài Liệu (Documentation)
 
 ```bash
 # Khởi tạo tài liệu
-/docs:init
+/ck:docs:init
 
 # Cập nhật tài liệu
-/docs:update
+/ck:docs:update
 
 # Tóm tắt tài liệu
-/docs:summarize
+/ck:docs:summarize
 ```
 
 ### Thao Tác Git (Git Operations)
 
 ```bash
 # Tạo commit với thông điệp có ý nghĩa
-/git cm
+/ck:git cm
 
 # Commit và push các thay đổi
-/git cp
+/ck:git cp
 
 # Tạo pull request
-/git pr
+/ck:git pr
 ```
 
 ### Lập Kế Hoạch & Nghiên Cứu
 
 ```bash
 # Brainstorm các hướng tiếp cận kỹ thuật
-/brainstorm <mô-tả>
+/ck:brainstorm <mô-tả>
 
 # Tạo kế hoạch triển khai chi tiết
-/plan <mô-tả>
+/ck:plan <mô-tả>
 
 # Lập kế hoạch thiết lập CI/CD hoặc sửa lỗi luồng CI/CD
-/plan:ci
+/ck:plan:ci
 
 # Kế hoạch triển khai hai bước
-/plan:two
+/ck:plan:two
 ```
 
 ### Tích Hợp (Integration)
@@ -173,18 +173,18 @@ skill-creator skill
 
 ```bash
 # Cách 1: Có xem lại kế hoạch (được khuyến nghị)
-/cook <mô-tả-tính-năng>
+/ck:cook <mô-tả-tính-năng>
 # → CC sẽ đặt thêm câu hỏi
 # → Bạn xem lại kế hoạch
 # → Bạn phê duyệt
 # → Quá trình triển khai bắt đầu
 
 # Cách 2: Tự động hoàn toàn (cẩn thận khi dùng)
-/cook --auto <mô-tả-tính-năng>
+/ck:cook --auto <mô-tả-tính-năng>
 # → Triển khai tự động mà không cần xem lại kế hoạch
 
 # Cách 3: Tự động nhanh (tiết kiệm token nhất)
-/cook --auto --fast <mô-tả-tính-năng>
+/ck:cook --auto --fast <mô-tả-tính-năng>
 # → Chế độ nhanh với việc lập kế hoạch tối thiểu
 ```
 
@@ -192,19 +192,19 @@ skill-creator skill
 
 ```bash
 # Các lỗi đơn giản
-/fix --quick <mô-tả-lỗi>
+/ck:fix --quick <mô-tả-lỗi>
 
 # Các lỗi phức tạp
-/fix <mô-tả-lỗi>
+/ck:fix <mô-tả-lỗi>
 
 # Sửa từ logs
-/fix
+/ck:fix
 
 # Sửa từ các test bị thất bại
-/fix
+/ck:fix
 
 # Sửa từ CI/CD
-/fix <action-url>
+/ck:fix <action-url>
 ```
 
 ## Các Quy Trình Làm Việc Thường Gặp (Common Workflows)
@@ -222,10 +222,10 @@ cd /path/to/existing/project
 claude
 
 # 4. Khởi tạo
-/docs:init
+/ck:docs:init
 
 # 5. Bắt đầu làm việc
-/cook <tính-năng>
+/ck:cook <tính-năng>
 ```
 
 ### Thiết Lập Dự Án Greenfield (Dự án mới hoàn toàn)
@@ -244,47 +244,47 @@ cd /path/to/project
 claude
 
 # 5. Khởi tạo ý tưởng (bootstrap)
-/bootstrap <mô-tả-ý-tưởng>
+/ck:bootstrap <mô-tả-ý-tưởng>
 
 # 6. Tiếp tục phát triển
-/cook <tính-năng-tiếp-theo>
+/ck:cook <tính-năng-tiếp-theo>
 ```
 
 ### Phát Triển Tính Năng
 
 ```bash
 # 1. Lập kế hoạch tính năng
-/plan Thêm hồ sơ người dùng với tính năng tải ảnh đại diện
+/ck:plan Thêm hồ sơ người dùng với tính năng tải ảnh đại diện
 
 # 2. Xem lại kế hoạch (một file markdown sẽ được tạo ra)
 
 # 3. Triển khai
-/cook profile-feature-plan.md
+/ck:cook profile-feature-plan.md
 
 # 4. Kiểm thử
-/test
+/ck:test
 
 # 5. Sửa lỗi nếu cần
-/fix
+/ck:fix
 
 # 6. Commit
-/git cm
+/ck:git cm
 ```
 
 ### Quy Trình Sửa Lỗi
 
 ```bash
 # 1. Mô tả lỗi
-/fix Lỗi thanh toán trên Safari sau khi xác thực biểu mẫu
+/ck:fix Lỗi thanh toán trên Safari sau khi xác thực biểu mẫu
 
 # 2. CC phân tích và sửa lỗi
-/fix
+/ck:fix
 
 # 3. Kiểm thử bản sửa lỗi
-/test
+/ck:test
 
 # 4. Commit
-/git cm
+/ck:git cm
 ```
 
 ### Quy Trình Sửa Lỗi CI/CD
@@ -294,12 +294,12 @@ claude
 # https://github.com/user/repo/actions/runs/12345
 
 # 2. Sửa CI
-/fix https://github.com/user/repo/actions/runs/12345
+/ck:fix https://github.com/user/repo/actions/runs/12345
 
 # 3. CC lấy logs, phân tích và sửa lỗi
 
 # 4. Push bản sửa lỗi
-/git cp
+/ck:git cp
 ```
 
 ## Các Ví Dụ Nhanh
@@ -307,19 +307,19 @@ claude
 ### Thêm Xác Thực (Authentication)
 
 ```bash
-/cook Thêm xác thực JWT với đăng nhập, đăng ký và đặt lại mật khẩu
+/ck:cook Thêm xác thực JWT với đăng nhập, đăng ký và đặt lại mật khẩu
 ```
 
 ### Sửa Vấn Đề Hiệu Suất
 
 ```bash
-/fix Dashboard tải chậm khi có hơn 1000 mục
+/ck:fix Dashboard tải chậm khi có hơn 1000 mục
 ```
 
 ### Lập Kế Hoạch Di Cư Cơ Sở Dữ Liệu (Database Migration)
 
 ```bash
-/plan Di cư từ MongoDB sang PostgreSQL mà không có thời gian dừng (zero downtime)
+/ck:plan Di cư từ MongoDB sang PostgreSQL mà không có thời gian dừng (zero downtime)
 ```
 
 ### Tích Hợp Thanh Toán
@@ -327,45 +327,45 @@ claude
 ```bash
 /integrate stripe
 # hoặc
-/cook Thêm tích hợp thanh toán Stripe với tính năng thanh toán theo gói (subscription billing)
+/ck:cook Thêm tích hợp thanh toán Stripe với tính năng thanh toán theo gói (subscription billing)
 ```
 
 ### Khởi Tạo API Mới
 
 ```bash
-/bootstrap REST API cho quản lý công việc với các nhóm, dự án, nhiệm vụ và theo dõi thời gian
+/ck:bootstrap REST API cho quản lý công việc với các nhóm, dự án, nhiệm vụ và theo dõi thời gian
 ```
 
 ## Các Danh Mục Lệnh
 
 ### 🚀 Phát Triển Cốt Lõi
-- `/cook` - Triển khai tính năng
-- `/plan` - Tạo kế hoạch
-- `/bootstrap` - Dự án mới
+- `/ck:cook` - Triển khai tính năng
+- `/ck:plan` - Tạo kế hoạch
+- `/ck:bootstrap` - Dự án mới
 
 ### 🐛 Kiểm Lỗi & Sửa Lỗi
-- `/fix --quick` - Sửa lỗi nhanh
-- `/fix` - Sửa lỗi phức tạp
-- `/fix` - Sửa lỗi dựa trên log
-- `/fix` - Sửa lỗi dựa trên test
-- `/fix` - Sửa lỗi CI/CD
+- `/ck:fix --quick` - Sửa lỗi nhanh
+- `/ck:fix` - Sửa lỗi phức tạp
+- `/ck:fix` - Sửa lỗi dựa trên log
+- `/ck:fix` - Sửa lỗi dựa trên test
+- `/ck:fix` - Sửa lỗi CI/CD
 
 ### 🧪 Kiểm Thử
-- `/test` - Chạy các bộ test
+- `/ck:test` - Chạy các bộ test
 
 ### 📚 Tài Liệu
-- `/docs:init` - Khởi tạo
-- `/docs:update` - Cập nhật
-- `/docs:summarize` - Tóm tắt
+- `/ck:docs:init` - Khởi tạo
+- `/ck:docs:update` - Cập nhật
+- `/ck:docs:summarize` - Tóm tắt
 
 ### 🔧 Thao Tác Git
-- `/git cm` - Commit thay đổi
-- `/git cp` - Commit và push
-- `/git pr` - Tạo PR
+- `/ck:git cm` - Commit thay đổi
+- `/ck:git cp` - Commit và push
+- `/ck:git pr` - Tạo PR
 
 ### 💡 Lập Kế Hoạch
-- `/plan` - Lập kế hoạch chi tiết
-- `/brainstorm` - Khám phá ý tưởng
+- `/ck:plan` - Lập kế hoạch chi tiết
+- `/ck:brainstorm` - Khám phá ý tưởng
 
 ### 🔌 Tích Hợp
 - `/integrate <service>` - Thêm các tích hợp
@@ -383,42 +383,42 @@ claude
 Mô tả chi tiết hơn = Kết quả tốt hơn
 ```bash
 # ❌ Không tốt
-/cook Thêm tính năng tìm kiếm
+/ck:cook Thêm tính năng tìm kiếm
 
 # ✅ Tốt
-/cook Thêm tính năng tìm kiếm toàn văn cho các bài viết blog với bộ lọc theo danh mục, nhãn và khoảng ngày
+/ck:cook Thêm tính năng tìm kiếm toàn văn cho các bài viết blog với bộ lọc theo danh mục, nhãn và khoảng ngày
 ```
 
 ### 3. Sử Dụng Đúng Lệnh
 
 ```bash
 # Lỗi nhanh
-/fix --quick <vấn-đề-đơn-giản>
+/ck:fix --quick <vấn-đề-đơn-giản>
 
 # Lỗi phức tạp
-/fix <vấn-đề-phức-tạp>
+/ck:fix <vấn-đề-phức-tạp>
 
 # Tính năng nhỏ
-/cook <tính-năng>
+/ck:cook <tính-năng>
 
 # Tính năng lớn
-/plan <tính-năng> → xem lại → /cook plan.md
+/ck:plan <tính-năng> → xem lại → /ck:cook plan.md
 ```
 
 ### 4. Kiểm Thử Thường Xuyên
 
 ```bash
 # Sau mỗi tính năng
-/test
+/ck:test
 
 # Hoặc tự động sửa lỗi test
-/fix
+/ck:fix
 ```
 
 ### 5. Ghi Lại Các Thay Đổi
 ```bash
 # Giữ tài liệu luôn được cập nhật
-/docs:update
+/ck:docs:update
 ```
 
 ## Khắc Phục Sự Cố
@@ -437,63 +437,63 @@ ck --version
 
 ```bash
 # Khởi tạo lại tài liệu
-/docs:init
+/ck:docs:init
 ```
 
 ### Cần Thêm Sự Trợ Giúp
 
 ```bash
 # Brainstorm hướng tiếp cận
-/brainstorm Cách triển khai <tính-năng-phức-tạp>
+/ck:brainstorm Cách triển khai <tính-năng-phức-tạp>
 
 # Lấy kế hoạch chi tiết
-/plan <điều-bạn-muốn-làm>
+/ck:plan <điều-bạn-muốn-làm>
 ```
 
 ## Tham Khảo Nhanh Các Lệnh
 
 ```bash
 # Khởi tạo dự án đã có sẵn
-/docs:init
+/ck:docs:init
 
 # Tính năng mới (cần xem lại kế hoạch)
-/cook <mô-tả-tính-năng>
+/ck:cook <mô-tả-tính-năng>
 
 # Tính năng mới (tự động, không xem lại)
-/cook --auto <mô-tả>
+/ck:cook --auto <mô-tả>
 
 # Tính năng mới (nhanh hơn, ít kế hoạch hơn)
-/cook --auto --fast <mô-tả>
+/ck:cook --auto --fast <mô-tả>
 
 # Chỉ lập kế hoạch, không triển khai
-/plan <mô-tả>
+/ck:plan <mô-tả>
 
 # Code từ một kế hoạch có sẵn
-/cook <plan.md>
+/ck:cook <plan.md>
 
 # Sửa lỗi nhanh
-/fix --quick <mô-tả-lỗi>
+/ck:fix --quick <mô-tả-lỗi>
 
 # Sửa lỗi khó (phân tích sâu hơn)
-/fix <mô-tả-lỗi>
+/ck:fix <mô-tả-lỗi>
 
 # Tự động lấy logs và sửa lỗi
-/fix
+/ck:fix
 
 # Chạy các test và sửa cho đến khi đạt
-/fix
+/ck:fix
 
 # Lấy logs từ GitHub Actions và sửa lỗi
-/fix <github-action-url>
+/ck:fix <github-action-url>
 
 # Khởi tạo dự án mới (cần xem lại kế hoạch)
-/bootstrap <mô-tả-ý-tưởng>
+/ck:bootstrap <mô-tả-ý-tưởng>
 
 # Khởi tạo dự án mới (tự động hoàn toàn)
-/bootstrap:auto <ý-tưởng>
+/ck:bootstrap:auto <ý-tưởng>
 
 # Chạy bộ test và báo cáo (không sửa lỗi)
-/test
+/ck:test
 ```
 
 ## Tài Nguyên

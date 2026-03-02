@@ -37,7 +37,7 @@ Sử dụng scout khi:
 
 ```bash
 # Tìm các tệp liên quan đến xác thực (authentication)
-/scout "locate all authentication-related files" 5
+/ck:scout "locate all authentication-related files" 5
 ```
 
 **Điều gì xảy ra**:

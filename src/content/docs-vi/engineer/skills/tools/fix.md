@@ -72,7 +72,7 @@ Phân loại trước khi định tuyến:
 ## Cách sử dụng
 
 ```
-/fix [--auto|--review|--quick]
+/ck:fix [--auto|--review|--quick]
 ```
 
 Kích hoạt tự động khi đề cập đến bugs, errors, test failures, CI/CD issues, type errors, lint, log errors, UI issues hoặc code problems.

@@ -342,7 +342,7 @@ Các agent của ClaudeKit sử dụng kỹ năng Next.js để:
 
 ```bash
 # Lệnh bootstrap tạo dự án Next.js
-/bootstrap [Ứng dụng Next.js với xác thực]
+/ck:bootstrap [Ứng dụng Next.js với xác thực]
 ```
 
 Agent Planner sẽ:
@@ -355,7 +355,7 @@ Agent Planner sẽ:
 
 ```bash
 # Lệnh cook triển khai các tính năng
-/cook [thêm phần blog hỗ trợ MDX]
+/ck:cook [thêm phần blog hỗ trợ MDX]
 ```
 
 Agent Developer sẽ:

@@ -1,5 +1,5 @@
 ---
-title: /plan:archive
+title: /ck:plan:archive
 description: Archive completed plans and write journal entries
 section: engineer
 kit: engineer
@@ -8,15 +8,15 @@ order: 10
 published: true
 ---
 
-# /plan:archive
+# /ck:plan:archive
 
 Archive completed plans with optional journal documentation.
 
 ## Syntax
 
 ```bash
-/plan:archive                  # Archive all plans
-/plan:archive [plan-path]      # Archive specific plan
+/ck:plan:archive                  # Archive all plans
+/ck:plan:archive [plan-path]      # Archive specific plan
 ```
 
 ## Workflow
@@ -25,7 +25,7 @@ Archive completed plans with optional journal documentation.
 2. **Journal Entries** (Optional) - Document key events, decisions, impacts
 3. **Confirm Action** - Choose specific plans or all completed plans
 4. **Archive Method** - Move to `./plans/archive/` or delete permanently
-5. **Commit Changes** (Optional) - Stage and commit via `/git cm` or `/git cp`
+5. **Commit Changes** (Optional) - Stage and commit via `/ck:git cm` or `/ck:git cp`
 
 ## Journal Documentation
 
@@ -57,9 +57,9 @@ After archiving:
 ## Examples
 
 ```bash
-/plan:archive
+/ck:plan:archive
 # Prompts for journal → selects plans → archives
 
-/plan:archive plans/260128-auth-implementation/
+/ck:plan:archive plans/260128-auth-implementation/
 # Archives specific plan only
 ```

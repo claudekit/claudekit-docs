@@ -15,7 +15,7 @@ Learn how to build production-ready REST APIs with ClaudeKit - from API design t
 **Goal**: Build a complete REST API with CRUD operations, auth, and docs
 **Time**: 30-60 minutes (vs 6-12 hours manually)
 **Agents Used**: planner, researcher, tester, code-reviewer, docs-manager
-**Commands**: /bootstrap, /plan, /cook, /test, /docs:update
+**Commands**: /ck:bootstrap, /ck:plan, /ck:cook, /ck:test, /ck:docs:update
 
 ## Prerequisites
 
@@ -28,12 +28,12 @@ Learn how to build production-ready REST APIs with ClaudeKit - from API design t
 
 | Phase | Activities | Time | Commands |
 |-------|-----------|------|----------|
-| Design | Plan endpoints, data models | 5-10 min | /plan |
-| Setup | Initialize project, database | 5-10 min | /bootstrap |
-| Implementation | Build endpoints, logic | 15-25 min | /cook |
-| Testing | Unit, integration, E2E tests | 5-10 min | /test |
-| Documentation | API docs, examples | 5 min | /docs:update |
-| Deployment | Production setup | 10-15 min | /cook |
+| Design | Plan endpoints, data models | 5-10 min | /ck:plan |
+| Setup | Initialize project, database | 5-10 min | /ck:bootstrap |
+| Implementation | Build endpoints, logic | 15-25 min | /ck:cook |
+| Testing | Unit, integration, E2E tests | 5-10 min | /ck:test |
+| Documentation | API docs, examples | 5 min | /ck:docs:update |
+| Deployment | Production setup | 10-15 min | /ck:cook |
 
 ## Step-by-Step Workflow
 
@@ -42,7 +42,7 @@ Learn how to build production-ready REST APIs with ClaudeKit - from API design t
 Plan your API endpoints and data models:
 
 ```bash
-/plan [design REST API for task management with users, tasks, and projects]
+/ck:plan [design REST API for task management with users, tasks, and projects]
 ```
 
 **Generated plan includes**:
@@ -140,7 +140,7 @@ Plan your API endpoints and data models:
 Create the initial project structure:
 
 ```bash
-/bootstrap [create REST API for task management with Node.js, Express, PostgreSQL, and JWT auth]
+/ck:bootstrap [create REST API for task management with Node.js, Express, PostgreSQL, and JWT auth]
 ```
 
 **Interactive setup**:
@@ -303,7 +303,7 @@ npx prisma db seed
 Add specialized endpoints not in bootstrap:
 
 ```bash
-/cook [add task filtering by status, priority, and due date]
+/ck:cook [add task filtering by status, priority, and due date]
 ```
 
 **Implementation**:
@@ -335,7 +335,7 @@ GET /api/tasks?status=in_progress&priority=high&dueBefore=2025-12-31
 ### Step 6: Add Search Functionality
 
 ```bash
-/cook [implement full-text search for tasks and projects]
+/ck:cook [implement full-text search for tasks and projects]
 ```
 
 **Implementation**:
@@ -367,7 +367,7 @@ GET /api/tasks?status=in_progress&priority=high&dueBefore=2025-12-31
 ### Step 7: Add Pagination
 
 ```bash
-/cook [add pagination to all list endpoints]
+/ck:cook [add pagination to all list endpoints]
 ```
 
 **Implementation**:
@@ -401,25 +401,25 @@ Response format:
 #### Rate Limiting
 
 ```bash
-/cook [add rate limiting per user with Redis]
+/ck:cook [add rate limiting per user with Redis]
 ```
 
 #### File Uploads
 
 ```bash
-/cook [add file attachment support for tasks using S3]
+/ck:cook [add file attachment support for tasks using S3]
 ```
 
 #### Real-time Updates
 
 ```bash
-/cook [add WebSocket support for real-time task updates]
+/ck:cook [add WebSocket support for real-time task updates]
 ```
 
 #### Email Notifications
 
 ```bash
-/cook [send email notifications for task assignments and due dates]
+/ck:cook [send email notifications for task assignments and due dates]
 ```
 
 ### Step 9: Testing
@@ -427,7 +427,7 @@ Response format:
 Run comprehensive test suite:
 
 ```bash
-/test
+/ck:test
 ```
 
 **Test results**:
@@ -461,7 +461,7 @@ Coverage:    91.3%
 Generate comprehensive API documentation:
 
 ```bash
-/docs:update
+/ck:docs:update
 ```
 
 **Generated documentation**:
@@ -544,7 +544,7 @@ Deploy to production:
 
 ```bash
 # Option 1: Deploy with Docker
-/cook [create production Docker setup with nginx reverse proxy]
+/ck:cook [create production Docker setup with nginx reverse proxy]
 
 docker build -t task-api:latest .
 docker push your-registry/task-api:latest
@@ -555,7 +555,7 @@ heroku addons:create heroku-postgresql:mini
 git push heroku main
 
 # Option 3: Deploy to AWS
-/cook [create AWS deployment with ECS, RDS, and load balancer]
+/ck:cook [create AWS deployment with ECS, RDS, and load balancer]
 ```
 
 ## Complete Example: Blog API
@@ -577,28 +577,28 @@ Build a REST API for a blogging platform with:
 
 ```bash
 # Design API
-/plan [design REST API for blogging platform with all features]
+/ck:plan [design REST API for blogging platform with all features]
 
 # Bootstrap project
-/bootstrap [create blog API with Node.js, Express, MongoDB, and JWT]
+/ck:bootstrap [create blog API with Node.js, Express, MongoDB, and JWT]
 
 # Implement features
-/cook [implement blog post CRUD with draft/publish status]
-/cook [add commenting system with nested replies]
-/cook [implement category and tag management]
-/cook [add full-text search for posts]
-/cook [implement like/unlike functionality]
-/cook [add user following system]
-/cook [implement feed generation for followed users]
+/ck:cook [implement blog post CRUD with draft/publish status]
+/ck:cook [add commenting system with nested replies]
+/ck:cook [implement category and tag management]
+/ck:cook [add full-text search for posts]
+/ck:cook [implement like/unlike functionality]
+/ck:cook [add user following system]
+/ck:cook [implement feed generation for followed users]
 
 # Test everything
-/test
+/ck:test
 
 # Document API
-/docs:update
+/ck:docs:update
 
 # Deploy
-/cook [set up production deployment to DigitalOcean]
+/ck:cook [set up production deployment to DigitalOcean]
 ```
 
 ### Time Breakdown
@@ -625,31 +625,31 @@ Build a REST API for a blogging platform with:
 ### 1. Versioning
 
 ```bash
-/cook [implement API versioning with v1 and v2 routes]
+/ck:cook [implement API versioning with v1 and v2 routes]
 ```
 
 ### 2. GraphQL Alternative
 
 ```bash
-/cook [add GraphQL endpoint alongside REST API]
+/ck:cook [add GraphQL endpoint alongside REST API]
 ```
 
 ### 3. Webhooks
 
 ```bash
-/cook [implement webhook system for task events]
+/ck:cook [implement webhook system for task events]
 ```
 
 ### 4. API Analytics
 
 ```bash
-/cook [add API usage analytics and metrics]
+/ck:cook [add API usage analytics and metrics]
 ```
 
 ### 5. Caching Layer
 
 ```bash
-/cook [implement Redis caching for frequently accessed data]
+/ck:cook [implement Redis caching for frequently accessed data]
 ```
 
 ## Best Practices
@@ -709,13 +709,13 @@ POST   /api/deleteUser/:id
 ### 4. Input Validation
 
 ```bash
-/cook [add comprehensive input validation to all endpoints]
+/ck:cook [add comprehensive input validation to all endpoints]
 ```
 
 ### 5. Error Handling
 
 ```bash
-/cook [implement centralized error handling middleware]
+/ck:cook [implement centralized error handling middleware]
 ```
 
 ## Troubleshooting
@@ -731,28 +731,28 @@ echo $DATABASE_URL
 npx prisma db pull
 
 # Or fix with ClaudeKit
-/fix --quick [database connection failing]
+/ck:fix --quick [database connection failing]
 ```
 
 ### Issue: Authentication Not Working
 
 **Solution**:
 ```bash
-/fix --quick [JWT authentication returning 401 for valid tokens]
+/ck:fix --quick [JWT authentication returning 401 for valid tokens]
 ```
 
 ### Issue: Slow Query Performance
 
 **Solution**:
 ```bash
-/cook [add database indexes for frequently queried fields]
+/ck:cook [add database indexes for frequently queried fields]
 ```
 
 ### Issue: API Rate Limiting Too Strict
 
 **Solution**:
 ```bash
-/cook [adjust rate limiting to 200 requests per 15 minutes]
+/ck:cook [adjust rate limiting to 200 requests per 15 minutes]
 ```
 
 ## Next Steps
@@ -763,9 +763,9 @@ npx prisma db pull
 - [Optimizing Performance](/docs/workflows/optimizing-performance) - Speed up API
 
 ### Related Commands
-- [/bootstrap](/docs/engineer/commands/core/bootstrap) - Initialize projects
-- [/cook](/docs/engineer/skills/cook) - Implement features
-- [/test](/docs/engineer/commands/core/test) - Test suite
+- [/ck:bootstrap](/docs/engineer/commands/core/bootstrap) - Initialize projects
+- [/ck:cook](/docs/engineer/skills/cook) - Implement features
+- [/ck:test](/docs/engineer/commands/core/test) - Test suite
 
 ### Further Reading
 - [API Best Practices](https://restfulapi.net/)

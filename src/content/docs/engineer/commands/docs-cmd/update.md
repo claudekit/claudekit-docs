@@ -1,5 +1,5 @@
 ---
-title: /docs:update
+title: /ck:docs:update
 description: Documentation for update
 section: engineer
 kit: engineer
@@ -7,14 +7,14 @@ category: commands/docs-cmd
 order: 61
 published: true
 ---
-# /docs:update
+# /ck:docs:update
 
 Comprehensively analyze your codebase and update all documentation files to ensure they accurately reflect the current state of your project. Uses the `docs-manager` agent to maintain synchronized, high-quality documentation.
 
 ## Syntax
 
 ```bash
-/docs:update [additional requests]
+/ck:docs:update [additional requests]
 ```
 
 ### Parameters
@@ -23,7 +23,7 @@ Comprehensively analyze your codebase and update all documentation files to ensu
 
 ## How It Works
 
-The `/docs:update` command uses the `docs-manager` agent with this workflow:
+The `/ck:docs:update` command uses the `docs-manager` agent with this workflow:
 
 ### 1. Codebase Analysis
 
@@ -68,51 +68,51 @@ The `/docs:update` command uses the `docs-manager` agent with this workflow:
 **After Major Features**
 ```bash
 # Implemented new authentication system
-/docs:update
+/ck:docs:update
 ```
 
 **Refactoring Projects**
 ```bash
 # Refactored entire API layer
-/docs:update [focus on API architecture changes]
+/ck:docs:update [focus on API architecture changes]
 ```
 
 **New Team Members**
 ```bash
 # Preparing documentation for onboarding
-/docs:update [ensure all setup instructions are current]
+/ck:docs:update [ensure all setup instructions are current]
 ```
 
 **Pre-Release**
 ```bash
 # Before version release
-/docs:update [prepare for v2.0 release]
+/ck:docs:update [prepare for v2.0 release]
 ```
 
 **Quarterly Maintenance**
 ```bash
 # Regular documentation review
-/docs:update [quarterly documentation audit]
+/ck:docs:update [quarterly documentation audit]
 ```
 
 ### ❌ Don't Use For
 
 **Simple Typos**
 ```bash
-❌ /docs:update [fix typo in README]
+❌ /ck:docs:update [fix typo in README]
 ✅ Just edit the README directly
 ```
 
 **No Code Changes**
 ```bash
-❌ /docs:update [just checking]
+❌ /ck:docs:update [just checking]
 ✅ Only run after meaningful code changes
 ```
 
 **Quick Status Check**
 ```bash
-❌ /docs:update [what changed?]
-✅ /watzup [review recent changes]
+❌ /ck:docs:update [what changed?]
+✅ /ck:watzup [review recent changes]
 ```
 
 ## Examples
@@ -120,7 +120,7 @@ The `/docs:update` command uses the `docs-manager` agent with this workflow:
 ### After Feature Implementation
 
 ```bash
-/docs:update
+/ck:docs:update
 ```
 
 **What happens:**
@@ -170,7 +170,7 @@ The `/docs:update` command uses the `docs-manager` agent with this workflow:
 ### Focused Update
 
 ```bash
-/docs:update [update API documentation with new endpoints]
+/ck:docs:update [update API documentation with new endpoints]
 ```
 
 **What happens:**
@@ -206,7 +206,7 @@ The `/docs:update` command uses the `docs-manager` agent with this workflow:
 ### Pre-Release Documentation
 
 ```bash
-/docs:update [prepare documentation for v2.0 release]
+/ck:docs:update [prepare documentation for v2.0 release]
 ```
 
 **What happens:**
@@ -249,7 +249,7 @@ The `/docs:update` command uses the `docs-manager` agent with this workflow:
 ### Architecture Documentation
 
 ```bash
-/docs:update [focus on system architecture]
+/ck:docs:update [focus on system architecture]
 ```
 
 **What happens:**
@@ -368,42 +368,42 @@ The command uses the **docs-manager agent** with these capabilities:
 ✅ **Good - After meaningful work:**
 ```bash
 # After implementing features
-/cook [add payment integration]
-/fix
-/test
-/docs:update
+/ck:cook [add payment integration]
+/ck:fix
+/ck:test
+/ck:docs:update
 
 # Commit everything together
-/git cm
+/ck:git cm
 ```
 
 ❌ **Bad - Too frequent:**
 ```bash
 # After every tiny change
-/fix --quick [typo]
-/docs:update  # Wasteful
+/ck:fix --quick [typo]
+/ck:docs:update  # Wasteful
 ```
 
 ### Provide Context
 
 ✅ **Specific focus:**
 ```bash
-/docs:update [focus on API changes and authentication flow]
+/ck:docs:update [focus on API changes and authentication flow]
 ```
 
 ❌ **No context:**
 ```bash
-/docs:update  # Works but less targeted
+/ck:docs:update  # Works but less targeted
 ```
 
 ### Review Before Committing
 
 ✅ **Review changes:**
 ```bash
-/docs:update
+/ck:docs:update
 git diff docs/
 # Review changes
-/git cm
+/ck:git cm
 ```
 
 ## Workflow
@@ -412,41 +412,41 @@ git diff docs/
 
 ```bash
 # 1. Plan feature
-/plan [add OAuth2 authentication]
+/ck:plan [add OAuth2 authentication]
 
 # 2. Implement feature
-/cook [implement OAuth2 with Google and GitHub providers]
+/ck:cook [implement OAuth2 with Google and GitHub providers]
 
 # 3. Fix any issues
-/fix
-/test
+/ck:fix
+/ck:test
 
 # 4. Update documentation
-/docs:update [document OAuth2 implementation]
+/ck:docs:update [document OAuth2 implementation]
 
 # 5. Review and commit
 git diff
-/git cm
+/ck:git cm
 ```
 
 ### Quarterly Documentation Maintenance
 
 ```bash
 # 1. Update documentation
-/docs:update [quarterly documentation review]
+/ck:docs:update [quarterly documentation review]
 
 # 2. Review all changes
 git diff docs/
 
 # 3. Commit documentation updates
-/git cm
+/ck:git cm
 ```
 
 ### Pre-Release Checklist
 
 ```bash
 # 1. Update documentation
-/docs:update [prepare for v2.0 release]
+/ck:docs:update [prepare for v2.0 release]
 
 # 2. Review roadmap
 # Edit docs/project-roadmap.md
@@ -455,10 +455,10 @@ git diff docs/
 # Edit CHANGELOG.md
 
 # 4. Commit release documentation
-/git cm
+/ck:git cm
 
 # 5. Create release PR
-/git pr main develop
+/ck:git pr main develop
 ```
 
 ## Troubleshooting
@@ -470,7 +470,7 @@ git diff docs/
 **Solution:**
 ```bash
 # Specify which files need attention
-/docs:update [update system-architecture.md and deployment-guide.md]
+/ck:docs:update [update system-architecture.md and deployment-guide.md]
 ```
 
 ### Outdated Examples
@@ -480,10 +480,10 @@ git diff docs/
 **Solution:**
 ```bash
 # Command automatically detects and updates
-/docs:update
+/ck:docs:update
 
 # Or specify focus
-/docs:update [refresh all code examples]
+/ck:docs:update [refresh all code examples]
 ```
 
 ### Missing Documentation
@@ -493,7 +493,7 @@ git diff docs/
 **Solution:**
 ```bash
 # Command will create missing sections
-/docs:update [document new payment service]
+/ck:docs:update [document new payment service]
 ```
 
 ### Formatting Issues
@@ -503,7 +503,7 @@ git diff docs/
 **Solution:**
 ```bash
 # Command standardizes formatting
-/docs:update
+/ck:docs:update
 ```
 
 ## Related Commands
@@ -512,35 +512,35 @@ git diff docs/
 
 ```bash
 # Quick summary of recent changes
-/watzup
+/ck:watzup
 
 # Full documentation update
-/docs:update
+/ck:docs:update
 ```
 
 ### Codebase Summary Only
 
 ```bash
 # Just update codebase summary
-/docs:summarize
+/ck:docs:summarize
 
 # Full documentation update
-/docs:update
+/ck:docs:update
 ```
 
 ### Initialize Documentation
 
 ```bash
 # First-time documentation setup
-/docs:init
+/ck:docs:init
 
 # Regular updates thereafter
-/docs:update
+/ck:docs:update
 ```
 
 ## Output Structure
 
-After running `/docs:update`, your documentation structure:
+After running `/ck:docs:update`, your documentation structure:
 
 ```
 ./
@@ -558,7 +558,7 @@ After running `/docs:update`, your documentation structure:
 
 ## Metrics
 
-Typical `/docs:update` performance:
+Typical `/ck:docs:update` performance:
 
 - **Time**: 3-5 minutes (depending on codebase size)
 - **Files analyzed**: Entire codebase
@@ -568,12 +568,12 @@ Typical `/docs:update` performance:
 
 ## Next Steps
 
-After using `/docs:update`:
+After using `/ck:docs:update`:
 
-- [/docs:summarize](/docs/engineer/commands/docs-cmd/summarize) - Update just codebase summary
-- [/watzup](/docs/engineer/commands/core/watzup) - Review recent changes
-- [/git cm](/docs/engineer/skills/git) - Commit documentation updates
+- [/ck:docs:summarize](/docs/engineer/commands/docs-cmd/summarize) - Update just codebase summary
+- [/ck:watzup](/docs/engineer/commands/core/watzup) - Review recent changes
+- [/ck:git cm](/docs/engineer/skills/git) - Commit documentation updates
 
 ---
 
-**Key Takeaway**: `/docs:update` ensures your documentation stays synchronized with your codebase through comprehensive analysis and systematic updates across all documentation files.
+**Key Takeaway**: `/ck:docs:update` ensures your documentation stays synchronized with your codebase through comprehensive analysis and systematic updates across all documentation files.

@@ -45,7 +45,7 @@ Skill này tự động kích hoạt khi:
 
 Kích hoạt thủ công:
 ```bash
-/preview [file-or-directory]
+/ck:preview [file-or-directory]
 ```
 
 ## Bắt Đầu Nhanh
@@ -268,7 +268,7 @@ Output bao gồm network URL:
 
 ```bash
 # Preview plan với tất cả phases
-/preview plans/feature-auth/plan.md
+/ck:preview plans/feature-auth/plan.md
 
 # Mở trong browser với:
 # - Warm reading theme
@@ -281,7 +281,7 @@ Output bao gồm network URL:
 
 ```bash
 # Browse docs directory
-/preview docs/
+/ck:preview docs/
 
 # Hiển thị file tree:
 # 📁 getting-started/
@@ -410,5 +410,5 @@ Paste diagram code, verify rendering trước khi add vào docs.
 
 ## Commands Liên Quan
 
-- `/preview` - Quick access tới viewer (alias cho skill này)
-- `/kanban` - Dashboard view cho plan directories
+- `/ck:preview` - Quick access tới viewer (alias cho skill này)
+- `/ck:kanban` - Dashboard view cho plan directories

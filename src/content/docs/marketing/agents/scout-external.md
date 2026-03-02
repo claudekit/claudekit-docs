@@ -23,7 +23,7 @@ Delegate complex searches to AI:
 
 ```bash
 # For large codebase searches
-/scout-ext "Find all authentication files across frontend, backend, and mobile apps"
+/ck:scout-ext "Find all authentication files across frontend, backend, and mobile apps"
 ```
 
 Multiple AI tools search in parallel, understanding code semantics to find relevant files you'd miss with pattern matching alone.
@@ -85,7 +85,7 @@ Use Scout External when:
 ### Monorepo Authentication Search
 
 ```bash
-/scout-ext "Find all authentication and session management across web, mobile, and API"
+/ck:scout-ext "Find all authentication and session management across web, mobile, and API"
 ```
 
 **AI agents search**:
@@ -100,7 +100,7 @@ Use Scout External when:
 ### Payment Integration Analysis
 
 ```bash
-/scout-ext "Locate all payment processing files including Stripe, SePay, webhooks, and transaction logging"
+/ck:scout-ext "Locate all payment processing files including Stripe, SePay, webhooks, and transaction logging"
 ```
 
 **AI understands**:
@@ -175,7 +175,7 @@ Optimized for large-scale searches:
 
 ## Related Commands
 
-- [`/scout-ext`](/docs/marketing/commands) - AI-powered codebase search
+- [`/ck:scout-ext`](/docs/marketing/commands) - AI-powered codebase search
 - [`/ckm:scout`](/docs/marketing/commands/scout) - Standard file search
 
 ## Tips
@@ -237,7 +237,7 @@ Gemini Flash 2.5 is extremely cheap ($0.075/1M tokens input). A typical search c
 **Custom Prompts**:
 For very specific searches, craft detailed prompts:
 ```bash
-/scout-ext "Find all files that implement retry logic for external API calls, including exponential backoff and error handling"
+/ck:scout-ext "Find all files that implement retry logic for external API calls, including exponential backoff and error handling"
 ```
 
 The Scout External Agent is your power tool for complex codebase exploration. When standard search isn't enough, bring in the AI.

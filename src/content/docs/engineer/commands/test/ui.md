@@ -1,5 +1,5 @@
 ---
-title: /test:ui
+title: /ck:test:ui
 description: Comprehensive UI testing with screenshots and detailed analysis
 section: engineer
 kit: engineer
@@ -8,14 +8,14 @@ order: 1
 published: true
 ---
 
-# /test:ui
+# /ck:test:ui
 
 Run comprehensive UI tests on websites with automated browser testing and visual analysis.
 
 ## Syntax
 
 ```bash
-/test:ui [url] [options]
+/ck:test:ui [url] [options]
 ```
 
 ## Arguments
@@ -87,21 +87,21 @@ All screenshots saved in report directory.
 ## Examples
 
 ```bash
-/test:ui https://example.com
+/ck:test:ui https://example.com
 # Full public site testing
 
-/test:ui https://app.example.com --auth
+/ck:test:ui https://app.example.com --auth
 # Protected routes with auth workflow
 
-/test:ui https://example.com --mobile
+/ck:test:ui https://example.com --mobile
 # Mobile-specific testing
 ```
 
 ## Report Preview
 
-After completion, prompts to preview report with `/preview` command.
+After completion, prompts to preview report with `/ck:preview` command.
 
 ## Related Commands
 
-- [/test](/docs/engineer/commands/core/test) - Run code tests
-- [/preview](/docs/engineer/commands/core/preview) - View test reports
+- [/ck:test](/docs/engineer/commands/core/test) - Run code tests
+- [/ck:preview](/docs/engineer/commands/core/preview) - View test reports

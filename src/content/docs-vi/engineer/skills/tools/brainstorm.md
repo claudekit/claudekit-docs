@@ -38,7 +38,7 @@ Hãy nghĩ về nó như một cố vấn kỹ thuật đáng tin cậy sẽ nó
 
 ## Sử Dụng
 
-Kích hoạt bằng cách gõ `/brainstorm` hoặc đề cập đến ideation, architecture decisions, technical debates, hoặc feature exploration.
+Kích hoạt bằng cách gõ `/ck:brainstorm` hoặc đề cập đến ideation, architecture decisions, technical debates, hoặc feature exploration.
 
 ## Câu Lệnh Mẫu
 

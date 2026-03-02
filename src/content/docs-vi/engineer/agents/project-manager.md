@@ -33,7 +33,7 @@ Agent project-manager kích hoạt khi:
 - Sau khi hoàn thành một tính năng lớn
 - Hợp nhất công việc từ nhiều agent
 - Xem xét trạng thái dự án
-- Khi cần theo dõi tiến độ (lệnh `/watzup`)
+- Khi cần theo dõi tiến độ (lệnh `/ck:watzup`)
 - Khi hoàn thành một cột mốc (milestone) quan trọng
 
 ## Khả năng
@@ -56,7 +56,7 @@ Cập nhật tệp `./docs/project-roadmap.md` sau khi hoàn thành tính năng,
 ## Ví dụ sử dụng
 
 ### Xem xét hoàn thành tính năng
-**Đầu vào**: `/watzup`
+**Đầu vào**: `/ck:watzup`
 **Quy trình**:
 1. Phân tích các thay đổi gần đây thông qua `git log`.
 2. Thu thập báo cáo từ các agent khác.

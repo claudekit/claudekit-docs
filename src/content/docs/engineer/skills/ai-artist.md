@@ -33,7 +33,7 @@ This skill activates automatically when:
 
 Manual activation:
 ```bash
-/ai-artist
+/ck:ai-artist
 ```
 
 ## Core Principles

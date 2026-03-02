@@ -29,7 +29,7 @@ model: gemini-2.5-flash-agent
 
 # 4. Run with verbose to see bottleneck
 export CLAUDEKIT_VERBOSE=1
-/cook implement feature
+/ck:cook implement feature
 ```
 
 ---
@@ -44,7 +44,7 @@ export CLAUDEKIT_VERBOSE=1
 
 ```bash
 # Time a simple command
-time /plan hello world
+time /ck:plan hello world
 
 # Expected: <30 seconds
 # If >60 seconds: Investigate below
@@ -75,10 +75,10 @@ curl -w "@-" -o /dev/null -s https://generativelanguage.googleapis.com <<< "time
 
 ```bash
 # Wait between commands
-/plan feature A
+/ck:plan feature A
 # Wait 60 seconds
 /clear
-/cook "Implement feature A as planned"
+/ck:cook "Implement feature A as planned"
 
 # Or upgrade to paid tier
 # console.cloud.google.com/billing
@@ -88,7 +88,7 @@ curl -w "@-" -o /dev/null -s https://generativelanguage.googleapis.com <<< "time
 ```bash
 # Enable verbose mode
 export CLAUDEKIT_VERBOSE=1
-/cook implement feature
+/ck:cook implement feature
 
 # Watch for "429" errors or "quota exceeded"
 ```
@@ -193,13 +193,13 @@ time npx repomix
 # Limit scope to relevant directories
 
 # ❌ Slow (scans everything)
-/cook implement user auth
+/ck:cook implement user auth
 
 # ✅ Fast (scoped)
-/cook implement user auth in src/auth/
+/ck:cook implement user auth in src/auth/
 
 # Or use --scope flag (if available)
-/cook implement user auth --scope src/auth/
+/ck:cook implement user auth --scope src/auth/
 ```
 
 ---
@@ -283,12 +283,12 @@ node --version  # Should be 18+
 # If command takes >5 minutes, split into smaller tasks
 
 # ❌ Slow (tries to do everything)
-/cook implement entire authentication system
+/ck:cook implement entire authentication system
 
 # ✅ Fast (incremental)
-/plan implement authentication
+/ck:plan implement authentication
 /clear
-/cook "Implement authentication as planned"  # Implements login, signup, password reset phases
+/ck:cook "Implement authentication as planned"  # Implements login, signup, password reset phases
 ```
 
 #### Check API Endpoint
@@ -330,10 +330,10 @@ claude
 ```bash
 # Method 1: Environment variable
 export CLAUDEKIT_VERBOSE=1
-/cook implement feature
+/ck:cook implement feature
 
 # Method 2: Command flag
-/cook implement feature --verbose
+/ck:cook implement feature --verbose
 
 # Watch for slow operations:
 # - "Generating repomix..." (should be <10s)
@@ -345,10 +345,10 @@ export CLAUDEKIT_VERBOSE=1
 
 ```bash
 # Time each command
-time /plan implement authentication
+time /ck:plan implement authentication
 # Note the "real" time
 
-time /cook implement authentication
+time /ck:cook implement authentication
 # Compare times
 
 # Identify bottleneck:
@@ -486,43 +486,43 @@ EOF
 
 ```bash
 # ✅ Fast commands (seconds)
-/fix --quick small bug         # Uses fast model
-/git cm                     # Simple git operations
+/ck:fix --quick small bug         # Uses fast model
+/ck:git cm                     # Simple git operations
 
 # ❌ Slow commands (minutes)
-/fix complex issue     # Uses thorough model
-/bootstrap full project     # Creates entire structure
+/ck:fix complex issue     # Uses thorough model
+/ck:bootstrap full project     # Creates entire structure
 ```
 
 #### Scope Tasks Narrowly
 
 ```bash
 # ❌ Slow (vague, agent explores everything)
-/cook add feature
+/ck:cook add feature
 
 # ✅ Fast (specific, agent focuses)
-/cook implement GET /api/users endpoint with pagination
+/ck:cook implement GET /api/users endpoint with pagination
 
 # ❌ Slow (entire codebase)
-/fix button styling
+/ck:fix button styling
 
 # ✅ Fast (scoped)
-/fix button styling in src/components/Button.tsx
+/ck:fix button styling in src/components/Button.tsx
 ```
 
 #### Run Commands Sequentially
 
 ```bash
 # ✅ Correct (one at a time)
-/plan implement auth
+/ck:plan implement auth
 # Wait for completion
 /clear
-/cook "Implement auth as planned"
+/ck:cook "Implement auth as planned"
 
 # ❌ Wrong (compete for resources)
-/plan implement auth
+/ck:plan implement auth
 # Don't start implementation before plan completes!
-/cook "Implement auth as planned"  # Don't run simultaneously!
+/ck:cook "Implement auth as planned"  # Don't run simultaneously!
 ```
 
 ---
@@ -535,11 +535,11 @@ EOF
 
 | Command | Small Project | Medium Project | Large Project |
 |---------|---------------|----------------|---------------|
-| /plan | 10-20s | 20-40s | 40-90s |
-| /cook | 30-60s | 60-120s | 120-300s |
-| /test | 15-30s | 30-60s | 60-120s |
-| /fix --quick | 10-20s | 20-30s | 30-60s |
-| /git cm | 5-10s | 10-20s | 20-30s |
+| /ck:plan | 10-20s | 20-40s | 40-90s |
+| /ck:cook | 30-60s | 60-120s | 120-300s |
+| /ck:test | 15-30s | 30-60s | 60-120s |
+| /ck:fix --quick | 10-20s | 20-30s | 30-60s |
+| /ck:git cm | 5-10s | 10-20s | 20-30s |
 
 **If commands take 2x longer**: Check optimizations above
 
@@ -603,7 +603,7 @@ EOF
     "https://generativelanguage.googleapis.com/v1beta/models?key=$GEMINI_API_KEY"
 
   echo -e "\n=== Command Timing ==="
-  time /plan hello world 2>&1 | tail -3
+  time /ck:plan hello world 2>&1 | tail -3
 } > performance-report.txt
 ```
 

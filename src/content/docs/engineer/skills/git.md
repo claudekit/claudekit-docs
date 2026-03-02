@@ -64,14 +64,14 @@ git commit -m "type(scope): description"
 
 ## Usage
 
-Activate by typing `/git` followed by arguments or mentioning git operations.
+Activate by typing `/ck:git` followed by arguments or mentioning git operations.
 
 ## Example Prompts
 
-- "/git cm" - Create commits
-- "/git cp" - Create commits and push
-- "/git pr main dev" - Create PR from dev to main
-- "/git merge dev feature-branch" - Merge feature into dev
+- "/ck:git cm" - Create commits
+- "/ck:git cp" - Create commits and push
+- "/ck:git pr main dev" - Create PR from dev to main
+- "/ck:git merge dev feature-branch" - Merge feature into dev
 
 ## Conventional Commit Format
 

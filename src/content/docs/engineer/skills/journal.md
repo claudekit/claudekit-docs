@@ -12,13 +12,13 @@ Write development journal entries to document technical decisions, challenges, a
 ## Usage
 
 ```
-/journal [entry topic or description]
+/ck:journal [entry topic or description]
 ```
 
 ## Examples
 
 ```bash
-/journal debugging the auth token refresh loop
-/journal decided to switch from REST to GraphQL
-/journal completed phase 2 of the migration
+/ck:journal debugging the auth token refresh loop
+/ck:journal decided to switch from REST to GraphQL
+/ck:journal completed phase 2 of the migration
 ```

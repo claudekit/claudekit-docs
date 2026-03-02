@@ -1,5 +1,5 @@
 ---
-title: /bootstrap:auto:parallel
+title: /ck:bootstrap:auto:parallel
 description: Khởi tạo dự án hoàn chỉnh với thực thi song song sử dụng các agent researcher, planner, và fullstack-developer
 section: engineer
 kit: engineer
@@ -9,14 +9,14 @@ published: true
 lang: vi
 ---
 
-# /bootstrap:auto:parallel
+# /ck:bootstrap:auto:parallel
 
 Khởi tạo dự án song song với điều phối đa agent. Tạo dự án hoàn chỉnh từ yêu cầu sử dụng researcher, planner, designer, và các agent triển khai làm việc theo sóng thực thi song song.
 
 ## Cú pháp
 
 ```bash
-/bootstrap:auto:parallel [yêu-cầu-người-dùng]
+/ck:bootstrap:auto:parallel [yêu-cầu-người-dùng]
 ```
 
 ## Khi nào sử dụng
@@ -30,7 +30,7 @@ Khởi tạo dự án song song với điều phối đa agent. Tạo dự án h
 ## Ví dụ nhanh
 
 ```bash
-/bootstrap:auto:parallel [xây dựng ứng dụng quản lý công việc với xác thực người dùng, cập nhật thời gian thực và giao diện web đáp ứng trên di động]
+/ck:bootstrap:auto:parallel [xây dựng ứng dụng quản lý công việc với xác thực người dùng, cập nhật thời gian thực và giao diện web đáp ứng trên di động]
 ```
 
 **Kết quả**:
@@ -113,7 +113,7 @@ Design tokens:
 
 **Bước 5: Tạo kế hoạch triển khai song song**
 ```
-Đang tạo kế hoạch /plan:parallel...
+Đang tạo kế hoạch /ck:plan:parallel...
 
 Các giai đoạn được xác định:
 - Giai đoạn 1: Xác thực (không phụ thuộc)
@@ -231,7 +231,7 @@ Sóng 4 (Tuần tự):
 ### Kịch bản: Nền tảng Thương mại Điện tử
 
 ```bash
-/bootstrap:auto:parallel [xây dựng nền tảng thương mại điện tử với danh mục sản phẩm, giỏ hàng, quy trình thanh toán và bảng điều khiển quản trị]
+/ck:bootstrap:auto:parallel [xây dựng nền tảng thương mại điện tử với danh mục sản phẩm, giỏ hàng, quy trình thanh toán và bảng điều khiển quản trị]
 ```
 
 **Thực thi**:
@@ -304,28 +304,28 @@ Các bước tiếp theo:
 ### Ứng dụng Full-Stack
 
 ```bash
-/bootstrap:auto:parallel [bảng điều khiển SaaS với quản lý người dùng, thanh toán và phân tích]
+/ck:bootstrap:auto:parallel [bảng điều khiển SaaS với quản lý người dùng, thanh toán và phân tích]
 ```
 
 ### Kiến trúc Microservices
 
 ```bash
-/bootstrap:auto:parallel [microservices: auth-service, user-service, notification-service với API gateway dùng chung]
+/ck:bootstrap:auto:parallel [microservices: auth-service, user-service, notification-service với API gateway dùng chung]
 ```
 
 ### Dự án Ưu tiên API (API-First)
 
 ```bash
-/bootstrap:auto:parallel [REST API với đặc tả OpenAPI, xác thực JWT, giới hạn tốc độ và PostgreSQL]
+/ck:bootstrap:auto:parallel [REST API với đặc tả OpenAPI, xác thực JWT, giới hạn tốc độ và PostgreSQL]
 ```
 
 ## So sánh
 
 | Lệnh | Phê duyệt | Song song hóa | Tốc độ |
 |------|-----------|---------------|--------|
-| /bootstrap | Bắt buộc | Không | Chậm nhất |
-| /bootstrap:auto | Không | Không | Trung bình |
-| /bootstrap:auto:parallel | Không | Có | Nhanh nhất |
+| /ck:bootstrap | Bắt buộc | Không | Chậm nhất |
+| /ck:bootstrap:auto | Không | Không | Trung bình |
+| /ck:bootstrap:auto:parallel | Không | Có | Nhanh nhất |
 
 ## Thực hành tốt nhất
 
@@ -333,7 +333,7 @@ Các bước tiếp theo:
 
 ```bash
 # Tốt: Yêu cầu cụ thể
-/bootstrap:auto:parallel [
+/ck:bootstrap:auto:parallel [
   Ứng dụng quản lý công việc với:
   - Xác thực người dùng (email + Google OAuth)
   - Tổ chức dự án
@@ -343,7 +343,7 @@ Các bước tiếp theo:
 ]
 
 # Kém hiệu quả: Mơ hồ
-/bootstrap:auto:parallel [xây dựng ứng dụng công việc]
+/ck:bootstrap:auto:parallel [xây dựng ứng dụng công việc]
 ```
 
 ### Kiểm tra cấu trúc đầu ra
@@ -357,11 +357,11 @@ cat README.md
 
 ## Các lệnh liên quan
 
-- [/bootstrap](/docs/engineer/commands/core/bootstrap) - Khởi tạo với các bước phê duyệt
-- [/bootstrap:auto](/docs/engineer/commands/core/bootstrap-auto) - Khởi tạo tự động (tuần tự)
-- [/plan --parallel](/docs/engineer/skills/plan) - Tạo kế hoạch thực thi song song
-- [/cook --parallel](/docs/engineer/skills/cook) - Thực thi kế hoạch song song
+- [/ck:bootstrap](/docs/engineer/commands/core/bootstrap) - Khởi tạo với các bước phê duyệt
+- [/ck:bootstrap:auto](/docs/engineer/commands/core/bootstrap-auto) - Khởi tạo tự động (tuần tự)
+- [/ck:plan --parallel](/docs/engineer/skills/plan) - Tạo kế hoạch thực thi song song
+- [/ck:cook --parallel](/docs/engineer/skills/cook) - Thực thi kế hoạch song song
 
 ---
 
-**Thông điệp chính**: `/bootstrap:auto:parallel` khởi tạo các dự án hoàn chỉnh bằng cách sử dụng các sóng thực thi agent song song, giúp giảm đáng kể thời gian thiết lập dự án thông qua sự điều phối phối hợp giữa nhiều agent.
+**Thông điệp chính**: `/ck:bootstrap:auto:parallel` khởi tạo các dự án hoàn chỉnh bằng cách sử dụng các sóng thực thi agent song song, giúp giảm đáng kể thời gian thiết lập dự án thông qua sự điều phối phối hợp giữa nhiều agent.

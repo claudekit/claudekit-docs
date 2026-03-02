@@ -35,7 +35,7 @@ Skill này được tham chiếu khi:
 
 Để tạo skills, sử dụng:
 ```bash
-/skill-creator
+/ck:skill-creator
 ```
 
 ## Cấu Trúc Thư Mục Skill
@@ -317,5 +317,5 @@ Xem [examples.md](references/examples.md) cho mẫu code đầy đủ.
 ## Tài Nguyên
 
 - ClaudeKit Engineer GitHub: https://github.com/claudekit/claudekit-engineer
-- Hướng dẫn tạo skill: Sử dụng `/skill-creator` cho quy trình tương tác
+- Hướng dẫn tạo skill: Sử dụng `/ck:skill-creator` cho quy trình tương tác
 - Ví dụ skills: Duyệt thư mục `.claude/skills/`

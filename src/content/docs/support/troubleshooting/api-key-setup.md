@@ -141,10 +141,10 @@ curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:g
 
 ```bash
 # Wait 1 minute between commands
-/plan implement feature
+/ck:plan implement feature
 # Wait 60 seconds...
 /clear
-/cook "Implement feature as planned"
+/ck:cook "Implement feature as planned"
 
 # Or upgrade to paid tier
 # Visit: console.cloud.google.com/billing
@@ -156,7 +156,7 @@ curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:g
 export CLAUDEKIT_VERBOSE=1
 
 # Watch API calls
-/cook implement feature
+/ck:cook implement feature
 
 # Count requests in output
 ```
@@ -234,9 +234,9 @@ curl "https://www.searchapi.io/api/v1/search?engine=google&q=test&api_key=$SEARC
 2. **Try different search terms**:
    ```bash
    # More specific query
-   /plan implement authentication with JWT tokens
+   /ck:plan implement authentication with JWT tokens
    # Better than:
-   /plan add auth
+   /ck:plan add auth
    ```
 
 ---
@@ -439,7 +439,7 @@ curl -s "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flas
 curl -s "https://www.searchapi.io/api/v1/search?q=test&api_key=$SEARCH_API_KEY" | grep -q "search_results" && echo "✅ SearchAPI works" || echo "❌ SearchAPI failed"
 
 # Test with ClaudeKit
-/plan implement hello world
+/ck:plan implement hello world
 # Should complete without API key errors
 ```
 

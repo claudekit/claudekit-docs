@@ -62,7 +62,7 @@ ck init my-app --kit engineer --prefix
 ### Bước 2: Lập Kế Hoạch Xác Thực
 
 ```bash
-/plan add user authentication with email/password and OAuth
+/ck:plan add user authentication with email/password and OAuth
 ```
 
 **Điều gì xảy ra** (30 giây):
@@ -88,7 +88,7 @@ Summary:
 • Tests: 12 test cases
 • Estimated: 2 hours manually, 5 minutes with ClaudeKit
 
-Next: /cook plans/251030-auth-implementation.md
+Next: /ck:cook plans/251030-auth-implementation.md
 ```
 
 ### Bước 3: Xem Lại Kế Hoạch
@@ -102,7 +102,7 @@ Kiểm tra kế hoạch. Kiến trúc vững chắc? Tiếp tục.
 ### Bước 4: Triển Khai
 
 ```bash
-/cook plans/251030-auth-implementation.md
+/ck:cook plans/251030-auth-implementation.md
 ```
 
 **Điều gì xảy ra** (5 phút):
@@ -169,7 +169,7 @@ Truy cập:
 ### Bước 6: Commit
 
 ```bash
-/git cm
+/ck:git cm
 ```
 
 **Đầu ra**:
@@ -244,16 +244,16 @@ Thử các tính năng phức tạp hơn:
 
 ```bash
 # Thêm xử lý thanh toán (Stripe + webhooks)
-/cook add Stripe payment with subscriptions and webhooks
+/ck:cook add Stripe payment with subscriptions and webhooks
 
 # Xây dựng REST API với validation
-/cook create REST API for blog posts with Zod validation
+/ck:cook create REST API for blog posts with Zod validation
 
 # Triển khai chat thời gian thực
-/cook add real-time chat using WebSockets
+/ck:cook add real-time chat using WebSockets
 
 # Di chuyển database (Database migrations)
-/cook migrate from SQLite to PostgreSQL with zero downtime
+/ck:cook migrate from SQLite to PostgreSQL with zero downtime
 ```
 
 Mỗi tác vụ chỉ mất 5-20 phút thay vì nhiều ngày.
@@ -262,25 +262,25 @@ Mỗi tác vụ chỉ mất 5-20 phút thay vì nhiều ngày.
 
 ### Chu Trình Tính Năng Đầy Đủ
 ```bash
-/plan [feature]           # Nghiên cứu + Lập kế hoạch
-/cook [plan]              # Triển khai
-/test                     # Xác thực
-/fix --quick [issue]         # Sửa lỗi nhanh
-/git cm                   # Commit
+/ck:plan [feature]           # Nghiên cứu + Lập kế hoạch
+/ck:cook [plan]              # Triển khai
+/ck:test                     # Xác thực
+/ck:fix --quick [issue]         # Sửa lỗi nhanh
+/ck:git cm                   # Commit
 ```
 
 ### Debug + Sửa Lỗi
 ```bash
-/debug [issue]            # Phân tích nguyên nhân gốc rễ
-/fix [complex-issue] # Sửa lỗi đa agent
-/fix [actions-url]     # Sửa lỗi CI/CD thất bại
+/ck:debug [issue]            # Phân tích nguyên nhân gốc rễ
+/ck:fix [complex-issue] # Sửa lỗi đa agent
+/ck:fix [actions-url]     # Sửa lỗi CI/CD thất bại
 ```
 
 ### Thiết Kế + Nội Dung
 ```bash
 # Sử dụng copywriting skill cho nội dung marketing chất lượng cao
 "Write marketing copy for [page]"
-/brainstorm [idea]        # Khám phá các giải pháp
+/ck:brainstorm [idea]        # Khám phá các giải pháp
 ```
 
 ## Câu Hỏi Thường Gặp

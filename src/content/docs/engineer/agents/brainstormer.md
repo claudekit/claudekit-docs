@@ -34,27 +34,27 @@ Your technical advisor who challenges assumptions, debates approaches, and provi
 
 **Startup CTO**: Evaluating API architecture
 ```bash
-/brainstorm [should we use REST API or GraphQL for our mobile app? Team has REST experience, need to ship MVP in 6 weeks]
+/ck:brainstorm [should we use REST API or GraphQL for our mobile app? Team has REST experience, need to ship MVP in 6 weeks]
 ```
 
 **Tech Lead**: Debating caching strategies
 ```bash
-/brainstorm [API responses are slow. Evaluating Redis cache vs database optimization vs CDN. Current p95 is 800ms, need <200ms]
+/ck:brainstorm [API responses are slow. Evaluating Redis cache vs database optimization vs CDN. Current p95 is 800ms, need <200ms]
 ```
 
 **Product Engineer**: Challenging feature requests
 ```bash
-/brainstorm [stakeholder wants real-time dashboard with WebSockets. Is this necessary or can we use polling?]
+/ck:brainstorm [stakeholder wants real-time dashboard with WebSockets. Is this necessary or can we use polling?]
 ```
 
 **Solo Developer**: Planning refactoring
 ```bash
-/brainstorm [monolith is getting messy. Should I split into microservices or improve modular monolith structure first?]
+/ck:brainstorm [monolith is getting messy. Should I split into microservices or improve modular monolith structure first?]
 ```
 
 **Team Lead**: Assessing feasibility
 ```bash
-/brainstorm [client wants offline-first mobile app with sync. Team has 3 junior devs, 8-week timeline. Realistic?]
+/ck:brainstorm [client wants offline-first mobile app with sync. Team has 3 junior devs, 8-week timeline. Realistic?]
 ```
 
 ## Pro Tips
@@ -71,7 +71,7 @@ Your technical advisor who challenges assumptions, debates approaches, and provi
 
 **Trust YAGNI assessments**: If brainstormer says it's overengineering, it probably is. Build what you need now.
 
-**Follow "Next Steps"**: Output includes actionable next steps. Usually involves `/plan` command for implementation.
+**Follow "Next Steps"**: Output includes actionable next steps. Usually involves `/ck:plan` command for implementation.
 
 ## Related Agents
 

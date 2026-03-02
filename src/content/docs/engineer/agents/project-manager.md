@@ -14,7 +14,7 @@ Senior orchestrator for tracking progress, collecting agent reports, maintaining
 
 ## When to Use
 
-- Track project status with `/watzup` command
+- Track project status with `/ck:watzup` command
 - Consolidate multi-agent work after features
 - Weekly progress reviews and milestone reports
 - Verify task completeness before deployment
@@ -33,7 +33,7 @@ Senior orchestrator for tracking progress, collecting agent reports, maintaining
 
 ### 1. Weekly Status Report
 **Who**: Team lead checking progress
-**Prompt**: `/watzup`
+**Prompt**: `/ck:watzup`
 **Output**: Consolidated report with velocity, quality metrics, completed features, next priorities
 
 ### 2. Feature Completion Review

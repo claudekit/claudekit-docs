@@ -464,7 +464,7 @@ gkg server start
 
 ```bash
 # Khi triển khai từ kế hoạch, sử dụng GKG cho ngữ cảnh
-/cook Add user authentication system
+/ck:cook Add user authentication system
 
 # Claude Code sử dụng GKG để:
 # 1. Tìm kiếm các mẫu xác thực hiện có
@@ -477,7 +477,7 @@ gkg server start
 
 ```bash
 # Trước khi tái cấu trúc lớn
-/plan Refactor authentication module
+/ck:plan Refactor authentication module
 
 # Claude Code sử dụng GKG để:
 # 1. Lập bản đồ tất cả code liên quan xác thực

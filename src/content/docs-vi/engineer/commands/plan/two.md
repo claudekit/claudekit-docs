@@ -1,5 +1,5 @@
 ---
-title: /plan:two
+title: /ck:plan:two
 description: Tài liệu hướng dẫn lệnh plan:two
 section: engineer
 kit: engineer
@@ -9,19 +9,19 @@ published: true
 lang: vi
 ---
 
-# /plan:two
+# /ck:plan:two
 
 Nghiên cứu một tác vụ và tạo ra hai cách tiếp cận triển khai riêng biệt với phân tích ưu/nhược điểm chi tiết và một khuyến nghị rõ ràng. Hoàn hảo khi bạn muốn đánh giá nhiều chiến lược trước khi cam kết thực hiện một cách cụ thể.
 
 ## Cú pháp
 
 ```bash
-/plan:two [mô tả tác vụ]
+/ck:plan:two [mô tả tác vụ]
 ```
 
 ## Cách hoạt động
 
-Lệnh `/plan:two` tuân theo một quy trình làm việc lập kế hoạch so sánh:
+Lệnh `/ck:plan:two` tuân theo một quy trình làm việc lập kế hoạch so sánh:
 
 ### 1. Phân tích yêu cầu
 
@@ -79,7 +79,7 @@ Dựa trên phân tích, cung cấp:
 ### Hệ thống xác thực (Authentication System)
 
 ```bash
-/plan:two [triển khai hệ thống xác thực người dùng]
+/ck:plan:two [triển khai hệ thống xác thực người dùng]
 ```
 
 **Điều gì xảy ra:**
@@ -486,7 +486,7 @@ Các kế hoạch đã lưu:
 ### Quản lý trạng thái (State Management)
 
 ```bash
-/plan:two [triển khai quản lý trạng thái toàn cục cho ứng dụng React]
+/ck:plan:two [triển khai quản lý trạng thái toàn cục cho ứng dụng React]
 ```
 
 **Điều gì xảy ra:**
@@ -703,26 +703,26 @@ Chọn Redux Toolkit nếu:
 
 ## Khi nào nên sử dụng
 
-### ✅ Sử dụng /plan:two cho:
+### ✅ Sử dụng /ck:plan:two cho:
 
 **Các quyết định kiến trúc**
 ```bash
-/plan:two [chọn cơ sở dữ liệu: SQL vs NoSQL]
+/ck:plan:two [chọn cơ sở dữ liệu: SQL vs NoSQL]
 ```
 
 **Lựa chọn công nghệ**
 ```bash
-/plan:two [triển khai caching: Redis vs Memcached]
+/ck:plan:two [triển khai caching: Redis vs Memcached]
 ```
 
 **Mẫu thiết kế (Design Patterns)**
 ```bash
-/plan:two [thiết kế API: REST vs GraphQL]
+/ck:plan:two [thiết kế API: REST vs GraphQL]
 ```
 
 **Chiến lược triển khai**
 ```bash
-/plan:two [tải tệp: trực tiếp S3 vs presigned URL]
+/ck:plan:two [tải tệp: trực tiếp S3 vs presigned URL]
 ```
 
 ### ❌ Không sử dụng khi:
@@ -731,10 +731,10 @@ Chọn Redux Toolkit nếu:
 - Nếu một cách tiếp cận rõ ràng là vượt trội, chỉ cần lập kế hoạch cho nó.
 
 **Đã quyết định xong**
-- Sử dụng `/plan` nếu bạn đã biết mình muốn sử dụng cách tiếp cận nào.
+- Sử dụng `/ck:plan` nếu bạn đã biết mình muốn sử dụng cách tiếp cận nào.
 
 **Cần nhiều hơn hai lựa chọn**
-- /plan:two cụ thể so sánh hai cách tiếp cận.
+- /ck:plan:two cụ thể so sánh hai cách tiếp cận.
 
 ## Các khía cạnh so sánh
 
@@ -770,7 +770,7 @@ Mỗi sự so sánh bao gồm:
 
 ## Các tệp đầu ra
 
-Sau khi `/plan:two` hoàn tất:
+Sau khi `/ck:plan:two` hoàn tất:
 
 ### Kế hoạch Cách tiếp cận 1
 
@@ -802,18 +802,18 @@ So sánh song song với khuyến nghị
 
 ✅ **Tốt:**
 ```bash
-/plan:two [triển khai các tính năng thời gian thực cho ứng dụng chat với 10k người dùng đồng thời]
+/ck:plan:two [triển khai các tính năng thời gian thực cho ứng dụng chat với 10k người dùng đồng thời]
 ```
 
 ❌ **Mơ hồ:**
 ```bash
-/plan:two [thêm thời gian thực]
+/ck:plan:two [thêm thời gian thực]
 ```
 
 ### Chỉ định các ràng buộc
 
 ```bash
-/plan:two [triển khai tìm kiếm: tìm kiếm toàn văn vs tìm kiếm vector, ngân sách tối đa $100/tháng, cần phản hồi dưới 100ms]
+/ck:plan:two [triển khai tìm kiếm: tìm kiếm toàn văn vs tìm kiếm vector, ngân sách tối đa $100/tháng, cần phản hồi dưới 100ms]
 ```
 
 ## Sau khi nhận được các kế hoạch
@@ -822,7 +822,7 @@ Quy trình làm việc tiêu chuẩn:
 
 ```bash
 # 1. Lấy hai cách tiếp cận
-/plan:two [tác vụ]
+/ck:plan:two [tác vụ]
 
 # 2. Xem lại cả hai kế hoạch
 cat plans/[tác vụ]-approach-1-*.md
@@ -846,10 +846,10 @@ Triển khai từ cách 1 trước → sau đó tích hợp thủ công từ cá
 
 ## Các lệnh liên quan
 
-- [/plan](/docs/engineer/commands/plan) - Lập kế hoạch cho một cách tiếp cận duy nhất
-- [/cook](/docs/engineer/skills/cook) - Triển khai kế hoạch đã chọn
+- [/ck:plan](/docs/engineer/commands/plan) - Lập kế hoạch cho một cách tiếp cận duy nhất
+- [/ck:cook](/docs/engineer/skills/cook) - Triển khai kế hoạch đã chọn
 - [Planning skill](/docs/engineer/skills/plan) - Lập kế hoạch tích hợp với đầy đủ chế độ
 
 ---
 
-**Điểm mấu chốt**: `/plan:two` tạo ra hai cách tiếp cận triển khai riêng biệt với phân tích ưu/nhược điểm chi tiết và khuyến nghị rõ ràng, giúp bạn đưa ra các quyết định kỹ thuật và kiến trúc sáng suốt trước khi bắt tay vào triển khai.
+**Điểm mấu chốt**: `/ck:plan:two` tạo ra hai cách tiếp cận triển khai riêng biệt với phân tích ưu/nhược điểm chi tiết và khuyến nghị rõ ràng, giúp bạn đưa ra các quyết định kỹ thuật và kiến trúc sáng suốt trước khi bắt tay vào triển khai.

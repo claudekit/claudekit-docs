@@ -15,7 +15,7 @@ Learn how to systematically investigate, fix, and verify bug fixes using ClaudeK
 **Goal**: Debug and fix issues systematically with root cause analysis
 **Time**: 5-20 minutes (vs 1-4 hours manually)
 **Agents Used**: debugger, tester, code-reviewer
-**Commands**: /fix --quick, /fix, /test
+**Commands**: /ck:fix --quick, /ck:fix, /ck:test
 
 ## Prerequisites
 
@@ -30,12 +30,12 @@ ClaudeKit provides different debugging commands for different scenarios:
 
 | Command | Use Case | Complexity | Time |
 |---------|----------|------------|------|
-| `/fix --quick` | Simple bugs, quick fixes | Low | 2-5 min |
-| `/fix` | Complex bugs, multi-file changes (auto-detects) | High | 10-20 min |
-| `/fix` | Production issues from logs (auto-detects) | Medium | 5-15 min |
-| `/fix` | Visual/layout bugs (auto-detects UI) | Low-Medium | 3-10 min |
-| `/fix` | CI/CD pipeline failures (auto-detects) | Medium | 5-15 min |
-| `/fix` | TypeScript type errors (auto-detects) | Low | 2-5 min |
+| `/ck:fix --quick` | Simple bugs, quick fixes | Low | 2-5 min |
+| `/ck:fix` | Complex bugs, multi-file changes (auto-detects) | High | 10-20 min |
+| `/ck:fix` | Production issues from logs (auto-detects) | Medium | 5-15 min |
+| `/ck:fix` | Visual/layout bugs (auto-detects UI) | Low-Medium | 3-10 min |
+| `/ck:fix` | CI/CD pipeline failures (auto-detects) | Medium | 5-15 min |
+| `/ck:fix` | TypeScript type errors (auto-detects) | Low | 2-5 min |
 
 ## Step-by-Step Workflow
 
@@ -64,12 +64,12 @@ Document the issue:
 
 ### Step 2: Choose Debugging Approach
 
-#### Option A: Quick Fix (/fix --quick)
+#### Option A: Quick Fix (/ck:fix --quick)
 
 For simple, isolated bugs:
 
 ```bash
-/fix --quick [users getting 401 error on login with valid credentials]
+/ck:fix --quick [users getting 401 error on login with valid credentials]
 ```
 
 **What happens**:
@@ -102,12 +102,12 @@ Change summary:
 - Added async/await for password validation
 ```
 
-#### Option B: Complex Fix (/fix)
+#### Option B: Complex Fix (/ck:fix)
 
 For bugs requiring investigation and multiple changes:
 
 ```bash
-/fix [memory leak in WebSocket connections causing server crashes]
+/ck:fix [memory leak in WebSocket connections causing server crashes]
 ```
 
 **What happens**:
@@ -157,7 +157,7 @@ Tests added:
 - tests/websocket/memory.test.js
 ```
 
-#### Option C: Production Log Analysis (/fix)
+#### Option C: Production Log Analysis (/ck:fix)
 
 For bugs discovered in production:
 
@@ -165,7 +165,7 @@ For bugs discovered in production:
 # Copy production logs
 # logs/production.log
 
-/fix [analyze production error logs and fix the issue]
+/ck:fix [analyze production error logs and fix the issue]
 ```
 
 **What happens**:
@@ -208,13 +208,13 @@ Next steps:
 3. Deploy to production
 ```
 
-#### Option D: UI Bug Fix (/fix)
+#### Option D: UI Bug Fix (/ck:fix)
 
 For visual or layout issues:
 
 ```bash
 # Provide screenshot or description
-/fix [button misaligned on mobile devices]
+/ck:fix [button misaligned on mobile devices]
 ```
 
 **What happens**:
@@ -244,13 +244,13 @@ Files modified:
 - src/components/Button.css
 ```
 
-#### Option E: CI/CD Fix (/fix)
+#### Option E: CI/CD Fix (/ck:fix)
 
 For build or deployment failures:
 
 ```bash
 # Provide GitHub Actions URL
-/fix [https://github.com/user/repo/actions/runs/12345]
+/ck:fix [https://github.com/user/repo/actions/runs/12345]
 ```
 
 **What happens**:
@@ -292,7 +292,7 @@ Always verify fixes thoroughly:
 
 ```bash
 # Run test suite
-/test
+/ck:test
 
 # Manual testing
 npm run dev
@@ -308,7 +308,7 @@ Update documentation with the fix:
 
 ```bash
 # Update docs
-/docs:update [document the login bug fix and prevention measures]
+/ck:docs:update [document the login bug fix and prevention measures]
 ```
 
 **Generated documentation**:
@@ -333,7 +333,7 @@ Updated authentication logic to use proper async bcrypt comparison.
 ### Step 5: Commit the Fix
 
 ```bash
-/git cm
+/ck:git cm
 ```
 
 **Generated commit**:
@@ -370,7 +370,7 @@ Browser: All browsers
 ### Investigation
 
 ```bash
-/fix [shopping cart duplicating items on page refresh]
+/ck:fix [shopping cart duplicating items on page refresh]
 ```
 
 ### Analysis Results
@@ -445,7 +445,7 @@ Fixes applied:
 
 **With ClaudeKit**: 18 minutes
 - Reproduce: 5 minutes
-- /fix (auto-detect): 12 minutes
+- /ck:fix (auto-detect): 12 minutes
 - Verification: 1 minute
 
 **Time saved**: 3+ hours (90% faster)
@@ -455,7 +455,7 @@ Fixes applied:
 ### Variation 1: Type Error Fix
 
 ```bash
-/fix
+/ck:fix
 
 # Automatically fixes TypeScript errors
 # Updates type definitions
@@ -465,7 +465,7 @@ Fixes applied:
 ### Variation 2: Performance Bug
 
 ```bash
-/fix [API endpoint taking 8+ seconds to respond]
+/ck:fix [API endpoint taking 8+ seconds to respond]
 
 # Analyzes performance
 # Identifies bottlenecks
@@ -476,7 +476,7 @@ Fixes applied:
 ### Variation 3: Security Bug
 
 ```bash
-/fix --quick [SQL injection vulnerability in search endpoint]
+/ck:fix --quick [SQL injection vulnerability in search endpoint]
 
 # Identifies vulnerability
 # Implements parameterized queries
@@ -487,7 +487,7 @@ Fixes applied:
 ### Variation 4: Integration Bug
 
 ```bash
-/fix [Stripe webhook failing with 400 errors]
+/ck:fix [Stripe webhook failing with 400 errors]
 
 # Analyzes webhook logs
 # Identifies signature mismatch
@@ -504,7 +504,7 @@ Fixes applied:
 **Solution**:
 ```bash
 # Use production logs
-/fix [analyze production logs to identify the issue]
+/ck:fix [analyze production logs to identify the issue]
 
 # Or try production-like environment
 docker-compose -f docker-compose.prod.yml up
@@ -517,16 +517,16 @@ docker-compose -f docker-compose.prod.yml up
 **Solution**:
 ```bash
 # Run comprehensive tests
-/test
+/ck:test
 
 # If tests fail
-/fix
+/ck:fix
 
 # Review all changes
 git diff
 
 # Consider alternative approach
-/fix [fix the login bug without changing the middleware]
+/ck:fix [fix the login bug without changing the middleware]
 ```
 
 ### Issue: Root Cause Unclear
@@ -536,7 +536,7 @@ git diff
 **Solution**:
 ```bash
 # Use hard fix for investigation
-/fix [detailed description of symptoms]
+/ck:fix [detailed description of symptoms]
 
 # Provides thorough analysis
 # Creates investigation plan
@@ -550,11 +550,11 @@ git diff
 **Solution**:
 ```bash
 # Add logging first
-/cook [add detailed logging around the problematic area]
+/ck:cook [add detailed logging around the problematic area]
 
 # Reproduce multiple times
 # Collect logs
-/fix [analyze collected logs]
+/ck:fix [analyze collected logs]
 ```
 
 ## Best Practices
@@ -576,10 +576,10 @@ Before fixing:
 Prevent regressions:
 ```bash
 # After fixing
-/test  # Includes new regression test
+/ck:test  # Includes new regression test
 
 # Or add specific test
-/cook [add test case for the login bug to prevent regression]
+/ck:cook [add test case for the login bug to prevent regression]
 ```
 
 ### 3. Check for Related Issues
@@ -587,10 +587,10 @@ Prevent regressions:
 Fix similar bugs:
 ```bash
 # Search codebase
-/scout "similar pattern to the bug" 3
+/ck:scout "similar pattern to the bug" 3
 
 # Fix all instances
-/fix --quick [fix all instances of the password comparison bug]
+/ck:fix --quick [fix all instances of the password comparison bug]
 ```
 
 ### 4. Document in Changelog
@@ -598,7 +598,7 @@ Fix similar bugs:
 Track bug fixes:
 ```bash
 # Commit with fix: prefix
-/git cm
+/ck:git cm
 
 # Automatically added to CHANGELOG.md
 # Links to issue number
@@ -618,7 +618,7 @@ Verify fix in production:
 
 Understand why bug occurred:
 ```bash
-# Use /fix for analysis
+# Use /ck:fix for analysis
 # Documents root cause
 # Suggests prevention measures
 # Updates development guidelines
@@ -631,25 +631,25 @@ After fixing bugs, improve processes:
 ### 1. Add Validation
 
 ```bash
-/cook [add input validation to prevent similar issues]
+/ck:cook [add input validation to prevent similar issues]
 ```
 
 ### 2. Improve Error Handling
 
 ```bash
-/cook [enhance error handling with better logging and user messages]
+/ck:cook [enhance error handling with better logging and user messages]
 ```
 
 ### 3. Add Monitoring
 
 ```bash
-/cook [add monitoring alerts for this type of error]
+/ck:cook [add monitoring alerts for this type of error]
 ```
 
 ### 4. Update Code Standards
 
 ```bash
-/docs:update [add this bug pattern to code review checklist]
+/ck:docs:update [add this bug pattern to code review checklist]
 ```
 
 ## Next Steps
@@ -660,12 +660,12 @@ After fixing bugs, improve processes:
 - [Refactoring Code](/docs/workflows/refactoring-code) - Code quality
 
 ### Related Commands
-- [/fix --quick](/docs/engineer/skills/fix) - Quick bug fixes
-- [/fix](/docs/engineer/skills/fix) - Complex debugging
-- [/fix](/docs/engineer/skills/fix) - Log analysis
-- [/fix](/docs/engineer/skills/fix) - UI bug fixes
-- [/fix](/docs/engineer/skills/fix) - CI/CD fixes
-- [/test](/docs/engineer/commands/core/test) - Test suite
+- [/ck:fix --quick](/docs/engineer/skills/fix) - Quick bug fixes
+- [/ck:fix](/docs/engineer/skills/fix) - Complex debugging
+- [/ck:fix](/docs/engineer/skills/fix) - Log analysis
+- [/ck:fix](/docs/engineer/skills/fix) - UI bug fixes
+- [/ck:fix](/docs/engineer/skills/fix) - CI/CD fixes
+- [/ck:test](/docs/engineer/commands/core/test) - Test suite
 
 ### Further Reading
 - [Debugger Agent](/docs/engineer/agents/debugger) - Debugging capabilities

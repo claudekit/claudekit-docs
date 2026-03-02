@@ -459,11 +459,11 @@ gkg server start
 
 ## Integration with ClaudeKit
 
-### Using GKG in `/cook` Commands
+### Using GKG in `/ck:cook` Commands
 
 ```bash
 # When implementing from plan, use GKG for context
-/cook Add user authentication system
+/ck:cook Add user authentication system
 
 # Claude Code uses GKG to:
 # 1. Search for existing auth patterns
@@ -476,7 +476,7 @@ gkg server start
 
 ```bash
 # Before major refactoring
-/plan Refactor authentication module
+/ck:plan Refactor authentication module
 
 # Claude Code uses GKG to:
 # 1. Map all auth-related code
@@ -532,7 +532,7 @@ gkg_repo_map \
 1. **Install GKG**: Follow installation guide above
 2. **Index Your Project**: `gkg index /path/to/project`
 3. **Explore**: Use MCP tools to understand codebase
-4. **Integrate with ClaudeKit**: Use GKG context in `/cook` and refactoring commands
+4. **Integrate with ClaudeKit**: Use GKG context in `/ck:cook` and refactoring commands
 5. **Automate**: Build workflows with GKG data
 
 ---

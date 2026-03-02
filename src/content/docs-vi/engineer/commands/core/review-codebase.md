@@ -350,7 +350,7 @@ Chỉ định khu vực cho phân tích có mục tiêu:
 cat plans/reports/codebase-review-*.md
 
 # Sau đó lập kế hoạch
-/plan [refactor based on review findings]
+/ck:plan [refactor based on review findings]
 ```
 
 ### Kiểm tra sức khỏe định kỳ
@@ -374,10 +374,10 @@ Chạy định kỳ cho dự án đang tiến hành:
 
 ## Các lệnh liên quan
 
-- [/scout](/docs/engineer/skills/scout) - Khám phá codebase nhanh
-- [/scout ext](/docs/engineer/skills/scout) - Khám phá với công cụ bên ngoài
-- [/ask](/docs/engineer/commands/core/ask) - Câu hỏi kiến trúc
-- [/plan](/vi/docs/engineer/commands/plan) - Tạo kế hoạch cải thiện
+- [/ck:scout](/docs/engineer/skills/scout) - Khám phá codebase nhanh
+- [/ck:scout ext](/docs/engineer/skills/scout) - Khám phá với công cụ bên ngoài
+- [/ck:ask](/docs/engineer/commands/core/ask) - Câu hỏi kiến trúc
+- [/ck:plan](/vi/docs/engineer/commands/plan) - Tạo kế hoạch cải thiện
 
 ---
 

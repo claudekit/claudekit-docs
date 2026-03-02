@@ -57,9 +57,9 @@ published: true
 
 **Automatic (recommended):** Commands orchestrate agents automatically
 ```bash
-/bootstrap [feature] # planner → fullstack-developer → tester → code-reviewer
-/plan [task]         # planner + researcher
-/debug [issue]       # debugger → analysis and diagnosis
+/ck:bootstrap [feature] # planner → fullstack-developer → tester → code-reviewer
+/ck:plan [task]         # planner + researcher
+/ck:debug [issue]       # debugger → analysis and diagnosis
 ```
 
 **Explicit:** Request specific agents in prompts

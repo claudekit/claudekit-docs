@@ -27,7 +27,7 @@ Learn how to bootstrap a new project with ClaudeKit, from initial requirements t
 
 ## Step 1: Initialize Project
 
-### Option A: Using /bootstrap (Recommended)
+### Option A: Using /ck:bootstrap (Recommended)
 
 Start Claude Code and use the bootstrap command:
 
@@ -40,7 +40,7 @@ cd task-api
 claude
 
 # Bootstrap the project
-/bootstrap [build a REST API for task management with user authentication]
+/ck:bootstrap [build a REST API for task management with user authentication]
 ```
 
 **Interactive Q&A:**
@@ -206,7 +206,7 @@ cd task-api
 claude
 ```
 
-Then use `/docs:init` and `/plan` to start development.
+Then use `/ck:docs:init` and `/ck:plan` to start development.
 
 ## Step 2: Review Generated Code
 
@@ -349,7 +349,7 @@ Coverage:    87.3%
 
 ```bash
 # Use ClaudeKit to fix
-/fix
+/ck:fix
 ```
 
 ## Step 5: Start Development Server
@@ -409,7 +409,7 @@ curl -X GET http://localhost:3000/api/tasks \
 
 ```bash
 # Plan the feature first
-/plan [add task categories and tags]
+/ck:plan [add task categories and tags]
 ```
 
 **Review the plan:**
@@ -419,7 +419,7 @@ cat plans/add-task-categories-YYYYMMDD.md
 
 **Implement:**
 ```bash
-/cook [implement task categories and tags]
+/ck:cook [implement task categories and tags]
 ```
 
 **What happens:**
@@ -475,7 +475,7 @@ cat docs/architecture.md
 ### Update Documentation
 
 ```bash
-/docs:update
+/ck:docs:update
 ```
 
 ## Step 8: Commit Changes
@@ -486,7 +486,7 @@ git status
 git diff
 
 # Commit with ClaudeKit
-/git cm
+/ck:git cm
 ```
 
 **Generated commit:**
@@ -512,7 +512,7 @@ feat: initialize task management API
 If not already created:
 
 ```bash
-/cook [add GitHub Actions CI workflow]
+/ck:cook [add GitHub Actions CI workflow]
 ```
 
 **Generated workflow** (`.github/workflows/ci.yml`):
@@ -568,7 +568,7 @@ jobs:
 ### Push and Verify CI
 
 ```bash
-/git cp
+/ck:git cp
 
 # Watch CI run
 gh run watch
@@ -654,33 +654,33 @@ A production-ready REST API with:
 ### Add More Features
 
 ```bash
-/plan [add task reminders and notifications]
-/cook [implement the feature]
-/test
-/git cm
+/ck:plan [add task reminders and notifications]
+/ck:cook [implement the feature]
+/ck:test
+/ck:git cm
 ```
 
 ### Improve Testing
 
 ```bash
-/cook [add E2E tests for complete user flows]
+/ck:cook [add E2E tests for complete user flows]
 ```
 
 ### Add Frontend
 
 ```bash
 cd ..
-/bootstrap [build a React frontend for the task API]
+/ck:bootstrap [build a React frontend for the task API]
 ```
 
 ### Monitor Production
 
 ```bash
 # Add logging
-/cook [implement structured logging with Winston]
+/ck:cook [implement structured logging with Winston]
 
 # Add monitoring
-/cook [add health check endpoints]
+/ck:cook [add health check endpoints]
 ```
 
 ## Troubleshooting
@@ -709,15 +709,15 @@ PORT=3001
 npx prisma migrate reset
 
 # Or fix manually
-/fix [describe migration error]
+/ck:fix [describe migration error]
 ```
 
 ## Key Takeaways
 
-1. **Use `/bootstrap`** for new projects - saves hours of setup
+1. **Use `/ck:bootstrap`** for new projects - saves hours of setup
 2. **Review generated code** - understand before modifying
 3. **Test immediately** - catch issues early
-4. **Document as you go** - `/docs:update` regularly
+4. **Document as you go** - `/ck:docs:update` regularly
 5. **Use feature branches** - safer development
 6. **Deploy early** - find production issues sooner
 

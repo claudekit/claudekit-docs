@@ -35,7 +35,7 @@ Skill này kích hoạt tự động khi:
 
 Kích hoạt thủ công:
 ```bash
-/ai-artist
+/ck:ai-artist
 ```
 
 ## Nguyên Tắc Cốt Lõi

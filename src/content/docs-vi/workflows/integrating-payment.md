@@ -17,7 +17,7 @@ Tìm hiểu cách tích hợp xử lý thanh toán với ClaudeKit - từ thanh 
 **Mục tiêu**: Triển khai xử lý thanh toán an toàn với việc tích hợp nhà cung cấp
 **Thời gian**: 25-50 phút (so với 5-10 giờ làm thủ công)
 **Agents sử dụng**: planner, researcher, tester, code-reviewer
-**Lệnh**: `/cook`, `/test`
+**Lệnh**: `/ck:cook`, `/ck:test`
 
 ## Điều Kiện Tiên Quyết
 
@@ -44,22 +44,22 @@ Chọn nhà cung cấp dựa trên nhu cầu của bạn:
 
 ```bash
 # Cho đăng ký SaaS
-/plan [tích hợp Stripe cho thanh toán đăng ký]
+/ck:plan [tích hợp Stripe cho thanh toán đăng ký]
 
 # Cho nền tảng sáng tạo (creators)
-/cook [tích hợp Polar cho thanh toán đăng ký]
+/ck:cook [tích hợp Polar cho thanh toán đăng ký]
 
 # Cho thị trường Việt Nam
-/cook [tích hợp SePay cho thanh toán tại Việt Nam]
+/ck:cook [tích hợp SePay cho thanh toán tại Việt Nam]
 
 # Cho thương mại điện tử nói chung
-/plan [tích hợp Stripe với PayPal làm dự phòng]
+/ck:plan [tích hợp Stripe với PayPal làm dự phòng]
 ```
 
 ### Bước 2: Tích Hợp Stripe (Phổ Biến Nhất)
 
 ```bash
-/cook [tích hợp xử lý thanh toán Stripe với thanh toán một lần và gói đăng ký]
+/ck:cook [tích hợp xử lý thanh toán Stripe với thanh toán một lần và gói đăng ký]
 ```
 
 **Triển khai**:
@@ -148,7 +148,7 @@ frontend/
 
 ```bash
 # Đã thực hiện ở Bước 2, nhưng có thể thêm các tính năng cụ thể
-/cook [thêm tính năng tạo hóa đơn cho thanh toán một lần]
+/ck:cook [thêm tính năng tạo hóa đơn cho thanh toán một lần]
 ```
 
 **Luồng thanh toán**:
@@ -179,7 +179,7 @@ const handlePayment = async (amount, currency) => {
 ### Bước 4: Triển Khai Gói Đăng Ký (Subscriptions)
 
 ```bash
-/cook [triển khai các cấp độ đăng ký với thanh toán hàng tháng và hàng năm]
+/ck:cook [triển khai các cấp độ đăng ký với thanh toán hàng tháng và hàng năm]
 ```
 
 **Triển khai**:
@@ -222,7 +222,7 @@ Các gói đã tạo:
 Webhooks cực kỳ quan trọng để xử lý trạng thái thanh toán:
 
 ```bash
-/cook [triển khai xử lý Stripe webhook toàn diện]
+/ck:cook [triển khai xử lý Stripe webhook toàn diện]
 ```
 
 **Các sự kiện Webhook được xử lý**:
@@ -285,7 +285,7 @@ const verifyWebhook = (req) => {
 ### Bước 6: Thêm Các Phương Thức Thanh Toán
 
 ```bash
-/cook [thêm hỗ trợ nhiều phương thức thanh toán - thẻ, Apple Pay, Google Pay]
+/ck:cook [thêm hỗ trợ nhiều phương thức thanh toán - thẻ, Apple Pay, Google Pay]
 ```
 
 **Triển khai**:
@@ -399,31 +399,31 @@ POLAR_WEBHOOK_SECRET=whsec_...
 #### Hệ Thống Coupon/Giảm Giá
 
 ```bash
-/cook [triển khai hệ thống mã coupon và giảm giá]
+/ck:cook [triển khai hệ thống mã coupon và giảm giá]
 ```
 
 #### Khôi Phục Giỏ Hàng Bị Bỏ Quên
 
 ```bash
-/cook [thêm tự động hóa email cho checkout bị bỏ quên]
+/ck:cook [thêm tự động hóa email cho checkout bị bỏ quên]
 ```
 
 #### Upsell/Cross-sell
 
 ```bash
-/cook [triển khai upsell tại trang thanh toán và gợi ý sản phẩm]
+/ck:cook [triển khai upsell tại trang thanh toán và gợi ý sản phẩm]
 ```
 
 #### Tính Thuế
 
 ```bash
-/cook [thêm tính thuế tự động với tích hợp TaxJar]
+/ck:cook [thêm tính thuế tự động với tích hợp TaxJar]
 ```
 
 ### Bước 10: Phân Tích và Báo Cáo
 
 ```bash
-/cook [triển khai dashboard phân tích thanh toán]
+/ck:cook [triển khai dashboard phân tích thanh toán]
 ```
 
 **Các tính năng phân tích**:
@@ -441,7 +441,7 @@ POLAR_WEBHOOK_SECRET=whsec_...
 ### Bước 11: Kiểm Thử Thanh Toán
 
 ```bash
-/test
+/ck:test
 ```
 
 **Độ bao phủ kiểm thử**:
@@ -490,7 +490,7 @@ STRIPE_SECRET_KEY=sk_live_...
 STRIPE_PUBLISHABLE_KEY=pk_live_...
 
 # Triển khai
-/cook [triển khai tích hợp thanh toán lên production với việc xem xét bảo mật]
+/ck:cook [triển khai tích hợp thanh toán lên production với việc xem xét bảo mật]
 ```
 
 ## Ví Dụ Hoàn Chỉnh: Nền Tảng Đăng Ký SaaS
@@ -514,40 +514,40 @@ Triển khai hệ thống thanh toán cho nền tảng SaaS:
 
 ```bash
 # Lập kế hoạch triển khai
-/plan [thiết kế hệ thống thanh toán cho SaaS với tất cả các yêu cầu]
+/ck:plan [thiết kế hệ thống thanh toán cho SaaS với tất cả các yêu cầu]
 
 # Tích hợp Stripe
-/cook [tích hợp Stripe với thanh toán đăng ký và sử dụng]
+/ck:cook [tích hợp Stripe với thanh toán đăng ký và sử dụng]
 
 # Cấp độ đăng ký
-/cook [tạo ba cấp độ đăng ký với tính năng bị chặn tương ứng]
+/ck:cook [tạo ba cấp độ đăng ký với tính năng bị chặn tương ứng]
 
 # Dùng thử miễn phí
-/cook [triển khai dùng thử 14 ngày không yêu cầu phương thức thanh toán]
+/ck:cook [triển khai dùng thử 14 ngày không yêu cầu phương thức thanh toán]
 
 # Tính phí sử dụng
-/cook [thêm tính phí dựa trên số lượng lệnh gọi API]
+/ck:cook [thêm tính phí dựa trên số lượng lệnh gọi API]
 
 # Thanh toán theo nhóm
-/cook [triển khai thanh toán theo nhóm với quản lý số lượng chỗ (seat)]
+/ck:cook [triển khai thanh toán theo nhóm với quản lý số lượng chỗ (seat)]
 
 # Hóa đơn
-/cook [thêm tự động tạo hóa đơn và gửi qua email]
+/ck:cook [thêm tự động tạo hóa đơn và gửi qua email]
 
 # Tính thuế
-/cook [tích hợp TaxJar để tính thuế tự động]
+/ck:cook [tích hợp TaxJar để tính thuế tự động]
 
 # Các phương thức thanh toán
-/cook [thêm hỗ trợ thẻ, Apple Pay, Google Pay và ACH]
+/ck:cook [thêm hỗ trợ thẻ, Apple Pay, Google Pay và ACH]
 
 # Dunning
-/cook [triển khai logic thử lại thông minh cho thanh toán thất bại]
+/ck:cook [triển khai logic thử lại thông minh cho thanh toán thất bại]
 
 # Kiểm thử mọi thứ
-/test
+/ck:test
 
 # Triển khai
-/cook [triển khai lên production có giám sát]
+/ck:cook [triển khai lên production có giám sát]
 ```
 
 ### So Sánh Thời Gian
@@ -574,25 +574,25 @@ Triển khai hệ thống thanh toán cho nền tảng SaaS:
 ### Mẫu 1: Mô Hình Freemium
 
 ```bash
-/cook [triển khai mô hình freemium với các lời nhắc nâng cấp]
+/ck:cook [triển khai mô hình freemium với các lời nhắc nâng cấp]
 ```
 
 ### Mẫu 2: Trả Tiền Theo Ý Muốn (Pay-What-You-Want)
 
 ```bash
-/cook [thêm định giá trả tiền theo ý muốn với các mức đề xuất]
+/ck:cook [thêm định giá trả tiền theo ý muốn với các mức đề xuất]
 ```
 
 ### Mẫu 3: Định Giá Theo Bậc
 
 ```bash
-/cook [triển khai định giá theo bậc động dựa trên mức độ sử dụng]
+/ck:cook [triển khai định giá theo bậc động dựa trên mức độ sử dụng]
 ```
 
 ### Mẫu 4: Thanh Toán Marketplace
 
 ```bash
-/cook [triển khai thanh toán marketplace với chia sẻ lợi nhuận sử dụng Stripe Connect]
+/ck:cook [triển khai thanh toán marketplace với chia sẻ lợi nhuận sử dụng Stripe Connect]
 ```
 
 ## Các Thực Hành Tốt Nhất (Best Practices)
@@ -631,7 +631,7 @@ const processWebhook = async (event) => {
 ### 3. Xử Lý Thanh Toán Thất Bại
 
 ```bash
-/cook [triển khai quản lý dunning với thử lại thông minh và thông báo email]
+/ck:cook [triển khai quản lý dunning với thử lại thông minh và thông báo email]
 ```
 
 ### 4. Tuân Thủ PCI
@@ -647,7 +647,7 @@ const processWebhook = async (event) => {
 ### 5. Giám Sát Giao Dịch
 
 ```bash
-/cook [thêm phát hiện gian lận và giám sát giao dịch]
+/ck:cook [thêm phát hiện gian lận và giám sát giao dịch]
 ```
 
 ## Xử Lý Sự Cố
@@ -660,28 +660,28 @@ const processWebhook = async (event) => {
 stripe listen --forward-to localhost:3000/api/webhooks/stripe
 
 # Hoặc sửa với ClaudeKit
-/fix --quick [Stripe webhooks không nhận được sự kiện]
+/ck:fix --quick [Stripe webhooks không nhận được sự kiện]
 ```
 
 ### Vấn Đề: Thanh Toán Thất Bại
 
 **Giải pháp**:
 ```bash
-/fix [phân tích log thanh toán thất bại và sửa lỗi]
+/ck:fix [phân tích log thanh toán thất bại và sửa lỗi]
 ```
 
 ### Vấn Đề: Bị Tính Phí Hai Lần
 
 **Giải pháp**:
 ```bash
-/fix --quick [ngăn chặn việc tính phí hai lần bằng idempotency keys]
+/ck:fix --quick [ngăn chặn việc tính phí hai lần bằng idempotency keys]
 ```
 
 ### Vấn Đề: Tính Thuế Sai
 
 **Giải pháp**:
 ```bash
-/fix --quick [tính thuế không chính xác cho khách hàng tại Canada]
+/ck:fix --quick [tính thuế không chính xác cho khách hàng tại Canada]
 ```
 
 ## Danh Mục Kiểm Tra Bảo Mật
@@ -717,8 +717,8 @@ Trước khi lên production:
 - [Thêm Tính Năng Mới](/docs/workflows/adding-feature) - Phát triển tính năng
 
 ### Các Lệnh Liên Quan
-- [/cook](/docs/engineer/skills/cook) - Các tính năng tùy chỉnh
-- [/test](/docs/engineer/commands/core/test) - Bộ kiểm thử
+- [/ck:cook](/docs/engineer/skills/cook) - Các tính năng tùy chỉnh
+- [/ck:test](/docs/engineer/commands/core/test) - Bộ kiểm thử
 
 ### Đọc Thêm
 - [Tài liệu Stripe](https://stripe.com/docs)

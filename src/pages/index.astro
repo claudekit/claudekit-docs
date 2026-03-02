@@ -25,9 +25,9 @@ claude
 # or \`claude --dangerously-skip-permissions\` (use as your own risk)
 
 # Bootstrap a new project, or plan and implement a feature
-/bootstrap [create a calendar booking app that sync with Apple & Google Calendar]
-/plan [add user authentication]
-/cook [implement user authentication]
+/ck:bootstrap [create a calendar booking app that sync with Apple & Google Calendar]
+/ck:plan [add user authentication]
+/ck:cook [implement user authentication]
 
 # Review, approve, deploy`;
 
@@ -41,7 +41,7 @@ ck init
 ck versions`;
 
 const planningCode = `# Planner agent reads your codebase
-/plan [add real-time notifications with WebSocket]
+/ck:plan [add real-time notifications with WebSocket]
 
 # Creates detailed implementation plan:
 # - Architecture decisions
@@ -50,7 +50,7 @@ const planningCode = `# Planner agent reads your codebase
 # - Security considerations`;
 
 const implementationCode = `# Implement based on plan
-/cook [implement WebSocket notifications based on the plan]
+/ck:cook [implement WebSocket notifications based on the plan]
 
 # Generates:
 # - Server-side WebSocket handler
@@ -59,7 +59,7 @@ const implementationCode = `# Implement based on plan
 # - Error handling and reconnection logic`;
 
 const testingCode = `# Tester agent creates comprehensive tests
-/test [WebSocket notifications]
+/ck:test [WebSocket notifications]
 
 # Produces:
 # - Unit tests for handlers
@@ -68,7 +68,7 @@ const testingCode = `# Tester agent creates comprehensive tests
 # - Coverage report`;
 
 const debuggingCode = `# Debug and fix issues
-/debug [users are reporting timeout errors on checkout]
+/ck:debug [users are reporting timeout errors on checkout]
 
 # Agent workflow:
 # 1. Searches logs for timeout patterns
@@ -78,24 +78,24 @@ const debuggingCode = `# Debug and fix issues
 # 5. Generates tests to prevent regression`;
 
 const refactoringCode = `# Map codebase structure
-/scout analyze the authentication system
+/ck:scout analyze the authentication system
 
 # Planner creates refactoring roadmap
-/plan [migrate from sessions to JWT]
+/ck:plan [migrate from sessions to JWT]
 
 # Implement changes from plan
 /clear
-/cook implement JWT authentication as planned
+/ck:cook implement JWT authentication as planned
 
 # Tester ensures nothing breaks
-/test [authentication system]`;
+/ck:test [authentication system]`;
 
 const step1Code = `npm install -g claudekit-cli`;
 const step2Code = `ck new my-first-app
 cd my-first-app`;
-const step3Code = `/plan [add user registration API]
+const step3Code = `/ck:plan [add user registration API]
 /clear
-/cook [implement the registration endpoint as planned]`;
+/ck:cook [implement the registration endpoint as planned]`;
 const step4Code = `git diff
 npm test
 # commit via git-manager or manually`;

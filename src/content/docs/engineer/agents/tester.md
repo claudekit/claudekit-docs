@@ -14,8 +14,8 @@ Automated test execution with 80%+ coverage targets, failure diagnosis, and buil
 
 ## When to Use
 
-- `/test` - Run full test suite with coverage
-- `/fix [issue]` - Fix failing tests automatically
+- `/ck:test` - Run full test suite with coverage
+- `/ck:fix [issue]` - Fix failing tests automatically
 - Pre-commit/pre-push validation
 - CI/CD pipeline verification
 
@@ -33,32 +33,32 @@ Automated test execution with 80%+ coverage targets, failure diagnosis, and buil
 
 **Solo Dev - Pre-commit validation**
 ```
-/test
+/ck:test
 
 Validates all changes before commit with coverage report
 ```
 
 **QA Engineer - Bug regression prevention**
 ```
-/test
+/ck:test
 Then review: Which areas have <80% coverage?
 ```
 
 **Team Lead - PR validation**
 ```
-/test
+/ck:test
 Verify: All tests pass + coverage targets met
 ```
 
 **DevOps - CI/CD integration**
 ```
-/test
+/ck:test
 Output: JSON report for pipeline integration
 ```
 
 **Full-Stack Dev - Multi-framework testing**
 ```
-/test
+/ck:test
 
 Runs: Flutter analyze + Jest + pytest in sequence
 ```
@@ -66,8 +66,8 @@ Runs: Flutter analyze + Jest + pytest in sequence
 ## Pro Tips
 
 **Coverage-first approach**: Always check coverage gaps after test runs - uncovered code = untested risk
-**Fail fast**: Use `/test` before starting new work to catch environment issues early
-**Fix atomically**: Use `/fix [specific failure]` for targeted repairs instead of batch fixes
+**Fail fast**: Use `/ck:test` before starting new work to catch environment issues early
+**Fix atomically**: Use `/ck:fix [specific failure]` for targeted repairs instead of batch fixes
 **Performance baseline**: Track test execution time - >60s indicates need for optimization
 **Docker isolation**: Run tests in containers for consistency across team environments
 

@@ -17,44 +17,44 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 
 ### Phát Triển Cốt Lõi (Core)
 
-- **[/bootstrap](/docs/engineer/commands/core/bootstrap)** - Khởi tạo dự án mới với phát triển hướng đặc tả (spec-driven development)
-- **[/cook](/docs/engineer/skills/cook)** - Phát triển tính năng mới
-- **[/plan](/docs/engineer/commands/plan)** - Tạo kế hoạch triển khai
-- **[/brainstorm](/docs/engineer/skills/brainstorm)** - Khám phá tính khả thi của tính năng
-- **[/ask](/docs/engineer/commands/core/ask)** - Đặt câu hỏi về codebase
-- **[/watzup](/docs/engineer/commands/core/watzup)** - Xem trạng thái dự án và các thay đổi gần đây
-- **[/scout](/docs/engineer/skills/scout)** - Tìm kiếm tệp tin trong toàn bộ codebase lớn
-- **[/test](/docs/engineer/commands/core/test)** - Chạy bộ thử nghiệm và nhận kết quả
-- **[/debug](/docs/engineer/commands/core/debug)** - Điều tra và chẩn đoán lỗi
+- **[/ck:bootstrap](/docs/engineer/commands/core/bootstrap)** - Khởi tạo dự án mới với phát triển hướng đặc tả (spec-driven development)
+- **[/ck:cook](/docs/engineer/skills/cook)** - Phát triển tính năng mới
+- **[/ck:plan](/docs/engineer/commands/plan)** - Tạo kế hoạch triển khai
+- **[/ck:brainstorm](/docs/engineer/skills/brainstorm)** - Khám phá tính khả thi của tính năng
+- **[/ck:ask](/docs/engineer/commands/core/ask)** - Đặt câu hỏi về codebase
+- **[/ck:watzup](/docs/engineer/commands/core/watzup)** - Xem trạng thái dự án và các thay đổi gần đây
+- **[/ck:scout](/docs/engineer/skills/scout)** - Tìm kiếm tệp tin trong toàn bộ codebase lớn
+- **[/ck:test](/docs/engineer/commands/core/test)** - Chạy bộ thử nghiệm và nhận kết quả
+- **[/ck:debug](/docs/engineer/commands/core/debug)** - Điều tra và chẩn đoán lỗi
 
 ### Sửa Lỗi (Bug Fixing)
 
-- **[/fix](/docs/engineer/skills/fix)** - Sửa lỗi thông minh (tự động chọn phương pháp fast/hard)
-- **[/fix --quick](/docs/engineer/skills/fix)** - Sửa lỗi nhỏ nhanh chóng
-- **[/fix](/docs/engineer/skills/fix)** - Sửa lỗi phức tạp với phân tích kỹ lưỡng
-- **[/fix](/docs/engineer/skills/fix)** - Sửa lỗi GitHub Actions CI
-- **[/fix](/docs/engineer/skills/fix)** - Phân tích và sửa lỗi từ logs
-- **[/fix](/docs/engineer/skills/fix)** - Sửa lỗi tests thất bại
-- **[/fix](/docs/engineer/skills/fix)** - Sửa lỗi UI/UX
-- **[/fix](/docs/engineer/skills/fix)** - Sửa lỗi TypeScript type
+- **[/ck:fix](/docs/engineer/skills/fix)** - Sửa lỗi thông minh (tự động chọn phương pháp fast/hard)
+- **[/ck:fix --quick](/docs/engineer/skills/fix)** - Sửa lỗi nhỏ nhanh chóng
+- **[/ck:fix](/docs/engineer/skills/fix)** - Sửa lỗi phức tạp với phân tích kỹ lưỡng
+- **[/ck:fix](/docs/engineer/skills/fix)** - Sửa lỗi GitHub Actions CI
+- **[/ck:fix](/docs/engineer/skills/fix)** - Phân tích và sửa lỗi từ logs
+- **[/ck:fix](/docs/engineer/skills/fix)** - Sửa lỗi tests thất bại
+- **[/ck:fix](/docs/engineer/skills/fix)** - Sửa lỗi UI/UX
+- **[/ck:fix](/docs/engineer/skills/fix)** - Sửa lỗi TypeScript type
 
 ### Tài Liệu (Documentation)
 
-- **[/docs:init](/docs/engineer/commands/docs-cmd/init)** - Khởi tạo tài liệu dự án
-- **[/docs:update](/docs/engineer/commands/docs-cmd/update)** - Cập nhật tài liệu dự án
-- **[/docs:summarize](/docs/engineer/commands/docs-cmd/summarize)** - Tóm tắt tài liệu dự án
+- **[/ck:docs:init](/docs/engineer/commands/docs-cmd/init)** - Khởi tạo tài liệu dự án
+- **[/ck:docs:update](/docs/engineer/commands/docs-cmd/update)** - Cập nhật tài liệu dự án
+- **[/ck:docs:summarize](/docs/engineer/commands/docs-cmd/summarize)** - Tóm tắt tài liệu dự án
 
 ### Thao Tác Git
 
-- **[/git cm](/docs/engineer/skills/git)** - Stage và commit các thay đổi
-- **[/git cp](/docs/engineer/skills/git)** - Stage, commit và push
-- **[/git pr](/docs/engineer/skills/git)** - Tạo pull request
+- **[/ck:git cm](/docs/engineer/skills/git)** - Stage và commit các thay đổi
+- **[/ck:git cp](/docs/engineer/skills/git)** - Stage, commit và push
+- **[/ck:git pr](/docs/engineer/skills/git)** - Tạo pull request
 
 ### Lập Kế Hoạch (Planning)
 
-- **[/plan --ci](/docs/engineer/skills/plan)** - Phân tích lỗi CI và tạo kế hoạch sửa chữa
-- **[/plan --two](/docs/engineer/skills/plan)** - Tạo kế hoạch với 2 phương án tiếp cận
-- **[/plan --hard](/docs/engineer/skills/plan)** - Lập kế hoạch chi tiết với nghiên cứu chuyên sâu
+- **[/ck:plan --ci](/docs/engineer/skills/plan)** - Phân tích lỗi CI và tạo kế hoạch sửa chữa
+- **[/ck:plan --two](/docs/engineer/skills/plan)** - Tạo kế hoạch với 2 phương án tiếp cận
+- **[/ck:plan --hard](/docs/engineer/skills/plan)** - Lập kế hoạch chi tiết với nghiên cứu chuyên sâu
 
 ### Thiết Kế & UI
 
@@ -79,7 +79,7 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 
 ### Nhật Ký (Journaling)
 
-- **[/journal](/docs/engineer/commands/core/journal)** - Viết nhật ký phát triển
+- **[/ck:journal](/docs/engineer/commands/core/journal)** - Viết nhật ký phát triển
 
 ## Tham Khảo Nhanh
 
@@ -87,26 +87,26 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 
 ```bash
 # Phát triển tính năng
-/plan [mô tả tính năng]      # Lập kế hoạch tính năng
-/cook [mô tả tính năng]      # Triển khai tính năng
+/ck:plan [mô tả tính năng]      # Lập kế hoạch tính năng
+/ck:cook [mô tả tính năng]      # Triển khai tính năng
 
 # Sửa lỗi
-/fix --quick [lỗi đơn giản]     # Sửa nhanh
-/fix [lỗi phức tạp]     # Điều tra kỹ lưỡng + sửa lỗi
-/fix [url-github-ci]      # Sửa lỗi CI thất bại
+/ck:fix --quick [lỗi đơn giản]     # Sửa nhanh
+/ck:fix [lỗi phức tạp]     # Điều tra kỹ lưỡng + sửa lỗi
+/ck:fix [url-github-ci]      # Sửa lỗi CI thất bại
 
 # Tài liệu
-/docs:init                   # Thiết lập lần đầu
-/docs:update                 # Sau khi thay đổi mã nguồn
+/ck:docs:init                   # Thiết lập lần đầu
+/ck:docs:update                 # Sau khi thay đổi mã nguồn
 
 # Quy trình Git
-/git cm                      # Commit thay đổi
-/git cp                      # Commit và push
-/git pr [nhánh-đích]         # Tạo pull request
+/ck:git cm                      # Commit thay đổi
+/ck:git cp                      # Commit và push
+/ck:git pr [nhánh-đích]         # Tạo pull request
 
 # Trạng thái dự án
-/watzup                      # Trạng thái hiện tại như thế nào?
-/ask [câu hỏi]               # Hỏi về codebase
+/ck:watzup                      # Trạng thái hiện tại như thế nào?
+/ck:ask [câu hỏi]               # Hỏi về codebase
 ```
 
 ## Cú Pháp Lệnh
@@ -121,22 +121,22 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 
 ```bash
 # Không tham số
-/test
-/watzup
-/docs:init
+/ck:test
+/ck:watzup
+/ck:docs:init
 
 # Tham số bắt buộc
-/cook [thêm xác thực người dùng]
-/debug [nút đăng nhập không hoạt động]
-/ask [quy trình điều hướng hoạt động như thế nào?]
+/ck:cook [thêm xác thực người dùng]
+/ck:debug [nút đăng nhập không hoạt động]
+/ck:ask [quy trình điều hướng hoạt động như thế nào?]
 
 # Tham số tùy chọn
-/git pr                          # PR vào nhánh mặc định
-/git pr [develop]                # PR vào nhánh develop
-/git pr [main] [feature-branch]  # PR từ nhánh feature vào main
+/ck:git pr                          # PR vào nhánh mặc định
+/ck:git pr [develop]                # PR vào nhánh develop
+/ck:git pr [main] [feature-branch]  # PR từ nhánh feature vào main
 
 # Nhiều tham số
-/scout [các tệp xác thực] [3]    # Tìm tệp xác thực, dùng 3 agent
+/ck:scout [các tệp xác thực] [3]    # Tìm tệp xác thực, dùng 3 agent
 ```
 
 ## Quy Trình Làm Việc
@@ -144,7 +144,7 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 ### Bắt Đầu Dự Án Mới
 
 ```bash
-1. /bootstrap [mô tả dự án]
+1. /ck:bootstrap [mô tả dự án]
    # HOẶC
    ck new --kit engineer
 
@@ -161,20 +161,20 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 ### Phát Triển Tính Năng
 
 ```bash
-1. /plan [mô tả tính năng]
+1. /ck:plan [mô tả tính năng]
    # Tạo kế hoạch triển khai chi tiết
 
 2. # Xem lại kế hoạch trong thư mục plans/
 
-3. /cook [triển khai tính năng]
+3. /ck:cook [triển khai tính năng]
    # Triển khai dựa trên kế hoạch
    # Tạo các bài kiểm tra
    # Cập nhật tài liệu
 
-4. /test
+4. /ck:test
    # Kiểm tra lại việc triển khai
 
-5. /git cm
+5. /ck:git cm
    # Commit với thông điệp chuẩn (conventional commit)
 ```
 
@@ -182,10 +182,10 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 
 ```bash
 # Lỗi đơn giản (bạn đã biết cách sửa)
-/fix --quick [lỗi đánh máy trong thông báo xác thực]
+/ck:fix --quick [lỗi đánh máy trong thông báo xác thực]
 
 # Lỗi phức tạp (cần điều tra)
-/fix [người dùng không thể đăng nhập sau khi đặt lại mật khẩu]
+/ck:fix [người dùng không thể đăng nhập sau khi đặt lại mật khẩu]
 # - Dùng scout để tìm các tệp liên quan
 # - Phân tích mã nguồn và nhật ký (logs)
 # - Nghiên cứu giải pháp
@@ -194,7 +194,7 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 # - Kiểm tra kỹ lưỡng
 
 # Lỗi CI
-/fix [https://github.com/user/repo/actions/runs/123]
+/ck:fix [https://github.com/user/repo/actions/runs/123]
 # - Đọc nhật ký CI
 # - Xác định nguyên nhân thất bại
 # - Triển khai sửa lỗi
@@ -205,13 +205,13 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 
 ```bash
 # Sau khi triển khai các tính năng
-/docs:update
+/ck:docs:update
 
 # Khi hướng dẫn thành viên mới
-/docs:summarize
+/ck:docs:summarize
 
 # Khi bắt đầu với một codebase hiện có
-/docs:init
+/ck:docs:init
 ```
 
 ## Thực Hành Tốt Nhất
@@ -221,105 +221,105 @@ ClaudeKit cung cấp một bộ lệnh slash toàn diện để tăng tốc quy 
 ✅ **Sử dụng đúng**
 ```bash
 # Sửa lỗi nhỏ
-/fix --quick [lỗi đánh máy trên văn bản nút]
+/ck:fix --quick [lỗi đánh máy trên văn bản nút]
 
 # Vấn đề phức tạp
-/fix [rò rỉ bộ nhớ trong kết nối websocket]
+/ck:fix [rò rỉ bộ nhớ trong kết nối websocket]
 
 # Vấn đề UI kèm ảnh chụp màn hình
-/fix [screenshot.png] - nút bị lệch trên thiết bị di động
+/ck:fix [screenshot.png] - nút bị lệch trên thiết bị di động
 ```
 
 ❌ **Sử dụng sai**
 ```bash
 # Đừng dùng fast cho vấn đề phức tạp
-/fix --quick [toàn bộ hệ thống xác thực bị hỏng]
+/ck:fix --quick [toàn bộ hệ thống xác thực bị hỏng]
 
 # Đừng dùng hard cho việc sửa lỗi đơn giản
-/fix [lỗi đánh máy trong ghi chú]
+/ck:fix [lỗi đánh máy trong ghi chú]
 ```
 
 ### Cung Cấp Mô Tả Rõ Ràng
 
 ✅ **Rõ ràng**
 ```bash
-/plan [thêm xác thực OAuth2 với nhà cung cấp Google và GitHub]
-/cook [triển khai làm mới mã JWT với thời gian hết hạn 15 phút]
-/debug [API trả về lỗi 500 khi tạo người dùng với email trống]
+/ck:plan [thêm xác thực OAuth2 với nhà cung cấp Google và GitHub]
+/ck:cook [triển khai làm mới mã JWT với thời gian hết hạn 15 phút]
+/ck:debug [API trả về lỗi 500 khi tạo người dùng với email trống]
 ```
 
 ❌ **Mơ hồ**
 ```bash
-/plan [thêm xác thực]
-/cook [làm cho nó hoạt động]
-/debug [cái gì đó bị hỏng]
+/ck:plan [thêm xác thực]
+/ck:cook [làm cho nó hoạt động]
+/ck:debug [cái gì đó bị hỏng]
 ```
 
 ### Kiểm Tra Trước Khi Commit
 
 ```bash
 # 1. Triển khai
-/cook [thêm giới hạn tốc độ - rate limiting]
+/ck:cook [thêm giới hạn tốc độ - rate limiting]
 
 # 2. Thử nghiệm
-/test
+/ck:test
 
 # 3. Xem lại các thay đổi
 git diff
 
 # 4. Chỉ commit khi hài lòng
-/git cm
+/ck:git cm
 ```
 
 ### Sử Dụng Chuỗi Lệnh Cho Các Tác Vụ Phức Tạp
 
 ```bash
 # 1. Hiểu codebase
-/ask [xác thực hiện tại được triển khai như thế nào?]
+/ck:ask [xác thực hiện tại được triển khai như thế nào?]
 
 # 2. Lập kế hoạch thay đổi
-/plan [chuyển từ xác thực dựa trên session sang JWT]
+/ck:plan [chuyển từ xác thực dựa trên session sang JWT]
 
 # 3. Xem lại kế hoạch
 cat plans/latest-plan.md
 
 # 4. Triển khai
-/cook [chuyển sang xác thực JWT]
+/ck:cook [chuyển sang xác thực JWT]
 
 # 5. Thử nghiệm
-/test
+/ck:test
 
 # 6. Sửa nếu cần
-/fix
+/ck:fix
 
 # 7. Commit
-/git cm
+/ck:git cm
 ```
 
 ## Các Cờ Và Tùy Chọn
 
 Một số lệnh hỗ trợ các cờ (flags):
 
-### /bootstrap
+### /ck:bootstrap
 
 ```bash
-/bootstrap [mô tả dự án]              # Q&A tương tác
-/bootstrap:auto [mô tả chi tiết]       # Hoàn toàn tự động
+/ck:bootstrap [mô tả dự án]              # Q&A tương tác
+/ck:bootstrap:auto [mô tả chi tiết]       # Hoàn toàn tự động
 ```
 
-### /git pr
+### /ck:git pr
 
 ```bash
-/git pr                      # PR vào nhánh mặc định (main)
-/git pr [develop]            # PR vào nhánh develop
-/git pr [main] [feature]     # PR từ nhánh feature vào main
+/ck:git pr                      # PR vào nhánh mặc định (main)
+/ck:git pr [develop]            # PR vào nhánh develop
+/ck:git pr [main] [feature]     # PR từ nhánh feature vào main
 ```
 
-### /plan
+### /ck:plan
 
 ```bash
-/plan [tính năng]              # Một phương án tiếp cận
-/plan:two [tính năng]          # Hai phương án tiếp cận khác nhau
+/ck:plan [tính năng]              # Một phương án tiếp cận
+/ck:plan:two [tính năng]          # Hai phương án tiếp cận khác nhau
 ```
 
 ## Hiểu Kết Quả Đầu Ra Của Lệnh
@@ -351,7 +351,7 @@ Thời gian dự kiến: 2-3 giờ
 Số tệp cần tạo mới: 5
 Số tệp cần chỉnh sửa: 3
 
-Tiếp theo: Xem lại kế hoạch, sau đó chạy /cook
+Tiếp theo: Xem lại kế hoạch, sau đó chạy /ck:cook
 ```
 
 ### Các Lệnh Triển Khai
@@ -376,7 +376,7 @@ Tài liệu đã được cập nhật:
 
 Triển khai hoàn tất!
 
-Tiếp theo: Chạy /test để xác minh
+Tiếp theo: Chạy /ck:test để xác minh
 ```
 
 ### Các Lệnh Thử Nghiệm
@@ -393,7 +393,7 @@ Kết quả thử nghiệm:
 
 Tất cả các bài kiểm tra đã vượt qua!
 
-Tiếp theo: Xem lại các thay đổi, sau đó chạy /git cm
+Tiếp theo: Xem lại các thay đổi, sau đó chạy /ck:git cm
 ```
 
 ## Xử Lý Sự Cố
@@ -417,7 +417,7 @@ Tiếp theo: Xem lại các thay đổi, sau đó chạy /git cm
 2. Xác minh các điều kiện tiên quyết (API keys, phụ thuộc)
 3. Xem lại nhật ký của agent
 4. Thử lại lệnh với đầu vào đơn giản hơn
-5. Sử dụng `/debug` để điều tra
+5. Sử dụng `/ck:debug` để điều tra
 
 ### Kết Quả Không Như Mong Đợi
 

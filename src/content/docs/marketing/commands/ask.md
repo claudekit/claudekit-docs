@@ -191,14 +191,14 @@ All recommendations honor:
 ## NOT For
 
 - Implementation (use /ckm:plan or /ckm:cook)
-- Debugging (use /ckm:fix or /debug)
+- Debugging (use /ckm:fix or /ck:debug)
 - Code review (use /ckm:review)
 
 ## Related Commands
 
 - [/ckm:brainstorm](/docs/marketing/commands/brainstorm) - Interactive discussion
 - [/ckm:plan](/docs/marketing/commands/plan) - Implementation planning
-- [/research](/docs/marketing/commands) - Market/tech research
+- [/ck:research](/docs/marketing/commands) - Market/tech research
 
 ---
 

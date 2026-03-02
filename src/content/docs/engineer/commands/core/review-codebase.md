@@ -348,7 +348,7 @@ Specify an area for targeted analysis:
 cat plans/reports/codebase-review-*.md
 
 # Then plan
-/plan [refactor based on review findings]
+/ck:plan [refactor based on review findings]
 ```
 
 ### Regular Health Checks
@@ -372,10 +372,10 @@ Run periodically for ongoing projects:
 
 ## Related Commands
 
-- [/scout](/docs/engineer/skills/scout) - Quick codebase exploration
-- [/scout ext](/docs/engineer/skills/scout) - External tool exploration
-- [/ask](/docs/engineer/commands/core/ask) - Architectural questions
-- [/plan](/docs/engineer/commands/plan) - Create improvement plans
+- [/ck:scout](/docs/engineer/skills/scout) - Quick codebase exploration
+- [/ck:scout ext](/docs/engineer/skills/scout) - External tool exploration
+- [/ck:ask](/docs/engineer/commands/core/ask) - Architectural questions
+- [/ck:plan](/docs/engineer/commands/plan) - Create improvement plans
 
 ---
 

@@ -17,7 +17,7 @@ Tìm hiểu cách điều tra, sửa chữa và xác minh các lỗi một cách
 **Mục tiêu**: Gỡ lỗi và sửa các vấn đề một cách hệ thống với phân tích nguyên nhân gốc rễ.
 **Thời gian**: 5-20 phút (so với 1-4 giờ làm thủ công)
 **Các Agent sử dụng**: debugger, tester, code-reviewer
-**Các lệnh**: /fix --quick, /fix, /test
+**Các lệnh**: /ck:fix --quick, /ck:fix, /ck:test
 
 ## Điều kiện tiên quyết
 
@@ -32,12 +32,12 @@ ClaudeKit cung cấp các lệnh gỡ lỗi khác nhau cho từng tình huống:
 
 | Lệnh | Trường hợp sử dụng | Độ phức tạp | Thời gian |
 |---------|----------|------------|------|
-| `/fix --quick` | Lỗi đơn giản, sửa nhanh | Thấp | 2-5 phút |
-| `/fix` | Lỗi phức tạp, thay đổi nhiều tệp | Cao | 10-20 phút |
-| `/fix` | Vấn đề production từ log | Trung bình | 5-15 phút |
-| `/fix` | Lỗi giao diện/bố cục | Thấp-Trung bình | 3-10 phút |
-| `/fix` | Thất bại trong pipeline CI/CD | Trung bình | 5-15 phút |
-| `/fix` | Lỗi kiểu dữ liệu TypeScript | Thấp | 2-5 phút |
+| `/ck:fix --quick` | Lỗi đơn giản, sửa nhanh | Thấp | 2-5 phút |
+| `/ck:fix` | Lỗi phức tạp, thay đổi nhiều tệp | Cao | 10-20 phút |
+| `/ck:fix` | Vấn đề production từ log | Trung bình | 5-15 phút |
+| `/ck:fix` | Lỗi giao diện/bố cục | Thấp-Trung bình | 3-10 phút |
+| `/ck:fix` | Thất bại trong pipeline CI/CD | Trung bình | 5-15 phút |
+| `/ck:fix` | Lỗi kiểu dữ liệu TypeScript | Thấp | 2-5 phút |
 
 ## Quy trình từng bước
 
@@ -66,12 +66,12 @@ Ghi lại vấn đề:
 
 ### Bước 2: Chọn phương pháp gỡ lỗi
 
-#### Lựa chọn A: Sửa nhanh (/fix --quick)
+#### Lựa chọn A: Sửa nhanh (/ck:fix --quick)
 
 Dành cho các lỗi đơn giản, biệt lập:
 
 ```bash
-/fix --quick [người dùng nhận lỗi 401 khi đăng nhập với thông tin hợp lệ]
+/ck:fix --quick [người dùng nhận lỗi 401 khi đăng nhập với thông tin hợp lệ]
 ```
 
 **Điều gì xảy ra**:
@@ -104,12 +104,12 @@ Tóm tắt thay đổi:
 - Thêm async/await cho việc xác thực mật khẩu
 ```
 
-#### Lựa chọn B: Sửa lỗi phức tạp (/fix)
+#### Lựa chọn B: Sửa lỗi phức tạp (/ck:fix)
 
 Dành cho các lỗi cần điều tra sâu và thay đổi nhiều tệp:
 
 ```bash
-/fix [rò rỉ bộ nhớ trong kết nối WebSocket gây treo server]
+/ck:fix [rò rỉ bộ nhớ trong kết nối WebSocket gây treo server]
 ```
 
 **Điều gì xảy ra**:
@@ -159,7 +159,7 @@ Các bài kiểm thử đã thêm:
 - tests/websocket/memory.test.js
 ```
 
-#### Lựa chọn C: Phân tích log Production (/fix)
+#### Lựa chọn C: Phân tích log Production (/ck:fix)
 
 Dành cho các lỗi được phát hiện trên môi trường production:
 
@@ -167,7 +167,7 @@ Dành cho các lỗi được phát hiện trên môi trường production:
 # Sao chép log production
 # logs/production.log
 
-/fix [phân tích log lỗi production và sửa vấn đề]
+/ck:fix [phân tích log lỗi production và sửa vấn đề]
 ```
 
 **Điều gì xảy ra**:
@@ -210,13 +210,13 @@ Các bước tiếp theo:
 3. Triển khai lên production
 ```
 
-#### Lựa chọn D: Sửa lỗi UI (/fix)
+#### Lựa chọn D: Sửa lỗi UI (/ck:fix)
 
 Dành cho các vấn đề về hiển thị hoặc bố cục:
 
 ```bash
 # Cung cấp ảnh chụp màn hình hoặc mô tả
-/fix [nút bấm bị lệch trên thiết bị di động]
+/ck:fix [nút bấm bị lệch trên thiết bị di động]
 ```
 
 **Điều gì xảy ra**:
@@ -246,13 +246,13 @@ Các tệp đã sửa đổi:
 - src/components/Button.css
 ```
 
-#### Lựa chọn E: Sửa lỗi CI/CD (/fix)
+#### Lựa chọn E: Sửa lỗi CI/CD (/ck:fix)
 
 Dành cho các thất bại trong build hoặc triển khai:
 
 ```bash
 # Cung cấp URL GitHub Actions
-/fix [https://github.com/user/repo/actions/runs/12345]
+/ck:fix [https://github.com/user/repo/actions/runs/12345]
 ```
 
 **Điều gì xảy ra**:
@@ -294,7 +294,7 @@ Luôn xác minh các bản sửa lỗi một cách kỹ lưỡng:
 
 ```bash
 # Chạy bộ kiểm thử
-/test
+/ck:test
 
 # Kiểm thử thủ công
 npm run dev
@@ -310,7 +310,7 @@ Cập nhật tài liệu kèm theo bản sửa:
 
 ```bash
 # Cập nhật tài liệu
-/docs:update [ghi lại tài liệu về việc sửa lỗi đăng nhập và các biện pháp ngăn ngừa]
+/ck:docs:update [ghi lại tài liệu về việc sửa lỗi đăng nhập và các biện pháp ngăn ngừa]
 ```
 
 **Tài liệu được tạo**:
@@ -335,7 +335,7 @@ Cập nhật logic xác thực để sử dụng so sánh bcrypt bất đồng b
 ### Bước 5: Commit bản sửa lỗi
 
 ```bash
-/git cm
+/ck:git cm
 ```
 
 **Commit được tạo**:
@@ -372,7 +372,7 @@ Trình duyệt: Tất cả trình duyệt
 ### Điều tra
 
 ```bash
-/fix [giỏ hàng bị nhân đôi sản phẩm khi tải lại trang]
+/ck:fix [giỏ hàng bị nhân đôi sản phẩm khi tải lại trang]
 ```
 
 ### Kết quả phân tích
@@ -447,7 +447,7 @@ Các bản sửa đã áp dụng:
 
 **Với ClaudeKit**: 18 phút
 - Tái hiện: 5 phút
-- /fix command: 12 phút
+- /ck:fix command: 12 phút
 - Xác minh: 1 phút
 
 **Thời gian tiết kiệm được**: 3+ giờ (nhanh hơn 90%)
@@ -457,7 +457,7 @@ Các bản sửa đã áp dụng:
 ### Biến thể 1: Sửa lỗi kiểu dữ liệu (Type Error)
 
 ```bash
-/fix
+/ck:fix
 
 # Tự động sửa các lỗi TypeScript
 # Cập nhật các định nghĩa kiểu
@@ -467,7 +467,7 @@ Các bản sửa đã áp dụng:
 ### Biến thể 2: Lỗi hiệu suất
 
 ```bash
-/fix [endpoint API mất hơn 8 giây để phản hồi]
+/ck:fix [endpoint API mất hơn 8 giây để phản hồi]
 
 # Phân tích hiệu suất
 # Xác định các nút thắt cổ chai
@@ -478,7 +478,7 @@ Các bản sửa đã áp dụng:
 ### Biến thể 3: Lỗi bảo mật
 
 ```bash
-/fix --quick [lỗ hổng SQL injection trong endpoint tìm kiếm]
+/ck:fix --quick [lỗ hổng SQL injection trong endpoint tìm kiếm]
 
 # Xác định lỗ hổng
 # Triển khai các truy vấn có tham số (parameterized queries)
@@ -489,7 +489,7 @@ Các bản sửa đã áp dụng:
 ### Biến thể 4: Lỗi tích hợp
 
 ```bash
-/fix [Stripe webhook thất bại với lỗi 400]
+/ck:fix [Stripe webhook thất bại với lỗi 400]
 
 # Phân tích log webhook
 # Xác định sự sai lệch chữ ký (signature mismatch)
@@ -506,7 +506,7 @@ Các bản sửa đã áp dụng:
 **Giải pháp**:
 ```bash
 # Sử dụng log production
-/fix [phân tích log production để xác định vấn đề]
+/ck:fix [phân tích log production để xác định vấn đề]
 
 # Hoặc thử môi trường giống production
 docker-compose -f docker-compose.prod.yml up
@@ -519,16 +519,16 @@ docker-compose -f docker-compose.prod.yml up
 **Giải pháp**:
 ```bash
 # Chạy kiểm thử toàn diện
-/test
+/ck:test
 
 # Nếu kiểm thử thất bại
-/fix
+/ck:fix
 
 # Xem lại tất cả thay đổi
 git diff
 
 # Cân nhắc cách tiếp cận khác
-/fix [sửa lỗi đăng nhập mà không làm thay đổi middleware]
+/ck:fix [sửa lỗi đăng nhập mà không làm thay đổi middleware]
 ```
 
 ### Vấn đề: Nguyên nhân gốc rễ không rõ ràng
@@ -538,7 +538,7 @@ git diff
 **Giải pháp**:
 ```bash
 # Sử dụng hard fix để điều tra
-/fix [mô tả chi tiết các triệu chứng]
+/ck:fix [mô tả chi tiết các triệu chứng]
 
 # Cung cấp phân tích kỹ lưỡng
 # Tạo kế hoạch điều tra
@@ -552,11 +552,11 @@ git diff
 **Giải pháp**:
 ```bash
 # Thêm ghi log trước
-/cook [thêm log chi tiết xung quanh khu vực có vấn đề]
+/ck:cook [thêm log chi tiết xung quanh khu vực có vấn đề]
 
 # Tái hiện nhiều lần
 # Thu thập log
-/fix [phân tích các log đã thu thập]
+/ck:fix [phân tích các log đã thu thập]
 ```
 
 ## Thực hành tốt nhất
@@ -578,10 +578,10 @@ Trước khi sửa:
 Ngăn chặn lỗi quay trở lại:
 ```bash
 # Sau khi sửa
-/test  # Bao gồm cả bài kiểm thử regression mới
+/ck:test  # Bao gồm cả bài kiểm thử regression mới
 
 # Hoặc thêm bài kiểm thử cụ thể
-/cook [thêm trường hợp kiểm thử cho lỗi đăng nhập để ngăn chặn lỗi tái diễn]
+/ck:cook [thêm trường hợp kiểm thử cho lỗi đăng nhập để ngăn chặn lỗi tái diễn]
 ```
 
 ### 3. Kiểm tra các vấn đề liên quan
@@ -589,10 +589,10 @@ Ngăn chặn lỗi quay trở lại:
 Sửa các lỗi tương tự:
 ```bash
 # Khảo sát codebase
-/scout "mẫu tương tự với lỗi này" 3
+/ck:scout "mẫu tương tự với lỗi này" 3
 
 # Sửa tất cả các trường hợp
-/fix --quick [sửa tất cả các trường hợp so sánh mật khẩu bị lỗi]
+/ck:fix --quick [sửa tất cả các trường hợp so sánh mật khẩu bị lỗi]
 ```
 
 ### 4. Ghi lại trong Changelog
@@ -600,7 +600,7 @@ Sửa các lỗi tương tự:
 Theo dõi các bản sửa lỗi:
 ```bash
 # Commit với tiền tố fix:
-/git cm
+/ck:git cm
 
 # Tự động được thêm vào CHANGELOG.md
 # Liên kết đến số thứ tự issue
@@ -620,7 +620,7 @@ Xác minh bản sửa trên production:
 
 Hiểu rõ tại sao lỗi lại xảy ra:
 ```bash
-# Sử dụng /fix để phân tích
+# Sử dụng /ck:fix để phân tích
 # Ghi lại nguyên nhân gốc rễ
 # Đề xuất các biện pháp ngăn ngừa
 # Cập nhật các hướng dẫn phát triển
@@ -633,25 +633,25 @@ Sau khi sửa lỗi, hãy cải thiện quy trình:
 ### 1. Thêm xác thực (Validation)
 
 ```bash
-/cook [thêm xác thực đầu vào để ngăn chặn các vấn đề tương tự]
+/ck:cook [thêm xác thực đầu vào để ngăn chặn các vấn đề tương tự]
 ```
 
 ### 2. Cải thiện xử lý lỗi
 
 ```bash
-/cook [tăng cường xử lý lỗi với log tốt hơn và thông báo rõ hơn cho người dùng]
+/ck:cook [tăng cường xử lý lỗi với log tốt hơn và thông báo rõ hơn cho người dùng]
 ```
 
 ### 3. Thêm giám sát
 
 ```bash
-/cook [thêm cảnh báo giám sát cho loại lỗi này]
+/ck:cook [thêm cảnh báo giám sát cho loại lỗi này]
 ```
 
 ### 4. Cập nhật tiêu chuẩn mã nguồn
 
 ```bash
-/docs:update [thêm mẫu lỗi này vào danh sách kiểm tra khi review mã nguồn]
+/ck:docs:update [thêm mẫu lỗi này vào danh sách kiểm tra khi review mã nguồn]
 ```
 
 ## Bước tiếp theo
@@ -662,8 +662,8 @@ Sau khi sửa lỗi, hãy cải thiện quy trình:
 - [Refactor Mã Nguồn](/vi/docs/workflows/refactoring-code) - Chất lượng mã nguồn
 
 ### Các lệnh liên quan
-- [/fix](/docs/engineer/skills/fix) - Sửa lỗi (quick/hard/logs/ui/ci)
-- [/test](/docs/engineer/commands/core/test) - Bộ kiểm thử
+- [/ck:fix](/docs/engineer/skills/fix) - Sửa lỗi (quick/hard/logs/ui/ci)
+- [/ck:test](/docs/engineer/commands/core/test) - Bộ kiểm thử
 
 ### Đọc thêm
 - [Debugger Agent](/vi/docs/engineer/agents/debugger) - Khả năng gỡ lỗi

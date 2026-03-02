@@ -25,7 +25,7 @@ The documentation workflow ensures your project documentation stays current, acc
 
 ### 1. Initialize Documentation
 ```bash
-/docs:init
+/ck:docs:init
 ```
 
 **What happens**:
@@ -44,7 +44,7 @@ The documentation workflow ensures your project documentation stays current, acc
 
 ### 2. Initial Documentation Generation
 ```bash
-/docs:init "comprehensive project documentation"
+/ck:docs:init "comprehensive project documentation"
 ```
 
 **What happens**:
@@ -62,7 +62,7 @@ The documentation workflow ensures your project documentation stays current, acc
 
 ### 3. Update Documentation After Changes
 ```bash
-/docs:update "after implementing user authentication"
+/ck:docs:update "after implementing user authentication"
 ```
 
 **What happens**:
@@ -80,7 +80,7 @@ The documentation workflow ensures your project documentation stays current, acc
 
 ### 4. Comprehensive Documentation Review
 ```bash
-/docs:summarize "complete documentation review"
+/ck:docs:summarize "complete documentation review"
 ```
 
 **What happens**:
@@ -102,7 +102,7 @@ Let's document a new authentication feature:
 
 ### Step 1: Initial Setup
 ```bash
-/docs:init
+/ck:docs:init
 ```
 
 **Created Structure**:
@@ -126,7 +126,7 @@ docs/
 
 ### Step 2: Update After Feature
 ```bash
-/docs:update "after implementing OAuth authentication"
+/ck:docs:update "after implementing OAuth authentication"
 ```
 
 **Updates Made**:
@@ -138,7 +138,7 @@ docs/
 
 ### Step 3: Review and Improve
 ```bash
-/docs:summarize "authentication documentation quality"
+/ck:docs:summarize "authentication documentation quality"
 ```
 
 **Improvements Applied**:
@@ -152,7 +152,7 @@ docs/
 
 ### API Documentation
 ```bash
-/docs:init "generate API documentation from code"
+/ck:docs:init "generate API documentation from code"
 ```
 - REST API endpoints
 - GraphQL schemas
@@ -162,7 +162,7 @@ docs/
 
 ### User Guides
 ```bash
-/docs:update "create user guide for new feature"
+/ck:docs:update "create user guide for new feature"
 ```
 - Step-by-step tutorials
 - Common use cases
@@ -172,7 +172,7 @@ docs/
 
 ### Developer Documentation
 ```bash
-/docs:update "development setup and workflows"
+/ck:docs:update "development setup and workflows"
 ```
 - Local development setup
 - Code contribution guidelines
@@ -182,7 +182,7 @@ docs/
 
 ### Architecture Documentation
 ```bash
-/docs:summarize "system architecture and design"
+/ck:docs:summarize "system architecture and design"
 ```
 - High-level architecture
 - Data flow diagrams
@@ -194,7 +194,7 @@ docs/
 
 ### Multi-language Documentation
 ```bash
-/docs:update "create Japanese translation of user guide"
+/ck:docs:update "create Japanese translation of user guide"
 ```
 - Automatic translation with human review
 - Cultural adaptation
@@ -203,7 +203,7 @@ docs/
 
 ### Interactive Documentation
 ```bash
-/docs:init "create interactive API documentation"
+/ck:docs:init "create interactive API documentation"
 ```
 - Try-it-now API consoles
 - Interactive tutorials
@@ -212,7 +212,7 @@ docs/
 
 ### Video Documentation
 ```bash
-/docs:update "create video tutorials for complex features"
+/ck:docs:update "create video tutorials for complex features"
 ```
 - Screen recording workflows
 - Animated explanations
@@ -247,21 +247,21 @@ docs/
 ### Pre-commit Documentation Check
 ```bash
 # Add to pre-commit hook
-/docs:summarize "check documentation for changes"
+/ck:docs:summarize "check documentation for changes"
 ```
 
 ### Automated Documentation Updates
 ```bash
 # Run after feature completion
-/cook
-/docs:update "document new feature"
-/git cm
+/ck:cook
+/ck:docs:update "document new feature"
+/ck:git cm
 ```
 
 ### Release Documentation
 ```bash
-/docs:update "prepare release notes and documentation"
-/docs:summarize "final review before release"
+/ck:docs:update "prepare release notes and documentation"
+/ck:docs:summarize "final review before release"
 ```
 
 ## Measuring Documentation Quality
@@ -275,7 +275,7 @@ docs/
 
 ### Quality Assessment
 ```bash
-/docs:summarize "comprehensive documentation quality assessment"
+/ck:docs:summarize "comprehensive documentation quality assessment"
 ```
 - Completeness analysis
 - Accuracy verification

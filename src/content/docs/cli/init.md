@@ -417,7 +417,7 @@ ls -la .claude/
 
 4. **Test a command:**
 
-Open your project in Claude Code and try a slash command like `/plan`.
+Open your project in Claude Code and try a slash command like `/ck:plan`.
 
 5. **Install skill dependencies (if not done):**
 

@@ -1,5 +1,5 @@
 ---
-title: /test
+title: /ck:test
 description: Run tests locally and analyze the summary report
 section: engineer
 kit: engineer
@@ -8,14 +8,14 @@ order: 22
 published: true
 ---
 
-# /test
+# /ck:test
 
 Run tests locally and analyze the summary report.
 
 ## Syntax
 
 ```bash
-/test
+/ck:test
 ```
 
 ## How It Works
@@ -44,10 +44,10 @@ Coverage: 78%
 
 | Command | Use Case |
 |---------|----------|
-| `/fix` | Fix failing tests |
-| `/cook` | Implement with auto-testing |
-| `/cook` | Implement plan with testing |
+| `/ck:fix` | Fix failing tests |
+| `/ck:cook` | Implement with auto-testing |
+| `/ck:cook` | Implement plan with testing |
 
 ---
 
-**Key Takeaway**: Use `/test` to run the test suite and get a summary report without implementing fixes.
+**Key Takeaway**: Use `/ck:test` to run the test suite and get a summary report without implementing fixes.

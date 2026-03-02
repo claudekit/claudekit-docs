@@ -20,7 +20,7 @@ Learn how to safely refactor code with ClaudeKit - from identifying technical de
 **Goal**: Improve code quality and maintainability without breaking functionality
 **Time**: 15-45 minutes (vs 3-8 hours manually)
 **Agents Used**: code-reviewer, tester, docs-manager
-**Commands**: /plan, /cook, /test, /docs:update
+**Commands**: /ck:plan, /ck:cook, /ck:test, /ck:docs:update
 
 ## Prerequisites
 
@@ -100,7 +100,7 @@ Maintainability Index: 42/100 (Needs Improvement)
 Create a refactoring plan:
 
 ```bash
-/plan [refactor user validation logic to eliminate duplication]
+/ck:plan [refactor user validation logic to eliminate duplication]
 ```
 
 **Generated plan**:
@@ -155,7 +155,7 @@ Before refactoring, ensure good test coverage:
 npm run test:coverage
 
 # Add tests if coverage low
-/cook [add comprehensive tests for user validation before refactoring]
+/ck:cook [add comprehensive tests for user validation before refactoring]
 ```
 
 **Why test first?**
@@ -169,7 +169,7 @@ npm run test:coverage
 Execute the refactoring:
 
 ```bash
-/cook [refactor user validation logic to eliminate duplication]
+/ck:cook [refactor user validation logic to eliminate duplication]
 ```
 
 **Refactoring process**:
@@ -229,7 +229,7 @@ Thoroughly test refactored code:
 
 ```bash
 # Run full test suite
-/test
+/ck:test
 
 # Manual testing
 npm run dev
@@ -248,7 +248,7 @@ curl -X PUT http://localhost:3000/api/users/123 \
 
 ```bash
 # Update documentation
-/docs:update [document the validator refactoring]
+/ck:docs:update [document the validator refactoring]
 
 # Review changes
 git diff
@@ -260,7 +260,7 @@ git diff
 ### Step 7: Commit Refactoring
 
 ```bash
-/git cm
+/ck:git cm
 ```
 
 **Generated commit**:
@@ -312,7 +312,7 @@ async function processOrder(orderId) {
 
 **Refactoring command**:
 ```bash
-/cook [refactor processOrder function to follow single responsibility principle]
+/ck:cook [refactor processOrder function to follow single responsibility principle]
 ```
 
 **After** (clean architecture):
@@ -371,7 +371,7 @@ class UserService {
 
 **Refactoring command**:
 ```bash
-/cook [refactor UserService to use dependency injection]
+/ck:cook [refactor UserService to use dependency injection]
 ```
 
 **After** (loosely coupled):
@@ -410,7 +410,7 @@ async function fetchUserData(userId) {
 
 **Refactoring command**:
 ```bash
-/cook [add comprehensive error handling to fetchUserData]
+/ck:cook [add comprehensive error handling to fetchUserData]
 ```
 
 **After** (robust error handling):
@@ -452,37 +452,37 @@ async function fetchUserData(userId) {
 ### 1. Extract Method
 
 ```bash
-/cook [extract password validation into separate function]
+/ck:cook [extract password validation into separate function]
 ```
 
 ### 2. Extract Class
 
 ```bash
-/cook [extract payment processing into PaymentService class]
+/ck:cook [extract payment processing into PaymentService class]
 ```
 
 ### 3. Rename
 
 ```bash
-/cook [rename all instances of 'data' variable to descriptive names]
+/ck:cook [rename all instances of 'data' variable to descriptive names]
 ```
 
 ### 4. Introduce Parameter Object
 
 ```bash
-/cook [replace multiple parameters with configuration object]
+/ck:cook [replace multiple parameters with configuration object]
 ```
 
 ### 5. Replace Conditional with Polymorphism
 
 ```bash
-/cook [replace user type conditionals with strategy pattern]
+/ck:cook [replace user type conditionals with strategy pattern]
 ```
 
 ### 6. Move Method
 
 ```bash
-/cook [move authentication logic from controller to service layer]
+/ck:cook [move authentication logic from controller to service layer]
 ```
 
 ## Refactoring Best Practices
@@ -491,11 +491,11 @@ async function fetchUserData(userId) {
 
 ```bash
 # Before refactoring
-/test
+/ck:test
 # Take note of test results
 
 # After refactoring
-/test
+/ck:test
 # Verify same results
 ```
 
@@ -503,16 +503,16 @@ async function fetchUserData(userId) {
 
 ```bash
 ✅ Good approach:
-/cook [extract validation to separate function]
-/test
-/git cm
+/ck:cook [extract validation to separate function]
+/ck:test
+/ck:git cm
 
-/cook [add error handling to validation]
-/test
-/git cm
+/ck:cook [add error handling to validation]
+/ck:test
+/ck:git cm
 
 ❌ Bad approach:
-/cook [refactor entire authentication system]
+/ck:cook [refactor entire authentication system]
 # Too many changes at once
 # Hard to debug if issues arise
 ```
@@ -528,13 +528,13 @@ async function fetchUserData(userId) {
 ### 4. Update Tests Alongside Code
 
 ```bash
-/cook [refactor user service and update tests accordingly]
+/ck:cook [refactor user service and update tests accordingly]
 ```
 
 ### 5. Document Architectural Changes
 
 ```bash
-/docs:update [document the new validation architecture]
+/ck:docs:update [document the new validation architecture]
 ```
 
 ## Common Variations
@@ -542,25 +542,25 @@ async function fetchUserData(userId) {
 ### Variation 1: Performance Refactoring
 
 ```bash
-/cook [optimize database queries in user service]
+/ck:cook [optimize database queries in user service]
 ```
 
 ### Variation 2: Security Refactoring
 
 ```bash
-/cook [refactor to use parameterized queries instead of string concatenation]
+/ck:cook [refactor to use parameterized queries instead of string concatenation]
 ```
 
 ### Variation 3: Modernize Code
 
 ```bash
-/cook [convert callbacks to async/await throughout the codebase]
+/ck:cook [convert callbacks to async/await throughout the codebase]
 ```
 
 ### Variation 4: Simplify Architecture
 
 ```bash
-/cook [simplify three-layer architecture to two layers]
+/ck:cook [simplify three-layer architecture to two layers]
 ```
 
 ## Troubleshooting
@@ -575,8 +575,8 @@ async function fetchUserData(userId) {
 git reset --hard HEAD
 
 # Refactor in smaller steps
-/cook [extract just the email validation function]
-/test
+/ck:cook [extract just the email validation function]
+/ck:test
 # Ensure tests pass before continuing
 ```
 
@@ -590,7 +590,7 @@ git reset --hard HEAD
 /review
 
 # Or ask for analysis
-/ask [analyze the codebase and suggest refactoring priorities]
+/ck:ask [analyze the codebase and suggest refactoring priorities]
 ```
 
 ### Issue: Breaking API Compatibility
@@ -600,10 +600,10 @@ git reset --hard HEAD
 **Solution**:
 ```bash
 # Maintain backward compatibility
-/cook [refactor internal implementation without changing public API]
+/ck:cook [refactor internal implementation without changing public API]
 
 # Or version the API
-/cook [create v2 API with refactored structure]
+/ck:cook [create v2 API with refactored structure]
 ```
 
 ## Measuring Success
@@ -640,9 +640,9 @@ Improvement: +36 points maintainability
 - [Optimizing Performance](/docs/workflows/optimizing-performance) - Speed improvements
 
 ### Related Commands
-- [/cook](/docs/engineer/skills/cook) - Implement refactoring
-- [/test](/docs/engineer/commands/core/test) - Verify changes
-- [/docs:update](/docs/engineer/commands/docs-cmd/update) - Update docs
+- [/ck:cook](/docs/engineer/skills/cook) - Implement refactoring
+- [/ck:test](/docs/engineer/commands/core/test) - Verify changes
+- [/ck:docs:update](/docs/engineer/commands/docs-cmd/update) - Update docs
 
 ### Related Agents
 - [Code Reviewer](/docs/engineer/agents/code-reviewer) - Code quality analysis

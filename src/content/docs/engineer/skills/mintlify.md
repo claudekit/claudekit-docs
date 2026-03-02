@@ -1,10 +1,10 @@
 ---
-title: "Mintlify"
+title: "ck:mintlify"
 description: "Build and deploy modern documentation sites with Mintlify, supporting MDX components, OpenAPI integration, and AI features"
 section: engineer
 kit: engineer
 category: skills
-order: 42
+order: 50
 published: true
 ---
 

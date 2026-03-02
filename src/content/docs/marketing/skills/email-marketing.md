@@ -1,5 +1,5 @@
 ---
-title: "Email Marketing"
+title: "ckm:email-marketing"
 description: "Build email campaigns, automation flows, drip sequences, and deliverability optimization for effective email marketing."
 section: marketing
 category: skills

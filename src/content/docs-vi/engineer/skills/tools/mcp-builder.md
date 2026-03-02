@@ -1,5 +1,5 @@
 ---
-title: Kỹ năng xây dựng MCP (mcp-builder)
+title: "ck:mcp-builder"
 description: Tài liệu hướng dẫn sử dụng kỹ năng mcp-builder
 section: engineer
 kit: engineer

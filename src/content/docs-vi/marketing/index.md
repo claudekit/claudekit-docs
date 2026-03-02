@@ -89,7 +89,7 @@ Tạo nội dung marketing chất lượng cao với trích xuất giọng văn 
 /ckm:write:publish /assets/copy/blog-posts/pricing-guide.md
 ```
 
-Xem [Lệnh Write](/docs/marketing/commands/write) để biết chi tiết.
+Xem [Kỹ năng Copywriting](/docs/marketing/skills/copywriting) để biết chi tiết.
 
 ### Sản Xuất Video
 
@@ -106,7 +106,7 @@ Quy trình video chuyên nghiệp với Gemini Veo 3.1 + Imagen 4:
 /ckm:video:storyboard /assets/videos/2024-12-30-api-demo/script.md
 ```
 
-Xem [Lệnh Video](/docs/marketing/commands/video) để biết chi tiết.
+Xem [Kỹ năng Media Processing](/docs/marketing/skills/media-processing) để biết chi tiết.
 
 ### Bài Thuyết Trình
 
@@ -123,7 +123,7 @@ Tạo pitch deck, đề xuất chiến dịch và bài thuyết trình đẹp:
 /ckm:slide:create "Technical demo API features cho doanh nghiệp"
 ```
 
-Xem [Lệnh Slide](/docs/marketing/commands/slide) để biết chi tiết.
+Xem [Kỹ năng Content Marketing](/docs/marketing/skills/content-marketing) để biết chi tiết.
 
 ### Quản Lý Chiến Dịch
 
@@ -158,5 +158,5 @@ Theo dõi hiệu suất và nhận được những hiểu biết có thể hàn
 ## Next Steps
 
 - [Marketing Agents](/vi/docs/marketing/agents) - Gặp gỡ đội tiếp thị AI của bạn
-- [Marketing Commands](/vi/docs/marketing/commands) - Tất cả các lệnh có sẵn
-- [Marketing Workflows](/vi/docs/marketing/workflows) - Hướng dẫn từng bước
+- [Marketing Skills](/vi/docs/marketing/skills) - Tất cả các kỹ năng có sẵn
+- [Marketing Workflows](/vi/docs/workflows) - Hướng dẫn từng bước

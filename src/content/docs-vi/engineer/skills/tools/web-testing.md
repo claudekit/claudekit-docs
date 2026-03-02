@@ -1,5 +1,5 @@
 ---
-title: "Web Testing"
+title: "ck:web-testing"
 description: "Web testing toàn diện với Playwright, Vitest, k6 cho E2E, unit, integration, load, security, visual và accessibility testing"
 section: engineer
 kit: engineer

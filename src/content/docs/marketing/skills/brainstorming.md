@@ -1,5 +1,5 @@
 ---
-title: "Brainstorming"
+title: "ckm:brainstorming"
 description: "Collaborative solution exploration and technical decision-making through structured dialogue and approach validation."
 section: marketing
 category: skills

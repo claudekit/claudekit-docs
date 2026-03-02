@@ -1,5 +1,5 @@
 ---
-title: "Remotion"
+title: "ck:remotion"
 description: "Video creation trong React với animations, compositions và programmatic rendering"
 section: engineer
 kit: engineer

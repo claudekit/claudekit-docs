@@ -3,7 +3,7 @@ title: Tối Ưu Hóa Hiệu Suất
 description: "Xác định và khắc phục các nút thắt cổ chai về hiệu suất với ClaudeKit - từ profiling đến caching, tối ưu hóa database và cải thiện mã nguồn."
 lang: vi
 section: workflows
-category: workflows
+category: engineer
 order: 9
 published: true
 ---
@@ -787,9 +787,9 @@ Chỉ số:
 - [Xây Dựng REST API](/docs/workflows/building-api) - Phát triển API
 
 ### Các Lệnh Liên Quan
-- [/ck:debug](/docs/engineer/commands/core/debug) - Phân tích hiệu suất
+- [/ck:debug](/docs/engineer/skills/debug) - Phân tích hiệu suất
 - [/ck:cook](/docs/engineer/skills/cook) - Triển khai tối ưu hóa
-- [/ck:test](/docs/engineer/commands/core/test) - Kiểm thử hiệu suất
+- [/ck:test](/docs/engineer/skills/test) - Kiểm thử hiệu suất
 
 ### Đọc Thêm
 - [Web.dev Performance](https://web.dev/performance/)

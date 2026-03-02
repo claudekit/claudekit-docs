@@ -1,5 +1,5 @@
 ---
-title: "Brand Guidelines"
+title: "ckm:brand-guidelines"
 description: "Brand voice, visual identity, asset management, and consistency enforcement with automated validation and color extraction."
 section: marketing
 category: skills

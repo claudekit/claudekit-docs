@@ -3,7 +3,7 @@ title: "Dự Án Brownfield"
 description: "Documentation for Dự Án Brownfield"
 lang: vi
 section: workflows
-category: workflows
+category: engineer
 order: 7
 published: true
 lastUpdated: 2025-11-07
@@ -319,7 +319,7 @@ Cung cấp mô tả chi tiết trong lệnh. Nhiều context = kết quả tốt
 
 Sau khi tích hợp thành công:
 
-1. **Khám Phá Lệnh**: Xem [Tài Liệu Lệnh](/vi/docs/engineer/commands/)
+1. **Khám Phá Skills**: Xem [Tài Liệu Skills](/vi/docs/engineer/skills)
 2. **Tìm Hiểu Agents**: Hiểu [Specialized Agents](/vi/docs/engineer/agents/)
 3. **Workflows Nâng Cao**: Xem [Workflows Guide](/vi/docs/engineer/configuration/workflows)
 4. **Đào Tạo Team**: Chia sẻ best practices với team

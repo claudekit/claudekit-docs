@@ -1,5 +1,5 @@
 ---
-title: "Find Skills"
+title: "ck:find-skills"
 description: "Khám phá và cài đặt agent skills từ open skills ecosystem"
 section: engineer
 kit: engineer

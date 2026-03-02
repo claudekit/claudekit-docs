@@ -249,8 +249,8 @@ docs/journals/
 
 ## Related Commands
 
-- [`/ckm:journal`](/docs/marketing/commands) - Create journal entry
-- [`/lessons`](/docs/marketing/commands) - Review lessons learned
+- [`/ckm:journal`](/docs/marketing/skills) - Create journal entry
+- [`/lessons`](/docs/marketing/skills) - Review lessons learned
 
 ## Tips
 

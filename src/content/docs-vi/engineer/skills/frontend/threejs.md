@@ -1,5 +1,5 @@
 ---
-title: Three.js Skill
+title: "ck:threejs"
 description: Xây dựng trải nghiệm web 3D với Three.js - thư viện WebGL/WebGPU cho scenes, cameras, materials, animations và rendering nâng cao
 section: engineer
 kit: engineer

@@ -1,5 +1,5 @@
 ---
-title: Kỹ năng Next.js
+title: "ck:nextjs"
 description: Tài liệu hướng dẫn sử dụng kỹ năng nextjs
 section: engineer
 kit: engineer

@@ -1,5 +1,5 @@
 ---
-title: Frontend Design
+title: "ck:frontend-design"
 description: Tạo distinctive, production-grade frontend interfaces từ scratch hoặc screenshots với exceptional design quality và creative direction
 section: engineer
 kit: engineer

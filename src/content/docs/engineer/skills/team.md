@@ -1,10 +1,10 @@
 ---
-title: "Agent Teams"
+title: "ck:team"
 description: "Orchestrate parallel multi-session collaboration with independent Claude Code teammates"
 section: engineer
 kit: engineer
 category: skills
-order: 37
+order: 50
 published: true
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "GitLab Knowledge Graph"
+title: "ck:gkg"
 description: "Phân tích semantic code với AST parsing cho go-to-definition, find-usages và architecture visualization"
 section: engineer
 kit: engineer

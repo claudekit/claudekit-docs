@@ -1,5 +1,5 @@
 ---
-title: "Integrate"
+title: "ck:integrate"
 description: "Tích hợp thanh toán với Polar.sh và SePay.vn"
 section: engineer
 kit: engineer

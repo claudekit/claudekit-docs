@@ -1,5 +1,5 @@
 ---
-title: "Analytics"
+title: "ckm:analytics"
 description: "Marketing analytics with GA4 API integration, KPI tracking, attribution models, and data-driven reporting for performance optimization."
 section: marketing
 category: skills

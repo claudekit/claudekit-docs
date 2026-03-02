@@ -1,5 +1,5 @@
 ---
-title: Google ADK Python
+title: "ck:google-adk-python"
 description: Xây dựng, đánh giá và deploy AI agents với Google's Agent Development Kit - toolkit code-first cho tool integration và multi-agent orchestration
 section: engineer
 kit: engineer

@@ -3,7 +3,7 @@ title: Gemini, wait what?
 description: "Tìm hiểu tại sao ClaudeKit lại cần Gemini API để xử lý hình ảnh và video."
 lang: vi
 section: workflows
-category: workflows
+category: engineer
 order: 3
 published: true
 ---

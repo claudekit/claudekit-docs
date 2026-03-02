@@ -1,10 +1,10 @@
 ---
-title: Shopify Skill
+title: "ck:shopify"
 description: Build Shopify apps, extensions, and themes using GraphQL/REST APIs, Shopify CLI, and Polaris UI
 section: engineer
 kit: engineer
 category: skills/ecommerce
-order: 23
+order: 50
 published: true
 ---
 # Shopify Skill

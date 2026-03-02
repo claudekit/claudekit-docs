@@ -1,10 +1,10 @@
 ---
-title: "Cook"
+title: "ck:cook"
 description: "End-to-end feature implementation with automatic workflow detection and intelligent routing"
 section: engineer
 kit: engineer
 category: skills
-order: 23
+order: 4
 ---
 
 Your complete feature implementation engine. Replaces the old `/code` command with smart workflow detection, research phases, and quality gates.

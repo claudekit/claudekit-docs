@@ -3,11 +3,11 @@ title: Implementing Authentication
 description: "Documentation for Implementing Authentication
 description:
 section: workflows
-category: workflows
+category: engineer
 order: 7
 published: true"
 section: workflows
-category: workflows
+category: engineer
 order: 7
 published: true
 ---
@@ -649,7 +649,7 @@ Before production deployment:
 
 ### Related Commands
 - [/ck:cook](/docs/engineer/skills/cook) - Implement features
-- [/ck:test](/docs/engineer/commands/core/test) - Test suite
+- [/ck:test](/docs/engineer/skills/test) - Test suite
 - [/ck:fix --quick](/docs/engineer/skills/fix) - Quick fixes
 
 ### Integration Guides

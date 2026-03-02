@@ -1,5 +1,5 @@
 ---
-title: "Gamification Marketing"
+title: "ckm:gamification-marketing"
 description: "Design gamified campaigns using behavioral psychology with points, badges, leaderboards, streaks, and challenges for engagement and retention."
 section: marketing
 category: skills

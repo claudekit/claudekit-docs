@@ -1,5 +1,5 @@
 ---
-title: Kỹ năng Tailwind CSS
+title: "ck:tailwindcss"
 description: Tài liệu hướng dẫn sử dụng kỹ năng tailwindcss
 section: engineer
 kit: engineer

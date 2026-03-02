@@ -2,7 +2,7 @@
 title: "Brownfield Projects"
 description: "Documentation for Brownfield Projects"
 section: workflows
-category: workflows
+category: engineer
 order: 7
 published: true
 lastUpdated: 2025-11-07

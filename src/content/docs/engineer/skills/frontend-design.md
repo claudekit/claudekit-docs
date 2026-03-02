@@ -1,10 +1,10 @@
 ---
-title: Frontend Design
+title: "ck:frontend-design"
 description: Create distinctive, production-grade frontend interfaces from scratch or screenshots with exceptional design quality and creative direction
 section: engineer
 kit: engineer
 category: skills
-order: 16
+order: 50
 ---
 
 Tired of generic-looking interfaces that scream "AI made this"? This skill helps you create frontend designs that feel genuinely crafted, memorable, and intentional.

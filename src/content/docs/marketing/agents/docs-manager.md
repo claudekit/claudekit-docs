@@ -220,8 +220,8 @@ The Docs Manager integrates seamlessly:
 
 ## Related Commands
 
-- [`/ck:docs`](/docs/marketing/commands) - Update or create documentation
-- [`/audit`](/docs/marketing/commands) - Run documentation quality audit
+- [`/ck:docs`](/docs/marketing/skills) - Update or create documentation
+- [`/audit`](/docs/marketing/skills) - Run documentation quality audit
 
 ## Tips
 

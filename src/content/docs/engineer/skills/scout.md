@@ -1,10 +1,10 @@
 ---
-title: "Scout"
+title: "ck:scout"
 description: "Fast codebase scouting using parallel agents for file discovery and context gathering"
 section: engineer
 kit: engineer
 category: skills
-order: 33
+order: 7
 ---
 
 Fast, token-efficient codebase scouting using parallel agents to find files needed for tasks.

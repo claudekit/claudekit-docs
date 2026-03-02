@@ -1,5 +1,5 @@
 ---
-title: Code Review Skill
+title: "ck:code-review"
 description: Hướng dẫn code review practices đúng đắn với technical rigor, evidence-based claims và verification gates
 section: engineer
 kit: engineer

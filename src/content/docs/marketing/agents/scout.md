@@ -174,8 +174,8 @@ Optimized for speed:
 
 ## Related Commands
 
-- [`/ckm:scout`](/docs/marketing/commands/scout) - Search for files
-- [`/explore`](/docs/marketing/commands) - Interactive code exploration
+- [`/ckm:scout`](/docs/marketing/skills) - Search for files
+- [`/explore`](/docs/marketing/skills) - Interactive code exploration
 
 ## Tips
 

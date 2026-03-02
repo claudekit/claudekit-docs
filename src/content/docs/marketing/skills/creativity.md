@@ -1,5 +1,5 @@
 ---
-title: "Creativity"
+title: "ckm:creativity"
 description: "Creative direction for digital marketing with 55 style templates, color psychology, voiceover guidance, and 2025-2026 visual trends."
 section: marketing
 category: skills

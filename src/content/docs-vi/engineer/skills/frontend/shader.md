@@ -1,5 +1,5 @@
 ---
-title: "Shader"
+title: "ck:shader"
 description: "Viết GLSL fragment shaders cho đồ họa thủ tục, textures và hiệu ứng hình ảnh"
 section: engineer
 kit: engineer

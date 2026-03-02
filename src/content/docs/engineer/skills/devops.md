@@ -1,10 +1,10 @@
 ---
-title: DevOps Skill
+title: "ck:devops"
 description: Deploy and manage cloud infrastructure on Cloudflare, Docker, and Google Cloud Platform
 section: engineer
 kit: engineer
 category: skills/backend
-order: 5
+order: 50
 published: true
 ---# DevOps Skill
 

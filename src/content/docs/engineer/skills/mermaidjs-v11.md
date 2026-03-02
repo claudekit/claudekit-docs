@@ -1,10 +1,10 @@
 ---
-title: "Mermaid.js v11"
+title: "ck:mermaidjs-v11"
 description: "Create diagrams with Mermaid.js v11 for flowcharts, sequence diagrams, class diagrams, and more"
 section: engineer
 kit: engineer
 category: skills
-order: 30
+order: 50
 ---
 
 Text-based diagram creation using Mermaid.js v11 declarative syntax. Convert code to SVG/PNG/PDF or render in browsers and markdown.

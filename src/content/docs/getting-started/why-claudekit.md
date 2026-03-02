@@ -43,7 +43,7 @@ cd my-app
 - `/ck:fix` - Multi-agent bug fixing
 - `ai-artist` skill - UI/UX design and visual assets
 - `/ck:git cm` - Commit with conventional format
-- [See all commands →](/docs/engineer/commands)
+- [See all skills →](/docs/engineer/skills)
 
 **45 Built-in Skills**:
 - Frontend: Next.js, shadcn/ui, Tailwind CSS

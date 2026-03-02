@@ -3,7 +3,7 @@ title: Sửa Lỗi
 description: "Tài liệu hướng dẫn Sửa Lỗi"
 lang: vi
 section: workflows
-category: workflows
+category: engineer
 order: 4
 published: true
 ---
@@ -663,7 +663,7 @@ Sau khi sửa lỗi, hãy cải thiện quy trình:
 
 ### Các lệnh liên quan
 - [/ck:fix](/docs/engineer/skills/fix) - Sửa lỗi (quick/hard/logs/ui/ci)
-- [/ck:test](/docs/engineer/commands/core/test) - Bộ kiểm thử
+- [/ck:test](/docs/engineer/skills/test) - Bộ kiểm thử
 
 ### Đọc thêm
 - [Debugger Agent](/vi/docs/engineer/agents/debugger) - Khả năng gỡ lỗi

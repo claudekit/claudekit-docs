@@ -1,5 +1,5 @@
 ---
-title: Repomix Skill
+title: "ck:repomix"
 description: Package repositories thành AI-friendly files với customizable patterns, token counting và security checks
 section: engineer
 kit: engineer

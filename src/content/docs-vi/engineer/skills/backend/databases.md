@@ -1,5 +1,5 @@
 ---
-title: Databases
+title: "ck:databases"
 description: Làm việc với MongoDB và PostgreSQL cho schema design, queries, indexing, performance optimization và administration
 section: engineer
 kit: engineer

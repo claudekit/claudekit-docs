@@ -1,5 +1,5 @@
 ---
-title: Media Processing
+title: "ck:media-processing"
 description: Xử lý video, audio và images với FFmpeg, ImageMagick và RMBG cho encoding, conversion, effects, optimization và background removal
 section: engineer
 kit: engineer

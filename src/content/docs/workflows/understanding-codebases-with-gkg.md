@@ -2,7 +2,7 @@
 title: "Understanding Codebases with GitLab Knowledge Graph"
 description: "Documentation for Understanding Codebases with GitLab Knowledge Graph"
 section: workflows
-category: workflows
+category: engineer
 published: true
 lastUpdated: 2025-11-21
 ---

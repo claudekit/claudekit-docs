@@ -3,7 +3,7 @@ title: Tái Cấu Trúc Mã Nguồn
 description: "Tái cấu trúc mã nguồn an toàn với ClaudeKit - từ xác định nợ kỹ thuật đến triển khai cải tiến với kiểm thử và xác thực toàn diện."
 lang: vi
 section: workflows
-category: workflows
+category: engineer
 order: 5
 published: true
 ---
@@ -638,8 +638,8 @@ Cải thiện: +36 điểm khả năng bảo trì
 
 ### Các Lệnh Liên Quan
 - [/ck:cook](/docs/engineer/skills/cook) - Triển khai tái cấu trúc
-- [/ck:test](/docs/engineer/commands/core/test) - Xác minh các thay đổi
-- [/ck:docs:update](/docs/engineer/commands/docs-cmd/update) - Cập nhật tài liệu
+- [/ck:test](/docs/engineer/skills/test) - Xác minh các thay đổi
+- [/ck:docs:update](/docs/engineer/skills/docs) - Cập nhật tài liệu
 
 ### Các Agents Liên Quan
 - [Code Reviewer](/docs/engineer/agents/code-reviewer) - Phân tích chất lượng code

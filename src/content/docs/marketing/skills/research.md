@@ -1,5 +1,5 @@
 ---
-title: "Research"
+title: "ckm:research"
 description: "Systematic technical research and analysis with multi-source validation, cross-referencing, and comprehensive reporting."
 section: marketing
 category: skills

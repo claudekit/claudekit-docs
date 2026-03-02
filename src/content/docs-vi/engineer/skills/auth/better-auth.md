@@ -1,5 +1,5 @@
 ---
-title: better-auth
+title: "ck:better-auth"
 description: Tài liệu hướng dẫn sử dụng kỹ năng better-auth
 section: engineer
 kit: engineer

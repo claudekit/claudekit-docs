@@ -88,7 +88,7 @@ Create high-quality marketing content with author voice extraction:
 /ckm:write:publish /assets/copy/blog-posts/pricing-guide.md
 ```
 
-See [Write Command](/docs/marketing/commands/write) for details.
+See [Copywriting Skill](/docs/marketing/skills/copywriting) for details.
 
 ### Video Production
 
@@ -105,7 +105,7 @@ Professional video workflow with Gemini Veo 3.1 + Imagen 4:
 /ckm:video:storyboard /assets/videos/2024-12-30-api-demo/script.md
 ```
 
-See [Video Command](/docs/marketing/commands/video) for details.
+See [Media Processing Skill](/docs/marketing/skills/media-processing) for details.
 
 ### Presentations
 
@@ -122,7 +122,7 @@ Create beautiful pitch decks, campaign proposals, and presentations:
 /ckm:slide:create "Technical demo API features for enterprise"
 ```
 
-See [Slide Command](/docs/marketing/commands/slide) for details.
+See [Content Marketing Skill](/docs/marketing/skills/content-marketing) for details.
 
 ### Campaign Management
 
@@ -157,5 +157,5 @@ Track performance and get actionable insights:
 ## Next Steps
 
 - [Marketing Agents](/docs/marketing/agents) - Meet your AI marketing team
-- [Marketing Commands](/docs/marketing/commands) - All available commands
-- [Marketing Workflows](/docs/marketing/workflows) - Step-by-step guides
+- [Marketing Skills](/docs/marketing/skills) - All available skills
+- [Marketing Workflows](/docs/workflows) - Step-by-step guides

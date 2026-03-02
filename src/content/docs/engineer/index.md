@@ -78,5 +78,5 @@ Manage databases and deployment:
 ## Next Steps
 
 - [Engineer Agents](/docs/engineer/agents) - Meet your AI development team
-- [Engineer Commands](/docs/engineer/commands) - All available commands
+- [Engineer Skills](/docs/engineer/skills) - All available skills
 - [Engineer Skills](/docs/engineer/skills) - Technical capabilities

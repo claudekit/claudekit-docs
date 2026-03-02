@@ -1,5 +1,5 @@
 ---
-title: "Ads Management"
+title: "ckm:ads-management"
 description: "Create and optimize paid advertising campaigns on Google Ads, Meta Ads, LinkedIn Ads, and TikTok Ads with ROAS tracking."
 section: marketing
 category: skills

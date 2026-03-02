@@ -100,6 +100,6 @@ Sử dụng kit switcher trong header để khám phá:
 - [Code Review](/vi/docs/workflows) - Kiểm tra chất lượng code tự động
 
 **Marketing Workflows**:
-- [Tạo Nội Dung](/docs/marketing/workflows/content-workflow) - Blog posts, copy, social media
-- [Sản Xuất Video](/docs/marketing/workflows/dashboard-workflow) - Script đến storyboard đến video
-- [Quản Lý Chiến Dịch](/docs/marketing/workflows/campaign-workflow) - Chiến dịch đa kênh
+- [Tạo Nội Dung](/docs/workflows/content-workflow) - Blog posts, copy, social media
+- [Sản Xuất Video](/docs/workflows/dashboard-workflow) - Script đến storyboard đến video
+- [Quản Lý Chiến Dịch](/docs/workflows/campaign-workflow) - Chiến dịch đa kênh

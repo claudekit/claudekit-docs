@@ -1,5 +1,5 @@
 ---
-title: Mobile Development Skill
+title: "ck:mobile-development"
 description: Xây dựng mobile applications với React Native, Flutter, Swift/SwiftUI và Kotlin/Jetpack Compose
 section: engineer
 kit: engineer

@@ -1,5 +1,5 @@
 ---
-title: Planning Skill
+title: "ck:planning"
 description: Chuyển đổi complex requirements thành executable technical plans thông qua research, codebase analysis và solution design
 section: engineer
 kit: engineer

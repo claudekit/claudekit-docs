@@ -1,5 +1,5 @@
 ---
-title: "AI Artist"
+title: "ckm:ai-artist"
 description: "Prompt engineering skills for AI text and image generation: LLM prompts, image generation syntax, style keywords, and iterative refinement."
 section: marketing
 category: skills

@@ -1,5 +1,5 @@
 ---
-title: Kỹ năng shadcn/ui
+title: "ck:shadcn-ui"
 description: Tài liệu hướng dẫn sử dụng kỹ năng shadcn-ui
 section: engineer
 kit: engineer

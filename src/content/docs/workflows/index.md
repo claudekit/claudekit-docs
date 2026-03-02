@@ -2,6 +2,7 @@
 title: "Workflows"
 description: "Task-oriented guides for common development scenarios with ClaudeKit"
 section: workflows
+category: engineer
 order: 0
 published: true
 ---
@@ -123,7 +124,7 @@ New to ClaudeKit? Start with:
 
 ## Reference
 
-- [Commands Reference](/docs/engineer/commands) - All available commands
+- [Skills Reference](/docs/engineer/skills) - All available skills
 - [Agents Overview](/docs/engineer/agents) - Meet your AI team
 - [Skills Library](/docs/engineer/skills) - Built-in knowledge modules
 

@@ -257,8 +257,8 @@ The developer is proficient in:
 
 ## Related Commands
 
-- [`/dev`](/docs/marketing/commands) - Execute development task
-- [`/implement`](/docs/marketing/commands) - Implement feature
+- [`/dev`](/docs/marketing/skills) - Execute development task
+- [`/implement`](/docs/marketing/skills) - Implement feature
 
 ## Tips
 

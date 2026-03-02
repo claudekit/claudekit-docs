@@ -1,5 +1,5 @@
 ---
-title: "Brainstorm"
+title: "ck:brainstorm"
 description: "Solution brainstorming với trade-off analysis, architecture decisions và sự trung thực tàn nhẫn về tính khả thi"
 section: engineer
 kit: engineer

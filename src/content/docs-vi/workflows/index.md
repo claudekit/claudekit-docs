@@ -3,7 +3,7 @@ title: "Trường Hợp Sử Dụng"
 description: "Tìm hiểu cách sử dụng ClaudeKit cho các tình huống phát triển thực tế thông qua các ví dụ và quy trình làm việc cụ thể."
 lang: vi
 section: workflows
-category: workflows
+category: engineer
 order: 0
 published: true
 ---

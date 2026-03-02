@@ -249,8 +249,8 @@ SELECT * FROM pg_stat_activity;
 
 ## Các lệnh liên quan
 
-- [`/db`](/docs/marketing/commands) - Quản lý và tối ưu hóa cơ sở dữ liệu
-- [`/migrate`](/docs/marketing/commands) - Hỗ trợ di chuyển cơ sở dữ liệu
+- [`/db`](/docs/marketing/skills) - Quản lý và tối ưu hóa cơ sở dữ liệu
+- [`/migrate`](/docs/marketing/skills) - Hỗ trợ di chuyển cơ sở dữ liệu
 
 ## Mẹo
 

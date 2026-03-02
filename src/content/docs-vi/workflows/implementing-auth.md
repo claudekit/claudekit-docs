@@ -3,7 +3,7 @@ title: "Triển khai Xác thực"
 description: "Tài liệu hướng dẫn triển khai hệ thống xác thực bảo mật"
 lang: vi
 section: workflows
-category: workflows
+category: engineer
 order: 7
 published: true
 ---
@@ -627,7 +627,7 @@ Trước khi triển khai lên production:
 
 ### Các lệnh liên quan
 - [/ck:cook](/docs/engineer/skills/cook) - Triển khai tính năng
-- [/ck:test](/docs/engineer/commands/core/test) - Bộ kiểm thử
+- [/ck:test](/docs/engineer/skills/test) - Bộ kiểm thử
 - [/ck:fix --quick](/docs/engineer/skills/fix) - Sửa lỗi nhanh
 
 ### Hướng dẫn tích hợp

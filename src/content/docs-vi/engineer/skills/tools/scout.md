@@ -1,5 +1,5 @@
 ---
-title: "Scout"
+title: "ck:scout"
 description: "Khám phá codebase nhanh sử dụng agent song song để phát hiện file và thu thập ngữ cảnh"
 section: engineer
 kit: engineer

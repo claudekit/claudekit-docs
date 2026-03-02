@@ -1,5 +1,5 @@
 ---
-title: "Campaign Management"
+title: "ckm:campaign-management"
 description: "Comprehensive campaign planning, execution, and optimization with budget allocation, launch checklists, and performance tracking."
 section: marketing
 category: skills

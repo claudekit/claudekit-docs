@@ -1,5 +1,5 @@
 ---
-title: "AI Multimodal"
+title: "ckm:ai-multimodal"
 description: "Process and generate multimedia content with Google Gemini API: audio transcription, image analysis, video processing, Imagen 4, and Veo 3."
 section: marketing
 category: skills

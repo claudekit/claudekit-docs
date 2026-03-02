@@ -1,5 +1,5 @@
 ---
-title: "Social Media"
+title: "ckm:social-media"
 description: "Create platform-specific social content, thread templates, cross-posting strategies, and engagement optimization."
 section: marketing
 category: skills

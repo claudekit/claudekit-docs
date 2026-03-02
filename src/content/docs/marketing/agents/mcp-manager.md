@@ -206,8 +206,8 @@ Optimized execution:
 
 ## Related Commands
 
-- [`/mcp`](/docs/marketing/commands) - Execute MCP tools
-- [`/tools`](/docs/marketing/commands) - List available MCP tools
+- [`/mcp`](/docs/marketing/skills) - Execute MCP tools
+- [`/tools`](/docs/marketing/skills) - List available MCP tools
 
 ## Tips
 

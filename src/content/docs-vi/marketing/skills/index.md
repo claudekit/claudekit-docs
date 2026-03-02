@@ -133,9 +133,9 @@ Kỹ năng với API bên ngoài (SEO, Analytics) tôn trọng giới hạn tố
 ## Tài liệu liên quan
 
 - [Marketing Agents](/vi/docs/marketing/agents) - Agents sử dụng các kỹ năng này
-- [Marketing Commands](/vi/docs/marketing/commands) - Lệnh slash theo kỹ năng
-- [Marketing Workflows](/vi/docs/marketing/workflows) - Quy trình đầu cuối
-- [Marketing Dashboard](/docs/marketing/commands/dashboard) - Tích hợp giao diện web
+- [Marketing Skills](/vi/docs/marketing/skills) - Tất cả các kỹ năng
+- [Marketing Workflows](/vi/docs/workflows) - Quy trình đầu cuối
+- [Analytics Skill](/docs/marketing/skills/analytics) - Tích hợp giao diện web
 
 ## Xử lý sự cố
 

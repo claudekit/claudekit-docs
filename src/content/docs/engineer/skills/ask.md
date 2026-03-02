@@ -1,10 +1,10 @@
 ---
-title: "Ask"
+title: "ck:ask"
 description: "Answer technical and architectural questions about your codebase with focused research"
 section: engineer
 kit: engineer
 category: skills
-order: 50
+order: 10
 ---
 
 Answer technical and architectural questions about your codebase. This skill provides focused, researched answers rather than superficial responses.

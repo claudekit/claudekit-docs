@@ -137,9 +137,9 @@ Skills with external APIs (SEO, Analytics) respect rate limits. Check reference 
 ## Related Docs
 
 - [Marketing Agents](/docs/marketing/agents) - Agents that use these skills
-- [Marketing Commands](/docs/marketing/commands) - Slash commands by skill
-- [Marketing Workflows](/docs/marketing/workflows) - End-to-end processes
-- [Marketing Dashboard](/docs/marketing/commands/dashboard) - Web UI integration
+- [Marketing Skills](/docs/marketing/skills) - All available skills
+- [Marketing Workflows](/docs/workflows) - End-to-end processes
+- [Analytics Skill](/docs/marketing/skills/analytics) - Web UI integration
 
 ## Troubleshooting
 

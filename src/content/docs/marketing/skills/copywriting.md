@@ -1,5 +1,5 @@
 ---
-title: "Copywriting"
+title: "ckm:copywriting"
 description: "Conversion-focused copy with proven formulas (AIDA, PAS, BAB), headline templates, CTA optimization, and custom writing style extraction."
 section: marketing
 category: skills

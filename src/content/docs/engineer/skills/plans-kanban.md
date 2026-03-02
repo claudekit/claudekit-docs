@@ -1,10 +1,10 @@
 ---
-title: Plans Kanban Dashboard
+title: "ck:plans-kanban"
 description: Visual dashboard server for viewing plan directories with progress tracking, timeline visualization, phase status, and activity heatmap
 section: engineer
 kit: engineer
 category: skills
-order: 3
+order: 50
 published: true
 ---
 
@@ -159,7 +159,7 @@ plans/
 
 ```yaml
 ---
-title: Feature A Implementation
+title: "ck:plans-kanban"
 status: in-progress
 priority: high
 issue: https://github.com/org/repo/issues/123

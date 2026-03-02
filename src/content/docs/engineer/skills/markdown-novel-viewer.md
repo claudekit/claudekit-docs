@@ -1,10 +1,10 @@
 ---
-title: Preview & Visual Generation
+title: "ck:markdown-novel-viewer"
 description: View markdown files with book-like reading experience, or generate visual explanations with ASCII diagrams, Mermaid charts, and presentation slides
 section: engineer
 kit: engineer
 category: skills
-order: 4
+order: 50
 published: true
 ---
 

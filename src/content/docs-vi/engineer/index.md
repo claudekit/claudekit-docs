@@ -79,5 +79,5 @@ Quản lý cơ sở dữ liệu và triển khai:
 ## Next Steps
 
 - [Engineer Agents](/vi/docs/engineer/agents) - Gặp gỡ đội ngũ phát triển AI của bạn
-- [Engineer Commands](/vi/docs/engineer/commands) - Tất cả các lệnh có sẵn
+- [Engineer Skills](/vi/docs/engineer/skills) - Tất cả các kỹ năng có sẵn
 - [Engineer Skills](/vi/docs/engineer/skills) - Các khả năng kỹ thuật

@@ -1,5 +1,5 @@
 ---
-title: MCP Management
+title: "ck:mcp-management"
 description: Khám phá, phân tích và thực thi tools từ các Model Context Protocol servers đã cấu hình với intelligent tool selection và multi-server orchestration
 section: engineer
 kit: engineer

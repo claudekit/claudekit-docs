@@ -1,5 +1,5 @@
 ---
-title: Web Frameworks Skill
+title: "ck:web-frameworks"
 description: Xây dựng ứng dụng web full-stack hiện đại với Next.js, Turborepo và RemixIcon
 section: engineer
 kit: engineer

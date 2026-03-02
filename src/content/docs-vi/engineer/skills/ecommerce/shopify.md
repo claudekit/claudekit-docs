@@ -1,5 +1,5 @@
 ---
-title: shopify
+title: "ck:shopify"
 description: Tài liệu hướng dẫn sử dụng kỹ năng shopify
 section: engineer
 kit: engineer

@@ -3,7 +3,7 @@ title: Thêm Tính Năng Mới
 description: "Tài liệu hướng dẫn Thêm Tính Năng Mới"
 lang: vi
 section: workflows
-category: workflows
+category: engineer
 order: 3
 published: true
 ---
@@ -640,14 +640,14 @@ git checkout -b feature/password-reset
 - [Xây dựng API](/vi/docs/workflows) - Tạo các REST API
 
 ### Các lệnh liên quan
-- [/ck:plan](/docs/engineer/commands/plan) - Tạo kế hoạch triển khai
+- [/ck:plan](/docs/engineer/skills/plan) - Tạo kế hoạch triển khai
 - [/ck:cook](/docs/engineer/skills/cook) - Triển khai tính năng
-- [/ck:test](/docs/engineer/commands/core/test) - Chạy bộ kiểm thử
-- [/ck:docs:update](/vi/docs/engineer/commands/docs-cmd/update) - Cập nhật tài liệu
+- [/ck:test](/docs/engineer/skills/test) - Chạy bộ kiểm thử
+- [/ck:docs:update](/docs/engineer/skills/docs) - Cập nhật tài liệu
 - [/ck:git cm](/docs/engineer/skills/git) - Commit thay đổi
 
 ### Đọc thêm
-- [Tham khảo lệnh](/vi/docs/engineer/commands) - Tất cả lệnh có sẵn
+- [Tham khảo skills](/vi/docs/engineer/skills) - Tất cả kỹ năng có sẵn
 - [Hướng dẫn về Agent](/vi/docs/engineer/agents) - Hiểu về các agent
 - [Workflows](/vi/docs/engineer/configuration/workflows) - Các mẫu phát triển
 

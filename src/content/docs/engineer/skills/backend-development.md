@@ -1,10 +1,10 @@
 ---
-title: Backend Development Skill
+title: "ck:backend-development"
 description: Build production-ready backend systems with modern technologies, security best practices, and scalable patterns
 section: engineer
 kit: engineer
 category: skills/backend
-order: 3
+order: 50
 published: true
 ---
 # Backend Development Skill

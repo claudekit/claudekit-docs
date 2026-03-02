@@ -1,10 +1,10 @@
 ---
-title: "Test"
+title: "ck:test"
 description: "Run unit, integration, e2e, and UI tests with coverage analysis, build verification, and QA reports"
 section: engineer
 kit: engineer
 category: skills
-order: 40
+order: 12
 published: true
 ---
 

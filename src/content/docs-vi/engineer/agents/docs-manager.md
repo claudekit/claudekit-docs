@@ -144,7 +144,7 @@ Tất cả tài liệu sử dụng định dạng Markdown nhất quán với:
 - [Agent Project Manager](/vi/docs/engineer/agents/project-manager) - Điều phối tổng thể dự án
 - [Tiêu chuẩn mã nguồn](/docs/engineer/configuration/claude-md) - Các quy ước mã nguồn
 - [Kiến trúc hệ thống](/docs/engineer/configuration/claude-md) - Thiết kế kỹ thuật
-- [Các lệnh](/vi/docs/engineer/commands/) - Các lệnh liên quan đến tài liệu
+- [Các kỹ năng](/vi/docs/engineer/skills) - Các kỹ năng liên quan đến tài liệu
 
 ---
 

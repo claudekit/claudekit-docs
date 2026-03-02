@@ -1,5 +1,5 @@
 ---
-title: "Content Hub"
+title: "ckm:content-hub"
 description: "Browser-based asset gallery for managing marketing assets with brand context, search/filters, and R2 sync."
 section: marketing
 category: skills

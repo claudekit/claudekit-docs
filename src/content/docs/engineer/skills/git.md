@@ -1,10 +1,10 @@
 ---
-title: "Git"
+title: "ck:git"
 description: "Git operations with conventional commits, auto-split logic, and secret detection"
 section: engineer
 kit: engineer
 category: skills
-order: 28
+order: 6
 ---
 
 Execute git workflows with conventional commit format, intelligent commit splitting, and security scanning for secrets.

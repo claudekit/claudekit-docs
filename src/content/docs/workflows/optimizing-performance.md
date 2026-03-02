@@ -3,11 +3,11 @@ title: Optimizing Performance
 description: "Documentation for Optimizing Performance
 description:
 section: workflows
-category: workflows
+category: engineer
 order: 9
 published: true"
 section: workflows
-category: workflows
+category: engineer
 order: 9
 published: true
 ---
@@ -791,10 +791,10 @@ Metrics:
 - [Building a REST API](/docs/workflows/building-api) - API development
 
 ### Related Commands
-- [/ck:debug](/docs/engineer/commands/core/debug) - Performance profiling
+- [/ck:debug](/docs/engineer/skills/debug) - Performance profiling
 - [/ck:cook](/docs/engineer/skills/cook) - Implement optimizations
 - [/ck:fix](/docs/engineer/skills/fix) - Complex fixes
-- [/ck:test](/docs/engineer/commands/core/test) - Performance testing
+- [/ck:test](/docs/engineer/skills/test) - Performance testing
 
 ### Further Reading
 - [Web.dev Performance](https://web.dev/performance/)

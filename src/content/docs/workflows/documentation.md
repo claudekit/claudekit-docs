@@ -2,6 +2,7 @@
 title: "Documentation Workflow"
 description: "Keep documentation in sync with code changes using ClaudeKit"
 section: workflows
+category: engineer
 order: 3
 published: true
 ---

@@ -3,11 +3,11 @@ title: Integrating Payment Processing
 description: "Documentation for Integrating Payment Processing
 description:
 section: workflows
-category: workflows
+category: engineer
 order: 8
 published: true"
 section: workflows
-category: workflows
+category: engineer
 order: 8
 published: true
 ---
@@ -729,7 +729,7 @@ Before production:
 - [/integrate:polar](/docs/engineer/skills) - Polar integration
 - [/integrate:sepay](/docs/engineer/skills) - SePay integration
 - [/ck:cook](/docs/engineer/skills/cook) - Implement features from plans
-- [/ck:test](/docs/engineer/commands/core/test) - Test suite
+- [/ck:test](/docs/engineer/skills/test) - Test suite
 
 ### Further Reading
 - [Stripe Documentation](https://stripe.com/docs)

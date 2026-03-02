@@ -1,5 +1,5 @@
 ---
-title: "React Best Practices"
+title: "ck:react-best-practices"
 description: "React và Next.js performance optimization guidelines từ Vercel Engineering"
 section: engineer
 kit: engineer

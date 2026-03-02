@@ -1,5 +1,5 @@
 ---
-title: UI Styling Skill
+title: "ck:ui-styling"
 description: Tạo giao diện người dùng đẹp, dễ tiếp cận với shadcn/ui components, Tailwind CSS và thiết kế hình ảnh dựa trên canvas
 section: engineer
 kit: engineer

@@ -1,5 +1,5 @@
 ---
-title: "Debug"
+title: "ck:debug"
 description: "Systematic debugging với root cause analysis, defense-in-depth validation và verification protocols"
 section: engineer
 kit: engineer

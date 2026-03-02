@@ -222,8 +222,8 @@ Docs Manager tích hợp một cách liền mạch:
 
 ## Các lệnh liên quan
 
-- [`/ck:docs`](/docs/marketing/commands) - Cập nhật hoặc tạo tài liệu mới
-- [`/audit`](/vi/docs/marketing/commands) - Chạy kiểm tra chất lượng tài liệu
+- [`/ck:docs`](/docs/marketing/skills) - Cập nhật hoặc tạo tài liệu mới
+- [`/audit`](/vi/docs/marketing/skills) - Chạy kiểm tra chất lượng tài liệu
 
 ## Mẹo
 

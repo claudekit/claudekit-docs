@@ -21,7 +21,7 @@ Nhận trợ giúp với ClaudeKit thông qua tài nguyên cộng đồng, tài 
 ### Đang tìm hướng dẫn?
 - [Bắt Đầu](/vi/docs/getting-started) - Học các kiến thức cơ bản
 - [Workflows](/vi/docs/workflows) - Hướng dẫn từng bước
-- [Commands Reference](/vi/docs/engineer/commands) - Tất cả các lệnh có sẵn
+- [Skills Reference](/vi/docs/engineer/skills) - Tất cả các kỹ năng có sẵn
 
 ## Community Support
 
@@ -67,7 +67,7 @@ Nhận trợ giúp với ClaudeKit thông qua tài nguyên cộng đồng, tài 
 
 ### Documentation
 - [Bắt Đầu](/vi/docs/getting-started) - Hướng dẫn người dùng mới
-- [Commands Reference](/vi/docs/engineer/commands) - Tài liệu lệnh đầy đủ
+- [Skills Reference](/vi/docs/engineer/skills) - Tài liệu kỹ năng đầy đủ
 - [Agents Overview](/vi/docs/engineer/agents) - Gặp đội ngũ AI của bạn
 - [Skills Library](/vi/docs/engineer/skills) - Các module kiến thức tích hợp
 - [Khắc Phục Sự Cố](/vi/docs/support/troubleshooting) - Các vấn đề và giải pháp phổ biến

@@ -1,5 +1,5 @@
 ---
-title: "Coding Level"
+title: "ck:coding-level"
 description: "Set your coding experience level for tailored explanations and output format"
 section: engineer
 kit: engineer

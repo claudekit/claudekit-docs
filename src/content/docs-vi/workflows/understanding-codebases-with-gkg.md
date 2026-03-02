@@ -3,7 +3,7 @@ title: "Hiểu Codebase với GitLab Knowledge Graph"
 description: "Documentation for Hiểu Codebase với GitLab Knowledge Graph"
 lang: vi
 section: workflows
-category: workflows
+category: engineer
 published: true
 lastUpdated: 2025-11-21
 ---

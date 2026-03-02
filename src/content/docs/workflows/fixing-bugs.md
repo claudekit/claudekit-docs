@@ -2,7 +2,7 @@
 title: Fixing Bugs
 description: "Systematically investigate, fix, and verify bug fixes using ClaudeKit's debugging workflow - from log analysis to production deployment."
 section: workflows
-category: workflows
+category: engineer
 order: 2
 published: true
 ---
@@ -665,7 +665,7 @@ After fixing bugs, improve processes:
 - [/ck:fix](/docs/engineer/skills/fix) - Log analysis
 - [/ck:fix](/docs/engineer/skills/fix) - UI bug fixes
 - [/ck:fix](/docs/engineer/skills/fix) - CI/CD fixes
-- [/ck:test](/docs/engineer/commands/core/test) - Test suite
+- [/ck:test](/docs/engineer/skills/test) - Test suite
 
 ### Further Reading
 - [Debugger Agent](/docs/engineer/agents/debugger) - Debugging capabilities

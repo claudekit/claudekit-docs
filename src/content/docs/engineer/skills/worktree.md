@@ -1,5 +1,5 @@
 ---
-title: "Worktree"
+title: "ck:worktree"
 description: "Create isolated git worktrees for parallel development without branch switching"
 section: engineer
 kit: engineer

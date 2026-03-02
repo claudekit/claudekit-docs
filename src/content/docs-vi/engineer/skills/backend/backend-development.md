@@ -1,5 +1,5 @@
 ---
-title: Backend Development Skill
+title: "ck:backend-development"
 description: Xây dựng hệ thống backend production-ready với công nghệ hiện đại, security best practices và scalable patterns
 section: engineer
 kit: engineer

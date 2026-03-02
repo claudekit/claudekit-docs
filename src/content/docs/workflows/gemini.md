@@ -3,11 +3,11 @@ title: Gemini, wait what?
 description: "Documentation for Gemini, wait what?
 description:
 section: workflows
-category: workflows
+category: engineer
 order: 3
 published: true"
 section: workflows
-category: workflows
+category: engineer
 order: 3
 published: true
 ---

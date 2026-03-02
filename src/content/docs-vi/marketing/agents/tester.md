@@ -265,9 +265,9 @@ Tester phù hợp liền mạch:
 
 ## Related Commands
 
-- [`/ckm:test`](/docs/marketing/commands/test) - Run tests and generate report
-- [`/coverage`](/docs/marketing/commands) - Check test coverage
-- [`/build`](/docs/marketing/commands) - Verify build succeeds
+- [`/ckm:test`](/docs/marketing/skills) - Run tests and generate report
+- [`/coverage`](/docs/marketing/skills) - Check test coverage
+- [`/build`](/docs/marketing/skills) - Verify build succeeds
 
 ## Tips
 

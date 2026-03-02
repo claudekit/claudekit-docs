@@ -1,10 +1,10 @@
 ---
-title: "Journal"
+title: "ck:journal"
 description: "Write development journal entries to document technical decisions, challenges, and progress"
 section: engineer
 kit: engineer
 category: skills
-order: 54
+order: 14
 ---
 
 Write development journal entries to document technical decisions, challenges, and progress. Useful for maintaining a record of your development journey.

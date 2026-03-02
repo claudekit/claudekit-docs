@@ -1,5 +1,5 @@
 ---
-title: Problem-Solving Skill
+title: "ck:problem-solving"
 description: Systematic techniques cho complexity spirals, innovation blocks, recurring patterns và scale uncertainty
 section: engineer
 kit: engineer

@@ -1,5 +1,5 @@
 ---
-title: postgresql-psql
+title: "ck:postgresql-psql"
 description: Tài liệu hướng dẫn sử dụng kỹ năng postgresql-psql
 section: engineer
 kit: engineer

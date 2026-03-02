@@ -1,10 +1,10 @@
 ---
-title: "Web Design Guidelines"
+title: "ck:web-design-guidelines"
 description: "Review UI code for Web Interface Guidelines compliance and accessibility standards"
 section: engineer
 kit: engineer
 category: skills
-order: 35
+order: 50
 ---
 
 Review files for compliance with Web Interface Guidelines—checking accessibility, UX best practices, and design standards.

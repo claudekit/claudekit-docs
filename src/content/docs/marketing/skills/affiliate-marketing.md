@@ -1,5 +1,5 @@
 ---
-title: "Affiliate Marketing"
+title: "ckm:affiliate-marketing"
 description: "Build high-converting SaaS affiliate programs with commission structures, platform selection, KOL partnerships, and fraud prevention."
 section: marketing
 category: skills

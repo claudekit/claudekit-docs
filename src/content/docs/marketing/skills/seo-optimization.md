@@ -1,5 +1,5 @@
 ---
-title: "SEO Optimization"
+title: "ckm:seo-optimization"
 description: "Technical SEO audits, keyword research with ReviewWeb API, Google Search Console integration, and programmatic SEO for search visibility."
 section: marketing
 category: skills

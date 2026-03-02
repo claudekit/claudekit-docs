@@ -1,10 +1,10 @@
 ---
-title: "CK Help"
+title: "ck:help"
 description: "ClaudeKit usage guide and skill discovery — find the right skill for any task"
 section: engineer
 kit: engineer
 category: skills
-order: 51
+order: 1
 ---
 
 ClaudeKit usage guide and skill discovery. Helps you find the right skill for any task and understand how to use ClaudeKit effectively.

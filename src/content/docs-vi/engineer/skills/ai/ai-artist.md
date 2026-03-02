@@ -1,5 +1,5 @@
 ---
-title: AI Artist - Prompt Engineering
+title: "ck:ai-artist"
 description: Viết và tối ưu hóa prompts cho kết quả AI-generated qua các mô hình text và image cho LLMs, image generators và video generators
 section: engineer
 kit: engineer

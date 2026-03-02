@@ -19,7 +19,7 @@ Get help with ClaudeKit through our community resources, documentation, and dire
 ### Looking for how-to guides?
 - [Getting Started](/docs/getting-started) - Learn the basics
 - [Workflows](/docs/workflows) - Step-by-step guides
-- [Commands Reference](/docs/engineer/commands) - All available commands
+- [Skills Reference](/docs/engineer/skills) - All available skills
 
 ## Community Support
 
@@ -65,7 +65,7 @@ Get help with ClaudeKit through our community resources, documentation, and dire
 
 ### Documentation
 - [Getting Started](/docs/getting-started) - New user guides
-- [Commands Reference](/docs/engineer/commands) - Complete command documentation
+- [Skills Reference](/docs/engineer/skills) - Complete skills documentation
 - [Agents Overview](/docs/engineer/agents) - Meet your AI team
 - [Skills Library](/docs/engineer/skills) - Built-in knowledge modules
 - [Troubleshooting](/docs/support/troubleshooting) - Common issues and solutions

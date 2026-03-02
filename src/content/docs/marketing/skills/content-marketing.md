@@ -1,5 +1,5 @@
 ---
-title: "Content Marketing"
+title: "ckm:content-marketing"
 description: "Strategic content planning, editorial workflow, and content optimization framework to build sustainable content programs."
 section: marketing
 category: skills

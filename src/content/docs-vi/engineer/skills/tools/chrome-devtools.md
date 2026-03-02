@@ -1,5 +1,5 @@
 ---
-title: Chrome DevTools
+title: "ck:chrome-devtools"
 description: Tự động hóa browsers, chụp screenshots, phân tích performance và debug với Puppeteer CLI scripts cho browser automation và testing
 section: engineer
 kit: engineer

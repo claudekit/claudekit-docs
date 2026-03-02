@@ -1,5 +1,5 @@
 ---
-title: Template Skill
+title: "ck:template-skill"
 description: Template tham khảo để tạo ClaudeKit Engineer skills mới với cấu trúc, metadata và integration patterns phù hợp
 section: engineer
 kit: engineer

@@ -1,10 +1,10 @@
 ---
-title: "Find Skills"
+title: "ck:find-skills"
 description: "Discover and install agent skills from the open skills ecosystem"
 section: engineer
 kit: engineer
 category: skills
-order: 26
+order: 50
 ---
 
 Your gateway to the open agent skills ecosystem. Search, discover, and install specialized capabilities for any domain.

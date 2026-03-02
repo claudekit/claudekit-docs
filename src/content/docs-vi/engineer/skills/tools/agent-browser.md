@@ -1,5 +1,5 @@
 ---
-title: "Agent Browser"
+title: "ck:agent-browser"
 description: "Tự động hóa trình duyệt được tối ưu cho AI với snapshots hiệu quả về context để kiểm thử tự động và hỗ trợ cloud browser"
 section: engineer
 kit: engineer

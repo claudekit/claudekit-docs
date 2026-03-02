@@ -1,5 +1,5 @@
 ---
-title: Kỹ năng gỡ lỗi hệ thống (systematic-debugging)
+title: "ck:systematic-debugging"
 description: Tài liệu hướng dẫn sử dụng kỹ năng systematic-debugging
 section: engineer
 kit: engineer

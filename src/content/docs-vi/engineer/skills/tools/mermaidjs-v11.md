@@ -1,5 +1,5 @@
 ---
-title: "Mermaid.js v11"
+title: "ck:mermaidjs-v11"
 description: "Tạo diagrams với Mermaid.js v11 cho flowcharts, sequence diagrams, class diagrams và nhiều hơn nữa"
 section: engineer
 kit: engineer

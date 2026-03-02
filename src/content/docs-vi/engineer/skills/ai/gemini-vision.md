@@ -1,5 +1,5 @@
 ---
-title: gemini-vision
+title: "ck:gemini-vision"
 description: Tài liệu hướng dẫn sử dụng kỹ năng gemini-vision
 section: engineer
 kit: engineer

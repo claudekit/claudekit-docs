@@ -98,6 +98,6 @@ Use the kit switcher in the header to explore:
 - [Code Review](/docs/workflows) - Automated code quality checks
 
 **Marketing Workflows**:
-- [Content Creation](/docs/marketing/workflows/content-workflow) - Blog posts, copy, social media
-- [Video Production](/docs/marketing/workflows/dashboard-workflow) - Script to storyboard to video
-- [Campaign Management](/docs/marketing/workflows/campaign-workflow) - Multi-channel campaigns
+- [Content Creation](/docs/workflows/content-workflow) - Blog posts, copy, social media
+- [Video Production](/docs/workflows/dashboard-workflow) - Script to storyboard to video
+- [Campaign Management](/docs/workflows/campaign-workflow) - Multi-channel campaigns

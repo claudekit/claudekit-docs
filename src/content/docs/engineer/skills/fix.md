@@ -1,10 +1,10 @@
 ---
-title: "Fix"
+title: "ck:fix"
 description: "Unified bug fixing with intelligent complexity routing and autonomous or human-in-the-loop modes"
 section: engineer
 kit: engineer
 category: skills
-order: 27
+order: 5
 ---
 
 Complete bug fixing workflow with intelligent routing based on issue complexity. Automatically activates before fixing ANY bug, error, test failure, or code problem.

@@ -1,5 +1,5 @@
 ---
-title: "Kanban"
+title: "ck:kanban"
 description: "AI agent orchestration board for task visualization and team coordination"
 section: engineer
 kit: engineer

@@ -1,10 +1,10 @@
 ---
-title: "Docs"
+title: "ck:docs"
 description: "Manage project documentation — initialize, update, and summarize docs with AI assistance"
 section: engineer
 kit: engineer
 category: skills
-order: 53
+order: 11
 ---
 
 Manage project documentation with AI-powered analysis. Initialize docs for new projects, update after changes, or generate summaries.

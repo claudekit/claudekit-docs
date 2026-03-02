@@ -1,10 +1,10 @@
 ---
-title: "Bootstrap"
+title: "ck:bootstrap"
 description: "End-to-end project scaffolding from idea to running code with research, tech stack selection, and implementation"
 section: engineer
 kit: engineer
 category: skills
-order: 39
+order: 50
 published: true
 ---
 

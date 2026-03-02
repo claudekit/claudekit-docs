@@ -255,8 +255,8 @@ All reports follow this structure:
 
 ## Related Commands
 
-- [`/analytics`](/docs/marketing/commands) - Generate analytics report
-- [`/metrics`](/docs/marketing/commands) - Quick metric snapshot
+- [`/analytics`](/docs/marketing/skills/analytics) - Generate analytics report
+- [`/metrics`](/docs/marketing/skills/analytics) - Quick metric snapshot
 
 ## Tips
 

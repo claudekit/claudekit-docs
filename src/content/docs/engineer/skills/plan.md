@@ -1,10 +1,10 @@
 ---
-title: "Planning"
+title: "ck:plan"
 description: "Create detailed technical implementation plans with research, architecture design, and comprehensive phase documentation"
 section: engineer
 kit: engineer
 category: skills
-order: 38
+order: 3
 published: true
 ---
 

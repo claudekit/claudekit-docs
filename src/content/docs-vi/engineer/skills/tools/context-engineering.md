@@ -1,5 +1,5 @@
 ---
-title: "Context Engineering"
+title: "ck:context-engineering"
 description: "Monitor context usage limits, tối ưu hóa token consumption và thiết kế efficient agent architectures"
 section: engineer
 kit: engineer

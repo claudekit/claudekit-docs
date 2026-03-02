@@ -302,7 +302,7 @@ A: Có. Chỉnh sửa `.claude/agents/*.md` để điều chỉnh hành vi. Xem 
 **Khái Niệm Cốt Lõi**:
 - [Kiến Trúc](/docs/engineer/configuration/claude-md) - Cách ClaudeKit hoạt động
 - [Tổng Quan Agents](/vi/docs/engineer/agents/) - Gặp gỡ đội ngũ AI của bạn
-- [Hướng Dẫn Commands](/vi/docs/engineer/commands/) - Toàn bộ hơn 30 lệnh
+- [Hướng Dẫn Skills](/vi/docs/engineer/skills) - Toàn bộ hơn 30 kỹ năng
 
 **Sử Dụng Thực Tế**:
 - [Bắt Đầu Dự Án Mới](/docs/workflows/new-project)

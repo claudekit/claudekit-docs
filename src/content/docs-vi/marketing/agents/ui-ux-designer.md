@@ -256,9 +256,9 @@ Nhà thiết kế theo dõi:
 
 ## Related Commands
 
-- [`/ckm:design`](/docs/marketing/commands/design) - Create or review design
-- [`/mockup`](/docs/marketing/commands) - Generate mockup
-- [`/audit`](/docs/marketing/commands) - Design system audit
+- [`/ckm:design`](/docs/marketing/skills) - Create or review design
+- [`/mockup`](/docs/marketing/skills) - Generate mockup
+- [`/audit`](/docs/marketing/skills) - Design system audit
 
 ## Tips
 

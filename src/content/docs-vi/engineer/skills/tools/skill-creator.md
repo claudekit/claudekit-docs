@@ -1,5 +1,5 @@
 ---
-title: Kỹ năng tạo kỹ năng (skill-creator)
+title: "ck:skill-creator"
 description: Tài liệu hướng dẫn sử dụng kỹ năng skill-creator
 section: engineer
 kit: engineer

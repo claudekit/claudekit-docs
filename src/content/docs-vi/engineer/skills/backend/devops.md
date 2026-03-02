@@ -1,5 +1,5 @@
 ---
-title: DevOps Skill
+title: "ck:devops"
 description: Deploy và quản lý cloud infrastructure trên Cloudflare, Docker và Google Cloud Platform
 section: engineer
 kit: engineer

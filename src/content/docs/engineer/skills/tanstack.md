@@ -1,5 +1,5 @@
 ---
-title: "TanStack"
+title: "ck:tanstack"
 description: "Build full-stack React applications with TanStack Start, TanStack Form, and TanStack AI"
 section: engineer
 kit: engineer

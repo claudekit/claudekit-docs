@@ -1,10 +1,10 @@
 ---
-title: Repomix Skill
+title: "ck:repomix"
 description: Package repositories into AI-friendly files with customizable patterns, token counting, and security checks
 section: engineer
 kit: engineer
 category: skills/tools
-order: 13
+order: 50
 published: true
 ---# Repomix Skill
 

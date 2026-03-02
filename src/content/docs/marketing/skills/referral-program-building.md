@@ -1,5 +1,5 @@
 ---
-title: "Referral Program Building"
+title: "ckm:referral-program-building"
 description: "Build viral referral programs for SaaS with dual rewards, platform integrations, fraud prevention, and attribution tracking."
 section: marketing
 category: skills

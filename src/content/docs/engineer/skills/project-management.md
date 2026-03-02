@@ -1,10 +1,10 @@
 ---
-title: "Project Management"
+title: "ck:project-management"
 description: "Track progress, manage tasks, coordinate documentation updates, and bridge sessions with persistent plan files"
 section: engineer
 kit: engineer
 category: skills
-order: 41
+order: 50
 published: true
 ---
 
@@ -72,7 +72,7 @@ Phase files support structured metadata for tracking:
 
 ```yaml
 ---
-title: Feature name
+title: "ck:project-management"
 status: in-progress   # pending | in-progress | completed
 priority: P1
 effort: medium

@@ -1,5 +1,5 @@
 ---
-title: Phát Triển Frontend
+title: "ck:frontend-development"
 description: Các mẫu phát triển React và TypeScript hiện đại với Suspense, lazy loading, TanStack Query và MUI v7 để xây dựng ứng dụng hiệu năng cao
 section: engineer
 kit: engineer

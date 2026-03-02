@@ -1,5 +1,5 @@
 ---
-title: UI/UX Pro Max Skill
+title: "ck:ui-ux-pro-max"
 description: Trí tuệ thiết kế UI/UX với cơ sở dữ liệu tìm kiếm được gồm 50 styles, 21 palettes, 50 font pairings, 20 charts qua 8 stacks
 section: engineer
 kit: engineer

@@ -1,5 +1,5 @@
 ---
-title: Plans Kanban Dashboard
+title: "ck:plans-kanban"
 description: Visual dashboard server để xem plan directories với progress tracking, timeline visualization, phase status và activity heatmap
 section: engineer
 kit: engineer

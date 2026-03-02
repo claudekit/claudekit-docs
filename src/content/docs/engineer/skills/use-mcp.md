@@ -1,5 +1,5 @@
 ---
-title: "Use MCP"
+title: "ck:use-mcp"
 description: "Utilize tools from Model Context Protocol (MCP) servers configured in your project"
 section: engineer
 kit: engineer

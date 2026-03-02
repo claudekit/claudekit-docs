@@ -499,7 +499,7 @@ ck --version
 ## Tài Nguyên
 
 - [Tài liệu đầy đủ](https://docs.claudekit.cc)
-- [Tất cả các lệnh](/vi/docs/engineer/commands/)
+- [Tất cả các kỹ năng](/vi/docs/engineer/skills)
 - [AI Agents](/vi/docs/engineer/agents/)
 - [Quy trình làm việc (Workflows)](/vi/docs/engineer/configuration/workflows)
 - [Khắc phục sự cố](/vi/docs/support/troubleshooting/)

@@ -2,7 +2,7 @@
 title: Building a REST API
 description: "Documentation for Building a REST API"
 section: workflows
-category: workflows
+category: engineer
 order: 6
 published: true
 ---
@@ -763,9 +763,9 @@ npx prisma db pull
 - [Optimizing Performance](/docs/workflows/optimizing-performance) - Speed up API
 
 ### Related Commands
-- [/ck:bootstrap](/docs/engineer/commands/core/bootstrap) - Initialize projects
+- [/ck:bootstrap](/docs/engineer/skills/bootstrap) - Initialize projects
 - [/ck:cook](/docs/engineer/skills/cook) - Implement features
-- [/ck:test](/docs/engineer/commands/core/test) - Test suite
+- [/ck:test](/docs/engineer/skills/test) - Test suite
 
 ### Further Reading
 - [API Best Practices](https://restfulapi.net/)

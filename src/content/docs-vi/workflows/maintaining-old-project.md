@@ -3,7 +3,7 @@ title: Bảo Trì Dự Án Cũ
 description: "Tìm hiểu cách tích hợp ClaudeKit vào một dự án hiện có, hiểu mã nguồn cũ (legacy code) và cải thiện nó một cách hệ thống."
 lang: vi
 section: workflows
-category: workflows
+category: engineer
 order: 2
 published: true
 ---

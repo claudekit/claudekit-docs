@@ -1,5 +1,5 @@
 ---
-title: Kỹ năng imagemagick
+title: "ck:imagemagick"
 description: Tài liệu hướng dẫn sử dụng kỹ năng imagemagick
 section: engineer
 kit: engineer

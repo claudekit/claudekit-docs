@@ -1,5 +1,5 @@
 ---
-title: "Cook"
+title: "ck:cook"
 description: "Triển khai tính năng từ đầu đến cuối với phát hiện quy trình tự động và định tuyến thông minh"
 section: engineer
 kit: engineer

@@ -1,5 +1,5 @@
 ---
-title: "Web Design Guidelines"
+title: "ck:web-design-guidelines"
 description: "Review UI code để tuân thủ Web Interface Guidelines và accessibility standards"
 section: engineer
 kit: engineer

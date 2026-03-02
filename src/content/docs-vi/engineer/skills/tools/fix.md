@@ -1,5 +1,5 @@
 ---
-title: "Fix"
+title: "ck:fix"
 description: "Sửa lỗi thống nhất với định tuyến độ phức tạp thông minh và chế độ tự động hoặc có sự tham gia của người dùng"
 section: engineer
 kit: engineer

@@ -3,11 +3,11 @@ title: Refactoring Code
 description: "Documentation for Refactoring Code
 description:
 section: workflows
-category: workflows
+category: engineer
 order: 5
 published: true"
 section: workflows
-category: workflows
+category: engineer
 order: 5
 published: true
 ---
@@ -641,8 +641,8 @@ Improvement: +36 points maintainability
 
 ### Related Commands
 - [/ck:cook](/docs/engineer/skills/cook) - Implement refactoring
-- [/ck:test](/docs/engineer/commands/core/test) - Verify changes
-- [/ck:docs:update](/docs/engineer/commands/docs-cmd/update) - Update docs
+- [/ck:test](/docs/engineer/skills/test) - Verify changes
+- [/ck:docs:update](/docs/engineer/skills/docs) - Update docs
 
 ### Related Agents
 - [Code Reviewer](/docs/engineer/agents/code-reviewer) - Code quality analysis

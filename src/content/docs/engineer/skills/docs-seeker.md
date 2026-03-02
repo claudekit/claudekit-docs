@@ -1,10 +1,10 @@
 ---
-title: Docs Seeker
+title: "ck:docs-seeker"
 description: Script-driven documentation discovery via llms.txt sources with automated query detection and parallel agent distribution
 section: engineer
 kit: engineer
 category: skills/tools
-order: 12
+order: 50
 published: true
 ---
 # Docs Seeker

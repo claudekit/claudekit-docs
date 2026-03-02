@@ -1,5 +1,5 @@
 ---
-title: AI Multimodal
+title: "ck:ai-multimodal"
 description: Xử lý audio, images, videos và documents sử dụng Google Gemini API với khả năng vision vượt trội cho transcription, analysis và content generation
 section: engineer
 kit: engineer

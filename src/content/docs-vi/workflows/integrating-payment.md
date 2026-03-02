@@ -3,7 +3,7 @@ title: Tích Hợp Xử Lý Thanh Toán
 description: "Tìm hiểu cách tích hợp xử lý thanh toán với ClaudeKit - từ thanh toán một lần đến gói đăng ký, webhooks và tối ưu hóa doanh thu."
 lang: vi
 section: workflows
-category: workflows
+category: engineer
 order: 8
 published: true
 ---
@@ -718,7 +718,7 @@ Trước khi lên production:
 
 ### Các Lệnh Liên Quan
 - [/ck:cook](/docs/engineer/skills/cook) - Các tính năng tùy chỉnh
-- [/ck:test](/docs/engineer/commands/core/test) - Bộ kiểm thử
+- [/ck:test](/docs/engineer/skills/test) - Bộ kiểm thử
 
 ### Đọc Thêm
 - [Tài liệu Stripe](https://stripe.com/docs)

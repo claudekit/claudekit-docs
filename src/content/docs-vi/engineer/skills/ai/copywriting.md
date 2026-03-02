@@ -1,5 +1,5 @@
 ---
-title: "Copywriting"
+title: "ck:copywriting"
 description: "Công thức copywriting chuyển đổi, mẫu headline, mẫu email và trích xuất phong cách viết tùy chỉnh"
 section: engineer
 kit: engineer

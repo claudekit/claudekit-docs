@@ -1,5 +1,5 @@
 ---
-title: "Media Processing"
+title: "ckm:media-processing"
 description: "Process multimedia files with FFmpeg, ImageMagick, and RMBG: video encoding, image manipulation, and AI background removal."
 section: marketing
 category: skills

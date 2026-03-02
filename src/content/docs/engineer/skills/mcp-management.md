@@ -1,10 +1,10 @@
 ---
-title: MCP Management
+title: "ck:mcp-management"
 description: Discover, analyze, and execute tools from configured Model Context Protocol servers with intelligent tool selection and multi-server orchestration
 section: engineer
 kit: engineer
 category: skills
-order: 19
+order: 50
 ---
 
 You've got MCP servers configured, but how do you actually use them without flooding your context window with hundreds of tool definitions? That's where MCP Management comes in.

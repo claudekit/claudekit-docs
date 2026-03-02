@@ -3,7 +3,7 @@ title: "Dự Án Greenfield"
 description: "Documentation for Dự Án Greenfield"
 lang: vi
 section: workflows
-category: workflows
+category: engineer
 order: 6
 published: true
 lastUpdated: 2025-11-07
@@ -400,7 +400,7 @@ Sau khi bootstrap dự án:
 
 ## Tài Nguyên
 
-- [Tất Cả Lệnh](/vi/docs/engineer/commands/) - Tham khảo lệnh đầy đủ
+- [Tất Cả Skills](/vi/docs/engineer/skills) - Tham khảo kỹ năng đầy đủ
 - [AI Agents](/vi/docs/engineer/agents/) - Hiểu specialized agents
 - [Workflows](/vi/docs/engineer/configuration/workflows) - Quy trình phát triển
 - [Use Cases](/vi/docs/workflows) - Ví dụ thực tế

@@ -236,10 +236,10 @@ Agents improve with feedback. Tell them what works and what doesn't.
 
 ## Related Resources
 
-- [Marketing Commands](/docs/marketing/commands) - Quick-access slash commands for marketing tasks
-- [Marketing Workflows](/docs/marketing/workflows) - Step-by-step guides for common scenarios
+- [Marketing Skills](/docs/marketing/skills) - Quick-access skills for marketing tasks
+- [Marketing Workflows](/docs/workflows) - Step-by-step guides for common scenarios
 - [Marketing Skills](/docs/marketing/skills) - Specialized capabilities agents can activate
-- [Marketing Dashboard](/docs/marketing/commands/dashboard) - Monitor campaigns and analytics
+- [Analytics Skill](/docs/marketing/skills/analytics) - Monitor campaigns and analytics
 
 ## Next Steps
 

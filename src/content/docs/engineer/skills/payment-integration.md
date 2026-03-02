@@ -1,10 +1,10 @@
 ---
-title: Payment Integration
+title: "ck:payment-integration"
 description: Implement payment processing with SePay (Vietnamese payments) and Polar (global SaaS monetization)
 section: engineer
 kit: engineer
 category: skills
-order: 1
+order: 50
 published: true
 ---
 # Payment Integration

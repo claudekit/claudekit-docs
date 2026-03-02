@@ -1,5 +1,5 @@
 ---
-title: "Chrome DevTools"
+title: "ckm:chrome-devtools"
 description: "Browser automation with Puppeteer: screenshots, ARIA snapshots, performance analysis, form automation, and debugging."
 section: marketing
 category: skills

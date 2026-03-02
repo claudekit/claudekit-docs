@@ -1,5 +1,5 @@
 ---
-title: Markdown Novel Viewer
+title: "ck:markdown-novel-viewer"
 description: Background HTTP server render markdown files với trải nghiệm đọc giống sách và directory browser cho navigation tài liệu
 section: engineer
 kit: engineer

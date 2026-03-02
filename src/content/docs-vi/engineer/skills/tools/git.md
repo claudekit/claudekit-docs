@@ -1,5 +1,5 @@
 ---
-title: "Git"
+title: "ck:git"
 description: "Thao tác Git với conventional commits, tách commit tự động và phát hiện thông tin nhạy cảm"
 section: engineer
 kit: engineer

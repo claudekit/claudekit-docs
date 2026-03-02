@@ -176,8 +176,8 @@ Gốc Dự Án
 
 ## Các lệnh liên quan
 
-- [`/ckm:scout`](/vi/docs/marketing/commands/scout) - Tìm kiếm các tệp tin.
-- [`/explore`](/docs/marketing/commands) - Khám phá mã nguồn theo cách tương tác.
+- [`/ckm:scout`](/vi/docs/marketing/skills) - Tìm kiếm các tệp tin.
+- [`/explore`](/docs/marketing/skills) - Khám phá mã nguồn theo cách tương tác.
 
 ## Mẹo
 

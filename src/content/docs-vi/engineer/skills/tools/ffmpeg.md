@@ -1,5 +1,5 @@
 ---
-title: Kỹ năng ffmpeg
+title: "ck:ffmpeg"
 description: Tài liệu hướng dẫn sử dụng kỹ năng ffmpeg
 section: engineer
 kit: engineer

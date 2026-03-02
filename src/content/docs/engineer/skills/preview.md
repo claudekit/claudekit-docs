@@ -1,5 +1,5 @@
 ---
-title: "Preview"
+title: "ck:preview"
 description: "View files/directories or generate visual explanations, slides, and diagrams"
 section: engineer
 kit: engineer

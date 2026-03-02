@@ -1,10 +1,10 @@
 ---
-title: Code Review Skill
+title: "ck:code-review"
 description: Guide proper code review practices with technical rigor, evidence-based claims, and verification gates
 section: engineer
 kit: engineer
 category: skills/tools
-order: 8
+order: 50
 published: true
 ---# Code Review Skill
 

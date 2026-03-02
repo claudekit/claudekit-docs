@@ -1,5 +1,5 @@
 ---
-title: Sequential Thinking Skill
+title: "ck:sequential-thinking"
 description: Áp dụng phương pháp giải quyết vấn đề có cấu trúc và suy nghĩ phản chiếu cho các tác vụ phức tạp đòi hỏi phân tích đa bước và xác minh giả thuyết
 section: engineer
 kit: engineer

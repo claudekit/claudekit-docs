@@ -1,5 +1,5 @@
 ---
-title: canvas-design
+title: "ck:canvas-design"
 description: Documentation for canvas-design
 section: engineer
 kit: engineer

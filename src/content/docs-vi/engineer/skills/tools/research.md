@@ -1,5 +1,5 @@
 ---
-title: Research Skill
+title: "ck:research"
 description: Systematic research methodology cho technical solutions với multi-source validation và comprehensive reporting
 section: engineer
 kit: engineer

@@ -1,5 +1,5 @@
 ---
-title: "/ask"
+title: "/ckm:ask"
 description: "Expert architectural consultation with 4 specialized advisors for technical decisions, system design, and scalability planning"
 section: marketing
 category: commands
@@ -11,7 +11,7 @@ published: true
 ## Quick Start
 
 ```bash
-/ask How should we structure our email automation system?
+/ckm:ask How should we structure our email automation system?
 ```
 
 **What happens**:
@@ -26,14 +26,14 @@ published: true
 ## Syntax
 
 ```bash
-/ask [technical-question]
+/ckm:ask [technical-question]
 ```
 
 ## Example
 
 **Input**:
 ```bash
-/ask Should we use microservices or monolith for our marketing automation platform?
+/ckm:ask Should we use microservices or monolith for our marketing automation platform?
 ```
 
 **Expected Output**:
@@ -124,8 +124,8 @@ When to reconsider:
 ---
 
 Next steps:
-/plan Design modular monolith architecture
-/cook Implement email module with clear boundaries
+/ckm:plan Design modular monolith architecture
+/ckm:cook Implement email module with clear boundaries
 ```
 
 ## 4 Expert Advisors
@@ -169,35 +169,35 @@ All recommendations honor:
 
 ### Strategic Decisions
 ```bash
-/ask Should we use SQL or NoSQL?
-/ask REST vs GraphQL vs tRPC?
-/ask Authentication strategy for multi-tenant SaaS?
+/ckm:ask Should we use SQL or NoSQL?
+/ckm:ask REST vs GraphQL vs tRPC?
+/ckm:ask Authentication strategy for multi-tenant SaaS?
 ```
 
 ### Architecture Questions
 ```bash
-/ask How to structure campaign automation system?
-/ask Best approach for real-time analytics?
-/ask Caching strategy for high-traffic API?
+/ckm:ask How to structure campaign automation system?
+/ckm:ask Best approach for real-time analytics?
+/ckm:ask Caching strategy for high-traffic API?
 ```
 
 ### Technology Choices
 ```bash
-/ask Which email service provider?
-/ask Best state management for dashboard?
-/ask Database choice for time-series data?
+/ckm:ask Which email service provider?
+/ckm:ask Best state management for dashboard?
+/ckm:ask Database choice for time-series data?
 ```
 
 ## NOT For
 
-- Implementation (use /plan or /cook)
-- Debugging (use /fix or /debug)
-- Code review (use /review)
+- Implementation (use /ckm:plan or /ckm:cook)
+- Debugging (use /ckm:fix or /debug)
+- Code review (use /ckm:review)
 
 ## Related Commands
 
-- [/brainstorm](/docs/marketing/commands/brainstorm) - Interactive discussion
-- [/plan](/docs/marketing/commands/plan) - Implementation planning
+- [/ckm:brainstorm](/docs/marketing/commands/brainstorm) - Interactive discussion
+- [/ckm:plan](/docs/marketing/commands/plan) - Implementation planning
 - [/research](/docs/marketing/commands) - Market/tech research
 
 ---

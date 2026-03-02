@@ -292,8 +292,8 @@ Sales materials should address actual objections from real prospects, not imagin
 
 ## Commands Used
 
-- `/funnel design` - Build conversion funnels
+- `/ckm:funnel design` - Build conversion funnels
 - `/lead score` - Setup qualification rules
-- `/email create` - Build nurture sequences
+- `/ckm:email create` - Build nurture sequences
 - `/sales materials` - Generate enablement content
 - `/upsell analyze` - Find expansion opportunities

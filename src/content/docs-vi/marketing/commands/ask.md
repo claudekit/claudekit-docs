@@ -1,6 +1,6 @@
 ---
 lang: vi
-title: "/ask"
+title: "/ckm:ask"
 description: "Tư vấn kiến trúc chuyên gia với 4 cố vấn chuyên biệt để đưa ra quyết định kỹ thuật, thiết kế hệ thống và lập kế hoạch khả năng mở rộng"
 section: marketing
 category: commands
@@ -13,7 +13,7 @@ published: true
 ## Khởi động nhanh
 
 ```bash
-/ask How should we structure our email automation system?
+/ckm:ask How should we structure our email automation system?
 ```
 
 **Điều gì xảy ra**:
@@ -28,14 +28,14 @@ published: true
 ## Cú pháp
 
 ```bash
-/ask [technical-question]
+/ckm:ask [technical-question]
 ```
 
 ## Ví dụ
 
 **Đầu vào**:
 ```bash
-/ask Should we use microservices or monolith for our marketing automation platform?
+/ckm:ask Should we use microservices or monolith for our marketing automation platform?
 ```
 
 **Kết quả mong đợi**:
@@ -126,8 +126,8 @@ Khi nào nên tái xem xét:
 ---
 
 Các bước tiếp theo:
-/plan Design modular monolith architecture
-/cook Implement email module with clear boundaries
+/ckm:plan Design modular monolith architecture
+/ckm:cook Implement email module with clear boundaries
 ```
 
 ## 4 Cố vấn chuyên gia
@@ -171,35 +171,35 @@ Tất cả khuyến cáo suy trọng:
 
 ### Quyết định chiến lược
 ```bash
-/ask Should we use SQL or NoSQL?
-/ask REST vs GraphQL vs tRPC?
-/ask Authentication strategy for multi-tenant SaaS?
+/ckm:ask Should we use SQL or NoSQL?
+/ckm:ask REST vs GraphQL vs tRPC?
+/ckm:ask Authentication strategy for multi-tenant SaaS?
 ```
 
 ### Câu hỏi kiến trúc
 ```bash
-/ask How to structure campaign automation system?
-/ask Best approach for real-time analytics?
-/ask Caching strategy for high-traffic API?
+/ckm:ask How to structure campaign automation system?
+/ckm:ask Best approach for real-time analytics?
+/ckm:ask Caching strategy for high-traffic API?
 ```
 
 ### Lựa chọn công nghệ
 ```bash
-/ask Which email service provider?
-/ask Best state management for dashboard?
-/ask Database choice for time-series data?
+/ckm:ask Which email service provider?
+/ckm:ask Best state management for dashboard?
+/ckm:ask Database choice for time-series data?
 ```
 
 ## KHÔNG phải cho
 
-- Thực hiện (sử dụng /plan hoặc /cook)
-- Gỡ lỗi (sử dụng /fix hoặc /debug)
-- Đánh giá mã (sử dụng /review)
+- Thực hiện (sử dụng /ckm:plan hoặc /ckm:cook)
+- Gỡ lỗi (sử dụng /ckm:fix hoặc /debug)
+- Đánh giá mã (sử dụng /ckm:review)
 
 ## Lệnh liên quan
 
-- [/brainstorm](/vi/docs/marketing/commands/brainstorm) - Thảo luận tương tác
-- [/plan](/vi/docs/marketing/commands/plan) - Lập kế hoạch thực hiện
+- [/ckm:brainstorm](/vi/docs/marketing/commands/brainstorm) - Thảo luận tương tác
+- [/ckm:plan](/vi/docs/marketing/commands/plan) - Lập kế hoạch thực hiện
 - [/research](/docs/marketing/commands) - Nghiên cứu thị trường/công nghệ
 
 ---

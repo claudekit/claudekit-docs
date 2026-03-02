@@ -286,4 +286,4 @@ Guidelines should evolve as brand grows but not change arbitrarily. Document why
 
 - `/brand check` - Verify brand compliance
 - `/brand guidelines` - Access brand standards
-- `/content review` - Check content against guidelines
+- `/ckm:content review` - Check content against guidelines

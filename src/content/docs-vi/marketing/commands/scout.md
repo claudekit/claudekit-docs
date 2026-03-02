@@ -1,6 +1,6 @@
 ---
 lang: vi
-title: "/scout"
+title: "/ckm:scout"
 description: "Fast, token-efficient codebase search với parallel agent spawning tìm relevant files cho implementation tasks"
 section: marketing
 category: commands
@@ -13,7 +13,7 @@ published: true
 ## Bắt Đầu Nhanh
 
 ```bash
-/scout find campaign-related components
+/ckm:scout find campaign-related components
 ```
 
 **Điều gì sẽ xảy ra** (dưới 30 giây):
@@ -28,7 +28,7 @@ published: true
 ## Cú Pháp
 
 ```bash
-/scout [user-prompt] [scale]
+/ckm:scout [user-prompt] [scale]
 ```
 
 ### Đối Số
@@ -44,7 +44,7 @@ published: true
 
 **Đầu vào**:
 ```bash
-/scout find campaign-related files
+/ckm:scout find campaign-related files
 ```
 
 **Quá trình**:
@@ -75,7 +75,7 @@ Saved: plans/reports/scout-251229-2145-campaign-files.md
 
 **Đầu vào**:
 ```bash
-/scout authentication implementation 5
+/ckm:scout authentication implementation 5
 ```
 
 **Spawn 5 agents** cho faster, more thorough search trong large codebases.
@@ -84,15 +84,15 @@ Saved: plans/reports/scout-251229-2145-campaign-files.md
 
 ```bash
 # Trước planning
-/scout find email-related code
-/plan implement email automation
+/ckm:scout find email-related code
+/ckm:plan implement email automation
 
 # Trước implementation
-/cook add payment feature
-# (internally runs /scout automatically)
+/ckm:cook add payment feature
+# (internally runs /ckm:scout automatically)
 
 # Manual search
-/scout find all database models
+/ckm:scout find all database models
 ```
 
 ## Performance
@@ -104,9 +104,9 @@ Saved: plans/reports/scout-251229-2145-campaign-files.md
 
 ## Lệnh Liên Quan
 
-- [/plan](/docs/marketing/commands/plan) - Uses /scout internally
-- [/cook](/docs/marketing/commands/cook) - Uses /scout internally
-- [/cook](/docs/marketing/commands/cook) - Implement after scouting
+- [/ckm:plan](/docs/marketing/commands/plan) - Uses /ckm:scout internally
+- [/ckm:cook](/docs/marketing/commands/cook) - Uses /ckm:scout internally
+- [/ckm:cook](/docs/marketing/commands/cook) - Implement after scouting
 
 ---
 

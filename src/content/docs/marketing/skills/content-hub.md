@@ -17,7 +17,7 @@ order: 16
 
 **Implicit**: Not automatically activated (on-demand tool).
 
-**Explicit**: `/write:hub` or `node .claude/skills/content-hub/scripts/server.cjs --open`
+**Explicit**: `/ckm:write:hub` or `node .claude/skills/content-hub/scripts/server.cjs --open`
 
 ## Capabilities
 
@@ -99,7 +99,7 @@ node .claude/skills/content-hub/scripts/server.cjs --stop
 **API Routes**:
 | Route | Purpose |
 |-------|---------|
-| `/hub` | Gallery HTML |
+| `/ckm:hub` | Gallery HTML |
 | `/api/assets` | Asset List JSON |
 | `/api/brand` | Brand Context JSON |
 | `/api/scan` | Trigger Rescan |
@@ -122,7 +122,7 @@ Run `--scan` flag or use `/api/scan` endpoint to refresh gallery after adding ne
 **Scenario**: Need product banner for Instagram post.
 
 **Workflow**:
-1. Open gallery: `/write:hub`
+1. Open gallery: `/ckm:write:hub`
 2. Filter by type: "banner"
 3. Search: "product"
 4. Preview candidates
@@ -162,5 +162,5 @@ Run `--scan` flag or use `/api/scan` endpoint to refresh gallery after adding ne
 
 ## Related Commands
 
-- `/write:hub` - Open content hub gallery
-- `/dashboard` - Open marketing dashboard (includes asset gallery)
+- `/ckm:write:hub` - Open content hub gallery
+- `/ckm:dashboard` - Open marketing dashboard (includes asset gallery)

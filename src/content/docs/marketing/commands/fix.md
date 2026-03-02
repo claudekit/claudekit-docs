@@ -1,5 +1,5 @@
 ---
-title: "/fix"
+title: "/ckm:fix"
 description: "Intelligent issue routing to specialized fix commands based on problem type - types, UI, CI/CD, tests, logs, and complex issues"
 section: marketing
 category: commands
@@ -11,7 +11,7 @@ published: true
 ## Quick Start
 
 ```bash
-/fix TypeScript compilation errors in campaign module
+/ckm:fix TypeScript compilation errors in campaign module
 ```
 
 **What happens**:
@@ -23,23 +23,23 @@ published: true
 ## Syntax
 
 ```bash
-/fix [issues]
+/ckm:fix [issues]
 ```
 
 ## Decision Tree
 
-The `/fix` command intelligently routes to specialized variants:
+The `/ckm:fix` command intelligently routes to specialized variants:
 
 | Issue Type | Keywords | Routes To | Agent |
 |------------|----------|-----------|-------|
-| Type Errors | type, typescript, tsc | `/fix` (auto-detect types) | type-fixer |
-| UI/UX | ui, ux, design, layout, style | `/fix` (auto-detect UI) | ui-ux-designer |
-| CI/CD | github actions, pipeline, workflow | `/fix` (auto-detect CI) | devops-specialist |
-| Tests | test, spec, jest, vitest | `/fix` (auto-detect test) | tester |
-| Logs | logs, error logs, stack trace | `/fix` (auto-detect logs) | debugger |
-| Multiple | 2+ unrelated issues | `/fix --parallel` | multiple agents |
-| Complex | architecture, refactor, system-wide | `/fix` (auto-detect complexity) | architect |
-| Simple | single file, small bug | `/fix --quick` | generalist |
+| Type Errors | type, typescript, tsc | `/ckm:fix` (auto-detect types) | type-fixer |
+| UI/UX | ui, ux, design, layout, style | `/ckm:fix` (auto-detect UI) | ui-ux-designer |
+| CI/CD | github actions, pipeline, workflow | `/ckm:fix` (auto-detect CI) | devops-specialist |
+| Tests | test, spec, jest, vitest | `/ckm:fix` (auto-detect test) | tester |
+| Logs | logs, error logs, stack trace | `/ckm:fix` (auto-detect logs) | debugger |
+| Multiple | 2+ unrelated issues | `/ckm:fix --parallel` | multiple agents |
+| Complex | architecture, refactor, system-wide | `/ckm:fix` (auto-detect complexity) | architect |
+| Simple | single file, small bug | `/ckm:fix --quick` | generalist |
 
 ## Examples
 
@@ -47,10 +47,10 @@ The `/fix` command intelligently routes to specialized variants:
 
 **Input**:
 ```bash
-/fix TypeScript compilation errors
+/ckm:fix TypeScript compilation errors
 ```
 
-**Routes to**: `/fix` (auto-detects type errors)
+**Routes to**: `/ckm:fix` (auto-detects type errors)
 
 **Output**:
 ```markdown
@@ -71,10 +71,10 @@ Total time: 47 seconds
 
 **Input**:
 ```bash
-/fix Button not responsive on mobile devices
+/ckm:fix Button not responsive on mobile devices
 ```
 
-**Routes to**: `/fix` (auto-detects UI context)
+**Routes to**: `/ckm:fix` (auto-detects UI context)
 
 **Output**:
 ```markdown
@@ -95,10 +95,10 @@ Files modified: components/Button.tsx
 
 **Input**:
 ```bash
-/fix GitHub Actions deployment pipeline failing
+/ckm:fix GitHub Actions deployment pipeline failing
 ```
 
-**Routes to**: `/fix` (auto-detects CI context)
+**Routes to**: `/ckm:fix` (auto-detects CI context)
 
 **Output**:
 ```markdown
@@ -119,10 +119,10 @@ Re-run pipeline: Build now passes ✓
 
 **Input**:
 ```bash
-/fix Type errors in auth module + UI bugs in dashboard + test failures
+/ckm:fix Type errors in auth module + UI bugs in dashboard + test failures
 ```
 
-**Routes to**: `/fix --parallel`
+**Routes to**: `/ckm:fix --parallel`
 
 **Output**:
 ```markdown
@@ -142,77 +142,77 @@ Time saved: 67%
 
 ## Variants
 
-### /fix --quick
+### /ckm:fix --quick
 Quick fixes for simple issues:
 ```bash
-/fix --quick Missing semicolon in utils.ts
+/ckm:fix --quick Missing semicolon in utils.ts
 ```
 
-### /fix (complex)
+### /ckm:fix (complex)
 Deep architectural fixes (auto-detects complexity):
 ```bash
-/fix Refactor campaign architecture for scalability
+/ckm:fix Refactor campaign architecture for scalability
 ```
 
-### /fix --parallel
+### /ckm:fix --parallel
 Multiple unrelated issues:
 ```bash
-/fix --parallel Fix types + UI bugs + test failures
+/ckm:fix --parallel Fix types + UI bugs + test failures
 ```
 
-### /fix (type errors)
+### /ckm:fix (type errors)
 TypeScript type errors (auto-detected):
 ```bash
-/fix
+/ckm:fix
 ```
 
-### /fix (UI issues)
+### /ckm:fix (UI issues)
 UI/UX issues (auto-detected from context):
 ```bash
-/fix [description]
+/ckm:fix [description]
 ```
 
-### /fix (CI/CD)
+### /ckm:fix (CI/CD)
 CI/CD pipeline failures (auto-detected from context):
 ```bash
-/fix [github-actions-url]
+/ckm:fix [github-actions-url]
 ```
 
-### /fix (test failures)
+### /ckm:fix (test failures)
 Test failures (auto-detected from context):
 ```bash
-/fix [description]
+/ckm:fix [description]
 ```
 
-### /fix (logs)
+### /ckm:fix (logs)
 Analyze error logs (auto-detected from context):
 ```bash
-/fix [description]
+/ckm:fix [description]
 ```
 
 ## Workflow Integration
 
 ```bash
-# After /cook if issues arise
-/cook plans/feature.md
+# After /ckm:cook if issues arise
+/ckm:cook plans/feature.md
 # Tests fail or types error
-/fix TypeScript errors + failing tests
+/ckm:fix TypeScript errors + failing tests
 
-# After /analyze identifies issues
-/analyze campaigns
-/fix Campaign analytics not tracking conversions
+# After /ckm:analyze identifies issues
+/ckm:analyze campaigns
+/ckm:fix Campaign analytics not tracking conversions
 
 # Quick iteration
-/cook add feature
+/ckm:cook add feature
 # Minor issues
-/fix --quick Issues from last commit
+/ckm:fix --quick Issues from last commit
 ```
 
 ## Related Commands
 
-- [/cook](/docs/engineer/skills/cook) - Implementation (includes testing)
-- [/test](/docs/marketing/commands/test) - Run tests only
-- [/review](/docs/marketing/commands/review) - Code quality check
+- [/ckm:cook](/docs/engineer/skills/cook) - Implementation (includes testing)
+- [/ckm:test](/docs/marketing/commands/test) - Run tests only
+- [/ckm:review](/docs/marketing/commands/review) - Code quality check
 - [/debug](/docs/marketing/commands) - Deep root cause analysis
 
 ---

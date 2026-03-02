@@ -1,5 +1,5 @@
 ---
-title: "/design"
+title: "/ckm:design"
 description: "AI-powered image generation with brand context, enhanced prompts, and automatic verification for marketing assets"
 section: marketing
 category: commands
@@ -12,7 +12,7 @@ published: true
 ## Quick Start
 
 ```bash
-/design hero banner for landing page
+/ckm:design hero banner for landing page
 ```
 
 **What happens**:
@@ -26,13 +26,13 @@ published: true
 
 ## What It Does
 
-### Before /design
+### Before /ckm:design
 - Manual design work (1-4 hours)
 - Hire designers ($50-500)
 - Stock photos (generic, overused)
 - Brand inconsistency
 
-### After /design
+### After /ckm:design
 - AI-generated assets (2 minutes)
 - Brand-consistent by default
 - Unique visuals
@@ -41,7 +41,7 @@ published: true
 ## Syntax
 
 ```bash
-/design [description]
+/ckm:design [description]
 ```
 
 ## Examples
@@ -50,7 +50,7 @@ published: true
 
 **Input**:
 ```bash
-/design hero banner for SaaS landing page
+/ckm:design hero banner for SaaS landing page
 ```
 
 **Process**:
@@ -83,7 +83,7 @@ Saved: assets/banners/hero-banner-saas-landing-251229.png
 
 **Input**:
 ```bash
-/design LinkedIn post graphic, 1:1 aspect, stats overlay
+/ckm:design LinkedIn post graphic, 1:1 aspect, stats overlay
 ```
 
 **Output**:
@@ -96,14 +96,14 @@ Saved: assets/banners/hero-banner-saas-landing-251229.png
 Saved: assets/banners/social-media/linkedin-stats-graphic-251229.png
 
 Next: Add text overlays in design tool or use:
-/design LinkedIn graphic with "76% faster workflows" text
+/ckm:design LinkedIn graphic with "76% faster workflows" text
 ```
 
 ### Example 3: Email Header
 
 **Input**:
 ```bash
-/design email header for welcome sequence
+/ckm:design email header for welcome sequence
 ```
 
 **Output**:
@@ -186,31 +186,31 @@ interior, cinematic depth of field, business-forward"
 ### Content Creation Flow
 ```bash
 # Blog post with visuals
-/content blog "AI marketing guide"
-/design featured image for blog post
-/design infographic showing AI benefits
+/ckm:content blog "AI marketing guide"
+/ckm:design featured image for blog post
+/ckm:design infographic showing AI benefits
 
 # Email campaign
-/email launch "New Product"
-/design email header for product launch
-/design product showcase graphic
+/ckm:email launch "New Product"
+/ckm:design email header for product launch
+/ckm:design product showcase graphic
 ```
 
 ### Campaign Assets
 ```bash
 # Complete campaign visuals
-/campaign create "Q1 Launch"
-/design hero banner for landing page
-/design social media pack (Twitter, LinkedIn, Instagram)
-/design email header series
+/ckm:campaign create "Q1 Launch"
+/ckm:design hero banner for landing page
+/ckm:design social media pack (Twitter, LinkedIn, Instagram)
+/ckm:design email header series
 ```
 
 ## Related Commands
 
-- [/content](/docs/marketing/commands/content) - Content needing visuals
-- [/email](/docs/marketing/commands/email) - Email headers
-- [/social](/docs/marketing/commands/social) - Social graphics
-- [/campaign](/docs/marketing/commands/campaign) - Campaign assets
+- [/ckm:content](/docs/marketing/commands/content) - Content needing visuals
+- [/ckm:email](/docs/marketing/commands/email) - Email headers
+- [/ckm:social](/docs/marketing/commands/social) - Social graphics
+- [/ckm:campaign](/docs/marketing/commands/campaign) - Campaign assets
 
 ## Skills Activated
 

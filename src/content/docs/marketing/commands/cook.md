@@ -1,5 +1,5 @@
 ---
-title: "/cook"
+title: "/ckm:cook"
 description: "All-in-one feature implementation with planning, research, coding, testing, and documentation in a single command"
 section: marketing
 category: commands
@@ -12,7 +12,7 @@ published: true
 ## Quick Start
 
 ```bash
-/cook add dark mode toggle to settings
+/ckm:cook add dark mode toggle to settings
 ```
 
 **What happens** (5-15 minutes):
@@ -20,7 +20,7 @@ published: true
 2. Researches best practices (3 agents)
 3. Scouts codebase for relevant files
 4. Creates internal plan
-5. Implements with /cook workflow
+5. Implements with /ckm:cook workflow
 6. Tests (100% pass required)
 7. Code review (0 critical issues)
 8. Updates documentation
@@ -30,9 +30,9 @@ published: true
 
 ## What It Does
 
-### /cook vs /plan → /cook
+### /ckm:cook vs /ckm:plan → /ckm:cook
 
-| Aspect | /cook | /plan → /cook |
+| Aspect | /ckm:cook | /ckm:plan → /ckm:cook |
 |--------|-------|---------------|
 | Planning | Internal (hidden) | Explicit plan file |
 | Best for | Small-medium features | Complex features |
@@ -40,7 +40,7 @@ published: true
 | Plan file | Not created | `plans/{date}-{slug}/` |
 | User review | Final only | Review plan + code |
 
-### Before /cook
+### Before /ckm:cook
 - Manual planning (1-2 hours)
 - Manual research (1-2 hours)
 - Manual coding (2-6 hours)
@@ -49,7 +49,7 @@ published: true
 - Manual commit (5 min)
 **Total: 5-12 hours**
 
-### After /cook
+### After /ckm:cook
 - One command
 - AI handles everything
 - User approves final result
@@ -58,23 +58,23 @@ published: true
 ## Syntax
 
 ```bash
-/cook [tasks]
+/ckm:cook [tasks]
 ```
 
 ### Variants
 
 | Variant | Speed | Complexity | Best For |
 |---------|-------|------------|----------|
-| `/cook` | Standard | Any | General features |
-| `/cook --fast` | Quick | Simple | Bug fixes, small features |
-| `/cook --hard` | Thorough | Complex | Architecture changes |
-| `/cook --parallel` | Multi-track | Independent | Multiple features |
+| `/ckm:cook` | Standard | Any | General features |
+| `/ckm:cook --fast` | Quick | Simple | Bug fixes, small features |
+| `/ckm:cook --hard` | Thorough | Complex | Architecture changes |
+| `/ckm:cook --parallel` | Multi-track | Independent | Multiple features |
 
 ## Example: Add Dark Mode
 
 **Input**:
 ```bash
-/cook add dark mode toggle to settings page
+/ckm:cook add dark mode toggle to settings page
 ```
 
 **AI Questions**:
@@ -170,39 +170,39 @@ Done! Dark mode live at /settings
 
 ### Quick Features
 ```bash
-/cook add newsletter signup form
-/cook implement email validation
-/cook add loading spinner to buttons
+/ckm:cook add newsletter signup form
+/ckm:cook implement email validation
+/ckm:cook add loading spinner to buttons
 ```
 
 ### vs Planning First
 ```bash
-# For complex features, use /plan first
-/plan implement payment integration  # Review plan
+# For complex features, use /ckm:plan first
+/ckm:plan implement payment integration  # Review plan
 "Implement plan"  # Then implement
 
-# For medium features, /cook is faster
-/cook implement payment integration  # Does both
+# For medium features, /ckm:cook is faster
+/ckm:cook implement payment integration  # Does both
 ```
 
 ### Multiple Features
 ```bash
 # Sequential (one at a time)
-/cook add dark mode
-/cook add export to CSV
-/cook add user preferences
+/ckm:cook add dark mode
+/ckm:cook add export to CSV
+/ckm:cook add user preferences
 
 # Parallel (all at once)
-/cook --parallel add dark mode, export CSV, user preferences
+/ckm:cook --parallel add dark mode, export CSV, user preferences
 ```
 
 ## Workflow Steps (Internal)
 
 1. **Question Everything**: Clarify requirements
 2. **Research**: 3+ researcher agents in parallel (≤150 lines each)
-3. **Scout**: /scout ext or /scout for relevant files
+3. **Scout**: /ckm:scout ext or /ckm:scout for relevant files
 4. **Plan**: Internal plan (progressive disclosure)
-5. **Implement**: /cook workflow (6-step process)
+5. **Implement**: /ckm:cook workflow (6-step process)
 6. **Test**: tester agent (100% pass required)
 7. **Review**: code-reviewer agent (0 critical issues required)
 8. **Docs**: docs-manager + project-manager agents
@@ -211,7 +211,7 @@ Done! Dark mode live at /settings
 
 ## Agents Used
 
-All agents from /plan and /cook:
+All agents from /ckm:plan and /ckm:cook:
 - planner, researcher (3+), scout
 - fullstack-developer, ui-ux-designer
 - tester, debugger, code-reviewer
@@ -227,8 +227,8 @@ All relevant skills auto-activated:
 
 ## Related Commands
 
-- [/plan](/docs/marketing/commands/plan) - Planning only (review before coding)
-- [/fix](/docs/marketing/commands/fix) - Fix issues after implementation
+- [/ckm:plan](/docs/marketing/commands/plan) - Planning only (review before coding)
+- [/ckm:fix](/docs/marketing/commands/fix) - Fix issues after implementation
 
 ---
 

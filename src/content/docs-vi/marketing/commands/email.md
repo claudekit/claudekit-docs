@@ -1,6 +1,6 @@
 ---
 lang: vi
-title: "/email"
+title: "/ckm:email"
 description: "Tạo nội dung email chuyển đổi cao với viết quảng cáo được tạo bằng AI cho newsletter, cold outreach, launch sequences, và nurture campaigns"
 section: marketing
 category: commands
@@ -15,7 +15,7 @@ published: true
 Tạo newsletter trong 30 giây:
 
 ```bash
-/email newsletter
+/ckm:email newsletter
 ```
 
 **Điều gì sẽ xảy ra**:
@@ -28,14 +28,14 @@ Tạo newsletter trong 30 giây:
 
 ## Nó Làm Gì
 
-### Trước /email
+### Trước /ckm:email
 - Viết quảng cáo thủ công (2-4 giờ mỗi email)
 - Dòng chủ đề không nhất quán
 - Không có chiến lược A/B test
 - Định dạng di động tệ
 - Đoán mò về khả năng gửi
 
-### Sau /email
+### Sau /ckm:email
 - Nội dung email được tạo bằng AI (2 phút)
 - Nhiều tùy chọn dòng chủ đề
 - Định dạng được tối ưu hóa cho di động
@@ -45,7 +45,7 @@ Tạo newsletter trong 30 giây:
 ## Cú Pháp
 
 ```bash
-/email <type> [context]
+/ckm:email <type> [context]
 ```
 
 ### Đối Số
@@ -73,7 +73,7 @@ Tạo newsletter trong 30 giây:
 
 **Đầu vào**:
 ```bash
-/email newsletter
+/ckm:email newsletter
 ```
 
 **AI Questions**:
@@ -177,7 +177,7 @@ Saved: assets/copy/emails/251229-newsletter-ai-automation-launch.md
 
 **Đầu vào**:
 ```bash
-/email cold "SaaS founders"
+/ckm:email cold "SaaS founders"
 ```
 
 **AI Questions**:
@@ -267,7 +267,7 @@ Saved: assets/copy/emails/251229-cold-churn-prediction-saas-founders.md
 
 **Đầu vào**:
 ```bash
-/email launch "New Mobile App"
+/ckm:email launch "New Mobile App"
 ```
 
 **Kết Quả Dự Kiến**:
@@ -356,31 +356,31 @@ Saved: assets/copy/emails/251229-launch-new-mobile-app.md
 
 ```bash
 # Step 1: Define audience
-/persona create
+/ckm:persona create
 
 # Step 2: Create campaign
-/campaign create "Email Marketing Campaign"
+/ckm:campaign create "Email Marketing Campaign"
 
 # Step 3: Generate email sequence
-/email welcome "New subscribers"
-/email nurture "Trial users day 3"
-/email nurture "Trial users day 7"
-/email winback "Inactive users"
+/ckm:email welcome "New subscribers"
+/ckm:email nurture "Trial users day 3"
+/ckm:email nurture "Trial users day 7"
+/ckm:email winback "Inactive users"
 
 # Step 4: Visual assets
-/design email header for welcome series
+/ckm:design email header for welcome series
 
 # Step 5: Track performance
-/analyze engagement
+/ckm:analyze engagement
 ```
 
 ### Email + Multi-Channel
 ```bash
 # Coordinate email with other channels
-/email launch "Product Launch"
-/social twitter "Launch announcement"
-/content blog "Product launch post"
-/campaign analyze "Product Launch"
+/ckm:email launch "Product Launch"
+/ckm:social twitter "Launch announcement"
+/ckm:content blog "Product launch post"
+/ckm:campaign analyze "Product Launch"
 ```
 
 ## Agent Sử Dụng
@@ -442,19 +442,19 @@ Tự động bao gồm trong mọi email:
 
 ## Lệnh Liên Quan
 
-### Trước /email
-- [/persona](/docs/marketing/commands/persona) - Define audience
-- [/campaign](/docs/marketing/commands/campaign) - Plan campaign
-- [/brainstorm](/docs/marketing/commands/brainstorm) - Strategy ideation
+### Trước /ckm:email
+- [/ckm:persona](/docs/marketing/commands/persona) - Define audience
+- [/ckm:campaign](/docs/marketing/commands/campaign) - Plan campaign
+- [/ckm:brainstorm](/docs/marketing/commands/brainstorm) - Strategy ideation
 
-### Sau /email
-- [/social](/docs/marketing/commands/social) - Cross-channel content
-- [/analyze](/docs/marketing/commands/analyze) - Email performance
-- [/use-mcp](/docs/marketing/commands/use-mcp) - Send via ESP
+### Sau /ckm:email
+- [/ckm:social](/docs/marketing/commands/social) - Cross-channel content
+- [/ckm:analyze](/docs/marketing/commands/analyze) - Email performance
+- [/ckm:use-mcp](/docs/marketing/commands/use-mcp) - Send via ESP
 
 ### Tăng Cường
-- [/design](/docs/marketing/commands/design) - Email headers/graphics
-- [/seo](/docs/marketing/commands/seo) - Landing page optimization
+- [/ckm:design](/docs/marketing/commands/design) - Email headers/graphics
+- [/ckm:seo](/docs/marketing/commands/seo) - Landing page optimization
 
 ## Related Agents
 

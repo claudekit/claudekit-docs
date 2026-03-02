@@ -139,4 +139,4 @@ Consistency matters more than frequency. Weekly schedule beats erratic bursts.
 - `/content/blog` - Create blog post from outline
 - `/content/enhance` - Improve existing content
 - `/seo/keywords` - Research content topics
-- `/plan` - Create content production plan
+- `/ckm:plan` - Create content production plan

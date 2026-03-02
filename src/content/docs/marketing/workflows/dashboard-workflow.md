@@ -16,7 +16,7 @@ The Dashboard Workflow helps you create a centralized command center for marketi
 
 Instead of checking multiple tools for campaign status, traffic data, and team progress, the dashboard provides a single source of truth. Whether you're monitoring active campaigns, tracking KPIs, or coordinating team work, the dashboard keeps everyone aligned.
 
-**Asset Management Integration**: The `/dashboard` command also serves as the visual interface for the [Asset Management](/docs/marketing/features/asset-management) system (Content Hub), providing browse, preview, and search capabilities for all marketing assets (copy, storyboards, slides, infographics, branding guidelines, social posts).
+**Asset Management Integration**: The `/ckm:dashboard` command also serves as the visual interface for the [Asset Management](/docs/marketing/features/asset-management) system (Content Hub), providing browse, preview, and search capabilities for all marketing assets (copy, storyboards, slides, infographics, branding guidelines, social posts).
 
 ## Metadata
 
@@ -340,7 +340,7 @@ Use color strategically (green=good, red=action needed). Large numbers for key m
 
 ## Commands Used
 
-- `/dashboard setup` - Initialize dashboard
-- `/dashboard configure` - Add metrics and alerts
-- `/dashboard view` - Access dashboard interface
-- `/analyze` - Pull data into dashboard
+- `/ckm:dashboard setup` - Initialize dashboard
+- `/ckm:dashboard configure` - Add metrics and alerts
+- `/ckm:dashboard view` - Access dashboard interface
+- `/ckm:analyze` - Pull data into dashboard

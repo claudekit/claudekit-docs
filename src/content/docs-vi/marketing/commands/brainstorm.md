@@ -1,6 +1,6 @@
 ---
 lang: vi
-title: "/brainstorm"
+title: "/ckm:brainstorm"
 description: "Các buổi họp não được hỗ trợ bởi AI hợp tác cho chiến lược, giải pháp và ra quyết định với quy trình có cấu trúc 5 pha"
 section: marketing
 category: commands
@@ -13,7 +13,7 @@ published: true
 ## Khởi động nhanh
 
 ```bash
-/brainstorm how to improve email open rates
+/ckm:brainstorm how to improve email open rates
 ```
 
 **Điều gì xảy ra**:
@@ -43,14 +43,14 @@ published: true
 ## Cú pháp
 
 ```bash
-/brainstorm [question or topic]
+/ckm:brainstorm [question or topic]
 ```
 
 ## Ví dụ: Cải thiện tỷ lệ mở email
 
 **Đầu vào**:
 ```bash
-/brainstorm how can we improve email open rates
+/ckm:brainstorm how can we improve email open rates
 ```
 
 **Quy trình AI**:
@@ -155,9 +155,9 @@ Kết quả dự kiến:
 Báo cáo tóm tắt đã lưu: plans/reports/brainstorm-251229-2145-email-open-rates.md
 
 Hành động tiếp theo:
-- /plan implement email segmentation system
-- /cook A/B test value-first subject lines
-- /analyze engagement (track results)
+- /ckm:plan implement email segmentation system
+- /ckm:cook A/B test value-first subject lines
+- /ckm:analyze engagement (track results)
 
 Chờ xác nhận của bạn trước khi tiếp tục.
 ```
@@ -215,13 +215,13 @@ Tài liệu phiên:
 ### Các bước tiếp theo (Lựa chọn của bạn)
 ```bash
 # Tạo kế hoạch thực hiện
-/plan [chosen solution]
+/ckm:plan [chosen solution]
 
 # Thực hiện ngay lập tức
-/cook [chosen solution]
+/ckm:cook [chosen solution]
 
 # Khắc phục các vấn đề cụ thể
-/fix [issues identified]
+/ckm:fix [issues identified]
 
 # Không làm gì (chỉ tài liệu các ý tưởng)
 ```
@@ -231,32 +231,32 @@ Tài liệu phiên:
 ### Phiên chiến lược
 ```bash
 # Chiến lược tiếp thị
-/brainstorm campaign strategy for Q1 launch
+/ckm:brainstorm campaign strategy for Q1 launch
 
 # Quyết định sản phẩm
-/brainstorm should we build feature X or Y
+/ckm:brainstorm should we build feature X or Y
 
 # Kiến trúc kỹ thuật
-/brainstorm microservices vs monolith for our scale
+/ckm:brainstorm microservices vs monolith for our scale
 ```
 
 ### Giải quyết vấn đề
 ```bash
 # Vấn đề hiệu suất
-/brainstorm how to reduce page load time
+/ckm:brainstorm how to reduce page load time
 
 # Tối ưu hóa chuyển đổi
-/brainstorm improve checkout conversion rate
+/ckm:brainstorm improve checkout conversion rate
 
 # Thách thức tăng trưởng
-/brainstorm customer acquisition strategies
+/ckm:brainstorm customer acquisition strategies
 ```
 
 ## Lệnh liên quan
 
-- [/ask](/vi/docs/marketing/commands/ask) - Tư vấn kỹ thuật (không thảo luận)
-- [/plan](/vi/docs/marketing/commands/plan) - Tạo kế hoạch thực hiện
-- [/cook](/vi/docs/marketing/commands/cook) - Thực hiện giải pháp
+- [/ckm:ask](/vi/docs/marketing/commands/ask) - Tư vấn kỹ thuật (không thảo luận)
+- [/ckm:plan](/vi/docs/marketing/commands/plan) - Tạo kế hoạch thực hiện
+- [/ckm:cook](/vi/docs/marketing/commands/cook) - Thực hiện giải pháp
 
 ---
 

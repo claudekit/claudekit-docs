@@ -26,7 +26,7 @@ Get market insights in 30 seconds:
 
 ```bash
 # Research your market landscape
-/ask "Research the [your industry] market and identify key trends for 2025"
+/ckm:ask "Research the [your industry] market and identify key trends for 2025"
 
 # The agent analyzes multiple sources and synthesizes findings
 ```
@@ -77,10 +77,10 @@ Deep-dive into competitor strategies:
 
 ```bash
 # Step 1: Identify competitors
-/scout "Who are the top 5 competitors in [your market]?"
+/ckm:scout "Who are the top 5 competitors in [your market]?"
 
 # Step 2: Analyze their strategies
-/ask "Research [competitor names] and analyze their marketing strategies"
+/ckm:ask "Research [competitor names] and analyze their marketing strategies"
 
 # The agent will investigate:
 # - Website positioning and messaging
@@ -103,7 +103,7 @@ Identify emerging opportunities:
 
 ```bash
 # Research market trends
-/ask "Research emerging trends in [your industry] for the next 12 months"
+/ckm:ask "Research emerging trends in [your industry] for the next 12 months"
 
 # The agent explores:
 # - Industry publications and reports
@@ -124,7 +124,7 @@ Find content opportunities:
 
 ```bash
 # Identify content gaps
-/ask "What content topics are our competitors covering that we're missing?"
+/ckm:ask "What content topics are our competitors covering that we're missing?"
 
 # The agent analyzes:
 # - Competitor content catalogs
@@ -144,7 +144,7 @@ Understand your audience deeply:
 
 ```bash
 # Research customer insights
-/ask "Research pain points and language used by [your target audience]"
+/ckm:ask "Research pain points and language used by [your target audience]"
 
 # The agent investigates:
 # - Review sites and G2/Capterra feedback
@@ -198,6 +198,6 @@ Reports follow concise formatting with key findings, evidence, and unresolved qu
 
 ## Related Commands
 
-- `/scout` - Find relevant files and context
-- `/ask` - Query the agent for research
-- `/plan` - Create comprehensive research plans
+- `/ckm:scout` - Find relevant files and context
+- `/ckm:ask` - Query the agent for research
+- `/ckm:plan` - Create comprehensive research plans

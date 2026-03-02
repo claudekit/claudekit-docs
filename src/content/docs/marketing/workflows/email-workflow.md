@@ -310,7 +310,7 @@ Every email should have ONE primary goal and ONE primary CTA. Multiple CTAs dilu
 
 ## Commands Used
 
-- `/email create` - Generate email campaigns
-- `/email sequence` - Build automated sequences
-- `/email test` - Validate before sending
-- `/email analyze` - Performance analysis
+- `/ckm:email create` - Generate email campaigns
+- `/ckm:email sequence` - Build automated sequences
+- `/ckm:email test` - Validate before sending
+- `/ckm:email analyze` - Performance analysis

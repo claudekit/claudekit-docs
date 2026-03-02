@@ -1,5 +1,5 @@
 ---
-title: "/seo"
+title: "/ckm:seo"
 description: "Technical SEO audits, keyword research, content optimization, and schema markup generation powered by AI analysis"
 section: marketing
 category: commands
@@ -14,7 +14,7 @@ published: true
 Audit any website in 60 seconds:
 
 ```bash
-/seo audit https://example.com
+/ckm:seo audit https://example.com
 ```
 
 **What happens**:
@@ -27,14 +27,14 @@ Audit any website in 60 seconds:
 
 ## What It Does
 
-### Before /seo
+### Before /ckm:seo
 - Manual SEO audits (4-6 hours)
 - Fragmented tools and reports
 - No actionable priorities
 - Missing technical issues
 - Inconsistent keyword research
 
-### After /seo
+### After /ckm:seo
 - AI-generated audit (60 seconds)
 - Comprehensive analysis report
 - Priority-ranked recommendations
@@ -44,7 +44,7 @@ Audit any website in 60 seconds:
 ## Syntax
 
 ```bash
-/seo <action> [target]
+/ckm:seo <action> [target]
 ```
 
 ### Arguments
@@ -69,7 +69,7 @@ Audit any website in 60 seconds:
 
 **Input**:
 ```bash
-/seo audit https://example.com/pricing
+/ckm:seo audit https://example.com/pricing
 ```
 
 **Expected Output**:
@@ -207,16 +207,16 @@ After implementing all fixes:
 - Keyword list: assets/seo/keywords/250129-saas-pricing-keywords.md
 
 Next Steps:
-/seo schema pricing  # Generate Product schema
-/fix --quick Add H1 and meta description to pricing page
-/content pricing-comparison  # Create comparison content
+/ckm:seo schema pricing  # Generate Product schema
+/ckm:fix --quick Add H1 and meta description to pricing page
+/ckm:content pricing-comparison  # Create comparison content
 ```
 
 ### Example 2: Keyword Research
 
 **Input**:
 ```bash
-/seo keywords "project management software"
+/ckm:seo keywords "project management software"
 ```
 
 **Expected Output**:
@@ -422,15 +422,15 @@ Target Rankings:
 Saved: assets/seo/keywords/250129-project-management-software-keywords.md
 
 Next Actions:
-/content blog "Best Project Management Software for Small Business 2025"
-/seo audit https://yoursite.com/blog/project-management
+/ckm:content blog "Best Project Management Software for Small Business 2025"
+/ckm:seo audit https://yoursite.com/blog/project-management
 ```
 
 ### Example 3: Generate Schema Markup
 
 **Input**:
 ```bash
-/seo schema pricing
+/ckm:seo schema pricing
 ```
 
 **Expected Output**:
@@ -512,29 +512,29 @@ https://search.google.com/test/rich-results
 ### Complete SEO Optimization
 ```bash
 # Step 1: Initial audit
-/seo audit https://example.com
+/ckm:seo audit https://example.com
 
 # Step 2: Keyword research
-/seo keywords "your main topic"
+/ckm:seo keywords "your main topic"
 
 # Step 3: Create optimized content
-/content blog "keyword-focused article"
+/ckm:content blog "keyword-focused article"
 
 # Step 4: Add schema
-/seo schema article
+/ckm:seo schema article
 
 # Step 5: Re-audit
-/seo audit https://example.com/new-article
+/ckm:seo audit https://example.com/new-article
 
 # Step 6: Track performance
-/analyze traffic
+/ckm:analyze traffic
 ```
 
 ## Related Commands
 
-- [/content](/docs/marketing/commands/content) - SEO-optimized content
-- [/analyze](/docs/marketing/commands/analyze) - Traffic analysis
-- [/campaign](/docs/marketing/commands/campaign) - SEO campaigns
+- [/ckm:content](/docs/marketing/commands/content) - SEO-optimized content
+- [/ckm:analyze](/docs/marketing/commands/analyze) - Traffic analysis
+- [/ckm:campaign](/docs/marketing/commands/campaign) - SEO campaigns
 
 ## Related Agents
 

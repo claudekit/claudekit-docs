@@ -138,5 +138,5 @@ Explain program in 2-3 lines. Complex rules kill participation.
 ## Related Commands
 
 - `/campaign/create` - Launch referral campaign
-- `/plan` - Implementation planning
-- `/analyze:report` - Analyze referral performance
+- `/ckm:plan` - Implementation planning
+- `/ckm:analyze:report` - Analyze referral performance

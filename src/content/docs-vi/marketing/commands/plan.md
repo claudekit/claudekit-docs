@@ -1,6 +1,6 @@
 ---
 lang: vi
-title: "/plan"
+title: "/ckm:plan"
 description: "Tạo detailed implementation plans với AI-powered research, complexity assessment, và progressive disclosure structure"
 section: marketing
 category: commands
@@ -13,27 +13,27 @@ published: true
 ## Bắt Đầu Nhanh
 
 ```bash
-/plan implement email drip campaign
+/ckm:plan implement email drip campaign
 ```
 
 **Điều gì sẽ xảy ra** (30 giây):
 1. Spawn 3 researcher agents song song
-2. Phân tích cấu trúc codebase với /scout
-3. Đánh giá độ phức tạp (simple → /plan:fast, complex → /plan:hard)
+2. Phân tích cấu trúc codebase với /ckm:scout
+3. Đánh giá độ phức tạp (simple → /ckm:plan:fast, complex → /ckm:plan:hard)
 4. Tạo progressive disclosure plan với phases
 
 **Kết Quả**: `plans/251229-email-drip-campaign/plan.md` + phase files
 
 ## Nó Làm Gì
 
-### Trước /plan
+### Trước /ckm:plan
 - Implementation ad-hoc (no strategy)
 - Missing requirements discovered mid-coding
 - No parallel execution opportunities
 - Unclear dependencies between tasks
 - Manual research (2-4 giờ)
 
-### Sau /plan
+### Sau /ckm:plan
 - Detailed implementation roadmap (30 giây)
 - All requirements surfaced upfront
 - Phases designed for parallelization
@@ -43,23 +43,23 @@ published: true
 ## Cú Pháp
 
 ```bash
-/plan [task]
+/ckm:plan [task]
 ```
 
 ### Biến Thể
 
 | Biến Thể | Khi Nào Sử Dụng | Phases | Research Depth |
 |---------|-------------|--------|----------------|
-| `/plan` | Auto-detects complexity | 1-8 | Standard |
-| `/plan:fast` | Simple features | 1-2 | Minimal |
-| `/plan:hard` | Complex architecture | 3-8 | Deep |
-| `/plan:parallel` | Independent features | Multi-track | Standard |
+| `/ckm:plan` | Auto-detects complexity | 1-8 | Standard |
+| `/ckm:plan:fast` | Simple features | 1-2 | Minimal |
+| `/ckm:plan:hard` | Complex architecture | 3-8 | Deep |
+| `/ckm:plan:parallel` | Independent features | Multi-track | Standard |
 
 ## Ví Dụ: Plan Email Campaign
 
 **Đầu vào**:
 ```bash
-/plan implement email drip campaign with analytics
+/ckm:plan implement email drip campaign with analytics
 ```
 
 **Kết Quả Dự Kiến**:
@@ -151,7 +151,7 @@ Phase details:
 - plans/250129-email-drip-campaign/phase-03-automation-engine.md
 - plans/250129-email-drip-campaign/phase-04-analytics-dashboard.md
 
-Next: /cook plans/250129-email-drip-campaign
+Next: /ckm:cook plans/250129-email-drip-campaign
 ```
 
 ## Tích Hợp Quy Trình Làm Việc
@@ -160,32 +160,32 @@ Next: /cook plans/250129-email-drip-campaign
 
 ```bash
 # Step 1: Plan
-/plan add user authentication
+/ckm:plan add user authentication
 
 # Step 2: Review plan
 cat plans/latest/plan.md
 
 # Step 3: Implement
-/cook
+/ckm:cook
 
-# Tests run automatically in /cook
-# Code review happens automatically in /cook
+# Tests run automatically in /ckm:cook
+# Code review happens automatically in /ckm:cook
 ```
 
 ### Plan Variants
 
 ```bash
 # Auto-detect complexity
-/plan add dark mode toggle
+/ckm:plan add dark mode toggle
 
 # Force fast planning
-/plan:fast fix button styling
+/ckm:plan:fast fix button styling
 
 # Force deep planning
-/plan:hard refactor entire auth system
+/ckm:plan:hard refactor entire auth system
 
 # Parallel execution
-/plan:parallel implement 3 dashboard widgets
+/ckm:plan:parallel implement 3 dashboard widgets
 ```
 
 ## Agent Sử Dụng
@@ -211,9 +211,9 @@ plans/251229-{slug}/
 
 ## Lệnh Liên Quan
 
-- [/cook](/docs/marketing/commands/cook) - Execute plan
-- [/cook](/docs/marketing/commands/cook) - Plan + implement
-- [/scout](/docs/marketing/commands/scout) - Codebase search
+- [/ckm:cook](/docs/marketing/commands/cook) - Execute plan
+- [/ckm:cook](/docs/marketing/commands/cook) - Plan + implement
+- [/ckm:scout](/docs/marketing/commands/scout) - Codebase search
 
 ---
 

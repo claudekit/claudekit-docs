@@ -1,5 +1,5 @@
 ---
-title: "/write - Content Writing Commands"
+title: "/ckm:write - Content Writing Commands"
 description: "Create blog posts, audit content quality, and manage publishing workflows with AI writing assistant that matches your brand voice"
 section: marketing
 category: commands
@@ -7,19 +7,19 @@ order: 3
 published: true
 ---
 
-# /write - Content Writing Commands
+# /ckm:write - Content Writing Commands
 
 AI-powered content creation with automatic writing style extraction. Generate blog posts that match your brand voice, audit existing content for quality and SEO, and streamline publishing workflows.
 
 ## Commands
 
-### /write:blog - Create Blog Posts
+### /ckm:write:blog - Create Blog Posts
 
 Generate complete blog posts with automatic style matching from your existing content.
 
 **Syntax:**
 ```bash
-/write:blog "<topic or title>"
+/ckm:write:blog "<topic or title>"
 ```
 
 **Features:**
@@ -32,13 +32,13 @@ Generate complete blog posts with automatic style matching from your existing co
 **Examples:**
 ```bash
 # Product feature blog
-/write:blog "introducing new API rate limiting system"
+/ckm:write:blog "introducing new API rate limiting system"
 
 # Tutorial content
-/write:blog "how to integrate Claude Code with CI/CD pipelines"
+/ckm:write:blog "how to integrate Claude Code with CI/CD pipelines"
 
 # Thought leadership
-/write:blog "the future of AI-assisted software development"
+/ckm:write:blog "the future of AI-assisted software development"
 ```
 
 **Output:**
@@ -79,13 +79,13 @@ System learns from sample content in `/assets/writing-styles/`:
 
 ---
 
-### /write:audit - Content Quality Audit
+### /ckm:write:audit - Content Quality Audit
 
 Analyze existing content for quality, SEO, readability, and brand alignment.
 
 **Syntax:**
 ```bash
-/write:audit <file-path or URL>
+/ckm:write:audit <file-path or URL>
 ```
 
 **Features:**
@@ -98,13 +98,13 @@ Analyze existing content for quality, SEO, readability, and brand alignment.
 **Examples:**
 ```bash
 # Audit local markdown file
-/write:audit /assets/blog-posts/2024-12-15-api-launch.md
+/ckm:write:audit /assets/blog-posts/2024-12-15-api-launch.md
 
 # Audit published blog post
-/write:audit https://example.com/blog/api-launch
+/ckm:write:audit https://example.com/blog/api-launch
 
 # Audit multiple files
-/write:audit "/assets/blog-posts/*.md"
+/ckm:write:audit "/assets/blog-posts/*.md"
 ```
 
 **Audit Criteria:**
@@ -153,13 +153,13 @@ Analyze existing content for quality, SEO, readability, and brand alignment.
 
 ---
 
-### /write:publish - Publishing Workflow
+### /ckm:write:publish - Publishing Workflow
 
 Streamline content publishing workflow from draft to release with automated checks and deployment.
 
 **Syntax:**
 ```bash
-/write:publish <draft-file> [--platform=<platform>]
+/ckm:write:publish <draft-file> [--platform=<platform>]
 ```
 
 **Platforms:**
@@ -181,13 +181,13 @@ Streamline content publishing workflow from draft to release with automated chec
 **Examples:**
 ```bash
 # Publish to WordPress
-/write:publish /assets/blog-posts/api-launch.md --platform=wordpress
+/ckm:write:publish /assets/blog-posts/api-launch.md --platform=wordpress
 
 # Publish to static site (commit to repo)
-/write:publish /assets/blog-posts/tutorial.md --platform=markdown
+/ckm:write:publish /assets/blog-posts/tutorial.md --platform=markdown
 
 # Publish to multiple platforms
-/write:publish /assets/blog-posts/announcement.md --platform=medium,dev,hashnode
+/ckm:write:publish /assets/blog-posts/announcement.md --platform=medium,dev,hashnode
 ```
 
 **Pre-Publish Checklist:**
@@ -273,7 +273,7 @@ HASHNODE_PUBLICATION_ID=xxxxxxxxxxxxx
 
 ## Related Skills
 
-The `/write` commands automatically activate these skills:
+The `/ckm:write` commands automatically activate these skills:
 
 - **[copywriting](/docs/marketing/skills/copywriting)** - Writing and persuasion techniques
 - **[content-marketing](/docs/marketing/skills/content-marketing)** - Content strategy and distribution
@@ -282,7 +282,7 @@ The `/write` commands automatically activate these skills:
 
 ## Related Agents
 
-These agents collaborate in the `/write` workflow:
+These agents collaborate in the `/ckm:write` workflow:
 
 - **[copywriter](/docs/marketing/agents/copywriter)** - Craft compelling content
 - **[content-reviewer](/docs/marketing/agents/content-reviewer)** - Quality auditing
@@ -305,11 +305,11 @@ See full workflow guides:
 1. Add 3+ sample posts to `/assets/writing-styles/author-samples/`
 2. Include variety of content types (announcements, tutorials, thought leadership)
 3. Create `/assets/writing-styles/brand-voice.md` with clear style guidelines
-4. Specify tone in prompt: `/write:blog "topic" --tone=technical`
+4. Specify tone in prompt: `/ckm:write:blog "topic" --tone=technical`
 
 ### Publishing Fails
 
-**Issue**: `/write:publish` reports error during deployment.
+**Issue**: `/ckm:write:publish` reports error during deployment.
 
 **Solution**:
 1. Verify platform credentials in `.env` file

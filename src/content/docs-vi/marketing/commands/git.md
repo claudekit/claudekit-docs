@@ -1,6 +1,6 @@
 ---
 lang: vi
-title: "/git"
+title: "/ckm:git"
 description: "Tạo pull requests với so sánh branch tự động, conventional commit messages, và GitHub CLI integration"
 section: marketing
 category: commands
@@ -13,7 +13,7 @@ published: true
 ## Bắt Đầu Nhanh
 
 ```bash
-/git pr
+/ckm:git pr
 ```
 
 **Điều gì sẽ xảy ra**:
@@ -28,7 +28,7 @@ published: true
 ## Cú Pháp
 
 ```bash
-/git pr [to-branch] [from-branch]
+/ckm:git pr [to-branch] [from-branch]
 ```
 
 ### Đối Số
@@ -42,7 +42,7 @@ published: true
 
 **Đầu vào**:
 ```bash
-/git pr main feature/email-campaigns
+/ckm:git pr main feature/email-campaigns
 ```
 
 **Quá trình**:
@@ -117,24 +117,24 @@ git status
 ### Sau Implementation
 
 ```bash
-/cook plans/feature.md
+/ckm:cook plans/feature.md
 # Implementation complete
-/git pr  # Create PR
+/ckm:git pr  # Create PR
 ```
 
-### Sau /cook
+### Sau /ckm:cook
 
 ```bash
-/cook add feature
+/ckm:cook add feature
 # User approves
-/git pr  # Create PR
+/ckm:git pr  # Create PR
 ```
 
 ### Custom Branch Flow
 
 ```bash
-/git pr dev  # PR to dev branch
-/git pr main feature/auth  # Specific branches
+/ckm:git pr dev  # PR to dev branch
+/ckm:git pr main feature/auth  # Specific branches
 ```
 
 ## Yêu Cầu
@@ -171,9 +171,9 @@ Tự động tạo tiêu đề theo quy ước:
 
 ## Lệnh Liên Quan
 
-- [/cook](/docs/marketing/commands/cook) - Auto-commits after implementation
-- [/cook](/docs/marketing/commands/cook) - Includes git commit
-- [/git cm](/docs/marketing/commands/git) - Commit only (no PR)
+- [/ckm:cook](/docs/marketing/commands/cook) - Auto-commits after implementation
+- [/ckm:cook](/docs/marketing/commands/cook) - Includes git commit
+- [/ckm:git cm](/docs/marketing/commands/git) - Commit only (no PR)
 
 ---
 

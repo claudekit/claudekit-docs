@@ -310,6 +310,6 @@ Track vanity metrics (impressions, followers) but optimize for business metrics 
 
 - `/research` - Conduct market/competitive research
 - `/strategy create` - Generate marketing plans
-- `/content create` - Produce content assets
-- `/campaign launch` - Activate campaigns
-- `/analyze` - Measure performance
+- `/ckm:content create` - Produce content assets
+- `/ckm:campaign launch` - Activate campaigns
+- `/ckm:analyze` - Measure performance

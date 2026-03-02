@@ -1,6 +1,6 @@
 ---
 lang: vi
-title: "/test"
+title: "/ckm:test"
 description: "Chạy bộ test và phân tích kết quả - chỉ kiểm tra, không triển khai"
 section: marketing
 category: commands
@@ -13,7 +13,7 @@ published: true
 ## Quick Start
 
 ```bash
-/test
+/ckm:test
 ```
 
 **Điều gì xảy ra**:
@@ -27,7 +27,7 @@ published: true
 ## Syntax
 
 ```bash
-/test
+/ckm:test
 ```
 
 Không cần đối số.
@@ -57,34 +57,34 @@ Failed Tests:
 
 Summary: 116/118 tests passing (98.3%)
 
-Next: /fix Test failures in email campaign + analytics
+Next: /ckm:fix Test failures in email campaign + analytics
 ```
 
 ## When to Use
 
 ### Sau khi triển khai
 ```bash
-/cook plans/feature.md
-/test  # Xác minh mọi thứ hoạt động
+/ckm:cook plans/feature.md
+/ckm:test  # Xác minh mọi thứ hoạt động
 ```
 
 ### Trước khi Commits
 ```bash
-/test  # Đảm bảo test pass
-/git cm  # Commit nếu tất cả bình thường
+/ckm:test  # Đảm bảo test pass
+/ckm:git cm  # Commit nếu tất cả bình thường
 ```
 
 ### Debugging
 ```bash
-/fix feature not working
-/test  # Xác minh bản sửa hoạt động
+/ckm:fix feature not working
+/ckm:test  # Xác minh bản sửa hoạt động
 ```
 
 ## Related Commands
 
-- [/cook](/docs/marketing/commands/cook) - Bao gồm kiểm tra tự động
-- [/fix](/docs/marketing/commands/fix) - Sửa lỗi test
-- [/review](/docs/marketing/commands/review) - Kiểm tra chất lượng mã
+- [/ckm:cook](/docs/marketing/commands/cook) - Bao gồm kiểm tra tự động
+- [/ckm:fix](/docs/marketing/commands/fix) - Sửa lỗi test
+- [/ckm:review](/docs/marketing/commands/review) - Kiểm tra chất lượng mã
 
 ---
 

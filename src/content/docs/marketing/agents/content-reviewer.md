@@ -626,7 +626,7 @@ Base recommendations on evidence, not taste.
 
 ## Related Commands
 
-- `/review` - Comprehensive content quality assessment
+- `/ckm:review` - Comprehensive content quality assessment
 - `/audit` - SEO and compliance audit
 - `/optimize` - Conversion rate optimization suggestions
 

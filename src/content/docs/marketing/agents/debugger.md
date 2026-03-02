@@ -640,7 +640,7 @@ Verify your fix actually worked.
 
 - `/debug` - Investigate system issues
 - `/logs` - Analyze application logs
-- `/test` - Run integration health checks
+- `/ckm:test` - Run integration health checks
 
 ---
 

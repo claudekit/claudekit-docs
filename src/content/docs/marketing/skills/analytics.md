@@ -168,5 +168,5 @@ Ensure sample size supports insights. Use confidence intervals for A/B tests.
 
 - `/analytics/dashboard` - Generate dashboard snapshot
 - `/analytics/keywords` - Analyze search performance
-- `/analyze` - General data analysis
-- `/analyze:report` - Create custom report
+- `/ckm:analyze` - General data analysis
+- `/ckm:analyze:report` - Create custom report

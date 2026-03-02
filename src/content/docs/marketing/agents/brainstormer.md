@@ -530,9 +530,9 @@ If you need 1,000 leads and projection says 1,500, build the plan assuming 1,000
 
 ## Related Commands
 
-- `/plan` - Create comprehensive marketing plan
+- `/ckm:plan` - Create comprehensive marketing plan
 - `/research` - Deep-dive research on topics, competitors, or strategies
-- `/analyze` - Evaluate data and provide strategic recommendations
+- `/ckm:analyze` - Evaluate data and provide strategic recommendations
 
 ---
 

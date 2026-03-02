@@ -180,6 +180,6 @@ Review brand consistency across channels every 3 months. Update guidelines as br
 
 ## Related Commands
 
-- `/brand:update` - Update brand guidelines
+- `/ckm:brand:update` - Update brand guidelines
 - `/content/good` - Generate brand-aligned content
 - `/design/good` - Create brand-compliant designs

@@ -27,7 +27,7 @@ Chạy kiểm tra SEO đầu tiên trong 30 giây:
 
 ```bash
 # Kiểm tra site của bạn về vấn đề SEO
-/ask "Thực hiện kiểm tra SEO kỹ thuật trên [your-domain.com]"
+/ckm:ask "Thực hiện kiểm tra SEO kỹ thuật trên [your-domain.com]"
 
 # Agent sẽ phân tích khả năng crawl, indexation, tốc độ, trải nghiệm mobile và nhiều hơn
 ```
@@ -78,7 +78,7 @@ Xác định và sửa vấn đề kỹ thuật:
 
 ```bash
 # Bước 1: Chạy kiểm tra toàn diện
-/ask "Kiểm tra [your-domain.com] về vấn đề SEO kỹ thuật"
+/ckm:ask "Kiểm tra [your-domain.com] về vấn đề SEO kỹ thuật"
 
 # Agent phân tích:
 # - Khả năng crawl và indexation
@@ -104,7 +104,7 @@ Tối ưu trang cho từ khóa mục tiêu:
 
 ```bash
 # Cung cấp URL và từ khóa mục tiêu
-/ask "Tối ưu [page-url] cho từ khóa '[từ khóa mục tiêu]'"
+/ckm:ask "Tối ưu [page-url] cho từ khóa '[từ khóa mục tiêu]'"
 
 # Agent sẽ:
 # - Phân tích yếu tố xếp hạng hiện tại
@@ -122,7 +122,7 @@ Thêm dữ liệu có cấu trúc cho rich snippet:
 
 ```bash
 # Yêu cầu schema cho loại nội dung của bạn
-/ask "Tạo JSON-LD schema cho trang [article/product/FAQ]"
+/ckm:ask "Tạo JSON-LD schema cho trang [article/product/FAQ]"
 
 # Agent tạo:
 # - Code JSON-LD định dạng đúng
@@ -139,7 +139,7 @@ Tìm cơ hội đối thủ đang khai thác:
 
 ```bash
 # So sánh với đối thủ
-/ask "Phân tích khoảng trống SEO giữa chúng tôi và [competitor-domain]"
+/ckm:ask "Phân tích khoảng trống SEO giữa chúng tôi và [competitor-domain]"
 
 # Agent xác định:
 # - Từ khóa họ xếp hạng mà bạn không
@@ -191,6 +191,6 @@ Agent tổ chức đầu ra trong vị trí chuẩn hóa:
 
 ## Lệnh Liên Quan
 
-- `/ask` - Query agent trực tiếp
-- `/scout` - Tìm file và bối cảnh liên quan
-- `/plan` - Tạo kế hoạch SEO toàn diện
+- `/ckm:ask` - Query agent trực tiếp
+- `/ckm:scout` - Tìm file và bối cảnh liên quan
+- `/ckm:plan` - Tạo kế hoạch SEO toàn diện

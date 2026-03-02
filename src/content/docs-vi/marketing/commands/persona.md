@@ -1,6 +1,6 @@
 ---
 lang: vi
-title: "/persona"
+title: "/ckm:persona"
 description: "Tạo và quản lý customer personas với AI-powered audience research, market validation, và ICP profiling"
 section: marketing
 category: commands
@@ -13,7 +13,7 @@ published: true
 ## Bắt Đầu Nhanh
 
 ```bash
-/persona create
+/ckm:persona create
 ```
 
 **Điều gì sẽ xảy ra**:
@@ -27,7 +27,7 @@ published: true
 ## Cú Pháp
 
 ```bash
-/persona <action> [name]
+/ckm:persona <action> [name]
 ```
 
 ### Hành Động
@@ -45,7 +45,7 @@ published: true
 
 **Đầu vào**:
 ```bash
-/persona create
+/ckm:persona create
 ```
 
 **AI Questions**:
@@ -217,7 +217,7 @@ Saved: assets/leads/icp-profiles/tech-startup-founder.md
 
 **Đầu vào**:
 ```bash
-/persona analyze
+/ckm:persona analyze
 ```
 
 **Kết Quả**:
@@ -268,7 +268,7 @@ Saved: assets/leads/audience-analysis-250129.md
 
 **Đầu vào**:
 ```bash
-/persona update "Tech Startup Founder"
+/ckm:persona update "Tech Startup Founder"
 ```
 
 **Quá trình**:
@@ -294,7 +294,7 @@ Saved: assets/leads/icp-profiles/tech-startup-founder.md
 
 **Đầu vào**:
 ```bash
-/persona list
+/ckm:persona list
 ```
 
 **Kết Quả**:
@@ -323,26 +323,26 @@ Customer Personas (3):
 
 ```bash
 # Step 1: Define audience
-/persona create
+/ckm:persona create
 
 # Step 2: Create campaign
-/campaign create "Q1 Launch"
+/ckm:campaign create "Q1 Launch"
 
 # Step 3: Generate persona-specific content
-/email cold "Tech Startup Founders"
-/content landing "For startup founders"
-/social linkedin "Founder audience"
+/ckm:email cold "Tech Startup Founders"
+/ckm:content landing "For startup founders"
+/ckm:social linkedin "Founder audience"
 ```
 
 ### Content Strategy
 
 ```bash
 # Analyze audience
-/persona analyze
+/ckm:persona analyze
 
 # Create targeted content
-/content blog "Best tools for startup founders"
-/content case-study "How StartupX reduced CAC 43%"
+/ckm:content blog "Best tools for startup founders"
+/ckm:content case-study "How StartupX reduced CAC 43%"
 ```
 
 ## Agent Sử Dụng
@@ -358,9 +358,9 @@ Customer Personas (3):
 
 ## Lệnh Liên Quan
 
-- [/campaign](/docs/marketing/commands/campaign) - Use personas in campaigns
-- [/content](/docs/marketing/commands/content) - Create persona-specific content
-- [/email](/docs/marketing/commands/email) - Persona-targeted emails
+- [/ckm:campaign](/docs/marketing/commands/campaign) - Use personas in campaigns
+- [/ckm:content](/docs/marketing/commands/content) - Create persona-specific content
+- [/ckm:email](/docs/marketing/commands/email) - Persona-targeted emails
 
 ---
 

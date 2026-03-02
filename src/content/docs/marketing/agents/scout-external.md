@@ -176,7 +176,7 @@ Optimized for large-scale searches:
 ## Related Commands
 
 - [`/scout-ext`](/docs/marketing/commands) - AI-powered codebase search
-- [`/scout`](/docs/marketing/commands/scout) - Standard file search
+- [`/ckm:scout`](/docs/marketing/commands/scout) - Standard file search
 
 ## Tips
 

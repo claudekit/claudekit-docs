@@ -1,6 +1,6 @@
 ---
 lang: vi
-title: "/fix"
+title: "/ckm:fix"
 description: "Định tuyến vấn đề thông minh tới các lệnh fix chuyên dụng dựa trên loại vấn đề - types, UI, CI/CD, tests, logs, và complex issues"
 section: marketing
 category: commands
@@ -13,35 +13,35 @@ published: true
 ## Bắt Đầu Nhanh
 
 ```bash
-/fix TypeScript compilation errors in campaign module
+/ckm:fix TypeScript compilation errors in campaign module
 ```
 
 **Điều gì sẽ xảy ra**:
 1. Phân tích loại vấn đề (type errors detected)
-2. Định tuyến tới `/fix`
+2. Định tuyến tới `/ckm:fix`
 3. Agent chuyên dụng sửa vấn đề
 4. Xác minh với type checker
 
 ## Cú Pháp
 
 ```bash
-/fix [issues]
+/ckm:fix [issues]
 ```
 
 ## Decision Tree
 
-Lệnh `/fix` định tuyến thông minh tới các biến thể chuyên dụng:
+Lệnh `/ckm:fix` định tuyến thông minh tới các biến thể chuyên dụng:
 
 | Loại Vấn Đề | Từ Khóa | Định Tuyến Tới | Agent |
 |------------|----------|-----------|-------|
-| Type Errors | type, typescript, tsc | `/fix` | type-fixer |
-| UI/UX | ui, ux, design, layout, style | `/fix` | ui-ux-designer |
-| CI/CD | github actions, pipeline, workflow | `/fix` | devops-specialist |
-| Tests | test, spec, jest, vitest | `/fix` | tester |
-| Logs | logs, error logs, stack trace | `/fix` | debugger |
-| Multiple | 2+ unrelated issues | `/fix --parallel` | multiple agents |
-| Complex | architecture, refactor, system-wide | `/fix` | architect |
-| Simple | single file, small bug | `/fix --quick` | generalist |
+| Type Errors | type, typescript, tsc | `/ckm:fix` | type-fixer |
+| UI/UX | ui, ux, design, layout, style | `/ckm:fix` | ui-ux-designer |
+| CI/CD | github actions, pipeline, workflow | `/ckm:fix` | devops-specialist |
+| Tests | test, spec, jest, vitest | `/ckm:fix` | tester |
+| Logs | logs, error logs, stack trace | `/ckm:fix` | debugger |
+| Multiple | 2+ unrelated issues | `/ckm:fix --parallel` | multiple agents |
+| Complex | architecture, refactor, system-wide | `/ckm:fix` | architect |
+| Simple | single file, small bug | `/ckm:fix --quick` | generalist |
 
 ## Ví Dụ
 
@@ -49,10 +49,10 @@ Lệnh `/fix` định tuyến thông minh tới các biến thể chuyên dụng
 
 **Đầu vào**:
 ```bash
-/fix TypeScript compilation errors
+/ckm:fix TypeScript compilation errors
 ```
 
-**Định Tuyến Tới**: `/fix`
+**Định Tuyến Tới**: `/ckm:fix`
 
 **Kết Quả**:
 ```markdown
@@ -73,10 +73,10 @@ Total time: 47 seconds
 
 **Đầu vào**:
 ```bash
-/fix Button not responsive on mobile devices
+/ckm:fix Button not responsive on mobile devices
 ```
 
-**Định Tuyến Tới**: `/fix`
+**Định Tuyến Tới**: `/ckm:fix`
 
 **Kết Quả**:
 ```markdown
@@ -97,10 +97,10 @@ Files modified: components/Button.tsx
 
 **Đầu vào**:
 ```bash
-/fix GitHub Actions deployment pipeline failing
+/ckm:fix GitHub Actions deployment pipeline failing
 ```
 
-**Định Tuyến Tới**: `/fix`
+**Định Tuyến Tới**: `/ckm:fix`
 
 **Kết Quả**:
 ```markdown
@@ -121,10 +121,10 @@ Re-run pipeline: Build now passes ✓
 
 **Đầu vào**:
 ```bash
-/fix Type errors in auth module + UI bugs in dashboard + test failures
+/ckm:fix Type errors in auth module + UI bugs in dashboard + test failures
 ```
 
-**Định Tuyến Tới**: `/fix --parallel`
+**Định Tuyến Tới**: `/ckm:fix --parallel`
 
 **Kết Quả**:
 ```markdown
@@ -144,77 +144,77 @@ Time saved: 67%
 
 ## Biến Thể
 
-### /fix --quick
+### /ckm:fix --quick
 Quick fixes for simple issues:
 ```bash
-/fix --quick Missing semicolon in utils.ts
+/ckm:fix --quick Missing semicolon in utils.ts
 ```
 
-### /fix (complex)
+### /ckm:fix (complex)
 Deep architectural fixes:
 ```bash
-/fix Refactor campaign architecture for scalability
+/ckm:fix Refactor campaign architecture for scalability
 ```
 
-### /fix --parallel
+### /ckm:fix --parallel
 Multiple unrelated issues:
 ```bash
-/fix --parallel Fix types + UI bugs + test failures
+/ckm:fix --parallel Fix types + UI bugs + test failures
 ```
 
-### /fix (auto-detects types)
+### /ckm:fix (auto-detects types)
 TypeScript type errors only:
 ```bash
-/fix TypeScript compilation errors
+/ckm:fix TypeScript compilation errors
 ```
 
-### /fix (auto-detects UI)
+### /ckm:fix (auto-detects UI)
 UI/UX issues:
 ```bash
-/fix Button not responsive on mobile
+/ckm:fix Button not responsive on mobile
 ```
 
-### /fix (auto-detects CI)
+### /ckm:fix (auto-detects CI)
 CI/CD pipeline failures:
 ```bash
-/fix GitHub Actions deployment pipeline failing
+/ckm:fix GitHub Actions deployment pipeline failing
 ```
 
-### /fix (auto-detects tests)
+### /ckm:fix (auto-detects tests)
 Test failures:
 ```bash
-/fix Test failures in authentication module
+/ckm:fix Test failures in authentication module
 ```
 
-### /fix (auto-detects logs)
+### /ckm:fix (auto-detects logs)
 Analyze error logs:
 ```bash
-/fix API returning 500 errors according to logs
+/ckm:fix API returning 500 errors according to logs
 ```
 
 ## Tích Hợp Quy Trình Làm Việc
 
 ```bash
-# After /cook if issues arise
-/cook plans/feature.md
+# After /ckm:cook if issues arise
+/ckm:cook plans/feature.md
 # Tests fail or types error
-/fix TypeScript errors + failing tests
+/ckm:fix TypeScript errors + failing tests
 
-# After /analyze identifies issues
-/analyze campaigns
-/fix Campaign analytics not tracking conversions
+# After /ckm:analyze identifies issues
+/ckm:analyze campaigns
+/ckm:fix Campaign analytics not tracking conversions
 
 # Quick iteration
-/cook add feature
+/ckm:cook add feature
 # Minor issues
-/fix --quick Issues from last commit
+/ckm:fix --quick Issues from last commit
 ```
 
 ## Lệnh Liên Quan
 
-- [/cook](/docs/marketing/commands/cook) - Implementation (includes testing)
-- [/test](/docs/marketing/commands/test) - Run tests only
-- [/review](/docs/marketing/commands/review) - Code quality check
+- [/ckm:cook](/docs/marketing/commands/cook) - Implementation (includes testing)
+- [/ckm:test](/docs/marketing/commands/test) - Run tests only
+- [/ckm:review](/docs/marketing/commands/review) - Code quality check
 - [/debug](/docs/marketing/commands) - Deep root cause analysis
 
 ---

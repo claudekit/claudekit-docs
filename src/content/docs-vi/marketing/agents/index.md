@@ -89,13 +89,13 @@ Gọi đích danh các đại lý khi bạn cần chuyên môn của họ:
 
 ```bash
 # Điều phối chiến dịch
-/campaign create "Q1 Product Launch"
+/ckm:campaign create "Q1 Product Launch"
 
 # Tạo nội dung
 "Write marketing copy for comparison landing page" # sử dụng copywriting skill
 
 # Tối ưu hóa SEO
-/seo optimize "product page"
+/ckm:seo optimize "product page"
 ```
 
 ### Ủy quyền tự động
@@ -116,7 +116,7 @@ Bạn: "Create a launch campaign across all channels"
 Các nhiệm vụ phức tạp sẽ tự động có sự tham gia của nhiều đại lý:
 
 ```bash
-/campaign create "Product Launch"
+/ckm:campaign create "Product Launch"
 ```
 
 **Hậu trường:**

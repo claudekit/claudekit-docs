@@ -1,5 +1,5 @@
 ---
-title: "/use-mcp"
+title: "/ckm:use-mcp"
 description: "Execute Model Context Protocol (MCP) operations via Gemini CLI to preserve context budget and access external tools"
 section: marketing
 category: commands
@@ -12,7 +12,7 @@ published: true
 ## Quick Start
 
 ```bash
-/use-mcp Get Google Analytics traffic for last 30 days
+/ckm:use-mcp Get Google Analytics traffic for last 30 days
 ```
 
 **What happens**:
@@ -43,7 +43,7 @@ You → Claude → Gemini CLI → MCP Servers → Tools
 ## Syntax
 
 ```bash
-/use-mcp [task]
+/ckm:use-mcp [task]
 ```
 
 ## Execution Method
@@ -65,7 +65,7 @@ gemini -y -m gemini-2.5-flash -p "..."
 
 **Input**:
 ```bash
-/use-mcp Get traffic data for last 30 days
+/ckm:use-mcp Get traffic data for last 30 days
 ```
 
 **Process**:
@@ -102,7 +102,7 @@ Summary:
 
 **Input**:
 ```bash
-/use-mcp Get top 10 keywords from Search Console
+/ckm:use-mcp Get top 10 keywords from Search Console
 ```
 
 **Output**:
@@ -124,7 +124,7 @@ Result:
 
 **Input**:
 ```bash
-/use-mcp Post campaign announcement to #marketing channel
+/ckm:use-mcp Post campaign announcement to #marketing channel
 ```
 
 **Output**:
@@ -206,21 +206,21 @@ All responses are structured JSON:
 
 ### Analytics Reporting
 ```bash
-/use-mcp Get GA4 traffic for last 30 days
-/analyze traffic  # Analyze with AI
+/ckm:use-mcp Get GA4 traffic for last 30 days
+/ckm:analyze traffic  # Analyze with AI
 ```
 
 ### SEO Tracking
 ```bash
-/use-mcp Get Search Console keyword rankings
-/seo keywords "top performing keywords"
+/ckm:use-mcp Get Search Console keyword rankings
+/ckm:seo keywords "top performing keywords"
 ```
 
 ### Multi-Channel Publishing
 ```bash
-/social twitter thread "product launch"
-/use-mcp Post to Discord #announcements
-/use-mcp Post to Slack #marketing
+/ckm:social twitter thread "product launch"
+/ckm:use-mcp Post to Discord #announcements
+/ckm:use-mcp Post to Slack #marketing
 ```
 
 ## Troubleshooting
@@ -231,7 +231,7 @@ All responses are structured JSON:
 npm install -g @google/generative-ai-cli
 
 # Or use fallback
-# /use-mcp automatically uses mcp-manager subagent
+# /ckm:use-mcp automatically uses mcp-manager subagent
 ```
 
 ### MCP server not connected
@@ -250,8 +250,8 @@ npm install -g @google/generative-ai-cli
 
 ## Related Commands
 
-- [/analyze](/docs/marketing/commands/analyze) - Analyze MCP data
-- [/campaign](/docs/marketing/commands/campaign) - Use analytics in campaigns
+- [/ckm:analyze](/docs/marketing/commands/analyze) - Analyze MCP data
+- [/ckm:campaign](/docs/marketing/commands/campaign) - Use analytics in campaigns
 
 ## Related Skills
 

@@ -1,6 +1,6 @@
 ---
 lang: vi
-title: "/social"
+title: "/ckm:social"
 description: "Tạo nội dung mạng xã hội được tối ưu hóa cho từng nền tảng với AI copywriting"
 section: marketing
 category: commands
@@ -15,7 +15,7 @@ published: true
 Tạo một bài đăng LinkedIn trong 30 giây:
 
 ```bash
-/social linkedin post
+/ckm:social linkedin post
 ```
 
 **Điều gì xảy ra**:
@@ -28,14 +28,14 @@ Tạo một bài đăng LinkedIn trong 30 giây:
 
 ## What It Does
 
-### Trước /social
+### Trước /ckm:social
 - Viết bản sao thủ công (30-60 phút mỗi bài)
 - Tối ưu hóa nền tảng không nhất quán
 - Lựa chọn hashtag ngẫu nhiên
 - Không có chiến lược đăng bài
 - Chiến thuật tham gia không rõ ràng
 
-### Sau /social
+### Sau /ckm:social
 - Nội dung mạng xã hội do AI tạo (2 phút)
 - Định dạng riêng cho từng nền tảng
 - Nghiên cứu hashtag chiến lược
@@ -45,7 +45,7 @@ Tạo một bài đăng LinkedIn trong 30 giây:
 ## Syntax
 
 ```bash
-/social <platform> [type]
+/ckm:social <platform> [type]
 ```
 
 ### Arguments
@@ -81,7 +81,7 @@ Tạo một bài đăng LinkedIn trong 30 giây:
 
 **Input**:
 ```bash
-/social linkedin post
+/ckm:social linkedin post
 ```
 
 **AI Questions**:
@@ -144,7 +144,7 @@ Option 2: Biểu đồ kết quả (76%, 3x, 92% thống kê)
 Option 3: Ảnh chụp sản phẩm với văn bản overlay
 
 Tạo bằng:
-/design LinkedIn post graphic, 1:1 aspect, stats overlay
+/ckm:design LinkedIn post graphic, 1:1 aspect, stats overlay
 
 ## Performance Predictions
 Reach dự kiến: 2,500-3,500 impressions
@@ -164,7 +164,7 @@ Saved: assets/posts/linkedin/251229-ai-automation-launch.md
 
 **Input**:
 ```bash
-/social twitter thread
+/ckm:social twitter thread
 ```
 
 **AI Questions**:
@@ -335,7 +335,7 @@ Saved: assets/posts/twitter/251229-churn-reduction-thread.md
 
 **Input**:
 ```bash
-/social instagram carousel
+/ckm:social instagram carousel
 ```
 
 **Expected Output**:
@@ -453,7 +453,7 @@ Màu sắc: Màu thương hiệu với khả năng đọc cao
 
 ## Visual Design
 Tạo slide bằng:
-/design Instagram carousel slides, productivity theme, 7 slides
+/ckm:design Instagram carousel slides, productivity theme, 7 slides
 
 Style: Minimalist, bold text, consistent color scheme
 Template: Title + 1-2 bullets per slide
@@ -473,36 +473,36 @@ Saved: assets/posts/instagram/251229-productivity-hacks-carousel.md
 ### Multi-Platform Campaign
 ```bash
 # Tạo nội dung cho tất cả nền tảng
-/social twitter thread "Thông báo ra mắt sản phẩm"
-/social linkedin post "Thông báo ra mắt sản phẩm"
-/social instagram carousel "Phân tích các tính năng sản phẩm"
+/ckm:social twitter thread "Thông báo ra mắt sản phẩm"
+/ckm:social linkedin post "Thông báo ra mắt sản phẩm"
+/ckm:social instagram carousel "Phân tích các tính năng sản phẩm"
 
 # Tạo hình ảnh
-/design Twitter post graphic
-/design LinkedIn post graphic
-/design Instagram carousel slides
+/ckm:design Twitter post graphic
+/ckm:design LinkedIn post graphic
+/ckm:design Instagram carousel slides
 
 # Theo dõi hiệu suất
-/analyze engagement
+/ckm:analyze engagement
 ```
 
 ### Content Repurposing
 ```bash
 # Bắt đầu với dạng dài
-/content blog "Hướng dẫn năng suất hoàn chỉnh"
+/ckm:content blog "Hướng dẫn năng suất hoàn chỉnh"
 
 # Tái sử dụng cho mạng xã hội
-/social twitter thread "Những điểm chính từ hướng dẫn năng suất"
-/social linkedin article "Tóm tắt hướng dẫn năng suất"
-/social instagram carousel "Top 7 productivity tips"
+/ckm:social twitter thread "Những điểm chính từ hướng dẫn năng suất"
+/ckm:social linkedin article "Tóm tắt hướng dẫn năng suất"
+/ckm:social instagram carousel "Top 7 productivity tips"
 ```
 
 ## Related Commands
 
-- [/content](/docs/marketing/commands/content) - Nội dung dạng dài
-- [/design](/docs/marketing/commands/design) - Đồ họa mạng xã hội
-- [/campaign](/docs/marketing/commands/campaign) - Chiến dịch mạng xã hội
-- [/analyze](/docs/marketing/commands/analyze) - Phân tích mạng xã hội
+- [/ckm:content](/docs/marketing/commands/content) - Nội dung dạng dài
+- [/ckm:design](/docs/marketing/commands/design) - Đồ họa mạng xã hội
+- [/ckm:campaign](/docs/marketing/commands/campaign) - Chiến dịch mạng xã hội
+- [/ckm:analyze](/docs/marketing/commands/analyze) - Phân tích mạng xã hội
 
 ## Related Agents
 

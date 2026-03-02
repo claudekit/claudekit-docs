@@ -1,6 +1,6 @@
 ---
 lang: vi
-title: "/content"
+title: "/ckm:content"
 description: "Tạo bài đăng blog được tối ưu hóa cho SEO, trang đích và nội dung tiếp thị với nghiên cứu do AI cung cấp, viết và tối ưu hóa"
 section: marketing
 category: commands
@@ -13,7 +13,7 @@ published: true
 ## Khởi động nhanh
 
 ```bash
-/content blog "best marketing automation tools"
+/ckm:content blog "best marketing automation tools"
 ```
 
 **Điều gì xảy ra**:
@@ -28,7 +28,7 @@ published: true
 ## Cú pháp
 
 ```bash
-/content <type> [topic]
+/ckm:content <type> [topic]
 ```
 
 ### Loại nội dung
@@ -44,7 +44,7 @@ published: true
 
 **Đầu vào**:
 ```bash
-/content blog "AI marketing automation guide"
+/ckm:content blog "AI marketing automation guide"
 ```
 
 **Kết quả mong đợi**:
@@ -96,17 +96,17 @@ Word Count: 2,847
 
 Lưu: assets/articles/250129-ai-marketing-automation-guide/
 
-Tiếp: /seo audit [published URL]
+Tiếp: /ckm:seo audit [published URL]
 ```
 
 ## Tích hợp quy trình làm việc
 
 ```bash
 # Quy trình nội dung hoàn chỉnh
-/seo keywords "your topic"  # Research first
-/content blog "your topic"  # Create content
-/design featured image for blog  # Visual assets
-/seo audit https://yoursite.com/blog/post  # Verify SEO
+/ckm:seo keywords "your topic"  # Research first
+/ckm:content blog "your topic"  # Create content
+/ckm:design featured image for blog  # Visual assets
+/ckm:seo audit https://yoursite.com/blog/post  # Verify SEO
 ```
 
 ## Tác nhân được sử dụng
@@ -124,9 +124,9 @@ Tiếp: /seo audit [published URL]
 
 ## Lệnh liên quan
 
-- [/seo](/vi/docs/marketing/commands/seo) - Nghiên cứu từ khóa và kiểm tra
-- [/design](/vi/docs/marketing/commands/design) - Tài sản trực quan
-- [/social](/vi/docs/marketing/commands/social) - Quảng bá nội dung
+- [/ckm:seo](/vi/docs/marketing/commands/seo) - Nghiên cứu từ khóa và kiểm tra
+- [/ckm:design](/vi/docs/marketing/commands/design) - Tài sản trực quan
+- [/ckm:social](/vi/docs/marketing/commands/social) - Quảng bá nội dung
 
 ---
 

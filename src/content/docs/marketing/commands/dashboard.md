@@ -1,5 +1,5 @@
 ---
-title: "/dashboard"
+title: "/ckm:dashboard"
 description: "Launch the Marketing Dashboard web app for visual campaign management, content library, and automation workflows"
 section: marketing
 category: commands
@@ -12,7 +12,7 @@ published: true
 ## Quick Start
 
 ```bash
-/dashboard
+/ckm:dashboard
 ```
 
 **What happens**:
@@ -29,7 +29,7 @@ published: true
 ## Syntax
 
 ```bash
-/dashboard [mode]
+/ckm:dashboard [mode]
 ```
 
 ### Modes
@@ -133,9 +133,9 @@ Pre-built automation recipes:
 
 ### Start Development
 ```bash
-/dashboard dev
+/ckm:dashboard dev
 # or just
-/dashboard
+/ckm:dashboard
 ```
 
 **Output**:
@@ -156,7 +156,7 @@ Press Ctrl+C to stop
 
 ### Build for Production
 ```bash
-/dashboard build
+/ckm:dashboard build
 ```
 
 **Output**:
@@ -171,12 +171,12 @@ Building for production...
 Build artifacts: app/dist/
 
 Deploy with:
-/dashboard prod
+/ckm:dashboard prod
 ```
 
 ### Production Mode
 ```bash
-/dashboard prod
+/ckm:dashboard prod
 ```
 
 **Output**:
@@ -193,7 +193,7 @@ Production ready!
 
 ### Stop Servers
 ```bash
-/dashboard stop
+/ckm:dashboard stop
 ```
 
 **Output**:
@@ -219,7 +219,7 @@ Required for AI features:
 **Via Environment**:
 ```bash
 export CLAUDE_API_KEY=your-key-here
-/dashboard
+/ckm:dashboard
 ```
 
 ## Data Storage
@@ -239,7 +239,7 @@ cp server/marketing.db server/marketing.db.backup
 ### Visual Campaign Management
 ```bash
 # Start dashboard
-/dashboard
+/ckm:dashboard
 
 # Create campaigns visually
 # Manage content in UI
@@ -249,10 +249,10 @@ cp server/marketing.db server/marketing.db.backup
 ### Command + Dashboard Combo
 ```bash
 # Create via command
-/campaign create "Q1 Launch"
+/ckm:campaign create "Q1 Launch"
 
 # View in dashboard
-/dashboard
+/ckm:dashboard
 # See new campaign in Kanban board
 
 # Analyze in dashboard
@@ -283,9 +283,9 @@ cp server/marketing.db server/marketing.db.backup
 
 ### Database Locked
 ```bash
-/dashboard stop
+/ckm:dashboard stop
 rm server/marketing.db.lock
-/dashboard
+/ckm:dashboard
 ```
 
 ### API Key Issues
@@ -297,9 +297,9 @@ export CLAUDE_API_KEY=sk-ant-...
 
 ## Related Commands
 
-- [/campaign](/docs/marketing/commands/campaign) - Create campaigns (CLI)
-- [/content](/docs/marketing/commands/content) - Create content (CLI)
-- [/analyze](/docs/marketing/commands/analyze) - View analytics (CLI + dashboard)
+- [/ckm:campaign](/docs/marketing/commands/campaign) - Create campaigns (CLI)
+- [/ckm:content](/docs/marketing/commands/content) - Create content (CLI)
+- [/ckm:analyze](/docs/marketing/commands/analyze) - View analytics (CLI + dashboard)
 
 ## Related Files
 

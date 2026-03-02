@@ -1,6 +1,6 @@
 ---
 lang: vi
-title: "/review"
+title: "/ckm:review"
 description: "Code quality analysis and review với security, performance, và architecture checks trước commits"
 section: marketing
 category: commands
@@ -13,7 +13,7 @@ published: true
 ## Bắt Đầu Nhanh
 
 ```bash
-/review
+/ckm:review
 ```
 
 **Điều gì sẽ xảy ra**:
@@ -28,7 +28,7 @@ published: true
 ## Cú Pháp
 
 ```bash
-/review [files or scope]
+/ckm:review [files or scope]
 ```
 
 ## Ví Dụ Output
@@ -81,7 +81,7 @@ STRENGTHS:
 
 Summary: Fix 1 high-priority issue before commit
 
-Next: /fix SQL injection in campaign query
+Next: /ckm:fix SQL injection in campaign query
 ```
 
 ## Khi Nào Sử Dụng
@@ -89,23 +89,23 @@ Next: /fix SQL injection in campaign query
 ### Trước Commits
 
 ```bash
-/review  # Check code quality
+/ckm:review  # Check code quality
 # Fix issues
-/git cm  # Commit
+/ckm:git cm  # Commit
 ```
 
 ### Sau Implementation
 
 ```bash
-/cook plans/feature.md
-/review  # Quality check
+/ckm:cook plans/feature.md
+/ckm:review  # Quality check
 ```
 
 ### Periodic Reviews
 
 ```bash
-/review lib/  # Review specific directory
-/review components/CampaignBuilder.tsx  # Single file
+/ckm:review lib/  # Review specific directory
+/ckm:review components/CampaignBuilder.tsx  # Single file
 ```
 
 ## Tiêu Chí Review
@@ -119,9 +119,9 @@ Next: /fix SQL injection in campaign query
 
 ## Lệnh Liên Quan
 
-- [/cook](/docs/marketing/commands/cook) - Includes review automatically
-- [/fix](/docs/marketing/commands/fix) - Fix issues found
-- [/test](/docs/marketing/commands/test) - Run tests
+- [/ckm:cook](/docs/marketing/commands/cook) - Includes review automatically
+- [/ckm:fix](/docs/marketing/commands/fix) - Fix issues found
+- [/ckm:test](/docs/marketing/commands/test) - Run tests
 
 ---
 

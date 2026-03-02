@@ -26,7 +26,7 @@ Create your first piece of content in 30 seconds:
 
 ```bash
 # Generate a blog post
-/ask "Write a blog post about [topic] targeting [audience]"
+/ckm:ask "Write a blog post about [topic] targeting [audience]"
 
 # The agent creates complete, ready-to-publish content
 ```
@@ -77,7 +77,7 @@ Create a ranking-optimized article:
 
 ```bash
 # Step 1: Define your target
-/ask "Write a blog post about [topic] targeting keyword '[keyword]' for [audience]"
+/ckm:ask "Write a blog post about [topic] targeting keyword '[keyword]' for [audience]"
 
 # The agent will create:
 # - SEO-optimized title with keyword
@@ -106,7 +106,7 @@ Generate platform-specific posts:
 
 ```bash
 # Create social content
-/ask "Write social media posts about [topic] for LinkedIn, Twitter, and Instagram"
+/ckm:ask "Write social media posts about [topic] for LinkedIn, Twitter, and Instagram"
 
 # The agent creates platform-optimized versions:
 
@@ -141,7 +141,7 @@ Write a compelling video narrative:
 
 ```bash
 # Create video script
-/ask "Write a [length] video script for [type] about [topic]"
+/ckm:ask "Write a [length] video script for [type] about [topic]"
 
 # Video types:
 # - Explainer (60-90 seconds)
@@ -173,7 +173,7 @@ Create conversion-focused ads:
 
 ```bash
 # Generate ad variations
-/ask "Write ad copy for [product] targeting [audience] for [platform]"
+/ckm:ask "Write ad copy for [product] targeting [audience] for [platform]"
 
 # The agent creates multiple variations:
 
@@ -240,6 +240,6 @@ The agent organizes content in standardized locations:
 
 ## Related Commands
 
-- `/ask` - Query the agent for content creation
-- `/scout` - Find existing content and templates
-- `/plan` - Create comprehensive content calendars
+- `/ckm:ask` - Query the agent for content creation
+- `/ckm:scout` - Find existing content and templates
+- `/ckm:plan` - Create comprehensive content calendars

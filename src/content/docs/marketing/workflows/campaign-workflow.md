@@ -367,8 +367,8 @@ Your favorite ad might perform worst. Let A/B test results guide decisions, not 
 
 ## Commands Used
 
-- `/campaign create` - Initialize new campaign
-- `/campaign status` - Check campaign progress
-- `/campaign analyze` - Get optimization recommendations
-- `/content create` - Generate creative assets
-- `/funnel design` - Build conversion path
+- `/ckm:campaign create` - Initialize new campaign
+- `/ckm:campaign status` - Check campaign progress
+- `/ckm:campaign analyze` - Get optimization recommendations
+- `/ckm:content create` - Generate creative assets
+- `/ckm:funnel design` - Build conversion path

@@ -1,5 +1,5 @@
 ---
-title: "/scout"
+title: "/ckm:scout"
 description: "Fast, token-efficient codebase search with parallel agent spawning to find relevant files for implementation tasks"
 section: marketing
 category: commands
@@ -12,7 +12,7 @@ published: true
 ## Quick Start
 
 ```bash
-/scout find campaign-related components
+/ckm:scout find campaign-related components
 ```
 
 **What happens** (under 30 seconds):
@@ -27,7 +27,7 @@ published: true
 ## Syntax
 
 ```bash
-/scout [user-prompt] [scale]
+/ckm:scout [user-prompt] [scale]
 ```
 
 ### Arguments
@@ -43,7 +43,7 @@ published: true
 
 **Input**:
 ```bash
-/scout find campaign-related files
+/ckm:scout find campaign-related files
 ```
 
 **Process**:
@@ -74,7 +74,7 @@ Saved: plans/reports/scout-251229-2145-campaign-files.md
 
 **Input**:
 ```bash
-/scout authentication implementation 5
+/ckm:scout authentication implementation 5
 ```
 
 **Spawns 5 agents** for faster, more thorough search in large codebases.
@@ -83,15 +83,15 @@ Saved: plans/reports/scout-251229-2145-campaign-files.md
 
 ```bash
 # Before planning
-/scout find email-related code
-/plan implement email automation
+/ckm:scout find email-related code
+/ckm:plan implement email automation
 
 # Before implementation
-/cook add payment feature
-# (internally runs /scout automatically)
+/ckm:cook add payment feature
+# (internally runs /ckm:scout automatically)
 
 # Manual search
-/scout find all database models
+/ckm:scout find all database models
 ```
 
 ## Performance
@@ -103,8 +103,8 @@ Saved: plans/reports/scout-251229-2145-campaign-files.md
 
 ## Related Commands
 
-- [/plan](/docs/marketing/commands/plan) - Uses /scout internally
-- [/cook](/docs/engineer/skills/cook) - Uses /scout internally and implements after scouting
+- [/ckm:plan](/docs/marketing/commands/plan) - Uses /ckm:scout internally
+- [/ckm:cook](/docs/engineer/skills/cook) - Uses /ckm:scout internally and implements after scouting
 
 ---
 

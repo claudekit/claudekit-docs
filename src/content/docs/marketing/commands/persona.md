@@ -1,5 +1,5 @@
 ---
-title: "/persona"
+title: "/ckm:persona"
 description: "Create and manage customer personas with AI-powered audience research, market validation, and ICP profiling"
 section: marketing
 category: commands
@@ -12,7 +12,7 @@ published: true
 ## Quick Start
 
 ```bash
-/persona create
+/ckm:persona create
 ```
 
 **What happens**:
@@ -26,7 +26,7 @@ published: true
 ## Syntax
 
 ```bash
-/persona <action> [name]
+/ckm:persona <action> [name]
 ```
 
 ### Actions
@@ -44,7 +44,7 @@ published: true
 
 **Input**:
 ```bash
-/persona create
+/ckm:persona create
 ```
 
 **AI Questions**:
@@ -216,7 +216,7 @@ Saved: assets/leads/icp-profiles/tech-startup-founder.md
 
 **Input**:
 ```bash
-/persona analyze
+/ckm:persona analyze
 ```
 
 **Output**:
@@ -267,7 +267,7 @@ Saved: assets/leads/audience-analysis-250129.md
 
 **Input**:
 ```bash
-/persona update "Tech Startup Founder"
+/ckm:persona update "Tech Startup Founder"
 ```
 
 **Process**:
@@ -293,7 +293,7 @@ Saved: assets/leads/icp-profiles/tech-startup-founder.md
 
 **Input**:
 ```bash
-/persona list
+/ckm:persona list
 ```
 
 **Output**:
@@ -321,25 +321,25 @@ Customer Personas (3):
 ### Campaign Planning
 ```bash
 # Step 1: Define audience
-/persona create
+/ckm:persona create
 
 # Step 2: Create campaign
-/campaign create "Q1 Launch"
+/ckm:campaign create "Q1 Launch"
 
 # Step 3: Generate persona-specific content
-/email cold "Tech Startup Founders"
-/content landing "For startup founders"
-/social linkedin "Founder audience"
+/ckm:email cold "Tech Startup Founders"
+/ckm:content landing "For startup founders"
+/ckm:social linkedin "Founder audience"
 ```
 
 ### Content Strategy
 ```bash
 # Analyze audience
-/persona analyze
+/ckm:persona analyze
 
 # Create targeted content
-/content blog "Best tools for startup founders"
-/content case-study "How StartupX reduced CAC 43%"
+/ckm:content blog "Best tools for startup founders"
+/ckm:content case-study "How StartupX reduced CAC 43%"
 ```
 
 ## Agents Used
@@ -355,9 +355,9 @@ Customer Personas (3):
 
 ## Related Commands
 
-- [/campaign](/docs/marketing/commands/campaign) - Use personas in campaigns
-- [/content](/docs/marketing/commands/content) - Create persona-specific content
-- [/email](/docs/marketing/commands/email) - Persona-targeted emails
+- [/ckm:campaign](/docs/marketing/commands/campaign) - Use personas in campaigns
+- [/ckm:content](/docs/marketing/commands/content) - Create persona-specific content
+- [/ckm:email](/docs/marketing/commands/email) - Persona-targeted emails
 
 ---
 

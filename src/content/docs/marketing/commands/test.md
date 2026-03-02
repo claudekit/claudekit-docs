@@ -1,5 +1,5 @@
 ---
-title: "/test"
+title: "/ckm:test"
 description: "Run test suites and analyze results with tester agent - no implementation, only testing and reporting"
 section: marketing
 category: commands
@@ -12,7 +12,7 @@ published: true
 ## Quick Start
 
 ```bash
-/test
+/ckm:test
 ```
 
 **What happens**:
@@ -26,7 +26,7 @@ published: true
 ## Syntax
 
 ```bash
-/test
+/ckm:test
 ```
 
 No arguments needed.
@@ -56,7 +56,7 @@ Failed Tests:
 
 Summary: 116/118 tests passing (98.3%)
 
-Next: /fix Test failures in email campaign + analytics
+Next: /ckm:fix Test failures in email campaign + analytics
 ```
 
 ## When to Use
@@ -64,26 +64,26 @@ Next: /fix Test failures in email campaign + analytics
 ### After Implementation
 ```bash
 "Implement feature"
-/test  # Verify everything works
+/ckm:test  # Verify everything works
 ```
 
 ### Before Commits
 ```bash
-/test  # Ensure tests pass
-/git cm  # Commit if all green
+/ckm:test  # Ensure tests pass
+/ckm:git cm  # Commit if all green
 ```
 
 ### Debugging
 ```bash
-/fix feature not working
-/test  # Verify fix worked
+/ckm:fix feature not working
+/ckm:test  # Verify fix worked
 ```
 
 ## Related Commands
 
-- [/cook](/docs/engineer/skills/cook) - Includes testing automatically
-- [/fix](/docs/marketing/commands/fix) - Fix test failures
-- [/review](/docs/marketing/commands/review) - Code quality check
+- [/ckm:cook](/docs/engineer/skills/cook) - Includes testing automatically
+- [/ckm:fix](/docs/marketing/commands/fix) - Fix test failures
+- [/ckm:review](/docs/marketing/commands/review) - Code quality check
 
 ---
 

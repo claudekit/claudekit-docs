@@ -1,5 +1,5 @@
 ---
-title: "/email"
+title: "/ckm:email"
 description: "Generate high-converting email content with AI-powered copywriting for newsletters, cold outreach, launch sequences, and nurture campaigns"
 section: marketing
 category: commands
@@ -14,7 +14,7 @@ published: true
 Generate a newsletter in 30 seconds:
 
 ```bash
-/email newsletter
+/ckm:email newsletter
 ```
 
 **What happens**:
@@ -27,14 +27,14 @@ Generate a newsletter in 30 seconds:
 
 ## What It Does
 
-### Before /email
+### Before /ckm:email
 - Manual copywriting (2-4 hours per email)
 - Inconsistent subject lines
 - No A/B testing strategy
 - Poor mobile formatting
 - Guesswork on deliverability
 
-### After /email
+### After /ckm:email
 - AI-generated email content (2 minutes)
 - Multiple subject line options
 - Mobile-optimized formatting
@@ -44,7 +44,7 @@ Generate a newsletter in 30 seconds:
 ## Syntax
 
 ```bash
-/email <type> [context]
+/ckm:email <type> [context]
 ```
 
 ### Arguments
@@ -72,7 +72,7 @@ Generate a newsletter in 30 seconds:
 
 **Input**:
 ```bash
-/email newsletter
+/ckm:email newsletter
 ```
 
 **AI Questions**:
@@ -176,7 +176,7 @@ Saved: assets/copy/emails/251229-newsletter-ai-automation-launch.md
 
 **Input**:
 ```bash
-/email cold "SaaS founders"
+/ckm:email cold "SaaS founders"
 ```
 
 **AI Questions**:
@@ -266,7 +266,7 @@ Saved: assets/copy/emails/251229-cold-churn-prediction-saas-founders.md
 
 **Input**:
 ```bash
-/email launch "New Mobile App"
+/ckm:email launch "New Mobile App"
 ```
 
 **Expected Output**:
@@ -354,31 +354,31 @@ Saved: assets/copy/emails/251229-launch-new-mobile-app.md
 ### Complete Email Campaign
 ```bash
 # Step 1: Define audience
-/persona create
+/ckm:persona create
 
 # Step 2: Create campaign
-/campaign create "Email Marketing Campaign"
+/ckm:campaign create "Email Marketing Campaign"
 
 # Step 3: Generate email sequence
-/email welcome "New subscribers"
-/email nurture "Trial users day 3"
-/email nurture "Trial users day 7"
-/email winback "Inactive users"
+/ckm:email welcome "New subscribers"
+/ckm:email nurture "Trial users day 3"
+/ckm:email nurture "Trial users day 7"
+/ckm:email winback "Inactive users"
 
 # Step 4: Visual assets
-/design email header for welcome series
+/ckm:design email header for welcome series
 
 # Step 5: Track performance
-/analyze engagement
+/ckm:analyze engagement
 ```
 
 ### Email + Multi-Channel
 ```bash
 # Coordinate email with other channels
-/email launch "Product Launch"
-/social twitter "Launch announcement"
-/content blog "Product launch post"
-/campaign analyze "Product Launch"
+/ckm:email launch "Product Launch"
+/ckm:social twitter "Launch announcement"
+/ckm:content blog "Product launch post"
+/ckm:campaign analyze "Product Launch"
 ```
 
 ## Agents Used
@@ -440,19 +440,19 @@ Auto-included in every email:
 
 ## Related Commands
 
-### Before /email
-- [/persona](/docs/marketing/commands/persona) - Define audience
-- [/campaign](/docs/marketing/commands/campaign) - Plan campaign
-- [/brainstorm](/docs/marketing/commands/brainstorm) - Strategy ideation
+### Before /ckm:email
+- [/ckm:persona](/docs/marketing/commands/persona) - Define audience
+- [/ckm:campaign](/docs/marketing/commands/campaign) - Plan campaign
+- [/ckm:brainstorm](/docs/marketing/commands/brainstorm) - Strategy ideation
 
-### After /email
-- [/social](/docs/marketing/commands/social) - Cross-channel content
-- [/analyze](/docs/marketing/commands/analyze) - Email performance
-- [/use-mcp](/docs/marketing/commands/use-mcp) - Send via ESP
+### After /ckm:email
+- [/ckm:social](/docs/marketing/commands/social) - Cross-channel content
+- [/ckm:analyze](/docs/marketing/commands/analyze) - Email performance
+- [/ckm:use-mcp](/docs/marketing/commands/use-mcp) - Send via ESP
 
 ### Enhancement
-- [/design](/docs/marketing/commands/design) - Email headers/graphics
-- [/seo](/docs/marketing/commands/seo) - Landing page optimization
+- [/ckm:design](/docs/marketing/commands/design) - Email headers/graphics
+- [/ckm:seo](/docs/marketing/commands/seo) - Landing page optimization
 
 ## Related Agents
 

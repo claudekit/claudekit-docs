@@ -13,12 +13,12 @@ published: true
 ## Khởi động nhanh
 
 ```bash
-/cook
+/ckm:cook
 ```
 
 **Tự động phát hiện kế hoạch mới nhất** hoặc chỉ định:
 ```bash
-/cook plans/251229-email-campaign
+/ckm:cook plans/251229-email-campaign
 ```
 
 ## Quy trình 6 bước
@@ -102,10 +102,10 @@ Committed: abc1234
 
 ## Lệnh liên quan
 
-- [/plan](/vi/docs/marketing/commands/plan) - Tạo kế hoạch trước
-- [/cook](/vi/docs/marketing/commands/cook) - Kế hoạch + mã trong một
-- [/test](/vi/docs/marketing/commands/test) - Chỉ chạy kiểm tra
-- [/fix](/vi/docs/marketing/commands/fix) - Khắc phục các vấn đề
+- [/ckm:plan](/vi/docs/marketing/commands/plan) - Tạo kế hoạch trước
+- [/ckm:cook](/vi/docs/marketing/commands/cook) - Kế hoạch + mã trong một
+- [/ckm:test](/vi/docs/marketing/commands/test) - Chỉ chạy kiểm tra
+- [/ckm:fix](/vi/docs/marketing/commands/fix) - Khắc phục các vấn đề
 
 ---
 

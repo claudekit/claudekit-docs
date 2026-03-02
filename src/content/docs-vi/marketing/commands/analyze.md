@@ -1,6 +1,6 @@
 ---
 lang: vi
-title: "/analyze"
+title: "/ckm:analyze"
 description: "Tạo báo cáo phân tích và hiệu suất với thông tin chi tiết do AI cung cấp"
 section: marketing
 category: commands
@@ -13,7 +13,7 @@ published: true
 ## Khởi động nhanh
 
 ```bash
-/analyze traffic
+/ckm:analyze traffic
 ```
 
 **Kết quả**: `reports/analytics/251229-traffic.md` với xu hướng, thông tin chi tiết và khuyến nghị
@@ -21,7 +21,7 @@ published: true
 ## Cú pháp
 
 ```bash
-/analyze <type>
+/ckm:analyze <type>
 ```
 
 ### Loại phân tích
@@ -39,7 +39,7 @@ published: true
 
 **Đầu vào**:
 ```bash
-/analyze traffic
+/ckm:analyze traffic
 ```
 
 **Kết quả mong đợi**:
@@ -87,24 +87,24 @@ Thời gian phiên bình quân: 3m 24s (+12%)
 
 Báo cáo đã lưu: reports/analytics/250129-traffic.md
 
-Tiếp theo: /analyze conversions
+Tiếp theo: /ckm:analyze conversions
 ```
 
 ## Tích hợp quy trình làm việc
 
 ```bash
 # Quy trình phân tích hàng tuần
-/analyze traffic
-/analyze campaigns
-/analyze conversions
+/ckm:analyze traffic
+/ckm:analyze campaigns
+/ckm:analyze conversions
 
 # Đi sâu vào các vấn đề
-/analyze engagement  # nếu mức độ tương tác thấp
-/fix --quick Issues identified in analytics
+/ckm:analyze engagement  # nếu mức độ tương tác thấp
+/ckm:fix --quick Issues identified in analytics
 
 # Chiến dịch cụ thể
-/campaign analyze "Q1 Launch"
-/analyze campaigns  # so sánh tất cả chiến dịch
+/ckm:campaign analyze "Q1 Launch"
+/ckm:analyze campaigns  # so sánh tất cả chiến dịch
 ```
 
 ## Tác nhân được sử dụng
@@ -123,9 +123,9 @@ Tiếp theo: /analyze conversions
 
 ## Lệnh liên quan
 
-- [/campaign](/vi/docs/marketing/commands/campaign) - Phân tích cụ thể chiến dịch
-- [/seo](/vi/docs/marketing/commands/seo) - Hiệu suất SEO
-- [/use-mcp](/vi/docs/marketing/commands/use-mcp) - Kết nối công cụ phân tích
+- [/ckm:campaign](/vi/docs/marketing/commands/campaign) - Phân tích cụ thể chiến dịch
+- [/ckm:seo](/vi/docs/marketing/commands/seo) - Hiệu suất SEO
+- [/ckm:use-mcp](/vi/docs/marketing/commands/use-mcp) - Kết nối công cụ phân tích
 
 ---
 

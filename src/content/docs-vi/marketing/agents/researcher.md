@@ -27,7 +27,7 @@ Nhận thông tin thị trường trong 30 giây:
 
 ```bash
 # Nghiên cứu cảnh quan thị trường của bạn
-/ask "Nghiên cứu thị trường [ngành của bạn] và xác định xu hướng chính cho 2025"
+/ckm:ask "Nghiên cứu thị trường [ngành của bạn] và xác định xu hướng chính cho 2025"
 
 # Agent phân tích nhiều nguồn và tổng hợp phát hiện
 ```
@@ -78,10 +78,10 @@ Sử dụng Researcher khi bạn cần:
 
 ```bash
 # Bước 1: Xác định đối thủ
-/scout "Ai là 5 đối thủ hàng đầu trong [thị trường của bạn]?"
+/ckm:scout "Ai là 5 đối thủ hàng đầu trong [thị trường của bạn]?"
 
 # Bước 2: Phân tích chiến lược của họ
-/ask "Nghiên cứu [tên đối thủ] và phân tích chiến lược marketing của họ"
+/ckm:ask "Nghiên cứu [tên đối thủ] và phân tích chiến lược marketing của họ"
 
 # Agent sẽ điều tra:
 # - Định vị và thông điệp website
@@ -104,7 +104,7 @@ Xác định cơ hội nổi lên:
 
 ```bash
 # Nghiên cứu xu hướng thị trường
-/ask "Nghiên cứu xu hướng nổi lên trong [ngành của bạn] cho 12 tháng tới"
+/ckm:ask "Nghiên cứu xu hướng nổi lên trong [ngành của bạn] cho 12 tháng tới"
 
 # Agent khám phá:
 # - Ấn phẩm và báo cáo ngành
@@ -125,7 +125,7 @@ Tìm cơ hội nội dung:
 
 ```bash
 # Xác định khoảng trống nội dung
-/ask "Chủ đề nội dung nào đối thủ của chúng tôi đang đề cập mà chúng tôi đang thiếu?"
+/ckm:ask "Chủ đề nội dung nào đối thủ của chúng tôi đang đề cập mà chúng tôi đang thiếu?"
 
 # Agent phân tích:
 # - Danh mục nội dung đối thủ
@@ -145,7 +145,7 @@ Hiểu đối tượng của bạn sâu sắc:
 
 ```bash
 # Nghiên cứu thông tin khách hàng
-/ask "Nghiên cứu điểm đau và ngôn ngữ được sử dụng bởi [đối tượng mục tiêu của bạn]"
+/ckm:ask "Nghiên cứu điểm đau và ngôn ngữ được sử dụng bởi [đối tượng mục tiêu của bạn]"
 
 # Agent điều tra:
 # - Site review và phản hồi G2/Capterra
@@ -199,6 +199,6 @@ Báo cáo tuân theo định dạng ngắn gọn với phát hiện chính, bằ
 
 ## Lệnh Liên Quan
 
-- `/scout` - Tìm file và bối cảnh liên quan
-- `/ask` - Query agent để nghiên cứu
-- `/plan` - Tạo kế hoạch nghiên cứu toàn diện
+- `/ckm:scout` - Tìm file và bối cảnh liên quan
+- `/ckm:ask` - Query agent để nghiên cứu
+- `/ckm:plan` - Tạo kế hoạch nghiên cứu toàn diện

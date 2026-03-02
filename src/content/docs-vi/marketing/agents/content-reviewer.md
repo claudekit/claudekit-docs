@@ -157,7 +157,7 @@ Dựa trên các khuyến nghị về bằng chứng, không thị hiếu.
 
 ## Các lệnh liên quan
 
-- `/review` - Đánh giá chất lượng nội dung toàn diện
+- `/ckm:review` - Đánh giá chất lượng nội dung toàn diện
 - `/audit` - SEO and compliance audit
 - `/optimize` - Conversion rate optimization suggestions
 

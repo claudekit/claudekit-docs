@@ -134,5 +134,5 @@ Frame as "friendly competition", hide ranks below top 10 to prevent negative psy
 ## Related Commands
 
 - `/campaign/create` - Plan gamified campaign
-- `/plan` - Implementation roadmap
+- `/ckm:plan` - Implementation roadmap
 - `/analytics/dashboard` - Track engagement

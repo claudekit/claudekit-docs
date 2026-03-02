@@ -1,6 +1,6 @@
 ---
 lang: vi
-title: "/bootstrap"
+title: "/ckm:bootstrap"
 description: "Khởi tạo dự án hoàn chỉnh với nghiên cứu, lựa chọn công nghệ, lập kế hoạch, thiết kế, thực hiện, kiểm tra và tài liệu trong một lệnh"
 section: marketing
 category: commands
@@ -13,7 +13,7 @@ published: true
 ## Khởi động nhanh
 
 ```bash
-/bootstrap Create AI-powered marketing automation platform
+/ckm:bootstrap Create AI-powered marketing automation platform
 ```
 
 **Điều gì xảy ra** (1-2 giờ):
@@ -116,7 +116,7 @@ Kết thúc:
 
 **Đầu vào**:
 ```bash
-/bootstrap Create marketing automation platform with email campaigns and analytics
+/ckm:bootstrap Create marketing automation platform with email campaigns and analytics
 ```
 
 **Quy trình** (tóm tắt):
@@ -204,20 +204,20 @@ Commit to git? [Y/n]
 
 ### Dự án mới
 ```bash
-/bootstrap Create SaaS analytics platform
-/bootstrap Build e-commerce store with headless CMS
-/bootstrap Marketing site with blog
+/ckm:bootstrap Create SaaS analytics platform
+/ckm:bootstrap Build e-commerce store with headless CMS
+/ckm:bootstrap Marketing site with blog
 ```
 
 ### Thí nghiệm
 ```bash
-/bootstrap MVP for customer feedback tool
-/bootstrap Prototype for AI chat interface
+/ckm:bootstrap MVP for customer feedback tool
+/ckm:bootstrap Prototype for AI chat interface
 ```
 
 ### Mẫu
 ```bash
-/bootstrap Next.js SaaS starter with auth and billing
+/ckm:bootstrap Next.js SaaS starter with auth and billing
 ```
 
 ## Ước tính thời gian
@@ -230,9 +230,9 @@ vs Manual: 1-2 weeks
 
 ## Lệnh liên quan
 
-- [/plan](/vi/docs/marketing/commands/plan) - Lập kế hoạch chỉ
-- [/cook](/vi/docs/marketing/commands/cook) - Chỉ thực hiện
-- [/design](/vi/docs/marketing/commands/design) - Chỉ thiết kế
+- [/ckm:plan](/vi/docs/marketing/commands/plan) - Lập kế hoạch chỉ
+- [/ckm:cook](/vi/docs/marketing/commands/cook) - Chỉ thực hiện
+- [/ckm:design](/vi/docs/marketing/commands/design) - Chỉ thiết kế
 
 ---
 

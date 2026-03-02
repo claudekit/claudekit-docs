@@ -16,35 +16,35 @@ published: true
 
 | Command | Purpose | Output | Agents Used |
 |---------|---------|--------|-------------|
-| [/campaign](/docs/marketing/commands/campaign) | Create and manage campaigns | Campaign briefs + reports | campaign-manager, funnel-architect |
-| [/content](/docs/marketing/commands/content) | Generate marketing content | Blog posts, landing pages | content-creator, seo-specialist |
-| [/seo](/docs/marketing/commands/seo) | SEO audit and optimization | SEO reports + recommendations | seo-specialist |
-| [/email](/docs/marketing/commands/email) | Create email content | Email sequences | email-wizard, copywriter |
-| [/social](/docs/marketing/commands/social) | Social media content | Platform-specific posts | social-media-manager |
-| [/analyze](/docs/marketing/commands/analyze) | Analytics and performance | Data-driven insights | analytics-analyst |
+| [/ckm:campaign](/docs/marketing/commands/campaign) | Create and manage campaigns | Campaign briefs + reports | campaign-manager, funnel-architect |
+| [/ckm:content](/docs/marketing/commands/content) | Generate marketing content | Blog posts, landing pages | content-creator, seo-specialist |
+| [/ckm:seo](/docs/marketing/commands/seo) | SEO audit and optimization | SEO reports + recommendations | seo-specialist |
+| [/ckm:email](/docs/marketing/commands/email) | Create email content | Email sequences | email-wizard, copywriter |
+| [/ckm:social](/docs/marketing/commands/social) | Social media content | Platform-specific posts | social-media-manager |
+| [/ckm:analyze](/docs/marketing/commands/analyze) | Analytics and performance | Data-driven insights | analytics-analyst |
 
 ### Content Creation Commands (6 commands)
 
 | Command | Purpose | Best For | Time Saved |
 |---------|---------|----------|------------|
-| [/write](/docs/marketing/commands/write) | Blog posts, content audit, publishing | Long-form content | 2-4 hours |
-| [/video](/docs/marketing/commands/video) | Video scripts, storyboards, production | Marketing videos | 4-8 hours |
-| [/slide](/docs/marketing/commands/slide) | Presentations, pitch decks | Sales & proposals | 2-3 hours |
-| [/brainstorm](/docs/marketing/commands/brainstorm) | Collaborative idea generation | Strategy sessions | 1-2 hours |
-| [/design](/docs/marketing/commands/design) | AI image generation | Visual assets | 30-60 minutes |
+| [/ckm:write](/docs/marketing/commands/write) | Blog posts, content audit, publishing | Long-form content | 2-4 hours |
+| [/ckm:video](/docs/marketing/commands/video) | Video scripts, storyboards, production | Marketing videos | 4-8 hours |
+| [/ckm:slide](/docs/marketing/commands/slide) | Presentations, pitch decks | Sales & proposals | 2-3 hours |
+| [/ckm:brainstorm](/docs/marketing/commands/brainstorm) | Collaborative idea generation | Strategy sessions | 1-2 hours |
+| [/ckm:design](/docs/marketing/commands/design) | AI image generation | Visual assets | 30-60 minutes |
 
 ### Utility Commands (8 commands)
 
 | Command | Purpose | When to Use |
 |---------|---------|-------------|
-| [/scout](/docs/marketing/commands/scout) | Quick codebase search | Find relevant files |
-| [/review](/docs/marketing/commands/review) | Code quality analysis | Before committing |
-| [/ask](/docs/marketing/commands/ask) | Architecture consultation | Technical decisions |
-| [/bootstrap](/docs/marketing/commands/bootstrap) | Project initialization | New projects |
-| [/git](/docs/marketing/commands/git) | Git operations | Create PRs, commits |
-| [/dashboard](/docs/marketing/commands/dashboard) | Marketing dashboard UI | Visual management |
-| [/use-mcp](/docs/marketing/commands/use-mcp) | MCP server operations | External integrations |
-| [/persona](/docs/marketing/commands/persona) | Customer persona management | Audience research |
+| [/ckm:scout](/docs/marketing/commands/scout) | Quick codebase search | Find relevant files |
+| [/ckm:review](/docs/marketing/commands/review) | Code quality analysis | Before committing |
+| [/ckm:ask](/docs/marketing/commands/ask) | Architecture consultation | Technical decisions |
+| [/ckm:bootstrap](/docs/marketing/commands/bootstrap) | Project initialization | New projects |
+| [/ckm:git](/docs/marketing/commands/git) | Git operations | Create PRs, commits |
+| [/ckm:dashboard](/docs/marketing/commands/dashboard) | Marketing dashboard UI | Visual management |
+| [/ckm:use-mcp](/docs/marketing/commands/use-mcp) | MCP server operations | External integrations |
+| [/ckm:persona](/docs/marketing/commands/persona) | Customer persona management | Audience research |
 
 ## Command Catalog
 
@@ -54,13 +54,13 @@ Start here for new campaigns or creative briefs:
 
 ```bash
 # Brainstorm solutions together
-/brainstorm how to improve conversion rates
+/ckm:brainstorm how to improve conversion rates
 
 # Get architecture guidance
-/ask what's the best way to structure our marketing automation?
+/ckm:ask what's the best way to structure our marketing automation?
 
 # Create customer personas
-/persona create "enterprise software buyers"
+/ckm:persona create "enterprise software buyers"
 ```
 
 ### Content Creation
@@ -69,25 +69,25 @@ Generate marketing assets:
 
 ```bash
 # Create blog content with brand voice matching
-/write:blog "AI marketing automation guide"
+/ckm:write:blog "AI marketing automation guide"
 
 # Audit existing content quality
-/write:audit /assets/blog-posts/latest-post.md
+/ckm:write:audit /assets/blog-posts/latest-post.md
 
 # Create video with script and storyboard
-/video:create "30-second product demo for social media"
+/ckm:video:create "30-second product demo for social media"
 
 # Create pitch deck
-/slide:create "Series A investor pitch deck"
+/ckm:slide:create "Series A investor pitch deck"
 
 # Create email sequences
-/email nurture "SaaS trial users"
+/ckm:email nurture "SaaS trial users"
 
 # Social media posts
-/social linkedin post "product launch announcement"
+/ckm:social linkedin post "product launch announcement"
 
 # Visual assets
-/design hero banner for landing page
+/ckm:design hero banner for landing page
 ```
 
 ### Campaign Management
@@ -96,13 +96,13 @@ Orchestrate marketing campaigns:
 
 ```bash
 # Create new campaign
-/campaign create "Q1 Product Launch"
+/ckm:campaign create "Q1 Product Launch"
 
 # Check campaign status
-/campaign status "Q1 Product Launch"
+/ckm:campaign status "Q1 Product Launch"
 
 # Analyze performance
-/campaign analyze "Q1 Product Launch"
+/ckm:campaign analyze "Q1 Product Launch"
 ```
 
 ### SEO & Analytics
@@ -111,14 +111,14 @@ Optimize and measure:
 
 ```bash
 # Technical SEO audit
-/seo audit https://example.com
+/ckm:seo audit https://example.com
 
 # Keyword research
-/seo keywords "project management software"
+/ckm:seo keywords "project management software"
 
 # Analytics reports
-/analyze traffic
-/analyze conversions
+/ckm:analyze traffic
+/ckm:analyze conversions
 ```
 
 ## Common Workflows
@@ -127,18 +127,18 @@ Optimize and measure:
 
 ```bash
 # Step 1: Define audience
-/persona create
+/ckm:persona create
 
 # Step 2: Plan campaign
-/campaign create "Summer Sale 2025"
+/ckm:campaign create "Summer Sale 2025"
 
 # Step 3: Create content
-/email launch "Summer Sale"
-/social twitter thread "Summer Sale announcement"
-/design social graphic for Twitter
+/ckm:email launch "Summer Sale"
+/ckm:social twitter thread "Summer Sale announcement"
+/ckm:design social graphic for Twitter
 
 # Step 4: Track performance
-/analyze campaigns
+/ckm:analyze campaigns
 ```
 
 **Time**: 30 minutes vs. 2-3 days manual
@@ -147,19 +147,19 @@ Optimize and measure:
 
 ```bash
 # Step 1: Keyword research
-/seo keywords "best marketing automation tools"
+/ckm:seo keywords "best marketing automation tools"
 
 # Step 2: Create content
-/content blog "Marketing automation tools comparison 2025"
+/ckm:content blog "Marketing automation tools comparison 2025"
 
 # Step 3: Create images
-/design featured image for blog post
+/ckm:design featured image for blog post
 
 # Step 4: Optimize
-/seo audit https://yourblog.com/marketing-automation
+/ckm:seo audit https://yourblog.com/marketing-automation
 
 # Step 5: Commit
-/git cm
+/ckm:git cm
 ```
 
 **Time**: 20 minutes vs. 4-6 hours manual
@@ -168,13 +168,13 @@ Optimize and measure:
 
 ```bash
 # Step 1: Create script
-/video:script "Product feature demo" --duration=60 --platform=youtube
+/ckm:video:script "Product feature demo" --duration=60 --platform=youtube
 
 # Step 2: Create storyboard
-/video:storyboard /assets/videos/latest-script.md
+/ckm:video:storyboard /assets/videos/latest-script.md
 
 # Step 3: Create complete video
-/video:create "Product demo video for homepage"
+/ckm:video:create "Product demo video for homepage"
 ```
 
 **Time**: 30 minutes vs. 2-3 days manual
@@ -183,10 +183,10 @@ Optimize and measure:
 
 ```bash
 # Step 1: Create presentation
-/slide:create "Series A investor pitch deck"
+/ckm:slide:create "Series A investor pitch deck"
 
 # Step 2: View dashboard to manage assets
-/dashboard
+/ckm:dashboard
 
 # Step 3: Export and share
 # .pptx file ready for editing at /assets/slides/
@@ -285,35 +285,35 @@ Commands support Model Context Protocol servers:
 - **Discord**: Community management
 - **Slack**: Team collaboration
 
-Use `/use-mcp` to interact with connected MCP servers.
+Use `/ckm:use-mcp` to interact with connected MCP servers.
 
 ## Best Practices
 
 ### 1. Start Specific
 ```bash
 # Good: Specific, focused
-/write:blog "10 SaaS pricing strategies for 2025"
+/ckm:write:blog "10 SaaS pricing strategies for 2025"
 
 # Avoid: Vague, too broad
-/write:blog "marketing tips"
+/ckm:write:blog "marketing tips"
 ```
 
 ### 2. Use Right Command for Job
 ```bash
-# Blog post → /write
-/write:blog "Complete guide to email marketing"
+# Blog post → /ckm:write
+/ckm:write:blog "Complete guide to email marketing"
 
-# Video content → /video
-/video:create "30-second product demo"
+# Video content → /ckm:video
+/ckm:video:create "30-second product demo"
 
-# Presentations → /slide
-/slide:create "Q1 campaign proposal"
+# Presentations → /ckm:slide
+/ckm:slide:create "Q1 campaign proposal"
 ```
 
 ### 3. Let AI Clarify
 Commands will ask questions when needed:
 ```bash
-/email newsletter
+/ckm:email newsletter
 
 # AI asks:
 # - Target audience?
@@ -324,17 +324,17 @@ Commands will ask questions when needed:
 ### 4. Review Before Publishing
 ```bash
 # Always audit content
-/write:audit /assets/blog-posts/latest.md
+/ckm:write:audit /assets/blog-posts/latest.md
 
 # Review quality scores
 # Then publish
-/write:publish /assets/blog-posts/latest.md
+/ckm:write:publish /assets/blog-posts/latest.md
 ```
 
 ### 5. Use Dashboard for Management
 ```bash
 # View all marketing assets
-/dashboard
+/ckm:dashboard
 
 # Manage:
 # - Copy & Writing Styles
@@ -349,23 +349,23 @@ Commands will ask questions when needed:
 ### Command-Specific Help
 ```bash
 # Get detailed command usage
-/ck-help campaign
-/ck-help plan
-/ck-help fix
+/ckm:ck-help campaign
+/ckm:ck-help plan
+/ckm:ck-help fix
 ```
 
 ### Search Documentation
 ```bash
 # Find relevant commands
-/ck-help search email marketing
-/ck-help search SEO
+/ckm:ck-help search email marketing
+/ckm:ck-help search SEO
 ```
 
 ### Task Suggestions
 ```bash
 # Get command suggestions
-/ck-help How do I create a blog post?
-/ck-help What command analyzes campaigns?
+/ckm:ck-help How do I create a blog post?
+/ckm:ck-help What command analyzes campaigns?
 ```
 
 ## Performance Tips
@@ -373,7 +373,7 @@ Commands will ask questions when needed:
 ### Use Dashboard for Visual Management
 ```bash
 # Launch visual interface
-/dashboard
+/ckm:dashboard
 
 # Manage campaigns, content, assets visually
 # Access at http://localhost:5173
@@ -393,7 +393,7 @@ Commands will ask questions when needed:
 ### Audit Content Before Publishing
 ```bash
 # Check quality before publishing
-/write:audit /assets/blog-posts/article.md
+/ckm:write:audit /assets/blog-posts/article.md
 
 # Ensure score ≥75/100 for SEO, readability, brand voice
 ```

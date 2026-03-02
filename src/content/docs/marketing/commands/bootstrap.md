@@ -1,5 +1,5 @@
 ---
-title: "/bootstrap"
+title: "/ckm:bootstrap"
 description: "Complete project initialization with research, tech stack selection, planning, design, implementation, testing, and documentation in one command"
 section: marketing
 category: commands
@@ -12,7 +12,7 @@ published: true
 ## Quick Start
 
 ```bash
-/bootstrap Create AI-powered marketing automation platform
+/ckm:bootstrap Create AI-powered marketing automation platform
 ```
 
 **What happens** (1-2 hours):
@@ -115,7 +115,7 @@ Wraps up:
 
 **Input**:
 ```bash
-/bootstrap Create marketing automation platform with email campaigns and analytics
+/ckm:bootstrap Create marketing automation platform with email campaigns and analytics
 ```
 
 **Process** (condensed):
@@ -203,20 +203,20 @@ Commit to git? [Y/n]
 
 ### New Projects
 ```bash
-/bootstrap Create SaaS analytics platform
-/bootstrap Build e-commerce store with headless CMS
-/bootstrap Marketing site with blog
+/ckm:bootstrap Create SaaS analytics platform
+/ckm:bootstrap Build e-commerce store with headless CMS
+/ckm:bootstrap Marketing site with blog
 ```
 
 ### Experiments
 ```bash
-/bootstrap MVP for customer feedback tool
-/bootstrap Prototype for AI chat interface
+/ckm:bootstrap MVP for customer feedback tool
+/ckm:bootstrap Prototype for AI chat interface
 ```
 
 ### Templates
 ```bash
-/bootstrap Next.js SaaS starter with auth and billing
+/ckm:bootstrap Next.js SaaS starter with auth and billing
 ```
 
 ## Time Estimates
@@ -229,9 +229,9 @@ vs Manual: 1-2 weeks
 
 ## Related Commands
 
-- [/plan](/docs/marketing/commands/plan) - Planning only
-- [/cook](/docs/engineer/skills/cook) - Implementation only
-- [/design](/docs/marketing/commands/design) - Design only
+- [/ckm:plan](/docs/marketing/commands/plan) - Planning only
+- [/ckm:cook](/docs/engineer/skills/cook) - Implementation only
+- [/ckm:design](/docs/marketing/commands/design) - Design only
 
 ---
 

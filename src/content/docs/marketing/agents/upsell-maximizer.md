@@ -26,7 +26,7 @@ Find your expansion opportunities in 30 seconds:
 
 ```bash
 # Identify upsell potential
-/ask "Analyze our product catalog and identify upsell opportunities"
+/ckm:ask "Analyze our product catalog and identify upsell opportunities"
 
 # The agent maps product relationships and expansion potential
 ```
@@ -77,7 +77,7 @@ Find expansion potential in your base:
 
 ```bash
 # Step 1: Analyze current state
-/ask "Analyze our customer base and identify upsell opportunities"
+/ckm:ask "Analyze our customer base and identify upsell opportunities"
 
 # The agent will examine:
 # - Current revenue mix (by tier/product)
@@ -107,7 +107,7 @@ Build "customers also bought" logic:
 
 ```bash
 # Design recommendation engine
-/ask "Create product recommendation logic for our catalog"
+/ckm:ask "Create product recommendation logic for our catalog"
 
 # The agent builds affinity matrix:
 
@@ -135,7 +135,7 @@ Fix your pricing structure:
 
 ```bash
 # Optimize pricing
-/ask "Analyze our pricing tiers and recommend optimization"
+/ckm:ask "Analyze our pricing tiers and recommend optimization"
 
 # The agent analyzes:
 # - Current tier distribution (how many per tier?)
@@ -164,7 +164,7 @@ Create automated cross-sell sequences:
 
 ```bash
 # Design cross-sell automation
-/ask "Create a cross-sell sequence for customers who buy [Product A]"
+/ckm:ask "Create a cross-sell sequence for customers who buy [Product A]"
 
 # The agent designs campaign:
 
@@ -226,6 +226,6 @@ Reports include current state analysis, opportunities, revenue forecasts, and im
 
 ## Related Commands
 
-- `/ask` - Query the agent for expansion strategy
-- `/scout` - Find customer and revenue data
-- `/plan` - Create comprehensive expansion programs
+- `/ckm:ask` - Query the agent for expansion strategy
+- `/ckm:scout` - Find customer and revenue data
+- `/ckm:plan` - Create comprehensive expansion programs

@@ -134,5 +134,5 @@ Hold payments 60-90 days to match refund windows. Prevents fraudulent signups.
 ## Related Commands
 
 - `/campaign/create` - Affiliate launch campaign
-- `/plan` - Implementation planning
-- `/analyze:report` - Performance analysis
+- `/ckm:plan` - Implementation planning
+- `/ckm:analyze:report` - Performance analysis

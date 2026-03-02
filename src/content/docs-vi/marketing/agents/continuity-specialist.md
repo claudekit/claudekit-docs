@@ -27,7 +27,7 @@ Tỷ lệ rời bỏ khách hàng hàng tháng của bạn là 8%, làm thất t
 
 ```bash
 # Phân tích rủi ro rời bỏ
-/ask "Identify customers at risk of churning and recommend interventions"
+/ckm:ask "Identify customers at risk of churning and recommend interventions"
 
 # Đại lý phân tích các mô hình tương tác và gắn cờ các tài khoản có rủi ro
 ```
@@ -78,7 +78,7 @@ Xác định ai có rủi ro và tại sao:
 
 ```bash
 # Bước 1: Phân tích các mô hình rời bỏ
-/ask "Analyze our churn patterns and identify predictive signals"
+/ckm:ask "Analyze our churn patterns and identify predictive signals"
 
 # Đại lý sẽ kiểm tra:
 # - Các mô hình sử dụng trước khi rời bỏ
@@ -106,7 +106,7 @@ Xây dựng hệ thống chấm điểm sức khỏe mang tính dự đoán:
 
 ```bash
 # Thiết kế điểm sức khỏe
-/ask "Create a customer health scoring model for [your product]"
+/ckm:ask "Create a customer health scoring model for [your product]"
 
 # Đại lý sẽ định nghĩa:
 
@@ -144,7 +144,7 @@ Giành lại những khách hàng không hoạt động:
 
 ```bash
 # Tạo chuỗi giành lại khách hàng
-/ask "Design a re-engagement campaign for customers inactive for 60+ days"
+/ckm:ask "Design a re-engagement campaign for customers inactive for 60+ days"
 
 # Đại lý tạo ra chuỗi tiếp cận đa điểm chạm:
 
@@ -179,7 +179,7 @@ Tự động hóa phản hồi và theo dõi:
 
 ```bash
 # Xây dựng quy trình NPS
-/ask "Design an NPS automation workflow with proper follow-up"
+/ckm:ask "Design an NPS automation workflow with proper follow-up"
 
 # Đại lý tạo ra:
 
@@ -245,6 +245,6 @@ Tự động hóa phản hồi và theo dõi:
 
 ## Các lệnh liên quan
 
-- `/ask` - Truy vấn đại lý về chiến lược duy trì khách hàng
-- `/scout` - Tìm kiếm dữ liệu và mô hình khách hàng
-- `/plan` - Tạo ra các chương trình duy trì khách hàng toàn diện
+- `/ckm:ask` - Truy vấn đại lý về chiến lược duy trì khách hàng
+- `/ckm:scout` - Tìm kiếm dữ liệu và mô hình khách hàng
+- `/ckm:plan` - Tạo ra các chương trình duy trì khách hàng toàn diện

@@ -27,7 +27,7 @@ Xem Attraction Specialist in action trong 30 giây:
 
 ```bash
 # Phân tích từ khóa đối thủ
-/scout "What keywords are our competitors ranking for?"
+/ckm:scout "What keywords are our competitors ranking for?"
 
 # Nhân viên sẽ xác định khoảng trống từ khóa và tạo danh sách ưu tiên
 ```
@@ -73,10 +73,10 @@ Khám phá các cơ hội bạn đang bỏ lỡ:
 
 ```bash
 # Bước 1: Xác định 3 đối thủ hàng đầu của bạn
-/scout "Who are the main competitors for [your product]"
+/ckm:scout "Who are the main competitors for [your product]"
 
 # Bước 2: Yêu cầu phân tích từ khóa
-/ask "Analyze keyword gaps between us and [competitor domains]"
+/ckm:ask "Analyze keyword gaps between us and [competitor domains]"
 
 # Nhân viên sẽ:
 # - Nghiên cứu xếp hạng từ khóa đối thủ
@@ -94,7 +94,7 @@ Xây dựng trang đích chuyển đổi cao:
 
 ```bash
 # Cung cấp chi tiết về ưu đãi của bạn
-/ask "Create landing page copy for [product/offer] targeting [audience]"
+/ckm:ask "Create landing page copy for [product/offer] targeting [audience]"
 
 # Nhân viên sẽ tạo ra:
 # - Tiêu đề anh hùng với tiêu đề phụ hướng lợi ích
@@ -112,7 +112,7 @@ Mở rộng quy mô sản xuất nội dung:
 
 ```bash
 # Xác định loại mẫu của bạn
-/ask "Design a programmatic SEO template for [location/comparison/integration] pages"
+/ckm:ask "Design a programmatic SEO template for [location/comparison/integration] pages"
 
 # Nhân viên tạo ra:
 # - Cấu trúc mẫu với các biến
@@ -163,6 +163,6 @@ Nhân viên sắp xếp các đầu ra trong các vị trí được chuẩn hó
 
 ## Các lệnh liên quan
 
-- `/scout` - Tìm các tệp và bối cảnh liên quan
-- `/ask` - Truy vấn nhân viên trực tiếp
-- `/plan` - Tạo các kế hoạch marketing toàn diện
+- `/ckm:scout` - Tìm các tệp và bối cảnh liên quan
+- `/ckm:ask` - Truy vấn nhân viên trực tiếp
+- `/ckm:plan` - Tạo các kế hoạch marketing toàn diện

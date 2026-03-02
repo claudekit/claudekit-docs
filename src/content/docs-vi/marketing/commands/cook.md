@@ -1,6 +1,6 @@
 ---
 lang: vi
-title: "/cook"
+title: "/ckm:cook"
 description: "Thực hiện tính năng toàn bộ với lập kế hoạch, nghiên cứu, mã hóa, kiểm tra và tài liệu trong một lệnh duy nhất"
 section: marketing
 category: commands
@@ -13,7 +13,7 @@ published: true
 ## Khởi động nhanh
 
 ```bash
-/cook add dark mode toggle to settings
+/ckm:cook add dark mode toggle to settings
 ```
 
 **Điều gì xảy ra** (5-15 phút):
@@ -21,7 +21,7 @@ published: true
 2. Nghiên cứu phương pháp hay nhất (3 tác nhân)
 3. Khai thác cơ sở mã cho các tệp liên quan
 4. Tạo kế hoạch nội bộ
-5. Thực hiện với quy trình /cook
+5. Thực hiện với quy trình /ckm:cook
 6. Kiểm tra (100% pass required)
 7. Đánh giá mã (0 vấn đề quan trọng)
 8. Cập nhật tài liệu
@@ -31,9 +31,9 @@ published: true
 
 ## Nó làm gì
 
-### /cook vs /plan → /cook
+### /ckm:cook vs /ckm:plan → /ckm:cook
 
-| Khía cạnh | /cook | /plan → /cook |
+| Khía cạnh | /ckm:cook | /ckm:plan → /ckm:cook |
 |----------|-------|---------------|
 | Lập kế hoạch | Nội bộ (ẩn) | Kế hoạch rõ ràng |
 | Tốt nhất cho | Tính năng nhỏ-trung bình | Tính năng phức tạp |
@@ -41,7 +41,7 @@ published: true
 | Tệp kế hoạch | Không được tạo | `plans/{date}-{slug}/` |
 | Xem xét người dùng | Chỉ cuối cùng | Xem xét kế hoạch + mã |
 
-### Trước /cook
+### Trước /ckm:cook
 - Lập kế hoạch thручnual (1-2 giờ)
 - Nghiên cứu thручnual (1-2 giờ)
 - Mã hóa thручnual (2-6 giờ)
@@ -50,7 +50,7 @@ published: true
 - Cam kết thручnual (5 phút)
 **Tổng: 5-12 giờ**
 
-### Sau /cook
+### Sau /ckm:cook
 - Một lệnh
 - AI xử lý mọi thứ
 - Người dùng phê duyệt kết quả cuối cùng
@@ -59,23 +59,23 @@ published: true
 ## Cú pháp
 
 ```bash
-/cook [tasks]
+/ckm:cook [tasks]
 ```
 
 ### Biến thể
 
 | Biến thể | Tốc độ | Độ phức tạp | Tốt nhất cho |
 |---------|--------|----------|-----------|
-| `/cook` | Tiêu chuẩn | Bất kỳ | Tính năng chung |
-| `/cook --fast` | Nhanh | Đơn giản | Sửa lỗi, tính năng nhỏ |
-| `/cook` (auto) | Kỹ lưỡng | Phức tạp | Thay đổi kiến trúc |
-| `/cook --parallel` | Đa theo dõi | Độc lập | Nhiều tính năng |
+| `/ckm:cook` | Tiêu chuẩn | Bất kỳ | Tính năng chung |
+| `/ckm:cook --fast` | Nhanh | Đơn giản | Sửa lỗi, tính năng nhỏ |
+| `/ckm:cook` (auto) | Kỹ lưỡng | Phức tạp | Thay đổi kiến trúc |
+| `/ckm:cook --parallel` | Đa theo dõi | Độc lập | Nhiều tính năng |
 
 ## Ví dụ: Thêm chế độ tối
 
 **Đầu vào**:
 ```bash
-/cook add dark mode toggle to settings page
+/ckm:cook add dark mode toggle to settings page
 ```
 
 **Câu hỏi AI**:
@@ -171,39 +171,39 @@ Xong! Chế độ tối live at /settings
 
 ### Tính năng nhanh
 ```bash
-/cook add newsletter signup form
-/cook implement email validation
-/cook add loading spinner to buttons
+/ckm:cook add newsletter signup form
+/ckm:cook implement email validation
+/ckm:cook add loading spinner to buttons
 ```
 
 ### vs Lập kế hoạch trước
 ```bash
-# Đối với các tính năng phức tạp, sử dụng /plan trước
-/plan implement payment integration  # Review plan
-/cook  # Then implement
+# Đối với các tính năng phức tạp, sử dụng /ckm:plan trước
+/ckm:plan implement payment integration  # Review plan
+/ckm:cook  # Then implement
 
-# Đối với các tính năng trung bình, /cook nhanh hơn
-/cook implement payment integration  # Does both
+# Đối với các tính năng trung bình, /ckm:cook nhanh hơn
+/ckm:cook implement payment integration  # Does both
 ```
 
 ### Nhiều tính năng
 ```bash
 # Sequential (one at a time)
-/cook add dark mode
-/cook add export to CSV
-/cook add user preferences
+/ckm:cook add dark mode
+/ckm:cook add export to CSV
+/ckm:cook add user preferences
 
 # Parallel (all at once)
-/cook --parallel add dark mode, export CSV, user preferences
+/ckm:cook --parallel add dark mode, export CSV, user preferences
 ```
 
 ## Bước quy trình làm việc (Nội bộ)
 
 1. **Hỏi mọi thứ**: Làm rõ yêu cầu
 2. **Nghiên cứu**: 3+ tác nhân nhà nghiên cứu song song (≤150 dòng mỗi cái)
-3. **Khai thác**: /scout ext hoặc /scout cho các tệp liên quan
+3. **Khai thác**: /ckm:scout ext hoặc /ckm:scout cho các tệp liên quan
 4. **Kế hoạch**: Kế hoạch nội bộ (tiết lộ từng bước)
-5. **Thực hiện**: Quy trình /cook (6 bước)
+5. **Thực hiện**: Quy trình /ckm:cook (6 bước)
 6. **Kiểm tra**: Tác nhân tester (100% pass required)
 7. **Xem xét**: Tác nhân code-reviewer (0 vấn đề quan trọng required)
 8. **Tài liệu**: Tác nhân docs-manager + project-manager
@@ -212,7 +212,7 @@ Xong! Chế độ tối live at /settings
 
 ## Tác nhân được sử dụng
 
-Tất cả tác nhân từ /plan và /cook command:
+Tất cả tác nhân từ /ckm:plan và /ckm:cook command:
 - planner, researcher (3+), scout
 - fullstack-developer, ui-ux-designer
 - tester, debugger, code-reviewer
@@ -228,8 +228,8 @@ Tất cả các kỹ năng liên quan được tự động kích hoạt:
 
 ## Lệnh liên quan
 
-- [/plan](/vi/docs/marketing/commands/plan) - Lập kế hoạch chỉ (xem xét trước khi mã hóa)
-- [/fix](/vi/docs/marketing/commands/fix) - Khắc phục các vấn đề sau thực hiện
+- [/ckm:plan](/vi/docs/marketing/commands/plan) - Lập kế hoạch chỉ (xem xét trước khi mã hóa)
+- [/ckm:fix](/vi/docs/marketing/commands/fix) - Khắc phục các vấn đề sau thực hiện
 
 ---
 

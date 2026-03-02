@@ -782,7 +782,7 @@ Evidence beats intuition.
 ## Related Commands
 
 - `/debug` - Investigate marketing performance issues
-- `/analyze` - Deep-dive analytics analysis
+- `/ckm:analyze` - Deep-dive analytics analysis
 - `/diagnose` - Troubleshoot campaign problems
 
 ---

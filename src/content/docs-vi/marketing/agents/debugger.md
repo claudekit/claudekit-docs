@@ -641,7 +641,7 @@ Hãy xác minh rằng bản sửa lỗi của bạn thực sự mang lại kết
 
 - `/debug` - Điều tra các vấn đề hệ thống
 - `/logs` - Phân tích nhật ký ứng dụng
-- `/test` - Chạy kiểm tra sức khỏe tích hợp
+- `/ckm:test` - Chạy kiểm tra sức khỏe tích hợp
 
 ---
 

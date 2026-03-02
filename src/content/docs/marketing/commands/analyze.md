@@ -1,5 +1,5 @@
 ---
-title: "/analyze"
+title: "/ckm:analyze"
 description: "Generate analytics and performance reports for traffic, campaigns, conversions, funnels, content, and engagement with AI-powered insights"
 section: marketing
 category: commands
@@ -12,7 +12,7 @@ published: true
 ## Quick Start
 
 ```bash
-/analyze traffic
+/ckm:analyze traffic
 ```
 
 **Output**: `reports/analytics/251229-traffic.md` with trends, insights, and recommendations
@@ -20,7 +20,7 @@ published: true
 ## Syntax
 
 ```bash
-/analyze <type>
+/ckm:analyze <type>
 ```
 
 ### Analysis Types
@@ -38,7 +38,7 @@ published: true
 
 **Input**:
 ```bash
-/analyze traffic
+/ckm:analyze traffic
 ```
 
 **Expected Output**:
@@ -86,24 +86,24 @@ Avg Session Duration: 3m 24s (+12%)
 
 Report saved: reports/analytics/250129-traffic.md
 
-Next: /analyze conversions
+Next: /ckm:analyze conversions
 ```
 
 ## Workflow Integration
 
 ```bash
 # Weekly analytics routine
-/analyze traffic
-/analyze campaigns
-/analyze conversions
+/ckm:analyze traffic
+/ckm:analyze campaigns
+/ckm:analyze conversions
 
 # Deep dive into issues
-/analyze engagement  # if low engagement
-/fix --quick Issues identified in analytics
+/ckm:analyze engagement  # if low engagement
+/ckm:fix --quick Issues identified in analytics
 
 # Campaign-specific
-/campaign analyze "Q1 Launch"
-/analyze campaigns  # compare all campaigns
+/ckm:campaign analyze "Q1 Launch"
+/ckm:analyze campaigns  # compare all campaigns
 ```
 
 ## Agents Used
@@ -122,9 +122,9 @@ Next: /analyze conversions
 
 ## Related Commands
 
-- [/campaign](/docs/marketing/commands/campaign) - Campaign-specific analysis
-- [/seo](/docs/marketing/commands/seo) - SEO performance
-- [/use-mcp](/docs/marketing/commands/use-mcp) - Connect analytics tools
+- [/ckm:campaign](/docs/marketing/commands/campaign) - Campaign-specific analysis
+- [/ckm:seo](/docs/marketing/commands/seo) - SEO performance
+- [/ckm:use-mcp](/docs/marketing/commands/use-mcp) - Connect analytics tools
 
 ---
 

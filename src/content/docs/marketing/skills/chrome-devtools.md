@@ -209,4 +209,4 @@ node scripts/evaluate.js --script "window.scrollTo(0, document.body.scrollHeight
 ## Related Commands
 
 - `/design/screenshot` - Analyze design screenshots
-- `/test` - Test web applications
+- `/ckm:test` - Test web applications

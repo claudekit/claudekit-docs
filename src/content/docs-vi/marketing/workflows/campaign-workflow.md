@@ -368,8 +368,8 @@ Quảng cáo yêu thích của bạn có thể hoạt động tệ nhất. Để
 
 ## Commands Được Sử Dụng
 
-- `/campaign create` - Khởi tạo campaign mới
-- `/campaign status` - Kiểm tra tiến độ campaign
-- `/campaign analyze` - Nhận đề xuất tối ưu hóa
-- `/content create` - Tạo tài liệu sáng tạo
-- `/funnel design` - Xây dựng đường dẫn chuyển đổi
+- `/ckm:campaign create` - Khởi tạo campaign mới
+- `/ckm:campaign status` - Kiểm tra tiến độ campaign
+- `/ckm:campaign analyze` - Nhận đề xuất tối ưu hóa
+- `/ckm:content create` - Tạo tài liệu sáng tạo
+- `/ckm:funnel design` - Xây dựng đường dẫn chuyển đổi

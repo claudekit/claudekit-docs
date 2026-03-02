@@ -315,8 +315,8 @@ One 3,000-word comprehensive guide beats five 500-word shallow posts. Google rew
 
 ## Commands Used
 
-- `/seo:audit` - Comprehensive SEO analysis
-- `/seo keywords` - Keyword research
-- `/seo optimize` - On-page optimization
+- `/ckm:seo:audit` - Comprehensive SEO analysis
+- `/ckm:seo keywords` - Keyword research
+- `/ckm:seo optimize` - On-page optimization
 - Use `copywriting` skill for SEO-optimized content creation
-- `/analyze traffic` - Monitor organic performance
+- `/ckm:analyze traffic` - Monitor organic performance

@@ -1,6 +1,6 @@
 ---
 lang: vi
-title: "/seo"
+title: "/ckm:seo"
 description: "Technical SEO audits, keyword research, content optimization, và schema markup generation powered by AI analysis"
 section: marketing
 category: commands
@@ -15,7 +15,7 @@ published: true
 Audit bất kỳ website nào trong 60 giây:
 
 ```bash
-/seo audit https://example.com
+/ckm:seo audit https://example.com
 ```
 
 **Điều gì sẽ xảy ra**:
@@ -28,14 +28,14 @@ Audit bất kỳ website nào trong 60 giây:
 
 ## Nó Làm Gì
 
-### Trước /seo
+### Trước /ckm:seo
 - Manual SEO audits (4-6 giờ)
 - Fragmented tools and reports
 - No actionable priorities
 - Missing technical issues
 - Inconsistent keyword research
 
-### Sau /seo
+### Sau /ckm:seo
 - AI-generated audit (60 giây)
 - Comprehensive analysis report
 - Priority-ranked recommendations
@@ -45,7 +45,7 @@ Audit bất kỳ website nào trong 60 giây:
 ## Cú Pháp
 
 ```bash
-/seo <action> [target]
+/ckm:seo <action> [target]
 ```
 
 ### Đối Số
@@ -70,7 +70,7 @@ Audit bất kỳ website nào trong 60 giây:
 
 **Đầu vào**:
 ```bash
-/seo audit https://example.com/pricing
+/ckm:seo audit https://example.com/pricing
 ```
 
 **Kết Quả Dự Kiến**:
@@ -208,16 +208,16 @@ After implementing all fixes:
 - Keyword list: assets/seo/keywords/250129-saas-pricing-keywords.md
 
 Next Steps:
-/seo schema pricing  # Generate Product schema
-/fix --quick Add H1 and meta description to pricing page
-/content pricing-comparison  # Create comparison content
+/ckm:seo schema pricing  # Generate Product schema
+/ckm:fix --quick Add H1 and meta description to pricing page
+/ckm:content pricing-comparison  # Create comparison content
 ```
 
 ### Ví Dụ 2: Keyword Research
 
 **Đầu vào**:
 ```bash
-/seo keywords "project management software"
+/ckm:seo keywords "project management software"
 ```
 
 **Kết Quả Dự Kiến**:
@@ -423,15 +423,15 @@ Target Rankings:
 Saved: assets/seo/keywords/250129-project-management-software-keywords.md
 
 Next Actions:
-/content blog "Best Project Management Software for Small Business 2025"
-/seo audit https://yoursite.com/blog/project-management
+/ckm:content blog "Best Project Management Software for Small Business 2025"
+/ckm:seo audit https://yoursite.com/blog/project-management
 ```
 
 ### Ví Dụ 3: Generate Schema Markup
 
 **Đầu vào**:
 ```bash
-/seo schema pricing
+/ckm:seo schema pricing
 ```
 
 **Kết Quả Dự Kiến**:
@@ -514,29 +514,29 @@ https://search.google.com/test/rich-results
 
 ```bash
 # Step 1: Initial audit
-/seo audit https://example.com
+/ckm:seo audit https://example.com
 
 # Step 2: Keyword research
-/seo keywords "your main topic"
+/ckm:seo keywords "your main topic"
 
 # Step 3: Create optimized content
-/content blog "keyword-focused article"
+/ckm:content blog "keyword-focused article"
 
 # Step 4: Add schema
-/seo schema article
+/ckm:seo schema article
 
 # Step 5: Re-audit
-/seo audit https://example.com/new-article
+/ckm:seo audit https://example.com/new-article
 
 # Step 6: Track performance
-/analyze traffic
+/ckm:analyze traffic
 ```
 
 ## Lệnh Liên Quan
 
-- [/content](/docs/marketing/commands/content) - SEO-optimized content
-- [/analyze](/docs/marketing/commands/analyze) - Traffic analysis
-- [/campaign](/docs/marketing/commands/campaign) - SEO campaigns
+- [/ckm:content](/docs/marketing/commands/content) - SEO-optimized content
+- [/ckm:analyze](/docs/marketing/commands/analyze) - Traffic analysis
+- [/ckm:campaign](/docs/marketing/commands/campaign) - SEO campaigns
 
 ## Các Agent Liên Quan
 

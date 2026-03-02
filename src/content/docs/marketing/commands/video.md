@@ -1,5 +1,5 @@
 ---
-title: "/video - Video Production Commands"
+title: "/ckm:video - Video Production Commands"
 description: "Create professional marketing videos with AI-powered script generation, visual storyboards, and production-ready output using Gemini Veo 3.1 and Imagen 4"
 section: marketing
 category: commands
@@ -7,19 +7,19 @@ order: 4
 published: true
 ---
 
-# /video - Video Production Commands
+# /ckm:video - Video Production Commands
 
 End-to-end video production workflow powered by Google Gemini Veo 3.1 (video generation) and Imagen 4 (image generation). From script to storyboard to final video, create professional marketing content without traditional video production costs.
 
 ## Commands
 
-### /video:create - Complete Video Workflow
+### /ckm:video:create - Complete Video Workflow
 
 Generate complete marketing videos from idea to production-ready output.
 
 **Syntax:**
 ```bash
-/video:create "<video idea or brief>"
+/ckm:video:create "<video idea or brief>"
 ```
 
 **Features:**
@@ -33,16 +33,16 @@ Generate complete marketing videos from idea to production-ready output.
 **Examples:**
 ```bash
 # Product demo video
-/video:create "30-second API rate limiting dashboard demo"
+/ckm:video:create "30-second API rate limiting dashboard demo"
 
 # Explainer video
-/video:create "explain how authentication flow works in 60 seconds"
+/ckm:video:create "explain how authentication flow works in 60 seconds"
 
 # Social media ad
-/video:create "Instagram Reel announcing new pricing tiers"
+/ckm:video:create "Instagram Reel announcing new pricing tiers"
 
 # Tutorial series
-/video:create "5-part video series on getting started with our platform"
+/ckm:video:create "5-part video series on getting started with our platform"
 ```
 
 **Output:**
@@ -110,13 +110,13 @@ Generate complete marketing videos from idea to production-ready output.
 
 ---
 
-### /video:script - Script Generation
+### /ckm:video:script - Script Generation
 
 Generate video scripts optimized for marketing messaging and platform requirements.
 
 **Syntax:**
 ```bash
-/video:script "<video idea>" [--duration=<seconds>] [--platform=<platform>]
+/ckm:video:script "<video idea>" [--duration=<seconds>] [--platform=<platform>]
 ```
 
 **Platforms:**
@@ -137,13 +137,13 @@ Generate video scripts optimized for marketing messaging and platform requiremen
 **Examples:**
 ```bash
 # YouTube explainer
-/video:script "how our API handles rate limiting" --duration=90 --platform=youtube
+/ckm:video:script "how our API handles rate limiting" --duration=90 --platform=youtube
 
 # Instagram Reel
-/video:script "3 tips for better API security" --duration=30 --platform=instagram
+/ckm:video:script "3 tips for better API security" --duration=30 --platform=instagram
 
 # LinkedIn product announcement
-/video:script "introducing enterprise tier features" --platform=linkedin
+/ckm:video:script "introducing enterprise tier features" --platform=linkedin
 ```
 
 **Script Output Format:**
@@ -227,13 +227,13 @@ Generate video scripts optimized for marketing messaging and platform requiremen
 
 ---
 
-### /video:storyboard - Visual Storyboard
+### /ckm:video:storyboard - Visual Storyboard
 
 Create detailed visual storyboards from scripts for pre-production planning.
 
 **Syntax:**
 ```bash
-/video:storyboard <script-file>
+/ckm:video:storyboard <script-file>
 ```
 
 **Features:**
@@ -246,10 +246,10 @@ Create detailed visual storyboards from scripts for pre-production planning.
 **Examples:**
 ```bash
 # Storyboard from generated script
-/video:storyboard /assets/videos/2024-12-30-api-demo/script.md
+/ckm:video:storyboard /assets/videos/2024-12-30-api-demo/script.md
 
 # Storyboard from custom script
-/video:storyboard /projects/marketing/scripts/product-launch.md
+/ckm:video:storyboard /projects/marketing/scripts/product-launch.md
 ```
 
 **Storyboard Output:**
@@ -412,7 +412,7 @@ ELEVENLABS_API_KEY=your-elevenlabs-key  # Alternative to Google TTS
 
 ## Related Skills
 
-The `/video` commands automatically activate these skills:
+The `/ckm:video` commands automatically activate these skills:
 
 - **[ai-multimodal](/docs/marketing/skills/ai-multimodal)** - Gemini Veo 3.1 and Imagen 4 integration
 - **[media-processing](/docs/marketing/skills/media-processing)** - FFmpeg for video editing and transcoding
@@ -421,7 +421,7 @@ The `/video` commands automatically activate these skills:
 
 ## Related Agents
 
-These agents collaborate in the `/video` workflow:
+These agents collaborate in the `/ckm:video` workflow:
 
 - **[copywriter](/docs/marketing/agents/copywriter)** - Write compelling video scripts
 - **[ui-ux-designer](/docs/marketing/agents/ui-ux-designer)** - Create visual storyboards

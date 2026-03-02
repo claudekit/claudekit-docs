@@ -1,5 +1,5 @@
 ---
-title: "/campaign"
+title: "/ckm:campaign"
 description: "Create, manage, and analyze marketing campaigns with AI-powered campaign management, funnel architecture, and performance tracking"
 section: marketing
 category: commands
@@ -14,7 +14,7 @@ published: true
 Create your first campaign in 30 seconds:
 
 ```bash
-/campaign create "Black Friday 2025"
+/ckm:campaign create "Black Friday 2025"
 ```
 
 **What happens**:
@@ -27,14 +27,14 @@ Create your first campaign in 30 seconds:
 
 ## What It Does
 
-### Before /campaign
+### Before /ckm:campaign
 - Manual campaign planning (2-3 days)
 - Scattered documents and spreadsheets
 - No standardized funnel architecture
 - Manual performance tracking
 - Disconnected creative assets
 
-### After /campaign
+### After /ckm:campaign
 - AI-generated campaign brief (2 minutes)
 - Structured campaign directory
 - Professional funnel design
@@ -44,7 +44,7 @@ Create your first campaign in 30 seconds:
 ## Syntax
 
 ```bash
-/campaign <action> [name]
+/ckm:campaign <action> [name]
 ```
 
 ### Arguments
@@ -68,7 +68,7 @@ Create your first campaign in 30 seconds:
 
 **Input**:
 ```bash
-/campaign create "SaaS Platform Launch Q1 2025"
+/ckm:campaign create "SaaS Platform Launch Q1 2025"
 ```
 
 **AI Questions**:
@@ -111,16 +111,16 @@ Assets Created:
 Path: assets/campaigns/250115-saas-platform-launch-q1-2025/
 
 Next Steps:
-• /email nurture "SaaS trial users"
-• /social linkedin "product launch series"
-• /content blog "SaaS platform announcement"
+• /ckm:email nurture "SaaS trial users"
+• /ckm:social linkedin "product launch series"
+• /ckm:content blog "SaaS platform announcement"
 ```
 
 ### Example 2: Check Campaign Status
 
 **Input**:
 ```bash
-/campaign status "SaaS Platform Launch Q1 2025"
+/ckm:campaign status "SaaS Platform Launch Q1 2025"
 ```
 
 **Expected Output**:
@@ -158,14 +158,14 @@ Recommendations:
 2. Enhance trial onboarding sequence
 3. Add case study to nurture emails
 
-Next: /campaign analyze "SaaS Platform Launch Q1 2025"
+Next: /ckm:campaign analyze "SaaS Platform Launch Q1 2025"
 ```
 
 ### Example 3: Analyze Campaign Performance
 
 **Input**:
 ```bash
-/campaign analyze "SaaS Platform Launch Q1 2025"
+/ckm:campaign analyze "SaaS Platform Launch Q1 2025"
 ```
 
 **Expected Output**:
@@ -237,9 +237,9 @@ Priority 2 (Next Week):
 Report saved: assets/diagnostics/campaign-audits/250129-saas-platform-launch-q1-2025.md
 
 Next:
-• /fix --quick Add testimonials to landing page
-• /content case-study "Enterprise customer success"
-• /campaign status "SaaS Platform Launch Q1 2025" (recheck in 7 days)
+• /ckm:fix --quick Add testimonials to landing page
+• /ckm:content case-study "Enterprise customer success"
+• /ckm:campaign status "SaaS Platform Launch Q1 2025" (recheck in 7 days)
 ```
 
 ## Workflow Integration
@@ -247,38 +247,38 @@ Next:
 ### Campaign Creation Flow
 ```bash
 # Step 1: Define audience
-/persona create
+/ckm:persona create
 
 # Step 2: Create campaign
-/campaign create "Product Launch"
+/ckm:campaign create "Product Launch"
 
 # Step 3: Generate assets
-/email launch "New Product"
-/social linkedin "Launch announcement"
-/design hero banner for landing page
+/ckm:email launch "New Product"
+/ckm:social linkedin "Launch announcement"
+/ckm:design hero banner for landing page
 
 # Step 4: Monitor
-/campaign status "Product Launch"
+/ckm:campaign status "Product Launch"
 
 # Step 5: Optimize
-/campaign analyze "Product Launch"
-/fix --quick Issues identified in campaign
+/ckm:campaign analyze "Product Launch"
+/ckm:fix --quick Issues identified in campaign
 ```
 
 ### Multi-Campaign Management
 ```bash
 # Create multiple campaigns
-/campaign create "Summer Sale 2025"
-/campaign create "Referral Program Launch"
-/campaign create "Content Marketing Initiative"
+/ckm:campaign create "Summer Sale 2025"
+/ckm:campaign create "Referral Program Launch"
+/ckm:campaign create "Content Marketing Initiative"
 
 # Check all statuses
-/campaign status "Summer Sale 2025"
-/campaign status "Referral Program Launch"
-/campaign status "Content Marketing Initiative"
+/ckm:campaign status "Summer Sale 2025"
+/ckm:campaign status "Referral Program Launch"
+/ckm:campaign status "Content Marketing Initiative"
 
 # Visual dashboard
-/dashboard
+/ckm:dashboard
 # View all campaigns in Kanban board
 ```
 
@@ -380,20 +380,20 @@ Week 5-6: {Phase 3}
 
 ## Related Commands
 
-### Before /campaign
-- [/persona](/docs/marketing/commands/persona) - Define target audience
-- [/brainstorm](/docs/marketing/commands/brainstorm) - Ideate campaign strategy
+### Before /ckm:campaign
+- [/ckm:persona](/docs/marketing/commands/persona) - Define target audience
+- [/ckm:brainstorm](/docs/marketing/commands/brainstorm) - Ideate campaign strategy
 
-### After /campaign
-- [/email](/docs/marketing/commands/email) - Create email sequences
-- [/social](/docs/marketing/commands/social) - Generate social content
-- [/content](/docs/marketing/commands/content) - Write blog posts
-- [/design](/docs/marketing/commands/design) - Create visual assets
-- [/analyze](/docs/marketing/commands/analyze) - Deep analytics
+### After /ckm:campaign
+- [/ckm:email](/docs/marketing/commands/email) - Create email sequences
+- [/ckm:social](/docs/marketing/commands/social) - Generate social content
+- [/ckm:content](/docs/marketing/commands/content) - Write blog posts
+- [/ckm:design](/docs/marketing/commands/design) - Create visual assets
+- [/ckm:analyze](/docs/marketing/commands/analyze) - Deep analytics
 
 ### Management
-- [/dashboard](/docs/marketing/commands/dashboard) - Visual campaign board
-- [/use-mcp](/docs/marketing/commands/use-mcp) - Connect analytics tools
+- [/ckm:dashboard](/docs/marketing/commands/dashboard) - Visual campaign board
+- [/ckm:use-mcp](/docs/marketing/commands/use-mcp) - Connect analytics tools
 
 ## Related Agents
 

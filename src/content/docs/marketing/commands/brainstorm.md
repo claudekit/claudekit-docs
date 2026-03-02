@@ -1,5 +1,5 @@
 ---
-title: "/brainstorm"
+title: "/ckm:brainstorm"
 description: "Collaborative AI-powered brainstorming sessions for strategy, solutions, and decision-making with structured 5-phase process"
 section: marketing
 category: commands
@@ -12,7 +12,7 @@ published: true
 ## Quick Start
 
 ```bash
-/brainstorm how to improve email open rates
+/ckm:brainstorm how to improve email open rates
 ```
 
 **What happens**:
@@ -42,14 +42,14 @@ published: true
 ## Syntax
 
 ```bash
-/brainstorm [question or topic]
+/ckm:brainstorm [question or topic]
 ```
 
 ## Example: Improve Email Open Rates
 
 **Input**:
 ```bash
-/brainstorm how can we improve email open rates
+/ckm:brainstorm how can we improve email open rates
 ```
 
 **AI Process**:
@@ -154,9 +154,9 @@ Expected Results:
 Summary Report saved: plans/reports/brainstorm-251229-2145-email-open-rates.md
 
 Next Actions:
-- /plan implement email segmentation system
-- /cook A/B test value-first subject lines
-- /analyze engagement (track results)
+- /ckm:plan implement email segmentation system
+- /ckm:cook A/B test value-first subject lines
+- /ckm:analyze engagement (track results)
 
 Wait for your confirmation before proceeding.
 ```
@@ -214,13 +214,13 @@ Document the session:
 ### Next Steps (Your Choice)
 ```bash
 # Create implementation plan
-/plan [chosen solution]
+/ckm:plan [chosen solution]
 
 # Implement immediately
-/cook [chosen solution]
+/ckm:cook [chosen solution]
 
 # Fix specific issues
-/fix [issues identified]
+/ckm:fix [issues identified]
 
 # Do nothing (just document ideas)
 ```
@@ -230,32 +230,32 @@ Document the session:
 ### Strategy Sessions
 ```bash
 # Marketing strategy
-/brainstorm campaign strategy for Q1 launch
+/ckm:brainstorm campaign strategy for Q1 launch
 
 # Product decisions
-/brainstorm should we build feature X or Y
+/ckm:brainstorm should we build feature X or Y
 
 # Technical architecture
-/brainstorm microservices vs monolith for our scale
+/ckm:brainstorm microservices vs monolith for our scale
 ```
 
 ### Problem-Solving
 ```bash
 # Performance issues
-/brainstorm how to reduce page load time
+/ckm:brainstorm how to reduce page load time
 
 # Conversion optimization
-/brainstorm improve checkout conversion rate
+/ckm:brainstorm improve checkout conversion rate
 
 # Growth challenges
-/brainstorm customer acquisition strategies
+/ckm:brainstorm customer acquisition strategies
 ```
 
 ## Related Commands
 
-- [/ask](/docs/marketing/commands/ask) - Technical consultation (no discussion)
-- [/plan](/docs/marketing/commands/plan) - Create implementation plan
-- [/cook](/docs/marketing/commands/cook) - Implement solution
+- [/ckm:ask](/docs/marketing/commands/ask) - Technical consultation (no discussion)
+- [/ckm:plan](/docs/marketing/commands/plan) - Create implementation plan
+- [/ckm:cook](/docs/marketing/commands/cook) - Implement solution
 
 ---
 

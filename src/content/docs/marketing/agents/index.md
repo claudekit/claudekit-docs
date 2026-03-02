@@ -94,13 +94,13 @@ Call agents explicitly when you need their expertise:
 
 ```bash
 # Campaign orchestration
-/campaign create "Q1 Product Launch"
+/ckm:campaign create "Q1 Product Launch"
 
 # Content creation (use copywriting skill - quality mode)
 "Create comparison landing page"
 
 # SEO optimization
-/seo optimize "product page"
+/ckm:seo optimize "product page"
 ```
 
 ### Automatic Delegation
@@ -123,7 +123,7 @@ You: "Create a launch campaign across all channels"
 Complex tasks automatically involve multiple agents:
 
 ```bash
-/campaign create "Product Launch"
+/ckm:campaign create "Product Launch"
 ```
 
 **Behind the scenes:**

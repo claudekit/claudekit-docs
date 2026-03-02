@@ -1,5 +1,5 @@
 ---
-title: "/git"
+title: "/ckm:git"
 description: "Create pull requests with automated branch comparison, conventional commit messages, and GitHub CLI integration"
 section: marketing
 category: commands
@@ -12,7 +12,7 @@ published: true
 ## Quick Start
 
 ```bash
-/git pr
+/ckm:git pr
 ```
 
 **What happens**:
@@ -27,7 +27,7 @@ published: true
 ## Syntax
 
 ```bash
-/git pr [to-branch] [from-branch]
+/ckm:git pr [to-branch] [from-branch]
 ```
 
 ### Arguments
@@ -41,7 +41,7 @@ published: true
 
 **Input**:
 ```bash
-/git pr main feature/email-campaigns
+/ckm:git pr main feature/email-campaigns
 ```
 
 **Process**:
@@ -117,20 +117,20 @@ git status
 ```bash
 "Implement feature"
 # Implementation complete
-/git pr  # Create PR
+/ckm:git pr  # Create PR
 ```
 
-### After /cook
+### After /ckm:cook
 ```bash
-/cook add feature
+/ckm:cook add feature
 # User approves
-/git pr  # Create PR
+/ckm:git pr  # Create PR
 ```
 
 ### Custom Branch Flow
 ```bash
-/git pr dev  # PR to dev branch
-/git pr main feature/auth  # Specific branches
+/ckm:git pr dev  # PR to dev branch
+/ckm:git pr main feature/auth  # Specific branches
 ```
 
 ## Requirements
@@ -166,8 +166,8 @@ Auto-generates titles following convention:
 
 ## Related Commands
 
-- [/cook](/docs/engineer/skills/cook) - Auto-commits after implementation and includes git commit
-- [/git cm](/docs/marketing/commands/git) - Commit only (no PR)
+- [/ckm:cook](/docs/engineer/skills/cook) - Auto-commits after implementation and includes git commit
+- [/ckm:git cm](/docs/marketing/commands/git) - Commit only (no PR)
 
 ---
 

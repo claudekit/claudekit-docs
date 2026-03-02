@@ -1,6 +1,6 @@
 ---
 lang: vi
-title: "/campaign"
+title: "/ckm:campaign"
 description: "Tạo, quản lý và phân tích các chiến dịch tiếp thị với quản lý chiến dịch do AI cung cấp, kiến trúc phễu và theo dõi hiệu suất"
 section: marketing
 category: commands
@@ -15,7 +15,7 @@ published: true
 Tạo chiến dịch đầu tiên của bạn trong 30 giây:
 
 ```bash
-/campaign create "Black Friday 2025"
+/ckm:campaign create "Black Friday 2025"
 ```
 
 **Điều gì xảy ra**:
@@ -28,14 +28,14 @@ Tạo chiến dịch đầu tiên của bạn trong 30 giây:
 
 ## Nó làm gì
 
-### Trước /campaign
+### Trước /ckm:campaign
 - Lập kế hoạch chiến dịch thручnual (2-3 ngày)
 - Tài liệu và bảng tính phân tán
 - Không có kiến trúc phễu được tiêu chuẩn hóa
 - Theo dõi hiệu suất thручnual
 - Tài sản sáng tạo bị ngắt kết nối
 
-### Sau /campaign
+### Sau /ckm:campaign
 - Bản tóm tắt chiến dịch do AI tạo (2 phút)
 - Thư mục chiến dịch có cấu trúc
 - Thiết kế phễu chuyên nghiệp
@@ -45,7 +45,7 @@ Tạo chiến dịch đầu tiên của bạn trong 30 giây:
 ## Cú pháp
 
 ```bash
-/campaign <action> [name]
+/ckm:campaign <action> [name]
 ```
 
 ### Đối số
@@ -69,7 +69,7 @@ Tạo chiến dịch đầu tiên của bạn trong 30 giây:
 
 **Đầu vào**:
 ```bash
-/campaign create "SaaS Platform Launch Q1 2025"
+/ckm:campaign create "SaaS Platform Launch Q1 2025"
 ```
 
 **Câu hỏi AI**:
@@ -112,16 +112,16 @@ Tài sản được tạo:
 Đường dẫn: assets/campaigns/250115-saas-platform-launch-q1-2025/
 
 Các bước tiếp theo:
-• /email nurture "SaaS trial users"
-• /social linkedin "product launch series"
-• /content blog "SaaS platform announcement"
+• /ckm:email nurture "SaaS trial users"
+• /ckm:social linkedin "product launch series"
+• /ckm:content blog "SaaS platform announcement"
 ```
 
 ### Ví dụ 2: Kiểm tra trạng thái chiến dịch
 
 **Đầu vào**:
 ```bash
-/campaign status "SaaS Platform Launch Q1 2025"
+/ckm:campaign status "SaaS Platform Launch Q1 2025"
 ```
 
 **Kết quả mong đợi**:
@@ -159,14 +159,14 @@ Khuyến nghị:
 2. Enhance trial onboarding sequence
 3. Add case study to nurture emails
 
-Tiếp: /campaign analyze "SaaS Platform Launch Q1 2025"
+Tiếp: /ckm:campaign analyze "SaaS Platform Launch Q1 2025"
 ```
 
 ### Ví dụ 3: Phân tích hiệu suất chiến dịch
 
 **Đầu vào**:
 ```bash
-/campaign analyze "SaaS Platform Launch Q1 2025"
+/ckm:campaign analyze "SaaS Platform Launch Q1 2025"
 ```
 
 **Kết quả mong đợi**:
@@ -238,9 +238,9 @@ MỤC HÀNH ĐỘNG
 Báo cáo đã lưu: assets/diagnostics/campaign-audits/250129-saas-platform-launch-q1-2025.md
 
 Tiếp:
-• /fix --quick Add testimonials to landing page
-• /content case-study "Enterprise customer success"
-• /campaign status "SaaS Platform Launch Q1 2025" (recheck in 7 days)
+• /ckm:fix --quick Add testimonials to landing page
+• /ckm:content case-study "Enterprise customer success"
+• /ckm:campaign status "SaaS Platform Launch Q1 2025" (recheck in 7 days)
 ```
 
 ## Tích hợp quy trình làm việc
@@ -248,38 +248,38 @@ Tiếp:
 ### Dòng tạo chiến dịch
 ```bash
 # Bước 1: Xác định đối tượng
-/persona create
+/ckm:persona create
 
 # Bước 2: Tạo chiến dịch
-/campaign create "Product Launch"
+/ckm:campaign create "Product Launch"
 
 # Bước 3: Tạo tài sản
-/email launch "New Product"
-/social linkedin "Launch announcement"
-/design hero banner for landing page
+/ckm:email launch "New Product"
+/ckm:social linkedin "Launch announcement"
+/ckm:design hero banner for landing page
 
 # Bước 4: Giám sát
-/campaign status "Product Launch"
+/ckm:campaign status "Product Launch"
 
 # Bước 5: Tối ưu hóa
-/campaign analyze "Product Launch"
-/fix --quick Issues identified in campaign
+/ckm:campaign analyze "Product Launch"
+/ckm:fix --quick Issues identified in campaign
 ```
 
 ### Quản lý nhiều chiến dịch
 ```bash
 # Tạo nhiều chiến dịch
-/campaign create "Summer Sale 2025"
-/campaign create "Referral Program Launch"
-/campaign create "Content Marketing Initiative"
+/ckm:campaign create "Summer Sale 2025"
+/ckm:campaign create "Referral Program Launch"
+/ckm:campaign create "Content Marketing Initiative"
 
 # Kiểm tra tất cả trạng thái
-/campaign status "Summer Sale 2025"
-/campaign status "Referral Program Launch"
-/campaign status "Content Marketing Initiative"
+/ckm:campaign status "Summer Sale 2025"
+/ckm:campaign status "Referral Program Launch"
+/ckm:campaign status "Content Marketing Initiative"
 
 # Bảng điều khiển trực quan
-/dashboard
+/ckm:dashboard
 # Xem tất cả chiến dịch trong Kanban board
 ```
 
@@ -381,20 +381,20 @@ Tuần 5-6: {Phase 3}
 
 ## Lệnh liên quan
 
-### Trước /campaign
-- [/persona](/vi/docs/marketing/commands/persona) - Xác định đối tượng mục tiêu
-- [/brainstorm](/vi/docs/marketing/commands/brainstorm) - Chiến lược chiến dịch tư tưởng
+### Trước /ckm:campaign
+- [/ckm:persona](/vi/docs/marketing/commands/persona) - Xác định đối tượng mục tiêu
+- [/ckm:brainstorm](/vi/docs/marketing/commands/brainstorm) - Chiến lược chiến dịch tư tưởng
 
-### Sau /campaign
-- [/email](/vi/docs/marketing/commands/email) - Tạo chuỗi email
-- [/social](/vi/docs/marketing/commands/social) - Tạo nội dung mạng xã hội
-- [/content](/vi/docs/marketing/commands/content) - Viết bài đăng blog
-- [/design](/vi/docs/marketing/commands/design) - Tạo tài sản trực quan
-- [/analyze](/vi/docs/marketing/commands/analyze) - Phân tích sâu
+### Sau /ckm:campaign
+- [/ckm:email](/vi/docs/marketing/commands/email) - Tạo chuỗi email
+- [/ckm:social](/vi/docs/marketing/commands/social) - Tạo nội dung mạng xã hội
+- [/ckm:content](/vi/docs/marketing/commands/content) - Viết bài đăng blog
+- [/ckm:design](/vi/docs/marketing/commands/design) - Tạo tài sản trực quan
+- [/ckm:analyze](/vi/docs/marketing/commands/analyze) - Phân tích sâu
 
 ### Quản lý
-- [/dashboard](/docs/marketing/commands/dashboard) - Bảng chiến dịch trực quan
-- [/use-mcp](/vi/docs/marketing/commands/use-mcp) - Kết nối công cụ phân tích
+- [/ckm:dashboard](/docs/marketing/commands/dashboard) - Bảng chiến dịch trực quan
+- [/ckm:use-mcp](/vi/docs/marketing/commands/use-mcp) - Kết nối công cụ phân tích
 
 ## Tác nhân liên quan
 

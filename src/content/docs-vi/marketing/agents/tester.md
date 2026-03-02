@@ -25,7 +25,7 @@ Kiểm tra triển khai của bạn:
 
 ```bash
 # After implementing a feature
-/test "Run full test suite and check coverage"
+/ckm:test "Run full test suite and check coverage"
 ```
 
 Bạn sẽ nhận được kết quả kiểm tra, số liệu độ phủ, phân tích hiệu suất, và khuyến nghị có thể hành động cho các bài kiểm tra bị thiếu.
@@ -88,7 +88,7 @@ Sử dụng Tester Agent khi bạn cần:
 
 ```bash
 # After building email campaign feature
-/test "Run tests for email campaign system"
+/ckm:test "Run tests for email campaign system"
 ```
 
 **The tester will**:
@@ -154,7 +154,7 @@ Priority 2: Complete E2E test infrastructure setup
 ### Coverage-Focused Analysis
 
 ```bash
-/test "Generate coverage report and identify gaps"
+/ckm:test "Generate coverage report and identify gaps"
 ```
 
 **Provides**:
@@ -167,7 +167,7 @@ Priority 2: Complete E2E test infrastructure setup
 ### Pre-Deployment Validation
 
 ```bash
-/test "Full validation before production deployment"
+/ckm:test "Full validation before production deployment"
 ```
 
 **Checks**:
@@ -265,7 +265,7 @@ Tester phù hợp liền mạch:
 
 ## Related Commands
 
-- [`/test`](/docs/marketing/commands/test) - Run tests and generate report
+- [`/ckm:test`](/docs/marketing/commands/test) - Run tests and generate report
 - [`/coverage`](/docs/marketing/commands) - Check test coverage
 - [`/build`](/docs/marketing/commands) - Verify build succeeds
 

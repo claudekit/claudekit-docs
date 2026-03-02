@@ -17,7 +17,7 @@ order: 9
 
 **Implicit**: Activates when user signals brainstorming mode ("let's explore", "what are our options", "brainstorm with me").
 
-**Explicit**: Activate by name when needed: "Activate brainstorming skill" or use /brainstorm command
+**Explicit**: Activate by name when needed: "Activate brainstorming skill" or use /ckm:brainstorm command
 
 ## Capabilities
 
@@ -127,6 +127,6 @@ Avoid overwhelming user with 10 questions upfront. Ask sequentially based on ans
 
 ## Related Commands
 
-- `/brainstorm` - Start brainstorming session
-- `/plan` - Create plan from brainstorm output
-- `/ask` - General questions and advice
+- `/ckm:brainstorm` - Start brainstorming session
+- `/ckm:plan` - Create plan from brainstorm output
+- `/ckm:ask` - General questions and advice

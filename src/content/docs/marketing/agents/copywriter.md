@@ -495,9 +495,9 @@ SEO-stuffed copy kills conversions. Write for readers first.
 
 - Use `copywriting` skill (quality mode) - Generate high-quality marketing content
 - Use `copywriting` skill (fast mode) - Quick copy for social, emails
-- `/brainstorm` - Explore messaging angles and hooks
-- `/email create` - Build email sequences with copy
-- `/social create` - Write social media posts
+- `/ckm:brainstorm` - Explore messaging angles and hooks
+- `/ckm:email create` - Build email sequences with copy
+- `/ckm:social create` - Write social media posts
 
 ---
 

@@ -32,7 +32,7 @@ npm install -g claudekit-cli
 ck new --kit marketing
 
 # Start your first campaign
-/campaign create "Q1 Product Launch"
+/ckm:campaign create "Q1 Product Launch"
 ```
 
 ## Competitive Advantage
@@ -54,7 +54,7 @@ Centralized hub for all marketing assets with intelligent organization:
 
 ```bash
 # Open visual dashboard
-/dashboard
+/ckm:dashboard
 
 # Manage 6 asset categories:
 # - Copy & Writing Styles
@@ -79,13 +79,13 @@ Create high-quality marketing content with author voice extraction:
 
 ```bash
 # Blog post with style matching
-/write:blog "10 SaaS Pricing Strategies" --style casual-founder
+/ckm:write:blog "10 SaaS Pricing Strategies" --style casual-founder
 
 # Content quality check
-/write:audit /assets/copy/blog-posts/pricing-guide.md
+/ckm:write:audit /assets/copy/blog-posts/pricing-guide.md
 
 # Publishing workflow
-/write:publish /assets/copy/blog-posts/pricing-guide.md
+/ckm:write:publish /assets/copy/blog-posts/pricing-guide.md
 ```
 
 See [Write Command](/docs/marketing/commands/write) for details.
@@ -96,13 +96,13 @@ Professional video workflow with Gemini Veo 3.1 + Imagen 4:
 
 ```bash
 # Create complete video
-/video:create "Product demo for homepage"
+/ckm:video:create "Product demo for homepage"
 
 # Generate video script
-/video:script "Explain API rate limiting" --duration=60 --platform=youtube
+/ckm:video:script "Explain API rate limiting" --duration=60 --platform=youtube
 
 # Create visual storyboard
-/video:storyboard /assets/videos/2024-12-30-api-demo/script.md
+/ckm:video:storyboard /assets/videos/2024-12-30-api-demo/script.md
 ```
 
 See [Video Command](/docs/marketing/commands/video) for details.
@@ -113,13 +113,13 @@ Create beautiful pitch decks, campaign proposals, and presentations:
 
 ```bash
 # Investor pitch deck
-/slide:create "Series A pitch deck - AI marketing automation"
+/ckm:slide:create "Series A pitch deck - AI marketing automation"
 
 # Campaign proposal
-/slide:create "Q1 product launch campaign with budget analysis"
+/ckm:slide:create "Q1 product launch campaign with budget analysis"
 
 # Product demo
-/slide:create "Technical demo API features for enterprise"
+/ckm:slide:create "Technical demo API features for enterprise"
 ```
 
 See [Slide Command](/docs/marketing/commands/slide) for details.
@@ -129,9 +129,9 @@ See [Slide Command](/docs/marketing/commands/slide) for details.
 Create, manage, and optimize marketing campaigns with AI assistance:
 
 ```bash
-/campaign create "Summer Sale 2025"
-/campaign status
-/campaign analyze
+/ckm:campaign create "Summer Sale 2025"
+/ckm:campaign status
+/ckm:campaign analyze
 ```
 
 ### SEO Optimization
@@ -139,9 +139,9 @@ Create, manage, and optimize marketing campaigns with AI assistance:
 Boost your search rankings with AI-powered SEO tools:
 
 ```bash
-/seo keywords "competitor analysis"
-/seo optimize "landing page"
-/seo audit
+/ckm:seo keywords "competitor analysis"
+/ckm:seo optimize "landing page"
+/ckm:seo audit
 ```
 
 ### Analytics & Insights
@@ -149,9 +149,9 @@ Boost your search rankings with AI-powered SEO tools:
 Track performance and get actionable insights:
 
 ```bash
-/analyze traffic
-/analyze campaigns
-/analyze conversions
+/ckm:analyze traffic
+/ckm:analyze campaigns
+/ckm:analyze conversions
 ```
 
 ## Next Steps

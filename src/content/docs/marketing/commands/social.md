@@ -1,5 +1,5 @@
 ---
-title: "/social"
+title: "/ckm:social"
 description: "Generate platform-optimized social media content for Twitter, LinkedIn, Instagram, TikTok, and YouTube with AI-powered copywriting"
 section: marketing
 category: commands
@@ -14,7 +14,7 @@ published: true
 Generate a LinkedIn post in 30 seconds:
 
 ```bash
-/social linkedin post
+/ckm:social linkedin post
 ```
 
 **What happens**:
@@ -27,14 +27,14 @@ Generate a LinkedIn post in 30 seconds:
 
 ## What It Does
 
-### Before /social
+### Before /ckm:social
 - Manual copywriting (30-60 min per post)
 - Inconsistent platform optimization
 - Random hashtag selection
 - No posting strategy
 - Unclear engagement tactics
 
-### After /social
+### After /ckm:social
 - AI-generated social content (2 minutes)
 - Platform-specific formatting
 - Strategic hashtag research
@@ -44,7 +44,7 @@ Generate a LinkedIn post in 30 seconds:
 ## Syntax
 
 ```bash
-/social <platform> [type]
+/ckm:social <platform> [type]
 ```
 
 ### Arguments
@@ -80,7 +80,7 @@ Generate a LinkedIn post in 30 seconds:
 
 **Input**:
 ```bash
-/social linkedin post
+/ckm:social linkedin post
 ```
 
 **AI Questions**:
@@ -143,7 +143,7 @@ Option 2: Results graphic (76%, 3x, 92% stats)
 Option 3: Product screenshot with overlay text
 
 Generate with:
-/design LinkedIn post graphic, 1:1 aspect, stats overlay
+/ckm:design LinkedIn post graphic, 1:1 aspect, stats overlay
 
 ## Performance Predictions
 Expected reach: 2,500-3,500 impressions
@@ -163,7 +163,7 @@ Saved: assets/posts/linkedin/251229-ai-automation-launch.md
 
 **Input**:
 ```bash
-/social twitter thread
+/ckm:social twitter thread
 ```
 
 **AI Questions**:
@@ -334,7 +334,7 @@ Saved: assets/posts/twitter/251229-churn-reduction-thread.md
 
 **Input**:
 ```bash
-/social instagram carousel
+/ckm:social instagram carousel
 ```
 
 **Expected Output**:
@@ -452,7 +452,7 @@ Colors: Brand colors with high readability
 
 ## Visual Design
 Generate slides with:
-/design Instagram carousel slides, productivity theme, 7 slides
+/ckm:design Instagram carousel slides, productivity theme, 7 slides
 
 Style: Minimalist, bold text, consistent color scheme
 Template: Title + 1-2 bullets per slide
@@ -472,36 +472,36 @@ Saved: assets/posts/instagram/251229-productivity-hacks-carousel.md
 ### Multi-Platform Campaign
 ```bash
 # Create content for all platforms
-/social twitter thread "Product launch announcement"
-/social linkedin post "Product launch announcement"
-/social instagram carousel "Product features breakdown"
+/ckm:social twitter thread "Product launch announcement"
+/ckm:social linkedin post "Product launch announcement"
+/ckm:social instagram carousel "Product features breakdown"
 
 # Generate visuals
-/design Twitter post graphic
-/design LinkedIn post graphic
-/design Instagram carousel slides
+/ckm:design Twitter post graphic
+/ckm:design LinkedIn post graphic
+/ckm:design Instagram carousel slides
 
 # Track performance
-/analyze engagement
+/ckm:analyze engagement
 ```
 
 ### Content Repurposing
 ```bash
 # Start with long-form
-/content blog "Complete productivity guide"
+/ckm:content blog "Complete productivity guide"
 
 # Repurpose to social
-/social twitter thread "Key takeaways from productivity guide"
-/social linkedin article "Productivity guide summary"
-/social instagram carousel "Top 7 productivity tips"
+/ckm:social twitter thread "Key takeaways from productivity guide"
+/ckm:social linkedin article "Productivity guide summary"
+/ckm:social instagram carousel "Top 7 productivity tips"
 ```
 
 ## Related Commands
 
-- [/content](/docs/marketing/commands/content) - Long-form content
-- [/design](/docs/marketing/commands/design) - Social graphics
-- [/campaign](/docs/marketing/commands/campaign) - Social campaigns
-- [/analyze](/docs/marketing/commands/analyze) - Social analytics
+- [/ckm:content](/docs/marketing/commands/content) - Long-form content
+- [/ckm:design](/docs/marketing/commands/design) - Social graphics
+- [/ckm:campaign](/docs/marketing/commands/campaign) - Social campaigns
+- [/ckm:analyze](/docs/marketing/commands/analyze) - Social analytics
 
 ## Related Agents
 

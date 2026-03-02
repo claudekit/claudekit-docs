@@ -157,4 +157,4 @@ Change one variable at a time (subject, style, composition). Big rewrites make i
 
 - `/design/good` - Generate images with optimized prompts
 - `/content/good` - Generate high-quality copy
-- `/ask` - Get prompt optimization advice
+- `/ckm:ask` - Get prompt optimization advice

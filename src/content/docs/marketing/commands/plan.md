@@ -1,5 +1,5 @@
 ---
-title: "/plan"
+title: "/ckm:plan"
 description: "Create detailed implementation plans with AI-powered research, complexity assessment, and progressive disclosure structure"
 section: marketing
 category: commands
@@ -12,27 +12,27 @@ published: true
 ## Quick Start
 
 ```bash
-/plan implement email drip campaign
+/ckm:plan implement email drip campaign
 ```
 
 **What happens** (30 seconds):
 1. Spawns 3 researcher agents in parallel
-2. Analyzes codebase structure with /scout
-3. Assesses complexity (simple → /plan:fast, complex → /plan:hard)
+2. Analyzes codebase structure with /ckm:scout
+3. Assesses complexity (simple → /ckm:plan:fast, complex → /ckm:plan:hard)
 4. Creates progressive disclosure plan with phases
 
 **Output**: `plans/251229-email-drip-campaign/plan.md` + phase files
 
 ## What It Does
 
-### Before /plan
+### Before /ckm:plan
 - Ad-hoc implementation (no strategy)
 - Missing requirements discovered mid-coding
 - No parallel execution opportunities
 - Unclear dependencies between tasks
 - Manual research (2-4 hours)
 
-### After /plan
+### After /ckm:plan
 - Detailed implementation roadmap (30 seconds)
 - All requirements surfaced upfront
 - Phases designed for parallelization
@@ -42,23 +42,23 @@ published: true
 ## Syntax
 
 ```bash
-/plan [task]
+/ckm:plan [task]
 ```
 
 ### Variants
 
 | Variant | When to Use | Phases | Research Depth |
 |---------|-------------|--------|----------------|
-| `/plan` | Auto-detects complexity | 1-8 | Standard |
-| `/plan:fast` | Simple features | 1-2 | Minimal |
-| `/plan:hard` | Complex architecture | 3-8 | Deep |
-| `/plan:parallel` | Independent features | Multi-track | Standard |
+| `/ckm:plan` | Auto-detects complexity | 1-8 | Standard |
+| `/ckm:plan:fast` | Simple features | 1-2 | Minimal |
+| `/ckm:plan:hard` | Complex architecture | 3-8 | Deep |
+| `/ckm:plan:parallel` | Independent features | Multi-track | Standard |
 
 ## Example: Plan Email Campaign
 
 **Input**:
 ```bash
-/plan implement email drip campaign with analytics
+/ckm:plan implement email drip campaign with analytics
 ```
 
 **Expected Output**:
@@ -158,31 +158,31 @@ Next: "Implement email drip campaign"
 ### Plan → Cook → Test → Review
 ```bash
 # Step 1: Plan
-/plan add user authentication
+/ckm:plan add user authentication
 
 # Step 2: Review plan
 cat plans/latest/plan.md
 
 # Step 3: Implement
-/cook
+/ckm:cook
 
-# Tests run automatically in /cook
-# Code review happens automatically in /cook
+# Tests run automatically in /ckm:cook
+# Code review happens automatically in /ckm:cook
 ```
 
 ### Plan Variants
 ```bash
 # Auto-detect complexity
-/plan add dark mode toggle
+/ckm:plan add dark mode toggle
 
 # Force fast planning
-/plan:fast fix button styling
+/ckm:plan:fast fix button styling
 
 # Force deep planning
-/plan:hard refactor entire auth system
+/ckm:plan:hard refactor entire auth system
 
 # Parallel execution
-/plan:parallel implement 3 dashboard widgets
+/ckm:plan:parallel implement 3 dashboard widgets
 ```
 
 ## Agents Used
@@ -208,8 +208,8 @@ plans/251229-{slug}/
 
 ## Related Commands
 
-- [/cook](/docs/engineer/skills/cook) - Execute plan + implement
-- [/scout](/docs/marketing/commands/scout) - Codebase search
+- [/ckm:cook](/docs/engineer/skills/cook) - Execute plan + implement
+- [/ckm:scout](/docs/marketing/commands/scout) - Codebase search
 
 ---
 

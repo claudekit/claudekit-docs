@@ -1,5 +1,5 @@
 ---
-title: "/slide - Create Presentations"
+title: "/ckm:slide - Create Presentations"
 description: "Generate professional pitch decks, campaign proposals, and marketing presentations with AI-powered content and design in .pptx format"
 section: marketing
 category: commands
@@ -7,19 +7,19 @@ order: 5
 published: true
 ---
 
-# /slide:create - Create Beautiful Presentations
+# /ckm:slide:create - Create Beautiful Presentations
 
 Generate professional presentations for pitch decks, campaign proposals, creative briefs, and internal reports. AI-powered content creation with beautiful design templates, export to editable .pptx files.
 
 ## Commands
 
-### /slide:create - Create Presentation
+### /ckm:slide:create - Create Presentation
 
 Generate complete slide decks from simple prompts or detailed briefs.
 
 **Syntax:**
 ```bash
-/slide:create "<presentation topic or brief>"
+/ckm:slide:create "<presentation topic or brief>"
 ```
 
 **Features:**
@@ -32,19 +32,19 @@ Generate complete slide decks from simple prompts or detailed briefs.
 **Examples:**
 ```bash
 # Investor pitch deck
-/slide:create "Series A pitch deck for AI marketing automation platform"
+/ckm:slide:create "Series A pitch deck for AI marketing automation platform"
 
 # Campaign proposal
-/slide:create "Q1 2025 product launch campaign proposal with budget breakdown"
+/ckm:slide:create "Q1 2025 product launch campaign proposal with budget breakdown"
 
 # Product demo presentation
-/slide:create "technical demo of API rate limiting feature for enterprise clients"
+/ckm:slide:create "technical demo of API rate limiting feature for enterprise clients"
 
 # Internal report
-/slide:create "Q4 marketing performance review with key metrics and 2025 strategy"
+/ckm:slide:create "Q4 marketing performance review with key metrics and 2025 strategy"
 
 # Sales enablement
-/slide:create "competitive analysis comparing our platform vs. competitors for sales team"
+/ckm:slide:create "competitive analysis comparing our platform vs. competitors for sales team"
 ```
 
 **Output:**
@@ -92,7 +92,7 @@ Generate complete slide decks from simple prompts or detailed briefs.
 
 **Example Command**:
 ```bash
-/slide:create "Series A pitch deck - AI marketing automation SaaS, raising $3M, 15x YoY growth, 500+ customers"
+/ckm:slide:create "Series A pitch deck - AI marketing automation SaaS, raising $3M, 15x YoY growth, 500+ customers"
 ```
 
 ---
@@ -127,7 +127,7 @@ Generate complete slide decks from simple prompts or detailed briefs.
 
 **Example Command**:
 ```bash
-/slide:create "Q1 product launch campaign - new API feature, developer audience, $50K budget, 6-week timeline"
+/ckm:slide:create "Q1 product launch campaign - new API feature, developer audience, $50K budget, 6-week timeline"
 ```
 
 ---
@@ -159,7 +159,7 @@ Generate complete slide decks from simple prompts or detailed briefs.
 
 **Example Command**:
 ```bash
-/slide:create "API rate limiting demo for enterprise customers - dashboard walkthrough, configuration, monitoring"
+/ckm:slide:create "API rate limiting demo for enterprise customers - dashboard walkthrough, configuration, monitoring"
 ```
 
 ---
@@ -193,7 +193,7 @@ Generate complete slide decks from simple prompts or detailed briefs.
 
 **Example Command**:
 ```bash
-/slide:create "Q4 2024 marketing performance review - campaign results, pipeline impact, 2025 recommendations"
+/ckm:slide:create "Q4 2024 marketing performance review - campaign results, pipeline impact, 2025 recommendations"
 ```
 
 ---
@@ -215,7 +215,7 @@ Generate complete slide decks from simple prompts or detailed briefs.
 
 **Example with Theme**:
 ```bash
-/slide:create "pitch deck for developer tools startup" --theme=dark
+/ckm:slide:create "pitch deck for developer tools startup" --theme=dark
 ```
 
 ### Custom Branding
@@ -248,7 +248,7 @@ Generate complete slide decks from simple prompts or detailed briefs.
 - Charts: Use brand colors, minimal gridlines
 ```
 
-The `/slide:create` command will automatically apply your branding.
+The `/ckm:slide:create` command will automatically apply your branding.
 
 ---
 
@@ -259,7 +259,7 @@ The `/slide:create` command will automatically apply your branding.
 **Provide custom outline** instead of auto-generating:
 
 ```bash
-/slide:create @outline.md
+/ckm:slide:create @outline.md
 ```
 
 **Example `outline.md`**:
@@ -290,7 +290,7 @@ Features: Real-time monitoring, flexible limits, zero downtime
 **Auto-generate speaker notes** for each slide:
 
 ```bash
-/slide:create "pitch deck" --speaker-notes
+/ckm:slide:create "pitch deck" --speaker-notes
 ```
 
 **Output** (`script.md`):
@@ -338,20 +338,20 @@ Transition: "This is the problem we're solving."
 
 ```bash
 # Export to PDF (for printing/sharing)
-/slide:create "pitch deck" --export=pdf
+/ckm:slide:create "pitch deck" --export=pdf
 
 # Export slide images (for embedding in docs)
-/slide:create "campaign proposal" --export=png
+/ckm:slide:create "campaign proposal" --export=png
 
 # Export to Google Slides (upload to Drive)
-/slide:create "demo presentation" --export=google-slides
+/ckm:slide:create "demo presentation" --export=google-slides
 ```
 
 ---
 
 ## Related Skills
 
-The `/slide:create` command automatically activates these skills:
+The `/ckm:slide:create` command automatically activates these skills:
 
 - **[copywriting](/docs/marketing/skills/copywriting)** - Compelling slide content
 - **[content-marketing](/docs/marketing/skills/content-marketing)** - Presentation strategy
@@ -359,7 +359,7 @@ The `/slide:create` command automatically activates these skills:
 
 ## Related Agents
 
-These agents collaborate in the `/slide:create` workflow:
+These agents collaborate in the `/ckm:slide:create` workflow:
 
 - **[copywriter](/docs/marketing/agents/copywriter)** - Write persuasive slide content
 - **[ui-ux-designer](/docs/marketing/agents/ui-ux-designer)** - Design beautiful layouts
@@ -410,6 +410,6 @@ See full workflow guides:
 
 **Solution**:
 1. Provide data in prompt: "Q4 revenue $500K, Q1 $750K, Q2 $1.2M"
-2. Attach CSV data file: `/slide:create @outline.md --data=metrics.csv`
+2. Attach CSV data file: `/ckm:slide:create @outline.md --data=metrics.csv`
 3. Use simpler chart types (bar, line instead of complex sankey/sunburst)
 4. Manually add charts to .pptx using embedded Excel data table

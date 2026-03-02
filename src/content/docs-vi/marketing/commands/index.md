@@ -18,35 +18,35 @@ published: true
 
 | Lệnh | Mục Đích | Kết Quả | Agents Sử Dụng |
 |---------|---------|--------|-------------|
-| [/campaign](/vi/docs/marketing/commands/campaign) | Tạo và quản lý chiến dịch | Bản tóm tắt chiến dịch + báo cáo | campaign-manager, funnel-architect |
-| [/content](/vi/docs/marketing/commands/content) | Tạo nội dung marketing | Bài blog, trang landing | content-creator, seo-specialist |
-| [/seo](/vi/docs/marketing/commands/seo) | Kiểm tra và tối ưu SEO | Báo cáo SEO + đề xuất | seo-specialist |
-| [/email](/vi/docs/marketing/commands/email) | Tạo nội dung email | Chuỗi email | email-wizard, copywriter |
-| [/social](/vi/docs/marketing/commands/social) | Nội dung mạng xã hội | Bài đăng theo nền tảng | social-media-manager |
-| [/analyze](/vi/docs/marketing/commands/analyze) | Phân tích và hiệu suất | Thông tin dựa trên dữ liệu | analytics-analyst |
+| [/ckm:campaign](/vi/docs/marketing/commands/campaign) | Tạo và quản lý chiến dịch | Bản tóm tắt chiến dịch + báo cáo | campaign-manager, funnel-architect |
+| [/ckm:content](/vi/docs/marketing/commands/content) | Tạo nội dung marketing | Bài blog, trang landing | content-creator, seo-specialist |
+| [/ckm:seo](/vi/docs/marketing/commands/seo) | Kiểm tra và tối ưu SEO | Báo cáo SEO + đề xuất | seo-specialist |
+| [/ckm:email](/vi/docs/marketing/commands/email) | Tạo nội dung email | Chuỗi email | email-wizard, copywriter |
+| [/ckm:social](/vi/docs/marketing/commands/social) | Nội dung mạng xã hội | Bài đăng theo nền tảng | social-media-manager |
+| [/ckm:analyze](/vi/docs/marketing/commands/analyze) | Phân tích và hiệu suất | Thông tin dựa trên dữ liệu | analytics-analyst |
 
 ### Lệnh Tạo Nội Dung (6 lệnh)
 
 | Lệnh | Mục Đích | Tốt Nhất Cho | Thời Gian Tiết Kiệm |
 |---------|---------|----------|------------|
-| [/write](/docs/marketing/commands/write) | Bài blog, kiểm tra nội dung, xuất bản | Nội dung dài | 2-4 giờ |
-| [/video](/docs/marketing/commands/video) | Script video, storyboard, sản xuất | Marketing video | 4-8 giờ |
-| [/slide](/docs/marketing/commands/slide) | Bài thuyết trình, pitch deck | Bán hàng & đề xuất | 2-3 giờ |
-| [/brainstorm](/vi/docs/marketing/commands/brainstorm) | Tạo ý tưởng hợp tác | Phiên chiến lược | 1-2 giờ |
-| [/design](/vi/docs/marketing/commands/design) | Tạo hình ảnh AI | Tài sản hình ảnh | 30-60 phút |
+| [/ckm:write](/docs/marketing/commands/write) | Bài blog, kiểm tra nội dung, xuất bản | Nội dung dài | 2-4 giờ |
+| [/ckm:video](/docs/marketing/commands/video) | Script video, storyboard, sản xuất | Marketing video | 4-8 giờ |
+| [/ckm:slide](/docs/marketing/commands/slide) | Bài thuyết trình, pitch deck | Bán hàng & đề xuất | 2-3 giờ |
+| [/ckm:brainstorm](/vi/docs/marketing/commands/brainstorm) | Tạo ý tưởng hợp tác | Phiên chiến lược | 1-2 giờ |
+| [/ckm:design](/vi/docs/marketing/commands/design) | Tạo hình ảnh AI | Tài sản hình ảnh | 30-60 phút |
 
 ### Lệnh Tiện Ích (8 lệnh)
 
 | Lệnh | Mục Đích | Khi Nào Sử Dụng |
 |---------|---------|-------------|
-| [/scout](/vi/docs/marketing/commands/scout) | Tìm kiếm codebase nhanh | Tìm tệp liên quan |
-| [/review](/vi/docs/marketing/commands/review) | Phân tích chất lượng code | Trước khi commit |
-| [/ask](/vi/docs/marketing/commands/ask) | Tư vấn kiến trúc | Quyết định kỹ thuật |
-| [/bootstrap](/vi/docs/marketing/commands/bootstrap) | Khởi tạo dự án | Dự án mới |
-| [/git](/vi/docs/marketing/commands/git) | Thao tác Git | Tạo PR, commit |
-| [/dashboard](/docs/marketing/commands/dashboard) | Giao diện dashboard marketing | Quản lý trực quan |
-| [/use-mcp](/vi/docs/marketing/commands/use-mcp) | Thao tác MCP server | Tích hợp bên ngoài |
-| [/persona](/vi/docs/marketing/commands/persona) | Quản lý persona khách hàng | Nghiên cứu đối tượng |
+| [/ckm:scout](/vi/docs/marketing/commands/scout) | Tìm kiếm codebase nhanh | Tìm tệp liên quan |
+| [/ckm:review](/vi/docs/marketing/commands/review) | Phân tích chất lượng code | Trước khi commit |
+| [/ckm:ask](/vi/docs/marketing/commands/ask) | Tư vấn kiến trúc | Quyết định kỹ thuật |
+| [/ckm:bootstrap](/vi/docs/marketing/commands/bootstrap) | Khởi tạo dự án | Dự án mới |
+| [/ckm:git](/vi/docs/marketing/commands/git) | Thao tác Git | Tạo PR, commit |
+| [/ckm:dashboard](/docs/marketing/commands/dashboard) | Giao diện dashboard marketing | Quản lý trực quan |
+| [/ckm:use-mcp](/vi/docs/marketing/commands/use-mcp) | Thao tác MCP server | Tích hợp bên ngoài |
+| [/ckm:persona](/vi/docs/marketing/commands/persona) | Quản lý persona khách hàng | Nghiên cứu đối tượng |
 
 ## Danh Mục Lệnh
 
@@ -56,13 +56,13 @@ Bắt đầu từ đây cho chiến dịch hoặc creative brief mới:
 
 ```bash
 # Brainstorm giải pháp cùng nhau
-/brainstorm how to improve conversion rates
+/ckm:brainstorm how to improve conversion rates
 
 # Nhận hướng dẫn kiến trúc
-/ask what's the best way to structure our marketing automation?
+/ckm:ask what's the best way to structure our marketing automation?
 
 # Tạo persona khách hàng
-/persona create "enterprise software buyers"
+/ckm:persona create "enterprise software buyers"
 ```
 
 ### Tạo Nội Dung
@@ -71,25 +71,25 @@ Tạo tài sản marketing:
 
 ```bash
 # Tạo nội dung blog với khớp giọng văn thương hiệu
-/write:blog "AI marketing automation guide"
+/ckm:write:blog "AI marketing automation guide"
 
 # Kiểm tra chất lượng nội dung hiện có
-/write:audit /assets/blog-posts/latest-post.md
+/ckm:write:audit /assets/blog-posts/latest-post.md
 
 # Tạo video với script và storyboard
-/video:create "30-second product demo for social media"
+/ckm:video:create "30-second product demo for social media"
 
 # Tạo pitch deck
-/slide:create "Series A investor pitch deck"
+/ckm:slide:create "Series A investor pitch deck"
 
 # Tạo chuỗi email
-/email nurture "SaaS trial users"
+/ckm:email nurture "SaaS trial users"
 
 # Bài đăng mạng xã hội
-/social linkedin post "product launch announcement"
+/ckm:social linkedin post "product launch announcement"
 
 # Tài sản hình ảnh
-/design hero banner for landing page
+/ckm:design hero banner for landing page
 ```
 
 ### Quản Lý Chiến Dịch
@@ -98,13 +98,13 @@ Tạo tài sản marketing:
 
 ```bash
 # Tạo chiến dịch mới
-/campaign create "Q1 Product Launch"
+/ckm:campaign create "Q1 Product Launch"
 
 # Kiểm tra trạng thái chiến dịch
-/campaign status "Q1 Product Launch"
+/ckm:campaign status "Q1 Product Launch"
 
 # Phân tích hiệu suất
-/campaign analyze "Q1 Product Launch"
+/ckm:campaign analyze "Q1 Product Launch"
 ```
 
 ### SEO & Phân Tích
@@ -113,14 +113,14 @@ Tối ưu hóa và đo lường:
 
 ```bash
 # Kiểm tra SEO kỹ thuật
-/seo audit https://example.com
+/ckm:seo audit https://example.com
 
 # Nghiên cứu từ khóa
-/seo keywords "project management software"
+/ckm:seo keywords "project management software"
 
 # Báo cáo phân tích
-/analyze traffic
-/analyze conversions
+/ckm:analyze traffic
+/ckm:analyze conversions
 ```
 
 ## Quy Trình Làm Việc Phổ Biến
@@ -129,18 +129,18 @@ Tối ưu hóa và đo lường:
 
 ```bash
 # Bước 1: Xác định đối tượng
-/persona create
+/ckm:persona create
 
 # Bước 2: Lập kế hoạch chiến dịch
-/campaign create "Summer Sale 2025"
+/ckm:campaign create "Summer Sale 2025"
 
 # Bước 3: Tạo nội dung
-/email launch "Summer Sale"
-/social twitter thread "Summer Sale announcement"
-/design social graphic for Twitter
+/ckm:email launch "Summer Sale"
+/ckm:social twitter thread "Summer Sale announcement"
+/ckm:design social graphic for Twitter
 
 # Bước 4: Theo dõi hiệu suất
-/analyze campaigns
+/ckm:analyze campaigns
 ```
 
 **Thời gian**: 30 phút so với 2-3 ngày làm thủ công
@@ -149,19 +149,19 @@ Tối ưu hóa và đo lường:
 
 ```bash
 # Bước 1: Nghiên cứu từ khóa
-/seo keywords "best marketing automation tools"
+/ckm:seo keywords "best marketing automation tools"
 
 # Bước 2: Tạo nội dung
-/content blog "Marketing automation tools comparison 2025"
+/ckm:content blog "Marketing automation tools comparison 2025"
 
 # Bước 3: Tạo hình ảnh
-/design featured image for blog post
+/ckm:design featured image for blog post
 
 # Bước 4: Tối ưu hóa
-/seo audit https://yourblog.com/marketing-automation
+/ckm:seo audit https://yourblog.com/marketing-automation
 
 # Bước 5: Commit
-/git cm
+/ckm:git cm
 ```
 
 **Thời gian**: 20 phút so với 4-6 giờ làm thủ công
@@ -170,13 +170,13 @@ Tối ưu hóa và đo lường:
 
 ```bash
 # Bước 1: Tạo script
-/video:script "Product feature demo" --duration=60 --platform=youtube
+/ckm:video:script "Product feature demo" --duration=60 --platform=youtube
 
 # Bước 2: Tạo storyboard
-/video:storyboard /assets/videos/latest-script.md
+/ckm:video:storyboard /assets/videos/latest-script.md
 
 # Bước 3: Tạo video hoàn chỉnh
-/video:create "Product demo video for homepage"
+/ckm:video:create "Product demo video for homepage"
 ```
 
 **Thời gian**: 30 phút so với 2-3 ngày làm thủ công
@@ -185,10 +185,10 @@ Tối ưu hóa và đo lường:
 
 ```bash
 # Bước 1: Tạo bài thuyết trình
-/slide:create "Series A investor pitch deck"
+/ckm:slide:create "Series A investor pitch deck"
 
 # Bước 2: Xem dashboard để quản lý tài sản
-/dashboard
+/ckm:dashboard
 
 # Bước 3: Xuất và chia sẻ
 # File .pptx sẵn sàng chỉnh sửa tại /assets/slides/
@@ -287,35 +287,35 @@ Các lệnh hỗ trợ Model Context Protocol servers:
 - **Discord**: Quản lý cộng đồng
 - **Slack**: Cộng tác nhóm
 
-Sử dụng `/use-mcp` để tương tác với các MCP servers đã kết nối.
+Sử dụng `/ckm:use-mcp` để tương tác với các MCP servers đã kết nối.
 
 ## Best Practices
 
 ### 1. Bắt Đầu Cụ Thể
 ```bash
 # Tốt: Cụ thể, tập trung
-/write:blog "10 SaaS pricing strategies for 2025"
+/ckm:write:blog "10 SaaS pricing strategies for 2025"
 
 # Tránh: Mơ hồ, quá rộng
-/write:blog "marketing tips"
+/ckm:write:blog "marketing tips"
 ```
 
 ### 2. Sử Dụng Đúng Lệnh Cho Công Việc
 ```bash
-# Blog post → /write
-/write:blog "Complete guide to email marketing"
+# Blog post → /ckm:write
+/ckm:write:blog "Complete guide to email marketing"
 
-# Video content → /video
-/video:create "30-second product demo"
+# Video content → /ckm:video
+/ckm:video:create "30-second product demo"
 
-# Presentations → /slide
-/slide:create "Q1 campaign proposal"
+# Presentations → /ckm:slide
+/ckm:slide:create "Q1 campaign proposal"
 ```
 
 ### 3. Để AI Làm Rõ
 Các lệnh sẽ đặt câu hỏi khi cần:
 ```bash
-/email newsletter
+/ckm:email newsletter
 
 # AI hỏi:
 # - Đối tượng mục tiêu?
@@ -326,17 +326,17 @@ Các lệnh sẽ đặt câu hỏi khi cần:
 ### 4. Xem Xét Trước Khi Xuất Bản
 ```bash
 # Luôn kiểm tra nội dung
-/write:audit /assets/blog-posts/latest.md
+/ckm:write:audit /assets/blog-posts/latest.md
 
 # Xem xét điểm chất lượng
 # Sau đó xuất bản
-/write:publish /assets/blog-posts/latest.md
+/ckm:write:publish /assets/blog-posts/latest.md
 ```
 
 ### 5. Sử Dụng Dashboard Để Quản Lý
 ```bash
 # Xem tất cả tài sản marketing
-/dashboard
+/ckm:dashboard
 
 # Quản lý:
 # - Copy & Writing Styles
@@ -351,23 +351,23 @@ Các lệnh sẽ đặt câu hỏi khi cần:
 ### Trợ Giúp Lệnh Cụ Thể
 ```bash
 # Nhận hướng dẫn sử dụng lệnh chi tiết
-/ck-help campaign
-/ck-help plan
-/ck-help fix
+/ckm:ck-help campaign
+/ckm:ck-help plan
+/ckm:ck-help fix
 ```
 
 ### Tìm Kiếm Tài Liệu
 ```bash
 # Tìm lệnh liên quan
-/ck-help search email marketing
-/ck-help search SEO
+/ckm:ck-help search email marketing
+/ckm:ck-help search SEO
 ```
 
 ### Đề Xuất Nhiệm Vụ
 ```bash
 # Nhận gợi ý lệnh
-/ck-help How do I create a blog post?
-/ck-help What command analyzes campaigns?
+/ckm:ck-help How do I create a blog post?
+/ckm:ck-help What command analyzes campaigns?
 ```
 
 ## Mẹo Hiệu Suất
@@ -375,7 +375,7 @@ Các lệnh sẽ đặt câu hỏi khi cần:
 ### Sử Dụng Dashboard Để Quản Lý Trực Quan
 ```bash
 # Khởi chạy giao diện trực quan
-/dashboard
+/ckm:dashboard
 
 # Quản lý chiến dịch, nội dung, tài sản một cách trực quan
 # Truy cập tại http://localhost:5173
@@ -395,7 +395,7 @@ Các lệnh sẽ đặt câu hỏi khi cần:
 ### Kiểm Tra Nội Dung Trước Xuất Bản
 ```bash
 # Kiểm tra chất lượng trước khi xuất bản
-/write:audit /assets/blog-posts/article.md
+/ckm:write:audit /assets/blog-posts/article.md
 
 # Đảm bảo điểm ≥75/100 cho SEO, khả năng đọc, giọng văn thương hiệu
 ```

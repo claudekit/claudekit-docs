@@ -1,5 +1,5 @@
 ---
-title: "/review"
+title: "/ckm:review"
 description: "Code quality analysis and review with security, performance, and architecture checks before commits"
 section: marketing
 category: commands
@@ -12,7 +12,7 @@ published: true
 ## Quick Start
 
 ```bash
-/review
+/ckm:review
 ```
 
 **What happens**:
@@ -27,7 +27,7 @@ published: true
 ## Syntax
 
 ```bash
-/review [files or scope]
+/ckm:review [files or scope]
 ```
 
 ## Example Output
@@ -80,28 +80,28 @@ STRENGTHS:
 
 Summary: Fix 1 high-priority issue before commit
 
-Next: /fix SQL injection in campaign query
+Next: /ckm:fix SQL injection in campaign query
 ```
 
 ## When to Use
 
 ### Before Commits
 ```bash
-/review  # Check code quality
+/ckm:review  # Check code quality
 # Fix issues
-/git cm  # Commit
+/ckm:git cm  # Commit
 ```
 
 ### After Implementation
 ```bash
-/cook plans/feature.md
-/review  # Quality check
+/ckm:cook plans/feature.md
+/ckm:review  # Quality check
 ```
 
 ### Periodic Reviews
 ```bash
-/review lib/  # Review specific directory
-/review components/CampaignBuilder.tsx  # Single file
+/ckm:review lib/  # Review specific directory
+/ckm:review components/CampaignBuilder.tsx  # Single file
 ```
 
 ## Review Criteria
@@ -115,9 +115,9 @@ Next: /fix SQL injection in campaign query
 
 ## Related Commands
 
-- [/cook](/docs/engineer/skills/cook) - Includes review automatically
-- [/fix](/docs/marketing/commands/fix) - Fix issues found
-- [/test](/docs/marketing/commands/test) - Run tests
+- [/ckm:cook](/docs/engineer/skills/cook) - Includes review automatically
+- [/ckm:fix](/docs/marketing/commands/fix) - Fix issues found
+- [/ckm:test](/docs/marketing/commands/test) - Run tests
 
 ---
 

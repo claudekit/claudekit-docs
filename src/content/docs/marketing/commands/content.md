@@ -1,5 +1,5 @@
 ---
-title: "/content"
+title: "/ckm:content"
 description: "Create SEO-optimized blog posts, landing pages, and marketing content with AI-powered research, writing, and optimization"
 section: marketing
 category: commands
@@ -12,7 +12,7 @@ published: true
 ## Quick Start
 
 ```bash
-/content blog "best marketing automation tools"
+/ckm:content blog "best marketing automation tools"
 ```
 
 **What happens**:
@@ -27,7 +27,7 @@ published: true
 ## Syntax
 
 ```bash
-/content <type> [topic]
+/ckm:content <type> [topic]
 ```
 
 ### Content Types
@@ -43,7 +43,7 @@ published: true
 
 **Input**:
 ```bash
-/content blog "AI marketing automation guide"
+/ckm:content blog "AI marketing automation guide"
 ```
 
 **Expected Output**:
@@ -95,17 +95,17 @@ Word Count: 2,847
 
 Saved: assets/articles/250129-ai-marketing-automation-guide/
 
-Next: /seo audit [published URL]
+Next: /ckm:seo audit [published URL]
 ```
 
 ## Workflow Integration
 
 ```bash
 # Complete content workflow
-/seo keywords "your topic"  # Research first
-/content blog "your topic"  # Create content
-/design featured image for blog  # Visual assets
-/seo audit https://yoursite.com/blog/post  # Verify SEO
+/ckm:seo keywords "your topic"  # Research first
+/ckm:content blog "your topic"  # Create content
+/ckm:design featured image for blog  # Visual assets
+/ckm:seo audit https://yoursite.com/blog/post  # Verify SEO
 ```
 
 ## Agents Used
@@ -123,9 +123,9 @@ Next: /seo audit [published URL]
 
 ## Related Commands
 
-- [/seo](/docs/marketing/commands/seo) - Keyword research and audits
-- [/design](/docs/marketing/commands/design) - Visual assets
-- [/social](/docs/marketing/commands/social) - Promote content
+- [/ckm:seo](/docs/marketing/commands/seo) - Keyword research and audits
+- [/ckm:design](/docs/marketing/commands/design) - Visual assets
+- [/ckm:social](/docs/marketing/commands/social) - Promote content
 
 ---
 

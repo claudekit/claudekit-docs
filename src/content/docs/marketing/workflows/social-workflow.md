@@ -308,7 +308,7 @@ Want comments on your posts? Comment on others' posts first. Want shares? Share 
 
 ## Commands Used
 
-- `/social create` - Generate social posts
-- `/social schedule` - Queue posts for publishing
-- `/social analyze` - Performance analysis
-- `/youtube:social` - Convert videos to social content
+- `/ckm:social create` - Generate social posts
+- `/ckm:social schedule` - Queue posts for publishing
+- `/ckm:social analyze` - Performance analysis
+- `/ckm:youtube:social` - Convert videos to social content

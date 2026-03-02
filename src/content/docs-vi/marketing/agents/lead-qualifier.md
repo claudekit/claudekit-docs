@@ -27,7 +27,7 @@ Xây dựng mô hình chấm điểm khách hàng tiềm năng đầu tiên củ
 
 ```bash
 # Tạo một khung chấm điểm khách hàng tiềm năng
-/ask "Design a lead scoring model for [your business type]"
+/ckm:ask "Design a lead scoring model for [your business type]"
 
 # Đại lý sẽ tạo ra hệ thống chấm điểm dựa trên nhân khẩu học + hành vi với các ngưỡng MQL/SQL
 ```
@@ -72,10 +72,10 @@ Tạo ra một hệ thống chấm điểm mang tính dự đoán:
 
 ```bash
 # Bước 1: Định nghĩa chân dung khách hàng lý tưởng (ICP)
-/ask "What are the characteristics of our best customers?"
+/ckm:ask "What are the characteristics of our best customers?"
 
 # Bước 2: Yêu cầu mô hình chấm điểm
-/ask "Create a lead scoring model with demographic and behavioral factors"
+/ckm:ask "Create a lead scoring model with demographic and behavioral factors"
 
 # Đại lý sẽ:
 # - Định nghĩa chấm điểm nhân khẩu học (quy mô công ty, ngành nghề, chức danh)
@@ -94,7 +94,7 @@ Tìm ra người cần liên hệ ngay lập tức:
 
 ```bash
 # Phân tích cơ sở dữ liệu khách hàng tiềm năng của bạn
-/ask "Which leads in our database show the strongest buying signals?"
+/ckm:ask "Which leads in our database show the strongest buying signals?"
 
 # Đại lý sẽ tìm kiếm:
 # - Các hoạt động giá trị cao gần đây (xem bảng giá, yêu cầu demo, nghiên cứu điển hình)
@@ -112,7 +112,7 @@ Tạo ra quy trình chuyển đổi từ MQL sang SQL:
 
 ```bash
 # Định nghĩa tiêu chí thẩm định
-/ask "Design our lead qualification process from MQL to SQL"
+/ckm:ask "Design our lead qualification process from MQL to SQL"
 
 # Đại lý sẽ tạo ra:
 # - Định nghĩa và tiêu chí cho MQL (Marketing Qualified Lead)
@@ -131,7 +131,7 @@ Hiểu rõ các phân khúc khách hàng tiềm năng của bạn:
 
 ```bash
 # Phân tích các phân khúc khách hàng
-/ask "Segment our leads by behavior and recommend actions for each segment"
+/ckm:ask "Segment our leads by behavior and recommend actions for each segment"
 
 # Đại lý sẽ:
 # - Xác định các nhóm hành vi riêng biệt
@@ -174,6 +174,6 @@ Hiểu rõ các phân khúc khách hàng tiềm năng của bạn:
 
 ## Các lệnh liên quan
 
-- `/ask` - Truy vấn đại lý để thực hiện phân tích.
-- `/scout` - Tìm kiếm dữ liệu và bối cảnh về khách hàng tiềm năng.
-- `/plan` - Tạo ra các chiến lược khách hàng tiềm năng toàn diện.
+- `/ckm:ask` - Truy vấn đại lý để thực hiện phân tích.
+- `/ckm:scout` - Tìm kiếm dữ liệu và bối cảnh về khách hàng tiềm năng.
+- `/ckm:plan` - Tạo ra các chiến lược khách hàng tiềm năng toàn diện.

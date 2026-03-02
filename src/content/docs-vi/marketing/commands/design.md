@@ -1,6 +1,6 @@
 ---
 lang: vi
-title: "/design"
+title: "/ckm:design"
 description: "Tạo nội dung hình ảnh trên brand với AI, tăng cường prompt, và xác minh tự động cho tài sản marketing"
 section: marketing
 category: commands
@@ -13,7 +13,7 @@ published: true
 ## Bắt Đầu Nhanh
 
 ```bash
-/design hero banner for landing page
+/ckm:design hero banner for landing page
 ```
 
 **Điều gì sẽ xảy ra**:
@@ -27,13 +27,13 @@ published: true
 
 ## Nó Làm Gì
 
-### Trước /design
+### Trước /ckm:design
 - Công việc thiết kế thủ công (1-4 giờ)
 - Thuê designer ($50-500)
 - Ảnh stock (nhạt, lặp lại)
 - Không nhất quán với brand
 
-### Sau /design
+### Sau /ckm:design
 - Tài sản được tạo bằng AI (2 phút)
 - Nhất quán với brand mặc định
 - Hình ảnh độc đáo
@@ -42,7 +42,7 @@ published: true
 ## Cú Pháp
 
 ```bash
-/design [description]
+/ckm:design [description]
 ```
 
 ## Ví Dụ
@@ -51,7 +51,7 @@ published: true
 
 **Đầu vào**:
 ```bash
-/design hero banner for SaaS landing page
+/ckm:design hero banner for SaaS landing page
 ```
 
 **Quá trình**:
@@ -84,7 +84,7 @@ Saved: assets/banners/hero-banner-saas-landing-251229.png
 
 **Đầu vào**:
 ```bash
-/design LinkedIn post graphic, 1:1 aspect, stats overlay
+/ckm:design LinkedIn post graphic, 1:1 aspect, stats overlay
 ```
 
 **Kết quả**:
@@ -97,14 +97,14 @@ Saved: assets/banners/hero-banner-saas-landing-251229.png
 Saved: assets/banners/social-media/linkedin-stats-graphic-251229.png
 
 Next: Add text overlays in design tool or use:
-/design LinkedIn graphic with "76% faster workflows" text
+/ckm:design LinkedIn graphic with "76% faster workflows" text
 ```
 
 ### Ví Dụ 3: Email Header
 
 **Đầu vào**:
 ```bash
-/design email header for welcome sequence
+/ckm:design email header for welcome sequence
 ```
 
 **Kết quả**:
@@ -187,31 +187,31 @@ interior, cinematic depth of field, business-forward"
 ### Quy Trình Tạo Nội Dung
 ```bash
 # Blog post with visuals
-/content blog "AI marketing guide"
-/design featured image for blog post
-/design infographic showing AI benefits
+/ckm:content blog "AI marketing guide"
+/ckm:design featured image for blog post
+/ckm:design infographic showing AI benefits
 
 # Email campaign
-/email launch "New Product"
-/design email header for product launch
-/design product showcase graphic
+/ckm:email launch "New Product"
+/ckm:design email header for product launch
+/ckm:design product showcase graphic
 ```
 
 ### Campaign Assets
 ```bash
 # Complete campaign visuals
-/campaign create "Q1 Launch"
-/design hero banner for landing page
-/design social media pack (Twitter, LinkedIn, Instagram)
-/design email header series
+/ckm:campaign create "Q1 Launch"
+/ckm:design hero banner for landing page
+/ckm:design social media pack (Twitter, LinkedIn, Instagram)
+/ckm:design email header series
 ```
 
 ## Lệnh Liên Quan
 
-- [/content](/docs/marketing/commands/content) - Nội dung cần hình ảnh
-- [/email](/docs/marketing/commands/email) - Email headers
-- [/social](/docs/marketing/commands/social) - Đồ họa mạng xã hội
-- [/campaign](/docs/marketing/commands/campaign) - Campaign assets
+- [/ckm:content](/docs/marketing/commands/content) - Nội dung cần hình ảnh
+- [/ckm:email](/docs/marketing/commands/email) - Email headers
+- [/ckm:social](/docs/marketing/commands/social) - Đồ họa mạng xã hội
+- [/ckm:campaign](/docs/marketing/commands/campaign) - Campaign assets
 
 ## Kỹ Năng Được Kích Hoạt
 

@@ -134,5 +134,5 @@ Add 20% buffer to timelines. Creative reviews, approvals, and platform setup alw
 
 - `/campaign/create` - Create campaign plan
 - `/campaign/analyze` - Analyze campaign performance
-- `/plan` - Generate implementation plan
+- `/ckm:plan` - Generate implementation plan
 - `/analytics/dashboard` - Campaign dashboard

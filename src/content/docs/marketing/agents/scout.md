@@ -23,14 +23,14 @@ Find files for any task:
 
 ```bash
 # Starting a feature
-/scout "Find all email sending and template files"
+/ckm:scout "Find all email sending and template files"
 ```
 
 You'll get a categorized list of relevant files:
 - Core utilities: `lib/email.ts`
 - API routes: `app/api/send-email/route.ts`
 - Templates: `templates/welcome-email.tsx`
-- Tests: `__tests__/email.test.ts`
+- Tests: `__tests__/ckm:email.test.ts`
 
 ## Capabilities
 
@@ -80,7 +80,7 @@ Use the Scout Agent when you need to:
 ### Finding Payment Integration Files
 
 ```bash
-/scout "Locate all payment processing files for Stripe and SePay"
+/ckm:scout "Locate all payment processing files for Stripe and SePay"
 ```
 
 **Scout will find**:
@@ -93,7 +93,7 @@ Use the Scout Agent when you need to:
 ### Debugging Authentication Flow
 
 ```bash
-/scout "Find all authentication and session management files"
+/ckm:scout "Find all authentication and session management files"
 ```
 
 **You'll get**:
@@ -106,7 +106,7 @@ Use the Scout Agent when you need to:
 ### Understanding Database Structure
 
 ```bash
-/scout "Show me all database schema and migration files"
+/ckm:scout "Show me all database schema and migration files"
 ```
 
 **Scout returns**:
@@ -174,7 +174,7 @@ Optimized for speed:
 
 ## Related Commands
 
-- [`/scout`](/docs/marketing/commands/scout) - Search for files
+- [`/ckm:scout`](/docs/marketing/commands/scout) - Search for files
 - [`/explore`](/docs/marketing/commands) - Interactive code exploration
 
 ## Tips
@@ -222,19 +222,19 @@ Database:
 **Exclude Patterns**:
 ```bash
 # Find TypeScript files excluding tests
-/scout "TypeScript files but skip test files"
+/ckm:scout "TypeScript files but skip test files"
 ```
 
 **Recent Changes**:
 ```bash
 # Files modified recently
-/scout "Files changed in last commit related to authentication"
+/ckm:scout "Files changed in last commit related to authentication"
 ```
 
 **Cross-Feature Search**:
 ```bash
 # Multiple features
-/scout "All webhook handlers for payment providers"
+/ckm:scout "All webhook handlers for payment providers"
 ```
 
 The Scout Agent eliminates the "Where is this file?" problem. You describe what you need, it finds it. Simple.

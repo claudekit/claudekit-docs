@@ -284,7 +284,7 @@ Every report should drive decisions. If a metric doesn't lead to action, don't i
 
 ## Commands Used
 
-- `/analyze traffic` - Analyze website traffic patterns
-- `/analyze campaigns` - Campaign performance analysis
-- `/analyze conversions` - Funnel and conversion analysis
-- `/analyze:report` - Generate comprehensive reports
+- `/ckm:analyze traffic` - Analyze website traffic patterns
+- `/ckm:analyze campaigns` - Campaign performance analysis
+- `/ckm:analyze conversions` - Funnel and conversion analysis
+- `/ckm:analyze:report` - Generate comprehensive reports

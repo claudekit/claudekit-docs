@@ -420,10 +420,10 @@ Save high-scoring content as templates. A blog post scoring 8.5+ becomes a templ
 
 ## Commands Used
 
-- `/write:blog` - Create blog post drafts
-- `/write:cro` - Create conversion-optimized landing pages
+- `/ckm:write:blog` - Create blog post drafts
+- `/ckm:write:cro` - Create conversion-optimized landing pages
 - `/write/audit` - Score content quality (automatically triggers)
 - `/write/publish` - Auto-fix content issues (automatically triggers)
 - Use `copywriting` skill for high-quality content creation
-- `/youtube:blog` - Convert YouTube videos to blog posts
-- `/youtube:social` - Convert YouTube videos to social posts
+- `/ckm:youtube:blog` - Convert YouTube videos to blog posts
+- `/ckm:youtube:social` - Convert YouTube videos to social posts

@@ -11,35 +11,45 @@ interface LanguageSwitcherProps {
 export default function LanguageSwitcher({ currentLocale, currentPath }: LanguageSwitcherProps) {
   const [locale, setLocale] = useState<Locale>(currentLocale);
 
+  const navigateToLocale = (targetLocale: Locale) => {
+    const slug = window.location.pathname
+      .replace(/^\/(en|vi)/, '')
+      .replace(/^\/docs\//, '')
+      .replace(/[^a-z0-9\-\/]/gi, '');
+    const newPath = getLocalizedPath(`/docs/${slug}`, targetLocale);
+    window.location.href = newPath;
+  };
+
   useEffect(() => {
-    // SSR safety check
-    if (typeof window !== 'undefined') {
-      // Load saved language preference
-      const savedLocale = localStorage.getItem('preferred-locale') as Locale;
-      if (savedLocale && LOCALES.includes(savedLocale)) {
-        setLocale(savedLocale);
+    if (typeof window === 'undefined') return;
+
+    const savedLocale = localStorage.getItem('preferred-locale') as Locale;
+
+    if (savedLocale && LOCALES.includes(savedLocale)) {
+      // Saved preference exists - redirect if URL locale doesn't match
+      if (savedLocale !== currentLocale) {
+        navigateToLocale(savedLocale);
+        return;
       }
+      setLocale(savedLocale);
+    } else {
+      // No saved preference - auto-detect from browser language
+      const browserLang = navigator.language.split('-')[0] as Locale;
+      const detectedLocale = LOCALES.includes(browserLang) ? browserLang : currentLocale;
+      localStorage.setItem('preferred-locale', detectedLocale);
+      if (detectedLocale !== currentLocale) {
+        navigateToLocale(detectedLocale);
+        return;
+      }
+      setLocale(detectedLocale);
     }
   }, []);
 
   const handleLanguageChange = (newLocale: Locale) => {
     setLocale(newLocale);
-
-    // SSR safety check
     if (typeof window !== 'undefined') {
       localStorage.setItem('preferred-locale', newLocale);
-
-      // Get the current slug without locale prefix - with validation
-      const slug = currentPath
-        .replace(/^\/(en|vi)/, '')
-        .replace(/^\/docs\//, '')
-        .replace(/[^a-z0-9\-\/]/gi, ''); // Sanitize slug
-
-      // Generate new localized path
-      const newPath = getLocalizedPath(`/docs/${slug}`, newLocale);
-
-      // Navigate to the new path
-      window.location.href = newPath;
+      navigateToLocale(newLocale);
     }
   };
 

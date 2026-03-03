@@ -7,7 +7,7 @@ category: skills
 order: 44
 ---
 
-# ckm:slides
+# `ckm:slides`
 
 > Transform marketing strategy, campaign results, and proposals into polished presentation slides.
 

@@ -7,7 +7,7 @@ category: skills
 order: 34
 ---
 
-# ckm:docs
+# `ckm:docs`
 
 > Keep marketing project documentation accurate, complete, and up to date.
 

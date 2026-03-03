@@ -6,6 +6,8 @@ category: skills
 order: 71
 ---
 
+# `ckm:debugging`
+
 > Diagnose and fix bugs systematically — from reproduction to root cause to verified resolution.
 
 ## What This Skill Does

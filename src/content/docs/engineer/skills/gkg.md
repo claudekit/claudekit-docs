@@ -7,6 +7,8 @@ category: skills
 order: 50
 ---
 
+# `ck:gkg`
+
 Semantic code analysis engine using AST parsing and KuzuDB graph database. Enables IDE-like code navigation for AI assistants.
 
 ## What This Skill Does

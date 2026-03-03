@@ -6,6 +6,8 @@ category: skills
 order: 73
 ---
 
+# `ckm:design-system`
+
 > Build systematic design foundations — token architecture, component specs, and style guides that scale across your entire product.
 
 ## What This Skill Does

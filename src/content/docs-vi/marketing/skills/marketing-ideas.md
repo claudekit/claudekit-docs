@@ -8,6 +8,8 @@ category: skills
 order: 86
 ---
 
+# `ckm:marketing-ideas`
+
 > Kho 140 chiến thuật marketing đã được chứng minh, phân loại theo giai đoạn và nguồn lực.
 
 ## Skill Này Làm Gì

@@ -8,7 +8,7 @@ category: skills
 order: 95
 ---
 
-# ckm:payment-integration
+# `ckm:payment-integration`
 
 > Tích hợp thanh toán an toàn và đáng tin cậy cho sản phẩm SaaS với các cổng thanh toán phổ biến.
 

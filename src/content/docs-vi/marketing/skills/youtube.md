@@ -8,7 +8,7 @@ category: skills
 order: 53
 ---
 
-# ckm:youtube
+# `ckm:youtube`
 
 > Tái sử dụng video YouTube thành bài blog, social posts và nội dung đa kênh tự động.
 

@@ -8,6 +8,8 @@ category: skills
 order: 75
 ---
 
+# `ckm:docs-seeker`
+
 > Truy cập tài liệu kỹ thuật cập nhật nhất thông qua llms.txt index — không cần tìm kiếm thủ công.
 
 ## Skill Này Làm Gì

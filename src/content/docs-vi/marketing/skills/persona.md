@@ -8,7 +8,7 @@ category: skills
 order: 41
 ---
 
-# ckm:persona
+# `ckm:persona`
 
 > Xây dựng và quản lý chân dung khách hàng chi tiết để cá nhân hóa mọi hoạt động marketing.
 

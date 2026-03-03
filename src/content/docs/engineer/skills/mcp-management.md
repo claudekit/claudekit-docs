@@ -7,6 +7,8 @@ category: skills
 order: 50
 ---
 
+# `ck:mcp-management`
+
 You've got MCP servers configured, but how do you actually use them without flooding your context window with hundreds of tool definitions? That's where MCP Management comes in.
 
 ## What This Skill Does

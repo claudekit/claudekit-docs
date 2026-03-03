@@ -7,6 +7,8 @@ category: skills
 order: 111
 ---
 
+# `ckm:web-frameworks`
+
 > Build scalable web applications using Next.js 14+ App Router, Turborepo monorepos, and modern full-stack TypeScript architecture patterns.
 
 ## What This Skill Does

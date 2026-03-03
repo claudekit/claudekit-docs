@@ -7,6 +7,8 @@ category: skills
 order: 99
 ---
 
+# `ckm:remotion`
+
 > Build videos programmatically with React components, CSS animations, and Remotion's rendering pipeline for scalable video content.
 
 ## What This Skill Does

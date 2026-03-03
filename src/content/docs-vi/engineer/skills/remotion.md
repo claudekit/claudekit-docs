@@ -8,6 +8,8 @@ order: 50
 lang: vi
 ---
 
+# `ck:remotion`
+
 Các phương pháp tốt nhất cho Remotion—tạo video theo chương trình bằng React components, hoạt ảnh và compositions.
 
 ## Skill Này Làm Gì

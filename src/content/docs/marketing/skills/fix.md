@@ -7,6 +7,8 @@ category: skills
 order: 114
 ---
 
+# `ckm:fix`
+
 > Fix bugs efficiently with intelligent routing — simple fixes applied immediately, complex issues diagnosed systematically before touching code.
 
 ## What This Skill Does

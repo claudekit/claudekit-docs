@@ -8,6 +8,8 @@ order: 50
 lang: vi
 ---
 
+# `ck:frontend-design`
+
 Chán với giao diện trông quá chung chung, như thể "AI đã làm cái này"? Skill này giúp bạn tạo ra các thiết kế frontend thực sự được chế tác, đáng nhớ và có chủ đích.
 
 ## Skill Này Làm Gì

@@ -7,6 +7,8 @@ category: skills
 order: 9
 ---
 
+# `ckm:brainstorming`
+
 > Biến ý tưởng thành thiết kế đã được xác nhận thông qua đối thoại có cấu trúc trước khi bất kỳ triển khai nào diễn ra.
 
 ## Skill Này Làm Gì

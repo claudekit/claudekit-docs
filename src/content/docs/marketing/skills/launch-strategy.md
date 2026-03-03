@@ -6,6 +6,8 @@ category: skills
 order: 83
 ---
 
+# `ckm:launch-strategy`
+
 > Plan and execute product launches that build momentum — from pre-launch hype to post-launch retention.
 
 ## What This Skill Does

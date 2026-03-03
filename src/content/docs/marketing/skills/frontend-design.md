@@ -6,6 +6,8 @@ category: skills
 order: 79
 ---
 
+# `ckm:frontend-design`
+
 > Translate designs, screenshots, and mockups into pixel-accurate, responsive frontend components — fast.
 
 ## What This Skill Does

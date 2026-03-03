@@ -7,6 +7,8 @@ category: skills
 order: 6
 ---
 
+# `ck:git`
+
 Execute git workflows with conventional commit format, intelligent commit splitting, and security scanning for secrets.
 
 ## What This Skill Does

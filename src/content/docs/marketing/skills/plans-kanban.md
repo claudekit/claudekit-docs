@@ -7,6 +7,8 @@ category: skills
 order: 96
 ---
 
+# `ckm:plans-kanban`
+
 > Visualize implementation plans as Kanban boards with phase tracking, task statuses, and progress dashboards.
 
 ## What This Skill Does

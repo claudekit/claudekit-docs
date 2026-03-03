@@ -5,6 +5,8 @@ section: marketing
 category: skills
 order: 16
 ---
+
+# `ckm:content-hub`
 > Browse and manage marketing assets through visual gallery with brand context sidebar and action buttons.
 
 ## What This Skill Does

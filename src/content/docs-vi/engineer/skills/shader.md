@@ -8,6 +8,8 @@ order: 50
 lang: vi
 ---
 
+# `ck:shader`
+
 Viết fragment shaders tăng tốc GPU cho đồ họa thủ tục, texture và hiệu ứng hình ảnh bằng GLSL.
 
 ## Skill Này Làm Gì

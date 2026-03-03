@@ -7,6 +7,8 @@ category: skills
 order: 50
 ---
 
+# `ck:media-processing`
+
 Ever needed to convert a video format, resize 500 images, or remove backgrounds from product photos? These are exactly the problems FFmpeg, ImageMagick, and RMBG solve.
 
 ## What This Skill Does

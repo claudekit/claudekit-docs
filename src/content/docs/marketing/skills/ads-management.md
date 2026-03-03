@@ -6,6 +6,8 @@ category: skills
 order: 10
 ---
 
+# `ckm:ads-management`
+
 > Launch and optimize paid campaigns across major platforms with data-driven targeting, copy testing, and ROI tracking.
 
 ## What This Skill Does

@@ -7,6 +7,8 @@ category: skills
 order: 107
 ---
 
+# `ckm:threejs`
+
 > Create immersive 3D web experiences, product visualizations, and interactive graphics with Three.js and modern WebGL/WebGPU rendering.
 
 ## What This Skill Does

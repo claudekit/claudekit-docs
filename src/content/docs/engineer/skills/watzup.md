@@ -7,6 +7,8 @@ category: skills
 order: 13
 ---
 
+# `ck:watzup`
+
 Review recent changes and wrap up your current work session. Generates a summary of what was accomplished and what's next.
 
 ## Usage

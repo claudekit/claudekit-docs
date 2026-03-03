@@ -8,6 +8,8 @@ category: skills
 order: 66
 ---
 
+# `ckm:claude-code`
+
 > Cài đặt và cấu hình Claude Code như một trợ lý marketing AI mạnh mẽ với skills, MCP servers và tích hợp IDE.
 
 ## Skill Này Làm Gì

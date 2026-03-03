@@ -6,6 +6,8 @@ category: skills
 order: 82
 ---
 
+# `ckm:kit-builder`
+
 > Extend ClaudeKit Marketing by building custom skills, agents, and workflow commands tailored to your marketing stack.
 
 ## What This Skill Does

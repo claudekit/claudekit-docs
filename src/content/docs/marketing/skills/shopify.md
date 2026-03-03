@@ -7,6 +7,8 @@ category: skills
 order: 104
 ---
 
+# `ckm:shopify`
+
 > Build production-ready Shopify apps and customizations using the Shopify App Bridge, GraphQL API, and Polaris design system.
 
 ## What This Skill Does

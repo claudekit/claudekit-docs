@@ -7,6 +7,8 @@ category: skills
 order: 50
 ---
 
+# `ck:frontend-development`
+
 Building React applications the modern way means embracing Suspense, lazy loading, and proper data fetching patterns. This skill shows you how.
 
 ## What This Skill Does

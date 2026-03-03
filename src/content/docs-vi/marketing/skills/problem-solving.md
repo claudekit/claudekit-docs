@@ -8,7 +8,7 @@ category: skills
 order: 98
 ---
 
-# ckm:problem-solving
+# `ckm:problem-solving`
 
 > Giải quyết các vấn đề phức tạp một cách có hệ thống thông qua phân tích đa chiều và khung tư duy có cấu trúc.
 

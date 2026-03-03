@@ -7,6 +7,8 @@ category: skills
 order: 8
 ---
 
+# `ckm:copywriting`
+
 > Viết nội dung chuyển đổi cao bằng các công thức đã kiểm chứng, mẫu tiêu đề và phong cách viết tùy chỉnh được trích xuất từ nội dung tốt nhất của bạn.
 
 ## Skill Này Làm Gì

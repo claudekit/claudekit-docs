@@ -7,6 +7,8 @@ category: skills
 order: 50
 ---
 
+# `ck:find-skills`
+
 Your gateway to the open agent skills ecosystem. Search, discover, and install specialized capabilities for any domain.
 
 ## What This Skill Does

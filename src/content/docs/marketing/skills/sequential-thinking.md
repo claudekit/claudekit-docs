@@ -7,6 +7,8 @@ category: skills
 order: 102
 ---
 
+# `ckm:sequential-thinking`
+
 > Work through complex problems one step at a time with the ability to revise earlier reasoning as new information emerges.
 
 ## What This Skill Does

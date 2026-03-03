@@ -8,7 +8,7 @@ category: skills
 order: 35
 ---
 
-# ckm:email
+# `ckm:email`
 
 > Tạo nội dung email marketing hiệu quả — từ email đơn lẻ đến chuỗi nurture và luồng tự động hóa.
 

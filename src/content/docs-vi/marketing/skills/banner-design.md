@@ -8,6 +8,8 @@ category: skills
 order: 63
 ---
 
+# `ckm:banner-design`
+
 > Tạo banner chuyên nghiệp cho mọi nền tảng với hướng dẫn thiết kế có cấu trúc và tạo ảnh bằng AI.
 
 ## Skill Này Làm Gì

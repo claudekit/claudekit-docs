@@ -7,6 +7,8 @@ category: skills
 order: 108
 ---
 
+# `ckm:ui-styling`
+
 > Build polished, accessible user interfaces using shadcn/ui components, Radix UI primitives, and Tailwind CSS with built-in dark mode and theming.
 
 ## What This Skill Does

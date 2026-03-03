@@ -8,6 +8,8 @@ order: 12
 published: true
 ---
 
+# `ck:test`
+
 Comprehensive testing framework for code and UI. Runs the full test stack, analyzes failures, measures coverage, and produces QA reports.
 
 ## Core Principle

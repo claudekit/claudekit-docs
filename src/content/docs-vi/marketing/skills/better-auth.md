@@ -8,6 +8,8 @@ category: skills
 order: 64
 ---
 
+# `ckm:better-auth`
+
 > Triển khai xác thực an toàn và linh hoạt với Better Auth — framework TypeScript-first mã nguồn mở.
 
 ## Skill Này Làm Gì

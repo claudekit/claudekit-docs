@@ -7,6 +7,8 @@ category: skills
 order: 5
 ---
 
+# `ckm:email-marketing`
+
 > Xây dựng chiến dịch email có tỷ lệ chuyển đổi cao với quy trình tự động, nội dung tối ưu và thực hành tốt nhất về khả năng giao.
 
 ## Skill Này Làm Gì

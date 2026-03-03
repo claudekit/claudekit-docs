@@ -114,6 +114,8 @@ npx @better-auth/cli migrate   # Apply migrations
 
 ---
 
+# `ck:better-auth`
+
 ## Key Takeaway
 
  Use Better Auth for production-ready authentication in any TypeScript framework with built-in email/password, OAuth, and extensible plugin system for 2FA, passkeys, and organizations.

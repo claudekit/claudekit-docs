@@ -8,6 +8,8 @@ category: skills
 order: 82
 ---
 
+# `ckm:kit-builder`
+
 > Tạo skills, agents và workflows tùy chỉnh để mở rộng ClaudeKit Marketing cho nhu cầu cụ thể của bạn.
 
 ## Skill Này Làm Gì

@@ -8,7 +8,7 @@ category: skills
 order: 50
 ---
 
-# ckm:watzup
+# `ckm:watzup`
 
 > Nhanh chóng nắm bắt những gì đã xảy ra — tổng kết phiên làm việc và thay đổi gần đây.
 

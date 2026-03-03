@@ -8,6 +8,8 @@ category: skills
 order: 70
 ---
 
+# `ckm:databases`
+
 > Thiết kế, truy vấn và tối ưu databases cho marketing applications với PostgreSQL và MongoDB.
 
 ## Skill Này Làm Gì

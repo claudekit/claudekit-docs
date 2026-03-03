@@ -8,7 +8,7 @@ category: skills
 order: 92
 ---
 
-# ckm:mermaidjs-v11
+# `ckm:mermaidjs-v11`
 
 > Tạo sơ đồ trực quan chuyên nghiệp với cú pháp Mermaid.js v11 chính xác và nhất quán.
 

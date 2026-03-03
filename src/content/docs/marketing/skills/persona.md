@@ -7,7 +7,7 @@ category: skills
 order: 41
 ---
 
-# ckm:persona
+# `ckm:persona`
 
 > Build detailed customer personas grounded in real data to sharpen targeting, messaging, and product positioning.
 

@@ -8,7 +8,7 @@ category: skills
 order: 38
 ---
 
-# ckm:init
+# `ckm:init`
 
 > Khởi động dự án marketing mới với thiết lập hoàn chỉnh trong vài phút thay vì vài giờ.
 

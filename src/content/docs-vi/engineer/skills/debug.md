@@ -8,6 +8,8 @@ order: 50
 lang: vi
 ---
 
+# `ck:debug`
+
 Framework debugging toàn diện kết hợp điều tra có hệ thống, root cause tracing và multi-layer validation. Không có fixes mà không hiểu root cause trước.
 
 ## Nguyên Tắc Cốt Lõi

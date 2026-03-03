@@ -8,6 +8,8 @@ order: 6
 lang: vi
 ---
 
+# `ck:git`
+
 Thực thi các quy trình git với định dạng conventional commit, tự động tách commit theo type/scope, và quét bảo mật để tìm secret.
 
 ## Skill Này Làm Gì

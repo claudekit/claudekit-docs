@@ -8,6 +8,8 @@ category: skills
 order: 74
 ---
 
+# `ckm:devops`
+
 > Deploy marketing tools lên production nhanh chóng và đáng tin cậy với Cloudflare, Docker và GCP.
 
 ## Skill Này Làm Gì

@@ -8,7 +8,7 @@ category: skills
 order: 96
 ---
 
-# ckm:plans-kanban
+# `ckm:plans-kanban`
 
 > Quản lý kế hoạch dự án với dashboard trực quan, theo dõi tiến độ realtime và timeline kanban.
 

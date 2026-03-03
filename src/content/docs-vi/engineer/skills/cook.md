@@ -8,6 +8,8 @@ order: 4
 lang: vi
 ---
 
+# `ck:cook`
+
 Engine implementation tính năng hoàn chỉnh của bạn. Thay thế lệnh `/code` cũ bằng smart workflow detection, research phases và quality gates.
 
 ## Skill Này Làm Gì

@@ -7,6 +7,8 @@ category: skills
 order: 50
 ---
 
+# `ck:context-engineering`
+
 The art and science of curating the smallest high-signal token set for maximum LLM reasoning quality while minimizing token usage.
 
 ## What This Skill Does

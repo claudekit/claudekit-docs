@@ -8,7 +8,7 @@ category: skills
 order: 94
 ---
 
-# ckm:paid-ads
+# `ckm:paid-ads`
 
 > Tối đa hóa ROI quảng cáo trả phí thông qua chiến lược nhắm mục tiêu chính xác và tối ưu liên tục.
 

@@ -6,6 +6,8 @@ category: skills
 order: 61
 ---
 
+# `ckm:assets-organizing`
+
 > Keep every agent output, creative asset, and campaign artifact organized and instantly retrievable.
 
 ## What This Skill Does

@@ -6,6 +6,8 @@ category: skills
 order: 11
 ---
 
+# `ckm:affiliate-marketing`
+
 > Design affiliate programs that generate 20-50% of customer acquisition with 30-50% lower CAC through strategic partner recruitment.
 
 ## What This Skill Does

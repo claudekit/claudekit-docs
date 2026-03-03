@@ -7,6 +7,8 @@ category: skills
 order: 57
 ---
 
+# `ck:use-mcp`
+
 Utilize tools from Model Context Protocol (MCP) servers configured in your project. Discovers and executes MCP capabilities.
 
 ## Usage

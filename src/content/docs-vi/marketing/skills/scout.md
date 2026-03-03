@@ -8,7 +8,7 @@ category: skills
 order: 101
 ---
 
-# ckm:scout
+# `ckm:scout`
 
 > Khám phá codebase lớn trong vài giây với agent song song chạy đồng thời trên nhiều phần code.
 

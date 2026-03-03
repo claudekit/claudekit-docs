@@ -6,6 +6,8 @@ category: skills
 order: 18
 ---
 
+# `ckm:ai-artist`
+
 > Craft effective prompts for AI models (Claude, GPT, Gemini, Midjourney, DALL-E, Stable Diffusion, Imagen, Flux) using proven patterns.
 
 ## What This Skill Does

@@ -8,6 +8,8 @@ category: skills
 order: 85
 ---
 
+# `ckm:marketing-dashboard`
+
 > Xây dựng marketing command center để quản lý toàn bộ hoạt động từ một nơi.
 
 ## Skill Này Làm Gì

@@ -8,6 +8,8 @@ order: 50
 published: true
 ---
 
+# `ck:team`
+
 CK-native orchestration engine (v2.1.0) that spawns independent Claude Code sessions as teammates, each with their own context window, task ownership, and cross-session memory.
 
 ## What This Skill Does

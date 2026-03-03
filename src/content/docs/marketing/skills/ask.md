@@ -7,7 +7,7 @@ category: skills
 order: 31
 ---
 
-# ckm:ask
+# `ckm:ask`
 
 > Get direct answers to technical, strategic, and architectural marketing questions.
 

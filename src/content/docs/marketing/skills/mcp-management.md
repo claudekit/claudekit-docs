@@ -7,6 +7,8 @@ category: skills
 order: 91
 ---
 
+# `ckm:mcp-management`
+
 > Discover, configure, and orchestrate MCP servers to extend Claude's capabilities with external tools and services.
 
 ## What This Skill Does

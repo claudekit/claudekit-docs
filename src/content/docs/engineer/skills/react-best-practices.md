@@ -7,6 +7,8 @@ category: skills
 order: 50
 ---
 
+# `ck:react-best-practices`
+
 Comprehensive performance optimization guide for React and Next.js applications, maintained by Vercel. Contains 45 rules across 8 categories prioritized by impact.
 
 ## What This Skill Does

@@ -9,6 +9,8 @@ published: true
 lang: vi
 ---
 
+# `ck:test`
+
 Framework testing toàn diện cho code và UI. Chạy toàn bộ test stack, phân tích failures, đo lường coverage và tạo báo cáo QA.
 
 ## Nguyên Tắc Cốt Lõi

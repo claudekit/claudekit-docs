@@ -7,6 +7,8 @@ category: skills
 order: 109
 ---
 
+# `ckm:ui-ux-pro-max`
+
 > Design exceptional UIs with a curated library of 50 visual styles, 21 palettes, and multi-stack implementation across 9 technology options.
 
 ## What This Skill Does

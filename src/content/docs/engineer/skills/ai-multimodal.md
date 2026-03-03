@@ -7,6 +7,8 @@ category: skills
 order: 50
 ---
 
+# `ck:ai-multimodal`
+
 You know that feeling when you need to analyze a 2-hour podcast, extract text from a complex PDF, or generate images that actually match your vision? That's where AI Multimodal comes in.
 
 ## What This Skill Does

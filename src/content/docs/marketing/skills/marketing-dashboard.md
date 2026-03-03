@@ -6,6 +6,8 @@ category: skills
 order: 85
 ---
 
+# `ckm:marketing-dashboard`
+
 > Your personal marketing command center — all metrics, campaigns, and AI agent activity in one unified dashboard.
 
 ## What This Skill Does

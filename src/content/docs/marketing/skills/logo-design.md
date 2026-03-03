@@ -6,6 +6,8 @@ category: skills
 order: 84
 ---
 
+# `ckm:logo-design`
+
 > Create distinctive, scalable logos with AI generation, 55 curated styles, and 30 color palettes — from concept to production-ready SVG.
 
 ## What This Skill Does

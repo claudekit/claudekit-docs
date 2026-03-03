@@ -8,6 +8,8 @@ order: 50
 lang: vi
 ---
 
+# `ck:frontend-development`
+
 Xây dựng ứng dụng React theo cách hiện đại có nghĩa là áp dụng Suspense, lazy loading, và các pattern fetching dữ liệu phù hợp. Skill này hướng dẫn bạn cách làm điều đó.
 
 ## Skill Này Làm Gì

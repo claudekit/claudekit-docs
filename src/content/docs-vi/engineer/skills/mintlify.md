@@ -9,6 +9,8 @@ published: true
 lang: vi
 ---
 
+# `ck:mintlify`
+
 v2.0.0 — Mintlify documentation builder. Bao gồm thiết lập, cấu hình, MDX components, API docs, tính năng AI và triển khai.
 
 ## Skill Này Làm Gì

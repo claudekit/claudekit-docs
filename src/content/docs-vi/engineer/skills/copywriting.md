@@ -8,6 +8,8 @@ order: 50
 lang: vi
 ---
 
+# `ck:copywriting`
+
 Các công thức copy chuyển đổi cao, templates và trích xuất phong cách viết cho marketing, landing pages, emails và mô tả sản phẩm.
 
 ## Skill Này Làm Gì

@@ -8,6 +8,8 @@ category: skills
 order: 61
 ---
 
+# `ckm:assets-organizing`
+
 > Giữ cho project gọn gàng bằng cách tổ chức tất cả đầu ra được tạo ra vào một cấu trúc thư mục nhất quán.
 
 ## Skill Này Làm Gì

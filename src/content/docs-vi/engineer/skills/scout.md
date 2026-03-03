@@ -8,6 +8,8 @@ order: 7
 lang: vi
 ---
 
+# `ck:scout`
+
 Khám phá codebase nhanh, tiết kiệm token bằng các agent song song để tìm các file cần thiết cho task.
 
 ## Skill Này Làm Gì

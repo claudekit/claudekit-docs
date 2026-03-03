@@ -8,6 +8,8 @@ category: skills
 order: 81
 ---
 
+# `ckm:google-adk-python`
+
 > Xây dựng hệ thống multi-agent marketing mạnh mẽ với Google Agent Development Kit (ADK) Python.
 
 ## Skill Này Làm Gì

@@ -7,6 +7,8 @@ category: skills
 order: 115
 ---
 
+# `ckm:git`
+
 > Manage git workflows with conventional commit enforcement, automatic secret scanning, branch strategy, and GitHub PR creation.
 
 ## What This Skill Does

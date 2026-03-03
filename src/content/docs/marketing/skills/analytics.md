@@ -6,6 +6,8 @@ category: skills
 order: 4
 ---
 
+# `ckm:analytics`
+
 > Transform marketing data into actionable insights through automated reporting, attribution analysis, and ROI tracking.
 
 ## What This Skill Does

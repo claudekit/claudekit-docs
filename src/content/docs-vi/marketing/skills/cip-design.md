@@ -8,6 +8,8 @@ category: skills
 order: 65
 ---
 
+# `ckm:cip-design`
+
 > Xây dựng nhận diện thương hiệu toàn diện với hệ thống visual nhất quán trên 50+ loại sản phẩm.
 
 ## Skill Này Làm Gì

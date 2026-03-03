@@ -8,6 +8,8 @@ order: 50
 lang: vi
 ---
 
+# `ck:context-engineering`
+
 Nghệ thuật và khoa học của việc tuyển chọn tập token nhỏ nhất có tín hiệu cao để đạt chất lượng reasoning LLM tối đa trong khi giảm thiểu token usage.
 
 ## Skill Này Làm Gì

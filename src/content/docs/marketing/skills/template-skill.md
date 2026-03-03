@@ -7,7 +7,7 @@ category: skills
 order: 106
 ---
 
-# `ckm:template-skill`
+# Template Skill
 
 > Bootstrap new Claude skills from a minimal, production-ready template that follows ClaudeKit skill conventions.
 

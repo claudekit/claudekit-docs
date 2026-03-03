@@ -6,7 +6,7 @@ category: skills
 order: 70
 ---
 
-# `ckm:databases`
+# Databases
 
 > Design efficient schemas, write optimized queries, and manage data at scale for marketing tools and analytics pipelines.
 

@@ -6,7 +6,7 @@ category: skills
 order: 8
 ---
 
-# `ckm:copywriting`
+# Copywriting
 
 > Write high-converting copy using proven formulas, headline templates, and custom writing styles extracted from your best content.
 

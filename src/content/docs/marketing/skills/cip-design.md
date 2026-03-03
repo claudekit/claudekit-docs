@@ -6,7 +6,7 @@ category: skills
 order: 65
 ---
 
-# `ckm:cip-design`
+# CIP Design
 
 > Build comprehensive Corporate Identity Programs with 50+ deliverables spanning logo, typography, color, and brand collateral.
 

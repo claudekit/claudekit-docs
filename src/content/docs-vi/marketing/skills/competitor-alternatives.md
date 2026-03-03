@@ -8,7 +8,7 @@ category: skills
 order: 68
 ---
 
-# `ckm:competitor-alternatives`
+# Competitor Alternatives
 
 > Chiếm lưu lượng high-intent bằng trang so sánh đối thủ và trang thay thế được tối ưu SEO.
 

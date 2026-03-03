@@ -7,7 +7,7 @@ category: skills
 order: 16
 ---
 
-# `ckm:content-hub`
+# Content Hub
 
 > Duyệt và quản lý tài sản marketing qua thư viện hình ảnh với thanh bên ngữ cảnh thương hiệu và các nút hành động.
 

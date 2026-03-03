@@ -8,7 +8,7 @@ category: skills
 order: 34
 ---
 
-# `ckm:docs`
+# Docs
 
 > Quản lý tài liệu dự án marketing — từ khởi tạo đến cập nhật và tóm tắt nhanh.
 

@@ -7,7 +7,7 @@ category: skills
 order: 17
 ---
 
-# `ckm:ai-multimodal`
+# AI Multimodal
 
 > Tạo ảnh, video, giọng nói và âm nhạc; phân tích file đa phương tiện và xử lý tài liệu bằng khả năng AI đa phương thức của Google Gemini và MiniMax.
 

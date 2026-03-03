@@ -7,7 +7,7 @@ category: skills
 order: 95
 ---
 
-# `ckm:payment-integration`
+# Payment Integration
 
 > Add payment processing to your product with battle-tested implementations for SePay (Vietnam), Polar (open source), and Stripe (global).
 

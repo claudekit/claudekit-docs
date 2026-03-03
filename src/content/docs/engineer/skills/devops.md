@@ -114,7 +114,7 @@ gcloud run deploy my-service \
 
 ---
 
-# `ck:devops`
+# Devops
 
 ## Key Takeaway
 

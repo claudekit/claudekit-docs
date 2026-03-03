@@ -7,7 +7,7 @@ category: skills
 order: 50
 ---
 
-# `ck:remotion`
+# Remotion
 
 Best practices for Remotion—create videos programmatically using React components, animations, and compositions.
 

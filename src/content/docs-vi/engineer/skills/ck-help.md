@@ -8,7 +8,7 @@ order: 1
 lang: vi
 ---
 
-# `ck:help`
+# Help
 
 Hướng dẫn sử dụng ClaudeKit và khám phá skills. Giúp bạn tìm đúng skill cho mọi tác vụ và hiểu cách sử dụng ClaudeKit hiệu quả.
 

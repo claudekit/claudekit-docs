@@ -7,7 +7,7 @@ category: skills
 order: 47
 ---
 
-# `ckm:test`
+# Test
 
 > Validate marketing workflows, landing pages, and automation sequences with automated testing.
 

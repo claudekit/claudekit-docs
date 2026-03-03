@@ -7,7 +7,7 @@ category: skills
 order: 50
 ---
 
-# `ck:web-testing`
+# Web Testing
 
 Comprehensive web testing covering unit, integration, E2E, load, security, visual regression, and accessibility testing with industry-standard tools.
 

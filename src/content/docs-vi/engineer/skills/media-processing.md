@@ -8,7 +8,7 @@ order: 50
 lang: vi
 ---
 
-# `ck:media-processing`
+# Media Processing
 
 Bạn từng cần chuyển đổi định dạng video, thay đổi kích thước 500 ảnh, hoặc xóa nền khỏi ảnh sản phẩm? Đây chính xác là những vấn đề mà FFmpeg, ImageMagick và RMBG giải quyết.
 

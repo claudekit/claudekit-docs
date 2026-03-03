@@ -7,7 +7,7 @@ category: skills
 order: 50
 ---
 
-# `ck:debug`
+# Debug
 
 Comprehensive debugging framework that combines systematic investigation, root cause tracing, and multi-layer validation. No fixes without understanding the root cause first.
 

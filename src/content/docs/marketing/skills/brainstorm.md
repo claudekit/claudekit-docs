@@ -7,7 +7,7 @@ category: skills
 order: 112
 ---
 
-# `ckm:brainstorm`
+# Brainstorm
 
 > Explore solutions through structured dialogue, compare approaches with trade-offs, and validate decisions before writing a single line of code.
 

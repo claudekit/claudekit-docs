@@ -114,7 +114,7 @@ npx @better-auth/cli migrate   # Apply migrations
 
 ---
 
-# `ck:better-auth`
+# Better Auth
 
 ## Key Takeaway
 

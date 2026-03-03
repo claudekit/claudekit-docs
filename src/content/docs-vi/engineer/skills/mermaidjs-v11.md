@@ -8,7 +8,7 @@ order: 50
 lang: vi
 ---
 
-# `ck:mermaidjs-v11`
+# Mermaid.js v11
 
 Tạo sơ đồ dựa trên văn bản sử dụng cú pháp khai báo Mermaid.js v11. Chuyển đổi code thành SVG/PNG/PDF hoặc render trong trình duyệt và markdown.
 

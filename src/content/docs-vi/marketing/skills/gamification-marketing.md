@@ -7,7 +7,7 @@ category: skills
 order: 12
 ---
 
-# `ckm:gamification-marketing`
+# Gamification Marketing
 
 > Thúc đẩy tương tác và giữ chân thông qua cơ chế trò chơi tận dụng tâm lý hành vi và động lực nội tại.
 

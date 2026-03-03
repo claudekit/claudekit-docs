@@ -8,7 +8,7 @@ category: skills
 order: 71
 ---
 
-# `ckm:debugging`
+# Debugging
 
 > Xác định và sửa bugs nhanh chóng thông qua quy trình debugging có cấu trúc và phân tích nguyên nhân gốc rễ.
 

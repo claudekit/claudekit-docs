@@ -8,7 +8,7 @@ category: skills
 order: 111
 ---
 
-# `ckm:web-frameworks`
+# Web Frameworks
 
 > Xây dựng ứng dụng web hiện đại với Next.js App Router và quản lý monorepo Turborepo.
 

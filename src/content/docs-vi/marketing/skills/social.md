@@ -8,7 +8,7 @@ category: skills
 order: 45
 ---
 
-# `ckm:social`
+# Social
 
 > Tạo nội dung mạng xã hội hấp dẫn cho mọi nền tảng và lên lịch phân phối chiến lược.
 

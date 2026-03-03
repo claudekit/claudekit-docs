@@ -7,7 +7,7 @@ category: skills
 order: 38
 ---
 
-# `ckm:init`
+# Init
 
 > Bootstrap a new marketing project with directory structure, documentation, and configuration in one command.
 

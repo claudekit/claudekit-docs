@@ -7,7 +7,7 @@ category: skills
 order: 50
 ---
 
-# `ck:mermaidjs-v11`
+# Mermaid.js v11
 
 Text-based diagram creation using Mermaid.js v11 declarative syntax. Convert code to SVG/PNG/PDF or render in browsers and markdown.
 

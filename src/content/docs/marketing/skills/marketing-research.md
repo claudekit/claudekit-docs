@@ -7,7 +7,7 @@ category: skills
 order: 89
 ---
 
-# `ckm:marketing-research`
+# Marketing Research
 
 > Turn market signals into actionable intelligence through systematic research, competitor analysis, and audience insight extraction.
 

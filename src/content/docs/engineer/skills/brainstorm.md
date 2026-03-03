@@ -7,7 +7,7 @@ category: skills
 order: 2
 ---
 
-# `ck:brainstorm`
+# Brainstorm
 
 Your elite technical advisor for architecture decisions, system design, and strategic planning. This skill brings brutal honesty and deep expertise to help you make the right technical choices.
 

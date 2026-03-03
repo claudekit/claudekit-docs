@@ -6,7 +6,7 @@ category: skills
 order: 75
 ---
 
-# `ckm:docs-seeker`
+# Docs Seeker
 
 > Find authoritative, up-to-date technical documentation for any library or framework before implementing.
 

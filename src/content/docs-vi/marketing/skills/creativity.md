@@ -7,7 +7,7 @@ category: skills
 order: 15
 ---
 
-# `ckm:creativity`
+# Creativity
 
 > Định hướng chiến dịch sáng tạo một cách có hệ thống với các mẫu phong cách đã được kiểm chứng, khung tâm lý màu sắc và thực hành tốt nhất theo nền tảng cho digital marketing.
 

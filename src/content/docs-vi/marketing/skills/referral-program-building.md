@@ -7,7 +7,7 @@ category: skills
 order: 13
 ---
 
-# `ckm:referral-program-building`
+# Referral Program Building
 
 > Xây dựng chương trình giới thiệu tạo tỷ lệ chuyển đổi cao hơn 2-3 lần với tỷ lệ giữ chân tốt hơn 37% bằng cơ chế viral đã được kiểm chứng.
 

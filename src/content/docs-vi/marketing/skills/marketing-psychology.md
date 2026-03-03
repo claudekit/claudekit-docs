@@ -8,7 +8,7 @@ category: skills
 order: 88
 ---
 
-# `ckm:marketing-psychology`
+# Marketing Psychology
 
 > Ứng dụng tâm lý học hành vi và khoa học nhận thức để tạo ra marketing thuyết phục và ethical.
 

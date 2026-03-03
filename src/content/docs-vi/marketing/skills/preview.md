@@ -8,7 +8,7 @@ category: skills
 order: 43
 ---
 
-# `ckm:preview`
+# Preview
 
 > Xem trước file markdown và kế hoạch dự án ngay trong terminal hoặc trình duyệt.
 

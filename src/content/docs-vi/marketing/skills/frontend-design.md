@@ -8,7 +8,7 @@ category: skills
 order: 79
 ---
 
-# `ckm:frontend-design`
+# Frontend Design
 
 > Chuyển đổi designs và screenshots thành frontend code chất lượng cao với pixel-perfect accuracy.
 

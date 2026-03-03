@@ -7,7 +7,7 @@ category: skills
 order: 43
 ---
 
-# `ckm:preview`
+# Preview
 
 > Render and preview marketing documents, plans, and content collections in a readable format.
 

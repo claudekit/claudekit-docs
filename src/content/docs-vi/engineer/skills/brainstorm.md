@@ -8,7 +8,7 @@ order: 2
 lang: vi
 ---
 
-# `ck:brainstorm`
+# Brainstorm
 
 Cố vấn kỹ thuật hàng đầu của bạn cho các quyết định kiến trúc, thiết kế hệ thống và lập kế hoạch chiến lược. Skill này mang đến sự thẳng thắn và chuyên môn sâu để giúp bạn đưa ra những lựa chọn kỹ thuật đúng đắn.
 

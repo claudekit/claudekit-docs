@@ -7,7 +7,7 @@ category: skills
 order: 105
 ---
 
-# `ckm:skill-creator`
+# Skill Creator
 
 > Build new Claude skills from scratch or update existing ones to meet Skillmark benchmark standards with proper spec files and test coverage.
 

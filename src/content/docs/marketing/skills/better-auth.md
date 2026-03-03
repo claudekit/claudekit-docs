@@ -6,7 +6,7 @@ category: skills
 order: 64
 ---
 
-# `ckm:better-auth`
+# Better Auth
 
 > Implement production-ready authentication with Better Auth — the type-safe, extensible auth framework for TypeScript applications.
 

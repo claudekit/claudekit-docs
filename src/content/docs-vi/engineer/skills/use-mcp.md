@@ -8,7 +8,7 @@ order: 57
 lang: vi
 ---
 
-# `ck:use-mcp`
+# Use MCP
 
 Sử dụng các công cụ từ máy chủ Model Context Protocol (MCP) được cấu hình trong dự án của bạn. Khám phá và thực thi các khả năng MCP.
 

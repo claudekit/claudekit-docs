@@ -7,7 +7,7 @@ category: skills
 order: 56
 ---
 
-# `ck:preview`
+# Preview
 
 View files and directories, or generate visual explanations with ASCII art, Mermaid diagrams, and slide presentations.
 

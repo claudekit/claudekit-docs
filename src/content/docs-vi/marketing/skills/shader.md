@@ -8,7 +8,7 @@ category: skills
 order: 103
 ---
 
-# `ckm:shader`
+# Shader
 
 > Tạo visual effects ấn tượng với GLSL shaders cho WebGL, Three.js và Shadertoy.
 

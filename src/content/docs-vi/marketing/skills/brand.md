@@ -7,7 +7,7 @@ category: skills
 order: 14
 ---
 
-# `ckm:brand`
+# Brand
 
 > Duy trì tính nhất quán thương hiệu trên tất cả tài liệu marketing với xác nhận tự động, tổ chức tài sản và khung giọng nói.
 

@@ -9,7 +9,7 @@ published: true
 lang: vi
 ---
 
-# `ck:bootstrap`
+# Bootstrap
 
 Orchestrator scaffolding dự án end-to-end. Đưa một yêu cầu từ con số không đến code đã chạy, đã test, đã review bằng cách điều phối qua research, planning và implementation theo trình tự.
 

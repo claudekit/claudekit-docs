@@ -7,7 +7,7 @@ category: skills
 order: 50
 ---
 
-# `ck:frontend-design`
+# Frontend Design
 
 Tired of generic-looking interfaces that scream "AI made this"? This skill helps you create frontend designs that feel genuinely crafted, memorable, and intentional.
 

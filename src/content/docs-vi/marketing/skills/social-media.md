@@ -7,7 +7,7 @@ category: skills
 order: 6
 ---
 
-# `ckm:social-media`
+# Social Media
 
 > Tạo nội dung mạng xã hội được tối ưu cho từng nền tảng với các mẫu đã được kiểm chứng, chiến lược tương tác và quy trình đăng chéo.
 

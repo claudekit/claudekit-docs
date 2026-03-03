@@ -8,7 +8,7 @@ order: 50
 published: true
 ---
 
-# `ck:mintlify`
+# Mintlify
 
 v2.0.0 — Mintlify documentation builder. Covers setup, configuration, MDX components, API docs, AI features, and deployment.
 

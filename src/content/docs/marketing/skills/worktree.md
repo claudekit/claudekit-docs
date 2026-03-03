@@ -7,7 +7,7 @@ category: skills
 order: 51
 ---
 
-# `ckm:worktree`
+# Worktree
 
 > Create isolated git worktrees so multiple marketing tasks can run in parallel without conflicts.
 

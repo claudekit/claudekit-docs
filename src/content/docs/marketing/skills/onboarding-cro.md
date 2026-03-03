@@ -7,7 +7,7 @@ category: skills
 order: 93
 ---
 
-# `ckm:onboarding-cro`
+# Onboarding CRO
 
 > Turn signups into activated users by mapping friction points, optimizing key flows, and personalizing the path to value.
 

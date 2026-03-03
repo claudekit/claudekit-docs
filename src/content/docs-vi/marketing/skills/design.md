@@ -8,7 +8,7 @@ category: skills
 order: 72
 ---
 
-# `ckm:design`
+# Design
 
 > Điểm vào thống nhất cho mọi tác vụ thiết kế — tự động định tuyến đến skill chuyên biệt phù hợp.
 

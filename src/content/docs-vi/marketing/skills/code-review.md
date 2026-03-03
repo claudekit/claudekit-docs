@@ -8,7 +8,7 @@ category: skills
 order: 67
 ---
 
-# `ckm:code-review`
+# Code Review
 
 > Đảm bảo chất lượng code marketing tools thông qua review có hệ thống và xử lý phản hồi hiệu quả.
 

@@ -7,7 +7,7 @@ category: skills
 order: 4
 ---
 
-# `ckm:analytics`
+# Analytics
 
 > Biến dữ liệu marketing thành insights hành động thông qua báo cáo tự động, phân tích phân bổ và theo dõi ROI.
 

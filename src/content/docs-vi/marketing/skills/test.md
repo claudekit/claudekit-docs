@@ -8,7 +8,7 @@ category: skills
 order: 47
 ---
 
-# `ckm:test`
+# Test
 
 > Kiểm thử tự động cho landing pages, email workflows và marketing automation pipelines.
 

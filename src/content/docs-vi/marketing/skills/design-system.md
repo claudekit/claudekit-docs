@@ -8,7 +8,7 @@ category: skills
 order: 73
 ---
 
-# `ckm:design-system`
+# Design System
 
 > Xây dựng hệ thống thiết kế nhất quán với design tokens, component specs và documentation để scale visual identity.
 

@@ -9,7 +9,7 @@ published: true
 lang: vi
 ---
 
-# `ck:project-management`
+# Project Management
 
 Giám sát dự án sử dụng hệ thống task gốc của Claude với các file plan persistent. Kết nối các phiên, theo dõi tiến độ, phối hợp cập nhật tài liệu và tạo báo cáo trạng thái.
 

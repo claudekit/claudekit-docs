@@ -8,7 +8,7 @@ order: 52
 lang: vi
 ---
 
-# `ck:coding-level`
+# Coding Level
 
 Đặt mức độ kinh nghiệm lập trình của bạn để ClaudeKit điều chỉnh giải thích, code comments và độ phức tạp output phù hợp với chuyên môn của bạn.
 

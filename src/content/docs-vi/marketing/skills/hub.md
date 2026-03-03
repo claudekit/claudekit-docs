@@ -8,7 +8,7 @@ category: skills
 order: 37
 ---
 
-# `ckm:hub`
+# Hub
 
 > Trung tâm điều phối toàn bộ hoạt động marketing — Content Hub và Dashboard trong một lệnh.
 

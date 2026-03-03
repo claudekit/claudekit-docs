@@ -8,7 +8,7 @@ category: skills
 order: 99
 ---
 
-# `ckm:remotion`
+# Remotion
 
 > Tạo video chuyên nghiệp bằng React code — từ explainer video đến social media content tự động hóa.
 

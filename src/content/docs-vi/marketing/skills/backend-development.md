@@ -8,7 +8,7 @@ category: skills
 order: 62
 ---
 
-# `ckm:backend-development`
+# Backend Development
 
 > Xây dựng API và hệ thống backend production-ready với kiến trúc hiện đại và best practices bảo mật.
 

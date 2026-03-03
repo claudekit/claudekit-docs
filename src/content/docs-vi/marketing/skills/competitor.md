@@ -8,7 +8,7 @@ category: skills
 order: 32
 ---
 
-# `ckm:competitor`
+# Competitor
 
 > Hiểu rõ vị thế cạnh tranh của bạn với phân tích đối thủ có hệ thống và insights thị trường.
 

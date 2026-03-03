@@ -7,7 +7,7 @@ category: skills
 order: 55
 ---
 
-# `ck:kanban`
+# Kanban
 
 AI agent orchestration board for visualizing tasks and coordinating agent teams. View and manage work in progress across your project.
 

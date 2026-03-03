@@ -6,7 +6,7 @@ category: skills
 order: 81
 ---
 
-# `ckm:google-adk-python`
+# Google ADK Python
 
 > Build production-grade AI agent workflows with Google ADK Python — orchestrate multi-agent marketing systems that run autonomously.
 

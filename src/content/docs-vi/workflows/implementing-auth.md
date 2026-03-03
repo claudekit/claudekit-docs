@@ -631,7 +631,7 @@ Trước khi triển khai lên production:
 - [/ck:fix --quick](/docs/engineer/skills/fix) - Sửa lỗi nhanh
 
 ### Hướng dẫn tích hợp
-- [/integrate:polar](/vi/docs/engineer/skills/tools/integrate) - Thanh toán Polar
+- [/integrate:polar](/vi/docs/engineer/skills/payment-integration) - Thanh toán Polar
 - [Better Auth Skill](/vi/docs/engineer/skills) - Framework Better Auth
 
 ### Đọc thêm

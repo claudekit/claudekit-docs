@@ -8,7 +8,7 @@ category: skills
 order: 93
 ---
 
-# ckm:onboarding-cro
+# `ckm:onboarding-cro`
 
 > Biến người đăng ký thành người dùng tích cực thông qua tối ưu hóa luồng onboarding dựa trên dữ liệu.
 

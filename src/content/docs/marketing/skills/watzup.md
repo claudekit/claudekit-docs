@@ -7,7 +7,7 @@ category: skills
 order: 50
 ---
 
-# ckm:watzup
+# `ckm:watzup`
 
 > Review everything that changed in the current session and produce a clean wrap-up summary.
 

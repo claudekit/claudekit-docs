@@ -8,7 +8,7 @@ category: skills
 order: 89
 ---
 
-# ckm:marketing-research
+# `ckm:marketing-research`
 
 > Biến dữ liệu thô thành insights chiến lược thông qua nghiên cứu thị trường có cấu trúc và phân tích đa chiều.
 

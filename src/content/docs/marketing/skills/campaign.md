@@ -6,6 +6,8 @@ category: skills
 order: 7
 ---
 
+# `ckm:campaign`
+
 > Orchestrate multi-channel campaigns from planning to post-mortem with systematic workflows and optimization frameworks.
 
 ## What This Skill Does

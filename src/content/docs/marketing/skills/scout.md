@@ -7,6 +7,8 @@ category: skills
 order: 101
 ---
 
+# `ckm:scout`
+
 > Map unfamiliar codebases in minutes using parallel agents that explore structure, patterns, and conventions simultaneously.
 
 ## What This Skill Does

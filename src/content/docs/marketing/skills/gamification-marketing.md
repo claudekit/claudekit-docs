@@ -6,6 +6,8 @@ category: skills
 order: 12
 ---
 
+# `ckm:gamification-marketing`
+
 > Drive engagement and retention through game mechanics that leverage behavioral psychology and intrinsic motivation.
 
 ## What This Skill Does

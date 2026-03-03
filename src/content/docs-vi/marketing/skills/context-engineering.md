@@ -8,6 +8,8 @@ category: skills
 order: 69
 ---
 
+# `ckm:context-engineering`
+
 > Tối đa hóa hiệu quả AI agent bằng cách quản lý context window thông minh và thiết kế kiến trúc agent tối ưu.
 
 ## Skill Này Làm Gì

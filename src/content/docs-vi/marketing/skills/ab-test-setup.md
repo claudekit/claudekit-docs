@@ -8,6 +8,8 @@ category: skills
 order: 60
 ---
 
+# `ckm:ab-test-setup`
+
 > Chạy thí nghiệm có kiểm soát để ra quyết định dựa trên dữ liệu, không dựa vào phỏng đoán.
 
 ## Skill Này Làm Gì

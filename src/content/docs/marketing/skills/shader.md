@@ -7,6 +7,8 @@ category: skills
 order: 103
 ---
 
+# `ckm:shader`
+
 > Create stunning procedural visuals and real-time effects with GLSL fragment shaders for web applications and creative coding.
 
 ## What This Skill Does

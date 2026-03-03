@@ -8,7 +8,7 @@ category: skills
 order: 104
 ---
 
-# ckm:shopify
+# `ckm:shopify`
 
 > Xây dựng ứng dụng và customization Shopify chuyên nghiệp với Shopify CLI, App Bridge và Polaris Design System.
 

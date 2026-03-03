@@ -6,6 +6,8 @@ category: skills
 order: 5
 ---
 
+# `ckm:email-marketing`
+
 > Build high-converting email campaigns with automation workflows, optimized copy, and deliverability best practices.
 
 ## What This Skill Does

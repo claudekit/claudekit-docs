@@ -7,6 +7,8 @@ category: skills
 order: 18
 ---
 
+# `ckm:ai-artist`
+
 > Tạo prompt hiệu quả cho các mô hình AI (Claude, GPT, Gemini, Midjourney, DALL-E, Stable Diffusion, Imagen, Flux) bằng các mẫu đã được kiểm chứng.
 
 ## Skill Này Làm Gì

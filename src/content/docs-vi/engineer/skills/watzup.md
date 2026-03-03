@@ -8,6 +8,8 @@ order: 13
 lang: vi
 ---
 
+# `ck:watzup`
+
 Xem lại các thay đổi gần đây và kết thúc phiên làm việc hiện tại. Tạo bản tóm tắt những gì đã hoàn thành và bước tiếp theo.
 
 ## Cách Dùng

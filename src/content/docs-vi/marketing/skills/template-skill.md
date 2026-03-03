@@ -8,7 +8,7 @@ category: skills
 order: 106
 ---
 
-# ckm:template-skill
+# `ckm:template-skill`
 
 > Điểm khởi đầu nhanh cho mọi Claude skill mới với cấu trúc chuẩn và hướng dẫn rõ ràng.
 

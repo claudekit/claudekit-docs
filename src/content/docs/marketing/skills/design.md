@@ -6,6 +6,8 @@ category: skills
 order: 72
 ---
 
+# `ckm:design`
+
 > The universal design entry point — routes your task to the right specialist skill automatically.
 
 ## What This Skill Does

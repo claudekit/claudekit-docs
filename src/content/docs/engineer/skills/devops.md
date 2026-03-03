@@ -114,6 +114,8 @@ gcloud run deploy my-service \
 
 ---
 
+# `ck:devops`
+
 ## Key Takeaway
 
  Choose Cloudflare for edge-first with zero egress, Docker for containerization, and GCP for enterprise scale. Combine platforms for optimal architecture.

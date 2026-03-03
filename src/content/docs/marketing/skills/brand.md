@@ -6,6 +6,8 @@ category: skills
 order: 14
 ---
 
+# `ckm:brand`
+
 > Maintain brand consistency across all marketing materials with automated validation, asset organization, and voice frameworks.
 
 ## What This Skill Does

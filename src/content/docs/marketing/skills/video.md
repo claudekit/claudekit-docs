@@ -7,7 +7,7 @@ category: skills
 order: 49
 ---
 
-# ckm:video
+# `ckm:video`
 
 > Produce video scripts, storyboards, and AI-generated video clips for marketing campaigns.
 

@@ -8,7 +8,7 @@ category: skills
 order: 36
 ---
 
-# ckm:funnel
+# `ckm:funnel`
 
 > Thiết kế phễu chuyển đổi từ nhận thức đến mua hàng và tối ưu từng bước để tăng doanh thu.
 

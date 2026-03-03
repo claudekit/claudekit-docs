@@ -5,6 +5,8 @@ section: marketing
 category: skills
 order: 9
 ---
+
+# `ckm:brainstorming`
 > Transform ideas into validated designs through structured dialogue before any implementation.
 
 ## What This Skill Does

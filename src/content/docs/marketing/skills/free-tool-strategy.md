@@ -6,6 +6,8 @@ category: skills
 order: 78
 ---
 
+# `ckm:free-tool-strategy`
+
 > Turn free tools into your highest-converting lead magnets — building SEO authority and capturing qualified leads at scale.
 
 ## What This Skill Does

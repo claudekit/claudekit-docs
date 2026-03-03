@@ -7,7 +7,7 @@ category: skills
 order: 52
 ---
 
-# ckm:write
+# `ckm:write`
 
 > Write high-quality marketing content — blog posts, landing page copy, CRO content, and creative pieces.
 

@@ -6,6 +6,8 @@ category: skills
 order: 68
 ---
 
+# `ckm:competitor-alternatives`
+
 > Capture high-intent buyer traffic by building SEO-optimized comparison and alternatives pages that win at the decision stage.
 
 ## What This Skill Does

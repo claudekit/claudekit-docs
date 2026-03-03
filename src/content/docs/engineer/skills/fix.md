@@ -7,6 +7,8 @@ category: skills
 order: 5
 ---
 
+# `ck:fix`
+
 Complete bug fixing workflow with intelligent routing based on issue complexity. Automatically activates before fixing ANY bug, error, test failure, or code problem.
 
 ## What This Skill Does

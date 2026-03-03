@@ -7,7 +7,7 @@ category: skills
 order: 54
 ---
 
-# ckm:ck-help
+# `ckm:ck-help`
 
 > Get instant guidance on ClaudeKit commands, skills, and workflows for the marketing toolkit.
 

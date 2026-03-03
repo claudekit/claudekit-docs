@@ -9,6 +9,8 @@ published: true
 lang: vi
 ---
 
+# `ck:team`
+
 Engine điều phối CK-native (v2.1.0) tạo ra các phiên Claude Code độc lập làm teammates, mỗi phiên có cửa sổ context riêng, quyền sở hữu task và bộ nhớ xuyên phiên.
 
 ## Skill Này Làm Gì

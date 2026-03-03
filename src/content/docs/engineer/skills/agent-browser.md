@@ -7,6 +7,8 @@ category: skills
 order: 50
 ---
 
+# `ck:agent-browser`
+
 Browser automation designed specifically for AI agents. Uses a "snapshot + refs" paradigm for 93% less context than traditional tools.
 
 ## What This Skill Does

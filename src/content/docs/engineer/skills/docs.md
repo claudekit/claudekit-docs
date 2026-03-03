@@ -7,6 +7,8 @@ category: skills
 order: 11
 ---
 
+# `ck:docs`
+
 Manage project documentation with AI-powered analysis. Initialize docs for new projects, update after changes, or generate summaries.
 
 ## Usage

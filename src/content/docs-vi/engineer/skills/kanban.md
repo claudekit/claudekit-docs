@@ -8,6 +8,8 @@ order: 55
 lang: vi
 ---
 
+# `ck:kanban`
+
 Bảng điều phối AI agent để trực quan hóa nhiệm vụ và phối hợp các nhóm agent. Xem và quản lý công việc đang tiến hành trên toàn dự án.
 
 ## Cách Dùng

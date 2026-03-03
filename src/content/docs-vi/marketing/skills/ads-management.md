@@ -7,6 +7,8 @@ category: skills
 order: 10
 ---
 
+# `ckm:ads-management`
+
 > Triển khai và tối ưu các chiến dịch trả phí trên nhiều nền tảng với nhắm mục tiêu dựa trên dữ liệu, kiểm thử nội dung và theo dõi ROI.
 
 ## Skill Này Làm Gì

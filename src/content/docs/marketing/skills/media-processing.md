@@ -6,6 +6,8 @@ category: skills
 order: 19
 ---
 
+# `ckm:media-processing`
+
 > Convert, resize, optimize, and manipulate media files using industry-standard tools for video, audio, and images.
 
 ## What This Skill Does

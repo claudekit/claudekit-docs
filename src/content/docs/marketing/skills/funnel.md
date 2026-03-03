@@ -7,7 +7,7 @@ category: skills
 order: 36
 ---
 
-# ckm:funnel
+# `ckm:funnel`
 
 > Design, map, and optimize marketing funnels to improve conversion rates at every stage.
 

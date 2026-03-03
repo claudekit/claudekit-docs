@@ -6,6 +6,8 @@ category: skills
 order: 63
 ---
 
+# `ckm:banner-design`
+
 > Generate on-brand banners for every placement — social media, display ads, email headers, and website heroes.
 
 ## What This Skill Does

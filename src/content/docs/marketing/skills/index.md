@@ -5,6 +5,8 @@ section: marketing
 category: skills
 order: 1
 ---
+
+# Marketing Skills Overview
 Marketing Kit includes 20+ specialized skills that power agents with domain expertise, automation workflows, and AI capabilities. Skills activate implicitly based on context or explicitly via natural language prompts.
 
 ## Skill Categories

@@ -7,7 +7,7 @@ category: skills
 order: 42
 ---
 
-# ckm:plan
+# `ckm:plan`
 
 > Transform a vague marketing goal into a structured, actionable implementation plan.
 

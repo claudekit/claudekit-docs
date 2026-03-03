@@ -8,6 +8,8 @@ order: 50
 lang: vi
 ---
 
+# `ck:web-design-guidelines`
+
 Xem xét các file để tuân thủ Web Interface Guidelines—kiểm tra accessibility, UX best practices và tiêu chuẩn thiết kế.
 
 ## Skill Này Làm Gì

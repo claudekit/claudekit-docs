@@ -6,6 +6,8 @@ category: skills
 order: 74
 ---
 
+# `ckm:devops`
+
 > Deploy marketing tools reliably with CI/CD, infrastructure-as-code, and production-grade security across Cloudflare, Docker, and GCP.
 
 ## What This Skill Does

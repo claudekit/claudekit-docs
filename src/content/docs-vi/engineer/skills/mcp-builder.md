@@ -8,6 +8,8 @@ order: 50
 lang: vi
 ---
 
+# `ck:mcp-builder`
+
 Bạn muốn cho AI agents truy cập vào các API và dịch vụ bên ngoài? Đó chính xác là những gì MCP servers làm, và skill này hướng dẫn bạn cách xây dựng chúng đúng cách.
 
 ## Skill Này Làm Gì

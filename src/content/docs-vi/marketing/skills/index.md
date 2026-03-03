@@ -7,6 +7,8 @@ category: skills
 order: 1
 ---
 
+# Tổng quan Kỹ năng Marketing
+
 Marketing Kit bao gồm hơn 20 kỹ năng chuyên môn cung cấp cho agents kiến thức chuyên sâu, quy trình tự động hóa và khả năng AI. Kỹ năng được kích hoạt ngầm dựa trên ngữ cảnh hoặc rõ ràng qua ngôn ngữ tự nhiên.
 
 ## Phân loại kỹ năng

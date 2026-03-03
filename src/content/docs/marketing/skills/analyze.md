@@ -7,7 +7,7 @@ category: skills
 order: 30
 ---
 
-# ckm:analyze
+# `ckm:analyze`
 
 > Turn raw marketing data into actionable performance insights and reports.
 

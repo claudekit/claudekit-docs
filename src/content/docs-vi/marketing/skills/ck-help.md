@@ -8,7 +8,7 @@ category: skills
 order: 54
 ---
 
-# ckm:ck-help
+# `ckm:ck-help`
 
 > Hướng dẫn đầy đủ về cách sử dụng ClaudeKit Marketing — skills, agents, workflows và best practices.
 

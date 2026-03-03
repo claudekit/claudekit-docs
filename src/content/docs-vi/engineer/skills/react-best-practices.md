@@ -8,6 +8,8 @@ order: 50
 lang: vi
 ---
 
+# `ck:react-best-practices`
+
 Hướng dẫn tối ưu hóa hiệu suất toàn diện cho các ứng dụng React và Next.js, được duy trì bởi Vercel. Chứa 45 quy tắc trên 8 danh mục được ưu tiên theo tác động.
 
 ## Skill Này Làm Gì

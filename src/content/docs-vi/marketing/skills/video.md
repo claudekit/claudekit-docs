@@ -8,7 +8,7 @@ category: skills
 order: 49
 ---
 
-# ckm:video
+# `ckm:video`
 
 > Tạo nội dung video marketing — từ kịch bản, storyboard đến video clips AI-generated.
 

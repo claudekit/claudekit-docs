@@ -8,6 +8,8 @@ order: 50
 lang: vi
 ---
 
+# `ck:web-testing`
+
 Testing web toàn diện bao gồm unit, integration, E2E, load, security, visual regression và accessibility testing với các công cụ tiêu chuẩn ngành.
 
 ## Skill Này Làm Gì

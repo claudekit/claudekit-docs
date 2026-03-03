@@ -8,7 +8,7 @@ category: skills
 order: 109
 ---
 
-# ckm:ui-ux-pro-max
+# `ckm:ui-ux-pro-max`
 
 > Thiết kế UI/UX đẳng cấp thế giới với thư viện phong cách khổng lồ — 50 styles, 21 palettes, 9 stacks.
 

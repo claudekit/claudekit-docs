@@ -7,6 +7,8 @@ category: skills
 order: 14
 ---
 
+# `ck:journal`
+
 Write development journal entries to document technical decisions, challenges, and progress. Useful for maintaining a record of your development journey.
 
 ## Usage

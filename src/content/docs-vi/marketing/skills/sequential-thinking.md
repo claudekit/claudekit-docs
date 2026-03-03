@@ -8,7 +8,7 @@ category: skills
 order: 102
 ---
 
-# ckm:sequential-thinking
+# `ckm:sequential-thinking`
 
 > Giải quyết vấn đề phức tạp thông qua chuỗi suy nghĩ có thể chỉnh sửa, phân nhánh và điều chỉnh động.
 

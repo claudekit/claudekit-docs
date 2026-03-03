@@ -7,6 +7,8 @@ category: skills
 order: 97
 ---
 
+# `ckm:pricing-strategy`
+
 > Build pricing strategy that maximizes revenue, reduces churn, and aligns with customer value perception using proven SaaS frameworks.
 
 ## What This Skill Does

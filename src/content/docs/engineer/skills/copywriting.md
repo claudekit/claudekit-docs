@@ -7,6 +7,8 @@ category: skills
 order: 50
 ---
 
+# `ck:copywriting`
+
 High-converting copy formulas, templates, and writing style extraction for marketing, landing pages, emails, and product descriptions.
 
 ## What This Skill Does

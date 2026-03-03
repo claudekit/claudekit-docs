@@ -7,6 +7,8 @@ category: skills
 order: 50
 ---
 
+# `ck:web-design-guidelines`
+
 Review files for compliance with Web Interface Guidelines—checking accessibility, UX best practices, and design standards.
 
 ## What This Skill Does

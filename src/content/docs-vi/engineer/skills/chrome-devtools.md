@@ -8,6 +8,8 @@ order: 50
 lang: vi
 ---
 
+# `ck:chrome-devtools`
+
 Cần tự động hóa các tương tác trình duyệt, chụp screenshots của trang web, hay debug các vấn đề JavaScript? Đó chính xác là những gì Chrome DevTools skill làm bằng Puppeteer.
 
 ## Skill Này Làm Gì

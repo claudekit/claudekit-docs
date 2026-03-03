@@ -8,6 +8,8 @@ order: 50
 lang: vi
 ---
 
+# `ck:gkg`
+
 Engine phân tích code ngữ nghĩa sử dụng AST parsing và cơ sở dữ liệu đồ thị KuzuDB. Cho phép điều hướng code như IDE cho các AI assistant.
 
 ## Skill Này Làm Gì

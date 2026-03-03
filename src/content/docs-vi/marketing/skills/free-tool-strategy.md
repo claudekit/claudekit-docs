@@ -8,6 +8,8 @@ category: skills
 order: 78
 ---
 
+# `ckm:free-tool-strategy`
+
 > Xây dựng công cụ miễn phí viral để thu hút leads chất lượng cao và backlinks tự nhiên.
 
 ## Skill Này Làm Gì

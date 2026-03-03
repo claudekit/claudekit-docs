@@ -8,7 +8,7 @@ category: skills
 order: 91
 ---
 
-# ckm:mcp-management
+# `ckm:mcp-management`
 
 > Kiểm soát toàn bộ vòng đời MCP server — từ khám phá tools đến thực thi và giám sát.
 

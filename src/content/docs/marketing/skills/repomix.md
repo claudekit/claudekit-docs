@@ -7,6 +7,8 @@ category: skills
 order: 100
 ---
 
+# `ckm:repomix`
+
 > Convert any repository into a single optimized file that LLMs can fully understand for code review, documentation, and analysis.
 
 ## What This Skill Does

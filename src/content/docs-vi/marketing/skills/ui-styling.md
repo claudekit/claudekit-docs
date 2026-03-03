@@ -8,7 +8,7 @@ category: skills
 order: 108
 ---
 
-# ckm:ui-styling
+# `ckm:ui-styling`
 
 > Xây dựng UI đẹp và accessible với shadcn/ui components, Radix UI primitives và Tailwind CSS utilities.
 

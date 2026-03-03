@@ -8,7 +8,7 @@ category: skills
 order: 105
 ---
 
-# ckm:skill-creator
+# `ckm:skill-creator`
 
 > Tạo skills mới cho ClaudeKit với cấu trúc chuẩn, prompt engineering tối ưu và tích hợp đầy đủ.
 

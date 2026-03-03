@@ -8,6 +8,8 @@ category: skills
 order: 83
 ---
 
+# `ckm:launch-strategy`
+
 > Tối đa hóa impact của product launches và feature announcements với chiến lược có cấu trúc.
 
 ## Skill Này Làm Gì

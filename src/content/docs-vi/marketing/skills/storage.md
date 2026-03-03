@@ -8,7 +8,7 @@ category: skills
 order: 46
 ---
 
-# ckm:storage
+# `ckm:storage`
 
 > Quản lý tài sản marketing trên S3-compatible storage — tải lên, đồng bộ, tìm kiếm và chia sẻ.
 

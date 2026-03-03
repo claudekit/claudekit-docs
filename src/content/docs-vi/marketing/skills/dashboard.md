@@ -8,7 +8,7 @@ category: skills
 order: 33
 ---
 
-# ckm:dashboard
+# `ckm:dashboard`
 
 > Khởi chạy Marketing Dashboard để theo dõi KPI và hiệu suất chiến dịch theo thời gian thực.
 

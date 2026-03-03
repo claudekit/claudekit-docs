@@ -6,6 +6,8 @@ category: skills
 order: 13
 ---
 
+# `ckm:referral-program-building`
+
 > Build referral programs that drive 2-3x higher conversion rates with 37% better retention using proven viral mechanics.
 
 ## What This Skill Does

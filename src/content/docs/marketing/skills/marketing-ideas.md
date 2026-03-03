@@ -6,6 +6,8 @@ category: skills
 order: 86
 ---
 
+# `ckm:marketing-ideas`
+
 > Access a curated library of 140 proven marketing approaches — filtered by growth stage, channel, and team size.
 
 ## What This Skill Does

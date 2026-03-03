@@ -7,6 +7,8 @@ category: skills
 order: 116
 ---
 
+# `ckm:markdown-novel-viewer`
+
 > Open any markdown file in a beautiful, distraction-free reader with rendered Mermaid diagrams, syntax-highlighted code, and a calm typography-first design.
 
 ## What This Skill Does

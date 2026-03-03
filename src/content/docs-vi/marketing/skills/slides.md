@@ -8,7 +8,7 @@ category: skills
 order: 44
 ---
 
-# ckm:slides
+# `ckm:slides`
 
 > Tạo slide thuyết trình chuyên nghiệp cho chiến lược marketing, báo cáo kết quả và pitch.
 

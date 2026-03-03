@@ -8,6 +8,8 @@ category: skills
 order: 84
 ---
 
+# `ckm:logo-design`
+
 > Tạo logo chuyên nghiệp với hướng dẫn phong cách đầy đủ, bảng màu phong phú và AI generation.
 
 ## Skill Này Làm Gì

@@ -7,6 +7,8 @@ category: skills
 order: 7
 ---
 
+# `ckm:campaign`
+
 > Điều phối chiến dịch đa kênh từ lập kế hoạch đến tổng kết với quy trình có hệ thống và khung tối ưu hóa.
 
 ## Skill Này Làm Gì

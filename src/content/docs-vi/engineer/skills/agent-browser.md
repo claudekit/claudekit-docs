@@ -8,6 +8,8 @@ order: 50
 lang: vi
 ---
 
+# `ck:agent-browser`
+
 Tự động hóa trình duyệt được thiết kế đặc biệt cho các AI agent. Sử dụng mô hình "snapshot + refs" để giảm 93% context so với các công cụ truyền thống.
 
 ## Skill Này Làm Gì

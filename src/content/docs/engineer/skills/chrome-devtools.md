@@ -7,6 +7,8 @@ category: skills
 order: 50
 ---
 
+# `ck:chrome-devtools`
+
 Need to automate browser interactions, take screenshots of web pages, or debug JavaScript issues? That's exactly what Chrome DevTools skill does using Puppeteer.
 
 ## What This Skill Does

@@ -7,6 +7,8 @@ category: skills
 order: 7
 ---
 
+# `ck:scout`
+
 Fast, token-efficient codebase scouting using parallel agents to find files needed for tasks.
 
 ## What This Skill Does

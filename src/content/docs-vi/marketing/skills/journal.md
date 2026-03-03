@@ -8,7 +8,7 @@ category: skills
 order: 39
 ---
 
-# ckm:journal
+# `ckm:journal`
 
 > Ghi lại và phân tích những gì đã thay đổi trong dự án — quyết định, thí nghiệm, kết quả.
 

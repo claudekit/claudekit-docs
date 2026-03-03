@@ -8,6 +8,8 @@ category: skills
 order: 80
 ---
 
+# `ckm:frontend-development`
+
 > Xây dựng frontend marketing applications hiệu suất cao với React, TypeScript và modern patterns.
 
 ## Skill Này Làm Gì

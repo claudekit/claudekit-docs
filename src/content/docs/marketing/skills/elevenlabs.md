@@ -6,6 +6,8 @@ category: skills
 order: 76
 ---
 
+# `ckm:elevenlabs`
+
 > Create professional voiceovers, clone brand voices, and generate audio content at scale with ElevenLabs.
 
 ## What This Skill Does

@@ -8,6 +8,8 @@ order: 50
 lang: vi
 ---
 
+# `ck:mcp-management`
+
 Bạn đã cấu hình MCP servers, nhưng làm thế nào để thực sự sử dụng chúng mà không làm tràn context window với hàng trăm định nghĩa công cụ? Đó là lúc MCP Management phát huy tác dụng.
 
 ## Skill Này Làm Gì

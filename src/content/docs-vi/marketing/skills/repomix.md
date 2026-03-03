@@ -8,7 +8,7 @@ category: skills
 order: 100
 ---
 
-# ckm:repomix
+# `ckm:repomix`
 
 > Chuyển đổi codebase thành context AI-ready — gộp toàn bộ repository thành một file để phân tích chuyên sâu.
 

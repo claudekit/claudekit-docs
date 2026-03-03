@@ -8,7 +8,7 @@ category: skills
 order: 48
 ---
 
-# ckm:use-mcp
+# `ckm:use-mcp`
 
 > Kết nối và sử dụng các công cụ từ MCP servers để mở rộng khả năng marketing AI.
 

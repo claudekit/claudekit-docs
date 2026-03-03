@@ -6,7 +6,7 @@ category: skills
 order: 2
 ---
 
-# `ckm:content-marketing`
+# Content Marketing
 
 > Build content programs that attract, engage, and convert through strategic planning and systematic execution.
 

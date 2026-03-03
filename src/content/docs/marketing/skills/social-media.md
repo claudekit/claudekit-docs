@@ -6,7 +6,7 @@ category: skills
 order: 6
 ---
 
-# `ckm:social-media`
+# Social Media
 
 > Create platform-optimized social content with proven templates, engagement strategies, and cross-posting workflows.
 

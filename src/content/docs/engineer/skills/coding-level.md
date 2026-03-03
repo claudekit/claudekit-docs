@@ -7,7 +7,7 @@ category: skills
 order: 52
 ---
 
-# `ck:coding-level`
+# Coding Level
 
 Set your coding experience level so ClaudeKit tailors its explanations, code comments, and output complexity to match your expertise.
 

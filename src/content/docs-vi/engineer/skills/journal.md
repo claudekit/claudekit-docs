@@ -8,7 +8,7 @@ order: 14
 lang: vi
 ---
 
-# `ck:journal`
+# Journal
 
 Viết nhật ký phát triển để ghi lại các quyết định kỹ thuật, thách thức và tiến độ. Hữu ích để duy trì hồ sơ về hành trình phát triển của bạn.
 

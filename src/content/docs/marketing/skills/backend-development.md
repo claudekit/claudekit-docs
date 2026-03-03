@@ -6,7 +6,7 @@ category: skills
 order: 62
 ---
 
-# `ckm:backend-development`
+# Backend Development
 
 > Build production-grade backend systems and APIs to power marketing automations, data pipelines, and custom tools.
 

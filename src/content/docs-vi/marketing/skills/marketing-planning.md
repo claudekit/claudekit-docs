@@ -8,7 +8,7 @@ category: skills
 order: 87
 ---
 
-# `ckm:marketing-planning`
+# Marketing Planning
 
 > Xây dựng chiến lược marketing toàn diện với các framework đã được chứng minh.
 

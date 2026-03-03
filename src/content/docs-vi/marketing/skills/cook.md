@@ -8,7 +8,7 @@ category: skills
 order: 113
 ---
 
-# `ckm:cook`
+# Cook
 
 > Triển khai tính năng hoàn chỉnh với pipeline tự động: plan → implement → test → review.
 

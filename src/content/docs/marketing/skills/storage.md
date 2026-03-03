@@ -7,7 +7,7 @@ category: skills
 order: 46
 ---
 
-# `ckm:storage`
+# Storage
 
 > Manage marketing assets in S3 storage — upload, sync, list, and retrieve public URLs.
 

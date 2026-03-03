@@ -8,7 +8,7 @@ order: 3
 published: true
 ---
 
-# `ck:plan`
+# Plan
 
 Creates structured, research-backed implementation plans in your `plans/` directory. Formerly split across `/ck:plan:fast`, `/ck:plan:hard`, and other commands—now consolidated into one skill.
 

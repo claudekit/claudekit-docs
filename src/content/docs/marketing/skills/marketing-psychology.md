@@ -6,7 +6,7 @@ category: skills
 order: 88
 ---
 
-# `ckm:marketing-psychology`
+# Marketing Psychology
 
 > Apply behavioral science and mental models to every marketing decision — from pricing to copy to onboarding flows.
 

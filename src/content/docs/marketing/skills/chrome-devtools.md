@@ -6,7 +6,7 @@ category: skills
 order: 20
 ---
 
-# `ckm:chrome-devtools`
+# Chrome DevTools
 
 > Automate browser tasks, capture screenshots, analyze web performance, and debug web applications using Puppeteer scripts.
 

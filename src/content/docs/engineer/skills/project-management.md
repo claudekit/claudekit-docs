@@ -8,7 +8,7 @@ order: 50
 published: true
 ---
 
-# `ck:project-management`
+# Project Management
 
 Project oversight using Claude's native task system with persistent plan files. Bridges sessions, tracks progress, coordinates docs updates, and generates status reports.
 

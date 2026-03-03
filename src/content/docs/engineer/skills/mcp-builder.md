@@ -7,7 +7,7 @@ category: skills
 order: 50
 ---
 
-# `ck:mcp-builder`
+# MCP Builder
 
 Want to give AI agents access to external APIs and services? That's exactly what MCP servers do, and this skill shows you how to build them properly.
 

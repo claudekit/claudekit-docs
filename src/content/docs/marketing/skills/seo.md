@@ -6,7 +6,7 @@ category: skills
 order: 3
 ---
 
-# `ckm:seo`
+# SEO
 
 > Increase search visibility through data-driven keyword research, technical audits, and programmatic SEO strategies.
 

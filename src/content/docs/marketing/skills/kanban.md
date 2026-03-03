@@ -7,7 +7,7 @@ category: skills
 order: 40
 ---
 
-# `ckm:kanban`
+# Kanban
 
 > Visualize and orchestrate AI agent tasks on a Kanban board for transparent, parallel marketing workflows.
 

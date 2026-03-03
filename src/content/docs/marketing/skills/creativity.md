@@ -6,7 +6,7 @@ category: skills
 order: 15
 ---
 
-# `ckm:creativity`
+# Creativity
 
 > Systematically direct creative campaigns with proven style templates, color psychology frameworks, and platform-specific best practices for digital marketing.
 

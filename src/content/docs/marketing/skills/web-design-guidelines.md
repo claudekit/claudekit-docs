@@ -7,7 +7,7 @@ category: skills
 order: 110
 ---
 
-# `ckm:web-design-guidelines`
+# Web Design Guidelines
 
 > Audit web interfaces against established design guidelines to surface accessibility issues, visual inconsistencies, and UX anti-patterns before they ship.
 

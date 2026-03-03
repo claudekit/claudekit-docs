@@ -8,7 +8,7 @@ category: skills
 order: 31
 ---
 
-# `ckm:ask`
+# Ask
 
 > Nhận câu trả lời chuyên sâu cho các câu hỏi kỹ thuật và kiến trúc của hệ thống marketing.
 

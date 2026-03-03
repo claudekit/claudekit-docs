@@ -7,7 +7,7 @@ category: skills
 order: 59
 ---
 
-# `ck:worktree`
+# Worktree
 
 Create isolated git worktrees for parallel development. Work on multiple features simultaneously without switching branches.
 

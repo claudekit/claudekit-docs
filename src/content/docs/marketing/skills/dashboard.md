@@ -7,7 +7,7 @@ category: skills
 order: 33
 ---
 
-# `ckm:dashboard`
+# Dashboard
 
 > Launch a live marketing dashboard to monitor KPIs, campaign metrics, and channel performance in real time.
 

@@ -8,7 +8,7 @@ category: skills
 order: 76
 ---
 
-# `ckm:elevenlabs`
+# ElevenLabs
 
 > Tạo voiceover marketing, podcast, và nội dung audio chuyên nghiệp với ElevenLabs AI.
 

@@ -7,7 +7,7 @@ category: skills
 order: 19
 ---
 
-# `ckm:media-processing`
+# Media Processing
 
 > Chuyển đổi, thay đổi kích thước, tối ưu hóa và thao tác file media bằng các công cụ tiêu chuẩn ngành cho video, audio và ảnh.
 

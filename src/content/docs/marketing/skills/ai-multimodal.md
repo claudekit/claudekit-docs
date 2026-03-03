@@ -6,7 +6,7 @@ category: skills
 order: 17
 ---
 
-# `ckm:ai-multimodal`
+# AI Multimodal
 
 > Generate images, videos, music, and speech; analyze multimedia files; and process documents using Google Gemini and MiniMax multimodal AI capabilities.
 

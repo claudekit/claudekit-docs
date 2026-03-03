@@ -6,7 +6,7 @@ category: skills
 order: 80
 ---
 
-# `ckm:frontend-development`
+# Frontend Development
 
 > Build fast, maintainable React/TypeScript frontends with modern patterns — Suspense, lazy loading, and optimized rendering.
 

@@ -7,7 +7,7 @@ category: skills
 order: 113
 ---
 
-# `ckm:cook`
+# Cook
 
 > Implement complete features end-to-end with smart agent routing — automatically selecting planner, coder, tester, and reviewer based on task complexity.
 

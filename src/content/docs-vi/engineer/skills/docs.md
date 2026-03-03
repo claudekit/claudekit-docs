@@ -8,7 +8,7 @@ order: 11
 lang: vi
 ---
 
-# `ck:docs`
+# Docs
 
 Quản lý tài liệu dự án với phân tích được hỗ trợ bởi AI. Khởi tạo docs cho các dự án mới, cập nhật sau khi có thay đổi hoặc tạo tóm tắt.
 

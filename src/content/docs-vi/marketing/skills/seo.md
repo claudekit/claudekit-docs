@@ -7,7 +7,7 @@ category: skills
 order: 3
 ---
 
-# `ckm:seo`
+# SEO
 
 > Tăng khả năng hiển thị tìm kiếm thông qua nghiên cứu từ khóa dựa trên dữ liệu, kiểm toán kỹ thuật và chiến lược SEO lập trình.
 

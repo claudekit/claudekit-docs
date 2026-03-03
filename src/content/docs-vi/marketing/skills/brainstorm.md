@@ -8,7 +8,7 @@ category: skills
 order: 112
 ---
 
-# `ckm:brainstorm`
+# Brainstorm
 
 > Nhanh chóng khám phá không gian giải pháp, so sánh phương án và đưa ra quyết định có căn cứ trước khi triển khai.
 

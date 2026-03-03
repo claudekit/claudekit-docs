@@ -8,7 +8,7 @@ order: 10
 lang: vi
 ---
 
-# `ck:ask`
+# Ask
 
 Trả lời các câu hỏi kỹ thuật và kiến trúc về codebase của bạn. Skill này cung cấp câu trả lời có nghiên cứu, chuyên sâu thay vì những phản hồi hời hợt.
 

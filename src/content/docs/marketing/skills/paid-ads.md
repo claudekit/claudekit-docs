@@ -7,7 +7,7 @@ category: skills
 order: 94
 ---
 
-# `ckm:paid-ads`
+# Paid Ads
 
 > Build high-performing paid campaigns with platform-specific creative frameworks, bid strategies, and optimization workflows.
 

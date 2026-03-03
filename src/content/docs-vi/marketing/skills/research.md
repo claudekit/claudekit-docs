@@ -7,7 +7,7 @@ category: skills
 order: 21
 ---
 
-# `ckm:research`
+# Research
 
 > Thực hiện nghiên cứu kỹ lưỡng với thu thập thông tin có hệ thống, xác nhận chéo và insights hành động.
 

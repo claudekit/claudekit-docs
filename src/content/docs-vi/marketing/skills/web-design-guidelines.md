@@ -8,7 +8,7 @@ category: skills
 order: 110
 ---
 
-# `ckm:web-design-guidelines`
+# Web Design Guidelines
 
 > Đảm bảo giao diện web đạt chuẩn chất lượng cao với đánh giá có hệ thống theo Web Interface Guidelines.
 

@@ -8,7 +8,7 @@ order: 50
 lang: vi
 ---
 
-# `ck:copywriting`
+# Copywriting
 
 Các công thức copy chuyển đổi cao, templates và trích xuất phong cách viết cho marketing, landing pages, emails và mô tả sản phẩm.
 

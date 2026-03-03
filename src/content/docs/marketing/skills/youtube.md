@@ -7,7 +7,7 @@ category: skills
 order: 53
 ---
 
-# `ckm:youtube`
+# YouTube
 
 > Transform YouTube videos into SEO-optimized blog posts, social media content, and newsletter material.
 

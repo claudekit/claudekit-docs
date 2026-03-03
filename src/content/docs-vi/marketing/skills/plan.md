@@ -8,7 +8,7 @@ category: skills
 order: 42
 ---
 
-# `ckm:plan`
+# Plan
 
 > Lập kế hoạch marketing thông minh với cải thiện prompt tự động và phân tích rủi ro.
 

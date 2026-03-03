@@ -8,7 +8,7 @@ category: skills
 order: 40
 ---
 
-# `ckm:kanban`
+# Kanban
 
 > Điều phối nhiều AI agents làm việc song song với bảng Kanban trực quan.
 

@@ -7,7 +7,7 @@ category: skills
 order: 45
 ---
 
-# `ckm:social`
+# Social
 
 > Generate platform-optimized social media content and build content calendars for consistent publishing.
 

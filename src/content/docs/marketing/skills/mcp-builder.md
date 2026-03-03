@@ -7,7 +7,7 @@ category: skills
 order: 90
 ---
 
-# `ckm:mcp-builder`
+# MCP Builder
 
 > Build MCP (Model Context Protocol) servers that give Claude and other LLMs direct access to your APIs, databases, and external tools.
 

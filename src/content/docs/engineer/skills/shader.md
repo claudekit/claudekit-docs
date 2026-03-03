@@ -7,7 +7,7 @@ category: skills
 order: 50
 ---
 
-# `ck:shader`
+# Shader
 
 Write GPU-accelerated fragment shaders for procedural graphics, textures, and visual effects using GLSL.
 

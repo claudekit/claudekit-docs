@@ -7,7 +7,7 @@ category: skills
 order: 4
 ---
 
-# `ck:cook`
+# Cook
 
 Your complete feature implementation engine. Replaces the old `/code` command with smart workflow detection, research phases, and quality gates.
 

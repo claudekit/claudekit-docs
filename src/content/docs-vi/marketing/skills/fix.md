@@ -8,7 +8,7 @@ category: skills
 order: 114
 ---
 
-# `ckm:fix`
+# Fix
 
 > Sửa lỗi nhanh chóng và chính xác với pipeline tự động: diagnose → fix → test → verify.
 

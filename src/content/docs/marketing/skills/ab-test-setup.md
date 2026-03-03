@@ -6,7 +6,7 @@ category: skills
 order: 60
 ---
 
-# `ckm:ab-test-setup`
+# A/B Test Setup
 
 > Design rigorous A/B tests, calculate sample sizes, and validate results with statistical confidence.
 

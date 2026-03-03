@@ -7,7 +7,7 @@ category: skills
 order: 11
 ---
 
-# `ckm:affiliate-marketing`
+# Affiliate Marketing
 
 > Thiết kế chương trình affiliate tạo ra 20-50% khách hàng mới với CAC thấp hơn 30-50% thông qua tuyển dụng đối tác chiến lược.
 

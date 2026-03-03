@@ -8,7 +8,7 @@ order: 56
 lang: vi
 ---
 
-# `ck:preview`
+# Preview
 
 Xem file và thư mục, hoặc tạo giải thích trực quan với ASCII art, sơ đồ Mermaid và slides thuyết trình.
 

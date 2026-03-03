@@ -6,7 +6,7 @@ category: skills
 order: 66
 ---
 
-# `ckm:claude-code`
+# Claude Code
 
 > Configure and extend Claude Code with custom skills, MCP server integrations, and workflow automation hooks.
 

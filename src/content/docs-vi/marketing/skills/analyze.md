@@ -8,7 +8,7 @@ category: skills
 order: 30
 ---
 
-# `ckm:analyze`
+# Analyze
 
 > Biến dữ liệu marketing thành insights hành động với báo cáo tự động và trực quan hóa.
 

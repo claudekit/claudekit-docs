@@ -8,7 +8,7 @@ order: 5
 lang: vi
 ---
 
-# `ck:fix`
+# Fix
 
 Quy trình sửa lỗi đầy đủ với định tuyến thông minh dựa trên độ phức tạp của vấn đề. Tự động kích hoạt trước khi sửa BẤT KỲ lỗi, lỗi kiểm thử, hoặc vấn đề về code nào.
 

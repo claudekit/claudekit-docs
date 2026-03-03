@@ -7,7 +7,7 @@ category: skills
 order: 37
 ---
 
-# `ckm:hub`
+# Hub
 
 > Open the Content Hub and Marketing Dashboard together in a unified workspace.
 

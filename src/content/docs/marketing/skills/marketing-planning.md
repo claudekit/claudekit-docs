@@ -6,7 +6,7 @@ category: skills
 order: 87
 ---
 
-# `ckm:marketing-planning`
+# Marketing Planning
 
 > Build rigorous marketing strategies using proven frameworks — from situation analysis to OKRs to quarterly execution plans.
 

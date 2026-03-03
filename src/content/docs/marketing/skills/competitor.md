@@ -7,7 +7,7 @@ category: skills
 order: 32
 ---
 
-# `ckm:competitor`
+# Competitor
 
 > Map the competitive landscape and extract actionable intelligence to sharpen positioning.
 

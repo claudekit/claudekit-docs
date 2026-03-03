@@ -7,7 +7,7 @@ category: skills
 order: 20
 ---
 
-# `ckm:chrome-devtools`
+# Chrome DevTools
 
 > Tự động hóa tác vụ trình duyệt, chụp màn hình, phân tích hiệu suất web và debug ứng dụng web bằng script Puppeteer.
 

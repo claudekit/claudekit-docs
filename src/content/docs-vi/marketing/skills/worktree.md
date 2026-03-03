@@ -8,7 +8,7 @@ category: skills
 order: 51
 ---
 
-# `ckm:worktree`
+# Worktree
 
 > Tạo git worktrees riêng biệt để nhiều AI agents có thể làm việc song song mà không xung đột.
 

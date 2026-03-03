@@ -6,7 +6,7 @@ category: skills
 order: 69
 ---
 
-# `ckm:context-engineering`
+# Context Engineering
 
 > Maximize AI agent performance by engineering context windows, optimizing token usage, and designing efficient multi-agent architectures.
 

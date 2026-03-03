@@ -7,7 +7,7 @@ category: skills
 order: 60
 ---
 
-# `ck:tanstack`
+# Tanstack
 
 Build full-stack React applications with TanStack Start, manage forms with TanStack Form, and add chat/streaming workflows with TanStack AI.
 

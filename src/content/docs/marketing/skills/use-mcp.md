@@ -7,7 +7,7 @@ category: skills
 order: 48
 ---
 
-# `ckm:use-mcp`
+# Use MCP
 
 > Connect to and use external tools through Model Context Protocol (MCP) servers.
 

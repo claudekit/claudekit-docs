@@ -7,7 +7,7 @@ category: skills
 order: 39
 ---
 
-# `ckm:journal`
+# Journal
 
 > Capture and analyze recent marketing changes in structured journal entries for learning and accountability.
 

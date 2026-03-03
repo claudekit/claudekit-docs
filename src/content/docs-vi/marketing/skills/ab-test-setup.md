@@ -8,7 +8,7 @@ category: skills
 order: 60
 ---
 
-# `ckm:ab-test-setup`
+# A/B Test Setup
 
 > Chạy thí nghiệm có kiểm soát để ra quyết định dựa trên dữ liệu, không dựa vào phỏng đoán.
 

@@ -8,7 +8,7 @@ category: skills
 order: 97
 ---
 
-# `ckm:pricing-strategy`
+# Pricing Strategy
 
 > Thiết kế cấu trúc giá tối ưu hóa doanh thu và tỷ lệ chuyển đổi thông qua phân tích giá trị và tâm lý học giá.
 

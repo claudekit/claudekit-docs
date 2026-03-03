@@ -6,7 +6,7 @@ category: skills
 order: 67
 ---
 
-# `ckm:code-review`
+# Code Review
 
 > Apply structured code review to catch bugs, enforce quality standards, and improve maintainability before shipping.
 

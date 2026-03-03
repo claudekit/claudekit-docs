@@ -7,7 +7,7 @@ category: skills
 order: 35
 ---
 
-# `ckm:email`
+# Email
 
 > Write high-converting emails, build sequences, and design automation flows for every stage of the funnel.
 

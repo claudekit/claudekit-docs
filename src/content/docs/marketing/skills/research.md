@@ -6,7 +6,7 @@ category: skills
 order: 21
 ---
 
-# `ckm:research`
+# Research
 
 > Conduct thorough research with systematic information gathering, cross-validation, and actionable insights.
 

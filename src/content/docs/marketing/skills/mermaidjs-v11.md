@@ -7,7 +7,7 @@ category: skills
 order: 92
 ---
 
-# `ckm:mermaidjs-v11`
+# Mermaid.js v11
 
 > Generate accurate, rendereable Mermaid.js v11 diagrams with proper syntax, theme support, and advanced layout features.
 

@@ -7,7 +7,7 @@ category: skills
 order: 2
 ---
 
-# `ckm:content-marketing`
+# Content Marketing
 
 > Xây dựng chương trình nội dung thu hút, tương tác và chuyển đổi thông qua lập kế hoạch chiến lược và thực thi có hệ thống.
 

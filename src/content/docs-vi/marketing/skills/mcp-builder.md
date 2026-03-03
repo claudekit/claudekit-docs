@@ -8,7 +8,7 @@ category: skills
 order: 90
 ---
 
-# `ckm:mcp-builder`
+# MCP Builder
 
 > Xây dựng MCP (Model Context Protocol) server để kết nối Claude với bất kỳ dịch vụ hoặc API nào.
 

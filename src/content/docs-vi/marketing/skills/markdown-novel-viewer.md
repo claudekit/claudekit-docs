@@ -8,7 +8,7 @@ category: skills
 order: 116
 ---
 
-# `ckm:markdown-novel-viewer`
+# Markdown Novel Viewer
 
 > Biến file markdown thành tài liệu đẹp với trải nghiệm đọc chuyên nghiệp, Mermaid diagrams và dark mode.
 

@@ -7,7 +7,7 @@ category: skills
 order: 98
 ---
 
-# `ckm:problem-solving`
+# Problem Solving
 
 > Break through complex problems with structured decomposition, root cause analysis, and systematic solution generation.
 

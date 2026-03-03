@@ -8,7 +8,7 @@ order: 50
 lang: vi
 ---
 
-# `ck:ai-multimodal`
+# AI Multimodal
 
 Bạn biết cảm giác cần phân tích một podcast dài 2 tiếng, trích xuất text từ PDF phức tạp, hay tạo images thực sự khớp với tầm nhìn của mình? Đó chính là lúc AI Multimodal phát huy tác dụng.
 

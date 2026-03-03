@@ -8,7 +8,7 @@ category: skills
 order: 107
 ---
 
-# `ckm:threejs`
+# Three.js
 
 > Tạo trải nghiệm 3D web ấn tượng với Three.js — từ product visualization đến interactive marketing experiences.
 

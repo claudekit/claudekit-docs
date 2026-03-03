@@ -6,7 +6,7 @@ category: skills
 order: 77
 ---
 
-# `ckm:form-cro`
+# Form CRO
 
 > Increase form completion rates with CRO principles, friction reduction, and behavioral psychology — without sacrificing lead quality.
 

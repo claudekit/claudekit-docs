@@ -7,7 +7,7 @@ category: skills
 order: 10
 ---
 
-# `ck:ask`
+# Ask
 
 Answer technical and architectural questions about your codebase. This skill provides focused, researched answers rather than superficial responses.
 

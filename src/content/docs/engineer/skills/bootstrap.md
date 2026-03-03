@@ -8,7 +8,7 @@ order: 50
 published: true
 ---
 
-# `ck:bootstrap`
+# Bootstrap
 
 End-to-end project scaffolding orchestrator. Takes a requirement from zero to running, tested, reviewed code by delegating through research, planning, and implementation in sequence.
 

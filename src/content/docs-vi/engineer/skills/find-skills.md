@@ -8,7 +8,7 @@ order: 50
 lang: vi
 ---
 
-# `ck:find-skills`
+# Find Skills
 
 Cổng vào hệ sinh thái open agent skills. Tìm kiếm, khám phá và cài đặt các khả năng chuyên biệt cho bất kỳ lĩnh vực nào.
 

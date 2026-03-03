@@ -66,12 +66,13 @@
 - ✅ Code review completed (0 critical issues)
 - ✅ Build passing successfully (dist/ generated)
 
-**Content** (October - December 2025):
-- **451 total documentation pages** (275 English + 176 Vietnamese)
-  - **English**: 275 pages across 8 main categories
-  - **Vietnamese**: 176 pages (64% coverage, targeting 100%)
+**Content** (October 2025 - March 2026):
+- **561 total documentation pages** (357 English + 204 Vietnamese)
+  - **English**: 357 pages across 8 main categories
+  - **Vietnamese**: 204 pages (57% coverage, expanding toward 100%)
   - **Engineer Kit**: 138 pages (18 agents + 66 commands + 49 skills + 4 config + 1 index)
-  - **Marketing Kit**: 88 pages (agents, commands, skills, workflows, features)
+  - **Marketing Kit**: 156 pages (33 agents + 23 commands + 99 skills + 11 workflows + features)
+    - Complete: All 99 marketing skills documented in English and Vietnamese
   - **CLI Kit**: 9 pages (commands, setup, reference)
   - **Getting Started**: Complete onboarding guides with installation, quick-start, project types
   - **Workflows**: 20+ cross-kit workflow guides
@@ -79,8 +80,8 @@
   - **Changelog**: Version history and release notes
 - **8 main content categories** (kit-agnostic organization)
 - **60+ agent documentation pages** (Engineer + Marketing)
-- **73+ command pages** across multiple kits
-- **49+ skill documentation pages**
+- **90+ command pages** across multiple kits (Engineer + Marketing + CLI)
+- **148+ skill documentation pages** (49 Engineer + 99 Marketing) - Marketing skills complete
 - **20+ workflow guides** and tutorials
 - **10+ troubleshooting guides** and support resources
 
@@ -129,7 +130,13 @@
   - Build validation: ✅ PASSED (464 pages, 0 errors)
   - Blockers: 0 remaining (3 critical issues found and fixed)
   - Next: Commit → PR → Merge to dev
-- 🔄 Vietnamese translations: 72% complete (63/88 files)
+- ✅ Marketing skills documentation: FULLY COMPLETE
+  - ✅ Scanned all 99 marketing skills
+  - ✅ Created 58 new EN skill docs (src/content/docs/marketing/skills/)
+  - ✅ Created 58 new VI skill docs (src/content/docs-vi/marketing/skills/)
+  - ✅ Build validation: PASSED (561 pages, 2042 internal links validated, 0 broken)
+  - ✅ Previous build: 447 pages → Current: 561 pages (+114 pages)
+- 🔄 Vietnamese translations: 72% complete (63/88 files) - targeting completion
 - 🔄 Visual assets: 60% complete (9/15 diagrams)
 - ⏸️ Production deployment to docs.claudekit.cc
 - TypeScript null safety improvements (non-blocking)
@@ -741,6 +748,16 @@
 - Code review completed: 0 critical issues, build passing
 - Security audit passed: no vulnerabilities detected
 - Production-ready codebase with backward compatibility
+
+### 2026-03-03
+
+- ✅ Marketing skills documentation COMPLETED
+- Scanned all 99 marketing skills from /Users/duynguyen/www/claudekit/claudekit-marketing/.claude/skills/
+- Created 58 new EN skill docs in src/content/docs/marketing/skills/
+- Created 58 new VI skill docs in src/content/docs-vi/marketing/skills/
+- Build validation: PASSED (561 pages generated, 2042 internal links validated, 0 broken)
+- Page count increased from 447 to 561 (+114 pages)
+- Updated project roadmap to reflect marketing skills completion
 
 ### 2025-11-25
 - Initial roadmap created

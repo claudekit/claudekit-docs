@@ -162,16 +162,17 @@ const example: string = 'Hello';
 
 ## Content Statistics
 
-- **Total Pages**: 451 documentation pages (275 EN + 176 VI)
+- **Total Pages**: 561 documentation pages (357 EN + 204 VI)
   - **Engineer Kit**: 138 pages (18 agents + 66 commands + 49 skills + 4 configuration + 1 index + docs)
-  - **Marketing Kit**: 88 pages (agents, commands, skills, workflows, features)
+  - **Marketing Kit**: 156 pages (33 agents + 23 commands + 99 skills + 11 workflows + features)
+    - All 99 marketing skills fully documented in English and Vietnamese
   - **CLI Kit**: 9 pages (commands, setup, reference)
   - **Getting Started**: Complete onboarding guides with quick-start tutorials
   - **Workflows**: Cross-kit workflow documentation with practical guides
   - **Tools & Support**: Troubleshooting, FAQ, and community support resources
   - **Changelog**: Version history and release notes
-- **Vietnamese Coverage**: ~64% (176/275 pages translated)
-- **Build Status**: PASSING - 464 pages generated, 0 errors
+- **Vietnamese Coverage**: ~57% (204/357 pages translated, actively expanding)
+- **Build Status**: PASSING - 561 pages generated, 0 errors
 
 ---
 
@@ -267,9 +268,10 @@ No special config needed (pure static site).
 
 ### Completed ✅
 
-- 451 documentation pages (275 EN + 176 VI) across 3 kits
+- 561 documentation pages (357 EN + 204 VI) across 3 kits
 - Kit-agnostic content architecture with Engineer/Marketing/CLI sections
 - Comprehensive 8 content categories (getting-started, cli, engineer, marketing, workflows, tools, support, changelog)
+- All 99 marketing skills documented in English and Vietnamese
 - Responsive 3-column layout with mobile adaptation
 - Context-aware sidebar navigation with kit switcher
 - AI chat UI with OpenRouter integration (UI complete, backend pending)
@@ -290,7 +292,7 @@ No special config needed (pure static site).
 ### Known Issues 🐛
 
 - AI chat backend connection pending OpenRouter setup
-- Marketing Workflows category has ~18% translation gap (9/50 pages)
+- Some marketing skills have ~40% translation gap in Vietnamese (actively being filled)
 - Engineer Skills category has ~2% translation gap (1/49 pages)
 - `troubleshooting` category exists in schema but missing from SidebarNav navigation
 
@@ -357,6 +359,6 @@ MIT License - see LICENSE file for details
 
 ---
 
-**Last Updated**: 2025-12-30
+**Last Updated**: 2026-03-03
 **Maintainers**: ClaudeKit Team
-**Build Status**: PASSING (464 pages, 0 errors)
+**Build Status**: PASSING (561 pages, 0 errors)

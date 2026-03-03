@@ -32,7 +32,7 @@ Skills là các thư mục chứa hướng dẫn, tập lệnh (scripts) và tà
 
 Các kỹ năng dùng để tạo và quản lý các kỹ năng khác.
 
-#### [skill-creator](/docs/engineer/skills/skill-creator)
+#### [skill-creator](/vi/docs/engineer/skills/skill-creator)
 Tạo các kỹ năng tùy chỉnh mới để mở rộng khả năng của Claude với kiến thức chuyên môn, quy trình làm việc hoặc tích hợp công cụ.
 
 **Sử dụng khi:** Xây dựng các kỹ năng tùy chỉnh cho nhu cầu cụ thể của dự án.
@@ -42,7 +42,7 @@ Tạo các kỹ năng tùy chỉnh mới để mở rộng khả năng của Cla
 "Sử dụng skill-creator để tạo một kỹ năng tạo schema GraphQL"
 ```
 
-[→ Hướng dẫn đầy đủ về skill-creator](/docs/engineer/skills/skill-creator)
+[→ Hướng dẫn đầy đủ về skill-creator](/vi/docs/engineer/skills/skill-creator)
 
 ---
 
@@ -53,7 +53,7 @@ Mẫu cơ bản để bắt đầu tạo các kỹ năng mới.
 
 ### Xác Thực & Bảo Mật (Authentication & Security)
 
-#### [better-auth](/docs/engineer/skills/better-auth)
+#### [better-auth](/vi/docs/engineer/skills/better-auth)
 Framework xác thực đa nền tảng cho TypeScript với các tính năng email/mật khẩu, OAuth, 2FA, passkeys và đa người thuê (multi-tenancy).
 
 **Sử dụng khi:** Triển khai xác thực trong các ứng dụng TypeScript/JavaScript.
@@ -72,7 +72,7 @@ Framework xác thực đa nền tảng cho TypeScript với các tính năng ema
 "Sử dụng better-auth để triển khai GitHub OAuth với 2FA"
 ```
 
-[→ Hướng dẫn đầy đủ về better-auth](/docs/engineer/skills/better-auth)
+[→ Hướng dẫn đầy đủ về better-auth](/vi/docs/engineer/skills/better-auth)
 
 ---
 
@@ -99,7 +99,7 @@ Tạo các tác phẩm nghệ thuật hình ảnh đẹp mắt ở định dạn
 
 ### Xử Lý Tài Liệu (Document Processing)
 
-#### [document-skills](/docs/engineer/skills/document-skills)
+#### [document-skills](/vi/docs/engineer/skills/document-skills)
 Đọc, phân tích và tạo các định dạng tài liệu khác nhau.
 
 **Định dạng hỗ trợ:**
@@ -115,13 +115,13 @@ Tạo các tác phẩm nghệ thuật hình ảnh đẹp mắt ở định dạn
 "Sử dụng document-skills/pdf để trích xuất các trường biểu mẫu từ file contract.pdf"
 ```
 
-[→ Hướng dẫn đầy đủ về document-skills](/docs/engineer/skills/document-skills)
+[→ Hướng dẫn đầy đủ về document-skills](/vi/docs/engineer/skills/document-skills)
 
 ---
 
 ### Công Cụ Phát Triển (Development Tools)
 
-#### [mcp-builder](/docs/engineer/skills/mcp-builder)
+#### [mcp-builder](/vi/docs/engineer/skills/mcp-builder)
 Tạo các máy chủ MCP (Model Context Protocol) chất lượng cao để tích hợp với các dịch vụ bên ngoài.
 
 **Sử dụng khi:** Xây dựng máy chủ MCP bằng Python (FastMCP) hoặc Node/TypeScript.
@@ -138,7 +138,7 @@ Tạo các máy chủ MCP (Model Context Protocol) chất lượng cao để tí
 "Sử dụng mcp-builder để tạo máy chủ MCP cho Stripe API"
 ```
 
-[→ Hướng dẫn đầy đủ về mcp-builder](/docs/engineer/skills/mcp-builder)
+[→ Hướng dẫn đầy đủ về mcp-builder](/vi/docs/engineer/skills/mcp-builder)
 
 ---
 

@@ -40,9 +40,9 @@ Slash commands kích hoạt agent workflows.
 - **Fix**: `/ck:fix`, `/ck:fix`, `/ck:fix`, `/ck:fix`
 - **Design**: `ai-artist` skill, `ai-multimodal` skill, `frontend-design` skill
 - **Git**: `/ck:git cm`, `/ck:git cp`, `/ck:git pr`
-- **Docs**: `/ck:docs:init`, `/ck:docs:update`, `/ck:docs:summarize`
+- **Docs**: `/ck:docs init`, `/ck:docs update`, `/ck:docs summarize`
 - **Content**: Sử dụng `copywriting` skill (quality, fast, CRO workflows)
-- **Plan**: `/ck:plan:ci`, `/ck:plan:two`, `/ck:plan:hard`
+- **Plan**: `/ck:plan`, `/ck:plan --two`, `/ck:plan --hard`
 - **Integrate**: `/integrate:polar`, `/integrate:sepay`
 - **Skill**: Sử dụng `skill-creator` skill
 

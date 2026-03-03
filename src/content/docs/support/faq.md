@@ -251,7 +251,7 @@ echo "node_modules/\ndist/\nbuild/\ncoverage/" > .claudeignore
 /ck:cook "optimize user authentication flow" --scope auth
 
 # Regular maintenance
-/ck:docs:update "keep documentation current"
+/ck:docs update "keep documentation current"
 /ck:fix "maintain CI/CD health"
 ```
 

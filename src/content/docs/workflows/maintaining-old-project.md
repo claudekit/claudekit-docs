@@ -56,7 +56,7 @@ claude
 This is the **most important first step**:
 
 ```bash
-/ck:docs:init
+/ck:docs init
 ```
 
 **What happens (5-8 minutes):**
@@ -462,7 +462,7 @@ Review the plan, then implement:
 ### Improve Documentation
 
 ```bash
-/ck:docs:update
+/ck:docs update
 ```
 
 Adds:
@@ -587,7 +587,7 @@ Add monitoring:
 ### Create Runbook
 
 ```bash
-/ck:docs:update
+/ck:docs update
 ```
 
 Creates `docs/runbook.md` with:
@@ -635,7 +635,7 @@ npm audit
 npm run test:coverage
 
 # Update docs if needed
-/ck:docs:update
+/ck:docs update
 ```
 
 ### Monthly Tasks
@@ -666,7 +666,7 @@ cat docs/technical-debt.md
 /ck:test
 
 # 4. Update docs
-/ck:docs:update
+/ck:docs update
 
 # 5. Commit
 /ck:git cm
@@ -693,7 +693,7 @@ Prioritize:
 3. Performance problems (/ck:fix)
 4. Test coverage (/ck:cook [add tests])
 5. Code quality (/ck:cook [refactor])
-6. Documentation (/ck:docs:update)
+6. Documentation (/ck:docs update)
 
 ### "Breaking changes in dependencies"
 
@@ -722,14 +722,14 @@ Implement improvements:
 
 ### Train Team
 
-1. Document everything (`/ck:docs:update`)
+1. Document everything (`/ck:docs update`)
 2. Create onboarding guide
 3. Share architecture docs
 4. Set up development environment guide
 
 ## Key Takeaways
 
-1. **Start with `/ck:docs:init`** - Critical for understanding legacy code
+1. **Start with `/ck:docs init`** - Critical for understanding legacy code
 2. **Fix security first** - Protect users and business
 3. **Add tests gradually** - Focus on critical paths
 4. **Update incrementally** - Don't break everything at once

@@ -89,7 +89,7 @@ Bộ điều chỉnh lệnh áp dụng cho các lệnh đang hoạt động:
 - `:parallel` — Bật thực thi song song
 - `:two` — Sử dụng quy trình hai agent
 
-**Ví dụ**: `/ck:plan:hard "feature phức tạp"` vẫn hoạt động.
+**Ví dụ**: `/ck:plan --hard "feature phức tạp"` vẫn hoạt động.
 
 ---
 

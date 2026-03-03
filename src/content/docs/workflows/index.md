@@ -32,8 +32,8 @@ Task-oriented guides for common development scenarios using ClaudeKit's slash co
 ### Documentation
 [**Documentation Workflow**](/docs/workflows/documentation) - Keep docs in sync with code changes
 ```bash
-/ck:docs:init
-/ck:docs:update "after feature changes"
+/ck:docs init
+/ck:docs update "after feature changes"
 ```
 
 ## Quick Workflows

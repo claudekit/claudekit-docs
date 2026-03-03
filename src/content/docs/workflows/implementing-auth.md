@@ -20,7 +20,7 @@ Learn how to implement secure authentication systems with ClaudeKit - from basic
 **Goal**: Implement secure, production-ready authentication
 **Time**: 20-40 minutes (vs 4-8 hours manually)
 **Agents Used**: planner, researcher, tester, code-reviewer
-**Commands**: /ck:plan, /ck:cook, /ck:test, /ck:docs:update
+**Commands**: /ck:plan, /ck:cook, /ck:test, /ck:docs update
 
 ## Prerequisites
 
@@ -426,7 +426,7 @@ Security Score: 9.4/10 (Excellent)
 ### Step 11: Documentation
 
 ```bash
-/ck:docs:update
+/ck:docs update
 ```
 
 **Generated documentation**:
@@ -481,7 +481,7 @@ Implement authentication for e-commerce site with:
 /ck:test
 
 # Document
-/ck:docs:update
+/ck:docs update
 ```
 
 ### Time Comparison

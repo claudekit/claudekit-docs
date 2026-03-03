@@ -308,7 +308,7 @@ Update documentation with the fix:
 
 ```bash
 # Update docs
-/ck:docs:update [document the login bug fix and prevention measures]
+/ck:docs update [document the login bug fix and prevention measures]
 ```
 
 **Generated documentation**:
@@ -649,7 +649,7 @@ After fixing bugs, improve processes:
 ### 4. Update Code Standards
 
 ```bash
-/ck:docs:update [add this bug pattern to code review checklist]
+/ck:docs update [add this bug pattern to code review checklist]
 ```
 
 ## Next Steps

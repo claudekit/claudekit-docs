@@ -41,7 +41,7 @@ This will start Claude Code (CC) with ClaudeKit agents in your project directory
 Let Claude Code scan and analyze your codebase to create initial specifications:
 
 ```bash
-/ck:docs:init
+/ck:docs init
 ```
 
 This command will:
@@ -170,8 +170,8 @@ Runs test suite and generates report. No automatic fixes.
 ### Documentation
 
 ```bash
-/ck:docs:update    # Update existing documentation
-/ck:docs:summarize # Summarize documentation
+/ck:docs update    # Update existing documentation
+/ck:docs summarize # Summarize documentation
 ```
 
 ### Git Operations
@@ -199,7 +199,7 @@ Use skill-creator skill # Fix skill errors
 ## Best Practices
 
 ### 1. Start with Documentation
-Always run `/ck:docs:init` first to let CC understand your codebase.
+Always run `/ck:docs init` first to let CC understand your codebase.
 
 ### 2. Review Plans Carefully
 **IMPORTANT:** Always review implementation plans before approving. CC provides detailed plans for a reason.
@@ -225,7 +225,7 @@ Run `/ck:test` frequently to catch issues early.
 
 ```bash
 # 1. Analyze codebase
-/ck:docs:init
+/ck:docs init
 
 # 2. Plan the feature
 /ck:plan Add user roles and permissions system
@@ -299,7 +299,7 @@ claude
 ### CC Not Understanding Codebase
 ```bash
 # Regenerate specs
-/ck:docs:update
+/ck:docs update
 ```
 
 ### Commands Not Working

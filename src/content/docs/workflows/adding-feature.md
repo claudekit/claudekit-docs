@@ -17,7 +17,7 @@ Learn the complete workflow for adding new features to your project with ClaudeK
 **Time**: 15-30 minutes (vs 2-4 hours manually)
 **Agents Used**: planner, scout, tester, code-reviewer, docs-manager
 **Skills**: cook (auto-activates from plan context)
-**Commands**: /ck:plan, /ck:test, /ck:docs:update, /ck:git cm
+**Commands**: /ck:plan, /ck:test, /ck:docs update, /ck:git cm
 
 ## Prerequisites
 
@@ -291,7 +291,7 @@ Overall: APPROVED ✓
 Sync documentation with new feature:
 
 ```bash
-/ck:docs:update
+/ck:docs update
 ```
 
 **Documentation updates**:
@@ -562,7 +562,7 @@ Real-world scenario: Adding search functionality to an e-commerce site.
 **Solution**:
 ```bash
 # Regenerate with focus
-/ck:docs:update [focus on password reset flow with diagrams]
+/ck:docs update [focus on password reset flow with diagrams]
 ```
 
 ## Best Practices
@@ -605,7 +605,7 @@ Don't skip testing:
 Keep docs current:
 ```bash
 /ck:cook [feature]
-/ck:docs:update    # Update docs immediately
+/ck:docs update    # Update docs immediately
 ```
 
 ### 5. Review Before Committing
@@ -650,7 +650,7 @@ git checkout -b feature/password-reset
 - [/ck:plan](/docs/engineer/skills/plan) - Create implementation plans
 - [/ck:cook](/docs/engineer/skills/cook) - Implement features from plans
 - [/ck:test](/docs/engineer/skills/test) - Run test suites
-- [/ck:docs:update](/docs/engineer/skills/docs) - Update documentation
+- [/ck:docs update](/docs/engineer/skills/docs) - Update documentation
 - [/ck:git cm](/docs/engineer/skills/git) - Commit changes
 
 ### Further Reading

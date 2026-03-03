@@ -41,7 +41,7 @@ Researches best practices, analyzes your codebase, and generates step-by-step im
 
 **Bug Investigation**
 - **Who**: Developer fixing complex race condition
-- **Prompt**: `/ck:plan:hard [fix checkout race condition causing double charges]`
+- **Prompt**: `/ck:plan --hard [fix checkout race condition causing double charges]`
 - **Output**: Root cause analysis, reproduction steps, fix plan with test cases
 
 **Optimization Planning**
@@ -51,7 +51,7 @@ Researches best practices, analyzes your codebase, and generates step-by-step im
 
 **CRO Implementation**
 - **Who**: Growth engineer improving conversion
-- **Prompt**: `/ck:plan:cro [improve checkout abandonment rate]`
+- **Prompt**: `/ck:plan [improve checkout abandonment rate]`
 - **Output**: A/B test plan, UX improvements, tracking implementation
 
 ## What You Get
@@ -103,7 +103,7 @@ Plans saved to: `plans/[feature-name]-YYYYMMDD-HHMMSS.md`
 
 **Use plans as specs**: Reference the plan during code review. "Did we implement step 3?" ensures nothing is missed.
 
-**Multiple approaches**: Use `/ck:plan:two [description]` to generate two different solutions with trade-off comparison.
+**Multiple approaches**: Use `/ck:plan --two [description]` to generate two different solutions with trade-off comparison.
 
 **Link from issues**: Save plans to git, link from GitHub issues. Future devs understand *why* decisions were made.
 
@@ -116,16 +116,16 @@ Plans saved to: `plans/[feature-name]-YYYYMMDD-HHMMSS.md`
 /ck:plan [add OAuth2 authentication]
 
 # Compare approaches
-/ck:plan:two [use Redis vs PostgreSQL for caching]
+/ck:plan --two [use Redis vs PostgreSQL for caching]
 
 # Fix planning
-/ck:plan:hard [memory leak in job processor]
+/ck:plan --hard [memory leak in job processor]
 
 # CRO planning
-/ck:plan:cro [improve signup conversion]
+/ck:plan [improve signup conversion]
 
 # CI/CD fix
-/ck:plan:ci [github-actions-url]
+/ck:plan [github-actions-url]
 
 # Execute plan
 /ck:cook @plans/oauth2-auth-20241020.md

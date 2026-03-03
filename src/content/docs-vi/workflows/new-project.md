@@ -65,7 +65,7 @@ claude
 6. Tạo specs và roadmap ban đầu
 7. Cung cấp báo cáo tóm tắt
 
-**Không cần chạy `/ck:docs:init`** - specs được tạo tự động trong quá trình bootstrap.
+**Không cần chạy `/ck:docs init`** - specs được tạo tự động trong quá trình bootstrap.
 
 ### Ví Dụ: Dự Án Đơn Giản
 
@@ -108,7 +108,7 @@ claude
 ### Chế Độ Tự Động (Dùng Cẩn Thận!)
 
 ```bash
-/ck:bootstrap:auto <ý-tưởng-của-bạn>
+/ck:bootstrap --auto <ý-tưởng-của-bạn>
 ```
 
 Chạy chế độ tự động hoàn toàn không cần review plan. CC sẽ:
@@ -394,8 +394,8 @@ Sau khi bootstrap dự án:
 
 1. **Phát Triển Liên Tục**: Dùng `/ck:cook` cho tính năng mới
 2. **Testing**: Chạy `/ck:test` thường xuyên
-3. **Tài Liệu**: Giữ `/ck:docs:update` cập nhật
-4. **Deployment**: Thiết lập CI/CD với `/ck:plan:ci`
+3. **Tài Liệu**: Giữ `/ck:docs update` cập nhật
+4. **Deployment**: Thiết lập CI/CD với `/ck:plan`
 5. **Cộng Tác Nhóm**: Chia sẻ cấu hình `.claude/`
 
 ## Tài Nguyên

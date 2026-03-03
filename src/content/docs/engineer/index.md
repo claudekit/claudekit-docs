@@ -44,7 +44,7 @@ Plan features and design systems with AI assistance:
 
 ```bash
 /ck:plan "implement payment integration"
-/ck:plan:parallel "refactor authentication system"
+/ck:plan --parallel "refactor authentication system"
 ```
 
 ### Code Generation

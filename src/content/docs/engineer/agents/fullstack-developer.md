@@ -13,7 +13,7 @@ published: true
 
 ## When to Use
 
-- Implementing phases from `/ck:plan:parallel` output
+- Implementing phases from `/ck:plan --parallel` output
 - Running backend + frontend work simultaneously without conflicts
 - Need file-level isolation for parallel execution
 - Building full-stack features (API + UI + tests)
@@ -34,7 +34,7 @@ published: true
 |-----|--------|---------|
 | **Team Lead** | `/ck:cook plans/251201-user-api/phase-02-endpoints.md` | Executes Phase 02 API endpoints with ownership boundaries |
 | **Developer** | Execute backend + frontend phases simultaneously | Safe parallel execution, no file conflicts |
-| **PM** | `/ck:plan:parallel Add CRUD API + React dashboard` → `/ck:cook` phases | Full implementation with automated reports |
+| **PM** | `/ck:plan --parallel Add CRUD API + React dashboard` → `/ck:cook` phases | Full implementation with automated reports |
 
 ## How It Works
 

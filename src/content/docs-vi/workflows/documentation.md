@@ -27,7 +27,7 @@ Documentation workflow đảm bảo tài liệu dự án của bạn luôn cập
 
 ### 1. Khởi tạo tài liệu
 ```bash
-/ck:docs:init
+/ck:docs init
 ```
 
 **Điều gì xảy ra**:
@@ -46,7 +46,7 @@ Documentation workflow đảm bảo tài liệu dự án của bạn luôn cập
 
 ### 2. Tạo tài liệu ban đầu
 ```bash
-/ck:docs:init "comprehensive project documentation"
+/ck:docs init "comprehensive project documentation"
 ```
 
 **Điều gì xảy ra**:
@@ -64,7 +64,7 @@ Documentation workflow đảm bảo tài liệu dự án của bạn luôn cập
 
 ### 3. Cập nhật tài liệu sau thay đổi
 ```bash
-/ck:docs:update "after implementing user authentication"
+/ck:docs update "after implementing user authentication"
 ```
 
 **Điều gì xảy ra**:
@@ -82,7 +82,7 @@ Documentation workflow đảm bảo tài liệu dự án của bạn luôn cập
 
 ### 4. Review tài liệu toàn diện
 ```bash
-/ck:docs:summarize "complete documentation review"
+/ck:docs summarize "complete documentation review"
 ```
 
 **Điều gì xảy ra**:
@@ -104,7 +104,7 @@ Hãy lập tài liệu cho tính năng xác thực mới:
 
 ### Bước 1: Thiết lập ban đầu
 ```bash
-/ck:docs:init
+/ck:docs init
 ```
 
 **Cấu trúc được tạo**:
@@ -128,7 +128,7 @@ docs/
 
 ### Bước 2: Cập nhật sau tính năng
 ```bash
-/ck:docs:update "after implementing OAuth authentication"
+/ck:docs update "after implementing OAuth authentication"
 ```
 
 **Các cập nhật được thực hiện**:
@@ -140,7 +140,7 @@ docs/
 
 ### Bước 3: Review và cải thiện
 ```bash
-/ck:docs:summarize "authentication documentation quality"
+/ck:docs summarize "authentication documentation quality"
 ```
 
 **Các cải tiến được áp dụng**:
@@ -154,7 +154,7 @@ docs/
 
 ### Tài liệu API
 ```bash
-/ck:docs:init "generate API documentation from code"
+/ck:docs init "generate API documentation from code"
 ```
 - REST API endpoints
 - GraphQL schemas
@@ -164,7 +164,7 @@ docs/
 
 ### Hướng dẫn người dùng
 ```bash
-/ck:docs:update "create user guide for new feature"
+/ck:docs update "create user guide for new feature"
 ```
 - Hướng dẫn từng bước
 - Các trường hợp sử dụng phổ biến
@@ -174,7 +174,7 @@ docs/
 
 ### Tài liệu nhà phát triển
 ```bash
-/ck:docs:update "development setup and workflows"
+/ck:docs update "development setup and workflows"
 ```
 - Thiết lập phát triển local
 - Hướng dẫn đóng góp code
@@ -184,7 +184,7 @@ docs/
 
 ### Tài liệu kiến trúc
 ```bash
-/ck:docs:summarize "system architecture and design"
+/ck:docs summarize "system architecture and design"
 ```
 - Kiến trúc cấp cao
 - Sơ đồ luồng dữ liệu
@@ -196,7 +196,7 @@ docs/
 
 ### Tài liệu đa ngôn ngữ
 ```bash
-/ck:docs:update "create Japanese translation of user guide"
+/ck:docs update "create Japanese translation of user guide"
 ```
 - Dịch tự động với review của con người
 - Thích nghi văn hóa
@@ -205,7 +205,7 @@ docs/
 
 ### Tài liệu tương tác
 ```bash
-/ck:docs:init "create interactive API documentation"
+/ck:docs init "create interactive API documentation"
 ```
 - API consoles thử ngay
 - Hướng dẫn tương tác
@@ -214,7 +214,7 @@ docs/
 
 ### Tài liệu video
 ```bash
-/ck:docs:update "create video tutorials for complex features"
+/ck:docs update "create video tutorials for complex features"
 ```
 - Quy trình ghi màn hình
 - Giải thích có hoạt hình
@@ -249,21 +249,21 @@ docs/
 ### Kiểm tra tài liệu trước commit
 ```bash
 # Add to pre-commit hook
-/ck:docs:summarize "check documentation for changes"
+/ck:docs summarize "check documentation for changes"
 ```
 
 ### Cập nhật tài liệu tự động
 ```bash
 # Run after feature completion
 /ck:cook
-/ck:docs:update "document new feature"
+/ck:docs update "document new feature"
 /ck:git cm
 ```
 
 ### Tài liệu phát hành
 ```bash
-/ck:docs:update "prepare release notes and documentation"
-/ck:docs:summarize "final review before release"
+/ck:docs update "prepare release notes and documentation"
+/ck:docs summarize "final review before release"
 ```
 
 ## Đo lường chất lượng tài liệu
@@ -277,7 +277,7 @@ docs/
 
 ### Đánh giá chất lượng
 ```bash
-/ck:docs:summarize "comprehensive documentation quality assessment"
+/ck:docs summarize "comprehensive documentation quality assessment"
 ```
 - Phân tích tính đầy đủ
 - Xác minh độ chính xác

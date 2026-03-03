@@ -1,10 +1,10 @@
 ---
-title: Sequential Thinking Skill
+title: "ck:sequential-thinking"
 description: Apply structured, reflective problem-solving for complex tasks requiring multi-step analysis and hypothesis verification
 section: engineer
 kit: engineer
 category: skills/tools
-order: 10
+order: 50
 published: true
 ---# Sequential Thinking
 

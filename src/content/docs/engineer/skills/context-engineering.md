@@ -1,10 +1,10 @@
 ---
-title: "Context Engineering"
+title: "ck:context-engineering"
 description: "Monitor context usage limits, optimize token consumption, and design efficient agent architectures"
 section: engineer
 kit: engineer
 category: skills
-order: 22
+order: 50
 ---
 
 The art and science of curating the smallest high-signal token set for maximum LLM reasoning quality while minimizing token usage.

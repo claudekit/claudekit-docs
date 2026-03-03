@@ -24,7 +24,7 @@ Specialized AI assistants with focused expertise.
 - **Copywriter**: Writes marketing copy, product descriptions, content
 
 **How Agents Work**:
-1. You invoke a command (e.g., `/cook "add feature"`)
+1. You invoke a command (e.g., `/ck:cook "add feature"`)
 2. Command spawns relevant agents in sequence or parallel
 3. Agents collaborate via shared context (plans, code, test results)
 4. Output consolidated and presented to you
@@ -33,31 +33,31 @@ Specialized AI assistants with focused expertise.
 
 Slash commands and skills that trigger agent workflows.
 
-**Note:** Skills like `/git`, `/fix`, `/cook` were migrated from commands. Slash syntax unchanged.
+**Note:** Skills like `/ck:git`, `/ck:fix`, `/ck:cook` were migrated from commands. Slash syntax unchanged.
 
 **Categories**:
-- **Core**: `/cook`, `/plan`, `/bootstrap`, `/ask`, `/scout`
-- **Fix**: `/fix`, `/fix`, `/fix`, `/fix`
+- **Core**: `/ck:cook`, `/ck:plan`, `/ck:bootstrap`, `/ck:ask`, `/ck:scout`
+- **Fix**: `/ck:fix`, `/ck:fix`, `/ck:fix`, `/ck:fix`
 - **Design**: `ai-artist` skill, `ai-multimodal` skill, `frontend-design` skill
-- **Git**: `/git cm`, `/git cp`, `/git pr`
-- **Docs**: `/docs:init`, `/docs:update`, `/docs:summarize`
+- **Git**: `/ck:git cm`, `/ck:git cp`, `/ck:git pr`
+- **Docs**: `/ck:docs:init`, `/ck:docs:update`, `/ck:docs:summarize`
 - **Content**: Use `copywriting` skill (quality, fast, CRO workflows)
-- **Plan**: `/plan:ci`, `/plan:two`, `/plan:hard`
+- **Plan**: `/ck:plan:ci`, `/ck:plan:two`, `/ck:plan:hard`
 - **Integrate**: `/integrate:polar`, `/integrate:sepay`
 - **Skill**: Use `skill-creator` skill
 
 **Example Workflow**:
 ```bash
-/plan "add payment processing with Stripe"
+/ck:plan "add payment processing with Stripe"
 # → Planner agent creates detailed plan
 
-/cook
+/ck:cook
 # → Reads plan, spawns developer + tester agents, implements feature
 
-/fix
+/ck:fix
 # → Debugger analyzes any test failures, fixes issues
 
-/git cm
+/ck:git cm
 # → Git manager stages, commits, pushes changes
 ```
 
@@ -90,7 +90,7 @@ Reusable knowledge modules injected into agent context.
 **Example: Adding Authentication**
 
 ```bash
-You: /cook "add authentication with Better Auth"
+You: /ck:cook "add authentication with Better Auth"
 
 System:
 1. Detects Better Auth skill → injects into context
@@ -116,7 +116,7 @@ All agent behaviors, skills, and workflows configured in `.claude/CLAUDE.md`:
 - nextjs: Next.js App Router best practices
 
 ## Workflows
-- /plan → /clear → describe task: Plan → cook skill auto-implements
+- /ck:plan → /clear → describe task: Plan → cook skill auto-implements
 - fix skill: Debug → Fix → Test → Commit
 ```
 
@@ -124,5 +124,5 @@ All agent behaviors, skills, and workflows configured in `.claude/CLAUDE.md`:
 
 - **[Installation](/docs/getting-started/installation)** - Install ClaudeKit
 - **[Quick Start](/docs/getting-started/quick-start)** - Try your first command
-- **[Commands Reference](/docs/engineer/commands)** - Explore all commands
+- **[Skills Reference](/docs/engineer/skills)** - Explore all skills
 - **[Agents Reference](/docs/engineer/agents)** - Learn about each agent

@@ -26,7 +26,7 @@ Create your first sales collateral in 30 seconds:
 
 ```bash
 # Generate a pitch for your target persona
-/ask "Create a sales pitch for [your product] targeting [job title] in [industry]"
+/ckm:ask "Create a sales pitch for [your product] targeting [job title] in [industry]"
 
 # The agent builds a complete pitch framework with objection handling
 ```
@@ -77,7 +77,7 @@ Build a full pitch framework:
 
 ```bash
 # Step 1: Define your target
-/ask "Create a sales pitch for [product] targeting [persona] in [industry]"
+/ckm:ask "Create a sales pitch for [product] targeting [persona] in [industry]"
 
 # The agent will create:
 # - Opening (attention-grabbing, relevant to their role)
@@ -102,7 +102,7 @@ Prepare for common objections:
 
 ```bash
 # Create comprehensive objection guide
-/ask "Create an objection handling guide for [your product]"
+/ckm:ask "Create an objection handling guide for [your product]"
 
 # The agent will document:
 # - "It's too expensive" → Value-based response
@@ -126,7 +126,7 @@ Turn a customer win into sales asset:
 
 ```bash
 # Generate case study from customer data
-/ask "Create a case study from [customer name] who achieved [results]"
+/ckm:ask "Create a case study from [customer name] who achieved [results]"
 
 # The agent structures:
 # - Customer background and situation
@@ -152,7 +152,7 @@ Build a modular proposal system:
 
 ```bash
 # Create proposal framework
-/ask "Design a proposal template for [your product] that we can customize per deal"
+/ckm:ask "Design a proposal template for [your product] that we can customize per deal"
 
 # The agent creates modular sections:
 # - Executive summary (customize per prospect)
@@ -206,6 +206,6 @@ The agent organizes sales materials in standardized locations:
 
 ## Related Commands
 
-- `/ask` - Query the agent for sales materials
-- `/scout` - Find existing collateral
-- `/plan` - Create comprehensive sales enablement programs
+- `/ckm:ask` - Query the agent for sales materials
+- `/ckm:scout` - Find existing collateral
+- `/ckm:plan` - Create comprehensive sales enablement programs

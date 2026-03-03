@@ -1,10 +1,10 @@
 ---
-title: Frontend Development
+title: "ck:frontend-development"
 description: Modern React and TypeScript development patterns with Suspense, lazy loading, TanStack Query, and MUI v7 for building performant applications
 section: engineer
 kit: engineer
 category: skills
-order: 17
+order: 50
 ---
 
 Building React applications the modern way means embracing Suspense, lazy loading, and proper data fetching patterns. This skill shows you how.

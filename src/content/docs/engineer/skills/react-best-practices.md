@@ -1,10 +1,10 @@
 ---
-title: "React Best Practices"
+title: "ck:react-best-practices"
 description: "React and Next.js performance optimization guidelines from Vercel Engineering"
 section: engineer
 kit: engineer
 category: skills
-order: 31
+order: 50
 ---
 
 Comprehensive performance optimization guide for React and Next.js applications, maintained by Vercel. Contains 45 rules across 8 categories prioritized by impact.

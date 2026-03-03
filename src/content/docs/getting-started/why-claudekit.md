@@ -12,7 +12,7 @@ published: true
 ```bash
 ck init my-app --kit engineer
 cd my-app
-/cook add user authentication with OAuth
+/ck:cook add user authentication with OAuth
 ```
 
 **Result**: Production auth system with login/signup pages, OAuth (Google/GitHub), protected routes, tests, and docs. **Time: 6 minutes vs 8 hours manually.**
@@ -38,12 +38,12 @@ cd my-app
 - **scout** - Codebase navigation
 
 **30+ Slash Commands**:
-- `/cook` - Implement features end-to-end
-- `/plan` - Research + create implementation plan
-- `/fix` - Multi-agent bug fixing
+- `/ck:cook` - Implement features end-to-end
+- `/ck:plan` - Research + create implementation plan
+- `/ck:fix` - Multi-agent bug fixing
 - `ai-artist` skill - UI/UX design and visual assets
-- `/git cm` - Commit with conventional format
-- [See all commands →](/docs/engineer/commands)
+- `/ck:git cm` - Commit with conventional format
+- [See all skills →](/docs/engineer/skills)
 
 **45 Built-in Skills**:
 - Frontend: Next.js, shadcn/ui, Tailwind CSS

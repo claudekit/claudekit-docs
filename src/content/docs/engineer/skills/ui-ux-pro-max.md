@@ -1,10 +1,10 @@
 ---
-title: UI/UX Pro Max Skill
+title: "ck:ui-ux-pro-max"
 description: UI/UX design intelligence with searchable database of 50 styles, 21 palettes, 50 font pairings, 20 charts across 8 stacks
 section: engineer
 kit: engineer
 category: skills/frontend
-order: 15
+order: 50
 published: true
 ---# UI/UX Pro Max Skill
 

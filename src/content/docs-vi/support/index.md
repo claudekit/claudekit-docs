@@ -21,7 +21,7 @@ Nhận trợ giúp với ClaudeKit thông qua tài nguyên cộng đồng, tài 
 ### Đang tìm hướng dẫn?
 - [Bắt Đầu](/vi/docs/getting-started) - Học các kiến thức cơ bản
 - [Workflows](/vi/docs/workflows) - Hướng dẫn từng bước
-- [Commands Reference](/vi/docs/engineer/commands) - Tất cả các lệnh có sẵn
+- [Skills Reference](/vi/docs/engineer/skills) - Tất cả các kỹ năng có sẵn
 
 ## Community Support
 
@@ -67,7 +67,7 @@ Nhận trợ giúp với ClaudeKit thông qua tài nguyên cộng đồng, tài 
 
 ### Documentation
 - [Bắt Đầu](/vi/docs/getting-started) - Hướng dẫn người dùng mới
-- [Commands Reference](/vi/docs/engineer/commands) - Tài liệu lệnh đầy đủ
+- [Skills Reference](/vi/docs/engineer/skills) - Tài liệu kỹ năng đầy đủ
 - [Agents Overview](/vi/docs/engineer/agents) - Gặp đội ngũ AI của bạn
 - [Skills Library](/vi/docs/engineer/skills) - Các module kiến thức tích hợp
 - [Khắc Phục Sự Cố](/vi/docs/support/troubleshooting) - Các vấn đề và giải pháp phổ biến
@@ -125,7 +125,7 @@ Nhận trợ giúp với ClaudeKit thông qua tài nguyên cộng đồng, tài 
 1. **Tìm kiếm trước**: Kiểm tra [FAQ](/docs/support/faq) và [Khắc Phục Sự Cố](/vi/docs/support/troubleshooting)
 2. **Kiểm tra tài liệu**: Tìm trong các phần tài liệu liên quan
 3. **Tìm GitHub Issues**: Xem vấn đề của bạn đã được báo cáo chưa
-4. **Thử debug**: Sử dụng lệnh `/debug` để điều tra vấn đề
+4. **Thử debug**: Sử dụng lệnh `/ck:debug` để điều tra vấn đề
 
 ### Khi Yêu Cầu Trợ Giúp
 
@@ -140,13 +140,13 @@ Nhận trợ giúp với ClaudeKit thông qua tài nguyên cộng đồng, tài 
 
 **Ví dụ tốt**:
 ```
-Xin chào! Tôi gặp vấn đề với lệnh /cook trên dự án Next.js.
+Xin chào! Tôi gặp vấn đề với lệnh /ck:cook trên dự án Next.js.
 
 Phiên bản ClaudeKit: 1.0.0
 OS: macOS 14.0
 Node.js: v18.17.0
 
-Lệnh: /cook "add user authentication with Better Auth"
+Lệnh: /ck:cook "add user authentication with Better Auth"
 
 Lỗi: "Better Auth skill not found"
 Mong đợi: Nên phát hiện dự án Next.js và kích hoạt Better Auth skill

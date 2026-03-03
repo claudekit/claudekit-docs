@@ -26,7 +26,7 @@ AI assistants chuyên biệt với chuyên môn tập trung.
 - **Copywriter**: Viết marketing copy, product descriptions, content
 
 **Cách Agents Hoạt Động**:
-1. Bạn gọi một command (ví dụ: `/cook "add feature"`)
+1. Bạn gọi một command (ví dụ: `/ck:cook "add feature"`)
 2. Command sinh ra các agents liên quan theo sequence hoặc parallel
 3. Agents cộng tác qua shared context (plans, code, test results)
 4. Output được tổng hợp và trình bày cho bạn
@@ -36,29 +36,29 @@ AI assistants chuyên biệt với chuyên môn tập trung.
 Slash commands kích hoạt agent workflows.
 
 **Danh Mục**:
-- **Core**: `/cook`, `/plan`, `/bootstrap`, `/ask`, `/scout`
-- **Fix**: `/fix`, `/fix`, `/fix`, `/fix`
+- **Core**: `/ck:cook`, `/ck:plan`, `/ck:bootstrap`, `/ck:ask`, `/ck:scout`
+- **Fix**: `/ck:fix`, `/ck:fix`, `/ck:fix`, `/ck:fix`
 - **Design**: `ai-artist` skill, `ai-multimodal` skill, `frontend-design` skill
-- **Git**: `/git cm`, `/git cp`, `/git pr`
-- **Docs**: `/docs:init`, `/docs:update`, `/docs:summarize`
+- **Git**: `/ck:git cm`, `/ck:git cp`, `/ck:git pr`
+- **Docs**: `/ck:docs:init`, `/ck:docs:update`, `/ck:docs:summarize`
 - **Content**: Sử dụng `copywriting` skill (quality, fast, CRO workflows)
-- **Plan**: `/plan:ci`, `/plan:two`, `/plan:hard`
+- **Plan**: `/ck:plan:ci`, `/ck:plan:two`, `/ck:plan:hard`
 - **Integrate**: `/integrate:polar`, `/integrate:sepay`
 - **Skill**: Sử dụng `skill-creator` skill
 
 **Ví Dụ Workflow**:
 ```bash
-/plan "add payment processing with Stripe"
+/ck:plan "add payment processing with Stripe"
 # → Planner agent tạo kế hoạch chi tiết
 
 /clear
 Mô tả task tự nhiên → skill cook kích hoạt từ ngữ cảnh plan
 # → Đọc plan, sinh developer + tester agents, triển khai tính năng
 
-/fix
+/ck:fix
 # → Debugger phân tích bất kỳ test failures nào, sửa issues
 
-/git cm
+/ck:git cm
 # → Git manager stages, commits, pushes changes
 ```
 
@@ -91,7 +91,7 @@ Modules kiến thức tái sử dụng được inject vào agent context.
 **Ví Dụ: Thêm Authentication**
 
 ```bash
-You: /cook "add authentication with Better Auth"
+You: /ck:cook "add authentication with Better Auth"
 
 System:
 1. Phát hiện Better Auth skill → inject vào context
@@ -117,7 +117,7 @@ Tất cả agent behaviors, skills và workflows được cấu hình trong `.cl
 - nextjs: Next.js App Router best practices
 
 ## Workflows
-- /plan → /clear → describe task: Plan → cook skill auto-implements
+- /ck:plan → /clear → describe task: Plan → cook skill auto-implements
 - fix skill: Debug → Fix → Test → Commit
 ```
 
@@ -125,5 +125,5 @@ Tất cả agent behaviors, skills và workflows được cấu hình trong `.cl
 
 - **[Cài Đặt](/vi/docs/getting-started/installation)** - Cài đặt ClaudeKit
 - **[Bắt Đầu Nhanh](/vi/docs/getting-started/quick-start)** - Thử command đầu tiên
-- **[Tham Chiếu Commands](/vi/docs/engineer/commands)** - Khám phá tất cả commands
+- **[Tham Chiếu Skills](/vi/docs/engineer/skills)** - Khám phá tất cả kỹ năng
 - **[Tham Chiếu Agents](/vi/docs/engineer/agents)** - Tìm hiểu về từng agent

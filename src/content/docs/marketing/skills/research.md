@@ -1,5 +1,5 @@
 ---
-title: "Research"
+title: "ckm:research"
 description: "Systematic technical research and analysis with multi-source validation, cross-referencing, and comprehensive reporting."
 section: marketing
 category: skills
@@ -21,7 +21,7 @@ order: 21
 **Explicit**: Activate via prompt:
 ```
 Activate research skill to [describe task]
-``` or `/scout ext` command
+``` or `/ckm:scout ext` command
 
 ## Capabilities
 
@@ -127,13 +127,13 @@ Note when sources disagree. Present multiple viewpoints with context.
 
 ## Related Skills
 
-- [SEO Optimization](/docs/marketing/skills/seo-optimization) - Keyword research and competitor analysis
+- [SEO Optimization](/docs/marketing/skills/seo) - Keyword research and competitor analysis
 - [Analytics](/docs/marketing/skills/analytics) - Data analysis and insights
 - [Brainstorming](/docs/marketing/skills/brainstorming) - Convert research into decisions
 
 ## Related Commands
 
-- `/scout` - Research current project context
-- `/scout ext` - Research external topics
-- `/ask` - Quick research questions
-- `/plan` - Convert research into action plan
+- `/ckm:scout` - Research current project context
+- `/ckm:scout ext` - Research external topics
+- `/ckm:ask` - Quick research questions
+- `/ckm:plan` - Convert research into action plan

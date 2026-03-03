@@ -412,8 +412,8 @@ Bàn Giao Tiếp Theo:
 
 5. Thực thi:
    - Sử dụng copywriting skill cho bài blog và kịch bản video
-   - /email create cho chuỗi chào mừng
-   - /social create cho bài thông báo
+   - /ckm:email create cho chuỗi chào mừng
+   - /ckm:social create cho bài thông báo
    - /analytics dashboard cho theo dõi
 
 6. campaign-manager theo dõi hiệu suất, đề xuất tối ưu hóa hàng tuần
@@ -578,10 +578,10 @@ Xem [Hướng dẫn thiết lập MCP](/vi/docs/engineer/configuration/mcp-setup
 
 ## Lệnh Liên Quan
 
-- `/campaign create` - Bắt đầu kế hoạch chiến dịch mới
-- `/campaign status` - Kiểm tra hiệu suất chiến dịch đang hoạt động
-- `/campaign analyze` - Phân tích hiệu suất sâu
-- `/plan` - Tạo kế hoạch thực thi cho thực thi chiến dịch
+- `/ckm:campaign create` - Bắt đầu kế hoạch chiến dịch mới
+- `/ckm:campaign status` - Kiểm tra hiệu suất chiến dịch đang hoạt động
+- `/ckm:campaign analyze` - Phân tích hiệu suất sâu
+- `/ckm:plan` - Tạo kế hoạch thực thi cho thực thi chiến dịch
 - `/analytics dashboard` - Thiết lập theo dõi chiến dịch
 
 ---

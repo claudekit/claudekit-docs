@@ -1,10 +1,10 @@
 ---
-title: Web Frameworks Skill
+title: "ck:web-frameworks"
 description: Build modern full-stack web applications with Next.js, Turborepo, and RemixIcon
 section: engineer
 kit: engineer
 category: skills/frontend
-order: 5
+order: 50
 published: true
 ---
 # Web Frameworks

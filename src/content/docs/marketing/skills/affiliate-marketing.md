@@ -1,5 +1,5 @@
 ---
-title: "Affiliate Marketing"
+title: "ckm:affiliate-marketing"
 description: "Build high-converting SaaS affiliate programs with commission structures, platform selection, KOL partnerships, and fraud prevention."
 section: marketing
 category: skills
@@ -128,11 +128,11 @@ Hold payments 60-90 days to match refund windows. Prevents fraudulent signups.
 ## Related Skills
 
 - [Referral Program Building](/docs/marketing/skills/referral-program-building) - Customer-driven referrals
-- [Campaign Management](/docs/marketing/skills/campaign-management) - Launch coordination
+- [Campaign Management](/docs/marketing/skills/campaign) - Launch coordination
 - [Analytics](/docs/marketing/skills/analytics) - Performance tracking and attribution
 
 ## Related Commands
 
 - `/campaign/create` - Affiliate launch campaign
-- `/plan` - Implementation planning
-- `/analyze:report` - Performance analysis
+- `/ckm:plan` - Implementation planning
+- `/ckm:analyze:report` - Performance analysis

@@ -3,7 +3,7 @@ title: "Trường Hợp Sử Dụng"
 description: "Tìm hiểu cách sử dụng ClaudeKit cho các tình huống phát triển thực tế thông qua các ví dụ và quy trình làm việc cụ thể."
 lang: vi
 section: workflows
-category: workflows
+category: engineer
 order: 0
 published: true
 ---
@@ -35,7 +35,7 @@ Hướng dẫn từng bước để khởi tạo một dự án mới từ đầ
 
 Cách tích hợp ClaudeKit vào các codebase hiện có:
 
-- Thiết lập tài liệu ban đầu với `/docs:init`
+- Thiết lập tài liệu ban đầu với `/ck:docs:init`
 - Hiểu kiến trúc hiện tại
 - Tái cấu trúc legacy code một cách an toàn
 - Thêm tests cho code chưa được kiểm thử
@@ -130,7 +130,7 @@ Cách thêm các tích hợp bên ngoài:
 
 Cách tiếp cận hệ thống để sửa lỗi trên production:
 
-- Phân tích production logs với `/fix`
+- Phân tích production logs với `/ck:fix`
 - Tái hiện lỗi tại local
 - Phân tích nguyên nhân gốc rễ (Root cause analysis)
 - Triển khai bản sửa lỗi
@@ -162,7 +162,7 @@ Sử dụng ClaudeKit trong môi trường nhóm:
 Thiết lập tích hợp và triển khai liên tục:
 
 - Tích hợp GitHub Actions
-- Sửa lỗi CI thất bại với `/fix`
+- Sửa lỗi CI thất bại với `/ck:fix`
 - Kiểm thử tự động
 - Pipelines triển khai
 - Quản lý môi trường

@@ -1,5 +1,5 @@
 ---
-title: "Copywriting"
+title: "ckm:copywriting"
 description: "Conversion-focused copy with proven formulas (AIDA, PAS, BAB), headline templates, CTA optimization, and custom writing style extraction."
 section: marketing
 category: skills
@@ -141,7 +141,7 @@ Multiple calls-to-action dilute focus. Choose one primary action.
 
 - [Content Marketing](/docs/marketing/skills/content-marketing) - Content planning and strategy
 - [Email Marketing](/docs/marketing/skills/email-marketing) - Email copy patterns
-- [Brand Guidelines](/docs/marketing/skills/brand-guidelines) - Voice consistency
+- [Brand Guidelines](/docs/marketing/skills/brand) - Voice consistency
 - [Social Media](/docs/marketing/skills/social-media) - Platform-specific copy
 
 ## Related Commands

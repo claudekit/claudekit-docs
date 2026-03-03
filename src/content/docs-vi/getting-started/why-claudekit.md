@@ -14,7 +14,7 @@ published: true
 ```bash
 ck init my-app --kit engineer
 cd my-app
-/cook add user authentication with OAuth
+/ck:cook add user authentication with OAuth
 ```
 
 **Kết Quả**: Hệ thống auth production với login/signup pages, OAuth (Google/GitHub), protected routes, tests và docs. **Thời gian: 6 phút so với 8 giờ thủ công.**
@@ -40,12 +40,12 @@ cd my-app
 - **scout** - Codebase navigation
 
 **30+ Slash Commands**:
-- `/cook` - Triển khai tính năng end-to-end
-- `/plan` - Research + tạo implementation plan
-- `/fix` - Multi-agent bug fixing
+- `/ck:cook` - Triển khai tính năng end-to-end
+- `/ck:plan` - Research + tạo implementation plan
+- `/ck:fix` - Multi-agent bug fixing
 - `ai-artist` skill - UI/UX design và visual assets
-- `/git cm` - Commit với conventional format
-- [Xem tất cả commands →](/vi/docs/engineer/commands)
+- `/ck:git cm` - Commit với conventional format
+- [Xem tất cả skills →](/vi/docs/engineer/skills)
 
 **45 Built-in Skills**:
 - Frontend: Next.js, shadcn/ui, Tailwind CSS

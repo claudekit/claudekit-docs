@@ -26,7 +26,7 @@ Build your first lead scoring model in 30 seconds:
 
 ```bash
 # Create a lead scoring framework
-/ask "Design a lead scoring model for [your business type]"
+/ckm:ask "Design a lead scoring model for [your business type]"
 
 # The agent creates demographic + behavioral scoring with MQL/SQL thresholds
 ```
@@ -77,10 +77,10 @@ Create a predictive scoring system:
 
 ```bash
 # Step 1: Define your ICP
-/ask "What are the characteristics of our best customers?"
+/ckm:ask "What are the characteristics of our best customers?"
 
 # Step 2: Request scoring model
-/ask "Create a lead scoring model with demographic and behavioral factors"
+/ckm:ask "Create a lead scoring model with demographic and behavioral factors"
 
 # The agent will:
 # - Define demographic scoring (company size, industry, job title)
@@ -99,7 +99,7 @@ Find who to call right now:
 
 ```bash
 # Analyze your lead database
-/ask "Which leads in our database show the strongest buying signals?"
+/ckm:ask "Which leads in our database show the strongest buying signals?"
 
 # The agent looks for:
 # - Recent high-value activities (pricing, demo, case studies)
@@ -117,7 +117,7 @@ Create your MQL to SQL process:
 
 ```bash
 # Define qualification criteria
-/ask "Design our lead qualification process from MQL to SQL"
+/ckm:ask "Design our lead qualification process from MQL to SQL"
 
 # The agent creates:
 # - MQL definition and criteria
@@ -136,7 +136,7 @@ Understand your lead segments:
 
 ```bash
 # Analyze lead segments
-/ask "Segment our leads by behavior and recommend actions for each segment"
+/ckm:ask "Segment our leads by behavior and recommend actions for each segment"
 
 # The agent will:
 # - Identify distinct behavioral clusters
@@ -179,6 +179,6 @@ The agent organizes outputs in standardized locations:
 
 ## Related Commands
 
-- `/ask` - Query the agent for analysis
-- `/scout` - Find lead data and context
-- `/plan` - Create comprehensive lead strategy
+- `/ckm:ask` - Query the agent for analysis
+- `/ckm:scout` - Find lead data and context
+- `/ckm:plan` - Create comprehensive lead strategy

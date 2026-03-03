@@ -103,10 +103,10 @@ claude --dangerously-skip-permissions
 
 ### Bước 5: Khởi Tạo Documentation
 
-Chạy lệnh `/docs:init` để quét và tạo specs cho project của bạn:
+Chạy lệnh `/ck:docs:init` để quét và tạo specs cho project của bạn:
 
 ```bash
-/docs:init
+/ck:docs:init
 ```
 
 Lệnh này tạo markdown files trong thư mục `docs`:

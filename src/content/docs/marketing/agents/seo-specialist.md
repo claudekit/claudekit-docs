@@ -26,7 +26,7 @@ Run your first SEO audit in 30 seconds:
 
 ```bash
 # Audit your site for SEO issues
-/ask "Perform a technical SEO audit on [your-domain.com]"
+/ckm:ask "Perform a technical SEO audit on [your-domain.com]"
 
 # The agent will analyze crawlability, indexation, speed, mobile experience, and more
 ```
@@ -77,7 +77,7 @@ Identify and fix technical issues:
 
 ```bash
 # Step 1: Run comprehensive audit
-/ask "Audit [your-domain.com] for technical SEO issues"
+/ckm:ask "Audit [your-domain.com] for technical SEO issues"
 
 # The agent analyzes:
 # - Crawlability and indexation
@@ -103,7 +103,7 @@ Optimize a page for target keywords:
 
 ```bash
 # Provide URL and target keyword
-/ask "Optimize [page-url] for keyword '[target keyword]'"
+/ckm:ask "Optimize [page-url] for keyword '[target keyword]'"
 
 # The agent will:
 # - Analyze current ranking factors
@@ -121,7 +121,7 @@ Add structured data for rich snippets:
 
 ```bash
 # Request schema for your content type
-/ask "Generate JSON-LD schema for [article/product/FAQ] page"
+/ckm:ask "Generate JSON-LD schema for [article/product/FAQ] page"
 
 # The agent creates:
 # - Properly formatted JSON-LD code
@@ -138,7 +138,7 @@ Find opportunities competitors are exploiting:
 
 ```bash
 # Compare against competitors
-/ask "Analyze SEO gaps between us and [competitor-domains]"
+/ckm:ask "Analyze SEO gaps between us and [competitor-domains]"
 
 # The agent identifies:
 # - Keywords they rank for that you don't
@@ -190,6 +190,6 @@ The agent organizes outputs in standardized locations:
 
 ## Related Commands
 
-- `/ask` - Query the agent directly
-- `/scout` - Find relevant files and context
-- `/plan` - Create comprehensive SEO plans
+- `/ckm:ask` - Query the agent directly
+- `/ckm:scout` - Find relevant files and context
+- `/ckm:plan` - Create comprehensive SEO plans

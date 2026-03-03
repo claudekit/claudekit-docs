@@ -151,7 +151,7 @@ See [API Key Setup](/docs/support/troubleshooting/api-key-setup) for configurati
 # Vertex AI: Higher limits
 
 # Wait 1 minute, then retry
-/cook implement feature
+/ck:cook implement feature
 
 # Or upgrade to paid tier at aistudio.google.com
 ```
@@ -162,7 +162,7 @@ See [API Key Setup](/docs/support/troubleshooting/api-key-setup) for configurati
 export CLAUDEKIT_VERBOSE=1
 
 # Watch API calls
-/cook implement feature
+/ck:cook implement feature
 
 # Look for "Rate limit" messages
 ```
@@ -182,7 +182,7 @@ export HTTP_PROXY=http://proxy.company.com:8080
 export HTTPS_PROXY=http://proxy.company.com:8080
 
 # Retry command
-/cook implement feature
+/ck:cook implement feature
 ```
 
 #### Memory Issues
@@ -235,7 +235,7 @@ cat .claude/commands/core/cook.md
 git stash
 
 # Restart command with clean state
-/cook implement feature
+/ck:cook implement feature
 
 # Expected: Agents run one at a time
 ```
@@ -299,7 +299,7 @@ ck init --kit engineer
 cat .claude/agents/planner.md | head -20
 
 # Test delegation
-/plan implement user authentication
+/ck:plan implement user authentication
 
 # Expected: Multiple agents activate
 ```
@@ -338,10 +338,10 @@ ck init --kit engineer
 
 ```bash
 # ✅ Correct: Fast tasks with fast agents
-/fix --quick typo in button text  # Uses fast model
+/ck:fix --quick typo in button text  # Uses fast model
 
 # ❌ Wrong: Simple task with complex agent
-/fix typo in button text  # Overkill, uses slow model
+/ck:fix typo in button text  # Overkill, uses slow model
 ```
 
 **Step 2: Check model configuration**
@@ -363,10 +363,10 @@ cat .claude/agents/planner.md | grep model:
 
 ```bash
 # ✅ Specific task
-/cook implement JWT authentication with refresh tokens
+/ck:cook implement JWT authentication with refresh tokens
 
 # ❌ Vague task (agent spends time clarifying)
-/cook add auth stuff
+/ck:cook add auth stuff
 ```
 
 **Step 4: Check network latency**
@@ -395,7 +395,7 @@ See [Performance Issues](/docs/support/troubleshooting/performance-issues) for o
 
 ```bash
 # Provide more context in task description
-/plan implement user authentication system with:
+/ck:plan implement user authentication system with:
 - JWT tokens
 - Refresh token rotation
 - Email/password login
@@ -532,7 +532,7 @@ tail -f plans/reports/*.md
 cat .claude/agents/planner.md
 
 # Test with minimal command
-/plan hello world feature
+/ck:plan hello world feature
 
 # Expected: Quick plan generation
 # If fails: Check agent file syntax

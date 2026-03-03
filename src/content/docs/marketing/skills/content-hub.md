@@ -1,5 +1,5 @@
 ---
-title: "Content Hub"
+title: "ckm:content-hub"
 description: "Browser-based asset gallery for managing marketing assets with brand context, search/filters, and R2 sync."
 section: marketing
 category: skills
@@ -17,7 +17,7 @@ order: 16
 
 **Implicit**: Not automatically activated (on-demand tool).
 
-**Explicit**: `/write:hub` or `node .claude/skills/content-hub/scripts/server.cjs --open`
+**Explicit**: `/ckm:write:hub` or `node .claude/skills/content-hub/scripts/server.cjs --open`
 
 ## Capabilities
 
@@ -99,7 +99,7 @@ node .claude/skills/content-hub/scripts/server.cjs --stop
 **API Routes**:
 | Route | Purpose |
 |-------|---------|
-| `/hub` | Gallery HTML |
+| `/ckm:hub` | Gallery HTML |
 | `/api/assets` | Asset List JSON |
 | `/api/brand` | Brand Context JSON |
 | `/api/scan` | Trigger Rescan |
@@ -108,7 +108,7 @@ node .claude/skills/content-hub/scripts/server.cjs --stop
 ## Best Practices
 
 **1. Use Consistent Asset Names**
-Follow naming conventions from `brand-guidelines` skill for easier searching.
+Follow naming conventions from `brand` skill for easier searching.
 
 **2. Organize by Type**
 Place assets in type-specific folders (banner/, logo/, video/) for better filtering.
@@ -122,7 +122,7 @@ Run `--scan` flag or use `/api/scan` endpoint to refresh gallery after adding ne
 **Scenario**: Need product banner for Instagram post.
 
 **Workflow**:
-1. Open gallery: `/write:hub`
+1. Open gallery: `/ckm:write:hub`
 2. Filter by type: "banner"
 3. Search: "product"
 4. Preview candidates
@@ -156,11 +156,11 @@ Run `--scan` flag or use `/api/scan` endpoint to refresh gallery after adding ne
 
 ## Related Skills
 
-- [Brand Guidelines](/docs/marketing/skills/brand-guidelines) - Asset validation and brand context
+- [Brand Guidelines](/docs/marketing/skills/brand) - Asset validation and brand context
 - [AI Multimodal](/docs/marketing/skills/ai-multimodal) - Generate new assets
 - [Design](/docs/engineer/skills/frontend-design) - Create design assets
 
 ## Related Commands
 
-- `/write:hub` - Open content hub gallery
-- `/dashboard` - Open marketing dashboard (includes asset gallery)
+- `/ckm:write:hub` - Open content hub gallery
+- `/ckm:dashboard` - Open marketing dashboard (includes asset gallery)

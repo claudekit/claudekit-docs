@@ -259,8 +259,8 @@ Nhà phát triển thành thạo:
 
 ## Các lệnh liên quan
 
-- [`/dev`](/docs/marketing/commands) - Thực hiện tác vụ phát triển.
-- [`/implement`](/docs/marketing/commands) - Triển khai một tính năng.
+- [`/dev`](/docs/marketing/skills) - Thực hiện tác vụ phát triển.
+- [`/implement`](/docs/marketing/skills) - Triển khai một tính năng.
 
 ## Mẹo
 

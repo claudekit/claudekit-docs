@@ -23,7 +23,7 @@ Document a significant technical difficulty:
 
 ```bash
 # After a major setback
-/journal "Database migration failed, lost 3 hours to schema conflict"
+/ckm:journal "Database migration failed, lost 3 hours to schema conflict"
 ```
 
 The agent creates a structured journal entry with technical details, emotional context, root cause analysis, and lessons learned.
@@ -90,7 +90,7 @@ Use the Journal Writer Agent when:
 
 ```bash
 # After fighting flaky tests for hours
-/journal "Integration tests failing randomly with timeout errors"
+/ckm:journal "Integration tests failing randomly with timeout errors"
 ```
 
 **The journal will include**:
@@ -148,7 +148,7 @@ The real mistake: We didn't mock external HTTP calls in tests.
 ### Security Vulnerability Discovery
 
 ```bash
-/journal "GitHub invitation system doesn't validate permissions properly"
+/ckm:journal "GitHub invitation system doesn't validate permissions properly"
 ```
 
 **Creates critical severity entry** documenting the vulnerability, potential exploit, immediate mitigation, and permanent fix plan.
@@ -156,7 +156,7 @@ The real mistake: We didn't mock external HTTP calls in tests.
 ### Failed Refactoring
 
 ```bash
-/journal "Database schema migration broke order processing, rolling back"
+/ckm:journal "Database schema migration broke order processing, rolling back"
 ```
 
 **Documents architectural decision failure**, what was overlooked, why the approach failed, and lessons for future migrations.
@@ -249,8 +249,8 @@ docs/journals/
 
 ## Related Commands
 
-- [`/journal`](/docs/marketing/commands) - Create journal entry
-- [`/lessons`](/docs/marketing/commands) - Review lessons learned
+- [`/ckm:journal`](/docs/marketing/skills) - Create journal entry
+- [`/lessons`](/docs/marketing/skills) - Review lessons learned
 
 ## Tips
 

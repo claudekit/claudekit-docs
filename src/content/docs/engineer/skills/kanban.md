@@ -1,5 +1,5 @@
 ---
-title: "Kanban"
+title: "ck:kanban"
 description: "AI agent orchestration board for task visualization and team coordination"
 section: engineer
 kit: engineer
@@ -12,7 +12,7 @@ AI agent orchestration board for visualizing tasks and coordinating agent teams.
 ## Usage
 
 ```
-/kanban
+/ck:kanban
 ```
 
 ## What It Does

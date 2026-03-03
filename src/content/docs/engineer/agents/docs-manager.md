@@ -14,9 +14,9 @@ published: true
 ## When to Use
 
 - After implementing new features requiring documentation updates
-- Setting up initial project documentation with `/docs:init`
+- Setting up initial project documentation with `/ck:docs:init`
 - Generating codebase summaries with Repomix integration
-- Syncing docs with code changes using `/docs:update`
+- Syncing docs with code changes using `/ck:docs:update`
 
 ## Key Capabilities
 
@@ -32,12 +32,12 @@ published: true
 
 ### New Project Setup
 **Who**: Team leads starting new projects
-**Prompt**: `/docs:init`
+**Prompt**: `/ck:docs:init`
 **Result**: Creates full documentation suite in `./docs/` directory
 
 ### Post-Feature Documentation
 **Who**: Developers who just shipped a feature
-**Prompt**: `/docs:update`
+**Prompt**: `/ck:docs:update`
 **Result**: Scans git diff → updates system architecture, API docs, standards
 
 ### Architecture Documentation
@@ -47,7 +47,7 @@ published: true
 
 ### Codebase Summary
 **Who**: Onboarding new team members
-**Prompt**: `/docs:summarize`
+**Prompt**: `/ck:docs:summarize`
 **Result**: Runs Repomix → generates `codebase-summary.md` with stats and structure
 
 ### API Reference Generation
@@ -61,15 +61,15 @@ published: true
 ```bash
 # Standard workflow
 git commit -m "feat: add auth"
-/docs:update
+/ck:docs:update
 git add docs/ && git commit -m "docs: update for auth"
 ```
 
 **2. Use Scout for Deep Context**
 ```bash
 # docs-manager auto-runs these behind the scenes
-/scout "authentication files" 5
-/scout "API endpoints" 5
+/ck:scout "authentication files" 5
+/ck:scout "API endpoints" 5
 # Aggregates results for accurate documentation
 ```
 
@@ -93,8 +93,8 @@ git add docs/ && git commit -m "docs: update for auth"
 **5. Weekly Maintenance**
 ```bash
 # Keep docs fresh
-/docs:update      # Scan for outdated content
-/docs:summarize   # Regenerate summary (monthly)
+/ck:docs:update      # Scan for outdated content
+/ck:docs:summarize   # Regenerate summary (monthly)
 ```
 
 **6. Document the "Why"**
@@ -144,4 +144,4 @@ Authenticate user and return JWT token.
 
 ## Key Takeaway
 
-**Docs-manager keeps documentation synchronized with code automatically.** Run `/docs:init` for initial setup, `/docs:update` after features, `/docs:summarize` for overview. Integrates with Repomix and Scout for comprehensive analysis. Part of ClaudeKit $99 toolkit.
+**Docs-manager keeps documentation synchronized with code automatically.** Run `/ck:docs:init` for initial setup, `/ck:docs:update` after features, `/ck:docs:summarize` for overview. Integrates with Repomix and Scout for comprehensive analysis. Part of ClaudeKit $99 toolkit.

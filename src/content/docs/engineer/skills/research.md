@@ -1,10 +1,10 @@
 ---
-title: Research Skill
+title: "ck:research"
 description: Systematic research methodology for technical solutions with multi-source validation and comprehensive reporting
 section: engineer
 kit: engineer
 category: skills/tools
-order: 15
+order: 8
 published: true
 ---
 # Research

@@ -1,10 +1,10 @@
 ---
-title: UI Styling Skill
+title: "ck:ui-styling"
 description: Create beautiful, accessible user interfaces with shadcn/ui components, Tailwind CSS, and canvas-based visual designs
 section: engineer
 kit: engineer
 category: skills/frontend
-order: 6
+order: 50
 published: true
 ---# UI Styling Skill
 

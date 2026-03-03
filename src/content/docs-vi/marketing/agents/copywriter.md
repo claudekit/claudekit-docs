@@ -495,9 +495,9 @@ Copy nhồi SEO giết chuyển đổi. Viết cho người đọc trước.
 ## Lệnh Liên Quan
 
 - Sử dụng `copywriting` skill - Tạo nội dung marketing với các công thức chuyển đổi
-- `/brainstorm` - Khám phá góc độ thông điệp và hook
-- `/email create` - Xây dựng chuỗi email với copy
-- `/social create` - Viết bài đăng mạng xã hội
+- `/ckm:brainstorm` - Khám phá góc độ thông điệp và hook
+- `/ckm:email create` - Xây dựng chuỗi email với copy
+- `/ckm:social create` - Viết bài đăng mạng xã hội
 
 ---
 

@@ -1,10 +1,10 @@
 ---
-title: "Web Testing"
+title: "ck:web-testing"
 description: "Comprehensive web testing with Playwright, Vitest, k6 for E2E, unit, integration, load, security, visual, and accessibility testing"
 section: engineer
 kit: engineer
 category: skills
-order: 36
+order: 50
 ---
 
 Comprehensive web testing covering unit, integration, E2E, load, security, visual regression, and accessibility testing with industry-standard tools.

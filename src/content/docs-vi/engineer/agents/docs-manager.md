@@ -35,9 +35,9 @@ Agent docs-manager được kích hoạt khi:
 
 - Sau khi triển khai các tính năng
 - Sau khi có thay đổi mã nguồn yêu cầu cập nhật tài liệu
-- Sử dụng lệnh `/docs:init` (thiết lập ban đầu)
-- Sử dụng lệnh `/docs:update` (cập nhật tài liệu)
-- Sử dụng lệnh `/docs:summarize` (tóm tắt mã nguồn)
+- Sử dụng lệnh `/ck:docs:init` (thiết lập ban đầu)
+- Sử dụng lệnh `/ck:docs:update` (cập nhật tài liệu)
+- Sử dụng lệnh `/ck:docs:summarize` (tóm tắt mã nguồn)
 - Xem xét toàn bộ thư mục `docs/`
 - Thiết lập các tiêu chuẩn mã nguồn
 
@@ -117,7 +117,7 @@ Docs-manager duy trì cấu trúc sau:
 
 ### Thiết lập tài liệu ban đầu
 
-Khi chạy `/docs:init`, Agent sẽ:
+Khi chạy `/ck:docs:init`, Agent sẽ:
 1. Phân tích mã nguồn bằng Repomix.
 2. Chạy các Scout song song để khám phá cấu trúc.
 3. Tạo các tệp tài liệu cơ bản như tóm tắt mã nguồn, tiêu chuẩn mã nguồn, kiến trúc hệ thống.
@@ -125,7 +125,7 @@ Khi chạy `/docs:init`, Agent sẽ:
 
 ### Cập nhật tài liệu sau khi có tính năng mới
 
-Khi chạy `/docs:update` sau khi thêm một tính năng (ví dụ: xác thực), Agent sẽ:
+Khi chạy `/ck:docs:update` sau khi thêm một tính năng (ví dụ: xác thực), Agent sẽ:
 1. Phát hiện các thay đổi thông qua `git diff`.
 2. Xác định các tài liệu cần cập nhật (kiến trúc, tiêu chuẩn, tóm tắt mã nguồn).
 3. Sử dụng Scout để hiểu bối cảnh của tính năng mới.
@@ -144,7 +144,7 @@ Tất cả tài liệu sử dụng định dạng Markdown nhất quán với:
 - [Agent Project Manager](/vi/docs/engineer/agents/project-manager) - Điều phối tổng thể dự án
 - [Tiêu chuẩn mã nguồn](/docs/engineer/configuration/claude-md) - Các quy ước mã nguồn
 - [Kiến trúc hệ thống](/docs/engineer/configuration/claude-md) - Thiết kế kỹ thuật
-- [Các lệnh](/vi/docs/engineer/commands/) - Các lệnh liên quan đến tài liệu
+- [Các kỹ năng](/vi/docs/engineer/skills) - Các kỹ năng liên quan đến tài liệu
 
 ---
 

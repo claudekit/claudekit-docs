@@ -1,10 +1,10 @@
 ---
-title: Chrome DevTools
+title: "ck:chrome-devtools"
 description: Automate browsers, take screenshots, analyze performance, and debug with Puppeteer CLI scripts for browser automation and testing
 section: engineer
 kit: engineer
 category: skills
-order: 21
+order: 50
 ---
 
 Need to automate browser interactions, take screenshots of web pages, or debug JavaScript issues? That's exactly what Chrome DevTools skill does using Puppeteer.

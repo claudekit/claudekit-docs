@@ -104,7 +104,7 @@ export GEMINI_API_KEY=your-key
 
 ```bash
 # Chạy với verbose logging
-/cook add feature --verbose
+/ck:cook add feature --verbose
 ```
 
 [Xem thêm cách sửa hiệu suất →](/docs/support/troubleshooting/performance-issues)
@@ -163,7 +163,7 @@ tree .claude -L 2
    export CLAUDEKIT_VERBOSE=1
 
    # Chạy lệnh
-   /cook add feature
+   /ck:cook add feature
 
    # Kiểm tra output
    cat claudekit-debug.log

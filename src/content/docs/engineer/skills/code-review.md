@@ -1,10 +1,10 @@
 ---
-title: Code Review Skill
+title: "ck:code-review"
 description: Guide proper code review practices with technical rigor, evidence-based claims, and verification gates
 section: engineer
 kit: engineer
 category: skills/tools
-order: 8
+order: 50
 published: true
 ---# Code Review Skill
 
@@ -39,7 +39,7 @@ Before dispatching the code-reviewer, scout for edge cases:
 # - Edge cases and boundary conditions
 # - Potential side effects
 
-/scout edge cases for <feature>
+/ck:scout edge cases for <feature>
 ```
 
 This pre-review step identifies potential issues the reviewer should focus on, making reviews more targeted and effective.

@@ -410,8 +410,8 @@ Next Handoffs:
 
 5. Execute:
    - Use copywriting skill (quality mode) for blog posts and video scripts
-   - /email create for welcome sequence
-   - /social create for announcement posts
+   - /ckm:email create for welcome sequence
+   - /ckm:social create for announcement posts
    - /analytics dashboard for tracking
 
 6. campaign-manager monitors performance, recommends optimizations weekly
@@ -576,10 +576,10 @@ See [MCP Setup Guide](/docs/engineer/configuration/mcp-setup) for integration in
 
 ## Related Commands
 
-- `/campaign create` - Start a new campaign plan
-- `/campaign status` - Check active campaign performance
-- `/campaign analyze` - Deep performance analysis
-- `/plan` - Create implementation plans for campaign execution
+- `/ckm:campaign create` - Start a new campaign plan
+- `/ckm:campaign status` - Check active campaign performance
+- `/ckm:campaign analyze` - Deep performance analysis
+- `/ckm:plan` - Create implementation plans for campaign execution
 - `/analytics dashboard` - Set up campaign tracking
 
 ---

@@ -1,10 +1,10 @@
 ---
-title: "Debug"
+title: "ck:debug"
 description: "Systematic debugging with root cause analysis, defense-in-depth validation, and verification protocols"
 section: engineer
 kit: engineer
 category: skills
-order: 25
+order: 50
 ---
 
 Comprehensive debugging framework that combines systematic investigation, root cause tracing, and multi-layer validation. No fixes without understanding the root cause first.

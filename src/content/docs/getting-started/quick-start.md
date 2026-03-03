@@ -65,7 +65,7 @@ ck init my-app --kit engineer --prefix
 ### Step 2: Plan Authentication
 
 ```bash
-/plan add user authentication with email/password and OAuth
+/ck:plan add user authentication with email/password and OAuth
 ```
 
 **What happens** (30 seconds):
@@ -172,7 +172,7 @@ Visit:
 ### Step 6: Commit
 
 ```bash
-/git cm
+/ck:git cm
 ```
 
 **Output**:
@@ -247,16 +247,16 @@ Try more complex features:
 
 ```bash
 # Add payment processing (Stripe + webhooks)
-/cook add Stripe payment with subscriptions and webhooks
+/ck:cook add Stripe payment with subscriptions and webhooks
 
 # Build REST API with validation
-/cook create REST API for blog posts with Zod validation
+/ck:cook create REST API for blog posts with Zod validation
 
 # Implement real-time chat
-/cook add real-time chat using WebSockets
+/ck:cook add real-time chat using WebSockets
 
 # Database migrations
-/cook migrate from SQLite to PostgreSQL with zero downtime
+/ck:cook migrate from SQLite to PostgreSQL with zero downtime
 ```
 
 Each takes 5-20 minutes instead of days.
@@ -265,25 +265,25 @@ Each takes 5-20 minutes instead of days.
 
 ### Full Feature Cycle
 ```bash
-/plan [feature]           # Research + plan
+/ck:plan [feature]           # Research + plan
 "Implement plan"              # Implement
-/test                     # Validate
-/fix --quick [issue]         # Quick fixes
-/git cm                   # Commit
+/ck:test                     # Validate
+/ck:fix --quick [issue]         # Quick fixes
+/ck:git cm                   # Commit
 ```
 
 ### Debug + Fix
 ```bash
-/debug [issue]            # Root cause analysis
-/fix [complex-issue] # Multi-agent fix
-/fix [actions-url]     # Fix failing CI/CD
+/ck:debug [issue]            # Root cause analysis
+/ck:fix [complex-issue] # Multi-agent fix
+/ck:fix [actions-url]     # Fix failing CI/CD
 ```
 
 ### Design + Content
 ```bash
 # Use ai-artist skill (creative mode) for UI/UX design
 "Create marketing copy for [page]"  # Use copywriting skill (quality mode)
-/brainstorm [idea]        # Explore solutions
+/ck:brainstorm [idea]        # Explore solutions
 ```
 
 ## Common Questions

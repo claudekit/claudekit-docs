@@ -27,7 +27,7 @@ Tìm các cơ hội mở rộng của bạn trong 30 giây:
 
 ```bash
 # Identify upsell potential
-/ask "Analyze our product catalog and identify upsell opportunities"
+/ckm:ask "Analyze our product catalog and identify upsell opportunities"
 
 # The agent maps product relationships and expansion potential
 ```
@@ -78,7 +78,7 @@ Tìm tiềm năng mở rộng ở cơ sở của bạn:
 
 ```bash
 # Step 1: Analyze current state
-/ask "Analyze our customer base and identify upsell opportunities"
+/ckm:ask "Analyze our customer base and identify upsell opportunities"
 
 # The agent will examine:
 # - Current revenue mix (by tier/product)
@@ -108,7 +108,7 @@ Xây dựng logic "khách hàng cũng mua":
 
 ```bash
 # Design recommendation engine
-/ask "Create product recommendation logic for our catalog"
+/ckm:ask "Create product recommendation logic for our catalog"
 
 # The agent builds affinity matrix:
 
@@ -136,7 +136,7 @@ Sửa cấu trúc giá của bạn:
 
 ```bash
 # Optimize pricing
-/ask "Analyze our pricing tiers and recommend optimization"
+/ckm:ask "Analyze our pricing tiers and recommend optimization"
 
 # The agent analyzes:
 # - Current tier distribution (how many per tier?)
@@ -165,7 +165,7 @@ Tạo chuỗi bán chéo tự động:
 
 ```bash
 # Design cross-sell automation
-/ask "Create a cross-sell sequence for customers who buy [Product A]"
+/ckm:ask "Create a cross-sell sequence for customers who buy [Product A]"
 
 # The agent designs campaign:
 
@@ -227,6 +227,6 @@ Báo cáo bao gồm phân tích trạng thái hiện tại, cơ hội, dự báo
 
 ## Related Commands
 
-- `/ask` - Query the agent for expansion strategy
-- `/scout` - Find customer and revenue data
-- `/plan` - Create comprehensive expansion programs
+- `/ckm:ask` - Query the agent for expansion strategy
+- `/ckm:scout` - Find customer and revenue data
+- `/ckm:plan` - Create comprehensive expansion programs

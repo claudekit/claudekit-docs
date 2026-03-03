@@ -1,10 +1,10 @@
 ---
-title: Media Processing
+title: "ck:media-processing"
 description: Process video, audio, and images with FFmpeg, ImageMagick, and RMBG for encoding, conversion, effects, optimization, and background removal
 section: engineer
 kit: engineer
 category: skills
-order: 20
+order: 50
 ---
 
 Ever needed to convert a video format, resize 500 images, or remove backgrounds from product photos? These are exactly the problems FFmpeg, ImageMagick, and RMBG solve.

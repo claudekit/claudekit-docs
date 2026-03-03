@@ -1,10 +1,10 @@
 ---
-title: Mobile Development Skill
+title: "ck:mobile-development"
 description: Build mobile applications with React Native, Flutter, Swift/SwiftUI, and Kotlin/Jetpack Compose
 section: engineer
 kit: engineer
 category: skills/mobile
-order: 1
+order: 50
 published: true
 ---
 

@@ -3,7 +3,7 @@ title: "Triển khai Xác thực"
 description: "Tài liệu hướng dẫn triển khai hệ thống xác thực bảo mật"
 lang: vi
 section: workflows
-category: workflows
+category: engineer
 order: 7
 published: true
 ---
@@ -17,7 +17,7 @@ Tìm hiểu cách triển khai các hệ thống xác thực bảo mật với C
 **Mục tiêu**: Triển khai hệ thống xác thực bảo mật, sẵn sàng cho môi trường production.
 **Thời gian**: 20-40 phút (so với 4-8 giờ làm thủ công)
 **Các Agent sử dụng**: planner, researcher, tester, code-reviewer
-**Các lệnh**: /plan, /cook, /test, /docs:update
+**Các lệnh**: /ck:plan, /ck:cook, /ck:test, /ck:docs:update
 
 ## Điều kiện tiên quyết
 
@@ -44,7 +44,7 @@ Tìm hiểu cách triển khai các hệ thống xác thực bảo mật với C
 Chọn phương thức xác thực và lập kế hoạch triển khai:
 
 ```bash
-/plan [triển khai xác thực JWT với email/mật khẩu và đặt lại mật khẩu]
+/ck:plan [triển khai xác thực JWT với email/mật khẩu và đặt lại mật khẩu]
 ```
 
 **Kế hoạch được tạo**:
@@ -96,7 +96,7 @@ Chọn phương thức xác thực và lập kế hoạch triển khai:
 ### Bước 2: Triển khai xác thực JWT cơ bản
 
 ```bash
-/cook [triển khai xác thực JWT với đăng ký và đăng nhập]
+/ck:cook [triển khai xác thực JWT với đăng ký và đăng nhập]
 ```
 
 **Triển khai**:
@@ -148,7 +148,7 @@ Các tệp đã tạo:
 ### Bước 3: Thêm xác minh Email
 
 ```bash
-/cook [thêm xác minh email vào quá trình đăng ký]
+/ck:cook [thêm xác minh email vào quá trình đăng ký]
 ```
 
 **Triển khai**:
@@ -182,7 +182,7 @@ Cách sử dụng:
 ### Bước 4: Triển khai đặt lại mật khẩu
 
 ```bash
-/cook [triển khai đặt lại mật khẩu với xác minh email]
+/ck:cook [triển khai đặt lại mật khẩu với xác minh email]
 ```
 
 **Triển khai**:
@@ -216,7 +216,7 @@ Cách sử dụng:
 ### Bước 5: Thêm OAuth2 (Đăng nhập mạng xã hội)
 
 ```bash
-/cook [thêm đăng nhập OAuth2 với Google và GitHub]
+/ck:cook [thêm đăng nhập OAuth2 với Google và GitHub]
 ```
 
 **Triển khai**:
@@ -263,7 +263,7 @@ GITHUB_CLIENT_SECRET=your-secret
 ### Bước 6: Thêm Xác thực Hai yếu tố (2FA)
 
 ```bash
-/cook [triển khai 2FA dựa trên TOTP với thiết lập mã QR]
+/ck:cook [triển khai 2FA dựa trên TOTP với thiết lập mã QR]
 ```
 
 **Triển khai**:
@@ -306,7 +306,7 @@ Luồng:
 ### Bước 7: Thêm Đăng nhập không mật khẩu (Passwordless)
 
 ```bash
-/cook [triển khai đăng nhập không mật khẩu với magic links]
+/ck:cook [triển khai đăng nhập không mật khẩu với magic links]
 ```
 
 **Triển khai**:
@@ -341,23 +341,23 @@ Cách sử dụng:
 
 #### Khóa tài khoản
 ```bash
-/cook [thêm chức năng khóa tài khoản sau 5 lần đăng nhập sai]
+/ck:cook [thêm chức năng khóa tài khoản sau 5 lần đăng nhập sai]
 ```
 
 #### Quản lý phiên (Session Management)
 ```bash
-/cook [triển khai quản lý phiên với theo dõi các phiên hoạt động]
+/ck:cook [triển khai quản lý phiên với theo dõi các phiên hoạt động]
 ```
 
 #### IP Whitelisting
 ```bash
-/cook [thêm tùy chọn danh sách trắng IP cho các tài khoản bảo mật cao]
+/ck:cook [thêm tùy chọn danh sách trắng IP cho các tài khoản bảo mật cao]
 ```
 
 ### Bước 9: Kiểm thử hệ thống xác thực
 
 ```bash
-/test
+/ck:test
 ```
 
 **Kết quả kiểm thử**:
@@ -420,7 +420,7 @@ Coverage:    94.7%
 ### Bước 11: Cập nhật tài liệu
 
 ```bash
-/docs:update
+/ck:docs:update
 ```
 
 **Tài liệu được tạo**:
@@ -452,28 +452,28 @@ Triển khai hệ thống xác thực cho trang TMĐT với:
 ### Triển khai
 ```bash
 # Lập kế hoạch xác thực
-/plan [thiết kế hệ thống xác thực cho TMĐT với tất cả các yêu cầu trên]
+/ck:plan [thiết kế hệ thống xác thực cho TMĐT với tất cả các yêu cầu trên]
 
 # Triển khai auth cơ bản
-/cook [triển khai xác thực JWT với xác minh email]
+/ck:cook [triển khai xác thực JWT với xác minh email]
 
 # Thêm OAuth
-/cook [thêm đăng nhập OAuth Google và Facebook]
+/ck:cook [thêm đăng nhập OAuth Google và Facebook]
 
 # Guest checkout
-/cook [triển khai thanh toán cho khách với tùy chọn tạo tài khoản sau đó]
+/ck:cook [triển khai thanh toán cho khách với tùy chọn tạo tài khoản sau đó]
 
 # Remember me
-/cook [thêm chức năng ghi nhớ đăng nhập với token dài hạn]
+/ck:cook [thêm chức năng ghi nhớ đăng nhập với token dài hạn]
 
 # Quản lý tài khoản
-/cook [triển khai xóa tài khoản kèm xuất dữ liệu (GDPR)]
+/ck:cook [triển khai xóa tài khoản kèm xuất dữ liệu (GDPR)]
 
 # Kiểm thử tất cả
-/test
+/ck:test
 
 # Cập nhật tài liệu
-/docs:update
+/ck:docs:update
 ```
 
 ### So sánh thời gian
@@ -499,22 +499,22 @@ Triển khai hệ thống xác thực cho trang TMĐT với:
 
 ### Mẫu 1: Xác thực ưu tiên API (API-First)
 ```bash
-/cook [triển khai xác thực JWT tối ưu cho ứng dụng di động]
+/ck:cook [triển khai xác thực JWT tối ưu cho ứng dụng di động]
 ```
 
 ### Mẫu 2: SSO (Single Sign-On)
 ```bash
-/cook [triển khai SSO với SAML để tích hợp doanh nghiệp]
+/ck:cook [triển khai SSO với SAML để tích hợp doanh nghiệp]
 ```
 
 ### Mẫu 3: Xác thực đa khách thuê (Multi-Tenant)
 ```bash
-/cook [triển khai xác thực đa khách thuê với sự cô lập giữa các tổ chức]
+/ck:cook [triển khai xác thực đa khách thuê với sự cô lập giữa các tổ chức]
 ```
 
 ### Mẫu 4: Phân quyền dựa trên vai trò (RBAC)
 ```bash
-/cook [thêm quyền dựa trên vai trò với các role admin, user và guest]
+/ck:cook [thêm quyền dựa trên vai trò với các role admin, user và guest]
 ```
 
 ## Thực hành tốt nhất
@@ -549,7 +549,7 @@ Triển khai hệ thống xác thực cho trang TMĐT với:
 
 ### 3. Xác thực đầu vào
 ```bash
-/cook [thêm xác thực đầu vào toàn diện cho tất cả các endpoint auth]
+/ck:cook [thêm xác thực đầu vào toàn diện cho tất cả các endpoint auth]
 ```
 
 ### 4. Giới hạn tốc độ (Rate Limiting)
@@ -563,7 +563,7 @@ Giới hạn cho các endpoint auth:
 
 ### 5. Ghi log kiểm toán (Audit Logging)
 ```bash
-/cook [thêm ghi log kiểm toán cho tất cả các sự kiện xác thực]
+/ck:cook [thêm ghi log kiểm toán cho tất cả các sự kiện xác thực]
 ```
 
 ## Khắc phục sự cố
@@ -571,25 +571,25 @@ Giới hạn cho các endpoint auth:
 ### Vấn đề: Token hết hạn quá nhanh
 **Giải pháp**:
 ```bash
-/cook [tăng thời gian hết hạn token JWT access lên 30 phút]
+/ck:cook [tăng thời gian hết hạn token JWT access lên 30 phút]
 ```
 
 ### Vấn đề: OAuth Callback thất bại
 **Giải pháp**:
 ```bash
-/fix --quick [OAuth callback trả về lỗi 400]
+/ck:fix --quick [OAuth callback trả về lỗi 400]
 ```
 
 ### Vấn đề: Không gửi được email đặt lại mật khẩu
 **Giải pháp**:
 ```bash
-/fix --quick [email đặt lại mật khẩu không gửi được]
+/ck:fix --quick [email đặt lại mật khẩu không gửi được]
 ```
 
 ### Vấn đề: Mã QR 2FA không hiển thị
 **Giải pháp**:
 ```bash
-/fix [mã QR 2FA không hiển thị trên giao diện di động]
+/ck:fix [mã QR 2FA không hiển thị trên giao diện di động]
 ```
 
 ## Danh sách kiểm tra bảo mật (Security Checklist)
@@ -626,12 +626,12 @@ Trước khi triển khai lên production:
 - [Thêm Tính Năng Mới](/vi/docs/workflows/adding-feature) - Xây dựng tính năng
 
 ### Các lệnh liên quan
-- [/cook](/docs/engineer/skills/cook) - Triển khai tính năng
-- [/test](/docs/engineer/commands/core/test) - Bộ kiểm thử
-- [/fix --quick](/docs/engineer/skills/fix) - Sửa lỗi nhanh
+- [/ck:cook](/docs/engineer/skills/cook) - Triển khai tính năng
+- [/ck:test](/docs/engineer/skills/test) - Bộ kiểm thử
+- [/ck:fix --quick](/docs/engineer/skills/fix) - Sửa lỗi nhanh
 
 ### Hướng dẫn tích hợp
-- [/integrate:polar](/vi/docs/engineer/skills/tools/integrate) - Thanh toán Polar
+- [/integrate:polar](/vi/docs/engineer/skills/payment-integration) - Thanh toán Polar
 - [Better Auth Skill](/vi/docs/engineer/skills) - Framework Better Auth
 
 ### Đọc thêm

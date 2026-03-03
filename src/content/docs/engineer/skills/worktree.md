@@ -1,5 +1,5 @@
 ---
-title: "Worktree"
+title: "ck:worktree"
 description: "Create isolated git worktrees for parallel development without branch switching"
 section: engineer
 kit: engineer
@@ -12,14 +12,14 @@ Create isolated git worktrees for parallel development. Work on multiple feature
 ## Usage
 
 ```
-/worktree [feature-name]
+/ck:worktree [feature-name]
 ```
 
 ## Examples
 
 ```bash
-/worktree add-auth           # Creates worktree for auth feature
-/worktree fix-login-bug      # Creates worktree for bug fix
+/ck:worktree add-auth           # Creates worktree for auth feature
+/ck:worktree fix-login-bug      # Creates worktree for bug fix
 ```
 
 ## What It Does

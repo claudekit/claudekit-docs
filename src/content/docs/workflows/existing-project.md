@@ -2,7 +2,7 @@
 title: "Brownfield Projects"
 description: "Documentation for Brownfield Projects"
 section: workflows
-category: workflows
+category: engineer
 order: 7
 published: true
 lastUpdated: 2025-11-07
@@ -41,7 +41,7 @@ This will start Claude Code (CC) with ClaudeKit agents in your project directory
 Let Claude Code scan and analyze your codebase to create initial specifications:
 
 ```bash
-/docs:init
+/ck:docs:init
 ```
 
 This command will:
@@ -57,12 +57,12 @@ This command will:
 ### Implement New Features
 
 ```bash
-/cook <description-of-a-feature>
+/ck:cook <description-of-a-feature>
 ```
 
 **Example:**
 ```bash
-/cook Add user profile page with avatar upload and edit functionality
+/ck:cook Add user profile page with avatar upload and edit functionality
 ```
 
 **Process:**
@@ -73,52 +73,52 @@ This command will:
 5. Summary report provided when finished
 
 **Autonomous variants** (use at your own risk):
-- `/cook --auto` - Full autonomous mode with plan review
-- `/cook --auto --fast` - Faster mode with less token consumption
+- `/ck:cook --auto` - Full autonomous mode with plan review
+- `/ck:cook --auto --fast` - Faster mode with less token consumption
 
 ### Fix Bugs
 
 #### Quick Bug Fix
 ```bash
-/fix --quick <description-of-bug>
+/ck:fix --quick <description-of-bug>
 ```
 
 For simple, straightforward bugs.
 
 #### Complex Bug Fix
 ```bash
-/fix <description-of-bug>
+/ck:fix <description-of-bug>
 ```
 
 For difficult bugs requiring deeper analysis and more thinking time.
 
 **Example:**
 ```bash
-/fix User authentication breaks after OAuth login when email is not verified
+/ck:fix User authentication breaks after OAuth login when email is not verified
 ```
 
 #### Auto-Fix from Logs
 ```bash
-/fix
+/ck:fix
 ```
 
 Automatically fetches logs and fixes issues.
 
 #### Fix Test Suite
 ```bash
-/fix
+/ck:fix
 ```
 
 Runs test suite and keeps fixing until all tests pass.
 
 #### Fix CI/CD Issues
 ```bash
-/fix <github-action-url>
+/ck:fix <github-action-url>
 ```
 
 **Example:**
 ```bash
-/fix https://github.com/username/repo/actions/runs/12345
+/ck:fix https://github.com/username/repo/actions/runs/12345
 ```
 
 Fetches GitHub Actions logs and fixes build/deployment errors.
@@ -127,26 +127,26 @@ Fetches GitHub Actions logs and fixes build/deployment errors.
 
 #### Brainstorm Ideas
 ```bash
-/brainstorm <your-description>
+/ck:brainstorm <your-description>
 ```
 
 Use when unsure about technical feasibility or implementation approach.
 
 **Example:**
 ```bash
-/brainstorm Real-time collaborative editing feature like Google Docs
+/ck:brainstorm Real-time collaborative editing feature like Google Docs
 ```
 
 #### Create Implementation Plan
 ```bash
-/plan <your-description>
+/ck:plan <your-description>
 ```
 
 Research and create detailed implementation plan without implementing.
 
 **Example:**
 ```bash
-/plan Migrate from REST API to GraphQL with backward compatibility
+/ck:plan Migrate from REST API to GraphQL with backward compatibility
 ```
 
 #### Execute Existing Plan
@@ -160,7 +160,7 @@ Start implementing from a markdown plan file.
 
 #### Run Tests and Report
 ```bash
-/test
+/ck:test
 ```
 
 Runs test suite and generates report. No automatic fixes.
@@ -170,16 +170,16 @@ Runs test suite and generates report. No automatic fixes.
 ### Documentation
 
 ```bash
-/docs:update    # Update existing documentation
-/docs:summarize # Summarize documentation
+/ck:docs:update    # Update existing documentation
+/ck:docs:summarize # Summarize documentation
 ```
 
 ### Git Operations
 
 ```bash
-/git cm         # Create meaningful commit message
-/git cp         # Commit and push changes
-/git pr         # Create pull request
+/ck:git cm         # Create meaningful commit message
+/ck:git cp         # Commit and push changes
+/ck:git pr         # Create pull request
 ```
 
 ### Integration
@@ -199,7 +199,7 @@ Use skill-creator skill # Fix skill errors
 ## Best Practices
 
 ### 1. Start with Documentation
-Always run `/docs:init` first to let CC understand your codebase.
+Always run `/ck:docs:init` first to let CC understand your codebase.
 
 ### 2. Review Plans Carefully
 **IMPORTANT:** Always review implementation plans before approving. CC provides detailed plans for a reason.
@@ -211,13 +211,13 @@ Always run `/docs:init` first to let CC understand your codebase.
 - Build team confidence
 
 ### 4. Use Appropriate Commands
-- Simple bugs → `/fix --quick`
-- Complex bugs → `/fix`
-- Small features → `/cook`
-- Large features → `/plan` then `/cook`
+- Simple bugs → `/ck:fix --quick`
+- Complex bugs → `/ck:fix`
+- Small features → `/ck:cook`
+- Large features → `/ck:plan` then `/ck:cook`
 
 ### 5. Test Regularly
-Run `/test` frequently to catch issues early.
+Run `/ck:test` frequently to catch issues early.
 
 ## Common Scenarios
 
@@ -225,49 +225,49 @@ Run `/test` frequently to catch issues early.
 
 ```bash
 # 1. Analyze codebase
-/docs:init
+/ck:docs:init
 
 # 2. Plan the feature
-/plan Add user roles and permissions system
+/ck:plan Add user roles and permissions system
 
 # 3. Review and approve plan
 
 # 4. Implement
-/cook
+/ck:cook
 
 # 5. Test
-/test
+/ck:test
 ```
 
 ### Fixing Production Bug
 
 ```bash
 # 1. Quick fix for urgent issue
-/fix --quick Payment processing fails on Safari browser
+/ck:fix --quick Payment processing fails on Safari browser
 
 # 2. Test the fix
-/test
+/ck:test
 
 # 3. Commit and push
-/git cp
+/ck:git cp
 ```
 
 ### Refactoring Legacy Module
 
 ```bash
 # 1. Brainstorm approach
-/brainstorm Refactor authentication module to use modern JWT patterns
+/ck:brainstorm Refactor authentication module to use modern JWT patterns
 
 # 2. Create detailed plan
-/plan Refactor auth module with backward compatibility
+/ck:plan Refactor auth module with backward compatibility
 
 # 3. Review plan carefully
 
 # 4. Implement incrementally
-/cook
+/ck:cook
 
 # 5. Run full test suite
-/fix
+/ck:fix
 ```
 
 ## Team Collaboration
@@ -291,7 +291,7 @@ cd project-name
 claude
 
 # 5. Specs already exist - start working!
-/cook Add new feature
+/ck:cook Add new feature
 ```
 
 ## Troubleshooting
@@ -299,7 +299,7 @@ claude
 ### CC Not Understanding Codebase
 ```bash
 # Regenerate specs
-/docs:update
+/ck:docs:update
 ```
 
 ### Commands Not Working

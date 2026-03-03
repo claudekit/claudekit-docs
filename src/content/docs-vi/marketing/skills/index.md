@@ -17,11 +17,11 @@ Hoạt động marketing chuyên nghiệp và quy trình làm việc nội dung.
 | Kỹ năng | Mục đích | Tính năng chính |
 |---------|----------|-----------------|
 | [Content Marketing](/docs/marketing/skills/content-marketing) | Chiến lược nội dung và lập kế hoạch biên tập | Lịch biên tập, trụ cột nội dung, mẫu blog, quy trình kiểm toán |
-| [SEO Optimization](/docs/marketing/skills/seo-optimization) | SEO kỹ thuật và nghiên cứu từ khóa | Google Search Console API, ReviewWeb.site API, Core Web Vitals, SEO lập trình |
+| [SEO Optimization](/docs/marketing/skills/seo) | SEO kỹ thuật và nghiên cứu từ khóa | Google Search Console API, ReviewWeb.site API, Core Web Vitals, SEO lập trình |
 | [Analytics](/docs/marketing/skills/analytics) | Chỉ số marketing và báo cáo | GA4 API, theo dõi KPI, mô hình attribution, phân tích ROI |
 | [Email Marketing](/docs/marketing/skills/email-marketing) | Chiến dịch email và tự động hóa | Mẫu chiến dịch, chuỗi drip, quy trình tự động, khả năng gửi đến |
 | [Social Media](/docs/marketing/skills/social-media) | Nội dung và tương tác mạng xã hội | Nội dung theo nền tảng, threads, đăng chéo, lên lịch |
-| [Campaign Management](/docs/marketing/skills/campaign-management) | Thực thi chiến dịch đa kênh | Campaign briefs, phân bổ ngân sách, danh sách kiểm tra ra mắt, tổng kết |
+| [Campaign Management](/docs/marketing/skills/campaign) | Thực thi chiến dịch đa kênh | Campaign briefs, phân bổ ngân sách, danh sách kiểm tra ra mắt, tổng kết |
 | [Copywriting](/docs/marketing/skills/copywriting) | Copy tập trung chuyển đổi | Công thức copy (AIDA, PAS, BAB), mẫu tiêu đề, tối ưu CTA |
 
 ### Marketing Chuyên sâu (8 kỹ năng)
@@ -34,7 +34,7 @@ Chiến thuật nâng cao và chiến lược tăng trưởng.
 | [Affiliate Marketing](/docs/marketing/skills/affiliate-marketing) | Thiết kế chương trình affiliate SaaS | Cấu trúc hoa hồng, lựa chọn nền tảng, phòng chống gian lận |
 | [Gamification Marketing](/docs/marketing/skills/gamification-marketing) | Chiến dịch tâm lý hành vi | Điểm, huy hiệu, bảng xếp hạng, chuỗi, thử thách |
 | [Referral Program Building](/docs/marketing/skills/referral-program-building) | Cơ chế giới thiệu viral | Phần thưởng hai chiều, theo dõi attribution, tích hợp nền tảng |
-| [Brand Guidelines](/docs/marketing/skills/brand-guidelines) | Tính nhất quán thương hiệu và quản lý tài sản | Giọng điệu thương hiệu, nhận diện thị giác, tổ chức tài sản, hệ thống màu |
+| [Brand Guidelines](/docs/marketing/skills/brand) | Tính nhất quán thương hiệu và quản lý tài sản | Giọng điệu thương hiệu, nhận diện thị giác, tổ chức tài sản, hệ thống màu |
 | [Creativity](/docs/marketing/skills/creativity) | Định hướng sáng tạo và chiến lược thị giác | 55 phong cách sáng tạo, tâm lý màu sắc, hướng dẫn lồng tiếng |
 | [Content Hub](/docs/marketing/skills/content-hub) | Thư viện tài sản hình ảnh và quản lý | Thư viện trên trình duyệt, ngữ cảnh thương hiệu, manifest sẵn sàng R2 |
 
@@ -54,13 +54,13 @@ AI đa phương thức và tự động hóa trình duyệt.
 ### Kích hoạt ngầm
 Kỹ năng tự động kích hoạt dựa trên ngữ cảnh agent và loại tác vụ. Không cần lệnh rõ ràng.
 
-**Ví dụ**: Agent Content Creator tự động tải kỹ năng `content-marketing`, `copywriting`, `brand-guidelines`.
+**Ví dụ**: Agent Content Creator tự động tải kỹ năng `content-marketing`, `copywriting`, `brand`.
 
 ### Kích hoạt rõ ràng
 Thêm kỹ năng vào phiên hiện tại khi cần.
 
 ```bash
-"Activate seo-optimization skill" # Kích hoạt một kỹ năng
+"Activate seo skill" # Kích hoạt một kỹ năng
 "Activate analytics and email-marketing skills" # Kích hoạt nhiều kỹ năng
 ```
 
@@ -69,11 +69,11 @@ Thêm kỹ năng vào phiên hiện tại khi cần.
 ### Quy trình sản xuất nội dung
 - `content-marketing` - Chiến lược và lập kế hoạch
 - `copywriting` - Viết và tối ưu hóa
-- `brand-guidelines` - Đảm bảo nhất quán
-- `seo-optimization` - Tối ưu tìm kiếm
+- `brand` - Đảm bảo nhất quán
+- `seo` - Tối ưu tìm kiếm
 
 ### Bộ ra mắt chiến dịch
-- `campaign-management` - Điều phối và theo dõi
+- `campaign` - Điều phối và theo dõi
 - `email-marketing` - Chuỗi email
 - `social-media` - Quảng bá trên mạng xã hội
 - `analytics` - Giám sát hiệu suất
@@ -88,7 +88,7 @@ Thêm kỹ năng vào phiên hiện tại khi cần.
 - `ai-multimodal` - Tạo tài sản (hình ảnh/video)
 - `creativity` - Định hướng sáng tạo
 - `ai-artist` - Tối ưu prompt
-- `brand-guidelines` - Căn chỉnh thương hiệu
+- `brand` - Căn chỉnh thương hiệu
 
 ## Cấu hình
 
@@ -125,7 +125,7 @@ Một số kỹ năng hoạt động tốt hơn cùng nhau. Kiểm tra mục "Re
 Sử dụng pattern kỹ năng `assets-organizing` cho đặt tên file và cấu trúc thư mục nhất quán.
 
 **4. Nhất quán thương hiệu**
-Luôn tải kỹ năng `brand-guidelines` khi tạo nội dung hướng đến khách hàng.
+Luôn tải kỹ năng `brand` khi tạo nội dung hướng đến khách hàng.
 
 **5. Giới hạn tốc độ API**
 Kỹ năng với API bên ngoài (SEO, Analytics) tôn trọng giới hạn tốc độ. Kiểm tra tài liệu tham khảo về quota.
@@ -133,9 +133,9 @@ Kỹ năng với API bên ngoài (SEO, Analytics) tôn trọng giới hạn tố
 ## Tài liệu liên quan
 
 - [Marketing Agents](/vi/docs/marketing/agents) - Agents sử dụng các kỹ năng này
-- [Marketing Commands](/vi/docs/marketing/commands) - Lệnh slash theo kỹ năng
-- [Marketing Workflows](/vi/docs/marketing/workflows) - Quy trình đầu cuối
-- [Marketing Dashboard](/docs/marketing/commands/dashboard) - Tích hợp giao diện web
+- [Marketing Skills](/vi/docs/marketing/skills) - Tất cả các kỹ năng
+- [Marketing Workflows](/vi/docs/workflows) - Quy trình đầu cuối
+- [Analytics Skill](/docs/marketing/skills/analytics) - Tích hợp giao diện web
 
 ## Xử lý sự cố
 

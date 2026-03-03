@@ -122,11 +122,11 @@ ccs glm:continue -p "run tests and fix errors"
 Use slash commands inside delegation sessions:
 
 ```bash
-# Execute /cook command in GLM session
-ccs glm -p "/cook create responsive landing page"
+# Execute /ck:cook command in GLM session
+ccs glm -p "/ck:cook create responsive landing page"
 
 # Use ClaudeKit commands
-ccs glm -p "/fix run all tests and fix errors"
+ccs glm -p "/ck:fix run all tests and fix errors"
 ```
 
 ### 4. Parallel Workflows
@@ -239,13 +239,13 @@ ccs glm:continue -p "add error handling"
 
 ```bash
 # 1. Planning with Claude
-ccs "/plan add payment integration"
+ccs "/ck:plan add payment integration"
 
 # 2. Implementation with GLM (cost-optimized)
-ccs glm -p "/cook implement Stripe payment flow"
+ccs glm -p "/ck:cook implement Stripe payment flow"
 
 # 3. Testing with GLM
-ccs glm -p "/fix run payment tests"
+ccs glm -p "/ck:fix run payment tests"
 
 # 4. Review with Claude
 ccs "/review check payment implementation"
@@ -254,14 +254,14 @@ ccs "/review check payment implementation"
 ### Cost-Optimization Strategy
 
 **Use Claude for:**
-- Complex planning (`/plan`)
+- Complex planning (`/ck:plan`)
 - Architecture decisions
 - Code review (`/review`)
 - Creative problem-solving
 
 **Use GLM for:**
 - Simple implementation
-- Running tests, fixing errors (`/fix`)
+- Running tests, fixing errors (`/ck:fix`)
 - Updating documentation
 - Repetitive work
 

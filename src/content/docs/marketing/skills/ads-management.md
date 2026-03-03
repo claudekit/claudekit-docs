@@ -1,5 +1,5 @@
 ---
-title: "Ads Management"
+title: "ckm:ads-management"
 description: "Create and optimize paid advertising campaigns on Google Ads, Meta Ads, LinkedIn Ads, and TikTok Ads with ROAS tracking."
 section: marketing
 category: skills
@@ -91,7 +91,7 @@ Right audience with average creative still beats wrong audience with great creat
 **Scenario**: Drive demo signups for project management tool.
 
 **Workflow**:
-1. Keyword research (use seo-optimization skill)
+1. Keyword research (use seo skill)
 2. Create intent-based ad groups (comparison, how-to, branded)
 3. Write ad variations (3 headlines, 2 descriptions each)
 4. Set bidding strategy (target CPA $40)
@@ -130,7 +130,7 @@ Right audience with average creative still beats wrong audience with great creat
 ## Related Skills
 
 - [Copywriting](/docs/marketing/skills/copywriting) - Ad copy formulas
-- [Campaign Management](/docs/marketing/skills/campaign-management) - Multi-channel coordination
+- [Campaign Management](/docs/marketing/skills/campaign) - Multi-channel coordination
 - [Analytics](/docs/marketing/skills/analytics) - ROAS and performance tracking
 - [Creativity](/docs/marketing/skills/creativity) - Creative direction for ad visuals
 

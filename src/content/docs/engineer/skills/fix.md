@@ -1,10 +1,10 @@
 ---
-title: "Fix"
+title: "ck:fix"
 description: "Unified bug fixing with intelligent complexity routing and autonomous or human-in-the-loop modes"
 section: engineer
 kit: engineer
 category: skills
-order: 27
+order: 5
 ---
 
 Complete bug fixing workflow with intelligent routing based on issue complexity. Automatically activates before fixing ANY bug, error, test failure, or code problem.
@@ -71,7 +71,7 @@ Classify before routing:
 ## Usage
 
 ```
-/fix [--auto|--review|--quick|--parallel]
+/ck:fix [--auto|--review|--quick|--parallel]
 ```
 
 | Flag | Behavior |
@@ -90,7 +90,7 @@ When you have multiple independent issues, `--parallel` spawns separate agents t
 
 ```bash
 # Fix multiple issues in parallel
-/fix --parallel
+/ck:fix --parallel
 
 # Example: 3 unrelated type errors → 3 parallel agents
 ```

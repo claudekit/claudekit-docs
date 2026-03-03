@@ -1,10 +1,10 @@
 ---
-title: Preview & Visual Generation
+title: "ck:markdown-novel-viewer"
 description: View markdown files with book-like reading experience, or generate visual explanations with ASCII diagrams, Mermaid charts, and presentation slides
 section: engineer
 kit: engineer
 category: skills
-order: 4
+order: 50
 published: true
 ---
 
@@ -12,7 +12,7 @@ published: true
 
 > Universal viewer for markdown files + visual generator for explanations, diagrams, and slides.
 
-The `/preview` skill has two modes:
+The `/ck:preview` skill has two modes:
 1. **View Mode** - Render markdown files with a warm, book-inspired theme
 2. **Generation Mode** - Generate visual explanations, diagrams, or presentation slides
 
@@ -48,7 +48,7 @@ This skill activates automatically when:
 
 Manual activation:
 ```bash
-/preview [file-or-directory]
+/ck:preview [file-or-directory]
 ```
 
 ## Quick Start
@@ -57,29 +57,29 @@ Manual activation:
 
 ```bash
 # View a markdown file
-/preview plans/my-plan/plan.md
+/ck:preview plans/my-plan/plan.md
 
 # Browse a directory
-/preview plans/
+/ck:preview plans/
 
 # Stop running server
-/preview --stop
+/ck:preview --stop
 ```
 
 ### Generation Mode
 
 ```bash
 # Generate visual explanation (ASCII + Mermaid + prose)
-/preview --explain OAuth flow
+/ck:preview --explain OAuth flow
 
 # Generate presentation slides
-/preview --slides API architecture
+/ck:preview --slides API architecture
 
 # Generate focused diagram
-/preview --diagram data flow
+/ck:preview --diagram data flow
 
 # Generate ASCII-only diagram (terminal-friendly)
-/preview --ascii auth process
+/ck:preview --ascii auth process
 ```
 
 ## Generation Mode (v2.10.0+)
@@ -91,7 +91,7 @@ Generate visual explanations, diagrams, and slides on any topic. Output is saved
 Generates comprehensive explanation with ASCII diagram, Mermaid chart, key concepts, and optional code examples.
 
 ```bash
-/preview --explain OAuth 2.0 authorization code flow
+/ck:preview --explain OAuth 2.0 authorization code flow
 ```
 
 **Output structure:**
@@ -106,7 +106,7 @@ Generates comprehensive explanation with ASCII diagram, Mermaid chart, key conce
 Generates slide-by-slide presentation, one concept per slide. Uses horizontal rules (`---`) as slide separators.
 
 ```bash
-/preview --slides microservices architecture
+/ck:preview --slides microservices architecture
 ```
 
 **Output structure:**
@@ -120,7 +120,7 @@ Generates slide-by-slide presentation, one concept per slide. Uses horizontal ru
 Generates both ASCII and Mermaid versions of a single diagram.
 
 ```bash
-/preview --diagram database schema
+/ck:preview --diagram database schema
 ```
 
 **Output structure:**
@@ -132,7 +132,7 @@ Generates both ASCII and Mermaid versions of a single diagram.
 Generates pure ASCII diagram without Mermaid. Ideal for terminal output or environments without browser access.
 
 ```bash
-/preview --ascii CI/CD pipeline
+/ck:preview --ascii CI/CD pipeline
 ```
 
 **Output:** Single ASCII box diagram with legend.
@@ -141,17 +141,17 @@ Generates pure ASCII diagram without Mermaid. Ideal for terminal output or envir
 
 ```bash
 # Explain complex concepts
-/preview --explain WebSocket handshake protocol
-/preview --explain React reconciliation algorithm
-/preview --explain Git rebase vs merge
+/ck:preview --explain WebSocket handshake protocol
+/ck:preview --explain React reconciliation algorithm
+/ck:preview --explain Git rebase vs merge
 
 # Create presentations
-/preview --slides system architecture overview
-/preview --slides new feature proposal
+/ck:preview --slides system architecture overview
+/ck:preview --slides new feature proposal
 
 # Quick diagrams
-/preview --diagram user authentication flow
-/preview --ascii file upload process
+/ck:preview --diagram user authentication flow
+/ck:preview --ascii file upload process
 ```
 
 ## View Mode (File/Directory Viewer)
@@ -378,7 +378,7 @@ Output includes network URL:
 
 ```bash
 # Preview plan with all phases
-/preview plans/feature-auth/plan.md
+/ck:preview plans/feature-auth/plan.md
 
 # Opens in browser with:
 # - Warm reading theme
@@ -391,7 +391,7 @@ Output includes network URL:
 
 ```bash
 # Browse docs directory
-/preview docs/
+/ck:preview docs/
 
 # Shows file tree:
 # 📁 getting-started/
@@ -546,5 +546,5 @@ Replace font families in CSS variables to match brand guidelines.
 
 ## Related Commands
 
-- `/preview` - Quick access to viewer (alias for this skill)
-- `/kanban` - Dashboard view for plan directories
+- `/ck:preview` - Quick access to viewer (alias for this skill)
+- `/ck:kanban` - Dashboard view for plan directories

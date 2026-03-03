@@ -187,8 +187,8 @@ The manager automatically triggers doc updates when:
 
 ## Related Commands
 
-- [`/status`](/docs/marketing/commands) - Check project status
-- [`/report`](/docs/marketing/commands) - Generate detailed status report
+- [`/status`](/docs/marketing/skills) - Check project status
+- [`/report`](/docs/marketing/skills) - Generate detailed status report
 
 ## Quality Standards
 

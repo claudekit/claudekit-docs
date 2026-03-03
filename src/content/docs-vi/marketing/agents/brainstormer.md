@@ -279,9 +279,9 @@ Nếu bạn cần 1,000 leads và dự kiến nói 1,500, xây dựng kế hoạ
 
 ## Các lệnh liên quan
 
-- `/plan` - Tạo kế hoạch marketing toàn diện
-- `/research` - Nghiên cứu sâu trên các chủ đề, đối thủ, hoặc chiến lược
-- `/analyze` - Đánh giá dữ liệu và cung cấp các khuyến nghị chiến lược
+- `/ckm:plan` - Tạo kế hoạch marketing toàn diện
+- `/ck:research` - Nghiên cứu sâu trên các chủ đề, đối thủ, hoặc chiến lược
+- `/ckm:analyze` - Đánh giá dữ liệu và cung cấp các khuyến nghị chiến lược
 
 ---
 

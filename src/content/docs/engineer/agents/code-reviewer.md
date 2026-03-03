@@ -67,8 +67,8 @@ Production-grade security and quality audits with categorized findings before me
 **Combine with Fix Workflow**
 ```bash
 /review [feature-x]
-/fix --quick [fix critical security issues from review]
-/test
+/ck:fix --quick [fix critical security issues from review]
+/ck:test
 /review [feature-x]  # Verify fixes
 ```
 

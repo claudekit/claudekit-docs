@@ -217,8 +217,8 @@ Token-optimized workflow:
 
 ## Related Commands
 
-- [`/commit`](/docs/marketing/commands) - Create and push commits
-- [`/pr`](/docs/marketing/commands) - Create pull request
+- [`/commit`](/docs/marketing/skills) - Create and push commits
+- [`/pr`](/docs/marketing/skills) - Create pull request
 
 ## Tips
 

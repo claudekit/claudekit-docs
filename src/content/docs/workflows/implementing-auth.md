@@ -3,11 +3,11 @@ title: Implementing Authentication
 description: "Documentation for Implementing Authentication
 description:
 section: workflows
-category: workflows
+category: engineer
 order: 7
 published: true"
 section: workflows
-category: workflows
+category: engineer
 order: 7
 published: true
 ---
@@ -20,7 +20,7 @@ Learn how to implement secure authentication systems with ClaudeKit - from basic
 **Goal**: Implement secure, production-ready authentication
 **Time**: 20-40 minutes (vs 4-8 hours manually)
 **Agents Used**: planner, researcher, tester, code-reviewer
-**Commands**: /plan, /cook, /test, /docs:update
+**Commands**: /ck:plan, /ck:cook, /ck:test, /ck:docs:update
 
 ## Prerequisites
 
@@ -47,7 +47,7 @@ Learn how to implement secure authentication systems with ClaudeKit - from basic
 Choose authentication method and plan implementation:
 
 ```bash
-/plan [implement JWT authentication with email/password and password reset]
+/ck:plan [implement JWT authentication with email/password and password reset]
 ```
 
 **Generated plan**:
@@ -99,7 +99,7 @@ Choose authentication method and plan implementation:
 ### Step 2: Implement Basic JWT Authentication
 
 ```bash
-/cook [implement JWT authentication with registration and login]
+/ck:cook [implement JWT authentication with registration and login]
 ```
 
 **Implementation**:
@@ -151,7 +151,7 @@ Files created:
 ### Step 3: Add Email Verification
 
 ```bash
-/cook [add email verification to registration process]
+/ck:cook [add email verification to registration process]
 ```
 
 **Implementation**:
@@ -185,7 +185,7 @@ Usage:
 ### Step 4: Implement Password Reset
 
 ```bash
-/cook [implement password reset with email verification]
+/ck:cook [implement password reset with email verification]
 ```
 
 **Implementation**:
@@ -219,7 +219,7 @@ Usage:
 ### Step 5: Add OAuth2 (Social Login)
 
 ```bash
-/cook [add OAuth2 login with Google and GitHub]
+/ck:cook [add OAuth2 login with Google and GitHub]
 ```
 
 **Implementation**:
@@ -266,7 +266,7 @@ GITHUB_CLIENT_SECRET=your-secret
 ### Step 6: Add Two-Factor Authentication (2FA)
 
 ```bash
-/cook [implement TOTP-based 2FA with QR code setup]
+/ck:cook [implement TOTP-based 2FA with QR code setup]
 ```
 
 **Implementation**:
@@ -309,7 +309,7 @@ Flow:
 ### Step 7: Add Passwordless Authentication
 
 ```bash
-/cook [implement passwordless login with magic links]
+/ck:cook [implement passwordless login with magic links]
 ```
 
 **Implementation**:
@@ -345,25 +345,25 @@ Usage:
 #### Account Lockout
 
 ```bash
-/cook [add account lockout after 5 failed login attempts]
+/ck:cook [add account lockout after 5 failed login attempts]
 ```
 
 #### Session Management
 
 ```bash
-/cook [implement session management with active session tracking]
+/ck:cook [implement session management with active session tracking]
 ```
 
 #### IP Whitelisting
 
 ```bash
-/cook [add IP whitelisting option for high-security accounts]
+/ck:cook [add IP whitelisting option for high-security accounts]
 ```
 
 ### Step 9: Testing Authentication
 
 ```bash
-/test
+/ck:test
 ```
 
 **Test results**:
@@ -426,7 +426,7 @@ Security Score: 9.4/10 (Excellent)
 ### Step 11: Documentation
 
 ```bash
-/docs:update
+/ck:docs:update
 ```
 
 **Generated documentation**:
@@ -460,28 +460,28 @@ Implement authentication for e-commerce site with:
 
 ```bash
 # Plan authentication
-/plan [design authentication system for e-commerce with all requirements]
+/ck:plan [design authentication system for e-commerce with all requirements]
 
 # Implement base auth
-/cook [implement JWT authentication with email verification]
+/ck:cook [implement JWT authentication with email verification]
 
 # Add OAuth
-/cook [add Google and Facebook OAuth login]
+/ck:cook [add Google and Facebook OAuth login]
 
 # Guest checkout
-/cook [implement guest checkout with optional account creation]
+/ck:cook [implement guest checkout with optional account creation]
 
 # Remember me
-/cook [add remember me functionality with long-lived tokens]
+/ck:cook [add remember me functionality with long-lived tokens]
 
 # Account management
-/cook [implement account deletion with data export (GDPR)]
+/ck:cook [implement account deletion with data export (GDPR)]
 
 # Test everything
-/test
+/ck:test
 
 # Document
-/docs:update
+/ck:docs:update
 ```
 
 ### Time Comparison
@@ -508,25 +508,25 @@ Implement authentication for e-commerce site with:
 ### Pattern 1: API-First Authentication
 
 ```bash
-/cook [implement JWT authentication optimized for mobile apps]
+/ck:cook [implement JWT authentication optimized for mobile apps]
 ```
 
 ### Pattern 2: SSO (Single Sign-On)
 
 ```bash
-/cook [implement SSO with SAML for enterprise integration]
+/ck:cook [implement SSO with SAML for enterprise integration]
 ```
 
 ### Pattern 3: Multi-Tenant Authentication
 
 ```bash
-/cook [implement multi-tenant authentication with organization isolation]
+/ck:cook [implement multi-tenant authentication with organization isolation]
 ```
 
 ### Pattern 4: Role-Based Access Control (RBAC)
 
 ```bash
-/cook [add role-based permissions with admin, user, and guest roles]
+/ck:cook [add role-based permissions with admin, user, and guest roles]
 ```
 
 ## Best Practices
@@ -564,7 +564,7 @@ Implement authentication for e-commerce site with:
 ### 3. Input Validation
 
 ```bash
-/cook [add comprehensive input validation to all auth endpoints]
+/ck:cook [add comprehensive input validation to all auth endpoints]
 ```
 
 ### 4. Rate Limiting
@@ -580,7 +580,7 @@ Auth endpoints rate limits:
 ### 5. Audit Logging
 
 ```bash
-/cook [add audit logging for all authentication events]
+/ck:cook [add audit logging for all authentication events]
 ```
 
 ## Troubleshooting
@@ -589,28 +589,28 @@ Auth endpoints rate limits:
 
 **Solution**:
 ```bash
-/cook [increase JWT access token expiry to 30 minutes]
+/ck:cook [increase JWT access token expiry to 30 minutes]
 ```
 
 ### Issue: OAuth Callback Failing
 
 **Solution**:
 ```bash
-/fix --quick [OAuth callback returning 400 error]
+/ck:fix --quick [OAuth callback returning 400 error]
 ```
 
 ### Issue: Password Reset Not Working
 
 **Solution**:
 ```bash
-/fix --quick [password reset emails not being sent]
+/ck:fix --quick [password reset emails not being sent]
 ```
 
 ### Issue: 2FA QR Code Not Displaying
 
 **Solution**:
 ```bash
-/fix [2FA QR code not rendering in mobile view]
+/ck:fix [2FA QR code not rendering in mobile view]
 ```
 
 ## Security Checklist
@@ -648,9 +648,9 @@ Before production deployment:
 - [Adding a New Feature](/docs/workflows/adding-feature) - Build features
 
 ### Related Commands
-- [/cook](/docs/engineer/skills/cook) - Implement features
-- [/test](/docs/engineer/commands/core/test) - Test suite
-- [/fix --quick](/docs/engineer/skills/fix) - Quick fixes
+- [/ck:cook](/docs/engineer/skills/cook) - Implement features
+- [/ck:test](/docs/engineer/skills/test) - Test suite
+- [/ck:fix --quick](/docs/engineer/skills/fix) - Quick fixes
 
 ### Integration Guides
 - [/integrate:polar](/docs/engineer/skills) - Polar payments

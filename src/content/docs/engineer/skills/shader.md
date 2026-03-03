@@ -1,10 +1,10 @@
 ---
-title: "Shader"
+title: "ck:shader"
 description: "Write GLSL fragment shaders for procedural graphics, textures, and visual effects"
 section: engineer
 kit: engineer
 category: skills
-order: 34
+order: 50
 ---
 
 Write GPU-accelerated fragment shaders for procedural graphics, textures, and visual effects using GLSL.

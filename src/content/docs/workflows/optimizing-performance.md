@@ -3,11 +3,11 @@ title: Optimizing Performance
 description: "Documentation for Optimizing Performance
 description:
 section: workflows
-category: workflows
+category: engineer
 order: 9
 published: true"
 section: workflows
-category: workflows
+category: engineer
 order: 9
 published: true
 ---
@@ -21,7 +21,7 @@ Learn how to identify and fix performance bottlenecks with ClaudeKit - from prof
 **Goal**: Identify and resolve performance bottlenecks systematically
 **Time**: 30-60 minutes (vs 4-12 hours manually)
 **Agents Used**: debugger, code-reviewer, tester
-**Commands**: /debug, /cook, /test, /fix
+**Commands**: /ck:debug, /ck:cook, /ck:test, /ck:fix
 
 ## Prerequisites
 
@@ -48,7 +48,7 @@ Start by profiling your application:
 
 ```bash
 # Run performance analysis
-/debug [analyze application performance and identify bottlenecks]
+/ck:debug [analyze application performance and identify bottlenecks]
 ```
 
 **Analysis output**:
@@ -118,7 +118,7 @@ Time to Interactive: 12.4s (Target: <3.5s)
 #### N+1 Query Problem
 
 ```bash
-/cook [fix N+1 query problem in user service with eager loading]
+/ck:cook [fix N+1 query problem in user service with eager loading]
 ```
 
 **Implementation**:
@@ -157,7 +157,7 @@ const users = await User.findAll({
 #### Add Database Indexes
 
 ```bash
-/cook [add database indexes for frequently queried fields]
+/ck:cook [add database indexes for frequently queried fields]
 ```
 
 **Implementation**:
@@ -191,7 +191,7 @@ Indexes to add:
 #### Query Optimization
 
 ```bash
-/cook [optimize database queries to reduce execution time]
+/ck:cook [optimize database queries to reduce execution time]
 ```
 
 ### Step 3: Implement Caching
@@ -199,7 +199,7 @@ Indexes to add:
 #### Redis Cache
 
 ```bash
-/cook [implement Redis caching for frequently accessed data]
+/ck:cook [implement Redis caching for frequently accessed data]
 ```
 
 **Implementation**:
@@ -241,13 +241,13 @@ Performance improvement:
 #### In-Memory Cache
 
 ```bash
-/cook [add in-memory LRU cache for hot data]
+/ck:cook [add in-memory LRU cache for hot data]
 ```
 
 #### CDN Integration
 
 ```bash
-/cook [integrate CloudFlare CDN for static assets]
+/ck:cook [integrate CloudFlare CDN for static assets]
 ```
 
 ### Step 4: Optimize Frontend
@@ -255,7 +255,7 @@ Performance improvement:
 #### Code Splitting
 
 ```bash
-/cook [implement code splitting and lazy loading]
+/ck:cook [implement code splitting and lazy loading]
 ```
 
 **Implementation**:
@@ -291,7 +291,7 @@ Heavy modules:
 #### Image Optimization
 
 ```bash
-/cook [optimize images with compression and lazy loading]
+/ck:cook [optimize images with compression and lazy loading]
 ```
 
 **Implementation**:
@@ -323,7 +323,7 @@ Heavy modules:
 #### Bundle Compression
 
 ```bash
-/cook [enable gzip and brotli compression]
+/ck:cook [enable gzip and brotli compression]
 ```
 
 ### Step 5: Optimize Algorithms
@@ -331,7 +331,7 @@ Heavy modules:
 #### Replace Inefficient Algorithm
 
 ```bash
-/cook [replace O(n²) algorithm with O(n) hash map solution]
+/ck:cook [replace O(n²) algorithm with O(n) hash map solution]
 ```
 
 **Before** (O(n²) - 523ms):
@@ -374,7 +374,7 @@ function findDuplicates(items) {
 #### Background Jobs
 
 ```bash
-/cook [move email sending to background queue with Bull]
+/ck:cook [move email sending to background queue with Bull]
 ```
 
 **Implementation**:
@@ -405,13 +405,13 @@ function findDuplicates(items) {
 #### Parallel Processing
 
 ```bash
-/cook [process multiple operations in parallel instead of sequential]
+/ck:cook [process multiple operations in parallel instead of sequential]
 ```
 
 ### Step 7: Database Connection Pool
 
 ```bash
-/cook [optimize database connection pooling]
+/ck:cook [optimize database connection pooling]
 ```
 
 **Configuration**:
@@ -438,7 +438,7 @@ Result: 45% faster during peak load
 ### Step 8: API Rate Limiting & Throttling
 
 ```bash
-/cook [implement intelligent rate limiting and request throttling]
+/ck:cook [implement intelligent rate limiting and request throttling]
 ```
 
 ### Step 9: Memory Optimization
@@ -446,7 +446,7 @@ Result: 45% faster during peak load
 #### Fix Memory Leaks
 
 ```bash
-/fix [fix memory leak in WebSocket handler]
+/ck:fix [fix memory leak in WebSocket handler]
 ```
 
 **Implementation**:
@@ -477,13 +477,13 @@ Result: 45% faster during peak load
 #### Reduce Memory Usage
 
 ```bash
-/cook [optimize memory usage by using streams for large data]
+/ck:cook [optimize memory usage by using streams for large data]
 ```
 
 ### Step 10: Monitoring & Profiling
 
 ```bash
-/cook [implement performance monitoring with metrics and alerts]
+/ck:cook [implement performance monitoring with metrics and alerts]
 ```
 
 **Monitoring setup**:
@@ -508,7 +508,7 @@ Alerts configured:
 ### Step 11: Load Testing
 
 ```bash
-/test
+/ck:test
 ```
 
 **Performance test results**:
@@ -567,32 +567,32 @@ Performance problems:
 
 ```bash
 # 1. Profile application
-/debug [analyze e-commerce API performance]
+/ck:debug [analyze e-commerce API performance]
 
 # 2. Database optimization
-/cook [fix N+1 queries and add indexes]
-/cook [optimize product search queries]
+/ck:cook [fix N+1 queries and add indexes]
+/ck:cook [optimize product search queries]
 
 # 3. Caching
-/cook [implement Redis caching for products and categories]
-/cook [add query result caching]
+/ck:cook [implement Redis caching for products and categories]
+/ck:cook [add query result caching]
 
 # 4. Frontend optimization
-/cook [implement code splitting and lazy loading]
-/cook [optimize product images with WebP and lazy loading]
+/ck:cook [implement code splitting and lazy loading]
+/ck:cook [optimize product images with WebP and lazy loading]
 
 # 5. API optimization
-/cook [move image processing to background queue]
-/cook [implement response compression]
+/ck:cook [move image processing to background queue]
+/ck:cook [implement response compression]
 
 # 6. Algorithm optimization
-/cook [optimize search algorithm with inverted index]
+/ck:cook [optimize search algorithm with inverted index]
 
 # 7. Test improvements
-/test
+/ck:test
 
 # 8. Monitor in production
-/cook [set up performance monitoring with alerts]
+/ck:cook [set up performance monitoring with alerts]
 ```
 
 ### Results
@@ -638,25 +638,25 @@ Customer impact:
 ### Pattern 1: Progressive Enhancement
 
 ```bash
-/cook [implement progressive enhancement for slow connections]
+/ck:cook [implement progressive enhancement for slow connections]
 ```
 
 ### Pattern 2: Predictive Prefetching
 
 ```bash
-/cook [add predictive prefetching for likely user actions]
+/ck:cook [add predictive prefetching for likely user actions]
 ```
 
 ### Pattern 3: Service Worker Caching
 
 ```bash
-/cook [implement service worker for offline-first experience]
+/ck:cook [implement service worker for offline-first experience]
 ```
 
 ### Pattern 4: Database Read Replicas
 
 ```bash
-/cook [set up database read replicas for scaling reads]
+/ck:cook [set up database read replicas for scaling reads]
 ```
 
 ## Best Practices
@@ -706,7 +706,7 @@ But invalidate correctly:
 ### 5. Monitor Continuously
 
 ```bash
-/cook [implement continuous performance monitoring]
+/ck:cook [implement continuous performance monitoring]
 ```
 
 ## Troubleshooting
@@ -716,7 +716,7 @@ But invalidate correctly:
 **Solution**:
 ```bash
 # Re-profile
-/debug [deep performance analysis with detailed metrics]
+/ck:debug [deep performance analysis with detailed metrics]
 
 # Check for new bottlenecks
 # Optimize further
@@ -726,21 +726,21 @@ But invalidate correctly:
 
 **Solution**:
 ```bash
-/fix --quick [Redis cache hit rate below 50%]
+/ck:fix --quick [Redis cache hit rate below 50%]
 ```
 
 ### Issue: Memory Still Growing
 
 **Solution**:
 ```bash
-/fix [memory still growing despite fixes]
+/ck:fix [memory still growing despite fixes]
 ```
 
 ### Issue: Database Timeout
 
 **Solution**:
 ```bash
-/cook [increase connection pool and optimize slow queries]
+/ck:cook [increase connection pool and optimize slow queries]
 ```
 
 ## Performance Checklist
@@ -791,10 +791,10 @@ Metrics:
 - [Building a REST API](/docs/workflows/building-api) - API development
 
 ### Related Commands
-- [/debug](/docs/engineer/commands/core/debug) - Performance profiling
-- [/cook](/docs/engineer/skills/cook) - Implement optimizations
-- [/fix](/docs/engineer/skills/fix) - Complex fixes
-- [/test](/docs/engineer/commands/core/test) - Performance testing
+- [/ck:debug](/docs/engineer/skills/debug) - Performance profiling
+- [/ck:cook](/docs/engineer/skills/cook) - Implement optimizations
+- [/ck:fix](/docs/engineer/skills/fix) - Complex fixes
+- [/ck:test](/docs/engineer/skills/test) - Performance testing
 
 ### Further Reading
 - [Web.dev Performance](https://web.dev/performance/)

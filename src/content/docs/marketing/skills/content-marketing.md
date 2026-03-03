@@ -1,5 +1,5 @@
 ---
-title: "Content Marketing"
+title: "ckm:content-marketing"
 description: "Strategic content planning, editorial workflow, and content optimization framework to build sustainable content programs."
 section: marketing
 category: skills
@@ -122,16 +122,16 @@ Consistency matters more than frequency. Weekly schedule beats erratic bursts.
 **Solution**: Start with 1 pillar, 1 content type, weekly cadence. Expand after 4-6 weeks of consistency.
 
 **Issue**: Running out of topic ideas
-**Solution**: Use seo-optimization skill for keyword research and search intent analysis. Check competitor content gaps.
+**Solution**: Use seo skill for keyword research and search intent analysis. Check competitor content gaps.
 
 **Issue**: Content not performing
 **Solution**: Activate analytics skill to identify well-performing topics. Double down on what works, cut what doesn't.
 
 ## Related Skills
 
-- [SEO Optimization](/docs/marketing/skills/seo-optimization) - Keyword research and search optimization
+- [SEO Optimization](/docs/marketing/skills/seo) - Keyword research and search optimization
 - [Copywriting](/docs/marketing/skills/copywriting) - Writing frameworks and headline templates
-- [Brand Guidelines](/docs/marketing/skills/brand-guidelines) - Voice consistency and messaging
+- [Brand Guidelines](/docs/marketing/skills/brand) - Voice consistency and messaging
 - [Analytics](/docs/marketing/skills/analytics) - Track content performance
 
 ## Related Commands
@@ -139,4 +139,4 @@ Consistency matters more than frequency. Weekly schedule beats erratic bursts.
 - `/content/blog` - Create blog post from outline
 - `/content/enhance` - Improve existing content
 - `/seo/keywords` - Research content topics
-- `/plan` - Create content production plan
+- `/ckm:plan` - Create content production plan

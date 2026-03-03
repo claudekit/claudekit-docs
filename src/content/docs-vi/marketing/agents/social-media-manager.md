@@ -315,9 +315,9 @@ Phương tiện xã hội là xã hội. Hội thoại xây dựng khán giả.
 
 ## Related Commands
 
-- `/social calendar` - Generate content calendar
-- `/social analyze` - Analyze engagement performance
-- `/social trends` - Research trending topics
+- `/ckm:social calendar` - Generate content calendar
+- `/ckm:social analyze` - Analyze engagement performance
+- `/ckm:social trends` - Research trending topics
 
 ---
 

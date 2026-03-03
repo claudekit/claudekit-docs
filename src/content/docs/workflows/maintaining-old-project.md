@@ -3,11 +3,11 @@ title: Maintaining an Old Project
 description: "Documentation for Maintaining an Old Project
 description:
 section: workflows
-category: workflows
+category: engineer
 order: 2
 published: true"
 section: workflows
-category: workflows
+category: engineer
 order: 2
 published: true
 ---
@@ -56,7 +56,7 @@ claude
 This is the **most important first step**:
 
 ```bash
-/docs:init
+/ck:docs:init
 ```
 
 **What happens (5-8 minutes):**
@@ -147,7 +147,7 @@ E-commerce backend API
 Now that ClaudeKit has context, ask specific questions:
 
 ```bash
-/ask [how does the payment processing work?]
+/ck:ask [how does the payment processing work?]
 ```
 
 **Response:**
@@ -175,15 +175,15 @@ Critical Issues Found:
 ⚠ Race condition in order updates
 ⚠ Email failures block order completion
 
-Recommendation: Use /fix to address these issues
+Recommendation: Use /ck:fix to address these issues
 ```
 
 More questions:
 
 ```bash
-/ask [what's the authentication flow?]
-/ask [how are background jobs processed?]
-/ask [what's causing the slow product search?]
+/ck:ask [what's the authentication flow?]
+/ck:ask [how are background jobs processed?]
+/ck:ask [what's causing the slow product search?]
 ```
 
 ## Step 3: Update Dependencies
@@ -197,7 +197,7 @@ npm outdated
 ### Create Update Plan
 
 ```bash
-/plan [update all dependencies to latest stable versions]
+/ck:plan [update all dependencies to latest stable versions]
 ```
 
 **Generated plan includes:**
@@ -210,7 +210,7 @@ npm outdated
 
 Implement the update plan:
 ```bash
-/cook "Update dependencies following the plan"
+/ck:cook "Update dependencies following the plan"
 ```
 
 **What happens:**
@@ -268,7 +268,7 @@ npm run dev
 
 Generate tests:
 ```bash
-/cook "Generate comprehensive test suite for critical paths"
+/ck:cook "Generate comprehensive test suite for critical paths"
 ```
 
 **Priority areas:**
@@ -318,7 +318,7 @@ Tests generated in tests/ directory
 ### Security Vulnerabilities
 
 ```bash
-/fix [Stripe webhook not verified - security risk]
+/ck:fix [Stripe webhook not verified - security risk]
 ```
 
 **Fix applied:**
@@ -344,7 +344,7 @@ Security issue resolved!
 ### Performance Issues
 
 ```bash
-/fix [N+1 queries in product listing causing slow response times]
+/ck:fix [N+1 queries in product listing causing slow response times]
 ```
 
 **Fix applied:**
@@ -377,7 +377,7 @@ Security issue resolved!
 ### Error Handling
 
 ```bash
-/fix [payment flow has no error handling, orders get stuck]
+/ck:fix [payment flow has no error handling, orders get stuck]
 ```
 
 **Fix applied:**
@@ -411,7 +411,7 @@ Security issue resolved!
 
 Refactor the code:
 ```bash
-/cook "Refactor mixed ES5/ES6 code to modern ES6+ with async/await"
+/ck:cook "Refactor mixed ES5/ES6 code to modern ES6+ with async/await"
 ```
 
 **Improvements:**
@@ -449,20 +449,20 @@ const getUserOrders = async (userId) => {
 ### Add TypeScript (Optional)
 
 ```bash
-/plan [migrate project to TypeScript]
+/ck:plan [migrate project to TypeScript]
 /clear  # Free context before implementation
 ```
 
 Review the plan, then implement:
 
 ```bash
-/cook "Implement TypeScript migration following the plan"
+/ck:cook "Implement TypeScript migration following the plan"
 ```
 
 ### Improve Documentation
 
 ```bash
-/docs:update
+/ck:docs:update
 ```
 
 Adds:
@@ -476,7 +476,7 @@ Adds:
 ### Diagnose Deployment Issues
 
 ```bash
-/ask [why is the production deployment broken?]
+/ck:ask [why is the production deployment broken?]
 ```
 
 **Analysis:**
@@ -504,7 +504,7 @@ Recommendation: Fix these issues before deployment
 ### Fix Deployment Issues
 
 ```bash
-/fix [fix production deployment issues]
+/ck:fix [fix production deployment issues]
 ```
 
 **Fixes applied:**
@@ -553,7 +553,7 @@ curl https://staging.example.com/health
 git push production main
 
 # Monitor
-/fix  # Watch production logs
+/ck:fix  # Watch production logs
 ```
 
 ## Step 8: Set Up Maintenance
@@ -562,7 +562,7 @@ git push production main
 
 Create the workflow:
 ```bash
-/cook "Create GitHub Actions workflow for CI/CD"
+/ck:cook "Create GitHub Actions workflow for CI/CD"
 ```
 
 **Generated workflow:**
@@ -575,7 +575,7 @@ Create the workflow:
 
 Add monitoring:
 ```bash
-/cook "Add monitoring and alerting"
+/ck:cook "Add monitoring and alerting"
 ```
 
 **Added:**
@@ -587,7 +587,7 @@ Add monitoring:
 ### Create Runbook
 
 ```bash
-/docs:update
+/ck:docs:update
 ```
 
 Creates `docs/runbook.md` with:
@@ -635,7 +635,7 @@ npm audit
 npm run test:coverage
 
 # Update docs if needed
-/docs:update
+/ck:docs:update
 ```
 
 ### Monthly Tasks
@@ -645,31 +645,31 @@ npm run test:coverage
 cat docs/technical-debt.md
 
 # Plan improvements
-/plan [next month's improvements]
+/ck:plan [next month's improvements]
 /clear
 
 # Update dependencies
-/cook "Update dependencies as planned"
+/ck:cook "Update dependencies as planned"
 ```
 
 ### When Adding Features
 
 ```bash
 # 1. Plan feature
-/plan [new feature description]
+/ck:plan [new feature description]
 /clear  # Free context
 
 # 2. Implement
-/cook "Implement [new feature description] as planned"
+/ck:cook "Implement [new feature description] as planned"
 
 # 3. Test
-/test
+/ck:test
 
 # 4. Update docs
-/docs:update
+/ck:docs:update
 
 # 5. Commit
-/git cm
+/ck:git cm
 
 # 6. Deploy
 git push
@@ -680,28 +680,28 @@ git push
 ### "I don't understand the code"
 
 ```bash
-/ask [explain how X works]
-/ask [what does this function do?]
-/ask [why is this pattern used here?]
+/ck:ask [explain how X works]
+/ck:ask [what does this function do?]
+/ck:ask [why is this pattern used here?]
 ```
 
 ### "Too many issues to fix"
 
 Prioritize:
-1. Security issues (/fix)
-2. Production blockers (/fix)
-3. Performance problems (/fix)
-4. Test coverage (/cook [add tests])
-5. Code quality (/cook [refactor])
-6. Documentation (/docs:update)
+1. Security issues (/ck:fix)
+2. Production blockers (/ck:fix)
+3. Performance problems (/ck:fix)
+4. Test coverage (/ck:cook [add tests])
+5. Code quality (/ck:cook [refactor])
+6. Documentation (/ck:docs:update)
 
 ### "Breaking changes in dependencies"
 
 ```bash
-/plan [migrate from package X v1 to v2]
+/ck:plan [migrate from package X v1 to v2]
 /clear  # Review plan carefully, then free context
-/cook "Migrate from package X v1 to v2 as planned"
-/test  # Comprehensive testing
+/ck:cook "Migrate from package X v1 to v2 as planned"
+/ck:test  # Comprehensive testing
 ```
 
 ## Next Steps
@@ -711,25 +711,25 @@ Prioritize:
 Implement improvements:
 ```bash
 # Add feature flags
-/cook "Implement feature flag system"
+/ck:cook "Implement feature flag system"
 
 # Add A/B testing
-/cook "Add A/B testing framework"
+/ck:cook "Add A/B testing framework"
 
 # Improve observability
-/cook "Add distributed tracing"
+/ck:cook "Add distributed tracing"
 ```
 
 ### Train Team
 
-1. Document everything (`/docs:update`)
+1. Document everything (`/ck:docs:update`)
 2. Create onboarding guide
 3. Share architecture docs
 4. Set up development environment guide
 
 ## Key Takeaways
 
-1. **Start with `/docs:init`** - Critical for understanding legacy code
+1. **Start with `/ck:docs:init`** - Critical for understanding legacy code
 2. **Fix security first** - Protect users and business
 3. **Add tests gradually** - Focus on critical paths
 4. **Update incrementally** - Don't break everything at once

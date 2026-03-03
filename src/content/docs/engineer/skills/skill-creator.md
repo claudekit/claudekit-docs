@@ -1,10 +1,10 @@
 ---
-title: skill-creator
+title: "ck:skill-creator"
 description: Create custom skills that extend Claude's capabilities with specialized knowledge, workflows, and tool integrations
 section: engineer
 kit: engineer
 category: skills/tools
-order: 15
+order: 9
 published: true
 ---# skill-creator
 

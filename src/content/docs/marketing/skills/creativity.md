@@ -1,5 +1,5 @@
 ---
-title: "Creativity"
+title: "ckm:creativity"
 description: "Creative direction for digital marketing with 55 style templates, color psychology, voiceover guidance, and 2025-2026 visual trends."
 section: marketing
 category: skills
@@ -126,11 +126,11 @@ Average attention span: 8 seconds. Lead with problem or promise immediately.
 **Solution**: Test creative variations (3-5). What works for others may not work for your audience. A/B test continuously.
 
 **Issue**: Creative doesn't align with brand guidelines
-**Solution**: Use brand-guidelines skill to extract brand context. Include in creative brief to ensure alignment.
+**Solution**: Use brand skill to extract brand context. Include in creative brief to ensure alignment.
 
 ## Related Skills
 
-- [Brand Guidelines](/docs/marketing/skills/brand-guidelines) - Brand alignment and validation
+- [Brand Guidelines](/docs/marketing/skills/brand) - Brand alignment and validation
 - [AI Multimodal](/docs/marketing/skills/ai-multimodal) - Generate creative content with Imagen 4
 - [AI Artist](/docs/marketing/skills/ai-artist) - Prompt engineering for imagery
 - [Social Media](/docs/marketing/skills/social-media) - Platform-specific creative requirements

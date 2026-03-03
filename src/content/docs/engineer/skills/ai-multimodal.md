@@ -1,10 +1,10 @@
 ---
-title: AI Multimodal
+title: "ck:ai-multimodal"
 description: Process audio, images, videos, and documents using Google Gemini API with superior vision capabilities for transcription, analysis, and content generation
 section: engineer
 kit: engineer
 category: skills
-order: 15
+order: 50
 ---
 
 You know that feeling when you need to analyze a 2-hour podcast, extract text from a complex PDF, or generate images that actually match your vision? That's where AI Multimodal comes in.

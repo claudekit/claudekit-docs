@@ -26,7 +26,7 @@ Create your first email sequence in 30 seconds:
 
 ```bash
 # Generate a welcome sequence
-/ask "Create a 5-email welcome sequence for new subscribers to [your product]"
+/ckm:ask "Create a 5-email welcome sequence for new subscribers to [your product]"
 
 # The agent designs the full sequence with subject lines, timing, and CTAs
 ```
@@ -77,7 +77,7 @@ Create a high-converting onboarding experience:
 
 ```bash
 # Step 1: Define your goal
-/ask "Create a welcome sequence that converts free trial users to paid within 7 days"
+/ckm:ask "Create a welcome sequence that converts free trial users to paid within 7 days"
 
 # The agent will design:
 # - Email 0 (Immediate): Welcome + quick win setup
@@ -102,7 +102,7 @@ Build trust over time:
 
 ```bash
 # Create educational nurture series
-/ask "Design a nurture campaign for leads who aren't ready to buy yet"
+/ckm:ask "Design a nurture campaign for leads who aren't ready to buy yet"
 
 # The agent creates:
 # - Value-first content (no selling)
@@ -125,7 +125,7 @@ Optimize your email performance:
 
 ```bash
 # Design test plan
-/ask "Create A/B test recommendations for our [campaign type]"
+/ckm:ask "Create A/B test recommendations for our [campaign type]"
 
 # The agent will:
 # - Identify testable elements (subject, CTA, content, timing)
@@ -146,7 +146,7 @@ Win back inactive subscribers:
 
 ```bash
 # Recover dormant contacts
-/ask "Create a re-engagement campaign for contacts who haven't opened in 60 days"
+/ckm:ask "Create a re-engagement campaign for contacts who haven't opened in 60 days"
 
 # The agent designs:
 # - Attention-grabbing subject lines
@@ -207,6 +207,6 @@ The agent organizes email copy in standardized locations:
 
 ## Related Commands
 
-- `/ask` - Query the agent for email strategy
-- `/scout` - Find existing email templates
-- `/plan` - Create comprehensive email programs
+- `/ckm:ask` - Query the agent for email strategy
+- `/ckm:scout` - Find existing email templates
+- `/ckm:plan` - Create comprehensive email programs

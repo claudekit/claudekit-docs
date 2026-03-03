@@ -27,7 +27,7 @@ Tạo chuỗi email đầu tiên của bạn trong 30 giây:
 
 ```bash
 # Tạo một chuỗi email chào mừng
-/ask "Create a 5-email welcome sequence for new subscribers to [your product]"
+/ckm:ask "Create a 5-email welcome sequence for new subscribers to [your product]"
 
 # Đại lý sẽ thiết kế toàn bộ chuỗi với tiêu đề, thời gian gửi và lời kêu gọi hành động (CTA)
 ```
@@ -72,7 +72,7 @@ Tạo trải nghiệm làm quen (onboarding) có tỷ lệ chuyển đổi cao:
 
 ```bash
 # Bước 1: Xác định mục tiêu
-/ask "Create a welcome sequence that converts free trial users to paid within 7 days"
+/ckm:ask "Create a welcome sequence that converts free trial users to paid within 7 days"
 
 # Đại lý sẽ thiết kế:
 # - Email 0 (Ngay lập tức): Chào mừng + thiết lập một "chiến thắng nhanh"
@@ -97,7 +97,7 @@ Xây dựng lòng tin theo thời gian:
 
 ```bash
 # Tạo chuỗi nuôi dưỡng mang tính giáo dục
-/ask "Design a nurture campaign for leads who aren't ready to buy yet"
+/ckm:ask "Design a nurture campaign for leads who aren't ready to buy yet"
 
 # Đại lý tạo ra:
 # - Nội dung ưu tiên giá trị (không bán hàng)
@@ -120,7 +120,7 @@ Tối ưu hóa hiệu suất email của bạn:
 
 ```bash
 # Thiết kế kế hoạch thử nghiệm
-/ask "Create A/B test recommendations for our [campaign type]"
+/ckm:ask "Create A/B test recommendations for our [campaign type]"
 
 # Đại lý sẽ:
 # - Xác định các yếu tố có thể thử nghiệm (tiêu đề, CTA, nội dung, thời gian)
@@ -141,7 +141,7 @@ Giành lại những người đăng ký không hoạt động:
 
 ```bash
 # Khôi phục các liên hệ đang ngủ đông
-/ask "Create a re-engagement campaign for contacts who haven't opened in 60 days"
+/ckm:ask "Create a re-engagement campaign for contacts who haven't opened in 60 days"
 
 # Đại lý thiết kế:
 # - Dòng tiêu đề gây chú ý
@@ -202,9 +202,9 @@ Các kỹ năng được kích hoạt tự động dựa trên yêu cầu của 
 
 ## Các lệnh liên quan
 
-- `/ask` - Truy vấn đại lý về chiến lược email
-- `/scout` - Tìm các mẫu email hiện có
-- `/plan` - Tạo các chương trình email toàn diện
+- `/ckm:ask` - Truy vấn đại lý về chiến lược email
+- `/ckm:scout` - Tìm các mẫu email hiện có
+- `/ckm:plan` - Tạo các chương trình email toàn diện
 
 ## Mẹo
 

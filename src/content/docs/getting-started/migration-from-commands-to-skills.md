@@ -20,14 +20,14 @@ Many slash commands have been converted to **skills** that activate automaticall
 | Old Command | New Skill | Invocation Type |
 |-------------|-----------|-----------------|
 | `/code` | `cook` | Linked (auto-activates) |
-| `/cook` | `cook` | Linked (auto-activates) |
-| `/fix` | `fix` | Linked (auto-activates) |
-| `/debug` | `debug` | Linked (auto-activates) |
-| `/scout` | `scout` | Linked (auto-activates) |
+| `/ck:cook` | `cook` | Linked (auto-activates) |
+| `/ck:fix` | `fix` | Linked (auto-activates) |
+| `/ck:debug` | `debug` | Linked (auto-activates) |
+| `/ck:scout` | `scout` | Linked (auto-activates) |
 | `/design` | `frontend-design` | Linked (auto-activates) |
-| `/code-review` | `code-review` | Linked (auto-activates) |
+| `/ck:code-review` | `code-review` | Linked (auto-activates) |
 | `/content` | `PowerWriting` | Skill |
-| `/brainstorm` | `brainstorm` | Passive (natural language) |
+| `/ck:brainstorm` | `brainstorm` | Passive (natural language) |
 
 ---
 
@@ -43,18 +43,18 @@ Many slash commands have been converted to **skills** that activate automaticall
 
 ### Old Workflow (pre-1.3.0)
 ```
-/plan "feature X"
+/ck:plan "feature X"
 /code @plans/feature.md
 ```
 
 ### New Workflow (1.3.0+)
 ```
-/plan "feature X"
+/ck:plan "feature X"
 /clear
-/cook plans/feature.md
+/ck:cook plans/feature.md
 ```
 
-**Important**: Run `/clear` after `/plan` to free context before implementation.
+**Important**: Run `/clear` after `/ck:plan` to free context before implementation.
 
 ---
 
@@ -62,20 +62,20 @@ Many slash commands have been converted to **skills** that activate automaticall
 
 These commands remain as slash commands:
 
-- `/ask` — Ask questions about project
-- `/bootstrap*` — Initialize project templates
-- `/ck-help` — ClaudeKit help system
-- `/coding-level` — Set coding detail level
-- `/docs*` — Documentation generation
-- `/journal` — Session journaling
-- `/kanban` — Task board management
-- `/plan*` — Planning workflows
-- `/preview` — Preview changes
+- `/ck:ask` — Ask questions about project
+- `/ck:bootstrap*` — Initialize project templates
+- `/ck:ck-help` — ClaudeKit help system
+- `/ck:coding-level` — Set coding detail level
+- `/ck:docs*` — Documentation generation
+- `/ck:journal` — Session journaling
+- `/ck:kanban` — Task board management
+- `/ck:plan*` — Planning workflows
+- `/ck:preview` — Preview changes
 - `/review:codebase*` — Codebase review
-- `/test*` — Testing workflows
-- `/use-mcp` — MCP integration
-- `/watzup` — Status overview
-- `/worktree` — Git worktree management
+- `/ck:test*` — Testing workflows
+- `/ck:use-mcp` — MCP integration
+- `/ck:watzup` — Status overview
+- `/ck:worktree` — Git worktree management
 
 ---
 
@@ -88,15 +88,15 @@ Command modifiers apply to active commands:
 - `:parallel` — Enable parallel execution
 - `:two` — Use two-agent workflow
 
-**Example**: `/plan:hard "complex feature"` still works.
+**Example**: `/ck:plan:hard "complex feature"` still works.
 
 ---
 
 ## Migration Tips
 
 1. **Don't memorize**: Just describe what you want. Skills activate automatically.
-2. **Use `/clear` liberally**: Especially after `/plan` or before starting new tasks.
-3. **Check `/ck-help`**: Lists all active commands and available skills.
+2. **Use `/clear` liberally**: Especially after `/ck:plan` or before starting new tasks.
+3. **Check `/ck:ck-help`**: Lists all active commands and available skills.
 4. **Natural language first**: Try describing your task before reaching for a command.
 
 ---
@@ -105,19 +105,19 @@ Command modifiers apply to active commands:
 
 ### Before (1.2.x)
 ```
-/plan "Add authentication"
+/ck:plan "Add authentication"
 /code @plans/260129-auth.md
-/test
-/code-review
+/ck:test
+/ck:code-review
 ```
 
 ### After (1.3.0+)
 ```
-/plan "Add authentication"
+/ck:plan "Add authentication"
 /clear
-/cook plans/260129-auth.md
-/test
-/code-review
+/ck:cook plans/260129-auth.md
+/ck:test
+/ck:code-review
 ```
 
-The workflow uses explicit `/cook` with the plan path after clearing context.
+The workflow uses explicit `/ck:cook` with the plan path after clearing context.

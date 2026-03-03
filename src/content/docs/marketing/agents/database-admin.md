@@ -247,8 +247,8 @@ The admin ensures:
 
 ## Related Commands
 
-- [`/db`](/docs/marketing/commands) - Database management and optimization
-- [`/migrate`](/docs/marketing/commands) - Database migration support
+- [`/db`](/docs/marketing/skills) - Database management and optimization
+- [`/migrate`](/docs/marketing/skills) - Database migration support
 
 ## Tips
 

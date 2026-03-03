@@ -1,10 +1,10 @@
 ---
-title: Template Skill
+title: "ck:template-skill"
 description: Reference template for creating new ClaudeKit Engineer skills with proper structure, metadata, and integration patterns
 section: engineer
 kit: engineer
 category: skills
-order: 5
+order: 50
 published: true
 ---
 # Template Skill
@@ -33,7 +33,7 @@ This skill is referenced when:
 
 For creating skills, use:
 ```bash
-/skill-creator
+/ck:skill-creator
 ```
 
 ## Skill Directory Structure
@@ -395,5 +395,5 @@ Scale images to target dimensions.
 ## Resources
 
 - ClaudeKit Engineer GitHub: https://github.com/claudekit/claudekit-engineer
-- Skill creation guide: Use `/skill-creator` for interactive process
+- Skill creation guide: Use `/ck:skill-creator` for interactive process
 - Example skills: Browse `.claude/skills/` directory

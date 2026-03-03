@@ -1,10 +1,10 @@
 ---
-title: Better Auth Skill
+title: "ck:better-auth"
 description: Framework-agnostic TypeScript authentication with email/password, OAuth, 2FA, passkeys, and multi-tenancy
 section: engineer
 kit: engineer
 category: skills/auth
-order: 10
+order: 50
 published: true
 ---# Better Auth Skill
 

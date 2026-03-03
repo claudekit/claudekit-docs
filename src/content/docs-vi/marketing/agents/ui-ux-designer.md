@@ -25,7 +25,7 @@ Thiết kế một giao diện mới:
 
 ```bash
 # Create a landing page design
-/design "Create landing page for SaaS product with hero, features, pricing"
+/ckm:design "Create landing page for SaaS product with hero, features, pricing"
 ```
 
 Bạn sẽ nhận được các wireframe, bản mockup độ trung thực cao, mã sản xuất-sẵn sàng, và tài liệu thiết kế toàn diện.
@@ -102,7 +102,7 @@ Sử dụng UI/UX Designer Agent khi bạn cần:
 ### Landing Page Design
 
 ```bash
-/design "Create high-converting landing page for email marketing SaaS"
+/ckm:design "Create high-converting landing page for email marketing SaaS"
 ```
 
 **The designer will**:
@@ -146,7 +146,7 @@ Sử dụng UI/UX Designer Agent khi bạn cần:
 ### Email Template Design
 
 ```bash
-/design "Create branded email template for campaign announcements"
+/ckm:design "Create branded email template for campaign announcements"
 ```
 
 **Implementation includes**:
@@ -161,7 +161,7 @@ Sử dụng UI/UX Designer Agent khi bạn cần:
 ### Design System Audit
 
 ```bash
-/design "Audit design consistency and create component library"
+/ckm:design "Audit design consistency and create component library"
 ```
 
 **The designer will**:
@@ -256,9 +256,9 @@ Nhà thiết kế theo dõi:
 
 ## Related Commands
 
-- [`/design`](/docs/marketing/commands/design) - Create or review design
-- [`/mockup`](/docs/marketing/commands) - Generate mockup
-- [`/audit`](/docs/marketing/commands) - Design system audit
+- [`/ckm:design`](/docs/marketing/skills) - Create or review design
+- [`/mockup`](/docs/marketing/skills) - Generate mockup
+- [`/audit`](/docs/marketing/skills) - Design system audit
 
 ## Tips
 

@@ -3,7 +3,7 @@ title: Bảo Trì Dự Án Cũ
 description: "Tìm hiểu cách tích hợp ClaudeKit vào một dự án hiện có, hiểu mã nguồn cũ (legacy code) và cải thiện nó một cách hệ thống."
 lang: vi
 section: workflows
-category: workflows
+category: engineer
 order: 2
 published: true
 ---
@@ -52,7 +52,7 @@ claude
 Đây là **bước quan trọng nhất đầu tiên**:
 
 ```bash
-/docs:init
+/ck:docs:init
 ```
 
 **Điều gì xảy ra (5-8 phút):**
@@ -143,7 +143,7 @@ E-commerce backend API
 Bây giờ ClaudeKit đã có ngữ cảnh, hãy đặt các câu hỏi cụ thể:
 
 ```bash
-/ask [luồng xử lý thanh toán hoạt động như thế nào?]
+/ck:ask [luồng xử lý thanh toán hoạt động như thế nào?]
 ```
 
 **Phản hồi:**
@@ -172,15 +172,15 @@ Các vấn đề nghiêm trọng tìm thấy:
 ⚠ Lỗi race condition khi cập nhật đơn hàng
 ⚠ Lỗi gửi email làm chặn quá trình hoàn tất đơn hàng
 
-Khuyến nghị: Sử dụng /fix để giải quyết các vấn đề này
+Khuyến nghị: Sử dụng /ck:fix để giải quyết các vấn đề này
 ```
 
 Thêm các câu hỏi khác:
 
 ```bash
-/ask [luồng xác thực như thế nào?]
-/ask [các công việc chạy ngầm được xử lý ra sao?]
-/ask [điều gì làm cho việc tìm kiếm sản phẩm bị chậm?]
+/ck:ask [luồng xác thực như thế nào?]
+/ck:ask [các công việc chạy ngầm được xử lý ra sao?]
+/ck:ask [điều gì làm cho việc tìm kiếm sản phẩm bị chậm?]
 ```
 
 ## Bước 3: Cập Nhật Dependencies
@@ -194,7 +194,7 @@ npm outdated
 ### Tạo Kế Hoạch Cập Nhật
 
 ```bash
-/plan [cập nhật tất cả dependencies lên phiên bản ổn định mới nhất]
+/ck:plan [cập nhật tất cả dependencies lên phiên bản ổn định mới nhất]
 ```
 
 **Kế hoạch được tạo bao gồm:**
@@ -206,7 +206,7 @@ npm outdated
 ### Triển Khai Cập Nhật
 
 ```bash
-/cook [cập nhật dependencies theo kế hoạch]
+/ck:cook [cập nhật dependencies theo kế hoạch]
 ```
 
 **Điều gì xảy ra:**
@@ -263,7 +263,7 @@ npm run dev
 ### Tạo Bộ Kiểm Thử (Test Suite)
 
 ```bash
-/cook [tạo bộ kiểm thử toàn diện cho các luồng quan trọng]
+/ck:cook [tạo bộ kiểm thử toàn diện cho các luồng quan trọng]
 ```
 
 **Các khu vực ưu tiên:**
@@ -313,7 +313,7 @@ Tests đã được tạo trong thư mục tests/
 ### Lỗ Hổng Bảo Mật
 
 ```bash
-/fix [Stripe webhook chưa được xác thực - rủi ro bảo mật]
+/ck:fix [Stripe webhook chưa được xác thực - rủi ro bảo mật]
 ```
 
 **Bản sửa lỗi đã áp dụng:**
@@ -339,7 +339,7 @@ Vấn đề bảo mật đã được giải quyết!
 ### Vấn Đề Hiệu Suất
 
 ```bash
-/fix [Lỗi N+1 query trong danh sách sản phẩm làm chậm phản hồi]
+/ck:fix [Lỗi N+1 query trong danh sách sản phẩm làm chậm phản hồi]
 ```
 
 **Bản sửa lỗi đã áp dụng:**
@@ -372,7 +372,7 @@ Vấn đề bảo mật đã được giải quyết!
 ### Xử Lý Lỗi
 
 ```bash
-/fix [luồng thanh toán thiếu xử lý lỗi, đơn hàng bị kẹt]
+/ck:fix [luồng thanh toán thiếu xử lý lỗi, đơn hàng bị kẹt]
 ```
 
 **Bản sửa lỗi đã áp dụng:**
@@ -405,7 +405,7 @@ Vấn đề bảo mật đã được giải quyết!
 ### Hiện Đại Hóa Code
 
 ```bash
-/cook [tái cấu trúc code trộn lẫn ES5/ES6 sang ES6+ hiện đại với async/await]
+/ck:cook [tái cấu trúc code trộn lẫn ES5/ES6 sang ES6+ hiện đại với async/await]
 ```
 
 **Các cải tiến:**
@@ -443,19 +443,19 @@ const getUserOrders = async (userId) => {
 ### Thêm TypeScript (Tùy chọn)
 
 ```bash
-/plan [chuyển đổi dự án sang TypeScript]
+/ck:plan [chuyển đổi dự án sang TypeScript]
 ```
 
 Xem lại kế hoạch, sau đó:
 
 ```bash
-/cook [triển khai chuyển đổi sang TypeScript theo kế hoạch]
+/ck:cook [triển khai chuyển đổi sang TypeScript theo kế hoạch]
 ```
 
 ### Cải Thiện Tài Liệu
 
 ```bash
-/docs:update
+/ck:docs:update
 ```
 
 Thêm:
@@ -469,7 +469,7 @@ Thêm:
 ### Chẩn Đoán Lỗi Triển Khai
 
 ```bash
-/ask [tại sao việc triển khai production bị lỗi?]
+/ck:ask [tại sao việc triển khai production bị lỗi?]
 ```
 
 **Phân tích:**
@@ -497,7 +497,7 @@ Khuyến nghị: Sửa các vấn đề này trước khi triển khai
 ### Sửa Các Lỗi Triển Khai
 
 ```bash
-/fix [sửa các vấn đề triển khai production]
+/ck:fix [sửa các vấn đề triển khai production]
 ```
 
 **Các bản sửa lỗi đã áp dụng:**
@@ -546,7 +546,7 @@ curl https://staging.example.com/health
 git push production main
 
 # Giám sát
-/fix  # Theo dõi production logs
+/ck:fix  # Theo dõi production logs
 ```
 
 ## Bước 8: Thiết Lập Bảo Trì
@@ -554,7 +554,7 @@ git push production main
 ### Thêm CI/CD
 
 ```bash
-/cook [tạo GitHub Actions workflow cho CI/CD]
+/ck:cook [tạo GitHub Actions workflow cho CI/CD]
 ```
 
 **Workflow được tạo:**
@@ -566,7 +566,7 @@ git push production main
 ### Thêm Giám Sát (Monitoring)
 
 ```bash
-/cook [thêm giám sát và cảnh báo]
+/ck:cook [thêm giám sát và cảnh báo]
 ```
 
 **Đã thêm:**
@@ -578,7 +578,7 @@ git push production main
 ### Tạo Runbook
 
 ```bash
-/docs:update
+/ck:docs:update
 ```
 
 Tạo `docs/runbook.md` với:
@@ -626,7 +626,7 @@ npm audit
 npm run test:coverage
 
 # Cập nhật tài liệu nếu cần
-/docs:update
+/ck:docs:update
 ```
 
 ### Công Việc Hàng Tháng
@@ -636,29 +636,29 @@ npm run test:coverage
 cat docs/technical-debt.md
 
 # Lên kế hoạch cải thiện
-/plan [các cải thiện cho tháng tới]
+/ck:plan [các cải thiện cho tháng tới]
 
 # Cập nhật dependencies
-/cook [cập nhật dependencies]
+/ck:cook [cập nhật dependencies]
 ```
 
 ### Khi Thêm Tính Năng
 
 ```bash
 # 1. Lập kế hoạch tính năng
-/plan [mô tả tính năng mới]
+/ck:plan [mô tả tính năng mới]
 
 # 2. Triển khai
-/cook [triển khai tính năng]
+/ck:cook [triển khai tính năng]
 
 # 3. Test
-/test
+/ck:test
 
 # 4. Cập nhật tài liệu
-/docs:update
+/ck:docs:update
 
 # 5. Commit
-/git cm
+/ck:git cm
 
 # 6. Deploy
 git push
@@ -669,28 +669,28 @@ git push
 ### "Tôi không hiểu code này"
 
 ```bash
-/ask [giải thích cách X hoạt động]
-/ask [hàm này làm nhiệm vụ gì?]
-/ask [tại sao mẫu hình (pattern) này được dùng ở đây?]
+/ck:ask [giải thích cách X hoạt động]
+/ck:ask [hàm này làm nhiệm vụ gì?]
+/ck:ask [tại sao mẫu hình (pattern) này được dùng ở đây?]
 ```
 
 ### "Có quá nhiều vấn đề cần sửa"
 
 Ưu tiên theo thứ tự:
-1. Các vấn đề bảo mật (/fix)
-2. Các lỗi chặn triển khai production (/fix)
-3. Các vấn đề hiệu suất (/fix)
-4. Độ bao phủ tests (/cook [add tests])
-5. Chất lượng code (/cook [refactor])
-6. Tài liệu (/docs:update)
+1. Các vấn đề bảo mật (/ck:fix)
+2. Các lỗi chặn triển khai production (/ck:fix)
+3. Các vấn đề hiệu suất (/ck:fix)
+4. Độ bao phủ tests (/ck:cook [add tests])
+5. Chất lượng code (/ck:cook [refactor])
+6. Tài liệu (/ck:docs:update)
 
 ### "Có thay đổi phá vỡ trong dependencies"
 
 ```bash
-/plan [di chuyển từ package X v1 sang v2]
+/ck:plan [di chuyển từ package X v1 sang v2]
 # Xem lại kế hoạch cẩn thận
-/cook [triển khai di chuyển]
-/test  # Kiểm thử toàn diện
+/ck:cook [triển khai di chuyển]
+/ck:test  # Kiểm thử toàn diện
 ```
 
 ## Bước Tiếp Theo
@@ -699,25 +699,25 @@ git push
 
 ```bash
 # Thêm feature flags
-/cook [triển khai hệ thống feature flag]
+/ck:cook [triển khai hệ thống feature flag]
 
 # Thêm A/B testing
-/cook [thêm framework A/B testing]
+/ck:cook [thêm framework A/B testing]
 
 # Cải thiện khả năng quan sát
-/cook [thêm distributed tracing]
+/ck:cook [thêm distributed tracing]
 ```
 
 ### Đào Tạo Nhóm
 
-1. Viết tài liệu mọi thứ (`/docs:update`)
+1. Viết tài liệu mọi thứ (`/ck:docs:update`)
 2. Tạo hướng dẫn onboarding
 3. Chia sẻ tài liệu kiến trúc
 4. Thiết lập hướng dẫn môi trường phát triển
 
 ## Các Bài Học Chính
 
-1. **Bắt đầu với `/docs:init`** - Cực kỳ quan trọng để hiểu mã nguồn cũ
+1. **Bắt đầu với `/ck:docs:init`** - Cực kỳ quan trọng để hiểu mã nguồn cũ
 2. **Sửa bảo mật trước tiên** - Bảo vệ người dùng và doanh nghiệp
 3. **Thêm tests dần dần** - Tập trung vào các luồng quan trọng
 4. **Cập nhật từng bước** - Đừng làm hỏng mọi thứ cùng một lúc

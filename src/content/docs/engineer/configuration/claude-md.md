@@ -222,7 +222,7 @@ Now that you understand CLAUDE.md:
 
 - [Workflows](/docs/engineer/configuration/workflows) - Learn about workflow files
 - [Agents](/docs/engineer/agents/) - Understand the agent system
-- [Commands](/docs/engineer/commands/) - Explore available commands
+- [Skills](/docs/engineer/skills) - Explore available skills
 
 ---
 

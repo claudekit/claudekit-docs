@@ -1,10 +1,10 @@
 ---
-title: "Agent Teams"
+title: "ck:team"
 description: "Orchestrate parallel multi-session collaboration with independent Claude Code teammates"
 section: engineer
 kit: engineer
 category: skills
-order: 37
+order: 50
 published: true
 ---
 
@@ -28,7 +28,7 @@ Templates auto-execute on spawn (v2.1.0 change—was manual in v1.x).
 ## Usage
 
 ```
-/team <template> <context> [flags]
+/ck:team <template> <context> [flags]
 ```
 
 **Flags:**
@@ -40,10 +40,10 @@ Templates auto-execute on spawn (v2.1.0 change—was manual in v1.x).
 - `--delegate` — lead only coordinates, never touches code directly
 
 **Examples:**
-- `/team cook "implement auth + notifications + dashboard" --devs 3`
-- `/team research "compare React state management options" --researchers 2`
-- `/team review --reviewers 2`
-- `/team debug "race condition in payment flow" --plan-approval`
+- `/ck:team cook "implement auth + notifications + dashboard" --devs 3`
+- `/ck:team research "compare React state management options" --researchers 2`
+- `/ck:team review --reviewers 2`
+- `/ck:team debug "race condition in payment flow" --plan-approval`
 
 ## Requirements
 

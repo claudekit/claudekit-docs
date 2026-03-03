@@ -908,8 +908,8 @@ export const loginUser = async (
 
 ### Các bước tiếp theo:
 1. **KHÔNG ĐƯỢC MERGE** - Các vấn đề nghiêm trọng phải được sửa trước
-2. Chạy: `/fix --quick [sửa các vấn đề bảo mật nghiêm trọng được tìm thấy trong review]`
-3. Chạy: `/test [xác nhận các bản sửa lỗi bảo mật]`
+2. Chạy: `/ck:fix --quick [sửa các vấn đề bảo mật nghiêm trọng được tìm thấy trong review]`
+3. Chạy: `/ck:test [xác nhận các bản sửa lỗi bảo mật]`
 4. Chạy: `/review [review lại sau khi sửa lỗi]`
 5. Cập nhật tài liệu
 6. Yêu cầu review lần cuối
@@ -1096,19 +1096,19 @@ Sau khi áp dụng các bản sửa lỗi:
 
 ```bash
 # 1. Triển khai tính năng
-/cook [triển khai xác thực người dùng]
+/ck:cook [triển khai xác thực người dùng]
 
 # 2. Chạy kiểm thử
-/test
+/ck:test
 
 # 3. Code review
 /review [mô-đun xác thực người dùng]
 
 # 4. Sửa các vấn đề
-/fix --quick [sửa các vấn đề bảo mật nghiêm trọng được tìm thấy trong review]
+/ck:fix --quick [sửa các vấn đề bảo mật nghiêm trọng được tìm thấy trong review]
 
 # 5. Kiểm thử lại
-/test
+/ck:test
 
 # 6. Review lại
 /review [mô-đun xác thực người dùng]
@@ -1153,7 +1153,7 @@ Một code review thành công:
 ## Danh sách kiểm tra Code Review
 
 - [ ] Chạy `/review` và giải quyết tất cả các vấn đề nghiêm trọng
-- [ ] Chạy `/test` và đảm bảo độ bao phủ >80%
+- [ ] Chạy `/ck:test` và đảm bảo độ bao phủ >80%
 - [ ] Sửa tất cả các lỗi chế độ nghiêm ngặt của TypeScript
 - [ ] Giải quyết các lỗ hổng bảo mật
 - [ ] Cập nhật tài liệu

@@ -170,7 +170,7 @@ Sửa các vấn đề bảo mật sau khởi động đắt gấp 10 lần.
 
 ## Các lệnh liên quan
 
-- `/review code` - Đánh giá chất lượng code toàn diện
+- `/ckm:review code` - Đánh giá chất lượng code toàn diện
 - `/security audit` - Quét lỗ hổng bảo mật
 - `/performance check` - Phân tích tốc độ trang và tối ưu hóa
 

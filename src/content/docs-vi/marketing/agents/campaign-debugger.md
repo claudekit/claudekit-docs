@@ -163,8 +163,8 @@ Bằng chứng thắng giác quán.
 
 ## Các lệnh liên quan
 
-- `/debug` - Điều tra các vấn đề hiệu suất marketing
-- `/analyze` - Phân tích sâu về phân tích
+- `/ck:debug` - Điều tra các vấn đề hiệu suất marketing
+- `/ckm:analyze` - Phân tích sâu về phân tích
 - `/diagnose` - Khắc phục sự cố các vấn đề chiến dịch
 
 ---

@@ -1,10 +1,10 @@
 ---
-title: "Brainstorm"
+title: "ck:brainstorm"
 description: "Solution brainstorming with trade-off analysis, architecture decisions, and brutal honesty about feasibility"
 section: engineer
 kit: engineer
 category: skills
-order: 21
+order: 2
 ---
 
 Your elite technical advisor for architecture decisions, system design, and strategic planning. This skill brings brutal honesty and deep expertise to help you make the right technical choices.
@@ -37,7 +37,7 @@ Think of it as having a trusted technical advisor who will tell you hard truths 
 
 ## Usage
 
-Activate by typing `/brainstorm` or mentioning ideation, architecture decisions, technical debates, or feature exploration.
+Activate by typing `/ck:brainstorm` or mentioning ideation, architecture decisions, technical debates, or feature exploration.
 
 ## Example Prompts
 

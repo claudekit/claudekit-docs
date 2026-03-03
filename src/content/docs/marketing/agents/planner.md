@@ -160,8 +160,8 @@ Phase 2: [Core Features]
 
 ## Related Commands
 
-- [`/plan`](/docs/marketing/commands/plan) - Create new implementation plan
-- [`/research`](/docs/marketing/commands) - Deep technical research
+- [`/ckm:plan`](/docs/marketing/skills) - Create new implementation plan
+- [`/ck:research`](/docs/marketing/skills/research) - Deep technical research
 
 ## Tips
 

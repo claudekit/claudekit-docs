@@ -39,7 +39,7 @@ Sử dụng brainstormer khi:
 
 ```bash
 # Thảo luận các phương pháp cho một tính năng
-/brainstorm [nên sử dụng REST API hay GraphQL cho ứng dụng di động của chúng ta?]
+/ck:brainstorm [nên sử dụng REST API hay GraphQL cho ứng dụng di động của chúng ta?]
 ```
 
 **Điều gì xảy ra**:
@@ -352,7 +352,7 @@ Trước khi hoàn tất quyết định:
 **Đường dẫn được khuyến nghị**:
 
 1. **Chấp nhận quyết định REST** ✅
-2. **Chạy**: `/plan [xây dựng REST API cho ứng dụng di động]`
+2. **Chạy**: `/ck:plan [xây dựng REST API cho ứng dụng di động]`
 3. **Thiết kế các điểm cuối** với các thực hành tốt (phân trang, lọc, nhúng)
 4. **Đo lường** các mẫu sử dụng API sau khi ra mắt
 5. **Xem xét lại** quyết định GraphQL với dữ liệu thực tế sau 3 tháng
@@ -418,7 +418,7 @@ Brainstormer sẽ gọi tên điều này. Hãy tin tưởng vào đánh giá YA
 - [Agent Planner](/vi/docs/engineer/agents/planner) - Tạo các kế hoạch triển khai chi tiết sau khi phương pháp được quyết định
 - [Agent Researcher](/vi/docs/engineer/agents/researcher) - Cung cấp dữ liệu cho các quyết định thảo luận
 - [Agent Docs-Manager](/vi/docs/engineer/agents/docs-manager) - Duy trì các hồ sơ quyết định kiến trúc
-- [Lệnh /brainstorm](/docs/engineer/skills/brainstorm) - Kích hoạt phiên thảo luận
+- [Lệnh /ck:brainstorm](/docs/engineer/skills/brainstorm) - Kích hoạt phiên thảo luận
 
 ---
 

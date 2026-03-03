@@ -27,7 +27,7 @@ Tạo mảnh nội dung đầu tiên của bạn trong 30 giây:
 
 ```bash
 # Tạo bài đăng blog
-/ask "Write a blog post about [topic] targeting [audience]"
+/ckm:ask "Write a blog post about [topic] targeting [audience]"
 
 # Nhân viên tạo nội dung hoàn chỉnh, sẵn sàng xuất bản
 ```
@@ -78,7 +78,7 @@ Tạo bài viết được tối ưu hóa xếp hạng:
 
 ```bash
 # Bước 1: Xác định mục tiêu của bạn
-/ask "Write a blog post about [topic] targeting keyword '[keyword]' for [audience]"
+/ckm:ask "Write a blog post about [topic] targeting keyword '[keyword]' for [audience]"
 
 # Nhân viên sẽ tạo ra:
 # - Tiêu đề được tối ưu hóa SEO với từ khóa
@@ -101,7 +101,7 @@ Tạo bài đăng tối ưu hóa cho nền tảng:
 
 ```bash
 # Tạo nội dung xã hội
-/ask "Write social media posts about [topic] for LinkedIn, Twitter, and Instagram"
+/ckm:ask "Write social media posts about [topic] for LinkedIn, Twitter, and Instagram"
 
 # Nhân viên tạo các phiên bản được tối ưu hóa cho nền tảng:
 
@@ -136,7 +136,7 @@ Viết câu chuyện video hấp dẫn:
 
 ```bash
 # Tạo script video
-/ask "Write a [length] video script for [type] about [topic]"
+/ckm:ask "Write a [length] video script for [type] about [topic]"
 
 # Loại video:
 # - Explainer (60-90 seconds)
@@ -154,7 +154,7 @@ Tạo quảng cáo tập trung chuyển đổi:
 
 ```bash
 # Tạo biến thể quảng cáo
-/ask "Write ad copy for [product] targeting [audience] for [platform]"
+/ckm:ask "Write ad copy for [product] targeting [audience] for [platform]"
 
 # Nhân viên tạo ra các biến thể bội:
 
@@ -216,6 +216,6 @@ Nhân viên sắp xếp nội dung trong các vị trí được chuẩn hóa:
 
 ## Các lệnh liên quan
 
-- `/ask` - Truy vấn nhân viên để tạo nội dung
-- `/scout` - Tìm nội dung hiện có và mẫu
-- `/plan` - Tạo lịch nội dung toàn diện
+- `/ckm:ask` - Truy vấn nhân viên để tạo nội dung
+- `/ckm:scout` - Tìm nội dung hiện có và mẫu
+- `/ckm:plan` - Tạo lịch nội dung toàn diện

@@ -1,10 +1,10 @@
 ---
-title: MCP Builder
+title: "ck:mcp-builder"
 description: Build high-quality Model Context Protocol servers that enable LLMs to interact with external services through well-designed tools in Python or TypeScript
 section: engineer
 kit: engineer
 category: skills
-order: 18
+order: 50
 ---
 
 Want to give AI agents access to external APIs and services? That's exactly what MCP servers do, and this skill shows you how to build them properly.

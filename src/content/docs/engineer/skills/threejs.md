@@ -1,10 +1,10 @@
 ---
-title: Three.js Skill
+title: "ck:threejs"
 description: Build 3D web experiences with Three.js - WebGL/WebGPU library for scenes, cameras, materials, animations, and advanced rendering
 section: engineer
 kit: engineer
 category: skills/frontend
-order: 7
+order: 50
 published: true
 ---
 # Three.js Skill

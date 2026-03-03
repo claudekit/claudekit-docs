@@ -34,16 +34,16 @@ ClaudeKit chuyển việc quản lý các máy chủ MCP (Model Context Protocol
 
 ## Sử dụng công cụ MCP
 
-Kích hoạt các công cụ do subagent quản lý thông qua lệnh `/use-mcp`:
+Kích hoạt các công cụ do subagent quản lý thông qua lệnh `/ck:use-mcp`:
 
 ```bash
-/use-mcp <chỉ-dẫn>
+/ck:use-mcp <chỉ-dẫn>
 ```
 
 **Ví dụ**
 
 ```bash
-/use-mcp Dùng chrome-devtools mcp để chụp ảnh màn hình google.com
+/ck:use-mcp Dùng chrome-devtools mcp để chụp ảnh màn hình google.com
 ```
 
 ClaudeKit sẽ gọi **mcp-manager**, nạp cấu hình MCP, phân tích các công cụ khả dụng, chọn phương án phù hợp nhất, thực thi và trả kết quả về phiên làm việc chính.
@@ -63,7 +63,7 @@ Bài viết “Code Execution with MCP” của Anthropic gợi ý một hướn
 ### Cơ chế hoạt động
 
 1. Bộ kỹ năng **mcp-management** lưu các đoạn script khởi tạo MCP Client từ `.claude/.mcp.json`.
-2. Subagent **mcp-manager** được cấp các kỹ năng này và chỉ chạy khi có lệnh `/use-mcp`.
+2. Subagent **mcp-manager** được cấp các kỹ năng này và chỉ chạy khi có lệnh `/ck:use-mcp`.
 3. Khi được kích hoạt, subagent sẽ:
    - Đọc `.claude/.mcp.json`.
    - Kết nối tới các máy chủ MCP đã khai báo.
@@ -82,6 +82,6 @@ Ngay cả khi cô lập bằng subagent, việc duyệt quá nhiều công cụ 
 
 - Cập nhật `.claude/.mcp.json` theo nhu cầu công cụ thực tế.
 - Quản lý phiên bản một cách riêng tư nếu tệp chứa endpoint hoặc thông tin nhạy cảm.
-- Kết hợp `/use-mcp` với các lệnh tự động như `/cook`, `/fix`, `/plan` để dùng song song công cụ tùy chỉnh và agent gốc của ClaudeKit.
+- Kết hợp `/ck:use-mcp` với các lệnh tự động như `/ck:cook`, `/ck:fix`, `/ck:plan` để dùng song song công cụ tùy chỉnh và agent gốc của ClaudeKit.
 
 Bạn sẽ tận dụng được lợi thế của MCP mà không lo phình to context chính.

@@ -48,22 +48,22 @@ npm install -g claudekit-cli@latest
 ## Gradual Migration Path
 
 ### Week 1: Try Core Commands
-Start with `/cook` for feature development:
+Start with `/ck:cook` for feature development:
 ```bash
 # Old way
 You: "I need to add a new API endpoint for user profiles"
 [Long conversation with manual guidance]
 
 # ClaudeKit way
-/cook "add user profiles API endpoint"
+/ck:cook "add user profiles API endpoint"
 [Automated planning, development, testing]
 ```
 
 ### Week 2: Use Specialized Workflows
 Adopt task-specific commands:
-- `/fix` for bug fixing (faster than manual debugging)
-- `/plan` for complex features (structured planning)
-- `/docs:update` for documentation (automated sync)
+- `/ck:fix` for bug fixing (faster than manual debugging)
+- `/ck:plan` for complex features (structured planning)
+- `/ck:docs:update` for documentation (automated sync)
 
 ### Week 3: Leverage Skills
 Add custom skills for your stack using the skill-creator skill:
@@ -75,12 +75,12 @@ Add custom skills for your stack using the skill-creator skill:
 ### Week 4: Full Workflow Integration
 Combine commands for complete workflows:
 ```bash
-/plan "redesign checkout flow"
+/ck:plan "redesign checkout flow"
 /clear  # Free context before implementation
-/cook "Redesign checkout flow as planned"
-/frontend-design "checkout UI mockup"
-/fix
-/git pr "feature/new-checkout"
+/ck:cook "Redesign checkout flow as planned"
+/ck:frontend-design "checkout UI mockup"
+/ck:fix
+/ck:git pr "feature/new-checkout"
 ```
 
 ## Compatibility
@@ -109,4 +109,4 @@ A: Uninstall and delete .claude/CLAUDE.md. No breaking changes.
 
 1. [Install ClaudeKit](/docs/getting-started/installation)
 2. [Try Quick Start](/docs/getting-started/quick-start)
-3. [Explore Commands](/docs/engineer/commands)
+3. [Explore Skills](/docs/engineer/skills)

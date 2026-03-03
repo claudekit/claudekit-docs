@@ -33,8 +33,8 @@ npm install -g claudekit-cli
 ck new --kit engineer
 
 # Bắt đầu xây dựng
-/plan "implement user authentication"
-/cook "add login form with validation"
+/ck:plan "implement user authentication"
+/ck:cook "add login form with validation"
 ```
 
 ## Core Features
@@ -44,8 +44,8 @@ ck new --kit engineer
 Lập kế hoạch tính năng và thiết kế hệ thống với sự hỗ trợ AI:
 
 ```bash
-/plan "implement payment integration"
-/plan:parallel "refactor authentication system"
+/ck:plan "implement payment integration"
+/ck:plan:parallel "refactor authentication system"
 ```
 
 ### Code Generation
@@ -53,8 +53,8 @@ Lập kế hoạch tính năng và thiết kế hệ thống với sự hỗ tr�
 Tạo code chất lượng cao với nhận thức ngữ cảnh:
 
 ```bash
-/cook "add REST API endpoints for users"
-/cook "implement caching layer"
+/ck:cook "add REST API endpoints for users"
+/ck:cook "implement caching layer"
 ```
 
 ### Testing & Quality
@@ -62,8 +62,8 @@ Tạo code chất lượng cao với nhận thức ngữ cảnh:
 Đảm bảo chất lượng code với kiểm tra tự động:
 
 ```bash
-/test "run full test suite"
-/fix "resolve TypeScript errors"
+/ck:test "run full test suite"
+/ck:fix "resolve TypeScript errors"
 /review "code review recent changes"
 ```
 
@@ -79,5 +79,5 @@ Quản lý cơ sở dữ liệu và triển khai:
 ## Next Steps
 
 - [Engineer Agents](/vi/docs/engineer/agents) - Gặp gỡ đội ngũ phát triển AI của bạn
-- [Engineer Commands](/vi/docs/engineer/commands) - Tất cả các lệnh có sẵn
+- [Engineer Skills](/vi/docs/engineer/skills) - Tất cả các kỹ năng có sẵn
 - [Engineer Skills](/vi/docs/engineer/skills) - Các khả năng kỹ thuật

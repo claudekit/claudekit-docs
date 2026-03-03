@@ -20,8 +20,8 @@ Thực thi kiểm thử đơn vị (unit tests), kiểm thử tích hợp (integ
 ## Khi nào được kích hoạt
 
 Agent tester kích hoạt khi:
-- Sử dụng lệnh `/test`
-- Sử dụng lệnh `/fix [issues]`
+- Sử dụng lệnh `/ck:test`
+- Sử dụng lệnh `/ck:fix [issues]`
 - Sau khi triển khai các tính năng mới
 - Khi kiểm tra độ bao phủ mã nguồn
 - Trước khi tạo pull request
@@ -64,7 +64,7 @@ Hỗ trợ đa dạng các ngôn ngữ và framework:
 
 ### Thực thi kiểm thử cơ bản
 ```bash
-/test
+/ck:test
 ```
 **Quy trình**: Phát hiện kiểm thử -> Thực thi -> Phân tích độ bao phủ -> Tạo báo cáo chi tiết về các bài test đạt/thất bại và các lỗ hổng bao phủ.
 

@@ -16,7 +16,7 @@ Execute MCP server tools (screenshots, browser automation, docs lookup) in isola
 - Need browser screenshots, form automation, web scraping
 - Query library docs (Next.js, React, Supabase via context7)
 - Access DevTools Protocol, sequential reasoning tools
-- Any `/use-mcp [task]` command - agent handles the rest
+- Any `/ck:use-mcp [task]` command - agent handles the rest
 
 ## Key Capabilities
 
@@ -31,23 +31,23 @@ Execute MCP server tools (screenshots, browser automation, docs lookup) in isola
 
 ### 1. Frontend Dev - Visual Testing
 **Who:** React/Next.js developers
-**Prompt:** `/use-mcp Screenshot staging.app.com/dashboard vs prod at 1920x1080, highlight differences`
+**Prompt:** `/ck:use-mcp Screenshot staging.app.com/dashboard vs prod at 1920x1080, highlight differences`
 
 ### 2. DevOps - Monitoring Checks
 **Who:** SREs, DevOps engineers
-**Prompt:** `/use-mcp Navigate to status.service.com, check all green checkmarks, screenshot if any red`
+**Prompt:** `/ck:use-mcp Navigate to status.service.com, check all green checkmarks, screenshot if any red`
 
 ### 3. Docs Research - API Lookup
 **Who:** Full-stack developers
-**Prompt:** `/use-mcp Find Supabase auth documentation for OAuth providers and MFA setup`
+**Prompt:** `/ck:use-mcp Find Supabase auth documentation for OAuth providers and MFA setup`
 
 ### 4. QA Automation - Form Testing
 **Who:** QA engineers
-**Prompt:** `/use-mcp Fill example.com/contact form with test data: name=John, email=test@test.com, submit and confirm`
+**Prompt:** `/ck:use-mcp Fill example.com/contact form with test data: name=John, email=test@test.com, submit and confirm`
 
 ### 5. Web Scraping - Data Extraction
 **Who:** Data analysts, marketers
-**Prompt:** `/use-mcp Extract all product names and prices from competitor.com/products table`
+**Prompt:** `/ck:use-mcp Extract all product names and prices from competitor.com/products table`
 
 ## Pro Tips
 
@@ -68,4 +68,4 @@ Execute MCP server tools (screenshots, browser automation, docs lookup) in isola
 
 ## Key Takeaway
 
-MCP Manager isolates complex tool execution (browser automation, docs queries, screenshots) from your main Claude context - you get clean outputs, Claude stays fast. Access 100+ MCP tools via `/use-mcp [natural language task]`.
+MCP Manager isolates complex tool execution (browser automation, docs queries, screenshots) from your main Claude context - you get clean outputs, Claude stays fast. Access 100+ MCP tools via `/ck:use-mcp [natural language task]`.

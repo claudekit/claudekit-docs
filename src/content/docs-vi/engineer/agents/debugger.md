@@ -21,7 +21,7 @@ Agent debugger điều tra các vấn đề phức tạp một cách có hệ th
 
 Agent debugger được kích hoạt khi:
 
-- Sử dụng lệnh `/debug [description]`
+- Sử dụng lệnh `/ck:debug [description]`
 - Các điểm cuối API trả về lỗi
 - Các đường dẫn CI/CD bị lỗi
 - Phát hiện các vấn đề về hiệu suất
@@ -104,7 +104,7 @@ Sử dụng các công cụ như `kubectl logs`, `psql`, `gh run view`, `docker 
 
 **Đầu vào:**
 ```bash
-/debug [điểm cuối API /api/orders đang trả về lỗi 500]
+/ck:debug [điểm cuối API /api/orders đang trả về lỗi 500]
 ```
 
 **Quá trình:**

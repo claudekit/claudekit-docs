@@ -26,7 +26,7 @@ Assess your retention health in 30 seconds:
 
 ```bash
 # Analyze churn risk
-/ask "Identify customers at risk of churning and recommend interventions"
+/ckm:ask "Identify customers at risk of churning and recommend interventions"
 
 # The agent analyzes engagement patterns and flags at-risk accounts
 ```
@@ -77,7 +77,7 @@ Identify who's at risk and why:
 
 ```bash
 # Step 1: Analyze churn patterns
-/ask "Analyze our churn patterns and identify predictive signals"
+/ckm:ask "Analyze our churn patterns and identify predictive signals"
 
 # The agent will examine:
 # - Usage patterns before churn
@@ -105,7 +105,7 @@ Build predictive health scoring:
 
 ```bash
 # Design health score
-/ask "Create a customer health scoring model for [your product]"
+/ckm:ask "Create a customer health scoring model for [your product]"
 
 # The agent will define:
 
@@ -143,7 +143,7 @@ Win back inactive customers:
 
 ```bash
 # Create win-back sequence
-/ask "Design a re-engagement campaign for customers inactive for 60+ days"
+/ckm:ask "Design a re-engagement campaign for customers inactive for 60+ days"
 
 # The agent creates multi-touch sequence:
 
@@ -178,7 +178,7 @@ Automate feedback and follow-up:
 
 ```bash
 # Build NPS workflow
-/ask "Design an NPS automation workflow with proper follow-up"
+/ckm:ask "Design an NPS automation workflow with proper follow-up"
 
 # The agent creates:
 
@@ -244,6 +244,6 @@ The agent organizes retention assets in standardized locations:
 
 ## Related Commands
 
-- `/ask` - Query the agent for retention strategy
-- `/scout` - Find customer data and patterns
-- `/plan` - Create comprehensive retention programs
+- `/ckm:ask` - Query the agent for retention strategy
+- `/ckm:scout` - Find customer data and patterns
+- `/ckm:plan` - Create comprehensive retention programs

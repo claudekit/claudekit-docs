@@ -1,10 +1,10 @@
 ---
-title: "Copywriting"
+title: "ck:copywriting"
 description: "Conversion copywriting formulas, headline templates, email patterns, and custom writing style extraction"
 section: engineer
 kit: engineer
 category: skills
-order: 24
+order: 50
 ---
 
 High-converting copy formulas, templates, and writing style extraction for marketing, landing pages, emails, and product descriptions.

@@ -67,20 +67,20 @@ claudekit init
 ### Q: What's the most common workflow?
 **A:** The feature development workflow:
 ```bash
-/plan "add user authentication with OAuth"  # Plan the feature
+/ck:plan "add user authentication with OAuth"  # Plan the feature
 /clear                                      # Free context
-/cook "Implement user authentication with OAuth as planned"
-/fix                                  # Test and fix issues
-/git cm                                    # Commit changes
+/ck:cook "Implement user authentication with OAuth as planned"
+/ck:fix                                  # Test and fix issues
+/ck:git cm                                    # Commit changes
 ```
 
 ### Q: How do I fix bugs with ClaudeKit?
 **A:** Use the debugging workflow:
 ```bash
-/debug "login button not working"          # Investigate issue
-/fix "session timeout problem"        # Implement fix
-/fix                                  # Verify fix works
-/git cm                                    # Commit solution
+/ck:debug "login button not working"          # Investigate issue
+/ck:fix "session timeout problem"        # Implement fix
+/ck:fix                                  # Verify fix works
+/ck:git cm                                    # Commit solution
 ```
 
 ### Q: Can I create custom commands?
@@ -153,14 +153,14 @@ claudekit init
 **A:** Try these solutions:
 ```bash
 "Refresh skill detection" # Natural language activation
-/debug "project analysis"  # Analyze project structure
+/ck:debug "project analysis"  # Analyze project structure
 claudekit doctor  # Check system health
 ```
 
 ### Q: Commands are taking too long
 **A:** Performance optimization tips:
 - Use `.claudeignore` to exclude large directories
-- Run `/debug "performance issues"` to identify bottlenecks
+- Run `/ck:debug "performance issues"` to identify bottlenecks
 - Consider splitting large tasks into smaller ones
 
 ### Q: I keep hitting Claude's rate limits. What can I do?
@@ -173,9 +173,9 @@ claudekit doctor  # Check system health
 ### Q: Generated code has errors
 **A:** Quick fixes:
 ```bash
-/fix          # Run tests and fix issues
-/fix          # Use multi-agent debugging
-/debug "analyze generated code"  # Investigate specific issues
+/ck:fix          # Run tests and fix issues
+/ck:fix          # Use multi-agent debugging
+/ck:debug "analyze generated code"  # Investigate specific issues
 ```
 
 ## Pricing and Licensing
@@ -248,11 +248,11 @@ claudekit doctor  # Check system health
 echo "node_modules/\ndist/\nbuild/\ncoverage/" > .claudeignore
 
 # Use specific focus areas
-/cook "optimize user authentication flow" --scope auth
+/ck:cook "optimize user authentication flow" --scope auth
 
 # Regular maintenance
-/docs:update "keep documentation current"
-/fix "maintain CI/CD health"
+/ck:docs:update "keep documentation current"
+/ck:fix "maintain CI/CD health"
 ```
 
 ### Q: Can ClaudeKit work with microservices?

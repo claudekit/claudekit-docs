@@ -26,7 +26,7 @@ Audit your funnel in 30 seconds:
 
 ```bash
 # Analyze your current funnel
-/ask "Audit our [product] funnel and identify bottlenecks"
+/ckm:ask "Audit our [product] funnel and identify bottlenecks"
 
 # The agent maps stages, identifies drops, and recommends fixes
 ```
@@ -79,7 +79,7 @@ Diagnose and fix your funnel:
 
 ```bash
 # Step 1: Map your current funnel
-/ask "Map our current funnel for [product] and calculate stage-by-stage conversion"
+/ckm:ask "Map our current funnel for [product] and calculate stage-by-stage conversion"
 
 # Agent will request or analyze:
 # - Traffic sources and volume
@@ -108,7 +108,7 @@ Build a high-converting funnel:
 
 ```bash
 # Design new funnel
-/ask "Design a [funnel type] for [product] targeting [audience]"
+/ckm:ask "Design a [funnel type] for [product] targeting [audience]"
 
 # Common funnel types:
 # - Webinar funnel (registration → attendance → offer → purchase)
@@ -132,7 +132,7 @@ Apply value equation to your offer:
 
 ```bash
 # Optimize your offer
-/ask "Apply the Hormozi value equation to optimize our [product] offer"
+/ckm:ask "Apply the Hormozi value equation to optimize our [product] offer"
 
 # Agent analyzes all four variables:
 # 1. Dream Outcome → What's the ideal result? Make it bigger.
@@ -156,7 +156,7 @@ Systematic improvement plan:
 
 ```bash
 # Create test plan
-/ask "Create an A/B testing roadmap for our [product] funnel"
+/ckm:ask "Create an A/B testing roadmap for our [product] funnel"
 
 # Agent will:
 # - Identify highest-impact test opportunities
@@ -214,6 +214,6 @@ The agent organizes funnel assets in standardized locations:
 
 ## Related Commands
 
-- `/ask` - Query the agent for funnel analysis
-- `/scout` - Find funnel data and analytics
-- `/plan` - Create comprehensive funnel strategies
+- `/ckm:ask` - Query the agent for funnel analysis
+- `/ckm:scout` - Find funnel data and analytics
+- `/ckm:plan` - Create comprehensive funnel strategies

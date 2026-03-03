@@ -758,7 +758,7 @@ Fixing security issues post-launch is 10x more expensive.
 
 ## Related Commands
 
-- `/review code` - Comprehensive code quality assessment
+- `/ckm:review code` - Comprehensive code quality assessment
 - `/security audit` - Security vulnerability scan
 - `/performance check` - Page speed and optimization analysis
 

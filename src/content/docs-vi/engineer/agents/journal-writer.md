@@ -20,7 +20,7 @@ Tạo ra các tài liệu xác thực về những gì đã sai, tại sao nó l
 ## Khi nào được kích hoạt
 
 Agent journal-writer kích hoạt khi:
-- Sử dụng lệnh `/journal`
+- Sử dụng lệnh `/ck:journal`
 - Khi xảy ra lỗi kiểm thử lặp đi lặp lại
 - Khi các lỗi nghiêm trọng chặn việc phát hành (release)
 - Khi việc triển khai thất bại cần được tài liệu hóa

@@ -1,10 +1,10 @@
 ---
-title: "Agent Browser"
+title: "ck:agent-browser"
 description: "AI-optimized browser automation with context-efficient snapshots for autonomous testing and cloud browser support"
 section: engineer
 kit: engineer
 category: skills
-order: 20
+order: 50
 ---
 
 Browser automation designed specifically for AI agents. Uses a "snapshot + refs" paradigm for 93% less context than traditional tools.

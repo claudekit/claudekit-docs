@@ -36,7 +36,7 @@ Sử dụng researcher khi:
 
 ```bash
 # Nghiên cứu một công nghệ trước khi triển khai
-/plan [thêm tích hợp thanh toán Stripe]
+/ck:plan [thêm tích hợp thanh toán Stripe]
 ```
 
 **Điều gì xảy ra**:

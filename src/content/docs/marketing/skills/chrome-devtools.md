@@ -1,5 +1,5 @@
 ---
-title: "Chrome DevTools"
+title: "ckm:chrome-devtools"
 description: "Browser automation with Puppeteer: screenshots, ARIA snapshots, performance analysis, form automation, and debugging."
 section: marketing
 category: skills
@@ -202,11 +202,11 @@ node scripts/evaluate.js --script "window.scrollTo(0, document.body.scrollHeight
 
 ## Related Skills
 
-- [SEO Optimization](/docs/marketing/skills/seo-optimization) - Measure Core Web Vitals
+- [SEO Optimization](/docs/marketing/skills/seo) - Measure Core Web Vitals
 - [Analytics](/docs/marketing/skills/analytics) - Performance tracking
 - [Media Processing](/docs/marketing/skills/media-processing) - Post-process screenshots
 
 ## Related Commands
 
 - `/design/screenshot` - Analyze design screenshots
-- `/test` - Test web applications
+- `/ckm:test` - Test web applications

@@ -51,23 +51,23 @@ npm install -g claudekit-cli@latest
 
 ### Tuần 1: Thử Core Commands
 
-Bắt đầu với `/cook` cho feature development:
+Bắt đầu với `/ck:cook` cho feature development:
 ```bash
 # Cách cũ
 You: "I need to add a new API endpoint for user profiles"
 [Cuộc trò chuyện dài với hướng dẫn thủ công]
 
 # Cách ClaudeKit
-/cook "add user profiles API endpoint"
+/ck:cook "add user profiles API endpoint"
 [Planning, development, testing tự động]
 ```
 
 ### Tuần 2: Sử Dụng Specialized Workflows
 
 Áp dụng commands cụ thể cho từng task:
-- `/fix` cho bug fixing (nhanh hơn debugging thủ công)
-- `/plan` cho tính năng phức tạp (planning có cấu trúc)
-- `/docs:update` cho documentation (đồng bộ tự động)
+- `/ck:fix` cho bug fixing (nhanh hơn debugging thủ công)
+- `/ck:plan` cho tính năng phức tạp (planning có cấu trúc)
+- `/ck:docs:update` cho documentation (đồng bộ tự động)
 
 ### Tuần 3: Tận Dụng Skills
 
@@ -81,12 +81,12 @@ Thêm custom skills cho stack của bạn sử dụng skill-creator skill:
 
 Kết hợp commands cho complete workflows:
 ```bash
-/plan "redesign checkout flow"
+/ck:plan "redesign checkout flow"
 /clear  # Giải phóng context trước khi triển khai
-/cook "Redesign checkout flow as planned"
-/frontend-design "checkout UI mockup"
-/fix
-/git pr "feature/new-checkout"
+/ck:cook "Redesign checkout flow as planned"
+/ck:frontend-design "checkout UI mockup"
+/ck:fix
+/ck:git pr "feature/new-checkout"
 ```
 
 ## Tương Thích
@@ -115,4 +115,4 @@ A: Gỡ cài đặt và xóa .claude/CLAUDE.md. Không có breaking changes.
 
 1. [Cài Đặt ClaudeKit](/vi/docs/getting-started/installation)
 2. [Thử Bắt Đầu Nhanh](/vi/docs/getting-started/quick-start)
-3. [Khám Phá Commands](/vi/docs/engineer/commands)
+3. [Khám Phá Skills](/vi/docs/engineer/skills)

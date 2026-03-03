@@ -1,5 +1,5 @@
 ---
-title: "Coding Level"
+title: "ck:coding-level"
 description: "Set your coding experience level for tailored explanations and output format"
 section: engineer
 kit: engineer
@@ -12,7 +12,7 @@ Set your coding experience level so ClaudeKit tailors its explanations, code com
 ## Usage
 
 ```
-/coding-level [0-5]
+/ck:coding-level [0-5]
 ```
 
 ## Levels

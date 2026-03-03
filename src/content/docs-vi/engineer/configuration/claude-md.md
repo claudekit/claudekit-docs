@@ -225,7 +225,7 @@ Bây giờ bạn đã hiểu về CLAUDE.md:
 
 - [Workflows](/docs/engineer/configuration/workflows) - Tìm hiểu về các file workflow.
 - [Agents](/docs/engineer/agents/) - Hiểu về hệ thống agent.
-- [Commands](/docs/engineer/commands/) - Khám phá các lệnh có sẵn.
+- [Skills](/docs/engineer/skills) - Khám phá các kỹ năng có sẵn.
 
 ---
 

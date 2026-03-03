@@ -1,5 +1,5 @@
 ---
-title: "Gamification Marketing"
+title: "ckm:gamification-marketing"
 description: "Design gamified campaigns using behavioral psychology with points, badges, leaderboards, streaks, and challenges for engagement and retention."
 section: marketing
 category: skills
@@ -134,5 +134,5 @@ Frame as "friendly competition", hide ranks below top 10 to prevent negative psy
 ## Related Commands
 
 - `/campaign/create` - Plan gamified campaign
-- `/plan` - Implementation roadmap
+- `/ckm:plan` - Implementation roadmap
 - `/analytics/dashboard` - Track engagement

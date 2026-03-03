@@ -1,10 +1,10 @@
 ---
-title: "Remotion"
+title: "ck:remotion"
 description: "Video creation in React with animations, compositions, and programmatic rendering"
 section: engineer
 kit: engineer
 category: skills
-order: 32
+order: 50
 ---
 
 Best practices for Remotion—create videos programmatically using React components, animations, and compositions.

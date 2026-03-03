@@ -12,7 +12,7 @@ Commands not working? Get them running in minutes with these step-by-step fixes.
 
 ## Quick Fix: Command Does Nothing
 
-**Symptom**: Typing `/cook` or other slash commands produces no response
+**Symptom**: Typing `/ck:cook` or other slash commands produces no response
 
 **Solution**:
 
@@ -142,7 +142,7 @@ See [Installation Issues](/docs/support/troubleshooting/installation-issues) for
 ```bash
 # Run with verbose output
 export CLAUDEKIT_VERBOSE=1
-/cook implement user authentication
+/ck:cook implement user authentication
 
 # Check error message details
 ```
@@ -179,10 +179,10 @@ See [API Key Setup](/docs/support/troubleshooting/api-key-setup) for complete co
 cat .claude/commands/core/cook.md
 
 # Use correct format:
-/cook implement feature name
+/ck:cook implement feature name
 
 # NOT:
-/cook --implement feature
+/ck:cook --implement feature
 ```
 
 #### Agent Not Available
@@ -320,7 +320,7 @@ ck init --kit engineer
 cp .claude.backup/commands/my-custom.md .claude/commands/
 
 # Verify
-/cook test command
+/ck:cook test command
 ```
 
 ### Permission Issues
@@ -399,10 +399,10 @@ find .claude/agents -name "*.md" | wc -l
 ```bash
 # Method 1: Environment variable
 export CLAUDEKIT_VERBOSE=1
-/cook implement feature
+/ck:cook implement feature
 
 # Method 2: Command flag (if supported)
-/cook implement feature --verbose
+/ck:cook implement feature --verbose
 
 # Method 3: Check logs
 cat ~/.claudekit/logs/latest.log
@@ -453,14 +453,14 @@ ck init --kit engineer
 cp .claude.backup/commands/my-custom.md .claude/commands/
 
 # Test
-/cook hello world
+/ck:cook hello world
 ```
 
 ### Verify Command Works
 
 ```bash
 # Simple test command
-/cook implement hello world feature
+/ck:cook implement hello world feature
 
 # Expected: Planner starts, creates plan, delegates to agents
 
@@ -481,7 +481,7 @@ claude
 claude --dangerously-skip-permissions
 
 # Test command again
-/cook test
+/ck:cook test
 ```
 
 ---

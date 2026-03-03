@@ -25,14 +25,14 @@ Tìm kiếm các tệp cho bất kỳ nhiệm vụ nào:
 
 ```bash
 # Khi bắt đầu một tính năng mới
-/scout "Find all email sending and template files"
+/ckm:scout "Find all email sending and template files"
 ```
 
 Bạn sẽ nhận được danh sách các tệp liên quan được phân loại rõ ràng:
 - Các tiện ích cốt lõi: `lib/email.ts`
 - Các tuyến API (API routes): `app/api/send-email/route.ts`
 - Các mẫu (Templates): `templates/welcome-email.tsx`
-- Các bài kiểm tra (Tests): `__tests__/email.test.ts`
+- Các bài kiểm tra (Tests): `__tests__/ckm:email.test.ts`
 
 ## Khả năng
 
@@ -82,7 +82,7 @@ Sử dụng Scout Agent khi bạn cần:
 ### Tìm kiếm các tệp tích hợp thanh toán
 
 ```bash
-/scout "Locate all payment processing files for Stripe and SePay"
+/ckm:scout "Locate all payment processing files for Stripe and SePay"
 ```
 
 **Scout sẽ tìm thấy**:
@@ -95,7 +95,7 @@ Sử dụng Scout Agent khi bạn cần:
 ### Gỡ lỗi luồng xác thực (Authentication)
 
 ```bash
-/scout "Find all authentication and session management files"
+/ckm:scout "Find all authentication and session management files"
 ```
 
 **Bạn sẽ nhận được**:
@@ -108,7 +108,7 @@ Sử dụng Scout Agent khi bạn cần:
 ### Tìm hiểu cấu trúc cơ sở dữ liệu
 
 ```bash
-/scout "Show me all database schema and migration files"
+/ckm:scout "Show me all database schema and migration files"
 ```
 
 **Scout trả về**:
@@ -176,8 +176,8 @@ Gốc Dự Án
 
 ## Các lệnh liên quan
 
-- [`/scout`](/vi/docs/marketing/commands/scout) - Tìm kiếm các tệp tin.
-- [`/explore`](/docs/marketing/commands) - Khám phá mã nguồn theo cách tương tác.
+- [`/ckm:scout`](/vi/docs/marketing/skills) - Tìm kiếm các tệp tin.
+- [`/explore`](/docs/marketing/skills) - Khám phá mã nguồn theo cách tương tác.
 
 ## Mẹo
 
@@ -224,19 +224,19 @@ Cơ sở dữ liệu:
 **Loại trừ các mẫu**:
 ```bash
 # Tìm các tệp TypeScript nhưng bỏ qua các tệp kiểm tra
-/scout "TypeScript files but skip test files"
+/ckm:scout "TypeScript files but skip test files"
 ```
 
 **Các thay đổi gần đây**:
 ```bash
 # Các tệp liên quan đến xác thực được thay đổi trong commit gần nhất
-/scout "Files changed in last commit related to authentication"
+/ckm:scout "Files changed in last commit related to authentication"
 ```
 
 **Tìm kiếm đa tính năng**:
 ```bash
 # Tìm tất cả các trình xử lý webhook cho các nhà cung cấp thanh toán
-/scout "All webhook handlers for payment providers"
+/ckm:scout "All webhook handlers for payment providers"
 ```
 
 Scout Agent loại bỏ hoàn toàn câu hỏi "Tệp tin này nằm ở đâu?". Bạn mô tả những gì bạn cần, và nó sẽ tìm thấy chúng. Đơn giản và hiệu quả.

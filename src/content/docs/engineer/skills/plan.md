@@ -1,14 +1,14 @@
 ---
-title: "Planning"
+title: "ck:plan"
 description: "Create detailed technical implementation plans with research, architecture design, and comprehensive phase documentation"
 section: engineer
 kit: engineer
 category: skills
-order: 38
+order: 3
 published: true
 ---
 
-Creates structured, research-backed implementation plans in your `plans/` directory. Formerly split across `/plan:fast`, `/plan:hard`, and other commands—now consolidated into one skill.
+Creates structured, research-backed implementation plans in your `plans/` directory. Formerly split across `/ck:plan:fast`, `/ck:plan:hard`, and other commands—now consolidated into one skill.
 
 ## What This Skill Does
 
@@ -29,15 +29,15 @@ Add `--no-tasks` to any mode to skip task hydration after plan creation.
 ## Usage
 
 ```
-/plan <requirements> [flags]
+/ck:plan <requirements> [flags]
 ```
 
 **Examples:**
-- `/plan "add Stripe subscription billing" --fast`
-- `/plan "migrate from REST to GraphQL" --hard`
-- `/plan "implement real-time notifications + presence" --parallel`
-- `/plan "redesign auth system" --two`
-- `/plan "scaffold new microservice" --auto --no-tasks`
+- `/ck:plan "add Stripe subscription billing" --fast`
+- `/ck:plan "migrate from REST to GraphQL" --hard`
+- `/ck:plan "implement real-time notifications + presence" --parallel`
+- `/ck:plan "redesign auth system" --two`
+- `/ck:plan "scaffold new microservice" --auto --no-tasks`
 
 ## Workflow Process
 

@@ -1,18 +1,18 @@
 ---
-title: "AI Multimodal"
-description: "Process and generate multimedia content with Google Gemini API: audio transcription, image analysis, video processing, Imagen 4, and Veo 3."
+title: "ckm:ai-multimodal"
+description: "Process multimedia with Gemini and MiniMax: transcription, image/video analysis, Imagen 4, Veo 3, Hailuo 1080p video, TTS, and AI music generation."
 section: marketing
 category: skills
 order: 17
 ---
 
-> Generate images and videos, analyze multimedia files, and process documents using Google Gemini's multimodal AI capabilities.
+> Generate images, videos, music, and speech; analyze multimedia files; and process documents using Google Gemini and MiniMax multimodal AI capabilities.
 
 ## What This Skill Does
 
 **Challenge**: Marketing requires processing diverse media (audio, images, videos, PDFs) and creating visual content. Using separate tools for each format is inefficient and expensive.
 
-**Solution**: The AI Multimodal skill integrates Google Gemini API for audio transcription (9.5h), image analysis, video processing (6h), PDF extraction, Imagen 4 image generation, and Veo 3 video generation (8-second clips with audio). One API, 2M token context window.
+**Solution**: The AI Multimodal skill integrates Google Gemini API for audio transcription (9.5h), image analysis, video processing (6h), PDF extraction, Imagen 4 image generation, and Veo 3 video generation (8-second clips with audio). It also integrates MiniMax for image generation, video generation, text-to-speech, and music generation. One skill, multiple AI backends, 2M token context window.
 
 ## Activation
 
@@ -96,7 +96,7 @@ python scripts/gemini_batch_process.py --task generate --prompt "Product hero im
 **Guide**: `references/image-generation.md`
 
 ### 5. Video Generation with Veo 3
-Generate 8-second video clips with audio asynchronously.
+Generate 8-second video clips with audio asynchronously using Google's Veo 3 model.
 
 ```bash
 # Generate video clip
@@ -110,6 +110,74 @@ python scripts/gemini_batch_process.py --task generate-video --prompt "Product u
 **Output**: MP4 file
 
 **Guide**: `references/video-generation.md`
+
+### 6. MiniMax Image Generation
+
+Generate high-quality marketing images using MiniMax's image generation model.
+
+```bash
+# Generate image with MiniMax
+python scripts/minimax_generate.py --task image --prompt "Product hero shot, minimalist white background, premium lighting, commercial quality"
+
+# Generate multiple variants
+python scripts/minimax_generate.py --task image --prompt "Social media banner" --count 4
+```
+
+**Capabilities**: Text-to-image, photorealistic outputs, brand asset generation
+
+**Guide**: `references/minimax-image-generation.md`
+
+### 7. MiniMax Video Generation
+
+Generate short marketing video clips using MiniMax's video model.
+
+```bash
+# Generate video from text
+python scripts/minimax_generate.py --task video --prompt "Product reveal animation, cinematic lighting, slow motion, professional"
+
+# Generate video from image
+python scripts/minimax_generate.py --task video --first-frame product.png --prompt "Smooth zoom in, professional studio"
+```
+
+**Capabilities**: Text-to-video, image-to-video, cinematic quality clips
+
+**Guide**: `references/minimax-video-generation.md`
+
+### 8. MiniMax Text-to-Speech
+
+Convert marketing copy to professional voiceovers using MiniMax's TTS model.
+
+```bash
+# Generate voiceover for ad script
+python scripts/minimax_generate.py --task speech --text "Discover the future of marketing automation..." --voice "professional_female"
+
+# Batch generate for email sequence
+python scripts/minimax_generate.py --task speech --file scripts/email-sequence-voiceovers.txt
+```
+
+**Voices**: Multiple languages and voice profiles (professional, casual, energetic)
+
+**Output**: MP3 files ready for video or podcast use
+
+**Guide**: `references/minimax-tts.md`
+
+### 9. MiniMax Music Generation
+
+Generate background music for marketing videos and audio content.
+
+```bash
+# Generate background music for a promotional video
+python scripts/minimax_generate.py --task music --prompt "Upbeat corporate background music, professional, energetic, 60 seconds"
+
+# Generate podcast intro music
+python scripts/minimax_generate.py --task music --prompt "Podcast intro, modern tech vibe, 15 seconds, fade out"
+```
+
+**Capabilities**: Custom music generation from text descriptions, mood and tempo control
+
+**Output**: MP3/WAV files
+
+**Guide**: `references/minimax-music-generation.md`
 
 ## Prerequisites
 
@@ -132,10 +200,13 @@ python scripts/check_setup.py
 **Environment Variables** (`.env`):
 ```bash
 GEMINI_API_KEY=your_key_here
+MINIMAX_API_KEY=your_minimax_key_here  # Required for MiniMax capabilities
 ```
 
 **Available Scripts**:
-- `gemini_batch_process.py` - Main CLI for all tasks
+
+- `gemini_batch_process.py` - Main CLI for Gemini tasks
+- `minimax_generate.py` - CLI for MiniMax image, video, TTS, and music
 - `media_optimizer.py` - Compress/resize media for API limits
 - `document_converter.py` - Convert PDF to markdown
 - `check_setup.py` - Verify API keys and dependencies
@@ -193,7 +264,7 @@ Use `media_optimizer.py` to compress files >20MB before processing.
 
 - [AI Artist](/docs/marketing/skills/ai-artist) - Prompt engineering for better outputs
 - [Media Processing](/docs/marketing/skills/media-processing) - FFmpeg for audio/video manipulation
-- [Brand Guidelines](/docs/marketing/skills/brand-guidelines) - Brand-aligned image generation
+- [Brand Guidelines](/docs/marketing/skills/brand) - Brand-aligned image generation
 - [Creativity](/docs/marketing/skills/creativity) - Creative direction for generated content
 
 ## Related Commands

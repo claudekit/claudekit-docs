@@ -26,7 +26,7 @@ See the Attraction Specialist in action in 30 seconds:
 
 ```bash
 # Analyze competitor keywords
-/scout "What keywords are our competitors ranking for?"
+/ckm:scout "What keywords are our competitors ranking for?"
 
 # The agent will identify keyword gaps and create a prioritized list
 ```
@@ -72,10 +72,10 @@ Discover opportunities you're missing:
 
 ```bash
 # Step 1: Identify your top 3 competitors
-/scout "Who are the main competitors for [your product]"
+/ckm:scout "Who are the main competitors for [your product]"
 
 # Step 2: Request keyword analysis
-/ask "Analyze keyword gaps between us and [competitor domains]"
+/ckm:ask "Analyze keyword gaps between us and [competitor domains]"
 
 # The agent will:
 # - Research competitor keyword rankings
@@ -93,7 +93,7 @@ Build a high-converting landing page:
 
 ```bash
 # Provide your offer details
-/ask "Create landing page copy for [product/offer] targeting [audience]"
+/ckm:ask "Create landing page copy for [product/offer] targeting [audience]"
 
 # The agent will generate:
 # - Hero headline with benefit-driven subheadline
@@ -111,7 +111,7 @@ Scale your content production:
 
 ```bash
 # Define your template type
-/ask "Design a programmatic SEO template for [location/comparison/integration] pages"
+/ckm:ask "Design a programmatic SEO template for [location/comparison/integration] pages"
 
 # The agent creates:
 # - Template structure with variables
@@ -162,6 +162,6 @@ The agent organizes outputs in standardized locations:
 
 ## Related Commands
 
-- `/scout` - Find relevant files and context
-- `/ask` - Query agents directly
-- `/plan` - Create comprehensive marketing plans
+- `/ckm:scout` - Find relevant files and context
+- `/ckm:ask` - Query agents directly
+- `/ckm:plan` - Create comprehensive marketing plans

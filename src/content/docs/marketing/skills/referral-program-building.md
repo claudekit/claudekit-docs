@@ -1,5 +1,5 @@
 ---
-title: "Referral Program Building"
+title: "ckm:referral-program-building"
 description: "Build viral referral programs for SaaS with dual rewards, platform integrations, fraud prevention, and attribution tracking."
 section: marketing
 category: skills
@@ -138,5 +138,5 @@ Explain program in 2-3 lines. Complex rules kill participation.
 ## Related Commands
 
 - `/campaign/create` - Launch referral campaign
-- `/plan` - Implementation planning
-- `/analyze:report` - Analyze referral performance
+- `/ckm:plan` - Implementation planning
+- `/ckm:analyze:report` - Analyze referral performance

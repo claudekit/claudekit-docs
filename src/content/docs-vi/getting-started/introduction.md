@@ -37,7 +37,7 @@ ClaudeKit mở rộng Claude Code với các bộ công cụ chuyên biệt cho 
 
 **Engineer Kit** - Bộ công cụ phát triển và tự động hóa:
 - **Agents**: AI assistants chuyên biệt (planner, researcher, tester, debugger, backend-developer)
-- **Commands**: Workflows phát triển (`/cook`, `/fix`, `/plan`, `/test`)
+- **Commands**: Workflows phát triển (`/ck:cook`, `/ck:fix`, `/ck:plan`, `/ck:test`)
 - **Skills**: Modules kiến thức kỹ thuật (Next.js, PostgreSQL, Docker, DevOps)
 
 **Marketing Kit** - Bộ công cụ tự động hóa marketing và nội dung:
@@ -49,7 +49,7 @@ ClaudeKit mở rộng Claude Code với các bộ công cụ chuyên biệt cho 
 ## Cách Hoạt Động
 
 **Ví Dụ Engineer Kit:**
-1. Gõ `/cook "add user authentication"`
+1. Gõ `/ck:cook "add user authentication"`
 2. Hệ thống khởi chạy planner → researcher → developer → tester
 3. Agents cộng tác, viết code, chạy tests, commit changes
 4. Bạn xem lại kết quả, cung cấp phản hồi, lặp lại
@@ -100,6 +100,6 @@ Sử dụng kit switcher trong header để khám phá:
 - [Code Review](/vi/docs/workflows) - Kiểm tra chất lượng code tự động
 
 **Marketing Workflows**:
-- [Tạo Nội Dung](/docs/marketing/workflows/content-workflow) - Blog posts, copy, social media
-- [Sản Xuất Video](/docs/marketing/workflows/dashboard-workflow) - Script đến storyboard đến video
-- [Quản Lý Chiến Dịch](/docs/marketing/workflows/campaign-workflow) - Chiến dịch đa kênh
+- [Tạo Nội Dung](/docs/workflows/content-workflow) - Blog posts, copy, social media
+- [Sản Xuất Video](/docs/workflows/dashboard-workflow) - Script đến storyboard đến video
+- [Quản Lý Chiến Dịch](/docs/workflows/campaign-workflow) - Chiến dịch đa kênh

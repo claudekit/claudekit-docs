@@ -1,10 +1,10 @@
 ---
-title: "Cook"
+title: "ck:cook"
 description: "End-to-end feature implementation with automatic workflow detection and intelligent routing"
 section: engineer
 kit: engineer
 category: skills
-order: 23
+order: 4
 ---
 
 Your complete feature implementation engine. Replaces the old `/code` command with smart workflow detection, research phases, and quality gates.
@@ -39,7 +39,7 @@ Think of it as your implementation conductor. Give it a task like "add user auth
 ## Usage
 
 ```
-/cook <task OR plan path> [--flag]
+/ck:cook <task OR plan path> [--flag]
 ```
 
 Optional flags: `--interactive`, `--fast`, `--parallel`, `--no-test`, `--auto`
@@ -48,11 +48,11 @@ If no flag provided, uses interactive mode by default.
 
 ## Example Prompts
 
-- "/cook add user authentication to the app"
-- "/cook implement real-time notifications --fast"
-- "/cook path/to/plan.md --auto"
-- "/cook add search, filters, and pagination --parallel"
-- "/cook prototype new UI design --no-test"
+- "/ck:cook add user authentication to the app"
+- "/ck:cook implement real-time notifications --fast"
+- "/ck:cook path/to/plan.md --auto"
+- "/ck:cook add search, filters, and pagination --parallel"
+- "/ck:cook prototype new UI design --no-test"
 
 ## Workflow Overview
 

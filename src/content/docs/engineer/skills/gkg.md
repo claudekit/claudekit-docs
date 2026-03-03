@@ -1,10 +1,10 @@
 ---
-title: "GitLab Knowledge Graph"
+title: "ck:gkg"
 description: "Semantic code analysis with AST parsing for go-to-definition, find-usages, and architecture visualization"
 section: engineer
 kit: engineer
 category: skills
-order: 29
+order: 50
 ---
 
 Semantic code analysis engine using AST parsing and KuzuDB graph database. Enables IDE-like code navigation for AI assistants.

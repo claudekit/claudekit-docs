@@ -42,7 +42,7 @@ Lệnh này sẽ khởi động Claude Code (CC) với ClaudeKit agents trong th
 Để Claude Code quét và phân tích codebase, tạo tài liệu kỹ thuật ban đầu:
 
 ```bash
-/ck:docs:init
+/ck:docs init
 ```
 
 Lệnh này sẽ:
@@ -171,8 +171,8 @@ Chạy test suite và tạo báo cáo. Không tự động sửa.
 ### Tài Liệu
 
 ```bash
-/ck:docs:update    # Cập nhật tài liệu hiện tại
-/ck:docs:summarize # Tóm tắt tài liệu
+/ck:docs update    # Cập nhật tài liệu hiện tại
+/ck:docs summarize # Tóm tắt tài liệu
 ```
 
 ### Git Operations
@@ -200,7 +200,7 @@ skill-creator skill # Sửa lỗi skill
 ## Best Practices
 
 ### 1. Bắt Đầu Với Tài Liệu
-Luôn chạy `/ck:docs:init` trước để CC hiểu codebase của bạn.
+Luôn chạy `/ck:docs init` trước để CC hiểu codebase của bạn.
 
 ### 2. Xem Kỹ Kế Hoạch
 **QUAN TRỌNG:** Luôn xem kỹ kế hoạch triển khai trước khi đồng ý. CC cung cấp kế hoạch chi tiết có lý do.
@@ -226,7 +226,7 @@ Chạy `/ck:test` thường xuyên để phát hiện lỗi sớm.
 
 ```bash
 # 1. Phân tích codebase
-/ck:docs:init
+/ck:docs init
 
 # 2. Lên kế hoạch tính năng
 /ck:plan Thêm hệ thống roles và permissions cho user
@@ -300,7 +300,7 @@ claude
 ### CC Không Hiểu Codebase
 ```bash
 # Tạo lại specs
-/ck:docs:init
+/ck:docs init
 ```
 
 ### Lệnh Không Hoạt Động

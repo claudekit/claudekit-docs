@@ -37,7 +37,7 @@ claude
 
 ```bash
 # Cho các dự án đã có sẵn (brownfield)
-/ck:docs:init
+/ck:docs init
 
 # Cho các dự án mới (greenfield)
 ck init --kit engineer --dir /path/to/project
@@ -55,7 +55,7 @@ ck init --use-git
 
 ```bash
 # Khởi tạo tài liệu và các đặc tả (specs)
-/ck:docs:init
+/ck:docs init
 
 # Triển khai tính năng mới
 /ck:cook <mô-tả>
@@ -76,7 +76,7 @@ ck init --use-git
 /ck:bootstrap <mô-tả-ý-tưởng>
 
 # Khởi tạo tự động (autonomous bootstrap)
-/ck:bootstrap:auto <mô-tả-ý-tưởng>
+/ck:bootstrap --auto <mô-tả-ý-tưởng>
 ```
 
 ### Sửa Lỗi (Bug Fixing)
@@ -109,13 +109,13 @@ ck init --use-git
 
 ```bash
 # Khởi tạo tài liệu
-/ck:docs:init
+/ck:docs init
 
 # Cập nhật tài liệu
-/ck:docs:update
+/ck:docs update
 
 # Tóm tắt tài liệu
-/ck:docs:summarize
+/ck:docs summarize
 ```
 
 ### Thao Tác Git (Git Operations)
@@ -141,10 +141,10 @@ ck init --use-git
 /ck:plan <mô-tả>
 
 # Lập kế hoạch thiết lập CI/CD hoặc sửa lỗi luồng CI/CD
-/ck:plan:ci
+/ck:plan
 
 # Kế hoạch triển khai hai bước
-/ck:plan:two
+/ck:plan --two
 ```
 
 ### Tích Hợp (Integration)
@@ -222,7 +222,7 @@ cd /path/to/existing/project
 claude
 
 # 4. Khởi tạo
-/ck:docs:init
+/ck:docs init
 
 # 5. Bắt đầu làm việc
 /ck:cook <tính-năng>
@@ -354,9 +354,9 @@ claude
 - `/ck:test` - Chạy các bộ test
 
 ### 📚 Tài Liệu
-- `/ck:docs:init` - Khởi tạo
-- `/ck:docs:update` - Cập nhật
-- `/ck:docs:summarize` - Tóm tắt
+- `/ck:docs init` - Khởi tạo
+- `/ck:docs update` - Cập nhật
+- `/ck:docs summarize` - Tóm tắt
 
 ### 🔧 Thao Tác Git
 - `/ck:git cm` - Commit thay đổi
@@ -418,7 +418,7 @@ Mô tả chi tiết hơn = Kết quả tốt hơn
 ### 5. Ghi Lại Các Thay Đổi
 ```bash
 # Giữ tài liệu luôn được cập nhật
-/ck:docs:update
+/ck:docs update
 ```
 
 ## Khắc Phục Sự Cố
@@ -437,7 +437,7 @@ ck --version
 
 ```bash
 # Khởi tạo lại tài liệu
-/ck:docs:init
+/ck:docs init
 ```
 
 ### Cần Thêm Sự Trợ Giúp
@@ -454,7 +454,7 @@ ck --version
 
 ```bash
 # Khởi tạo dự án đã có sẵn
-/ck:docs:init
+/ck:docs init
 
 # Tính năng mới (cần xem lại kế hoạch)
 /ck:cook <mô-tả-tính-năng>
@@ -490,7 +490,7 @@ ck --version
 /ck:bootstrap <mô-tả-ý-tưởng>
 
 # Khởi tạo dự án mới (tự động hoàn toàn)
-/ck:bootstrap:auto <ý-tưởng>
+/ck:bootstrap --auto <ý-tưởng>
 
 # Chạy bộ test và báo cáo (không sửa lỗi)
 /ck:test

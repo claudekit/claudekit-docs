@@ -63,7 +63,7 @@ You: "I need to add a new API endpoint for user profiles"
 Adopt task-specific commands:
 - `/ck:fix` for bug fixing (faster than manual debugging)
 - `/ck:plan` for complex features (structured planning)
-- `/ck:docs:update` for documentation (automated sync)
+- `/ck:docs update` for documentation (automated sync)
 
 ### Week 3: Leverage Skills
 Add custom skills for your stack using the skill-creator skill:

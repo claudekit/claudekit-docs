@@ -10,7 +10,7 @@ published: true
 
 # Plan
 
-Creates structured, research-backed implementation plans in your `plans/` directory. Formerly split across `/ck:plan:fast`, `/ck:plan:hard`, and other commands—now consolidated into one skill.
+Creates structured, research-backed implementation plans in your `plans/` directory. Formerly split across `/ck:plan --fast`, `/ck:plan --hard`, and other commands—now consolidated into one skill.
 
 ## What This Skill Does
 

@@ -310,7 +310,7 @@ Cập nhật tài liệu kèm theo bản sửa:
 
 ```bash
 # Cập nhật tài liệu
-/ck:docs:update [ghi lại tài liệu về việc sửa lỗi đăng nhập và các biện pháp ngăn ngừa]
+/ck:docs update [ghi lại tài liệu về việc sửa lỗi đăng nhập và các biện pháp ngăn ngừa]
 ```
 
 **Tài liệu được tạo**:
@@ -651,7 +651,7 @@ Sau khi sửa lỗi, hãy cải thiện quy trình:
 ### 4. Cập nhật tiêu chuẩn mã nguồn
 
 ```bash
-/ck:docs:update [thêm mẫu lỗi này vào danh sách kiểm tra khi review mã nguồn]
+/ck:docs update [thêm mẫu lỗi này vào danh sách kiểm tra khi review mã nguồn]
 ```
 
 ## Bước tiếp theo

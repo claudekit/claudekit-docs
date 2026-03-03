@@ -52,7 +52,7 @@ claude
 Đây là **bước quan trọng nhất đầu tiên**:
 
 ```bash
-/ck:docs:init
+/ck:docs init
 ```
 
 **Điều gì xảy ra (5-8 phút):**
@@ -455,7 +455,7 @@ Xem lại kế hoạch, sau đó:
 ### Cải Thiện Tài Liệu
 
 ```bash
-/ck:docs:update
+/ck:docs update
 ```
 
 Thêm:
@@ -578,7 +578,7 @@ git push production main
 ### Tạo Runbook
 
 ```bash
-/ck:docs:update
+/ck:docs update
 ```
 
 Tạo `docs/runbook.md` với:
@@ -626,7 +626,7 @@ npm audit
 npm run test:coverage
 
 # Cập nhật tài liệu nếu cần
-/ck:docs:update
+/ck:docs update
 ```
 
 ### Công Việc Hàng Tháng
@@ -655,7 +655,7 @@ cat docs/technical-debt.md
 /ck:test
 
 # 4. Cập nhật tài liệu
-/ck:docs:update
+/ck:docs update
 
 # 5. Commit
 /ck:git cm
@@ -682,7 +682,7 @@ git push
 3. Các vấn đề hiệu suất (/ck:fix)
 4. Độ bao phủ tests (/ck:cook [add tests])
 5. Chất lượng code (/ck:cook [refactor])
-6. Tài liệu (/ck:docs:update)
+6. Tài liệu (/ck:docs update)
 
 ### "Có thay đổi phá vỡ trong dependencies"
 
@@ -710,14 +710,14 @@ git push
 
 ### Đào Tạo Nhóm
 
-1. Viết tài liệu mọi thứ (`/ck:docs:update`)
+1. Viết tài liệu mọi thứ (`/ck:docs update`)
 2. Tạo hướng dẫn onboarding
 3. Chia sẻ tài liệu kiến trúc
 4. Thiết lập hướng dẫn môi trường phát triển
 
 ## Các Bài Học Chính
 
-1. **Bắt đầu với `/ck:docs:init`** - Cực kỳ quan trọng để hiểu mã nguồn cũ
+1. **Bắt đầu với `/ck:docs init`** - Cực kỳ quan trọng để hiểu mã nguồn cũ
 2. **Sửa bảo mật trước tiên** - Bảo vệ người dùng và doanh nghiệp
 3. **Thêm tests dần dần** - Tập trung vào các luồng quan trọng
 4. **Cập nhật từng bước** - Đừng làm hỏng mọi thứ cùng một lúc

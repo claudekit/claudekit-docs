@@ -17,7 +17,7 @@ Tìm hiểu cách tái cấu trúc mã nguồn (Refactoring) một cách an toà
 **Mục tiêu**: Cải thiện chất lượng và khả năng bảo trì của mã nguồn mà không làm thay đổi chức năng
 **Thời gian**: 15-45 phút (so với 3-8 giờ làm thủ công)
 **Agents sử dụng**: code-reviewer, tester, docs-manager
-**Lệnh**: `/ck:plan`, `/code`, `/ck:test`, `/ck:docs:update`
+**Lệnh**: `/ck:plan`, `/code`, `/ck:test`, `/ck:docs update`
 
 ## Điều Kiện Tiên Quyết
 
@@ -245,7 +245,7 @@ curl -X PUT http://localhost:3000/api/users/123 \
 
 ```bash
 # Cập nhật tài liệu
-/ck:docs:update [document the validator refactoring]
+/ck:docs update [document the validator refactoring]
 
 # Xem lại các thay đổi
 git diff
@@ -531,7 +531,7 @@ async function fetchUserData(userId) {
 ### 5. Viết Tài Liệu Cho Các Thay Đổi Kiến Trúc
 
 ```bash
-/ck:docs:update [document the new validation architecture]
+/ck:docs update [document the new validation architecture]
 ```
 
 ## Các Biến Thể Phổ Biến
@@ -639,7 +639,7 @@ Cải thiện: +36 điểm khả năng bảo trì
 ### Các Lệnh Liên Quan
 - [/ck:cook](/docs/engineer/skills/cook) - Triển khai tái cấu trúc
 - [/ck:test](/docs/engineer/skills/test) - Xác minh các thay đổi
-- [/ck:docs:update](/docs/engineer/skills/docs) - Cập nhật tài liệu
+- [/ck:docs update](/docs/engineer/skills/docs) - Cập nhật tài liệu
 
 ### Các Agents Liên Quan
 - [Code Reviewer](/docs/engineer/agents/code-reviewer) - Phân tích chất lượng code

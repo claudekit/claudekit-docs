@@ -35,7 +35,7 @@ Hướng dẫn từng bước để khởi tạo một dự án mới từ đầ
 
 Cách tích hợp ClaudeKit vào các codebase hiện có:
 
-- Thiết lập tài liệu ban đầu với `/ck:docs:init`
+- Thiết lập tài liệu ban đầu với `/ck:docs init`
 - Hiểu kiến trúc hiện tại
 - Tái cấu trúc legacy code một cách an toàn
 - Thêm tests cho code chưa được kiểm thử

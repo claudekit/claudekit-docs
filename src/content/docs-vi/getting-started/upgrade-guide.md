@@ -67,7 +67,7 @@ You: "I need to add a new API endpoint for user profiles"
 Áp dụng commands cụ thể cho từng task:
 - `/ck:fix` cho bug fixing (nhanh hơn debugging thủ công)
 - `/ck:plan` cho tính năng phức tạp (planning có cấu trúc)
-- `/ck:docs:update` cho documentation (đồng bộ tự động)
+- `/ck:docs update` cho documentation (đồng bộ tự động)
 
 ### Tuần 3: Tận Dụng Skills
 

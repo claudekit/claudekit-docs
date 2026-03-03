@@ -20,7 +20,7 @@ Learn how to safely refactor code with ClaudeKit - from identifying technical de
 **Goal**: Improve code quality and maintainability without breaking functionality
 **Time**: 15-45 minutes (vs 3-8 hours manually)
 **Agents Used**: code-reviewer, tester, docs-manager
-**Commands**: /ck:plan, /ck:cook, /ck:test, /ck:docs:update
+**Commands**: /ck:plan, /ck:cook, /ck:test, /ck:docs update
 
 ## Prerequisites
 
@@ -248,7 +248,7 @@ curl -X PUT http://localhost:3000/api/users/123 \
 
 ```bash
 # Update documentation
-/ck:docs:update [document the validator refactoring]
+/ck:docs update [document the validator refactoring]
 
 # Review changes
 git diff
@@ -534,7 +534,7 @@ async function fetchUserData(userId) {
 ### 5. Document Architectural Changes
 
 ```bash
-/ck:docs:update [document the new validation architecture]
+/ck:docs update [document the new validation architecture]
 ```
 
 ## Common Variations
@@ -642,7 +642,7 @@ Improvement: +36 points maintainability
 ### Related Commands
 - [/ck:cook](/docs/engineer/skills/cook) - Implement refactoring
 - [/ck:test](/docs/engineer/skills/test) - Verify changes
-- [/ck:docs:update](/docs/engineer/skills/docs) - Update docs
+- [/ck:docs update](/docs/engineer/skills/docs) - Update docs
 
 ### Related Agents
 - [Code Reviewer](/docs/engineer/agents/code-reviewer) - Code quality analysis

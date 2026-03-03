@@ -142,7 +142,7 @@ Nhiều lời kêu gọi hành động làm loãng sự tập trung. Chọn mộ
 
 - [Content Marketing](/vi/docs/marketing/skills/content-marketing) - Lập kế hoạch và chiến lược nội dung
 - [Email Marketing](/vi/docs/marketing/skills/email-marketing) - Mẫu nội dung email
-- [Brand Guidelines](/vi/docs/marketing/skills/brand-guidelines) - Nhất quán giọng nói
+- [Brand Guidelines](/vi/docs/marketing/skills/brand) - Nhất quán giọng nói
 - [Social Media](/vi/docs/marketing/skills/social-media) - Nội dung theo nền tảng
 
 ## Lệnh Liên Quan

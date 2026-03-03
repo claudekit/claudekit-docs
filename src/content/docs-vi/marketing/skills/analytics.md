@@ -160,8 +160,8 @@ Sử dụng khung thời gian và phân khúc nhất quán. So sánh năm này s
 
 ## Skill Liên Quan
 
-- [Campaign Management](/vi/docs/marketing/skills/campaign-management) - Theo dõi và tối ưu chiến dịch
-- [SEO Optimization](/vi/docs/marketing/skills/seo-optimization) - Phân tích lưu lượng tìm kiếm
+- [Campaign Management](/vi/docs/marketing/skills/campaign) - Theo dõi và tối ưu chiến dịch
+- [SEO Optimization](/vi/docs/marketing/skills/seo) - Phân tích lưu lượng tìm kiếm
 - [Email Marketing](/vi/docs/marketing/skills/email-marketing) - Chỉ số hiệu suất email
 - [Ads Management](/vi/docs/marketing/skills/ads-management) - Theo dõi ROAS chiến dịch trả phí
 

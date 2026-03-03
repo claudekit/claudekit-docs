@@ -134,7 +134,7 @@ LinkedIn carousels, Twitter polls, Instagram Reels, TikTok effects—algorithms 
 
 - [Copywriting](/docs/marketing/skills/copywriting) - Social media copy formulas
 - [Content Marketing](/docs/marketing/skills/content-marketing) - Content repurposing strategy
-- [Brand Guidelines](/docs/marketing/skills/brand-guidelines) - Voice consistency across platforms
+- [Brand Guidelines](/docs/marketing/skills/brand) - Voice consistency across platforms
 - [Creativity](/docs/marketing/skills/creativity) - Visual content direction
 
 ## Related Commands

@@ -138,7 +138,7 @@ Use behavioral data (last purchase, feature usage) for relevant content.
 - [Copywriting](/docs/marketing/skills/copywriting) - Email copy formulas and CTAs
 - [Content Marketing](/docs/marketing/skills/content-marketing) - Newsletter content planning
 - [Analytics](/docs/marketing/skills/analytics) - Email performance tracking
-- [Campaign Management](/docs/marketing/skills/campaign-management) - Multi-channel coordination
+- [Campaign Management](/docs/marketing/skills/campaign) - Multi-channel coordination
 
 ## Related Commands
 

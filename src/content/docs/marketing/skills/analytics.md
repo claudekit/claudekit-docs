@@ -159,8 +159,8 @@ Ensure sample size supports insights. Use confidence intervals for A/B tests.
 
 ## Related Skills
 
-- [Campaign Management](/docs/marketing/skills/campaign-management) - Campaign tracking and optimization
-- [SEO Optimization](/docs/marketing/skills/seo-optimization) - Search traffic analysis
+- [Campaign Management](/docs/marketing/skills/campaign) - Campaign tracking and optimization
+- [SEO Optimization](/docs/marketing/skills/seo) - Search traffic analysis
 - [Email Marketing](/docs/marketing/skills/email-marketing) - Email performance metrics
 - [Ads Management](/docs/marketing/skills/ads-management) - Paid campaign ROAS tracking
 

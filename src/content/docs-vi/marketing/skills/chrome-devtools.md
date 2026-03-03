@@ -203,7 +203,7 @@ node scripts/evaluate.js --script "window.scrollTo(0, document.body.scrollHeight
 
 ## Skill Liên Quan
 
-- [SEO Optimization](/vi/docs/marketing/skills/seo-optimization) - Đo Core Web Vitals
+- [SEO Optimization](/vi/docs/marketing/skills/seo) - Đo Core Web Vitals
 - [Analytics](/vi/docs/marketing/skills/analytics) - Theo dõi hiệu suất
 - [Media Processing](/vi/docs/marketing/skills/media-processing) - Xử lý sau màn hình
 

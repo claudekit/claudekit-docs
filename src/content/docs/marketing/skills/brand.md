@@ -1,6 +1,6 @@
 ---
-title: "ckm:brand-guidelines"
-description: "Brand voice, visual identity, asset management, and consistency enforcement with automated validation and color extraction."
+title: "ckm:brand"
+description: "Brand voice, visual identity, messaging frameworks, asset management, brand consistency"
 section: marketing
 category: skills
 order: 14
@@ -12,13 +12,13 @@ order: 14
 
 **The Challenge**: Brand inconsistency weakens differentiation and erodes trust. Managing assets, enforcing voice guidelines, and maintaining visual standards across teams is manual and error-prone.
 
-**The Solution**: Brand Guidelines skill provides brand voice frameworks, visual identity systems, asset organization patterns, and automated validation scripts. Includes color extraction, asset naming conventions, and brand context injection for AI-generated content.
+**The Solution**: Brand skill provides brand voice frameworks, visual identity systems, asset organization patterns, and automated validation scripts. Includes color extraction, asset naming conventions, and brand context injection for AI-generated content.
 
 ## Activation
 
 **Implicit**: Activates automatically for Content Creator, Social Media Manager, Email Wizard, and UI/UX Designer agents.
 
-**Explicit**: Activate by name when needed: "Activate brand-guidelines skill"
+**Explicit**: Activate by name when needed: "Activate brand skill"
 
 ## Capabilities
 

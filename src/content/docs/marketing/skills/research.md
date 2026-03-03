@@ -127,7 +127,7 @@ Note when sources disagree. Present multiple viewpoints with context.
 
 ## Related Skills
 
-- [SEO Optimization](/docs/marketing/skills/seo-optimization) - Keyword research and competitor analysis
+- [SEO Optimization](/docs/marketing/skills/seo) - Keyword research and competitor analysis
 - [Analytics](/docs/marketing/skills/analytics) - Data analysis and insights
 - [Brainstorming](/docs/marketing/skills/brainstorming) - Convert research into decisions
 

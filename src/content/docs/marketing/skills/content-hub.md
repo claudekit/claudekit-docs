@@ -108,7 +108,7 @@ node .claude/skills/content-hub/scripts/server.cjs --stop
 ## Best Practices
 
 **1. Use Consistent Asset Names**
-Follow naming conventions from `brand-guidelines` skill for easier searching.
+Follow naming conventions from `brand` skill for easier searching.
 
 **2. Organize by Type**
 Place assets in type-specific folders (banner/, logo/, video/) for better filtering.
@@ -156,7 +156,7 @@ Run `--scan` flag or use `/api/scan` endpoint to refresh gallery after adding ne
 
 ## Related Skills
 
-- [Brand Guidelines](/docs/marketing/skills/brand-guidelines) - Asset validation and brand context
+- [Brand Guidelines](/docs/marketing/skills/brand) - Asset validation and brand context
 - [AI Multimodal](/docs/marketing/skills/ai-multimodal) - Generate new assets
 - [Design](/docs/engineer/skills/frontend-design) - Create design assets
 

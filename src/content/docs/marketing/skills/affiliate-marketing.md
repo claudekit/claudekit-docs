@@ -128,7 +128,7 @@ Hold payments 60-90 days to match refund windows. Prevents fraudulent signups.
 ## Related Skills
 
 - [Referral Program Building](/docs/marketing/skills/referral-program-building) - Customer-driven referrals
-- [Campaign Management](/docs/marketing/skills/campaign-management) - Launch coordination
+- [Campaign Management](/docs/marketing/skills/campaign) - Launch coordination
 - [Analytics](/docs/marketing/skills/analytics) - Performance tracking and attribution
 
 ## Related Commands

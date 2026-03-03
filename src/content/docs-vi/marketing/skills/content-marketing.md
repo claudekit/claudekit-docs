@@ -123,16 +123,16 @@ Tính nhất quán quan trọng hơn tần suất. Lịch hàng tuần tốt hơ
 **Giải pháp**: Bắt đầu với 1 trụ cột, 1 loại nội dung, nhịp hàng tuần. Mở rộng sau 4-6 tuần nhất quán.
 
 **Vấn đề**: Hết ý tưởng chủ đề
-**Giải pháp**: Dùng skill seo-optimization để nghiên cứu từ khóa và phân tích ý định tìm kiếm. Kiểm tra khoảng trống nội dung đối thủ.
+**Giải pháp**: Dùng skill seo để nghiên cứu từ khóa và phân tích ý định tìm kiếm. Kiểm tra khoảng trống nội dung đối thủ.
 
 **Vấn đề**: Nội dung không có hiệu suất tốt
 **Giải pháp**: Kích hoạt skill analytics để xác định các chủ đề hoạt động tốt. Tập trung gấp đôi vào những gì hiệu quả, cắt bỏ những gì không.
 
 ## Skill Liên Quan
 
-- [SEO Optimization](/vi/docs/marketing/skills/seo-optimization) - Nghiên cứu từ khóa và tối ưu tìm kiếm
+- [SEO Optimization](/vi/docs/marketing/skills/seo) - Nghiên cứu từ khóa và tối ưu tìm kiếm
 - [Copywriting](/vi/docs/marketing/skills/copywriting) - Khung viết và mẫu tiêu đề
-- [Brand Guidelines](/vi/docs/marketing/skills/brand-guidelines) - Nhất quán giọng nói và nhắn tin
+- [Brand Guidelines](/vi/docs/marketing/skills/brand) - Nhất quán giọng nói và nhắn tin
 - [Analytics](/vi/docs/marketing/skills/analytics) - Theo dõi hiệu suất nội dung
 
 ## Lệnh Liên Quan

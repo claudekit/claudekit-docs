@@ -202,7 +202,7 @@ node scripts/evaluate.js --script "window.scrollTo(0, document.body.scrollHeight
 
 ## Related Skills
 
-- [SEO Optimization](/docs/marketing/skills/seo-optimization) - Measure Core Web Vitals
+- [SEO Optimization](/docs/marketing/skills/seo) - Measure Core Web Vitals
 - [Analytics](/docs/marketing/skills/analytics) - Performance tracking
 - [Media Processing](/docs/marketing/skills/media-processing) - Post-process screenshots
 

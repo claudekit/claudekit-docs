@@ -1,6 +1,6 @@
 ---
 lang: vi
-title: "ckm:brand-guidelines"
+title: "ckm:brand"
 description: "Giọng nói thương hiệu, nhận diện hình ảnh, quản lý tài sản và thực thi tính nhất quán với xác nhận tự động và trích xuất màu sắc."
 section: marketing
 category: skills
@@ -19,7 +19,7 @@ order: 14
 
 **Ngầm định**: Tự động kích hoạt cho agent Content Creator, Social Media Manager, Email Wizard và UI/UX Designer.
 
-**Tường minh**: Kích hoạt theo tên khi cần: "Activate brand-guidelines skill"
+**Tường minh**: Kích hoạt theo tên khi cần: "Activate brand skill"
 
 ## Tính Năng
 

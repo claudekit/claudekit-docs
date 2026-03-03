@@ -139,7 +139,7 @@ Dùng dữ liệu hành vi (lần mua cuối, sử dụng tính năng) cho nội
 - [Copywriting](/vi/docs/marketing/skills/copywriting) - Công thức nội dung email và CTA
 - [Content Marketing](/vi/docs/marketing/skills/content-marketing) - Lập kế hoạch nội dung newsletter
 - [Analytics](/vi/docs/marketing/skills/analytics) - Theo dõi hiệu suất email
-- [Campaign Management](/vi/docs/marketing/skills/campaign-management) - Phối hợp đa kênh
+- [Campaign Management](/vi/docs/marketing/skills/campaign) - Phối hợp đa kênh
 
 ## Lệnh Liên Quan
 

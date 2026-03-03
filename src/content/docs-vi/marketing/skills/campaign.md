@@ -1,6 +1,6 @@
 ---
 lang: vi
-title: "ckm:campaign-management"
+title: "ckm:campaign"
 description: "Lập kế hoạch, thực thi và tối ưu chiến dịch toàn diện với phân bổ ngân sách, danh sách kiểm tra ra mắt và theo dõi hiệu suất."
 section: marketing
 category: skills
@@ -19,7 +19,7 @@ order: 7
 
 **Ngầm định**: Tự động kích hoạt cho agent Campaign Manager, Growth Specialist và Project Manager.
 
-**Tường minh**: Kích hoạt theo tên khi cần: "Activate campaign-management skill"
+**Tường minh**: Kích hoạt theo tên khi cần: "Activate campaign skill"
 
 ## Tính Năng
 

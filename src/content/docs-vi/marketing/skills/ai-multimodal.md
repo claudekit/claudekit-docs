@@ -1,19 +1,19 @@
 ---
 lang: vi
 title: "ckm:ai-multimodal"
-description: "Xử lý và tạo nội dung đa phương tiện với Google Gemini API: phiên âm audio, phân tích ảnh, xử lý video, Imagen 4 và Veo 3."
+description: "Xử lý và tạo nội dung đa phương tiện với Gemini và MiniMax: phiên âm audio, phân tích ảnh/video, tạo ảnh Imagen 4, video Hailuo 1080p, TTS và nhạc AI."
 section: marketing
 category: skills
 order: 17
 ---
 
-> Tạo ảnh và video, phân tích file đa phương tiện và xử lý tài liệu bằng khả năng AI đa phương thức của Google Gemini.
+> Tạo ảnh, video, giọng nói và âm nhạc; phân tích file đa phương tiện và xử lý tài liệu bằng khả năng AI đa phương thức của Google Gemini và MiniMax.
 
 ## Skill Này Làm Gì
 
 **Thách thức**: Marketing đòi hỏi xử lý nhiều loại phương tiện (audio, ảnh, video, PDF) và tạo nội dung hình ảnh. Sử dụng các công cụ riêng cho mỗi định dạng không hiệu quả và tốn kém.
 
-**Giải pháp**: Skill AI Multimodal tích hợp Google Gemini API cho phiên âm audio (9.5 giờ), phân tích ảnh, xử lý video (6 giờ), trích xuất PDF, tạo ảnh Imagen 4 và tạo video Veo 3 (clip 8 giây có âm thanh). Một API duy nhất, cửa sổ ngữ cảnh 2M token.
+**Giải pháp**: Skill AI Multimodal tích hợp hai nền tảng mạnh mẽ: **Google Gemini API** cho phiên âm audio (9.5 giờ), phân tích ảnh, xử lý video (6 giờ), trích xuất PDF, tạo ảnh Imagen 4 và tạo video Veo 3 (clip 8 giây); **MiniMax** cho tạo ảnh chất lượng cao, video Hailuo 1080p, text-to-speech với 300+ giọng và tạo nhạc AI lên đến 4 phút. Hai API, một skill.
 
 ## Kích Hoạt
 
@@ -112,15 +112,53 @@ python scripts/gemini_batch_process.py --task generate-video --prompt "Product u
 
 **Hướng dẫn**: `references/video-generation.md`
 
+### 6. Tạo Nội Dung Với MiniMax
+
+MiniMax cung cấp bộ API bổ sung cho ảnh, video 1080p, giọng nói và âm nhạc.
+
+**Tạo ảnh**:
+```bash
+python scripts/minimax_cli.py --task generate --prompt "Product lifestyle photo, warm colors, minimal" --count 4
+```
+
+**Mô hình**: `image-01` (tiêu chuẩn), `image-01-live` (nâng cao) — $0.03/ảnh
+
+**Tạo video Hailuo**:
+```bash
+python scripts/minimax_cli.py --task generate-video --prompt "Brand ambassador walking in city, 1080p, cinematic"
+```
+
+**Mô hình video**:
+- `MiniMax-Hailuo-2.3` (1080p chất lượng cao)
+- `MiniMax-Hailuo-2.3-Fast` (nhanh hơn, rẻ hơn 50%)
+- `MiniMax-Hailuo-02` (khung đầu + cuối tùy chỉnh)
+
+**Text-to-Speech**:
+```bash
+python scripts/minimax_cli.py --task generate-speech --prompt "Chào mừng bạn đến với ClaudeKit Marketing" --voice "Vietnamese_Female_1"
+```
+
+**Mô hình TTS**: `speech-2.8-hd` (tốt nhất), `speech-2.8-turbo` (nhanh) — 300+ giọng, 40+ ngôn ngữ, điều chỉnh cảm xúc
+
+**Tạo âm nhạc**:
+```bash
+python scripts/minimax_cli.py --task generate-music --prompt "Upbeat corporate background music, professional, 60 seconds"
+```
+
+**Mô hình**: `music-2.5` — bài nhạc 4 phút có giọng ca, lời đồng bộ hóa
+
+**Hướng dẫn**: `references/minimax-generation.md`
+
 ## Điều Kiện Tiên Quyết
 
 **Quyền truy cập API**:
 - `GEMINI_API_KEY` từ [Google AI Studio](https://aistudio.google.com/apikey)
-- Python 3.8+ với `google-genai`, `python-dotenv`, `pillow`
+- `MINIMAX_API_KEY` từ [MiniMax Platform](https://platform.minimax.io/user-center/basic-information/interface-key)
+- Python 3.8+ với `google-genai`, `python-dotenv`, `pillow`, `requests`
 
 **Cài đặt**:
 ```bash
-pip install google-genai python-dotenv pillow
+pip install google-genai python-dotenv pillow requests
 ```
 
 **Xác minh cài đặt**:
@@ -132,22 +170,27 @@ python scripts/check_setup.py
 
 **Biến môi trường** (`.env`):
 ```bash
-GEMINI_API_KEY=your_key_here
+GEMINI_API_KEY=your_gemini_key_here
+MINIMAX_API_KEY=your_minimax_key_here
 ```
 
 **Script có sẵn**:
-- `gemini_batch_process.py` - CLI chính cho tất cả tác vụ
+- `gemini_batch_process.py` - CLI Gemini cho phân tích, phiên âm, tạo ảnh/video Gemini
+- `minimax_cli.py` - CLI MiniMax cho tạo ảnh, video Hailuo, TTS, âm nhạc
 - `media_optimizer.py` - Nén/thay đổi kích thước media theo giới hạn API
 - `document_converter.py` - Chuyển đổi PDF sang markdown
 - `check_setup.py` - Xác minh API key và phụ thuộc
 
 ## Thực Hành Tốt Nhất
 
-**1. Chọn Mô Hình Phù Hợp Với Tác Vụ**
-- `gemini-2.5-flash` cho tốc độ (phiên âm, phân tích)
+**1. Chọn Nền Tảng Và Mô Hình Phù Hợp**
+- `gemini-2.5-flash` cho phiên âm, phân tích nhanh
 - `gemini-2.5-pro` cho suy luận phức tạp
-- `imagen-4.0-generate-001` cho ảnh tiêu chuẩn
+- `imagen-4.0-generate-001` cho ảnh Gemini tiêu chuẩn
 - `imagen-4.0-ultra-generate-001` chỉ cho ảnh hero (chi phí cao hơn)
+- `image-01` (MiniMax) cho ảnh lifestyle/sản phẩm — $0.03/ảnh
+- `MiniMax-Hailuo-2.3` cho video marketing 1080p chuyên nghiệp
+- `speech-2.8-hd` cho voiceover quảng cáo chất lượng cao
 
 **2. Tối Ưu Media Trước Khi Tải Lên**
 Dùng `media_optimizer.py` để nén file >20MB trước khi xử lý.
@@ -190,12 +233,19 @@ Dùng `media_optimizer.py` để nén file >20MB trước khi xử lý.
 **Vấn đề**: Tạo ảnh không khớp với thương hiệu
 **Giải pháp**: Bao gồm màu sắc thương hiệu cụ thể, từ khóa phong cách và tham chiếu tài sản hiện có trong prompt. Dùng skill `ai-artist` để tối ưu prompt.
 
+**Vấn đề**: MiniMax API trả về 401 Unauthorized
+**Giải pháp**: Xác minh `MINIMAX_API_KEY` trong file `.env`. Lấy key từ [MiniMax Platform](https://platform.minimax.io/user-center/basic-information/interface-key).
+
+**Vấn đề**: Video Hailuo mất nhiều thời gian render
+**Giải pháp**: Video Hailuo xử lý bất đồng bộ — script tự động polling. Dùng `MiniMax-Hailuo-2.3-Fast` nếu cần kết quả nhanh hơn (rẻ hơn 50%).
+
 ## Skill Liên Quan
 
 - [AI Artist](/vi/docs/marketing/skills/ai-artist) - Kỹ thuật viết prompt cho kết quả tốt hơn
 - [Media Processing](/vi/docs/marketing/skills/media-processing) - FFmpeg để thao tác audio/video
-- [Brand Guidelines](/vi/docs/marketing/skills/brand-guidelines) - Tạo ảnh phù hợp thương hiệu
+- [Brand](/vi/docs/marketing/skills/brand) - Tạo ảnh phù hợp thương hiệu
 - [Creativity](/vi/docs/marketing/skills/creativity) - Định hướng sáng tạo cho nội dung được tạo
+- [Video](/vi/docs/marketing/skills/video) - Lập kế hoạch và kịch bản video marketing
 
 ## Lệnh Liên Quan
 

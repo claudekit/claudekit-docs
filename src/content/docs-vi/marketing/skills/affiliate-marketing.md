@@ -129,7 +129,7 @@ Giữ thanh toán 60-90 ngày để khớp với cửa sổ hoàn tiền. Ngăn 
 ## Skill Liên Quan
 
 - [Referral Program Building](/vi/docs/marketing/skills/referral-program-building) - Giới thiệu do khách hàng thúc đẩy
-- [Campaign Management](/vi/docs/marketing/skills/campaign-management) - Phối hợp ra mắt
+- [Campaign Management](/vi/docs/marketing/skills/campaign) - Phối hợp ra mắt
 - [Analytics](/vi/docs/marketing/skills/analytics) - Theo dõi hiệu suất và phân bổ
 
 ## Lệnh Liên Quan

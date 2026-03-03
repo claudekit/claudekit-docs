@@ -135,7 +135,7 @@ Carousel LinkedIn, bình chọn Twitter, Instagram Reels, hiệu ứng TikTok—
 
 - [Copywriting](/vi/docs/marketing/skills/copywriting) - Công thức nội dung mạng xã hội
 - [Content Marketing](/vi/docs/marketing/skills/content-marketing) - Chiến lược tái sử dụng nội dung
-- [Brand Guidelines](/vi/docs/marketing/skills/brand-guidelines) - Nhất quán giọng nói trên các nền tảng
+- [Brand Guidelines](/vi/docs/marketing/skills/brand) - Nhất quán giọng nói trên các nền tảng
 - [Creativity](/vi/docs/marketing/skills/creativity) - Định hướng nội dung hình ảnh
 
 ## Lệnh Liên Quan

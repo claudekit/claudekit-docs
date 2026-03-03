@@ -141,7 +141,7 @@ Multiple calls-to-action dilute focus. Choose one primary action.
 
 - [Content Marketing](/docs/marketing/skills/content-marketing) - Content planning and strategy
 - [Email Marketing](/docs/marketing/skills/email-marketing) - Email copy patterns
-- [Brand Guidelines](/docs/marketing/skills/brand-guidelines) - Voice consistency
+- [Brand Guidelines](/docs/marketing/skills/brand) - Voice consistency
 - [Social Media](/docs/marketing/skills/social-media) - Platform-specific copy
 
 ## Related Commands

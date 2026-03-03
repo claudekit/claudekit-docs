@@ -92,7 +92,7 @@ Triển khai với $50/ngày, xác định hiệu suất cao nhất trong 3-5 ng
 **Tình huống**: Tăng đăng ký demo cho công cụ quản lý dự án.
 
 **Quy trình**:
-1. Nghiên cứu từ khóa (sử dụng skill seo-optimization)
+1. Nghiên cứu từ khóa (sử dụng skill seo)
 2. Tạo nhóm quảng cáo theo ý định (so sánh, hướng dẫn, thương hiệu)
 3. Viết các biến thể quảng cáo (3 tiêu đề, 2 mô tả mỗi cái)
 4. Đặt chiến lược đặt giá thầu (CPA mục tiêu $40)
@@ -131,7 +131,7 @@ Triển khai với $50/ngày, xác định hiệu suất cao nhất trong 3-5 ng
 ## Skill Liên Quan
 
 - [Copywriting](/vi/docs/marketing/skills/copywriting) - Công thức nội dung quảng cáo
-- [Campaign Management](/vi/docs/marketing/skills/campaign-management) - Phối hợp đa kênh
+- [Campaign Management](/vi/docs/marketing/skills/campaign) - Phối hợp đa kênh
 - [Analytics](/vi/docs/marketing/skills/analytics) - Theo dõi ROAS và hiệu suất
 - [Creativity](/vi/docs/marketing/skills/creativity) - Định hướng sáng tạo cho hình ảnh quảng cáo
 

@@ -1,6 +1,6 @@
 ---
-title: "ckm:campaign-management"
-description: "Comprehensive campaign planning, execution, and optimization with budget allocation, launch checklists, and performance tracking."
+title: "ckm:campaign"
+description: "Marketing campaign planning, execution, optimization"
 section: marketing
 category: skills
 order: 7
@@ -12,13 +12,13 @@ order: 7
 
 **The Challenge**: Marketing campaigns involve coordinating multiple channels, teams, assets, and timelines. Without systematic planning, campaigns launch late, miss key elements, or lack clear success metrics.
 
-**The Solution**: Campaign Management skill provides campaign brief templates, launch checklists, budget allocation frameworks, and optimization workflows. Includes milestone tracking, multi-channel coordination, and post-campaign analysis structure.
+**The Solution**: Campaign skill provides campaign brief templates, launch checklists, budget allocation frameworks, and optimization workflows. Includes milestone tracking, multi-channel coordination, and post-campaign analysis structure.
 
 ## Activation
 
 **Implicit**: Activates automatically for Campaign Manager, Growth Specialist, and Project Manager agents.
 
-**Explicit**: Activate by name when needed: "Activate campaign-management skill"
+**Explicit**: Activate by name when needed: "Activate campaign skill"
 
 ## Capabilities
 

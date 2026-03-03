@@ -139,7 +139,7 @@ Thay đổi một biến tại một lúc (chủ thể, phong cách, bố cục)
 ## Xử Lý Sự Cố
 
 **Vấn đề**: Ảnh tạo ra không khớp với thương hiệu
-**Giải pháp**: Thêm màu sắc thương hiệu cụ thể, từ khóa phong cách và tham chiếu tài sản hiện có. Tải skill `brand-guidelines` để có ngữ cảnh thương hiệu.
+**Giải pháp**: Thêm màu sắc thương hiệu cụ thể, từ khóa phong cách và tham chiếu tài sản hiện có. Tải skill `brand` để có ngữ cảnh thương hiệu.
 
 **Vấn đề**: Kết quả LLM quá dài dòng hoặc chung chung
 **Giải pháp**: Thêm ràng buộc định dạng ("Tối đa 50 từ", "Dùng gạch đầu dòng"). Bao gồm few-shot examples của kết quả mong muốn.
@@ -152,7 +152,7 @@ Thay đổi một biến tại một lúc (chủ thể, phong cách, bố cục)
 - [AI Multimodal](/vi/docs/marketing/skills/ai-multimodal) - Thực thi tạo ảnh/video
 - [Copywriting](/vi/docs/marketing/skills/copywriting) - Công thức nội dung cho prompt LLM
 - [Creativity](/vi/docs/marketing/skills/creativity) - Định hướng sáng tạo và lựa chọn phong cách
-- [Brand Guidelines](/vi/docs/marketing/skills/brand-guidelines) - Prompt phù hợp thương hiệu
+- [Brand Guidelines](/vi/docs/marketing/skills/brand) - Prompt phù hợp thương hiệu
 
 ## Lệnh Liên Quan
 

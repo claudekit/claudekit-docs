@@ -1,6 +1,6 @@
 ---
-title: "ckm:seo-optimization"
-description: "Technical SEO audits, keyword research with ReviewWeb API, Google Search Console integration, and programmatic SEO for search visibility."
+title: "ckm:seo"
+description: "SEO audits, keyword research, on-page optimization, technical SEO, programmatic SEO"
 section: marketing
 category: skills
 order: 3
@@ -12,7 +12,7 @@ order: 3
 
 **The Challenge**: SEO requires combining keyword research, technical audits, content optimization, and performance monitoring across multiple tools and platforms. Manual workflows are time-consuming and error-prone.
 
-**The Solution**: SEO Optimization skill integrates ReviewWeb.site API for keyword data (volume, difficulty, CPC), Google Search Console API for ranking insights, Core Web Vitals measurement, and programmatic SEO templates. Provides automated audits, schema generation, and sitemap management.
+**The Solution**: SEO skill integrates ReviewWeb.site API for keyword data (volume, difficulty, CPC), Google Search Console API for ranking insights, Core Web Vitals measurement, and programmatic SEO templates. Provides automated audits, schema generation, and sitemap management.
 
 ## Activation
 
@@ -20,7 +20,7 @@ order: 3
 
 **Explicit**: Activate via prompt:
 ```
-Activate seo-optimization skill to [describe task]
+Activate seo skill to [describe task]
 ```
 
 ## Capabilities

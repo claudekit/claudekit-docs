@@ -127,11 +127,11 @@ Thời gian chú ý trung bình: 8 giây. Dẫn đầu bằng vấn đề hoặc
 **Giải pháp**: Kiểm thử các biến thể sáng tạo (3-5). Điều gì hiệu quả với người khác có thể không hiệu quả với đối tượng của bạn. A/B test liên tục.
 
 **Vấn đề**: Sáng tạo không phù hợp với hướng dẫn thương hiệu
-**Giải pháp**: Dùng skill brand-guidelines để trích xuất ngữ cảnh thương hiệu. Đưa vào brief sáng tạo để đảm bảo sự phù hợp.
+**Giải pháp**: Dùng skill brand để trích xuất ngữ cảnh thương hiệu. Đưa vào brief sáng tạo để đảm bảo sự phù hợp.
 
 ## Skill Liên Quan
 
-- [Brand Guidelines](/vi/docs/marketing/skills/brand-guidelines) - Căn chỉnh và xác nhận thương hiệu
+- [Brand Guidelines](/vi/docs/marketing/skills/brand) - Căn chỉnh và xác nhận thương hiệu
 - [AI Multimodal](/vi/docs/marketing/skills/ai-multimodal) - Tạo nội dung sáng tạo với Imagen 4
 - [AI Artist](/vi/docs/marketing/skills/ai-artist) - Kỹ thuật viết prompt cho hình ảnh
 - [Social Media](/vi/docs/marketing/skills/social-media) - Yêu cầu sáng tạo theo nền tảng

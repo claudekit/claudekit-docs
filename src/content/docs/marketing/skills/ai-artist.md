@@ -138,7 +138,7 @@ Change one variable at a time (subject, style, composition). Big rewrites make i
 ## Troubleshooting
 
 **Issue**: Generated images don't match brand
-**Solution**: Add specific brand colors, style keywords, and reference existing assets. Load `brand-guidelines` skill for brand context.
+**Solution**: Add specific brand colors, style keywords, and reference existing assets. Load `brand` skill for brand context.
 
 **Issue**: LLM output too verbose or generic
 **Solution**: Add format constraints ("Max 50 words", "Use bullet points"). Include few-shot examples of desired output.
@@ -151,7 +151,7 @@ Change one variable at a time (subject, style, composition). Big rewrites make i
 - [AI Multimodal](/docs/marketing/skills/ai-multimodal) - Image/video generation execution
 - [Copywriting](/docs/marketing/skills/copywriting) - Copy formulas for LLM prompts
 - [Creativity](/docs/marketing/skills/creativity) - Creative direction and style selection
-- [Brand Guidelines](/docs/marketing/skills/brand-guidelines) - Brand-aligned prompts
+- [Brand Guidelines](/docs/marketing/skills/brand) - Brand-aligned prompts
 
 ## Related Commands
 

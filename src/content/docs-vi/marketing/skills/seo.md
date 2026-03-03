@@ -1,6 +1,6 @@
 ---
 lang: vi
-title: "ckm:seo-optimization"
+title: "ckm:seo"
 description: "Kiểm toán SEO kỹ thuật, nghiên cứu từ khóa với ReviewWeb API, tích hợp Google Search Console và SEO lập trình để tăng khả năng hiển thị tìm kiếm."
 section: marketing
 category: skills
@@ -21,7 +21,7 @@ order: 3
 
 **Tường minh**: Kích hoạt qua prompt:
 ```
-Activate seo-optimization skill to [mô tả tác vụ]
+Activate seo skill to [mô tả tác vụ]
 ```
 
 ## Tính Năng

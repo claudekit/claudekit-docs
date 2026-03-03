@@ -17,7 +17,7 @@ Tìm hiểu cách triển khai các hệ thống xác thực bảo mật với C
 **Mục tiêu**: Triển khai hệ thống xác thực bảo mật, sẵn sàng cho môi trường production.
 **Thời gian**: 20-40 phút (so với 4-8 giờ làm thủ công)
 **Các Agent sử dụng**: planner, researcher, tester, code-reviewer
-**Các lệnh**: /ck:plan, /ck:cook, /ck:test, /ck:docs:update
+**Các lệnh**: /ck:plan, /ck:cook, /ck:test, /ck:docs update
 
 ## Điều kiện tiên quyết
 
@@ -420,7 +420,7 @@ Coverage:    94.7%
 ### Bước 11: Cập nhật tài liệu
 
 ```bash
-/ck:docs:update
+/ck:docs update
 ```
 
 **Tài liệu được tạo**:
@@ -473,7 +473,7 @@ Triển khai hệ thống xác thực cho trang TMĐT với:
 /ck:test
 
 # Cập nhật tài liệu
-/ck:docs:update
+/ck:docs update
 ```
 
 ### So sánh thời gian

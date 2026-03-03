@@ -35,7 +35,7 @@ claude
 
 ```bash
 # For existing projects (brownfield)
-/ck:docs:init
+/ck:docs init
 
 # For new projects (greenfield)
 ck init --kit engineer --dir /path/to/project
@@ -53,7 +53,7 @@ ck init --use-git
 
 ```bash
 # Initialize documentation and specs
-/ck:docs:init
+/ck:docs init
 
 # Implement new feature
 /ck:cook <description>
@@ -71,7 +71,7 @@ ck init --use-git
 /ck:bootstrap <idea-description>
 
 # Autonomous bootstrap
-/ck:bootstrap:auto <idea-description>
+/ck:bootstrap --auto <idea-description>
 ```
 
 ### Bug Fixing
@@ -104,13 +104,13 @@ ck init --use-git
 
 ```bash
 # Initialize documentation
-/ck:docs:init
+/ck:docs init
 
 # Update documentation
-/ck:docs:update
+/ck:docs update
 
 # Summarize documentation
-/ck:docs:summarize
+/ck:docs summarize
 ```
 
 ### Git Operations
@@ -136,10 +136,10 @@ ck init --use-git
 /ck:plan <description>
 
 # Plan CI/CD setup or fix CI/CD pipeline
-/ck:plan:ci
+/ck:plan
 
 # Two-step implementation plan
-/ck:plan:two
+/ck:plan --two
 ```
 
 ### Integration
@@ -213,7 +213,7 @@ cd /path/to/existing/project
 claude
 
 # 4. Initialize
-/ck:docs:init
+/ck:docs init
 
 # 5. Start working
 /ck:cook <feature>
@@ -344,9 +344,9 @@ claude
 - `/ck:test` - Run tests
 
 ### 📚 Documentation
-- `/ck:docs:init` - Initialize
-- `/ck:docs:update` - Update
-- `/ck:docs:summarize` - Summarize
+- `/ck:docs init` - Initialize
+- `/ck:docs update` - Update
+- `/ck:docs summarize` - Summarize
 
 ### 🔧 Git Operations
 - `/ck:git cm` - Commit changes
@@ -408,7 +408,7 @@ More detailed descriptions = better results
 
 ```bash
 # Keep docs updated
-/ck:docs:update
+/ck:docs update
 ```
 
 ## Troubleshooting
@@ -427,7 +427,7 @@ ck --version
 
 ```bash
 # Reinitialize docs
-/ck:docs:init
+/ck:docs init
 ```
 
 ### Need More Help
@@ -444,7 +444,7 @@ ck --version
 
 ```bash
 # Initialize existing project
-/ck:docs:init
+/ck:docs init
 
 # New feature (needs plan review)
 /ck:cook <feature-description>
@@ -477,7 +477,7 @@ ck --version
 /ck:bootstrap <idea-description>
 
 # Create new project (autonomous till death)
-/ck:bootstrap:auto <idea>
+/ck:bootstrap --auto <idea>
 
 # Run test suite and report (no fixes)
 /ck:test

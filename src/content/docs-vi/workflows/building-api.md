@@ -16,7 +16,7 @@ Tìm hiểu cách xây dựng REST API sẵn sàng cho production với ClaudeKi
 **Mục tiêu**: Xây dựng REST API hoàn chỉnh với các thao tác CRUD, xác thực và tài liệu
 **Thời gian**: 30-60 phút (so với 6-12 giờ thủ công)
 **Agents sử dụng**: planner, researcher, tester, code-reviewer, docs-manager
-**Commands**: /ck:bootstrap, /ck:plan, /ck:cook, /ck:test, /ck:docs:update
+**Commands**: /ck:bootstrap, /ck:plan, /ck:cook, /ck:test, /ck:docs update
 
 ## Điều kiện tiên quyết
 
@@ -33,7 +33,7 @@ Tìm hiểu cách xây dựng REST API sẵn sàng cho production với ClaudeKi
 | Thiết lập | Khởi tạo project, cơ sở dữ liệu | 5-10 phút | /ck:bootstrap |
 | Triển khai | Xây dựng endpoints, logic | 15-25 phút | /ck:cook |
 | Kiểm thử | Unit, integration, E2E tests | 5-10 phút | /ck:test |
-| Tài liệu | API docs, ví dụ | 5 phút | /ck:docs:update |
+| Tài liệu | API docs, ví dụ | 5 phút | /ck:docs update |
 | Deployment | Thiết lập production | 10-15 phút | /ck:cook |
 
 ## Quy trình từng bước
@@ -462,7 +462,7 @@ Coverage:    91.3%
 Tạo tài liệu API toàn diện:
 
 ```bash
-/ck:docs:update
+/ck:docs update
 ```
 
 **Tài liệu được tạo**:
@@ -596,7 +596,7 @@ Build a REST API for a blogging platform with:
 /ck:test
 
 # Document API
-/ck:docs:update
+/ck:docs update
 
 # Deploy
 /ck:cook [set up production deployment to DigitalOcean]

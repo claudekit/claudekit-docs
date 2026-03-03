@@ -15,7 +15,7 @@ Learn how to build production-ready REST APIs with ClaudeKit - from API design t
 **Goal**: Build a complete REST API with CRUD operations, auth, and docs
 **Time**: 30-60 minutes (vs 6-12 hours manually)
 **Agents Used**: planner, researcher, tester, code-reviewer, docs-manager
-**Commands**: /ck:bootstrap, /ck:plan, /ck:cook, /ck:test, /ck:docs:update
+**Commands**: /ck:bootstrap, /ck:plan, /ck:cook, /ck:test, /ck:docs update
 
 ## Prerequisites
 
@@ -32,7 +32,7 @@ Learn how to build production-ready REST APIs with ClaudeKit - from API design t
 | Setup | Initialize project, database | 5-10 min | /ck:bootstrap |
 | Implementation | Build endpoints, logic | 15-25 min | /ck:cook |
 | Testing | Unit, integration, E2E tests | 5-10 min | /ck:test |
-| Documentation | API docs, examples | 5 min | /ck:docs:update |
+| Documentation | API docs, examples | 5 min | /ck:docs update |
 | Deployment | Production setup | 10-15 min | /ck:cook |
 
 ## Step-by-Step Workflow
@@ -461,7 +461,7 @@ Coverage:    91.3%
 Generate comprehensive API documentation:
 
 ```bash
-/ck:docs:update
+/ck:docs update
 ```
 
 **Generated documentation**:
@@ -595,7 +595,7 @@ Build a REST API for a blogging platform with:
 /ck:test
 
 # Document API
-/ck:docs:update
+/ck:docs update
 
 # Deploy
 /ck:cook [set up production deployment to DigitalOcean]

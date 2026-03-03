@@ -88,7 +88,7 @@ Command modifiers apply to active commands:
 - `:parallel` — Enable parallel execution
 - `:two` — Use two-agent workflow
 
-**Example**: `/ck:plan:hard "complex feature"` still works.
+**Example**: `/ck:plan --hard "complex feature"` still works.
 
 ---
 

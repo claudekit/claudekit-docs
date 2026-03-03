@@ -11,7 +11,7 @@ lang: vi
 
 # Plan
 
-Tạo các bản thiết kế implementation có cấu trúc, dựa trên nghiên cứu trong thư mục `plans/`. Trước đây được chia thành `/ck:plan:fast`, `/ck:plan:hard` và các lệnh khác — nay được hợp nhất thành một skill duy nhất.
+Tạo các bản thiết kế implementation có cấu trúc, dựa trên nghiên cứu trong thư mục `plans/`. Trước đây được chia thành `/ck:plan --fast`, `/ck:plan --hard` và các lệnh khác — nay được hợp nhất thành một skill duy nhất.
 
 ## Skill Này Làm Gì
 

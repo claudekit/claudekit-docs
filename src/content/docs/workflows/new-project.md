@@ -206,7 +206,7 @@ cd task-api
 claude
 ```
 
-Then use `/ck:docs:init` and `/ck:plan` to start development.
+Then use `/ck:docs init` and `/ck:plan` to start development.
 
 ## Step 2: Review Generated Code
 
@@ -475,7 +475,7 @@ cat docs/architecture.md
 ### Update Documentation
 
 ```bash
-/ck:docs:update
+/ck:docs update
 ```
 
 ## Step 8: Commit Changes
@@ -717,7 +717,7 @@ npx prisma migrate reset
 1. **Use `/ck:bootstrap`** for new projects - saves hours of setup
 2. **Review generated code** - understand before modifying
 3. **Test immediately** - catch issues early
-4. **Document as you go** - `/ck:docs:update` regularly
+4. **Document as you go** - `/ck:docs update` regularly
 5. **Use feature branches** - safer development
 6. **Deploy early** - find production issues sooner
 

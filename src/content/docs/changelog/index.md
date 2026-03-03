@@ -18,7 +18,7 @@ Track all releases and changes for the ClaudeKit Engineer Kit.
 
 - **Agent Teams v2.1.0** — Complete rewrite as CK-native imperative execution engine. Templates auto-execute. Event-driven hooks (TaskCompleted, TeammateIdle) for monitoring. Agent memory persistence.
 - **Portable manifest** — Codex AGENTS.md to `.codex/agents/` path migration support
-- **`/ck:plan:red-team`** — Adversarial plan review command with hostile reviewer lenses
+- **`/ck:plan red-team`** — Adversarial plan review command with hostile reviewer lenses
 - **Command-to-Skill migrations** — `bootstrap`, `plan` modes consolidated into skills
 
 ### New Skills
@@ -26,7 +26,7 @@ Track all releases and changes for the ClaudeKit Engineer Kit.
 | Skill | Description |
 |-------|-------------|
 | `team` | Agent Teams orchestration (v2.1.0) |
-| `plan` | Consolidated planning skill (replaces `/ck:plan:fast`, `/ck:plan:hard`, `/ck:plan:parallel`, `/ck:plan:two`) |
+| `plan` | Consolidated planning skill (replaces `/ck:plan --fast`, `/ck:plan --hard`, `/ck:plan --parallel`, `/ck:plan --two`) |
 | `bootstrap` | Project scaffolding skill (was command) |
 | `test` | Comprehensive testing skill |
 | `project-management` | Task tracking and session bridging |
@@ -34,7 +34,7 @@ Track all releases and changes for the ClaudeKit Engineer Kit.
 
 ### New Commands
 
-- `/ck:plan:red-team` — Adversarial plan review with 4 hostile lenses
+- `/ck:plan red-team` — Adversarial plan review with 4 hostile lenses
 
 ### New Agents
 
@@ -97,7 +97,7 @@ Track all releases and changes for the ClaudeKit Engineer Kit.
 
 ### Bug Fixes
 
-- `/ck:docs:init` stall after Phase 1
+- `/ck:docs init` stall after Phase 1
 - Empty local hooks config inheritance
 - Preview ASCII diagram alignment and unicode handling
 

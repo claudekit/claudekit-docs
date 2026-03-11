@@ -226,36 +226,46 @@ Desktop (>= 1024px):
 ```
 Content Collection (all docs)
     ↓
-Filter by category
+Filter by current section
     ↓
-Sort by order field
+Group by top-level category
     ↓
-Group into sections
+Apply section/category nav metadata
+    ↓
+Pin overview pages and sort items
+    ↓
+Optional A-Z grouping for large categories
     ↓
 Render collapsible tree
     ↓
-localStorage persistence
+sessionStorage persistence
 ```
 
-**Categories**:
+**Navigation Contract**:
 ```typescript
-categories = {
-  'getting-started': { title: t('nav.getting-started'), docs: [...] },
-  'cli': { title: t('nav.cli'), docs: [...] },
-  'core-concepts': { title: t('nav.core-concepts'), docs: [...] },
-  'agents': { title: t('nav.agents'), docs: [...] },
-  'commands': { title: t('nav.commands'), docs: [...] },
-  'skills': { title: t('nav.skills'), docs: [...] },
-  'use-cases': { title: t('nav.use-cases'), docs: [...] },
-  // 'troubleshooting': MISSING (known issue)
-}
+categoryMeta = {
+  agents: {
+    groupMode: 'alpha',
+    pinnedSlugSegments: ['agents', 'index'],
+    sortKey: 'slug',
+    sortMode: 'alpha',
+  },
+  skills: {
+    groupMode: 'alpha',
+    pinnedSlugSegments: ['skills', 'index'],
+    sortKey: 'slug',
+    sortMode: 'alpha',
+    displayLabelMode: 'trim-skill-prefix',
+  },
+};
 ```
 
 **State Management**:
-- Collapse state stored in `localStorage`
-- Key format: `sidebar-section-${sectionName}`
-- Values: `'collapsed'` | `'expanded'`
-- Default: "Getting Started" expanded, others collapsed
+- Collapse state stored in `sessionStorage`
+- Root key: `claudekit-sidebar-collapse-state`
+- Category keys are namespaced as `${section}:${category}`
+- Active category always expands so the current page stays visible
+- Inactive categories default to collapsed unless the user expanded them earlier in the tab session
 
 **Active Page Highlighting**:
 ```typescript
@@ -306,10 +316,9 @@ window.addEventListener('storage', (e) => {
 
 #### 4.3 Known Issues
 
-1. **Flat Navigation**: Commands have nested structure (`commands/fix/hard.md`) but sidebar shows flat list
-2. **Missing Category**: `troubleshooting` in schema but not in SidebarNav
-3. **No Breadcrumbs**: Users can't see path hierarchy
-4. **Marketing Nav Missing**: WorkflowsNav only shows engineer workflows (marketing TBD)
+1. **Flat Command Navigation**: Commands still have nested structure (`commands/fix/hard.md`) but sidebar remains one level deep
+2. **No Breadcrumbs**: Users can't see path hierarchy from the page itself
+3. **Targeted IA Only**: A-Z grouping is enabled for large Engineer/Marketing `agents` and `skills` sections, not every section
 
 ### 5. AI Integration System (Planned)
 
@@ -651,7 +660,7 @@ spec:
 - OpenRouter API backend for AI chat
 - Pagefind search integration
 - Hierarchical sidebar navigation
-- Add `troubleshooting` category to sidebar
+- Extend grouped sidebar patterns where other sections become hard to scan
 
 **Phase 2** (Q2 2026):
 - Light/dark theme toggle
@@ -675,14 +684,13 @@ spec:
 
 **Current Issues**:
 1. Sidebar flat navigation (need hierarchical)
-2. Missing troubleshooting category
-3. AI backend not connected
-4. Search not implemented
-5. Vietnamese translations may lag behind English
+2. AI backend not connected
+3. Search not implemented
+4. Vietnamese translations may lag behind English
 
 **Prioritization**:
 - P0: AI backend, search
-- P1: Hierarchical nav, troubleshooting category
+- P1: Hierarchical nav for commands and other nested sections
 - P2: Theme toggle, analytics
 - P3: Versioning, additional locales
 

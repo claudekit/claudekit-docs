@@ -3,7 +3,7 @@ title: Workflows
 description: Documentation for workflows
 section: engineer
 kit: engineer
-category: docs/configuration
+category: configuration
 order: 3
 published: true
 lang: vi

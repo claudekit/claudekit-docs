@@ -1,0 +1,113 @@
+---
+import { getLangFromUrl, getDocPath } from '../../i18n/utils';
+import type { NavCategoryMeta } from '../../lib/sidebar-nav-section-config';
+import {
+  buildAlphaGroups,
+  capitalizeCategoryLabel,
+  getDocDisplayLabel,
+  splitPinnedDocs,
+} from '../../lib/section-nav';
+
+interface Props {
+  categoryKey: string;
+  currentPath: string;
+  docs: any[];
+  icon?: string;
+  meta?: NavCategoryMeta;
+  stateKey?: string;
+}
+
+const { categoryKey, currentPath, docs, icon, meta, stateKey = categoryKey } = Astro.props;
+const currentLocale = getLangFromUrl(Astro.url);
+const categoryLabel = meta?.title ?? capitalizeCategoryLabel(categoryKey);
+const { pinnedDocs, remainingDocs } = splitPinnedDocs(docs, meta);
+const alphaGroups = meta?.groupMode === 'alpha' ? buildAlphaGroups(remainingDocs, meta) : [];
+const hasActiveItem = docs.some((doc) => {
+  const href = getDocPath(doc.slug, currentLocale);
+  return currentPath === href || currentPath === `${href}/`;
+});
+const defaultCategoryIcon =
+  '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline>';
+---
+
+<div
+  class="nav-section"
+  data-category={stateKey}
+  data-collapsible
+  data-default-expanded={hasActiveItem ? 'true' : 'false'}
+>
+  <button class="nav-section-title" aria-expanded={hasActiveItem ? 'true' : 'false'}>
+    <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m9 18 6-6-6-6"></path>
+    </svg>
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="category-icon"
+      set:html={icon ?? defaultCategoryIcon}
+    />
+    {categoryLabel}
+    <span class="item-count">({docs.length})</span>
+  </button>
+
+  <div class="nav-items" hidden={!hasActiveItem}>
+    {pinnedDocs.map((doc) => {
+      const href = getDocPath(doc.slug, currentLocale);
+      const isActive = currentPath === href || currentPath === `${href}/`;
+      return (
+        <a href={href} class:list={['nav-link', { active: isActive }]}>
+          <span>{getDocDisplayLabel(doc, meta)}</span>
+        </a>
+      );
+    })}
+
+    {alphaGroups.length > 0 ? (
+      alphaGroups.map((group) => (
+        <div class="alpha-group">
+          <div class="alpha-label">{group.key}</div>
+          {group.items.map((doc) => {
+            const href = getDocPath(doc.slug, currentLocale);
+            const isActive = currentPath === href || currentPath === `${href}/`;
+            return (
+              <a href={href} class:list={['nav-link', { active: isActive }]}>
+                <span>{getDocDisplayLabel(doc, meta)}</span>
+              </a>
+            );
+          })}
+        </div>
+      ))
+    ) : (
+      remainingDocs.map((doc) => {
+        const href = getDocPath(doc.slug, currentLocale);
+        const isActive = currentPath === href || currentPath === `${href}/`;
+        return (
+          <a href={href} class:list={['nav-link', { active: isActive }]}>
+            <span>{getDocDisplayLabel(doc, meta)}</span>
+          </a>
+        );
+      })
+    )}
+  </div>
+</div>
+
+<style>
+  .alpha-group + .alpha-group {
+    margin-top: var(--space-2);
+  }
+
+  .alpha-label {
+    padding: var(--space-2) var(--space-3);
+    padding-left: calc(var(--space-3) + 32px);
+    color: var(--color-text-muted);
+    font-size: 11px;
+    font-weight: var(--font-semibold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+</style>

@@ -3,7 +3,7 @@ title: CLAUDE.md
 description: Tài liệu hướng dẫn sử dụng file CLAUDE.md
 section: engineer
 kit: engineer
-category: docs/configuration
+category: configuration
 order: 2
 published: true
 lang: vi

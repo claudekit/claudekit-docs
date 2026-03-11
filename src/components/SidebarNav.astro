@@ -106,32 +106,58 @@ const sectionDocs = allDocs.filter(doc => doc.data.section === section);
   // State persistence logic (runs client-side)
   const COLLAPSE_KEY = 'claudekit-sidebar-collapse-state';
 
+  function readSidebarState() {
+    try {
+      const saved = sessionStorage.getItem(COLLAPSE_KEY);
+      if (!saved) return {};
+
+      const parsed = JSON.parse(saved);
+      return parsed && typeof parsed === 'object' ? parsed : {};
+    } catch {
+      return {};
+    }
+  }
+
   function initSidebarState() {
-    const saved = sessionStorage.getItem(COLLAPSE_KEY);
-    const state = saved ? JSON.parse(saved) : {};
+    const state = readSidebarState();
 
     // Apply saved collapse state
     document.querySelectorAll('[data-collapsible]').forEach(section => {
-      const key = section.getAttribute('data-category');
-      const isCollapsed = state[key] ?? true; // Default collapsed
+      if (!(section instanceof HTMLElement)) return;
 
+      const key = section.getAttribute('data-category');
+      if (!key) return;
+
+      const defaultExpanded = section.getAttribute('data-default-expanded') === 'true';
       const button = section.querySelector('button');
       const items = section.querySelector('.nav-items');
+      const shouldCollapse = defaultExpanded ? false : state[key] ?? true;
 
-      if (isCollapsed) {
+      if (shouldCollapse) {
         section.classList.add('collapsed');
         items?.setAttribute('hidden', '');
       } else {
         section.classList.remove('collapsed');
         items?.removeAttribute('hidden');
       }
+
+      button?.setAttribute('aria-expanded', String(!shouldCollapse));
     });
 
     // Add click handlers
     document.querySelectorAll('[data-collapsible] button').forEach(button => {
-      button.addEventListener('click', (e) => {
+      if (!(button instanceof HTMLButtonElement)) return;
+      if (button.dataset.sidebarBound === 'true') return;
+
+      button.dataset.sidebarBound = 'true';
+
+      button.addEventListener('click', () => {
         const section = button.closest('[data-collapsible]');
+        if (!(section instanceof HTMLElement)) return;
+
         const key = section.getAttribute('data-category');
+        if (!key) return;
+
         const items = section.querySelector('.nav-items');
 
         const isCollapsed = section.classList.toggle('collapsed');
@@ -142,9 +168,10 @@ const sectionDocs = allDocs.filter(doc => doc.data.section === section);
           items?.removeAttribute('hidden');
         }
 
+        button.setAttribute('aria-expanded', String(!isCollapsed));
+
         // Save state
-        const saved = sessionStorage.getItem(COLLAPSE_KEY);
-        const state = saved ? JSON.parse(saved) : {};
+        const state = readSidebarState();
         state[key] = isCollapsed;
         sessionStorage.setItem(COLLAPSE_KEY, JSON.stringify(state));
       });

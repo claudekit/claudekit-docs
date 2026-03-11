@@ -1,5 +1,14 @@
 import { defineCollection, z } from 'astro:content';
 
+const validCategoryRootsBySection: Record<string, string[]> = {
+  'getting-started': ['getting-started'],
+  engineer: ['overview', 'agents', 'skills', 'configuration'],
+  marketing: ['overview', 'agents', 'skills', 'features', 'dashboard'],
+  support: ['support', 'troubleshooting'],
+  tools: ['tools'],
+  workflows: ['engineer', 'marketing'],
+};
+
 const docsSchema = z.object({
   title: z.string(),
   description: z.string().min(10).max(160), // SEO constraint
@@ -20,6 +29,21 @@ const docsSchema = z.object({
   order: z.number().optional().default(999),
   published: z.boolean().default(true),
   lastUpdated: z.date().optional(),
+}).superRefine((data, ctx) => {
+  if (!data.category) return;
+
+  const validRoots = validCategoryRootsBySection[data.section];
+  if (!validRoots) return;
+
+  const categoryRoot = data.category.split('/')[0];
+
+  if (!validRoots.includes(categoryRoot)) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      path: ['category'],
+      message: `Invalid category root "${categoryRoot}" for section "${data.section}". Expected one of: ${validRoots.join(', ')}.`,
+    });
+  }
 });
 
 const docs = defineCollection({

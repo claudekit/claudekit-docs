@@ -3,7 +3,7 @@ title: "Thiết lập MCP"
 description: "Tài liệu hướng dẫn thiết lập MCP (Model Context Protocol)"
 section: engineer
 kit: engineer
-category: docs/configuration
+category: configuration
 order: 3
 published: true
 lang: vi

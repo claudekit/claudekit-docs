@@ -1,0 +1,210 @@
+---
+import { getLangFromUrl, getDocPath } from '../../i18n/utils';
+import type { NavCategoryMeta } from '../../lib/sidebar-nav-section-config';
+import {
+  buildAlphaGroups,
+  capitalizeCategoryLabel,
+  getDocDisplayLabel,
+  splitPinnedDocs,
+} from '../../lib/section-nav';
+
+interface Props {
+  categoryKey: string;
+  currentPath: string;
+  docs: any[];
+  icon?: string;
+  meta?: NavCategoryMeta;
+  stateKey?: string;
+}
+
+const { categoryKey, currentPath, docs, icon, meta, stateKey = categoryKey } = Astro.props;
+const currentLocale = getLangFromUrl(Astro.url);
+const categoryLabel = meta?.title ?? capitalizeCategoryLabel(categoryKey);
+const { pinnedDocs, remainingDocs } = splitPinnedDocs(docs, meta);
+const alphaGroups = meta?.groupMode === 'alpha' ? buildAlphaGroups(remainingDocs, meta) : [];
+const hasActiveItem = docs.some((doc) => {
+  const href = getDocPath(doc.slug, currentLocale);
+  return currentPath === href || currentPath === `${href}/`;
+});
+const defaultCategoryIcon =
+  '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline>';
+---
+
+<div
+  class="nav-section"
+  data-category={stateKey}
+  data-collapsible
+  data-default-expanded={hasActiveItem ? 'true' : 'false'}
+>
+  <button class="nav-section-title" aria-expanded={hasActiveItem ? 'true' : 'false'}>
+    <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m9 18 6-6-6-6"></path>
+    </svg>
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="category-icon"
+      set:html={icon ?? defaultCategoryIcon}
+    />
+    {categoryLabel}
+    <span class="item-count">({docs.length})</span>
+  </button>
+
+  <div class="nav-items" hidden={!hasActiveItem}>
+    {pinnedDocs.map((doc) => {
+      const href = getDocPath(doc.slug, currentLocale);
+      const isActive = currentPath === href || currentPath === `${href}/`;
+      return (
+        <a href={href} class:list={['nav-link', { active: isActive }]}>
+          <span>{getDocDisplayLabel(doc, meta)}</span>
+        </a>
+      );
+    })}
+
+    {alphaGroups.length > 0 ? (
+      alphaGroups.map((group) => (
+        <div class="alpha-group">
+          <div class="alpha-label">{group.key}</div>
+          {group.items.map((doc) => {
+            const href = getDocPath(doc.slug, currentLocale);
+            const isActive = currentPath === href || currentPath === `${href}/`;
+            return (
+              <a href={href} class:list={['nav-link', { active: isActive }]}>
+                <span>{getDocDisplayLabel(doc, meta)}</span>
+              </a>
+            );
+          })}
+        </div>
+      ))
+    ) : (
+      remainingDocs.map((doc) => {
+        const href = getDocPath(doc.slug, currentLocale);
+        const isActive = currentPath === href || currentPath === `${href}/`;
+        return (
+          <a href={href} class:list={['nav-link', { active: isActive }]}>
+            <span>{getDocDisplayLabel(doc, meta)}</span>
+          </a>
+        );
+      })
+    )}
+  </div>
+</div>
+
+<style>
+  .nav-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--space-2);
+  }
+
+  .nav-section-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    background: transparent;
+    border: none;
+    color: var(--color-text-secondary);
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    transition: all 0.15s;
+    text-align: left;
+    width: 100%;
+  }
+
+  .nav-section-title:hover {
+    background: var(--color-bg-tertiary);
+    color: var(--color-text-primary);
+  }
+
+  .chevron {
+    transition: transform 0.2s;
+    color: var(--color-text-muted);
+    width: 14px;
+    height: 14px;
+  }
+
+  .nav-section.collapsed .chevron {
+    transform: rotate(0deg);
+  }
+
+  .nav-section:not(.collapsed) .chevron {
+    transform: rotate(90deg);
+  }
+
+  .category-icon {
+    color: var(--section-accent);
+    width: 16px;
+    height: 16px;
+  }
+
+  .item-count {
+    margin-left: auto;
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    font-weight: var(--font-normal);
+  }
+
+  .nav-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-items[hidden] {
+    display: none;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    padding-left: calc(var(--space-3) + 32px);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    border-radius: var(--radius-md);
+    transition: all 0.15s;
+    text-decoration: none;
+  }
+
+  .nav-link:hover {
+    background: var(--color-bg-tertiary);
+    color: var(--color-text-primary);
+    text-decoration: none;
+  }
+
+  .nav-link.active {
+    background: var(--color-bg-tertiary);
+    color: var(--section-accent);
+    border-left: 2px solid var(--section-accent);
+    padding-left: calc(var(--space-3) + 30px);
+  }
+
+  .alpha-group + .alpha-group {
+    margin-top: var(--space-2);
+  }
+
+  .alpha-label {
+    padding: var(--space-2) var(--space-3);
+    padding-left: calc(var(--space-3) + 32px);
+    color: var(--color-text-muted);
+    font-size: 11px;
+    font-weight: var(--font-semibold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+</style>

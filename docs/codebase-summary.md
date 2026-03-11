@@ -427,10 +427,13 @@ docsSchema = z.object({
 ### 2. Navigation System
 
 **SidebarNav.astro** (Enhanced through Phases 01-03):
-- Groups docs by logical sections from frontmatter category field
-- Sorts by `order` field (lower = higher)
-- Collapsible sections with localStorage persistence
-- Auto-expands "Getting Started" by default
+- Detects the active docs section from the URL and delegates rendering to shared section nav components
+- Groups docs by frontmatter category, then applies per-section metadata from `src/lib/sidebar-nav-section-config.ts`
+- Engineer/Marketing `agents` and `skills` pin their overview page first, sort by slug, and render A-Z group headings
+- Skill labels in alpha-grouped sidebars trim `ck:` / `ckm:` prefixes for scanability while leaving page titles and URLs unchanged
+- Collapsible sections persist in `sessionStorage` under `claudekit-sidebar-collapse-state`
+- Collapse keys are namespaced by section/category (`engineer:skills`, `marketing:agents`, etc.)
+- Active category auto-expands so the current page is not hidden by saved collapse state
 - Active page highlighting with 2px blue left border
 - File/folder icons (Lucide-style inline SVG)
 - Enhanced section-based organization improving content discoverability
@@ -439,6 +442,7 @@ docsSchema = z.object({
 - **Phase 02**: Section-specific navigation components with smart detection
 - **Phase 02**: Enhanced mobile responsiveness and active state highlighting
 - **Phase 02**: Fixed nested command navigation hierarchy
+- **Current branch**: Shared nav helpers live in `src/lib/section-nav.ts` and alpha-grouped category rendering lives in `src/components/nav/SectionNavCategory.astro`
 
 **Navigation Improvements**:
 - Section-based categorization replaces flat hierarchy
@@ -459,7 +463,7 @@ docsSchema = z.object({
 
 **Remaining Navigation Issues**:
 - Commands have nested subdirectories (`commands/fix/hard.md`) but sidebar shows flat list. Hierarchical nav still needed for command subcategories (partially addressed in Phase 02, may need further refinement).
-- `troubleshooting` category navigation integration needs verification.
+- Alpha grouping is currently targeted at the largest Engineer/Marketing categories only; other sections still use their existing layouts.
 
 ### 3. Internationalization (i18n)
 
@@ -872,7 +876,7 @@ npm run preview      # Preview build
 
 ## Unresolved Questions
 
-1. Should `troubleshooting` category be added to SidebarNav or removed from schema?
+1. Should A-Z grouping stay limited to Engineer/Marketing `agents` and `skills`, or expand to other large sections later?
 2. How to implement hierarchical navigation for nested command categories?
 3. What's the timeline for OpenRouter API backend integration?
 4. Should Vietnamese translations be auto-synced or manually maintained?

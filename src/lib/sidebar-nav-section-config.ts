@@ -9,9 +9,19 @@ export interface NavSectionConfig {
   layout: 'categorized' | 'flat' | 'grouped'; // categorized = collapsible categories, flat = simple list, grouped = non-collapsible groups
   categoryOrder?: string[];
   categoryIcons?: Record<string, string>;
-  categoryMeta?: Record<string, { title: string; collapsible?: boolean }>;
+  categoryMeta?: Record<string, NavCategoryMeta>;
   filterIndex?: boolean; // ToolsNav filters out index pages
   showDocIcon?: boolean; // CLINav shows document icon per nav item
+}
+
+export interface NavCategoryMeta {
+  title?: string;
+  collapsible?: boolean;
+  groupMode?: 'none' | 'alpha';
+  pinnedSlugSegments?: string[];
+  sortKey?: 'title' | 'slug';
+  sortMode?: 'order' | 'alpha';
+  displayLabelMode?: 'title' | 'trim-skill-prefix';
 }
 
 export const NAV_SECTION_CONFIGS: Record<string, NavSectionConfig> = {
@@ -21,6 +31,21 @@ export const NAV_SECTION_CONFIGS: Record<string, NavSectionConfig> = {
     badgeStyle: 'filled',
     layout: 'categorized',
     categoryOrder: ['overview', 'agents', 'skills', 'configuration'],
+    categoryMeta: {
+      agents: {
+        groupMode: 'alpha',
+        pinnedSlugSegments: ['agents', 'index'],
+        sortKey: 'slug',
+        sortMode: 'alpha',
+      },
+      skills: {
+        groupMode: 'alpha',
+        pinnedSlugSegments: ['skills', 'index'],
+        sortKey: 'slug',
+        sortMode: 'alpha',
+        displayLabelMode: 'trim-skill-prefix',
+      },
+    },
     categoryIcons: {
       overview: '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>',
       agents: '<circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/>',
@@ -35,6 +60,21 @@ export const NAV_SECTION_CONFIGS: Record<string, NavSectionConfig> = {
     badgeStyle: 'filled',
     layout: 'categorized',
     categoryOrder: ['overview', 'agents', 'skills', 'dashboard'],
+    categoryMeta: {
+      agents: {
+        groupMode: 'alpha',
+        pinnedSlugSegments: ['agents', 'index'],
+        sortKey: 'slug',
+        sortMode: 'alpha',
+      },
+      skills: {
+        groupMode: 'alpha',
+        pinnedSlugSegments: ['skills', 'index'],
+        sortKey: 'slug',
+        sortMode: 'alpha',
+        displayLabelMode: 'trim-skill-prefix',
+      },
+    },
     categoryIcons: {
       overview: '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>',
       agents: '<circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/>',

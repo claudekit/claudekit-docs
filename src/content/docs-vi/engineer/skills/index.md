@@ -3,7 +3,7 @@ title: Kỹ Năng (Skills)
 description: Tài liệu hướng dẫn sử dụng Skills trong ClaudeKit
 section: engineer
 kit: engineer
-category: docs/skills
+category: skills
 order: 1
 published: true
 lang: vi

@@ -16,7 +16,9 @@ Hooks allow you to extend Claude Code with custom scripts that run at specific p
 
 Hooks are configured in `.claude/settings.json` and execute shell commands in response to Claude Code events.
 
-> **Always-on diagnostics (v2.11.0+):** All built-in hooks are wrapped in crash handlers that automatically capture errors and write them to `.claude/hooks/logs/`. Hook failures are logged but do not interrupt your session.
+> **Always-on diagnostics (v2.11.0+):** Built-in hooks fail open and write diagnostics to `.claude/hooks/.logs/hook-log.jsonl`. Recent ClaudeKit releases log both crashes and key hook outcomes, so you can inspect failures without interrupting the session.
+
+> **Dashboard visibility (CLI):** `ck config` now reads these hook logs and shows recent hook activity, warnings, blocks, and crashes for both global and project scopes.
 
 ### Available Hook Events
 

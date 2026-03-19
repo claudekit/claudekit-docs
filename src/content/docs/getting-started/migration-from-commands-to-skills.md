@@ -64,7 +64,6 @@ These commands remain as slash commands:
 
 - `/ck:ask` — Ask questions about project
 - `/ck:bootstrap*` — Initialize project templates
-- `/ck:ck-help` — ClaudeKit help system
 - `/ck:coding-level` — Set coding detail level
 - `/ck:docs*` — Documentation generation
 - `/ck:journal` — Session journaling
@@ -96,8 +95,7 @@ Command modifiers apply to active commands:
 
 1. **Don't memorize**: Just describe what you want. Skills activate automatically.
 2. **Use `/clear` liberally**: Especially after `/ck:plan` or before starting new tasks.
-3. **Check `/ck:ck-help`**: Lists all active commands and available skills.
-4. **Natural language first**: Try describing your task before reaching for a command.
+3. **Natural language first**: Try describing your task before reaching for a command.
 
 ---
 

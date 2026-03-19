@@ -65,7 +65,6 @@ Các lệnh này vẫn giữ nguyên dạng lệnh slash:
 
 - `/ck:ask` — Đặt câu hỏi về dự án
 - `/ck:bootstrap*` — Khởi tạo mẫu dự án
-- `/ck:ck-help` — Hệ thống trợ giúp ClaudeKit
 - `/ck:coding-level` — Đặt mức độ chi tiết code
 - `/ck:docs*` — Tạo tài liệu
 - `/ck:journal` — Ghi nhật ký phiên làm việc
@@ -97,8 +96,7 @@ Bộ điều chỉnh lệnh áp dụng cho các lệnh đang hoạt động:
 
 1. **Đừng ghi nhớ**: Chỉ cần mô tả những gì bạn muốn. Skills tự động kích hoạt.
 2. **Sử dụng `/clear` thường xuyên**: Đặc biệt sau `/ck:plan` hoặc trước khi bắt đầu tác vụ mới.
-3. **Kiểm tra `/ck:ck-help`**: Liệt kê tất cả lệnh đang hoạt động và skills có sẵn.
-4. **Ngôn ngữ tự nhiên trước**: Thử mô tả tác vụ trước khi dùng lệnh.
+3. **Ngôn ngữ tự nhiên trước**: Thử mô tả tác vụ trước khi dùng lệnh.
 
 ---
 

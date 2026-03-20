@@ -89,7 +89,6 @@ As of engineer@2.12.0, all 19 commands have been migrated to skills. The `/` sla
 | [team](/docs/engineer/skills/team) | Agent Teams for parallel multi-session collaboration |
 | [ask](/docs/engineer/skills/ask) | Answer technical and architectural questions |
 | [bootstrap](/docs/engineer/skills/bootstrap) | Initialize new projects with spec-driven development |
-| [ck-help](/docs/engineer/skills/ck-help) | ClaudeKit usage guide and skill discovery |
 | [coding-level](/docs/engineer/skills/coding-level) | Set coding experience level for tailored output |
 | [docs](/docs/engineer/skills/docs) | Manage project documentation (init, update, summarize) |
 | [journal](/docs/engineer/skills/journal) | Write development journal entries |

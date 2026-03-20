@@ -60,6 +60,40 @@ Or for a single file:
 # Generates visual explanation with Mermaid diagram, opens in browser
 ```
 
+## HTML Mode
+
+Add `--html` to generate a self-contained HTML file that opens directly in the browser — no external viewer required.
+
+```
+/ckm:preview --html --explain "How does our email automation flow work?"
+# Generates a standalone HTML file, opens in browser immediately
+```
+
+HTML-only modes for marketing workflows:
+
+```
+/ckm:preview --html --diff content/v1.md content/v2.md
+# Side-by-side diff of two content versions
+
+/ckm:preview --html --plan-review plans/260301-email-campaign/
+# Plan review with phase navigation and status indicators
+
+/ckm:preview --html --recap "Q1 campaign performance"
+# Recap summary formatted for stakeholder sharing
+```
+
+### HTML Mode Reference
+
+| Flag | Use case |
+|------|----------|
+| `--diff` | Compare content drafts, review copy changes |
+| `--plan-review` | Share campaign plan status with stakeholders |
+| `--recap` | Generate shareable session or campaign summaries |
+
+**Output:** Single `.html` file saved to the active plan's `visuals/` directory. Opens automatically in the default browser. No dependencies — share the file directly.
+
+**Style strategy:** HTML output uses anti-slop rules (no filler content, no padding prose). The `--slides` mode additionally applies `ui-ux-pro-max` style for polished presentation layout.
+
 ## Related
 
 - [ckm:plan](/docs/marketing/skills/plan) - Create plans to preview

@@ -9,6 +9,19 @@ order: 9
 
 > Customize ClaudeKit CLI behavior with config files, environment variables, and project-specific settings.
 
+## Config Dashboard
+
+Use `ck config` to open the local configuration dashboard.
+
+### Hook Diagnostics Panel
+
+The System view includes a Hook Diagnostics panel that reads structured hook logs from:
+
+- Global installs: `~/.claude/hooks/.logs/hook-log.jsonl`
+- Project installs: `<project>/.claude/hooks/.logs/hook-log.jsonl`
+
+The panel lets you switch between global and project scope, refresh recent entries, and inspect warning, block, and crash counts without manually opening JSONL files.
+
 ## Configuration Files
 
 ClaudeKit CLI uses multiple configuration files at different levels.

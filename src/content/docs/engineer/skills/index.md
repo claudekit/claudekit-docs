@@ -196,4 +196,4 @@ skill-creator will:
 
 ## Key Takeaway
 
-65 skills provide instant expertise—invoke with `/skill-name` or mention the skill and describe your task. No configuration needed.
+70+ skills provide instant expertise—invoke with `/skill-name` or mention the skill and describe your task. No configuration needed.

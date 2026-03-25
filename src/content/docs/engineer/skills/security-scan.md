@@ -61,10 +61,10 @@ Run native audit tools by detected project type:
 
 | Stack | Tool |
 |-------|------|
-| Node.js | `npm audit` / `bun audit` |
-| Python | `pip-audit` or `safety check` |
-| Go | `govulncheck` |
-| Rust | `cargo audit` |
+| Node.js | `npm audit` |
+| Python | `pip audit` |
+| Go | Language-specific audit tools |
+| Rust | Language-specific audit tools |
 
 ### 3. Code Patterns (OWASP)
 Static analysis for:

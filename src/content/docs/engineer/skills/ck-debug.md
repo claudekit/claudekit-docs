@@ -87,6 +87,17 @@ Stop and follow process if thinking:
 
 **All mean**: Return to systematic process.
 
+## Additional Capabilities
+
+The full skill includes six more techniques for system-level investigation:
+
+- **Investigation Methodology** — five-step structured investigation for server incidents and multi-component failures
+- **Log & CI/CD Analysis** — collect and correlate logs from servers, GitHub Actions, and application layers
+- **Performance Diagnostics** — identify bottlenecks, slow queries, and resource exhaustion
+- **Reporting Standards** — structured diagnostic reports with executive summary, technical analysis, and recommendations
+- **Task Management** — track multi-step investigations via Claude Tasks (TaskCreate/TaskUpdate); falls back to TodoWrite in VSCode
+- **Frontend Verification** — visual verification via Chrome MCP or `ck:chrome-devtools` for UI bugs and visual regressions
+
 ## Related Skills
 
 - [Fix](/docs/engineer/skills/fix) - Complete bug fixing workflow with intelligent routing

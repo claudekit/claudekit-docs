@@ -1,11 +1,6 @@
 ---
 title: Optimizing Performance
-description: "Documentation for Optimizing Performance
-description:
-section: workflows
-category: engineer
-order: 9
-published: true"
+description: "Identify and fix performance bottlenecks with ClaudeKit using profiling, caching, database optimization, and code improvements"
 section: workflows
 category: engineer
 order: 9

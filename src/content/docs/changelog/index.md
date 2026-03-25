@@ -46,6 +46,7 @@ Track all releases and changes for the ClaudeKit Engineer Kit.
 - Manifest: Windsurf global path migration, skills consolidation paths
 - JSON schema reference in `settings.json`
 - Attribution API migrated from deprecated `includeCoAuthoredBy`
+- `ck-debug` / `ck-plan` skill directory renames to avoid built-in `/debug` and `/plan` collisions
 
 ### Removals
 
@@ -76,7 +77,6 @@ Track all releases and changes for the ClaudeKit Engineer Kit.
 
 - **`ck:` namespace prefix** — All skill names prefixed with `ck:` to avoid collisions with Claude Code built-ins
 - **`argument-hint` field** — Added to all skills for improved discoverability
-- **`ck-debug` / `ck-plan` renames** — Skill directories renamed to avoid built-in `/debug` and `/plan` collisions
 - Various namespace cleanup and cross-reference fixes
 - `chrome-devtools` evaluate fix
 

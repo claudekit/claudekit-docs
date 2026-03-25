@@ -26,7 +26,7 @@ Before completing any task, this agent verifies:
 - Error scenarios and exception paths tested
 - Flaky tests detected and isolated
 - Build verification passes (typecheck, lint, compile)
-- Coverage targets met (80%+ overall, 75%+ integration)
+- Coverage targets met (80%+ overall)
 
 ## Diff-Aware Mode
 
@@ -37,12 +37,12 @@ By default, the tester agent analyzes the git diff and runs only the tests affec
 | **Co-located** | Test file sits next to source file (`foo.ts` → `foo.test.ts`) |
 | **Mirror directory** | Tests mirror source structure (`src/api/` → `tests/api/`) |
 | **Import graph** | File is imported by a tested module (transitive impact) |
-| **Config detection** | Test config files reference the changed file directly |
+| **Config detection** | Config/infra files changed (`tsconfig`, `jest.config`, `package.json`) → full suite |
 | **High fan-out** | File imported by many modules — runs broader suite |
 
 **Auto-escalation to full suite** occurs when:
-- More than 40% of files changed in a single diff
-- Configuration files are modified (`package.json`, `tsconfig.json`, CI workflows, etc.)
+- More than 70% of total tests are mapped by the diff (overhead not worth it)
+- Configuration files are modified (`package.json`, `tsconfig.json`, CI workflows, etc.) — config changes always trigger full suite
 
 This keeps CI fast on small PRs while ensuring correctness on large changes.
 
@@ -58,7 +58,7 @@ This keeps CI fast on small PRs while ensuring correctness on large changes.
 | Category | Tools | Coverage Target |
 |----------|-------|-----------------|
 | **Unit Tests** | Jest, Vitest, pytest, cargo test, go test | 80%+ |
-| **Integration** | API testing, DB interactions, service layers | 75%+ |
+| **Integration** | API testing, DB interactions, service layers | Critical paths |
 | **E2E** | Playwright, Cypress, Flutter integration tests | Critical paths |
 | **Coverage** | Line, branch, function, statement analysis | 80%+ overall |
 | **Build Check** | TypeScript, linting, bundle size, compilation | 100% pass |

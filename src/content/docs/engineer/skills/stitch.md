@@ -44,7 +44,6 @@ Get your API key at [stitch.withgoogle.com](https://stitch.withgoogle.com).
 |----------|-------------|
 | `"prompt"` | Natural language description of the UI to generate |
 | `--export tailwind\|html\|design-md` | Output format (default: design-md) |
-| `--experimental` | Use experimental model (50 credits/day limit) |
 
 ## Example Usage
 

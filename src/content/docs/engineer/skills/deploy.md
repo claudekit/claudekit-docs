@@ -36,26 +36,18 @@ Deploy reads your project config files (vercel.json, netlify.toml, fly.toml, etc
 | GitHub Pages | `gh-pages` branch / Actions workflow |
 | AWS | `serverless.yml`, `cdk.json`, `amplify.yml` |
 | GCP | `app.yaml`, `cloudbuild.yaml` |
-| DigitalOcean | `do-app.yaml` |
+| DigitalOcean | `.do/app.yaml` |
 | Vultr | Detected via CLI |
-| Coolify | `coolify.yaml` |
-| Dokploy | `dokploy.yaml` |
+| Coolify | `docker-compose.yml` + Coolify reference |
+| Dokploy | `dokploy.yml` |
 | TOSE | `tose.yaml` |
-
-## Arguments
-
-| Argument | Description |
-|----------|-------------|
-| `[platform]` | Override auto-detection (e.g., `vercel`, `fly`) |
-| `--env production\|preview\|staging` | Target environment |
-| `--dry-run` | Show what would be deployed without executing |
 
 ## Example Usage
 
 ```
 /ck:deploy
-/ck:deploy vercel --env production
-/ck:deploy fly --dry-run
+/ck:deploy vercel
+/ck:deploy fly
 ```
 
 ## Workflow

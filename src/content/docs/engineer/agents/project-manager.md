@@ -20,11 +20,11 @@ This agent operates as an **Engineering Manager providing project oversight and 
 
 Before completing any status update or coordination task, this agent verifies:
 
-- Progress percentages reflect actual completion, not optimistic estimates
-- Blockers identified with owner and estimated resolution timeline
-- Scope changes detected and documented with impact assessment
-- Resource allocation appropriate for current sprint priorities
-- Stakeholder communication drafted for significant status changes
+- Progress measured against plan: tasks checked complete only if done criteria are met, not just "in progress"
+- Blockers identified: any task stalled >1 session flagged with owner and unblock path
+- Scope changes logged: any deviation from original plan documented with reason and impact
+- Risks updated: new risks added, resolved risks closed — no stale risk register
+- Next actions concrete: each next step has an owner and a definition of done
 
 ## When to Use
 

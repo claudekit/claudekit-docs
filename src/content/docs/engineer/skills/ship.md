@@ -31,8 +31,8 @@ Ship orchestrates the full handoff workflow so you don't have to run a dozen com
 | auto-detect | inferred from branch name | Default behavior |
 
 Branch name patterns for auto-detection:
-- `hotfix/*` → targets `main`
-- `feat/*`, `fix/*`, `kai/*` → targets `dev`
+- `feature/*`, `hotfix/*`, `bugfix/*` → targets `main` (official)
+- `dev/*`, `beta/*`, `experiment/*` → targets `dev` (beta)
 
 ## Arguments
 

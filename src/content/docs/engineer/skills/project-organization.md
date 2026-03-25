@@ -59,16 +59,13 @@ Scans project, proposes moves, and optionally executes them.
 | Argument | Description |
 |----------|-------------|
 | `"[description]"` | Describe a file to get its correct path (advisory) |
-| `--organize` | Scan and propose full restructuring |
-| `--execute` | Execute proposed moves without confirmation prompt |
-| `--dry-run` | Show what would change without moving files |
+| `--organize` | Scan and propose full restructuring (confirms before executing) |
 
 ## Example Usage
 
 ```
 /ck:project-organization "where does the database migration script go?"
 /ck:project-organization --organize
-/ck:project-organization --organize --dry-run
 ```
 
 ## Naming Conventions Enforced

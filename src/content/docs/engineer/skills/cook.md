@@ -80,7 +80,7 @@ Cook doesn't just write code—it manages the entire software development lifecy
 
 ## Related Skills
 
-- [Planning](/docs/engineer/skills/plan) - Creates plans that cook executes
+- [Planning](/docs/engineer/skills/ck-plan) - Creates plans that cook executes
 - [Brainstorm](/docs/engineer/skills/brainstorm) - For architecture decisions before implementation
 - [Fix](/docs/engineer/skills/fix) - For debugging existing code
 - [Scout](/docs/engineer/skills/scout) - For codebase discovery

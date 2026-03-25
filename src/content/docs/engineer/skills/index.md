@@ -1,6 +1,6 @@
 ---
 title: Skills Overview
-description: ClaudeKit's 65 specialized skills for development, design, and tooling
+description: ClaudeKit's 70+ specialized skills for development, design, and tooling
 section: engineer
 kit: engineer
 category: skills
@@ -9,7 +9,7 @@ published: true
 ---
 # Skills Overview
 
-65 specialized skills that extend Claude's capabilities—invoked with `/skill-name` or loaded dynamically when you mention them.
+70+ specialized skills that extend Claude's capabilities—invoked with `/skill-name` or loaded dynamically when you mention them.
 
 :::tip[Commands → Skills Complete]
 As of engineer@2.12.0, all 19 commands have been migrated to skills. The `/` slash syntax is unchanged. See [Migration Guide](/docs/getting-started/migration-from-commands-to-skills).
@@ -73,11 +73,11 @@ As of engineer@2.12.0, all 19 commands have been migrated to skills. The `/` sla
 
 | Skill | Purpose |
 |-------|---------|
-| [plan](/docs/engineer/skills/plan) | Transform requirements into executable plans |
+| [plan](/docs/engineer/skills/ck-plan) | Transform requirements into executable plans |
 | [research](/docs/engineer/skills/research) | Multi-source validation before implementation |
 | [sequential-thinking](/docs/engineer/skills/sequential-thinking) | Numbered thought sequences for complex problems |
 | [problem-solving](/docs/engineer/skills/problem-solving) | Systematic approaches when stuck |
-| [debug](/docs/engineer/skills/debug) | Root cause investigation framework |
+| [debug](/docs/engineer/skills/ck-debug) | Root cause investigation framework |
 | [code-review](/docs/engineer/skills/code-review) | Verification gates and technical rigor |
 | [brainstorm](/docs/engineer/skills/brainstorm) | Trade-off analysis with brutal honesty |
 | [scout](/docs/engineer/skills/scout) | Fast parallel codebase scouting |
@@ -196,4 +196,4 @@ skill-creator will:
 
 ## Key Takeaway
 
-65 skills provide instant expertise—invoke with `/skill-name` or mention the skill and describe your task. No configuration needed.
+70+ skills provide instant expertise—invoke with `/skill-name` or mention the skill and describe your task. No configuration needed.

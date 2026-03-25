@@ -108,6 +108,6 @@ Scan Plans → Hydrate Tasks → Track Progress
 
 ## Related Skills
 
-- [Planning](/docs/engineer/skills/plan) — creates the plan files this skill tracks
+- [Planning](/docs/engineer/skills/ck-plan) — creates the plan files this skill tracks
 - [Cook](/docs/engineer/skills/cook) — executes phases tracked by this skill
 - [Plans Kanban](/docs/engineer/skills/plans-kanban) — visual kanban view of plan progress

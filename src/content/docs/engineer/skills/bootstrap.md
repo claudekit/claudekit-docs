@@ -74,6 +74,6 @@ Bootstrap is an orchestrator, not an implementer:
 
 ## Related Skills
 
-- [Planning](/docs/engineer/skills/plan) — plan skill invoked during workflow
+- [Planning](/docs/engineer/skills/ck-plan) — plan skill invoked during workflow
 - [Cook](/docs/engineer/skills/cook) — cook skill invoked during workflow
 - [Agent Teams](/docs/engineer/skills/team) — use with `--parallel` for multi-agent execution

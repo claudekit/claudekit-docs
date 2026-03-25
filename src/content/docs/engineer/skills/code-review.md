@@ -28,6 +28,14 @@ Enforce verification gates and technical rigor across three critical practices: 
 
 ## The Process
 
+### Adversarial Review (v2.14.0+)
+
+The code-reviewer agent applies adversarial analysis with the following constraints:
+
+- **Scope gate** — Review is skipped if the diff is ≤2 files and ≤30 lines (trivial changes don't warrant full review)
+- **Context anchoring** — Review considers runtime environment, framework version, and context files before flagging issues
+- **Expanded attack categories** — Security analysis covers injection, auth bypass, timing attacks, deserialization, and supply-chain risks
+
 ### 0. Edge Case Scouting (v2.10.0+)
 
 Before dispatching the code-reviewer, scout for edge cases:
@@ -164,9 +172,9 @@ SITUATION?
 
 ## Related Skills
 
-- [Debugging](/docs/engineer/skills/debug) - Debug with evidence-based approach
+- [Debugging](/docs/engineer/skills/ck-debug) - Debug with evidence-based approach
 - [Sequential Thinking](/docs/engineer/skills/sequential-thinking) - Systematic problem-solving
-- [Planning](/docs/engineer/skills/plan) - Task breakdown and verification
+- [Planning](/docs/engineer/skills/ck-plan) - Task breakdown and verification
 
 ## Key Takeaway
 

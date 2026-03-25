@@ -307,7 +307,7 @@ Dashboard shows all three features side-by-side with progress bars and timeline 
 ## Related Skills
 
 - [Markdown Novel Viewer](/docs/engineer/skills/markdown-novel-viewer) - Read individual plan files with rich formatting
-- [Planning](/docs/engineer/skills/plan) - Create and structure plan directories
+- [Planning](/docs/engineer/skills/ck-plan) - Create and structure plan directories
 - [Research](/docs/engineer/skills/research) - Gather requirements for planning
 
 ## Related Commands

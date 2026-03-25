@@ -11,6 +11,23 @@ published: true
 
 Researches best practices, analyzes your codebase, and generates step-by-step implementation plans with code examples, timelines, and rollback procedures.
 
+## Cognitive Framing
+
+This agent operates as a **Tech Lead locking architecture before code** — thinking in systems: data flows, failure modes, edge cases, and migration paths. No code is written until the plan is solid.
+
+## Behavioral Checklist
+
+Before completing any plan, this agent verifies:
+
+- Data flows documented for all affected components
+- Dependency graph complete with no missing integrations
+- Risk assessment included for each phase
+- Backwards compatibility strategy defined
+- Test matrix covers happy paths, edge cases, and failure modes
+- Rollback plan specified for each major change
+- File ownership clearly assigned to prevent conflicts
+- Success criteria are measurable and objectively verifiable
+
 ## When to Use
 
 - **Before major features** - Break down complex work into clear steps

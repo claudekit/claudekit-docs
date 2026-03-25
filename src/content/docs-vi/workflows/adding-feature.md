@@ -640,7 +640,7 @@ git checkout -b feature/password-reset
 - [Xây dựng API](/vi/docs/workflows) - Tạo các REST API
 
 ### Các lệnh liên quan
-- [/ck:plan](/docs/engineer/skills/plan) - Tạo kế hoạch triển khai
+- [/ck:plan](/docs/engineer/skills/ck-plan) - Tạo kế hoạch triển khai
 - [/ck:cook](/docs/engineer/skills/cook) - Triển khai tính năng
 - [/ck:test](/docs/engineer/skills/test) - Chạy bộ kiểm thử
 - [/ck:docs update](/docs/engineer/skills/docs) - Cập nhật tài liệu

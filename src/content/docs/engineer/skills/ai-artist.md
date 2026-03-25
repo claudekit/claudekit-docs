@@ -105,6 +105,12 @@ Reference files cover:
 - **Negative prompts**: Specifying what to avoid (for Stable Diffusion, Midjourney)
 - **A/B testing**: Systematic comparison of prompt variations
 
+## Default Image Generation Model (v2.14.0+)
+
+AI Artist now uses **Nano Banana 2** as the default image generation model, replacing the previous default. Nano Banana 2 offers improved photorealism and prompt adherence for product and marketing visuals.
+
+You can still target other models explicitly — see the model-specific syntax section below.
+
 ## Model-Specific Syntax
 
 Different models have unique parameter syntax:

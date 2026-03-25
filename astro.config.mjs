@@ -14,6 +14,7 @@ import remarkDirective from 'remark-directive';
 import { remarkAdmonitions } from './src/plugins/remark-admonitions.mjs';
 import { writeFileSync } from 'fs';
 import { join } from 'path';
+import { fileURLToPath } from 'url';
 
 // Custom integrations
 import buildTimeInternalLinkValidator from './src/integrations/build-time-internal-link-validator.ts';
@@ -97,21 +98,8 @@ function llmsTxtGenerator() {
             return (a.data.order || 999) - (b.data.order || 999);
           });
 
-          // Generate llms.txt (index with links)
-          const llmsTxt = `# ClaudeKit Documentation
-
-> Production-grade framework for Claude Code with agents, commands, and skills
-
-## Sections
-
-${generateSectionIndex(sorted)}
-
-## All Pages
-
-${sorted.map(doc => `- [${doc.data.title}](https://docs.claudekit.cc/docs/${doc.slug}): ${doc.data.description}`).join('\n')}
-`;
-
-          // Generate llms-full.txt (complete content)
+          // Generate llms-full.txt (complete content) — llms.txt is maintained manually in public/
+          const distDir = fileURLToPath(dir);
           const llmsFullTxt = `# ClaudeKit Documentation (Complete)
 
 Generated: ${new Date().toISOString()}
@@ -131,11 +119,10 @@ ${doc.body}
 ---
 `).join('\n')}`;
 
-          // Write files
-          writeFileSync(join(dir.pathname, 'llms.txt'), llmsTxt);
-          writeFileSync(join(dir.pathname, 'llms-full.txt'), llmsFullTxt);
+          // Write llms-full.txt to dist (llms.txt comes from public/ via Astro copy)
+          writeFileSync(join(distDir, 'llms-full.txt'), llmsFullTxt);
 
-          console.log(`✓ Generated llms.txt (${Math.round(llmsTxt.length / 1024)}KB)`);
+          console.log(`✓ llms.txt served from public/ (manually curated)`);
           console.log(`✓ Generated llms-full.txt (${Math.round(llmsFullTxt.length / 1024)}KB)`);
         } catch (error) {
           console.error('Error generating llms.txt files:', error);

@@ -614,6 +614,48 @@ chmod 600 ~/.claudekit/config.json
 
 Run as administrator or check file permissions in Properties.
 
+## New in v3.36.0
+
+### StatuslineColors
+
+Enable or disable ANSI color rendering in the Claude Code status line. Add to `.claude/.ck.json` (or `~/.claude/.ck.json` for global):
+
+```json
+{
+  "statuslineColors": true
+}
+```
+
+| Value | Effect |
+|-------|--------|
+| `true` (default) | ANSI colors enabled in status line |
+| `false` | Plain ASCII status line (useful for terminals without color support) |
+
+### Hook Diagnostics Dashboard
+
+`ck config` now includes a hook diagnostics panel showing:
+- Execution logs for all registered hooks
+- Timing data per hook run
+- Error history and failure details
+
+Use this to debug hook configuration issues or verify hooks are firing as expected.
+
+### Quality Gate Hooks
+
+ClaudeKit automatically installs git pre-commit and pre-push hooks during `ck init`:
+
+- **pre-commit** — Runs linter before every commit. Blocks commit if lint fails.
+- **pre-push** — Runs test suite before every push. Blocks push if tests fail.
+
+These hooks enforce code quality locally, preventing broken code from reaching CI. Hooks are idempotent — safe to re-run `ck init` without duplicating them.
+
+To skip hooks in an emergency (not recommended):
+
+```bash
+git commit --no-verify
+git push --no-verify
+```
+
 ## Next Steps
 
 After configuring:

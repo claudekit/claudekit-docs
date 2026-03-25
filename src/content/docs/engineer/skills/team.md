@@ -10,13 +10,13 @@ published: true
 
 # Team
 
-CK-native orchestration engine (v2.1.0) that spawns independent Claude Code sessions as teammates, each with their own context window, task ownership, and cross-session memory.
+CK-native orchestration engine (v3.0) that spawns independent Claude Code sessions as teammates, each with their own context window, task ownership, and cross-session memory. Updated to current Claude Code Agent API with improved event-driven hooks and teammate coordination.
 
 ## What This Skill Does
 
 Agent Teams lets you run multiple Claude Code instances in parallel—each tackling a different workstream simultaneously. Teammates share a task list and communicate via messaging. Unlike subagents (fire-and-forget), teammates are persistent, event-driven, and capable of discussion.
 
-Templates auto-execute on spawn (v2.1.0 change—was manual in v1.x).
+Templates auto-execute on spawn (v2.1.0+). v3.0 updates the underlying Agent API integration and adds improved cross-teammate event coordination.
 
 ## Templates
 
@@ -107,4 +107,4 @@ If a teammate crashes or goes idle unexpectedly:
 ## Related Skills
 
 - [Cook](/docs/engineer/skills/cook) — implementation engine used by cook teams
-- [Planning](/docs/engineer/skills/plan) — create plans before delegating to teams
+- [Planning](/docs/engineer/skills/ck-plan) — create plans before delegating to teams

@@ -85,6 +85,18 @@ Identify Scope → Typecheck First → Execute Suites
 - **Data cleanup**: tests clean up any created data
 - **No flaky tests**: fix or remove, never retry-loop
 
+## Diff-Aware Testing (v2.14.0+)
+
+The tester agent integrates git diff analysis to run only tests affected by recent changes. Five mapping strategies determine which test files to include:
+
+1. Direct file → test file mapping (e.g., `src/auth.ts` → `src/auth.test.ts`)
+2. Import graph analysis (files that import changed modules)
+3. Test fixture dependencies
+4. Integration test scope detection
+5. Full suite fallback (when scope cannot be determined)
+
+This reduces test execution time during iteration while preserving full-suite runs for pre-push verification.
+
 ## Team Mode
 
 In agent team sessions, the tester teammate:
@@ -101,6 +113,6 @@ In agent team sessions, the tester teammate:
 
 ## Related Skills
 
-- [Debug](/docs/engineer/skills/debug) — activated for failures requiring root cause analysis
+- [Debug](/docs/engineer/skills/ck-debug) — activated for failures requiring root cause analysis
 - [Cook](/docs/engineer/skills/cook) — cook's quality gate requires 100% test pass
 - [Chrome DevTools](/docs/engineer/skills/chrome-devtools) — UI and browser testing

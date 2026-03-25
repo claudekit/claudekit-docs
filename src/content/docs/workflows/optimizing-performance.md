@@ -1,11 +1,6 @@
 ---
 title: Optimizing Performance
-description: "Documentation for Optimizing Performance
-description:
-section: workflows
-category: engineer
-order: 9
-published: true"
+description: "Identify and fix performance bottlenecks with ClaudeKit using profiling, caching, database optimization, and code improvements"
 section: workflows
 category: engineer
 order: 9
@@ -791,7 +786,7 @@ Metrics:
 - [Building a REST API](/docs/workflows/building-api) - API development
 
 ### Related Commands
-- [/ck:debug](/docs/engineer/skills/debug) - Performance profiling
+- [/ck:debug](/docs/engineer/skills/ck-debug) - Performance profiling
 - [/ck:cook](/docs/engineer/skills/cook) - Implement optimizations
 - [/ck:fix](/docs/engineer/skills/fix) - Complex fixes
 - [/ck:test](/docs/engineer/skills/test) - Performance testing

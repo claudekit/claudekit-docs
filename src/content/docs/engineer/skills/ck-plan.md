@@ -93,6 +93,14 @@ Hooks track the current active plan. Downstream skills (cook, project-management
 
 Plans follow YAGNI, KISS, DRY. Honest and brutal—no wishful thinking about complexity or timeline. Concise phase files beat exhaustive ones. Each phase must be independently executable.
 
+## Subcommands
+
+| Subcommand | Purpose |
+|------------|---------|
+| `/ck:plan archive` | Write journal entry and archive completed plans |
+| `/ck:plan red-team` | Adversarial review — hostile critique of a plan to find weaknesses |
+| `/ck:plan validate` | Critical questions interview to verify plan is implementable |
+
 ## Related Skills
 
 - [Cook](/docs/engineer/skills/cook) — executes plans produced by this skill

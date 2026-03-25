@@ -787,7 +787,7 @@ Chỉ số:
 - [Xây Dựng REST API](/docs/workflows/building-api) - Phát triển API
 
 ### Các Lệnh Liên Quan
-- [/ck:debug](/docs/engineer/skills/debug) - Phân tích hiệu suất
+- [/ck:debug](/docs/engineer/skills/ck-debug) - Phân tích hiệu suất
 - [/ck:cook](/docs/engineer/skills/cook) - Triển khai tối ưu hóa
 - [/ck:test](/docs/engineer/skills/test) - Kiểm thử hiệu suất
 

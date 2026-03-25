@@ -647,7 +647,7 @@ git checkout -b feature/password-reset
 - [Building an API](/docs/workflows/building-api) - Create REST APIs
 
 ### Related Commands
-- [/ck:plan](/docs/engineer/skills/plan) - Create implementation plans
+- [/ck:plan](/docs/engineer/skills/ck-plan) - Create implementation plans
 - [/ck:cook](/docs/engineer/skills/cook) - Implement features from plans
 - [/ck:test](/docs/engineer/skills/test) - Run test suites
 - [/ck:docs update](/docs/engineer/skills/docs) - Update documentation

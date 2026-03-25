@@ -122,7 +122,13 @@ Activate automatically when mentioning bugs, errors, test failures, CI/CD issues
 
 Fix doesn't just patch symptoms—it finds root causes, verifies fixes across the codebase, and prevents similar issues in the future through defense-in-depth validation. The result: reliable fixes, not band-aids.
 
+## What's New (v2.14.0)
+
+- Updated internal references to match renamed skill directories (`ck-debug`, `ck-plan`)
+- Parallel exploration patterns refined — each hypothesis branch runs independent codebase analysis before convergence
+- Documentation links updated to reflect `ck:` namespace prefix
+
 ## Related Skills
 
-- [Debug](/docs/engineer/skills/debug) - Systematic debugging framework
+- [Debug](/docs/engineer/skills/ck-debug) - Systematic debugging framework
 - [Cook](/docs/engineer/skills/cook) - For implementing new features

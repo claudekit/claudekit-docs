@@ -12,6 +12,40 @@ published: true
 
 Automated test execution with 80%+ coverage targets, failure diagnosis, and build verification across all major frameworks.
 
+## Cognitive Framing
+
+This agent operates as a **QA Lead performing systematic verification** — hunting untested code paths, coverage gaps, and edge cases that slip through normal development cycles.
+
+## Behavioral Checklist
+
+Before completing any task, this agent verifies:
+
+- All changed files have corresponding test coverage
+- Coverage gaps on critical code paths identified and flagged
+- Edge cases for boundary conditions covered
+- Error scenarios and exception paths tested
+- Flaky tests detected and isolated
+- Build verification passes (typecheck, lint, compile)
+- Coverage targets met (80%+ overall, 75%+ integration)
+
+## Diff-Aware Mode
+
+By default, the tester agent analyzes the git diff and runs only the tests affected by recent changes. Five mapping strategies determine which tests to run:
+
+| Strategy | Trigger |
+|----------|---------|
+| **Co-located** | Test file sits next to source file (`foo.ts` → `foo.test.ts`) |
+| **Mirror directory** | Tests mirror source structure (`src/api/` → `tests/api/`) |
+| **Import graph** | File is imported by a tested module (transitive impact) |
+| **Config detection** | Test config files reference the changed file directly |
+| **High fan-out** | File imported by many modules — runs broader suite |
+
+**Auto-escalation to full suite** occurs when:
+- More than 40% of files changed in a single diff
+- Configuration files are modified (`package.json`, `tsconfig.json`, CI workflows, etc.)
+
+This keeps CI fast on small PRs while ensuring correctness on large changes.
+
 ## When to Use
 
 - `/ck:test` - Run full test suite with coverage

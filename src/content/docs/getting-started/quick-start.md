@@ -1,11 +1,6 @@
 ---
 title: Quick Start
-description: "Documentation for Quick Start
-description:
-section: getting-started
-category: getting-started
-order: 4
-published: true"
+description: "Ship production features in 15 minutes with ClaudeKit - from install to first feature."
 section: getting-started
 category: getting-started
 order: 4
@@ -52,7 +47,7 @@ ck init my-app --kit engineer
 cd my-app
 ```
 
-**Tip:** Use `--prefix` to namespace commands as `/ck:plan`, `/ck:code`, etc.:
+**Tip:** Use `--prefix` to namespace commands as `/ck:plan`, `/ck:cook`, etc.:
 ```bash
 ck init my-app --kit engineer --prefix
 ```

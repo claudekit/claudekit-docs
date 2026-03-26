@@ -37,7 +37,7 @@ Slash commands and skills that trigger agent workflows.
 
 **Categories**:
 - **Core**: `/ck:cook`, `/ck:plan`, `/ck:bootstrap`, `/ck:ask`, `/ck:scout`
-- **Fix**: `/ck:fix`, `/ck:fix`, `/ck:fix`, `/ck:fix`
+- **Fix**: `/ck:fix` (auto/quick/parallel/review), `/ck:debug`
 - **Design**: `ai-artist` skill, `ai-multimodal` skill, `frontend-design` skill
 - **Git**: `/ck:git cm`, `/ck:git cp`, `/ck:git pr`
 - **Docs**: `/ck:docs init`, `/ck:docs update`, `/ck:docs summarize`

@@ -16,7 +16,7 @@ Chào mừng đến với tài liệu Engineer Kit của ClaudeKit. Bộ công c
 
 Engineer Kit bao gồm:
 
-- **17+ Specialized Agents** - Từ lập kế hoạch đến triển khai
+- **14 Specialized Agents** - Từ lập kế hoạch đến triển khai
 - **70+ Skills** - Các skill có thể gọi qua slash command
 - **Workflow Automation** - Quy trình phát triển được tối ưu hóa
 

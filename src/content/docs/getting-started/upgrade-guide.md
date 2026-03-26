@@ -80,7 +80,7 @@ Combine commands for complete workflows:
 /ck:cook "Redesign checkout flow as planned"
 /ck:frontend-design "checkout UI mockup"
 /ck:fix
-/ck:git pr "feature/new-checkout"
+/ck:git pr
 ```
 
 ## Compatibility

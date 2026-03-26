@@ -160,11 +160,11 @@ ck init --use-git
 ### Quản Lý Skills
 
 ```bash
-# Tạo skill mới
-skill-creator skill
+# Tạo skill mới (sử dụng skill-creator skill)
+"Tạo skill mới cho [chủ đề]"
 
-# Sửa các lỗi liên quan đến skill
-skill-creator skill
+# Sửa các lỗi liên quan đến skill (sử dụng skill-creator skill)
+"Sửa lỗi trong skill logs"
 ```
 
 ## So Sánh Các Lệnh
@@ -370,8 +370,8 @@ claude
 - `/integrate <service>` - Thêm các tích hợp
 
 ### ⚙️ Skills
-- `skill-creator skill` - Tạo skill mới
-- `skill-creator skill` - Sửa lỗi skill
+- `/ck:skill:create` - Tạo skill mới
+- `/ck:skill:fix-logs` - Sửa lỗi skill
 
 ## Lời Khuyên & Thực Hành Tốt Nhất
 

@@ -61,6 +61,9 @@ ck init --use-git
 # Autonomous feature implementation
 /ck:cook --auto <description>
 
+# Fast implementation (skip research)
+/ck:cook --fast <description>
+
 # Create implementation plan only
 /ck:plan <description>
 

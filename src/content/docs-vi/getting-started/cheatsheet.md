@@ -344,11 +344,10 @@ claude
 - `/ck:bootstrap` - Dự án mới
 
 ### 🐛 Kiểm Lỗi & Sửa Lỗi
-- `/ck:fix --quick` - Sửa lỗi nhanh
-- `/ck:fix` - Sửa lỗi phức tạp
-- `/ck:fix` - Sửa lỗi dựa trên log
-- `/ck:fix` - Sửa lỗi dựa trên test
-- `/ck:fix` - Sửa lỗi CI/CD
+- `/ck:fix --quick` - Sửa lỗi nhanh (lint, type errors)
+- `/ck:fix <issue>` - Tự động phát hiện: phức tạp, logs, tests, CI
+- `/ck:fix --parallel` - Sửa song song nhiều vấn đề
+- `/ck:debug` - Phân tích nguyên nhân gốc
 
 ### 🧪 Kiểm Thử
 - `/ck:test` - Chạy các bộ test

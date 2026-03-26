@@ -61,6 +61,9 @@ ck init --use-git
 # Autonomous feature implementation
 /ck:cook --auto <description>
 
+# Fast implementation (skip research)
+/ck:cook --fast <description>
+
 # Create implementation plan only
 /ck:plan <description>
 
@@ -334,11 +337,10 @@ claude
 - `/ck:bootstrap` - New projects
 
 ### 🐛 Debugging & Fixing
-- `/ck:fix --quick` - Quick fixes
-- `/ck:fix` - Auto-detects complexity
-- `/ck:fix` - Auto-detects logs
-- `/ck:fix` - Auto-detects tests
-- `/ck:fix` - Auto-detects CI
+- `/ck:fix --quick` - Quick fixes (lint, type errors)
+- `/ck:fix <issue>` - Auto-detect complexity, logs, tests, CI
+- `/ck:fix --parallel` - Parallel fix for multiple issues
+- `/ck:debug` - Root cause analysis
 
 ### 🧪 Testing
 - `/ck:test` - Run tests

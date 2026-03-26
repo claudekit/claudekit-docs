@@ -160,11 +160,11 @@ ck init --use-git
 ### Quản Lý Skills
 
 ```bash
-# Tạo skill mới
-skill-creator skill
+# Tạo skill mới (sử dụng skill-creator skill)
+"Tạo skill mới cho [chủ đề]"
 
-# Sửa các lỗi liên quan đến skill
-skill-creator skill
+# Sửa các lỗi liên quan đến skill (sử dụng skill-creator skill)
+"Sửa lỗi trong skill logs"
 ```
 
 ## So Sánh Các Lệnh
@@ -344,11 +344,10 @@ claude
 - `/ck:bootstrap` - Dự án mới
 
 ### 🐛 Kiểm Lỗi & Sửa Lỗi
-- `/ck:fix --quick` - Sửa lỗi nhanh
-- `/ck:fix` - Sửa lỗi phức tạp
-- `/ck:fix` - Sửa lỗi dựa trên log
-- `/ck:fix` - Sửa lỗi dựa trên test
-- `/ck:fix` - Sửa lỗi CI/CD
+- `/ck:fix --quick` - Sửa lỗi nhanh (lint, type errors)
+- `/ck:fix <issue>` - Tự động phát hiện: phức tạp, logs, tests, CI
+- `/ck:fix --parallel` - Sửa song song nhiều vấn đề
+- `/ck:debug` - Phân tích nguyên nhân gốc
 
 ### 🧪 Kiểm Thử
 - `/ck:test` - Chạy các bộ test
@@ -371,8 +370,8 @@ claude
 - `/integrate <service>` - Thêm các tích hợp
 
 ### ⚙️ Skills
-- `skill-creator skill` - Tạo skill mới
-- `skill-creator skill` - Sửa lỗi skill
+- `/ck:skill:create` - Tạo skill mới
+- `/ck:skill:fix-logs` - Sửa lỗi skill
 
 ## Lời Khuyên & Thực Hành Tốt Nhất
 

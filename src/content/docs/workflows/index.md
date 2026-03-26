@@ -19,7 +19,7 @@ Task-oriented guides for common development scenarios using ClaudeKit's slash co
 /clear  # Free context before implementation
 /ck:cook "Implement user authentication with OAuth as planned"
 /ck:fix
-/ck:git pr "feature/user-auth"
+/ck:git pr
 ```
 
 ### Bug Fixing

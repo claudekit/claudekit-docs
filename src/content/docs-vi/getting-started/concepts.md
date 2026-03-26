@@ -31,13 +31,15 @@ AI assistants chuyên biệt với chuyên môn tập trung.
 3. Agents cộng tác qua shared context (plans, code, test results)
 4. Output được tổng hợp và trình bày cho bạn
 
-## Commands
+## Skills & Commands
 
-Slash commands kích hoạt agent workflows.
+Slash commands và skills kích hoạt agent workflows.
+
+**Lưu ý:** Các skill như `/ck:git`, `/ck:fix`, `/ck:cook` đã được chuyển từ commands. Cú pháp slash không thay đổi.
 
 **Danh Mục**:
 - **Core**: `/ck:cook`, `/ck:plan`, `/ck:bootstrap`, `/ck:ask`, `/ck:scout`
-- **Fix**: `/ck:fix`, `/ck:fix`, `/ck:fix`, `/ck:fix`
+- **Fix**: `/ck:fix` (auto/quick/parallel/review), `/ck:debug`
 - **Design**: `ai-artist` skill, `ai-multimodal` skill, `frontend-design` skill
 - **Git**: `/ck:git cm`, `/ck:git cp`, `/ck:git pr`
 - **Docs**: `/ck:docs init`, `/ck:docs update`, `/ck:docs summarize`
@@ -51,8 +53,7 @@ Slash commands kích hoạt agent workflows.
 /ck:plan "add payment processing with Stripe"
 # → Planner agent tạo kế hoạch chi tiết
 
-/clear
-Mô tả task tự nhiên → skill cook kích hoạt từ ngữ cảnh plan
+/ck:cook
 # → Đọc plan, sinh developer + tester agents, triển khai tính năng
 
 /ck:fix

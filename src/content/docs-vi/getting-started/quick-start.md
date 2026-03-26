@@ -49,7 +49,7 @@ ck init my-app --kit engineer
 cd my-app
 ```
 
-**Tip:** Sử dụng `--prefix` để namespace các lệnh thành `/ck:plan`, `/ck:code`, v.v.:
+**Tip:** Sử dụng `--prefix` để namespace các lệnh thành `/ck:plan`, `/ck:cook`, v.v.:
 ```bash
 ck init my-app --kit engineer --prefix
 ```

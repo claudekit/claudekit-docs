@@ -71,7 +71,7 @@ Các lệnh này vẫn giữ nguyên dạng lệnh slash:
 - `/ck:kanban` — Quản lý bảng tác vụ
 - `/ck:plan*` — Quy trình lập kế hoạch
 - `/ck:preview` — Xem trước thay đổi
-- `/review:codebase*` — Review codebase
+- `/ck:code-review` — Review codebase (migrated từ `/review:codebase*`)
 - `/ck:test*` — Quy trình kiểm thử
 - `/ck:use-mcp` — Tích hợp MCP
 - `/ck:watzup` — Tổng quan trạng thái

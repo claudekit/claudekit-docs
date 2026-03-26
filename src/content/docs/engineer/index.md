@@ -15,9 +15,8 @@ Welcome to the ClaudeKit Engineer Kit documentation. This toolkit supercharges y
 
 The Engineer Kit includes:
 
-- **17+ Specialized Agents** - From planning to deployment
-- **50+ Slash Commands** - Quick access to development tasks
-- **80+ Skills** - Technical capabilities for every need
+- **14 Specialized Agents** - From planning to deployment
+- **70+ Skills** - Slash-invokable development capabilities
 - **Workflow Automation** - Streamlined development processes
 
 ## Quick Start
@@ -53,7 +52,7 @@ Generate high-quality code with context awareness:
 
 ```bash
 /ck:cook "add REST API endpoints for users"
-"Implement caching layer"
+/ck:cook "implement caching layer"
 ```
 
 ### Testing & Quality
@@ -63,20 +62,20 @@ Ensure code quality with automated testing:
 ```bash
 /ck:test "run full test suite"
 /ck:fix "resolve TypeScript errors"
-/review "code review recent changes"
+/ck:code-review "review recent changes"
 ```
 
 ### Database & Infrastructure
 
-Manage databases and deployment:
+Manage databases and deployment with skills:
 
 ```bash
-/db:query "show slow queries"
-/deploy "staging environment"
+/ck:debug "investigate slow database queries"
+/ck:cook "set up staging deployment pipeline"
 ```
 
 ## Next Steps
 
 - [Engineer Agents](/docs/engineer/agents) - Meet your AI development team
 - [Engineer Skills](/docs/engineer/skills) - All available skills
-- [Engineer Skills](/docs/engineer/skills) - Technical capabilities
+- [Engineer Workflows](/docs/engineer/configuration/workflows) - Hooks, agents, and settings

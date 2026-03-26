@@ -70,7 +70,7 @@ These commands remain as slash commands:
 - `/ck:kanban` — Task board management
 - `/ck:plan*` — Planning workflows
 - `/ck:preview` — Preview changes
-- `/review:codebase*` — Codebase review
+- `/ck:code-review` — Codebase review (migrated from `/review:codebase*`)
 - `/ck:test*` — Testing workflows
 - `/ck:use-mcp` — MCP integration
 - `/ck:watzup` — Status overview

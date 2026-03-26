@@ -16,9 +16,8 @@ Chào mừng đến với tài liệu Engineer Kit của ClaudeKit. Bộ công c
 
 Engineer Kit bao gồm:
 
-- **17+ Specialized Agents** - Từ lập kế hoạch đến triển khai
-- **50+ Slash Commands** - Truy cập nhanh vào các tác vụ phát triển
-- **80+ Skills** - Khả năng kỹ thuật cho mọi nhu cầu
+- **14 Specialized Agents** - Từ lập kế hoạch đến triển khai
+- **70+ Skills** - Các skill có thể gọi qua slash command
 - **Workflow Automation** - Quy trình phát triển được tối ưu hóa
 
 ## Quick Start
@@ -64,7 +63,7 @@ Tạo code chất lượng cao với nhận thức ngữ cảnh:
 ```bash
 /ck:test "run full test suite"
 /ck:fix "resolve TypeScript errors"
-/review "code review recent changes"
+/ck:code-review "review recent changes"
 ```
 
 ### Database & Infrastructure
@@ -72,12 +71,12 @@ Tạo code chất lượng cao với nhận thức ngữ cảnh:
 Quản lý cơ sở dữ liệu và triển khai:
 
 ```bash
-/db:query "show slow queries"
-/deploy "staging environment"
+/ck:debug "investigate slow database queries"
+/ck:cook "set up staging deployment pipeline"
 ```
 
 ## Next Steps
 
 - [Engineer Agents](/vi/docs/engineer/agents) - Gặp gỡ đội ngũ phát triển AI của bạn
 - [Engineer Skills](/vi/docs/engineer/skills) - Tất cả các kỹ năng có sẵn
-- [Engineer Skills](/vi/docs/engineer/skills) - Các khả năng kỹ thuật
+- [Engineer Workflows](/vi/docs/engineer/configuration/workflows) - Hooks, agents và cấu hình

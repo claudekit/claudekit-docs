@@ -1,8 +1,7 @@
 ---
 title: "ck watch"
 description: "Autonomous GitHub issue monitor that polls, analyzes, plans, and implements issues with AI"
-section: docs
-category: cli
+section: cli
 order: 10
 published: true
 ---

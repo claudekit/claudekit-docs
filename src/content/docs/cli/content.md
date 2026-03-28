@@ -1,8 +1,7 @@
 ---
 title: "ck content"
 description: "Autonomous content daemon that scans git activity and publishes to social media platforms"
-section: docs
-category: cli
+section: cli
 order: 11
 published: true
 ---

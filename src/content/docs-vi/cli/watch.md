@@ -1,8 +1,7 @@
 ---
 title: "ck watch"
 description: "Giám sát GitHub issue tự động, phân tích, lập kế hoạch và triển khai với AI"
-section: docs
-category: docs/cli
+section: cli
 order: 10
 published: true
 ---

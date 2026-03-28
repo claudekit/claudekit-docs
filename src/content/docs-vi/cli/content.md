@@ -1,8 +1,7 @@
 ---
 title: "ck content"
 description: "Daemon tạo content tự động từ hoạt động git và đăng lên mạng xã hội"
-section: docs
-category: docs/cli
+section: cli
 order: 11
 published: true
 ---

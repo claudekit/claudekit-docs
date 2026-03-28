@@ -615,6 +615,23 @@ chmod 600 ~/.claudekit/config.json
 
 Chạy với quyền Administrator hoặc kiểm tra quyền tệp trong Properties.
 
+## Truy Cập Dashboard Cấu Hình
+
+Mặc định, `ck config` bind dashboard vào `127.0.0.1`, nên chỉ máy đang chạy CLI mới truy cập được.
+
+Dùng `--host` khi bạn chủ động muốn mở dashboard cho thiết bị khác trong cùng mạng tin cậy:
+
+```bash
+# Mở cho LAN/Tailscale
+ck config --host 0.0.0.0 --no-open
+
+# Bind vào một interface hoặc hostname cụ thể
+ck config --host 100.88.12.4 --no-open
+ck config --host dashboard.local --no-open
+```
+
+Dashboard vẫn kiểm tra same-origin trong trình duyệt. Truy cập từ xa hoạt động khi trình duyệt mở UI từ đúng host hoặc origin đang trỏ tới server.
+
 ## Các Bước Tiếp Theo
 
 Sau khi cấu hình:

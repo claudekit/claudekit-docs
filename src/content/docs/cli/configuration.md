@@ -640,6 +640,23 @@ Enable or disable ANSI color rendering in the Claude Code status line. Add to `.
 
 Use this to debug hook configuration issues or verify hooks are firing as expected.
 
+### Config Dashboard Access
+
+By default, `ck config` binds the dashboard to `127.0.0.1`, which keeps access local to the machine running the CLI.
+
+Use `--host` when you intentionally want to reach the dashboard from another device on the same trusted network:
+
+```bash
+# Expose to your LAN/Tailscale
+ck config --host 0.0.0.0 --no-open
+
+# Bind to a specific interface or hostname
+ck config --host 100.88.12.4 --no-open
+ck config --host dashboard.local --no-open
+```
+
+The dashboard still enforces same-origin browser access. Remote access works when the browser opens the UI from the same host or origin that reaches the server.
+
 ### Quality Gate Hooks
 
 ClaudeKit automatically installs git pre-commit and pre-push hooks during `ck init`:

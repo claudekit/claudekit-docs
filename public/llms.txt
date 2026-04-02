@@ -30,6 +30,7 @@ Command-line interface documentation:
 - [ck uninstall](https://docs.claudekit.cc/docs/cli/uninstall.md): Remove ClaudeKit
 - [ck doctor](https://docs.claudekit.cc/docs/cli/doctor.md): Diagnose and fix issues
 - [ck versions](https://docs.claudekit.cc/docs/cli/versions.md): Version management
+- [ck migrate](https://docs.claudekit.cc/docs/cli/migrate.md): Migrate portable content to other AI coding providers
 - [Configuration](https://docs.claudekit.cc/docs/cli/configuration.md): CLI configuration options
 
 ## Engineer Kit

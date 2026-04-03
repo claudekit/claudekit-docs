@@ -195,7 +195,7 @@ ClaudeKit Engineer ships with hooks organized by event type. All hook files live
 **Purpose:** Blocks file system access to directories listed in `.ckignore`. Allows build commands (e.g., `npm run build`) to pass through.
 
 **What it does:**
-- Reads the shipped `.ckignore` baseline and then layers an optional project-root `.ckignore` override
+- Reads the shipped `.ckignore` baseline and then layers an optional git-root `./.claude/.ckignore` override
 - Blocks Read/Edit/Write/Glob/Grep operations on matched paths
 - Allows Bash commands that are recognized build/test commands
 - Returns a clear error message explaining which path is blocked and which `.ckignore` file to edit

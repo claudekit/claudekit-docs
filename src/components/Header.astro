@@ -15,6 +15,7 @@ function getSectionFromUrl(path: string): string {
 
   if (cleanPath === '/' || cleanPath === '') return 'home';
   if (cleanPath.startsWith('/docs/getting-started')) return 'getting-started';
+  if (cleanPath.startsWith('/docs/cli')) return 'cli';
   if (cleanPath.startsWith('/docs/workflows')) return 'workflows';
   if (cleanPath.startsWith('/docs/tools')) return 'tools';
   if (cleanPath.startsWith('/docs/changelog')) return 'changelog';
@@ -30,6 +31,7 @@ const navIcons = {
   'workflows': `<path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect width="12" height="12" x="8" y="8" rx="2" ry="2"/><path d="M16 8V6a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>`,
   'tools': `<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>`,
   'changelog': `<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>`,
+  'cli': `<polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/>`,
   'support': `<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h.01"/><path d="M12 10h.01"/><path d="M16 10h.01"/>`,
 };
 ---
@@ -74,6 +76,13 @@ const navIcons = {
           <span>{t('nav.docs')}</span>
         </a>
         <a
+          href={getLocalizedPath('/docs/cli', currentLocale)}
+          class:list={['nav-link', { active: currentSection === 'cli' }]}
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={navIcons['cli']} />
+          <span>{t('nav.cli')}</span>
+        </a>
+        <a
           href={getLocalizedPath('/docs/workflows/new-project', currentLocale)}
           class:list={['nav-link', { active: currentSection === 'workflows' }]}
         >
@@ -86,13 +95,6 @@ const navIcons = {
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={navIcons['tools']} />
           <span>{t('nav.tools')}</span>
-        </a>
-        <a
-          href={getLocalizedPath('/docs/changelog', currentLocale)}
-          class:list={['nav-link', { active: currentSection === 'changelog' }]}
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={navIcons['changelog']} />
-          <span>{t('nav.changelog')}</span>
         </a>
         <a
           href={getLocalizedPath('/docs/support/troubleshooting', currentLocale)}

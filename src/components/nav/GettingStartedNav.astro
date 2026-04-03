@@ -1,6 +1,6 @@
 ---
 // src/components/nav/GettingStartedNav.astro
-import { getLangFromUrl, getDocPath } from '../../i18n/utils';
+import { getLangFromUrl, getDocPath, getLocalizedPath } from '../../i18n/utils';
 
 interface Props {
   docs: any[];
@@ -9,6 +9,7 @@ interface Props {
 
 const { docs, currentPath } = Astro.props;
 const currentLocale = getLangFromUrl(Astro.url);
+const cliHref = getLocalizedPath('/docs/cli', currentLocale);
 
 // Sort by order
 const sortedDocs = docs.sort((a, b) => (a.data.order || 999) - (b.data.order || 999));
@@ -32,6 +33,20 @@ const sortedDocs = docs.sort((a, b) => (a.data.order || 999) - (b.data.order || 
       );
     })}
   </ul>
+
+  <div class="cli-cta">
+    <a href={cliHref} class="cli-button">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="4 17 10 11 4 5"/>
+        <line x1="12" y1="19" x2="20" y2="19"/>
+      </svg>
+      <span>CLI</span>
+      <svg class="cli-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12h14"/>
+        <path d="m12 5 7 7-7 7"/>
+      </svg>
+    </a>
+  </div>
 </div>
 
 <style>
@@ -69,5 +84,43 @@ const sortedDocs = docs.sort((a, b) => (a.data.order || 999) - (b.data.order || 
     border-left: 2px solid var(--color-accent-blue);
     padding-left: calc(var(--space-3) + 10px);
     font-weight: var(--font-normal);
+  }
+
+  .cli-cta {
+    margin-top: var(--space-4);
+    padding: 0 var(--space-3);
+  }
+
+  .cli-button {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    width: 100%;
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-accent-blue);
+    background: color-mix(in srgb, var(--color-accent-blue) 10%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-accent-blue) 25%, transparent);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+
+  .cli-button:hover {
+    background: color-mix(in srgb, var(--color-accent-blue) 18%, transparent);
+    border-color: color-mix(in srgb, var(--color-accent-blue) 40%, transparent);
+    text-decoration: none;
+  }
+
+  .cli-arrow {
+    margin-left: auto;
+    opacity: 0.6;
+    transition: transform 0.15s;
+  }
+
+  .cli-button:hover .cli-arrow {
+    transform: translateX(2px);
+    opacity: 1;
   }
 </style>

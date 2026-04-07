@@ -111,6 +111,8 @@ export GEMINI_API_KEY=your-key
 
 ### Reset ClaudeKit
 
+`ck init --fresh` and `ck uninstall` now create an automatic recovery backup under `~/.claudekit/backups/` before destructive changes. The manual backup below is still a good extra safeguard when you want a separate copy of custom files.
+
 ```bash
 # Backup first
 cp -r .claude .claude.backup

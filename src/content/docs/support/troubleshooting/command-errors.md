@@ -309,6 +309,8 @@ tree .claude -L 2
 
 **Solution**:
 
+ClaudeKit now creates an automatic recovery backup under `~/.claudekit/backups/` before destructive refresh or uninstall flows. Keep the manual copy below if you want your own explicit backup as well.
+
 ```bash
 # Backup current .claude
 cp -r .claude .claude.backup

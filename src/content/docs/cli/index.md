@@ -64,6 +64,7 @@ Local Kit Version: 1.16.0 (ClaudeKit Engineer)
 | [`ck versions`](/docs/cli/versions) | List available kit versions |
 | [`ck update`](/docs/cli/update) | Update CLI to latest version |
 | [`ck uninstall`](/docs/cli/uninstall) | Remove ClaudeKit installation |
+| [`ck backups`](/docs/cli/backups) | Manage recovery backups for destructive operations |
 
 ## Quick Start
 

@@ -21,7 +21,7 @@ ck init --yes
 # Global installation (user-level config)
 ck init --global
 
-# Fresh installation (removes all customizations)
+# Fresh installation (creates a recovery backup, then resets CK-managed files)
 ck init --fresh
 ```
 
@@ -56,7 +56,7 @@ ck init [OPTIONS]
 | `--refresh` | Force cache refresh for releases | `false` |
 | `--global` / `-g` | Install to user directory (`~/.claude/`) | `false` (local) |
 | `--yes` / `-y` | Non-interactive mode with defaults | `false` |
-| `--fresh` | Remove existing `.claude/` before installing | `false` |
+| `--fresh` | Create a recovery backup, remove CK-managed files, then reinstall | `false` |
 | `--exclude <pattern>` | Exclude files matching pattern (repeatable) | None |
 | `--only <pattern>` | Only update specific directories (repeatable) | All |
 | `--prefix` | Apply `/ck:` namespace to commands | `false` |
@@ -141,16 +141,20 @@ Global mode is useful for:
 
 ### Fresh Installation
 
-Remove all existing ClaudeKit files and reinstall:
+Create a recovery backup, remove existing ClaudeKit-managed files, and reinstall:
 
 ```bash
 ck init --fresh
 ```
 
-**Warning**: This permanently deletes:
-- `.claude/` directory and all contents
-- Custom commands, workflows, and configs
-- Skill customizations
+ClaudeKit first writes a scoped recovery backup under `~/.claudekit/backups/`, then removes the CK-managed files targeted by the fresh install.
+
+To inspect or restore those backups later:
+
+```bash
+ck backups list
+ck backups restore <backup-id>
+```
 
 Protected files are still preserved:
 - `.env`, `.env.local`

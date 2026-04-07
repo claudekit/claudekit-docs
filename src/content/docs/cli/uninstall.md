@@ -36,7 +36,8 @@ The `ck uninstall` command:
 2. Prompts you to choose scope (local, global, or both)
 3. Analyzes files using ownership tracking
 4. Shows preview of files to delete and preserve
-5. Removes ClaudeKit-owned files
+5. Creates a scoped recovery backup under `~/.claudekit/backups/`
+6. Removes ClaudeKit-owned files
 6. Preserves user customizations and configurations
 7. Cleans up empty directories
 
@@ -58,6 +59,8 @@ ck uninstall [OPTIONS]
 | `--dry-run` | Preview changes without removing files | `false` |
 | `--force-overwrite` | Delete modified files (use with caution) | `false` |
 | `--verbose` | Enable verbose logging | `false` |
+
+After uninstall creates a recovery backup, you can inspect or restore it with [`ck backups`](/docs/cli/backups).
 
 ## Installation Scopes
 

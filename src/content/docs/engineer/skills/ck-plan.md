@@ -23,10 +23,13 @@ Planning produces complete project blueprints: `plan.md` overview plus `phase-XX
 | `--auto` | Auto-detect | Follows mode | Follows mode | Follows mode | `--auto` |
 | `--fast` | Fast | Skip | Skip | Skip | `--auto` |
 | `--hard` | Hard | 2 researchers | Yes | Optional | (none) |
+| `--deep` | Deep | 2-3 researchers + per-phase scout | Yes | Yes | (none) |
 | `--parallel` | Parallel | 2 researchers | Yes | Optional | `--parallel` |
 | `--two` | Two approaches | 2+ researchers | After selection | After selection | (none) |
 
-Add `--no-tasks` to any mode to skip task hydration after plan creation.
+Composable flags:
+- `--tdd` — add tests-first structure to each phase for regression-safe refactors
+- `--no-tasks` — skip task hydration after plan creation
 
 ## Usage
 
@@ -37,6 +40,8 @@ Add `--no-tasks` to any mode to skip task hydration after plan creation.
 **Examples:**
 - `/ck:plan "add Stripe subscription billing" --fast`
 - `/ck:plan "migrate from REST to GraphQL" --hard`
+- `/ck:plan "untangle the notification pipeline" --deep`
+- `/ck:plan "refactor auth middleware safely" --tdd`
 - `/ck:plan "implement real-time notifications + presence" --parallel`
 - `/ck:plan "redesign auth system" --two`
 - `/ck:plan "scaffold new microservice" --auto --no-tasks`
@@ -51,10 +56,10 @@ Pre-Creation Check → Mode Detection → Research Phase
 
 1. **Pre-Creation Check** — scan existing plans to avoid duplication
 2. **Mode Detection** — interpret flags or auto-select based on task complexity
-3. **Research Phase** — spawn parallel researchers (hard/parallel/two modes)
+3. **Research Phase** — spawn parallel researchers (hard/deep/parallel/two modes)
 4. **Codebase Analysis** — scout relevant files, patterns, dependencies
 5. **Plan Documentation** — write plan.md + phase files
-6. **Red Team Review** — adversarial critique of the plan (hard/parallel)
+6. **Red Team Review** — adversarial critique of the plan (hard/deep/parallel/two)
 7. **Validation** — confirm plan is implementable
 8. **Hydrate Tasks** — create session-scoped tasks from phase todo items
 9. **Context Reminder** — remind active plan for downstream tools
@@ -71,7 +76,12 @@ plans/
         └── researcher-*.md  # Research findings
 ```
 
-Each phase file contains: overview, requirements, architecture, file ownership, implementation steps, todo checklist, success criteria, risk assessment.
+Each phase file contains: overview, requirements, architecture, file ownership,
+implementation steps, todo checklist, success criteria, risk assessment.
+
+Deep mode adds per-phase file inventories, test scenario matrices, and
+dependency maps. `--tdd` adds "Tests Before", "Refactor", and "Tests After"
+sections so the generated plan protects existing behavior during refactors.
 
 ## Task Hydration
 
@@ -84,6 +94,9 @@ Tasks are ephemeral (session-scoped). Plan files are persistent. Hydration bridg
 5. Next session: re-hydrate remaining `[ ]` items
 
 Use `--no-tasks` when you want the plan only (e.g., for review before execution).
+
+If planning used `--tdd`, keep that flag on the cook handoff command:
+`/ck:cook /absolute/path/to/plan.md --tdd`
 
 ## Active Plan State
 

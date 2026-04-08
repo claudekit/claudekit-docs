@@ -57,7 +57,7 @@ Lệnh `ck migrate`:
 | Goose | Co | - | - | Co | Co | - |
 | Gemini CLI | Co | - | - | Co | Co | - |
 | Amp | Co | - | - | Co | Co | - |
-| Antigravity | Co | - | - | Co | Co | - |
+| Antigravity | Co | Co | Co | Co | Co | - |
 | Cline | Co | - | - | Co | Co | - |
 | OpenHands | Co | - | - | Co | Co | - |
 

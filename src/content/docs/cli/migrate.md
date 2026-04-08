@@ -56,7 +56,7 @@ The `ck migrate` command:
 | Goose | Yes | - | - | Yes | Yes | - |
 | Gemini CLI | Yes | - | - | Yes | Yes | - |
 | Amp | Yes | - | - | Yes | Yes | - |
-| Antigravity | Yes | - | - | Yes | Yes | - |
+| Antigravity | Yes | Yes | Yes | Yes | Yes | - |
 | Cline | Yes | - | - | Yes | Yes | - |
 | OpenHands | Yes | - | - | Yes | Yes | - |
 

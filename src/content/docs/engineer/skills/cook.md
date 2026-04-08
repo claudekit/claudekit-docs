@@ -24,6 +24,8 @@ Think of it as your implementation conductor. Give it a task like "add user auth
 - **Scout Phase**: Discover codebase structure and related files
 - **Planning**: Create detailed implementation plans with phases
 - **Implementation**: Execute with quality gates and review cycles
+- **TDD Refactors**: Add tests-first execution with `--tdd` when you need
+  regression-safe changes
 - **Testing**: Comprehensive test coverage with 100% pass requirement
 - **Code Review**: Automated or human review based on complexity
 
@@ -46,6 +48,9 @@ Think of it as your implementation conductor. Give it a task like "add user auth
 
 Optional flags: `--interactive`, `--fast`, `--parallel`, `--no-test`, `--auto`
 
+Composable flags: `--tdd` adds tests-first execution per phase without changing
+the detected mode.
+
 If no flag provided, uses interactive mode by default.
 
 ## Example Prompts
@@ -53,6 +58,7 @@ If no flag provided, uses interactive mode by default.
 - "/ck:cook add user authentication to the app"
 - "/ck:cook implement real-time notifications --fast"
 - "/ck:cook path/to/plan.md --auto"
+- "/ck:cook refactor auth middleware --tdd"
 - "/ck:cook add search, filters, and pagination --parallel"
 - "/ck:cook prototype new UI design --no-test"
 
@@ -66,6 +72,9 @@ If no flag provided, uses interactive mode by default.
 **Default (non-auto)**: Stops at [Review] gates for human approval before each major step.
 
 **Auto mode**: Skips human review gates, implements all phases continuously.
+
+**TDD mode**: Keeps the selected workflow mode, but splits each implementation
+phase into tests-before, implementation, and verification steps.
 
 ## Quality Gates
 

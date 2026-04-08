@@ -67,8 +67,8 @@ Direction: higher
    - Run Guard if provided
    - Keep (update baseline) or discard (git revert)
    - Log result to TSV
-4. **Stuck detection** — 5+ consecutive discards triggers strategy shift
-5. **Stop** — after N iterations or second stuck trigger
+4. **Stuck detection** — 5 consecutive discards triggers strategy shift; 10 consecutive discards forces a full stop
+5. **Stop** — after N iterations or 10 consecutive discards
 
 ## Output
 

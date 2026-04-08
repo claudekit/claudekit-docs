@@ -1,5 +1,5 @@
 ---
-title: "ck:design"
+title: "ckm:design"
 description: "Comprehensive design skill covering logo generation, corporate identity, presentations, banners, icons, and social media assets"
 section: engineer
 kit: engineer
@@ -8,6 +8,8 @@ order: 66
 ---
 
 # Design
+
+> **Shared skill** — registered as `ckm:design` (marketing namespace) but available in both Engineer and Marketing kits.
 
 Unified design skill that handles brand identity, logo generation, corporate identity programs (CIP), HTML presentations, banner design, icon design, and social media assets. Uses Gemini AI for image generation across 55+ logo styles, 22 banner styles, and 15 icon styles.
 
@@ -43,15 +45,20 @@ Design routes your request to the appropriate sub-capability based on what you n
 | `design-type` | `logo`, `cip`, `slides`, `banner`, `icon`, `social` |
 | `context` | Brand name, description, or project context |
 
+## Prerequisites
+
+- `GEMINI_API_KEY` environment variable set (in `.env` or `.claude/.env`)
+- Python packages: `pip install google-genai pillow`
+
 ## Example Usage
 
 ```
-/ck:design logo "TechFlow - a developer productivity tool"
-/ck:design cip "TopGroup consulting firm" --logo /path/to/logo.png
-/ck:design slides "Q4 revenue analysis with charts"
-/ck:design banner "Product launch announcement for Twitter and LinkedIn"
-/ck:design icon "settings gear icon" --style outlined
-/ck:design social "New feature announcement" --platforms twitter,linkedin
+/ckm:design logo "TechFlow - a developer productivity tool"
+/ckm:design cip "TopGroup consulting firm" --logo /path/to/logo.png
+/ckm:design slides "Q4 revenue analysis with charts"
+/ckm:design banner "Product launch announcement for Twitter and LinkedIn"
+/ckm:design icon "settings gear icon" --style outlined
+/ckm:design social "New feature announcement" --platforms twitter,linkedin
 ```
 
 ## Routing

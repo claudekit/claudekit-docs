@@ -56,6 +56,29 @@ Show Off takes a prompt or markdown content and produces a polished HTML showcas
 5. **Capture** — screenshot each section at multiple ratios (horizontal, vertical, square)
 6. **Deliver** — open the resulting HTML page
 
+## Capture Script
+
+Section screenshots are captured via a built-in Node.js script:
+
+```bash
+node .claude/skills/show-off/scripts/capture-sections.js \
+  --url "file:///path/to/index.html" \
+  --output-dir "assets/showoff/<name>/images" \
+  --sections "#hero,#section-2,#section-3" \
+  --ratios "horizontal,vertical,square" \
+  --delay 2000
+```
+
+| Flag | Default | Description |
+|------|---------|-------------|
+| `--url` | (required) | Page URL to capture |
+| `--output-dir` | (required) | Output directory for images |
+| `--sections` | (required) | CSS selectors, comma-separated |
+| `--ratios` | `horizontal,vertical,square` | Capture aspect ratios |
+| `--delay` | `2000` | Ms to wait after page load |
+| `--format` | `png` | Image format (png/jpg/webp) |
+| `--quality` | `90` | Image quality (1-100) |
+
 ## Output
 
 - Self-contained HTML file with inline styles and scripts

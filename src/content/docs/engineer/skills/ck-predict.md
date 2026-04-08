@@ -56,6 +56,16 @@ Predict simulates a design review by running your proposal through five distinct
 5. **Resolve** — weigh trade-offs for each conflict
 6. **Verdict** — produce final recommendation
 
+## Verdict Levels
+
+| Verdict | Meaning |
+|---------|---------|
+| **GO** | Proceed with implementation — no blocking concerns |
+| **CAUTION** | Proceed with specific mitigations — risks are manageable |
+| **STOP** | Do not proceed — fundamental issues need resolution first |
+
+**STOP triggers** (any one forces STOP): security auth bypass detected, architect finds design incompatibility, performance analysis shows exponential scaling, or devil's advocate surfaces a false core assumption.
+
 ## Output
 
 | Section | Content |

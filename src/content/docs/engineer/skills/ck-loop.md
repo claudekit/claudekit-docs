@@ -15,6 +15,17 @@ Autonomous optimization loop that iteratively improves a measurable metric. Shar
 
 Loop takes a numeric goal and repeatedly makes targeted code changes to drive it in the desired direction. Each change is committed, verified, and either kept or reverted. Strategy shifts automatically when progress stalls.
 
+Loop and [Autoresearch](/docs/engineer/skills/ck-autoresearch) share the same core optimization protocol. Use whichever name fits your mental model — both invoke the same iterative keep/discard loop.
+
+## Core Capabilities
+
+- N iterations of autonomous code changes (default: 10)
+- Git-tracked experiments with automatic rollback on regression
+- Guard pattern to prevent regressions in other areas
+- Stuck detection: 5 consecutive discards shifts strategy, 10 consecutive discards stops
+- Results logged to TSV with per-iteration history
+- Configurable noise tolerance and minimum delta
+
 ## When to Use
 
 - Reducing bundle size below a target
@@ -52,7 +63,7 @@ Min-Delta: 0.5
 1. **Configure** — parse fields from argument or ask via batched questions
 2. **Baseline** — measure starting metric
 3. **Iterate** — make atomic change → commit → verify → keep or discard
-4. **Stuck detection** — 5+ consecutive discards triggers strategy shift
+4. **Stuck detection** — 5 consecutive discards shifts strategy; 10 consecutive discards forces a full stop
 5. **Results** — TSV log with `iter`, `timestamp`, `metric`, `delta`, `kept`, `description`
 
 ## Related Skills

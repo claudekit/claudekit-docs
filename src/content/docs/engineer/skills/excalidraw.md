@@ -1,5 +1,5 @@
 ---
-title: "ck:excalidraw"
+title: "excalidraw"
 description: "Create Excalidraw diagrams for architecture, data flow, workflows, and system design with auto-diagramming support"
 section: engineer
 kit: engineer

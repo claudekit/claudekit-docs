@@ -54,7 +54,7 @@ Security runs a multi-layer analysis: STRIDE threat modeling, OWASP Top 10 mappi
 |-------|---------|
 | **Critical** | Exploitable now, data loss or unauthorized access |
 | **High** | Significant risk, should fix before release |
-| **Medium** | Moderate risk, fix in current sprint |
+| **Medium** | Limited exploitability or impact, fix next sprint |
 | **Low** | Minor concern, fix when convenient |
 | **Info** | Best practice suggestion |
 
@@ -71,7 +71,7 @@ Security runs a multi-layer analysis: STRIDE threat modeling, OWASP Top 10 mappi
 
 1. Sort findings by severity (Critical first)
 2. For each finding: apply targeted fix → run guard (tests/lint) → commit with `security(fix-N): <description>`
-3. Stop early if guard fails
+3. If guard fails: stop early and report the failure (no partial fixes left uncommitted)
 
 ## Output
 

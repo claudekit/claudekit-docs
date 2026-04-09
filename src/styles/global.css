@@ -1318,6 +1318,9 @@ pre.astro-code:not([data-language]) span {
 .assistant-message--user .assistant-message-content {
   background-color: var(--color-msg-user-bg);
   color: var(--color-msg-user-text);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  line-height: 1.45;
   margin-left: auto;
   max-width: 85%;
   border-bottom-right-radius: 4px;

@@ -23,7 +23,9 @@ export function AssistantMessage({ message }: AssistantMessageProps) {
     <div className={`assistant-message assistant-message--${message.role} ${isNew ? 'new' : ''}`}>
       <div className="assistant-message-content">
         {isAssistant ? (
-          <Markdown className="assistant-markdown">{message.content}</Markdown>
+          <div className="assistant-markdown">
+            <Markdown>{message.content}</Markdown>
+          </div>
         ) : (
           <p>{message.content}</p>
         )}

@@ -30,12 +30,25 @@
 
     --color-border: #E5E7EB;
     --color-border-hover: #D1D5DB;
+    --color-border-focus: #3B82F6;
 
     /* Message Bubble Colors - Light */
     --color-msg-user-bg: #2563EB;
     --color-msg-user-text: #FFFFFF;
 
     --color-header-bg: rgba(255, 255, 255, 0.8);
+    --color-assistant-panel-bg: #F8FAFC;
+    --color-assistant-panel-border: #D7E0EA;
+    --color-assistant-message-bg: #EEF3F8;
+    --color-assistant-message-border: #D7E0EA;
+    --color-assistant-code-bg: #FFFFFF;
+    --color-assistant-code-border: #CBD5E1;
+    --color-assistant-chip-bg: #F2F6FA;
+    --color-assistant-chip-hover-bg: #E7EEF5;
+    --color-assistant-input-bg: #FFFFFF;
+    --color-assistant-input-border: #CBD5E1;
+    --color-assistant-link: #1D4ED8;
+    --color-assistant-link-hover: #1E40AF;
   }
 
   /* Dark Theme (Polar-inspired v1.1) */
@@ -90,6 +103,18 @@
     /* Theme-specific gradients and overlays */
     --color-text-gradient: linear-gradient(135deg, #fff 0%, #999 100%);
     --color-header-bg: rgba(17, 17, 17, 0.8);
+    --color-assistant-panel-bg: #0E1318;
+    --color-assistant-panel-border: #27323D;
+    --color-assistant-message-bg: #151C23;
+    --color-assistant-message-border: #2B3742;
+    --color-assistant-code-bg: #0B1015;
+    --color-assistant-code-border: #334251;
+    --color-assistant-chip-bg: #151C23;
+    --color-assistant-chip-hover-bg: #1B2430;
+    --color-assistant-input-bg: #0B1015;
+    --color-assistant-input-border: #334251;
+    --color-assistant-link: #7DD3FC;
+    --color-assistant-link-hover: #BAE6FD;
   }
 
   /* Typography Variables (Polar v1.1) */
@@ -1151,8 +1176,8 @@ pre.astro-code:not([data-language]) span {
   right: 0;
   width: var(--assistant-width, 380px);
   height: 100vh;
-  background-color: var(--color-bg-secondary);
-  border-left: 1px solid var(--color-border);
+  background-color: var(--color-assistant-panel-bg);
+  border-left: 1px solid var(--color-assistant-panel-border);
   display: flex;
   flex-direction: column;
   z-index: 500;
@@ -1179,7 +1204,8 @@ pre.astro-code:not([data-language]) span {
   align-items: center;
   justify-content: space-between;
   padding: var(--space-4) var(--space-5);
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-assistant-panel-border);
+  background-color: var(--color-assistant-panel-bg);
   flex-shrink: 0;
   height: 56px;
 }
@@ -1232,7 +1258,7 @@ pre.astro-code:not([data-language]) span {
 }
 
 .assistant-action-btn:hover {
-  background-color: var(--color-bg-tertiary);
+  background-color: var(--color-assistant-chip-hover-bg);
   color: var(--color-text-primary);
   transform: translateY(-1px);
 }
@@ -1270,11 +1296,19 @@ pre.astro-code:not([data-language]) span {
 .assistant-message-content {
   padding: var(--space-3) var(--space-4);
   border-radius: 12px;
+  border: 1px solid transparent;
   font-family: var(--font-sans);
   font-size: 13px; /* Smaller font as requested */
   line-height: 1.5;
   letter-spacing: -0.01em;
   transition: transform 150ms ease-out;
+}
+
+.assistant-message-content > p {
+  margin: 0;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 .assistant-message:hover .assistant-message-content {
@@ -1290,7 +1324,8 @@ pre.astro-code:not([data-language]) span {
 }
 
 .assistant-message--assistant .assistant-message-content {
-  background-color: var(--color-bg-tertiary);
+  background-color: var(--color-assistant-message-bg);
+  border-color: var(--color-assistant-message-border);
   color: var(--color-text-primary);
   max-width: 90%;
   border-bottom-left-radius: 4px;
@@ -1328,9 +1363,44 @@ pre.astro-code:not([data-language]) span {
   color: var(--color-text-primary);
 }
 
+.assistant-markdown h1,
+.assistant-markdown h2,
+.assistant-markdown h3,
+.assistant-markdown h4,
+.assistant-markdown h5,
+.assistant-markdown h6 {
+  margin: 0 0 var(--space-3);
+  color: var(--color-text-primary);
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.assistant-markdown h1 {
+  font-size: 1.25rem;
+}
+
+.assistant-markdown h2 {
+  font-size: 1.125rem;
+}
+
+.assistant-markdown h3,
+.assistant-markdown h4,
+.assistant-markdown h5,
+.assistant-markdown h6 {
+  font-size: 1rem;
+}
+
+.assistant-markdown hr {
+  margin: var(--space-3) 0;
+  border: 0;
+  border-top: 1px solid var(--color-assistant-message-border);
+}
+
 .assistant-markdown code {
   padding: 0.125em 0.25em;
-  background-color: var(--color-bg-inline-code, var(--color-bg-code));
+  background-color: var(--color-assistant-code-bg);
+  border: 1px solid var(--color-assistant-code-border);
   color: var(--color-text-code);
   border-radius: 3px;
   font-family: var(--font-mono);
@@ -1340,15 +1410,16 @@ pre.astro-code:not([data-language]) span {
 .assistant-markdown pre {
   margin: var(--space-2) 0;
   padding: var(--space-3);
-  background-color: var(--color-bg-code);
+  background-color: var(--color-assistant-code-bg);
   border-radius: 6px;
   overflow-x: auto;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-assistant-code-border);
 }
 
 .assistant-markdown pre code {
   padding: 0;
   background: none;
+  border: none;
   color: var(--color-text-code);
 }
 
@@ -1363,13 +1434,13 @@ pre.astro-code:not([data-language]) span {
 }
 
 .assistant-markdown a {
-  color: var(--color-accent-cyan);
+  color: var(--color-assistant-link);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
 .assistant-markdown a:hover {
-  color: var(--color-accent-blue);
+  color: var(--color-assistant-link-hover);
 }
 
 /* Loading */
@@ -1412,7 +1483,7 @@ pre.astro-code:not([data-language]) span {
 .assistant-sources {
   margin-top: var(--space-3);
   padding-top: var(--space-3);
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-assistant-message-border);
 }
 
 .assistant-sources-label {
@@ -1436,8 +1507,9 @@ pre.astro-code:not([data-language]) span {
 
 .assistant-source-link {
   font-size: var(--text-xs);
-  color: var(--color-accent-blue);
-  text-decoration: none;
+  color: var(--color-assistant-link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
   display: flex;
   align-items: center;
   gap: var(--space-1);
@@ -1450,8 +1522,7 @@ pre.astro-code:not([data-language]) span {
 }
 
 .assistant-source-link:hover {
-  text-decoration: underline;
-  color: var(--color-accent-cyan);
+  color: var(--color-assistant-link-hover);
 }
 
 /* Suggestions */
@@ -1477,8 +1548,8 @@ pre.astro-code:not([data-language]) span {
 
 .assistant-suggestion-chip {
   padding: var(--space-2) var(--space-3);
-  background: var(--color-bg-tertiary);
-  border: 1px solid var(--color-border);
+  background: var(--color-assistant-chip-bg);
+  border: 1px solid var(--color-assistant-message-border);
   border-radius: 6px;
   font-size: var(--text-sm);
   color: var(--color-text-secondary);
@@ -1488,7 +1559,7 @@ pre.astro-code:not([data-language]) span {
 }
 
 .assistant-suggestion-chip:hover {
-  background: var(--color-bg-secondary);
+  background: var(--color-assistant-chip-hover-bg);
   border-color: var(--color-accent-cyan);
   color: var(--color-text-primary);
 }
@@ -1501,8 +1572,8 @@ pre.astro-code:not([data-language]) span {
 /* Input Area */
 .assistant-sidebar-input {
   padding: var(--space-4);
-  border-top: 1px solid var(--color-border);
-  background-color: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-assistant-panel-border);
+  background-color: var(--color-assistant-panel-bg);
   flex-shrink: 0;
 }
 
@@ -1511,10 +1582,10 @@ pre.astro-code:not([data-language]) span {
   align-items: center;
   gap: var(--space-2);
   padding: var(--space-1-5) var(--space-3); /* Slightly tighter padding */
-  background-color: var(--color-bg-primary);
-  border: 1px solid var(--color-border);
+  background-color: var(--color-assistant-input-bg);
+  border: 1px solid var(--color-assistant-input-border);
   border-radius: 6px;
-  transition: border-color 200ms ease-out;
+  transition: border-color 200ms ease-out, background-color 200ms ease-out;
 }
 
 .assistant-sidebar-form:focus-within {
@@ -1606,7 +1677,7 @@ pre.astro-code:not([data-language]) span {
     height: 85vh;
     max-height: calc(100vh - 60px);
     border-left: none;
-    border-top: 1px solid var(--color-border-hover);
+    border-top: 1px solid var(--color-assistant-panel-border);
     border-radius: 16px 16px 0 0;
     animation: assistant-slide-up 300ms ease-out forwards;
   }
@@ -1759,7 +1830,7 @@ body.assistant-open .table-of-contents {
   body.assistant-open .assistant-sidebar {
     right: 0;
     box-shadow: -4px 0 16px rgba(0,0,0,0.05);
-    border-left: 1px solid var(--color-border);
+    border-left: 1px solid var(--color-assistant-panel-border);
   }
 }
 

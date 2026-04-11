@@ -42,23 +42,29 @@ The `ck migrate` command:
 
 ## Supported Providers
 
+Each column indicates how well `ck migrate` can transfer that content type to the target provider:
+
+- **Yes** — Provider has a native equivalent. Content migrates 1:1 with full functionality.
+- **Partial** — Content is copied/converted, but the provider has no native equivalent for this concept. It may work as context or rules, but not as a first-class feature (e.g., agents merged into a flat context file).
+- **-** — Not supported. Content is not migrated to this provider.
+
 | Provider | Agents | Commands | Skills | Config | Rules | Hooks |
 |----------|--------|----------|--------|--------|-------|-------|
 | Claude Code | Yes | Yes | Yes | Yes | Yes | Yes |
-| OpenCode | Yes | Yes | Yes | Yes | Yes | Yes |
-| GitHub Copilot | Yes | Yes | Yes | Yes | Yes | - |
-| Codex | Yes | Yes | Yes | Yes | Yes | - |
-| Droid | Yes | Yes | Yes | Yes | Yes | - |
-| Cursor | Yes | Yes | Yes | Yes | Yes | - |
-| Roo Code | Yes | Yes | Yes | Yes | Yes | - |
-| Kilo Code | Yes | Yes | Yes | Yes | Yes | - |
-| Windsurf | Yes | Yes | Yes | Yes | Yes | - |
-| Goose | Yes | - | - | Yes | Yes | - |
-| Gemini CLI | Yes | - | - | Yes | Yes | - |
-| Amp | Yes | - | - | Yes | Yes | - |
-| Antigravity | Yes | - | - | Yes | Yes | - |
-| Cline | Yes | - | - | Yes | Yes | - |
-| OpenHands | Yes | - | - | Yes | Yes | - |
+| OpenCode | Yes | Yes | Yes | Yes | Yes | - |
+| GitHub Copilot | Yes | - | Yes | Yes | Yes | - |
+| Codex | Yes | Yes | Yes | Yes | Yes | Yes |
+| Droid | Yes | Yes | Yes | Yes | Yes | Yes |
+| Cursor | Partial | - | Yes | Yes | Yes | - |
+| Roo Code | Yes | - | Yes | Yes | Yes | - |
+| Kilo Code | Yes | - | Yes | Yes | Yes | - |
+| Windsurf | Partial | Yes | Yes | Yes | Yes | - |
+| Goose | Partial | - | Yes | Yes | Yes | - |
+| Gemini CLI | Partial | Yes | Yes | Yes | Yes | - |
+| Amp | Partial | - | Yes | Yes | Yes | - |
+| Antigravity | - | Yes | Yes | Yes | Yes | - |
+| Cline | Partial | - | Yes | Yes | Yes | - |
+| OpenHands | Partial | - | Yes | Yes | Yes | - |
 
 ## Options
 

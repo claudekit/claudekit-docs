@@ -43,23 +43,29 @@ Lệnh `ck migrate`:
 
 ## Provider Được Hỗ Trợ
 
+Mỗi cột cho biết mức độ `ck migrate` có thể chuyển loại nội dung đó sang provider đích:
+
+- **Co** — Provider có tính năng tương đương. Nội dung được chuyển 1:1 với đầy đủ chức năng.
+- **Một phần** — Nội dung được sao chép/chuyển đổi, nhưng provider không có tính năng tương đương. Có thể hoạt động như context hoặc rules, nhưng không phải tính năng chính thức (ví dụ: agents được gộp vào file context chung).
+- **-** — Không hỗ trợ. Nội dung không được chuyển sang provider này.
+
 | Provider | Agents | Commands | Skills | Config | Rules | Hooks |
 |----------|--------|----------|--------|--------|-------|-------|
 | Claude Code | Co | Co | Co | Co | Co | Co |
-| OpenCode | Co | Co | Co | Co | Co | Co |
-| GitHub Copilot | Co | Co | Co | Co | Co | - |
-| Codex | Co | Co | Co | Co | Co | - |
-| Droid | Co | Co | Co | Co | Co | - |
-| Cursor | Co | Co | Co | Co | Co | - |
-| Roo Code | Co | Co | Co | Co | Co | - |
-| Kilo Code | Co | Co | Co | Co | Co | - |
-| Windsurf | Co | Co | Co | Co | Co | - |
-| Goose | Co | - | - | Co | Co | - |
-| Gemini CLI | Co | - | - | Co | Co | - |
-| Amp | Co | - | - | Co | Co | - |
+| OpenCode | Co | Co | Co | Co | Co | - |
+| GitHub Copilot | Co | - | Co | Co | Co | - |
+| Codex | Co | Co | Co | Co | Co | Co |
+| Droid | Co | Co | Co | Co | Co | Co |
+| Cursor | Một phần | - | Co | Co | Co | - |
+| Roo Code | Co | - | Co | Co | Co | - |
+| Kilo Code | Co | - | Co | Co | Co | - |
+| Windsurf | Một phần | Co | Co | Co | Co | - |
+| Goose | Một phần | - | Co | Co | Co | - |
+| Gemini CLI | Một phần | Co | Co | Co | Co | - |
+| Amp | Một phần | - | Co | Co | Co | - |
 | Antigravity | - | Co | Co | Co | Co | - |
-| Cline | Co | - | - | Co | Co | - |
-| OpenHands | Co | - | - | Co | Co | - |
+| Cline | Một phần | - | Co | Co | Co | - |
+| OpenHands | Một phần | - | Co | Co | Co | - |
 
 ## Tùy Chọn
 

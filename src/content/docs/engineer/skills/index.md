@@ -84,7 +84,7 @@ As of engineer@2.12.0, all 19 commands have been migrated to skills. The `/` sla
 | [cook](/docs/engineer/skills/cook) | Feature implementation workflow |
 | [fix](/docs/engineer/skills/fix) | Bug fixing with intelligent routing |
 | [git](/docs/engineer/skills/git) | Git operations with conventional commits |
-| [plans-kanban](/docs/engineer/skills/plans-kanban) | Visual plan progress tracking |
+| [plans-kanban](/docs/engineer/skills/plans-kanban) | Open the integrated plans dashboard in the CLI UI |
 | [project-management](/docs/engineer/skills/project-management) | Task tracking, plan status, session bridging |
 | [team](/docs/engineer/skills/team) | Agent Teams for parallel multi-session collaboration |
 | [ask](/docs/engineer/skills/ask) | Answer technical and architectural questions |
@@ -92,7 +92,7 @@ As of engineer@2.12.0, all 19 commands have been migrated to skills. The `/` sla
 | [coding-level](/docs/engineer/skills/coding-level) | Set coding experience level for tailored output |
 | [docs](/docs/engineer/skills/docs) | Manage project documentation (init, update, summarize) |
 | [journal](/docs/engineer/skills/journal) | Write development journal entries |
-| [kanban](/docs/engineer/skills/kanban) | AI agent orchestration board |
+| [kanban](/docs/engineer/skills/kanban) | Alias launcher for the plans dashboard |
 | [preview](/docs/engineer/skills/preview) | View files or generate visual explanations and diagrams |
 | [test](/docs/engineer/skills/test) | Run test suites, coverage analysis, build verification |
 | [use-mcp](/docs/engineer/skills/use-mcp) | Utilize MCP server tools |

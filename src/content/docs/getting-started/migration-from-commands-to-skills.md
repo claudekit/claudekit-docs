@@ -67,7 +67,7 @@ These commands remain as slash commands:
 - `/ck:coding-level` — Set coding detail level
 - `/ck:docs*` — Documentation generation
 - `/ck:journal` — Session journaling
-- `/ck:kanban` — Task board management
+- `/ck:kanban` — Plans dashboard launcher
 - `/ck:plan*` — Planning workflows
 - `/ck:preview` — Preview changes
 - `/ck:code-review` — Codebase review (migrated from `/review:codebase*`)

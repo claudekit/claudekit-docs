@@ -10,7 +10,7 @@ published: true
 
 # Plan
 
-Creates structured, research-backed implementation plans in your `plans/` directory. Formerly split across `/ck:plan --fast`, `/ck:plan --hard`, and other commands—now consolidated into one skill.
+Creates structured, research-backed implementation plans in the active plan root. Project scope defaults to `plans/` in the current project. Global scope is allowed conditionally and resolves through the configured global plans root, defaulting to `~/.claude/plans/` when unset. Formerly split across `/ck:plan --fast`, `/ck:plan --hard`, and other commands—now consolidated into one skill.
 
 ## What This Skill Does
 
@@ -45,6 +45,16 @@ Composable flags:
 - `/ck:plan "implement real-time notifications + presence" --parallel`
 - `/ck:plan "redesign auth system" --two`
 - `/ck:plan "scaffold new microservice" --auto --no-tasks`
+- `/ck:plan "create shared architecture roadmap" --global`
+
+## Scope Rules
+
+- **Project scope** is the default whenever the current working tree has project context.
+- **Global scope** is allowed when:
+  - you explicitly ask for it with `--global`, or
+  - there is no project context to anchor a local plan.
+- **No project context** means no `.git`, `package.json`, or `CLAUDE.md` was found in the ancestor chain.
+- Scan unfinished plans in the active scope before creating a new one.
 
 ## Workflow Process
 
@@ -76,6 +86,8 @@ plans/
         └── researcher-*.md  # Research findings
 ```
 
+Global scope uses the same directory shape under the configured global plans root instead of the current project.
+
 Each phase file contains: overview, requirements, architecture, file ownership,
 implementation steps, todo checklist, success criteria, risk assessment.
 
@@ -97,6 +109,16 @@ Use `--no-tasks` when you want the plan only (e.g., for review before execution)
 
 If planning used `--tdd`, keep that flag on the cook handoff command:
 `/ck:cook /absolute/path/to/plan.md --tdd`
+
+## Cross-Plan Dependencies
+
+Use `ck plan status` as the authoritative dependency/status view.
+
+- Bare references such as `260413-auth-system` stay in the current scope.
+- Cross-scope references use explicit prefixes:
+  - `global:260413-auth-system`
+  - `project:260413-dashboard`
+- Missing refs should warn and render as `not found`, not hard-fail the plan.
 
 ## Active Plan State
 

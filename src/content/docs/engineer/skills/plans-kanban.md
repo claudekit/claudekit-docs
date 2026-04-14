@@ -24,6 +24,12 @@ It opens the ClaudeKit CLI dashboard plans route and gives you:
 - markdown reader navigation for `plan.md` and phase files
 - quick phase actions such as start, complete, reset, validate, and start-next
 
+Scope note:
+
+- Project dashboards should show project-scoped plans only.
+- Global dashboards should show global-scoped plans only.
+- `ck plan status` remains the authoritative dependency/status view for `blockedBy` / `blocks`.
+
 ## How It Works
 
 When invoked, the launcher:
@@ -64,7 +70,7 @@ Old standalone-server flags are still accepted with warnings so existing habits 
 
 | Legacy input | Current behavior |
 | --- | --- |
-| `--dir <path>` / positional path | Warns and ignores. The dashboard now discovers plans through the CLI UI route. |
+| `--dir <path>` / positional path | Warns and ignores. This launcher opens the generic `/plans` route and does not choose a custom plan root. |
 | `--plans <path>` | Warns and ignores. |
 | `--port <n>` | Warns and ignores. The launcher targets the CLI dashboard starting at `3456`. |
 | `--host <addr>` | Warns and ignores. Use `ck config ui --host ...` directly if needed. |
@@ -97,6 +103,8 @@ That means:
 - there is no separate `localhost:3500` dashboard anymore
 - the canonical visual experience lives under the CLI dashboard
 - the skill exists to open the right place quickly, not to run a separate app stack
+- the generic `/plans` route still defaults to `plans` unless a `dir` query param is already present
+- scope-aware plan roots come from project/global dashboard context, not deprecated launcher flags
 
 ## Troubleshooting
 

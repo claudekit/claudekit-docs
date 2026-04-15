@@ -1,10 +1,52 @@
 # Project Changelog
 
-**Last Updated**: 2025-12-30
+**Last Updated**: 2026-04-15
 **Version**: 0.0.4
 **Project**: claudekit-docs
 
 ## Version History
+
+### Unreleased - 2026-04-15
+
+#### 🛡️ Trust Hardening For `docs.claudekit.cc`
+
+**Problem Addressed**:
+- Hardened the docs site after FortiGuard classified `docs.claudekit.cc` as `Spam URLs`
+- Focused on repo-owned trust, crawlability, and metadata signals instead of treating the issue as an application outage
+
+**Site Identity Improvements**:
+- Reworked the root homepage into a neutral documentation-first entrypoint instead of a sales-forward landing page
+- Added explicit trust and support references for sitemap, `llms.txt`, `security.txt`, and support/security contacts
+- Disabled the AI assistant launcher on the root docs homepage to keep the entrypoint clean and uncluttered
+
+**SEO / Discovery Improvements**:
+- Added Astro `site` configuration for canonical absolute URL generation
+- Integrated `@astrojs/sitemap` and verified `sitemap-index.xml` generation during build
+- Added canonical, Open Graph, Twitter, robots, author, and theme-color metadata in the shared base layout
+- Added `robots.txt` and `security.txt` artifacts, including `/.well-known/security.txt`
+
+**Edge Security Improvements**:
+- Added baseline ingress response headers:
+  - `X-Content-Type-Options: nosniff`
+  - `X-Frame-Options: SAMEORIGIN`
+  - `Referrer-Policy: strict-origin-when-cross-origin`
+  - `Permissions-Policy` for camera, geolocation, and microphone
+
+**Validation**:
+- `bun run build` passes successfully
+- Generated artifacts verified in `dist/`:
+  - `sitemap-index.xml`
+  - `robots.txt`
+  - `security.txt`
+  - `.well-known/security.txt`
+- Root page metadata verified in built HTML
+
+**Follow-Up Still Required Outside This Repo**:
+- Promote the docs fix from `dev` to `main`
+- Re-submit / escalate FortiGuard reclassification after production rollout
+- Post a single final status update back to `claudekit-engineer#639` only after rollout is complete
+
+---
 
 ### v0.0.4 - 2025-12-30
 

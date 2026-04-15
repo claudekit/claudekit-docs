@@ -1,144 +1,139 @@
 ---
 import DocsLayout from '../layouts/DocsLayout.astro';
-import HomeHero from '../components/home/HomeHero.astro';
-import HomeValueProps from '../components/home/HomeValueProps.astro';
-import HomeWorkflowProof from '../components/home/HomeWorkflowProof.astro';
-import HomeGetStarted from '../components/home/HomeGetStarted.astro';
 
-const title = 'ClaudeKit - Build Software Like You Have a Team';
-const description = '14 specialized AI agents working together. Write less code, ship faster, maintain quality. Reclaim 50-70% of time on repetitive tasks.';
+const title = 'ClaudeKit Documentation';
+const description =
+  'Official documentation for ClaudeKit CLI, Engineer, and Marketing kits, including installation, workflows, troubleshooting, and support resources.';
 
-const heroCode = `# Install ClaudeKit CLI
-npm install -g claudekit-cli
+const quickLinks = [
+  { title: 'Install ClaudeKit', description: 'Start with setup, access requirements, and first-run guidance.', href: '/docs/getting-started/installation' },
+  { title: 'Read The Introduction', description: 'Understand how the CLI, agents, commands, and skills fit together.', href: '/docs/getting-started/introduction' },
+  { title: 'Get Support', description: 'Find troubleshooting steps, FAQ entries, and support channels.', href: '/docs/support' },
+  { title: 'Review The Changelog', description: 'See what changed across recent ClaudeKit releases.', href: '/docs/changelog' },
+];
 
-# Create new project
-ck new --dir my-app
+const sections = [
+  { title: 'Getting Started', description: 'Installation, concepts, quick start, and migration guidance.', href: '/docs/getting-started' },
+  { title: 'CLI', description: 'Command reference, configuration, backups, and architecture.', href: '/docs/cli' },
+  { title: 'Engineer', description: 'Agents, commands, configuration, and technical skills.', href: '/docs/engineer' },
+  { title: 'Marketing', description: 'Marketing agents, content workflows, and automation skills.', href: '/docs/marketing' },
+  { title: 'Workflows', description: 'End-to-end playbooks for planning, implementation, testing, and delivery.', href: '/docs/workflows' },
+  { title: 'Support', description: 'Troubleshooting, FAQ, community, and escalation paths.', href: '/docs/support' },
+];
 
-# Select "Engineer Kit"
-# Wait for installation to complete
-
-# Start the project
-cd my-app
-
-# Start Claude Code
-claude
-# or \`claude --dangerously-skip-permissions\` (use as your own risk)
-
-# Bootstrap a new project, or plan and implement a feature
-/ck:bootstrap [create a calendar booking app that sync with Apple & Google Calendar]
-/ck:plan [add user authentication]
-/ck:cook [implement user authentication]
-
-# Review, approve, deploy`;
-
-const cliCode = `# Initialize ClaudeKit Engineer in your project
-ck init --kit engineer
-
-# Update ClaudeKit Engineer to latest version
-ck init
-
-# Check available ClaudeKit versions
-ck versions`;
-
-const planningCode = `# Planner agent reads your codebase
-/ck:plan [add real-time notifications with WebSocket]
-
-# Creates detailed implementation plan:
-# - Architecture decisions
-# - File changes needed
-# - Test strategy
-# - Security considerations`;
-
-const implementationCode = `# Implement based on plan
-/ck:cook [implement WebSocket notifications based on the plan]
-
-# Generates:
-# - Server-side WebSocket handler
-# - Client-side connection manager
-# - Event types and validators
-# - Error handling and reconnection logic`;
-
-const testingCode = `# Tester agent creates comprehensive tests
-/ck:test [WebSocket notifications]
-
-# Produces:
-# - Unit tests for handlers
-# - Integration tests for end-to-end flow
-# - Mock WebSocket server
-# - Coverage report`;
-
-const debuggingCode = `# Debug and fix issues
-/ck:debug [users are reporting timeout errors on checkout]
-
-# Agent workflow:
-# 1. Searches logs for timeout patterns
-# 2. Traces code execution paths
-# 3. Identifies bottleneck in payment processing
-# 4. Suggests fixes with performance impact
-# 5. Generates tests to prevent regression`;
-
-const refactoringCode = `# Map codebase structure
-/ck:scout analyze the authentication system
-
-# Planner creates refactoring roadmap
-/ck:plan [migrate from sessions to JWT]
-
-# Implement changes from plan
-/clear
-/ck:cook implement JWT authentication as planned
-
-# Tester ensures nothing breaks
-/ck:test [authentication system]`;
-
-const step1Code = `npm install -g claudekit-cli`;
-const step2Code = `ck new my-first-app
-cd my-first-app`;
-const step3Code = `/ck:plan [add user registration API]
-/clear
-/ck:cook [implement the registration endpoint as planned]`;
-const step4Code = `git diff
-npm test
-# commit via git-manager or manually`;
+const trustLinks = [
+  { label: 'LLMs.txt', href: '/llms.txt', description: 'Machine-readable site index for AI tooling and retrieval.' },
+  { label: 'Sitemap', href: '/sitemap-index.xml', description: 'XML sitemap for search engines and security scanners.' },
+  { label: 'Security.txt', href: '/.well-known/security.txt', description: 'Security contact and disclosure information.' },
+];
 
 const headings = [
-  { depth: 2, text: 'Why ClaudeKit?', slug: 'why-claudekit' },
-  { depth: 3, text: 'Specialized Agents, Real Results', slug: 'specialized-agents-real-results' },
-  { depth: 3, text: 'Eliminate Repetitive Work', slug: 'eliminate-repetitive-work' },
-  { depth: 3, text: 'Stay in Control', slug: 'stay-in-control' },
-  { depth: 2, text: 'How It Works', slug: 'how-it-works' },
-  { depth: 3, text: 'ClaudeKit Engineer: 14 Specialized Agents', slug: 'claudekit-engineer-14-specialized-agents' },
-  { depth: 3, text: 'ClaudeKit CLI: Smart Project Management', slug: 'claudekit-cli-smart-project-management' },
-  { depth: 2, text: 'Real Developer Workflows', slug: 'real-developer-workflows' },
-  { depth: 3, text: 'Building a New Feature', slug: 'building-a-new-feature' },
-  { depth: 3, text: 'Debugging Production Issues', slug: 'debugging-production-issues' },
-  { depth: 3, text: 'Refactoring Legacy Code', slug: 'refactoring-legacy-code' },
-  { depth: 2, text: 'Proven Results', slug: 'proven-results' },
-  { depth: 2, text: 'What Developers Say', slug: 'what-developers-say' },
-  { depth: 2, text: 'Get Started in 5 Minutes', slug: 'get-started-in-5-minutes' },
-  { depth: 2, text: 'Explore Documentation', slug: 'explore-documentation' },
+  { depth: 2, text: 'Overview', slug: 'overview' },
+  { depth: 2, text: 'Start Here', slug: 'start-here' },
+  { depth: 2, text: 'Documentation Sections', slug: 'documentation-sections' },
+  { depth: 2, text: 'Trust And Support', slug: 'trust-and-support' },
 ];
 ---
 
-<DocsLayout
-  title={title}
-  description={description}
-  headings={headings}
-  contentWidth="wide"
->
-  <HomeHero heroCode={heroCode} />
-  <HomeValueProps />
-  <HomeWorkflowProof
-    cliCode={cliCode}
-    planningCode={planningCode}
-    implementationCode={implementationCode}
-    testingCode={testingCode}
-    debuggingCode={debuggingCode}
-    refactoringCode={refactoringCode}
-  />
-  <HomeGetStarted
-    step1Code={step1Code}
-    step2Code={step2Code}
-    step3Code={step3Code}
-    step4Code={step4Code}
-  />
+<DocsLayout title={title} description={description} headings={headings} contentWidth="wide" showAssistant={false}>
+  <section class="space-y-6 pb-10 pt-2">
+    <p class="text-sm font-medium uppercase tracking-[0.16em] text-[var(--color-text-muted)]">Official Documentation</p>
+    <h1 class="text-4xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-5xl">ClaudeKit Documentation</h1>
+    <p class="max-w-4xl text-lg leading-8 text-[var(--color-text-secondary)]">Official documentation for ClaudeKit installation, CLI usage, Engineer and Marketing kits, workflow guides, troubleshooting, and support resources.</p>
+
+    <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      {quickLinks.map((item) => (
+        <a
+          href={item.href}
+          class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-secondary)] p-5 transition-colors hover:border-[var(--color-border-hover)] hover:bg-[var(--color-bg-tertiary)]"
+        >
+          <h2 class="text-lg font-semibold text-[var(--color-text-primary)]">{item.title}</h2>
+          <p class="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">{item.description}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section id="overview" class="space-y-4 border-t border-[var(--color-border)] pt-10">
+    <h2 class="text-2xl font-semibold text-[var(--color-text-primary)]">Overview</h2>
+    <p class="max-w-4xl leading-7 text-[var(--color-text-secondary)]">ClaudeKit extends Claude Code with kits, agents, commands, and reusable skills. This site is the primary reference for setup, usage, and maintenance across the ClaudeKit stack.</p>
+    <p class="max-w-4xl leading-7 text-[var(--color-text-secondary)]">If you are new here, start with installation and concepts. If you are troubleshooting or validating an existing setup, use the support and workflow sections.</p>
+  </section>
+
+  <section id="start-here" class="space-y-4 border-t border-[var(--color-border)] pt-10">
+    <h2 class="text-2xl font-semibold text-[var(--color-text-primary)]">Start Here</h2>
+    <ol class="grid gap-4 md:grid-cols-3">
+      <li class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-secondary)] p-5">
+        <p class="text-sm font-medium uppercase tracking-[0.12em] text-[var(--color-text-muted)]">Step 1</p>
+        <a href="/docs/getting-started/installation" class="mt-2 block text-lg font-semibold text-[var(--color-text-primary)]">
+          Install The CLI
+        </a>
+        <p class="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
+          Follow the setup guide, validate repository access, and complete first-run configuration.
+        </p>
+      </li>
+      <li class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-secondary)] p-5">
+        <p class="text-sm font-medium uppercase tracking-[0.12em] text-[var(--color-text-muted)]">Step 2</p>
+        <a href="/docs/getting-started/concepts" class="mt-2 block text-lg font-semibold text-[var(--color-text-primary)]">
+          Learn The Model
+        </a>
+        <p class="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
+          Understand how kits, agents, slash commands, and skills work together in daily use.
+        </p>
+      </li>
+      <li class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-secondary)] p-5">
+        <p class="text-sm font-medium uppercase tracking-[0.12em] text-[var(--color-text-muted)]">Step 3</p>
+        <a href="/docs/workflows" class="mt-2 block text-lg font-semibold text-[var(--color-text-primary)]">
+          Run A Workflow
+        </a>
+        <p class="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
+          Pick a workflow for planning, implementation, debugging, review, or delivery.
+        </p>
+      </li>
+    </ol>
+  </section>
+
+  <section id="documentation-sections" class="space-y-4 border-t border-[var(--color-border)] pt-10">
+    <h2 class="text-2xl font-semibold text-[var(--color-text-primary)]">Documentation Sections</h2>
+    <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+      {sections.map((section) => (
+        <a
+          href={section.href}
+          class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-secondary)] p-5 transition-colors hover:border-[var(--color-border-hover)] hover:bg-[var(--color-bg-tertiary)]"
+        >
+          <h3 class="text-lg font-semibold text-[var(--color-text-primary)]">{section.title}</h3>
+          <p class="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">{section.description}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section id="trust-and-support" class="space-y-4 border-t border-[var(--color-border)] pt-10">
+    <h2 class="text-2xl font-semibold text-[var(--color-text-primary)]">Trust And Support</h2>
+    <p class="max-w-4xl leading-7 text-[var(--color-text-secondary)]">
+      The official documentation host is <code>docs.claudekit.cc</code>. Search engine and security tooling can use the
+      references below to verify site ownership, discover pages, and contact the ClaudeKit team when needed.
+    </p>
+
+    <div class="grid gap-4 md:grid-cols-3">
+      {trustLinks.map((item) => (
+        <a
+          href={item.href}
+          class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-secondary)] p-5 transition-colors hover:border-[var(--color-border-hover)] hover:bg-[var(--color-bg-tertiary)]"
+        >
+          <h3 class="text-lg font-semibold text-[var(--color-text-primary)]">{item.label}</h3>
+          <p class="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">{item.description}</p>
+        </a>
+      ))}
+    </div>
+
+    <div class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-secondary)] p-6">
+      <h3 class="text-lg font-semibold text-[var(--color-text-primary)]">Contacts</h3>
+      <ul class="mt-3 space-y-2 text-sm leading-6 text-[var(--color-text-secondary)]">
+        <li>Support: <a class="font-medium text-[var(--color-accent-blue)] hover:underline" href="mailto:support@claudekit.cc">support@claudekit.cc</a></li>
+        <li>Security: <a class="font-medium text-[var(--color-accent-blue)] hover:underline" href="mailto:security@claudekit.cc">security@claudekit.cc</a></li>
+        <li>Community: <a class="font-medium text-[var(--color-accent-blue)] hover:underline" href="https://claudekit.cc/discord">claudekit.cc/discord</a></li>
+      </ul>
+    </div>
+  </section>
 </DocsLayout>

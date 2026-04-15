@@ -1,0 +1,6 @@
+Contact: mailto:security@claudekit.cc
+Contact: mailto:support@claudekit.cc
+Expires: 2026-10-15T00:00:00.000Z
+Preferred-Languages: en, vi
+Canonical: https://docs.claudekit.cc/.well-known/security.txt
+Policy: https://docs.claudekit.cc/docs/support

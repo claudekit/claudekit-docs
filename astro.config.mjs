@@ -1,6 +1,7 @@
 // @ts-nocheck
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
+import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
 import pagefind from 'astro-pagefind';
@@ -160,6 +161,7 @@ ${docs.length > 5 ? `- [... ${docs.length - 5} more pages](https://docs.claudeki
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://docs.claudekit.cc',
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'vi'],
@@ -171,6 +173,7 @@ export default defineConfig({
   integrations: [
     mdx(),
     react(),
+    sitemap(),
     tailwind({
       applyBaseStyles: false, // We'll use our custom CSS
     }),

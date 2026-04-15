@@ -23,6 +23,7 @@ export interface Props {
   content?: { body: string; data: Record<string, any> };
   contentWidth?: 'default' | 'wide';
   showTableOfContents?: boolean;
+  showAssistant?: boolean;
 }
 
 const {
@@ -33,6 +34,7 @@ const {
   headings = [],
   contentWidth = 'default',
   showTableOfContents = true,
+  showAssistant = true,
 } = Astro.props;
 const currentPath = Astro.url.pathname;
 const shouldShowTableOfContents = showTableOfContents && headings.length > 0;
@@ -83,8 +85,12 @@ const frontmatter = content?.data || {
         )}
       </div>
 
-      {/* AI Assistant - Two-stage UX (client:only to avoid SSR hook errors) */}
-      <DocsAssistant client:only="react" />
+      {showAssistant && (
+        <>
+          {/* AI Assistant - Two-stage UX (client:only to avoid SSR hook errors) */}
+          <DocsAssistant client:only="react" />
+        </>
+      )}
     </div>
   </div>
 

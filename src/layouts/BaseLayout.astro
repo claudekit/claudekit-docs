@@ -19,6 +19,17 @@ const {
 
 // Generate alternate URLs for hreflang tags
 const alternates = slug ? getAlternateUrls(slug) : [];
+const siteUrl = Astro.site ?? new URL('https://docs.claudekit.cc');
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl);
+
+canonicalUrl.search = '';
+canonicalUrl.hash = '';
+
+const socialImageUrl = new URL('/og-image.png', siteUrl);
+const ogLocale = locale === 'vi' ? 'vi_VN' : 'en_US';
+const alternateOgLocales = Array.from(
+  new Set(alternates.map(({ lang }) => (lang === 'vi' ? 'vi_VN' : lang === 'en' ? 'en_US' : null)))
+).filter((value): value is 'en_US' | 'vi_VN' => value !== null && value !== ogLocale);
 ---
 
 <!DOCTYPE html>
@@ -27,14 +38,35 @@ const alternates = slug ? getAlternateUrls(slug) : [];
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta name="author" content="ClaudeKit" />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+    <meta name="theme-color" content="#0d0d0d" />
     <meta name="generator" content={Astro.generator} />
 
     <link rel="icon" type="image/png" href="/logo-512-transparent.png" />
+    <link rel="canonical" href={canonicalUrl.toString()} />
 
     <!-- Hreflang tags for SEO -->
     {alternates.map(({ lang, url }) => (
       <link rel="alternate" hreflang={lang} href={url} />
     ))}
+
+    <meta property="og:site_name" content="ClaudeKit Documentation" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl.toString()} />
+    <meta property="og:image" content={socialImageUrl.toString()} />
+    <meta property="og:image:alt" content="ClaudeKit Documentation" />
+    <meta property="og:locale" content={ogLocale} />
+    {alternateOgLocales.map((value) => (
+      <meta property="og:locale:alternate" content={value} />
+    ))}
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageUrl.toString()} />
 
     <title>{title}</title>
   </head>

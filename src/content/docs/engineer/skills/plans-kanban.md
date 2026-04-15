@@ -1,6 +1,6 @@
 ---
 title: "ck:plans-kanban"
-description: Visual dashboard server for viewing plan directories with progress tracking, timeline visualization, phase status, and activity heatmap
+description: Open the ClaudeKit plans dashboard inside the CLI config UI for plan tracking, timelines, reader navigation, and quick phase actions
 section: engineer
 kit: engineer
 category: skills
@@ -8,309 +8,130 @@ order: 50
 published: true
 ---
 
-# Plans Kanban Dashboard
+# Plans Dashboard
 
-> Transform plan directories into visual dashboards with progress tracking, Gantt timelines, and phase status indicators.
+> Open the integrated plans dashboard inside `ck config ui`.
 
 ## What This Skill Does
 
-Plans Kanban Dashboard is a background HTTP server that renders interactive visual dashboards for plan directories. It automatically parses `plan.md` files and phase documents to display progress bars, phase breakdowns, timeline visualizations, and activity heatmaps.
+`ck:plans-kanban` is now a thin launcher, not a standalone server.
 
-This skill is essential for monitoring multi-phase implementation plans, tracking progress across parallel development efforts, and visualizing project timelines. The glassmorphism UI with dark mode provides a modern, readable interface accessible from any browser.
+It opens the ClaudeKit CLI dashboard plans route and gives you:
 
-## Prerequisites
+- multi-plan grid and kanban views
+- single-plan detail pages with progress summaries
+- timeline and activity heatmap views
+- markdown reader navigation for `plan.md` and phase files
+- quick phase actions such as start, complete, reset, validate, and start-next
 
-**Installation Required**:
-```bash
-# Option 1: Install via ClaudeKit CLI (recommended)
-ck init  # Runs install.sh which handles all skills
+Scope note:
 
-# Option 2: Manual installation
-cd .claude/skills/plans-kanban
-npm install
+- Project dashboards should show project-scoped plans only.
+- Global dashboards should show global-scoped plans only.
+- `ck plan status` remains the authoritative dependency/status view for `blockedBy` / `blocks`.
+
+## How It Works
+
+When invoked, the launcher:
+
+1. checks whether the CLI dashboard is already running
+2. starts `ck config ui --port 3456 --no-open` if needed
+3. opens the plans route in your browser
+
+Default URL:
+
+```text
+http://localhost:3456/plans
 ```
 
-**Dependencies**: `gray-matter` (installed via npm)
+If port `3456` is busy, the CLI may auto-fallback to `3457-3460`, and the launcher follows that running port.
 
-**Without installation**: You'll get **Error 500** when viewing plan details.
-
-## Activation
-
-This skill activates automatically when:
-- User mentions viewing plans, kanban dashboard, or progress tracking
-- User references plan directories or phase management
-- User wants visual timeline or Gantt chart
-
-Manual activation:
-```bash
-/ck:kanban [plans-directory]
-```
-
-## Quick Start
-
-```bash
-# View plans dashboard
-node .claude/skills/plans-kanban/scripts/server.cjs \
-  --dir ./plans \
-  --open
-
-# Remote access (accessible from network)
-node .claude/skills/plans-kanban/scripts/server.cjs \
-  --dir ./plans \
-  --host 0.0.0.0 \
-  --open
-
-# Background mode (keep terminal free)
-node .claude/skills/plans-kanban/scripts/server.cjs \
-  --dir ./plans \
-  --background
-
-# Stop all running servers
-node .claude/skills/plans-kanban/scripts/server.cjs --stop
-```
-
-## Features
-
-### Dashboard View
-
-Plan cards display:
-- **Progress bars**: Visual percentage of completed phases
-- **Phase breakdown**: Count of completed, in-progress, and pending phases
-- **Last modified**: Timestamp of most recent update
-- **Issue links**: GitHub issue references (if present)
-- **Branch links**: Git branch references (if present)
-- **Priority indicators**: High/medium/low priority badges
-
-### Timeline Visualization
-
-Gantt-style timeline showing:
-- Plan duration from start to estimated completion
-- Overlapping plans for resource planning
-- Activity heatmap highlighting busy periods
-- Phase milestones and deadlines
-
-### Design
-
-- **Glassmorphism UI**: Frosted glass effect with backdrop blur
-- **Dark mode**: Warm accent colors optimized for night viewing
-- **Responsive grid**: Adapts to screen size (desktop, tablet, mobile)
-- **Warm accents**: Amber and orange highlights for visual hierarchy
-
-## CLI Options
-
-| Option | Description | Default |
-|--------|-------------|---------|
-| `--dir <path>` | Plans directory to scan | Required |
-| `--port <number>` | Server port | 3500 |
-| `--host <addr>` | Host to bind (`0.0.0.0` for remote) | localhost |
-| `--open` | Auto-open browser | false |
-| `--background` | Run in background | false |
-| `--stop` | Stop all servers | - |
-
-## Architecture
-
-```
-scripts/
-├── server.cjs               # Main entry point
-└── lib/
-    ├── port-finder.cjs      # Port allocation (3500-3550)
-    ├── process-mgr.cjs      # PID management (/tmp)
-    ├── http-server.cjs      # HTTP routing
-    ├── plan-parser.cjs      # Plan.md parsing
-    ├── plan-scanner.cjs     # Directory scanning
-    ├── plan-metadata-extractor.cjs  # Rich metadata extraction
-    └── dashboard-renderer.cjs       # HTML generation
-
-assets/
-├── dashboard-template.html  # Dashboard HTML template
-├── dashboard.css           # Glassmorphism styles
-└── dashboard.js            # Client interactivity
-```
-
-## HTTP Routes
-
-| Route | Description |
-|-------|-------------|
-| `/` or `/ck:kanban` | Dashboard view for default directory |
-| `/ck:kanban?dir=<path>` | Dashboard for specific directory |
-| `/api/plans` | JSON API for plans data |
-| `/api/plans?dir=<path>` | JSON API for specific directory |
-| `/assets/*` | Static assets (CSS, JS) |
-| `/file/*` | Local file serving (for images, etc.) |
-
-## Plan Directory Structure
-
-The dashboard scans for directories containing `plan.md` files:
-
-```
-plans/
-├── 251215-feature-a/
-│   ├── plan.md              # Required - parsed for metadata and phases
-│   ├── phase-01-setup.md
-│   ├── phase-02-impl.md
-│   └── phase-03-test.md
-├── 251214-feature-b/
-│   ├── plan.md
-│   └── phase-01-research.md
-└── templates/               # Excluded by default (no plan.md)
-```
-
-**Required**: Each plan directory must contain `plan.md` with frontmatter:
-
-```yaml
----
-title: "ck:plans-kanban"
-status: in-progress
-priority: high
-issue: https://github.com/org/repo/issues/123
-branch: feature/feature-a
-created: 2025-12-15
----
-```
-
-## Remote Access
-
-For network access from other devices:
+## Usage
 
 ```bash
-# Bind to all interfaces
-node .claude/skills/plans-kanban/scripts/server.cjs \
-  --dir ./plans \
-  --host 0.0.0.0 \
-  --port 3500
+/ck:plans-kanban
 ```
 
-Server output includes both local and network URLs:
-
-```json
-{
-  "success": true,
-  "url": "http://localhost:3500/kanban?dir=...",
-  "networkUrl": "http://192.168.2.75:3500/kanban?dir=...",
-  "port": 3500
-}
-```
-
-**Use networkUrl to access from phones, tablets, or other computers on same network.**
-
-## Capabilities
-
-### Progress Tracking
-
-Dashboard automatically calculates completion percentage:
-
-```markdown
-# plan.md
-
-## Phase 1: Setup [completed]
-## Phase 2: Implementation [in-progress]
-## Phase 3: Testing [pending]
-
-Progress: 33% (1/3 completed)
-```
-
-**When to use**: Track multi-phase projects, monitor parallel teams, visualize sprint progress.
-
-### Timeline Visualization
-
-Gantt chart shows:
-- Plan start and end dates
-- Overlapping plans (resource conflicts)
-- Critical path highlighting
-- Milestone markers
-
-**When to use**: Capacity planning, deadline tracking, resource allocation.
-
-### JSON API Integration
-
-Programmatic access to plan data:
+Direct launcher:
 
 ```bash
-curl http://localhost:3500/api/plans | jq '.plans[] | {title, status, progress}'
+node .claude/skills/plans-kanban/scripts/open-dashboard.cjs
 ```
 
-**When to use**: CI/CD integration, reporting dashboards, automation scripts.
-
-## Examples
-
-### Example 1: Monitor Development Sprints
+Run the dashboard manually:
 
 ```bash
-# Start dashboard for sprint plans
-/ck:kanban plans/sprints/
-
-# Access from phone to check progress during standup
-# Use networkUrl: http://192.168.1.100:3500/kanban?dir=plans/sprints
+ck config ui
 ```
 
-### Example 2: Track Parallel Feature Development
+## Deprecated Compatibility
 
+Old standalone-server flags are still accepted with warnings so existing habits do not break abruptly.
+
+| Legacy input | Current behavior |
+| --- | --- |
+| `--dir <path>` / positional path | Warns and ignores. This launcher opens the generic `/plans` route and does not choose a custom plan root. |
+| `--plans <path>` | Warns and ignores. |
+| `--port <n>` | Warns and ignores. The launcher targets the CLI dashboard starting at `3456`. |
+| `--host <addr>` | Warns and ignores. Use `ck config ui --host ...` directly if needed. |
+| `--background` / `--foreground` | Warns and ignores. The standalone server flow no longer exists. |
+| `--stop` | Stops the launcher-managed dashboard process if present; otherwise prints manual shutdown guidance. |
+| `--open` | Accepted. Opening is now the default behavior. |
+
+## Related CLI Commands
+
+```bash
+ck config ui
+ck plan status /absolute/path/to/plan.md
+cd /absolute/path/to/plan-dir && ck plan check 1 --start
+cd /absolute/path/to/plan-dir && ck plan check 1
+cd /absolute/path/to/plan-dir && ck plan uncheck 1
 ```
-plans/
-├── feature-auth/
-│   ├── plan.md [in-progress, 60% complete]
-│   ├── phase-01-design.md [completed]
-│   └── phase-02-impl.md [in-progress]
-├── feature-api/
-│   ├── plan.md [in-progress, 80% complete]
-│   └── phase-01-endpoints.md [completed]
-└── feature-ui/
-    └── plan.md [pending, 0% complete]
-```
 
-Dashboard shows all three features side-by-side with progress bars and timeline overlap.
+## What Changed
 
-## Best Practices
+Before this migration, `plans-kanban` owned:
 
-**Use consistent phase naming**: `phase-01-name.md`, `phase-02-name.md` for automatic sorting.
+- its own localhost server
+- its own renderer and static assets
+- its own background server lifecycle
 
-**Update plan.md frontmatter**: Keep status, priority, and dates current for accurate dashboards.
+After the migration, those responsibilities moved into `claudekit-cli` and `ck config ui`.
 
-**Include issue/branch links**: Dashboard auto-links to GitHub for quick navigation.
+That means:
 
-**Run in background mode**: Free up terminal while keeping dashboard accessible.
-
-**Use network access for teams**: Share networkUrl for team visibility during standups.
-
-**Check /api/plans for automation**: Integrate with CI/CD or reporting tools.
+- there is no separate `localhost:3500` dashboard anymore
+- the canonical visual experience lives under the CLI dashboard
+- the skill exists to open the right place quickly, not to run a separate app stack
+- the generic `/plans` route still defaults to `plans` unless a `dir` query param is already present
+- scope-aware plan roots come from project/global dashboard context, not deprecated launcher flags
 
 ## Troubleshooting
 
-**Problem**: Port 3500 already in use.
+**`ck` not found**
 
-**Solution**: Server auto-increments to next available port (3500-3550). Check terminal output for actual port.
+Install the ClaudeKit CLI and confirm `ck --version` works.
 
----
+**Dashboard did not open**
 
-**Problem**: No plans found in directory.
+Start it manually with:
 
-**Solution**: Ensure each plan directory contains `plan.md` file. Check directory path is correct.
+```bash
+ck config ui --port 3456
+```
 
----
+Then open `/plans` on the port the CLI reports.
 
-**Problem**: Can't access from other devices.
+**Need a custom host or port**
 
-**Solution**: Use `--host 0.0.0.0` to bind to all network interfaces. Check firewall allows port 3500.
+Run `ck config ui` directly with the flags you need. The skill intentionally stays thin and opinionated.
 
----
+**Need to stop a launcher-started dashboard**
 
-**Problem**: Server won't stop with `--stop`.
-
-**Solution**: Check `/tmp/plans-kanban-*.pid` for stale PID files. Manually kill process or delete PID files.
-
----
-
-**Problem**: Progress shows 0% but phases are marked completed.
-
-**Solution**: Verify phase markdown files have status indicators in headers: `## Phase 1: Name [completed]`
+Run the launcher again with `--stop`. If you started the dashboard manually, stop the terminal running `ck config ui`.
 
 ## Related Skills
 
-- [Markdown Novel Viewer](/docs/engineer/skills/markdown-novel-viewer) - Read individual plan files with rich formatting
-- [Planning](/docs/engineer/skills/ck-plan) - Create and structure plan directories
-- [Research](/docs/engineer/skills/research) - Gather requirements for planning
-
-## Related Commands
-
-- `/ck:kanban` - Quick access to dashboard server
-- `/ck:preview` - View individual plan files (uses Markdown Novel Viewer)
+- [ck:kanban](/docs/engineer/skills/kanban) - alias launcher for the same plans dashboard
+- [ck:plan](/docs/engineer/skills/ck-plan) - plan creation and state management
+- [markdown-novel-viewer](/docs/engineer/skills/markdown-novel-viewer) - long-form markdown reading

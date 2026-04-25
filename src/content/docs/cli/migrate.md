@@ -24,9 +24,41 @@ ck migrate --all --global
 # Preview migration plan without writing files
 ck migrate --dry-run
 
+# Force ASCII borders for legacy terminals
+CK_FORCE_ASCII=1 ck migrate --agent codex --dry-run
+
 # Non-interactive with sensible defaults
 ck migrate --yes
 ```
+
+## Terminal Flow
+
+The current CLI flow is optimized to answer the two questions users actually ask during migration:
+
+1. **Where will the files go?**
+2. **What changed?**
+
+Before any write happens, `ck migrate` now renders:
+
+- A **source/destination intro panel** showing discovered Claude Code content and the target provider paths
+- A **pre-flight summary** with one row per portable type (`Agents`, `Skills`, `Commands`, `Config`, `Rules`, `Hooks`)
+- Inline scope notes such as `Codex: global-only` or `merge` when a provider does not map 1:1
+
+After execution, the command ends with a boxed footer:
+
+- **WHERE** — destination paths that were actually touched
+- **WHAT** — item counts by type
+- **NEXT** — follow-up commands such as `ck doctor` or provider-specific inspection commands
+
+`--dry-run` uses the same structure, but reports what **would** change instead of writing files.
+
+## Scope Behavior
+
+- **Default scope**: project-level
+- **Global scope**: pass `-g` or `--global`
+- **Provider quirks still apply**: for example, Codex commands remain global-only, so the command will clearly tell you when global output is forced for that provider/type
+
+If you are migrating in older Windows terminals, set `CK_FORCE_ASCII=1` to force the ASCII fallback border set.
 
 ## What Happens
 
@@ -184,7 +216,7 @@ Scans `.claude/agents/`, `.claude/commands/`, `.claude/skills/`, `.claude/rules/
 Auto-detects installed providers or prompts for selection. Use `--agent` or `--all` to skip detection.
 
 ### Phase 3: Scope Selection
-Choose between project-level (`.claude/` in CWD) or global (`~/.claude/`) installation.
+Choose between project-level (`.claude/` in CWD, the default) or global (`~/.claude/`) installation.
 
 ### Phase 4: Reconciliation
 Computes a migration plan using checksums and registry state. Displays actions (install, update, skip, delete, conflict).
@@ -193,7 +225,7 @@ Computes a migration plan using checksums and registry state. Displays actions (
 Installs items, merges hook settings, processes metadata deletions, and cleans up stale entries.
 
 ### Phase 6: Summary
-Displays results with success/skip/failure counts and offers rollback on partial failures.
+Displays a destination-aware `WHERE / WHAT / NEXT` footer and offers rollback on partial failures.
 
 ## Rollback on Failure
 

@@ -74,6 +74,8 @@ Pre-Creation Check → Mode Detection → Research Phase
 8. **Hydrate Tasks** — create session-scoped tasks from phase todo items
 9. **Boundary reminder** — show the active plan path and optional implementation command without treating implementation as pre-approved
 
+Red-team and validation edits finish with a whole-plan consistency sweep. The agent re-reads `plan.md` and every `phase-*.md`, searches for stale terms or superseded assumptions, reconciles duplicated drafts/contracts, and reports unresolved contradictions before recommending cook.
+
 ## Plan Output Structure
 
 ```

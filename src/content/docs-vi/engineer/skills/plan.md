@@ -60,6 +60,8 @@ Kiểm Tra Trước → Phát Hiện Chế Độ → Giai Đoạn Nghiên Cứu
 8. **Hydrate Tasks** — tạo tasks phiên từ các todo items trong phase files
 9. **Nhắc ranh giới** — hiển thị active plan path và command implementation tùy chọn mà không xem implementation là đã được phê duyệt trước
 
+Các chỉnh sửa từ red-team và validate kết thúc bằng bước quét nhất quán toàn bộ plan. Agent đọc lại `plan.md` và mọi file `phase-*.md`, tìm thuật ngữ cũ hoặc giả định đã bị thay thế, đồng bộ các bản nháp/contract bị lặp, và báo cáo mâu thuẫn chưa xử lý trước khi khuyến nghị cook.
+
 ## Cấu Trúc Đầu Ra Plan
 
 ```

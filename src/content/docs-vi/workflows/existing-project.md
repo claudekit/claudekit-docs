@@ -73,9 +73,9 @@ Lệnh này sẽ:
 4. Tự động test và code review
 5. Báo cáo tóm tắt khi hoàn thành
 
-**Chế độ tự động** (dùng cẩn thận):
-- `/ck:cook --auto` - Chế độ tự động hoàn toàn
-- `/ck:cook --auto --fast` - Nhanh hơn, ít token hơn
+**Biến thể tự động** (chọn rõ ràng):
+- `/ck:cook --auto` - Chế độ tự động hoàn toàn khi bạn muốn tự động hóa
+- `/ck:cook --auto --fast` - Nhanh hơn, ít token hơn khi cố ý bỏ qua các bước xem lại
 
 ### Sửa Lỗi
 

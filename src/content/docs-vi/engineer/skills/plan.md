@@ -21,8 +21,8 @@ Planning tạo ra các bản thiết kế dự án hoàn chỉnh: tổng quan `p
 
 | Flag | Chế độ | Nghiên cứu | Red Team | Xác nhận | Cook Flag |
 |------|--------|-----------|---------|---------|-----------|
-| `--auto` | Tự động phát hiện | Theo chế độ | Theo chế độ | Theo chế độ | `--auto` |
-| `--fast` | Nhanh | Bỏ qua | Bỏ qua | Bỏ qua | `--auto` |
+| `--auto` | Tự động phát hiện | Theo chế độ | Theo chế độ | Theo chế độ | Theo chế độ được chọn |
+| `--fast` | Nhanh | Bỏ qua | Bỏ qua | Bỏ qua | (không có) |
 | `--hard` | Khó | 2 researchers | Có | Tùy chọn | (không có) |
 | `--parallel` | Song song | 2 researchers | Có | Tùy chọn | `--parallel` |
 | `--two` | Hai cách tiếp cận | 2+ researchers | Sau chọn | Sau chọn | (không có) |
@@ -47,7 +47,7 @@ Thêm `--no-tasks` vào bất kỳ chế độ nào để bỏ qua việc hydrat
 ```
 Kiểm Tra Trước → Phát Hiện Chế Độ → Giai Đoạn Nghiên Cứu
 → Phân Tích Codebase → Tài Liệu Plan → Red Team Review
-→ Xác Nhận → Hydrate Tasks → Nhắc Nhở Ngữ Cảnh
+→ Xác Nhận → Hydrate Tasks → Nhắc ranh giới
 ```
 
 1. **Kiểm Tra Trước** — quét các plans hiện có để tránh trùng lặp
@@ -58,7 +58,7 @@ Kiểm Tra Trước → Phát Hiện Chế Độ → Giai Đoạn Nghiên Cứu
 6. **Red Team Review** — phê bình đối nghịch về plan (hard/parallel)
 7. **Xác Nhận** — xác nhận plan có thể thực hiện được
 8. **Hydrate Tasks** — tạo tasks phiên từ các todo items trong phase files
-9. **Nhắc Nhở Ngữ Cảnh** — nhắc nhở active plan cho các công cụ phía sau
+9. **Nhắc ranh giới** — hiển thị active plan path và command implementation tùy chọn mà không xem implementation là đã được phê duyệt trước
 
 ## Cấu Trúc Đầu Ra Plan
 

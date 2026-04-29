@@ -20,9 +20,9 @@ Bootstrap handles the entire "greenfield" workflow: git init, tech stack researc
 
 | Flag | Mode | User Gates | Planning Skill | Cook Skill |
 |------|------|-----------|----------------|------------|
-| `--full` | Full interactive | Every phase | `--hard` | (interactive) |
-| `--auto` | Automatic (default) | Design only | `--auto` | `--auto` |
-| `--fast` | Quick | None | `--fast` | `--auto` |
+| `--full` | Full interactive (default) | Every phase | `--hard` | (interactive) |
+| `--auto` | Automatic explicit opt-in | Design only | `--auto` | `--auto` |
+| `--fast` | Quick | Cook review gates | `--fast` | (interactive) |
 | `--parallel` | Multi-agent | Design only | `--parallel` | `--parallel` |
 
 ## Usage
@@ -46,9 +46,10 @@ Git Init → Research → Tech Stack Selection → Design Review
 ```
 
 **User gates** (pause for approval) depend on mode:
-- `--full`: every phase
-- `--auto` / `--parallel`: design phase only
-- `--fast`: none (fully autonomous)
+- `--full` or no flag: every phase
+- `--auto`: design phase only, then autonomous implementation because it was explicitly requested
+- `--parallel`: design phase only, then parallel cook review gates
+- `--fast`: skips extra research but keeps cook review gates
 
 ## How It Works
 

@@ -81,7 +81,7 @@ ClaudeKit Engineer ships with hooks organized by event type. All hook files live
 | `session-init.cjs` | `SessionStart` | Load config, detect project, persist env vars |
 | `subagent-init.cjs` | `SubagentStart` | Inject minimal context (~200 tokens) to subagents |
 | `team-context-inject.cjs` | `SubagentStart` | Inject peer info + task summary for Agent Team members |
-| `cook-after-plan-reminder.cjs` | `SubagentStop` (Plan) | Remind to invoke `/ck:cook --auto` after planning |
+| `cook-after-plan-reminder.cjs` | `SubagentStop` (Plan) | Print user-choice guidance after planning |
 | `dev-rules-reminder.cjs` | `UserPromptSubmit` | Inject session context, rules, modularization, Plan Context |
 | `usage-context-awareness.cjs` | `UserPromptSubmit` + `PostToolUse` | Fetch usage limits, write to cache (throttled) |
 | `descriptive-name.cjs` | `PreToolUse` (Write) | Inject file naming guidance: kebab-case, language conventions |
@@ -138,12 +138,13 @@ ClaudeKit Engineer ships with hooks organized by event type. All hook files live
 
 **Event:** `SubagentStop` (matcher: Plan subagents)
 
-**Purpose:** After a planning subagent completes, reminds Claude to invoke `/ck:cook --auto` to begin implementation from the generated plan.
+**Purpose:** After a planning subagent completes, prints boundary guidance so Claude stops before implementation and presents the available next steps.
 
 **What it does:**
 - Detects if the stopping subagent was a planner
-- Injects a reminder with the path to the generated plan file
-- Prevents the common pattern of forgetting to start implementation
+- Prints an optional `/ck:cook <plan.md>` command with the generated plan path
+- Keeps planning and implementation separated until the user approves implementation
+- Mentions `--auto` only as an explicit opt-in for autonomous implementation
 
 ---
 

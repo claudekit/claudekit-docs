@@ -60,10 +60,10 @@ ck init --use-git
 # Triển khai tính năng mới
 /ck:cook <mô-tả>
 
-# Triển khai tính năng tự động (autonomous)
+# Triển khai tự động khi chọn rõ ràng
 /ck:cook --auto <mô-tả>
 
-# Chế độ tự động nhanh (ít lập kế hoạch hơn)
+# Chế độ tự động nhanh khi chọn rõ ràng
 /ck:cook --auto --fast <mô-tả>
 
 # Chỉ tạo kế hoạch triển khai
@@ -75,7 +75,7 @@ ck init --use-git
 # Khởi tạo dự án mới (bootstrap)
 /ck:bootstrap <mô-tả-ý-tưởng>
 
-# Khởi tạo tự động (autonomous bootstrap)
+# Khởi tạo tự động khi chọn rõ ràng
 /ck:bootstrap --auto <mô-tả-ý-tưởng>
 ```
 
@@ -179,9 +179,9 @@ ck init --use-git
 # → Bạn phê duyệt
 # → Quá trình triển khai bắt đầu
 
-# Cách 2: Tự động hoàn toàn (cẩn thận khi dùng)
+# Cách 2: Tự động khi chọn rõ ràng
 /ck:cook --auto <mô-tả-tính-năng>
-# → Triển khai tự động mà không cần xem lại kế hoạch
+# → Tự động hoàn toàn, không xem lại kế hoạch; chỉ dùng khi bạn muốn tự động hóa
 
 # Cách 3: Tự động nhanh (tiết kiệm token nhất)
 /ck:cook --auto --fast <mô-tả-tính-năng>
@@ -458,7 +458,7 @@ ck --version
 # Tính năng mới (cần xem lại kế hoạch)
 /ck:cook <mô-tả-tính-năng>
 
-# Tính năng mới (tự động, không xem lại)
+# Tính năng mới (tự động khi chọn rõ ràng)
 /ck:cook --auto <mô-tả>
 
 # Tính năng mới (nhanh hơn, ít kế hoạch hơn)
@@ -488,7 +488,7 @@ ck --version
 # Khởi tạo dự án mới (cần xem lại kế hoạch)
 /ck:bootstrap <mô-tả-ý-tưởng>
 
-# Khởi tạo dự án mới (tự động hoàn toàn)
+# Khởi tạo dự án mới (tự động khi chọn rõ ràng)
 /ck:bootstrap --auto <ý-tưởng>
 
 # Chạy bộ test và báo cáo (không sửa lỗi)

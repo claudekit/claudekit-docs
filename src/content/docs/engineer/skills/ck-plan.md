@@ -20,8 +20,8 @@ Planning produces complete project blueprints: `plan.md` overview plus `phase-XX
 
 | Flag | Mode | Research | Red Team | Validation | Cook Flag |
 |------|------|----------|----------|------------|-----------|
-| `--auto` | Auto-detect | Follows mode | Follows mode | Follows mode | `--auto` |
-| `--fast` | Fast | Skip | Skip | Skip | `--auto` |
+| `--auto` | Auto-detect | Follows mode | Follows mode | Follows mode | Follows detected mode |
+| `--fast` | Fast | Skip | Skip | Skip | (none) |
 | `--hard` | Hard | 2 researchers | Yes | Optional | (none) |
 | `--deep` | Deep | 2-3 researchers + per-phase scout | Yes | Yes | (none) |
 | `--parallel` | Parallel | 2 researchers | Yes | Optional | `--parallel` |
@@ -61,7 +61,7 @@ Composable flags:
 ```
 Pre-Creation Check → Mode Detection → Research Phase
 → Codebase Analysis → Plan Documentation → Red Team Review
-→ Validation → Hydrate Tasks → Context Reminder
+→ Validation → Hydrate Tasks → Boundary reminder
 ```
 
 1. **Pre-Creation Check** — scan existing plans to avoid duplication
@@ -72,7 +72,7 @@ Pre-Creation Check → Mode Detection → Research Phase
 6. **Red Team Review** — adversarial critique of the plan (hard/deep/parallel/two)
 7. **Validation** — confirm plan is implementable
 8. **Hydrate Tasks** — create session-scoped tasks from phase todo items
-9. **Context Reminder** — remind active plan for downstream tools
+9. **Boundary reminder** — show the active plan path and optional implementation command without treating implementation as pre-approved
 
 ## Plan Output Structure
 

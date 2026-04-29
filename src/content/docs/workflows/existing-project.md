@@ -72,9 +72,9 @@ This command will:
 4. Automatic testing and code review included
 5. Summary report provided when finished
 
-**Autonomous variants** (use at your own risk):
-- `/ck:cook --auto` - Full autonomous mode with plan review
-- `/ck:cook --auto --fast` - Faster mode with less token consumption
+**Autonomous variants** (explicit opt-in):
+- `/ck:cook --auto` - Full autonomous mode when you explicitly want automation
+- `/ck:cook --auto --fast` - Faster mode with less token consumption when review gates are intentionally skipped
 
 ### Fix Bugs
 

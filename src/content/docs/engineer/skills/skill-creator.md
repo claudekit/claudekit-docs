@@ -92,7 +92,7 @@ Transform your workflow knowledge into reusable AI skills that Claude can activa
 
 - [/docs/engineer/skills/claude-code-skill](/docs/engineer/skills/skill-creator) - Create skills via CLI commands
 - [/docs/engineer/skills/ck-plan](/docs/engineer/skills/ck-plan) - Design complex workflows before building skills
-- [/docs/engineer/skills/mcp-management](/docs/engineer/skills/mcp-management) - Manage Model Context Protocol integrations
+- [/docs/engineer/skills/use-mcp](/docs/engineer/skills/use-mcp) - Manage Model Context Protocol integrations
 
 ## Key Takeaway
 

@@ -55,7 +55,6 @@ As of engineer@2.12.0, all 19 commands have been migrated to skills. The `/` sla
 | Skill | Purpose |
 |-------|---------|
 | [mcp-builder](/docs/engineer/skills/mcp-builder) | Create MCP servers (Python FastMCP / TypeScript) |
-| [mcp-management](/docs/engineer/skills/mcp-management) | Discover and execute MCP tools |
 | [skill-creator](/docs/engineer/skills/skill-creator) | Create custom skills for your projects |
 | [repomix](/docs/engineer/skills/repomix) | Pack repos into AI-friendly context files |
 | [document-skills](/docs/engineer/skills/document-skills) | PDF, DOCX, PPTX, XLSX processing |
@@ -67,7 +66,6 @@ As of engineer@2.12.0, all 19 commands have been migrated to skills. The `/` sla
 | [context-engineering](/docs/engineer/skills/context-engineering) | Monitor and optimize token consumption |
 | [gkg](/docs/engineer/skills/gkg) | GitLab Knowledge Graph semantic analysis |
 | [mintlify](/docs/engineer/skills/mintlify) | Build and deploy modern documentation sites with Mintlify |
-| [template-skill](/docs/engineer/skills/template-skill) | Baseline template for creating new skills |
 
 ### Process & Methodology
 
@@ -92,7 +90,6 @@ As of engineer@2.12.0, all 19 commands have been migrated to skills. The `/` sla
 | [coding-level](/docs/engineer/skills/coding-level) | Set coding experience level for tailored output |
 | [docs](/docs/engineer/skills/docs) | Manage project documentation (init, update, summarize) |
 | [journal](/docs/engineer/skills/journal) | Write development journal entries |
-| [kanban](/docs/engineer/skills/kanban) | Alias launcher for the plans dashboard |
 | [preview](/docs/engineer/skills/preview) | View files or generate visual explanations and diagrams |
 | [test](/docs/engineer/skills/test) | Run test suites, coverage analysis, build verification |
 | [use-mcp](/docs/engineer/skills/use-mcp) | Utilize MCP server tools |

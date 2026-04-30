@@ -443,7 +443,7 @@ Tải chúng trong giai đoạn phát triển phù hợp.
 
 Khi xây dựng MCP servers, bạn cũng có thể dùng:
 
-- [MCP Management](/vi/docs/engineer/skills/mcp-management) - Kiểm thử và tương tác với MCP server của bạn sau khi xây dựng
+- [Use MCP](/vi/docs/engineer/skills/use-mcp) - Kiểm thử và tương tác với MCP server của bạn sau khi xây dựng
 - [Backend Development](/vi/docs/engineer/skills/backend-development) - Nếu xây dựng công cụ API wrapper
 
 ## Nguyên Tắc Cốt Lõi

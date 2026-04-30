@@ -12,7 +12,7 @@ published: true
 
 ## TL;DR
 
-ClaudeKit delegates MCP (Model Context Protocol) servers to the dedicated **mcp-manager** subagent. This isolates heavy tool manifests away from the primary agent, keeping its context window lean while still enabling deep integrations.
+ClaudeKit routes MCP (Model Context Protocol) server usage through `/ck:use-mcp`. This keeps heavy tool manifests out of the primary agent until a task actually needs MCP access.
 
 ---
 
@@ -25,7 +25,7 @@ ClaudeKit delegates MCP (Model Context Protocol) servers to the dedicated **mcp-
 2. **Customize the MCP roster**
    - Remove the default sample servers: `context7`, `human-mcp`, `chrome-devtools`, `sequential-thinking`.
    - Add only the MCP servers you truly need to avoid unnecessary token use.
-3. **Save the configuration** so the subagent can bootstrap clients from `.claude/.mcp.json` on demand.
+3. **Save the configuration** so `/ck:use-mcp` can load clients from `.claude/.mcp.json` on demand.
 
 > 💡 Keep `.claude/.mcp.json` outside your main prompts so the core agent never loads server manifests unless explicitly requested.
 
@@ -33,7 +33,7 @@ ClaudeKit delegates MCP (Model Context Protocol) servers to the dedicated **mcp-
 
 ## Using MCP Tools
 
-Trigger the subagent-managed tools via the `/ck:use-mcp` command:
+Trigger configured tools via the `/ck:use-mcp` command:
 
 ```bash
 /ck:use-mcp <instruction>
@@ -45,7 +45,7 @@ Trigger the subagent-managed tools via the `/ck:use-mcp` command:
 /ck:use-mcp Use chrome-devtools mcp to capture a screenshot of google.com
 ```
 
-ClaudeKit will summon the **mcp-manager** subagent, load the configured MCP clients, analyze available tools, execute the best fit, and return the results to your primary chat.
+ClaudeKit loads the configured MCP clients, analyzes available tools, executes the best fit, and returns the results to your primary chat.
 
 ---
 
@@ -61,9 +61,9 @@ Anthropic's “Code Execution with MCP” pattern inspired a lightweight approac
 
 ### How It Works
 
-1. The **mcp-management** skill bundle stores script snippets that instantiate MCP clients from `.claude/.mcp.json`.
-2. The **mcp-manager** subagent is granted these skills and remains dormant until a `/ck:use-mcp` command fires.
-3. When invoked, the subagent:
+1. The **use-mcp** skill reads `.claude/.mcp.json` only when a task asks for MCP access.
+2. It can use an LLM-driven path for flexible tool selection or deterministic scripts for direct list/call workflows.
+3. When invoked, the skill:
    - Loads `.claude/.mcp.json`.
    - Connects to the declared MCP servers.
    - Enumerates available tools and selects the best option for the prompt.

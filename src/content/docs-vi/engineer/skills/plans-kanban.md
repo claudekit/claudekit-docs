@@ -44,7 +44,7 @@ Skill này tự động kích hoạt khi:
 
 Kích hoạt thủ công:
 ```bash
-/ck:kanban [thư-mục-plans]
+/ck:plans-kanban [thư-mục-plans]
 ```
 
 ## Bắt Đầu Nhanh
@@ -132,8 +132,8 @@ assets/
 
 | Route | Mô tả |
 |-------|-------|
-| `/` hoặc `/ck:kanban` | Chế độ dashboard cho thư mục mặc định |
-| `/ck:kanban?dir=<path>` | Dashboard cho thư mục cụ thể |
+| `/` hoặc `/ck:plans-kanban` | Chế độ dashboard cho thư mục mặc định |
+| `/ck:plans-kanban?dir=<path>` | Dashboard cho thư mục cụ thể |
 | `/api/plans` | JSON API cho dữ liệu plans |
 | `/api/plans?dir=<path>` | JSON API cho thư mục cụ thể |
 | `/assets/*` | Static assets (CSS, JS) |
@@ -238,7 +238,7 @@ curl http://localhost:3500/api/plans | jq '.plans[] | {title, status, progress}'
 
 ```bash
 # Khởi động dashboard cho sprint plans
-/ck:kanban plans/sprints/
+/ck:plans-kanban plans/sprints/
 
 # Truy cập từ điện thoại để kiểm tra tiến độ trong standup
 # Dùng networkUrl: http://192.168.1.100:3500/kanban?dir=plans/sprints
@@ -313,5 +313,5 @@ Dashboard hiển thị cả ba features cạnh nhau với progress bars và time
 
 ## Lệnh Liên Quan
 
-- `/ck:kanban` - Truy cập nhanh vào dashboard server
+- `/ck:plans-kanban` - Truy cập nhanh vào dashboard server
 - `/ck:preview` - Xem các file plan riêng lẻ (dùng Markdown Novel Viewer)

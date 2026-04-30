@@ -13,7 +13,7 @@ lang: vi
 
 ## Tóm tắt
 
-ClaudeKit chuyển việc quản lý các máy chủ MCP (Model Context Protocol) cho **mcp-manager** – một subagent chuyên trách. Cách làm này tách toàn bộ manifest của công cụ ra khỏi agent chính, giúp giữ context gọn nhẹ mà vẫn tận dụng được các tích hợp sâu.
+ClaudeKit định tuyến việc dùng máy chủ MCP (Model Context Protocol) qua `/ck:use-mcp`. Cách làm này giữ manifest công cụ ngoài agent chính cho đến khi tác vụ thật sự cần MCP.
 
 ---
 
@@ -26,7 +26,7 @@ ClaudeKit chuyển việc quản lý các máy chủ MCP (Model Context Protocol
 2. **Tùy biến danh sách MCP**
    - Xóa các máy chủ mẫu: `context7`, `human-mcp`, `chrome-devtools`, `sequential-thinking`.
    - Chỉ thêm những máy chủ MCP thực sự cần thiết để hạn chế tiêu tốn token.
-3. **Lưu tệp cấu hình** để subagent có thể khởi tạo MCP Client từ `.claude/.mcp.json` khi cần.
+3. **Lưu tệp cấu hình** để `/ck:use-mcp` có thể khởi tạo MCP Client từ `.claude/.mcp.json` khi cần.
 
 > 💡 Đặt `.claude/.mcp.json` ngoài nội dung prompt chính để agent cốt lõi không tải manifest MCP ngay từ đầu.
 
@@ -34,7 +34,7 @@ ClaudeKit chuyển việc quản lý các máy chủ MCP (Model Context Protocol
 
 ## Sử dụng công cụ MCP
 
-Kích hoạt các công cụ do subagent quản lý thông qua lệnh `/ck:use-mcp`:
+Kích hoạt các công cụ đã cấu hình thông qua lệnh `/ck:use-mcp`:
 
 ```bash
 /ck:use-mcp <chỉ-dẫn>
@@ -46,7 +46,7 @@ Kích hoạt các công cụ do subagent quản lý thông qua lệnh `/ck:use-m
 /ck:use-mcp Dùng chrome-devtools mcp để chụp ảnh màn hình google.com
 ```
 
-ClaudeKit sẽ gọi **mcp-manager**, nạp cấu hình MCP, phân tích các công cụ khả dụng, chọn phương án phù hợp nhất, thực thi và trả kết quả về phiên làm việc chính.
+ClaudeKit nạp cấu hình MCP, phân tích các công cụ khả dụng, chọn phương án phù hợp nhất, thực thi và trả kết quả về phiên làm việc chính.
 
 ---
 
@@ -62,9 +62,9 @@ Bài viết “Code Execution with MCP” của Anthropic gợi ý một hướn
 
 ### Cơ chế hoạt động
 
-1. Bộ kỹ năng **mcp-management** lưu các đoạn script khởi tạo MCP Client từ `.claude/.mcp.json`.
-2. Subagent **mcp-manager** được cấp các kỹ năng này và chỉ chạy khi có lệnh `/ck:use-mcp`.
-3. Khi được kích hoạt, subagent sẽ:
+1. Kỹ năng **use-mcp** chỉ đọc `.claude/.mcp.json` khi tác vụ yêu cầu truy cập MCP.
+2. Nó có thể dùng luồng LLM để chọn tool linh hoạt hoặc scripts xác định cho quy trình liệt kê/gọi tool trực tiếp.
+3. Khi được kích hoạt, kỹ năng sẽ:
    - Đọc `.claude/.mcp.json`.
    - Kết nối tới các máy chủ MCP đã khai báo.
    - Liệt kê công cụ, chọn phương án phù hợp với yêu cầu.

@@ -227,6 +227,40 @@ Installs items, merges hook settings, processes metadata deletions, and cleans u
 ### Phase 6: Summary
 Displays a destination-aware `WHERE / WHAT / NEXT` footer and offers rollback on partial failures.
 
+## Provider Notes
+
+### OpenCode
+
+`ck migrate --agent opencode` writes a **default model** to `opencode.json` so migrated agents resolve at invocation. The migration:
+
+1. Reads your authenticated providers from `~/.local/share/opencode/auth.json`.
+2. Picks a sensible default model from the [models.dev](https://models.dev) catalog. When **OpenCode Zen** (provider id `opencode`) is authenticated — the most common case — the migration prefers a free-tier model (`*-free`), sorted newest first.
+3. In interactive mode, you can accept the suggestion, type a custom `provider/model` string, or skip. In `--yes` / non-interactive mode, the suggestion is auto-accepted.
+4. If `opencode` is **not** authenticated (no `auth.json` or empty), `--yes` mode exits with a clear hint: `Run: opencode auth login`. The migration does NOT write a guessed default that would later fail.
+5. If your `opencode.json` already has a `model` field, the migration validates it against the live `models.dev` catalog. A valid existing model is preserved untouched. An **invalid** existing model (e.g. left over from an older release) triggers an interactive rewrite/keep prompt; in non-interactive mode, the invalid value is left in place with a loud warning so you can fix it manually.
+
+The catalog is fetched once per 24 hours and cached at `~/.config/claudekit/cache/models-dev.json`.
+
+#### Why the default isn't `anthropic/...` anymore
+
+Earlier releases hardcoded an Anthropic default (`anthropic/claude-sonnet-4-6`). For users authenticated only with OpenCode Zen (qwen, glm, kimi, etc.), that default triggered `ProviderModelNotFoundError` at sub-agent invocation because the user has no Anthropic provider configured. The migration now derives the default from your actual auth state instead of guessing.
+
+#### Override via `.ck.json`
+
+If you want to pin a specific default:
+
+```json
+{
+  "taxonomy": {
+    "opencode": {
+      "default": { "model": "opencode/glm-4.7-free" }
+    }
+  }
+}
+```
+
+This wins over auto-detection.
+
 ## Rollback on Failure
 
 If some items fail while others succeed, the command offers a rollback option:

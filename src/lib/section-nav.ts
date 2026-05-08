@@ -140,5 +140,5 @@ function normalizeSortLabel(value: string) {
 }
 
 function trimSkillPrefix(value: string) {
-  return value.replace(/^ckm?:/i, '').trim();
+  return value.replace(/^ckm?[:-]/i, '').trim();
 }

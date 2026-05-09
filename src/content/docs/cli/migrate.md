@@ -42,7 +42,7 @@ Before any write happens, `ck migrate` now renders:
 
 - A **source/destination intro panel** showing discovered Claude Code content and the target provider paths
 - A **pre-flight summary** with one row per portable type (`Agents`, `Skills`, `Commands`, `Config`, `Rules`, `Hooks`)
-- Inline scope notes such as `Codex: global-only` or `merge` when a provider does not map 1:1
+- Inline scope notes such as `merge` when a provider does not map 1:1
 
 After execution, the command ends with a boxed footer:
 
@@ -56,7 +56,7 @@ After execution, the command ends with a boxed footer:
 
 - **Default scope**: project-level
 - **Global scope**: pass `-g` or `--global`
-- **Provider quirks still apply**: for example, Codex commands remain global-only, so the command will clearly tell you when global output is forced for that provider/type
+- **Provider quirks still apply**: for example, Codex commands migrate as skills, so project scope writes `.agents/skills/source-command-*/SKILL.md` and global scope writes `~/.agents/skills/source-command-*/SKILL.md`
 
 If you are migrating in older Windows terminals, set `CK_FORCE_ASCII=1` to force the ASCII fallback border set.
 

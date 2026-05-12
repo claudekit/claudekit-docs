@@ -164,7 +164,7 @@ ck init -g --kit engineer --version v1.0.0
 
 **Where files are installed:**
 - **macOS/Linux**: `~/.claude/`
-- **Windows**: `%LOCALAPPDATA%\.claude\`
+- **Windows**: `%USERPROFILE%\.claude\`
 
 > ✅ **Tip:** Global mode is ideal for personal development. Install once, use everywhere.
 

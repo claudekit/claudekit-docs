@@ -166,7 +166,7 @@ ck init -g --kit engineer --version v1.0.0
 
 **Nơi files được cài đặt:**
 - **macOS/Linux**: `~/.claude/`
-- **Windows**: `%LOCALAPPDATA%\.claude\`
+- **Windows**: `%USERPROFILE%\.claude\`
 
 > ✅ **Mẹo:** Chế độ global lý tưởng cho phát triển cá nhân. Cài đặt một lần, sử dụng mọi nơi.
 

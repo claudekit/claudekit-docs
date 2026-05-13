@@ -72,6 +72,8 @@ The `ck migrate` command:
 6. **Merges** hook settings into provider-specific `settings.json`
 7. **Cleans up** stale registry entries and deprecated paths
 
+> **Generated hook cleanup (v4.3.0+):** `ck migrate` does not migrate ClaudeKit's generated session/subagent/usage context hooks by default. It also removes stale registrations and hook files for those generated hooks from existing migrated providers, including Codex and Claude Code, while preserving safety hooks such as privacy and scout blocking.
+
 ## Supported Providers
 
 Each column indicates how well `ck migrate` can transfer that content type to the target provider:

@@ -153,7 +153,14 @@ When creating a new project, choose from available kits:
 ClaudeKit supports two installation modes:
 
 - **Local** (default): Install to `.claude/` in your project directory
-- **Global**: Install to `~/.claude/` for user-level configuration
+- **Global**: Install to the Claude user directory for user-level configuration
+
+Global kit location:
+
+| Platform | Path |
+|----------|------|
+| macOS/Linux | `~/.claude/` |
+| Windows | `%USERPROFILE%\.claude\` |
 
 Use `ck init --global` for global installation, or `ck init` for local (project-specific) installation.
 

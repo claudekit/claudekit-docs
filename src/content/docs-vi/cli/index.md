@@ -153,7 +153,14 @@ Khi tạo một dự án mới, hãy chọn từ các kit có sẵn:
 ClaudeKit hỗ trợ hai chế độ cài đặt:
 
 - **Local** (default): Cài đặt vào `.claude/` trong thư mục dự án của bạn
-- **Global**: Cài đặt vào `~/.claude/` để cấu hình cấp người dùng
+- **Global**: Cài đặt vào thư mục Claude cấp người dùng
+
+Vị trí kit global:
+
+| Nền tảng | Đường dẫn |
+|----------|-----------|
+| macOS/Linux | `~/.claude/` |
+| Windows | `%USERPROFILE%\.claude\` |
 
 Sử dụng `ck init --global` để cài đặt toàn cầu, hoặc `ck init` để cài đặt cục bộ (dành riêng cho dự án).
 

@@ -10,13 +10,13 @@ published: true
 
 # Hooks
 
-Hooks allow you to extend Claude Code with custom scripts that run at specific points in the workflow. ClaudeKit Engineer (v2.12.0) includes pre-built hooks for session management, subagent coordination, file access control, developer rule enforcement, and notifications.
+Hooks allow you to extend Claude Code with custom scripts that run at specific points in the workflow. ClaudeKit Engineer includes pre-built hooks for file access control, naming guidance, simplification gates, statusline rendering, optional session context, and notifications.
 
 ## Overview
 
 Hooks are configured in `.claude/settings.json` and execute shell commands in response to Claude Code events.
 
-> **Always-on diagnostics (v2.11.0+):** All built-in hooks are wrapped in crash handlers that automatically capture errors and write them to `.claude/hooks/logs/`. Hook failures are logged but do not interrupt your session.
+> **Current default (v2.19.0+):** ClaudeKit installs only lightweight safety and workflow hooks by default. Generated session/subagent/usage context hooks are opt-in and are pruned from existing installs during `ck update` or `ck migrate`.
 
 ### Available Hook Events
 
@@ -38,24 +38,42 @@ Hooks are defined in `.claude/settings.json`:
 
 ```json
 {
+  "statusLine": {
+    "type": "command",
+    "command": "bash .claude/hooks/node-hook-runner.sh .claude/statusline.cjs",
+    "padding": 0
+  },
   "hooks": {
     "UserPromptSubmit": [
       {
         "hooks": [
           {
             "type": "command",
-            "command": "node .claude/hooks/dev-rules-reminder.cjs"
+            "command": "bash .claude/hooks/node-hook-runner.sh .claude/hooks/simplify-gate.cjs"
           }
         ]
       }
     ],
     "PreToolUse": [
       {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/hooks/node-hook-runner.sh .claude/hooks/descriptive-name.cjs"
+          }
+        ]
+      },
+      {
         "matcher": "Bash|Glob|Grep|Read|Edit|Write",
         "hooks": [
           {
             "type": "command",
-            "command": "node .claude/hooks/scout-block.cjs"
+            "command": "bash .claude/hooks/node-hook-runner.sh .claude/hooks/scout-block.cjs"
+          },
+          {
+            "type": "command",
+            "command": "bash .claude/hooks/node-hook-runner.sh .claude/hooks/privacy-block.cjs"
           }
         ]
       }
@@ -72,24 +90,27 @@ Hooks are defined in `.claude/settings.json`:
 
 ## Built-in Hooks
 
-ClaudeKit Engineer ships with hooks organized by event type. All hook files live in `.claude/hooks/`. Shared utilities are in `.claude/hooks/lib/`. Notification providers are in `.claude/hooks/notifications/`.
+ClaudeKit Engineer ships with hooks organized by event type. All default hook files live in `.claude/hooks/`. Shared utilities are in `.claude/hooks/lib/`. Notification providers are in `.claude/hooks/notifications/`.
 
 ### Summary Table
 
-| Hook File | Event | Purpose |
-|-----------|-------|---------|
-| `session-init.cjs` | `SessionStart` | Load config, detect project, persist env vars |
-| `subagent-init.cjs` | `SubagentStart` | Inject minimal context (~200 tokens) to subagents |
-| `team-context-inject.cjs` | `SubagentStart` | Inject peer info + task summary for Agent Team members |
-| `cook-after-plan-reminder.cjs` | `SubagentStop` (Plan) | Remind to invoke `/ck:cook --auto` after planning |
-| `dev-rules-reminder.cjs` | `UserPromptSubmit` | Inject session context, rules, modularization, Plan Context |
-| `usage-context-awareness.cjs` | `UserPromptSubmit` + `PostToolUse` | Fetch usage limits, write to cache (throttled) |
-| `descriptive-name.cjs` | `PreToolUse` (Write) | Inject file naming guidance: kebab-case, language conventions |
-| `scout-block.cjs` | `PreToolUse` (Bash/Glob/Grep/Read/Edit/Write) | Block access to `.ckignore`-listed directories |
-| `privacy-block.cjs` | `PreToolUse` (Bash/Glob/Grep/Read/Edit/Write) | Block sensitive files, require user approval |
-| `post-edit-simplify-reminder.cjs` | `PostToolUse` (Edit/Write/MultiEdit) | Remind about code-simplifier after 5+ edits |
-| `task-completed-handler.cjs` | `TaskCompleted` | Log completions, inject progress for Agent Team leads |
-| `teammate-idle-handler.cjs` | `TeammateIdle` | Inject available task context when team member goes idle |
+| Hook File | Default | Event | Purpose |
+|-----------|---------|-------|---------|
+| `simplify-gate.cjs` | Yes | `UserPromptSubmit` | Enforce simplification workflow rules when relevant |
+| `descriptive-name.cjs` | Yes | `PreToolUse` (Write) | Inject file naming guidance: kebab-case, language conventions |
+| `scout-block.cjs` | Yes | `PreToolUse` (Bash/Glob/Grep/Read/Edit/Write) | Block access to `.ckignore`-listed directories |
+| `privacy-block.cjs` | Yes | `PreToolUse` (Bash/Glob/Grep/Read/Edit/Write) | Block sensitive files, require user approval |
+| `session-init.cjs` | No | `SessionStart` | Load config, detect project, persist env vars |
+| `subagent-init.cjs` | No | `SubagentStart` | Inject minimal context to subagents |
+| `team-context-inject.cjs` | No | `SubagentStart` | Inject peer info + task summary for Agent Team members |
+| `cook-after-plan-reminder.cjs` | No | `SubagentStop` (Plan) | Print user-choice guidance after planning |
+| `dev-rules-reminder.cjs` | No | `UserPromptSubmit` | Inject session context, rules, modularization, Plan Context |
+| `usage-context-awareness.cjs` | No | `UserPromptSubmit` + `PostToolUse` | Fetch usage limits, write to cache |
+| `post-edit-simplify-reminder.cjs` | No | `PostToolUse` (Edit/Write/MultiEdit) | Remind about code-simplifier after repeated edits |
+| `task-completed-handler.cjs` | No | `TaskCompleted` | Log completions, inject progress for Agent Team leads |
+| `teammate-idle-handler.cjs` | No | `TeammateIdle` | Inject available task context when team member goes idle |
+
+The hooks marked `No` are no longer installed by default because they generate context on session, prompt, subagent, or tool events. Existing installations are cleaned up idempotently by the CLI during update and migration.
 
 ---
 

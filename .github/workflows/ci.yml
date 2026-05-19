@@ -85,11 +85,14 @@ jobs:
       # of ../agentkit (which would resolve to the parent directory and fail).
       # See: https://github.com/actions/checkout/issues/197
       - name: Checkout agentkit
+        # continue-on-error: agentkit may be private / inaccessible from
+        # PR-scoped GITHUB_TOKEN. Parity check is warn-mode anyway; missing
+        # .agentkit dir already emits ::warning:: via check-skill-parity.ts.
+        continue-on-error: true
         uses: actions/checkout@v4
         with:
           repository: bestagentkits/agentkit
           path: .agentkit
-          # Use default branch; no token needed for public repo
           fetch-depth: 1
 
       - uses: oven-sh/setup-bun@v2

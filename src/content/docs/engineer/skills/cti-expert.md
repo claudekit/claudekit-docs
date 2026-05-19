@@ -5,7 +5,12 @@ section: engineer
 kit: engineer
 category: skills
 order: 25
+published: true
 ---
+
+:::caution[Deprecated]
+`cti-expert` has been archived from AgentKit and is no longer included in new ClaudeKit installations. This page is kept for historical reference. There is no direct replacement — use `/ck:brainstorm` for threat modeling discussions or `/ck:ck-security` for security audits.
+:::
 
 # CTI Expert
 

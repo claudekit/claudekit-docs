@@ -18,16 +18,17 @@ Commands not working? Get them running in minutes with these step-by-step fixes.
 
 ```bash
 # 1. Verify .claude directory exists
-ls -la .claude/
+ls -la ~/.claude/    # global install
+ls -la .claude/      # local project install
 
-# 2. Check commands directory
-ls .claude/commands/
+# 2. Check skills directory
+ls ~/.claude/skills/
 
-# 3. Verify specific command file
-cat .claude/commands/core/cook.md
+# 3. Verify a specific skill file exists
+ls ~/.claude/skills/cook/
 
 # If files missing, reinitialize ClaudeKit
-ck init --kit engineer
+ck init -g --kit engineer
 ```
 
 ---
@@ -52,56 +53,57 @@ claude --version
 **Step 2: Check .claude directory structure**
 
 ```bash
+# Global install (recommended)
 # Should show:
-# .claude/
+# ~/.claude/
 # ├── agents/
-# ├── commands/
 # ├── skills/
-# └── workflows/
+# └── .ck.json
 
-tree .claude -L 2
+tree ~/.claude -L 2
 
 # Or without tree command
-ls -R .claude/
+ls ~/.claude/
+ls ~/.claude/skills/
 ```
 
-**Step 3: Verify command files exist**
+**Step 3: Verify skill files exist**
 
 ```bash
-# List all commands
-find .claude/commands -name "*.md"
+# List all installed skills
+ls ~/.claude/skills/
 
-# Should show files like:
-# .claude/commands/core/cook.md
-# .claude/commands/core/plan.md
-# .claude/commands/fix/fast.md
-# etc.
+# Should show directories like:
+# cook/  fix/  brainstorm/  test/  scout/ ...
+
+# Verify a specific skill
+ls ~/.claude/skills/cook/
+# Should show: SKILL.md
 ```
 
-**Step 4: Check command file format**
+**Step 4: Check skill file format**
 
 ```bash
-# View command file
-cat .claude/commands/core/cook.md
+# View skill file
+cat ~/.claude/skills/cook/SKILL.md
 
 # Must have frontmatter:
 # ---
-# name: cook
-# description: Implement a feature step by step
+# name: ck:cook
+# description: Implement features...
 # ---
 ```
 
 **Expected structure**:
 ```markdown
 ---
-name: cook
-description: Implement a feature step by step
-model: gemini-2.5-flash-agent
+name: ck:cook
+description: Implement features, plans, and fixes with structured workflow
+category: utilities
 ---
 
-# Cook Command
-
-Detailed implementation instructions...
+# Cook - Smart Feature Implementation
+...
 ```
 
 ---
@@ -175,14 +177,16 @@ See [API Key Setup](/docs/support/troubleshooting/api-key-setup) for complete co
 **Solution**:
 
 ```bash
-# Check command syntax in file
-cat .claude/commands/core/cook.md
-
-# Use correct format:
+# Use correct format — natural language after skill name:
 /ck:cook implement feature name
 
-# NOT:
-/ck:cook --implement feature
+# Flags use -- prefix:
+/ck:fix --auto
+/ck:cook "add auth" --fast
+
+# NOT colon-separated flags (old syntax):
+# /ck:fix:auto  ❌  (wrong)
+# /ck:fix --auto  ✓  (correct)
 ```
 
 #### Agent Not Available
@@ -193,7 +197,8 @@ cat .claude/commands/core/cook.md
 
 ```bash
 # Check agents directory
-ls .claude/agents/
+ls ~/.claude/agents/    # global
+ls .claude/agents/      # local
 
 # Should show:
 # planner.md
@@ -202,10 +207,10 @@ ls .claude/agents/
 # etc.
 
 # Verify agent file
-cat .claude/agents/planner.md
+cat ~/.claude/agents/planner.md
 
 # Reinitialize if missing
-ck init --kit engineer
+ck init -g --kit engineer
 ```
 
 See [Agent Issues](/docs/support/troubleshooting/agent-issues) for agent-specific problems.
@@ -216,13 +221,13 @@ See [Agent Issues](/docs/support/troubleshooting/agent-issues) for agent-specifi
 
 ### Invalid Frontmatter
 
-**Symptom**: Command file exists but command doesn't load
+**Symptom**: Skill file exists but skill doesn't load
 
 **Problem**: Frontmatter syntax errors
 
 ```bash
 # Check frontmatter format
-head -n 10 .claude/commands/core/cook.md
+head -n 10 ~/.claude/skills/cook/SKILL.md
 ```
 
 ✅ **Correct format**:
@@ -260,26 +265,23 @@ description: Implement a feature
 3. Use correct YAML syntax
 4. Include closing `---`
 
-### Command Name Conflicts
+### Skill Name Conflicts
 
-**Symptom**: Custom command doesn't work, core command runs instead
+**Symptom**: Custom skill doesn't work, core skill runs instead
 
-**Problem**: Duplicate command names
+**Problem**: Duplicate skill names
 
 **Solution**:
 
 ```bash
 # Find duplicates
-find .claude/commands -name "*.md" -exec grep -l "^name: cook$" {} \;
+find ~/.claude/skills -name "SKILL.md" -exec grep -l "^name: ck:cook$" {} \;
 
 # Should show only one file
 
-# If duplicates exist, rename custom command
-# Change name in frontmatter
----
-name: cook-custom
-description: My custom cook implementation
----
+# If duplicates exist, rename your custom skill
+# Change name in frontmatter to a unique value:
+# name: ck:cook-custom
 ```
 
 ---
@@ -303,23 +305,23 @@ ck init --kit engineer
 tree .claude -L 2
 ```
 
-### Corrupted Command Files
+### Corrupted Skill Files
 
-**Symptom**: Commands worked before, now fail with parse errors
+**Symptom**: Skills worked before, now fail with parse errors
 
 **Solution**:
 
-ClaudeKit now creates an automatic recovery backup under `~/.claudekit/backups/` before destructive refresh or uninstall flows. Keep the manual copy below if you want your own explicit backup as well.
+ClaudeKit creates an automatic recovery backup under `~/.claudekit/backups/` before destructive refresh or uninstall flows. Keep the manual copy below for your own explicit backup as well.
 
 ```bash
-# Backup current .claude
-cp -r .claude .claude.backup
+# Backup current .claude (global)
+cp -r ~/.claude ~/.claude.backup
 
-# Update to fresh version
-ck init --kit engineer
+# Re-install to fresh version
+ck init -g --kit engineer
 
-# Restore custom files if needed
-cp .claude.backup/commands/my-custom.md .claude/commands/
+# Restore custom skills if needed
+cp -r ~/.claude.backup/skills/my-custom-skill ~/.claude/skills/
 
 # Verify
 /ck:cook test command
@@ -348,48 +350,49 @@ icacls .claude /grant Everyone:F /T
 
 ### Required Files
 
-ClaudeKit requires this structure:
+ClaudeKit (global install) requires this structure:
 
 ```
-.claude/
+~/.claude/
 ├── agents/          # AI agent definitions
 │   ├── planner.md
 │   ├── researcher.md
 │   ├── code-reviewer.md
 │   └── ...
-├── commands/        # Slash commands
-│   ├── core/
-│   │   ├── cook.md
-│   │   ├── plan.md
-│   │   └── ...
+├── skills/          # Installed skills (from AgentKit kits)
+│   ├── cook/
+│   │   └── SKILL.md
 │   ├── fix/
-│   ├── git/
+│   │   └── SKILL.md
+│   ├── brainstorm/
+│   │   └── SKILL.md
 │   └── ...
-├── skills/          # Specialized skills
-├── workflows/       # Workflow definitions
-CLAUDE.md           # Configuration
-.mcp.json           # MCP server config [DEPRECATED]
+├── .ck.json         # ClaudeKit configuration
+├── .ckignore        # Paths excluded from LLM context
+└── settings.json    # Claude Code hook settings
 ```
+
+> **Note:** There is no `commands/` directory in current AgentKit installations. Skills replaced commands as of engineer@2.12.0.
 
 ### Validate Structure
 
 ```bash
-# Check all required directories
-for dir in agents commands skills workflows; do
-  if [ -d ".claude/$dir" ]; then
-    echo "✅ .claude/$dir exists"
+# Check all required directories (global)
+for dir in agents skills; do
+  if [ -d "$HOME/.claude/$dir" ]; then
+    echo "✅ ~/.claude/$dir exists"
   else
-    echo "❌ .claude/$dir missing"
+    echo "❌ ~/.claude/$dir missing — run: ck init -g --kit engineer"
   fi
 done
 
-# Count command files
-find .claude/commands -name "*.md" | wc -l
-# Should show 30+
+# Count skill directories
+ls ~/.claude/skills/ | wc -l
+# Should show 50+
 
 # Count agent files
-find .claude/agents -name "*.md" | wc -l
-# Should show 12+
+find ~/.claude/agents -name "*.md" | wc -l
+# Should show 5+
 ```
 
 ---
@@ -414,10 +417,10 @@ cat ~/.claudekit/logs/latest.log
 
 ```bash
 # Test agent directly
-cat .claude/agents/planner.md
+cat ~/.claude/agents/planner.md
 
-# Test command parsing
-head -n 20 .claude/commands/core/cook.md
+# Test skill file
+head -n 20 ~/.claude/skills/cook/SKILL.md
 
 # Test Claude Code
 claude --version
@@ -445,14 +448,14 @@ echo ".claude exists: $([ -d .claude ] && echo yes || echo no)"
 ### Reset ClaudeKit
 
 ```bash
-# Backup custom files
-cp -r .claude .claude.backup
+# Backup custom files (global install)
+cp -r ~/.claude ~/.claude.backup
 
 # Update to latest
-ck init --kit engineer
+ck init -g --kit engineer
 
-# Restore custom commands
-cp .claude.backup/commands/my-custom.md .claude/commands/
+# Restore custom skills
+cp -r ~/.claude.backup/skills/my-custom-skill ~/.claude/skills/
 
 # Test
 /ck:cook hello world

@@ -242,4 +242,4 @@ For detailed guidance on specific capabilities, the skill includes comprehensive
 - `references/video-generation.md` - Veo 3 text-to-video, camera control, timing
 - `references/music-generation.md` - Lyria API for background music generation
 
-These references live in the Engineer Kit at `../claudekit-engineer/.claude/skills/ai-multimodal/references/`.
+These references are installed with the skill at `~/.claude/skills/ai-multimodal/references/` (global install) or `.claude/skills/ai-multimodal/references/` (local install).

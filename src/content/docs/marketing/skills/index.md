@@ -98,10 +98,11 @@ Skills automatically activate based on task context - no explicit command needed
 
 ## Configuration
 
-Skills store configuration in user's project directory:
+Skills are installed to `~/.claude/skills/` (global) or `.claude/skills/` (local project):
 
 ```
-.claude/skills/{skill-name}/
+~/.claude/skills/{skill-name}/     # global install (recommended)
+.claude/skills/{skill-name}/       # local project install
 ├── SKILL.md              # Skill definition
 ├── references/           # Knowledge base
 ├── scripts/              # Automation scripts
@@ -152,7 +153,7 @@ Use natural language to explicitly activate: "Activate {skill-name} skill for th
 Check skill doc's "Prerequisites" section for required keys.
 
 **Script not found?**
-Verify skill installed: `ls .claude/skills/{skill-name}/scripts/`
+Verify skill installed: `ls ~/.claude/skills/{skill-name}/scripts/` (global) or `ls .claude/skills/{skill-name}/scripts/` (local)
 
 **Reference not loading?**
-Skills use progressive disclosure. Load references manually when needed: `Read .claude/skills/{skill-name}/references/{file}.md`
+Skills use progressive disclosure. Load references manually when needed: `Read ~/.claude/skills/{skill-name}/references/{file}.md`

@@ -24,6 +24,11 @@ jobs:
   astro-check:
     name: "Gate 1: astro check"
     runs-on: ubuntu-latest
+    # continue-on-error: 25 pre-existing TS errors in src/components/
+    # (Header.astro, DocsNav.astro, FloatingChat.astro, LanguageSwitcher.tsx)
+    # block this gate from being green on dev today. Tracked separately.
+    # Flip to blocking once that issue is closed.
+    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
         with:

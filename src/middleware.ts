@@ -1,3 +1,20 @@
+/**
+ * DEAD CODE IN STATIC MODE
+ *
+ * This middleware is intentionally kept for documentation and future SSR use.
+ * In the current deployment (output: 'static' in astro.config.mjs), Astro does
+ * NOT execute middleware at runtime — it is server-side only. All production
+ * redirects are defined in astro.config.mjs under the `redirects:` key.
+ *
+ * The wildcard prefix rules below document the INTENDED redirect behavior for
+ * path prefixes. They cannot be expressed in Astro static redirects, which only
+ * support exact-path entries. If a CDN/edge layer (e.g. Cloudflare Pages with
+ * _redirects, or Vercel rewrites) is added in front of the static output, this
+ * file serves as the specification for those rules.
+ *
+ * DO NOT DELETE: preserves redirect intent for SSR migration or CDN config.
+ * See: claudekit/claudekit-docs#166 (wildcard gap tracking)
+ */
 import { defineMiddleware } from 'astro:middleware';
 
 // URL redirect mapping for old paths → new paths

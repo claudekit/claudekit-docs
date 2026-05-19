@@ -9,6 +9,8 @@ import { mkdirSync, writeFileSync, rmSync } from 'fs';
 import { join } from 'path';
 import {
   extractUrlsFromSitemap,
+  extractChildSitemapLocs,
+  collectAllSitemapUrls,
   urlToDistPath,
   checkSitemapCoverage,
 } from '../scripts/check-sitemap-coverage';
@@ -68,6 +70,107 @@ describe('extractUrlsFromSitemap', () => {
     const xml = `<urlset><url><loc>https://example.com/page</loc></url></urlset>`;
     const urls = extractUrlsFromSitemap(xml);
     expect(urls).toContain('https://example.com/page');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Unit tests — extractChildSitemapLocs
+// ---------------------------------------------------------------------------
+
+describe('extractChildSitemapLocs', () => {
+  test('extracts child sitemap file names from a sitemap index XML', () => {
+    const indexXml = `<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap><loc>https://docs.claudekit.cc/sitemap-0.xml</loc></sitemap>
+  <sitemap><loc>https://docs.claudekit.cc/sitemap-1.xml</loc></sitemap>
+</sitemapindex>`;
+    const childFiles = extractChildSitemapLocs(indexXml);
+    expect(childFiles).toEqual(['sitemap-0.xml', 'sitemap-1.xml']);
+  });
+
+  test('returns empty array for empty sitemap index', () => {
+    const indexXml = `<?xml version="1.0"?><sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></sitemapindex>`;
+    expect(extractChildSitemapLocs(indexXml)).toEqual([]);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Integration tests — collectAllSitemapUrls
+// ---------------------------------------------------------------------------
+
+describe('collectAllSitemapUrls', () => {
+  const siteUrl = 'https://docs.claudekit.cc';
+
+  test('reads sitemap-index.xml and follows child sitemaps', () => {
+    const distDir = join(TMP, 'dist_index');
+    rmSync(distDir, { recursive: true, force: true });
+    mkdirSync(distDir, { recursive: true });
+
+    // Shard 0
+    writeFileSync(join(distDir, 'sitemap-0.xml'), `<urlset>
+<url><loc>${siteUrl}/</loc></url>
+<url><loc>${siteUrl}/docs/getting-started</loc></url>
+</urlset>`);
+    // Shard 1
+    writeFileSync(join(distDir, 'sitemap-1.xml'), `<urlset>
+<url><loc>${siteUrl}/docs/engineer</loc></url>
+</urlset>`);
+    // Index
+    writeFileSync(join(distDir, 'sitemap-index.xml'), `<sitemapindex>
+<sitemap><loc>${siteUrl}/sitemap-0.xml</loc></sitemap>
+<sitemap><loc>${siteUrl}/sitemap-1.xml</loc></sitemap>
+</sitemapindex>`);
+
+    const urls = collectAllSitemapUrls(distDir);
+    expect(urls).toContain(`${siteUrl}/`);
+    expect(urls).toContain(`${siteUrl}/docs/getting-started`);
+    expect(urls).toContain(`${siteUrl}/docs/engineer`);
+    expect(urls).toHaveLength(3);
+  });
+
+  test('falls back to sitemap-0.xml when no sitemap-index.xml exists', () => {
+    const distDir = join(TMP, 'dist_fallback');
+    rmSync(distDir, { recursive: true, force: true });
+    mkdirSync(distDir, { recursive: true });
+
+    writeFileSync(join(distDir, 'sitemap-0.xml'), `<urlset>
+<url><loc>${siteUrl}/</loc></url>
+<url><loc>${siteUrl}/docs/cli</loc></url>
+</urlset>`);
+
+    const urls = collectAllSitemapUrls(distDir);
+    expect(urls).toContain(`${siteUrl}/`);
+    expect(urls).toContain(`${siteUrl}/docs/cli`);
+    expect(urls).toHaveLength(2);
+  });
+
+  test('deduplicates URLs that appear in multiple shards', () => {
+    const distDir = join(TMP, 'dist_dedup');
+    rmSync(distDir, { recursive: true, force: true });
+    mkdirSync(distDir, { recursive: true });
+
+    writeFileSync(join(distDir, 'sitemap-0.xml'), `<urlset>
+<url><loc>${siteUrl}/docs/page</loc></url>
+</urlset>`);
+    writeFileSync(join(distDir, 'sitemap-1.xml'), `<urlset>
+<url><loc>${siteUrl}/docs/page</loc></url>
+</urlset>`);
+    writeFileSync(join(distDir, 'sitemap-index.xml'), `<sitemapindex>
+<sitemap><loc>${siteUrl}/sitemap-0.xml</loc></sitemap>
+<sitemap><loc>${siteUrl}/sitemap-1.xml</loc></sitemap>
+</sitemapindex>`);
+
+    const urls = collectAllSitemapUrls(distDir);
+    expect(urls).toHaveLength(1);
+  });
+
+  test('returns empty array when no sitemap files exist', () => {
+    const distDir = join(TMP, 'dist_empty');
+    rmSync(distDir, { recursive: true, force: true });
+    mkdirSync(distDir, { recursive: true });
+
+    const urls = collectAllSitemapUrls(distDir);
+    expect(urls).toHaveLength(0);
   });
 });
 

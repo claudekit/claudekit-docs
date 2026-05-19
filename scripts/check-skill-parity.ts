@@ -129,8 +129,47 @@ export function computeParityDelta(
 // Multi-kit runner
 // ---------------------------------------------------------------------------
 
-const SUPPORTED_KITS = ['engineer', 'marketing'] as const;
-type Kit = (typeof SUPPORTED_KITS)[number];
+/**
+ * Fallback kit list used when --kit all is requested but the agentkit directory
+ * is not yet available at parse time (the dir check happens after arg parsing).
+ * The dynamic discovery in discoverKits() overrides this at runtime.
+ */
+const FALLBACK_KITS = ['engineer', 'marketing'] as const;
+
+/**
+ * Discover the list of kits from agentkit/kits/<name> directories.
+ * Returns kit names whose directory exists and is readable.
+ * Falls back to FALLBACK_KITS if the kits directory is missing or empty.
+ *
+ * M6: reading dynamically ensures the gate automatically picks up new kits
+ * (e.g. kits/core/) without requiring a code change.
+ */
+export function discoverKits(agentKitDir: string): string[] {
+  const kitsDir = join(agentKitDir, 'kits');
+
+  if (!existsSync(kitsDir)) {
+    return [...FALLBACK_KITS];
+  }
+
+  try {
+    const entries = readdirSync(kitsDir);
+    const kits = entries.filter(entry => {
+      if (entry.startsWith('_') || entry.startsWith('.')) return false;
+      const entryPath = join(kitsDir, entry);
+      return statSync(entryPath).isDirectory();
+    });
+
+    if (kits.length === 0) {
+      return [...FALLBACK_KITS];
+    }
+
+    return kits.sort();
+  } catch {
+    return [...FALLBACK_KITS];
+  }
+}
+
+type Kit = string;
 
 interface KitResult {
   kit: Kit;
@@ -159,13 +198,13 @@ function checkKit(kit: Kit, agentKitDir: string, docsContentDir: string): KitRes
 function parseArgs(args: string[]): {
   agentKitDir: string;
   docsContentDir: string;
-  kits: Kit[];
+  kitArg: string | 'all';
   mode: 'warn' | 'fail';
 } {
   const cwd = process.cwd();
   let agentKitDir = resolve(cwd, '../agentkit');
   let docsContentDir = join(cwd, 'src', 'content', 'docs');
-  let kits: Kit[] = [...SUPPORTED_KITS];
+  let kitArg: string | 'all' = 'all';
   let mode: 'warn' | 'fail' = 'warn';
 
   for (let i = 0; i < args.length; i++) {
@@ -178,8 +217,7 @@ function parseArgs(args: string[]): {
       docsContentDir = val.startsWith('/') ? val : join(cwd, val);
       i++;
     } else if (args[i] === '--kit' && args[i + 1]) {
-      const val = args[i + 1] as Kit | 'all';
-      kits = val === 'all' ? [...SUPPORTED_KITS] : [val as Kit];
+      kitArg = args[i + 1];
       i++;
     } else if (args[i] === '--mode' && args[i + 1]) {
       const val = args[i + 1];
@@ -188,17 +226,33 @@ function parseArgs(args: string[]): {
     }
   }
 
-  return { agentKitDir, docsContentDir, kits, mode };
+  return { agentKitDir, docsContentDir, kitArg, mode };
 }
 
 if (import.meta.main) {
-  const { agentKitDir, docsContentDir, kits, mode } = parseArgs(process.argv.slice(2));
+  const { agentKitDir, docsContentDir, kitArg, mode } = parseArgs(process.argv.slice(2));
 
   if (!existsSync(agentKitDir)) {
-    console.error(`[X] agentkit directory not found: ${agentKitDir}`);
-    console.error('    Pass --agentkit <path> or clone agentkit as a sibling directory.');
-    process.exit(mode === 'fail' ? 1 : 0);
+    if (mode === 'fail') {
+      console.error(`[X] agentkit directory not found: ${agentKitDir}`);
+      console.error('    Pass --agentkit <path> or clone agentkit as a sibling directory.');
+      process.exit(1);
+    } else {
+      // M5: emit a GitHub Actions warning annotation so the PR check UI surfaces
+      // the missing-dir condition even though we exit 0 (warn mode).
+      // ::warning:: is a workflow command understood by the Actions runner.
+      console.log(`::warning::skill-parity gate skipped — agentkit not found at ${agentKitDir}. Checkout may have failed or landed at an unexpected path.`);
+      console.log('[!] Parity check skipped (warn mode) — agentkit directory missing.');
+      process.exit(0);
+    }
   }
+
+  // M6: resolve kit list dynamically from agentkit/kits/* (falls back to
+  // FALLBACK_KITS if the dir is unreadable). A specific --kit value bypasses discovery.
+  const kits: Kit[] =
+    kitArg === 'all' ? discoverKits(agentKitDir) : [kitArg];
+
+  console.log(`[i] Checking kits: ${kits.join(', ')}`);
 
   const results: KitResult[] = kits.map(kit =>
     checkKit(kit, agentKitDir, docsContentDir)

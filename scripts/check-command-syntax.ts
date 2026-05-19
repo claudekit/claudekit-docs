@@ -49,17 +49,28 @@ export interface ColonSyntaxViolation {
  *
  * Both patterns exclude:
  *   - URLs (preceded by "://")
- *   - Markdown link targets (preceded by "(")
+ *   - Markdown link targets (preceded by "(" or "./")
+ *   - HTML <code> inline spans (detected via per-line strip before matching)
  *   - Content inside fenced code blocks (stripped before scanning)
+ *   - Content inside 4-space indented code blocks (stripped before scanning)
+ *   - Lines preceded by <!-- ck-syntax-ignore-next --> (escape hatch)
  */
+// Negative lookbehind exclusions (applied left-to-right — each char checked is
+// the single char immediately before the `/` that starts the command):
+//   (?<!:)   — excludes URLs like https://... (char before / is ':' in '://')
+//   (?<!()   — excludes markdown link targets [text](/path)
+//   (?<!.)   — excludes relative link targets [text](./path) — '.' immediately before '/'
 const DOUBLE_COLON_PATTERN =
-  /(?<!:\/\/)(?<!\()\/[a-z][a-z0-9-]*:[a-z][a-z0-9-]+(:[a-z][a-z0-9-]+)+(?![:/])/g;
+  /(?<!:)(?<!\()(?<!\.)\/[a-z][a-z0-9-]*:[a-z][a-z0-9-]+(:[a-z][a-z0-9-]+)+(?![:/])/g;
 
 // Valid kit prefixes — single-colon invocations with these prefixes are correct syntax
 const VALID_PREFIXES_RE = /^\/(?:ck|ckm):/;
 
 const NONSTANDARD_PREFIX_PATTERN =
-  /(?<!:\/\/)(?<!\()\/([a-z][a-z0-9-]*):[a-z][a-z0-9-]+(?!:[a-z])/g;
+  /(?<!:)(?<!\()(?<!\.)\/([a-z][a-z0-9-]*):[a-z][a-z0-9-]+(?!:[a-z])/g;
+
+/** Matches a <!-- ck-syntax-ignore-next --> HTML comment (whole line). */
+const IGNORE_NEXT_COMMENT = /<!--\s*ck-syntax-ignore-next\s*-->/;
 
 /**
  * Strip fenced code blocks (``` ... ```) from content.
@@ -71,6 +82,31 @@ function stripFencedCodeBlocks(content: string): string {
     const lineCount = (match.match(/\n/g) || []).length;
     return '\n'.repeat(lineCount);
   });
+}
+
+/**
+ * Strip 4-space-indented code blocks from content (Markdown spec §4.4).
+ * A line is an indented code block line when:
+ *   - it has 4+ leading spaces, AND
+ *   - the preceding non-blank line was also blank or also an indented code line.
+ * We replace such lines with blank lines to preserve line numbers.
+ *
+ * Simplified heuristic: any line whose first 4 characters are spaces is
+ * treated as a code block line and blanked, consistent with how most static
+ * site generators handle them.
+ */
+function stripIndentedCodeBlocks(content: string): string {
+  return content.replace(/^    .*/gm, () => '');
+}
+
+/**
+ * Strip HTML <code>…</code> spans from a single line.
+ * Replaces the inner content with spaces to preserve column positions for
+ * any surrounding text, but removes the potential violation inside the tags.
+ */
+function stripHtmlCodeSpans(line: string): string {
+  // Replace <code>...</code> contents with spaces of equal length
+  return line.replace(/<code>[^<]*<\/code>/g, (match) => ' '.repeat(match.length));
 }
 
 /**
@@ -96,13 +132,20 @@ export function findColonSyntaxViolations(
 ): ColonSyntaxViolation[] {
   const violations: ColonSyntaxViolation[] = [];
 
-  // Strip front matter and fenced code blocks before scanning
-  const stripped = stripFencedCodeBlocks(stripFrontMatter(content));
+  // Strip front matter, fenced code blocks, and 4-space indented code blocks
+  const stripped = stripIndentedCodeBlocks(stripFencedCodeBlocks(stripFrontMatter(content)));
 
   const lines = stripped.split('\n');
 
   for (let lineIdx = 0; lineIdx < lines.length; lineIdx++) {
-    const rawLine = lines[lineIdx];
+    // M3: skip lines preceded by <!-- ck-syntax-ignore-next -->
+    if (lineIdx > 0 && IGNORE_NEXT_COMMENT.test(lines[lineIdx - 1])) {
+      continue;
+    }
+
+    // M2: strip HTML <code> spans before matching (preserves column positions
+    // for surrounding text but removes false-positive colon patterns inside tags)
+    const rawLine = stripHtmlCodeSpans(lines[lineIdx]);
 
     // Track col positions already reported to avoid double-counting when both
     // patterns match the same token (e.g. /plan:hard:deep matches both).

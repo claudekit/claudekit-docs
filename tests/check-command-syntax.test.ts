@@ -132,4 +132,69 @@ describe('findColonSyntaxViolations', () => {
     expect(violations).toHaveLength(1);
     expect(violations[0].match).toBe('/plan:hard');
   });
+
+  // M1: 4-space indented code block should be exempt
+  test('does NOT flag content in 4-space indented code block', () => {
+    const content = [
+      'Example usage:',
+      '',
+      '    /ckm:write:blog "My Post"',
+    ].join('\n');
+    const violations = findColonSyntaxViolations('test.md', content);
+    expect(violations).toHaveLength(0);
+  });
+
+  test('flags violation on non-indented line adjacent to indented block', () => {
+    const content = [
+      '    /ckm:write:blog is exempt here',
+      '/ckm:write:blog is NOT exempt here',
+    ].join('\n');
+    const violations = findColonSyntaxViolations('test.md', content);
+    expect(violations).toHaveLength(1);
+    expect(violations[0].line).toBe(2);
+  });
+
+  // M2: markdown link target [text](./path:thing) should not be flagged
+  test('does NOT flag colon patterns inside markdown link targets', () => {
+    const content = 'See [blog post](./ck:fix:auto) for more.';
+    const violations = findColonSyntaxViolations('test.md', content);
+    expect(violations).toHaveLength(0);
+  });
+
+  // M2: HTML <code> inline should not be flagged
+  test('does NOT flag colon patterns inside HTML code tags', () => {
+    const content = 'Old syntax was <code>/ck:fix:auto</code>.';
+    const violations = findColonSyntaxViolations('test.md', content);
+    expect(violations).toHaveLength(0);
+  });
+
+  // M3: comment-based opt-out escape hatch
+  test('does NOT flag line after <!-- ck-syntax-ignore-next --> comment', () => {
+    const content = [
+      '<!-- ck-syntax-ignore-next -->',
+      '/ckm:write:blog',
+    ].join('\n');
+    const violations = findColonSyntaxViolations('test.md', content);
+    expect(violations).toHaveLength(0);
+  });
+
+  test('flags normally on lines NOT preceded by ignore comment', () => {
+    const content = [
+      'Normal line.',
+      '/ckm:write:blog',
+    ].join('\n');
+    const violations = findColonSyntaxViolations('test.md', content);
+    expect(violations).toHaveLength(1);
+  });
+
+  test('ignore comment only suppresses the immediately following line', () => {
+    const content = [
+      '<!-- ck-syntax-ignore-next -->',
+      '/ckm:write:blog is suppressed',
+      '/ckm:youtube:social is NOT suppressed',
+    ].join('\n');
+    const violations = findColonSyntaxViolations('test.md', content);
+    expect(violations).toHaveLength(1);
+    expect(violations[0].line).toBe(3);
+  });
 });

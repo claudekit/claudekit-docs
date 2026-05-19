@@ -7,6 +7,12 @@ on:
   push:
     branches: [dev]
 
+# Cancel in-progress runs for the same ref when a new push arrives.
+# Saves runner capacity when devs push rapid fixups on a PR.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 env:
   # Bun version pinned so CI matches local toolchain
   BUN_VERSION: "1.3.9"
@@ -26,6 +32,8 @@ jobs:
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: ${{ env.BUN_VERSION }}
+          # M4: cache bun's install cache to avoid re-downloading on every PR
+          cache: true
 
       - name: Install dependencies
         run: bun install --frozen-lockfile
@@ -47,6 +55,7 @@ jobs:
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: ${{ env.BUN_VERSION }}
+          cache: true
 
       - name: Install dependencies
         run: bun install --frozen-lockfile
@@ -55,7 +64,8 @@ jobs:
         run: bun run build
 
       - name: Check sitemap coverage
-        # Fails if any URL in dist/sitemap-0.xml has no matching dist/<path>/index.html.
+        # Reads sitemap-index.xml first (split sitemaps); falls back to sitemap-0.xml.
+        # Fails if any URL in the aggregated sitemap set has no matching dist file.
         # This catches the "sitemap lists pages that 404" bug that affected production.
         run: bun run scripts/check-sitemap-coverage.ts --dir dist
 
@@ -70,18 +80,22 @@ jobs:
         with:
           fetch-depth: 0
 
-      # Check out agentkit as a sibling directory so the parity script can find it
+      # Check out agentkit inside workspace — actions/checkout@v4 rejects paths
+      # outside $GITHUB_WORKSPACE, so we use .agentkit (in-workspace) instead
+      # of ../agentkit (which would resolve to the parent directory and fail).
+      # See: https://github.com/actions/checkout/issues/197
       - name: Checkout agentkit
         uses: actions/checkout@v4
         with:
           repository: bestagentkits/agentkit
-          path: ../agentkit
+          path: .agentkit
           # Use default branch; no token needed for public repo
           fetch-depth: 1
 
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: ${{ env.BUN_VERSION }}
+          cache: true
 
       - name: Install dependencies
         run: bun install --frozen-lockfile
@@ -92,7 +106,7 @@ jobs:
         # Track this in issue claudekit/claudekit-docs#166.
         run: |
           bun run scripts/check-skill-parity.ts \
-            --agentkit ../agentkit \
+            --agentkit .agentkit \
             --docs src/content/docs \
             --kit all \
             --mode warn
@@ -111,6 +125,7 @@ jobs:
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: ${{ env.BUN_VERSION }}
+          cache: true
 
       - name: Install dependencies
         run: bun install --frozen-lockfile
@@ -140,6 +155,7 @@ jobs:
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: ${{ env.BUN_VERSION }}
+          cache: true
 
       - name: Install dependencies
         run: bun install --frozen-lockfile

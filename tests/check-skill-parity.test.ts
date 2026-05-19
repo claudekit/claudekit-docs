@@ -14,6 +14,7 @@ import {
   collectAgentKitSkills,
   collectDocSkillPages,
   computeParityDelta,
+  discoverKits,
 } from '../scripts/check-skill-parity';
 
 // ---------------------------------------------------------------------------
@@ -111,6 +112,54 @@ describe('collectDocSkillPages', () => {
     mkdirSync(docsContentDir, { recursive: true });
     const pages = collectDocSkillPages(docsContentDir, 'engineer');
     expect(pages).toEqual([]);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Unit tests — discoverKits (M6)
+// ---------------------------------------------------------------------------
+
+describe('discoverKits', () => {
+  test('discovers kit names from agentkit/kits/* directories', () => {
+    const agentKitDir = join(TMP, 'dk_test');
+    mkdirSync(join(agentKitDir, 'kits', 'engineer'), { recursive: true });
+    mkdirSync(join(agentKitDir, 'kits', 'marketing'), { recursive: true });
+    mkdirSync(join(agentKitDir, 'kits', 'core'), { recursive: true });
+
+    const kits = discoverKits(agentKitDir);
+    expect(kits).toContain('engineer');
+    expect(kits).toContain('marketing');
+    expect(kits).toContain('core');
+    expect(kits).toHaveLength(3);
+  });
+
+  test('excludes underscore-prefixed directories', () => {
+    const agentKitDir = join(TMP, 'dk_underscore');
+    mkdirSync(join(agentKitDir, 'kits', '_shared'), { recursive: true });
+    mkdirSync(join(agentKitDir, 'kits', 'engineer'), { recursive: true });
+
+    const kits = discoverKits(agentKitDir);
+    expect(kits).not.toContain('_shared');
+    expect(kits).toContain('engineer');
+  });
+
+  test('falls back to FALLBACK_KITS when kits dir is missing', () => {
+    const agentKitDir = join(TMP, 'dk_missing');
+    // Do not create the kits dir
+
+    const kits = discoverKits(agentKitDir);
+    expect(kits).toContain('engineer');
+    expect(kits).toContain('marketing');
+  });
+
+  test('returns sorted kit names', () => {
+    const agentKitDir = join(TMP, 'dk_sorted');
+    mkdirSync(join(agentKitDir, 'kits', 'marketing'), { recursive: true });
+    mkdirSync(join(agentKitDir, 'kits', 'core'), { recursive: true });
+    mkdirSync(join(agentKitDir, 'kits', 'engineer'), { recursive: true });
+
+    const kits = discoverKits(agentKitDir);
+    expect(kits).toEqual([...kits].sort());
   });
 });
 

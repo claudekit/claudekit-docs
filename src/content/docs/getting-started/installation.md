@@ -58,7 +58,7 @@ ck init --kit engineer
 ```
 
 **What gets installed:**
-- 80+ skills (cook, fix, brainstorm, test, scout, and more)
+- 80+ skills (engineer kit includes core skills; 83 total installed)
 - Agents (planner, tester, code-reviewer, debugger)
 - Configuration files (`.ck.json`, `.ckignore`, `settings.json`)
 
@@ -148,7 +148,7 @@ Re-run `ck init` to pull the latest release:
 ck init -g --kit engineer
 
 # Update to a specific version
-ck init -g --kit engineer --version v3.1.0
+ck init -g --kit engineer --release v3.1.0
 
 # Update CLI itself
 ck update
@@ -166,12 +166,12 @@ If you cannot use the CLI (no internet on target machine, air-gapped environment
 
 1. Download the kit release archive from the GitHub Releases page
 2. Extract to a local directory
-3. Run `ck init --local-path /path/to/extracted-kit`
+3. Run `ck init --kit-path /path/to/extracted-kit`
 
 Or install from a local directory:
 
 ```bash
-ck init -g --kit engineer --local-path ./my-downloaded-kit
+ck init -g --kit engineer --kit-path ./my-downloaded-kit
 ```
 
 ---

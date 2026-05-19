@@ -127,7 +127,7 @@ To pull the latest skill updates from AgentKit:
 ck init -g --kit engineer
 
 # Update to a specific version
-ck init -g --kit engineer --version v3.1.0
+ck init -g --kit engineer --release v3.1.0
 ```
 
 The `ck init` command is idempotent — safe to run multiple times. It preserves any customizations you've made to skills using smart merge.

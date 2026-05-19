@@ -9,7 +9,7 @@ published: true
 ---
 # Skills Overview
 
-80+ specialized skills that extend Claude's capabilities — invoked with `/ck:skill-name` or loaded dynamically when you mention them.
+80+ specialized skills that extend Claude's capabilities — invoked with `/ck:skill-name` or loaded dynamically when you mention them. The engineer kit release archive bundles both engineer and core skills (83 total).
 
 Skills are sourced from [AgentKit](https://github.com/bestagentkits/agentkit) (`kits/engineer/` and `kits/core/`) and installed to `~/.claude/skills/` via `ck init -g --kit engineer`.
 

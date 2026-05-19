@@ -104,7 +104,6 @@ Skills that moved or were renamed between old CK and AgentKit:
 | `/ck:code` | `/ck:cook` | core |
 | `/ck:plan --two` | `/ck:plan --two` (unchanged) | engineer |
 | `/ck:plan --hard` | `/ck:plan --hard` (unchanged) | engineer |
-| `cti-expert` | Archived — no replacement | — |
 | `.claude/commands/core/cook.md` | `~/.claude/skills/cook/SKILL.md` | core |
 | `.claude/commands/fix/fast.md` | `~/.claude/skills/fix/SKILL.md` (use `--quick`) | core |
 

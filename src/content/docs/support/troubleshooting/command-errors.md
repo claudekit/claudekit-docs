@@ -233,9 +233,8 @@ head -n 10 ~/.claude/skills/cook/SKILL.md
 ✅ **Correct format**:
 ```yaml
 ---
-name: cook
+name: ck:cook
 description: Implement a feature step by step
-model: gemini-2.5-flash-agent
 ---
 ```
 
@@ -544,7 +543,7 @@ claude --dangerously-skip-permissions
 
 ### Get Help
 
-1. **GitHub Issues**: [Report command problems](https://github.com/claudekit/claudekit-engineer/issues)
+1. **GitHub Issues**: [Report command problems](https://github.com/bestagentkits/agentkit/issues)
 2. **Discord**: [Ask community](https://claudekit.cc/discord)
 3. **Include**: Debug report, error message, steps to reproduce
 

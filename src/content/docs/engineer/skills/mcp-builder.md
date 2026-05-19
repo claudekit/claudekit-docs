@@ -454,7 +454,7 @@ Load these during the appropriate phase of development.
 
 When building MCP servers, you might also use:
 
-- [MCP Management](/docs/engineer/skills/mcp-management) - Test and interact with your MCP server once built
+- [Use MCP](/docs/engineer/skills/use-mcp) - Test and interact with your MCP server once built
 - [Backend Development](/docs/engineer/skills/backend-development) - If building API wrapper tools
 
 ## Key Principle

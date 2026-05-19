@@ -3,9 +3,17 @@ import { getCollection } from 'astro:content';
 export async function getStaticPaths() {
   const docs = await getCollection('docs', (entry) => entry.data.published);
 
-  // Normalize slug: remove leading 'docs/' to avoid /docs/docs/... duplication
+  // Same normalization as /docs/[...slug].astro — strip 'docs/' prefix and
+  // trailing '/index' so raw markdown endpoints mirror the HTML routes.
+  function normalizeSlug(raw: string): string {
+    let slug = raw.startsWith('docs/') ? raw.slice(5) : raw;
+    if (slug === 'index') slug = '';
+    else if (slug.endsWith('/index')) slug = slug.slice(0, -6);
+    return slug;
+  }
+
   return docs.map(doc => ({
-    params: { slug: doc.slug.startsWith('docs/') ? doc.slug.slice(5) : doc.slug },
+    params: { slug: normalizeSlug(doc.slug) || undefined },
     props: { doc },
   }));
 }

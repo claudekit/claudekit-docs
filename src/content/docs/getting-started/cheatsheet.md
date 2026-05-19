@@ -58,7 +58,7 @@ ck init --use-git
 # Implement new feature
 /ck:cook <description>
 
-# Autonomous feature implementation
+# Explicit autonomous feature implementation
 /ck:cook --auto <description>
 
 # Fast implementation (skip research)
@@ -73,7 +73,7 @@ ck init --use-git
 # Bootstrap new project
 /ck:bootstrap <idea-description>
 
-# Autonomous bootstrap
+# Explicit autonomous bootstrap
 /ck:bootstrap --auto <idea-description>
 ```
 
@@ -177,9 +177,9 @@ ck init --use-git
 # → Approve
 # → Implementation starts
 
-# Approach 2: Autonomous (use with caution)
+# Approach 2: Autonomous (explicit opt-in)
 /ck:cook --auto <feature-description>
-# → Full autonomous without plan review
+# → Full autonomous without plan review; use only when you want automation
 ```
 
 ### Bug Fixing Flow
@@ -451,7 +451,7 @@ ck --version
 # New feature (needs plan review)
 /ck:cook <feature-description>
 
-# New feature (autonomous, no review)
+# New feature (autonomous, explicit opt-in)
 /ck:cook --auto <description>
 
 # Only plan, no implementation
@@ -478,7 +478,7 @@ ck --version
 # Create new project (needs plan review)
 /ck:bootstrap <idea-description>
 
-# Create new project (autonomous till death)
+# Create new project (autonomous, explicit opt-in)
 /ck:bootstrap --auto <idea>
 
 # Run test suite and report (no fixes)

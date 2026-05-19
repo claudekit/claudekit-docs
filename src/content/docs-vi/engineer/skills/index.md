@@ -46,11 +46,6 @@ Tạo các kỹ năng tùy chỉnh mới để mở rộng khả năng của Cla
 
 ---
 
-#### template-skill
-Mẫu cơ bản để bắt đầu tạo các kỹ năng mới.
-
----
-
 ### Xác Thực & Bảo Mật (Authentication & Security)
 
 #### [better-auth](/vi/docs/engineer/skills/better-auth)
@@ -692,7 +687,7 @@ sau đó sử dụng gemini-document-processing để tóm tắt các yêu cầu
 
 ## Tổng Hợp Tất Cả 46+ Skills
 
-**Meta:** skill-creator, template-skill
+**Meta:** skill-creator
 
 **Xác thực/Bảo mật:** better-auth
 

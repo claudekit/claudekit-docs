@@ -104,7 +104,7 @@ process.env > .claude/skills/docs-seeker/.env > .claude/skills/.env > .claude/.e
 
 - [Research](/vi/docs/engineer/skills/research) - Documentation research workflows
 - [Planning](/vi/docs/engineer/skills/plan) - Lập kế hoạch với documentation context
-- [MCP Management](/vi/docs/engineer/skills/mcp-management) - Quản lý MCP servers để mở rộng khả năng
+- [Use MCP](/vi/docs/engineer/skills/use-mcp) - Quản lý MCP servers để mở rộng khả năng
 
 ---
 

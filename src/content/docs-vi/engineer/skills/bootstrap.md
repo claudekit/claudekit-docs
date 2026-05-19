@@ -21,9 +21,9 @@ Bootstrap xử lý toàn bộ workflow "greenfield": git init, nghiên cứu tec
 
 | Flag | Mode | User Gates | Planning Skill | Cook Skill |
 |------|------|-----------|----------------|------------|
-| `--full` | Full interactive | Mỗi phase | `--hard` | (interactive) |
-| `--auto` | Tự động (mặc định) | Chỉ Design | `--auto` | `--auto` |
-| `--fast` | Nhanh | Không có | `--fast` | `--auto` |
+| `--full` | Full interactive (mặc định) | Mỗi phase | `--hard` | (interactive) |
+| `--auto` | Tự động khi chọn rõ ràng | Chỉ Design | `--auto` | `--auto` |
+| `--fast` | Nhanh | Cook review gates | `--fast` | (interactive) |
 | `--parallel` | Multi-agent | Chỉ Design | `--parallel` | `--parallel` |
 
 ## Sử Dụng
@@ -47,9 +47,10 @@ Git Init → Research → Tech Stack Selection → Design Review
 ```
 
 **User gates** (dừng để phê duyệt) tùy thuộc vào mode:
-- `--full`: mỗi phase
-- `--auto` / `--parallel`: chỉ design phase
-- `--fast`: không có (hoàn toàn tự động)
+- `--full` hoặc không có flag: mỗi phase
+- `--auto`: chỉ design phase, sau đó implementation tự động vì đã chọn rõ ràng
+- `--parallel`: chỉ design phase, sau đó giữ cook review gates song song
+- `--fast`: bỏ qua research thêm nhưng giữ cook review gates
 
 ## Cách Hoạt Động
 

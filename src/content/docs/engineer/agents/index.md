@@ -1,6 +1,6 @@
 ---
 title: Agents Overview
-description: ClaudeKit's 15 specialized agents for software development
+description: ClaudeKit's 14 specialized agents for software development
 section: engineer
 kit: engineer
 category: agents
@@ -10,7 +10,7 @@ published: true
 
 # Agents Overview
 
-15 specialized agents that handle every aspect of software development—automatically orchestrated through predefined workflows.
+14 specialized agents that handle every aspect of software development—automatically orchestrated through predefined workflows.
 
 ## Quick Reference
 
@@ -46,12 +46,6 @@ published: true
 | [ui-ux-designer](/docs/engineer/agents/ui-ux-designer) | Award-winning UI with Three.js, responsive layouts |
 | [brainstormer](/docs/engineer/agents/brainstormer) | Explore approaches, challenge assumptions, debate decisions |
 | [researcher](/docs/engineer/agents/researcher) | Multi-source research, documentation analysis |
-
-### Integration
-
-| Agent | Purpose |
-|-------|---------|
-| [mcp-manager](/docs/engineer/agents/mcp-manager) | MCP server integrations, tool discovery, execution |
 
 ## How to Use
 

@@ -172,12 +172,13 @@ Use the graphify MCP tool to find how AuthService connects to UserRepository
 
 ## Installation
 
+ClaudeKit already ships `ck:graphify` as a bundled skill. Do not run
+`graphify install` for ClaudeKit setup: upstream uses that command to install
+its standalone Claude skill at `~/.claude/skills/graphify/SKILL.md`.
+
 ```bash
 # Core install (code parsing only)
 pip install graphifyy
-
-# Download language grammars
-graphify install
 
 # With MCP server support
 pip install 'graphifyy[mcp]'

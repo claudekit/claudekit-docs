@@ -1,39 +1,64 @@
 ---
 title: "ck:kanban"
-description: "Alias launcher for the ClaudeKit plans dashboard"
+description: "Visual plans dashboard — track plan progress, open plan files, and manage phases from the CLI UI"
 section: engineer
 kit: engineer
 category: skills
-order: 55
+order: 99
+published: true
 ---
 
-# Kanban
+# kanban
 
-`ck:kanban` is now an alias for the plans dashboard launcher.
+Open the ClaudeKit plans dashboard to visually track plan progress, navigate phases, and manage implementation status.
 
-It no longer refers to a separate AI agent orchestration board in the engineer kit. For engineer users, this command opens the same integrated plans experience as `ck:plans-kanban`.
+## What This Skill Does
+
+`/ck:kanban` is an alias for `/ck:plans-kanban`. It opens the ClaudeKit CLI dashboard at the plans route, giving you a visual board of your current implementation plans with phase statuses, checkboxes, and quick navigation into plan files.
 
 ## Usage
 
-```bash
+```
 /ck:kanban
 ```
 
-## Current Behavior
+Or use the underlying CLI directly:
 
-- opens the plans dashboard inside `ck config ui`
-- starts the dashboard if it is not already running
-- follows CLI auto-fallback ports if `3456` is unavailable
-- accepts old path/server flags with warnings for compatibility
+```bash
+ck config ui
+```
 
-## Use It For
+## Dashboard Features
 
-- visual plan progress tracking
-- phase timelines and activity views
-- quick navigation into `plan.md` and phase files
-- lightweight plan-state actions from the dashboard
+- Visual plan board showing all plans in `plans/` directory
+- Phase status tracking (not started / in progress / complete)
+- Check/uncheck individual phase tasks
+- Click-through to open plan files
+- Auto-starts the CLI dashboard server if not running
+
+## CLI Commands
+
+For scripted plan management, use the CLI directly:
+
+```bash
+# Open dashboard UI
+ck config ui
+
+# Check plan status
+ck plan status /path/to/plan.md
+
+# Mark a phase started
+cd /path/to/plan-dir && ck plan check <phase-id> --start
+
+# Mark a phase complete
+cd /path/to/plan-dir && ck plan check <phase-id>
+
+# Uncheck a phase
+cd /path/to/plan-dir && ck plan uncheck <phase-id>
+```
 
 ## Related Skills
 
-- [ck:plans-kanban](/docs/engineer/skills/plans-kanban) - primary plans dashboard launcher
-- [ck:plan](/docs/engineer/skills/ck-plan) - plan creation and updates
+- [plans-kanban](/docs/engineer/skills/plans-kanban) — The underlying skill this aliases
+- [project-management](/docs/engineer/skills/project-management) — Task tracking and session bridging
+- [cook](/docs/engineer/skills/cook) — Feature implementation that generates plans

@@ -31,50 +31,51 @@ New to ClaudeKit? Watch this step-by-step tutorial covering CLI installation, se
 
 ClaudeKit extends Claude Code with specialized toolkits for engineering and marketing. Instead of writing prompts from scratch, you call workflows optimized for speed and quality.
 
-### Two Powerful Toolkits
+ClaudeKit is powered by **AgentKit** — a multi-kit framework that ships skills, agents, and workflows as versioned releases. Skills install to `~/.claude/skills/` via the `ck` CLI and are invoked with `/ck:skill-name` inside Claude Code.
 
-**Engineer Kit** - Development & automation toolkit:
-- **Agents**: Specialized AI assistants (planner, researcher, tester, debugger, backend-developer)
-- **Commands**: Development workflows (`/ck:cook`, `/ck:fix`, `/ck:plan`, `/ck:test`)
-- **Skills**: Technical knowledge modules (Next.js, PostgreSQL, Docker, DevOps)
+### Two Powerful Kits
 
-**Marketing Kit** - Marketing & content automation toolkit:
-- **Agents**: Content creators (copywriter, ui-ux-designer, campaign-manager, seo-specialist)
-- **Commands**: Marketing workflows (`/write:blog`, `/video:create`, `/slide:create`, `/campaign:*`)
+**Engineer Kit** — Development & automation toolkit:
+- **Agents**: Specialized AI assistants (planner, researcher, tester, debugger, code-reviewer)
+- **Skills**: `/ck:cook`, `/ck:fix`, `/ck:plan`, `/ck:test`, `/ck:brainstorm` and 75+ more
+- **Knowledge modules**: Next.js, PostgreSQL, Docker, DevOps, better-auth, and more
+
+**Marketing Kit** — Marketing & content automation toolkit:
+- **Agents**: Content creators (copywriter, designer, campaign-manager, seo-specialist)
+- **Skills**: `/ckm:social`, `/ckm:email`, `/ckm:brand`, `/ckm:seo`, `/ckm:campaign` and 55+ more
 - **Asset Management**: Centralized hub for copy, storyboards, slides, brand guidelines
-- **Skills**: Marketing expertise (copywriting, SEO, analytics, video production)
 
 ## How It Works
 
 **Engineer Kit Example:**
 1. Type `/ck:cook "add user authentication"`
-2. System launches planner → researcher → developer → tester
+2. System launches planner → researcher → developer → tester agents
 3. Agents collaborate, write code, run tests, commit changes
 4. You review results, provide feedback, iterate
 
 **Marketing Kit Example:**
-1. Type `/write:blog "introducing our new API"`
-2. System extracts your writing style from `/assets/writing-styles/`
-3. Copywriter agent drafts blog matching your tone
-4. Content saved to Asset Management hub for reuse
+1. Type `/ckm:social "launch announcement for our new API"`
+2. System applies your brand voice and platform guidelines
+3. Content variants generated for LinkedIn, X, and newsletter
+4. Assets saved to content hub for reuse
 
 ## Why Use ClaudeKit?
 
 **For Engineers:**
-- **Speed**: 10x faster than manual prompting for feature development
-- **Quality**: Battle-tested workflows reduce bugs and technical debt
-- **Consistency**: Same development patterns across entire team
+- **Speed**: Structured workflows replace repetitive prompting for feature development
+- **Quality**: Battle-tested skill prompts reduce bugs and technical debt
+- **Consistency**: Same development patterns across your entire team
 
 **For Marketers:**
 - **Brand Consistency**: Centralized asset management ensures unified messaging
-- **Context Awareness**: Content based on actual product/codebase
-- **Production Ready**: Video storyboards with Gemini Veo 3.1, slides in .pptx format
+- **Context Awareness**: Content based on actual product and codebase
+- **Production Ready**: Video storyboards, `.pptx` slides, multi-channel copy
 
-## Choose Your Toolkit
+## Choose Your Kit
 
 Use the kit switcher in the header to explore:
 
-**Engineer Kit** → Start at [Engineer Docs](/docs/engineer/agents)
+**Engineer Kit** → Start at [Engineer Skills](/docs/engineer/skills)
 - Feature development workflows
 - Testing and debugging agents
 - Infrastructure automation
@@ -86,9 +87,9 @@ Use the kit switcher in the header to explore:
 
 ## Next Steps
 
-1. **[Understand the Concepts](/docs/getting-started/concepts)** - How agents, commands, and skills work
-2. **[Install ClaudeKit](/docs/getting-started/installation)** - Set up the CLI
-3. **[Quick Start](/docs/getting-started/quick-start)** - Build your first feature or campaign
+1. **[Install ClaudeKit](/docs/getting-started/installation)** — Set up the `ck` CLI in 5 minutes
+2. **[AgentKit Architecture](/docs/getting-started/agentkit-overview)** — Understand kits, skills, and agents
+3. **[Quick Start](/docs/getting-started/quick-start)** — Build your first feature or campaign
 
 ## Explore Workflows
 

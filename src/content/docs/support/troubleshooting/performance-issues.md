@@ -102,8 +102,8 @@ export CLAUDEKIT_VERBOSE=1
 **Solution**:
 
 ```bash
-# Check agent model
-cat .claude/agents/tester.md | grep model:
+# Check agent model (global install)
+cat ~/.claude/agents/tester.md | grep model:
 
 # Fast models (use for simple tasks):
 model: gemini-2.5-flash-agent
@@ -114,7 +114,7 @@ model: claude-sonnet-4
 model: claude-opus-4
 
 # Fix: Edit agent file
-nano .claude/agents/tester.md
+nano ~/.claude/agents/tester.md
 # Change to: model: gemini-2.5-flash-agent
 ```
 

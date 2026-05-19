@@ -68,7 +68,7 @@ Các lệnh này vẫn giữ nguyên dạng lệnh slash:
 - `/ck:coding-level` — Đặt mức độ chi tiết code
 - `/ck:docs*` — Tạo tài liệu
 - `/ck:journal` — Ghi nhật ký phiên làm việc
-- `/ck:kanban` — Quản lý bảng tác vụ
+- `/ck:plans-kanban` — Quản lý bảng tác vụ
 - `/ck:plan*` — Quy trình lập kế hoạch
 - `/ck:preview` — Xem trước thay đổi
 - `/ck:code-review` — Review codebase (migrated từ `/review:codebase*`)

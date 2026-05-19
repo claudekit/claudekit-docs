@@ -275,8 +275,8 @@ echo $OPENROUTER_API_KEY
 Edit agent files to use OpenRouter models:
 
 ```bash
-# Example: Use Claude Opus for planning
-cat > .claude/agents/planner.md << 'EOF'
+# Example: Use Claude Opus for planning (global install)
+cat > ~/.claude/agents/planner.md << 'EOF'
 ---
 name: planner
 description: Creates implementation plans

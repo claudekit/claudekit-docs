@@ -132,6 +132,5 @@ Run the launcher again with `--stop`. If you started the dashboard manually, sto
 
 ## Related Skills
 
-- [ck:kanban](/docs/engineer/skills/kanban) - alias launcher for the same plans dashboard
 - [ck:plan](/docs/engineer/skills/ck-plan) - plan creation and state management
 - [markdown-novel-viewer](/docs/engineer/skills/markdown-novel-viewer) - long-form markdown reading

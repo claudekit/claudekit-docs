@@ -1,0 +1,172 @@
+name: CI
+
+# Run on every PR targeting dev or main, and on direct pushes to dev.
+on:
+  pull_request:
+    branches: [dev, main]
+  push:
+    branches: [dev]
+
+# Cancel in-progress runs for the same ref when a new push arrives.
+# Saves runner capacity when devs push rapid fixups on a PR.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  # Bun version pinned so CI matches local toolchain
+  BUN_VERSION: "1.3.9"
+
+jobs:
+  # ---------------------------------------------------------------------------
+  # Gate 1: astro check — TypeScript + Astro component type-checking
+  # ---------------------------------------------------------------------------
+  astro-check:
+    name: "Gate 1: astro check"
+    runs-on: ubuntu-latest
+    # continue-on-error: 25 pre-existing TS errors in src/components/
+    # (Header.astro, DocsNav.astro, FloatingChat.astro, LanguageSwitcher.tsx)
+    # block this gate from being green on dev today. Tracked separately.
+    # Flip to blocking once that issue is closed.
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: ${{ env.BUN_VERSION }}
+          # M4: cache bun's install cache to avoid re-downloading on every PR
+          cache: true
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Run astro check
+        run: bunx astro check
+
+  # ---------------------------------------------------------------------------
+  # Gate 2: build + sitemap coverage — every sitemap URL must have a dist file
+  # ---------------------------------------------------------------------------
+  build-and-sitemap:
+    name: "Gate 2: build + sitemap coverage"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: ${{ env.BUN_VERSION }}
+          cache: true
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Build site
+        run: bun run build
+
+      - name: Check sitemap coverage
+        # Reads sitemap-index.xml first (split sitemaps); falls back to sitemap-0.xml.
+        # Fails if any URL in the aggregated sitemap set has no matching dist file.
+        # This catches the "sitemap lists pages that 404" bug that affected production.
+        run: bun run scripts/check-sitemap-coverage.ts --dir dist
+
+  # ---------------------------------------------------------------------------
+  # Gate 3: skill parity — agentkit skills must have matching docs pages
+  # ---------------------------------------------------------------------------
+  skill-parity:
+    name: "Gate 3: skill parity"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Check out agentkit inside workspace — actions/checkout@v4 rejects paths
+      # outside $GITHUB_WORKSPACE, so we use .agentkit (in-workspace) instead
+      # of ../agentkit (which would resolve to the parent directory and fail).
+      # See: https://github.com/actions/checkout/issues/197
+      - name: Checkout agentkit
+        # continue-on-error: agentkit may be private / inaccessible from
+        # PR-scoped GITHUB_TOKEN. Parity check is warn-mode anyway; missing
+        # .agentkit dir already emits ::warning:: via check-skill-parity.ts.
+        continue-on-error: true
+        uses: actions/checkout@v4
+        with:
+          repository: bestagentkits/agentkit
+          path: .agentkit
+          fetch-depth: 1
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: ${{ env.BUN_VERSION }}
+          cache: true
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Check skill parity
+        # WARN MODE: exits 0 even on mismatch so Track 1 content work can land first.
+        # Switch to --mode fail once all skill pages exist in src/content/docs/.
+        # Track this in issue claudekit/claudekit-docs#166.
+        run: |
+          bun run scripts/check-skill-parity.ts \
+            --agentkit .agentkit \
+            --docs src/content/docs \
+            --kit all \
+            --mode warn
+
+  # ---------------------------------------------------------------------------
+  # Gate 4: colon-syntax linter — flag /word:word:word patterns in MDX/MD
+  # ---------------------------------------------------------------------------
+  colon-syntax-lint:
+    name: "Gate 4: colon-syntax linter"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: ${{ env.BUN_VERSION }}
+          cache: true
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Lint colon-syntax violations
+        # WARN MODE: exits 0 even if violations are found.
+        # Track 1 (issue #165) owns fixing the content violations.
+        # Switch to --mode fail once Track 1 is merged to dev:
+        #   run: bun run scripts/check-command-syntax.ts --mode fail
+        run: |
+          bun run scripts/check-command-syntax.ts \
+            --dir src/content/docs \
+            --dir src/content/docs-vi \
+            --mode warn
+
+  # ---------------------------------------------------------------------------
+  # Unit tests — scripts/check-*.ts
+  # ---------------------------------------------------------------------------
+  unit-tests:
+    name: "Unit tests"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: ${{ env.BUN_VERSION }}
+          cache: true
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Run tests
+        run: bun test tests/

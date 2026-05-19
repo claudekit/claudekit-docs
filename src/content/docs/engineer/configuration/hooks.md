@@ -159,12 +159,13 @@ The hooks marked `No` are no longer installed by default because they generate c
 
 **Event:** `SubagentStop` (matcher: Plan subagents)
 
-**Purpose:** After a planning subagent completes, reminds Claude to invoke `/ck:cook --auto` to begin implementation from the generated plan.
+**Purpose:** After a planning subagent completes, prints boundary guidance so Claude stops before implementation and presents the available next steps.
 
 **What it does:**
 - Detects if the stopping subagent was a planner
-- Injects a reminder with the path to the generated plan file
-- Prevents the common pattern of forgetting to start implementation
+- Prints an optional `/ck:cook <plan.md>` command with the generated plan path
+- Keeps planning and implementation separated until the user approves implementation
+- Mentions `--auto` only as an explicit opt-in for autonomous implementation
 
 ---
 

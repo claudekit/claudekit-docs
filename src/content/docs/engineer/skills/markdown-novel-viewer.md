@@ -547,4 +547,4 @@ Replace font families in CSS variables to match brand guidelines.
 ## Related Commands
 
 - `/ck:preview` - Quick access to viewer (alias for this skill)
-- `/ck:kanban` - Dashboard view for plan directories
+- `/ck:plans-kanban` - Dashboard view for plan directories

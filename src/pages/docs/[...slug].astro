@@ -5,11 +5,30 @@ import DocsLayout from '../../layouts/DocsLayout.astro';
 export async function getStaticPaths() {
   const docsEntries = await getCollection('docs');
 
-  // Normalize slug: remove leading 'docs/' to avoid /docs/docs/... duplication
-  // Content in src/content/docs/docs/* creates slugs like "docs/agents/planner"
-  // We need the final URL to be /docs/agents/planner, not /docs/docs/agents/planner
+  // Normalize slug to produce the canonical URL for each content file:
+  //
+  // 1. Strip leading 'docs/' prefix — Astro content collections under
+  //    src/content/docs/ prefix all slugs with the collection name segment.
+  //    Without this, src/content/docs/cli/index.md → slug "cli/index"
+  //    which maps to /docs/cli/index rather than /docs/cli.
+  //
+  // 2. Strip trailing '/index' — Astro v5 does NOT automatically serve
+  //    index.md at the directory URL. Without stripping '/index' the page
+  //    at src/content/docs/getting-started/index.md only exists at
+  //    /docs/getting-started/index (404 at /docs/getting-started).
+  //
+  // Result: src/content/docs/getting-started/index.md → /docs/getting-started
+  //         src/content/docs/cli/index.md             → /docs/cli
+  //         src/content/docs/engineer/agents/planner.md → /docs/engineer/agents/planner
+  function normalizeSlug(raw: string): string {
+    let slug = raw.startsWith('docs/') ? raw.slice(5) : raw;
+    if (slug === 'index') slug = '';           // root index → empty slug (serves /docs/)
+    else if (slug.endsWith('/index')) slug = slug.slice(0, -6); // dir index → dir URL
+    return slug;
+  }
+
   return docsEntries.map((entry) => ({
-    params: { slug: entry.slug.startsWith('docs/') ? entry.slug.slice(5) : entry.slug },
+    params: { slug: normalizeSlug(entry.slug) || undefined },
     props: { entry },
   }));
 }

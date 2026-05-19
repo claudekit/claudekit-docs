@@ -5,9 +5,18 @@ import DocsLayout from '../../../layouts/DocsLayout.astro';
 export async function getStaticPaths() {
   const docsEntries = await getCollection('docs-vi');
 
-  // Normalize slug: remove leading 'docs/' to avoid /docs/docs/... duplication
+  // Same normalization as /docs/[...slug].astro — strip 'docs/' prefix and
+  // trailing '/index' so index.md files serve at the directory URL.
+  // See /src/pages/docs/[...slug].astro for full explanation.
+  function normalizeSlug(raw: string): string {
+    let slug = raw.startsWith('docs/') ? raw.slice(5) : raw;
+    if (slug === 'index') slug = '';
+    else if (slug.endsWith('/index')) slug = slug.slice(0, -6);
+    return slug;
+  }
+
   return docsEntries.map((entry) => ({
-    params: { slug: entry.slug.startsWith('docs/') ? entry.slug.slice(5) : entry.slug },
+    params: { slug: normalizeSlug(entry.slug) || undefined },
     props: { entry },
   }));
 }

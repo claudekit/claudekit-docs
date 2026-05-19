@@ -6,7 +6,11 @@
     "dev": "astro dev 2>&1 | tee logs.txt",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "test": "bun test tests/",
+    "check:sitemap": "bun run scripts/check-sitemap-coverage.ts --dir dist",
+    "check:parity": "bun run scripts/check-skill-parity.ts --agentkit ../agentkit --docs src/content/docs --kit all --mode warn",
+    "check:syntax": "bun run scripts/check-command-syntax.ts --dir src/content/docs --dir src/content/docs-vi --mode warn"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.6",

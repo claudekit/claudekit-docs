@@ -162,6 +162,58 @@ ${docs.length > 5 ? `- [... ${docs.length - 5} more pages](https://docs.claudeki
 // https://astro.build/config
 export default defineConfig({
   site: 'https://docs.claudekit.cc',
+
+  // Static redirects — these work in SSG (output: 'static') mode because Astro
+  // generates redirect HTML stubs at build time. The middleware.ts redirects are
+  // DEAD CODE in static mode (middleware only runs server-side); all redirects
+  // that matter must live here.
+  //
+  // Format: { '/old/path': '/new/path' }  (301 by default)
+  // Wildcard prefix rules from middleware.ts are approximated with explicit entries
+  // because Astro's static redirects do not support regex or wildcards.
+  redirects: {
+    // Getting Started path moves
+    '/docs/getting-started/greenfield-projects': '/docs/workflows/new-project',
+    '/docs/getting-started/brownfield-projects': '/docs/workflows/existing-project',
+    '/docs/getting-started/mcp-setup':           '/docs/cli/configuration',
+    '/docs/getting-started/gemini':              '/docs/workflows/gemini',
+
+    // Core Concepts section removed — map to nearest equivalent
+    '/docs/core-concepts/claude-md':             '/docs/getting-started/concepts',
+    '/docs/core-concepts/workflows':             '/docs/workflows',
+    '/docs/core-concepts/architecture':          '/docs/engineer/agents',
+    '/docs/core-concepts/code-standards':        '/docs/getting-started/concepts',
+    '/docs/core-concepts/system-architecture':   '/docs/engineer/agents',
+
+    // Use Cases → Workflows (old URL pattern)
+    '/docs/use-cases':                                        '/docs/workflows',
+    '/docs/use-cases/adding-feature':                         '/docs/workflows/adding-feature',
+    '/docs/use-cases/fixing-bugs':                            '/docs/workflows/fixing-bugs',
+    '/docs/use-cases/building-api':                           '/docs/workflows/building-api',
+    '/docs/use-cases/implementing-auth':                      '/docs/workflows/implementing-auth',
+    '/docs/use-cases/integrating-payment':                    '/docs/workflows/integrating-payment',
+    '/docs/use-cases/optimizing-performance':                 '/docs/workflows/optimizing-performance',
+    '/docs/use-cases/refactoring-code':                       '/docs/workflows/refactoring-code',
+    '/docs/use-cases/understanding-codebases-with-gkg':       '/docs/workflows/understanding-codebases-with-gkg',
+    '/docs/use-cases/starting-new-project':                   '/docs/workflows/new-project',
+
+    // Troubleshooting path move
+    '/docs/troubleshooting': '/docs/support/troubleshooting',
+
+    // VI: old command paths → skills
+    '/vi/docs/engineer/commands/git':             '/vi/docs/engineer/skills/git',
+    '/vi/docs/engineer/commands/fix':             '/vi/docs/engineer/skills/fix',
+    '/vi/docs/engineer/commands/core/cook':       '/vi/docs/engineer/skills/cook',
+    '/vi/docs/engineer/commands/core/code':       '/vi/docs/engineer/skills/cook',
+    '/vi/docs/engineer/commands/core/scout':      '/vi/docs/engineer/skills/scout',
+    '/vi/docs/engineer/commands/design':          '/vi/docs/engineer/skills/frontend-design',
+    '/vi/docs/engineer/commands/content':         '/vi/docs/engineer/skills/copywriting',
+    '/vi/docs/engineer/commands/skill':           '/vi/docs/engineer/skills/skill-creator',
+
+    // EN: cook command redirect
+    '/docs/engineer/commands/core/cook':          '/docs/engineer/skills/cook',
+  },
+
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'vi'],

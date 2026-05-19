@@ -1,6 +1,6 @@
 ---
 title: Installation
-description: "Documentation for Installation"
+description: "Install ClaudeKit via the CLI — global or project-local, engineer or marketing kit"
 section: getting-started
 category: getting-started
 order: 2
@@ -8,304 +8,221 @@ published: true
 ---
 # Installation
 
-This guide will help you install ClaudeKit and set up your development environment. You can choose between manual installation or using the ClaudeKit CLI.
+ClaudeKit is installed via the **ClaudeKit CLI** (`ck`). The CLI downloads the kit you select from AgentKit releases and copies skills, agents, and configuration into your Claude Code environment.
 
 ## Requirements
 
-Before installing ClaudeKit, ensure you have:
-
 - **Node.js** v18 or higher
 - **npm** v10 or higher (or bun, pnpm, yarn)
-- **Git** for version control
-- **Claude Code CLI** installed (`claude`)
-- **Google Gemini API Key** from [Google AI Studio](https://aistudio.google.com)
+- **Claude Code CLI** installed and authenticated (`claude`)
+- **GitHub Personal Access Token** with `repo` scope (for private repository access)
 
-## Method 1: Manual Installation
+> **Note:** A Google Gemini API key is optional. It is only needed if you use the `ai-multimodal` skill for vision/document analysis.
 
-This method gives you complete control over the installation process.
-
-### Step 1: Clone or Download ClaudeKit Engineer
+## Step 1: Install the CLI
 
 ```bash
-# Option A: Clone repo (requires GitHub access)
-git clone https://github.com/claudekit/claudekit-engineer.git
-
-# Option B: Download from GitHub Releases
-# Visit: https://github.com/claudekit/claudekit-engineer/releases
-```
-
-### Step 2: Copy ClaudeKit Files
-
-Copy the following directories and files from `claudekit-engineer` to your project root:
-
-| Path | Description |
-|-----------|-------|
-| `.claude/` | Main configuration - hooks, skills, commands, workflows |
-| `docs/` | Documentation templates |
-| `plans/` | Planning templates |
-| `CLAUDE.md` | Project instructions for Claude |
-
-**Important hidden files in `.claude/`:**
-- `.ck.json` - ClaudeKit configuration (plan naming, paths, language)
-- `.ckignore` - Directories excluded from context (like `.gitignore` for LLM)
-
-**Linux/macOS:**
-```bash
-cp -r claudekit-engineer/.claude your-project/
-cp -r claudekit-engineer/docs your-project/
-cp -r claudekit-engineer/plans your-project/
-cp claudekit-engineer/CLAUDE.md your-project/
-
-# Verify hidden files were copied
-ls -la your-project/.claude/
-# Should see: .ck.json, .ckignore, settings.json, etc.
-```
-
-**Windows (PowerShell):**
-```powershell
-Copy-Item -Recurse claudekit-engineer\.claude your-project\
-Copy-Item -Recurse claudekit-engineer\docs your-project\
-Copy-Item -Recurse claudekit-engineer\plans your-project\
-Copy-Item claudekit-engineer\CLAUDE.md your-project\
-
-# Verify hidden files were copied
-Get-ChildItem -Force your-project\.claude\
-# Should see: .ck.json, .ckignore, settings.json, etc.
-```
-
-> ⚠️ **Note:** File managers may hide dotfiles (`.ck.json`, `.ckignore`). Use terminal/PowerShell or enable "show hidden files".
-
-### Step 3: Configure Gemini API Key (Optional)
-
-**WHY?**
-ClaudeKit previously used [Human MCP](https://www.npmjs.com/package/@goonnguyen/human-mcp) for image and video analysis because Gemini has better vision capabilities. However, Anthropic launched [**Agent Skills**](https://docs.claude.com/en/docs/engineer/agents-and-tools/agent-skills/overview) with better context engineering support, so all Human MCP tools have been converted to Agent Skills.
-
-**Note:** Gemini API currently offers a generous free tier.
-
-1. Go to [Google AI Studio](https://aistudio.google.com) and get your API Key
-2. Copy `.claude/skills/.env.example` to `.claude/skills/.env` and paste your key into the `GEMINI_API_KEY` environment variable
-
-You're ready to use it.
-
-### Step 4: Start Claude Code
-
-Launch Claude Code in your working project:
-
-```bash
-# Standard mode
-claude
-
-# Skip permissions (use cautiously)
-claude --dangerously-skip-permissions
-```
-
-### Step 5: Initialize Documentation
-
-Run the `/ck:docs init` command to scan and generate specs for your project:
-
-```bash
-/ck:docs init
-```
-
-This command creates markdown files in the `docs` directory:
-- `codebase-summary.md`
-- `code-standards.md`
-- `system-architecture.md`
-- And more...
-
-Your project is now ready for development!
-
-## Method 2: ClaudeKit CLI
-
-The CLI provides an automated way to set up ClaudeKit projects.
-
-### Installation
-
-Install ClaudeKit CLI globally:
-
-```bash
-# npm
+# npm (recommended)
 npm install -g claudekit-cli
 
 # bun
 bun add -g claudekit-cli
 
-# Verify installation
+# pnpm
+pnpm add -g claudekit-cli
+
+# Verify
 ck --version
 ```
 
-### Which Installation Mode Should I Choose?
+## Step 2: Choose Installation Scope
 
-| Use Case | Mode | Command |
-|------------|--------|------|
-| **First-time installation** | Global ⭐ | `ck init -g --kit engineer` |
-| **Want to use ClaudeKit for ALL projects** | Global ⭐ | `ck init -g --kit engineer` |
-| **Only for a specific project** | Local | `ck init --kit engineer` |
-| **CI/CD environment** | Local | `ck init --kit engineer` |
+| Mode | Command | Skills installed to | Use when |
+|------|---------|-------------------|----------|
+| **Global** ⭐ | `ck init -g` | `~/.claude/skills/` | Available in every project |
+| **Local** | `ck init` | `./.claude/skills/` | Only this project |
 
----
+**Global is recommended for most users.** Run once, use ClaudeKit in any project.
 
-### Option A: Global Installation ⭐ Recommended for Most Users
+## Step 3: Install Your Kit
 
-> **Use when:** You want ClaudeKit available for ALL projects without copying files to each project.
->
-> **Run from:** Any directory (e.g., home folder, desktop, anywhere)
+### Engineer Kit (development workflows)
 
 ```bash
-# Interactive mode
-ck init -g
-
-# With kit selection
+# Global — available in all projects
 ck init -g --kit engineer
 
-# Specific version
-ck init -g --kit engineer --version v1.0.0
-```
-
-**Where files are installed:**
-- **macOS/Linux**: `~/.claude/`
-- **Windows**: `%USERPROFILE%\.claude\`
-
-> ✅ **Tip:** Global mode is ideal for personal development. Install once, use everywhere.
-
----
-
-### Option B: Local Installation (Project-Specific)
-
-> **Use when:** You want ClaudeKit files ONLY in a specific project.
->
-> **Run from:** Your project's root directory (e.g., `/projects/my-app/`)
-
-```bash
-# Move to project first!
+# Local — current project only
 cd /path/to/your/project
-
-# Interactive mode
-ck init
-
-# With kit selection
 ck init --kit engineer
-
-# With exclude patterns
-ck init --exclude "local-config/**" --exclude "*.local"
 ```
 
-**Where files are installed:** In the current project directory (`./.claude/`)
+**What gets installed:**
+- 80+ skills (engineer kit includes core skills; 83 total installed)
+- Agents (planner, tester, code-reviewer, debugger)
+- Configuration files (`.ck.json`, `.ckignore`, `settings.json`)
 
-> ⚠️ **Warning:** Running `ck init` (without `-g`) from **home directory** or **user directory** will install ClaudeKit there, which may cause hook path errors. If you want ClaudeKit available everywhere, use `ck init -g`.
-
----
-
-### Updating CLI
-
-To update the `ck` command-line tool to the latest version:
+### Marketing Kit (content & campaigns)
 
 ```bash
-ck update
+ck init -g --kit marketing
 ```
 
-**Note:** This command only updates the CLI, not ClaudeKit Engineer files. Use `ck init` (local) or `ck init -g` (global) to update ClaudeKit Engineer files.
+**What gets installed:**
+- 60+ skills (social, email, brand, seo, video, campaign, and more)
+- Marketing agents (copywriter, designer, campaign-manager)
 
-### Authentication
+### Both Kits
 
-The CLI requires a **GitHub Personal Access Token (PAT)** to download releases from private repositories (`claudekit-engineer` and `claudekit-marketing`).
+Run `ck init -g` once per kit. They install to the same `~/.claude/` directory without conflict:
 
-**Authentication Fallback Chain:**
+```bash
+ck init -g --kit engineer
+ck init -g --kit marketing
+```
 
-1. **GitHub CLI**: Uses `gh auth token` if GitHub CLI is installed and authenticated
-2. **Environment Variables**: Checks `GITHUB_TOKEN` or `GH_TOKEN`
-3. **OS Keychain**: Retrieves saved token from system keychain
-4. **User Prompt**: Prompts for token input and offers to save securely
+## Step 4: Authenticate
 
-**Creating a Personal Access Token:**
+The CLI needs a GitHub Personal Access Token to download kit releases.
 
-1. Go to GitHub Settings → Developer settings → Personal access tokens → Tokens (classic)
-2. Create new token with `repo` scope (for private repositories)
-3. Copy the token
+**Automatic (recommended):** If you have the GitHub CLI installed and authenticated, the CLI picks up your token automatically:
 
-**Setting Token via Environment Variable:**
+```bash
+gh auth login  # if not already done
+ck init -g --kit engineer  # token detected automatically
+```
+
+**Manual:** Create a token at GitHub Settings → Developer settings → Personal access tokens → Tokens (classic). Select the `repo` scope. Then:
 
 ```bash
 export GITHUB_TOKEN=ghp_your_token_here
+ck init -g --kit engineer
 ```
+
+The CLI also checks `GH_TOKEN` and your OS keychain — you only need to enter a token once.
+
+## Step 5: Start Using ClaudeKit
+
+Launch Claude Code in any project:
+
+```bash
+claude
+```
+
+Then invoke skills with `/ck:` prefix:
+
+```bash
+/ck:cook add user authentication
+/ck:fix --auto
+/ck:brainstorm should I use REST or GraphQL?
+/ck:test
+```
+
+Initialize project documentation (optional but recommended):
+
+```bash
+/ck:docs init
+```
+
+This scans your project and generates `docs/codebase-summary.md`, `docs/code-standards.md`, and `docs/system-architecture.md`.
+
+---
 
 ## Verify Installation
 
-After installation (either method), verify everything is set up correctly:
-
 ```bash
-# Check Claude Code is available
+# Check skills are installed
+ls ~/.claude/skills/    # Global
+ls .claude/skills/      # Local
+
+# Check Claude Code sees the config
 claude --version
-
-# Check .claude directory exists
-ls -la .claude/
 ```
 
-## Updating ClaudeKit
+## Update ClaudeKit
 
-Keep ClaudeKit Engineer up to date:
-
-```bash
-# Update ClaudeKit Engineer to latest version
-ck init
-
-# Update to specific version
-ck init --version v1.2.0
-```
-
-**Exclude specific files when updating:**
+Re-run `ck init` to pull the latest release:
 
 ```bash
-# Don't overwrite CLAUDE.md
-ck init --exclude CLAUDE.md
-```
+# Update engineer kit globally
+ck init -g --kit engineer
 
-**Update CLI:**
+# Update to a specific version
+ck init -g --kit engineer --release v3.1.0
 
-```bash
-# Update ck command-line tool
+# Update CLI itself
 ck update
 ```
 
-## Troubleshooting
+`ck init` is safe to re-run — it merges updates and preserves your customizations.
 
-### Permission Errors
+---
 
-On macOS/Linux, you may need sudo:
+## Advanced: Manual Installation
+
+> This method is not recommended for most users. Use `ck init` above.
+
+If you cannot use the CLI (no internet on target machine, air-gapped environment):
+
+1. Download the kit release archive from the GitHub Releases page
+2. Extract to a local directory
+3. Run `ck init --kit-path /path/to/extracted-kit`
+
+Or install from a local directory:
 
 ```bash
-sudo npm install -g claudekit-cli
+ck init -g --kit engineer --kit-path ./my-downloaded-kit
 ```
 
-Or configure npm to use a different directory:
+---
+
+## Troubleshooting
+
+### Permission Errors (npm global install)
 
 ```bash
+# Option A: Use npx (no global install needed)
+npx claudekit-cli init -g --kit engineer
+
+# Option B: Configure npm prefix
 mkdir ~/.npm-global
 npm config set prefix '~/.npm-global'
 export PATH=~/.npm-global/bin:$PATH
+npm install -g claudekit-cli
+```
+
+### GitHub Authentication Failed
+
+```bash
+# Install GitHub CLI
+brew install gh        # macOS
+# or: https://cli.github.com
+
+# Authenticate
+gh auth login
+
+# Verify
+gh auth status
 ```
 
 ### Claude Code Not Found
 
-If the `claude` command is not found:
+Install Claude Code CLI from [claude.ai/code](https://claude.ai/code), then restart your terminal and verify with `claude --version`.
 
-1. Install Claude Code CLI from [claude.ai/code](https://claude.ai/code)
-2. Restart terminal
-3. Verify with `claude --version`
+### Skills Not Activating
 
-### GitHub Authentication Failed
+After global install, verify skills are present:
+```bash
+ls ~/.claude/skills/cook
+# Should show: SKILL.md (and possibly references/ scripts/)
+```
 
-If CLI cannot authenticate:
+If empty, re-run `ck init -g --kit engineer`.
 
-1. Install GitHub CLI: `brew install gh` (macOS) or see [cli.github.com](https://cli.github.com)
-2. Authenticate: `gh auth login`
-3. Verify: `gh auth status`
-4. Or set environment variable: `export GITHUB_TOKEN=your_token`
+---
 
 ## Next Steps
 
-Now that ClaudeKit is installed, continue with:
-
-- [Quick Start Guide](/docs/getting-started/quick-start) - Build your first project
-- [CLAUDE.md Explained](/docs/engineer/configuration/claude-md) - Understand the configuration file
-- [Workflows](/docs/engineer/configuration/workflows) - Learn about development workflows
+- [AgentKit Architecture](/docs/getting-started/agentkit-overview) — Understand how kits, skills, and agents fit together
+- [Quick Start](/docs/getting-started/quick-start) — Build your first feature
+- [Skills Overview](/docs/engineer/skills) — Browse all available skills

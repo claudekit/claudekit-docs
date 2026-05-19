@@ -293,7 +293,7 @@ A: `code-reviewer` catches issues before commit. Plus, you review PRs as normal.
 A: For basic features, no. For advanced skills (Gemini, Search), yes. See [API Key Setup](/docs/support/troubleshooting/api-key-setup).
 
 **Q: Can I customize agents?**
-A: Yes. Edit `.claude/agents/*.md` to tune behavior. See [Custom Agents](/docs/engineer/configuration/hooks).
+A: Yes. Edit `~/.claude/agents/*.md` (global) or `.claude/agents/*.md` (local) to tune behavior. See [Custom Agents](/docs/engineer/configuration/hooks).
 
 ## Explore More
 

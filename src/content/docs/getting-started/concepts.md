@@ -74,8 +74,8 @@ Reusable knowledge modules injected into agent context.
 - **Tools**: FFmpeg, ImageMagick, MCP Builder
 
 **How Skills Work**:
-1. Skill files stored in `.claude/skills/`
-2. Auto-activated based on codebase detection (e.g., detects `next.config.js` → activates Next.js skill)
+1. Skill files installed to `~/.claude/skills/` (global) or `.claude/skills/` (local project)
+2. Sourced from [AgentKit kits](https://github.com/bestagentkits/agentkit) — install via `ck init -g --kit engineer`
 3. Skill provides agent with best practices, examples, gotchas
 4. Agent makes better decisions (uses right patterns, avoids common mistakes)
 

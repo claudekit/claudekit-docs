@@ -9,10 +9,12 @@ published: true
 ---
 # Skills Overview
 
-70+ specialized skills that extend Claude's capabilities—invoked with `/skill-name` or loaded dynamically when you mention them.
+80+ specialized skills that extend Claude's capabilities — invoked with `/ck:skill-name` or loaded dynamically when you mention them. The engineer kit release archive bundles both engineer and core skills (83 total).
+
+Skills are sourced from [AgentKit](https://github.com/bestagentkits/agentkit) (`kits/engineer/` and `kits/core/`) and installed to `~/.claude/skills/` via `ck init -g --kit engineer`.
 
 :::tip[Commands → Skills Complete]
-As of engineer@2.12.0, all 19 commands have been migrated to skills. The `/` slash syntax is unchanged. See [Migration Guide](/docs/getting-started/migration-from-commands-to-skills).
+As of engineer@2.12.0, all commands have been migrated to skills. The `/ck:` slash syntax is unchanged. See [Migration Guide](/docs/getting-started/migration-from-commands-to-skills).
 :::
 
 ## Quick Reference
@@ -83,6 +85,7 @@ As of engineer@2.12.0, all 19 commands have been migrated to skills. The `/` sla
 | [fix](/docs/engineer/skills/fix) | Bug fixing with intelligent routing |
 | [git](/docs/engineer/skills/git) | Git operations with conventional commits |
 | [plans-kanban](/docs/engineer/skills/plans-kanban) | Open the integrated plans dashboard in the CLI UI |
+| [kanban](/docs/engineer/skills/kanban) | Alias for plans-kanban — visual plan board shortcut |
 | [project-management](/docs/engineer/skills/project-management) | Task tracking, plan status, session bridging |
 | [team](/docs/engineer/skills/team) | Agent Teams for parallel multi-session collaboration |
 | [ask](/docs/engineer/skills/ask) | Answer technical and architectural questions |
@@ -93,6 +96,7 @@ As of engineer@2.12.0, all 19 commands have been migrated to skills. The `/` sla
 | [preview](/docs/engineer/skills/preview) | View files or generate visual explanations and diagrams |
 | [test](/docs/engineer/skills/test) | Run test suites, coverage analysis, build verification |
 | [use-mcp](/docs/engineer/skills/use-mcp) | Utilize MCP server tools |
+| [mcp-management](/docs/engineer/skills/mcp-management) | Discover, select, and execute MCP server capabilities |
 | [watzup](/docs/engineer/skills/watzup) | Review recent changes and wrap up sessions |
 | [worktree](/docs/engineer/skills/worktree) | Create isolated git worktrees |
 
@@ -146,10 +150,15 @@ Skills activate through **semantic matching** on your prompt:
 
 Every skill contains:
 ```
-.claude/skills/[skill-name]/
-├── SKILL.md          # Core instructions (<100 lines)
+# Source (AgentKit repo):
+agentkit/kits/<kit>/skills/[skill-name]/
+├── SKILL.md          # Core instructions
 ├── references/       # Detailed documentation
 └── scripts/          # Automation scripts (optional)
+
+# Installed location on your machine:
+~/.claude/skills/[skill-name]/   # global (ck init -g)
+.claude/skills/[skill-name]/     # local  (ck init)
 ```
 
 **Progressive disclosure**: SKILL.md provides essentials, references/ has depth.
@@ -178,7 +187,7 @@ skill-creator will:
 2. Design skill structure
 3. Create SKILL.md with proper frontmatter
 4. Add references if needed
-5. Save to `.claude/skills/`
+5. Save to `.claude/skills/` (local) or `~/.claude/skills/` (global)
 
 ### Troubleshooting
 

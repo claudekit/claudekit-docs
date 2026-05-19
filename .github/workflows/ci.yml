@@ -23,7 +23,7 @@ jobs:
   # ---------------------------------------------------------------------------
   astro-check:
     name: "Gate 1: astro check"
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
@@ -46,7 +46,7 @@ jobs:
   # ---------------------------------------------------------------------------
   build-and-sitemap:
     name: "Gate 2: build + sitemap coverage"
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
@@ -74,7 +74,7 @@ jobs:
   # ---------------------------------------------------------------------------
   skill-parity:
     name: "Gate 3: skill parity"
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
@@ -116,7 +116,7 @@ jobs:
   # ---------------------------------------------------------------------------
   colon-syntax-lint:
     name: "Gate 4: colon-syntax linter"
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
@@ -146,7 +146,7 @@ jobs:
   # ---------------------------------------------------------------------------
   unit-tests:
     name: "Unit tests"
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:

@@ -74,7 +74,7 @@ The `ck migrate` command:
 
 > **Generated hook cleanup (v4.3.0+):** `ck migrate` does not migrate ClaudeKit's generated session/subagent/usage context hooks by default. It also removes stale registrations and hook files for those generated hooks from existing migrated providers, including Codex and Claude Code, while preserving safety hooks such as privacy and scout blocking.
 
-> **Codex hooks on Windows (v4.4.0+):** Hook wiring to Codex now works on all platforms including Windows. The previous Windows short-circuit has been removed. `ck init` and `ck migrate` probe for both `codex` and `codex.exe`, resolve `%USERPROFILE%` path candidates, and strip Unix shebangs from hook files when writing to Windows targets. If you previously ran `ck migrate --agent codex` on Windows and hooks were silently skipped, re-run `ck migrate --agent codex --hooks --force` to wire them now.
+> **Codex hooks on Windows (v4.4.0+):** Hook wiring to Codex now works on all platforms including Windows. The previous Windows short-circuit has been removed. `ck init` and `ck migrate` probe for both `codex` and `codex.exe`, resolve `%USERPROFILE%` path candidates, and generate hook wrappers without a shebang (always invoked via `node`, so they run identically on every platform). If you previously ran `ck migrate --agent codex` on Windows and hooks were silently skipped, re-run `ck migrate --agent codex --hooks --force` to wire them now.
 
 ## Supported Providers
 

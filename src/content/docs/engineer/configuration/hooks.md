@@ -155,7 +155,7 @@ ClaudeKit Engineer ships with hooks organized by event type. All default hook fi
 | `session-state.cjs` | `SubagentStop` | — | Persist state when any subagent stops |
 | `session-state.cjs` | `Stop` | — | Persist state when session ends |
 
-> `usage-quota-cache-refresh.cjs` and `session-state.cjs` each appear across multiple events — that is intentional. Total: 15 wired entries across 6 events.
+> `usage-quota-cache-refresh.cjs` and `session-state.cjs` each appear across multiple events — that is intentional. Total: 15 wired entries across 7 events.
 
 **Opt-in hooks (not wired by default — add to `settings.json` manually):**
 

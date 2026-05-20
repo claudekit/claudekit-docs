@@ -12,6 +12,23 @@ Track all releases and changes for the ClaudeKit Engineer Kit.
 
 ---
 
+## v2.20.0 (Upcoming)
+
+### Highlights
+
+- **Expanded default hook wiring** — 7 additional hooks now wired by default: `session-init`, `dev-rules-reminder`, `cook-after-plan-reminder`, `plan-format-kanban`, `session-state`, `subagent-init`, `usage-quota-cache-refresh`. Total: 15 wired entries across 6 events.
+- **Codex hooks on Windows** — Hook wiring to Codex now works on Windows. The platform gate is removed; `ck init` and `ck migrate` probe for `codex`/`codex.exe`, resolve `%USERPROFILE%` paths, and strip Unix shebangs when targeting Windows.
+- **Direct node invocation** — `node-hook-runner.sh` bash wrapper removed. All hook commands now run via `node` directly. `ck init` auto-repairs legacy bash-runner entries on upgrade.
+- **Zombie hook pruner** — `ck init` automatically removes engineer-tagged hook entries whose referenced file is missing (cleans up stale `node-hook-runner.sh` and `skill-dedup.cjs` references from old installs).
+- **3 opt-in hooks** — `usage-context-awareness`, `team-context-inject`, and `workflow-artifact-gate` are documented as user-side opt-ins with example wiring snippets.
+
+### Removals
+
+- `skill-dedup.cjs` deleted — deprecated since v2.9.1; deduplication now handled by CLI install logic.
+- `node-hook-runner.sh` removed — replaced by direct `node` invocation.
+
+---
+
 ## v2.14.0 (Upcoming)
 
 ### Highlights

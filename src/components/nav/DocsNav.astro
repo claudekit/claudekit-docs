@@ -7,6 +7,14 @@ interface Props {
   currentPath: string;
 }
 
+interface NavTreeNode {
+  title: string;
+  items: any[];
+  subcategories: Record<string, NavTreeNode>;
+  path: string;
+  collapsed: boolean;
+}
+
 const { docs, currentPath } = Astro.props;
 const currentLocale = getLangFromUrl(Astro.url);
 
@@ -16,16 +24,16 @@ const capitalize = (str: string) => {
 };
 
 // Build nested structure
-const buildHierarchy = (docs: any[]) => {
-  const root = {};
+const buildHierarchy = (docs: any[]): Record<string, NavTreeNode> => {
+  const root: Record<string, NavTreeNode> = {};
 
   docs.forEach(doc => {
     const categoryPath = doc.data.category || 'uncategorized';
     const parts = categoryPath.split('/');
-    
-    let currentLevel = root;
-    
-    parts.forEach((part, index) => {
+
+    let currentLevel: Record<string, NavTreeNode> = root;
+
+    parts.forEach((part: string, index: number) => {
       if (!currentLevel[part]) {
         currentLevel[part] = {
           title: capitalize(part),
@@ -35,7 +43,7 @@ const buildHierarchy = (docs: any[]) => {
           collapsed: true // Default collapsed
         };
       }
-      
+
       if (index === parts.length - 1) {
         currentLevel[part].items.push(doc);
       } else {
@@ -65,7 +73,7 @@ const sortItems = (items: any[]) => {
 ---
 
 <div class="docs-nav">
-  {Object.entries(hierarchy).map(([key, category]: [string, any]) => (
+  {Object.entries(hierarchy).map(([_key, category]: [string, NavTreeNode]) => (
     <div class="nav-section" data-category={category.path} data-collapsible>
       <button class="nav-section-title" aria-expanded="false">
         <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -100,7 +108,7 @@ const sortItems = (items: any[]) => {
         })}
 
         {/* Render subcategories */}
-        {Object.entries(category.subcategories).map(([subKey, subCategory]: [string, any]) => (
+        {Object.entries(category.subcategories).map(([_subKey, subCategory]: [string, NavTreeNode]) => (
           <div class="nav-sub-section" data-category={subCategory.path} data-collapsible>
             <button class="nav-sub-section-title" aria-expanded="false">
               <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

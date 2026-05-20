@@ -10,13 +10,13 @@ published: true
 
 # Hooks
 
-Hooks allow you to extend Claude Code with custom scripts that run at specific points in the workflow. ClaudeKit Engineer includes pre-built hooks for file access control, naming guidance, simplification gates, statusline rendering, optional session context, and notifications.
+Hooks allow you to extend Claude Code with custom scripts that run at specific points in the workflow. ClaudeKit Engineer includes pre-built hooks for file access control, naming guidance, simplification gates, statusline rendering, session context, and notifications.
 
 ## Overview
 
 Hooks are configured in `.claude/settings.json` and execute shell commands in response to Claude Code events.
 
-> **Current default (v2.19.0+):** ClaudeKit installs only lightweight safety and workflow hooks by default. Generated session/subagent/usage context hooks are opt-in and are pruned from existing installs during `ck update` or `ck migrate`.
+> **Current default (v2.20.0+):** ClaudeKit installs a comprehensive set of workflow hooks by default across all supported events. Three additional hooks are available as opt-in for users who want extended context injection. Zombie hook entries (referencing missing files from old installs) are pruned automatically on `ck init`.
 
 ### Available Hook Events
 
@@ -34,23 +34,38 @@ Hooks are configured in `.claude/settings.json` and execute shell commands in re
 
 ## Configuration
 
-Hooks are defined in `.claude/settings.json`:
+Hooks are defined in `.claude/settings.json`. Since v2.20.0, hook commands invoke `node` directly — the `node-hook-runner.sh` bash wrapper has been removed. If you have an older install, `ck init` auto-repairs legacy bash-runner commands to the direct form.
 
 ```json
 {
   "statusLine": {
     "type": "command",
-    "command": "bash .claude/hooks/node-hook-runner.sh .claude/statusline.cjs",
+    "command": "node \".claude/statusline.cjs\"",
     "padding": 0
   },
   "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          { "type": "command", "command": "node \".claude/hooks/session-init.cjs\"" },
+          { "type": "command", "command": "node \".claude/hooks/usage-quota-cache-refresh.cjs\"" }
+        ]
+      }
+    ],
     "UserPromptSubmit": [
       {
         "hooks": [
-          {
-            "type": "command",
-            "command": "bash .claude/hooks/node-hook-runner.sh .claude/hooks/simplify-gate.cjs"
-          }
+          { "type": "command", "command": "node \".claude/hooks/simplify-gate.cjs\"" },
+          { "type": "command", "command": "node \".claude/hooks/dev-rules-reminder.cjs\"" },
+          { "type": "command", "command": "node \".claude/hooks/usage-quota-cache-refresh.cjs\"" }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "hooks": [
+          { "type": "command", "command": "node \".claude/hooks/subagent-init.cjs\"" }
         ]
       }
     ],
@@ -58,23 +73,49 @@ Hooks are defined in `.claude/settings.json`:
       {
         "matcher": "Write",
         "hooks": [
-          {
-            "type": "command",
-            "command": "bash .claude/hooks/node-hook-runner.sh .claude/hooks/descriptive-name.cjs"
-          }
+          { "type": "command", "command": "node \".claude/hooks/descriptive-name.cjs\"" }
         ]
       },
       {
         "matcher": "Bash|Glob|Grep|Read|Edit|Write",
         "hooks": [
-          {
-            "type": "command",
-            "command": "bash .claude/hooks/node-hook-runner.sh .claude/hooks/scout-block.cjs"
-          },
-          {
-            "type": "command",
-            "command": "bash .claude/hooks/node-hook-runner.sh .claude/hooks/privacy-block.cjs"
-          }
+          { "type": "command", "command": "node \".claude/hooks/scout-block.cjs\"" },
+          { "type": "command", "command": "node \".claude/hooks/privacy-block.cjs\"" }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          { "type": "command", "command": "node \".claude/hooks/plan-format-kanban.cjs\"" }
+        ]
+      },
+      {
+        "matcher": "Task|TaskCreate|TaskUpdate|TodoWrite",
+        "hooks": [
+          { "type": "command", "command": "node \".claude/hooks/session-state.cjs\"" },
+          { "type": "command", "command": "node \".claude/hooks/usage-quota-cache-refresh.cjs\"" }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "matcher": "Plan",
+        "hooks": [
+          { "type": "command", "command": "node \".claude/hooks/cook-after-plan-reminder.cjs\"" }
+        ]
+      },
+      {
+        "hooks": [
+          { "type": "command", "command": "node \".claude/hooks/session-state.cjs\"" }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          { "type": "command", "command": "node \".claude/hooks/session-state.cjs\"" }
         ]
       }
     ]
@@ -94,23 +135,69 @@ ClaudeKit Engineer ships with hooks organized by event type. All default hook fi
 
 ### Summary Table
 
-| Hook File | Default | Event | Purpose |
-|-----------|---------|-------|---------|
-| `simplify-gate.cjs` | Yes | `UserPromptSubmit` | Enforce simplification workflow rules when relevant |
-| `descriptive-name.cjs` | Yes | `PreToolUse` (Write) | Inject file naming guidance: kebab-case, language conventions |
-| `scout-block.cjs` | Yes | `PreToolUse` (Bash/Glob/Grep/Read/Edit/Write) | Block access to `.ckignore`-listed directories |
-| `privacy-block.cjs` | Yes | `PreToolUse` (Bash/Glob/Grep/Read/Edit/Write) | Block sensitive files, require user approval |
-| `session-init.cjs` | No | `SessionStart` | Load config, detect project, persist env vars |
-| `subagent-init.cjs` | No | `SubagentStart` | Inject minimal context to subagents |
-| `team-context-inject.cjs` | No | `SubagentStart` | Inject peer info + task summary for Agent Team members |
-| `cook-after-plan-reminder.cjs` | No | `SubagentStop` (Plan) | Print user-choice guidance after planning |
-| `dev-rules-reminder.cjs` | No | `UserPromptSubmit` | Inject session context, rules, modularization, Plan Context |
-| `usage-context-awareness.cjs` | No | `UserPromptSubmit` + `PostToolUse` | Fetch usage limits, write to cache |
-| `post-edit-simplify-reminder.cjs` | No | `PostToolUse` (Edit/Write/MultiEdit) | Remind about code-simplifier after repeated edits |
-| `task-completed-handler.cjs` | No | `TaskCompleted` | Log completions, inject progress for Agent Team leads |
-| `teammate-idle-handler.cjs` | No | `TeammateIdle` | Inject available task context when team member goes idle |
+**Default hooks (wired automatically by `ck init`):**
 
-The hooks marked `No` are no longer installed by default because they generate context on session, prompt, subagent, or tool events. Existing installations are cleaned up idempotently by the CLI during update and migration.
+| Hook File | Event | Matcher | Purpose |
+|-----------|-------|---------|---------|
+| `session-init.cjs` | `SessionStart` | `startup\|resume\|clear\|compact` | Load config, detect project, persist env vars |
+| `usage-quota-cache-refresh.cjs` | `SessionStart` | `startup\|resume\|clear\|compact` | Refresh API quota cache on session start |
+| `simplify-gate.cjs` | `UserPromptSubmit` | — | Enforce simplification workflow rules when relevant |
+| `dev-rules-reminder.cjs` | `UserPromptSubmit` | — | Inject session context, rules, modularization, Plan Context |
+| `usage-quota-cache-refresh.cjs` | `UserPromptSubmit` | — | Refresh quota cache on each prompt |
+| `subagent-init.cjs` | `SubagentStart` | — | Inject minimal context (~200 tokens) to subagents |
+| `descriptive-name.cjs` | `PreToolUse` | `Write` | Inject file naming guidance: kebab-case, language conventions |
+| `scout-block.cjs` | `PreToolUse` | `Bash\|Glob\|Grep\|Read\|Edit\|Write` | Block access to `.ckignore`-listed directories |
+| `privacy-block.cjs` | `PreToolUse` | `Bash\|Glob\|Grep\|Read\|Edit\|Write` | Block sensitive files, require user approval |
+| `plan-format-kanban.cjs` | `PostToolUse` | `Edit\|Write\|MultiEdit` | Auto-format plan files as Kanban after edits |
+| `session-state.cjs` | `PostToolUse` | `Task\|TaskCreate\|TaskUpdate\|TodoWrite` | Persist session state on task events |
+| `usage-quota-cache-refresh.cjs` | `PostToolUse` | `Task\|TaskCreate\|TaskUpdate\|TodoWrite` | Refresh quota cache on task tool use |
+| `cook-after-plan-reminder.cjs` | `SubagentStop` | `Plan` | Print `/ck:cook` guidance after planning subagent completes |
+| `session-state.cjs` | `SubagentStop` | — | Persist state when any subagent stops |
+| `session-state.cjs` | `Stop` | — | Persist state when session ends |
+
+> `usage-quota-cache-refresh.cjs` and `session-state.cjs` each appear across multiple events — that is intentional. Total: 15 wired entries across 7 events.
+
+**Opt-in hooks (not wired by default — add to `settings.json` manually):**
+
+| Hook File | Event | Purpose |
+|-----------|-------|---------|
+| `usage-context-awareness.cjs` | `UserPromptSubmit` + `PostToolUse` | Fetch usage limits from API, inject token budget into context |
+| `team-context-inject.cjs` | `SubagentStart` | Inject peer info + task summary for Agent Team members (requires `CK_TEAM_MODE=1`) |
+| `workflow-artifact-gate.cjs` | `UserPromptSubmit` | Gate `/ck:fix` and `/ck:cook` approval on review artifact presence |
+
+**Removed hooks:**
+
+| Hook File | Removed in | Notes |
+|-----------|-----------|-------|
+| `skill-dedup.cjs` | v2.20.0 | Deprecated since v2.9.1; deduplication now handled by CLI install logic |
+| `node-hook-runner.sh` | v2.20.0 | Bash wrapper removed; hooks now invoke `node` directly. `ck init` auto-repairs legacy entries |
+
+**Example: enabling opt-in hooks**
+
+Add any of these blocks to your `.claude/settings.json` `hooks` section:
+
+```json
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          { "type": "command", "command": "node \".claude/hooks/usage-context-awareness.cjs\"" }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "hooks": [
+          { "type": "command", "command": "node \".claude/hooks/team-context-inject.cjs\"" }
+        ]
+      }
+    ]
+  }
+}
+```
+
+Zombie hook entries (entries referencing missing files such as old `node-hook-runner.sh` or `skill-dedup.cjs` paths) are automatically pruned by `ck init` on upgrade.
 
 ---
 

@@ -17,6 +17,8 @@ Before installing ClaudeKit CLI, ensure you have:
 
 ClaudeKit CLI requires Node.js 18.0.0 or higher.
 
+Most CLI commands do not require native build tools. `ck content` uses an optional native SQLite driver; if that driver is unavailable, the rest of the CLI still installs and runs.
+
 **Check your version:**
 
 ```bash

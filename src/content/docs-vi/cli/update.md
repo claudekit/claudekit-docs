@@ -353,6 +353,21 @@ npm view claudekit-cli versions
 ck update --release 3.11.0
 ```
 
+### Lỗi Build Native SQLite
+
+**Triệu chứng:** Output update nhắc tới `better-sqlite3`, `prebuild-install`, `node-gyp`, hoặc thiếu Visual Studio Build Tools.
+
+**Nguyên nhân:** Các bản CLI cũ coi SQLite driver của `ck content` là dependency cài đặt bình thường.
+
+**Giải pháp:**
+
+```bash
+# Thử lại với package CLI mới nhất
+npm install -g claudekit-cli@latest
+```
+
+Nếu cần dùng `ck content` trên Windows và npm vẫn build SQLite từ source, hãy cài Visual Studio Build Tools với workload Desktop development with C++.
+
 ### "Already on the latest version"
 
 **Triệu chứng:**

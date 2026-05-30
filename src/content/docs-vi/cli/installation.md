@@ -18,6 +18,8 @@ Trước khi cài đặt ClaudeKit CLI, hãy đảm bảo bạn đã có:
 
 ClaudeKit CLI yêu cầu Node.js phiên bản 18.0.0 hoặc cao hơn.
 
+Hầu hết lệnh CLI không cần native build tools. `ck content` dùng SQLite driver native dạng optional; nếu driver này không khả dụng, các lệnh CLI khác vẫn cài và chạy bình thường.
+
 **Kiểm tra phiên bản của bạn:**
 
 ```bash

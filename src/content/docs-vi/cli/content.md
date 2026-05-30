@@ -46,6 +46,7 @@ ck content <subcommand> [options]
 
 - **GitHub CLI** (`gh`) đã cài đặt và xác thực
 - **Git** repository (hoặc thư mục chứa nhiều git repo)
+- **SQLite driver optional** (`better-sqlite3`) có trong CLI install. Nếu thiếu, `ck content` sẽ in hướng dẫn cài lại hoặc cài Windows build tools, còn các lệnh CLI khác vẫn chạy.
 - **API credential của platform** cấu hình qua `ck content setup`:
   - X/Twitter: API key, API secret, access token, access secret
   - Facebook: Page access token, Page ID

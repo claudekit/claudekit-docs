@@ -46,6 +46,7 @@ ck content <subcommand> [options]
 
 - **GitHub CLI** (`gh`) installed and authenticated
 - **Git** repository (or directory containing git repos)
+- **Optional SQLite driver** (`better-sqlite3`) available in the CLI install. If it is missing, `ck content` prints reinstall or Windows build-tool guidance while other CLI commands keep working.
 - **Platform API credentials** configured via `ck content setup`:
   - X/Twitter: API key, API secret, access token, access secret
   - Facebook: Page access token, Page ID

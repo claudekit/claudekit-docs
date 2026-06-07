@@ -46,28 +46,31 @@ import { AIChat } from './AIChat';
     const closeBtn = document.getElementById('chat-close');
 
     if (!fab || !modal || !backdrop) return;
+    const chatFab = fab;
+    const chatModal = modal;
+    const chatBackdrop = backdrop;
 
     function openChat() {
-      modal.classList.add('open');
-      backdrop.classList.add('open');
-      fab.classList.add('open');
+      chatModal.classList.add('open');
+      chatBackdrop.classList.add('open');
+      chatFab.classList.add('open');
       document.body.style.overflow = 'hidden';
       // Focus input
       setTimeout(() => {
-        const input = modal.querySelector('.ai-input') as HTMLInputElement;
+        const input = chatModal.querySelector('.ai-input') as HTMLInputElement;
         input?.focus();
       }, 100);
     }
 
     function closeChat() {
-      modal.classList.remove('open');
-      backdrop.classList.remove('open');
-      fab.classList.remove('open');
+      chatModal.classList.remove('open');
+      chatBackdrop.classList.remove('open');
+      chatFab.classList.remove('open');
       document.body.style.overflow = '';
     }
 
-    fab.addEventListener('click', () => {
-      if (modal.classList.contains('open')) {
+    chatFab.addEventListener('click', () => {
+      if (chatModal.classList.contains('open')) {
         closeChat();
       } else {
         openChat();
@@ -75,7 +78,7 @@ import { AIChat } from './AIChat';
     });
 
     closeBtn?.addEventListener('click', closeChat);
-    backdrop.addEventListener('click', closeChat);
+    chatBackdrop.addEventListener('click', closeChat);
 
     // Keyboard: Cmd+? to open, Escape to close
     document.addEventListener('keydown', (e) => {
@@ -83,7 +86,7 @@ import { AIChat } from './AIChat';
         e.preventDefault();
         openChat();
       }
-      if (e.key === 'Escape' && modal.classList.contains('open')) {
+      if (e.key === 'Escape' && chatModal.classList.contains('open')) {
         closeChat();
       }
     });

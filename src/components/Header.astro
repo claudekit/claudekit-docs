@@ -2,7 +2,6 @@
 import LanguageSwitcher from './LanguageSwitcher';
 import { KitSwitcher } from './KitSwitcher';
 import { getLangFromUrl, getLocalizedPath, useTranslations } from '../i18n/utils';
-import type { Locale } from '../i18n/locales';
 
 const currentLocale = getLangFromUrl(Astro.url);
 const currentPath = Astro.url.pathname;
@@ -126,24 +125,27 @@ const navIcons = {
     const backdrop = document.getElementById('sidebar-backdrop');
 
     if (!menuToggle || !sidebar || !backdrop) return;
+    const menuToggleButton = menuToggle;
+    const sidebarElement = sidebar;
+    const backdropElement = backdrop;
 
     // Helper function to close sidebar
     function closeSidebar() {
-      sidebar.classList.remove('open');
-      backdrop.classList.remove('visible');
+      sidebarElement.classList.remove('open');
+      backdropElement.classList.remove('visible');
       document.body.style.overflow = '';
     }
 
     // Helper function to open sidebar
     function openSidebar() {
-      sidebar.classList.add('open');
-      backdrop.classList.add('visible');
+      sidebarElement.classList.add('open');
+      backdropElement.classList.add('visible');
       document.body.style.overflow = 'hidden';
     }
 
     // Toggle sidebar on button click
     function handleToggle() {
-      const isOpen = sidebar.classList.contains('open');
+      const isOpen = sidebarElement.classList.contains('open');
       if (isOpen) {
         closeSidebar();
       } else {
@@ -158,7 +160,7 @@ const navIcons = {
 
     // Close sidebar on Escape key
     function handleEscape(e: KeyboardEvent) {
-      if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+      if (e.key === 'Escape' && sidebarElement.classList.contains('open')) {
         closeSidebar();
       }
     }
@@ -172,8 +174,8 @@ const navIcons = {
     }
 
     // Attach event listeners
-    menuToggle.addEventListener('click', handleToggle);
-    backdrop.addEventListener('click', handleBackdropClick);
+    menuToggleButton.addEventListener('click', handleToggle);
+    backdropElement.addEventListener('click', handleBackdropClick);
     document.addEventListener('keydown', handleEscape);
     mediaQuery.addEventListener('change', handleMediaChange);
 
@@ -182,8 +184,8 @@ const navIcons = {
 
     // Cleanup function for event listeners
     function cleanup() {
-      menuToggle.removeEventListener('click', handleToggle);
-      backdrop.removeEventListener('click', handleBackdropClick);
+      menuToggleButton.removeEventListener('click', handleToggle);
+      backdropElement.removeEventListener('click', handleBackdropClick);
       document.removeEventListener('keydown', handleEscape);
       mediaQuery.removeEventListener('change', handleMediaChange);
     }
@@ -203,16 +205,17 @@ const navIcons = {
     const docsLink = document.querySelector('.docs-link');
 
     if (!docsLink) return;
+    const docsAnchor = docsLink;
 
     function updateDocsLink() {
       const selectedKit = localStorage.getItem(STORAGE_KEY);
-      const engineerPath = docsLink.getAttribute('data-engineer-path');
-      const marketingPath = docsLink.getAttribute('data-marketing-path');
+      const engineerPath = docsAnchor.getAttribute('data-engineer-path');
+      const marketingPath = docsAnchor.getAttribute('data-marketing-path');
 
       if (selectedKit === 'marketing' && marketingPath) {
-        docsLink.setAttribute('href', marketingPath);
+        docsAnchor.setAttribute('href', marketingPath);
       } else if (engineerPath) {
-        docsLink.setAttribute('href', engineerPath);
+        docsAnchor.setAttribute('href', engineerPath);
       }
     }
 

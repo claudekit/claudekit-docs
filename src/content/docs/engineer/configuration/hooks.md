@@ -32,6 +32,8 @@ Hooks are configured in `.claude/settings.json` and execute shell commands in re
 | `Stop` | When Claude session ends |
 | `SubagentStop` | When a subagent completes |
 
+ClaudeKit does not register default handlers for `TaskCompleted` or `TeammateIdle`. `/ck:team` monitors `TaskList` and teammate messages explicitly.
+
 ## Configuration
 
 Hooks are defined in `.claude/settings.json`. Since v2.20.0, hook commands invoke `node` directly — the `node-hook-runner.sh` bash wrapper has been removed. If you have an older install, `ck init` auto-repairs legacy bash-runner commands to the direct form.
@@ -171,6 +173,8 @@ ClaudeKit Engineer ships with hooks organized by event type. All default hook fi
 |-----------|-----------|-------|
 | `skill-dedup.cjs` | v2.20.0 | Deprecated since v2.9.1; deduplication now handled by CLI install logic |
 | `node-hook-runner.sh` | v2.20.0 | Bash wrapper removed; hooks now invoke `node` directly. `ck init` auto-repairs legacy entries |
+| `task-completed-handler.cjs` | Agent Teams v3.0 cleanup | Removed from ClaudeKit defaults; use explicit TaskList/message monitoring |
+| `teammate-idle-handler.cjs` | Agent Teams v3.0 cleanup | Removed from ClaudeKit defaults; idle is not a completion signal |
 
 **Example: enabling opt-in hooks**
 
@@ -340,28 +344,11 @@ Zombie hook entries (entries referencing missing files such as old `node-hook-ru
 
 ---
 
-### task-completed-handler.cjs
+### Retired Agent Teams handlers
 
-**Event:** `TaskCompleted`
+ClaudeKit no longer ships `task-completed-handler.cjs` or `teammate-idle-handler.cjs`. If an older install still references those files, `ck init` removes the stale entries during upgrade cleanup.
 
-**Purpose:** Logs task completions to `.claude/logs/tasks.log`. In Agent Team mode, injects progress summary for the lead agent.
-
-**What it does:**
-- Appends task ID, subject, completion time, and owner to the task log
-- If `CK_TEAM_MODE=1`: formats a progress summary showing completed vs total tasks and injects it into lead's context
-
----
-
-### teammate-idle-handler.cjs
-
-**Event:** `TeammateIdle`
-
-**Purpose:** When an Agent Team member goes idle (waiting for input), injects available unblocked task context so they can claim the next task without waiting for a message.
-
-**What it does:**
-- Reads `TaskList` for unblocked pending tasks
-- Formats task summary and injects it as context
-- Prevents teammates from staying idle when work is available
+For `/ck:team`, teammates mark progress with `TaskUpdate`, send concise completion or blocked messages, and the lead checks `TaskList` before synthesis, reassignment, tester spawn, or shutdown.
 
 ---
 

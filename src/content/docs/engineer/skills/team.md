@@ -10,13 +10,13 @@ published: true
 
 # Team
 
-CK-native orchestration engine (v3.0) that spawns independent Claude Code sessions as teammates, each with their own context window, task ownership, and cross-session memory. Updated to current Claude Code Agent API with improved event-driven hooks and teammate coordination.
+CK-native orchestration engine (v3.0) that spawns independent Claude Code sessions as teammates, each with their own context window, task ownership, and cross-session memory. Updated to current Claude Code Agent API with explicit TaskList/message monitoring and skill-local teammate rules.
 
 ## What This Skill Does
 
-Agent Teams lets you run multiple Claude Code instances in parallel—each tackling a different workstream simultaneously. Teammates share a task list and communicate via messaging. Unlike subagents (fire-and-forget), teammates are persistent, event-driven, and capable of discussion.
+Agent Teams lets you run multiple Claude Code instances in parallel—each tackling a different workstream simultaneously. Teammates share a task list and communicate via messaging. Unlike subagents (fire-and-forget), teammates are persistent and capable of discussion.
 
-Templates auto-execute on spawn (v2.1.0+). v3.0 updates the underlying Agent API integration and adds improved cross-teammate event coordination.
+Templates auto-execute on spawn (v2.1.0+). v3.0 updates the underlying Agent API integration and keeps monitoring explicit by default: teammates update TaskList and send concise messages to the lead.
 
 ## Templates
 
@@ -58,14 +58,16 @@ CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1 claude
 # Claude Code >= 2.1.33 (enabled by default)
 ```
 
-## Event-Driven Monitoring
+## Explicit Monitoring
 
-Teams fire hooks you can observe:
+ClaudeKit does not ship custom `TaskCompleted` or `TeammateIdle` handlers by default. Team workflows use explicit task state and messages:
 
-| Event | When | Use For |
-|-------|------|---------|
-| `TaskCompleted` | Teammate finishes a task | Progress tracking, triggering dependents |
-| `TeammateIdle` | Teammate has no pending tasks | Reassign work, wind down |
+1. Teammates call `TaskUpdate` when they start, block, or complete work
+2. Teammates send concise completion or blocked messages to the lead
+3. The lead checks `TaskList` before synthesis, reassignment, tester spawn, or shutdown
+4. Idle means a teammate is waiting; it is not a completion signal
+
+Claude Code exposes platform events such as `TaskCompleted` and `TeammateIdle`, but ClaudeKit keeps handler automation out of the default install until a project deliberately adds and validates its own handlers.
 
 ## Agent Memory
 

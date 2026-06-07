@@ -11,13 +11,13 @@ lang: vi
 
 # Team
 
-Engine điều phối CK-native (v2.1.0) tạo ra các phiên Claude Code độc lập làm teammates, mỗi phiên có cửa sổ context riêng, quyền sở hữu task và bộ nhớ xuyên phiên.
+Engine điều phối CK-native (v3.0) tạo ra các phiên Claude Code độc lập làm teammates, mỗi phiên có cửa sổ context riêng, quyền sở hữu task và bộ nhớ xuyên phiên. v3.0 dùng giám sát tường minh qua TaskList/message và giữ rules của teammate trong skill.
 
 ## Skill Này Làm Gì
 
-Agent Teams cho phép bạn chạy nhiều instance Claude Code song song—mỗi instance giải quyết một workstream khác nhau đồng thời. Teammates chia sẻ danh sách task và giao tiếp qua messaging. Không giống subagents (fire-and-forget), teammates là liên tục, hướng sự kiện và có khả năng thảo luận.
+Agent Teams cho phép bạn chạy nhiều instance Claude Code song song—mỗi instance giải quyết một workstream khác nhau đồng thời. Teammates chia sẻ danh sách task và giao tiếp qua messaging. Không giống subagents (fire-and-forget), teammates là liên tục và có khả năng thảo luận.
 
-Templates tự động thực thi khi spawn (thay đổi từ v2.1.0—là thủ công trong v1.x).
+Templates tự động thực thi khi spawn (thay đổi từ v2.1.0—là thủ công trong v1.x). v3.0 cập nhật Agent API và mặc định yêu cầu teammates cập nhật TaskList, rồi gửi message ngắn gọn cho lead.
 
 ## Templates
 
@@ -59,14 +59,16 @@ CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1 claude
 # Claude Code >= 2.1.33 (được bật mặc định)
 ```
 
-## Giám Sát Hướng Sự Kiện
+## Giám Sát Tường Minh
 
-Teams kích hoạt hooks bạn có thể quan sát:
+ClaudeKit không ship custom handlers `TaskCompleted` hoặc `TeammateIdle` mặc định. Team workflow dùng trạng thái task và message tường minh:
 
-| Sự Kiện | Khi Nào | Dùng Cho |
-|-------|------|---------|
-| `TaskCompleted` | Teammate hoàn thành task | Theo dõi tiến trình, kích hoạt dependents |
-| `TeammateIdle` | Teammate không có task đang chờ | Phân công lại công việc, kết thúc |
+1. Teammates gọi `TaskUpdate` khi bắt đầu, bị block, hoặc hoàn thành việc
+2. Teammates gửi message ngắn gọn khi hoàn thành hoặc bị block cho lead
+3. Lead kiểm tra `TaskList` trước khi tổng hợp, phân công lại, spawn tester, hoặc shutdown
+4. Idle nghĩa là teammate đang chờ; không phải tín hiệu hoàn thành
+
+Claude Code có platform events như `TaskCompleted` và `TeammateIdle`, nhưng ClaudeKit không bật handler automation mặc định cho đến khi project tự thêm và validate handler riêng.
 
 ## Bộ Nhớ Agent
 

@@ -76,6 +76,8 @@ The `ck migrate` command:
 
 > **Codex hooks on Windows (v4.4.0+):** Hook wiring to Codex now works on all platforms including Windows. The previous Windows short-circuit has been removed. `ck init` and `ck migrate` probe for both `codex` and `codex.exe`, resolve `%USERPROFILE%` path candidates, and generate hook wrappers without a shebang (always invoked via `node`, so they run identically on every platform). If you previously ran `ck migrate --agent codex` on Windows and hooks were silently skipped, re-run `ck migrate --agent codex --hooks --force` to wire them now.
 
+> **Project-scope Codex hook paths (v4.4.0+):** Earlier versions of project-scope `ck migrate --agent codex` could leave `$CLAUDE_PROJECT_DIR` in `.codex/hooks.json` commands. Codex does not define that variable, so every migrated hook failed with `hook exited with code 1`. Migration now resolves hook commands to absolute paths at migrate time and automatically removes the old broken entries on re-run. If you hit this error, update the CLI and re-run `ck migrate --agent codex` in the project. Note that `.codex/hooks.json` contains machine-specific absolute paths: do not commit it for shared use, and re-run the migration after moving or renaming the project directory.
+
 ## Supported Providers
 
 Each column indicates how well `ck migrate` can transfer that content type to the target provider:

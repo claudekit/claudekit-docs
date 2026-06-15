@@ -41,7 +41,7 @@ Lệnh `ck migrate`:
 6. **Gộp** cấu hình hooks vào `settings.json` của provider
 7. **Dọn dẹp** registry cũ và đường dẫn deprecated
 
-> **Antigravity 2.0:** skills và agents đã migrate được ghi vào `.agents/skills/<name>/SKILL.md`, rules ghi vào `.agents/rules/`, commands ghi vào `.agents/workflows/`, và skills global ghi vào `~/.gemini/config/skills/`. Agents của ClaudeKit sẽ hiển thị trong Antigravity như skills.
+> **Antigravity 2.0:** agents project được gộp vào `.agents/agents.md`, skills project ghi vào `.agents/skills/<name>/SKILL.md`, rules ghi vào `.agents/rules/`, commands ghi vào `.agents/workflows/`, và skills global ghi vào `~/.gemini/config/skills/`. Chưa có đường dẫn `agents.md` global đã được xác minh.
 
 ## Provider Được Hỗ Trợ
 

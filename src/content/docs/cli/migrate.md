@@ -57,7 +57,7 @@ After execution, the command ends with a boxed footer:
 - **Default scope**: project-level
 - **Global scope**: pass `-g` or `--global`
 - **Provider quirks still apply**: for example, Codex commands migrate as skills, so project scope writes `.agents/skills/source-command-*/SKILL.md` and global scope writes `~/.agents/skills/source-command-*/SKILL.md`
-- **Antigravity 2.0 paths**: project skills and migrated agents write to `.agents/skills/<name>/SKILL.md`, project rules write to `.agents/rules/`, project commands write to `.agents/workflows/`, and global skills write to `~/.gemini/config/skills/`
+- **Antigravity 2.0 paths**: project agents merge into `.agents/agents.md`, project skills write to `.agents/skills/<name>/SKILL.md`, project rules write to `.agents/rules/`, project commands write to `.agents/workflows/`, and global skills write to `~/.gemini/config/skills/`
 
 If you are migrating in older Windows terminals, set `CK_FORCE_ASCII=1` to force the ASCII fallback border set.
 
@@ -105,7 +105,7 @@ Each column indicates how well `ck migrate` can transfer that content type to th
 | Cline | Partial | - | Yes | Yes | Yes | - |
 | OpenHands | Partial | - | Yes | Yes | Yes | - |
 
-Antigravity agents migrate as Antigravity 2.0 skills, so they appear under the provider's skills surface rather than a separate custom-agent directory.
+Antigravity agents migrate into `.agents/agents.md`, Antigravity 2.0's project agents/personas file. Global Antigravity skills are supported, but no verified global `agents.md` path is documented.
 
 ## Options
 

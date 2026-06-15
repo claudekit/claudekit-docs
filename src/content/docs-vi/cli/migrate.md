@@ -41,6 +41,8 @@ Lệnh `ck migrate`:
 6. **Gộp** cấu hình hooks vào `settings.json` của provider
 7. **Dọn dẹp** registry cũ và đường dẫn deprecated
 
+> **Antigravity 2.0:** skills và agents đã migrate được ghi vào `.agents/skills/<name>/SKILL.md`, rules ghi vào `.agents/rules/`, commands ghi vào `.agents/workflows/`, và skills global ghi vào `~/.gemini/config/skills/`. Agents của ClaudeKit sẽ hiển thị trong Antigravity như skills.
+
 ## Provider Được Hỗ Trợ
 
 Mỗi cột cho biết mức độ `ck migrate` có thể chuyển loại nội dung đó sang provider đích:
@@ -63,7 +65,7 @@ Mỗi cột cho biết mức độ `ck migrate` có thể chuyển loại nội 
 | Goose | Một phần | - | Co | Co | Co | - |
 | Gemini CLI | Một phần | Co | Co | Co | Co | - |
 | Amp | Một phần | - | Co | Co | Co | - |
-| Antigravity | - | Co | Co | Co | Co | - |
+| Antigravity | Co | Co | Co | Co | Co | - |
 | Cline | Một phần | - | Co | Co | Co | - |
 | OpenHands | Một phần | - | Co | Co | Co | - |
 

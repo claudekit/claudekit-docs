@@ -38,8 +38,11 @@ Lệnh `ck uninstall`:
 3. Phân tích tệp bằng cách theo dõi quyền sở hữu
 4. Hiển thị xem trước các tệp sẽ xóa và bảo toàn
 5. Xóa các tệp thuộc quyền sở hữu của ClaudeKit
-6. Bảo toàn các tùy chỉnh và cấu hình của người dùng
-7. Dọn dẹp các thư mục trống
+6. Xóa các đăng ký hook và MCP mà nó đã thêm vào `settings.json` và dọn dẹp dữ liệu theo dõi trong `.ck.json`
+7. Bảo toàn các tùy chỉnh và cấu hình của người dùng
+8. Dọn dẹp các thư mục trống
+
+Các hook do bạn tự viết hoặc tự chỉnh sửa sẽ được giữ nguyên, và khi gỡ một kit khỏi cài đặt nhiều kit, các đăng ký vẫn còn được kit còn lại sử dụng sẽ được giữ lại.
 
 ## Cú Pháp
 

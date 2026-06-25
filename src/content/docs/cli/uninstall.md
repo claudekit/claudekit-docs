@@ -38,8 +38,11 @@ The `ck uninstall` command:
 4. Shows preview of files to delete and preserve
 5. Creates a scoped recovery backup under `~/.claudekit/backups/`
 6. Removes ClaudeKit-owned files
-6. Preserves user customizations and configurations
-7. Cleans up empty directories
+7. Removes the hook and MCP registrations it added to `settings.json` and clears its `.ck.json` tracking
+8. Preserves user customizations and configurations
+9. Cleans up empty directories
+
+Hook entries you authored or edited yourself are left untouched, and when a single kit is removed from a multi-kit install, registrations still used by the remaining kit are kept.
 
 ## Syntax
 

@@ -74,7 +74,7 @@ The result: your main context stays pristine, yet you can still tap into special
 
 ### Further Optimization
 
-Even with subagent isolation, processing massive MCP catalogs still burns tokens. To mitigate that, ClaudeKit can hand off heavy MCP orchestration to **gemini-cli**, shifting the most expensive reasoning to a cheaper, external runtime while keeping the main conversation focused.
+Even with subagent isolation, processing massive MCP catalogs still burns tokens. To mitigate that, ClaudeKit can hand off heavy MCP orchestration to the **Antigravity (agy) CLI**, shifting the most expensive reasoning to a cheaper, external runtime while keeping the main conversation focused.
 
 ---
 

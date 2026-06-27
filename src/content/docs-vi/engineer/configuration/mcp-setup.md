@@ -75,7 +75,7 @@ Kết quả: context chính vẫn sạch nhưng bạn vẫn khai thác trọn v�
 
 ### Tối ưu nâng cao
 
-Ngay cả khi cô lập bằng subagent, việc duyệt quá nhiều công cụ MCP vẫn tốn token. Để giảm chi phí, ClaudeKit có thể chuyển phần orchestration nặng nề sang **gemini-cli**, tận dụng một runtime rẻ hơn mà vẫn giữ cuộc trò chuyện chính tập trung.
+Ngay cả khi cô lập bằng subagent, việc duyệt quá nhiều công cụ MCP vẫn tốn token. Để giảm chi phí, ClaudeKit có thể chuyển phần orchestration nặng nề sang **Antigravity (agy) CLI**, tận dụng một runtime rẻ hơn mà vẫn giữ cuộc trò chuyện chính tập trung.
 
 ---
 

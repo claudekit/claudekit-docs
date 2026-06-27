@@ -52,7 +52,7 @@ ck new [OPTIONS]
 | `--exclude <pattern>` | Exclude files matching glob pattern (repeatable) | None |
 | `--prefix` | Move commands to `/ck:` namespace | `false` |
 | `--opencode` | Install OpenCode package globally | `false` |
-| `--gemini` | Install Gemini CLI and set up MCP integration | `false` |
+| `--gemini` | Install the Antigravity (agy) CLI and set up MCP integration | `false` |
 | `--install-skills` | Auto-install skill dependencies | `false` |
 | `--docs-dir <name>` | Custom name for docs folder | `docs` |
 | `--plans-dir <name>` | Custom name for plans folder | `plans` |

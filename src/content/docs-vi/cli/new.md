@@ -53,7 +53,7 @@ ck new [OPTIONS]
 | `--exclude <pattern>` | Loại trừ các tệp khớp với mẫu glob (có thể lặp lại) | Không có |
 | `--prefix` | Chuyển các lệnh sang không gian tên `/ck:` | `false` |
 | `--opencode` | Cài đặt gói OpenCode trên toàn cầu | `false` |
-| `--gemini` | Cài đặt Gemini CLI và thiết lập tích hợp MCP | `false` |
+| `--gemini` | Cài đặt Antigravity (agy) CLI và thiết lập tích hợp MCP | `false` |
 | `--install-skills` | Tự động cài đặt các phụ thuộc của kỹ năng | `false` |
 | `--docs-dir <name>` | Tên tùy chỉnh cho thư mục tài liệu | `docs` |
 | `--plans-dir <name>` | Tên tùy chỉnh cho thư mục kế hoạch | `plans` |

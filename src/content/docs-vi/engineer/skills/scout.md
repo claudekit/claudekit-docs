@@ -30,14 +30,14 @@ Hãy nghĩ đây như nhiệm vụ trinh sát trước khi thực hiện tính n
 
 - Khám phá file dựa trên agent song song
 - Khám phá codebase tiết kiệm token
-- Tích hợp sẵn khám phá song song hoặc công cụ bên ngoài (Gemini/OpenCode CLI)
+- Tích hợp sẵn khám phá song song hoặc công cụ bên ngoài (Antigravity agy/OpenCode CLI)
 - Mở rộng linh hoạt dựa trên quy mô codebase
 - Báo cáo ngắn gọn với các câu hỏi chưa giải quyết
 
 ## Đối Số
 
 - **Mặc định**: Scout dùng khám phá song song tích hợp sẵn
-- **ext**: Scout dùng công cụ Gemini/OpenCode CLI bên ngoài song song
+- **ext**: Scout dùng công cụ Antigravity (agy)/OpenCode CLI bên ngoài song song
 
 ## Bắt Đầu Nhanh
 

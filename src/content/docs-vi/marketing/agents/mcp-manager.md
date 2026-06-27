@@ -17,7 +17,7 @@ Bạn muốn tự động chụp ảnh màn hình, truy cập dữ liệu Google
 
 **Vấn đề**: Các workflow marketing hiện đại phụ thuộc vào nhiều dịch vụ bên ngoài—nền tảng phân tích, công cụ thiết kế, tự động hóa trình duyệt, API. Tích hợp từng dịch vụ có nghĩa là học SDK của nó, xử lý xác thực và viết code tùy chỉnh.
 
-**Giải pháp**: MCP Manager Agent xử lý tất cả các tích hợp server Model Context Protocol (MCP). Nó khám phá các tool có sẵn, thực thi chúng hiệu quả qua Gemini CLI hoặc script trực tiếp, và trả về kết quả gọn gàng. Bạn truy cập các dịch vụ bên ngoài mạnh mẽ với các lệnh đơn giản.
+**Giải pháp**: MCP Manager Agent xử lý tất cả các tích hợp server Model Context Protocol (MCP). Nó khám phá các tool có sẵn, thực thi chúng hiệu quả qua Antigravity (agy) CLI hoặc script trực tiếp, và trả về kết quả gọn gàng. Bạn truy cập các dịch vụ bên ngoài mạnh mẽ với các lệnh đơn giản.
 
 ## Bắt Đầu Nhanh
 
@@ -28,7 +28,7 @@ Thực thi MCP tools qua manager:
 /mcp "Take screenshot of claudekit.cc homepage"
 ```
 
-Manager xử lý việc khám phá tool, thực thi qua phương pháp tối ưu (Gemini CLI trước, script dự phòng), và trả về kết quả.
+Manager xử lý việc khám phá tool, thực thi qua phương pháp tối ưu (Antigravity agy CLI trước, script dự phòng), và trả về kết quả.
 
 ## Khả Năng
 
@@ -42,7 +42,7 @@ Khám phá và quản lý các dịch vụ tích hợp:
 
 ### Chiến Lược Thực Thi Thông Minh
 Chọn phương pháp thực thi tối ưu:
-- **Chính**: Gemini CLI (nhanh nhất, cửa sổ context 2M)
+- **Chính**: Antigravity (agy) CLI (nhanh nhất, cửa sổ context 2M)
 - **Phụ**: Script TypeScript trực tiếp
 - **Dự phòng**: Báo cáo lỗi với hướng dẫn
 - Tự động chuyển đổi dự phòng giữa các phương pháp
@@ -83,11 +83,11 @@ Sử dụng MCP Manager Agent khi bạn cần:
 ```
 
 **Manager sẽ**:
-1. Kiểm tra Gemini CLI có sẵn không
+1. Kiểm tra Antigravity (agy) CLI có sẵn không
 2. Thiết lập symlink MCP server nếu cần
-3. Thực thi qua Gemini: `gemini -y -m gemini-2.5-flash -p "Take screenshot of https://claudekit.cc/docs"`
+3. Thực thi qua agy: `agy --dangerously-skip-permissions --model gemini-2.5-flash -p "Take screenshot of https://claudekit.cc/docs"`
 4. Trả về đường dẫn file ảnh màn hình
-5. Nếu Gemini không khả dụng, chuyển sang thực thi script trực tiếp
+5. Nếu agy không khả dụng, chuyển sang thực thi script trực tiếp
 
 ### Dữ Liệu Google Analytics
 
@@ -117,18 +117,18 @@ Data from: google-analytics MCP server
 
 ## Phương Pháp Thực Thi
 
-### Phương Pháp 1: Gemini CLI (Chính)
+### Phương Pháp 1: Antigravity (agy) CLI (Chính)
 
 Nhanh nhất và nhận thức context tốt nhất:
 ```bash
 # Kiểm tra tính khả dụng
-command -v gemini >/dev/null 2>&1
+command -v agy >/dev/null 2>&1
 
-# Thiết lập symlink config MCP
-mkdir -p .gemini && ln -sf .claude/.mcp.json .gemini/settings.json
+# Thiết lập symlink config MCP (agy đọc file global ~/.gemini/config/mcp_config.json)
+mkdir -p ~/.gemini/config && ln -sf "$(pwd)/.claude/.mcp.json" ~/.gemini/config/mcp_config.json
 
 # Thực thi tác vụ
-gemini -y -m gemini-2.5-flash -p "Take screenshot of example.com"
+agy --dangerously-skip-permissions --model gemini-2.5-flash -p "Take screenshot of example.com"
 ```
 
 **Ưu điểm**:
@@ -139,7 +139,7 @@ gemini -y -m gemini-2.5-flash -p "Take screenshot of example.com"
 
 ### Phương Pháp 2: Script Trực Tiếp (Dự Phòng)
 
-Khi Gemini không khả dụng:
+Khi agy không khả dụng:
 ```bash
 npx tsx .claude/skills/mcp-management/scripts/cli.ts call-tool \
   <server-name> <tool-name> '<json-args>'
@@ -195,7 +195,7 @@ Thêm bất kỳ server tuân thủ MCP vào `.claude/.mcp.json`
 ## Hiệu Suất
 
 Thực thi được tối ưu:
-- Gemini CLI: ~2-5 giây cho tác vụ đơn giản
+- Antigravity (agy) CLI: ~2-5 giây cho tác vụ đơn giản
 - Script trực tiếp: ~3-8 giây cho cùng tác vụ
 - Tự động chuyển dự phòng thêm dưới 1 giây overhead
 - Kết quả được cache khi phù hợp
@@ -213,9 +213,9 @@ Thực thi được tối ưu:
 
 ## Mẹo
 
-**Ưu Tiên Gemini CLI**: Nếu cả hai đều có sẵn, Gemini CLI nhanh hơn và linh hoạt hơn. Cài đặt Gemini CLI để có trải nghiệm tốt nhất.
+**Ưu Tiên Antigravity (agy) CLI**: Nếu cả hai đều có sẵn, Antigravity (agy) CLI nhanh hơn và linh hoạt hơn. Cài đặt nó để có trải nghiệm tốt nhất.
 
-**Tác Vụ Ngôn Ngữ Tự Nhiên**: Với Gemini CLI, mô tả tác vụ một cách tự nhiên: "Take screenshot and resize to 1200px wide" hoạt động tốt hơn việc chuỗi tool thủ công.
+**Tác Vụ Ngôn Ngữ Tự Nhiên**: Với Antigravity (agy) CLI, mô tả tác vụ một cách tự nhiên: "Take screenshot and resize to 1200px wide" hoạt động tốt hơn việc chuỗi tool thủ công.
 
 **Kiểm Tra Tính Khả Dụng**: Chạy `/tools` để xem tất cả MCP tool có sẵn trên các server đã cấu hình.
 
@@ -223,13 +223,13 @@ Thực thi được tối ưu:
 
 ## Khắc Phục Sự Cố
 
-**Không tìm thấy Gemini CLI**:
+**Không tìm thấy Antigravity (agy) CLI**:
 ```bash
-# Cài đặt Gemini CLI
-npm install -g @anthropic-ai/gemini-cli
+# Cài đặt Antigravity (agy) CLI (macOS/Linux)
+curl -fsSL https://antigravity.google/cli/install.sh | bash
 
 # Xác minh cài đặt
-gemini --version
+agy --version
 ```
 
 **MCP server không phản hồi**:

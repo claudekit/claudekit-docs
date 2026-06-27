@@ -29,14 +29,14 @@ Think of it as your reconnaissance mission before feature work—quickly mapping
 
 - Parallel agent-based file discovery
 - Token-efficient codebase exploration
-- Built-in parallel scouting or external tools (Gemini/OpenCode CLI)
+- Built-in parallel scouting or external tools (Antigravity agy/OpenCode CLI)
 - Adaptive scaling based on codebase size
 - Concise reporting with unresolved questions
 
 ## Arguments
 
 - **Default**: Scout using built-in parallel exploration
-- **ext**: Scout using external Gemini/OpenCode CLI tools in parallel
+- **ext**: Scout using external Antigravity (agy)/OpenCode CLI tools in parallel
 
 ## Quick Start
 

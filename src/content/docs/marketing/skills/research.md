@@ -38,7 +38,7 @@ Combine web search, documentation analysis, and GitHub repository exploration.
 5. **Cross-validation**: Verify across 3+ independent sources
 
 **Search priorities**:
-- Check if `gemini` bash command available → use for research (10min timeout)
+- Check if `agy` (Antigravity) bash command available → use for research (`--print-timeout 600s`)
 - Fall back to `WebSearch` tool if needed
 - Run maximum 5 research queries in parallel
 

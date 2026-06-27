@@ -39,7 +39,7 @@ Luôn dùng khi:
 Xác định: Quyết định nào cần nghiên cứu này? Sự thật nào sẽ thay đổi kết quả? Đặt ranh giới (độ sâu, độ mới, nguồn). Ví dụ: "Thư viện auth nào cho Next.js?" → Tiêu chí: được duy trì, lịch sử bảo mật, hỗ trợ TypeScript, <50kb.
 
 ### 2. Tìm Kiếm Có Hệ Thống (Tối Đa 5)
-**Ưu tiên**: `gemini -m gemini-2.5-flash -p "your prompt"` (nếu có)
+**Ưu tiên**: `agy --model gemini-2.5-flash -p "your prompt"` (nếu có)
 **Dự phòng**: Công cụ `WebSearch`
 
 **Fan-out truy vấn** trên:

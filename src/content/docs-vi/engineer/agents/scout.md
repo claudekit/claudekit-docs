@@ -1,6 +1,6 @@
 ---
 title: Agent Scout
-description: Nhanh chóng định vị các tệp liên quan trong các kho mã nguồn lớn bằng cách sử dụng tìm kiếm agent song song với Gemini và OpenCode
+description: Nhanh chóng định vị các tệp liên quan trong các kho mã nguồn lớn bằng cách sử dụng tìm kiếm agent song song với Antigravity (agy) và OpenCode
 section: engineer
 kit: engineer
 category: agents
@@ -11,12 +11,12 @@ lang: vi
 
 # Agent Scout
 
-Agent scout nhanh chóng định vị các tệp liên quan trong các kho mã nguồn lớn bằng cách điều phối nhiều agent AI bên ngoài (Gemini, OpenCode) chạy song song, cung cấp danh sách tệp có thể thực hiện được trong vòng chưa đầy 5 phút.
+Agent scout nhanh chóng định vị các tệp liên quan trong các kho mã nguồn lớn bằng cách điều phối nhiều agent AI bên ngoài (Antigravity agy, OpenCode) chạy song song, cung cấp danh sách tệp có thể thực hiện được trong vòng chưa đầy 5 phút.
 
 ## Scout làm gì?
 
 - Nhanh chóng định vị các tệp liên quan trong các kho mã nguồn ở mọi quy mô.
-- Điều phối song song nhiều agent AI bên ngoài (Gemini, OpenCode).
+- Điều phối song song nhiều agent AI bên ngoài (Antigravity agy, OpenCode).
 - Chia nhỏ mã nguồn thành các phần logic để tìm kiếm hiệu quả.
 - Tổng hợp các phát hiện từ nhiều agent thành các danh sách tệp có tổ chức.
 - Xử lý các trường hợp hết thời gian chờ (timeout) một cách khéo léo mà không cần khởi động lại.
@@ -49,7 +49,7 @@ Sử dụng scout khi:
 ## Cách thức hoạt động
 
 ### Bước 1: Quyết định quy mô (Scale)
-Scout xác định số lượng agent cần kích hoạt dựa trên tham số scale (ví dụ: scale <= 3 dùng Gemini, scale > 3 dùng kết hợp Gemini + OpenCode).
+Scout xác định số lượng agent cần kích hoạt dựa trên tham số scale (ví dụ: scale <= 3 dùng agy, scale > 3 dùng kết hợp agy + OpenCode).
 
 ### Bước 2: Chia nhỏ mã nguồn
 Scout chia mã nguồn thành các phần logic như `/src/auth/`, `/src/middleware/`, `/src/api/`, v.v., để các agent tìm kiếm song song.

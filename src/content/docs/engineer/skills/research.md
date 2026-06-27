@@ -37,7 +37,7 @@ Especially when:
 Identify: What decision needs this research? What facts will change the outcome? Set boundaries (depth, recency, sources). Example: "Which auth lib for Next.js?" → Criteria: maintained, security track record, TypeScript support, <50kb.
 
 ### 2. Systematic Search (Max 5)
-**Preferred**: `gemini -m gemini-2.5-flash -p "your prompt"` (if available)
+**Preferred**: `agy --model gemini-2.5-flash -p "your prompt"` (if available)
 **Fallback**: `WebSearch` tool
 
 **Query fan-out** across:

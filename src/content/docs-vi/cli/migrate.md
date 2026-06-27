@@ -69,6 +69,8 @@ Mỗi cột cho biết mức độ `ck migrate` có thể chuyển loại nội 
 | Cline | Một phần | - | Co | Co | Co | - |
 | OpenHands | Một phần | - | Co | Co | Co | - |
 
+> **Lưu ý về dòng Gemini CLI:** Google đã ngừng cung cấp Gemini CLI độc lập vào 2026-06-18. Kế nhiệm của nó là Antigravity CLI (`agy`), được liệt kê ở dòng riêng phía trên. Dòng Gemini CLI vẫn giữ để `ck migrate` có thể chuyển config sang bố cục Gemini CLI hiện có.
+
 ## Tùy Chọn
 
 ### Tùy Chọn Target

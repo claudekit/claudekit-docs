@@ -50,13 +50,15 @@ Look at this example, Claude Desktop completely failed compared to Gemini and Ch
 
 Claude couldn't correctly identify the actions and devices in the image.
 
-**Now let's compare directly between Claude Code and Gemini CLI!**
+**Now let's compare directly between Claude Code and the Antigravity CLI (agy)!**
+
+> Google retired the standalone `gemini` CLI on 2026-06-18. Its successor is the Antigravity CLI, binary `agy`. The screenshot below was captured with the original Gemini CLI, but the same comparison holds for `agy`, which runs the same Gemini models.
 
 I'll ask both to read a blueprint image and describe in detail what they see:
 
-![Gemini Analyze Screenshot](/assets/03-claude-code-vs-gemini-cli.jpg)
+![Antigravity CLI analyze screenshot](/assets/03-claude-code-vs-gemini-cli.jpg)
 
-Gemini CLI provides detailed descriptions of the blueprint, while Claude Code is quite superficial...
+The Antigravity CLI (agy) provides detailed descriptions of the blueprint, while Claude Code is quite superficial...
 
 Do you see the difference?
 
@@ -64,7 +66,7 @@ Do you see the difference?
 
 ## Wait, there's one more thing that Claude's "eyes" currently CANNOT do: VIDEO ANALYSIS capability
 
-But Gemini (web version, not CLI) can do this, which makes debugging in Vibe Coding much easier.
+But Gemini (web version, not the agy CLI) can do this, which makes debugging in Vibe Coding much easier.
 
 ![Gemini Analyze Video](/assets/04-gemini-analyze-video.jpg)
 

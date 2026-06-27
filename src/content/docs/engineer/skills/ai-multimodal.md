@@ -87,10 +87,10 @@ python scripts/gemini_batch_process.py --files screenshot.png --task analyze --p
 python scripts/gemini_batch_process.py --files img1.jpg img2.jpg --task analyze
 ```
 
-If you have the `gemini` CLI installed, there's a faster shortcut:
+If you have the `agy` (Antigravity) CLI installed, there's a faster shortcut:
 
 ```bash
-cat image.png | gemini -y -m gemini-2.5-flash
+cat image.png | agy --dangerously-skip-permissions --model gemini-2.5-flash -p
 ```
 
 Gemini excels at object detection, OCR from screenshots, design extraction, visual Q&A, and handling multiple images for comparison.

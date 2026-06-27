@@ -7,7 +7,7 @@ order: 7
 ---
 # Scout External Agent
 
-> **Your AI-powered explorer** - Harnesses Gemini and other AI tools for deep codebase analysis
+> **Your AI-powered explorer** - Harnesses the Antigravity (agy) CLI and other AI tools for deep codebase analysis
 
 ## What This Agent Does
 
@@ -15,7 +15,7 @@ You're working on a massive monorepo with hundreds of directories. You need to f
 
 **The Problem**: Large, complex codebases need parallel, intelligent search across many directories. Simple pattern matching isn't enough—you need AI that understands code semantics and relationships.
 
-**The Solution**: Scout External orchestrates multiple AI coding assistants (Gemini, OpenCode) to search different parts of your codebase simultaneously. It delegates complex searches to AI tools with massive context windows, then synthesizes results into actionable file lists.
+**The Solution**: Scout External orchestrates multiple AI coding assistants (Antigravity agy, OpenCode) to search different parts of your codebase simultaneously. It delegates complex searches to AI tools with massive context windows, then synthesizes results into actionable file lists.
 
 ## Quick Start
 
@@ -32,7 +32,7 @@ Multiple AI tools search in parallel, understanding code semantics to find relev
 
 ### AI-Powered Search Orchestration
 Coordinates multiple AI assistants:
-- Delegates search regions to Gemini Flash 2.5 (2M context)
+- Delegates search regions to the Antigravity (agy) CLI running Gemini Flash 2.5 (2M context)
 - Uses OpenCode for specialized code analysis
 - Runs searches in parallel for speed
 - Combines results from multiple tools
@@ -115,7 +115,7 @@ Use Scout External when:
 ### Small Scale (2-3 agents)
 For focused searches:
 ```bash
-# Uses only Gemini
+# Uses only the Antigravity (agy) CLI
 Agent 1: Search lib/ for payment utilities
 Agent 2: Search app/api/ for payment routes
 Agent 3: Search db/ for payment schemas
@@ -124,19 +124,19 @@ Agent 3: Search db/ for payment schemas
 ### Large Scale (4-5 agents)
 For comprehensive searches:
 ```bash
-# Uses Gemini + OpenCode for diversity
-Agent 1 (Gemini): Frontend payment UI
-Agent 2 (Gemini): Backend payment logic
+# Uses agy + OpenCode for diversity
+Agent 1 (agy): Frontend payment UI
+Agent 2 (agy): Backend payment logic
 Agent 3 (OpenCode): Database and migrations
-Agent 4 (Gemini): Webhook handlers
+Agent 4 (agy): Webhook handlers
 Agent 5 (OpenCode): Configuration and tests
 ```
 
 ## AI Tool Commands
 
-**Gemini Flash 2.5** (primary):
+**Antigravity (agy) CLI** (primary, runs Gemini Flash 2.5):
 ```bash
-gemini -y -p "Search app/ for email-related files. Return file paths only." --model gemini-2.5-flash
+agy --dangerously-skip-permissions -p "Search app/ for email-related files. Return file paths only." --model gemini-2.5-flash
 ```
 
 **OpenCode** (secondary):
@@ -184,7 +184,7 @@ Optimized for large-scale searches:
 
 **Describe Functionality**: Instead of "find files with 'stripe' in them," say "find payment processing and webhook files." AI understands intent.
 
-**Trust Semantic Search**: AI might suggest files you didn't expect. If Gemini thinks a file is relevant, it probably is—even if naming doesn't match.
+**Trust Semantic Search**: AI might suggest files you didn't expect. If agy thinks a file is relevant, it probably is, even if naming doesn't match.
 
 **Check Timeouts**: If an agent times out, results will note the gap. You can rerun or search that section manually.
 
@@ -193,12 +193,12 @@ Optimized for large-scale searches:
 ```
 AI-Powered Search Results (5 agents, 4.2 minutes):
 
-Frontend Payment UI (Agent 1 - Gemini):
+Frontend Payment UI (Agent 1 - agy):
 - app/checkout/page.tsx - Checkout page with Stripe Elements
 - components/PaymentForm.tsx - Payment form component
 - components/PaymentMethod.tsx - Payment method selector
 
-Backend Payment Logic (Agent 2 - Gemini):
+Backend Payment Logic (Agent 2 - agy):
 - lib/stripe/client.ts - Stripe API client
 - lib/sepay/client.ts - SePay API client
 - api/checkout/route.ts - Checkout API endpoint
@@ -209,7 +209,7 @@ Database & Schemas (Agent 3 - OpenCode):
 - db/schema/transactions.ts - Transaction logs
 - db/migrations/001_add_payments.sql - Payment tables migration
 
-Webhooks (Agent 4 - Gemini):
+Webhooks (Agent 4 - agy):
 - api/webhooks/stripe/route.ts - Stripe webhook handler
 - api/webhooks/sepay/route.ts - SePay webhook handler
 - lib/webhooks/verify.ts - Webhook signature verification

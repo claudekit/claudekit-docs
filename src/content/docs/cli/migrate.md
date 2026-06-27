@@ -107,6 +107,8 @@ Each column indicates how well `ck migrate` can transfer that content type to th
 
 Antigravity agents migrate into `.agents/agents.md`, Antigravity 2.0's project agents/personas file. Global Antigravity skills are supported, but no verified global `agents.md` path is documented.
 
+> **Note on the Gemini CLI row:** Google retired the standalone Gemini CLI on 2026-06-18. Its successor is the Antigravity CLI (`agy`), listed as a separate row above. The Gemini CLI row stays so `ck migrate` can still transfer configs to existing Gemini CLI layouts.
+
 ## Options
 
 ### Target Options

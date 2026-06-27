@@ -15,7 +15,7 @@ You want to automate screenshot capture, access Google Analytics data, or intera
 
 **The Problem**: Modern marketing workflows depend on many external services—analytics platforms, design tools, browser automation, APIs. Integrating each service means learning its SDK, handling auth, and writing custom code.
 
-**The Solution**: The MCP Manager Agent handles all Model Context Protocol (MCP) server integrations. It discovers available tools, executes them efficiently via Gemini CLI or direct scripts, and returns results cleanly. You access powerful external services with simple commands.
+**The Solution**: The MCP Manager Agent handles all Model Context Protocol (MCP) server integrations. It discovers available tools, executes them efficiently via the Antigravity (agy) CLI or direct scripts, and returns results cleanly. You access powerful external services with simple commands.
 
 ## Quick Start
 
@@ -26,7 +26,7 @@ Execute MCP tools through the manager:
 /mcp "Take screenshot of claudekit.cc homepage"
 ```
 
-The manager handles tool discovery, execution via optimal method (Gemini CLI first, scripts fallback), and result delivery.
+The manager handles tool discovery, execution via optimal method (Antigravity agy CLI first, scripts fallback), and result delivery.
 
 ## Capabilities
 
@@ -40,7 +40,7 @@ Discovers and manages integrated services:
 
 ### Intelligent Execution Strategy
 Chooses optimal execution method:
-- **Primary**: Gemini CLI (fastest, 2M context window)
+- **Primary**: Antigravity (agy) CLI (fastest, 2M context window)
 - **Secondary**: Direct TypeScript scripts
 - **Fallback**: Error reporting with guidance
 - Automatic failover between methods
@@ -81,11 +81,11 @@ Use the MCP Manager Agent when you need to:
 ```
 
 **The manager will**:
-1. Check if Gemini CLI available
+1. Check if the Antigravity (agy) CLI is available
 2. Setup MCP server symlink if needed
-3. Execute via Gemini: `gemini -y -m gemini-2.5-flash -p "Take screenshot of https://claudekit.cc/docs"`
+3. Execute via agy: `agy --dangerously-skip-permissions --model gemini-2.5-flash -p "Take screenshot of https://claudekit.cc/docs"`
 4. Return screenshot file path
-5. If Gemini unavailable, fall back to direct script execution
+5. If agy unavailable, fall back to direct script execution
 
 ### Google Analytics Data
 
@@ -115,18 +115,18 @@ Data from: google-analytics MCP server
 
 ## Execution Methods
 
-### Method 1: Gemini CLI (Primary)
+### Method 1: Antigravity (agy) CLI (Primary)
 
 Fastest and most context-aware:
 ```bash
 # Check availability
-command -v gemini >/dev/null 2>&1
+command -v agy >/dev/null 2>&1
 
-# Setup MCP config symlink
-mkdir -p .gemini && ln -sf .claude/.mcp.json .gemini/settings.json
+# Setup MCP config symlink (agy reads the global ~/.gemini/config/mcp_config.json)
+mkdir -p ~/.gemini/config && ln -sf "$(pwd)/.claude/.mcp.json" ~/.gemini/config/mcp_config.json
 
 # Execute task
-gemini -y -m gemini-2.5-flash -p "Take screenshot of example.com"
+agy --dangerously-skip-permissions --model gemini-2.5-flash -p "Take screenshot of example.com"
 ```
 
 **Advantages**:
@@ -137,7 +137,7 @@ gemini -y -m gemini-2.5-flash -p "Take screenshot of example.com"
 
 ### Method 2: Direct Scripts (Fallback)
 
-When Gemini unavailable:
+When agy unavailable:
 ```bash
 npx tsx .claude/skills/mcp-management/scripts/cli.ts call-tool \
   <server-name> <tool-name> '<json-args>'
@@ -193,7 +193,7 @@ Add any MCP-compliant server to `.claude/.mcp.json`
 ## Performance
 
 Optimized execution:
-- Gemini CLI: ~2-5 seconds for simple tasks
+- Antigravity (agy) CLI: ~2-5 seconds for simple tasks
 - Direct scripts: ~3-8 seconds for same task
 - Automatic failover adds <1 second overhead
 - Results cached when appropriate
@@ -211,9 +211,9 @@ Optimized execution:
 
 ## Tips
 
-**Prefer Gemini CLI**: If both available, Gemini CLI is faster and more flexible. Install Gemini CLI for best experience.
+**Prefer the Antigravity (agy) CLI**: If both available, the Antigravity (agy) CLI is faster and more flexible. Install it for the best experience.
 
-**Natural Language Tasks**: With Gemini CLI, describe tasks naturally: "Take screenshot and resize to 1200px wide" works better than manual tool chaining.
+**Natural Language Tasks**: With the Antigravity (agy) CLI, describe tasks naturally: "Take screenshot and resize to 1200px wide" works better than manual tool chaining.
 
 **Check Availability**: Run `/tools` to see all available MCP tools across configured servers.
 
@@ -221,13 +221,13 @@ Optimized execution:
 
 ## Troubleshooting
 
-**Gemini CLI not found**:
+**Antigravity (agy) CLI not found**:
 ```bash
-# Install Gemini CLI
-npm install -g @anthropic-ai/gemini-cli
+# Install the Antigravity (agy) CLI (macOS/Linux)
+curl -fsSL https://antigravity.google/cli/install.sh | bash
 
 # Verify installation
-gemini --version
+agy --version
 ```
 
 **MCP server not responding**:

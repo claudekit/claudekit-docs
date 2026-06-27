@@ -36,10 +36,10 @@ MCP is an open protocol that lets AI agents connect to external tools and data s
 
 MCP servers are configured in `.claude/.mcp.json` in your project root.
 
-**Gemini CLI integration** (recommended) — create a symlink so both Claude Code and Gemini CLI share one config:
+**Antigravity (agy) CLI integration** (recommended) — share one MCP config so both Claude Code and the Antigravity (agy) CLI read the same servers. agy loads MCP servers from the global `~/.gemini/config/mcp_config.json`, so symlink it to your project config:
 
 ```bash
-mkdir -p .gemini && ln -sf .claude/.mcp.json .gemini/settings.json
+mkdir -p ~/.gemini/config && ln -sf "$(pwd)/.claude/.mcp.json" ~/.gemini/config/mcp_config.json
 ```
 
 ## Core Capabilities

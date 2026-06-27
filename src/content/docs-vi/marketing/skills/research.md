@@ -39,7 +39,7 @@ Kết hợp tìm kiếm web, phân tích tài liệu và khám phá kho GitHub.
 5. **Xác nhận chéo**: Xác minh qua 3+ nguồn độc lập
 
 **Ưu tiên tìm kiếm**:
-- Kiểm tra xem lệnh `gemini` bash có sẵn không → dùng cho nghiên cứu (timeout 10 phút)
+- Kiểm tra xem lệnh `agy` (Antigravity) bash có sẵn không → dùng cho nghiên cứu (`--print-timeout 600s`)
 - Dự phòng sang công cụ `WebSearch` nếu cần
 - Chạy tối đa 5 truy vấn nghiên cứu song song
 

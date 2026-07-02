@@ -55,6 +55,7 @@ ck init [OPTIONS]
 | `--beta` | Include beta versions in selection | `false` |
 | `--refresh` | Force cache refresh for releases | `false` |
 | `--global` / `-g` | Install to user directory (`~/.claude/`) | `false` (local) |
+| `--install-mode <mode>` | Global Engineer install mode: `auto`, `plugin`, or `legacy` | `auto` |
 | `--yes` / `-y` | Non-interactive mode with defaults | `false` |
 | `--fresh` | Create a recovery backup, remove CK-managed files, then reinstall | `false` |
 | `--exclude <pattern>` | Exclude files matching pattern (repeatable) | None |
@@ -138,6 +139,20 @@ Global mode is useful for:
 - Sharing configuration across projects
 - Using ClaudeKit commands everywhere
 - Centralized skill management
+
+### Engineer Install Mode
+
+Global Engineer installs can run as Claude/Codex plugins or as copied legacy files:
+
+```bash
+ck init -g --kit engineer --install-mode auto
+ck init -g --kit engineer --install-mode plugin
+ck init -g --kit engineer --install-mode legacy
+```
+
+Use `auto` for normal installs. ClaudeKit prefers plugins when Claude Code or Codex supports them, keeps copied skills as fallback until plugin verification succeeds, and removes duplicate CK-owned legacy skill files after a verified migration.
+
+Use `plugin` when plugin verification should be required for supported runtimes. Use `legacy` when you want copied files in `~/.claude/` to remain the active install and owned plugin state removed.
 
 ### Fresh Installation
 

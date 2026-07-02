@@ -40,6 +40,9 @@ The `ck update` command:
 4. Prompts for confirmation (unless `--yes`)
 5. Executes package manager update command
 6. Verifies installation
+7. Offers or runs the matching `ck init` follow-up when installed kit content needs updating or self-healing
+
+For global Engineer installs, the follow-up init preserves your saved install mode preference. `legacy` stays legacy across version updates, while `auto` and `plugin` can self-heal missing, disabled, stale-version, or stale-source `ck@claudekit` plugin state.
 
 ## Syntax
 

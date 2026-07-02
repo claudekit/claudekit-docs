@@ -82,6 +82,7 @@ Validates ClaudeKit installation:
 - **Metadata**: Installation metadata is valid
 - **Version**: Installed version is current
 - **Skills**: Skills directory structure is correct
+- **Install mode**: Global Engineer preference, Claude plugin state, legacy copied files, and Codex plugin state
 
 ### Auth Checks
 
@@ -303,6 +304,23 @@ Issues that can be automatically fixed:
 | Missing global install | Prompt `ck init --global` |
 | Missing skill dependencies | Install packages in skill directories |
 | Invalid cache | Clear cache and refresh |
+
+### Install Mode Findings
+
+For global Engineer installs, `ck doctor` reports the persisted install mode preference and the live Claude/Codex state:
+
+- `preference: auto|plugin|legacy`
+- Claude plugin registration and enabled/disabled status
+- Legacy copied skill state
+- Codex plugin state, including missing, disabled, stale version, or stale source
+
+If both copied CK skills and the `ck@claudekit` plugin are active, run:
+
+```bash
+ck init -g --kit engineer --install-mode auto
+```
+
+Use `--install-mode legacy` if you intentionally want copied skills and no owned plugin state.
 
 Issues that require manual intervention:
 

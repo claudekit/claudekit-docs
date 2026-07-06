@@ -44,6 +44,8 @@ The `ck update` command:
 
 For global Engineer installs, the follow-up init preserves your saved install mode preference. `legacy` stays legacy across version updates, while `auto` and `plugin` can self-heal missing, disabled, stale-version, or stale-source `ck@claudekit` plugin state.
 
+Existing Engineer users moving from copied skills to the plugin format can use `ck update` as the normal migration entry point. See [Engineer Kit Plugin Migration](/docs/engineer/configuration/plugin-migration).
+
 ## Syntax
 
 ```bash

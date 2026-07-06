@@ -322,6 +322,8 @@ ck init -g --kit engineer --install-mode auto
 
 Use `--install-mode legacy` if you intentionally want copied skills and no owned plugin state.
 
+For the full migration checklist, see [Engineer Kit Plugin Migration](/docs/engineer/configuration/plugin-migration).
+
 Issues that require manual intervention:
 
 | Issue | Manual Fix |

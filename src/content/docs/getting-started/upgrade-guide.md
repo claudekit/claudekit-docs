@@ -45,6 +45,8 @@ ck update
 npm install -g claudekit-cli@latest
 ```
 
+For existing global Engineer installs, `ck update` also guides the legacy-to-plugin self-heal path. See [Engineer Kit Plugin Migration](/docs/engineer/configuration/plugin-migration) for verification and rollback details.
+
 ## Gradual Migration Path
 
 ### Week 1: Try Core Commands

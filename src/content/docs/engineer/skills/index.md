@@ -88,6 +88,7 @@ As of engineer@2.12.0, all commands have been migrated to skills. The `/ck:` sla
 | [kanban](/docs/engineer/skills/kanban) | Alias for plans-kanban — visual plan board shortcut |
 | [project-management](/docs/engineer/skills/project-management) | Task tracking, plan status, session bridging |
 | [team](/docs/engineer/skills/team) | Agent Teams for parallel multi-session collaboration |
+| [coding-agent-orchestration](/docs/engineer/skills/coding-agent-orchestration) | Coordinate multiple coding agents and AI developer tools |
 | [ask](/docs/engineer/skills/ask) | Answer technical and architectural questions |
 | [bootstrap](/docs/engineer/skills/bootstrap) | Initialize new projects with spec-driven development |
 | [coding-level](/docs/engineer/skills/coding-level) | Set coding experience level for tailored output |

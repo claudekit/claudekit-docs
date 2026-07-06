@@ -47,6 +47,12 @@ claudekit init
 - Works with your existing projects
 - Preserves your custom commands
 
+### Q: Do I need to do anything for the Engineer Kit plugin migration?
+**A:** Run `ck update`. For normal global Engineer installs, the CLI updates itself and guides the needed kit self-heal. See the [Engineer Kit Plugin Migration guide](/docs/engineer/configuration/plugin-migration).
+
+### Q: Can I still use `~/.claude/skills/`?
+**A:** Yes. User-owned skills can still live there. ClaudeKit-managed `ck:*` skills are managed through the plugin by default so updates can cleanly remove stale files.
+
 ### Q: What are the system requirements?
 **A:**
 - Node.js 16+

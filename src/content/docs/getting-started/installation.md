@@ -118,6 +118,8 @@ Then invoke skills with `/ck:` prefix:
 /ck:test
 ```
 
+> **Engineer Kit plugin install:** Current global Engineer installs use the Claude Code plugin format. Existing users can migrate with `ck update`; details are in the [Engineer Kit Plugin Migration guide](/docs/engineer/configuration/plugin-migration).
+
 Initialize project documentation (optional but recommended):
 
 ```bash

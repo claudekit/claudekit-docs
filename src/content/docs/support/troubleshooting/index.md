@@ -15,6 +15,7 @@ Quick fixes for common issues. Most problems resolve in under 5 minutes.
 **Problem category?**
 - [Installation fails](#installation) → [Installation Issues](/docs/support/troubleshooting/installation-issues)
 - [Command not found or errors](#commands) → [Command Errors](/docs/support/troubleshooting/command-errors)
+- [`/ck:*` slash menu has no descriptions](#plugin-migration) → [Engineer Kit Plugin Migration](/docs/engineer/configuration/plugin-migration)
 - [Agent not working](#agents) → [Agent Issues](/docs/support/troubleshooting/agent-issues)
 - [API key errors](#api-keys) → [API Key Setup](/docs/support/troubleshooting/api-key-setup)
 - [Slow or hanging](#performance) → [Performance Issues](/docs/support/troubleshooting/performance-issues)
@@ -55,6 +56,18 @@ cat .claude/commands/core/cook.md
 ```
 
 [More command fixes →](/docs/support/troubleshooting/command-errors)
+
+## Plugin Migration
+
+**Issue**: `/ck:*` skills appear without descriptions, or `ck doctor` reports mixed legacy/plugin state.
+
+**Fix**:
+```bash
+ck update
+ck init -g --kit engineer --install-mode auto
+```
+
+[Complete migration guide →](/docs/engineer/configuration/plugin-migration)
 
 ## Agents
 

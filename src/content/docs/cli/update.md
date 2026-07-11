@@ -42,9 +42,9 @@ The `ck update` command:
 6. Verifies installation
 7. Offers or runs the matching `ck init` follow-up when installed kit content needs updating or self-healing
 
-For global Engineer installs, the follow-up init preserves your saved install mode preference. `legacy` stays legacy across version updates, while `auto` and `plugin` can self-heal missing, disabled, stale-version, or stale-source `ck@claudekit` plugin state.
+For global Engineer installs, the follow-up init preserves plugins only when metadata contains explicit `plugin` consent. Missing, malformed, `auto`, and `legacy` preferences converge to the recommended Normal skills installation in `~/.claude/skills/`.
 
-Existing Engineer users moving from copied skills to the plugin format can use `ck update` as the normal migration entry point. See [Engineer Kit Plugin Migration](/docs/engineer/configuration/plugin-migration).
+Use `ck init -g --kit engineer --install-mode plugin` to opt in to plugins, or `--install-mode legacy` to return to Normal skills. The transition removes only ClaudeKit-owned state and preserves user-created or modified files. See [Engineer Kit Install Modes](/docs/engineer/configuration/plugin-migration).
 
 ## Syntax
 

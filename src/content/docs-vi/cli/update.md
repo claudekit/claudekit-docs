@@ -42,6 +42,10 @@ Lệnh `ck update`:
 5. Thực thi lệnh cập nhật của trình quản lý gói
 6. Xác minh cài đặt
 
+Với Engineer global, bước `ck init` tiếp theo chỉ duy trì plugin khi metadata ghi nhận lựa chọn `plugin` rõ ràng. Preference bị thiếu, sai định dạng, `auto`, hoặc `legacy` đều hội tụ về Kỹ năng thông thường trong `~/.claude/skills/`.
+
+Dùng `ck init -g --kit engineer --install-mode plugin` để chủ động chọn plugin, hoặc `--install-mode legacy` để trở lại Kỹ năng thông thường. Quá trình chuyển đổi chỉ dọn trạng thái do ClaudeKit quản lý và không xóa file người dùng hoặc skill đã chỉnh sửa.
+
 ## Cú Pháp
 
 ```bash

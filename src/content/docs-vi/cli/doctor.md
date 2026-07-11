@@ -84,6 +84,18 @@ Xác thực cài đặt ClaudeKit:
 - **Phiên bản**: Phiên bản đã cài đặt là hiện tại
 - **Skills**: Cấu trúc thư mục skills chính xác
 
+### Kiểm Tra Chế Độ Cài Đặt
+
+Với Engineer global, `ck doctor` hiển thị preference đã lưu, Kỹ năng thông thường đã copy, trạng thái plugin Claude và trạng thái plugin Codex. Chỉ preference `plugin` rõ ràng mới duy trì plugin; preference bị thiếu, sai định dạng, `auto`, hoặc `legacy` đều có nghĩa là Kỹ năng thông thường.
+
+Nếu cả skill đã copy và `ck@claudekit` cùng hoạt động, trở lại chế độ mặc định bằng:
+
+```bash
+ck init -g --kit engineer --install-mode legacy
+```
+
+CLI chỉ xóa registration/cache plugin do ClaudeKit quản lý và giữ nguyên file người dùng hoặc skill đã chỉnh sửa.
+
 ### Kiểm Tra Xác Thực
 
 Xác thực xác thực GitHub:

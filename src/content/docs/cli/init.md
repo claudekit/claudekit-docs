@@ -55,7 +55,7 @@ ck init [OPTIONS]
 | `--beta` | Include beta versions in selection | `false` |
 | `--refresh` | Force cache refresh for releases | `false` |
 | `--global` / `-g` | Install to user directory (`~/.claude/`) | `false` (local) |
-| `--install-mode <mode>` | Global Engineer install mode: `auto`, `plugin`, or `legacy` | `auto` |
+| `--install-mode <mode>` | Global Engineer mode: `plugin` opts in; `auto`/`legacy` use Normal skills | Normal skills |
 | `--yes` / `-y` | Non-interactive mode with defaults | `false` |
 | `--fresh` | Create a recovery backup, remove CK-managed files, then reinstall | `false` |
 | `--exclude <pattern>` | Exclude files matching pattern (repeatable) | None |
@@ -142,17 +142,31 @@ Global mode is useful for:
 
 ### Engineer Install Mode
 
-Global Engineer installs can run as Claude/Codex plugins or as copied legacy files:
+Global Engineer installs offer two user-facing choices:
+
+- **Normal skills (recommended)** — copy skills to `~/.claude/skills/`.
+- **Claude and Codex plugins (advanced opt-in)** — register runtime plugins and preserve that explicit preference for later updates.
 
 ```bash
-ck init -g --kit engineer --install-mode auto
+# Recommended/default
+ck init -g --kit engineer
+
+# Advanced explicit opt-in
 ck init -g --kit engineer --install-mode plugin
+
+# Return an opted-in installation to Normal skills
 ck init -g --kit engineer --install-mode legacy
 ```
 
-Use `auto` for normal installs. ClaudeKit prefers plugins when Claude Code or Codex supports them, keeps copied skills as fallback until plugin verification succeeds, and removes duplicate CK-owned legacy skill files after a verified migration.
+Fresh interactive installs explain both choices. `ck init --yes` and other non-interactive runs choose Normal skills unless `--install-mode plugin` is supplied. The compatibility inputs `auto` and `legacy` also resolve to Normal skills.
 
-Use `plugin` when plugin verification should be required for supported runtimes. Use `legacy` when you want copied files in `~/.claude/` to remain the active install and owned plugin state removed.
+Only a persisted explicit `plugin` choice keeps plugin mode on later `ck init` or `ck update` runs. Missing, malformed, `auto`, and `legacy` preferences converge to Normal skills. Switching back removes only ClaudeKit-owned plugin state after the copied install is ready; user files and modified skills are preserved.
+
+Normal mode does not install a Codex plugin. Sync skills to Codex's native directory with:
+
+```bash
+ck migrate --agent codex
+```
 
 ### Fresh Installation
 

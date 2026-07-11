@@ -56,6 +56,7 @@ ck init [OPTIONS]
 | `--beta` | Bao gồm phiên bản beta trong lựa chọn | `false` |
 | `--refresh` | Buộc làm mới cache cho các bản phát hành | `false` |
 | `--global` / `-g` | Cài đặt vào thư mục người dùng (`~/.claude/`) | `false` (cục bộ) |
+| `--install-mode <mode>` | `plugin` để chủ động chọn plugin; `auto`/`legacy` dùng Kỹ năng thông thường | Kỹ năng thông thường |
 | `--yes` / `-y` | Chế độ không tương tác với giá trị mặc định | `false` |
 | `--fresh` | Xóa `.claude/` hiện có trước khi cài đặt | `false` |
 | `--exclude <pattern>` | Loại trừ tệp khớp với mẫu (có thể lặp lại) | Không có |
@@ -139,6 +140,32 @@ Chế độ toàn cục hữu ích cho:
 - Chia sẻ cấu hình giữa các dự án
 - Sử dụng lệnh ClaudeKit ở mọi nơi
 - Quản lý skill tập trung
+
+### Chế Độ Cài Đặt Engineer
+
+- **Kỹ năng thông thường (khuyến nghị)**: copy vào `~/.claude/skills/`.
+- **Plugin Claude và Codex (nâng cao)**: chỉ bật khi người dùng chủ động chọn và được giữ lại cho các lần cập nhật sau.
+
+```bash
+# Mặc định/khuyến nghị
+ck init -g --kit engineer
+
+# Chủ động chọn plugin
+ck init -g --kit engineer --install-mode plugin
+
+# Trở lại Kỹ năng thông thường
+ck init -g --kit engineer --install-mode legacy
+```
+
+Cài mới có tương tác sẽ giải thích hai lựa chọn. `ck init --yes` và các lần chạy không tương tác chọn Kỹ năng thông thường nếu không truyền rõ `--install-mode plugin`. Các giá trị tương thích `auto` và `legacy` cũng chọn Kỹ năng thông thường.
+
+Chỉ preference `plugin` đã lưu mới được duy trì. Preference bị thiếu, sai định dạng, `auto`, hoặc `legacy` đều hội tụ về Kỹ năng thông thường. Khi chuyển về chế độ này, CLI chỉ xóa trạng thái plugin do ClaudeKit quản lý và giữ nguyên file người dùng hoặc skill đã chỉnh sửa.
+
+Chế độ thông thường không cài plugin Codex. Đồng bộ skill sang Codex bằng:
+
+```bash
+ck migrate --agent codex
+```
 
 ### Cài Đặt Mới Hoàn Toàn
 

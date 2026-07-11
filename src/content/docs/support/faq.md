@@ -47,11 +47,11 @@ claudekit init
 - Works with your existing projects
 - Preserves your custom commands
 
-### Q: Do I need to do anything for the Engineer Kit plugin migration?
-**A:** Run `ck update`. For normal global Engineer installs, the CLI updates itself and guides the needed kit self-heal. See the [Engineer Kit Plugin Migration guide](/docs/engineer/configuration/plugin-migration).
+### Q: Are plugins required for the Engineer Kit?
+**A:** No. Normal copied skills in `~/.claude/skills/` are recommended and selected by default. Use `ck init -g --kit engineer --install-mode plugin` only when you explicitly want the advanced plugin mode. See [Engineer Kit Install Modes](/docs/engineer/configuration/plugin-migration).
 
 ### Q: Can I still use `~/.claude/skills/`?
-**A:** Yes. User-owned skills can still live there. ClaudeKit-managed `ck:*` skills are managed through the plugin by default so updates can cleanly remove stale files.
+**A:** Yes. It is the default global location for Normal Engineer skills, and user-owned skills can live there too. ClaudeKit preserves user-created or modified files during mode changes.
 
 ### Q: What are the system requirements?
 **A:**

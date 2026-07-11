@@ -1,6 +1,6 @@
 ---
-title: "Engineer Kit Plugin Migration"
-description: "Move Engineer Kit installs from legacy copied skills to the Claude Code plugin format"
+title: "Engineer Kit Install Modes"
+description: "Choose Normal copied skills or explicitly opt in to Claude and Codex plugins"
 section: engineer
 kit: engineer
 category: configuration
@@ -8,107 +8,80 @@ order: 5
 published: true
 ---
 
-# Engineer Kit Plugin Migration
+# Engineer Kit Install Modes
 
-ClaudeKit Engineer now ships as a Claude Code plugin. This keeps `/ck:*` skills grouped under the `ck@claudekit` plugin, restores slash-menu descriptions, and gives the CLI one owned install surface to update.
+Global Engineer installs support two modes. **Normal skills are recommended and selected by default.** Plugin mode is an advanced option that requires explicit consent.
 
-## What You Need To Do
+## Normal Skills (Recommended)
 
-Run:
-
-```bash
-ck update
-```
-
-For normal global Engineer installs, that is enough. The CLI updates itself, then offers or runs the matching `ck init` follow-up needed to migrate or self-heal the installed kit content.
-
-## How To Verify
-
-Open Claude Code and type:
-
-```text
-/ck:plan
-```
-
-The slash menu should show the `ck:plan` skill with its description. You can also check the plugin registration:
+Normal mode copies ClaudeKit skills to `~/.claude/skills/`, where Claude Code discovers them directly:
 
 ```bash
-claude plugin list
+ck init -g --kit engineer
 ```
 
-Look for `ck@claudekit` in the installed plugin list.
+Fresh interactive installs show Normal skills first and explain both choices. Non-interactive installs, including `--yes`, select Normal skills unless `--install-mode plugin` is supplied.
 
-## What Changed
-
-Older global installs copied ClaudeKit-managed skills directly into `~/.claude/skills/`. Current global Engineer installs use a Claude Code plugin registration instead. The CLI still preserves your preferences and custom files; the migration only changes how ClaudeKit-owned kit content is installed and updated.
-
-Local project installs continue to work through the project `.claude/` directory.
-
-## Troubleshooting
-
-### Slash Menu Still Shows No Hint
-
-Run the kit self-heal path:
+The compatibility inputs `auto` and `legacy` also select Normal skills:
 
 ```bash
 ck init -g --kit engineer --install-mode auto
+ck init -g --kit engineer --install-mode legacy
 ```
 
-Then restart Claude Code and try `/ck:plan` again.
-
-### Doctor Reports Mixed State
-
-Mixed state means copied ClaudeKit skills and the `ck@claudekit` plugin are both visible. Run:
+Normal mode does not install a Codex plugin. Sync the skills to Codex's native directory separately:
 
 ```bash
-ck doctor
-ck init -g --kit engineer --install-mode auto
+ck migrate --agent codex
 ```
 
-`ck init` prunes stale ClaudeKit-owned files and keeps user-owned custom skills intact.
+## Plugin Mode (Advanced Opt-In)
 
-### Plugin Disabled Or Missing
-
-Run:
-
-```bash
-ck doctor --fix
-```
-
-If the plugin is still missing after the fix pass, rerun:
+Choose plugin mode explicitly when you want ClaudeKit to register supported Claude Code and Codex plugins:
 
 ```bash
 ck init -g --kit engineer --install-mode plugin
 ```
 
-### Need A Temporary Rollback
+The CLI persists this explicit choice. Later `ck init` and `ck update` runs preserve plugin mode only while the saved preference is `plugin`. Missing, malformed, `auto`, and `legacy` preferences converge to Normal skills rather than inferring consent.
 
-Use legacy mode only when you intentionally need copied skills:
+## Return To Normal Skills
+
+To leave plugin mode, run:
 
 ```bash
 ck init -g --kit engineer --install-mode legacy
 ```
 
-Return to the plugin path with:
+ClaudeKit installs the copied replacement, then removes CK-owned Claude and Codex plugin registration/cache state. Cleanup is limited to tracked ClaudeKit files; user-created and modified files are preserved.
+
+Restart Claude Code after changing modes so its skill and plugin discovery state reloads.
+
+## Diagnose Mixed State
+
+If copied skills and `ck@claudekit` both appear active, run:
 
 ```bash
-ck init -g --kit engineer --install-mode auto
+ck doctor
+ck init -g --kit engineer --install-mode legacy
+```
+
+Use explicit plugin mode instead only when that remains your intended choice:
+
+```bash
+ck init -g --kit engineer --install-mode plugin
 ```
 
 ## FAQ
 
-### Can I Still Use `~/.claude/skills/`?
-
-Yes. Your own skills can still live there. ClaudeKit-managed `ck:*` skills are managed by the plugin in the default global install mode so updates can remove stale files cleanly.
-
 ### Does This Affect Project-Local Installs?
 
-Project-local installs still place kit content inside that project's `.claude/` directory. The plugin migration mainly affects global Engineer installs.
+No. This choice applies to global Engineer installs. Project-local installs continue to place kit content inside the project's `.claude/` directory.
 
 ### Do I Need To Delete Old Files Manually?
 
-No. Use `ck update` or `ck init -g --kit engineer --install-mode auto`. The CLI knows which ClaudeKit-owned legacy paths can be removed.
+No. Let `ck init` perform the transition. It knows which CK-owned paths are safe to remove and preserves unknown or modified files.
 
-### What If I Pinned Legacy Mode?
+### Why Does Metadata Say `legacy`?
 
-Legacy mode remains available for compatibility. If you previously chose `legacy`, the CLI preserves that preference until you opt into `auto` or `plugin`.
+`legacy` is the stored compatibility value for the user-facing Normal skills choice. It does not mean the installation is unsupported or deprecated.

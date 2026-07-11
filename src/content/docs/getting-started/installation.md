@@ -8,7 +8,7 @@ published: true
 ---
 # Installation
 
-ClaudeKit is installed via the **ClaudeKit CLI** (`ck`). The CLI downloads the kit you select from AgentKit releases and copies skills, agents, and configuration into your Claude Code environment.
+ClaudeKit is installed via the **ClaudeKit CLI** (`ck`). The CLI downloads the kit you select and copies skills, agents, and configuration into your Claude Code environment.
 
 ## Requirements
 
@@ -118,7 +118,7 @@ Then invoke skills with `/ck:` prefix:
 /ck:test
 ```
 
-> **Engineer Kit plugin install:** Current global Engineer installs use the Claude Code plugin format. Existing users can migrate with `ck update`; details are in the [Engineer Kit Plugin Migration guide](/docs/engineer/configuration/plugin-migration).
+> **Engineer install mode:** Normal copied skills in `~/.claude/skills/` are the recommended default. Fresh interactive installs let you choose Normal skills or the advanced plugin option; non-interactive installs choose Normal skills. Use `--install-mode plugin` only to opt in explicitly. See [Engineer Kit Install Modes](/docs/engineer/configuration/plugin-migration).
 
 Initialize project documentation (optional but recommended):
 
@@ -139,6 +139,12 @@ ls .claude/skills/      # Local
 
 # Check Claude Code sees the config
 claude --version
+```
+
+To sync a Normal skills install to Codex's native skills directory, run:
+
+```bash
+ck migrate --agent codex
 ```
 
 ## Update ClaudeKit
@@ -225,6 +231,6 @@ If empty, re-run `ck init -g --kit engineer`.
 
 ## Next Steps
 
-- [AgentKit Architecture](/docs/getting-started/agentkit-overview) — Understand how kits, skills, and agents fit together
+- [ClaudeKit Concepts](/docs/getting-started/concepts) — Understand how kits, skills, and agents fit together
 - [Quick Start](/docs/getting-started/quick-start) — Build your first feature
 - [Skills Overview](/docs/engineer/skills) — Browse all available skills

@@ -170,6 +170,23 @@ ck init -g --kit engineer --version v1.0.0
 
 > ✅ **Mẹo:** Chế độ global lý tưởng cho phát triển cá nhân. Cài đặt một lần, sử dụng mọi nơi.
 
+#### Chế Độ Cài Đặt Engineer
+
+**Kỹ năng thông thường (Normal skills) là lựa chọn mặc định và được khuyến nghị.** Các skill được copy vào `~/.claude/skills/`. Ở lần cài mới có tương tác, CLI cho phép chọn Kỹ năng thông thường hoặc plugin nâng cao; chế độ không tương tác luôn chọn Kỹ năng thông thường nếu bạn không truyền `--install-mode plugin`.
+
+```bash
+# Mặc định/khuyến nghị
+ck init -g --kit engineer
+
+# Chủ động chọn plugin nâng cao
+ck init -g --kit engineer --install-mode plugin
+
+# Trở lại Kỹ năng thông thường
+ck init -g --kit engineer --install-mode legacy
+```
+
+Chỉ lựa chọn `plugin` được lưu rõ ràng mới duy trì plugin trong các lần cập nhật sau. Preference bị thiếu, sai định dạng, `auto`, hoặc `legacy` đều hội tụ về Kỹ năng thông thường. Để đồng bộ skill thông thường sang đường dẫn native của Codex, chạy `ck migrate --agent codex`.
+
 ---
 
 ### Lựa Chọn B: Cài Đặt Local (Project-Specific)

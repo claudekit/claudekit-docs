@@ -44,6 +44,8 @@ The `ck update` command:
 
 For global Engineer installs, the follow-up init preserves plugins only when metadata contains explicit `plugin` consent. Missing, malformed, `auto`, and `legacy` preferences converge to the recommended Normal skills installation in `~/.claude/skills/`.
 
+For an explicitly opted-in plugin install, a same-version update also repairs missing, orphaned, disabled, stale-version, or stale-source Claude state and missing, disabled, or stale Codex state. Health repair never opts a Normal installation into plugin mode.
+
 Use `ck init -g --kit engineer --install-mode plugin` to opt in to plugins, or `--install-mode legacy` to return to Normal skills. The transition removes only ClaudeKit-owned state and preserves user-created or modified files. See [Engineer Kit Install Modes](/docs/engineer/configuration/plugin-migration).
 
 ## Syntax

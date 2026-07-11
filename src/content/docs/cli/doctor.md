@@ -21,7 +21,7 @@ ck doctor --fix
 # Generate shareable diagnostic report
 ck doctor --report
 
-# CI mode (JSON output, exit code on failure)
+# CI mode (JSON output, exit code on actionable findings)
 ck doctor --check-only --json
 ```
 
@@ -54,7 +54,7 @@ ck doctor [OPTIONS]
 |------|-------------|---------|
 | `--fix` | Auto-fix all fixable issues | `false` |
 | `--report` | Generate shareable diagnostic report (prompts for gist upload) | `false` |
-| `--check-only` | CI mode: no prompts, exit 1 on failures | `false` |
+| `--check-only` | CI mode: no prompts, exit 1 on failures or actionable warnings | `false` |
 | `--json` | Output results as JSON | `false` |
 | `--full` | Run extended checks (slower but more thorough) | `false` |
 | `--verbose` | Enable verbose logging | `false` |
@@ -153,7 +153,7 @@ Module Checks:
 
 Summary: 17 passed, 1 warning, 0 failed
 
-All checks passed!
+1 actionable warning found
 ```
 
 ### Auto-Fix Issues
@@ -247,8 +247,10 @@ ck doctor --check-only --json
 
 **Exit codes:**
 
-- `0`: All checks pass
-- `1`: One or more checks failed
+- `0`: No failures or actionable warnings
+- `1`: One or more failures or actionable warnings
+
+These exit codes apply consistently to text, JSON, and report output when combined with `--check-only`.
 
 **JSON output example:**
 
@@ -310,9 +312,11 @@ Issues that can be automatically fixed:
 For global Engineer installs, `ck doctor` reports the persisted install mode preference and the live Claude/Codex state:
 
 - `preference: auto|plugin|legacy`
-- Claude plugin registration and enabled/disabled status
 - Normal copied skill state
+- Claude plugin state, including missing, orphaned, disabled, stale version, or stale source
 - Codex plugin state, including missing, disabled, stale version, or stale source
+
+Unknown Codex inspection state and provider inspection errors are actionable; they never pass silently.
 
 If both copied CK skills and the `ck@claudekit` plugin are active, return to the recommended Normal skills mode with:
 
@@ -320,7 +324,7 @@ If both copied CK skills and the `ck@claudekit` plugin are active, return to the
 ck init -g --kit engineer --install-mode legacy
 ```
 
-Only an explicit persisted `plugin` preference preserves plugin mode. Missing, malformed, `auto`, and `legacy` preferences resolve to Normal skills. Doctor cleanup removes CK-owned plugin registration/cache state without deleting user-created or modified skill files.
+Only an explicit persisted `plugin` preference preserves plugin mode. Missing, malformed, `auto`, and `legacy` preferences resolve to Normal skills. Doctor reports repair guidance; the recommended `ck init` transition removes CK-owned plugin registration/cache state without deleting user-created or modified skill files.
 
 For the full mode and transition checklist, see [Engineer Kit Install Modes](/docs/engineer/configuration/plugin-migration).
 

@@ -39,10 +39,13 @@ The `ck uninstall` command:
 5. Creates a scoped recovery backup under `~/.claudekit/backups/`
 6. Removes ClaudeKit-owned files
 7. Removes the hook and MCP registrations it added to `settings.json` and clears its `.ck.json` tracking
-8. Preserves user customizations and configurations
-9. Cleans up empty directories
+8. For global Engineer scope, removes and verifies Claude and Codex plugins and their ClaudeKit-owned marketplace registrations
+9. Preserves user customizations and configurations
+10. Cleans up empty directories
 
 Hook entries you authored or edited yourself are left untouched, and when a single kit is removed from a multi-kit install, registrations still used by the remaining kit are kept.
+
+Project-local and Marketing-only uninstall do not change global Engineer provider state. Repeating global Engineer uninstall is safe: already-absent plugin and marketplace state is treated as a verified no-op, while provider inspection or removal errors fail instead of reporting success.
 
 ## Syntax
 

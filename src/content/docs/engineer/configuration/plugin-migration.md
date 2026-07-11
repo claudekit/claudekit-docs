@@ -22,6 +22,8 @@ ck init -g --kit engineer
 
 Fresh interactive installs show Normal skills first and explain both choices. Non-interactive installs, including `--yes`, select Normal skills unless `--install-mode plugin` is supplied.
 
+Normal and plugin mode expose the same `ck:<skill>` names. Normal mode projects the `ck:` namespace exactly once onto copied skill metadata; plugin payloads remain canonical so each supported runtime can apply its own namespace without duplication.
+
 The compatibility inputs `auto` and `legacy` also select Normal skills:
 
 ```bash
@@ -44,6 +46,8 @@ ck init -g --kit engineer --install-mode plugin
 ```
 
 The CLI persists this explicit choice. Later `ck init` and `ck update` runs preserve plugin mode only while the saved preference is `plugin`. Missing, malformed, `auto`, and `legacy` preferences converge to Normal skills rather than inferring consent.
+
+Plugin activation is transactional. ClaudeKit validates a staged replacement before switching the stable plugin source, and restores the previous stage and provider registrations if preparation fails. CK-owned copied skills are removed only after the required Claude plugin and any supported Codex plugin are prepared successfully.
 
 ## Return To Normal Skills
 

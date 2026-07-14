@@ -308,7 +308,7 @@ Dashboard hiển thị cả ba features cạnh nhau với progress bars và time
 ## Skills Liên Quan
 
 - [Markdown Novel Viewer](/vi/docs/engineer/skills/markdown-novel-viewer) - Đọc các file plan riêng lẻ với định dạng phong phú
-- [Planning](/vi/docs/engineer/skills/plan) - Tạo và cấu trúc các thư mục plan
+- [Planning](/vi/docs/engineer/skills/ck-plan) - Tạo và cấu trúc các thư mục plan
 - [Research](/vi/docs/engineer/skills/research) - Thu thập yêu cầu để lên kế hoạch
 
 ## Lệnh Liên Quan

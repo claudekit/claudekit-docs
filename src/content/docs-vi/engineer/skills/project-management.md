@@ -109,6 +109,6 @@ Quét Plans → Hydrate Tasks → Theo Dõi Tiến Độ
 
 ## Skills Liên Quan
 
-- [Planning](/vi/docs/engineer/skills/plan) — tạo các file plan mà skill này theo dõi
+- [Planning](/vi/docs/engineer/skills/ck-plan) — tạo các file plan mà skill này theo dõi
 - [Cook](/vi/docs/engineer/skills/cook) — thực thi các phases được theo dõi bởi skill này
 - [Plans Kanban](/vi/docs/engineer/skills/plans-kanban) — chế độ xem kanban trực quan của tiến độ plan

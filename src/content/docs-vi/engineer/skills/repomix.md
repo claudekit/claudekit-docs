@@ -129,9 +129,9 @@ repomix --token-count-tree 1000
 
 ## Skill Liên Quan
 
-- [Code Review](/vi/docs/engineer/skills/code-review) - Phân tích code bằng AI
+- [Code Review](/vi/docs/engineer/skills/ck-code-review) - Phân tích code bằng AI
 - [Research](/vi/docs/engineer/skills/research) - Khám phá codebase không quen thuộc
-- [Debugging](/vi/docs/engineer/skills/debug) - Cô lập lỗi có hệ thống
+- [Debugging](/vi/docs/engineer/skills/ck-debug) - Cô lập lỗi có hệ thống
 
 ## Điểm Mấu Chốt
 

@@ -389,7 +389,7 @@ Kết hợp Media Processing với:
 
 - [AI Multimodal](/vi/docs/engineer/skills/ai-multimodal) - Xử lý media trước khi gửi đến Gemini API (nén, thay đổi kích thước, chia nhỏ)
 - [Frontend Design](/vi/docs/engineer/skills/frontend-design) - Tối ưu hóa ảnh đã tạo, xóa nền khỏi assets
-- [Chrome DevTools](/vi/docs/engineer/skills/chrome-devtools) - Chụp ảnh màn hình, sau đó tối ưu hóa với ImageMagick
+- [Agent Browser](/vi/docs/engineer/skills/agent-browser) - Chụp ảnh màn hình, sau đó tối ưu hóa với ImageMagick
 
 ## Tham Chiếu Tham Số Thông Dụng
 

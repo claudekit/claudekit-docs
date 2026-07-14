@@ -149,7 +149,7 @@ Hy sinh ngữ pháp để cô đọng. Dùng code blocks, sơ đồ mermaid/ASCI
 
 - [Docs Seeker](/vi/docs/engineer/skills/docs-seeker) - Tra cứu tài liệu
 - [Sequential Thinking](/vi/docs/engineer/skills/sequential-thinking) - Phân tích có cấu trúc
-- [Planning](/vi/docs/engineer/skills/plan) - Thiết kế giải pháp
+- [Planning](/vi/docs/engineer/skills/ck-plan) - Thiết kế giải pháp
 
 ## Điểm Mấu Chốt
 

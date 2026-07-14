@@ -31,7 +31,7 @@ New to ClaudeKit? Watch this step-by-step tutorial covering CLI installation, se
 
 ClaudeKit extends Claude Code with specialized toolkits for engineering and marketing. Instead of writing prompts from scratch, you call workflows optimized for speed and quality.
 
-ClaudeKit is powered by **AgentKit** — a multi-kit framework that ships skills, agents, and workflows as versioned releases. Skills install to `~/.claude/skills/` via the `ck` CLI and are invoked with `/ck:skill-name` inside Claude Code.
+ClaudeKit ships skills, agents, and workflows as versioned Engineer and Marketing kits. Install a kit with the `ck` CLI, then invoke its skills with `/ck:skill-name` or `/ckm:skill-name` inside Claude Code.
 
 ### Two Powerful Kits
 
@@ -88,7 +88,7 @@ Use the kit switcher in the header to explore:
 ## Next Steps
 
 1. **[Install ClaudeKit](/docs/getting-started/installation)** — Set up the `ck` CLI in 5 minutes
-2. **[AgentKit Architecture](/docs/getting-started/agentkit-overview)** — Understand kits, skills, and agents
+2. **[Core Concepts](/docs/getting-started/concepts)** — Understand kits, skills, and agents
 3. **[Quick Start](/docs/getting-started/quick-start)** — Build your first feature or campaign
 
 ## Explore Workflows

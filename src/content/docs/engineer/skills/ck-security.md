@@ -81,5 +81,5 @@ Security runs a multi-layer analysis: STRIDE threat modeling, OWASP Top 10 mappi
 ## Related Skills
 
 - [Autoresearch](/docs/engineer/skills/ck-autoresearch) — underlying guard pattern used by `--fix` mode
-- [Code Review](/docs/engineer/skills/code-review) — broader code quality review including security
+- [Code Review](/docs/engineer/skills/ck-code-review) — broader code quality review including security
 - [Security Scan](/docs/engineer/skills/security-scan) — lighter-weight secret and dependency scanning

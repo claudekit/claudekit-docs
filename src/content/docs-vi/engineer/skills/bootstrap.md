@@ -76,6 +76,6 @@ Bootstrap là orchestrator, không phải implementer:
 
 ## Các Skills Liên Quan
 
-- [Planning](/vi/docs/engineer/skills/plan) — planning skill được gọi trong workflow
+- [Planning](/vi/docs/engineer/skills/ck-plan) — planning skill được gọi trong workflow
 - [Cook](/vi/docs/engineer/skills/cook) — cook skill được gọi trong workflow
 - [Agent Teams](/vi/docs/engineer/skills/team) — dùng với `--parallel` để thực thi multi-agent

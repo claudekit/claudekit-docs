@@ -29,11 +29,9 @@ Skill này xuất sắc trong các phiên làm việc tự động dài hạn kh
 - Mock network requests và responses
 - Mô phỏng thiết bị, geolocation, chế độ offline
 
-## Khi Nào Dùng Cái Này vs Chrome DevTools
+## Khi Nào Dùng Skill Này
 
-Dùng agent-browser cho: Các phiên AI tự động dài hạn, workflows bị giới hạn context, ghi video, cloud browsers, xử lý đa tab, self-verifying build loops
-
-Dùng chrome-devtools cho: Screenshots nhanh, custom Puppeteer scripts, debug WebSocket, tích hợp workflow hiện có, auth injection
+Dùng agent-browser cho các phiên AI tự động dài, workflow bị giới hạn context, ghi video, cloud browser, xử lý đa tab, và vòng lặp build tự xác minh.
 
 ## Sử Dụng
 

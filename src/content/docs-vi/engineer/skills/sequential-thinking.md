@@ -113,8 +113,8 @@ Thought 4/7 [BRANCH B from Thought 2]: Zustand
 ## Skill Liên Quan
 
 - [Problem Solving](/vi/docs/engineer/skills/problem-solving) - Phân tách vấn đề chung
-- [Debugging](/vi/docs/engineer/skills/debug) - Điều tra lỗi có hệ thống
-- [Code Review](/vi/docs/engineer/skills/code-review) - Phân tích kỹ thuật
+- [Debugging](/vi/docs/engineer/skills/ck-debug) - Điều tra lỗi có hệ thống
+- [Code Review](/vi/docs/engineer/skills/ck-code-review) - Phân tích kỹ thuật
 
 ## Điểm Mấu Chốt
 

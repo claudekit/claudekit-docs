@@ -110,4 +110,4 @@ Nếu teammate bị crash hoặc idle bất ngờ:
 ## Skill Liên Quan
 
 - [Cook](/vi/docs/engineer/skills/cook) — implementation engine được dùng bởi cook teams
-- [Planning](/vi/docs/engineer/skills/plan) — tạo plans trước khi giao cho teams
+- [Planning](/vi/docs/engineer/skills/ck-plan) — tạo plans trước khi giao cho teams

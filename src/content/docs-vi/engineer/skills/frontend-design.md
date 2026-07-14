@@ -88,7 +88,7 @@ So sánh triển khai của bạn với ảnh chụp màn hình gốc:
 
 ```bash
 # Chụp ảnh màn hình triển khai của bạn
-# Dùng chrome-devtools skill hoặc dev tools của trình duyệt
+# Dùng agent-browser hoặc dev tools tích hợp của trình duyệt
 
 # So sánh với ai-multimodal
 python scripts/gemini_batch_process.py --files original.png implementation.png --task analyze --prompt "Compare these two designs. Check color accuracy, spacing consistency, typography matching, and overall fidelity"
@@ -324,7 +324,7 @@ Kết hợp Frontend Design với các skill khác để có quy trình hoàn ch
 - [AI Multimodal](/vi/docs/engineer/skills/ai-multimodal) - Trích xuất thiết kế từ ảnh chụp màn hình, tạo asset trực quan
 - [Frontend Development](/vi/docs/engineer/skills/frontend-development) - Triển khai với React/TypeScript best practices
 - [Media Processing](/vi/docs/engineer/skills/media-processing) - Tối ưu hóa hình ảnh đã tạo, xóa nền
-- [Chrome DevTools](/vi/docs/engineer/skills/chrome-devtools) - Chụp ảnh màn hình triển khai để so sánh
+- [Agent Browser](/vi/docs/engineer/skills/agent-browser) - Chụp ảnh màn hình triển khai để so sánh
 
 ## Nguyên Tắc Cốt Lõi
 

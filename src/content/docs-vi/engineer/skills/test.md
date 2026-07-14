@@ -39,7 +39,7 @@ Hỗ trợ tất cả test runners chính:
 
 ### UI Testing
 
-Ủy quyền cho skill `chrome-devtools` để:
+Ủy quyền cho skill `agent-browser` để:
 - Visual regression
 - Interaction testing
 - Kiểm tra accessibility
@@ -62,7 +62,7 @@ Xác Định Phạm Vi → Typecheck Trước → Thực Thi Suites
 3. **Thực Thi Suites** — chạy test runner(s) cho dự án
 4. **Phân Tích Failures** — cho mỗi failure: đọc lỗi, truy vết nguyên nhân gốc, đề xuất fix
 5. **Coverage Report** — xuất Istanbul/c8/pytest-cov/go cover
-6. **UI Tests** — xác nhận trình duyệt qua chrome-devtools skill
+6. **UI Tests** — xác nhận trình duyệt qua agent-browser skill
 7. **QA Report** — viết báo cáo có cấu trúc với phát hiện có thể thực hiện
 
 ## Tích Hợp Công Cụ
@@ -73,7 +73,7 @@ Xác Định Phạm Vi → Typecheck Trước → Thực Thi Suites
 | Istanbul/c8 | Coverage JS/TS |
 | pytest-cov | Coverage Python |
 | go cover | Coverage Go |
-| chrome-devtools skill | Testing trình duyệt/UI |
+| agent-browser skill | Testing trình duyệt/UI |
 | ai-multimodal skill | Phân tích screenshot cho UI failures |
 | debug skill | Phân tích nguyên nhân gốc cho failures phức tạp |
 
@@ -102,6 +102,6 @@ Trong phiên agent team, tester teammate:
 
 ## Skill Liên Quan
 
-- [Debug](/vi/docs/engineer/skills/debug) — được kích hoạt cho failures cần phân tích nguyên nhân gốc
+- [Debug](/vi/docs/engineer/skills/ck-debug) — được kích hoạt cho failures cần phân tích nguyên nhân gốc
 - [Cook](/vi/docs/engineer/skills/cook) — quality gate của cook yêu cầu 100% test pass
-- [Chrome DevTools](/vi/docs/engineer/skills/chrome-devtools) — UI và browser testing
+- [Agent Browser](/vi/docs/engineer/skills/agent-browser) — UI và browser testing

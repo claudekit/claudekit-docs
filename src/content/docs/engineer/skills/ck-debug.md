@@ -96,7 +96,7 @@ The full skill includes six more techniques for system-level investigation:
 - **Performance Diagnostics** — identify bottlenecks, slow queries, and resource exhaustion
 - **Reporting Standards** — structured diagnostic reports with executive summary, technical analysis, and recommendations
 - **Task Management** — track multi-step investigations via Claude Tasks (TaskCreate/TaskUpdate); falls back to TodoWrite in VSCode
-- **Frontend Verification** — visual verification via Chrome MCP or `ck:chrome-devtools` for UI bugs and visual regressions
+- **Frontend Verification** — visual verification via `/ck:agent-browser` for UI bugs and visual regressions
 
 ## Related Skills
 

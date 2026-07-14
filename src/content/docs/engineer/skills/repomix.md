@@ -126,7 +126,7 @@ repomix --token-count-tree 1000
 
 ## Related Skills
 
-- [Code Review](/docs/engineer/skills/code-review) - AI-powered code analysis
+- [Code Review](/docs/engineer/skills/ck-code-review) - AI-powered code analysis
 - [Research](/docs/engineer/skills/research) - Investigate unfamiliar codebases
 - [Debugging](/docs/engineer/skills/ck-debug) - Systematic bug isolation
 

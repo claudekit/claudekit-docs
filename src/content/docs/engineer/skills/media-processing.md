@@ -388,7 +388,7 @@ Combine Media Processing with:
 
 - [AI Multimodal](/docs/engineer/skills/ai-multimodal) - Process media before sending to Gemini API (compress, resize, split)
 - [Frontend Design](/docs/engineer/skills/frontend-design) - Optimize generated images, remove backgrounds from assets
-- [Chrome DevTools](/docs/engineer/skills/chrome-devtools) - Capture screenshots, then optimize with ImageMagick
+- [Agent Browser](/docs/engineer/skills/agent-browser) - Capture screenshots, then optimize with ImageMagick
 
 ## Common Parameters Reference
 

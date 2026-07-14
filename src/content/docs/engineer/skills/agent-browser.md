@@ -28,11 +28,9 @@ This skill excels at long autonomous sessions where context conservation matters
 - Mock network requests and responses
 - Emulate devices, geolocation, offline mode
 
-## When to Use This vs Chrome DevTools
+## When to Use This Skill
 
-Use agent-browser for: Long autonomous AI sessions, context-constrained workflows, video recording, cloud browsers, multi-tab handling, self-verifying build loops
-
-Use chrome-devtools for: Quick screenshots, custom Puppeteer scripts, WebSocket debugging, existing workflow integration, auth injection
+Use agent-browser for long autonomous AI sessions, context-constrained workflows, video recording, cloud browsers, multi-tab handling, and self-verifying build loops.
 
 ## Usage
 

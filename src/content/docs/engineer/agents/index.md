@@ -1,6 +1,6 @@
 ---
 title: Agents Overview
-description: ClaudeKit's 14 specialized agents for software development
+description: ClaudeKit's 13 specialized agents for Claude Code workflows
 section: engineer
 kit: engineer
 category: agents
@@ -10,112 +10,36 @@ published: true
 
 # Agents Overview
 
-14 specialized agents that handle every aspect of software development—automatically orchestrated through predefined workflows.
+ClaudeKit Engineer ships 13 specialized agents for Claude Code. They can be selected directly or coordinated by skills such as `/ck:plan`, `/ck:cook`, `/ck:test`, and `/ck:ck-code-review`.
 
-## Quick Reference
+:::note[Provider support]
+These agent definitions are available in Claude Code. Codex installations expose the ClaudeKit skill catalog, not these Claude-specific agents.
+:::
 
-### Development & Implementation
-
-| Agent | Purpose |
-|-------|---------|
-| [planner](/docs/engineer/agents/planner) | Research, analyze, create implementation plans before coding |
-| [fullstack-developer](/docs/engineer/agents/fullstack-developer) | Execute implementation phases with strict file ownership |
-| [debugger](/docs/engineer/agents/debugger) | Root cause analysis, log investigation, issue diagnosis |
-| [tester](/docs/engineer/agents/tester) | Test execution, coverage analysis, quality validation |
-
-### Quality & Review
+## Agent Catalog
 
 | Agent | Purpose |
 |-------|---------|
-| [code-reviewer](/docs/engineer/agents/code-reviewer) | Security audits, performance analysis, code quality |
-| [code-simplifier](/docs/engineer/agents/code-simplifier) | Autonomous code refinement for clarity and maintainability |
+| [brainstormer](/docs/engineer/agents/brainstormer) | Explore approaches, challenge assumptions, and compare trade-offs |
+| [code-reviewer](/docs/engineer/agents/code-reviewer) | Review correctness, security, performance, and maintainability |
+| [code-simplifier](/docs/engineer/agents/code-simplifier) | Refine implemented code for clarity without changing behavior |
+| [debugger](/docs/engineer/agents/debugger) | Investigate failures and identify root causes |
+| [docs-manager](/docs/engineer/agents/docs-manager) | Maintain technical documentation and project knowledge |
+| [fullstack-developer](/docs/engineer/agents/fullstack-developer) | Implement frontend, backend, and integration work |
+| [git-manager](/docs/engineer/agents/git-manager) | Prepare focused commits and repository handoffs |
+| [journal-writer](/docs/engineer/agents/journal-writer) | Record engineering decisions, failures, and lessons |
+| [planner](/docs/engineer/agents/planner) | Research requirements and create implementation plans |
+| [project-manager](/docs/engineer/agents/project-manager) | Track progress, dependencies, and delivery status |
+| [researcher](/docs/engineer/agents/researcher) | Gather and synthesize technical evidence |
+| [tester](/docs/engineer/agents/tester) | Run tests and validate quality gates |
+| [ui-ux-designer](/docs/engineer/agents/ui-ux-designer) | Design usable, accessible interfaces and experiences |
 
-### Documentation & Management
+## How They Work Together
 
-| Agent | Purpose |
-|-------|---------|
-| [docs-manager](/docs/engineer/agents/docs-manager) | Technical documentation, API docs, architecture guides |
-| [project-manager](/docs/engineer/agents/project-manager) | Progress tracking, cross-agent coordination, status reports |
-| [journal-writer](/docs/engineer/agents/journal-writer) | Document failures and setbacks with brutal honesty |
-| [git-manager](/docs/engineer/agents/git-manager) | Conventional commits, security scanning, token-optimized |
+Skills choose the appropriate agents for each workflow. A typical implementation can move from planning through development, testing, review, and git handoff while keeping each responsibility explicit.
 
-### Creative & Research
-
-| Agent | Purpose |
-|-------|---------|
-| [ui-ux-designer](/docs/engineer/agents/ui-ux-designer) | Award-winning UI with Three.js, responsive layouts |
-| [brainstormer](/docs/engineer/agents/brainstormer) | Explore approaches, challenge assumptions, debate decisions |
-| [researcher](/docs/engineer/agents/researcher) | Multi-source research, documentation analysis |
-
-## How to Use
-
-**Automatic (recommended):** Commands orchestrate agents automatically
-```bash
-/ck:bootstrap [feature] # planner → fullstack-developer → tester → code-reviewer
-/ck:plan [task]         # planner + researcher
-/ck:debug [issue]       # debugger → analysis and diagnosis
+```text
+planner -> fullstack-developer -> tester -> code-reviewer -> git-manager
 ```
 
-**Explicit:** Request specific agents in prompts
-```
-"Use debugger agent to investigate login failures, then planner to create fix strategy"
-```
-
-## Under the Hood
-
-### Orchestration Patterns
-
-**Sequential** (default): Agents run in order, each building on previous output
-```
-planner → fullstack-developer → tester → code-reviewer → git-manager
-```
-
-**Parallel**: Independent agents run simultaneously
-```
-researcher (topic1) ┐
-researcher (topic2) ├─→ Aggregate → planner
-researcher (topic3) ┘
-```
-
-**Hybrid**: Mix of sequential and parallel for complex tasks
-
-### Agent Communication
-
-Agents share context through:
-- **Shared files**: `docs/`, `plans/`, code standards
-- **Handoff protocols**: Each agent receives previous output, performs task, passes results
-- **TodoWrite**: Real-time progress tracking visible to user
-
-### Handoff Example
-
-```
-planner output → plans/auth-feature.md
-    ↓
-fullstack-developer reads plan → implements → creates files + tests
-    ↓
-tester runs tests → validates coverage
-    ↓
-code-reviewer audits → security + quality report
-    ↓
-git-manager commits → conventional commit + push
-```
-
-### Troubleshooting
-
-**Agent not activating?**
-- Check command matches task type
-- Verify workflow files exist in `.claude/agents/`
-- Try explicit invocation: "Use [agent] to..."
-
-**Slow response?**
-- Use parallel orchestration when tasks are independent
-- Scope tasks more specifically
-- Use simpler commands for simple tasks
-
-**Conflicts?**
-- Review orchestration order in workflow files
-- Check handoff protocols between agents
-
-## Key Takeaway
-
-15 agents work together automatically—use commands to orchestrate them, or invoke explicitly for specific tasks. No manual coordination needed.
+For independent research or review tasks, Claude Code can run multiple agents in parallel and combine their findings before the next step.

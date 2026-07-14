@@ -490,7 +490,7 @@ Combine Frontend Development with:
 
 - [Frontend Design](/docs/engineer/skills/frontend-design) - Create distinctive UI designs before implementing them
 - [AI Multimodal](/docs/engineer/skills/ai-multimodal) - Generate assets, extract design from screenshots
-- [Chrome DevTools](/docs/engineer/skills/chrome-devtools) - Test your application, take screenshots, debug issues
+- [Agent Browser](/docs/engineer/skills/agent-browser) - Test your application, take screenshots, debug issues
 
 ## Core Principles
 

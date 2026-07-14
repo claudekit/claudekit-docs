@@ -75,7 +75,7 @@ Reusable knowledge modules injected into agent context.
 
 **How Skills Work**:
 1. Skill files installed to `~/.claude/skills/` (global) or `.claude/skills/` (local project)
-2. Sourced from [AgentKit kits](https://github.com/bestagentkits/agentkit) — install via `ck init -g --kit engineer`
+2. Installed with the Engineer Kit — run `ck init -g --kit engineer`
 3. Skill provides agent with best practices, examples, gotchas
 4. Agent makes better decisions (uses right patterns, avoids common mistakes)
 

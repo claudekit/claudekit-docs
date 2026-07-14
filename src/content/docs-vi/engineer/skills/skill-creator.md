@@ -94,7 +94,7 @@ Biến kiến thức workflow của bạn thành các AI skills có thể tái s
 ## Skill Liên Quan
 
 - [/docs/engineer/skills/claude-code-skill](/vi/docs/engineer/skills/skill-creator) - Tạo skills qua lệnh CLI
-- [/docs/engineer/skills/plan](/vi/docs/engineer/skills/plan) - Thiết kế workflows phức tạp trước khi xây dựng skills
+- [Planning](/vi/docs/engineer/skills/ck-plan) - Thiết kế workflows phức tạp trước khi xây dựng skills
 - [/docs/engineer/skills/use-mcp](/vi/docs/engineer/skills/use-mcp) - Quản lý tích hợp Model Context Protocol
 
 ## Điểm Mấu Chốt

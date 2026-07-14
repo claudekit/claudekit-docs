@@ -45,5 +45,5 @@ For one narrow fix, prefer a single agent. Orchestration should buy lower risk, 
 
 - [Team](/docs/engineer/skills/team) — run Claude Code Agent Teams for persistent parallel sessions
 - [Cook](/docs/engineer/skills/cook) — implement a feature once the execution path is clear
-- [Review PR](/docs/engineer/skills/code-review) — review code quality and correctness
+- [Code Review](/docs/engineer/skills/ck-code-review) — review code quality and correctness
 - [Worktree](/docs/engineer/skills/worktree) — isolate branches for parallel local work

@@ -358,7 +358,7 @@ ClaudeKit (global install) requires this structure:
 │   ├── researcher.md
 │   ├── code-reviewer.md
 │   └── ...
-├── skills/          # Installed skills (from AgentKit kits)
+├── skills/          # Installed ClaudeKit skills
 │   ├── cook/
 │   │   └── SKILL.md
 │   ├── fix/
@@ -371,7 +371,7 @@ ClaudeKit (global install) requires this structure:
 └── settings.json    # Claude Code hook settings
 ```
 
-> **Note:** There is no `commands/` directory in current AgentKit installations. Skills replaced commands as of engineer@2.12.0.
+> **Note:** There is no `commands/` directory in current ClaudeKit Engineer installations. Skills replaced commands as of engineer@2.12.0.
 
 ### Validate Structure
 
@@ -543,7 +543,7 @@ claude --dangerously-skip-permissions
 
 ### Get Help
 
-1. **GitHub Issues**: [Report command problems](https://github.com/bestagentkits/agentkit/issues)
+1. **GitHub Issues**: [Report command problems](https://github.com/claudekit/claudekit-engineer/issues)
 2. **Discord**: [Ask community](https://claudekit.cc/discord)
 3. **Include**: Debug report, error message, steps to reproduce
 

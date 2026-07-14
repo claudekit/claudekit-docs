@@ -125,5 +125,5 @@ Fix không chỉ vá triệu chứng — nó tìm nguyên nhân gốc rễ, xác
 
 ## Skills Liên Quan
 
-- [Debug](/vi/docs/engineer/skills/debug) - Framework debug có hệ thống
+- [Debug](/vi/docs/engineer/skills/ck-debug) - Framework debug có hệ thống
 - [Cook](/vi/docs/engineer/skills/cook) - Để triển khai tính năng mới

@@ -73,5 +73,5 @@ Each stage must pass before the next begins. On failure, Ship reports which stag
 
 - [Git](/docs/engineer/skills/git) — git operations Ship orchestrates
 - [Test](/docs/engineer/skills/test) — test suite Ship runs
-- [Code Review](/docs/engineer/skills/code-review) — review gate Ship enforces
+- [Code Review](/docs/engineer/skills/ck-code-review) — review gate Ship enforces
 - [Deploy](/docs/engineer/skills/deploy) — deploy after PR merges

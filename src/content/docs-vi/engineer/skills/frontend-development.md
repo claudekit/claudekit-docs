@@ -491,7 +491,7 @@ Kết hợp Frontend Development với:
 
 - [Frontend Design](/vi/docs/engineer/skills/frontend-design) - Tạo thiết kế UI độc đáo trước khi triển khai
 - [AI Multimodal](/vi/docs/engineer/skills/ai-multimodal) - Tạo assets, trích xuất thiết kế từ ảnh chụp màn hình
-- [Chrome DevTools](/vi/docs/engineer/skills/chrome-devtools) - Kiểm thử ứng dụng, chụp ảnh màn hình, debug vấn đề
+- [Agent Browser](/vi/docs/engineer/skills/agent-browser) - Kiểm thử ứng dụng, chụp ảnh màn hình, debug vấn đề
 
 ## Nguyên Tắc Cốt Lõi
 

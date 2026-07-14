@@ -8,7 +8,7 @@ published: true
 ---
 # Installation
 
-ClaudeKit is installed via the **ClaudeKit CLI** (`ck`). The CLI downloads the kit you select from AgentKit releases and copies skills, agents, and configuration into your Claude Code environment.
+ClaudeKit is installed via the **ClaudeKit CLI** (`ck`). The CLI downloads the kit release you select and installs its skills, agents, and configuration into your Claude Code environment.
 
 ## Requirements
 
@@ -225,6 +225,6 @@ If empty, re-run `ck init -g --kit engineer`.
 
 ## Next Steps
 
-- [AgentKit Architecture](/docs/getting-started/agentkit-overview) — Understand how kits, skills, and agents fit together
+- [Core Concepts](/docs/getting-started/concepts) — Understand how kits, skills, and agents fit together
 - [Quick Start](/docs/getting-started/quick-start) — Build your first feature
 - [Skills Overview](/docs/engineer/skills) — Browse all available skills

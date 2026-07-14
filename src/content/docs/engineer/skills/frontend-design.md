@@ -87,7 +87,7 @@ Compare your implementation to the original screenshot:
 
 ```bash
 # Take a screenshot of your implementation
-# Use chrome-devtools skill or browser dev tools
+# Use agent-browser or the browser's built-in developer tools
 
 # Compare with ai-multimodal
 python scripts/gemini_batch_process.py --files original.png implementation.png --task analyze --prompt "Compare these two designs. Check color accuracy, spacing consistency, typography matching, and overall fidelity"
@@ -323,7 +323,7 @@ Combine Frontend Design with these other skills for complete workflows:
 - [AI Multimodal](/docs/engineer/skills/ai-multimodal) - Extract design from screenshots, generate visual assets
 - [Frontend Development](/docs/engineer/skills/frontend-development) - Implement with React/TypeScript best practices
 - [Media Processing](/docs/engineer/skills/media-processing) - Optimize generated images, remove backgrounds
-- [Chrome DevTools](/docs/engineer/skills/chrome-devtools) - Take screenshots of implementations for comparison
+- [Agent Browser](/docs/engineer/skills/agent-browser) - Take screenshots of implementations for comparison
 
 ## Key Principle
 

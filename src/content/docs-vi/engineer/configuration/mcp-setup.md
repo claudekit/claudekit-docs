@@ -24,7 +24,7 @@ ClaudeKit định tuyến việc dùng máy chủ MCP (Model Context Protocol) q
    cp .claude/.mcp.json.example .claude/.mcp.json
    ```
 2. **Tùy biến danh sách MCP**
-   - Xóa các máy chủ mẫu không cần dùng: `context7`, `chrome-devtools`, `sequential-thinking`, `stitch`.
+   - Xóa các máy chủ mẫu không cần dùng, chẳng hạn Context7, máy chủ Chrome DevTools MCP, Sequential Thinking, hoặc Stitch.
    - `human-mcp` được tắt mặc định trong `.claude/settings.json` vì cần Gemini API key. Để dùng nó, đặt `GOOGLE_GEMINI_API_KEY` và xóa `human-mcp` khỏi `disabledMcpjsonServers`.
    - Chỉ thêm những máy chủ MCP thực sự cần thiết để hạn chế tiêu tốn token.
 3. **Lưu tệp cấu hình** để `/ck:use-mcp` có thể khởi tạo MCP Client từ `.claude/.mcp.json` khi cần.
@@ -44,7 +44,7 @@ Kích hoạt các công cụ đã cấu hình thông qua lệnh `/ck:use-mcp`:
 **Ví dụ**
 
 ```bash
-/ck:use-mcp Dùng chrome-devtools mcp để chụp ảnh màn hình google.com
+/ck:use-mcp Dùng máy chủ Chrome DevTools MCP để chụp ảnh màn hình google.com
 ```
 
 ClaudeKit nạp cấu hình MCP, phân tích các công cụ khả dụng, chọn phương án phù hợp nhất, thực thi và trả kết quả về phiên làm việc chính.

@@ -1,6 +1,6 @@
 ---
-title: Các Agent (Tổng quan)
-description: Hiểu về 14 agent chuyên biệt của ClaudeKit và cách chúng phối hợp làm việc cùng nhau
+title: Tổng quan Agent
+description: 13 agent chuyên biệt của ClaudeKit dành cho quy trình Claude Code
 section: engineer
 kit: engineer
 category: agents
@@ -9,70 +9,38 @@ published: true
 lang: vi
 ---
 
-# Tổng quan về các Agent
+# Tổng quan Agent
 
-ClaudeKit bao gồm 14 agent chuyên biệt làm việc cùng nhau để xử lý mọi khía cạnh của quá trình phát triển phần mềm. Mỗi agent được tối ưu hóa cho các nhiệm vụ cụ thể và tuân theo các quy trình làm việc (workflows) đã được thiết lập.
+ClaudeKit Engineer cung cấp 13 agent chuyên biệt cho Claude Code. Bạn có thể chọn agent trực tiếp hoặc để các skill như `/ck:plan`, `/ck:cook`, `/ck:test`, và `/ck:ck-code-review` điều phối.
 
-## 14 Agent Chuyên biệt
+:::note[Hỗ trợ nhà cung cấp]
+Các định nghĩa agent này chỉ có trong Claude Code. Bản cài đặt Codex cung cấp danh mục skill của ClaudeKit, không cung cấp các agent dành riêng cho Claude.
+:::
 
-### Nhóm Phát triển
-1. **[planner](/vi/docs/engineer/agents/planner)** - Nghiên cứu, phân tích và tạo kế hoạch triển khai.
-2. **[scout](/docs/engineer/skills/scout)** - Nhanh chóng định vị các tệp liên quan bằng tìm kiếm song song.
-3. **[debugger](/vi/docs/engineer/agents/debugger)** - Điều tra vấn đề, phân tích nhật ký, chẩn đoán lỗi.
-4. **[tester](/vi/docs/engineer/agents/tester)** - Xác nhận chất lượng mã nguồn thông qua kiểm thử toàn diện.
+## Danh mục Agent
 
-### Nhóm Đảm bảo Chất lượng
-5. **[code-reviewer](/vi/docs/engineer/agents/code-reviewer)** - Xem xét mã nguồn và đánh giá chất lượng toàn diện.
+| Agent | Mục đích |
+|-------|----------|
+| [brainstormer](/vi/docs/engineer/agents/brainstormer) | Khám phá phương án, thách thức giả định, và so sánh đánh đổi |
+| [code-reviewer](/vi/docs/engineer/agents/code-reviewer) | Đánh giá tính đúng đắn, bảo mật, hiệu năng, và khả năng bảo trì |
+| [code-simplifier](/vi/docs/engineer/agents/code-simplifier) | Làm rõ mã đã triển khai mà không đổi hành vi |
+| [debugger](/vi/docs/engineer/agents/debugger) | Điều tra lỗi và xác định nguyên nhân gốc |
+| [docs-manager](/vi/docs/engineer/agents/docs-manager) | Duy trì tài liệu kỹ thuật và tri thức dự án |
+| [fullstack-developer](/vi/docs/engineer/agents/fullstack-developer) | Triển khai frontend, backend, và tích hợp |
+| [git-manager](/vi/docs/engineer/agents/git-manager) | Chuẩn bị commit tập trung và bàn giao repository |
+| [journal-writer](/vi/docs/engineer/agents/journal-writer) | Ghi lại quyết định kỹ thuật, thất bại, và bài học |
+| [planner](/vi/docs/engineer/agents/planner) | Nghiên cứu yêu cầu và lập kế hoạch triển khai |
+| [project-manager](/vi/docs/engineer/agents/project-manager) | Theo dõi tiến độ, phụ thuộc, và trạng thái bàn giao |
+| [researcher](/vi/docs/engineer/agents/researcher) | Thu thập và tổng hợp bằng chứng kỹ thuật |
+| [tester](/vi/docs/engineer/agents/tester) | Chạy kiểm thử và xác nhận các cổng chất lượng |
+| [ui-ux-designer](/vi/docs/engineer/agents/ui-ux-designer) | Thiết kế giao diện và trải nghiệm dễ dùng, dễ tiếp cận |
 
-### Nhóm Tài liệu & Quản lý Dự án
-6. **[docs-manager](/vi/docs/engineer/agents/docs-manager)** - Quản lý tài liệu kỹ thuật và các tiêu chuẩn.
-7. **[project-manager](/vi/docs/engineer/agents/project-manager)** - Giám sát và điều phối dự án tổng thể.
+## Cách phối hợp
 
-### Nhóm Sáng tạo & Thiết kế
-8. **[ui-ux-designer](/vi/docs/engineer/agents/ui-ux-designer)** - Thiết kế giao diện và trải nghiệm người dùng.
-9. **[copywriter](/docs/engineer/skills/copywriting)** - Tạo nội dung marketing chuyển đổi cao.
-10. **[brainstormer](/vi/docs/engineer/agents/brainstormer)** - Khám phá ý tưởng và tranh luận các quyết định kỹ thuật.
+Các skill chọn agent phù hợp cho từng workflow. Một quy trình triển khai điển hình có thể chuyển từ lập kế hoạch sang phát triển, kiểm thử, đánh giá, rồi bàn giao Git.
 
-### Nhóm Nghiên cứu & Viết lách
-11. **[researcher](/vi/docs/engineer/agents/researcher)** - Nghiên cứu đa nguồn, phân tích tài liệu và thực hành tốt nhất.
-12. **[journal-writer](/vi/docs/engineer/agents/journal-writer)** - Ghi lại hành trình dự án và các khó khăn kỹ thuật.
+```text
+planner -> fullstack-developer -> tester -> code-reviewer -> git-manager
+```
 
-### Nhóm DevOps & Hạ tầng
-13. **[git-manager](/vi/docs/engineer/agents/git-manager)** - Lưu tạm, chuyển giao và đẩy mã nguồn theo chuẩn chuyên nghiệp.
-14. **[database-admin](/vi/docs/engineer/agents/database-admin)** - Tối ưu hóa DB, phân tích truy vấn và quản trị.
-
-## Tại sao lại là 14 Agent?
-
-Các agent này được tối ưu hóa dựa trên kinh nghiệm thực tế:
-- **Hiệu quả đã được chứng minh**: Được thử nghiệm trong các dự án thực tế.
-- **Sự phối hợp tối ưu**: Các agent làm việc cùng nhau một cách liền mạch.
-- **Phạm vi bao phủ toàn diện**: Xử lý mọi khía cạnh phát triển.
-
-## Cách các Agent phối hợp
-
-Các agent được ClaudeKit tự động điều phối dựa trên các workflow định trước. Bạn không cần phải điều phối thủ công.
-
-### Ví dụ: Xây dựng một tính năng mới
-1. **planner Agent**: Nghiên cứu và tạo kế hoạch.
-2. **scout Agent**: Tìm các điểm tích hợp trong mã nguồn.
-3. **Triển khai**: Viết mã và tạo kiểm thử.
-4. **tester Agent**: Chạy bộ kiểm thử.
-5. **code-reviewer Agent**: Xem xét chất lượng và bảo mật.
-6. **docs-manager Agent**: Cập nhật tài liệu API và hướng dẫn.
-7. **git-manager Agent**: Tạo commit và đẩy mã nguồn.
-
-## Các mô hình điều phối
-
-- **Tuần tự (Mặc định)**: Agent này chạy sau agent kia (planner → code → tester...).
-- **Song song**: Nhiều agent chạy đồng thời để có kết quả nhanh hơn (ví dụ: nhiều Scout tìm kiếm cùng lúc).
-- **Hỗn hợp**: Kết hợp cả tuần tự và song song cho các tác vụ phức tạp.
-
-## Cách kích hoạt Agent
-
-1. **Tự động (Khuyên dùng)**: ClaudeKit tự động điều phối dựa trên lệnh (`/ck:cook`, `/ck:fix`, v.v.).
-2. **Thông qua Lệnh**: Các lệnh cụ thể kích hoạt agent cụ thể (`/ck:test`, `/ck:debug`, `/ck:git cm`).
-3. **Trực tiếp (Nâng cao)**: Yêu cầu đích danh agent trong câu lệnh của bạn.
-
----
-
-**Thông điệp chính**: 14 agent chuyên biệt của ClaudeKit tự động phối hợp thông qua các quy trình làm việc định trước, xử lý mọi khía cạnh phát triển phần mềm từ lập kế hoạch đến triển khai.
+Với các tác vụ nghiên cứu hoặc đánh giá độc lập, Claude Code có thể chạy nhiều agent song song rồi tổng hợp kết quả trước bước tiếp theo.

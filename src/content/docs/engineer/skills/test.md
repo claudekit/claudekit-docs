@@ -38,7 +38,7 @@ Supports all major test runners:
 
 ### UI Testing
 
-Delegates to the `chrome-devtools` skill for:
+Delegates to the `agent-browser` skill for:
 - Visual regression
 - Interaction testing
 - Accessibility checks
@@ -61,7 +61,7 @@ Identify Scope → Typecheck First → Execute Suites
 3. **Execute Suites** — run test runner(s) for the project
 4. **Analyze Failures** — for each failure: read error, trace root cause, recommend fix
 5. **Coverage Report** — Istanbul/c8/pytest-cov/go cover output
-6. **UI Tests** — browser-based validation via chrome-devtools skill
+6. **UI Tests** — browser-based validation via agent-browser skill
 7. **QA Report** — write structured report with actionable findings
 
 ## Tools Integration
@@ -72,7 +72,7 @@ Identify Scope → Typecheck First → Execute Suites
 | Istanbul/c8 | JS/TS coverage |
 | pytest-cov | Python coverage |
 | go cover | Go coverage |
-| chrome-devtools skill | Browser/UI testing |
+| agent-browser skill | Browser/UI testing |
 | ai-multimodal skill | Screenshot analysis for UI failures |
 | debug skill | Root cause analysis for complex failures |
 
@@ -115,4 +115,4 @@ In agent team sessions, the tester teammate:
 
 - [Debug](/docs/engineer/skills/ck-debug) — activated for failures requiring root cause analysis
 - [Cook](/docs/engineer/skills/cook) — cook's quality gate requires 100% test pass
-- [Chrome DevTools](/docs/engineer/skills/chrome-devtools) — UI and browser testing
+- [Agent Browser](/docs/engineer/skills/agent-browser) — UI and browser testing

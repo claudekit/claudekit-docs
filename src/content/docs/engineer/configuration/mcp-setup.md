@@ -23,7 +23,7 @@ ClaudeKit routes MCP (Model Context Protocol) server usage through `/ck:use-mcp`
    cp .claude/.mcp.json.example .claude/.mcp.json
    ```
 2. **Customize the MCP roster**
-   - Remove any default sample servers you do not need: `context7`, `chrome-devtools`, `sequential-thinking`, `stitch`.
+   - Remove any default sample servers you do not need, such as Context7, the Chrome DevTools MCP server, Sequential Thinking, or Stitch.
    - `human-mcp` ships disabled in `.claude/settings.json` because it requires a Gemini API key. To use it, set `GOOGLE_GEMINI_API_KEY` and remove `human-mcp` from `disabledMcpjsonServers`.
    - Add only the MCP servers you truly need to avoid unnecessary token use.
 3. **Save the configuration** so `/ck:use-mcp` can load clients from `.claude/.mcp.json` on demand.
@@ -43,7 +43,7 @@ Trigger configured tools via the `/ck:use-mcp` command:
 **Example**
 
 ```bash
-/ck:use-mcp Use chrome-devtools mcp to capture a screenshot of google.com
+/ck:use-mcp Use the Chrome DevTools MCP server to capture a screenshot of google.com
 ```
 
 ClaudeKit loads the configured MCP clients, analyzes available tools, executes the best fit, and returns the results to your primary chat.

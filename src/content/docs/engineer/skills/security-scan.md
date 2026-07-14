@@ -88,6 +88,6 @@ CRITICAL (0) | HIGH (2) | MEDIUM (5) | LOW (8)
 
 ## Related Skills
 
-- [Code Review](/docs/engineer/skills/code-review) — broader code quality review including security
+- [Code Review](/docs/engineer/skills/ck-code-review) — broader code quality review including security
 - [DevOps](/docs/engineer/skills/devops) — CI/CD integration for automated scanning
 - [Fix](/docs/engineer/skills/fix) — remediate issues found by security scan

@@ -81,7 +81,7 @@ Cook không chỉ viết code — nó quản lý toàn bộ software development
 
 ## Các Skills Liên Quan
 
-- [Planning](/vi/docs/engineer/skills/plan) - Tạo plans mà cook thực thi
+- [Planning](/vi/docs/engineer/skills/ck-plan) - Tạo plans mà cook thực thi
 - [Brainstorm](/vi/docs/engineer/skills/brainstorm) - Cho quyết định kiến trúc trước khi implementation
 - [Fix](/vi/docs/engineer/skills/fix) - Để debug code hiện có
 - [Scout](/vi/docs/engineer/skills/scout) - Để khám phá codebase

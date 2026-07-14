@@ -75,29 +75,22 @@ jobs:
         run: bun run scripts/check-sitemap-coverage.ts --dir dist
 
   # ---------------------------------------------------------------------------
-  # Gate 3: skill parity — agentkit skills must have matching docs pages
+  # Gate 3: Engineer payload parity — shipped agents and skills need matching docs
   # ---------------------------------------------------------------------------
-  skill-parity:
-    name: "Gate 3: skill parity"
+  engineer-payload-parity:
+    name: "Gate 3: Engineer payload parity"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      # Check out agentkit inside workspace — actions/checkout@v4 rejects paths
-      # outside $GITHUB_WORKSPACE, so we use .agentkit (in-workspace) instead
-      # of ../agentkit (which would resolve to the parent directory and fail).
-      # See: https://github.com/actions/checkout/issues/197
-      - name: Checkout agentkit
-        # continue-on-error: agentkit may be private / inaccessible from
-        # PR-scoped GITHUB_TOKEN. Parity check is warn-mode anyway; missing
-        # .agentkit dir already emits ::warning:: via check-skill-parity.ts.
-        continue-on-error: true
+      - name: Checkout public Engineer payload
         uses: actions/checkout@v4
         with:
-          repository: bestagentkits/agentkit
-          path: .agentkit
+          repository: claudekit/claudekit-engineer
+          ref: dev
+          path: .claudekit-engineer
           fetch-depth: 1
 
       - uses: oven-sh/setup-bun@v2
@@ -108,16 +101,12 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
-      - name: Check skill parity
-        # WARN MODE: exits 0 even on mismatch so Track 1 content work can land first.
-        # Switch to --mode fail once all skill pages exist in src/content/docs/.
-        # Track this in issue claudekit/claudekit-docs#166.
+      - name: Check Engineer payload parity
         run: |
-          bun run scripts/check-skill-parity.ts \
-            --agentkit .agentkit \
-            --docs src/content/docs \
-            --kit all \
-            --mode warn
+          bun run scripts/check-engineer-payload-parity.ts \
+            --payload .claudekit-engineer/claude \
+            --docs . \
+            --mode fail
 
   # ---------------------------------------------------------------------------
   # Gate 4: colon-syntax linter — flag /word:word:word patterns in MDX/MD
